@@ -226,7 +226,9 @@ class ConnectionServiceGrpcAsyncIOTransport(ConnectionServiceTransport):
     def list_connections(self) -> Callable[
             [connection.ListConnectionsRequest],
             Awaitable[connection.ListConnectionsResponse]]:
-        r"""Return a callable for the list connections method over gRPC.
+        r"""Return a callable for the
+        list connections
+          method over gRPC.
 
         Lists connections that are currently active for the
         given Apigee Connect endpoint.

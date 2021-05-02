@@ -57,7 +57,7 @@ class Service(proto.Message):
     metadata = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=2,
+        number=2
     )
     endpoints = proto.RepeatedField(
         proto.MESSAGE,

@@ -344,7 +344,8 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.ListDocumentsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [Documents.ListDocuments][google.cloud.dialogflow.v2beta1.Documents.ListDocuments].
             parent (str):
                 Required. The knowledge base to list all documents for.
@@ -383,7 +384,7 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, document.ListDocumentsRequest):
             request = document.ListDocumentsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -435,7 +436,8 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.GetDocumentRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [Documents.GetDocument][google.cloud.dialogflow.v2beta1.Documents.GetDocument].
             name (str):
                 Required. The name of the document to retrieve. Format
@@ -477,7 +479,7 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, document.GetDocumentRequest):
             request = document.GetDocumentRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -521,7 +523,8 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.CreateDocumentRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [Documents.CreateDocument][google.cloud.dialogflow.v2beta1.Documents.CreateDocument].
             parent (str):
                 Required. The knowledge base to create a document for.
@@ -573,7 +576,7 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_document.CreateDocumentRequest):
             request = gcd_document.CreateDocumentRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -623,7 +626,8 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.ImportDocumentsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [Documents.ImportDocuments][google.cloud.dialogflow.v2beta1.Documents.ImportDocuments].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -695,7 +699,8 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.DeleteDocumentRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [Documents.DeleteDocument][google.cloud.dialogflow.v2beta1.Documents.DeleteDocument].
             name (str):
                 Required. The name of the document to delete. Format:
@@ -743,7 +748,7 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, document.DeleteDocumentRequest):
             request = document.DeleteDocumentRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -795,7 +800,8 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.UpdateDocumentRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [Documents.UpdateDocument][google.cloud.dialogflow.v2beta1.Documents.UpdateDocument].
             document (google.cloud.dialogflow_v2beta1.types.Document):
                 Required. The document to update.
@@ -847,7 +853,7 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_document.UpdateDocumentRequest):
             request = gcd_document.UpdateDocumentRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if document is not None:
                 request.document = document
@@ -909,7 +915,8 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.ReloadDocumentRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [Documents.ReloadDocument][google.cloud.dialogflow.v2beta1.Documents.ReloadDocument].
             name (str):
                 Required. The name of the document to reload. Format:
@@ -964,7 +971,7 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, document.ReloadDocumentRequest):
             request = document.ReloadDocumentRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

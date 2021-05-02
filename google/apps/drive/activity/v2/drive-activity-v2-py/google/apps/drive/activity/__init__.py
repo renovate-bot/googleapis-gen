@@ -14,9 +14,8 @@
 # limitations under the License.
 #
 
-from google.apps.drive.activity_v2.services.drive_activity_service.client import DriveActivityServiceClient
 from google.apps.drive.activity_v2.services.drive_activity_service.async_client import DriveActivityServiceAsyncClient
-
+from google.apps.drive.activity_v2.services.drive_activity_service.client import DriveActivityServiceClient
 from google.apps.drive.activity_v2.types.action import Action
 from google.apps.drive.activity_v2.types.action import ActionDetail
 from google.apps.drive.activity_v2.types.action import ApplicationReference
@@ -55,43 +54,43 @@ from google.apps.drive.activity_v2.types.target import TargetReference
 from google.apps.drive.activity_v2.types.target import TeamDrive
 from google.apps.drive.activity_v2.types.target import TeamDriveReference
 
-__all__ = ('DriveActivityServiceClient',
-    'DriveActivityServiceAsyncClient',
-    'Action',
+__all__ = ('Action',
     'ActionDetail',
-    'ApplicationReference',
-    'Comment',
-    'Create',
-    'DataLeakPreventionChange',
-    'Delete',
-    'Edit',
-    'Move',
-    'Permission',
-    'PermissionChange',
-    'Rename',
-    'Restore',
-    'SettingsChange',
     'Actor',
     'Administrator',
     'AnonymousUser',
-    'Impersonation',
-    'SystemEvent',
-    'User',
-    'Domain',
-    'Group',
-    'TimeRange',
+    'ApplicationReference',
+    'Comment',
     'ConsolidationStrategy',
-    'QueryDriveActivityRequest',
-    'DriveActivity',
-    'QueryDriveActivityResponse',
+    'Create',
+    'DataLeakPreventionChange',
+    'Delete',
+    'Domain',
     'Drive',
+    'DriveActivity',
+    'DriveActivityServiceAsyncClient',
+    'DriveActivityServiceClient',
     'DriveItem',
     'DriveItemReference',
     'DriveReference',
+    'Edit',
     'FileComment',
+    'Group',
+    'Impersonation',
+    'Move',
     'Owner',
+    'Permission',
+    'PermissionChange',
+    'QueryDriveActivityRequest',
+    'QueryDriveActivityResponse',
+    'Rename',
+    'Restore',
+    'SettingsChange',
+    'SystemEvent',
     'Target',
     'TargetReference',
     'TeamDrive',
     'TeamDriveReference',
+    'TimeRange',
+    'User',
 )

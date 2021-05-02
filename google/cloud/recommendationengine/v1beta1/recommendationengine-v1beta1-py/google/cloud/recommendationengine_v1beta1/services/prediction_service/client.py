@@ -339,7 +339,8 @@ class PredictionServiceClient(metaclass=PredictionServiceClientMeta):
 
         Args:
             request (google.cloud.recommendationengine_v1beta1.types.PredictRequest):
-                The request object. Request message for Predict method.
+                The request object.
+                Request message for Predict method.
             name (str):
                 Required. Full resource name of the format:
                 ``{name=projects/*/locations/global/catalogs/default_catalog/eventStores/default_event_store/placements/*}``
@@ -422,7 +423,7 @@ class PredictionServiceClient(metaclass=PredictionServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, prediction_service.PredictRequest):
             request = prediction_service.PredictRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

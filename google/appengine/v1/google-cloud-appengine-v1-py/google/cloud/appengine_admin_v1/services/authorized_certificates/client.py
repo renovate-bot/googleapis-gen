@@ -327,7 +327,8 @@ class AuthorizedCertificatesClient(metaclass=AuthorizedCertificatesClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.ListAuthorizedCertificatesRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `AuthorizedCertificates.ListAuthorizedCertificates`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -395,7 +396,8 @@ class AuthorizedCertificatesClient(metaclass=AuthorizedCertificatesClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.GetAuthorizedCertificateRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `AuthorizedCertificates.GetAuthorizedCertificate`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -454,7 +456,8 @@ class AuthorizedCertificatesClient(metaclass=AuthorizedCertificatesClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.CreateAuthorizedCertificateRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `AuthorizedCertificates.CreateAuthorizedCertificate`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -518,7 +521,8 @@ class AuthorizedCertificatesClient(metaclass=AuthorizedCertificatesClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.UpdateAuthorizedCertificateRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `AuthorizedCertificates.UpdateAuthorizedCertificate`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -577,7 +581,8 @@ class AuthorizedCertificatesClient(metaclass=AuthorizedCertificatesClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.DeleteAuthorizedCertificateRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `AuthorizedCertificates.DeleteAuthorizedCertificate`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

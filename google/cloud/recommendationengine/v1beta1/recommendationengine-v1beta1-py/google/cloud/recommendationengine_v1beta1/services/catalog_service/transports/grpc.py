@@ -243,7 +243,9 @@ class CatalogServiceGrpcTransport(CatalogServiceTransport):
     def create_catalog_item(self) -> Callable[
             [catalog_service.CreateCatalogItemRequest],
             catalog.CatalogItem]:
-        r"""Return a callable for the create catalog item method over gRPC.
+        r"""Return a callable for the
+        create catalog item
+          method over gRPC.
 
         Creates a catalog item.
 
@@ -269,7 +271,9 @@ class CatalogServiceGrpcTransport(CatalogServiceTransport):
     def get_catalog_item(self) -> Callable[
             [catalog_service.GetCatalogItemRequest],
             catalog.CatalogItem]:
-        r"""Return a callable for the get catalog item method over gRPC.
+        r"""Return a callable for the
+        get catalog item
+          method over gRPC.
 
         Gets a specific catalog item.
 
@@ -295,7 +299,9 @@ class CatalogServiceGrpcTransport(CatalogServiceTransport):
     def list_catalog_items(self) -> Callable[
             [catalog_service.ListCatalogItemsRequest],
             catalog_service.ListCatalogItemsResponse]:
-        r"""Return a callable for the list catalog items method over gRPC.
+        r"""Return a callable for the
+        list catalog items
+          method over gRPC.
 
         Gets a list of catalog items.
 
@@ -321,7 +327,9 @@ class CatalogServiceGrpcTransport(CatalogServiceTransport):
     def update_catalog_item(self) -> Callable[
             [catalog_service.UpdateCatalogItemRequest],
             catalog.CatalogItem]:
-        r"""Return a callable for the update catalog item method over gRPC.
+        r"""Return a callable for the
+        update catalog item
+          method over gRPC.
 
         Updates a catalog item. Partial updating is
         supported. Non-existing items will be created.
@@ -348,7 +356,9 @@ class CatalogServiceGrpcTransport(CatalogServiceTransport):
     def delete_catalog_item(self) -> Callable[
             [catalog_service.DeleteCatalogItemRequest],
             empty.Empty]:
-        r"""Return a callable for the delete catalog item method over gRPC.
+        r"""Return a callable for the
+        delete catalog item
+          method over gRPC.
 
         Deletes a catalog item.
 
@@ -374,7 +384,9 @@ class CatalogServiceGrpcTransport(CatalogServiceTransport):
     def import_catalog_items(self) -> Callable[
             [import_.ImportCatalogItemsRequest],
             operations.Operation]:
-        r"""Return a callable for the import catalog items method over gRPC.
+        r"""Return a callable for the
+        import catalog items
+          method over gRPC.
 
         Bulk import of multiple catalog items. Request
         processing may be synchronous. No partial updating

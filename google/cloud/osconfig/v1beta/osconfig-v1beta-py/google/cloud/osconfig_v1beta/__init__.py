@@ -20,6 +20,7 @@ from .types.guest_policies import AptRepository
 from .types.guest_policies import Assignment
 from .types.guest_policies import CreateGuestPolicyRequest
 from .types.guest_policies import DeleteGuestPolicyRequest
+from .types.guest_policies import DesiredState
 from .types.guest_policies import EffectiveGuestPolicy
 from .types.guest_policies import GetGuestPolicyRequest
 from .types.guest_policies import GooRepository
@@ -33,7 +34,6 @@ from .types.guest_policies import SoftwareRecipe
 from .types.guest_policies import UpdateGuestPolicyRequest
 from .types.guest_policies import YumRepository
 from .types.guest_policies import ZypperRepository
-from .types.guest_policies import DesiredState
 from .types.patch_deployments import CreatePatchDeploymentRequest
 from .types.patch_deployments import DeletePatchDeploymentRequest
 from .types.patch_deployments import GetPatchDeploymentRequest
@@ -67,54 +67,54 @@ from .types.patch_jobs import YumSettings
 from .types.patch_jobs import ZypperSettings
 
 __all__ = (
-    'OsConfigServiceClient',
     'AptRepository',
-    'Assignment',
-    'CreateGuestPolicyRequest',
-    'DeleteGuestPolicyRequest',
-    'EffectiveGuestPolicy',
-    'GetGuestPolicyRequest',
-    'GooRepository',
-    'GuestPolicy',
-    'ListGuestPoliciesRequest',
-    'ListGuestPoliciesResponse',
-    'LookupEffectiveGuestPolicyRequest',
-    'Package',
-    'PackageRepository',
-    'SoftwareRecipe',
-    'UpdateGuestPolicyRequest',
-    'YumRepository',
-    'ZypperRepository',
-    'DesiredState',
-    'CreatePatchDeploymentRequest',
-    'DeletePatchDeploymentRequest',
-    'GetPatchDeploymentRequest',
-    'ListPatchDeploymentsRequest',
-    'ListPatchDeploymentsResponse',
-    'MonthlySchedule',
-    'OneTimeSchedule',
-    'PatchDeployment',
-    'RecurringSchedule',
-    'WeekDayOfMonth',
-    'WeeklySchedule',
     'AptSettings',
+    'Assignment',
     'CancelPatchJobRequest',
+    'CreateGuestPolicyRequest',
+    'CreatePatchDeploymentRequest',
+    'DeleteGuestPolicyRequest',
+    'DeletePatchDeploymentRequest',
+    'DesiredState',
+    'EffectiveGuestPolicy',
     'ExecStep',
     'ExecStepConfig',
     'ExecutePatchJobRequest',
     'GcsObject',
+    'GetGuestPolicyRequest',
+    'GetPatchDeploymentRequest',
     'GetPatchJobRequest',
+    'GooRepository',
     'GooSettings',
+    'GuestPolicy',
     'Instance',
+    'ListGuestPoliciesRequest',
+    'ListGuestPoliciesResponse',
+    'ListPatchDeploymentsRequest',
+    'ListPatchDeploymentsResponse',
     'ListPatchJobInstanceDetailsRequest',
     'ListPatchJobInstanceDetailsResponse',
     'ListPatchJobsRequest',
     'ListPatchJobsResponse',
+    'LookupEffectiveGuestPolicyRequest',
+    'MonthlySchedule',
+    'OneTimeSchedule',
+    'Package',
+    'PackageRepository',
     'PatchConfig',
+    'PatchDeployment',
     'PatchInstanceFilter',
     'PatchJob',
     'PatchJobInstanceDetails',
+    'RecurringSchedule',
+    'SoftwareRecipe',
+    'UpdateGuestPolicyRequest',
+    'WeekDayOfMonth',
+    'WeeklySchedule',
     'WindowsUpdateSettings',
+    'YumRepository',
     'YumSettings',
+    'ZypperRepository',
     'ZypperSettings',
+'OsConfigServiceClient',
 )

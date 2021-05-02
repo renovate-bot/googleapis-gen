@@ -114,7 +114,7 @@ class TrafficSplit(proto.Message):
     allocations = proto.MapField(
         proto.STRING,
         proto.DOUBLE,
-        number=2,
+        number=2
     )
 
 

@@ -39,7 +39,6 @@ from .types.cloud_tpu import Symptom
 from .types.cloud_tpu import TensorFlowVersion
 
 __all__ = (
-    'TpuClient',
     'AcceleratorType',
     'CreateNodeRequest',
     'DeleteNodeRequest',
@@ -61,4 +60,5 @@ __all__ = (
     'StopNodeRequest',
     'Symptom',
     'TensorFlowVersion',
+'TpuClient',
 )

@@ -164,7 +164,8 @@ class AdminServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.pubsublite_v1.types.CreateTopicRequest`):
-                The request object. Request for CreateTopic.
+                The request object.
+                Request for CreateTopic.
             parent (:class:`str`):
                 Required. The parent location in which to create the
                 topic. Structured like
@@ -257,7 +258,8 @@ class AdminServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.pubsublite_v1.types.GetTopicRequest`):
-                The request object. Request for GetTopic.
+                The request object.
+                Request for GetTopic.
             name (:class:`str`):
                 Required. The name of the topic whose
                 configuration to return.
@@ -330,7 +332,8 @@ class AdminServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.pubsublite_v1.types.GetTopicPartitionsRequest`):
-                The request object. Request for GetTopicPartitions.
+                The request object.
+                Request for GetTopicPartitions.
             name (:class:`str`):
                 Required. The topic whose partition
                 information to return.
@@ -402,7 +405,8 @@ class AdminServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.pubsublite_v1.types.ListTopicsRequest`):
-                The request object. Request for ListTopics.
+                The request object.
+                Request for ListTopics.
             parent (:class:`str`):
                 Required. The parent whose topics are to be listed.
                 Structured like
@@ -489,7 +493,8 @@ class AdminServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.pubsublite_v1.types.UpdateTopicRequest`):
-                The request object. Request for UpdateTopic.
+                The request object.
+                Request for UpdateTopic.
             topic (:class:`google.cloud.pubsublite_v1.types.Topic`):
                 Required. The topic to update. Its ``name`` field must
                 be populated.
@@ -570,7 +575,8 @@ class AdminServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.pubsublite_v1.types.DeleteTopicRequest`):
-                The request object. Request for DeleteTopic.
+                The request object.
+                Request for DeleteTopic.
             name (:class:`str`):
                 Required. The name of the topic to
                 delete.
@@ -636,7 +642,8 @@ class AdminServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.pubsublite_v1.types.ListTopicSubscriptionsRequest`):
-                The request object. Request for ListTopicSubscriptions.
+                The request object.
+                Request for ListTopicSubscriptions.
             name (:class:`str`):
                 Required. The name of the topic whose
                 subscriptions to list.
@@ -723,7 +730,8 @@ class AdminServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.pubsublite_v1.types.CreateSubscriptionRequest`):
-                The request object. Request for CreateSubscription.
+                The request object.
+                Request for CreateSubscription.
             parent (:class:`str`):
                 Required. The parent location in which to create the
                 subscription. Structured like
@@ -818,7 +826,8 @@ class AdminServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.pubsublite_v1.types.GetSubscriptionRequest`):
-                The request object. Request for GetSubscription.
+                The request object.
+                Request for GetSubscription.
             name (:class:`str`):
                 Required. The name of the
                 subscription whose configuration to
@@ -894,7 +903,8 @@ class AdminServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.pubsublite_v1.types.ListSubscriptionsRequest`):
-                The request object. Request for ListSubscriptions.
+                The request object.
+                Request for ListSubscriptions.
             parent (:class:`str`):
                 Required. The parent whose subscriptions are to be
                 listed. Structured like
@@ -981,7 +991,8 @@ class AdminServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.pubsublite_v1.types.UpdateSubscriptionRequest`):
-                The request object. Request for UpdateSubscription.
+                The request object.
+                Request for UpdateSubscription.
             subscription (:class:`google.cloud.pubsublite_v1.types.Subscription`):
                 Required. The subscription to update. Its ``name`` field
                 must be populated. Topic field must not be populated.
@@ -1064,7 +1075,8 @@ class AdminServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.pubsublite_v1.types.DeleteSubscriptionRequest`):
-                The request object. Request for DeleteSubscription.
+                The request object.
+                Request for DeleteSubscription.
             name (:class:`str`):
                 Required. The name of the
                 subscription to delete.

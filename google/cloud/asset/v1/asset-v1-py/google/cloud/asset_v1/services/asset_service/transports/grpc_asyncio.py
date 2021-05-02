@@ -245,7 +245,9 @@ class AssetServiceGrpcAsyncIOTransport(AssetServiceTransport):
     def export_assets(self) -> Callable[
             [asset_service.ExportAssetsRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the export assets method over gRPC.
+        r"""Return a callable for the
+        export assets
+          method over gRPC.
 
         Exports assets with time and resource types to a given Cloud
         Storage location/BigQuery table. For Cloud Storage location
@@ -283,7 +285,9 @@ class AssetServiceGrpcAsyncIOTransport(AssetServiceTransport):
     def batch_get_assets_history(self) -> Callable[
             [asset_service.BatchGetAssetsHistoryRequest],
             Awaitable[asset_service.BatchGetAssetsHistoryResponse]]:
-        r"""Return a callable for the batch get assets history method over gRPC.
+        r"""Return a callable for the
+        batch get assets history
+          method over gRPC.
 
         Batch gets the update history of assets that overlap a time
         window. For IAM_POLICY content, this API outputs history when
@@ -315,7 +319,9 @@ class AssetServiceGrpcAsyncIOTransport(AssetServiceTransport):
     def create_feed(self) -> Callable[
             [asset_service.CreateFeedRequest],
             Awaitable[asset_service.Feed]]:
-        r"""Return a callable for the create feed method over gRPC.
+        r"""Return a callable for the
+        create feed
+          method over gRPC.
 
         Creates a feed in a parent
         project/folder/organization to listen to its asset
@@ -343,7 +349,9 @@ class AssetServiceGrpcAsyncIOTransport(AssetServiceTransport):
     def get_feed(self) -> Callable[
             [asset_service.GetFeedRequest],
             Awaitable[asset_service.Feed]]:
-        r"""Return a callable for the get feed method over gRPC.
+        r"""Return a callable for the
+        get feed
+          method over gRPC.
 
         Gets details about an asset feed.
 
@@ -369,7 +377,9 @@ class AssetServiceGrpcAsyncIOTransport(AssetServiceTransport):
     def list_feeds(self) -> Callable[
             [asset_service.ListFeedsRequest],
             Awaitable[asset_service.ListFeedsResponse]]:
-        r"""Return a callable for the list feeds method over gRPC.
+        r"""Return a callable for the
+        list feeds
+          method over gRPC.
 
         Lists all asset feeds in a parent
         project/folder/organization.
@@ -396,7 +406,9 @@ class AssetServiceGrpcAsyncIOTransport(AssetServiceTransport):
     def update_feed(self) -> Callable[
             [asset_service.UpdateFeedRequest],
             Awaitable[asset_service.Feed]]:
-        r"""Return a callable for the update feed method over gRPC.
+        r"""Return a callable for the
+        update feed
+          method over gRPC.
 
         Updates an asset feed configuration.
 
@@ -422,7 +434,9 @@ class AssetServiceGrpcAsyncIOTransport(AssetServiceTransport):
     def delete_feed(self) -> Callable[
             [asset_service.DeleteFeedRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete feed method over gRPC.
+        r"""Return a callable for the
+        delete feed
+          method over gRPC.
 
         Deletes an asset feed.
 
@@ -448,7 +462,9 @@ class AssetServiceGrpcAsyncIOTransport(AssetServiceTransport):
     def search_all_resources(self) -> Callable[
             [asset_service.SearchAllResourcesRequest],
             Awaitable[asset_service.SearchAllResourcesResponse]]:
-        r"""Return a callable for the search all resources method over gRPC.
+        r"""Return a callable for the
+        search all resources
+          method over gRPC.
 
         Searches all Cloud resources within the specified scope, such as
         a project, folder, or organization. The caller must be granted
@@ -477,7 +493,9 @@ class AssetServiceGrpcAsyncIOTransport(AssetServiceTransport):
     def search_all_iam_policies(self) -> Callable[
             [asset_service.SearchAllIamPoliciesRequest],
             Awaitable[asset_service.SearchAllIamPoliciesResponse]]:
-        r"""Return a callable for the search all iam policies method over gRPC.
+        r"""Return a callable for the
+        search all iam policies
+          method over gRPC.
 
         Searches all IAM policies within the specified scope, such as a
         project, folder, or organization. The caller must be granted the
@@ -506,7 +524,9 @@ class AssetServiceGrpcAsyncIOTransport(AssetServiceTransport):
     def analyze_iam_policy(self) -> Callable[
             [asset_service.AnalyzeIamPolicyRequest],
             Awaitable[asset_service.AnalyzeIamPolicyResponse]]:
-        r"""Return a callable for the analyze iam policy method over gRPC.
+        r"""Return a callable for the
+        analyze iam policy
+          method over gRPC.
 
         Analyzes IAM policies to answer which identities have
         what accesses on which resources.
@@ -533,7 +553,9 @@ class AssetServiceGrpcAsyncIOTransport(AssetServiceTransport):
     def analyze_iam_policy_longrunning(self) -> Callable[
             [asset_service.AnalyzeIamPolicyLongrunningRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the analyze iam policy longrunning method over gRPC.
+        r"""Return a callable for the
+        analyze iam policy longrunning
+          method over gRPC.
 
         Analyzes IAM policies asynchronously to answer which identities
         have what accesses on which resources, and writes the analysis

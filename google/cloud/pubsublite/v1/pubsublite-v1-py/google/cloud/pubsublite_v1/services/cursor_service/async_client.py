@@ -159,7 +159,8 @@ class CursorServiceAsyncClient:
 
         Args:
             requests (AsyncIterator[`google.cloud.pubsublite_v1.types.StreamingCommitCursorRequest`]):
-                The request object AsyncIterator. A request sent from the client to
+                The request object AsyncIterator.
+                A request sent from the client to
                 the server on a stream.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -204,7 +205,8 @@ class CursorServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.pubsublite_v1.types.CommitCursorRequest`):
-                The request object. Request for CommitCursor.
+                The request object.
+                Request for CommitCursor.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -260,7 +262,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.pubsublite_v1.types.ListPartitionCursorsRequest`):
-                The request object. Request for ListPartitionCursors.
+                The request object.
+                Request for ListPartitionCursors.
             parent (:class:`str`):
                 Required. The subscription for which to retrieve
                 cursors. Structured like

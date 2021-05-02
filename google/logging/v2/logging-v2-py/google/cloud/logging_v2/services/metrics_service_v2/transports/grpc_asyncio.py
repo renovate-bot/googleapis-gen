@@ -226,7 +226,9 @@ class MetricsServiceV2GrpcAsyncIOTransport(MetricsServiceV2Transport):
     def list_log_metrics(self) -> Callable[
             [logging_metrics.ListLogMetricsRequest],
             Awaitable[logging_metrics.ListLogMetricsResponse]]:
-        r"""Return a callable for the list log metrics method over gRPC.
+        r"""Return a callable for the
+        list log metrics
+          method over gRPC.
 
         Lists logs-based metrics.
 
@@ -252,7 +254,9 @@ class MetricsServiceV2GrpcAsyncIOTransport(MetricsServiceV2Transport):
     def get_log_metric(self) -> Callable[
             [logging_metrics.GetLogMetricRequest],
             Awaitable[logging_metrics.LogMetric]]:
-        r"""Return a callable for the get log metric method over gRPC.
+        r"""Return a callable for the
+        get log metric
+          method over gRPC.
 
         Gets a logs-based metric.
 
@@ -278,7 +282,9 @@ class MetricsServiceV2GrpcAsyncIOTransport(MetricsServiceV2Transport):
     def create_log_metric(self) -> Callable[
             [logging_metrics.CreateLogMetricRequest],
             Awaitable[logging_metrics.LogMetric]]:
-        r"""Return a callable for the create log metric method over gRPC.
+        r"""Return a callable for the
+        create log metric
+          method over gRPC.
 
         Creates a logs-based metric.
 
@@ -304,7 +310,9 @@ class MetricsServiceV2GrpcAsyncIOTransport(MetricsServiceV2Transport):
     def update_log_metric(self) -> Callable[
             [logging_metrics.UpdateLogMetricRequest],
             Awaitable[logging_metrics.LogMetric]]:
-        r"""Return a callable for the update log metric method over gRPC.
+        r"""Return a callable for the
+        update log metric
+          method over gRPC.
 
         Creates or updates a logs-based metric.
 
@@ -330,7 +338,9 @@ class MetricsServiceV2GrpcAsyncIOTransport(MetricsServiceV2Transport):
     def delete_log_metric(self) -> Callable[
             [logging_metrics.DeleteLogMetricRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete log metric method over gRPC.
+        r"""Return a callable for the
+        delete log metric
+          method over gRPC.
 
         Deletes a logs-based metric.
 

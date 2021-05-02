@@ -259,7 +259,9 @@ class ProductSearchGrpcTransport(ProductSearchTransport):
     def create_product_set(self) -> Callable[
             [product_search_service.CreateProductSetRequest],
             product_search_service.ProductSet]:
-        r"""Return a callable for the create product set method over gRPC.
+        r"""Return a callable for the
+        create product set
+          method over gRPC.
 
         Creates and returns a new ProductSet resource.
 
@@ -290,7 +292,9 @@ class ProductSearchGrpcTransport(ProductSearchTransport):
     def list_product_sets(self) -> Callable[
             [product_search_service.ListProductSetsRequest],
             product_search_service.ListProductSetsResponse]:
-        r"""Return a callable for the list product sets method over gRPC.
+        r"""Return a callable for the
+        list product sets
+          method over gRPC.
 
         Lists ProductSets in an unspecified order.
 
@@ -321,7 +325,9 @@ class ProductSearchGrpcTransport(ProductSearchTransport):
     def get_product_set(self) -> Callable[
             [product_search_service.GetProductSetRequest],
             product_search_service.ProductSet]:
-        r"""Return a callable for the get product set method over gRPC.
+        r"""Return a callable for the
+        get product set
+          method over gRPC.
 
         Gets information associated with a ProductSet.
 
@@ -351,7 +357,9 @@ class ProductSearchGrpcTransport(ProductSearchTransport):
     def update_product_set(self) -> Callable[
             [product_search_service.UpdateProductSetRequest],
             product_search_service.ProductSet]:
-        r"""Return a callable for the update product set method over gRPC.
+        r"""Return a callable for the
+        update product set
+          method over gRPC.
 
         Makes changes to a ProductSet resource. Only display_name can be
         updated currently.
@@ -385,7 +393,9 @@ class ProductSearchGrpcTransport(ProductSearchTransport):
     def delete_product_set(self) -> Callable[
             [product_search_service.DeleteProductSetRequest],
             empty.Empty]:
-        r"""Return a callable for the delete product set method over gRPC.
+        r"""Return a callable for the
+        delete product set
+          method over gRPC.
 
         Permanently deletes a ProductSet. Products and
         ReferenceImages in the ProductSet are not deleted.
@@ -414,7 +424,9 @@ class ProductSearchGrpcTransport(ProductSearchTransport):
     def create_product(self) -> Callable[
             [product_search_service.CreateProductRequest],
             product_search_service.Product]:
-        r"""Return a callable for the create product method over gRPC.
+        r"""Return a callable for the
+        create product
+          method over gRPC.
 
         Creates and returns a new product resource.
 
@@ -449,7 +461,9 @@ class ProductSearchGrpcTransport(ProductSearchTransport):
     def list_products(self) -> Callable[
             [product_search_service.ListProductsRequest],
             product_search_service.ListProductsResponse]:
-        r"""Return a callable for the list products method over gRPC.
+        r"""Return a callable for the
+        list products
+          method over gRPC.
 
         Lists products in an unspecified order.
 
@@ -480,7 +494,9 @@ class ProductSearchGrpcTransport(ProductSearchTransport):
     def get_product(self) -> Callable[
             [product_search_service.GetProductRequest],
             product_search_service.Product]:
-        r"""Return a callable for the get product method over gRPC.
+        r"""Return a callable for the
+        get product
+          method over gRPC.
 
         Gets information associated with a Product.
 
@@ -510,7 +526,9 @@ class ProductSearchGrpcTransport(ProductSearchTransport):
     def update_product(self) -> Callable[
             [product_search_service.UpdateProductRequest],
             product_search_service.Product]:
-        r"""Return a callable for the update product method over gRPC.
+        r"""Return a callable for the
+        update product
+          method over gRPC.
 
         Makes changes to a Product resource. Only the ``display_name``,
         ``description``, and ``labels`` fields can be updated right now.
@@ -551,7 +569,9 @@ class ProductSearchGrpcTransport(ProductSearchTransport):
     def delete_product(self) -> Callable[
             [product_search_service.DeleteProductRequest],
             empty.Empty]:
-        r"""Return a callable for the delete product method over gRPC.
+        r"""Return a callable for the
+        delete product
+          method over gRPC.
 
         Permanently deletes a product and its reference
         images.
@@ -582,7 +602,9 @@ class ProductSearchGrpcTransport(ProductSearchTransport):
     def create_reference_image(self) -> Callable[
             [product_search_service.CreateReferenceImageRequest],
             product_search_service.ReferenceImage]:
-        r"""Return a callable for the create reference image method over gRPC.
+        r"""Return a callable for the
+        create reference image
+          method over gRPC.
 
         Creates and returns a new ReferenceImage resource.
 
@@ -629,7 +651,9 @@ class ProductSearchGrpcTransport(ProductSearchTransport):
     def delete_reference_image(self) -> Callable[
             [product_search_service.DeleteReferenceImageRequest],
             empty.Empty]:
-        r"""Return a callable for the delete reference image method over gRPC.
+        r"""Return a callable for the
+        delete reference image
+          method over gRPC.
 
         Permanently deletes a reference image.
         The image metadata will be deleted right away, but
@@ -661,7 +685,9 @@ class ProductSearchGrpcTransport(ProductSearchTransport):
     def list_reference_images(self) -> Callable[
             [product_search_service.ListReferenceImagesRequest],
             product_search_service.ListReferenceImagesResponse]:
-        r"""Return a callable for the list reference images method over gRPC.
+        r"""Return a callable for the
+        list reference images
+          method over gRPC.
 
         Lists reference images.
 
@@ -693,7 +719,9 @@ class ProductSearchGrpcTransport(ProductSearchTransport):
     def get_reference_image(self) -> Callable[
             [product_search_service.GetReferenceImageRequest],
             product_search_service.ReferenceImage]:
-        r"""Return a callable for the get reference image method over gRPC.
+        r"""Return a callable for the
+        get reference image
+          method over gRPC.
 
         Gets information associated with a ReferenceImage.
 
@@ -723,7 +751,9 @@ class ProductSearchGrpcTransport(ProductSearchTransport):
     def add_product_to_product_set(self) -> Callable[
             [product_search_service.AddProductToProductSetRequest],
             empty.Empty]:
-        r"""Return a callable for the add product to product set method over gRPC.
+        r"""Return a callable for the
+        add product to product set
+          method over gRPC.
 
         Adds a Product to the specified ProductSet. If the Product is
         already present, no change is made.
@@ -757,8 +787,10 @@ class ProductSearchGrpcTransport(ProductSearchTransport):
     def remove_product_from_product_set(self) -> Callable[
             [product_search_service.RemoveProductFromProductSetRequest],
             empty.Empty]:
-        r"""Return a callable for the remove product from product
-        set method over gRPC.
+        r"""Return a callable for the
+        remove product from product
+        set
+          method over gRPC.
 
         Removes a Product from the specified ProductSet.
 
@@ -784,7 +816,9 @@ class ProductSearchGrpcTransport(ProductSearchTransport):
     def list_products_in_product_set(self) -> Callable[
             [product_search_service.ListProductsInProductSetRequest],
             product_search_service.ListProductsInProductSetResponse]:
-        r"""Return a callable for the list products in product set method over gRPC.
+        r"""Return a callable for the
+        list products in product set
+          method over gRPC.
 
         Lists the Products in a ProductSet, in an unspecified order. If
         the ProductSet does not exist, the products field of the
@@ -817,7 +851,9 @@ class ProductSearchGrpcTransport(ProductSearchTransport):
     def import_product_sets(self) -> Callable[
             [product_search_service.ImportProductSetsRequest],
             operations.Operation]:
-        r"""Return a callable for the import product sets method over gRPC.
+        r"""Return a callable for the
+        import product sets
+          method over gRPC.
 
         Asynchronous API that imports a list of reference images to
         specified product sets based on a list of image information.
@@ -854,7 +890,9 @@ class ProductSearchGrpcTransport(ProductSearchTransport):
     def purge_products(self) -> Callable[
             [product_search_service.PurgeProductsRequest],
             operations.Operation]:
-        r"""Return a callable for the purge products method over gRPC.
+        r"""Return a callable for the
+        purge products
+          method over gRPC.
 
         Asynchronous API to delete all Products in a ProductSet or all
         Products that are in no ProductSet.

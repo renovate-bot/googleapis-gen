@@ -240,7 +240,9 @@ class InstancesGrpcTransport(InstancesTransport):
     def list_instances(self) -> Callable[
             [appengine.ListInstancesRequest],
             appengine.ListInstancesResponse]:
-        r"""Return a callable for the list instances method over gRPC.
+        r"""Return a callable for the
+        list instances
+          method over gRPC.
 
         Lists the instances of a version.
 
@@ -270,7 +272,9 @@ class InstancesGrpcTransport(InstancesTransport):
     def get_instance(self) -> Callable[
             [appengine.GetInstanceRequest],
             instance.Instance]:
-        r"""Return a callable for the get instance method over gRPC.
+        r"""Return a callable for the
+        get instance
+          method over gRPC.
 
         Gets instance information.
 
@@ -296,7 +300,9 @@ class InstancesGrpcTransport(InstancesTransport):
     def delete_instance(self) -> Callable[
             [appengine.DeleteInstanceRequest],
             operations.Operation]:
-        r"""Return a callable for the delete instance method over gRPC.
+        r"""Return a callable for the
+        delete instance
+          method over gRPC.
 
         Stops a running instance.
 
@@ -336,7 +342,9 @@ class InstancesGrpcTransport(InstancesTransport):
     def debug_instance(self) -> Callable[
             [appengine.DebugInstanceRequest],
             operations.Operation]:
-        r"""Return a callable for the debug instance method over gRPC.
+        r"""Return a callable for the
+        debug instance
+          method over gRPC.
 
         Enables debugging on a VM instance. This allows you
         to use the SSH command to connect to the virtual machine

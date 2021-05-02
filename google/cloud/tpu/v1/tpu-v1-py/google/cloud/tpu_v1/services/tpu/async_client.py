@@ -164,7 +164,8 @@ class TpuAsyncClient:
 
         Args:
             request (:class:`google.cloud.tpu_v1.types.ListNodesRequest`):
-                The request object. Request for
+                The request object.
+                Request for
                 [ListNodes][google.cloud.tpu.v1.Tpu.ListNodes].
             parent (:class:`str`):
                 Required. The parent resource name.
@@ -249,7 +250,8 @@ class TpuAsyncClient:
 
         Args:
             request (:class:`google.cloud.tpu_v1.types.GetNodeRequest`):
-                The request object. Request for
+                The request object.
+                Request for
                 [GetNode][google.cloud.tpu.v1.Tpu.GetNode].
             name (:class:`str`):
                 Required. The resource name.
@@ -322,7 +324,8 @@ class TpuAsyncClient:
 
         Args:
             request (:class:`google.cloud.tpu_v1.types.CreateNodeRequest`):
-                The request object. Request for
+                The request object.
+                Request for
                 [CreateNode][google.cloud.tpu.v1.Tpu.CreateNode].
             parent (:class:`str`):
                 Required. The parent resource name.
@@ -419,7 +422,8 @@ class TpuAsyncClient:
 
         Args:
             request (:class:`google.cloud.tpu_v1.types.DeleteNodeRequest`):
-                The request object. Request for
+                The request object.
+                Request for
                 [DeleteNode][google.cloud.tpu.v1.Tpu.DeleteNode].
             name (:class:`str`):
                 Required. The resource name.
@@ -501,7 +505,8 @@ class TpuAsyncClient:
 
         Args:
             request (:class:`google.cloud.tpu_v1.types.ReimageNodeRequest`):
-                The request object. Request for
+                The request object.
+                Request for
                 [ReimageNode][google.cloud.tpu.v1.Tpu.ReimageNode].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -566,7 +571,8 @@ class TpuAsyncClient:
 
         Args:
             request (:class:`google.cloud.tpu_v1.types.StopNodeRequest`):
-                The request object. Request for
+                The request object.
+                Request for
                 [StopNode][google.cloud.tpu.v1.Tpu.StopNode].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -631,7 +637,8 @@ class TpuAsyncClient:
 
         Args:
             request (:class:`google.cloud.tpu_v1.types.StartNodeRequest`):
-                The request object. Request for
+                The request object.
+                Request for
                 [StartNode][google.cloud.tpu.v1.Tpu.StartNode].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -697,7 +704,8 @@ class TpuAsyncClient:
 
         Args:
             request (:class:`google.cloud.tpu_v1.types.ListTensorFlowVersionsRequest`):
-                The request object. Request for
+                The request object.
+                Request for
                 [ListTensorFlowVersions][google.cloud.tpu.v1.Tpu.ListTensorFlowVersions].
             parent (:class:`str`):
                 Required. The parent resource name.
@@ -782,7 +790,8 @@ class TpuAsyncClient:
 
         Args:
             request (:class:`google.cloud.tpu_v1.types.GetTensorFlowVersionRequest`):
-                The request object. Request for
+                The request object.
+                Request for
                 [GetTensorFlowVersion][google.cloud.tpu.v1.Tpu.GetTensorFlowVersion].
             name (:class:`str`):
                 Required. The resource name.
@@ -855,7 +864,8 @@ class TpuAsyncClient:
 
         Args:
             request (:class:`google.cloud.tpu_v1.types.ListAcceleratorTypesRequest`):
-                The request object. Request for
+                The request object.
+                Request for
                 [ListAcceleratorTypes][google.cloud.tpu.v1.Tpu.ListAcceleratorTypes].
             parent (:class:`str`):
                 Required. The parent resource name.
@@ -940,7 +950,8 @@ class TpuAsyncClient:
 
         Args:
             request (:class:`google.cloud.tpu_v1.types.GetAcceleratorTypeRequest`):
-                The request object. Request for
+                The request object.
+                Request for
                 [GetAcceleratorType][google.cloud.tpu.v1.Tpu.GetAcceleratorType].
             name (:class:`str`):
                 Required. The resource name.

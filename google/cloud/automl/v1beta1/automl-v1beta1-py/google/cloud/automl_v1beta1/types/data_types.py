@@ -123,7 +123,7 @@ class StructType(proto.Message):
     fields = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=1,
+        number=1
         message='DataType',
     )
 

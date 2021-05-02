@@ -577,13 +577,13 @@ class ReportRow(proto.Message):
     dimension_values = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=1,
+        number=1
         message=DimensionValue,
     )
     metric_values = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=2,
+        number=2
         message=MetricValue,
     )
 

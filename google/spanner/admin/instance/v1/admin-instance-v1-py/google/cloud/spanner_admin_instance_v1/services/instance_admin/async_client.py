@@ -184,7 +184,8 @@ class InstanceAdminAsyncClient:
 
         Args:
             request (:class:`google.cloud.spanner_admin_instance_v1.types.ListInstanceConfigsRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs].
             parent (:class:`str`):
                 Required. The name of the project for which a list of
@@ -280,7 +281,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.spanner_admin_instance_v1.types.GetInstanceConfigRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [GetInstanceConfigRequest][google.spanner.admin.instance.v1.InstanceAdmin.GetInstanceConfig].
             name (:class:`str`):
                 Required. The name of the requested instance
@@ -365,7 +367,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.spanner_admin_instance_v1.types.ListInstancesRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [ListInstances][google.spanner.admin.instance.v1.InstanceAdmin.ListInstances].
             parent (:class:`str`):
                 Required. The name of the project for which a list of
@@ -460,7 +463,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.spanner_admin_instance_v1.types.GetInstanceRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [GetInstance][google.spanner.admin.instance.v1.InstanceAdmin.GetInstance].
             name (:class:`str`):
                 Required. The name of the requested instance. Values are
@@ -582,7 +586,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.spanner_admin_instance_v1.types.CreateInstanceRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [CreateInstance][google.spanner.admin.instance.v1.InstanceAdmin.CreateInstance].
             parent (:class:`str`):
                 Required. The name of the project in which to create the
@@ -734,7 +739,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.spanner_admin_instance_v1.types.UpdateInstanceRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance].
             instance (:class:`google.cloud.spanner_admin_instance_v1.types.Instance`):
                 Required. The instance to update, which must always
@@ -848,7 +854,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.spanner_admin_instance_v1.types.DeleteInstanceRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [DeleteInstance][google.spanner.admin.instance.v1.InstanceAdmin.DeleteInstance].
             name (:class:`str`):
                 Required. The name of the instance to be deleted. Values
@@ -926,7 +933,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.SetIamPolicyRequest`):
-                The request object. Request message for `SetIamPolicy`
+                The request object.
+                Request message for `SetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -1061,7 +1069,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.GetIamPolicyRequest`):
-                The request object. Request message for `GetIamPolicy`
+                The request object.
+                Request message for `GetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -1205,7 +1214,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `TestIamPermissions` method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the

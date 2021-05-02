@@ -392,7 +392,8 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1beta1.types.UploadModelRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel].
             parent (str):
                 Required. The resource name of the Location into which
@@ -438,7 +439,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, model_service.UploadModelRequest):
             request = model_service.UploadModelRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -488,7 +489,8 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1beta1.types.GetModelRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ModelService.GetModel][google.cloud.aiplatform.v1beta1.ModelService.GetModel].
             name (str):
                 Required. The name of the Model resource. Format:
@@ -521,7 +523,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, model_service.GetModelRequest):
             request = model_service.GetModelRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -561,7 +563,8 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1beta1.types.ListModelsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ModelService.ListModels][google.cloud.aiplatform.v1beta1.ModelService.ListModels].
             parent (str):
                 Required. The resource name of the Location to list the
@@ -600,7 +603,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, model_service.ListModelsRequest):
             request = model_service.ListModelsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -650,7 +653,8 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1beta1.types.UpdateModelRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ModelService.UpdateModel][google.cloud.aiplatform.v1beta1.ModelService.UpdateModel].
             model (google.cloud.aiplatform_v1beta1.types.Model):
                 Required. The Model which replaces
@@ -691,7 +695,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, model_service.UpdateModelRequest):
             request = model_service.UpdateModelRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if model is not None:
                 request.model = model
@@ -735,7 +739,8 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1beta1.types.DeleteModelRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ModelService.DeleteModel][google.cloud.aiplatform.v1beta1.ModelService.DeleteModel].
             name (str):
                 Required. The name of the Model resource to be deleted.
@@ -784,7 +789,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, model_service.DeleteModelRequest):
             request = model_service.DeleteModelRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -836,7 +841,8 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1beta1.types.ExportModelRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ModelService.ExportModel][google.cloud.aiplatform.v1beta1.ModelService.ExportModel].
             name (str):
                 Required. The resource name of the Model to export.
@@ -884,7 +890,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, model_service.ExportModelRequest):
             request = model_service.ExportModelRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -934,7 +940,8 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1beta1.types.GetModelEvaluationRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ModelService.GetModelEvaluation][google.cloud.aiplatform.v1beta1.ModelService.GetModelEvaluation].
             name (str):
                 Required. The name of the ModelEvaluation resource.
@@ -972,7 +979,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, model_service.GetModelEvaluationRequest):
             request = model_service.GetModelEvaluationRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1012,7 +1019,8 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1beta1.types.ListModelEvaluationsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ModelService.ListModelEvaluations][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluations].
             parent (str):
                 Required. The resource name of the Model to list the
@@ -1051,7 +1059,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, model_service.ListModelEvaluationsRequest):
             request = model_service.ListModelEvaluationsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1100,7 +1108,8 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1beta1.types.GetModelEvaluationSliceRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ModelService.GetModelEvaluationSlice][google.cloud.aiplatform.v1beta1.ModelService.GetModelEvaluationSlice].
             name (str):
                 Required. The name of the ModelEvaluationSlice resource.
@@ -1138,7 +1147,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, model_service.GetModelEvaluationSliceRequest):
             request = model_service.GetModelEvaluationSliceRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1178,7 +1187,8 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1beta1.types.ListModelEvaluationSlicesRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices].
             parent (str):
                 Required. The resource name of the ModelEvaluation to
@@ -1217,7 +1227,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, model_service.ListModelEvaluationSlicesRequest):
             request = model_service.ListModelEvaluationSlicesRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent

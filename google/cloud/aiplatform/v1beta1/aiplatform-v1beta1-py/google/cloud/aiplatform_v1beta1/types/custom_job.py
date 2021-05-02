@@ -134,7 +134,7 @@ class CustomJob(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=11,
+        number=11
     )
     encryption_spec = proto.Field(
         proto.MESSAGE,

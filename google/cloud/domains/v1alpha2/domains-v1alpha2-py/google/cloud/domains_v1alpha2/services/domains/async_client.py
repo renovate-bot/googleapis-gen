@@ -169,7 +169,8 @@ class DomainsAsyncClient:
 
         Args:
             request (:class:`google.cloud.domains_v1alpha2.types.SearchDomainsRequest`):
-                The request object. Request for the `SearchDomains`
+                The request object.
+                Request for the `SearchDomains`
                 method.
             location (:class:`str`):
                 Required. The location. Must be in the format
@@ -254,7 +255,8 @@ class DomainsAsyncClient:
 
         Args:
             request (:class:`google.cloud.domains_v1alpha2.types.RetrieveRegisterParametersRequest`):
-                The request object. Request for the
+                The request object.
+                Request for the
                 `RetrieveRegisterParameters` method.
             location (:class:`str`):
                 Required. The location. Must be in the format
@@ -352,7 +354,8 @@ class DomainsAsyncClient:
 
         Args:
             request (:class:`google.cloud.domains_v1alpha2.types.RegisterDomainRequest`):
-                The request object. Request for the `RegisterDomain`
+                The request object.
+                Request for the `RegisterDomain`
                 method.
             parent (:class:`str`):
                 Required. The parent resource of the ``Registration``.
@@ -466,7 +469,8 @@ class DomainsAsyncClient:
 
         Args:
             request (:class:`google.cloud.domains_v1alpha2.types.ListRegistrationsRequest`):
-                The request object. Request for the `ListRegistrations`
+                The request object.
+                Request for the `ListRegistrations`
                 method.
             parent (:class:`str`):
                 Required. The project and location from which to list
@@ -553,7 +557,8 @@ class DomainsAsyncClient:
 
         Args:
             request (:class:`google.cloud.domains_v1alpha2.types.GetRegistrationRequest`):
-                The request object. Request for the `GetRegistration`
+                The request object.
+                Request for the `GetRegistration`
                 method.
             name (:class:`str`):
                 Required. The name of the ``Registration`` to get, in
@@ -645,7 +650,8 @@ class DomainsAsyncClient:
 
         Args:
             request (:class:`google.cloud.domains_v1alpha2.types.UpdateRegistrationRequest`):
-                The request object. Request for the `UpdateRegistration`
+                The request object.
+                Request for the `UpdateRegistration`
                 method.
             registration (:class:`google.cloud.domains_v1alpha2.types.Registration`):
                 Fields of the ``Registration`` to update.
@@ -749,7 +755,8 @@ class DomainsAsyncClient:
 
         Args:
             request (:class:`google.cloud.domains_v1alpha2.types.ConfigureManagementSettingsRequest`):
-                The request object. Request for the
+                The request object.
+                Request for the
                 `ConfigureManagementSettings` method.
             registration (:class:`str`):
                 Required. The name of the ``Registration`` whose
@@ -863,7 +870,8 @@ class DomainsAsyncClient:
 
         Args:
             request (:class:`google.cloud.domains_v1alpha2.types.ConfigureDnsSettingsRequest`):
-                The request object. Request for the
+                The request object.
+                Request for the
                 `ConfigureDnsSettings` method.
             registration (:class:`str`):
                 Required. The name of the ``Registration`` whose DNS
@@ -985,7 +993,8 @@ class DomainsAsyncClient:
 
         Args:
             request (:class:`google.cloud.domains_v1alpha2.types.ConfigureContactSettingsRequest`):
-                The request object. Request for the
+                The request object.
+                Request for the
                 `ConfigureContactSettings` method.
             registration (:class:`str`):
                 Required. The name of the ``Registration`` whose contact
@@ -1110,7 +1119,8 @@ class DomainsAsyncClient:
 
         Args:
             request (:class:`google.cloud.domains_v1alpha2.types.ExportRegistrationRequest`):
-                The request object. Request for the `ExportRegistration`
+                The request object.
+                Request for the `ExportRegistration`
                 method.
             name (:class:`str`):
                 Required. The name of the ``Registration`` to export, in
@@ -1209,7 +1219,8 @@ class DomainsAsyncClient:
 
         Args:
             request (:class:`google.cloud.domains_v1alpha2.types.DeleteRegistrationRequest`):
-                The request object. Request for the `DeleteRegistration`
+                The request object.
+                Request for the `DeleteRegistration`
                 method.
             name (:class:`str`):
                 Required. The name of the ``Registration`` to delete, in
@@ -1309,7 +1320,8 @@ class DomainsAsyncClient:
 
         Args:
             request (:class:`google.cloud.domains_v1alpha2.types.RetrieveAuthorizationCodeRequest`):
-                The request object. Request for the
+                The request object.
+                Request for the
                 `RetrieveAuthorizationCode` method.
             registration (:class:`str`):
                 Required. The name of the ``Registration`` whose
@@ -1387,7 +1399,8 @@ class DomainsAsyncClient:
 
         Args:
             request (:class:`google.cloud.domains_v1alpha2.types.ResetAuthorizationCodeRequest`):
-                The request object. Request for the
+                The request object.
+                Request for the
                 `ResetAuthorizationCode` method.
             registration (:class:`str`):
                 Required. The name of the ``Registration`` whose

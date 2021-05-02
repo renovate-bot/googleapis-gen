@@ -83,7 +83,7 @@ class Endpoint(proto.Message):
     annotations = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=5,
+        number=5
     )
 
 

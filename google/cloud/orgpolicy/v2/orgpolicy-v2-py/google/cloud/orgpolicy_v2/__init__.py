@@ -31,9 +31,8 @@ from .types.orgpolicy import PolicySpec
 from .types.orgpolicy import UpdatePolicyRequest
 
 __all__ = (
-    'OrgPolicyClient',
-    'Constraint',
     'AlternatePolicySpec',
+    'Constraint',
     'CreatePolicyRequest',
     'DeletePolicyRequest',
     'GetEffectivePolicyRequest',
@@ -45,4 +44,5 @@ __all__ = (
     'Policy',
     'PolicySpec',
     'UpdatePolicyRequest',
+'OrgPolicyClient',
 )

@@ -160,7 +160,7 @@ class Topic(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=2,
+        number=2
     )
     message_storage_policy = proto.Field(
         proto.MESSAGE,
@@ -232,7 +232,7 @@ class PubsubMessage(proto.Message):
     attributes = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=2,
+        number=2
     )
     message_id = proto.Field(
         proto.STRING,
@@ -672,7 +672,7 @@ class Subscription(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=9,
+        number=9
     )
     enable_message_ordering = proto.Field(
         proto.BOOL,
@@ -897,7 +897,7 @@ class PushConfig(proto.Message):
     attributes = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=2,
+        number=2
     )
     oidc_token = proto.Field(
         proto.MESSAGE,
@@ -1370,7 +1370,7 @@ class CreateSnapshotRequest(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=3,
+        number=3
     )
 
 
@@ -1445,7 +1445,7 @@ class Snapshot(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=4,
+        number=4
     )
 
 

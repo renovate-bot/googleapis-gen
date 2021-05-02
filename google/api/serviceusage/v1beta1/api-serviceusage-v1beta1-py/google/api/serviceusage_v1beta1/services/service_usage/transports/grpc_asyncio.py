@@ -245,7 +245,9 @@ class ServiceUsageGrpcAsyncIOTransport(ServiceUsageTransport):
     def enable_service(self) -> Callable[
             [serviceusage.EnableServiceRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the enable service method over gRPC.
+        r"""Return a callable for the
+        enable service
+          method over gRPC.
 
         Enables a service so that it can be used with a project.
 
@@ -273,7 +275,9 @@ class ServiceUsageGrpcAsyncIOTransport(ServiceUsageTransport):
     def disable_service(self) -> Callable[
             [serviceusage.DisableServiceRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the disable service method over gRPC.
+        r"""Return a callable for the
+        disable service
+          method over gRPC.
 
         Disables a service so that it can no longer be used with a
         project. This prevents unintended usage that may cause
@@ -308,7 +312,9 @@ class ServiceUsageGrpcAsyncIOTransport(ServiceUsageTransport):
     def get_service(self) -> Callable[
             [serviceusage.GetServiceRequest],
             Awaitable[resources.Service]]:
-        r"""Return a callable for the get service method over gRPC.
+        r"""Return a callable for the
+        get service
+          method over gRPC.
 
         Returns the service configuration and enabled state
         for a given service.
@@ -335,7 +341,9 @@ class ServiceUsageGrpcAsyncIOTransport(ServiceUsageTransport):
     def list_services(self) -> Callable[
             [serviceusage.ListServicesRequest],
             Awaitable[serviceusage.ListServicesResponse]]:
-        r"""Return a callable for the list services method over gRPC.
+        r"""Return a callable for the
+        list services
+          method over gRPC.
 
         Lists all services available to the specified project, and the
         current state of those services with respect to the project. The
@@ -368,7 +376,9 @@ class ServiceUsageGrpcAsyncIOTransport(ServiceUsageTransport):
     def batch_enable_services(self) -> Callable[
             [serviceusage.BatchEnableServicesRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the batch enable services method over gRPC.
+        r"""Return a callable for the
+        batch enable services
+          method over gRPC.
 
         Enables multiple services on a project. The operation is atomic:
         if enabling any service fails, then the entire batch fails, and
@@ -398,7 +408,9 @@ class ServiceUsageGrpcAsyncIOTransport(ServiceUsageTransport):
     def list_consumer_quota_metrics(self) -> Callable[
             [serviceusage.ListConsumerQuotaMetricsRequest],
             Awaitable[serviceusage.ListConsumerQuotaMetricsResponse]]:
-        r"""Return a callable for the list consumer quota metrics method over gRPC.
+        r"""Return a callable for the
+        list consumer quota metrics
+          method over gRPC.
 
         Retrieves a summary of all quota information visible
         to the service consumer, organized by service metric.
@@ -430,7 +442,9 @@ class ServiceUsageGrpcAsyncIOTransport(ServiceUsageTransport):
     def get_consumer_quota_metric(self) -> Callable[
             [serviceusage.GetConsumerQuotaMetricRequest],
             Awaitable[resources.ConsumerQuotaMetric]]:
-        r"""Return a callable for the get consumer quota metric method over gRPC.
+        r"""Return a callable for the
+        get consumer quota metric
+          method over gRPC.
 
         Retrieves a summary of quota information for a
         specific quota metric
@@ -457,7 +471,9 @@ class ServiceUsageGrpcAsyncIOTransport(ServiceUsageTransport):
     def get_consumer_quota_limit(self) -> Callable[
             [serviceusage.GetConsumerQuotaLimitRequest],
             Awaitable[resources.ConsumerQuotaLimit]]:
-        r"""Return a callable for the get consumer quota limit method over gRPC.
+        r"""Return a callable for the
+        get consumer quota limit
+          method over gRPC.
 
         Retrieves a summary of quota information for a
         specific quota limit.
@@ -484,7 +500,9 @@ class ServiceUsageGrpcAsyncIOTransport(ServiceUsageTransport):
     def create_admin_override(self) -> Callable[
             [serviceusage.CreateAdminOverrideRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the create admin override method over gRPC.
+        r"""Return a callable for the
+        create admin override
+          method over gRPC.
 
         Creates an admin override.
         An admin override is applied by an administrator of a
@@ -516,7 +534,9 @@ class ServiceUsageGrpcAsyncIOTransport(ServiceUsageTransport):
     def update_admin_override(self) -> Callable[
             [serviceusage.UpdateAdminOverrideRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the update admin override method over gRPC.
+        r"""Return a callable for the
+        update admin override
+          method over gRPC.
 
         Updates an admin override.
 
@@ -542,7 +562,9 @@ class ServiceUsageGrpcAsyncIOTransport(ServiceUsageTransport):
     def delete_admin_override(self) -> Callable[
             [serviceusage.DeleteAdminOverrideRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the delete admin override method over gRPC.
+        r"""Return a callable for the
+        delete admin override
+          method over gRPC.
 
         Deletes an admin override.
 
@@ -568,7 +590,9 @@ class ServiceUsageGrpcAsyncIOTransport(ServiceUsageTransport):
     def list_admin_overrides(self) -> Callable[
             [serviceusage.ListAdminOverridesRequest],
             Awaitable[serviceusage.ListAdminOverridesResponse]]:
-        r"""Return a callable for the list admin overrides method over gRPC.
+        r"""Return a callable for the
+        list admin overrides
+          method over gRPC.
 
         Lists all admin overrides on this limit.
 
@@ -594,7 +618,9 @@ class ServiceUsageGrpcAsyncIOTransport(ServiceUsageTransport):
     def import_admin_overrides(self) -> Callable[
             [serviceusage.ImportAdminOverridesRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the import admin overrides method over gRPC.
+        r"""Return a callable for the
+        import admin overrides
+          method over gRPC.
 
         Creates or updates multiple admin overrides
         atomically, all on the same consumer, but on many
@@ -623,7 +649,9 @@ class ServiceUsageGrpcAsyncIOTransport(ServiceUsageTransport):
     def create_consumer_override(self) -> Callable[
             [serviceusage.CreateConsumerOverrideRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the create consumer override method over gRPC.
+        r"""Return a callable for the
+        create consumer override
+          method over gRPC.
 
         Creates a consumer override.
         A consumer override is applied to the consumer on its
@@ -654,7 +682,9 @@ class ServiceUsageGrpcAsyncIOTransport(ServiceUsageTransport):
     def update_consumer_override(self) -> Callable[
             [serviceusage.UpdateConsumerOverrideRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the update consumer override method over gRPC.
+        r"""Return a callable for the
+        update consumer override
+          method over gRPC.
 
         Updates a consumer override.
 
@@ -680,7 +710,9 @@ class ServiceUsageGrpcAsyncIOTransport(ServiceUsageTransport):
     def delete_consumer_override(self) -> Callable[
             [serviceusage.DeleteConsumerOverrideRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the delete consumer override method over gRPC.
+        r"""Return a callable for the
+        delete consumer override
+          method over gRPC.
 
         Deletes a consumer override.
 
@@ -706,7 +738,9 @@ class ServiceUsageGrpcAsyncIOTransport(ServiceUsageTransport):
     def list_consumer_overrides(self) -> Callable[
             [serviceusage.ListConsumerOverridesRequest],
             Awaitable[serviceusage.ListConsumerOverridesResponse]]:
-        r"""Return a callable for the list consumer overrides method over gRPC.
+        r"""Return a callable for the
+        list consumer overrides
+          method over gRPC.
 
         Lists all consumer overrides on this limit.
 
@@ -732,7 +766,9 @@ class ServiceUsageGrpcAsyncIOTransport(ServiceUsageTransport):
     def import_consumer_overrides(self) -> Callable[
             [serviceusage.ImportConsumerOverridesRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the import consumer overrides method over gRPC.
+        r"""Return a callable for the
+        import consumer overrides
+          method over gRPC.
 
         Creates or updates multiple consumer overrides
         atomically, all on the same consumer, but on many
@@ -761,7 +797,9 @@ class ServiceUsageGrpcAsyncIOTransport(ServiceUsageTransport):
     def generate_service_identity(self) -> Callable[
             [serviceusage.GenerateServiceIdentityRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the generate service identity method over gRPC.
+        r"""Return a callable for the
+        generate service identity
+          method over gRPC.
 
         Generates service identity for service.
 

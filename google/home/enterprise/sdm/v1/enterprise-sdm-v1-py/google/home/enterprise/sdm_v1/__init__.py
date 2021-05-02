@@ -33,11 +33,7 @@ from .types.smart_device_management_service import ListStructuresRequest
 from .types.smart_device_management_service import ListStructuresResponse
 
 __all__ = (
-    'SmartDeviceManagementServiceClient',
     'Device',
-    'ParentRelation',
-    'Room',
-    'Structure',
     'ExecuteDeviceCommandRequest',
     'ExecuteDeviceCommandResponse',
     'GetDeviceRequest',
@@ -49,4 +45,8 @@ __all__ = (
     'ListRoomsResponse',
     'ListStructuresRequest',
     'ListStructuresResponse',
+    'ParentRelation',
+    'Room',
+    'Structure',
+'SmartDeviceManagementServiceClient',
 )

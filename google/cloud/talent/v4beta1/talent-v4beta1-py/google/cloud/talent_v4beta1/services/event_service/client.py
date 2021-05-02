@@ -341,7 +341,8 @@ class EventServiceClient(metaclass=EventServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4beta1.types.CreateClientEventRequest):
-                The request object. The report event request.
+                The request object.
+                The report event request.
             parent (str):
                 Required. Resource name of the tenant under which the
                 event is created.
@@ -397,7 +398,7 @@ class EventServiceClient(metaclass=EventServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, event_service.CreateClientEventRequest):
             request = event_service.CreateClientEventRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent

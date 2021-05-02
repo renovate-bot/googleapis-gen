@@ -225,7 +225,9 @@ class AssetServiceGrpcAsyncIOTransport(AssetServiceTransport):
     def list_assets(self) -> Callable[
             [asset_service.ListAssetsRequest],
             Awaitable[asset_service.ListAssetsResponse]]:
-        r"""Return a callable for the list assets method over gRPC.
+        r"""Return a callable for the
+        list assets
+          method over gRPC.
 
         Lists assets with time and resource types and returns
         paged results in response.

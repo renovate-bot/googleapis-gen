@@ -326,7 +326,8 @@ class SpeechClient(metaclass=SpeechClientMeta):
 
         Args:
             request (google.cloud.speech_v1.types.RecognizeRequest):
-                The request object. The top-level message sent by the
+                The request object.
+                The top-level message sent by the
                 client for the `Recognize` method.
             config (google.cloud.speech_v1.types.RecognitionConfig):
                 Required. Provides information to the
@@ -370,7 +371,7 @@ class SpeechClient(metaclass=SpeechClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_speech.RecognizeRequest):
             request = cloud_speech.RecognizeRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if config is not None:
                 request.config = config
@@ -410,7 +411,8 @@ class SpeechClient(metaclass=SpeechClientMeta):
 
         Args:
             request (google.cloud.speech_v1.types.LongRunningRecognizeRequest):
-                The request object. The top-level message sent by the
+                The request object.
+                The top-level message sent by the
                 client for the `LongRunningRecognize` method.
             config (google.cloud.speech_v1.types.RecognitionConfig):
                 Required. Provides information to the
@@ -459,7 +461,7 @@ class SpeechClient(metaclass=SpeechClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_speech.LongRunningRecognizeRequest):
             request = cloud_speech.LongRunningRecognizeRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if config is not None:
                 request.config = config
@@ -502,7 +504,8 @@ class SpeechClient(metaclass=SpeechClientMeta):
 
         Args:
             requests (Iterator[google.cloud.speech_v1.types.StreamingRecognizeRequest]):
-                The request object iterator. The top-level message sent by the
+                The request object iterator.
+                The top-level message sent by the
                 client for the `StreamingRecognize` method. Multiple
                 `StreamingRecognizeRequest` messages are sent. The first
                 message must contain a `streaming_config` message and

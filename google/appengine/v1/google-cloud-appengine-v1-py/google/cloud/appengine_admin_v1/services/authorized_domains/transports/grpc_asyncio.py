@@ -227,7 +227,9 @@ class AuthorizedDomainsGrpcAsyncIOTransport(AuthorizedDomainsTransport):
     def list_authorized_domains(self) -> Callable[
             [appengine.ListAuthorizedDomainsRequest],
             Awaitable[appengine.ListAuthorizedDomainsResponse]]:
-        r"""Return a callable for the list authorized domains method over gRPC.
+        r"""Return a callable for the
+        list authorized domains
+          method over gRPC.
 
         Lists all domains the user is authorized to
         administer.

@@ -228,7 +228,9 @@ class CloudTasksGrpcTransport(CloudTasksTransport):
     def list_queues(self) -> Callable[
             [cloudtasks.ListQueuesRequest],
             cloudtasks.ListQueuesResponse]:
-        r"""Return a callable for the list queues method over gRPC.
+        r"""Return a callable for the
+        list queues
+          method over gRPC.
 
         Lists queues.
         Queues are returned in lexicographical order.
@@ -255,7 +257,9 @@ class CloudTasksGrpcTransport(CloudTasksTransport):
     def get_queue(self) -> Callable[
             [cloudtasks.GetQueueRequest],
             queue.Queue]:
-        r"""Return a callable for the get queue method over gRPC.
+        r"""Return a callable for the
+        get queue
+          method over gRPC.
 
         Gets a queue.
 
@@ -281,7 +285,9 @@ class CloudTasksGrpcTransport(CloudTasksTransport):
     def create_queue(self) -> Callable[
             [cloudtasks.CreateQueueRequest],
             gct_queue.Queue]:
-        r"""Return a callable for the create queue method over gRPC.
+        r"""Return a callable for the
+        create queue
+          method over gRPC.
 
         Creates a queue.
 
@@ -317,7 +323,9 @@ class CloudTasksGrpcTransport(CloudTasksTransport):
     def update_queue(self) -> Callable[
             [cloudtasks.UpdateQueueRequest],
             gct_queue.Queue]:
-        r"""Return a callable for the update queue method over gRPC.
+        r"""Return a callable for the
+        update queue
+          method over gRPC.
 
         Updates a queue.
 
@@ -356,7 +364,9 @@ class CloudTasksGrpcTransport(CloudTasksTransport):
     def delete_queue(self) -> Callable[
             [cloudtasks.DeleteQueueRequest],
             empty.Empty]:
-        r"""Return a callable for the delete queue method over gRPC.
+        r"""Return a callable for the
+        delete queue
+          method over gRPC.
 
         Deletes a queue.
 
@@ -393,7 +403,9 @@ class CloudTasksGrpcTransport(CloudTasksTransport):
     def purge_queue(self) -> Callable[
             [cloudtasks.PurgeQueueRequest],
             queue.Queue]:
-        r"""Return a callable for the purge queue method over gRPC.
+        r"""Return a callable for the
+        purge queue
+          method over gRPC.
 
         Purges a queue by deleting all of its tasks.
         All tasks created before this method is called are
@@ -424,7 +436,9 @@ class CloudTasksGrpcTransport(CloudTasksTransport):
     def pause_queue(self) -> Callable[
             [cloudtasks.PauseQueueRequest],
             queue.Queue]:
-        r"""Return a callable for the pause queue method over gRPC.
+        r"""Return a callable for the
+        pause queue
+          method over gRPC.
 
         Pauses the queue.
 
@@ -457,7 +471,9 @@ class CloudTasksGrpcTransport(CloudTasksTransport):
     def resume_queue(self) -> Callable[
             [cloudtasks.ResumeQueueRequest],
             queue.Queue]:
-        r"""Return a callable for the resume queue method over gRPC.
+        r"""Return a callable for the
+        resume queue
+          method over gRPC.
 
         Resume a queue.
 
@@ -497,7 +513,9 @@ class CloudTasksGrpcTransport(CloudTasksTransport):
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
             giv_policy.Policy]:
-        r"""Return a callable for the get iam policy method over gRPC.
+        r"""Return a callable for the
+        get iam policy
+          method over gRPC.
 
         Gets the access control policy for a
         [Queue][google.cloud.tasks.v2.Queue]. Returns an empty policy if
@@ -531,7 +549,9 @@ class CloudTasksGrpcTransport(CloudTasksTransport):
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
             giv_policy.Policy]:
-        r"""Return a callable for the set iam policy method over gRPC.
+        r"""Return a callable for the
+        set iam policy
+          method over gRPC.
 
         Sets the access control policy for a
         [Queue][google.cloud.tasks.v2.Queue]. Replaces any existing
@@ -569,7 +589,9 @@ class CloudTasksGrpcTransport(CloudTasksTransport):
     def test_iam_permissions(self) -> Callable[
             [iam_policy.TestIamPermissionsRequest],
             iam_policy.TestIamPermissionsResponse]:
-        r"""Return a callable for the test iam permissions method over gRPC.
+        r"""Return a callable for the
+        test iam permissions
+          method over gRPC.
 
         Returns permissions that a caller has on a
         [Queue][google.cloud.tasks.v2.Queue]. If the resource does not
@@ -603,7 +625,9 @@ class CloudTasksGrpcTransport(CloudTasksTransport):
     def list_tasks(self) -> Callable[
             [cloudtasks.ListTasksRequest],
             cloudtasks.ListTasksResponse]:
-        r"""Return a callable for the list tasks method over gRPC.
+        r"""Return a callable for the
+        list tasks
+          method over gRPC.
 
         Lists the tasks in a queue.
 
@@ -638,7 +662,9 @@ class CloudTasksGrpcTransport(CloudTasksTransport):
     def get_task(self) -> Callable[
             [cloudtasks.GetTaskRequest],
             task.Task]:
-        r"""Return a callable for the get task method over gRPC.
+        r"""Return a callable for the
+        get task
+          method over gRPC.
 
         Gets a task.
 
@@ -664,7 +690,9 @@ class CloudTasksGrpcTransport(CloudTasksTransport):
     def create_task(self) -> Callable[
             [cloudtasks.CreateTaskRequest],
             gct_task.Task]:
-        r"""Return a callable for the create task method over gRPC.
+        r"""Return a callable for the
+        create task
+          method over gRPC.
 
         Creates a task and adds it to a queue.
 
@@ -695,7 +723,9 @@ class CloudTasksGrpcTransport(CloudTasksTransport):
     def delete_task(self) -> Callable[
             [cloudtasks.DeleteTaskRequest],
             empty.Empty]:
-        r"""Return a callable for the delete task method over gRPC.
+        r"""Return a callable for the
+        delete task
+          method over gRPC.
 
         Deletes a task.
         A task can be deleted if it is scheduled or dispatched.
@@ -724,7 +754,9 @@ class CloudTasksGrpcTransport(CloudTasksTransport):
     def run_task(self) -> Callable[
             [cloudtasks.RunTaskRequest],
             task.Task]:
-        r"""Return a callable for the run task method over gRPC.
+        r"""Return a callable for the
+        run task
+          method over gRPC.
 
         Forces a task to run now.
 

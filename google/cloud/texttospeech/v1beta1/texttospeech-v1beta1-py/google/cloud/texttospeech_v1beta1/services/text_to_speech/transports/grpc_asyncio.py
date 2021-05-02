@@ -225,7 +225,9 @@ class TextToSpeechGrpcAsyncIOTransport(TextToSpeechTransport):
     def list_voices(self) -> Callable[
             [cloud_tts.ListVoicesRequest],
             Awaitable[cloud_tts.ListVoicesResponse]]:
-        r"""Return a callable for the list voices method over gRPC.
+        r"""Return a callable for the
+        list voices
+          method over gRPC.
 
         Returns a list of Voice supported for synthesis.
 
@@ -251,7 +253,9 @@ class TextToSpeechGrpcAsyncIOTransport(TextToSpeechTransport):
     def synthesize_speech(self) -> Callable[
             [cloud_tts.SynthesizeSpeechRequest],
             Awaitable[cloud_tts.SynthesizeSpeechResponse]]:
-        r"""Return a callable for the synthesize speech method over gRPC.
+        r"""Return a callable for the
+        synthesize speech
+          method over gRPC.
 
         Synthesizes speech synchronously: receive results
         after all text input has been processed.

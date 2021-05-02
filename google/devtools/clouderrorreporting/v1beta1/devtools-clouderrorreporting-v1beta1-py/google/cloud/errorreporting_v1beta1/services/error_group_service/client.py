@@ -333,7 +333,8 @@ class ErrorGroupServiceClient(metaclass=ErrorGroupServiceClientMeta):
 
         Args:
             request (google.cloud.errorreporting_v1beta1.types.GetGroupRequest):
-                The request object. A request to return an individual
+                The request object.
+                A request to return an individual
                 group.
             group_name (str):
                 Required. The group resource name. Written as
@@ -372,7 +373,7 @@ class ErrorGroupServiceClient(metaclass=ErrorGroupServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, error_group_service.GetGroupRequest):
             request = error_group_service.GetGroupRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if group_name is not None:
                 request.group_name = group_name
@@ -413,7 +414,8 @@ class ErrorGroupServiceClient(metaclass=ErrorGroupServiceClientMeta):
 
         Args:
             request (google.cloud.errorreporting_v1beta1.types.UpdateGroupRequest):
-                The request object. A request to replace the existing
+                The request object.
+                A request to replace the existing
                 data for the given group.
             group (google.cloud.errorreporting_v1beta1.types.ErrorGroup):
                 Required. The group which replaces
@@ -448,7 +450,7 @@ class ErrorGroupServiceClient(metaclass=ErrorGroupServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, error_group_service.UpdateGroupRequest):
             request = error_group_service.UpdateGroupRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if group is not None:
                 request.group = group

@@ -241,7 +241,9 @@ class WorkflowTemplateServiceGrpcTransport(WorkflowTemplateServiceTransport):
     def create_workflow_template(self) -> Callable[
             [workflow_templates.CreateWorkflowTemplateRequest],
             workflow_templates.WorkflowTemplate]:
-        r"""Return a callable for the create workflow template method over gRPC.
+        r"""Return a callable for the
+        create workflow template
+          method over gRPC.
 
         Creates new workflow template.
 
@@ -267,7 +269,9 @@ class WorkflowTemplateServiceGrpcTransport(WorkflowTemplateServiceTransport):
     def get_workflow_template(self) -> Callable[
             [workflow_templates.GetWorkflowTemplateRequest],
             workflow_templates.WorkflowTemplate]:
-        r"""Return a callable for the get workflow template method over gRPC.
+        r"""Return a callable for the
+        get workflow template
+          method over gRPC.
 
         Retrieves the latest workflow template.
         Can retrieve previously instantiated template by
@@ -295,7 +299,9 @@ class WorkflowTemplateServiceGrpcTransport(WorkflowTemplateServiceTransport):
     def instantiate_workflow_template(self) -> Callable[
             [workflow_templates.InstantiateWorkflowTemplateRequest],
             operations.Operation]:
-        r"""Return a callable for the instantiate workflow template method over gRPC.
+        r"""Return a callable for the
+        instantiate workflow template
+          method over gRPC.
 
         Instantiates a template and begins execution.
 
@@ -341,8 +347,10 @@ class WorkflowTemplateServiceGrpcTransport(WorkflowTemplateServiceTransport):
     def instantiate_inline_workflow_template(self) -> Callable[
             [workflow_templates.InstantiateInlineWorkflowTemplateRequest],
             operations.Operation]:
-        r"""Return a callable for the instantiate inline workflow
-        template method over gRPC.
+        r"""Return a callable for the
+        instantiate inline workflow
+        template
+          method over gRPC.
 
         Instantiates a template and begins execution.
 
@@ -393,7 +401,9 @@ class WorkflowTemplateServiceGrpcTransport(WorkflowTemplateServiceTransport):
     def update_workflow_template(self) -> Callable[
             [workflow_templates.UpdateWorkflowTemplateRequest],
             workflow_templates.WorkflowTemplate]:
-        r"""Return a callable for the update workflow template method over gRPC.
+        r"""Return a callable for the
+        update workflow template
+          method over gRPC.
 
         Updates (replaces) workflow template. The updated
         template must contain version that matches the current
@@ -421,7 +431,9 @@ class WorkflowTemplateServiceGrpcTransport(WorkflowTemplateServiceTransport):
     def list_workflow_templates(self) -> Callable[
             [workflow_templates.ListWorkflowTemplatesRequest],
             workflow_templates.ListWorkflowTemplatesResponse]:
-        r"""Return a callable for the list workflow templates method over gRPC.
+        r"""Return a callable for the
+        list workflow templates
+          method over gRPC.
 
         Lists workflows that match the specified filter in
         the request.
@@ -448,7 +460,9 @@ class WorkflowTemplateServiceGrpcTransport(WorkflowTemplateServiceTransport):
     def delete_workflow_template(self) -> Callable[
             [workflow_templates.DeleteWorkflowTemplateRequest],
             empty.Empty]:
-        r"""Return a callable for the delete workflow template method over gRPC.
+        r"""Return a callable for the
+        delete workflow template
+          method over gRPC.
 
         Deletes a workflow template. It does not cancel in-
         rogress workflows.

@@ -225,7 +225,9 @@ class SpeechTranslationServiceGrpcAsyncIOTransport(SpeechTranslationServiceTrans
     def streaming_translate_speech(self) -> Callable[
             [media_translation.StreamingTranslateSpeechRequest],
             Awaitable[media_translation.StreamingTranslateSpeechResponse]]:
-        r"""Return a callable for the streaming translate speech method over gRPC.
+        r"""Return a callable for the
+        streaming translate speech
+          method over gRPC.
 
         Performs bidirectional streaming speech translation:
         receive results while sending audio. This method is only

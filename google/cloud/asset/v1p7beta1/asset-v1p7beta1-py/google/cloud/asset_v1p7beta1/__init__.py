@@ -17,6 +17,7 @@
 from .services.asset_service import AssetServiceClient
 
 from .types.asset_service import BigQueryDestination
+from .types.asset_service import ContentType
 from .types.asset_service import ExportAssetsRequest
 from .types.asset_service import ExportAssetsResponse
 from .types.asset_service import GcsDestination
@@ -24,7 +25,6 @@ from .types.asset_service import GcsOutputResult
 from .types.asset_service import OutputConfig
 from .types.asset_service import OutputResult
 from .types.asset_service import PartitionSpec
-from .types.asset_service import ContentType
 from .types.assets import Asset
 from .types.assets import RelatedAsset
 from .types.assets import RelatedAssets
@@ -32,8 +32,9 @@ from .types.assets import RelationshipAttributes
 from .types.assets import Resource
 
 __all__ = (
-    'AssetServiceClient',
+    'Asset',
     'BigQueryDestination',
+    'ContentType',
     'ExportAssetsRequest',
     'ExportAssetsResponse',
     'GcsDestination',
@@ -41,10 +42,9 @@ __all__ = (
     'OutputConfig',
     'OutputResult',
     'PartitionSpec',
-    'ContentType',
-    'Asset',
     'RelatedAsset',
     'RelatedAssets',
     'RelationshipAttributes',
     'Resource',
+'AssetServiceClient',
 )

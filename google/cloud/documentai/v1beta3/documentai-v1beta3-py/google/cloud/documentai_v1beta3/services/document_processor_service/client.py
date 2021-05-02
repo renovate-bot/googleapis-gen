@@ -351,7 +351,8 @@ class DocumentProcessorServiceClient(metaclass=DocumentProcessorServiceClientMet
 
         Args:
             request (google.cloud.documentai_v1beta3.types.ProcessRequest):
-                The request object. Request message for the process
+                The request object.
+                Request message for the process
                 document method.
             name (str):
                 Required. The processor resource
@@ -386,7 +387,7 @@ class DocumentProcessorServiceClient(metaclass=DocumentProcessorServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, document_processor_service.ProcessRequest):
             request = document_processor_service.ProcessRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -427,7 +428,8 @@ class DocumentProcessorServiceClient(metaclass=DocumentProcessorServiceClientMet
 
         Args:
             request (google.cloud.documentai_v1beta3.types.BatchProcessRequest):
-                The request object. Request message for batch process
+                The request object.
+                Request message for batch process
                 document method.
             name (str):
                 Required. The processor resource
@@ -465,7 +467,7 @@ class DocumentProcessorServiceClient(metaclass=DocumentProcessorServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, document_processor_service.BatchProcessRequest):
             request = document_processor_service.BatchProcessRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -514,7 +516,8 @@ class DocumentProcessorServiceClient(metaclass=DocumentProcessorServiceClientMet
 
         Args:
             request (google.cloud.documentai_v1beta3.types.ReviewDocumentRequest):
-                The request object. Request message for review document
+                The request object.
+                Request message for review document
                 method.
             human_review_config (str):
                 Required. The resource name of the
@@ -553,7 +556,7 @@ class DocumentProcessorServiceClient(metaclass=DocumentProcessorServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, document_processor_service.ReviewDocumentRequest):
             request = document_processor_service.ReviewDocumentRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if human_review_config is not None:
                 request.human_review_config = human_review_config

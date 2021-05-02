@@ -175,7 +175,8 @@ class SessionsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.DetectIntentRequest`):
-                The request object. The request to detect user's intent.
+                The request object.
+                The request to detect user's intent.
             session (:class:`str`):
                 Required. The name of the session this query is sent to.
                 Format:
@@ -297,7 +298,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             requests (AsyncIterator[`google.cloud.dialogflow_v2.types.StreamingDetectIntentRequest`]):
-                The request object AsyncIterator. The top-level message sent by the
+                The request object AsyncIterator.
+                The top-level message sent by the
                 client to the
                 [Sessions.StreamingDetectIntent][google.cloud.dialogflow.v2.Sessions.StreamingDetectIntent]
                 method.

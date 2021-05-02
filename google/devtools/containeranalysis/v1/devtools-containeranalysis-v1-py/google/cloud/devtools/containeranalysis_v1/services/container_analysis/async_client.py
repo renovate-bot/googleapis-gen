@@ -177,7 +177,8 @@ class ContainerAnalysisAsyncClient:
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.SetIamPolicyRequest`):
-                The request object. Request message for `SetIamPolicy`
+                The request object.
+                Request message for `SetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -315,7 +316,8 @@ class ContainerAnalysisAsyncClient:
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.GetIamPolicyRequest`):
-                The request object. Request message for `GetIamPolicy`
+                The request object.
+                Request message for `GetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -453,7 +455,8 @@ class ContainerAnalysisAsyncClient:
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `TestIamPermissions` method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -539,7 +542,8 @@ class ContainerAnalysisAsyncClient:
 
         Args:
             request (:class:`google.cloud.devtools.containeranalysis_v1.types.GetVulnerabilityOccurrencesSummaryRequest`):
-                The request object. Request to get a vulnerability
+                The request object.
+                Request to get a vulnerability
                 summary for some set of occurrences.
             parent (:class:`str`):
                 The name of the project to get a vulnerability summary

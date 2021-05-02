@@ -249,7 +249,9 @@ class FoldersGrpcAsyncIOTransport(FoldersTransport):
     def get_folder(self) -> Callable[
             [folders.GetFolderRequest],
             Awaitable[folders.Folder]]:
-        r"""Return a callable for the get folder method over gRPC.
+        r"""Return a callable for the
+        get folder
+          method over gRPC.
 
         Retrieves a folder identified by the supplied resource name.
         Valid folder resource names have the format
@@ -279,7 +281,9 @@ class FoldersGrpcAsyncIOTransport(FoldersTransport):
     def list_folders(self) -> Callable[
             [folders.ListFoldersRequest],
             Awaitable[folders.ListFoldersResponse]]:
-        r"""Return a callable for the list folders method over gRPC.
+        r"""Return a callable for the
+        list folders
+          method over gRPC.
 
         Lists the folders that are direct descendants of supplied parent
         resource. ``list()`` provides a strongly consistent view of the
@@ -311,7 +315,9 @@ class FoldersGrpcAsyncIOTransport(FoldersTransport):
     def search_folders(self) -> Callable[
             [folders.SearchFoldersRequest],
             Awaitable[folders.SearchFoldersResponse]]:
-        r"""Return a callable for the search folders method over gRPC.
+        r"""Return a callable for the
+        search folders
+          method over gRPC.
 
         Search for folders that match specific filter criteria.
         ``search()`` provides an eventually consistent view of the
@@ -343,7 +349,9 @@ class FoldersGrpcAsyncIOTransport(FoldersTransport):
     def create_folder(self) -> Callable[
             [folders.CreateFolderRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the create folder method over gRPC.
+        r"""Return a callable for the
+        create folder
+          method over gRPC.
 
         Creates a folder in the resource hierarchy. Returns an
         ``Operation`` which can be used to track the progress of the
@@ -397,7 +405,9 @@ class FoldersGrpcAsyncIOTransport(FoldersTransport):
     def update_folder(self) -> Callable[
             [folders.UpdateFolderRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the update folder method over gRPC.
+        r"""Return a callable for the
+        update folder
+          method over gRPC.
 
         Updates a folder, changing its ``display_name``. Changes to the
         folder ``display_name`` will be rejected if they violate either
@@ -440,7 +450,9 @@ class FoldersGrpcAsyncIOTransport(FoldersTransport):
     def move_folder(self) -> Callable[
             [folders.MoveFolderRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the move folder method over gRPC.
+        r"""Return a callable for the
+        move folder
+          method over gRPC.
 
         Moves a folder under a new resource parent. Returns an
         ``Operation`` which can be used to track the progress of the
@@ -483,7 +495,9 @@ class FoldersGrpcAsyncIOTransport(FoldersTransport):
     def delete_folder(self) -> Callable[
             [folders.DeleteFolderRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the delete folder method over gRPC.
+        r"""Return a callable for the
+        delete folder
+          method over gRPC.
 
         Requests deletion of a folder. The folder is moved into the
         [DELETE_REQUESTED][google.cloud.resourcemanager.v3.Folder.State.DELETE_REQUESTED]
@@ -520,7 +534,9 @@ class FoldersGrpcAsyncIOTransport(FoldersTransport):
     def undelete_folder(self) -> Callable[
             [folders.UndeleteFolderRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the undelete folder method over gRPC.
+        r"""Return a callable for the
+        undelete folder
+          method over gRPC.
 
         Cancels the deletion request for a folder. This method may be
         called on a folder in any state. If the folder is in the
@@ -558,7 +574,9 @@ class FoldersGrpcAsyncIOTransport(FoldersTransport):
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
             Awaitable[giv_policy.Policy]]:
-        r"""Return a callable for the get iam policy method over gRPC.
+        r"""Return a callable for the
+        get iam policy
+          method over gRPC.
 
         Gets the access control policy for a folder. The returned policy
         may be empty if no such policy or resource exists. The
@@ -589,7 +607,9 @@ class FoldersGrpcAsyncIOTransport(FoldersTransport):
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
             Awaitable[giv_policy.Policy]]:
-        r"""Return a callable for the set iam policy method over gRPC.
+        r"""Return a callable for the
+        set iam policy
+          method over gRPC.
 
         Sets the access control policy on a folder, replacing any
         existing policy. The ``resource`` field should be the folder's
@@ -619,7 +639,9 @@ class FoldersGrpcAsyncIOTransport(FoldersTransport):
     def test_iam_permissions(self) -> Callable[
             [iam_policy.TestIamPermissionsRequest],
             Awaitable[iam_policy.TestIamPermissionsResponse]]:
-        r"""Return a callable for the test iam permissions method over gRPC.
+        r"""Return a callable for the
+        test iam permissions
+          method over gRPC.
 
         Returns permissions that a caller has on the specified folder.
         The ``resource`` field should be the folder's resource name, for

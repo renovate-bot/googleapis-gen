@@ -14,9 +14,8 @@
 # limitations under the License.
 #
 
-from google.cloud.tasks_v2.services.cloud_tasks.client import CloudTasksClient
 from google.cloud.tasks_v2.services.cloud_tasks.async_client import CloudTasksAsyncClient
-
+from google.cloud.tasks_v2.services.cloud_tasks.client import CloudTasksClient
 from google.cloud.tasks_v2.types.cloudtasks import CreateQueueRequest
 from google.cloud.tasks_v2.types.cloudtasks import CreateTaskRequest
 from google.cloud.tasks_v2.types.cloudtasks import DeleteQueueRequest
@@ -38,40 +37,40 @@ from google.cloud.tasks_v2.types.queue import RetryConfig
 from google.cloud.tasks_v2.types.queue import StackdriverLoggingConfig
 from google.cloud.tasks_v2.types.target import AppEngineHttpRequest
 from google.cloud.tasks_v2.types.target import AppEngineRouting
+from google.cloud.tasks_v2.types.target import HttpMethod
 from google.cloud.tasks_v2.types.target import HttpRequest
 from google.cloud.tasks_v2.types.target import OAuthToken
 from google.cloud.tasks_v2.types.target import OidcToken
-from google.cloud.tasks_v2.types.target import HttpMethod
 from google.cloud.tasks_v2.types.task import Attempt
 from google.cloud.tasks_v2.types.task import Task
 
-__all__ = ('CloudTasksClient',
+__all__ = ('AppEngineHttpRequest',
+    'AppEngineRouting',
+    'Attempt',
     'CloudTasksAsyncClient',
+    'CloudTasksClient',
     'CreateQueueRequest',
     'CreateTaskRequest',
     'DeleteQueueRequest',
     'DeleteTaskRequest',
     'GetQueueRequest',
     'GetTaskRequest',
+    'HttpMethod',
+    'HttpRequest',
     'ListQueuesRequest',
     'ListQueuesResponse',
     'ListTasksRequest',
     'ListTasksResponse',
-    'PauseQueueRequest',
-    'PurgeQueueRequest',
-    'ResumeQueueRequest',
-    'RunTaskRequest',
-    'UpdateQueueRequest',
-    'Queue',
-    'RateLimits',
-    'RetryConfig',
-    'StackdriverLoggingConfig',
-    'AppEngineHttpRequest',
-    'AppEngineRouting',
-    'HttpRequest',
     'OAuthToken',
     'OidcToken',
-    'HttpMethod',
-    'Attempt',
+    'PauseQueueRequest',
+    'PurgeQueueRequest',
+    'Queue',
+    'RateLimits',
+    'ResumeQueueRequest',
+    'RetryConfig',
+    'RunTaskRequest',
+    'StackdriverLoggingConfig',
     'Task',
+    'UpdateQueueRequest',
 )

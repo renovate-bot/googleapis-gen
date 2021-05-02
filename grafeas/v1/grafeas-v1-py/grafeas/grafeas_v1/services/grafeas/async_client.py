@@ -186,7 +186,8 @@ class GrafeasAsyncClient:
 
         Args:
             request (:class:`grafeas.grafeas_v1.types.GetOccurrenceRequest`):
-                The request object. Request to get an occurrence.
+                The request object.
+                Request to get an occurrence.
             name (:class:`str`):
                 The name of the occurrence in the form of
                 ``projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]``.
@@ -268,7 +269,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`grafeas.grafeas_v1.types.ListOccurrencesRequest`):
-                The request object. Request to list occurrences.
+                The request object.
+                Request to list occurrences.
             parent (:class:`str`):
                 The name of the project to list occurrences for in the
                 form of ``projects/[PROJECT_ID]``.
@@ -369,7 +371,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`grafeas.grafeas_v1.types.DeleteOccurrenceRequest`):
-                The request object. Request to delete an occurrence.
+                The request object.
+                Request to delete an occurrence.
             name (:class:`str`):
                 The name of the occurrence in the form of
                 ``projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]``.
@@ -442,7 +445,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`grafeas.grafeas_v1.types.CreateOccurrenceRequest`):
-                The request object. Request to create a new occurrence.
+                The request object.
+                Request to create a new occurrence.
             parent (:class:`str`):
                 The name of the project in the form of
                 ``projects/[PROJECT_ID]``, under which the occurrence is
@@ -525,7 +529,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`grafeas.grafeas_v1.types.BatchCreateOccurrencesRequest`):
-                The request object. Request to create occurrences in
+                The request object.
+                Request to create occurrences in
                 batch.
             parent (:class:`str`):
                 The name of the project in the form of
@@ -612,7 +617,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`grafeas.grafeas_v1.types.UpdateOccurrenceRequest`):
-                The request object. Request to update an occurrence.
+                The request object.
+                Request to update an occurrence.
             name (:class:`str`):
                 The name of the occurrence in the form of
                 ``projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]``.
@@ -702,7 +708,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`grafeas.grafeas_v1.types.GetOccurrenceNoteRequest`):
-                The request object. Request to get the note to which the
+                The request object.
+                Request to get the note to which the
                 specified occurrence is attached.
             name (:class:`str`):
                 The name of the occurrence in the form of
@@ -784,7 +791,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`grafeas.grafeas_v1.types.GetNoteRequest`):
-                The request object. Request to get a note.
+                The request object.
+                Request to get a note.
             name (:class:`str`):
                 The name of the note in the form of
                 ``projects/[PROVIDER_ID]/notes/[NOTE_ID]``.
@@ -866,7 +874,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`grafeas.grafeas_v1.types.ListNotesRequest`):
-                The request object. Request to list notes.
+                The request object.
+                Request to list notes.
             parent (:class:`str`):
                 The name of the project to list notes for in the form of
                 ``projects/[PROJECT_ID]``.
@@ -965,7 +974,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`grafeas.grafeas_v1.types.DeleteNoteRequest`):
-                The request object. Request to delete a note.
+                The request object.
+                Request to delete a note.
             name (:class:`str`):
                 The name of the note in the form of
                 ``projects/[PROVIDER_ID]/notes/[NOTE_ID]``.
@@ -1039,7 +1049,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`grafeas.grafeas_v1.types.CreateNoteRequest`):
-                The request object. Request to create a new note.
+                The request object.
+                Request to create a new note.
             parent (:class:`str`):
                 The name of the project in the form of
                 ``projects/[PROJECT_ID]``, under which the note is to be
@@ -1129,7 +1140,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`grafeas.grafeas_v1.types.BatchCreateNotesRequest`):
-                The request object. Request to create notes in batch.
+                The request object.
+                Request to create notes in batch.
             parent (:class:`str`):
                 The name of the project in the form of
                 ``projects/[PROJECT_ID]``, under which the notes are to
@@ -1214,7 +1226,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`grafeas.grafeas_v1.types.UpdateNoteRequest`):
-                The request object. Request to update a note.
+                The request object.
+                Request to update a note.
             name (:class:`str`):
                 The name of the note in the form of
                 ``projects/[PROVIDER_ID]/notes/[NOTE_ID]``.
@@ -1306,7 +1319,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`grafeas.grafeas_v1.types.ListNoteOccurrencesRequest`):
-                The request object. Request to list occurrences for a
+                The request object.
+                Request to list occurrences for a
                 note.
             name (:class:`str`):
                 The name of the note to list occurrences for in the form

@@ -96,7 +96,7 @@ class Domain(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=2,
+        number=2
     )
     authorized_networks = proto.RepeatedField(
         proto.STRING,

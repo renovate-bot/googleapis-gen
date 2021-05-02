@@ -225,7 +225,9 @@ class ReportErrorsServiceGrpcAsyncIOTransport(ReportErrorsServiceTransport):
     def report_error_event(self) -> Callable[
             [report_errors_service.ReportErrorEventRequest],
             Awaitable[report_errors_service.ReportErrorEventResponse]]:
-        r"""Return a callable for the report error event method over gRPC.
+        r"""Return a callable for the
+        report error event
+          method over gRPC.
 
         Report an individual error event and record the event to a log.
 

@@ -18,17 +18,17 @@ from .services.roads_service import RoadsServiceClient
 
 from .types.roads import ListNearestRoadsRequest
 from .types.roads import ListNearestRoadsResponse
-from .types.roads import SnappedPoint
 from .types.roads import SnapToRoadsRequest
 from .types.roads import SnapToRoadsResponse
+from .types.roads import SnappedPoint
 from .types.roads import TravelMode
 
 __all__ = (
-    'RoadsServiceClient',
     'ListNearestRoadsRequest',
     'ListNearestRoadsResponse',
-    'SnappedPoint',
     'SnapToRoadsRequest',
     'SnapToRoadsResponse',
+    'SnappedPoint',
     'TravelMode',
+'RoadsServiceClient',
 )

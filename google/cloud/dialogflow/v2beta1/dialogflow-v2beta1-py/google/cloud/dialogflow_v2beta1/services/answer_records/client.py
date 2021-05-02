@@ -337,7 +337,8 @@ class AnswerRecordsClient(metaclass=AnswerRecordsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.GetAnswerRecordRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AnswerRecords.GetAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.GetAnswerRecord].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -427,7 +428,8 @@ class AnswerRecordsClient(metaclass=AnswerRecordsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.ListAnswerRecordsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AnswerRecords.ListAnswerRecords][google.cloud.dialogflow.v2beta1.AnswerRecords.ListAnswerRecords].
             parent (str):
                 Required. The project to list all answer records for in
@@ -466,7 +468,7 @@ class AnswerRecordsClient(metaclass=AnswerRecordsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, answer_record.ListAnswerRecordsRequest):
             request = answer_record.ListAnswerRecordsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -516,7 +518,8 @@ class AnswerRecordsClient(metaclass=AnswerRecordsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.UpdateAnswerRecordRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord].
             answer_record (google.cloud.dialogflow_v2beta1.types.AnswerRecord):
                 Required. Answer record to update.
@@ -588,7 +591,7 @@ class AnswerRecordsClient(metaclass=AnswerRecordsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_answer_record.UpdateAnswerRecordRequest):
             request = gcd_answer_record.UpdateAnswerRecordRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if answer_record is not None:
                 request.answer_record = answer_record

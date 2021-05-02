@@ -14,9 +14,8 @@
 # limitations under the License.
 #
 
-from google.cloud.osconfig.agentendpoint_v1.services.agent_endpoint_service.client import AgentEndpointServiceClient
 from google.cloud.osconfig.agentendpoint_v1.services.agent_endpoint_service.async_client import AgentEndpointServiceAsyncClient
-
+from google.cloud.osconfig.agentendpoint_v1.services.agent_endpoint_service.client import AgentEndpointServiceClient
 from google.cloud.osconfig.agentendpoint_v1.types.agentendpoint import ReceiveTaskNotificationRequest
 from google.cloud.osconfig.agentendpoint_v1.types.agentendpoint import ReceiveTaskNotificationResponse
 from google.cloud.osconfig.agentendpoint_v1.types.agentendpoint import RegisterAgentRequest
@@ -29,9 +28,9 @@ from google.cloud.osconfig.agentendpoint_v1.types.agentendpoint import ReportTas
 from google.cloud.osconfig.agentendpoint_v1.types.agentendpoint import ReportTaskProgressResponse
 from google.cloud.osconfig.agentendpoint_v1.types.agentendpoint import StartNextTaskRequest
 from google.cloud.osconfig.agentendpoint_v1.types.agentendpoint import StartNextTaskResponse
+from google.cloud.osconfig.agentendpoint_v1.types.config_common import OSPolicyComplianceState
 from google.cloud.osconfig.agentendpoint_v1.types.config_common import OSPolicyResourceCompliance
 from google.cloud.osconfig.agentendpoint_v1.types.config_common import OSPolicyResourceConfigStep
-from google.cloud.osconfig.agentendpoint_v1.types.config_common import OSPolicyComplianceState
 from google.cloud.osconfig.agentendpoint_v1.types.inventory import Inventory
 from google.cloud.osconfig.agentendpoint_v1.types.os_policy import OSPolicy
 from google.cloud.osconfig.agentendpoint_v1.types.patch_jobs import AptSettings
@@ -57,8 +56,28 @@ from google.cloud.osconfig.agentendpoint_v1.types.tasks import Task
 from google.cloud.osconfig.agentendpoint_v1.types.tasks import TaskDirective
 from google.cloud.osconfig.agentendpoint_v1.types.tasks import TaskType
 
-__all__ = ('AgentEndpointServiceClient',
-    'AgentEndpointServiceAsyncClient',
+__all__ = ('AgentEndpointServiceAsyncClient',
+    'AgentEndpointServiceClient',
+    'ApplyConfigTask',
+    'ApplyConfigTaskOutput',
+    'ApplyConfigTaskProgress',
+    'ApplyPatchesTask',
+    'ApplyPatchesTaskOutput',
+    'ApplyPatchesTaskProgress',
+    'AptSettings',
+    'ExecStep',
+    'ExecStepConfig',
+    'ExecStepTask',
+    'ExecStepTaskOutput',
+    'ExecStepTaskProgress',
+    'GcsObject',
+    'GooSettings',
+    'Inventory',
+    'OSPolicy',
+    'OSPolicyComplianceState',
+    'OSPolicyResourceCompliance',
+    'OSPolicyResourceConfigStep',
+    'PatchConfig',
     'ReceiveTaskNotificationRequest',
     'ReceiveTaskNotificationResponse',
     'RegisterAgentRequest',
@@ -69,33 +88,13 @@ __all__ = ('AgentEndpointServiceClient',
     'ReportTaskCompleteResponse',
     'ReportTaskProgressRequest',
     'ReportTaskProgressResponse',
+    'RetryStrategy',
     'StartNextTaskRequest',
     'StartNextTaskResponse',
-    'OSPolicyResourceCompliance',
-    'OSPolicyResourceConfigStep',
-    'OSPolicyComplianceState',
-    'Inventory',
-    'OSPolicy',
-    'AptSettings',
-    'ExecStep',
-    'ExecStepConfig',
-    'GcsObject',
-    'GooSettings',
-    'PatchConfig',
-    'RetryStrategy',
-    'WindowsUpdateSettings',
-    'YumSettings',
-    'ZypperSettings',
-    'ApplyConfigTask',
-    'ApplyConfigTaskOutput',
-    'ApplyConfigTaskProgress',
-    'ApplyPatchesTask',
-    'ApplyPatchesTaskOutput',
-    'ApplyPatchesTaskProgress',
-    'ExecStepTask',
-    'ExecStepTaskOutput',
-    'ExecStepTaskProgress',
     'Task',
     'TaskDirective',
     'TaskType',
+    'WindowsUpdateSettings',
+    'YumSettings',
+    'ZypperSettings',
 )

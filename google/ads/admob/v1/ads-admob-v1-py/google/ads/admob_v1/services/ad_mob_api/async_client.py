@@ -159,7 +159,8 @@ class AdMobApiAsyncClient:
 
         Args:
             request (:class:`google.ads.admob_v1.types.GetPublisherAccountRequest`):
-                The request object. Request to retrieve the specified
+                The request object.
+                Request to retrieve the specified
                 publisher account.
             name (:class:`str`):
                 Resource name of the publisher
@@ -238,7 +239,8 @@ class AdMobApiAsyncClient:
 
         Args:
             request (:class:`google.ads.admob_v1.types.ListPublisherAccountsRequest`):
-                The request object. Request to retrieve the AdMob
+                The request object.
+                Request to retrieve the AdMob
                 publisher account accessible with the client credential.
                 Currently all credentials have access to at most 1
                 account.
@@ -300,7 +302,8 @@ class AdMobApiAsyncClient:
 
         Args:
             request (:class:`google.ads.admob_v1.types.GenerateNetworkReportRequest`):
-                The request object. Request to generate an AdMob Network
+                The request object.
+                Request to generate an AdMob Network
                 report.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -379,7 +382,8 @@ class AdMobApiAsyncClient:
 
         Args:
             request (:class:`google.ads.admob_v1.types.GenerateMediationReportRequest`):
-                The request object. Request to generate an AdMob
+                The request object.
+                Request to generate an AdMob
                 Mediation report.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

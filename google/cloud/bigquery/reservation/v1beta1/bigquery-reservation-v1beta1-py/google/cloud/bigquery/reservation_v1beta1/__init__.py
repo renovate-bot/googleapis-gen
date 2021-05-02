@@ -46,7 +46,6 @@ from .types.reservation import UpdateCapacityCommitmentRequest
 from .types.reservation import UpdateReservationRequest
 
 __all__ = (
-    'ReservationServiceClient',
     'Assignment',
     'BiReservation',
     'CapacityCommitment',
@@ -75,4 +74,5 @@ __all__ = (
     'UpdateBiReservationRequest',
     'UpdateCapacityCommitmentRequest',
     'UpdateReservationRequest',
+'ReservationServiceClient',
 )

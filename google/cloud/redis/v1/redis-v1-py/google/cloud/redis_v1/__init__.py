@@ -36,7 +36,6 @@ from .types.cloud_redis import UpgradeInstanceRequest
 from .types.cloud_redis import ZoneMetadata
 
 __all__ = (
-    'CloudRedisClient',
     'CreateInstanceRequest',
     'DeleteInstanceRequest',
     'ExportInstanceRequest',
@@ -55,4 +54,5 @@ __all__ = (
     'UpdateInstanceRequest',
     'UpgradeInstanceRequest',
     'ZoneMetadata',
+'CloudRedisClient',
 )

@@ -14,9 +14,8 @@
 # limitations under the License.
 #
 
-from google.cloud.spanner_v1.services.spanner.client import SpannerClient
 from google.cloud.spanner_v1.services.spanner.async_client import SpannerAsyncClient
-
+from google.cloud.spanner_v1.services.spanner.client import SpannerClient
 from google.cloud.spanner_v1.types.commit_response import CommitResponse
 from google.cloud.spanner_v1.types.keys import KeyRange
 from google.cloud.spanner_v1.types.keys import KeySet
@@ -55,43 +54,43 @@ from google.cloud.spanner_v1.types.type import StructType
 from google.cloud.spanner_v1.types.type import Type
 from google.cloud.spanner_v1.types.type import TypeCode
 
-__all__ = ('SpannerClient',
-    'SpannerAsyncClient',
-    'CommitResponse',
-    'KeyRange',
-    'KeySet',
-    'Mutation',
-    'PlanNode',
-    'QueryPlan',
-    'PartialResultSet',
-    'ResultSet',
-    'ResultSetMetadata',
-    'ResultSetStats',
-    'BatchCreateSessionsRequest',
+__all__ = ('BatchCreateSessionsRequest',
     'BatchCreateSessionsResponse',
     'BeginTransactionRequest',
     'CommitRequest',
+    'CommitResponse',
     'CreateSessionRequest',
     'DeleteSessionRequest',
     'ExecuteBatchDmlRequest',
     'ExecuteBatchDmlResponse',
     'ExecuteSqlRequest',
     'GetSessionRequest',
+    'KeyRange',
+    'KeySet',
     'ListSessionsRequest',
     'ListSessionsResponse',
+    'Mutation',
+    'PartialResultSet',
     'Partition',
     'PartitionOptions',
     'PartitionQueryRequest',
     'PartitionReadRequest',
     'PartitionResponse',
+    'PlanNode',
+    'QueryPlan',
     'ReadRequest',
     'RequestOptions',
+    'ResultSet',
+    'ResultSetMetadata',
+    'ResultSetStats',
     'RollbackRequest',
     'Session',
+    'SpannerAsyncClient',
+    'SpannerClient',
+    'StructType',
     'Transaction',
     'TransactionOptions',
     'TransactionSelector',
-    'StructType',
     'Type',
     'TypeCode',
 )

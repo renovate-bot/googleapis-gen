@@ -223,7 +223,9 @@ class ExperimentsGrpcTransport(ExperimentsTransport):
     def list_experiments(self) -> Callable[
             [experiment.ListExperimentsRequest],
             experiment.ListExperimentsResponse]:
-        r"""Return a callable for the list experiments method over gRPC.
+        r"""Return a callable for the
+        list experiments
+          method over gRPC.
 
         Returns the list of all experiments in the specified
         [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
@@ -250,7 +252,9 @@ class ExperimentsGrpcTransport(ExperimentsTransport):
     def get_experiment(self) -> Callable[
             [experiment.GetExperimentRequest],
             experiment.Experiment]:
-        r"""Return a callable for the get experiment method over gRPC.
+        r"""Return a callable for the
+        get experiment
+          method over gRPC.
 
         Retrieves the specified
         [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
@@ -277,7 +281,9 @@ class ExperimentsGrpcTransport(ExperimentsTransport):
     def create_experiment(self) -> Callable[
             [gcdc_experiment.CreateExperimentRequest],
             gcdc_experiment.Experiment]:
-        r"""Return a callable for the create experiment method over gRPC.
+        r"""Return a callable for the
+        create experiment
+          method over gRPC.
 
         Creates an
         [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment] in
@@ -306,7 +312,9 @@ class ExperimentsGrpcTransport(ExperimentsTransport):
     def update_experiment(self) -> Callable[
             [gcdc_experiment.UpdateExperimentRequest],
             gcdc_experiment.Experiment]:
-        r"""Return a callable for the update experiment method over gRPC.
+        r"""Return a callable for the
+        update experiment
+          method over gRPC.
 
         Updates the specified
         [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
@@ -333,7 +341,9 @@ class ExperimentsGrpcTransport(ExperimentsTransport):
     def delete_experiment(self) -> Callable[
             [experiment.DeleteExperimentRequest],
             empty.Empty]:
-        r"""Return a callable for the delete experiment method over gRPC.
+        r"""Return a callable for the
+        delete experiment
+          method over gRPC.
 
         Deletes the specified
         [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
@@ -360,7 +370,9 @@ class ExperimentsGrpcTransport(ExperimentsTransport):
     def start_experiment(self) -> Callable[
             [experiment.StartExperimentRequest],
             experiment.Experiment]:
-        r"""Return a callable for the start experiment method over gRPC.
+        r"""Return a callable for the
+        start experiment
+          method over gRPC.
 
         Starts the specified
         [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
@@ -389,7 +401,9 @@ class ExperimentsGrpcTransport(ExperimentsTransport):
     def stop_experiment(self) -> Callable[
             [experiment.StopExperimentRequest],
             experiment.Experiment]:
-        r"""Return a callable for the stop experiment method over gRPC.
+        r"""Return a callable for the
+        stop experiment
+          method over gRPC.
 
         Stops the specified
         [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].

@@ -228,7 +228,9 @@ class PagesGrpcAsyncIOTransport(PagesTransport):
     def list_pages(self) -> Callable[
             [page.ListPagesRequest],
             Awaitable[page.ListPagesResponse]]:
-        r"""Return a callable for the list pages method over gRPC.
+        r"""Return a callable for the
+        list pages
+          method over gRPC.
 
         Returns the list of all pages in the specified flow.
 
@@ -254,7 +256,9 @@ class PagesGrpcAsyncIOTransport(PagesTransport):
     def get_page(self) -> Callable[
             [page.GetPageRequest],
             Awaitable[page.Page]]:
-        r"""Return a callable for the get page method over gRPC.
+        r"""Return a callable for the
+        get page
+          method over gRPC.
 
         Retrieves the specified page.
 
@@ -280,7 +284,9 @@ class PagesGrpcAsyncIOTransport(PagesTransport):
     def create_page(self) -> Callable[
             [gcdc_page.CreatePageRequest],
             Awaitable[gcdc_page.Page]]:
-        r"""Return a callable for the create page method over gRPC.
+        r"""Return a callable for the
+        create page
+          method over gRPC.
 
         Creates a page in the specified flow.
 
@@ -306,7 +312,9 @@ class PagesGrpcAsyncIOTransport(PagesTransport):
     def update_page(self) -> Callable[
             [gcdc_page.UpdatePageRequest],
             Awaitable[gcdc_page.Page]]:
-        r"""Return a callable for the update page method over gRPC.
+        r"""Return a callable for the
+        update page
+          method over gRPC.
 
         Updates the specified page.
 
@@ -332,7 +340,9 @@ class PagesGrpcAsyncIOTransport(PagesTransport):
     def delete_page(self) -> Callable[
             [page.DeletePageRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete page method over gRPC.
+        r"""Return a callable for the
+        delete page
+          method over gRPC.
 
         Deletes the specified page.
 

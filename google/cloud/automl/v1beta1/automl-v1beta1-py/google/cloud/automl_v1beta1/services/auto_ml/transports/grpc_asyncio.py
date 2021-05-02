@@ -267,7 +267,9 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
     def create_dataset(self) -> Callable[
             [service.CreateDatasetRequest],
             Awaitable[gca_dataset.Dataset]]:
-        r"""Return a callable for the create dataset method over gRPC.
+        r"""Return a callable for the
+        create dataset
+          method over gRPC.
 
         Creates a dataset.
 
@@ -293,7 +295,9 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
     def get_dataset(self) -> Callable[
             [service.GetDatasetRequest],
             Awaitable[dataset.Dataset]]:
-        r"""Return a callable for the get dataset method over gRPC.
+        r"""Return a callable for the
+        get dataset
+          method over gRPC.
 
         Gets a dataset.
 
@@ -319,7 +323,9 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
     def list_datasets(self) -> Callable[
             [service.ListDatasetsRequest],
             Awaitable[service.ListDatasetsResponse]]:
-        r"""Return a callable for the list datasets method over gRPC.
+        r"""Return a callable for the
+        list datasets
+          method over gRPC.
 
         Lists datasets in a project.
 
@@ -345,7 +351,9 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
     def update_dataset(self) -> Callable[
             [service.UpdateDatasetRequest],
             Awaitable[gca_dataset.Dataset]]:
-        r"""Return a callable for the update dataset method over gRPC.
+        r"""Return a callable for the
+        update dataset
+          method over gRPC.
 
         Updates a dataset.
 
@@ -371,7 +379,9 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
     def delete_dataset(self) -> Callable[
             [service.DeleteDatasetRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the delete dataset method over gRPC.
+        r"""Return a callable for the
+        delete dataset
+          method over gRPC.
 
         Deletes a dataset and all of its contents. Returns empty
         response in the
@@ -401,7 +411,9 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
     def import_data(self) -> Callable[
             [service.ImportDataRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the import data method over gRPC.
+        r"""Return a callable for the
+        import data
+          method over gRPC.
 
         Imports data into a dataset. For Tables this method can only be
         called on an empty Dataset.
@@ -436,7 +448,9 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
     def export_data(self) -> Callable[
             [service.ExportDataRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the export data method over gRPC.
+        r"""Return a callable for the
+        export data
+          method over gRPC.
 
         Exports dataset's data to the provided output location. Returns
         an empty response in the
@@ -465,7 +479,9 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
     def get_annotation_spec(self) -> Callable[
             [service.GetAnnotationSpecRequest],
             Awaitable[annotation_spec.AnnotationSpec]]:
-        r"""Return a callable for the get annotation spec method over gRPC.
+        r"""Return a callable for the
+        get annotation spec
+          method over gRPC.
 
         Gets an annotation spec.
 
@@ -491,7 +507,9 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
     def get_table_spec(self) -> Callable[
             [service.GetTableSpecRequest],
             Awaitable[table_spec.TableSpec]]:
-        r"""Return a callable for the get table spec method over gRPC.
+        r"""Return a callable for the
+        get table spec
+          method over gRPC.
 
         Gets a table spec.
 
@@ -517,7 +535,9 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
     def list_table_specs(self) -> Callable[
             [service.ListTableSpecsRequest],
             Awaitable[service.ListTableSpecsResponse]]:
-        r"""Return a callable for the list table specs method over gRPC.
+        r"""Return a callable for the
+        list table specs
+          method over gRPC.
 
         Lists table specs in a dataset.
 
@@ -543,7 +563,9 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
     def update_table_spec(self) -> Callable[
             [service.UpdateTableSpecRequest],
             Awaitable[gca_table_spec.TableSpec]]:
-        r"""Return a callable for the update table spec method over gRPC.
+        r"""Return a callable for the
+        update table spec
+          method over gRPC.
 
         Updates a table spec.
 
@@ -569,7 +591,9 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
     def get_column_spec(self) -> Callable[
             [service.GetColumnSpecRequest],
             Awaitable[column_spec.ColumnSpec]]:
-        r"""Return a callable for the get column spec method over gRPC.
+        r"""Return a callable for the
+        get column spec
+          method over gRPC.
 
         Gets a column spec.
 
@@ -595,7 +619,9 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
     def list_column_specs(self) -> Callable[
             [service.ListColumnSpecsRequest],
             Awaitable[service.ListColumnSpecsResponse]]:
-        r"""Return a callable for the list column specs method over gRPC.
+        r"""Return a callable for the
+        list column specs
+          method over gRPC.
 
         Lists column specs in a table spec.
 
@@ -621,7 +647,9 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
     def update_column_spec(self) -> Callable[
             [service.UpdateColumnSpecRequest],
             Awaitable[gca_column_spec.ColumnSpec]]:
-        r"""Return a callable for the update column spec method over gRPC.
+        r"""Return a callable for the
+        update column spec
+          method over gRPC.
 
         Updates a column spec.
 
@@ -647,7 +675,9 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
     def create_model(self) -> Callable[
             [service.CreateModelRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the create model method over gRPC.
+        r"""Return a callable for the
+        create model
+          method over gRPC.
 
         Creates a model. Returns a Model in the
         [response][google.longrunning.Operation.response] field when it
@@ -677,7 +707,9 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
     def get_model(self) -> Callable[
             [service.GetModelRequest],
             Awaitable[model.Model]]:
-        r"""Return a callable for the get model method over gRPC.
+        r"""Return a callable for the
+        get model
+          method over gRPC.
 
         Gets a model.
 
@@ -703,7 +735,9 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
     def list_models(self) -> Callable[
             [service.ListModelsRequest],
             Awaitable[service.ListModelsResponse]]:
-        r"""Return a callable for the list models method over gRPC.
+        r"""Return a callable for the
+        list models
+          method over gRPC.
 
         Lists models.
 
@@ -729,7 +763,9 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
     def delete_model(self) -> Callable[
             [service.DeleteModelRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the delete model method over gRPC.
+        r"""Return a callable for the
+        delete model
+          method over gRPC.
 
         Deletes a model. Returns ``google.protobuf.Empty`` in the
         [response][google.longrunning.Operation.response] field when it
@@ -758,7 +794,9 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
     def deploy_model(self) -> Callable[
             [service.DeployModelRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the deploy model method over gRPC.
+        r"""Return a callable for the
+        deploy model
+          method over gRPC.
 
         Deploys a model. If a model is already deployed, deploying it
         with the same parameters has no effect. Deploying with different
@@ -798,7 +836,9 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
     def undeploy_model(self) -> Callable[
             [service.UndeployModelRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the undeploy model method over gRPC.
+        r"""Return a callable for the
+        undeploy model
+          method over gRPC.
 
         Undeploys a model. If the model is not deployed this method has
         no effect.
@@ -832,7 +872,9 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
     def export_model(self) -> Callable[
             [service.ExportModelRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the export model method over gRPC.
+        r"""Return a callable for the
+        export model
+          method over gRPC.
 
         Exports a trained, "export-able", model to a user specified
         Google Cloud Storage location. A model is considered export-able
@@ -866,7 +908,9 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
     def export_evaluated_examples(self) -> Callable[
             [service.ExportEvaluatedExamplesRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the export evaluated examples method over gRPC.
+        r"""Return a callable for the
+        export evaluated examples
+          method over gRPC.
 
         Exports examples on which the model was evaluated (i.e. which
         were in the TEST set of the dataset the model was created from),
@@ -906,7 +950,9 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
     def get_model_evaluation(self) -> Callable[
             [service.GetModelEvaluationRequest],
             Awaitable[model_evaluation.ModelEvaluation]]:
-        r"""Return a callable for the get model evaluation method over gRPC.
+        r"""Return a callable for the
+        get model evaluation
+          method over gRPC.
 
         Gets a model evaluation.
 
@@ -932,7 +978,9 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
     def list_model_evaluations(self) -> Callable[
             [service.ListModelEvaluationsRequest],
             Awaitable[service.ListModelEvaluationsResponse]]:
-        r"""Return a callable for the list model evaluations method over gRPC.
+        r"""Return a callable for the
+        list model evaluations
+          method over gRPC.
 
         Lists model evaluations.
 

@@ -198,7 +198,8 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1.types.CreateMicrosoftAdDomainRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CreateMicrosoftAdDomain][google.cloud.managedidentities.v1.CreateMicrosoftAdDomain]
             parent (:class:`str`):
                 Required. The resource project name and location using
@@ -314,7 +315,8 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1.types.ResetAdminPasswordRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ResetAdminPassword][google.cloud.managedidentities.v1.ResetAdminPassword]
             name (:class:`str`):
                 Required. The domain resource name using the form:
@@ -389,7 +391,8 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1.types.ListDomainsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ListDomains][google.cloud.managedidentities.v1.ListDomains]
             parent (:class:`str`):
                 Required. The resource name of the domain location using
@@ -476,7 +479,8 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1.types.GetDomainRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [GetDomain][google.cloud.managedidentities.v1.GetDomain]
             name (:class:`str`):
                 Required. The domain resource name using the form:
@@ -552,7 +556,8 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1.types.UpdateDomainRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [UpdateDomain][google.cloud.managedidentities.v1.UpdateDomain]
             domain (:class:`google.cloud.managedidentities_v1.types.Domain`):
                 Required. Domain message with updated fields. Only
@@ -653,7 +658,8 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1.types.DeleteDomainRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DeleteDomain][google.cloud.managedidentities.v1.DeleteDomain]
             name (:class:`str`):
                 Required. The domain resource name using the form:
@@ -750,7 +756,8 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1.types.AttachTrustRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AttachTrust][google.cloud.managedidentities.v1.AttachTrust]
             name (:class:`str`):
                 Required. The resource domain name, project name and
@@ -846,7 +853,8 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1.types.ReconfigureTrustRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ReconfigureTrust][google.cloud.managedidentities.v1.ReconfigureTrust]
             name (:class:`str`):
                 Required. The resource domain name, project name and
@@ -954,7 +962,8 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1.types.DetachTrustRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DetachTrust][google.cloud.managedidentities.v1.DetachTrust]
             name (:class:`str`):
                 Required. The resource domain name, project name, and
@@ -1053,7 +1062,8 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1.types.ValidateTrustRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ValidateTrust][google.cloud.managedidentities.v1.ValidateTrust]
             name (:class:`str`):
                 Required. The resource domain name, project name, and

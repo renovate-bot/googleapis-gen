@@ -228,7 +228,9 @@ class BigQueryStorageGrpcAsyncIOTransport(BigQueryStorageTransport):
     def create_read_session(self) -> Callable[
             [storage.CreateReadSessionRequest],
             Awaitable[storage.ReadSession]]:
-        r"""Return a callable for the create read session method over gRPC.
+        r"""Return a callable for the
+        create read session
+          method over gRPC.
 
         Creates a new read session. A read session divides
         the contents of a BigQuery table into one or more
@@ -267,7 +269,9 @@ class BigQueryStorageGrpcAsyncIOTransport(BigQueryStorageTransport):
     def read_rows(self) -> Callable[
             [storage.ReadRowsRequest],
             Awaitable[storage.ReadRowsResponse]]:
-        r"""Return a callable for the read rows method over gRPC.
+        r"""Return a callable for the
+        read rows
+          method over gRPC.
 
         Reads rows from the table in the format prescribed by
         the read session. Each response contains one or more
@@ -304,8 +308,10 @@ class BigQueryStorageGrpcAsyncIOTransport(BigQueryStorageTransport):
     def batch_create_read_session_streams(self) -> Callable[
             [storage.BatchCreateReadSessionStreamsRequest],
             Awaitable[storage.BatchCreateReadSessionStreamsResponse]]:
-        r"""Return a callable for the batch create read session
-        streams method over gRPC.
+        r"""Return a callable for the
+        batch create read session
+        streams
+          method over gRPC.
 
         Creates additional streams for a ReadSession. This
         API can be used to dynamically adjust the parallelism of
@@ -334,7 +340,9 @@ class BigQueryStorageGrpcAsyncIOTransport(BigQueryStorageTransport):
     def finalize_stream(self) -> Callable[
             [storage.FinalizeStreamRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the finalize stream method over gRPC.
+        r"""Return a callable for the
+        finalize stream
+          method over gRPC.
 
         Triggers the graceful termination of a single stream
         in a ReadSession. This API can be used to dynamically
@@ -376,7 +384,9 @@ class BigQueryStorageGrpcAsyncIOTransport(BigQueryStorageTransport):
     def split_read_stream(self) -> Callable[
             [storage.SplitReadStreamRequest],
             Awaitable[storage.SplitReadStreamResponse]]:
-        r"""Return a callable for the split read stream method over gRPC.
+        r"""Return a callable for the
+        split read stream
+          method over gRPC.
 
         Splits a given read stream into two Streams. These streams are
         referred to as the primary and the residual of the split. The

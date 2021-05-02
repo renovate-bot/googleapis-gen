@@ -340,7 +340,8 @@ class BetaAnalyticsDataClient(metaclass=BetaAnalyticsDataClientMeta):
 
         Args:
             request (google.analytics.data_v1beta.types.RunReportRequest):
-                The request object. The request to generate a report.
+                The request object.
+                The request to generate a report.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -400,7 +401,8 @@ class BetaAnalyticsDataClient(metaclass=BetaAnalyticsDataClientMeta):
 
         Args:
             request (google.analytics.data_v1beta.types.RunPivotReportRequest):
-                The request object. The request to generate a pivot
+                The request object.
+                The request to generate a pivot
                 report.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -457,7 +459,8 @@ class BetaAnalyticsDataClient(metaclass=BetaAnalyticsDataClientMeta):
 
         Args:
             request (google.analytics.data_v1beta.types.BatchRunReportsRequest):
-                The request object. The batch request containing
+                The request object.
+                The batch request containing
                 multiple report requests.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -514,7 +517,8 @@ class BetaAnalyticsDataClient(metaclass=BetaAnalyticsDataClientMeta):
 
         Args:
             request (google.analytics.data_v1beta.types.BatchRunPivotReportsRequest):
-                The request object. The batch request containing
+                The request object.
+                The batch request containing
                 multiple pivot report requests.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -581,7 +585,8 @@ class BetaAnalyticsDataClient(metaclass=BetaAnalyticsDataClientMeta):
 
         Args:
             request (google.analytics.data_v1beta.types.GetMetadataRequest):
-                The request object. Request for a property's dimension
+                The request object.
+                Request for a property's dimension
                 and metric metadata.
             name (str):
                 Required. The resource name of the metadata to retrieve.
@@ -626,7 +631,7 @@ class BetaAnalyticsDataClient(metaclass=BetaAnalyticsDataClientMeta):
         # there are no flattened fields.
         if not isinstance(request, analytics_data_api.GetMetadataRequest):
             request = analytics_data_api.GetMetadataRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -668,7 +673,8 @@ class BetaAnalyticsDataClient(metaclass=BetaAnalyticsDataClientMeta):
 
         Args:
             request (google.analytics.data_v1beta.types.RunRealtimeReportRequest):
-                The request object. The request to generate a realtime
+                The request object.
+                The request to generate a realtime
                 report.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

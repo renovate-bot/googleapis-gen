@@ -363,7 +363,7 @@ class CertificateAuthority(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=17,
+        number=17
     )
 
 
@@ -688,7 +688,7 @@ class CaPool(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=5,
+        number=5
     )
 
 
@@ -821,7 +821,7 @@ class CertificateRevocationList(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=10,
+        number=10
     )
 
 
@@ -985,7 +985,7 @@ class Certificate(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=14,
+        number=14
     )
 
 
@@ -1090,7 +1090,7 @@ class CertificateTemplate(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=8,
+        number=8
     )
 
 

@@ -321,7 +321,7 @@ class Version(proto.Message):
     beta_settings = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=13,
+        number=13
     )
     env = proto.Field(
         proto.STRING,
@@ -380,12 +380,12 @@ class Version(proto.Message):
     env_variables = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=104,
+        number=104
     )
     build_env_variables = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=125,
+        number=125
     )
     default_expiration = proto.Field(
         proto.MESSAGE,

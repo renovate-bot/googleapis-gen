@@ -20,7 +20,7 @@ from .types.containeranalysis import GetVulnerabilityOccurrencesSummaryRequest
 from .types.containeranalysis import VulnerabilityOccurrencesSummary
 
 __all__ = (
-    'ContainerAnalysisClient',
     'GetVulnerabilityOccurrencesSummaryRequest',
     'VulnerabilityOccurrencesSummary',
+'ContainerAnalysisClient',
 )

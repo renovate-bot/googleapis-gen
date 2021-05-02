@@ -245,7 +245,9 @@ class ApiGatewayServiceGrpcAsyncIOTransport(ApiGatewayServiceTransport):
     def list_gateways(self) -> Callable[
             [apigateway.ListGatewaysRequest],
             Awaitable[apigateway.ListGatewaysResponse]]:
-        r"""Return a callable for the list gateways method over gRPC.
+        r"""Return a callable for the
+        list gateways
+          method over gRPC.
 
         Lists Gateways in a given project and location.
 
@@ -271,7 +273,9 @@ class ApiGatewayServiceGrpcAsyncIOTransport(ApiGatewayServiceTransport):
     def get_gateway(self) -> Callable[
             [apigateway.GetGatewayRequest],
             Awaitable[apigateway.Gateway]]:
-        r"""Return a callable for the get gateway method over gRPC.
+        r"""Return a callable for the
+        get gateway
+          method over gRPC.
 
         Gets details of a single Gateway.
 
@@ -297,7 +301,9 @@ class ApiGatewayServiceGrpcAsyncIOTransport(ApiGatewayServiceTransport):
     def create_gateway(self) -> Callable[
             [apigateway.CreateGatewayRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the create gateway method over gRPC.
+        r"""Return a callable for the
+        create gateway
+          method over gRPC.
 
         Creates a new Gateway in a given project and
         location.
@@ -324,7 +330,9 @@ class ApiGatewayServiceGrpcAsyncIOTransport(ApiGatewayServiceTransport):
     def update_gateway(self) -> Callable[
             [apigateway.UpdateGatewayRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the update gateway method over gRPC.
+        r"""Return a callable for the
+        update gateway
+          method over gRPC.
 
         Updates the parameters of a single Gateway.
 
@@ -350,7 +358,9 @@ class ApiGatewayServiceGrpcAsyncIOTransport(ApiGatewayServiceTransport):
     def delete_gateway(self) -> Callable[
             [apigateway.DeleteGatewayRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the delete gateway method over gRPC.
+        r"""Return a callable for the
+        delete gateway
+          method over gRPC.
 
         Deletes a single Gateway.
 
@@ -376,7 +386,9 @@ class ApiGatewayServiceGrpcAsyncIOTransport(ApiGatewayServiceTransport):
     def list_apis(self) -> Callable[
             [apigateway.ListApisRequest],
             Awaitable[apigateway.ListApisResponse]]:
-        r"""Return a callable for the list apis method over gRPC.
+        r"""Return a callable for the
+        list apis
+          method over gRPC.
 
         Lists Apis in a given project and location.
 
@@ -402,7 +414,9 @@ class ApiGatewayServiceGrpcAsyncIOTransport(ApiGatewayServiceTransport):
     def get_api(self) -> Callable[
             [apigateway.GetApiRequest],
             Awaitable[apigateway.Api]]:
-        r"""Return a callable for the get api method over gRPC.
+        r"""Return a callable for the
+        get api
+          method over gRPC.
 
         Gets details of a single Api.
 
@@ -428,7 +442,9 @@ class ApiGatewayServiceGrpcAsyncIOTransport(ApiGatewayServiceTransport):
     def create_api(self) -> Callable[
             [apigateway.CreateApiRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the create api method over gRPC.
+        r"""Return a callable for the
+        create api
+          method over gRPC.
 
         Creates a new Api in a given project and location.
 
@@ -454,7 +470,9 @@ class ApiGatewayServiceGrpcAsyncIOTransport(ApiGatewayServiceTransport):
     def update_api(self) -> Callable[
             [apigateway.UpdateApiRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the update api method over gRPC.
+        r"""Return a callable for the
+        update api
+          method over gRPC.
 
         Updates the parameters of a single Api.
 
@@ -480,7 +498,9 @@ class ApiGatewayServiceGrpcAsyncIOTransport(ApiGatewayServiceTransport):
     def delete_api(self) -> Callable[
             [apigateway.DeleteApiRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the delete api method over gRPC.
+        r"""Return a callable for the
+        delete api
+          method over gRPC.
 
         Deletes a single Api.
 
@@ -506,7 +526,9 @@ class ApiGatewayServiceGrpcAsyncIOTransport(ApiGatewayServiceTransport):
     def list_api_configs(self) -> Callable[
             [apigateway.ListApiConfigsRequest],
             Awaitable[apigateway.ListApiConfigsResponse]]:
-        r"""Return a callable for the list api configs method over gRPC.
+        r"""Return a callable for the
+        list api configs
+          method over gRPC.
 
         Lists ApiConfigs in a given project and location.
 
@@ -532,7 +554,9 @@ class ApiGatewayServiceGrpcAsyncIOTransport(ApiGatewayServiceTransport):
     def get_api_config(self) -> Callable[
             [apigateway.GetApiConfigRequest],
             Awaitable[apigateway.ApiConfig]]:
-        r"""Return a callable for the get api config method over gRPC.
+        r"""Return a callable for the
+        get api config
+          method over gRPC.
 
         Gets details of a single ApiConfig.
 
@@ -558,7 +582,9 @@ class ApiGatewayServiceGrpcAsyncIOTransport(ApiGatewayServiceTransport):
     def create_api_config(self) -> Callable[
             [apigateway.CreateApiConfigRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the create api config method over gRPC.
+        r"""Return a callable for the
+        create api config
+          method over gRPC.
 
         Creates a new ApiConfig in a given project and
         location.
@@ -585,7 +611,9 @@ class ApiGatewayServiceGrpcAsyncIOTransport(ApiGatewayServiceTransport):
     def update_api_config(self) -> Callable[
             [apigateway.UpdateApiConfigRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the update api config method over gRPC.
+        r"""Return a callable for the
+        update api config
+          method over gRPC.
 
         Updates the parameters of a single ApiConfig.
 
@@ -611,7 +639,9 @@ class ApiGatewayServiceGrpcAsyncIOTransport(ApiGatewayServiceTransport):
     def delete_api_config(self) -> Callable[
             [apigateway.DeleteApiConfigRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the delete api config method over gRPC.
+        r"""Return a callable for the
+        delete api config
+          method over gRPC.
 
         Deletes a single ApiConfig.
 

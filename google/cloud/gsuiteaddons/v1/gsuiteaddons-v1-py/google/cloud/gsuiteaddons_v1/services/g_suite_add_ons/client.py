@@ -386,7 +386,8 @@ class GSuiteAddOnsClient(metaclass=GSuiteAddOnsClientMeta):
 
         Args:
             request (google.cloud.gsuiteaddons_v1.types.GetAuthorizationRequest):
-                The request object. Request message to get Google
+                The request object.
+                Request message to get Google
                 Workspace Add-ons authorization information.
             name (str):
                 Required. Name of the project for which to get the
@@ -423,7 +424,7 @@ class GSuiteAddOnsClient(metaclass=GSuiteAddOnsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gsuiteaddons.GetAuthorizationRequest):
             request = gsuiteaddons.GetAuthorizationRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -466,7 +467,8 @@ class GSuiteAddOnsClient(metaclass=GSuiteAddOnsClientMeta):
 
         Args:
             request (google.cloud.gsuiteaddons_v1.types.CreateDeploymentRequest):
-                The request object. Request message to create a
+                The request object.
+                Request message to create a
                 deployment.
             parent (str):
                 Required. Name of the project in which to create the
@@ -516,7 +518,7 @@ class GSuiteAddOnsClient(metaclass=GSuiteAddOnsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gsuiteaddons.CreateDeploymentRequest):
             request = gsuiteaddons.CreateDeploymentRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -561,7 +563,8 @@ class GSuiteAddOnsClient(metaclass=GSuiteAddOnsClientMeta):
 
         Args:
             request (google.cloud.gsuiteaddons_v1.types.ReplaceDeploymentRequest):
-                The request object. Request message to create or replace
+                The request object.
+                Request message to create or replace
                 a deployment.
             deployment (google.cloud.gsuiteaddons_v1.types.Deployment):
                 Required. The deployment to create or
@@ -594,7 +597,7 @@ class GSuiteAddOnsClient(metaclass=GSuiteAddOnsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gsuiteaddons.ReplaceDeploymentRequest):
             request = gsuiteaddons.ReplaceDeploymentRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if deployment is not None:
                 request.deployment = deployment
@@ -634,7 +637,8 @@ class GSuiteAddOnsClient(metaclass=GSuiteAddOnsClientMeta):
 
         Args:
             request (google.cloud.gsuiteaddons_v1.types.GetDeploymentRequest):
-                The request object. Request message to get a deployment.
+                The request object.
+                Request message to get a deployment.
             name (str):
                 Required. The full resource name of the deployment to
                 get.
@@ -669,7 +673,7 @@ class GSuiteAddOnsClient(metaclass=GSuiteAddOnsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gsuiteaddons.GetDeploymentRequest):
             request = gsuiteaddons.GetDeploymentRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -709,7 +713,8 @@ class GSuiteAddOnsClient(metaclass=GSuiteAddOnsClientMeta):
 
         Args:
             request (google.cloud.gsuiteaddons_v1.types.ListDeploymentsRequest):
-                The request object. Request message to list deployments
+                The request object.
+                Request message to list deployments
                 for a project.
             parent (str):
                 Required. Name of the project in which to create the
@@ -748,7 +753,7 @@ class GSuiteAddOnsClient(metaclass=GSuiteAddOnsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gsuiteaddons.ListDeploymentsRequest):
             request = gsuiteaddons.ListDeploymentsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -797,7 +802,8 @@ class GSuiteAddOnsClient(metaclass=GSuiteAddOnsClientMeta):
 
         Args:
             request (google.cloud.gsuiteaddons_v1.types.DeleteDeploymentRequest):
-                The request object. Request message to delete a
+                The request object.
+                Request message to delete a
                 deployment.
             name (str):
                 Required. The full resource name of the deployment to
@@ -829,7 +835,7 @@ class GSuiteAddOnsClient(metaclass=GSuiteAddOnsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gsuiteaddons.DeleteDeploymentRequest):
             request = gsuiteaddons.DeleteDeploymentRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -869,7 +875,8 @@ class GSuiteAddOnsClient(metaclass=GSuiteAddOnsClientMeta):
 
         Args:
             request (google.cloud.gsuiteaddons_v1.types.InstallDeploymentRequest):
-                The request object. Request message to install a
+                The request object.
+                Request message to install a
                 developer mode deployment.
             name (str):
                 Required. The full resource name of the deployment to
@@ -901,7 +908,7 @@ class GSuiteAddOnsClient(metaclass=GSuiteAddOnsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gsuiteaddons.InstallDeploymentRequest):
             request = gsuiteaddons.InstallDeploymentRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -941,7 +948,8 @@ class GSuiteAddOnsClient(metaclass=GSuiteAddOnsClientMeta):
 
         Args:
             request (google.cloud.gsuiteaddons_v1.types.UninstallDeploymentRequest):
-                The request object. Request message to uninstall a
+                The request object.
+                Request message to uninstall a
                 developer mode deployment.
             name (str):
                 Required. The full resource name of the deployment to
@@ -973,7 +981,7 @@ class GSuiteAddOnsClient(metaclass=GSuiteAddOnsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gsuiteaddons.UninstallDeploymentRequest):
             request = gsuiteaddons.UninstallDeploymentRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1011,7 +1019,8 @@ class GSuiteAddOnsClient(metaclass=GSuiteAddOnsClientMeta):
 
         Args:
             request (google.cloud.gsuiteaddons_v1.types.GetInstallStatusRequest):
-                The request object. Request message to get the install
+                The request object.
+                Request message to get the install
                 status of a developer mode deployment.
             name (str):
                 Required. The full resource name of the deployment.
@@ -1048,7 +1057,7 @@ class GSuiteAddOnsClient(metaclass=GSuiteAddOnsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gsuiteaddons.GetInstallStatusRequest):
             request = gsuiteaddons.GetInstallStatusRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

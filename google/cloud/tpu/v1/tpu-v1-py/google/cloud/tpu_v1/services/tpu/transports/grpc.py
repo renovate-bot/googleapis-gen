@@ -240,7 +240,9 @@ class TpuGrpcTransport(TpuTransport):
     def list_nodes(self) -> Callable[
             [cloud_tpu.ListNodesRequest],
             cloud_tpu.ListNodesResponse]:
-        r"""Return a callable for the list nodes method over gRPC.
+        r"""Return a callable for the
+        list nodes
+          method over gRPC.
 
         Lists nodes.
 
@@ -266,7 +268,9 @@ class TpuGrpcTransport(TpuTransport):
     def get_node(self) -> Callable[
             [cloud_tpu.GetNodeRequest],
             cloud_tpu.Node]:
-        r"""Return a callable for the get node method over gRPC.
+        r"""Return a callable for the
+        get node
+          method over gRPC.
 
         Gets the details of a node.
 
@@ -292,7 +296,9 @@ class TpuGrpcTransport(TpuTransport):
     def create_node(self) -> Callable[
             [cloud_tpu.CreateNodeRequest],
             operations.Operation]:
-        r"""Return a callable for the create node method over gRPC.
+        r"""Return a callable for the
+        create node
+          method over gRPC.
 
         Creates a node.
 
@@ -318,7 +324,9 @@ class TpuGrpcTransport(TpuTransport):
     def delete_node(self) -> Callable[
             [cloud_tpu.DeleteNodeRequest],
             operations.Operation]:
-        r"""Return a callable for the delete node method over gRPC.
+        r"""Return a callable for the
+        delete node
+          method over gRPC.
 
         Deletes a node.
 
@@ -344,7 +352,9 @@ class TpuGrpcTransport(TpuTransport):
     def reimage_node(self) -> Callable[
             [cloud_tpu.ReimageNodeRequest],
             operations.Operation]:
-        r"""Return a callable for the reimage node method over gRPC.
+        r"""Return a callable for the
+        reimage node
+          method over gRPC.
 
         Reimages a node's OS.
 
@@ -370,7 +380,9 @@ class TpuGrpcTransport(TpuTransport):
     def stop_node(self) -> Callable[
             [cloud_tpu.StopNodeRequest],
             operations.Operation]:
-        r"""Return a callable for the stop node method over gRPC.
+        r"""Return a callable for the
+        stop node
+          method over gRPC.
 
         Stops a node.
 
@@ -396,7 +408,9 @@ class TpuGrpcTransport(TpuTransport):
     def start_node(self) -> Callable[
             [cloud_tpu.StartNodeRequest],
             operations.Operation]:
-        r"""Return a callable for the start node method over gRPC.
+        r"""Return a callable for the
+        start node
+          method over gRPC.
 
         Starts a node.
 
@@ -422,7 +436,9 @@ class TpuGrpcTransport(TpuTransport):
     def list_tensor_flow_versions(self) -> Callable[
             [cloud_tpu.ListTensorFlowVersionsRequest],
             cloud_tpu.ListTensorFlowVersionsResponse]:
-        r"""Return a callable for the list tensor flow versions method over gRPC.
+        r"""Return a callable for the
+        list tensor flow versions
+          method over gRPC.
 
         List TensorFlow versions supported by this API.
 
@@ -448,7 +464,9 @@ class TpuGrpcTransport(TpuTransport):
     def get_tensor_flow_version(self) -> Callable[
             [cloud_tpu.GetTensorFlowVersionRequest],
             cloud_tpu.TensorFlowVersion]:
-        r"""Return a callable for the get tensor flow version method over gRPC.
+        r"""Return a callable for the
+        get tensor flow version
+          method over gRPC.
 
         Gets TensorFlow Version.
 
@@ -474,7 +492,9 @@ class TpuGrpcTransport(TpuTransport):
     def list_accelerator_types(self) -> Callable[
             [cloud_tpu.ListAcceleratorTypesRequest],
             cloud_tpu.ListAcceleratorTypesResponse]:
-        r"""Return a callable for the list accelerator types method over gRPC.
+        r"""Return a callable for the
+        list accelerator types
+          method over gRPC.
 
         Lists accelerator types supported by this API.
 
@@ -500,7 +520,9 @@ class TpuGrpcTransport(TpuTransport):
     def get_accelerator_type(self) -> Callable[
             [cloud_tpu.GetAcceleratorTypeRequest],
             cloud_tpu.AcceleratorType]:
-        r"""Return a callable for the get accelerator type method over gRPC.
+        r"""Return a callable for the
+        get accelerator type
+          method over gRPC.
 
         Gets AcceleratorType.
 

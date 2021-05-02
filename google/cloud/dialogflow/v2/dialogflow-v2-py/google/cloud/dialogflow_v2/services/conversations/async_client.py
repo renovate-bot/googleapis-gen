@@ -185,7 +185,8 @@ class ConversationsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.CreateConversationRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Conversations.CreateConversation][google.cloud.dialogflow.v2.Conversations.CreateConversation].
             parent (:class:`str`):
                 Required. Resource identifier of the project creating
@@ -274,7 +275,8 @@ class ConversationsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.ListConversationsRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Conversations.ListConversations][google.cloud.dialogflow.v2.Conversations.ListConversations].
             parent (:class:`str`):
                 Required. The project from which to list all
@@ -362,7 +364,8 @@ class ConversationsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.GetConversationRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Conversations.GetConversation][google.cloud.dialogflow.v2.Conversations.GetConversation].
             name (:class:`str`):
                 Required. The name of the conversation. Format:
@@ -444,7 +447,8 @@ class ConversationsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.CompleteConversationRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Conversations.CompleteConversation][google.cloud.dialogflow.v2.Conversations.CompleteConversation].
             name (:class:`str`):
                 Required. Resource identifier of the conversation to
@@ -529,7 +533,8 @@ class ConversationsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.ListMessagesRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Conversations.ListMessages][google.cloud.dialogflow.v2.Conversations.ListMessages].
             parent (:class:`str`):
                 Required. The name of the conversation to list messages

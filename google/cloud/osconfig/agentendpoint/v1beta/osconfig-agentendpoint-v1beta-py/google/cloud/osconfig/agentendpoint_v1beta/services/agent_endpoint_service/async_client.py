@@ -156,7 +156,8 @@ class AgentEndpointServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.osconfig.agentendpoint_v1beta.types.ReceiveTaskNotificationRequest`):
-                The request object. A request message to receive task
+                The request object.
+                A request message to receive task
                 notifications.
             instance_id_token (:class:`str`):
                 Required. This is the Compute Engine
@@ -249,7 +250,8 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.osconfig.agentendpoint_v1beta.types.StartNextTaskRequest`):
-                The request object. A request message for signaling the
+                The request object.
+                A request message for signaling the
                 start of a task execution.
             instance_id_token (:class:`str`):
                 Required. This is the Compute Engine
@@ -323,7 +325,8 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.osconfig.agentendpoint_v1beta.types.ReportTaskProgressRequest`):
-                The request object. A request message for reporting the
+                The request object.
+                A request message for reporting the
                 progress of current task.
             instance_id_token (:class:`str`):
                 Required. This is the Compute Engine
@@ -420,7 +423,8 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.osconfig.agentendpoint_v1beta.types.ReportTaskCompleteRequest`):
-                The request object. A request message for signaling the
+                The request object.
+                A request message for signaling the
                 completion of a task execution.
             instance_id_token (:class:`str`):
                 Required. This is the Compute Engine
@@ -526,7 +530,8 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.osconfig.agentendpoint_v1beta.types.LookupEffectiveGuestPolicyRequest`):
-                The request object. A request message for getting
+                The request object.
+                A request message for getting
                 effective policy assigned to the instance.
             instance_id_token (:class:`str`):
                 Required. This is the GCE instance
@@ -633,7 +638,8 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.osconfig.agentendpoint_v1beta.types.RegisterAgentRequest`):
-                The request object. The request message for registering
+                The request object.
+                The request message for registering
                 the agent.
             instance_id_token (:class:`str`):
                 Required. This is the Compute Engine

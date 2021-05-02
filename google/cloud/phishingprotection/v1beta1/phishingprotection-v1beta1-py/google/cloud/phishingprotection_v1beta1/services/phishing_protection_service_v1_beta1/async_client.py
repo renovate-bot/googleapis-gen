@@ -161,7 +161,8 @@ class PhishingProtectionServiceV1Beta1AsyncClient:
 
         Args:
             request (:class:`google.cloud.phishingprotection_v1beta1.types.ReportPhishingRequest`):
-                The request object. The ReportPhishing request message.
+                The request object.
+                The ReportPhishing request message.
             parent (:class:`str`):
                 Required. The name of the project for which the report
                 will be created, in the format

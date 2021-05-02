@@ -355,7 +355,8 @@ class Controller2Client(metaclass=Controller2ClientMeta):
 
         Args:
             request (google.devtools.clouddebugger_v2.types.RegisterDebuggeeRequest):
-                The request object. Request to register a debuggee.
+                The request object.
+                Request to register a debuggee.
             debuggee (google.devtools.clouddebugger_v2.types.Debuggee):
                 Required. Debuggee information to register. The fields
                 ``project``, ``uniquifier``, ``description`` and
@@ -388,7 +389,7 @@ class Controller2Client(metaclass=Controller2ClientMeta):
         # there are no flattened fields.
         if not isinstance(request, controller.RegisterDebuggeeRequest):
             request = controller.RegisterDebuggeeRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if debuggee is not None:
                 request.debuggee = debuggee
@@ -433,7 +434,8 @@ class Controller2Client(metaclass=Controller2ClientMeta):
 
         Args:
             request (google.devtools.clouddebugger_v2.types.ListActiveBreakpointsRequest):
-                The request object. Request to list active breakpoints.
+                The request object.
+                Request to list active breakpoints.
             debuggee_id (str):
                 Required. Identifies the debuggee.
                 This corresponds to the ``debuggee_id`` field
@@ -465,7 +467,7 @@ class Controller2Client(metaclass=Controller2ClientMeta):
         # there are no flattened fields.
         if not isinstance(request, controller.ListActiveBreakpointsRequest):
             request = controller.ListActiveBreakpointsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if debuggee_id is not None:
                 request.debuggee_id = debuggee_id
@@ -506,7 +508,8 @@ class Controller2Client(metaclass=Controller2ClientMeta):
 
         Args:
             request (google.devtools.clouddebugger_v2.types.UpdateActiveBreakpointRequest):
-                The request object. Request to update an active
+                The request object.
+                Request to update an active
                 breakpoint.
             debuggee_id (str):
                 Required. Identifies the debuggee
@@ -550,7 +553,7 @@ class Controller2Client(metaclass=Controller2ClientMeta):
         # there are no flattened fields.
         if not isinstance(request, controller.UpdateActiveBreakpointRequest):
             request = controller.UpdateActiveBreakpointRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if debuggee_id is not None:
                 request.debuggee_id = debuggee_id

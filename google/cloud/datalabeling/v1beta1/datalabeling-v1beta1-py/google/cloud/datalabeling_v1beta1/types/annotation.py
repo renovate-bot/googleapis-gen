@@ -416,7 +416,7 @@ class ImageSegmentationAnnotation(proto.Message):
     annotation_colors = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=1,
+        number=1
         message=annotation_spec_set.AnnotationSpec,
     )
     mime_type = proto.Field(

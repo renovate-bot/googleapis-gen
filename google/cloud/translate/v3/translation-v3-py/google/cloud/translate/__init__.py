@@ -14,9 +14,8 @@
 # limitations under the License.
 #
 
-from google.cloud.translate_v3.services.translation_service.client import TranslationServiceClient
 from google.cloud.translate_v3.services.translation_service.async_client import TranslationServiceAsyncClient
-
+from google.cloud.translate_v3.services.translation_service.client import TranslationServiceClient
 from google.cloud.translate_v3.types.translation_service import BatchTranslateMetadata
 from google.cloud.translate_v3.types.translation_service import BatchTranslateResponse
 from google.cloud.translate_v3.types.translation_service import BatchTranslateTextRequest
@@ -25,9 +24,9 @@ from google.cloud.translate_v3.types.translation_service import CreateGlossaryRe
 from google.cloud.translate_v3.types.translation_service import DeleteGlossaryMetadata
 from google.cloud.translate_v3.types.translation_service import DeleteGlossaryRequest
 from google.cloud.translate_v3.types.translation_service import DeleteGlossaryResponse
-from google.cloud.translate_v3.types.translation_service import DetectedLanguage
 from google.cloud.translate_v3.types.translation_service import DetectLanguageRequest
 from google.cloud.translate_v3.types.translation_service import DetectLanguageResponse
+from google.cloud.translate_v3.types.translation_service import DetectedLanguage
 from google.cloud.translate_v3.types.translation_service import GcsDestination
 from google.cloud.translate_v3.types.translation_service import GcsSource
 from google.cloud.translate_v3.types.translation_service import GetGlossaryRequest
@@ -45,9 +44,7 @@ from google.cloud.translate_v3.types.translation_service import TranslateTextReq
 from google.cloud.translate_v3.types.translation_service import TranslateTextResponse
 from google.cloud.translate_v3.types.translation_service import Translation
 
-__all__ = ('TranslationServiceClient',
-    'TranslationServiceAsyncClient',
-    'BatchTranslateMetadata',
+__all__ = ('BatchTranslateMetadata',
     'BatchTranslateResponse',
     'BatchTranslateTextRequest',
     'CreateGlossaryMetadata',
@@ -55,9 +52,9 @@ __all__ = ('TranslationServiceClient',
     'DeleteGlossaryMetadata',
     'DeleteGlossaryRequest',
     'DeleteGlossaryResponse',
-    'DetectedLanguage',
     'DetectLanguageRequest',
     'DetectLanguageResponse',
+    'DetectedLanguage',
     'GcsDestination',
     'GcsSource',
     'GetGlossaryRequest',
@@ -74,4 +71,6 @@ __all__ = ('TranslationServiceClient',
     'TranslateTextRequest',
     'TranslateTextResponse',
     'Translation',
+    'TranslationServiceAsyncClient',
+    'TranslationServiceClient',
 )

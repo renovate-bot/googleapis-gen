@@ -360,7 +360,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
 
         Args:
             request (google.cloud.servicemanagement_v1.types.ListServicesRequest):
-                The request object. Request message for `ListServices`
+                The request object.
+                Request message for `ListServices`
                 method.
             producer_project_id (str):
                 Include services produced by the
@@ -408,7 +409,7 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, servicemanager.ListServicesRequest):
             request = servicemanager.ListServicesRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if producer_project_id is not None:
                 request.producer_project_id = producer_project_id
@@ -452,7 +453,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
 
         Args:
             request (google.cloud.servicemanagement_v1.types.GetServiceRequest):
-                The request object. Request message for `GetService`
+                The request object.
+                Request message for `GetService`
                 method.
             service_name (str):
                 Required. The name of the service. See the
@@ -489,7 +491,7 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, servicemanager.GetServiceRequest):
             request = servicemanager.GetServiceRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if service_name is not None:
                 request.service_name = service_name
@@ -524,7 +526,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
 
         Args:
             request (google.cloud.servicemanagement_v1.types.CreateServiceRequest):
-                The request object. Request message for CreateService
+                The request object.
+                Request message for CreateService
                 method.
             service (google.cloud.servicemanagement_v1.types.ManagedService):
                 Required. Initial values for the
@@ -561,7 +564,7 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, servicemanager.CreateServiceRequest):
             request = servicemanager.CreateServiceRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if service is not None:
                 request.service = service
@@ -608,7 +611,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
 
         Args:
             request (google.cloud.servicemanagement_v1.types.DeleteServiceRequest):
-                The request object. Request message for DeleteService
+                The request object.
+                Request message for DeleteService
                 method.
             service_name (str):
                 Required. The name of the service. See the
@@ -658,7 +662,7 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, servicemanager.DeleteServiceRequest):
             request = servicemanager.DeleteServiceRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if service_name is not None:
                 request.service_name = service_name
@@ -704,7 +708,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
 
         Args:
             request (google.cloud.servicemanagement_v1.types.UndeleteServiceRequest):
-                The request object. Request message for UndeleteService
+                The request object.
+                Request message for UndeleteService
                 method.
             service_name (str):
                 Required. The name of the service. See the
@@ -744,7 +749,7 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, servicemanager.UndeleteServiceRequest):
             request = servicemanager.UndeleteServiceRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if service_name is not None:
                 request.service_name = service_name
@@ -785,7 +790,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
 
         Args:
             request (google.cloud.servicemanagement_v1.types.ListServiceConfigsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ListServiceConfigs method.
             service_name (str):
                 Required. The name of the service. See the
@@ -825,7 +831,7 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, servicemanager.ListServiceConfigsRequest):
             request = servicemanager.ListServiceConfigsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if service_name is not None:
                 request.service_name = service_name
@@ -869,7 +875,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
 
         Args:
             request (google.cloud.servicemanagement_v1.types.GetServiceConfigRequest):
-                The request object. Request message for GetServiceConfig
+                The request object.
+                Request message for GetServiceConfig
                 method.
             service_name (str):
                 Required. The name of the service. See the
@@ -940,7 +947,7 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, servicemanager.GetServiceConfigRequest):
             request = servicemanager.GetServiceConfigRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if service_name is not None:
                 request.service_name = service_name
@@ -985,7 +992,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
 
         Args:
             request (google.cloud.servicemanagement_v1.types.CreateServiceConfigRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 CreateServiceConfig method.
             service_name (str):
                 Required. The name of the service. See the
@@ -1046,7 +1054,7 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, servicemanager.CreateServiceConfigRequest):
             request = servicemanager.CreateServiceConfigRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if service_name is not None:
                 request.service_name = service_name
@@ -1094,7 +1102,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
 
         Args:
             request (google.cloud.servicemanagement_v1.types.SubmitConfigSourceRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 SubmitConfigSource method.
             service_name (str):
                 Required. The name of the service. See the
@@ -1150,7 +1159,7 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, servicemanager.SubmitConfigSourceRequest):
             request = servicemanager.SubmitConfigSourceRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if service_name is not None:
                 request.service_name = service_name
@@ -1197,7 +1206,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
 
         Args:
             request (google.cloud.servicemanagement_v1.types.ListServiceRolloutsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 'ListServiceRollouts'
             service_name (str):
                 Required. The name of the service. See the
@@ -1251,7 +1261,7 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, servicemanager.ListServiceRolloutsRequest):
             request = servicemanager.ListServiceRolloutsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if service_name is not None:
                 request.service_name = service_name
@@ -1296,7 +1306,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
 
         Args:
             request (google.cloud.servicemanagement_v1.types.GetServiceRolloutRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GetServiceRollout method.
             service_name (str):
                 Required. The name of the service. See the
@@ -1344,7 +1355,7 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, servicemanager.GetServiceRolloutRequest):
             request = servicemanager.GetServiceRolloutRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if service_name is not None:
                 request.service_name = service_name
@@ -1395,7 +1406,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
 
         Args:
             request (google.cloud.servicemanagement_v1.types.CreateServiceRolloutRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 'CreateServiceRollout'
             service_name (str):
                 Required. The name of the service. See the
@@ -1443,7 +1455,7 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, servicemanager.CreateServiceRolloutRequest):
             request = servicemanager.CreateServiceRolloutRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if service_name is not None:
                 request.service_name = service_name
@@ -1497,7 +1509,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
 
         Args:
             request (google.cloud.servicemanagement_v1.types.GenerateConfigReportRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GenerateConfigReport method.
             new_config (google.protobuf.any_pb2.Any):
                 Required. Service configuration for which we want to
@@ -1547,7 +1560,7 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, servicemanager.GenerateConfigReportRequest):
             request = servicemanager.GenerateConfigReportRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if new_config is not None:
                 request.new_config = new_config
@@ -1588,7 +1601,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
 
         Args:
             request (google.cloud.servicemanagement_v1.types.EnableServiceRequest):
-                The request object. Request message for EnableService
+                The request object.
+                Request message for EnableService
                 method.
             service_name (str):
                 Required. Name of the service to
@@ -1642,7 +1656,7 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, servicemanager.EnableServiceRequest):
             request = servicemanager.EnableServiceRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if service_name is not None:
                 request.service_name = service_name
@@ -1691,7 +1705,8 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
 
         Args:
             request (google.cloud.servicemanagement_v1.types.DisableServiceRequest):
-                The request object. Request message for DisableService
+                The request object.
+                Request message for DisableService
                 method.
             service_name (str):
                 Required. Name of the service to
@@ -1745,7 +1760,7 @@ class ServiceManagerClient(metaclass=ServiceManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, servicemanager.DisableServiceRequest):
             request = servicemanager.DisableServiceRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if service_name is not None:
                 request.service_name = service_name

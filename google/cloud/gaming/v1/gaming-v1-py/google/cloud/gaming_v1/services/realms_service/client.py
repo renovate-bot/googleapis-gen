@@ -341,7 +341,8 @@ class RealmsServiceClient(metaclass=RealmsServiceClientMeta):
 
         Args:
             request (google.cloud.gaming_v1.types.ListRealmsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 RealmsService.ListRealms.
             parent (str):
                 Required. The parent resource name. Uses the form:
@@ -379,7 +380,7 @@ class RealmsServiceClient(metaclass=RealmsServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, realms.ListRealmsRequest):
             request = realms.ListRealmsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -428,7 +429,8 @@ class RealmsServiceClient(metaclass=RealmsServiceClientMeta):
 
         Args:
             request (google.cloud.gaming_v1.types.GetRealmRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 RealmsService.GetRealm.
             name (str):
                 Required. The name of the realm to retrieve. Uses the
@@ -462,7 +464,7 @@ class RealmsServiceClient(metaclass=RealmsServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, realms.GetRealmRequest):
             request = realms.GetRealmRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -504,7 +506,8 @@ class RealmsServiceClient(metaclass=RealmsServiceClientMeta):
 
         Args:
             request (google.cloud.gaming_v1.types.CreateRealmRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 RealmsService.CreateRealm.
             parent (str):
                 Required. The parent resource name. Uses the form:
@@ -556,7 +559,7 @@ class RealmsServiceClient(metaclass=RealmsServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, realms.CreateRealmRequest):
             request = realms.CreateRealmRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -608,7 +611,8 @@ class RealmsServiceClient(metaclass=RealmsServiceClientMeta):
 
         Args:
             request (google.cloud.gaming_v1.types.DeleteRealmRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 RealmsService.DeleteRealm.
             name (str):
                 Required. The name of the realm to delete. Uses the
@@ -657,7 +661,7 @@ class RealmsServiceClient(metaclass=RealmsServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, realms.DeleteRealmRequest):
             request = realms.DeleteRealmRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -706,7 +710,8 @@ class RealmsServiceClient(metaclass=RealmsServiceClientMeta):
 
         Args:
             request (google.cloud.gaming_v1.types.UpdateRealmRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 RealmsService.UpdateRealm.
             realm (google.cloud.gaming_v1.types.Realm):
                 Required. The realm to be updated. Only fields specified
@@ -754,7 +759,7 @@ class RealmsServiceClient(metaclass=RealmsServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, realms.UpdateRealmRequest):
             request = realms.UpdateRealmRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if realm is not None:
                 request.realm = realm
@@ -803,7 +808,8 @@ class RealmsServiceClient(metaclass=RealmsServiceClientMeta):
 
         Args:
             request (google.cloud.gaming_v1.types.PreviewRealmUpdateRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 RealmsService.PreviewRealmUpdate.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

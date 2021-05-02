@@ -26,7 +26,6 @@ from .types.workflows import UpdateWorkflowRequest
 from .types.workflows import Workflow
 
 __all__ = (
-    'WorkflowsClient',
     'CreateWorkflowRequest',
     'DeleteWorkflowRequest',
     'GetWorkflowRequest',
@@ -35,4 +34,5 @@ __all__ = (
     'OperationMetadata',
     'UpdateWorkflowRequest',
     'Workflow',
+'WorkflowsClient',
 )

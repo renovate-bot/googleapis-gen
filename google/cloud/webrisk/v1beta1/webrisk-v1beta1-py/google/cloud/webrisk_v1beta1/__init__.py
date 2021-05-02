@@ -16,6 +16,7 @@
 
 from .services.web_risk_service_v1_beta1 import WebRiskServiceV1Beta1Client
 
+from .types.webrisk import CompressionType
 from .types.webrisk import ComputeThreatListDiffRequest
 from .types.webrisk import ComputeThreatListDiffResponse
 from .types.webrisk import RawHashes
@@ -27,11 +28,10 @@ from .types.webrisk import SearchUrisRequest
 from .types.webrisk import SearchUrisResponse
 from .types.webrisk import ThreatEntryAdditions
 from .types.webrisk import ThreatEntryRemovals
-from .types.webrisk import CompressionType
 from .types.webrisk import ThreatType
 
 __all__ = (
-    'WebRiskServiceV1Beta1Client',
+    'CompressionType',
     'ComputeThreatListDiffRequest',
     'ComputeThreatListDiffResponse',
     'RawHashes',
@@ -43,6 +43,6 @@ __all__ = (
     'SearchUrisResponse',
     'ThreatEntryAdditions',
     'ThreatEntryRemovals',
-    'CompressionType',
     'ThreatType',
+'WebRiskServiceV1Beta1Client',
 )

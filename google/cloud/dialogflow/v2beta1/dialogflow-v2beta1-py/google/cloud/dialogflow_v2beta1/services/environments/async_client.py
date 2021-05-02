@@ -158,7 +158,8 @@ class EnvironmentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2beta1.types.ListEnvironmentsRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Environments.ListEnvironments][google.cloud.dialogflow.v2beta1.Environments.ListEnvironments].
             parent (:class:`str`):
                 Required. The agent to list all environments from.

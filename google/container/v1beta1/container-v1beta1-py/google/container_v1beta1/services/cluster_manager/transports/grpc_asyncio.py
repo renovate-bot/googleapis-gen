@@ -226,7 +226,9 @@ class ClusterManagerGrpcAsyncIOTransport(ClusterManagerTransport):
     def list_clusters(self) -> Callable[
             [cluster_service.ListClustersRequest],
             Awaitable[cluster_service.ListClustersResponse]]:
-        r"""Return a callable for the list clusters method over gRPC.
+        r"""Return a callable for the
+        list clusters
+          method over gRPC.
 
         Lists all clusters owned by a project in either the
         specified zone or all zones.
@@ -253,7 +255,9 @@ class ClusterManagerGrpcAsyncIOTransport(ClusterManagerTransport):
     def get_cluster(self) -> Callable[
             [cluster_service.GetClusterRequest],
             Awaitable[cluster_service.Cluster]]:
-        r"""Return a callable for the get cluster method over gRPC.
+        r"""Return a callable for the
+        get cluster
+          method over gRPC.
 
         Gets the details for a specific cluster.
 
@@ -279,7 +283,9 @@ class ClusterManagerGrpcAsyncIOTransport(ClusterManagerTransport):
     def create_cluster(self) -> Callable[
             [cluster_service.CreateClusterRequest],
             Awaitable[cluster_service.Operation]]:
-        r"""Return a callable for the create cluster method over gRPC.
+        r"""Return a callable for the
+        create cluster
+          method over gRPC.
 
         Creates a cluster, consisting of the specified number and type
         of Google Compute Engine instances.
@@ -317,7 +323,9 @@ class ClusterManagerGrpcAsyncIOTransport(ClusterManagerTransport):
     def update_cluster(self) -> Callable[
             [cluster_service.UpdateClusterRequest],
             Awaitable[cluster_service.Operation]]:
-        r"""Return a callable for the update cluster method over gRPC.
+        r"""Return a callable for the
+        update cluster
+          method over gRPC.
 
         Updates the settings for a specific cluster.
 
@@ -343,7 +351,9 @@ class ClusterManagerGrpcAsyncIOTransport(ClusterManagerTransport):
     def update_node_pool(self) -> Callable[
             [cluster_service.UpdateNodePoolRequest],
             Awaitable[cluster_service.Operation]]:
-        r"""Return a callable for the update node pool method over gRPC.
+        r"""Return a callable for the
+        update node pool
+          method over gRPC.
 
         Updates the version and/or image type of a specific
         node pool.
@@ -370,7 +380,9 @@ class ClusterManagerGrpcAsyncIOTransport(ClusterManagerTransport):
     def set_node_pool_autoscaling(self) -> Callable[
             [cluster_service.SetNodePoolAutoscalingRequest],
             Awaitable[cluster_service.Operation]]:
-        r"""Return a callable for the set node pool autoscaling method over gRPC.
+        r"""Return a callable for the
+        set node pool autoscaling
+          method over gRPC.
 
         Sets the autoscaling settings of a specific node
         pool.
@@ -397,7 +409,9 @@ class ClusterManagerGrpcAsyncIOTransport(ClusterManagerTransport):
     def set_logging_service(self) -> Callable[
             [cluster_service.SetLoggingServiceRequest],
             Awaitable[cluster_service.Operation]]:
-        r"""Return a callable for the set logging service method over gRPC.
+        r"""Return a callable for the
+        set logging service
+          method over gRPC.
 
         Sets the logging service for a specific cluster.
 
@@ -423,7 +437,9 @@ class ClusterManagerGrpcAsyncIOTransport(ClusterManagerTransport):
     def set_monitoring_service(self) -> Callable[
             [cluster_service.SetMonitoringServiceRequest],
             Awaitable[cluster_service.Operation]]:
-        r"""Return a callable for the set monitoring service method over gRPC.
+        r"""Return a callable for the
+        set monitoring service
+          method over gRPC.
 
         Sets the monitoring service for a specific cluster.
 
@@ -449,7 +465,9 @@ class ClusterManagerGrpcAsyncIOTransport(ClusterManagerTransport):
     def set_addons_config(self) -> Callable[
             [cluster_service.SetAddonsConfigRequest],
             Awaitable[cluster_service.Operation]]:
-        r"""Return a callable for the set addons config method over gRPC.
+        r"""Return a callable for the
+        set addons config
+          method over gRPC.
 
         Sets the addons for a specific cluster.
 
@@ -475,7 +493,9 @@ class ClusterManagerGrpcAsyncIOTransport(ClusterManagerTransport):
     def set_locations(self) -> Callable[
             [cluster_service.SetLocationsRequest],
             Awaitable[cluster_service.Operation]]:
-        r"""Return a callable for the set locations method over gRPC.
+        r"""Return a callable for the
+        set locations
+          method over gRPC.
 
         Sets the locations for a specific cluster. Deprecated. Use
         `projects.locations.clusters.update <https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1beta1/projects.locations.clusters/update>`__
@@ -503,7 +523,9 @@ class ClusterManagerGrpcAsyncIOTransport(ClusterManagerTransport):
     def update_master(self) -> Callable[
             [cluster_service.UpdateMasterRequest],
             Awaitable[cluster_service.Operation]]:
-        r"""Return a callable for the update master method over gRPC.
+        r"""Return a callable for the
+        update master
+          method over gRPC.
 
         Updates the master for a specific cluster.
 
@@ -529,7 +551,9 @@ class ClusterManagerGrpcAsyncIOTransport(ClusterManagerTransport):
     def set_master_auth(self) -> Callable[
             [cluster_service.SetMasterAuthRequest],
             Awaitable[cluster_service.Operation]]:
-        r"""Return a callable for the set master auth method over gRPC.
+        r"""Return a callable for the
+        set master auth
+          method over gRPC.
 
         Sets master auth materials. Currently supports
         changing the admin password or a specific cluster,
@@ -558,7 +582,9 @@ class ClusterManagerGrpcAsyncIOTransport(ClusterManagerTransport):
     def delete_cluster(self) -> Callable[
             [cluster_service.DeleteClusterRequest],
             Awaitable[cluster_service.Operation]]:
-        r"""Return a callable for the delete cluster method over gRPC.
+        r"""Return a callable for the
+        delete cluster
+          method over gRPC.
 
         Deletes the cluster, including the Kubernetes
         endpoint and all worker nodes.
@@ -593,7 +619,9 @@ class ClusterManagerGrpcAsyncIOTransport(ClusterManagerTransport):
     def list_operations(self) -> Callable[
             [cluster_service.ListOperationsRequest],
             Awaitable[cluster_service.ListOperationsResponse]]:
-        r"""Return a callable for the list operations method over gRPC.
+        r"""Return a callable for the
+        list operations
+          method over gRPC.
 
         Lists all operations in a project in the specified
         zone or all zones.
@@ -620,7 +648,9 @@ class ClusterManagerGrpcAsyncIOTransport(ClusterManagerTransport):
     def get_operation(self) -> Callable[
             [cluster_service.GetOperationRequest],
             Awaitable[cluster_service.Operation]]:
-        r"""Return a callable for the get operation method over gRPC.
+        r"""Return a callable for the
+        get operation
+          method over gRPC.
 
         Gets the specified operation.
 
@@ -646,7 +676,9 @@ class ClusterManagerGrpcAsyncIOTransport(ClusterManagerTransport):
     def cancel_operation(self) -> Callable[
             [cluster_service.CancelOperationRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the cancel operation method over gRPC.
+        r"""Return a callable for the
+        cancel operation
+          method over gRPC.
 
         Cancels the specified operation.
 
@@ -672,7 +704,9 @@ class ClusterManagerGrpcAsyncIOTransport(ClusterManagerTransport):
     def get_server_config(self) -> Callable[
             [cluster_service.GetServerConfigRequest],
             Awaitable[cluster_service.ServerConfig]]:
-        r"""Return a callable for the get server config method over gRPC.
+        r"""Return a callable for the
+        get server config
+          method over gRPC.
 
         Returns configuration info about the Google
         Kubernetes Engine service.
@@ -699,7 +733,9 @@ class ClusterManagerGrpcAsyncIOTransport(ClusterManagerTransport):
     def list_node_pools(self) -> Callable[
             [cluster_service.ListNodePoolsRequest],
             Awaitable[cluster_service.ListNodePoolsResponse]]:
-        r"""Return a callable for the list node pools method over gRPC.
+        r"""Return a callable for the
+        list node pools
+          method over gRPC.
 
         Lists the node pools for a cluster.
 
@@ -725,7 +761,9 @@ class ClusterManagerGrpcAsyncIOTransport(ClusterManagerTransport):
     def get_json_web_keys(self) -> Callable[
             [cluster_service.GetJSONWebKeysRequest],
             Awaitable[cluster_service.GetJSONWebKeysResponse]]:
-        r"""Return a callable for the get json web keys method over gRPC.
+        r"""Return a callable for the
+        get json web keys
+          method over gRPC.
 
         Gets the public component of the cluster signing keys
         in JSON Web Key format.
@@ -754,7 +792,9 @@ class ClusterManagerGrpcAsyncIOTransport(ClusterManagerTransport):
     def get_node_pool(self) -> Callable[
             [cluster_service.GetNodePoolRequest],
             Awaitable[cluster_service.NodePool]]:
-        r"""Return a callable for the get node pool method over gRPC.
+        r"""Return a callable for the
+        get node pool
+          method over gRPC.
 
         Retrieves the requested node pool.
 
@@ -780,7 +820,9 @@ class ClusterManagerGrpcAsyncIOTransport(ClusterManagerTransport):
     def create_node_pool(self) -> Callable[
             [cluster_service.CreateNodePoolRequest],
             Awaitable[cluster_service.Operation]]:
-        r"""Return a callable for the create node pool method over gRPC.
+        r"""Return a callable for the
+        create node pool
+          method over gRPC.
 
         Creates a node pool for a cluster.
 
@@ -806,7 +848,9 @@ class ClusterManagerGrpcAsyncIOTransport(ClusterManagerTransport):
     def delete_node_pool(self) -> Callable[
             [cluster_service.DeleteNodePoolRequest],
             Awaitable[cluster_service.Operation]]:
-        r"""Return a callable for the delete node pool method over gRPC.
+        r"""Return a callable for the
+        delete node pool
+          method over gRPC.
 
         Deletes a node pool from a cluster.
 
@@ -832,7 +876,9 @@ class ClusterManagerGrpcAsyncIOTransport(ClusterManagerTransport):
     def rollback_node_pool_upgrade(self) -> Callable[
             [cluster_service.RollbackNodePoolUpgradeRequest],
             Awaitable[cluster_service.Operation]]:
-        r"""Return a callable for the rollback node pool upgrade method over gRPC.
+        r"""Return a callable for the
+        rollback node pool upgrade
+          method over gRPC.
 
         Rolls back a previously Aborted or Failed NodePool
         upgrade. This makes no changes if the last upgrade
@@ -860,7 +906,9 @@ class ClusterManagerGrpcAsyncIOTransport(ClusterManagerTransport):
     def set_node_pool_management(self) -> Callable[
             [cluster_service.SetNodePoolManagementRequest],
             Awaitable[cluster_service.Operation]]:
-        r"""Return a callable for the set node pool management method over gRPC.
+        r"""Return a callable for the
+        set node pool management
+          method over gRPC.
 
         Sets the NodeManagement options for a node pool.
 
@@ -886,7 +934,9 @@ class ClusterManagerGrpcAsyncIOTransport(ClusterManagerTransport):
     def set_labels(self) -> Callable[
             [cluster_service.SetLabelsRequest],
             Awaitable[cluster_service.Operation]]:
-        r"""Return a callable for the set labels method over gRPC.
+        r"""Return a callable for the
+        set labels
+          method over gRPC.
 
         Sets labels on a cluster.
 
@@ -912,7 +962,9 @@ class ClusterManagerGrpcAsyncIOTransport(ClusterManagerTransport):
     def set_legacy_abac(self) -> Callable[
             [cluster_service.SetLegacyAbacRequest],
             Awaitable[cluster_service.Operation]]:
-        r"""Return a callable for the set legacy abac method over gRPC.
+        r"""Return a callable for the
+        set legacy abac
+          method over gRPC.
 
         Enables or disables the ABAC authorization mechanism
         on a cluster.
@@ -939,7 +991,9 @@ class ClusterManagerGrpcAsyncIOTransport(ClusterManagerTransport):
     def start_ip_rotation(self) -> Callable[
             [cluster_service.StartIPRotationRequest],
             Awaitable[cluster_service.Operation]]:
-        r"""Return a callable for the start ip rotation method over gRPC.
+        r"""Return a callable for the
+        start ip rotation
+          method over gRPC.
 
         Starts master IP rotation.
 
@@ -965,7 +1019,9 @@ class ClusterManagerGrpcAsyncIOTransport(ClusterManagerTransport):
     def complete_ip_rotation(self) -> Callable[
             [cluster_service.CompleteIPRotationRequest],
             Awaitable[cluster_service.Operation]]:
-        r"""Return a callable for the complete ip rotation method over gRPC.
+        r"""Return a callable for the
+        complete ip rotation
+          method over gRPC.
 
         Completes master IP rotation.
 
@@ -991,7 +1047,9 @@ class ClusterManagerGrpcAsyncIOTransport(ClusterManagerTransport):
     def set_node_pool_size(self) -> Callable[
             [cluster_service.SetNodePoolSizeRequest],
             Awaitable[cluster_service.Operation]]:
-        r"""Return a callable for the set node pool size method over gRPC.
+        r"""Return a callable for the
+        set node pool size
+          method over gRPC.
 
         Sets the size for a specific node pool.
 
@@ -1017,7 +1075,9 @@ class ClusterManagerGrpcAsyncIOTransport(ClusterManagerTransport):
     def set_network_policy(self) -> Callable[
             [cluster_service.SetNetworkPolicyRequest],
             Awaitable[cluster_service.Operation]]:
-        r"""Return a callable for the set network policy method over gRPC.
+        r"""Return a callable for the
+        set network policy
+          method over gRPC.
 
         Enables or disables Network Policy for a cluster.
 
@@ -1043,7 +1103,9 @@ class ClusterManagerGrpcAsyncIOTransport(ClusterManagerTransport):
     def set_maintenance_policy(self) -> Callable[
             [cluster_service.SetMaintenancePolicyRequest],
             Awaitable[cluster_service.Operation]]:
-        r"""Return a callable for the set maintenance policy method over gRPC.
+        r"""Return a callable for the
+        set maintenance policy
+          method over gRPC.
 
         Sets the maintenance policy for a cluster.
 
@@ -1069,7 +1131,9 @@ class ClusterManagerGrpcAsyncIOTransport(ClusterManagerTransport):
     def list_usable_subnetworks(self) -> Callable[
             [cluster_service.ListUsableSubnetworksRequest],
             Awaitable[cluster_service.ListUsableSubnetworksResponse]]:
-        r"""Return a callable for the list usable subnetworks method over gRPC.
+        r"""Return a callable for the
+        list usable subnetworks
+          method over gRPC.
 
         Lists subnetworks that can be used for creating
         clusters in a project.
@@ -1096,7 +1160,9 @@ class ClusterManagerGrpcAsyncIOTransport(ClusterManagerTransport):
     def list_locations(self) -> Callable[
             [cluster_service.ListLocationsRequest],
             Awaitable[cluster_service.ListLocationsResponse]]:
-        r"""Return a callable for the list locations method over gRPC.
+        r"""Return a callable for the
+        list locations
+          method over gRPC.
 
         Fetches locations that offer Google Kubernetes
         Engine.

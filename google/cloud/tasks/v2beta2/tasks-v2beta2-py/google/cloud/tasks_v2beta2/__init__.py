@@ -43,16 +43,19 @@ from .types.queue import RetryConfig
 from .types.target import AppEngineHttpRequest
 from .types.target import AppEngineHttpTarget
 from .types.target import AppEngineRouting
+from .types.target import HttpMethod
 from .types.target import PullMessage
 from .types.target import PullTarget
-from .types.target import HttpMethod
 from .types.task import AttemptStatus
 from .types.task import Task
 from .types.task import TaskStatus
 
 __all__ = (
-    'CloudTasksClient',
     'AcknowledgeTaskRequest',
+    'AppEngineHttpRequest',
+    'AppEngineHttpTarget',
+    'AppEngineRouting',
+    'AttemptStatus',
     'CancelLeaseRequest',
     'CreateQueueRequest',
     'CreateTaskRequest',
@@ -60,6 +63,7 @@ __all__ = (
     'DeleteTaskRequest',
     'GetQueueRequest',
     'GetTaskRequest',
+    'HttpMethod',
     'LeaseTasksRequest',
     'LeaseTasksResponse',
     'ListQueuesRequest',
@@ -67,22 +71,18 @@ __all__ = (
     'ListTasksRequest',
     'ListTasksResponse',
     'PauseQueueRequest',
+    'PullMessage',
+    'PullTarget',
     'PurgeQueueRequest',
-    'RenewLeaseRequest',
-    'ResumeQueueRequest',
-    'RunTaskRequest',
-    'UpdateQueueRequest',
     'Queue',
     'QueueStats',
     'RateLimits',
+    'RenewLeaseRequest',
+    'ResumeQueueRequest',
     'RetryConfig',
-    'AppEngineHttpRequest',
-    'AppEngineHttpTarget',
-    'AppEngineRouting',
-    'PullMessage',
-    'PullTarget',
-    'HttpMethod',
-    'AttemptStatus',
+    'RunTaskRequest',
     'Task',
     'TaskStatus',
+    'UpdateQueueRequest',
+'CloudTasksClient',
 )

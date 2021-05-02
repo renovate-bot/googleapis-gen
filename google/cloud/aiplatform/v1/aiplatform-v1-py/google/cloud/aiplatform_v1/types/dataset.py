@@ -122,7 +122,7 @@ class Dataset(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=7,
+        number=7
     )
     encryption_spec = proto.Field(
         proto.MESSAGE,
@@ -172,7 +172,7 @@ class ImportDataConfig(proto.Message):
     data_item_labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=2,
+        number=2
     )
     import_schema_uri = proto.Field(
         proto.STRING,

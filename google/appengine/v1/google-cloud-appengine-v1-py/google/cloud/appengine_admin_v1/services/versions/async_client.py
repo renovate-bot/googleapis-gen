@@ -161,7 +161,8 @@ class VersionsAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.ListVersionsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Versions.ListVersions`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -229,7 +230,8 @@ class VersionsAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.GetVersionRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Versions.GetVersion`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -285,7 +287,8 @@ class VersionsAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.CreateVersionRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Versions.CreateVersion`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -385,7 +388,8 @@ class VersionsAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.UpdateVersionRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Versions.UpdateVersion`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -450,7 +454,8 @@ class VersionsAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.DeleteVersionRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Versions.DeleteVersion`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

@@ -89,7 +89,7 @@ class Document(proto.Message):
     fields = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=2,
+        number=2
         message='Value',
     )
     create_time = proto.Field(
@@ -237,7 +237,7 @@ class MapValue(proto.Message):
     fields = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=1,
+        number=1
         message='Value',
     )
 

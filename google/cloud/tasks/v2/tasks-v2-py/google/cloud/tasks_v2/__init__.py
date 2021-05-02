@@ -37,40 +37,40 @@ from .types.queue import RetryConfig
 from .types.queue import StackdriverLoggingConfig
 from .types.target import AppEngineHttpRequest
 from .types.target import AppEngineRouting
+from .types.target import HttpMethod
 from .types.target import HttpRequest
 from .types.target import OAuthToken
 from .types.target import OidcToken
-from .types.target import HttpMethod
 from .types.task import Attempt
 from .types.task import Task
 
 __all__ = (
-    'CloudTasksClient',
+    'AppEngineHttpRequest',
+    'AppEngineRouting',
+    'Attempt',
     'CreateQueueRequest',
     'CreateTaskRequest',
     'DeleteQueueRequest',
     'DeleteTaskRequest',
     'GetQueueRequest',
     'GetTaskRequest',
+    'HttpMethod',
+    'HttpRequest',
     'ListQueuesRequest',
     'ListQueuesResponse',
     'ListTasksRequest',
     'ListTasksResponse',
-    'PauseQueueRequest',
-    'PurgeQueueRequest',
-    'ResumeQueueRequest',
-    'RunTaskRequest',
-    'UpdateQueueRequest',
-    'Queue',
-    'RateLimits',
-    'RetryConfig',
-    'StackdriverLoggingConfig',
-    'AppEngineHttpRequest',
-    'AppEngineRouting',
-    'HttpRequest',
     'OAuthToken',
     'OidcToken',
-    'HttpMethod',
-    'Attempt',
+    'PauseQueueRequest',
+    'PurgeQueueRequest',
+    'Queue',
+    'RateLimits',
+    'ResumeQueueRequest',
+    'RetryConfig',
+    'RunTaskRequest',
+    'StackdriverLoggingConfig',
     'Task',
+    'UpdateQueueRequest',
+'CloudTasksClient',
 )

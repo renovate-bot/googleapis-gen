@@ -226,7 +226,9 @@ class EnvironmentsGrpcAsyncIOTransport(EnvironmentsTransport):
     def list_environments(self) -> Callable[
             [environment.ListEnvironmentsRequest],
             Awaitable[environment.ListEnvironmentsResponse]]:
-        r"""Return a callable for the list environments method over gRPC.
+        r"""Return a callable for the
+        list environments
+          method over gRPC.
 
         Returns the list of all non-draft environments of the
         specified agent.

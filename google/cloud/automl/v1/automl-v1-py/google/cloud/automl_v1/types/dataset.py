@@ -150,7 +150,7 @@ class Dataset(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=39,
+        number=39
     )
 
 

@@ -153,7 +153,7 @@ class WorkflowTemplate(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=6,
+        number=6
     )
     placement = proto.Field(
         proto.MESSAGE,
@@ -249,7 +249,7 @@ class ManagedCluster(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=4,
+        number=4
     )
 
 
@@ -276,7 +276,7 @@ class ClusterSelector(proto.Message):
     cluster_labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=2,
+        number=2
     )
 
 
@@ -387,7 +387,7 @@ class OrderedJob(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=8,
+        number=8
     )
     scheduling = proto.Field(
         proto.MESSAGE,
@@ -649,7 +649,7 @@ class WorkflowMetadata(proto.Message):
     parameters = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=8,
+        number=8
     )
     start_time = proto.Field(
         proto.MESSAGE,
@@ -893,7 +893,7 @@ class InstantiateWorkflowTemplateRequest(proto.Message):
     parameters = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=4,
+        number=4
     )
 
 

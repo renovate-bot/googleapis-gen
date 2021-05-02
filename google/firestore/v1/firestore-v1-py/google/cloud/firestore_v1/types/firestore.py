@@ -879,7 +879,7 @@ class WriteRequest(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=5,
+        number=5
     )
 
 
@@ -962,7 +962,7 @@ class ListenRequest(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=4,
+        number=4
     )
 
 
@@ -1278,7 +1278,7 @@ class BatchWriteRequest(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=3,
+        number=3
     )
 
 

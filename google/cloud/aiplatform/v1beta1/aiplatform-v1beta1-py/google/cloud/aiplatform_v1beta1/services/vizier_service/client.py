@@ -366,7 +366,8 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1beta1.types.CreateStudyRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [VizierService.CreateStudy][google.cloud.aiplatform.v1beta1.VizierService.CreateStudy].
             parent (str):
                 Required. The resource name of the Location to create
@@ -407,7 +408,7 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, vizier_service.CreateStudyRequest):
             request = vizier_service.CreateStudyRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -449,7 +450,8 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1beta1.types.GetStudyRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [VizierService.GetStudy][google.cloud.aiplatform.v1beta1.VizierService.GetStudy].
             name (str):
                 Required. The name of the Study resource. Format:
@@ -482,7 +484,7 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, vizier_service.GetStudyRequest):
             request = vizier_service.GetStudyRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -523,7 +525,8 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1beta1.types.ListStudiesRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [VizierService.ListStudies][google.cloud.aiplatform.v1beta1.VizierService.ListStudies].
             parent (str):
                 Required. The resource name of the Location to list the
@@ -562,7 +565,7 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, vizier_service.ListStudiesRequest):
             request = vizier_service.ListStudiesRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -611,7 +614,8 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1beta1.types.DeleteStudyRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [VizierService.DeleteStudy][google.cloud.aiplatform.v1beta1.VizierService.DeleteStudy].
             name (str):
                 Required. The name of the Study resource to be deleted.
@@ -641,7 +645,7 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, vizier_service.DeleteStudyRequest):
             request = vizier_service.DeleteStudyRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -679,7 +683,8 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1beta1.types.LookupStudyRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [VizierService.LookupStudy][google.cloud.aiplatform.v1beta1.VizierService.LookupStudy].
             parent (str):
                 Required. The resource name of the Location to get the
@@ -713,7 +718,7 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, vizier_service.LookupStudyRequest):
             request = vizier_service.LookupStudyRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -756,7 +761,8 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1beta1.types.SuggestTrialsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [VizierService.SuggestTrials][google.cloud.aiplatform.v1beta1.VizierService.SuggestTrials].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -826,7 +832,8 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1beta1.types.CreateTrialRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [VizierService.CreateTrial][google.cloud.aiplatform.v1beta1.VizierService.CreateTrial].
             parent (str):
                 Required. The resource name of the Study to create the
@@ -870,7 +877,7 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, vizier_service.CreateTrialRequest):
             request = vizier_service.CreateTrialRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -912,7 +919,8 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1beta1.types.GetTrialRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [VizierService.GetTrial][google.cloud.aiplatform.v1beta1.VizierService.GetTrial].
             name (str):
                 Required. The name of the Trial resource. Format:
@@ -950,7 +958,7 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, vizier_service.GetTrialRequest):
             request = vizier_service.GetTrialRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -990,7 +998,8 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1beta1.types.ListTrialsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [VizierService.ListTrials][google.cloud.aiplatform.v1beta1.VizierService.ListTrials].
             parent (str):
                 Required. The resource name of the Study to list the
@@ -1029,7 +1038,7 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, vizier_service.ListTrialsRequest):
             request = vizier_service.ListTrialsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1079,7 +1088,8 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1beta1.types.AddTrialMeasurementRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [VizierService.AddTrialMeasurement][google.cloud.aiplatform.v1beta1.VizierService.AddTrialMeasurement].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1138,7 +1148,8 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1beta1.types.CompleteTrialRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [VizierService.CompleteTrial][google.cloud.aiplatform.v1beta1.VizierService.CompleteTrial].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1198,7 +1209,8 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1beta1.types.DeleteTrialRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [VizierService.DeleteTrial][google.cloud.aiplatform.v1beta1.VizierService.DeleteTrial].
             name (str):
                 Required. The Trial's name. Format:
@@ -1227,7 +1239,7 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, vizier_service.DeleteTrialRequest):
             request = vizier_service.DeleteTrialRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1266,7 +1278,8 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1beta1.types.CheckTrialEarlyStoppingStateRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [VizierService.CheckTrialEarlyStoppingState][google.cloud.aiplatform.v1beta1.VizierService.CheckTrialEarlyStoppingState].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1334,7 +1347,8 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1beta1.types.StopTrialRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [VizierService.StopTrial][google.cloud.aiplatform.v1beta1.VizierService.StopTrial].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1397,7 +1411,8 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1beta1.types.ListOptimalTrialsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [VizierService.ListOptimalTrials][google.cloud.aiplatform.v1beta1.VizierService.ListOptimalTrials].
             parent (str):
                 Required. The name of the Study that
@@ -1432,7 +1447,7 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, vizier_service.ListOptimalTrialsRequest):
             request = vizier_service.ListOptimalTrialsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent

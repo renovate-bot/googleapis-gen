@@ -177,7 +177,8 @@ class FlowsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.CreateFlowRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Flows.CreateFlow][google.cloud.dialogflow.cx.v3beta1.Flows.CreateFlow].
             parent (:class:`str`):
                 Required. The agent to create a flow for. Format:
@@ -280,7 +281,8 @@ class FlowsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.DeleteFlowRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Flows.DeleteFlow][google.cloud.dialogflow.cx.v3beta1.Flows.DeleteFlow].
             name (:class:`str`):
                 Required. The name of the flow to delete. Format:
@@ -346,7 +348,8 @@ class FlowsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.ListFlowsRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Flows.ListFlows][google.cloud.dialogflow.cx.v3beta1.Flows.ListFlows].
             parent (:class:`str`):
                 Required. The agent containing the flows. Format:
@@ -433,7 +436,8 @@ class FlowsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.GetFlowRequest`):
-                The request object. The response message for
+                The request object.
+                The response message for
                 [Flows.GetFlow][google.cloud.dialogflow.cx.v3beta1.Flows.GetFlow].
             name (:class:`str`):
                 Required. The name of the flow to get. Format:
@@ -530,7 +534,8 @@ class FlowsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.UpdateFlowRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Flows.UpdateFlow][google.cloud.dialogflow.cx.v3beta1.Flows.UpdateFlow].
             flow (:class:`google.cloud.dialogflowcx_v3beta1.types.Flow`):
                 Required. The flow to update.
@@ -635,7 +640,8 @@ class FlowsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.TrainFlowRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Flows.TrainFlow][google.cloud.dialogflow.cx.v3beta1.Flows.TrainFlow].
             name (:class:`str`):
                 Required. The flow to train. Format:
@@ -733,7 +739,8 @@ class FlowsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.ValidateFlowRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Flows.ValidateFlow][google.cloud.dialogflow.cx.v3beta1.Flows.ValidateFlow].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -790,7 +797,8 @@ class FlowsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.GetFlowValidationResultRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Flows.GetFlowValidationResult][google.cloud.dialogflow.cx.v3beta1.Flows.GetFlowValidationResult].
             name (:class:`str`):
                 Required. The flow name. Format:
@@ -865,7 +873,8 @@ class FlowsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.ImportFlowRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Flows.ImportFlow][google.cloud.dialogflow.cx.v3beta1.Flows.ImportFlow].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -934,7 +943,8 @@ class FlowsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.ExportFlowRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Flows.ExportFlow][google.cloud.dialogflow.cx.v3beta1.Flows.ExportFlow].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

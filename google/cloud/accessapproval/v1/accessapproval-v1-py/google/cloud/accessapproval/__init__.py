@@ -14,9 +14,8 @@
 # limitations under the License.
 #
 
-from google.cloud.accessapproval_v1.services.access_approval.client import AccessApprovalClient
 from google.cloud.accessapproval_v1.services.access_approval.async_client import AccessApprovalAsyncClient
-
+from google.cloud.accessapproval_v1.services.access_approval.client import AccessApprovalClient
 from google.cloud.accessapproval_v1.types.accessapproval import AccessApprovalSettings
 from google.cloud.accessapproval_v1.types.accessapproval import AccessLocations
 from google.cloud.accessapproval_v1.types.accessapproval import AccessReason
@@ -27,16 +26,16 @@ from google.cloud.accessapproval_v1.types.accessapproval import DeleteAccessAppr
 from google.cloud.accessapproval_v1.types.accessapproval import DismissApprovalRequestMessage
 from google.cloud.accessapproval_v1.types.accessapproval import DismissDecision
 from google.cloud.accessapproval_v1.types.accessapproval import EnrolledService
+from google.cloud.accessapproval_v1.types.accessapproval import EnrollmentLevel
 from google.cloud.accessapproval_v1.types.accessapproval import GetAccessApprovalSettingsMessage
 from google.cloud.accessapproval_v1.types.accessapproval import GetApprovalRequestMessage
 from google.cloud.accessapproval_v1.types.accessapproval import ListApprovalRequestsMessage
 from google.cloud.accessapproval_v1.types.accessapproval import ListApprovalRequestsResponse
 from google.cloud.accessapproval_v1.types.accessapproval import ResourceProperties
 from google.cloud.accessapproval_v1.types.accessapproval import UpdateAccessApprovalSettingsMessage
-from google.cloud.accessapproval_v1.types.accessapproval import EnrollmentLevel
 
-__all__ = ('AccessApprovalClient',
-    'AccessApprovalAsyncClient',
+__all__ = ('AccessApprovalAsyncClient',
+    'AccessApprovalClient',
     'AccessApprovalSettings',
     'AccessLocations',
     'AccessReason',
@@ -47,11 +46,11 @@ __all__ = ('AccessApprovalClient',
     'DismissApprovalRequestMessage',
     'DismissDecision',
     'EnrolledService',
+    'EnrollmentLevel',
     'GetAccessApprovalSettingsMessage',
     'GetApprovalRequestMessage',
     'ListApprovalRequestsMessage',
     'ListApprovalRequestsResponse',
     'ResourceProperties',
     'UpdateAccessApprovalSettingsMessage',
-    'EnrollmentLevel',
 )

@@ -159,7 +159,8 @@ class CatalogServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.retail_v2alpha.types.ListCatalogsRequest`):
-                The request object. Request for
+                The request object.
+                Request for
                 [CatalogService.ListCatalogs][google.cloud.retail.v2alpha.CatalogService.ListCatalogs]
                 method.
             parent (:class:`str`):
@@ -254,7 +255,8 @@ class CatalogServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.retail_v2alpha.types.UpdateCatalogRequest`):
-                The request object. Request for
+                The request object.
+                Request for
                 [CatalogService.UpdateCatalog][google.cloud.retail.v2alpha.CatalogService.UpdateCatalog]
                 method.
             catalog (:class:`google.cloud.retail_v2alpha.types.Catalog`):

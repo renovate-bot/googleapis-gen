@@ -164,7 +164,8 @@ class WorkflowsAsyncClient:
 
         Args:
             request (:class:`google.cloud.workflows_v1beta.types.ListWorkflowsRequest`):
-                The request object. Request for the
+                The request object.
+                Request for the
                 [ListWorkflows][google.cloud.workflows.v1beta.Workflows.ListWorkflows]
                 method.
             parent (:class:`str`):
@@ -255,7 +256,8 @@ class WorkflowsAsyncClient:
 
         Args:
             request (:class:`google.cloud.workflows_v1beta.types.GetWorkflowRequest`):
-                The request object. Request for the
+                The request object.
+                Request for the
                 [GetWorkflow][google.cloud.workflows.v1beta.Workflows.GetWorkflow]
                 method.
             name (:class:`str`):
@@ -337,7 +339,8 @@ class WorkflowsAsyncClient:
 
         Args:
             request (:class:`google.cloud.workflows_v1beta.types.CreateWorkflowRequest`):
-                The request object. Request for the
+                The request object.
+                Request for the
                 [CreateWorkflow][google.cloud.workflows.v1beta.Workflows.CreateWorkflow]
                 method.
             parent (:class:`str`):
@@ -452,7 +455,8 @@ class WorkflowsAsyncClient:
 
         Args:
             request (:class:`google.cloud.workflows_v1beta.types.DeleteWorkflowRequest`):
-                The request object. Request for the
+                The request object.
+                Request for the
                 [DeleteWorkflow][google.cloud.workflows.v1beta.Workflows.DeleteWorkflow]
                 method.
             name (:class:`str`):
@@ -556,7 +560,8 @@ class WorkflowsAsyncClient:
 
         Args:
             request (:class:`google.cloud.workflows_v1beta.types.UpdateWorkflowRequest`):
-                The request object. Request for the
+                The request object.
+                Request for the
                 [UpdateWorkflow][google.cloud.workflows.v1beta.Workflows.UpdateWorkflow]
                 method.
             workflow (:class:`google.cloud.workflows_v1beta.types.Workflow`):

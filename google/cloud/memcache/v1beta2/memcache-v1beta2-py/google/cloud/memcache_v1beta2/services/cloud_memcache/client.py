@@ -357,7 +357,8 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
 
         Args:
             request (google.cloud.memcache_v1beta2.types.ListInstancesRequest):
-                The request object. Request for
+                The request object.
+                Request for
                 [ListInstances][google.cloud.memcache.v1beta2.CloudMemcache.ListInstances].
             parent (str):
                 Required. The resource name of the instance location
@@ -397,7 +398,7 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_memcache.ListInstancesRequest):
             request = cloud_memcache.ListInstancesRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -446,7 +447,8 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
 
         Args:
             request (google.cloud.memcache_v1beta2.types.GetInstanceRequest):
-                The request object. Request for
+                The request object.
+                Request for
                 [GetInstance][google.cloud.memcache.v1beta2.CloudMemcache.GetInstance].
             name (str):
                 Required. Memcached instance resource name in the
@@ -481,7 +483,7 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_memcache.GetInstanceRequest):
             request = cloud_memcache.GetInstanceRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -523,7 +525,8 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
 
         Args:
             request (google.cloud.memcache_v1beta2.types.CreateInstanceRequest):
-                The request object. Request for
+                The request object.
+                Request for
                 [CreateInstance][google.cloud.memcache.v1beta2.CloudMemcache.CreateInstance].
             parent (str):
                 Required. The resource name of the instance location
@@ -585,7 +588,7 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_memcache.CreateInstanceRequest):
             request = cloud_memcache.CreateInstanceRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -639,7 +642,8 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
 
         Args:
             request (google.cloud.memcache_v1beta2.types.UpdateInstanceRequest):
-                The request object. Request for
+                The request object.
+                Request for
                 [UpdateInstance][google.cloud.memcache.v1beta2.CloudMemcache.UpdateInstance].
             update_mask (google.protobuf.field_mask_pb2.FieldMask):
                 Required. Mask of fields to update.
@@ -685,7 +689,7 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_memcache.UpdateInstanceRequest):
             request = cloud_memcache.UpdateInstanceRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if update_mask is not None:
                 request.update_mask = update_mask
@@ -740,7 +744,8 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
 
         Args:
             request (google.cloud.memcache_v1beta2.types.UpdateParametersRequest):
-                The request object. Request for
+                The request object.
+                Request for
                 [UpdateParameters][google.cloud.memcache.v1beta2.CloudMemcache.UpdateParameters].
             name (str):
                 Required. Resource name of the
@@ -791,7 +796,7 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_memcache.UpdateParametersRequest):
             request = cloud_memcache.UpdateParametersRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -843,7 +848,8 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
 
         Args:
             request (google.cloud.memcache_v1beta2.types.DeleteInstanceRequest):
-                The request object. Request for
+                The request object.
+                Request for
                 [DeleteInstance][google.cloud.memcache.v1beta2.CloudMemcache.DeleteInstance].
             name (str):
                 Required. Memcached instance resource name in the
@@ -893,7 +899,7 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_memcache.DeleteInstanceRequest):
             request = cloud_memcache.DeleteInstanceRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -945,7 +951,8 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
 
         Args:
             request (google.cloud.memcache_v1beta2.types.ApplyParametersRequest):
-                The request object. Request for
+                The request object.
+                Request for
                 [ApplyParameters][google.cloud.memcache.v1beta2.CloudMemcache.ApplyParameters].
             name (str):
                 Required. Resource name of the
@@ -1000,7 +1007,7 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_memcache.ApplyParametersRequest):
             request = cloud_memcache.ApplyParametersRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1055,7 +1062,8 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
 
         Args:
             request (google.cloud.memcache_v1beta2.types.ApplySoftwareUpdateRequest):
-                The request object. Request for
+                The request object.
+                Request for
                 [ApplySoftwareUpdate][google.cloud.memcache.v1beta2.CloudMemcache.ApplySoftwareUpdate].
             instance (str):
                 Required. Resource name of the
@@ -1113,7 +1121,7 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_memcache.ApplySoftwareUpdateRequest):
             request = cloud_memcache.ApplySoftwareUpdateRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if instance is not None:
                 request.instance = instance

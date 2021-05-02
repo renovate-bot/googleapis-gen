@@ -216,7 +216,7 @@ class LogEntry(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=11,
+        number=11
     )
     operation = proto.Field(
         proto.MESSAGE,

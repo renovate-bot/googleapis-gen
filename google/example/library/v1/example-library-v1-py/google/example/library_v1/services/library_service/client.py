@@ -356,7 +356,8 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
 
         Args:
             request (google.example.library_v1.types.CreateShelfRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 LibraryService.CreateShelf.
             shelf (google.example.library_v1.types.Shelf):
                 The shelf to create.
@@ -389,7 +390,7 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, library.CreateShelfRequest):
             request = library.CreateShelfRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if shelf is not None:
                 request.shelf = shelf
@@ -421,7 +422,8 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
 
         Args:
             request (google.example.library_v1.types.GetShelfRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 LibraryService.GetShelf.
             name (str):
                 The name of the shelf to retrieve.
@@ -454,7 +456,7 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, library.GetShelfRequest):
             request = library.GetShelfRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -495,7 +497,8 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
 
         Args:
             request (google.example.library_v1.types.ListShelvesRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 LibraryService.ListShelves.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -556,7 +559,8 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
 
         Args:
             request (google.example.library_v1.types.DeleteShelfRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 LibraryService.DeleteShelf.
             name (str):
                 The name of the shelf to delete.
@@ -583,7 +587,7 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, library.DeleteShelfRequest):
             request = library.DeleteShelfRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -627,7 +631,8 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
 
         Args:
             request (google.example.library_v1.types.MergeShelvesRequest):
-                The request object. Describes the shelf being removed
+                The request object.
+                Describes the shelf being removed
                 (other_shelf_name) and updated (name) in this merge.
             name (str):
                 The name of the shelf we're adding
@@ -669,7 +674,7 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, library.MergeShelvesRequest):
             request = library.MergeShelvesRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -712,7 +717,8 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
 
         Args:
             request (google.example.library_v1.types.CreateBookRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 LibraryService.CreateBook.
             parent (str):
                 The name of the shelf in which the
@@ -750,7 +756,7 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, library.CreateBookRequest):
             request = library.CreateBookRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -792,7 +798,8 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
 
         Args:
             request (google.example.library_v1.types.GetBookRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 LibraryService.GetBook.
             name (str):
                 The name of the book to retrieve.
@@ -823,7 +830,7 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, library.GetBookRequest):
             request = library.GetBookRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -866,7 +873,8 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
 
         Args:
             request (google.example.library_v1.types.ListBooksRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 LibraryService.ListBooks.
             parent (str):
                 The name of the shelf whose books
@@ -904,7 +912,7 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, library.ListBooksRequest):
             request = library.ListBooksRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -953,7 +961,8 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
 
         Args:
             request (google.example.library_v1.types.DeleteBookRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 LibraryService.DeleteBook.
             name (str):
                 The name of the book to delete.
@@ -980,7 +989,7 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, library.DeleteBookRequest):
             request = library.DeleteBookRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1019,7 +1028,8 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
 
         Args:
             request (google.example.library_v1.types.UpdateBookRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 LibraryService.UpdateBook.
             book (google.example.library_v1.types.Book):
                 The name of the book to update.
@@ -1055,7 +1065,7 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, library.UpdateBookRequest):
             request = library.UpdateBookRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if book is not None:
                 request.book = book
@@ -1100,7 +1110,8 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
 
         Args:
             request (google.example.library_v1.types.MoveBookRequest):
-                The request object. Describes what book to move (name)
+                The request object.
+                Describes what book to move (name)
                 and what shelf we're moving it to (other_shelf_name).
             name (str):
                 The name of the book to move.
@@ -1136,7 +1147,7 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, library.MoveBookRequest):
             request = library.MoveBookRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

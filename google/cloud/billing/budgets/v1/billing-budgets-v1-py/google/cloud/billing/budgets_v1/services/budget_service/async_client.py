@@ -164,7 +164,8 @@ class BudgetServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.billing.budgets_v1.types.CreateBudgetRequest`):
-                The request object. Request for CreateBudget
+                The request object.
+                Request for CreateBudget
             parent (:class:`str`):
                 Required. The name of the billing account to create the
                 budget in. Values are of the form
@@ -258,7 +259,8 @@ class BudgetServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.billing.budgets_v1.types.UpdateBudgetRequest`):
-                The request object. Request for UpdateBudget
+                The request object.
+                Request for UpdateBudget
             budget (:class:`google.cloud.billing.budgets_v1.types.Budget`):
                 Required. The updated budget object.
                 The budget to update is specified by the
@@ -365,7 +367,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.billing.budgets_v1.types.GetBudgetRequest`):
-                The request object. Request for GetBudget
+                The request object.
+                Request for GetBudget
             name (:class:`str`):
                 Required. Name of budget to get. Values are of the form
                 ``billingAccounts/{billingAccountId}/budgets/{budgetId}``.
@@ -458,7 +461,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.billing.budgets_v1.types.ListBudgetsRequest`):
-                The request object. Request for ListBudgets
+                The request object.
+                Request for ListBudgets
             parent (:class:`str`):
                 Required. Name of billing account to list budgets under.
                 Values are of the form
@@ -552,7 +556,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.billing.budgets_v1.types.DeleteBudgetRequest`):
-                The request object. Request for DeleteBudget
+                The request object.
+                Request for DeleteBudget
             name (:class:`str`):
                 Required. Name of the budget to delete. Values are of
                 the form

@@ -331,7 +331,8 @@ class PredictionServiceClient(metaclass=PredictionServiceClientMeta):
 
         Args:
             request (google.cloud.retail_v2alpha.types.PredictRequest):
-                The request object. Request message for Predict method.
+                The request object.
+                Request message for Predict method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.

@@ -326,7 +326,8 @@ class DomainMappingsClient(metaclass=DomainMappingsClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.ListDomainMappingsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `DomainMappings.ListDomainMappings`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -393,7 +394,8 @@ class DomainMappingsClient(metaclass=DomainMappingsClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.GetDomainMappingRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `DomainMappings.GetDomainMapping`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -452,7 +454,8 @@ class DomainMappingsClient(metaclass=DomainMappingsClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.CreateDomainMappingRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `DomainMappings.CreateDomainMapping`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -523,7 +526,8 @@ class DomainMappingsClient(metaclass=DomainMappingsClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.UpdateDomainMappingRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `DomainMappings.UpdateDomainMapping`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -592,7 +596,8 @@ class DomainMappingsClient(metaclass=DomainMappingsClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.DeleteDomainMappingRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `DomainMappings.DeleteDomainMapping`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

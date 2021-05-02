@@ -379,7 +379,8 @@ class ConfigServiceV2Client(metaclass=ConfigServiceV2ClientMeta):
 
         Args:
             request (google.cloud.logging_v2.types.ListBucketsRequest):
-                The request object. The parameters to `ListBuckets`.
+                The request object.
+                The parameters to `ListBuckets`.
             parent (str):
                 Required. The parent resource whose buckets are to be
                 listed:
@@ -426,7 +427,7 @@ class ConfigServiceV2Client(metaclass=ConfigServiceV2ClientMeta):
         # there are no flattened fields.
         if not isinstance(request, logging_config.ListBucketsRequest):
             request = logging_config.ListBucketsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -474,7 +475,8 @@ class ConfigServiceV2Client(metaclass=ConfigServiceV2ClientMeta):
 
         Args:
             request (google.cloud.logging_v2.types.GetBucketRequest):
-                The request object. The parameters to `GetBucket`.
+                The request object.
+                The parameters to `GetBucket`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -529,7 +531,8 @@ class ConfigServiceV2Client(metaclass=ConfigServiceV2ClientMeta):
 
         Args:
             request (google.cloud.logging_v2.types.CreateBucketRequest):
-                The request object. The parameters to `CreateBucket`.
+                The request object.
+                The parameters to `CreateBucket`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -592,7 +595,8 @@ class ConfigServiceV2Client(metaclass=ConfigServiceV2ClientMeta):
 
         Args:
             request (google.cloud.logging_v2.types.UpdateBucketRequest):
-                The request object. The parameters to `UpdateBucket`.
+                The request object.
+                The parameters to `UpdateBucket`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -647,7 +651,8 @@ class ConfigServiceV2Client(metaclass=ConfigServiceV2ClientMeta):
 
         Args:
             request (google.cloud.logging_v2.types.DeleteBucketRequest):
-                The request object. The parameters to `DeleteBucket`.
+                The request object.
+                The parameters to `DeleteBucket`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -694,7 +699,8 @@ class ConfigServiceV2Client(metaclass=ConfigServiceV2ClientMeta):
 
         Args:
             request (google.cloud.logging_v2.types.UndeleteBucketRequest):
-                The request object. The parameters to `UndeleteBucket`.
+                The request object.
+                The parameters to `UndeleteBucket`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -741,7 +747,8 @@ class ConfigServiceV2Client(metaclass=ConfigServiceV2ClientMeta):
 
         Args:
             request (google.cloud.logging_v2.types.ListViewsRequest):
-                The request object. The parameters to `ListViews`.
+                The request object.
+                The parameters to `ListViews`.
             parent (str):
                 Required. The bucket whose views are to be listed:
 
@@ -780,7 +787,7 @@ class ConfigServiceV2Client(metaclass=ConfigServiceV2ClientMeta):
         # there are no flattened fields.
         if not isinstance(request, logging_config.ListViewsRequest):
             request = logging_config.ListViewsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -828,7 +835,8 @@ class ConfigServiceV2Client(metaclass=ConfigServiceV2ClientMeta):
 
         Args:
             request (google.cloud.logging_v2.types.GetViewRequest):
-                The request object. The parameters to `GetView`.
+                The request object.
+                The parameters to `GetView`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -884,7 +892,8 @@ class ConfigServiceV2Client(metaclass=ConfigServiceV2ClientMeta):
 
         Args:
             request (google.cloud.logging_v2.types.CreateViewRequest):
-                The request object. The parameters to `CreateView`.
+                The request object.
+                The parameters to `CreateView`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -940,7 +949,8 @@ class ConfigServiceV2Client(metaclass=ConfigServiceV2ClientMeta):
 
         Args:
             request (google.cloud.logging_v2.types.UpdateViewRequest):
-                The request object. The parameters to `UpdateView`.
+                The request object.
+                The parameters to `UpdateView`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -995,7 +1005,8 @@ class ConfigServiceV2Client(metaclass=ConfigServiceV2ClientMeta):
 
         Args:
             request (google.cloud.logging_v2.types.DeleteViewRequest):
-                The request object. The parameters to `DeleteView`.
+                The request object.
+                The parameters to `DeleteView`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1042,7 +1053,8 @@ class ConfigServiceV2Client(metaclass=ConfigServiceV2ClientMeta):
 
         Args:
             request (google.cloud.logging_v2.types.ListSinksRequest):
-                The request object. The parameters to `ListSinks`.
+                The request object.
+                The parameters to `ListSinks`.
             parent (str):
                 Required. The parent resource whose sinks are to be
                 listed:
@@ -1085,7 +1097,7 @@ class ConfigServiceV2Client(metaclass=ConfigServiceV2ClientMeta):
         # there are no flattened fields.
         if not isinstance(request, logging_config.ListSinksRequest):
             request = logging_config.ListSinksRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1134,7 +1146,8 @@ class ConfigServiceV2Client(metaclass=ConfigServiceV2ClientMeta):
 
         Args:
             request (google.cloud.logging_v2.types.GetSinkRequest):
-                The request object. The parameters to `GetSink`.
+                The request object.
+                The parameters to `GetSink`.
             sink_name (str):
                 Required. The resource name of the sink:
 
@@ -1183,7 +1196,7 @@ class ConfigServiceV2Client(metaclass=ConfigServiceV2ClientMeta):
         # there are no flattened fields.
         if not isinstance(request, logging_config.GetSinkRequest):
             request = logging_config.GetSinkRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if sink_name is not None:
                 request.sink_name = sink_name
@@ -1228,7 +1241,8 @@ class ConfigServiceV2Client(metaclass=ConfigServiceV2ClientMeta):
 
         Args:
             request (google.cloud.logging_v2.types.CreateSinkRequest):
-                The request object. The parameters to `CreateSink`.
+                The request object.
+                The parameters to `CreateSink`.
             parent (str):
                 Required. The resource in which to create the sink:
 
@@ -1285,7 +1299,7 @@ class ConfigServiceV2Client(metaclass=ConfigServiceV2ClientMeta):
         # there are no flattened fields.
         if not isinstance(request, logging_config.CreateSinkRequest):
             request = logging_config.CreateSinkRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1334,7 +1348,8 @@ class ConfigServiceV2Client(metaclass=ConfigServiceV2ClientMeta):
 
         Args:
             request (google.cloud.logging_v2.types.UpdateSinkRequest):
-                The request object. The parameters to `UpdateSink`.
+                The request object.
+                The parameters to `UpdateSink`.
             sink_name (str):
                 Required. The full resource name of the sink to update,
                 including the parent resource and the sink identifier:
@@ -1411,7 +1426,7 @@ class ConfigServiceV2Client(metaclass=ConfigServiceV2ClientMeta):
         # there are no flattened fields.
         if not isinstance(request, logging_config.UpdateSinkRequest):
             request = logging_config.UpdateSinkRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if sink_name is not None:
                 request.sink_name = sink_name
@@ -1456,7 +1471,8 @@ class ConfigServiceV2Client(metaclass=ConfigServiceV2ClientMeta):
 
         Args:
             request (google.cloud.logging_v2.types.DeleteSinkRequest):
-                The request object. The parameters to `DeleteSink`.
+                The request object.
+                The parameters to `DeleteSink`.
             sink_name (str):
                 Required. The full resource name of the sink to delete,
                 including the parent resource and the sink identifier:
@@ -1493,7 +1509,7 @@ class ConfigServiceV2Client(metaclass=ConfigServiceV2ClientMeta):
         # there are no flattened fields.
         if not isinstance(request, logging_config.DeleteSinkRequest):
             request = logging_config.DeleteSinkRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if sink_name is not None:
                 request.sink_name = sink_name
@@ -1530,7 +1546,8 @@ class ConfigServiceV2Client(metaclass=ConfigServiceV2ClientMeta):
 
         Args:
             request (google.cloud.logging_v2.types.ListExclusionsRequest):
-                The request object. The parameters to `ListExclusions`.
+                The request object.
+                The parameters to `ListExclusions`.
             parent (str):
                 Required. The parent resource whose exclusions are to be
                 listed.
@@ -1573,7 +1590,7 @@ class ConfigServiceV2Client(metaclass=ConfigServiceV2ClientMeta):
         # there are no flattened fields.
         if not isinstance(request, logging_config.ListExclusionsRequest):
             request = logging_config.ListExclusionsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1622,7 +1639,8 @@ class ConfigServiceV2Client(metaclass=ConfigServiceV2ClientMeta):
 
         Args:
             request (google.cloud.logging_v2.types.GetExclusionRequest):
-                The request object. The parameters to `GetExclusion`.
+                The request object.
+                The parameters to `GetExclusion`.
             name (str):
                 Required. The resource name of an existing exclusion:
 
@@ -1674,7 +1692,7 @@ class ConfigServiceV2Client(metaclass=ConfigServiceV2ClientMeta):
         # there are no flattened fields.
         if not isinstance(request, logging_config.GetExclusionRequest):
             request = logging_config.GetExclusionRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1718,7 +1736,8 @@ class ConfigServiceV2Client(metaclass=ConfigServiceV2ClientMeta):
 
         Args:
             request (google.cloud.logging_v2.types.CreateExclusionRequest):
-                The request object. The parameters to `CreateExclusion`.
+                The request object.
+                The parameters to `CreateExclusion`.
             parent (str):
                 Required. The parent resource in which to create the
                 exclusion:
@@ -1779,7 +1798,7 @@ class ConfigServiceV2Client(metaclass=ConfigServiceV2ClientMeta):
         # there are no flattened fields.
         if not isinstance(request, logging_config.CreateExclusionRequest):
             request = logging_config.CreateExclusionRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1824,7 +1843,8 @@ class ConfigServiceV2Client(metaclass=ConfigServiceV2ClientMeta):
 
         Args:
             request (google.cloud.logging_v2.types.UpdateExclusionRequest):
-                The request object. The parameters to `UpdateExclusion`.
+                The request object.
+                The parameters to `UpdateExclusion`.
             name (str):
                 Required. The resource name of the exclusion to update:
 
@@ -1898,7 +1918,7 @@ class ConfigServiceV2Client(metaclass=ConfigServiceV2ClientMeta):
         # there are no flattened fields.
         if not isinstance(request, logging_config.UpdateExclusionRequest):
             request = logging_config.UpdateExclusionRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1942,7 +1962,8 @@ class ConfigServiceV2Client(metaclass=ConfigServiceV2ClientMeta):
 
         Args:
             request (google.cloud.logging_v2.types.DeleteExclusionRequest):
-                The request object. The parameters to `DeleteExclusion`.
+                The request object.
+                The parameters to `DeleteExclusion`.
             name (str):
                 Required. The resource name of an existing exclusion to
                 delete:
@@ -1980,7 +2001,7 @@ class ConfigServiceV2Client(metaclass=ConfigServiceV2ClientMeta):
         # there are no flattened fields.
         if not isinstance(request, logging_config.DeleteExclusionRequest):
             request = logging_config.DeleteExclusionRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -2024,7 +2045,8 @@ class ConfigServiceV2Client(metaclass=ConfigServiceV2ClientMeta):
 
         Args:
             request (google.cloud.logging_v2.types.GetCmekSettingsRequest):
-                The request object. The parameters to
+                The request object.
+                The parameters to
                 [GetCmekSettings][google.logging.v2.ConfigServiceV2.GetCmekSettings].
                 See [Enabling CMEK for Logs
                 Router](https://cloud.google.com/logging/docs/routing/managed-
@@ -2107,7 +2129,8 @@ class ConfigServiceV2Client(metaclass=ConfigServiceV2ClientMeta):
 
         Args:
             request (google.cloud.logging_v2.types.UpdateCmekSettingsRequest):
-                The request object. The parameters to
+                The request object.
+                The parameters to
                 [UpdateCmekSettings][google.logging.v2.ConfigServiceV2.UpdateCmekSettings].
                 See [Enabling CMEK for Logs
                 Router](https://cloud.google.com/logging/docs/routing/managed-

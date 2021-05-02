@@ -228,7 +228,9 @@ class ConversationProfilesGrpcAsyncIOTransport(ConversationProfilesTransport):
     def list_conversation_profiles(self) -> Callable[
             [conversation_profile.ListConversationProfilesRequest],
             Awaitable[conversation_profile.ListConversationProfilesResponse]]:
-        r"""Return a callable for the list conversation profiles method over gRPC.
+        r"""Return a callable for the
+        list conversation profiles
+          method over gRPC.
 
         Returns the list of all conversation profiles in the
         specified project.
@@ -255,7 +257,9 @@ class ConversationProfilesGrpcAsyncIOTransport(ConversationProfilesTransport):
     def get_conversation_profile(self) -> Callable[
             [conversation_profile.GetConversationProfileRequest],
             Awaitable[conversation_profile.ConversationProfile]]:
-        r"""Return a callable for the get conversation profile method over gRPC.
+        r"""Return a callable for the
+        get conversation profile
+          method over gRPC.
 
         Retrieves the specified conversation profile.
 
@@ -281,7 +285,9 @@ class ConversationProfilesGrpcAsyncIOTransport(ConversationProfilesTransport):
     def create_conversation_profile(self) -> Callable[
             [gcd_conversation_profile.CreateConversationProfileRequest],
             Awaitable[gcd_conversation_profile.ConversationProfile]]:
-        r"""Return a callable for the create conversation profile method over gRPC.
+        r"""Return a callable for the
+        create conversation profile
+          method over gRPC.
 
         Creates a conversation profile in the specified project.
 
@@ -313,7 +319,9 @@ class ConversationProfilesGrpcAsyncIOTransport(ConversationProfilesTransport):
     def update_conversation_profile(self) -> Callable[
             [gcd_conversation_profile.UpdateConversationProfileRequest],
             Awaitable[gcd_conversation_profile.ConversationProfile]]:
-        r"""Return a callable for the update conversation profile method over gRPC.
+        r"""Return a callable for the
+        update conversation profile
+          method over gRPC.
 
         Updates the specified conversation profile.
 
@@ -345,7 +353,9 @@ class ConversationProfilesGrpcAsyncIOTransport(ConversationProfilesTransport):
     def delete_conversation_profile(self) -> Callable[
             [conversation_profile.DeleteConversationProfileRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete conversation profile method over gRPC.
+        r"""Return a callable for the
+        delete conversation profile
+          method over gRPC.
 
         Deletes the specified conversation profile.
 

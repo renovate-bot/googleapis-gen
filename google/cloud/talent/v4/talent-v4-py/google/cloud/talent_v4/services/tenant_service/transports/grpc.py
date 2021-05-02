@@ -224,7 +224,9 @@ class TenantServiceGrpcTransport(TenantServiceTransport):
     def create_tenant(self) -> Callable[
             [tenant_service.CreateTenantRequest],
             gct_tenant.Tenant]:
-        r"""Return a callable for the create tenant method over gRPC.
+        r"""Return a callable for the
+        create tenant
+          method over gRPC.
 
         Creates a new tenant entity.
 
@@ -250,7 +252,9 @@ class TenantServiceGrpcTransport(TenantServiceTransport):
     def get_tenant(self) -> Callable[
             [tenant_service.GetTenantRequest],
             tenant.Tenant]:
-        r"""Return a callable for the get tenant method over gRPC.
+        r"""Return a callable for the
+        get tenant
+          method over gRPC.
 
         Retrieves specified tenant.
 
@@ -276,7 +280,9 @@ class TenantServiceGrpcTransport(TenantServiceTransport):
     def update_tenant(self) -> Callable[
             [tenant_service.UpdateTenantRequest],
             gct_tenant.Tenant]:
-        r"""Return a callable for the update tenant method over gRPC.
+        r"""Return a callable for the
+        update tenant
+          method over gRPC.
 
         Updates specified tenant.
 
@@ -302,7 +308,9 @@ class TenantServiceGrpcTransport(TenantServiceTransport):
     def delete_tenant(self) -> Callable[
             [tenant_service.DeleteTenantRequest],
             empty.Empty]:
-        r"""Return a callable for the delete tenant method over gRPC.
+        r"""Return a callable for the
+        delete tenant
+          method over gRPC.
 
         Deletes specified tenant.
 
@@ -328,7 +336,9 @@ class TenantServiceGrpcTransport(TenantServiceTransport):
     def list_tenants(self) -> Callable[
             [tenant_service.ListTenantsRequest],
             tenant_service.ListTenantsResponse]:
-        r"""Return a callable for the list tenants method over gRPC.
+        r"""Return a callable for the
+        list tenants
+          method over gRPC.
 
         Lists all tenants associated with the project.
 

@@ -224,7 +224,9 @@ class ConnectionServiceGrpcTransport(ConnectionServiceTransport):
     def create_connection(self) -> Callable[
             [gcbc_connection.CreateConnectionRequest],
             gcbc_connection.Connection]:
-        r"""Return a callable for the create connection method over gRPC.
+        r"""Return a callable for the
+        create connection
+          method over gRPC.
 
         Creates a new connection.
 
@@ -250,7 +252,9 @@ class ConnectionServiceGrpcTransport(ConnectionServiceTransport):
     def get_connection(self) -> Callable[
             [connection.GetConnectionRequest],
             connection.Connection]:
-        r"""Return a callable for the get connection method over gRPC.
+        r"""Return a callable for the
+        get connection
+          method over gRPC.
 
         Returns specified connection.
 
@@ -276,7 +280,9 @@ class ConnectionServiceGrpcTransport(ConnectionServiceTransport):
     def list_connections(self) -> Callable[
             [connection.ListConnectionsRequest],
             connection.ListConnectionsResponse]:
-        r"""Return a callable for the list connections method over gRPC.
+        r"""Return a callable for the
+        list connections
+          method over gRPC.
 
         Returns a list of connections in the given project.
 
@@ -302,7 +308,9 @@ class ConnectionServiceGrpcTransport(ConnectionServiceTransport):
     def update_connection(self) -> Callable[
             [gcbc_connection.UpdateConnectionRequest],
             gcbc_connection.Connection]:
-        r"""Return a callable for the update connection method over gRPC.
+        r"""Return a callable for the
+        update connection
+          method over gRPC.
 
         Updates the specified connection. For security
         reasons, also resets credential if connection properties
@@ -330,7 +338,9 @@ class ConnectionServiceGrpcTransport(ConnectionServiceTransport):
     def update_connection_credential(self) -> Callable[
             [connection.UpdateConnectionCredentialRequest],
             empty.Empty]:
-        r"""Return a callable for the update connection credential method over gRPC.
+        r"""Return a callable for the
+        update connection credential
+          method over gRPC.
 
         Sets the credential for the specified connection.
 
@@ -356,7 +366,9 @@ class ConnectionServiceGrpcTransport(ConnectionServiceTransport):
     def delete_connection(self) -> Callable[
             [connection.DeleteConnectionRequest],
             empty.Empty]:
-        r"""Return a callable for the delete connection method over gRPC.
+        r"""Return a callable for the
+        delete connection
+          method over gRPC.
 
         Deletes connection and associated credential.
 
@@ -382,7 +394,9 @@ class ConnectionServiceGrpcTransport(ConnectionServiceTransport):
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
             giv_policy.Policy]:
-        r"""Return a callable for the get iam policy method over gRPC.
+        r"""Return a callable for the
+        get iam policy
+          method over gRPC.
 
         Gets the access control policy for a resource.
         Returns an empty policy if the resource exists and does
@@ -410,7 +424,9 @@ class ConnectionServiceGrpcTransport(ConnectionServiceTransport):
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
             giv_policy.Policy]:
-        r"""Return a callable for the set iam policy method over gRPC.
+        r"""Return a callable for the
+        set iam policy
+          method over gRPC.
 
         Sets the access control policy on the specified resource.
         Replaces any existing policy.
@@ -440,7 +456,9 @@ class ConnectionServiceGrpcTransport(ConnectionServiceTransport):
     def test_iam_permissions(self) -> Callable[
             [iam_policy.TestIamPermissionsRequest],
             iam_policy.TestIamPermissionsResponse]:
-        r"""Return a callable for the test iam permissions method over gRPC.
+        r"""Return a callable for the
+        test iam permissions
+          method over gRPC.
 
         Returns permissions that a caller has on the specified resource.
         If the resource does not exist, this will return an empty set of

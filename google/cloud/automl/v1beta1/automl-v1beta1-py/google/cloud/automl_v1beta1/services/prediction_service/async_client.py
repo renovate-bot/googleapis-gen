@@ -186,7 +186,8 @@ class PredictionServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.automl_v1beta1.types.PredictRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [PredictionService.Predict][google.cloud.automl.v1beta1.PredictionService.Predict].
             name (:class:`str`):
                 Required. Name of the model requested
@@ -321,7 +322,8 @@ class PredictionServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.automl_v1beta1.types.BatchPredictRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [PredictionService.BatchPredict][google.cloud.automl.v1beta1.PredictionService.BatchPredict].
             name (:class:`str`):
                 Required. Name of the model requested

@@ -14,9 +14,8 @@
 # limitations under the License.
 #
 
-from google.cloud.bigquery.storage_v1alpha2.services.big_query_write.client import BigQueryWriteClient
 from google.cloud.bigquery.storage_v1alpha2.services.big_query_write.async_client import BigQueryWriteAsyncClient
-
+from google.cloud.bigquery.storage_v1alpha2.services.big_query_write.client import BigQueryWriteClient
 from google.cloud.bigquery.storage_v1alpha2.types.protobuf import ProtoRows
 from google.cloud.bigquery.storage_v1alpha2.types.protobuf import ProtoSchema
 from google.cloud.bigquery.storage_v1alpha2.types.storage import AppendRowsRequest
@@ -33,21 +32,21 @@ from google.cloud.bigquery.storage_v1alpha2.types.stream import WriteStream
 from google.cloud.bigquery.storage_v1alpha2.types.table import TableFieldSchema
 from google.cloud.bigquery.storage_v1alpha2.types.table import TableSchema
 
-__all__ = ('BigQueryWriteClient',
-    'BigQueryWriteAsyncClient',
-    'ProtoRows',
-    'ProtoSchema',
-    'AppendRowsRequest',
+__all__ = ('AppendRowsRequest',
     'AppendRowsResponse',
     'BatchCommitWriteStreamsRequest',
     'BatchCommitWriteStreamsResponse',
+    'BigQueryWriteAsyncClient',
+    'BigQueryWriteClient',
     'CreateWriteStreamRequest',
     'FinalizeWriteStreamRequest',
     'FinalizeWriteStreamResponse',
     'FlushRowsRequest',
     'FlushRowsResponse',
     'GetWriteStreamRequest',
-    'WriteStream',
+    'ProtoRows',
+    'ProtoSchema',
     'TableFieldSchema',
     'TableSchema',
+    'WriteStream',
 )

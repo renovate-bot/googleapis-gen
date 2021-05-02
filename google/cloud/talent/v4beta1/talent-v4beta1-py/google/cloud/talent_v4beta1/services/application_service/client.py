@@ -375,7 +375,8 @@ class ApplicationServiceClient(metaclass=ApplicationServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4beta1.types.CreateApplicationRequest):
-                The request object. The Request of the CreateApplication
+                The request object.
+                The Request of the CreateApplication
                 method.
             parent (str):
                 Required. Resource name of the profile under which the
@@ -421,7 +422,7 @@ class ApplicationServiceClient(metaclass=ApplicationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, application_service.CreateApplicationRequest):
             request = application_service.CreateApplicationRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -463,7 +464,8 @@ class ApplicationServiceClient(metaclass=ApplicationServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4beta1.types.GetApplicationRequest):
-                The request object. Request for getting a application by
+                The request object.
+                Request for getting a application by
                 name.
             name (str):
                 Required. The resource name of the application to be
@@ -503,7 +505,7 @@ class ApplicationServiceClient(metaclass=ApplicationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, application_service.GetApplicationRequest):
             request = application_service.GetApplicationRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -543,7 +545,8 @@ class ApplicationServiceClient(metaclass=ApplicationServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4beta1.types.UpdateApplicationRequest):
-                The request object. Request for updating a specified
+                The request object.
+                Request for updating a specified
                 application.
             application (google.cloud.talent_v4beta1.types.Application):
                 Required. The application resource to
@@ -579,7 +582,7 @@ class ApplicationServiceClient(metaclass=ApplicationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, application_service.UpdateApplicationRequest):
             request = application_service.UpdateApplicationRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if application is not None:
                 request.application = application
@@ -619,7 +622,8 @@ class ApplicationServiceClient(metaclass=ApplicationServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4beta1.types.DeleteApplicationRequest):
-                The request object. Request to delete a application.
+                The request object.
+                Request to delete a application.
             name (str):
                 Required. The resource name of the application to be
                 deleted.
@@ -652,7 +656,7 @@ class ApplicationServiceClient(metaclass=ApplicationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, application_service.DeleteApplicationRequest):
             request = application_service.DeleteApplicationRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -689,7 +693,8 @@ class ApplicationServiceClient(metaclass=ApplicationServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4beta1.types.ListApplicationsRequest):
-                The request object. List applications for which the
+                The request object.
+                List applications for which the
                 client has ACL visibility.
             parent (str):
                 Required. Resource name of the profile under which the
@@ -731,7 +736,7 @@ class ApplicationServiceClient(metaclass=ApplicationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, application_service.ListApplicationsRequest):
             request = application_service.ListApplicationsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent

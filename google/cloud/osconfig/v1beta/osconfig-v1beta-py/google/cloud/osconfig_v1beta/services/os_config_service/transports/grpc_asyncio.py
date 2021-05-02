@@ -231,7 +231,9 @@ class OsConfigServiceGrpcAsyncIOTransport(OsConfigServiceTransport):
     def execute_patch_job(self) -> Callable[
             [patch_jobs.ExecutePatchJobRequest],
             Awaitable[patch_jobs.PatchJob]]:
-        r"""Return a callable for the execute patch job method over gRPC.
+        r"""Return a callable for the
+        execute patch job
+          method over gRPC.
 
         Patch VM instances by creating and running a patch
         job.
@@ -258,7 +260,9 @@ class OsConfigServiceGrpcAsyncIOTransport(OsConfigServiceTransport):
     def get_patch_job(self) -> Callable[
             [patch_jobs.GetPatchJobRequest],
             Awaitable[patch_jobs.PatchJob]]:
-        r"""Return a callable for the get patch job method over gRPC.
+        r"""Return a callable for the
+        get patch job
+          method over gRPC.
 
         Get the patch job. This can be used to track the
         progress of an ongoing patch job or review the details
@@ -286,7 +290,9 @@ class OsConfigServiceGrpcAsyncIOTransport(OsConfigServiceTransport):
     def cancel_patch_job(self) -> Callable[
             [patch_jobs.CancelPatchJobRequest],
             Awaitable[patch_jobs.PatchJob]]:
-        r"""Return a callable for the cancel patch job method over gRPC.
+        r"""Return a callable for the
+        cancel patch job
+          method over gRPC.
 
         Cancel a patch job. The patch job must be active.
         Canceled patch jobs cannot be restarted.
@@ -313,7 +319,9 @@ class OsConfigServiceGrpcAsyncIOTransport(OsConfigServiceTransport):
     def list_patch_jobs(self) -> Callable[
             [patch_jobs.ListPatchJobsRequest],
             Awaitable[patch_jobs.ListPatchJobsResponse]]:
-        r"""Return a callable for the list patch jobs method over gRPC.
+        r"""Return a callable for the
+        list patch jobs
+          method over gRPC.
 
         Get a list of patch jobs.
 
@@ -339,8 +347,10 @@ class OsConfigServiceGrpcAsyncIOTransport(OsConfigServiceTransport):
     def list_patch_job_instance_details(self) -> Callable[
             [patch_jobs.ListPatchJobInstanceDetailsRequest],
             Awaitable[patch_jobs.ListPatchJobInstanceDetailsResponse]]:
-        r"""Return a callable for the list patch job instance
-        details method over gRPC.
+        r"""Return a callable for the
+        list patch job instance
+        details
+          method over gRPC.
 
         Get a list of instance details for a given patch job.
 
@@ -366,7 +376,9 @@ class OsConfigServiceGrpcAsyncIOTransport(OsConfigServiceTransport):
     def create_patch_deployment(self) -> Callable[
             [patch_deployments.CreatePatchDeploymentRequest],
             Awaitable[patch_deployments.PatchDeployment]]:
-        r"""Return a callable for the create patch deployment method over gRPC.
+        r"""Return a callable for the
+        create patch deployment
+          method over gRPC.
 
         Create an OS Config patch deployment.
 
@@ -392,7 +404,9 @@ class OsConfigServiceGrpcAsyncIOTransport(OsConfigServiceTransport):
     def get_patch_deployment(self) -> Callable[
             [patch_deployments.GetPatchDeploymentRequest],
             Awaitable[patch_deployments.PatchDeployment]]:
-        r"""Return a callable for the get patch deployment method over gRPC.
+        r"""Return a callable for the
+        get patch deployment
+          method over gRPC.
 
         Get an OS Config patch deployment.
 
@@ -418,7 +432,9 @@ class OsConfigServiceGrpcAsyncIOTransport(OsConfigServiceTransport):
     def list_patch_deployments(self) -> Callable[
             [patch_deployments.ListPatchDeploymentsRequest],
             Awaitable[patch_deployments.ListPatchDeploymentsResponse]]:
-        r"""Return a callable for the list patch deployments method over gRPC.
+        r"""Return a callable for the
+        list patch deployments
+          method over gRPC.
 
         Get a page of OS Config patch deployments.
 
@@ -444,7 +460,9 @@ class OsConfigServiceGrpcAsyncIOTransport(OsConfigServiceTransport):
     def delete_patch_deployment(self) -> Callable[
             [patch_deployments.DeletePatchDeploymentRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete patch deployment method over gRPC.
+        r"""Return a callable for the
+        delete patch deployment
+          method over gRPC.
 
         Delete an OS Config patch deployment.
 
@@ -470,7 +488,9 @@ class OsConfigServiceGrpcAsyncIOTransport(OsConfigServiceTransport):
     def create_guest_policy(self) -> Callable[
             [guest_policies.CreateGuestPolicyRequest],
             Awaitable[guest_policies.GuestPolicy]]:
-        r"""Return a callable for the create guest policy method over gRPC.
+        r"""Return a callable for the
+        create guest policy
+          method over gRPC.
 
         Create an OS Config guest policy.
 
@@ -496,7 +516,9 @@ class OsConfigServiceGrpcAsyncIOTransport(OsConfigServiceTransport):
     def get_guest_policy(self) -> Callable[
             [guest_policies.GetGuestPolicyRequest],
             Awaitable[guest_policies.GuestPolicy]]:
-        r"""Return a callable for the get guest policy method over gRPC.
+        r"""Return a callable for the
+        get guest policy
+          method over gRPC.
 
         Get an OS Config guest policy.
 
@@ -522,7 +544,9 @@ class OsConfigServiceGrpcAsyncIOTransport(OsConfigServiceTransport):
     def list_guest_policies(self) -> Callable[
             [guest_policies.ListGuestPoliciesRequest],
             Awaitable[guest_policies.ListGuestPoliciesResponse]]:
-        r"""Return a callable for the list guest policies method over gRPC.
+        r"""Return a callable for the
+        list guest policies
+          method over gRPC.
 
         Get a page of OS Config guest policies.
 
@@ -548,7 +572,9 @@ class OsConfigServiceGrpcAsyncIOTransport(OsConfigServiceTransport):
     def update_guest_policy(self) -> Callable[
             [guest_policies.UpdateGuestPolicyRequest],
             Awaitable[guest_policies.GuestPolicy]]:
-        r"""Return a callable for the update guest policy method over gRPC.
+        r"""Return a callable for the
+        update guest policy
+          method over gRPC.
 
         Update an OS Config guest policy.
 
@@ -574,7 +600,9 @@ class OsConfigServiceGrpcAsyncIOTransport(OsConfigServiceTransport):
     def delete_guest_policy(self) -> Callable[
             [guest_policies.DeleteGuestPolicyRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete guest policy method over gRPC.
+        r"""Return a callable for the
+        delete guest policy
+          method over gRPC.
 
         Delete an OS Config guest policy.
 
@@ -600,7 +628,9 @@ class OsConfigServiceGrpcAsyncIOTransport(OsConfigServiceTransport):
     def lookup_effective_guest_policy(self) -> Callable[
             [guest_policies.LookupEffectiveGuestPolicyRequest],
             Awaitable[guest_policies.EffectiveGuestPolicy]]:
-        r"""Return a callable for the lookup effective guest policy method over gRPC.
+        r"""Return a callable for the
+        lookup effective guest policy
+          method over gRPC.
 
         Lookup the effective guest policy that applies to a
         VM instance. This lookup merges all policies that are

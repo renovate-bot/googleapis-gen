@@ -381,7 +381,8 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
 
         Args:
             request (google.cloud.servicedirectory_v1.types.CreateNamespaceRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [RegistrationService.CreateNamespace][google.cloud.servicedirectory.v1.RegistrationService.CreateNamespace].
             parent (str):
                 Required. The resource name of the
@@ -439,7 +440,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, registration_service.CreateNamespaceRequest):
             request = registration_service.CreateNamespaceRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -483,7 +484,8 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
 
         Args:
             request (google.cloud.servicedirectory_v1.types.ListNamespacesRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [RegistrationService.ListNamespaces][google.cloud.servicedirectory.v1.RegistrationService.ListNamespaces].
             parent (str):
                 Required. The resource name of the
@@ -522,7 +524,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, registration_service.ListNamespacesRequest):
             request = registration_service.ListNamespacesRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -571,7 +573,8 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
 
         Args:
             request (google.cloud.servicedirectory_v1.types.GetNamespaceRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [RegistrationService.GetNamespace][google.cloud.servicedirectory.v1.RegistrationService.GetNamespace].
             name (str):
                 Required. The name of the namespace
@@ -608,7 +611,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, registration_service.GetNamespaceRequest):
             request = registration_service.GetNamespaceRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -649,7 +652,8 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
 
         Args:
             request (google.cloud.servicedirectory_v1.types.UpdateNamespaceRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [RegistrationService.UpdateNamespace][google.cloud.servicedirectory.v1.RegistrationService.UpdateNamespace].
             namespace (google.cloud.servicedirectory_v1.types.Namespace):
                 Required. The updated namespace.
@@ -691,7 +695,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, registration_service.UpdateNamespaceRequest):
             request = registration_service.UpdateNamespaceRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if namespace is not None:
                 request.namespace = namespace
@@ -734,7 +738,8 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
 
         Args:
             request (google.cloud.servicedirectory_v1.types.DeleteNamespaceRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [RegistrationService.DeleteNamespace][google.cloud.servicedirectory.v1.RegistrationService.DeleteNamespace].
             name (str):
                 Required. The name of the namespace
@@ -763,7 +768,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, registration_service.DeleteNamespaceRequest):
             request = registration_service.DeleteNamespaceRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -802,7 +807,8 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
 
         Args:
             request (google.cloud.servicedirectory_v1.types.CreateServiceRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [RegistrationService.CreateService][google.cloud.servicedirectory.v1.RegistrationService.CreateService].
             parent (str):
                 Required. The resource name of the
@@ -859,7 +865,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, registration_service.CreateServiceRequest):
             request = registration_service.CreateServiceRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -903,7 +909,8 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
 
         Args:
             request (google.cloud.servicedirectory_v1.types.ListServicesRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [RegistrationService.ListServices][google.cloud.servicedirectory.v1.RegistrationService.ListServices].
             parent (str):
                 Required. The resource name of the
@@ -942,7 +949,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, registration_service.ListServicesRequest):
             request = registration_service.ListServicesRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -991,7 +998,8 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
 
         Args:
             request (google.cloud.servicedirectory_v1.types.GetServiceRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [RegistrationService.GetService][google.cloud.servicedirectory.v1.RegistrationService.GetService].
                 This should not be used for looking up a service.
                 Insead, use the `resolve` method as it will contain all
@@ -1031,7 +1039,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, registration_service.GetServiceRequest):
             request = registration_service.GetServiceRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1072,7 +1080,8 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
 
         Args:
             request (google.cloud.servicedirectory_v1.types.UpdateServiceRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [RegistrationService.UpdateService][google.cloud.servicedirectory.v1.RegistrationService.UpdateService].
             service (google.cloud.servicedirectory_v1.types.Service):
                 Required. The updated service.
@@ -1114,7 +1123,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, registration_service.UpdateServiceRequest):
             request = registration_service.UpdateServiceRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if service is not None:
                 request.service = service
@@ -1157,7 +1166,8 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
 
         Args:
             request (google.cloud.servicedirectory_v1.types.DeleteServiceRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [RegistrationService.DeleteService][google.cloud.servicedirectory.v1.RegistrationService.DeleteService].
             name (str):
                 Required. The name of the service to
@@ -1186,7 +1196,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, registration_service.DeleteServiceRequest):
             request = registration_service.DeleteServiceRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1225,7 +1235,8 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
 
         Args:
             request (google.cloud.servicedirectory_v1.types.CreateEndpointRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [RegistrationService.CreateEndpoint][google.cloud.servicedirectory.v1.RegistrationService.CreateEndpoint].
             parent (str):
                 Required. The resource name of the
@@ -1281,7 +1292,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, registration_service.CreateEndpointRequest):
             request = registration_service.CreateEndpointRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1325,7 +1336,8 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
 
         Args:
             request (google.cloud.servicedirectory_v1.types.ListEndpointsRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1.RegistrationService.ListEndpoints].
             parent (str):
                 Required. The resource name of the
@@ -1364,7 +1376,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, registration_service.ListEndpointsRequest):
             request = registration_service.ListEndpointsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1413,7 +1425,8 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
 
         Args:
             request (google.cloud.servicedirectory_v1.types.GetEndpointRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [RegistrationService.GetEndpoint][google.cloud.servicedirectory.v1.RegistrationService.GetEndpoint].
                 This should not be used to lookup endpoints at runtime.
                 Instead, use the `resolve` method.
@@ -1451,7 +1464,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, registration_service.GetEndpointRequest):
             request = registration_service.GetEndpointRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1492,7 +1505,8 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
 
         Args:
             request (google.cloud.servicedirectory_v1.types.UpdateEndpointRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [RegistrationService.UpdateEndpoint][google.cloud.servicedirectory.v1.RegistrationService.UpdateEndpoint].
             endpoint (google.cloud.servicedirectory_v1.types.Endpoint):
                 Required. The updated endpoint.
@@ -1533,7 +1547,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, registration_service.UpdateEndpointRequest):
             request = registration_service.UpdateEndpointRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if endpoint is not None:
                 request.endpoint = endpoint
@@ -1575,7 +1589,8 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
 
         Args:
             request (google.cloud.servicedirectory_v1.types.DeleteEndpointRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [RegistrationService.DeleteEndpoint][google.cloud.servicedirectory.v1.RegistrationService.DeleteEndpoint].
             name (str):
                 Required. The name of the endpoint to
@@ -1604,7 +1619,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, registration_service.DeleteEndpointRequest):
             request = registration_service.DeleteEndpointRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1641,7 +1656,8 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.GetIamPolicyRequest):
-                The request object. Request message for `GetIamPolicy`
+                The request object.
+                Request message for `GetIamPolicy`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1709,7 +1725,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-        if isinstance(request, dict):
+         if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.GetIamPolicyRequest(**request)
@@ -1752,7 +1768,8 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.SetIamPolicyRequest):
-                The request object. Request message for `SetIamPolicy`
+                The request object.
+                Request message for `SetIamPolicy`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1820,7 +1837,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-        if isinstance(request, dict):
+         if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.SetIamPolicyRequest(**request)
@@ -1863,7 +1880,8 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `TestIamPermissions` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1876,7 +1894,7 @@ class RegistrationServiceClient(metaclass=RegistrationServiceClientMeta):
                 Response message for TestIamPermissions method.
         """
         # Create or coerce a protobuf request object.
-        if isinstance(request, dict):
+         if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.TestIamPermissionsRequest(**request)

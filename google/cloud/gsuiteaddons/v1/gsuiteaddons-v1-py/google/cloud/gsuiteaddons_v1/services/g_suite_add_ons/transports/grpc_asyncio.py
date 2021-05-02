@@ -254,7 +254,9 @@ class GSuiteAddOnsGrpcAsyncIOTransport(GSuiteAddOnsTransport):
     def get_authorization(self) -> Callable[
             [gsuiteaddons.GetAuthorizationRequest],
             Awaitable[gsuiteaddons.Authorization]]:
-        r"""Return a callable for the get authorization method over gRPC.
+        r"""Return a callable for the
+        get authorization
+          method over gRPC.
 
         Gets the authorization information for deployments in
         a given project.
@@ -281,7 +283,9 @@ class GSuiteAddOnsGrpcAsyncIOTransport(GSuiteAddOnsTransport):
     def create_deployment(self) -> Callable[
             [gsuiteaddons.CreateDeploymentRequest],
             Awaitable[gsuiteaddons.Deployment]]:
-        r"""Return a callable for the create deployment method over gRPC.
+        r"""Return a callable for the
+        create deployment
+          method over gRPC.
 
         Creates a deployment with the specified name and
         configuration.
@@ -308,7 +312,9 @@ class GSuiteAddOnsGrpcAsyncIOTransport(GSuiteAddOnsTransport):
     def replace_deployment(self) -> Callable[
             [gsuiteaddons.ReplaceDeploymentRequest],
             Awaitable[gsuiteaddons.Deployment]]:
-        r"""Return a callable for the replace deployment method over gRPC.
+        r"""Return a callable for the
+        replace deployment
+          method over gRPC.
 
         Creates or replaces a deployment with the specified
         name.
@@ -335,7 +341,9 @@ class GSuiteAddOnsGrpcAsyncIOTransport(GSuiteAddOnsTransport):
     def get_deployment(self) -> Callable[
             [gsuiteaddons.GetDeploymentRequest],
             Awaitable[gsuiteaddons.Deployment]]:
-        r"""Return a callable for the get deployment method over gRPC.
+        r"""Return a callable for the
+        get deployment
+          method over gRPC.
 
         Gets the deployment with the specified name.
 
@@ -361,7 +369,9 @@ class GSuiteAddOnsGrpcAsyncIOTransport(GSuiteAddOnsTransport):
     def list_deployments(self) -> Callable[
             [gsuiteaddons.ListDeploymentsRequest],
             Awaitable[gsuiteaddons.ListDeploymentsResponse]]:
-        r"""Return a callable for the list deployments method over gRPC.
+        r"""Return a callable for the
+        list deployments
+          method over gRPC.
 
         Lists all deployments in a particular project.
 
@@ -387,7 +397,9 @@ class GSuiteAddOnsGrpcAsyncIOTransport(GSuiteAddOnsTransport):
     def delete_deployment(self) -> Callable[
             [gsuiteaddons.DeleteDeploymentRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete deployment method over gRPC.
+        r"""Return a callable for the
+        delete deployment
+          method over gRPC.
 
         Deletes the deployment with the given name.
 
@@ -413,7 +425,9 @@ class GSuiteAddOnsGrpcAsyncIOTransport(GSuiteAddOnsTransport):
     def install_deployment(self) -> Callable[
             [gsuiteaddons.InstallDeploymentRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the install deployment method over gRPC.
+        r"""Return a callable for the
+        install deployment
+          method over gRPC.
 
         Installs a deployment in developer mode.
         See:
@@ -442,7 +456,9 @@ class GSuiteAddOnsGrpcAsyncIOTransport(GSuiteAddOnsTransport):
     def uninstall_deployment(self) -> Callable[
             [gsuiteaddons.UninstallDeploymentRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the uninstall deployment method over gRPC.
+        r"""Return a callable for the
+        uninstall deployment
+          method over gRPC.
 
         Uninstalls a developer mode deployment.
         See:
@@ -471,7 +487,9 @@ class GSuiteAddOnsGrpcAsyncIOTransport(GSuiteAddOnsTransport):
     def get_install_status(self) -> Callable[
             [gsuiteaddons.GetInstallStatusRequest],
             Awaitable[gsuiteaddons.InstallStatus]]:
-        r"""Return a callable for the get install status method over gRPC.
+        r"""Return a callable for the
+        get install status
+          method over gRPC.
 
         Fetches the install status of a developer mode
         deployment.

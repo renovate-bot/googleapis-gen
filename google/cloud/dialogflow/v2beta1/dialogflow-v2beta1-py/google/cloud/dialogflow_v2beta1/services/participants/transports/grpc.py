@@ -222,7 +222,9 @@ class ParticipantsGrpcTransport(ParticipantsTransport):
     def create_participant(self) -> Callable[
             [gcd_participant.CreateParticipantRequest],
             gcd_participant.Participant]:
-        r"""Return a callable for the create participant method over gRPC.
+        r"""Return a callable for the
+        create participant
+          method over gRPC.
 
         Creates a new participant in a conversation.
 
@@ -248,7 +250,9 @@ class ParticipantsGrpcTransport(ParticipantsTransport):
     def get_participant(self) -> Callable[
             [participant.GetParticipantRequest],
             participant.Participant]:
-        r"""Return a callable for the get participant method over gRPC.
+        r"""Return a callable for the
+        get participant
+          method over gRPC.
 
         Retrieves a conversation participant.
 
@@ -274,7 +278,9 @@ class ParticipantsGrpcTransport(ParticipantsTransport):
     def list_participants(self) -> Callable[
             [participant.ListParticipantsRequest],
             participant.ListParticipantsResponse]:
-        r"""Return a callable for the list participants method over gRPC.
+        r"""Return a callable for the
+        list participants
+          method over gRPC.
 
         Returns the list of all participants in the specified
         conversation.
@@ -301,7 +307,9 @@ class ParticipantsGrpcTransport(ParticipantsTransport):
     def update_participant(self) -> Callable[
             [gcd_participant.UpdateParticipantRequest],
             gcd_participant.Participant]:
-        r"""Return a callable for the update participant method over gRPC.
+        r"""Return a callable for the
+        update participant
+          method over gRPC.
 
         Updates the specified participant.
 
@@ -327,7 +335,9 @@ class ParticipantsGrpcTransport(ParticipantsTransport):
     def analyze_content(self) -> Callable[
             [gcd_participant.AnalyzeContentRequest],
             gcd_participant.AnalyzeContentResponse]:
-        r"""Return a callable for the analyze content method over gRPC.
+        r"""Return a callable for the
+        analyze content
+          method over gRPC.
 
         Adds a text (chat, for example), or audio (phone recording, for
         example) message from a participant into the conversation.
@@ -358,7 +368,9 @@ class ParticipantsGrpcTransport(ParticipantsTransport):
     def suggest_articles(self) -> Callable[
             [participant.SuggestArticlesRequest],
             participant.SuggestArticlesResponse]:
-        r"""Return a callable for the suggest articles method over gRPC.
+        r"""Return a callable for the
+        suggest articles
+          method over gRPC.
 
         Gets suggested articles for a participant based on specific
         historical messages.
@@ -392,7 +404,9 @@ class ParticipantsGrpcTransport(ParticipantsTransport):
     def suggest_faq_answers(self) -> Callable[
             [participant.SuggestFaqAnswersRequest],
             participant.SuggestFaqAnswersResponse]:
-        r"""Return a callable for the suggest faq answers method over gRPC.
+        r"""Return a callable for the
+        suggest faq answers
+          method over gRPC.
 
         Gets suggested faq answers for a participant based on
         specific historical messages.
@@ -419,7 +433,9 @@ class ParticipantsGrpcTransport(ParticipantsTransport):
     def suggest_smart_replies(self) -> Callable[
             [participant.SuggestSmartRepliesRequest],
             participant.SuggestSmartRepliesResponse]:
-        r"""Return a callable for the suggest smart replies method over gRPC.
+        r"""Return a callable for the
+        suggest smart replies
+          method over gRPC.
 
         Gets smart replies for a participant based on
         specific historical messages.
@@ -446,7 +462,9 @@ class ParticipantsGrpcTransport(ParticipantsTransport):
     def list_suggestions(self) -> Callable[
             [participant.ListSuggestionsRequest],
             participant.ListSuggestionsResponse]:
-        r"""Return a callable for the list suggestions method over gRPC.
+        r"""Return a callable for the
+        list suggestions
+          method over gRPC.
 
         Deprecated: Use inline suggestion, event based suggestion or
         Suggestion\* API instead. See
@@ -491,7 +509,9 @@ class ParticipantsGrpcTransport(ParticipantsTransport):
     def compile_suggestion(self) -> Callable[
             [participant.CompileSuggestionRequest],
             participant.CompileSuggestionResponse]:
-        r"""Return a callable for the compile suggestion method over gRPC.
+        r"""Return a callable for the
+        compile suggestion
+          method over gRPC.
 
         Deprecated. use
         [SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles]

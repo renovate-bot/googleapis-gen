@@ -224,7 +224,9 @@ class AuthorizedCertificatesGrpcTransport(AuthorizedCertificatesTransport):
     def list_authorized_certificates(self) -> Callable[
             [appengine.ListAuthorizedCertificatesRequest],
             appengine.ListAuthorizedCertificatesResponse]:
-        r"""Return a callable for the list authorized certificates method over gRPC.
+        r"""Return a callable for the
+        list authorized certificates
+          method over gRPC.
 
         Lists all SSL certificates the user is authorized to
         administer.
@@ -251,7 +253,9 @@ class AuthorizedCertificatesGrpcTransport(AuthorizedCertificatesTransport):
     def get_authorized_certificate(self) -> Callable[
             [appengine.GetAuthorizedCertificateRequest],
             certificate.AuthorizedCertificate]:
-        r"""Return a callable for the get authorized certificate method over gRPC.
+        r"""Return a callable for the
+        get authorized certificate
+          method over gRPC.
 
         Gets the specified SSL certificate.
 
@@ -277,7 +281,9 @@ class AuthorizedCertificatesGrpcTransport(AuthorizedCertificatesTransport):
     def create_authorized_certificate(self) -> Callable[
             [appengine.CreateAuthorizedCertificateRequest],
             certificate.AuthorizedCertificate]:
-        r"""Return a callable for the create authorized certificate method over gRPC.
+        r"""Return a callable for the
+        create authorized certificate
+          method over gRPC.
 
         Uploads the specified SSL certificate.
 
@@ -303,7 +309,9 @@ class AuthorizedCertificatesGrpcTransport(AuthorizedCertificatesTransport):
     def update_authorized_certificate(self) -> Callable[
             [appengine.UpdateAuthorizedCertificateRequest],
             certificate.AuthorizedCertificate]:
-        r"""Return a callable for the update authorized certificate method over gRPC.
+        r"""Return a callable for the
+        update authorized certificate
+          method over gRPC.
 
         Updates the specified SSL certificate. To renew a certificate
         and maintain its existing domain mappings, update
@@ -334,7 +342,9 @@ class AuthorizedCertificatesGrpcTransport(AuthorizedCertificatesTransport):
     def delete_authorized_certificate(self) -> Callable[
             [appengine.DeleteAuthorizedCertificateRequest],
             empty.Empty]:
-        r"""Return a callable for the delete authorized certificate method over gRPC.
+        r"""Return a callable for the
+        delete authorized certificate
+          method over gRPC.
 
         Deletes the specified SSL certificate.
 

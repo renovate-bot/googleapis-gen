@@ -167,7 +167,8 @@ class AssetServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.asset_v1p7beta1.types.ExportAssetsRequest`):
-                The request object. Export asset request.
+                The request object.
+                Export asset request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.

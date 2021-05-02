@@ -14,9 +14,8 @@
 # limitations under the License.
 #
 
-from google.cloud.essentialcontacts_v1.services.essential_contacts_service.client import EssentialContactsServiceClient
 from google.cloud.essentialcontacts_v1.services.essential_contacts_service.async_client import EssentialContactsServiceAsyncClient
-
+from google.cloud.essentialcontacts_v1.services.essential_contacts_service.client import EssentialContactsServiceClient
 from google.cloud.essentialcontacts_v1.types.enums import NotificationCategory
 from google.cloud.essentialcontacts_v1.types.enums import ValidationState
 from google.cloud.essentialcontacts_v1.types.service import ComputeContactsRequest
@@ -30,18 +29,18 @@ from google.cloud.essentialcontacts_v1.types.service import ListContactsResponse
 from google.cloud.essentialcontacts_v1.types.service import SendTestMessageRequest
 from google.cloud.essentialcontacts_v1.types.service import UpdateContactRequest
 
-__all__ = ('EssentialContactsServiceClient',
-    'EssentialContactsServiceAsyncClient',
-    'NotificationCategory',
-    'ValidationState',
-    'ComputeContactsRequest',
+__all__ = ('ComputeContactsRequest',
     'ComputeContactsResponse',
     'Contact',
     'CreateContactRequest',
     'DeleteContactRequest',
+    'EssentialContactsServiceAsyncClient',
+    'EssentialContactsServiceClient',
     'GetContactRequest',
     'ListContactsRequest',
     'ListContactsResponse',
+    'NotificationCategory',
     'SendTestMessageRequest',
     'UpdateContactRequest',
+    'ValidationState',
 )

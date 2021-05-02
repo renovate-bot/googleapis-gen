@@ -14,9 +14,8 @@
 # limitations under the License.
 #
 
-from google.partner.aistreams_v1alpha1.services.ai_streams.client import AIStreamsClient
 from google.partner.aistreams_v1alpha1.services.ai_streams.async_client import AIStreamsAsyncClient
-
+from google.partner.aistreams_v1alpha1.services.ai_streams.client import AIStreamsClient
 from google.partner.aistreams_v1alpha1.types.aistreams import Cluster
 from google.partner.aistreams_v1alpha1.types.aistreams import CreateClusterRequest
 from google.partner.aistreams_v1alpha1.types.aistreams import CreateStreamRequest
@@ -33,8 +32,8 @@ from google.partner.aistreams_v1alpha1.types.aistreams import Stream
 from google.partner.aistreams_v1alpha1.types.aistreams import UpdateClusterRequest
 from google.partner.aistreams_v1alpha1.types.aistreams import UpdateStreamRequest
 
-__all__ = ('AIStreamsClient',
-    'AIStreamsAsyncClient',
+__all__ = ('AIStreamsAsyncClient',
+    'AIStreamsClient',
     'Cluster',
     'CreateClusterRequest',
     'CreateStreamRequest',

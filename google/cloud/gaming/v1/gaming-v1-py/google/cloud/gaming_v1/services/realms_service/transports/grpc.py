@@ -240,7 +240,9 @@ class RealmsServiceGrpcTransport(RealmsServiceTransport):
     def list_realms(self) -> Callable[
             [realms.ListRealmsRequest],
             realms.ListRealmsResponse]:
-        r"""Return a callable for the list realms method over gRPC.
+        r"""Return a callable for the
+        list realms
+          method over gRPC.
 
         Lists realms in a given project and location.
 
@@ -266,7 +268,9 @@ class RealmsServiceGrpcTransport(RealmsServiceTransport):
     def get_realm(self) -> Callable[
             [realms.GetRealmRequest],
             realms.Realm]:
-        r"""Return a callable for the get realm method over gRPC.
+        r"""Return a callable for the
+        get realm
+          method over gRPC.
 
         Gets details of a single realm.
 
@@ -292,7 +296,9 @@ class RealmsServiceGrpcTransport(RealmsServiceTransport):
     def create_realm(self) -> Callable[
             [realms.CreateRealmRequest],
             operations.Operation]:
-        r"""Return a callable for the create realm method over gRPC.
+        r"""Return a callable for the
+        create realm
+          method over gRPC.
 
         Creates a new realm in a given project and location.
 
@@ -318,7 +324,9 @@ class RealmsServiceGrpcTransport(RealmsServiceTransport):
     def delete_realm(self) -> Callable[
             [realms.DeleteRealmRequest],
             operations.Operation]:
-        r"""Return a callable for the delete realm method over gRPC.
+        r"""Return a callable for the
+        delete realm
+          method over gRPC.
 
         Deletes a single realm.
 
@@ -344,7 +352,9 @@ class RealmsServiceGrpcTransport(RealmsServiceTransport):
     def update_realm(self) -> Callable[
             [realms.UpdateRealmRequest],
             operations.Operation]:
-        r"""Return a callable for the update realm method over gRPC.
+        r"""Return a callable for the
+        update realm
+          method over gRPC.
 
         Patches a single realm.
 
@@ -370,7 +380,9 @@ class RealmsServiceGrpcTransport(RealmsServiceTransport):
     def preview_realm_update(self) -> Callable[
             [realms.PreviewRealmUpdateRequest],
             realms.PreviewRealmUpdateResponse]:
-        r"""Return a callable for the preview realm update method over gRPC.
+        r"""Return a callable for the
+        preview realm update
+          method over gRPC.
 
         Previews patches to a single realm.
 

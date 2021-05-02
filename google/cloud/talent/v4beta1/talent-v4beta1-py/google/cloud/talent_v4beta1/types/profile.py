@@ -426,7 +426,7 @@ class Profile(proto.Message):
     custom_attributes = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=26,
+        number=26
         message=common.CustomAttribute,
     )
     processed = proto.Field(

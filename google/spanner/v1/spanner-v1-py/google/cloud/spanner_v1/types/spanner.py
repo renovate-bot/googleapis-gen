@@ -164,7 +164,7 @@ class Session(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=2,
+        number=2
     )
     create_time = proto.Field(
         proto.MESSAGE,
@@ -541,7 +541,7 @@ class ExecuteSqlRequest(proto.Message):
     param_types = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=5,
+        number=5
         message=gs_type.Type,
     )
     resume_token = proto.Field(
@@ -662,7 +662,7 @@ class ExecuteBatchDmlRequest(proto.Message):
         param_types = proto.MapField(
             proto.STRING,
             proto.MESSAGE,
-            number=3,
+            number=3
             message=gs_type.Type,
         )
 
@@ -873,7 +873,7 @@ class PartitionQueryRequest(proto.Message):
     param_types = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=5,
+        number=5
         message=gs_type.Type,
     )
     partition_options = proto.Field(

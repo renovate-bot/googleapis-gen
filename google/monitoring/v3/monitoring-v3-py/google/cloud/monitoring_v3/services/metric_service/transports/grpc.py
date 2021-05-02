@@ -224,8 +224,10 @@ class MetricServiceGrpcTransport(MetricServiceTransport):
     def list_monitored_resource_descriptors(self) -> Callable[
             [metric_service.ListMonitoredResourceDescriptorsRequest],
             metric_service.ListMonitoredResourceDescriptorsResponse]:
-        r"""Return a callable for the list monitored resource
-        descriptors method over gRPC.
+        r"""Return a callable for the
+        list monitored resource
+        descriptors
+          method over gRPC.
 
         Lists monitored resource descriptors that match a
         filter. This method does not require a Workspace.
@@ -252,8 +254,10 @@ class MetricServiceGrpcTransport(MetricServiceTransport):
     def get_monitored_resource_descriptor(self) -> Callable[
             [metric_service.GetMonitoredResourceDescriptorRequest],
             monitored_resource.MonitoredResourceDescriptor]:
-        r"""Return a callable for the get monitored resource
-        descriptor method over gRPC.
+        r"""Return a callable for the
+        get monitored resource
+        descriptor
+          method over gRPC.
 
         Gets a single monitored resource descriptor. This
         method does not require a Workspace.
@@ -280,7 +284,9 @@ class MetricServiceGrpcTransport(MetricServiceTransport):
     def list_metric_descriptors(self) -> Callable[
             [metric_service.ListMetricDescriptorsRequest],
             metric_service.ListMetricDescriptorsResponse]:
-        r"""Return a callable for the list metric descriptors method over gRPC.
+        r"""Return a callable for the
+        list metric descriptors
+          method over gRPC.
 
         Lists metric descriptors that match a filter. This
         method does not require a Workspace.
@@ -307,7 +313,9 @@ class MetricServiceGrpcTransport(MetricServiceTransport):
     def get_metric_descriptor(self) -> Callable[
             [metric_service.GetMetricDescriptorRequest],
             ga_metric.MetricDescriptor]:
-        r"""Return a callable for the get metric descriptor method over gRPC.
+        r"""Return a callable for the
+        get metric descriptor
+          method over gRPC.
 
         Gets a single metric descriptor. This method does not
         require a Workspace.
@@ -334,7 +342,9 @@ class MetricServiceGrpcTransport(MetricServiceTransport):
     def create_metric_descriptor(self) -> Callable[
             [metric_service.CreateMetricDescriptorRequest],
             ga_metric.MetricDescriptor]:
-        r"""Return a callable for the create metric descriptor method over gRPC.
+        r"""Return a callable for the
+        create metric descriptor
+          method over gRPC.
 
         Creates a new metric descriptor. User-created metric descriptors
         define `custom
@@ -362,7 +372,9 @@ class MetricServiceGrpcTransport(MetricServiceTransport):
     def delete_metric_descriptor(self) -> Callable[
             [metric_service.DeleteMetricDescriptorRequest],
             empty.Empty]:
-        r"""Return a callable for the delete metric descriptor method over gRPC.
+        r"""Return a callable for the
+        delete metric descriptor
+          method over gRPC.
 
         Deletes a metric descriptor. Only user-created `custom
         metrics <https://cloud.google.com/monitoring/custom-metrics>`__
@@ -390,7 +402,9 @@ class MetricServiceGrpcTransport(MetricServiceTransport):
     def list_time_series(self) -> Callable[
             [metric_service.ListTimeSeriesRequest],
             metric_service.ListTimeSeriesResponse]:
-        r"""Return a callable for the list time series method over gRPC.
+        r"""Return a callable for the
+        list time series
+          method over gRPC.
 
         Lists time series that match a filter. This method
         does not require a Workspace.
@@ -417,7 +431,9 @@ class MetricServiceGrpcTransport(MetricServiceTransport):
     def create_time_series(self) -> Callable[
             [metric_service.CreateTimeSeriesRequest],
             empty.Empty]:
-        r"""Return a callable for the create time series method over gRPC.
+        r"""Return a callable for the
+        create time series
+          method over gRPC.
 
         Creates or adds data to one or more time series.
         The response is empty if all time series in the request

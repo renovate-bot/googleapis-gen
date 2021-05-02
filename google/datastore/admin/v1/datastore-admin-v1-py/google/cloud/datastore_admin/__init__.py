@@ -14,9 +14,8 @@
 # limitations under the License.
 #
 
-from google.cloud.datastore_admin_v1.services.datastore_admin.client import DatastoreAdminClient
 from google.cloud.datastore_admin_v1.services.datastore_admin.async_client import DatastoreAdminAsyncClient
-
+from google.cloud.datastore_admin_v1.services.datastore_admin.client import DatastoreAdminClient
 from google.cloud.datastore_admin_v1.types.datastore_admin import CommonMetadata
 from google.cloud.datastore_admin_v1.types.datastore_admin import CreateIndexRequest
 from google.cloud.datastore_admin_v1.types.datastore_admin import DeleteIndexRequest
@@ -30,14 +29,14 @@ from google.cloud.datastore_admin_v1.types.datastore_admin import ImportEntities
 from google.cloud.datastore_admin_v1.types.datastore_admin import IndexOperationMetadata
 from google.cloud.datastore_admin_v1.types.datastore_admin import ListIndexesRequest
 from google.cloud.datastore_admin_v1.types.datastore_admin import ListIndexesResponse
-from google.cloud.datastore_admin_v1.types.datastore_admin import Progress
 from google.cloud.datastore_admin_v1.types.datastore_admin import OperationType
+from google.cloud.datastore_admin_v1.types.datastore_admin import Progress
 from google.cloud.datastore_admin_v1.types.index import Index
 
-__all__ = ('DatastoreAdminClient',
-    'DatastoreAdminAsyncClient',
-    'CommonMetadata',
+__all__ = ('CommonMetadata',
     'CreateIndexRequest',
+    'DatastoreAdminAsyncClient',
+    'DatastoreAdminClient',
     'DeleteIndexRequest',
     'EntityFilter',
     'ExportEntitiesMetadata',
@@ -46,10 +45,10 @@ __all__ = ('DatastoreAdminClient',
     'GetIndexRequest',
     'ImportEntitiesMetadata',
     'ImportEntitiesRequest',
+    'Index',
     'IndexOperationMetadata',
     'ListIndexesRequest',
     'ListIndexesResponse',
-    'Progress',
     'OperationType',
-    'Index',
+    'Progress',
 )

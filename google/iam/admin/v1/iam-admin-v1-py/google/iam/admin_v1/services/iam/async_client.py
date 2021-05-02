@@ -181,7 +181,8 @@ class IAMAsyncClient:
 
         Args:
             request (:class:`google.iam.admin_v1.types.ListServiceAccountsRequest`):
-                The request object. The service account list request.
+                The request object.
+                The service account list request.
             name (:class:`str`):
                 Required. The resource name of the project associated
                 with the service accounts, such as
@@ -274,7 +275,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.admin_v1.types.GetServiceAccountRequest`):
-                The request object. The service account get request.
+                The request object.
+                The service account get request.
             name (:class:`str`):
                 Required. The resource name of the service account in
                 the following format:
@@ -373,7 +375,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.admin_v1.types.CreateServiceAccountRequest`):
-                The request object. The service account create request.
+                The request object.
+                The service account create request.
             name (:class:`str`):
                 Required. The resource name of the project associated
                 with the service accounts, such as
@@ -488,7 +491,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.admin_v1.types.ServiceAccount`):
-                The request object. An IAM service account.
+                The request object.
+                An IAM service account.
                 A service account is an account for an application or a
                 virtual machine (VM) instance, not a person. You can use
                 a service account to call Google APIs. To learn more,
@@ -571,7 +575,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.admin_v1.types.PatchServiceAccountRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [PatchServiceAccount][google.iam.admin.v1.PatchServiceAccount].
                 You can patch only the `display_name` and `description`
                 fields. You must use the `update_mask` field to specify
@@ -662,7 +667,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.admin_v1.types.DeleteServiceAccountRequest`):
-                The request object. The service account delete request.
+                The request object.
+                The service account delete request.
             name (:class:`str`):
                 Required. The resource name of the service account in
                 the following format:
@@ -746,7 +752,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.admin_v1.types.UndeleteServiceAccountRequest`):
-                The request object. The service account undelete
+                The request object.
+                The service account undelete
                 request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -809,7 +816,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.admin_v1.types.EnableServiceAccountRequest`):
-                The request object. The service account enable request.
+                The request object.
+                The service account enable request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -872,7 +880,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.admin_v1.types.DisableServiceAccountRequest`):
-                The request object. The service account disable request.
+                The request object.
+                The service account disable request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -921,7 +930,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.admin_v1.types.ListServiceAccountKeysRequest`):
-                The request object. The service account keys list
+                The request object.
+                The service account keys list
                 request.
             name (:class:`str`):
                 Required. The resource name of the service account in
@@ -1023,7 +1033,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.admin_v1.types.GetServiceAccountKeyRequest`):
-                The request object. The service account key get by id
+                The request object.
+                The service account key get by id
                 request.
             name (:class:`str`):
                 Required. The resource name of the service account key
@@ -1155,7 +1166,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.admin_v1.types.CreateServiceAccountKeyRequest`):
-                The request object. The service account key create
+                The request object.
+                The service account key create
                 request.
             name (:class:`str`):
                 Required. The resource name of the service account in
@@ -1289,7 +1301,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.admin_v1.types.UploadServiceAccountKeyRequest`):
-                The request object. The service account key upload
+                The request object.
+                The service account key upload
                 request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1381,7 +1394,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.admin_v1.types.DeleteServiceAccountKeyRequest`):
-                The request object. The service account key delete
+                The request object.
+                The service account key delete
                 request.
             name (:class:`str`):
                 Required. The resource name of the service account key
@@ -1468,7 +1482,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.admin_v1.types.SignBlobRequest`):
-                The request object. Deprecated. [Migrate to Service
+                The request object.
+                Deprecated. [Migrate to Service
                 Account Credentials
                 API](https://cloud.google.com/iam/help/credentials/migrate-
                 api).
@@ -1578,7 +1593,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.admin_v1.types.SignJwtRequest`):
-                The request object. Deprecated. [Migrate to Service
+                The request object.
+                Deprecated. [Migrate to Service
                 Account Credentials
                 API](https://cloud.google.com/iam/help/credentials/migrate-
                 api).
@@ -1700,7 +1716,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.GetIamPolicyRequest`):
-                The request object. Request message for `GetIamPolicy`
+                The request object.
+                Request message for `GetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -1850,7 +1867,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.SetIamPolicyRequest`):
-                The request object. Request message for `SetIamPolicy`
+                The request object.
+                Request message for `SetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -1982,7 +2000,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `TestIamPermissions` method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -2068,7 +2087,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.admin_v1.types.QueryGrantableRolesRequest`):
-                The request object. The grantable role query request.
+                The request object.
+                The grantable role query request.
             full_resource_name (:class:`str`):
                 Required. The full resource name to query from the list
                 of grantable roles.
@@ -2151,7 +2171,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.admin_v1.types.ListRolesRequest`):
-                The request object. The request to get all roles defined
+                The request object.
+                The request to get all roles defined
                 under a resource.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -2210,7 +2231,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.admin_v1.types.GetRoleRequest`):
-                The request object. The request to get the definition of
+                The request object.
+                The request to get the definition of
                 an existing role.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -2265,7 +2287,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.admin_v1.types.CreateRoleRequest`):
-                The request object. The request to create a new role.
+                The request object.
+                The request to create a new role.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2320,7 +2343,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.admin_v1.types.UpdateRoleRequest`):
-                The request object. The request to update a role.
+                The request object.
+                The request to update a role.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2393,7 +2417,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.admin_v1.types.DeleteRoleRequest`):
-                The request object. The request to delete an existing
+                The request object.
+                The request to delete an existing
                 role.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -2448,7 +2473,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.admin_v1.types.UndeleteRoleRequest`):
-                The request object. The request to undelete an existing
+                The request object.
+                The request to undelete an existing
                 role.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -2505,7 +2531,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.admin_v1.types.QueryTestablePermissionsRequest`):
-                The request object. A request to get permissions which
+                The request object.
+                A request to get permissions which
                 can be tested on a resource.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -2568,7 +2595,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.admin_v1.types.QueryAuditableServicesRequest`):
-                The request object. A request to get the list of
+                The request object.
+                A request to get the list of
                 auditable services for a resource.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -2621,7 +2649,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.admin_v1.types.LintPolicyRequest`):
-                The request object. The request to lint a Cloud IAM
+                The request object.
+                The request to lint a Cloud IAM
                 policy object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

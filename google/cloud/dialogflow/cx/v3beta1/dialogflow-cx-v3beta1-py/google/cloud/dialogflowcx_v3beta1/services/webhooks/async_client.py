@@ -161,7 +161,8 @@ class WebhooksAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.ListWebhooksRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Webhooks.ListWebhooks][google.cloud.dialogflow.cx.v3beta1.Webhooks.ListWebhooks].
             parent (:class:`str`):
                 Required. The agent to list all webhooks for. Format:
@@ -248,7 +249,8 @@ class WebhooksAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.GetWebhookRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Webhooks.GetWebhook][google.cloud.dialogflow.cx.v3beta1.Webhooks.GetWebhook].
             name (:class:`str`):
                 Required. The name of the webhook. Format:
@@ -329,7 +331,8 @@ class WebhooksAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.CreateWebhookRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Webhooks.CreateWebhook][google.cloud.dialogflow.cx.v3beta1.Webhooks.CreateWebhook].
             parent (:class:`str`):
                 Required. The agent to create a webhook for. Format:
@@ -417,7 +420,8 @@ class WebhooksAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.UpdateWebhookRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Webhooks.UpdateWebhook][google.cloud.dialogflow.cx.v3beta1.Webhooks.UpdateWebhook].
             webhook (:class:`google.cloud.dialogflowcx_v3beta1.types.Webhook`):
                 Required. The webhook to update.
@@ -505,7 +509,8 @@ class WebhooksAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.DeleteWebhookRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Webhooks.DeleteWebhook][google.cloud.dialogflow.cx.v3beta1.Webhooks.DeleteWebhook].
             name (:class:`str`):
                 Required. The name of the webhook to delete. Format:

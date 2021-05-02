@@ -380,7 +380,8 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.CreateDatasetRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DatasetService.CreateDataset][google.cloud.aiplatform.v1.DatasetService.CreateDataset].
             parent (str):
                 Required. The resource name of the Location to create
@@ -424,7 +425,7 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dataset_service.CreateDatasetRequest):
             request = dataset_service.CreateDatasetRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -474,7 +475,8 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.GetDatasetRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DatasetService.GetDataset][google.cloud.aiplatform.v1.DatasetService.GetDataset].
             name (str):
                 Required. The name of the Dataset
@@ -509,7 +511,7 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dataset_service.GetDatasetRequest):
             request = dataset_service.GetDatasetRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -550,7 +552,8 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.UpdateDatasetRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DatasetService.UpdateDataset][google.cloud.aiplatform.v1.DatasetService.UpdateDataset].
             dataset (google.cloud.aiplatform_v1.types.Dataset):
                 Required. The Dataset which replaces
@@ -598,7 +601,7 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dataset_service.UpdateDatasetRequest):
             request = dataset_service.UpdateDatasetRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if dataset is not None:
                 request.dataset = dataset
@@ -640,7 +643,8 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.ListDatasetsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DatasetService.ListDatasets][google.cloud.aiplatform.v1.DatasetService.ListDatasets].
             parent (str):
                 Required. The name of the Dataset's parent resource.
@@ -678,7 +682,7 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dataset_service.ListDatasetsRequest):
             request = dataset_service.ListDatasetsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -727,7 +731,8 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.DeleteDatasetRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DatasetService.DeleteDataset][google.cloud.aiplatform.v1.DatasetService.DeleteDataset].
             name (str):
                 Required. The resource name of the Dataset to delete.
@@ -776,7 +781,7 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dataset_service.DeleteDatasetRequest):
             request = dataset_service.DeleteDatasetRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -825,7 +830,8 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.ImportDataRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DatasetService.ImportData][google.cloud.aiplatform.v1.DatasetService.ImportData].
             name (str):
                 Required. The name of the Dataset resource. Format:
@@ -872,7 +878,7 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dataset_service.ImportDataRequest):
             request = dataset_service.ImportDataRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -923,7 +929,8 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.ExportDataRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DatasetService.ExportData][google.cloud.aiplatform.v1.DatasetService.ExportData].
             name (str):
                 Required. The name of the Dataset resource. Format:
@@ -969,7 +976,7 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dataset_service.ExportDataRequest):
             request = dataset_service.ExportDataRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1019,7 +1026,8 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.ListDataItemsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DatasetService.ListDataItems][google.cloud.aiplatform.v1.DatasetService.ListDataItems].
             parent (str):
                 Required. The resource name of the Dataset to list
@@ -1058,7 +1066,7 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dataset_service.ListDataItemsRequest):
             request = dataset_service.ListDataItemsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1107,7 +1115,8 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.GetAnnotationSpecRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DatasetService.GetAnnotationSpec][google.cloud.aiplatform.v1.DatasetService.GetAnnotationSpec].
             name (str):
                 Required. The name of the AnnotationSpec resource.
@@ -1144,7 +1153,7 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dataset_service.GetAnnotationSpecRequest):
             request = dataset_service.GetAnnotationSpecRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1184,7 +1193,8 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.ListAnnotationsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DatasetService.ListAnnotations][google.cloud.aiplatform.v1.DatasetService.ListAnnotations].
             parent (str):
                 Required. The resource name of the DataItem to list
@@ -1224,7 +1234,7 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dataset_service.ListAnnotationsRequest):
             request = dataset_service.ListAnnotationsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent

@@ -171,6 +171,7 @@ class IAMCredentialsAsyncClient:
         Args:
             request (:class:`google.iam.credentials_v1.types.GenerateAccessTokenRequest`):
                 The request object.
+
             name (:class:`str`):
                 Required. The resource name of the service account for
                 which the credentials are requested, in the following
@@ -304,6 +305,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         Args:
             request (:class:`google.iam.credentials_v1.types.GenerateIdTokenRequest`):
                 The request object.
+
             name (:class:`str`):
                 Required. The resource name of the service account for
                 which the credentials are requested, in the following
@@ -430,6 +432,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         Args:
             request (:class:`google.iam.credentials_v1.types.SignBlobRequest`):
                 The request object.
+
             name (:class:`str`):
                 Required. The resource name of the service account for
                 which the credentials are requested, in the following
@@ -543,6 +546,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         Args:
             request (:class:`google.iam.credentials_v1.types.SignJwtRequest`):
                 The request object.
+
             name (:class:`str`):
                 Required. The resource name of the service account for
                 which the credentials are requested, in the following

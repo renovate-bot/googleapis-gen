@@ -161,7 +161,8 @@ class PredictionServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.recommendationengine_v1beta1.types.PredictRequest`):
-                The request object. Request message for Predict method.
+                The request object.
+                Request message for Predict method.
             name (:class:`str`):
                 Required. Full resource name of the format:
                 ``{name=projects/*/locations/global/catalogs/default_catalog/eventStores/default_event_store/placements/*}``

@@ -224,7 +224,9 @@ class QuotaControllerGrpcTransport(QuotaControllerTransport):
     def allocate_quota(self) -> Callable[
             [quota_controller.AllocateQuotaRequest],
             quota_controller.AllocateQuotaResponse]:
-        r"""Return a callable for the allocate quota method over gRPC.
+        r"""Return a callable for the
+        allocate quota
+          method over gRPC.
 
         Attempts to allocate quota for the specified consumer. It should
         be called before the operation is executed.

@@ -57,7 +57,7 @@ class SecurityMarks(proto.Message):
     marks = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=2,
+        number=2
     )
 
 

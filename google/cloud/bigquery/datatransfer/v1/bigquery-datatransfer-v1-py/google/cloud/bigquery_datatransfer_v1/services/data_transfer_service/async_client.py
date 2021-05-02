@@ -170,7 +170,8 @@ class DataTransferServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery_datatransfer_v1.types.GetDataSourceRequest`):
-                The request object. A request to get data source info.
+                The request object.
+                A request to get data source info.
             name (:class:`str`):
                 Required. The field will contain name of the resource
                 requested, for example:
@@ -256,7 +257,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery_datatransfer_v1.types.ListDataSourcesRequest`):
-                The request object. Request to list supported data
+                The request object.
+                Request to list supported data
                 sources and their data transfer settings.
             parent (:class:`str`):
                 Required. The BigQuery project id for which data sources
@@ -353,7 +355,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery_datatransfer_v1.types.CreateTransferConfigRequest`):
-                The request object. A request to create a data transfer
+                The request object.
+                A request to create a data transfer
                 configuration. If new credentials are needed for this
                 transfer configuration, an authorization code must be
                 provided. If an authorization code is provided, the
@@ -455,7 +458,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery_datatransfer_v1.types.UpdateTransferConfigRequest`):
-                The request object. A request to update a transfer
+                The request object.
+                A request to update a transfer
                 configuration. To update the user id of the transfer
                 configuration, an authorization code needs to be
                 provided.
@@ -548,7 +552,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery_datatransfer_v1.types.DeleteTransferConfigRequest`):
-                The request object. A request to delete data transfer
+                The request object.
+                A request to delete data transfer
                 information. All associated transfer runs and log
                 messages will be deleted as well.
             name (:class:`str`):
@@ -624,7 +629,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery_datatransfer_v1.types.GetTransferConfigRequest`):
-                The request object. A request to get data transfer
+                The request object.
+                A request to get data transfer
                 information.
             name (:class:`str`):
                 Required. The field will contain name of the resource
@@ -715,7 +721,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery_datatransfer_v1.types.ListTransferConfigsRequest`):
-                The request object. A request to list data transfers
+                The request object.
+                A request to list data transfers
                 configured for a BigQuery project.
             parent (:class:`str`):
                 Required. The BigQuery project id for which data sources
@@ -816,7 +823,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery_datatransfer_v1.types.ScheduleTransferRunsRequest`):
-                The request object. A request to schedule transfer runs
+                The request object.
+                A request to schedule transfer runs
                 for a time range.
             parent (:class:`str`):
                 Required. Transfer configuration name in the form:
@@ -912,7 +920,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery_datatransfer_v1.types.StartManualTransferRunsRequest`):
-                The request object. A request to start manual transfer
+                The request object.
+                A request to start manual transfer
                 runs.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -969,7 +978,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery_datatransfer_v1.types.GetTransferRunRequest`):
-                The request object. A request to get data transfer run
+                The request object.
+                A request to get data transfer run
                 information.
             name (:class:`str`):
                 Required. The field will contain name of the resource
@@ -1052,7 +1062,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery_datatransfer_v1.types.DeleteTransferRunRequest`):
-                The request object. A request to delete data transfer
+                The request object.
+                A request to delete data transfer
                 run information.
             name (:class:`str`):
                 Required. The field will contain name of the resource
@@ -1128,7 +1139,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery_datatransfer_v1.types.ListTransferRunsRequest`):
-                The request object. A request to list data transfer
+                The request object.
+                A request to list data transfer
                 runs. UI can use this method to show/filter specific
                 data transfer runs. The data source can use this method
                 to request all scheduled transfer runs.
@@ -1228,7 +1240,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery_datatransfer_v1.types.ListTransferLogsRequest`):
-                The request object. A request to get user facing log
+                The request object.
+                A request to get user facing log
                 messages associated with data transfer run.
             parent (:class:`str`):
                 Required. Transfer run name in the form:
@@ -1330,7 +1343,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery_datatransfer_v1.types.CheckValidCredsRequest`):
-                The request object. A request to determine whether the
+                The request object.
+                A request to determine whether the
                 user has valid credentials. This method is used to limit
                 the number of OAuth popups in the user interface. The
                 user id is inferred from the API call context.

@@ -155,7 +155,8 @@ class LanguageServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.language_v1.types.AnalyzeSentimentRequest`):
-                The request object. The sentiment analysis request
+                The request object.
+                The sentiment analysis request
                 message.
             document (:class:`google.cloud.language_v1.types.Document`):
                 Input document.
@@ -240,7 +241,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.language_v1.types.AnalyzeEntitiesRequest`):
-                The request object. The entity analysis request message.
+                The request object.
+                The entity analysis request message.
             document (:class:`google.cloud.language_v1.types.Document`):
                 Input document.
                 This corresponds to the ``document`` field
@@ -322,7 +324,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.language_v1.types.AnalyzeEntitySentimentRequest`):
-                The request object. The entity-level sentiment analysis
+                The request object.
+                The entity-level sentiment analysis
                 request message.
             document (:class:`google.cloud.language_v1.types.Document`):
                 Input document.
@@ -406,7 +409,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.language_v1.types.AnalyzeSyntaxRequest`):
-                The request object. The syntax analysis request message.
+                The request object.
+                The syntax analysis request message.
             document (:class:`google.cloud.language_v1.types.Document`):
                 Input document.
                 This corresponds to the ``document`` field
@@ -484,7 +488,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.language_v1.types.ClassifyTextRequest`):
-                The request object. The document classification request
+                The request object.
+                The document classification request
                 message.
             document (:class:`google.cloud.language_v1.types.Document`):
                 Input document.
@@ -560,7 +565,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.language_v1.types.AnnotateTextRequest`):
-                The request object. The request message for the text
+                The request object.
+                The request message for the text
                 annotation API, which can perform multiple analysis
                 types (sentiment, entities, and syntax) in one call.
             document (:class:`google.cloud.language_v1.types.Document`):

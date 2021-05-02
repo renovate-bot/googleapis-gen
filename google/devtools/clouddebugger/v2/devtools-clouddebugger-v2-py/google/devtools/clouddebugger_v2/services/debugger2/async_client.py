@@ -168,7 +168,8 @@ class Debugger2AsyncClient:
 
         Args:
             request (:class:`google.devtools.clouddebugger_v2.types.SetBreakpointRequest`):
-                The request object. Request to set a breakpoint
+                The request object.
+                Request to set a breakpoint
             debuggee_id (:class:`str`):
                 Required. ID of the debuggee where
                 the breakpoint is to be set.
@@ -253,7 +254,8 @@ class Debugger2AsyncClient:
 
         Args:
             request (:class:`google.devtools.clouddebugger_v2.types.GetBreakpointRequest`):
-                The request object. Request to get breakpoint
+                The request object.
+                Request to get breakpoint
                 information.
             debuggee_id (:class:`str`):
                 Required. ID of the debuggee whose
@@ -348,7 +350,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.devtools.clouddebugger_v2.types.DeleteBreakpointRequest`):
-                The request object. Request to delete a breakpoint.
+                The request object.
+                Request to delete a breakpoint.
             debuggee_id (:class:`str`):
                 Required. ID of the debuggee whose
                 breakpoint to delete.
@@ -432,7 +435,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.devtools.clouddebugger_v2.types.ListBreakpointsRequest`):
-                The request object. Request to list breakpoints.
+                The request object.
+                Request to list breakpoints.
             debuggee_id (:class:`str`):
                 Required. ID of the debuggee whose
                 breakpoints to list.
@@ -514,7 +518,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.devtools.clouddebugger_v2.types.ListDebuggeesRequest`):
-                The request object. Request to list debuggees.
+                The request object.
+                Request to list debuggees.
             project (:class:`str`):
                 Required. Project number of a Google
                 Cloud project whose debuggees to list.

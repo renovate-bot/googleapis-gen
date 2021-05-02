@@ -14,9 +14,8 @@
 # limitations under the License.
 #
 
-from google.cloud.documentai_v1.services.document_processor_service.client import DocumentProcessorServiceClient
 from google.cloud.documentai_v1.services.document_processor_service.async_client import DocumentProcessorServiceAsyncClient
-
+from google.cloud.documentai_v1.services.document_processor_service.client import DocumentProcessorServiceClient
 from google.cloud.documentai_v1.types.document import Document
 from google.cloud.documentai_v1.types.document_io import BatchDocumentsInputConfig
 from google.cloud.documentai_v1.types.document_io import DocumentOutputConfig
@@ -38,26 +37,26 @@ from google.cloud.documentai_v1.types.geometry import BoundingPoly
 from google.cloud.documentai_v1.types.geometry import NormalizedVertex
 from google.cloud.documentai_v1.types.geometry import Vertex
 
-__all__ = ('DocumentProcessorServiceClient',
-    'DocumentProcessorServiceAsyncClient',
-    'Document',
-    'BatchDocumentsInputConfig',
-    'DocumentOutputConfig',
-    'GcsDocument',
-    'GcsDocuments',
-    'GcsPrefix',
-    'RawDocument',
+__all__ = ('BatchDocumentsInputConfig',
     'BatchProcessMetadata',
     'BatchProcessRequest',
     'BatchProcessResponse',
+    'BoundingPoly',
     'CommonOperationMetadata',
+    'Document',
+    'DocumentOutputConfig',
+    'DocumentProcessorServiceAsyncClient',
+    'DocumentProcessorServiceClient',
+    'GcsDocument',
+    'GcsDocuments',
+    'GcsPrefix',
     'HumanReviewStatus',
+    'NormalizedVertex',
     'ProcessRequest',
     'ProcessResponse',
+    'RawDocument',
     'ReviewDocumentOperationMetadata',
     'ReviewDocumentRequest',
     'ReviewDocumentResponse',
-    'BoundingPoly',
-    'NormalizedVertex',
     'Vertex',
 )

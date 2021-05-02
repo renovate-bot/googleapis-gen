@@ -229,7 +229,9 @@ class CloudSchedulerGrpcAsyncIOTransport(CloudSchedulerTransport):
     def list_jobs(self) -> Callable[
             [cloudscheduler.ListJobsRequest],
             Awaitable[cloudscheduler.ListJobsResponse]]:
-        r"""Return a callable for the list jobs method over gRPC.
+        r"""Return a callable for the
+        list jobs
+          method over gRPC.
 
         Lists jobs.
 
@@ -255,7 +257,9 @@ class CloudSchedulerGrpcAsyncIOTransport(CloudSchedulerTransport):
     def get_job(self) -> Callable[
             [cloudscheduler.GetJobRequest],
             Awaitable[job.Job]]:
-        r"""Return a callable for the get job method over gRPC.
+        r"""Return a callable for the
+        get job
+          method over gRPC.
 
         Gets a job.
 
@@ -281,7 +285,9 @@ class CloudSchedulerGrpcAsyncIOTransport(CloudSchedulerTransport):
     def create_job(self) -> Callable[
             [cloudscheduler.CreateJobRequest],
             Awaitable[gcs_job.Job]]:
-        r"""Return a callable for the create job method over gRPC.
+        r"""Return a callable for the
+        create job
+          method over gRPC.
 
         Creates a job.
 
@@ -307,7 +313,9 @@ class CloudSchedulerGrpcAsyncIOTransport(CloudSchedulerTransport):
     def update_job(self) -> Callable[
             [cloudscheduler.UpdateJobRequest],
             Awaitable[gcs_job.Job]]:
-        r"""Return a callable for the update job method over gRPC.
+        r"""Return a callable for the
+        update job
+          method over gRPC.
 
         Updates a job.
 
@@ -344,7 +352,9 @@ class CloudSchedulerGrpcAsyncIOTransport(CloudSchedulerTransport):
     def delete_job(self) -> Callable[
             [cloudscheduler.DeleteJobRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete job method over gRPC.
+        r"""Return a callable for the
+        delete job
+          method over gRPC.
 
         Deletes a job.
 
@@ -370,7 +380,9 @@ class CloudSchedulerGrpcAsyncIOTransport(CloudSchedulerTransport):
     def pause_job(self) -> Callable[
             [cloudscheduler.PauseJobRequest],
             Awaitable[job.Job]]:
-        r"""Return a callable for the pause job method over gRPC.
+        r"""Return a callable for the
+        pause job
+          method over gRPC.
 
         Pauses a job.
 
@@ -407,7 +419,9 @@ class CloudSchedulerGrpcAsyncIOTransport(CloudSchedulerTransport):
     def resume_job(self) -> Callable[
             [cloudscheduler.ResumeJobRequest],
             Awaitable[job.Job]]:
-        r"""Return a callable for the resume job method over gRPC.
+        r"""Return a callable for the
+        resume job
+          method over gRPC.
 
         Resume a job.
 
@@ -443,7 +457,9 @@ class CloudSchedulerGrpcAsyncIOTransport(CloudSchedulerTransport):
     def run_job(self) -> Callable[
             [cloudscheduler.RunJobRequest],
             Awaitable[job.Job]]:
-        r"""Return a callable for the run job method over gRPC.
+        r"""Return a callable for the
+        run job
+          method over gRPC.
 
         Forces a job to run now.
         When this method is called, Cloud Scheduler will

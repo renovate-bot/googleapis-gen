@@ -337,7 +337,8 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
 
         Args:
             request (google.cloud.essentialcontacts_v1.types.CreateContactRequest):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 CreateContact method.
             parent (str):
                 Required. The resource to save this contact for. Format:
@@ -381,7 +382,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, service.CreateContactRequest):
             request = service.CreateContactRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -425,7 +426,8 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
 
         Args:
             request (google.cloud.essentialcontacts_v1.types.UpdateContactRequest):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 UpdateContact method.
             contact (google.cloud.essentialcontacts_v1.types.Contact):
                 Required. The contact resource to
@@ -470,7 +472,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, service.UpdateContactRequest):
             request = service.UpdateContactRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if contact is not None:
                 request.contact = contact
@@ -512,7 +514,8 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
 
         Args:
             request (google.cloud.essentialcontacts_v1.types.ListContactsRequest):
-                The request object. Request message for the ListContacts
+                The request object.
+                Request message for the ListContacts
                 method.
             parent (str):
                 Required. The parent resource name. Format:
@@ -551,7 +554,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, service.ListContactsRequest):
             request = service.ListContactsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -600,7 +603,8 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
 
         Args:
             request (google.cloud.essentialcontacts_v1.types.GetContactRequest):
-                The request object. Request message for the GetContact
+                The request object.
+                Request message for the GetContact
                 method.
             name (str):
                 Required. The name of the contact to retrieve. Format:
@@ -637,7 +641,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, service.GetContactRequest):
             request = service.GetContactRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -677,7 +681,8 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
 
         Args:
             request (google.cloud.essentialcontacts_v1.types.DeleteContactRequest):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 DeleteContact method.
             name (str):
                 Required. The name of the contact to delete. Format:
@@ -708,7 +713,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, service.DeleteContactRequest):
             request = service.DeleteContactRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -746,7 +751,8 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
 
         Args:
             request (google.cloud.essentialcontacts_v1.types.ComputeContactsRequest):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 ComputeContacts method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -815,7 +821,8 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
 
         Args:
             request (google.cloud.essentialcontacts_v1.types.SendTestMessageRequest):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 SendTestMessage method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

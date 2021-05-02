@@ -356,7 +356,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
 
         Args:
             request (google.cloud.secretmanager_v1beta1.types.ListSecretsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SecretManagerService.ListSecrets][google.cloud.secrets.v1beta1.SecretManagerService.ListSecrets].
             parent (str):
                 Required. The resource name of the project associated
@@ -395,7 +396,7 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.ListSecretsRequest):
             request = service.ListSecretsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -448,7 +449,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
 
         Args:
             request (google.cloud.secretmanager_v1beta1.types.CreateSecretRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SecretManagerService.CreateSecret][google.cloud.secrets.v1beta1.SecretManagerService.CreateSecret].
             parent (str):
                 Required. The resource name of the project to associate
@@ -508,7 +510,7 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.CreateSecretRequest):
             request = service.CreateSecretRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -556,7 +558,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
 
         Args:
             request (google.cloud.secretmanager_v1beta1.types.AddSecretVersionRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SecretManagerService.AddSecretVersion][google.cloud.secrets.v1beta1.SecretManagerService.AddSecretVersion].
             parent (str):
                 Required. The resource name of the
@@ -601,7 +604,7 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.AddSecretVersionRequest):
             request = service.AddSecretVersionRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -644,7 +647,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
 
         Args:
             request (google.cloud.secretmanager_v1beta1.types.GetSecretRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SecretManagerService.GetSecret][google.cloud.secrets.v1beta1.SecretManagerService.GetSecret].
             name (str):
                 Required. The resource name of the
@@ -685,7 +689,7 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.GetSecretRequest):
             request = service.GetSecretRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -727,7 +731,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
 
         Args:
             request (google.cloud.secretmanager_v1beta1.types.UpdateSecretRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SecretManagerService.UpdateSecret][google.cloud.secrets.v1beta1.SecretManagerService.UpdateSecret].
             secret (google.cloud.secretmanager_v1beta1.types.Secret):
                 Required. [Secret][google.cloud.secrets.v1beta1.Secret]
@@ -774,7 +779,7 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.UpdateSecretRequest):
             request = service.UpdateSecretRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if secret is not None:
                 request.secret = secret
@@ -816,7 +821,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
 
         Args:
             request (google.cloud.secretmanager_v1beta1.types.DeleteSecretRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SecretManagerService.DeleteSecret][google.cloud.secrets.v1beta1.SecretManagerService.DeleteSecret].
             name (str):
                 Required. The resource name of the
@@ -846,7 +852,7 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.DeleteSecretRequest):
             request = service.DeleteSecretRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -885,7 +891,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
 
         Args:
             request (google.cloud.secretmanager_v1beta1.types.ListSecretVersionsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SecretManagerService.ListSecretVersions][google.cloud.secrets.v1beta1.SecretManagerService.ListSecretVersions].
             parent (str):
                 Required. The resource name of the
@@ -926,7 +933,7 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.ListSecretVersionsRequest):
             request = service.ListSecretVersionsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -980,7 +987,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
 
         Args:
             request (google.cloud.secretmanager_v1beta1.types.GetSecretVersionRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SecretManagerService.GetSecretVersion][google.cloud.secrets.v1beta1.SecretManagerService.GetSecretVersion].
             name (str):
                 Required. The resource name of the
@@ -1019,7 +1027,7 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.GetSecretVersionRequest):
             request = service.GetSecretVersionRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1065,7 +1073,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
 
         Args:
             request (google.cloud.secretmanager_v1beta1.types.AccessSecretVersionRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SecretManagerService.AccessSecretVersion][google.cloud.secrets.v1beta1.SecretManagerService.AccessSecretVersion].
             name (str):
                 Required. The resource name of the
@@ -1101,7 +1110,7 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.AccessSecretVersionRequest):
             request = service.AccessSecretVersionRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1147,7 +1156,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
 
         Args:
             request (google.cloud.secretmanager_v1beta1.types.DisableSecretVersionRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SecretManagerService.DisableSecretVersion][google.cloud.secrets.v1beta1.SecretManagerService.DisableSecretVersion].
             name (str):
                 Required. The resource name of the
@@ -1184,7 +1194,7 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.DisableSecretVersionRequest):
             request = service.DisableSecretVersionRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1230,7 +1240,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
 
         Args:
             request (google.cloud.secretmanager_v1beta1.types.EnableSecretVersionRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SecretManagerService.EnableSecretVersion][google.cloud.secrets.v1beta1.SecretManagerService.EnableSecretVersion].
             name (str):
                 Required. The resource name of the
@@ -1267,7 +1278,7 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.EnableSecretVersionRequest):
             request = service.EnableSecretVersionRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1314,7 +1325,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
 
         Args:
             request (google.cloud.secretmanager_v1beta1.types.DestroySecretVersionRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SecretManagerService.DestroySecretVersion][google.cloud.secrets.v1beta1.SecretManagerService.DestroySecretVersion].
             name (str):
                 Required. The resource name of the
@@ -1351,7 +1363,7 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.DestroySecretVersionRequest):
             request = service.DestroySecretVersionRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1396,7 +1408,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.SetIamPolicyRequest):
-                The request object. Request message for `SetIamPolicy`
+                The request object.
+                Request message for `SetIamPolicy`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1464,7 +1477,7 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-        if isinstance(request, dict):
+         if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.SetIamPolicyRequest(**request)
@@ -1508,7 +1521,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.GetIamPolicyRequest):
-                The request object. Request message for `GetIamPolicy`
+                The request object.
+                Request message for `GetIamPolicy`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1576,7 +1590,7 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-        if isinstance(request, dict):
+         if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.GetIamPolicyRequest(**request)
@@ -1625,7 +1639,8 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `TestIamPermissions` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1638,7 +1653,7 @@ class SecretManagerServiceClient(metaclass=SecretManagerServiceClientMeta):
                 Response message for TestIamPermissions method.
         """
         # Create or coerce a protobuf request object.
-        if isinstance(request, dict):
+         if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.TestIamPermissionsRequest(**request)

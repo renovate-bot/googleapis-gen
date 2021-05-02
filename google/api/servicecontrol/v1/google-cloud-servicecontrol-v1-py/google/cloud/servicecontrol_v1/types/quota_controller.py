@@ -139,7 +139,7 @@ class QuotaOperation(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=4,
+        number=4
     )
     quota_metrics = proto.RepeatedField(
         proto.MESSAGE,

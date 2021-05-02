@@ -14,44 +14,43 @@
 # limitations under the License.
 #
 
-from google.cloud.apigeeconnect_v1.services.connection_service.client import ConnectionServiceClient
 from google.cloud.apigeeconnect_v1.services.connection_service.async_client import ConnectionServiceAsyncClient
-from google.cloud.apigeeconnect_v1.services.tether.client import TetherClient
+from google.cloud.apigeeconnect_v1.services.connection_service.client import ConnectionServiceClient
 from google.cloud.apigeeconnect_v1.services.tether.async_client import TetherAsyncClient
-
+from google.cloud.apigeeconnect_v1.services.tether.client import TetherClient
 from google.cloud.apigeeconnect_v1.types.connection import Cluster
 from google.cloud.apigeeconnect_v1.types.connection import Connection
 from google.cloud.apigeeconnect_v1.types.connection import ListConnectionsRequest
 from google.cloud.apigeeconnect_v1.types.connection import ListConnectionsResponse
+from google.cloud.apigeeconnect_v1.types.tether import Action
 from google.cloud.apigeeconnect_v1.types.tether import EgressRequest
 from google.cloud.apigeeconnect_v1.types.tether import EgressResponse
 from google.cloud.apigeeconnect_v1.types.tether import Header
 from google.cloud.apigeeconnect_v1.types.tether import HttpRequest
 from google.cloud.apigeeconnect_v1.types.tether import HttpResponse
 from google.cloud.apigeeconnect_v1.types.tether import Payload
-from google.cloud.apigeeconnect_v1.types.tether import StreamInfo
-from google.cloud.apigeeconnect_v1.types.tether import Url
-from google.cloud.apigeeconnect_v1.types.tether import Action
 from google.cloud.apigeeconnect_v1.types.tether import Scheme
+from google.cloud.apigeeconnect_v1.types.tether import StreamInfo
 from google.cloud.apigeeconnect_v1.types.tether import TetherEndpoint
+from google.cloud.apigeeconnect_v1.types.tether import Url
 
-__all__ = ('ConnectionServiceClient',
-    'ConnectionServiceAsyncClient',
-    'TetherClient',
-    'TetherAsyncClient',
+__all__ = ('Action',
     'Cluster',
     'Connection',
-    'ListConnectionsRequest',
-    'ListConnectionsResponse',
+    'ConnectionServiceAsyncClient',
+    'ConnectionServiceClient',
     'EgressRequest',
     'EgressResponse',
     'Header',
     'HttpRequest',
     'HttpResponse',
+    'ListConnectionsRequest',
+    'ListConnectionsResponse',
     'Payload',
-    'StreamInfo',
-    'Url',
-    'Action',
     'Scheme',
+    'StreamInfo',
+    'TetherAsyncClient',
+    'TetherClient',
     'TetherEndpoint',
+    'Url',
 )

@@ -228,7 +228,9 @@ class KnowledgeBasesGrpcAsyncIOTransport(KnowledgeBasesTransport):
     def list_knowledge_bases(self) -> Callable[
             [knowledge_base.ListKnowledgeBasesRequest],
             Awaitable[knowledge_base.ListKnowledgeBasesResponse]]:
-        r"""Return a callable for the list knowledge bases method over gRPC.
+        r"""Return a callable for the
+        list knowledge bases
+          method over gRPC.
 
         Returns the list of all knowledge bases of the
         specified agent.
@@ -255,7 +257,9 @@ class KnowledgeBasesGrpcAsyncIOTransport(KnowledgeBasesTransport):
     def get_knowledge_base(self) -> Callable[
             [knowledge_base.GetKnowledgeBaseRequest],
             Awaitable[knowledge_base.KnowledgeBase]]:
-        r"""Return a callable for the get knowledge base method over gRPC.
+        r"""Return a callable for the
+        get knowledge base
+          method over gRPC.
 
         Retrieves the specified knowledge base.
 
@@ -281,7 +285,9 @@ class KnowledgeBasesGrpcAsyncIOTransport(KnowledgeBasesTransport):
     def create_knowledge_base(self) -> Callable[
             [gcd_knowledge_base.CreateKnowledgeBaseRequest],
             Awaitable[gcd_knowledge_base.KnowledgeBase]]:
-        r"""Return a callable for the create knowledge base method over gRPC.
+        r"""Return a callable for the
+        create knowledge base
+          method over gRPC.
 
         Creates a knowledge base.
 
@@ -307,7 +313,9 @@ class KnowledgeBasesGrpcAsyncIOTransport(KnowledgeBasesTransport):
     def delete_knowledge_base(self) -> Callable[
             [knowledge_base.DeleteKnowledgeBaseRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete knowledge base method over gRPC.
+        r"""Return a callable for the
+        delete knowledge base
+          method over gRPC.
 
         Deletes the specified knowledge base.
 
@@ -333,7 +341,9 @@ class KnowledgeBasesGrpcAsyncIOTransport(KnowledgeBasesTransport):
     def update_knowledge_base(self) -> Callable[
             [gcd_knowledge_base.UpdateKnowledgeBaseRequest],
             Awaitable[gcd_knowledge_base.KnowledgeBase]]:
-        r"""Return a callable for the update knowledge base method over gRPC.
+        r"""Return a callable for the
+        update knowledge base
+          method over gRPC.
 
         Updates the specified knowledge base.
 

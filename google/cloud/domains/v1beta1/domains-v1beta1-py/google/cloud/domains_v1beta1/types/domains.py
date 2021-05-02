@@ -199,7 +199,7 @@ class Registration(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=9,
+        number=9
     )
     management_settings = proto.Field(
         proto.MESSAGE,

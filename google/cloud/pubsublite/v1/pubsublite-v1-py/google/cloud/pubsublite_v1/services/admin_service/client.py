@@ -351,7 +351,8 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
 
         Args:
             request (google.cloud.pubsublite_v1.types.CreateTopicRequest):
-                The request object. Request for CreateTopic.
+                The request object.
+                Request for CreateTopic.
             parent (str):
                 Required. The parent location in which to create the
                 topic. Structured like
@@ -400,7 +401,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, admin.CreateTopicRequest):
             request = admin.CreateTopicRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -444,7 +445,8 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
 
         Args:
             request (google.cloud.pubsublite_v1.types.GetTopicRequest):
-                The request object. Request for GetTopic.
+                The request object.
+                Request for GetTopic.
             name (str):
                 Required. The name of the topic whose
                 configuration to return.
@@ -476,7 +478,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, admin.GetTopicRequest):
             request = admin.GetTopicRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -517,7 +519,8 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
 
         Args:
             request (google.cloud.pubsublite_v1.types.GetTopicPartitionsRequest):
-                The request object. Request for GetTopicPartitions.
+                The request object.
+                Request for GetTopicPartitions.
             name (str):
                 Required. The topic whose partition
                 information to return.
@@ -549,7 +552,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, admin.GetTopicPartitionsRequest):
             request = admin.GetTopicPartitionsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -589,7 +592,8 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
 
         Args:
             request (google.cloud.pubsublite_v1.types.ListTopicsRequest):
-                The request object. Request for ListTopics.
+                The request object.
+                Request for ListTopics.
             parent (str):
                 Required. The parent whose topics are to be listed.
                 Structured like
@@ -626,7 +630,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, admin.ListTopicsRequest):
             request = admin.ListTopicsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -676,7 +680,8 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
 
         Args:
             request (google.cloud.pubsublite_v1.types.UpdateTopicRequest):
-                The request object. Request for UpdateTopic.
+                The request object.
+                Request for UpdateTopic.
             topic (google.cloud.pubsublite_v1.types.Topic):
                 Required. The topic to update. Its ``name`` field must
                 be populated.
@@ -715,7 +720,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, admin.UpdateTopicRequest):
             request = admin.UpdateTopicRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if topic is not None:
                 request.topic = topic
@@ -757,7 +762,8 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
 
         Args:
             request (google.cloud.pubsublite_v1.types.DeleteTopicRequest):
-                The request object. Request for DeleteTopic.
+                The request object.
+                Request for DeleteTopic.
             name (str):
                 Required. The name of the topic to
                 delete.
@@ -785,7 +791,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, admin.DeleteTopicRequest):
             request = admin.DeleteTopicRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -823,7 +829,8 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
 
         Args:
             request (google.cloud.pubsublite_v1.types.ListTopicSubscriptionsRequest):
-                The request object. Request for ListTopicSubscriptions.
+                The request object.
+                Request for ListTopicSubscriptions.
             name (str):
                 Required. The name of the topic whose
                 subscriptions to list.
@@ -859,7 +866,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, admin.ListTopicSubscriptionsRequest):
             request = admin.ListTopicSubscriptionsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -910,7 +917,8 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
 
         Args:
             request (google.cloud.pubsublite_v1.types.CreateSubscriptionRequest):
-                The request object. Request for CreateSubscription.
+                The request object.
+                Request for CreateSubscription.
             parent (str):
                 Required. The parent location in which to create the
                 subscription. Structured like
@@ -961,7 +969,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, admin.CreateSubscriptionRequest):
             request = admin.CreateSubscriptionRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1005,7 +1013,8 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
 
         Args:
             request (google.cloud.pubsublite_v1.types.GetSubscriptionRequest):
-                The request object. Request for GetSubscription.
+                The request object.
+                Request for GetSubscription.
             name (str):
                 Required. The name of the
                 subscription whose configuration to
@@ -1040,7 +1049,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, admin.GetSubscriptionRequest):
             request = admin.GetSubscriptionRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1081,7 +1090,8 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
 
         Args:
             request (google.cloud.pubsublite_v1.types.ListSubscriptionsRequest):
-                The request object. Request for ListSubscriptions.
+                The request object.
+                Request for ListSubscriptions.
             parent (str):
                 Required. The parent whose subscriptions are to be
                 listed. Structured like
@@ -1118,7 +1128,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, admin.ListSubscriptionsRequest):
             request = admin.ListSubscriptionsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1168,7 +1178,8 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
 
         Args:
             request (google.cloud.pubsublite_v1.types.UpdateSubscriptionRequest):
-                The request object. Request for UpdateSubscription.
+                The request object.
+                Request for UpdateSubscription.
             subscription (google.cloud.pubsublite_v1.types.Subscription):
                 Required. The subscription to update. Its ``name`` field
                 must be populated. Topic field must not be populated.
@@ -1209,7 +1220,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, admin.UpdateSubscriptionRequest):
             request = admin.UpdateSubscriptionRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if subscription is not None:
                 request.subscription = subscription
@@ -1251,7 +1262,8 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
 
         Args:
             request (google.cloud.pubsublite_v1.types.DeleteSubscriptionRequest):
-                The request object. Request for DeleteSubscription.
+                The request object.
+                Request for DeleteSubscription.
             name (str):
                 Required. The name of the
                 subscription to delete.
@@ -1279,7 +1291,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, admin.DeleteSubscriptionRequest):
             request = admin.DeleteSubscriptionRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

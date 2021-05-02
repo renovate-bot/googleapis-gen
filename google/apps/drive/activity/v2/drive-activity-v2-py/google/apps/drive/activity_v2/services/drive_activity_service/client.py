@@ -325,7 +325,8 @@ class DriveActivityServiceClient(metaclass=DriveActivityServiceClientMeta):
 
         Args:
             request (google.apps.drive.activity_v2.types.QueryDriveActivityRequest):
-                The request object. The request message for querying
+                The request object.
+                The request message for querying
                 Drive activity.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

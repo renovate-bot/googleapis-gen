@@ -223,7 +223,9 @@ class ImageAnnotatorGrpcTransport(ImageAnnotatorTransport):
     def batch_annotate_images(self) -> Callable[
             [image_annotator.BatchAnnotateImagesRequest],
             image_annotator.BatchAnnotateImagesResponse]:
-        r"""Return a callable for the batch annotate images method over gRPC.
+        r"""Return a callable for the
+        batch annotate images
+          method over gRPC.
 
         Run image detection and annotation for a batch of
         images.

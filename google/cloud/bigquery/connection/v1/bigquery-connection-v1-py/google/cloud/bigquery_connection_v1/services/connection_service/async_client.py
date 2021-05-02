@@ -161,7 +161,8 @@ class ConnectionServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery_connection_v1.types.CreateConnectionRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [ConnectionService.CreateConnection][google.cloud.bigquery.connection.v1.ConnectionService.CreateConnection].
             parent (:class:`str`):
                 Required. Parent resource name. Must be in the format
@@ -253,7 +254,8 @@ class ConnectionServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery_connection_v1.types.GetConnectionRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [ConnectionService.GetConnection][google.cloud.bigquery.connection.v1.ConnectionService.GetConnection].
             name (:class:`str`):
                 Required. Name of the requested connection, for example:
@@ -336,7 +338,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery_connection_v1.types.ListConnectionsRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [ConnectionService.ListConnections][google.cloud.bigquery.connection.v1.ConnectionService.ListConnections].
             parent (:class:`str`):
                 Required. Parent resource name. Must be in the form:
@@ -434,7 +437,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery_connection_v1.types.UpdateConnectionRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [ConnectionService.UpdateConnection][google.cloud.bigquery.connection.v1.ConnectionService.UpdateConnection].
             name (:class:`str`):
                 Required. Name of the connection to update, for example:
@@ -528,7 +532,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery_connection_v1.types.DeleteConnectionRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [ConnectionService.DeleteConnectionRequest][].
             name (:class:`str`):
                 Required. Name of the deleted connection, for example:
@@ -603,7 +608,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.GetIamPolicyRequest`):
-                The request object. Request message for `GetIamPolicy`
+                The request object.
+                Request message for `GetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -737,7 +743,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.SetIamPolicyRequest`):
-                The request object. Request message for `SetIamPolicy`
+                The request object.
+                Request message for `SetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -875,7 +882,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `TestIamPermissions` method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the

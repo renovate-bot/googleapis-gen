@@ -3284,11 +3284,7 @@ def test_notification_channel_service_base_transport_with_credentials_file():
         )
         load_creds.assert_called_once_with("credentials.json",
             scopes=None,
-            default_scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-            'https://www.googleapis.com/auth/monitoring',
-            'https://www.googleapis.com/auth/monitoring.read',
-),
+            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            'https://www.googleapis.com/auth/monitoring',            'https://www.googleapis.com/auth/monitoring.read',            ),
             quota_project_id="octopus",
         )
 
@@ -3334,6 +3330,7 @@ def test_notification_channel_service_auth_adc():
             'https://www.googleapis.com/auth/monitoring',
             'https://www.googleapis.com/auth/monitoring.read',
 ),
+
             quota_project_id=None,
         )
 
@@ -3416,15 +3413,11 @@ def test_notification_channel_service_transport_create_channel(transport_class, 
         )
 
         create_channel.assert_called_with(
-            "monitoring.googleapis.com:443",
+            "monitoring.googleapis.com",
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",
-            default_scopes=(
-                'https://www.googleapis.com/auth/cloud-platform',
-                'https://www.googleapis.com/auth/monitoring',
-                'https://www.googleapis.com/auth/monitoring.read',
-),
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/monitoring',                'https://www.googleapis.com/auth/monitoring.read',),
             scopes=["1", "2"],
             default_host="monitoring.googleapis.com",
             ssl_credentials=None,
@@ -3458,11 +3451,7 @@ def test_notification_channel_service_transport_create_channel_old_api_core(tran
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",
-            scopes=(
-                'https://www.googleapis.com/auth/cloud-platform',
-                'https://www.googleapis.com/auth/monitoring',
-                'https://www.googleapis.com/auth/monitoring.read',
-),
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/monitoring',                'https://www.googleapis.com/auth/monitoring.read',),
             ssl_credentials=None,
             options=[
                 ("grpc.max_send_message_length", -1),

@@ -348,7 +348,8 @@ class HomeGraphApiServiceClient(metaclass=HomeGraphApiServiceClientMeta):
 
         Args:
             request (google.home.graph_v1.types.RequestSyncDevicesRequest):
-                The request object. Request type for the
+                The request object.
+                Request type for the
                 [`RequestSyncDevices`](#google.home.graph.v1.HomeGraphApiService.RequestSyncDevices)
                 call.
             agent_user_id (str):
@@ -386,7 +387,7 @@ class HomeGraphApiServiceClient(metaclass=HomeGraphApiServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, homegraph.RequestSyncDevicesRequest):
             request = homegraph.RequestSyncDevicesRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if agent_user_id is not None:
                 request.agent_user_id = agent_user_id
@@ -437,7 +438,8 @@ class HomeGraphApiServiceClient(metaclass=HomeGraphApiServiceClientMeta):
 
         Args:
             request (google.home.graph_v1.types.ReportStateAndNotificationRequest):
-                The request object. Request type for the
+                The request object.
+                Request type for the
                 [`ReportStateAndNotification`](#google.home.graph.v1.HomeGraphApiService.ReportStateAndNotification)
                 call. It may include states, notifications, or both.
                 States and notifications are defined per `device_id`
@@ -514,7 +516,7 @@ class HomeGraphApiServiceClient(metaclass=HomeGraphApiServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, homegraph.ReportStateAndNotificationRequest):
             request = homegraph.ReportStateAndNotificationRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if request_id is not None:
                 request.request_id = request_id
@@ -564,7 +566,8 @@ class HomeGraphApiServiceClient(metaclass=HomeGraphApiServiceClientMeta):
 
         Args:
             request (google.home.graph_v1.types.DeleteAgentUserRequest):
-                The request object. Request type for the
+                The request object.
+                Request type for the
                 [`DeleteAgentUser`](#google.home.graph.v1.HomeGraphApiService.DeleteAgentUser)
                 call.
             request_id (str):
@@ -597,7 +600,7 @@ class HomeGraphApiServiceClient(metaclass=HomeGraphApiServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, homegraph.DeleteAgentUserRequest):
             request = homegraph.DeleteAgentUserRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if request_id is not None:
                 request.request_id = request_id
@@ -645,7 +648,8 @@ class HomeGraphApiServiceClient(metaclass=HomeGraphApiServiceClientMeta):
 
         Args:
             request (google.home.graph_v1.types.QueryRequest):
-                The request object. Request type for the
+                The request object.
+                Request type for the
                 [`Query`](#google.home.graph.v1.HomeGraphApiService.Query)
                 call.
             request_id (str):
@@ -698,7 +702,7 @@ class HomeGraphApiServiceClient(metaclass=HomeGraphApiServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, homegraph.QueryRequest):
             request = homegraph.QueryRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if request_id is not None:
                 request.request_id = request_id
@@ -741,7 +745,8 @@ class HomeGraphApiServiceClient(metaclass=HomeGraphApiServiceClientMeta):
 
         Args:
             request (google.home.graph_v1.types.SyncRequest):
-                The request object. Request type for the
+                The request object.
+                Request type for the
                 [`Sync`](#google.home.graph.v1.HomeGraphApiService.Sync)
                 call.
             request_id (str):
@@ -786,7 +791,7 @@ class HomeGraphApiServiceClient(metaclass=HomeGraphApiServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, homegraph.SyncRequest):
             request = homegraph.SyncRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if request_id is not None:
                 request.request_id = request_id

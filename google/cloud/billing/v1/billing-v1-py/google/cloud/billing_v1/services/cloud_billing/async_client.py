@@ -159,7 +159,8 @@ class CloudBillingAsyncClient:
 
         Args:
             request (:class:`google.cloud.billing_v1.types.GetBillingAccountRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `GetBillingAccount`.
             name (:class:`str`):
                 Required. The resource name of the billing account to
@@ -244,7 +245,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.billing_v1.types.ListBillingAccountsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `ListBillingAccounts`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -316,7 +318,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.billing_v1.types.UpdateBillingAccountRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `UpdateBillingAccount`.
             name (:class:`str`):
                 Required. The name of the billing
@@ -418,7 +421,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.billing_v1.types.CreateBillingAccountRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `CreateBillingAccount`.
             billing_account (:class:`google.cloud.billing_v1.types.BillingAccount`):
                 Required. The billing account
@@ -494,7 +498,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.billing_v1.types.ListProjectBillingInfoRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `ListProjectBillingInfo`.
             name (:class:`str`):
                 Required. The resource name of the billing account
@@ -590,7 +595,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.billing_v1.types.GetProjectBillingInfoRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `GetProjectBillingInfo`.
             name (:class:`str`):
                 Required. The resource name of the project for which
@@ -712,7 +718,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.billing_v1.types.UpdateProjectBillingInfoRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `UpdateProjectBillingInfo`.
             name (:class:`str`):
                 Required. The resource name of the project associated
@@ -811,7 +818,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.GetIamPolicyRequest`):
-                The request object. Request message for `GetIamPolicy`
+                The request object.
+                Request message for `GetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -952,7 +960,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.SetIamPolicyRequest`):
-                The request object. Request message for `SetIamPolicy`
+                The request object.
+                Request message for `SetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -1094,7 +1103,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `TestIamPermissions` method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the

@@ -370,7 +370,7 @@ class QueryResponsePayload(proto.Message):
     devices = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=1,
+        number=1
         message=struct.Struct,
     )
 

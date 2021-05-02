@@ -165,7 +165,8 @@ class ProjectsAsyncClient:
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.GetProjectRequest`):
-                The request object. The request sent to the
+                The request object.
+                The request sent to the
                 [GetProject][google.cloud.resourcemanager.v3.Projects.GetProject]
                 method.
             name (:class:`str`):
@@ -255,7 +256,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.ListProjectsRequest`):
-                The request object. The request sent to the
+                The request object.
+                The request sent to the
                 [ListProjects][google.cloud.resourcemanager.v3.Projects.ListProjects]
                 method.
             parent (:class:`str`):
@@ -364,7 +366,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.SearchProjectsRequest`):
-                The request object. The request sent to the
+                The request object.
+                The request sent to the
                 [SearchProjects][google.cloud.resourcemanager.v3.Projects.SearchProjects]
                 method.
             query (:class:`str`):
@@ -492,7 +495,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.CreateProjectRequest`):
-                The request object. The request sent to the
+                The request object.
+                The request sent to the
                 [CreateProject][google.cloud.resourcemanager.v3.Projects.CreateProject]
                 method.
             project (:class:`google.cloud.resourcemanager_v3.types.Project`):
@@ -586,7 +590,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.UpdateProjectRequest`):
-                The request object. The request sent to the
+                The request object.
+                The request sent to the
                 [UpdateProject][google.cloud.resourcemanager.v3.Projects.UpdateProject]
                 method.
 
@@ -699,7 +704,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.MoveProjectRequest`):
-                The request object. The request sent to
+                The request object.
+                The request sent to
                 [MoveProject][google.cloud.resourcemanager.v3.Projects.MoveProject]
                 method.
             name (:class:`str`):
@@ -829,7 +835,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.DeleteProjectRequest`):
-                The request object. [DeleteProject][google.cloud.resourcemanager.v3.Projects.DeleteProject]
+                The request object.
+                [DeleteProject][google.cloud.resourcemanager.v3.Projects.DeleteProject]
                 method.
             name (:class:`str`):
                 Required. The name of the Project (for example,
@@ -922,7 +929,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.UndeleteProjectRequest`):
-                The request object. The request sent to the
+                The request object.
+                The request sent to the
                 [UndeleteProject]
                 [google.cloud.resourcemanager.v3.Projects.UndeleteProject]
                 method.
@@ -1014,7 +1022,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.GetIamPolicyRequest`):
-                The request object. Request message for `GetIamPolicy`
+                The request object.
+                Request message for `GetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -1201,7 +1210,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.SetIamPolicyRequest`):
-                The request object. Request message for `SetIamPolicy`
+                The request object.
+                Request message for `SetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -1333,7 +1343,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `TestIamPermissions` method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the

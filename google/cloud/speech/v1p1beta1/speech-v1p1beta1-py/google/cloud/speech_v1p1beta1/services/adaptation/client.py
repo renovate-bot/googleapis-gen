@@ -351,7 +351,8 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
 
         Args:
             request (google.cloud.speech_v1p1beta1.types.CreatePhraseSetRequest):
-                The request object. Message sent by the client for the
+                The request object.
+                Message sent by the client for the
                 `CreatePhraseSet` method.
             parent (str):
                 Required. The parent resource where this phrase set will
@@ -403,7 +404,7 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_speech_adaptation.CreatePhraseSetRequest):
             request = cloud_speech_adaptation.CreatePhraseSetRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -447,7 +448,8 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
 
         Args:
             request (google.cloud.speech_v1p1beta1.types.GetPhraseSetRequest):
-                The request object. Message sent by the client for the
+                The request object.
+                Message sent by the client for the
                 `GetPhraseSet` method.
             name (str):
                 Required. The name of the phrase set to retrieve.
@@ -484,7 +486,7 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_speech_adaptation.GetPhraseSetRequest):
             request = cloud_speech_adaptation.GetPhraseSetRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -524,7 +526,8 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
 
         Args:
             request (google.cloud.speech_v1p1beta1.types.ListPhraseSetRequest):
-                The request object. Message sent by the client for the
+                The request object.
+                Message sent by the client for the
                 `ListPhraseSet` method.
             parent (str):
                 Required. The parent, which owns this
@@ -563,7 +566,7 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_speech_adaptation.ListPhraseSetRequest):
             request = cloud_speech_adaptation.ListPhraseSetRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -613,7 +616,8 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
 
         Args:
             request (google.cloud.speech_v1p1beta1.types.UpdatePhraseSetRequest):
-                The request object. Message sent by the client for the
+                The request object.
+                Message sent by the client for the
                 `UpdatePhraseSet` method.
             phrase_set (google.cloud.speech_v1p1beta1.types.PhraseSet):
                 Required. The phrase set to update.
@@ -657,7 +661,7 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_speech_adaptation.UpdatePhraseSetRequest):
             request = cloud_speech_adaptation.UpdatePhraseSetRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if phrase_set is not None:
                 request.phrase_set = phrase_set
@@ -699,7 +703,8 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
 
         Args:
             request (google.cloud.speech_v1p1beta1.types.DeletePhraseSetRequest):
-                The request object. Message sent by the client for the
+                The request object.
+                Message sent by the client for the
                 `DeletePhraseSet` method.
             name (str):
                 Required. The name of the phrase set to delete. Format:
@@ -728,7 +733,7 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_speech_adaptation.DeletePhraseSetRequest):
             request = cloud_speech_adaptation.DeletePhraseSetRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -767,7 +772,8 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
 
         Args:
             request (google.cloud.speech_v1p1beta1.types.CreateCustomClassRequest):
-                The request object. Message sent by the client for the
+                The request object.
+                Message sent by the client for the
                 `CreateCustomClass` method.
             parent (str):
                 Required. The parent resource where this custom class
@@ -823,7 +829,7 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_speech_adaptation.CreateCustomClassRequest):
             request = cloud_speech_adaptation.CreateCustomClassRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -867,7 +873,8 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
 
         Args:
             request (google.cloud.speech_v1p1beta1.types.GetCustomClassRequest):
-                The request object. Message sent by the client for the
+                The request object.
+                Message sent by the client for the
                 `GetCustomClass` method.
             name (str):
                 Required. The name of the custom class to retrieve.
@@ -908,7 +915,7 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_speech_adaptation.GetCustomClassRequest):
             request = cloud_speech_adaptation.GetCustomClassRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -948,7 +955,8 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
 
         Args:
             request (google.cloud.speech_v1p1beta1.types.ListCustomClassesRequest):
-                The request object. Message sent by the client for the
+                The request object.
+                Message sent by the client for the
                 `ListCustomClasses` method.
             parent (str):
                 Required. The parent, which owns this collection of
@@ -987,7 +995,7 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_speech_adaptation.ListCustomClassesRequest):
             request = cloud_speech_adaptation.ListCustomClassesRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1037,7 +1045,8 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
 
         Args:
             request (google.cloud.speech_v1p1beta1.types.UpdateCustomClassRequest):
-                The request object. Message sent by the client for the
+                The request object.
+                Message sent by the client for the
                 `UpdateCustomClass` method.
             custom_class (google.cloud.speech_v1p1beta1.types.CustomClass):
                 Required. The custom class to update.
@@ -1085,7 +1094,7 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_speech_adaptation.UpdateCustomClassRequest):
             request = cloud_speech_adaptation.UpdateCustomClassRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if custom_class is not None:
                 request.custom_class = custom_class
@@ -1127,7 +1136,8 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
 
         Args:
             request (google.cloud.speech_v1p1beta1.types.DeleteCustomClassRequest):
-                The request object. Message sent by the client for the
+                The request object.
+                Message sent by the client for the
                 `DeleteCustomClass` method.
             name (str):
                 Required. The name of the custom class to delete.
@@ -1157,7 +1167,7 @@ class AdaptationClient(metaclass=AdaptationClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_speech_adaptation.DeleteCustomClassRequest):
             request = cloud_speech_adaptation.DeleteCustomClassRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

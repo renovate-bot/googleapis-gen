@@ -371,7 +371,8 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
 
         Args:
             request (google.cloud.spanner_admin_instance_v1.types.ListInstanceConfigsRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs].
             parent (str):
                 Required. The name of the project for which a list of
@@ -410,7 +411,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
         # there are no flattened fields.
         if not isinstance(request, spanner_instance_admin.ListInstanceConfigsRequest):
             request = spanner_instance_admin.ListInstanceConfigsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -460,7 +461,8 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
 
         Args:
             request (google.cloud.spanner_admin_instance_v1.types.GetInstanceConfigRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [GetInstanceConfigRequest][google.spanner.admin.instance.v1.InstanceAdmin.GetInstanceConfig].
             name (str):
                 Required. The name of the requested instance
@@ -498,7 +500,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
         # there are no flattened fields.
         if not isinstance(request, spanner_instance_admin.GetInstanceConfigRequest):
             request = spanner_instance_admin.GetInstanceConfigRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -538,7 +540,8 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
 
         Args:
             request (google.cloud.spanner_admin_instance_v1.types.ListInstancesRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [ListInstances][google.spanner.admin.instance.v1.InstanceAdmin.ListInstances].
             parent (str):
                 Required. The name of the project for which a list of
@@ -577,7 +580,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
         # there are no flattened fields.
         if not isinstance(request, spanner_instance_admin.ListInstancesRequest):
             request = spanner_instance_admin.ListInstancesRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -626,7 +629,8 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
 
         Args:
             request (google.cloud.spanner_admin_instance_v1.types.GetInstanceRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [GetInstance][google.spanner.admin.instance.v1.InstanceAdmin.GetInstance].
             name (str):
                 Required. The name of the requested instance. Values are
@@ -662,7 +666,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
         # there are no flattened fields.
         if not isinstance(request, spanner_instance_admin.GetInstanceRequest):
             request = spanner_instance_admin.GetInstanceRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -741,7 +745,8 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
 
         Args:
             request (google.cloud.spanner_admin_instance_v1.types.CreateInstanceRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [CreateInstance][google.spanner.admin.instance.v1.InstanceAdmin.CreateInstance].
             parent (str):
                 Required. The name of the project in which to create the
@@ -796,7 +801,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
         # there are no flattened fields.
         if not isinstance(request, spanner_instance_admin.CreateInstanceRequest):
             request = spanner_instance_admin.CreateInstanceRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -893,7 +898,8 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
 
         Args:
             request (google.cloud.spanner_admin_instance_v1.types.UpdateInstanceRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance].
             instance (google.cloud.spanner_admin_instance_v1.types.Instance):
                 Required. The instance to update, which must always
@@ -947,7 +953,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
         # there are no flattened fields.
         if not isinstance(request, spanner_instance_admin.UpdateInstanceRequest):
             request = spanner_instance_admin.UpdateInstanceRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if instance is not None:
                 request.instance = instance
@@ -1007,7 +1013,8 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
 
         Args:
             request (google.cloud.spanner_admin_instance_v1.types.DeleteInstanceRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [DeleteInstance][google.spanner.admin.instance.v1.InstanceAdmin.DeleteInstance].
             name (str):
                 Required. The name of the instance to be deleted. Values
@@ -1037,7 +1044,7 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
         # there are no flattened fields.
         if not isinstance(request, spanner_instance_admin.DeleteInstanceRequest):
             request = spanner_instance_admin.DeleteInstanceRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1078,7 +1085,8 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.SetIamPolicyRequest):
-                The request object. Request message for `SetIamPolicy`
+                The request object.
+                Request message for `SetIamPolicy`
                 method.
             resource (str):
                 REQUIRED: The resource for which the
@@ -1162,14 +1170,14 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        if isinstance(request, dict):
+         if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.SetIamPolicyRequest(**request)
         elif not request:
             # Null request, just make one.
             request = iam_policy.SetIamPolicyRequest()
-            if resource is not None:
+             if resource is not None:
                 request.resource = resource
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1212,7 +1220,8 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.GetIamPolicyRequest):
-                The request object. Request message for `GetIamPolicy`
+                The request object.
+                Request message for `GetIamPolicy`
                 method.
             resource (str):
                 REQUIRED: The resource for which the
@@ -1296,14 +1305,14 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        if isinstance(request, dict):
+         if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.GetIamPolicyRequest(**request)
         elif not request:
             # Null request, just make one.
             request = iam_policy.GetIamPolicyRequest()
-            if resource is not None:
+             if resource is not None:
                 request.resource = resource
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1348,7 +1357,8 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `TestIamPermissions` method.
             resource (str):
                 REQUIRED: The resource for which the
@@ -1386,14 +1396,14 @@ class InstanceAdminClient(metaclass=InstanceAdminClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        if isinstance(request, dict):
+         if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.TestIamPermissionsRequest(**request)
         elif not request:
             # Null request, just make one.
             request = iam_policy.TestIamPermissionsRequest()
-            if resource is not None:
+             if resource is not None:
                 request.resource = resource
             if permissions:
                 request.permissions.extend(permissions)

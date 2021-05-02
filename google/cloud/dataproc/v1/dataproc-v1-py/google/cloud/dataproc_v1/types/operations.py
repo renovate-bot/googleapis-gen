@@ -122,7 +122,7 @@ class ClusterOperationMetadata(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=13,
+        number=13
     )
     warnings = proto.RepeatedField(
         proto.STRING,

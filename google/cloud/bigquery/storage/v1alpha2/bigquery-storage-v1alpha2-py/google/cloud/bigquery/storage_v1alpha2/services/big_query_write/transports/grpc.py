@@ -222,7 +222,9 @@ class BigQueryWriteGrpcTransport(BigQueryWriteTransport):
     def create_write_stream(self) -> Callable[
             [storage.CreateWriteStreamRequest],
             stream.WriteStream]:
-        r"""Return a callable for the create write stream method over gRPC.
+        r"""Return a callable for the
+        create write stream
+          method over gRPC.
 
         Creates a write stream to the given table. Additionally, every
         table has a special COMMITTED stream named '_default' to which
@@ -254,7 +256,9 @@ class BigQueryWriteGrpcTransport(BigQueryWriteTransport):
     def append_rows(self) -> Callable[
             [storage.AppendRowsRequest],
             storage.AppendRowsResponse]:
-        r"""Return a callable for the append rows method over gRPC.
+        r"""Return a callable for the
+        append rows
+          method over gRPC.
 
         Appends data to the given stream.
 
@@ -300,7 +304,9 @@ class BigQueryWriteGrpcTransport(BigQueryWriteTransport):
     def get_write_stream(self) -> Callable[
             [storage.GetWriteStreamRequest],
             stream.WriteStream]:
-        r"""Return a callable for the get write stream method over gRPC.
+        r"""Return a callable for the
+        get write stream
+          method over gRPC.
 
         Gets a write stream.
 
@@ -326,7 +332,9 @@ class BigQueryWriteGrpcTransport(BigQueryWriteTransport):
     def finalize_write_stream(self) -> Callable[
             [storage.FinalizeWriteStreamRequest],
             storage.FinalizeWriteStreamResponse]:
-        r"""Return a callable for the finalize write stream method over gRPC.
+        r"""Return a callable for the
+        finalize write stream
+          method over gRPC.
 
         Finalize a write stream so that no new data can be appended to
         the stream. Finalize is not supported on the '_default' stream.
@@ -353,7 +361,9 @@ class BigQueryWriteGrpcTransport(BigQueryWriteTransport):
     def batch_commit_write_streams(self) -> Callable[
             [storage.BatchCommitWriteStreamsRequest],
             storage.BatchCommitWriteStreamsResponse]:
-        r"""Return a callable for the batch commit write streams method over gRPC.
+        r"""Return a callable for the
+        batch commit write streams
+          method over gRPC.
 
         Atomically commits a group of ``PENDING`` streams that belong to
         the same ``parent`` table. Streams must be finalized before
@@ -383,7 +393,9 @@ class BigQueryWriteGrpcTransport(BigQueryWriteTransport):
     def flush_rows(self) -> Callable[
             [storage.FlushRowsRequest],
             storage.FlushRowsResponse]:
-        r"""Return a callable for the flush rows method over gRPC.
+        r"""Return a callable for the
+        flush rows
+          method over gRPC.
 
         Flushes rows to a BUFFERED stream. If users are appending rows
         to BUFFERED stream, flush operation is required in order for the

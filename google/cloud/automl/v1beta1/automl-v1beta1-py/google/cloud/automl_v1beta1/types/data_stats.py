@@ -229,13 +229,13 @@ class TimestampStats(proto.Message):
         buckets = proto.MapField(
             proto.INT32,
             proto.INT64,
-            number=1,
+            number=1
         )
 
     granular_stats = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=1,
+        number=1
         message=GranularStats,
     )
 
@@ -268,7 +268,7 @@ class StructStats(proto.Message):
     field_stats = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=1,
+        number=1
         message='DataStats',
     )
 

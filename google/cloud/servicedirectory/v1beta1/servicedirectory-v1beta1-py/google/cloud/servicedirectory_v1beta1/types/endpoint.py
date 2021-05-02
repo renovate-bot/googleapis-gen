@@ -65,7 +65,7 @@ class Endpoint(proto.Message):
     metadata = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=4,
+        number=4
     )
 
 

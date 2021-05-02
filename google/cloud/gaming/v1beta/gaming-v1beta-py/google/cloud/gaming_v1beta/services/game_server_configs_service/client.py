@@ -341,7 +341,8 @@ class GameServerConfigsServiceClient(metaclass=GameServerConfigsServiceClientMet
 
         Args:
             request (google.cloud.gaming_v1beta.types.ListGameServerConfigsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GameServerConfigsService.ListGameServerConfigs.
             parent (str):
                 Required. The parent resource name. Uses the form:
@@ -380,7 +381,7 @@ class GameServerConfigsServiceClient(metaclass=GameServerConfigsServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, game_server_configs.ListGameServerConfigsRequest):
             request = game_server_configs.ListGameServerConfigsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -429,7 +430,8 @@ class GameServerConfigsServiceClient(metaclass=GameServerConfigsServiceClientMet
 
         Args:
             request (google.cloud.gaming_v1beta.types.GetGameServerConfigRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GameServerConfigsService.GetGameServerConfig.
             name (str):
                 Required. The name of the game server config to
@@ -464,7 +466,7 @@ class GameServerConfigsServiceClient(metaclass=GameServerConfigsServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, game_server_configs.GetGameServerConfigRequest):
             request = game_server_configs.GetGameServerConfigRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -509,7 +511,8 @@ class GameServerConfigsServiceClient(metaclass=GameServerConfigsServiceClientMet
 
         Args:
             request (google.cloud.gaming_v1beta.types.CreateGameServerConfigRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GameServerConfigsService.CreateGameServerConfig.
             parent (str):
                 Required. The parent resource name. Uses the form:
@@ -555,7 +558,7 @@ class GameServerConfigsServiceClient(metaclass=GameServerConfigsServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, game_server_configs.CreateGameServerConfigRequest):
             request = game_server_configs.CreateGameServerConfigRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -607,7 +610,8 @@ class GameServerConfigsServiceClient(metaclass=GameServerConfigsServiceClientMet
 
         Args:
             request (google.cloud.gaming_v1beta.types.DeleteGameServerConfigRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GameServerConfigsService.DeleteGameServerConfig.
             name (str):
                 Required. The name of the game server config to delete.
@@ -657,7 +661,7 @@ class GameServerConfigsServiceClient(metaclass=GameServerConfigsServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, game_server_configs.DeleteGameServerConfigRequest):
             request = game_server_configs.DeleteGameServerConfigRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

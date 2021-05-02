@@ -14,11 +14,10 @@
 # limitations under the License.
 #
 
-from google.cloud.videointelligence_v1p3beta1.services.streaming_video_intelligence_service.client import StreamingVideoIntelligenceServiceClient
 from google.cloud.videointelligence_v1p3beta1.services.streaming_video_intelligence_service.async_client import StreamingVideoIntelligenceServiceAsyncClient
-from google.cloud.videointelligence_v1p3beta1.services.video_intelligence_service.client import VideoIntelligenceServiceClient
+from google.cloud.videointelligence_v1p3beta1.services.streaming_video_intelligence_service.client import StreamingVideoIntelligenceServiceClient
 from google.cloud.videointelligence_v1p3beta1.services.video_intelligence_service.async_client import VideoIntelligenceServiceAsyncClient
-
+from google.cloud.videointelligence_v1p3beta1.services.video_intelligence_service.client import VideoIntelligenceServiceClient
 from google.cloud.videointelligence_v1p3beta1.types.video_intelligence import AnnotateVideoProgress
 from google.cloud.videointelligence_v1p3beta1.types.video_intelligence import AnnotateVideoRequest
 from google.cloud.videointelligence_v1p3beta1.types.video_intelligence import AnnotateVideoResponse
@@ -33,10 +32,13 @@ from google.cloud.videointelligence_v1p3beta1.types.video_intelligence import Ex
 from google.cloud.videointelligence_v1p3beta1.types.video_intelligence import ExplicitContentFrame
 from google.cloud.videointelligence_v1p3beta1.types.video_intelligence import FaceDetectionAnnotation
 from google.cloud.videointelligence_v1p3beta1.types.video_intelligence import FaceDetectionConfig
+from google.cloud.videointelligence_v1p3beta1.types.video_intelligence import Feature
 from google.cloud.videointelligence_v1p3beta1.types.video_intelligence import LabelAnnotation
 from google.cloud.videointelligence_v1p3beta1.types.video_intelligence import LabelDetectionConfig
+from google.cloud.videointelligence_v1p3beta1.types.video_intelligence import LabelDetectionMode
 from google.cloud.videointelligence_v1p3beta1.types.video_intelligence import LabelFrame
 from google.cloud.videointelligence_v1p3beta1.types.video_intelligence import LabelSegment
+from google.cloud.videointelligence_v1p3beta1.types.video_intelligence import Likelihood
 from google.cloud.videointelligence_v1p3beta1.types.video_intelligence import LogoRecognitionAnnotation
 from google.cloud.videointelligence_v1p3beta1.types.video_intelligence import NormalizedBoundingBox
 from google.cloud.videointelligence_v1p3beta1.types.video_intelligence import NormalizedBoundingPoly
@@ -57,6 +59,7 @@ from google.cloud.videointelligence_v1p3beta1.types.video_intelligence import St
 from google.cloud.videointelligence_v1p3beta1.types.video_intelligence import StreamingAutomlClassificationConfig
 from google.cloud.videointelligence_v1p3beta1.types.video_intelligence import StreamingAutomlObjectTrackingConfig
 from google.cloud.videointelligence_v1p3beta1.types.video_intelligence import StreamingExplicitContentDetectionConfig
+from google.cloud.videointelligence_v1p3beta1.types.video_intelligence import StreamingFeature
 from google.cloud.videointelligence_v1p3beta1.types.video_intelligence import StreamingLabelDetectionConfig
 from google.cloud.videointelligence_v1p3beta1.types.video_intelligence import StreamingObjectTrackingConfig
 from google.cloud.videointelligence_v1p3beta1.types.video_intelligence import StreamingShotChangeDetectionConfig
@@ -74,16 +77,8 @@ from google.cloud.videointelligence_v1p3beta1.types.video_intelligence import Vi
 from google.cloud.videointelligence_v1p3beta1.types.video_intelligence import VideoContext
 from google.cloud.videointelligence_v1p3beta1.types.video_intelligence import VideoSegment
 from google.cloud.videointelligence_v1p3beta1.types.video_intelligence import WordInfo
-from google.cloud.videointelligence_v1p3beta1.types.video_intelligence import Feature
-from google.cloud.videointelligence_v1p3beta1.types.video_intelligence import LabelDetectionMode
-from google.cloud.videointelligence_v1p3beta1.types.video_intelligence import Likelihood
-from google.cloud.videointelligence_v1p3beta1.types.video_intelligence import StreamingFeature
 
-__all__ = ('StreamingVideoIntelligenceServiceClient',
-    'StreamingVideoIntelligenceServiceAsyncClient',
-    'VideoIntelligenceServiceClient',
-    'VideoIntelligenceServiceAsyncClient',
-    'AnnotateVideoProgress',
+__all__ = ('AnnotateVideoProgress',
     'AnnotateVideoRequest',
     'AnnotateVideoResponse',
     'Celebrity',
@@ -97,10 +92,13 @@ __all__ = ('StreamingVideoIntelligenceServiceClient',
     'ExplicitContentFrame',
     'FaceDetectionAnnotation',
     'FaceDetectionConfig',
+    'Feature',
     'LabelAnnotation',
     'LabelDetectionConfig',
+    'LabelDetectionMode',
     'LabelFrame',
     'LabelSegment',
+    'Likelihood',
     'LogoRecognitionAnnotation',
     'NormalizedBoundingBox',
     'NormalizedBoundingPoly',
@@ -121,12 +119,15 @@ __all__ = ('StreamingVideoIntelligenceServiceClient',
     'StreamingAutomlClassificationConfig',
     'StreamingAutomlObjectTrackingConfig',
     'StreamingExplicitContentDetectionConfig',
+    'StreamingFeature',
     'StreamingLabelDetectionConfig',
     'StreamingObjectTrackingConfig',
     'StreamingShotChangeDetectionConfig',
     'StreamingStorageConfig',
     'StreamingVideoAnnotationResults',
     'StreamingVideoConfig',
+    'StreamingVideoIntelligenceServiceAsyncClient',
+    'StreamingVideoIntelligenceServiceClient',
     'TextAnnotation',
     'TextDetectionConfig',
     'TextFrame',
@@ -136,10 +137,8 @@ __all__ = ('StreamingVideoIntelligenceServiceClient',
     'VideoAnnotationProgress',
     'VideoAnnotationResults',
     'VideoContext',
+    'VideoIntelligenceServiceAsyncClient',
+    'VideoIntelligenceServiceClient',
     'VideoSegment',
     'WordInfo',
-    'Feature',
-    'LabelDetectionMode',
-    'Likelihood',
-    'StreamingFeature',
 )

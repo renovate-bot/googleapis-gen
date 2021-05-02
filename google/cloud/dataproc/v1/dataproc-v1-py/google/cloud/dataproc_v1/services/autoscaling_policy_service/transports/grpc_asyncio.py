@@ -227,7 +227,9 @@ class AutoscalingPolicyServiceGrpcAsyncIOTransport(AutoscalingPolicyServiceTrans
     def create_autoscaling_policy(self) -> Callable[
             [autoscaling_policies.CreateAutoscalingPolicyRequest],
             Awaitable[autoscaling_policies.AutoscalingPolicy]]:
-        r"""Return a callable for the create autoscaling policy method over gRPC.
+        r"""Return a callable for the
+        create autoscaling policy
+          method over gRPC.
 
         Creates new autoscaling policy.
 
@@ -253,7 +255,9 @@ class AutoscalingPolicyServiceGrpcAsyncIOTransport(AutoscalingPolicyServiceTrans
     def update_autoscaling_policy(self) -> Callable[
             [autoscaling_policies.UpdateAutoscalingPolicyRequest],
             Awaitable[autoscaling_policies.AutoscalingPolicy]]:
-        r"""Return a callable for the update autoscaling policy method over gRPC.
+        r"""Return a callable for the
+        update autoscaling policy
+          method over gRPC.
 
         Updates (replaces) autoscaling policy.
 
@@ -282,7 +286,9 @@ class AutoscalingPolicyServiceGrpcAsyncIOTransport(AutoscalingPolicyServiceTrans
     def get_autoscaling_policy(self) -> Callable[
             [autoscaling_policies.GetAutoscalingPolicyRequest],
             Awaitable[autoscaling_policies.AutoscalingPolicy]]:
-        r"""Return a callable for the get autoscaling policy method over gRPC.
+        r"""Return a callable for the
+        get autoscaling policy
+          method over gRPC.
 
         Retrieves autoscaling policy.
 
@@ -308,7 +314,9 @@ class AutoscalingPolicyServiceGrpcAsyncIOTransport(AutoscalingPolicyServiceTrans
     def list_autoscaling_policies(self) -> Callable[
             [autoscaling_policies.ListAutoscalingPoliciesRequest],
             Awaitable[autoscaling_policies.ListAutoscalingPoliciesResponse]]:
-        r"""Return a callable for the list autoscaling policies method over gRPC.
+        r"""Return a callable for the
+        list autoscaling policies
+          method over gRPC.
 
         Lists autoscaling policies in the project.
 
@@ -334,7 +342,9 @@ class AutoscalingPolicyServiceGrpcAsyncIOTransport(AutoscalingPolicyServiceTrans
     def delete_autoscaling_policy(self) -> Callable[
             [autoscaling_policies.DeleteAutoscalingPolicyRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete autoscaling policy method over gRPC.
+        r"""Return a callable for the
+        delete autoscaling policy
+          method over gRPC.
 
         Deletes an autoscaling policy. It is an error to
         delete an autoscaling policy that is in use by one or

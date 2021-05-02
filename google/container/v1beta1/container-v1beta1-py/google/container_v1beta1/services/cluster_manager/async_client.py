@@ -158,7 +158,8 @@ class ClusterManagerAsyncClient:
 
         Args:
             request (:class:`google.container_v1beta1.types.ListClustersRequest`):
-                The request object. ListClustersRequest lists clusters.
+                The request object.
+                ListClustersRequest lists clusters.
             project_id (:class:`str`):
                 Required. Deprecated. The Google Developers Console
                 `project ID or project
@@ -257,7 +258,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.container_v1beta1.types.GetClusterRequest`):
-                The request object. GetClusterRequest gets the settings
+                The request object.
+                GetClusterRequest gets the settings
                 of a cluster.
             project_id (:class:`str`):
                 Required. Deprecated. The Google Developers Console
@@ -377,7 +379,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.container_v1beta1.types.CreateClusterRequest`):
-                The request object. CreateClusterRequest creates a
+                The request object.
+                CreateClusterRequest creates a
                 cluster.
             project_id (:class:`str`):
                 Required. Deprecated. The Google Developers Console
@@ -481,7 +484,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.container_v1beta1.types.UpdateClusterRequest`):
-                The request object. UpdateClusterRequest updates the
+                The request object.
+                UpdateClusterRequest updates the
                 settings of a cluster.
             project_id (:class:`str`):
                 Required. Deprecated. The Google Developers Console
@@ -593,7 +597,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.container_v1beta1.types.UpdateNodePoolRequest`):
-                The request object. SetNodePoolVersionRequest updates
+                The request object.
+                SetNodePoolVersionRequest updates
                 the version of a node pool.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -651,7 +656,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.container_v1beta1.types.SetNodePoolAutoscalingRequest`):
-                The request object. SetNodePoolAutoscalingRequest sets
+                The request object.
+                SetNodePoolAutoscalingRequest sets
                 the autoscaler settings of a node pool.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -712,7 +718,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.container_v1beta1.types.SetLoggingServiceRequest`):
-                The request object. SetLoggingServiceRequest sets the
+                The request object.
+                SetLoggingServiceRequest sets the
                 logging service of a cluster.
             project_id (:class:`str`):
                 Required. Deprecated. The Google Developers Console
@@ -839,7 +846,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.container_v1beta1.types.SetMonitoringServiceRequest`):
-                The request object. SetMonitoringServiceRequest sets the
+                The request object.
+                SetMonitoringServiceRequest sets the
                 monitoring service of a cluster.
             project_id (:class:`str`):
                 Required. Deprecated. The Google Developers Console
@@ -968,7 +976,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.container_v1beta1.types.SetAddonsConfigRequest`):
-                The request object. SetAddonsRequest sets the addons
+                The request object.
+                SetAddonsRequest sets the addons
                 associated with the cluster.
             project_id (:class:`str`):
                 Required. Deprecated. The Google Developers Console
@@ -1086,7 +1095,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.container_v1beta1.types.SetLocationsRequest`):
-                The request object. SetLocationsRequest sets the
+                The request object.
+                SetLocationsRequest sets the
                 locations of the cluster.
             project_id (:class:`str`):
                 Required. Deprecated. The Google Developers Console
@@ -1208,7 +1218,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.container_v1beta1.types.UpdateMasterRequest`):
-                The request object. UpdateMasterRequest updates the
+                The request object.
+                UpdateMasterRequest updates the
                 master of the cluster.
             project_id (:class:`str`):
                 Required. Deprecated. The Google Developers Console
@@ -1334,7 +1345,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.container_v1beta1.types.SetMasterAuthRequest`):
-                The request object. SetMasterAuthRequest updates the
+                The request object.
+                SetMasterAuthRequest updates the
                 admin password of a cluster.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1403,7 +1415,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.container_v1beta1.types.DeleteClusterRequest`):
-                The request object. DeleteClusterRequest deletes a
+                The request object.
+                DeleteClusterRequest deletes a
                 cluster.
             project_id (:class:`str`):
                 Required. Deprecated. The Google Developers Console
@@ -1515,7 +1528,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.container_v1beta1.types.ListOperationsRequest`):
-                The request object. ListOperationsRequest lists
+                The request object.
+                ListOperationsRequest lists
                 operations.
             project_id (:class:`str`):
                 Required. Deprecated. The Google Developers Console
@@ -1615,7 +1629,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.container_v1beta1.types.GetOperationRequest`):
-                The request object. GetOperationRequest gets a single
+                The request object.
+                GetOperationRequest gets a single
                 operation.
             project_id (:class:`str`):
                 Required. Deprecated. The Google Developers Console
@@ -1726,7 +1741,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.container_v1beta1.types.CancelOperationRequest`):
-                The request object. CancelOperationRequest cancels a
+                The request object.
+                CancelOperationRequest cancels a
                 single operation.
             project_id (:class:`str`):
                 Required. Deprecated. The Google Developers Console
@@ -1819,7 +1835,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.container_v1beta1.types.GetServerConfigRequest`):
-                The request object. Gets the current Kubernetes Engine
+                The request object.
+                Gets the current Kubernetes Engine
                 service configuration.
             project_id (:class:`str`):
                 Required. Deprecated. The Google Developers Console
@@ -1918,7 +1935,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.container_v1beta1.types.ListNodePoolsRequest`):
-                The request object. ListNodePoolsRequest lists the node
+                The request object.
+                ListNodePoolsRequest lists the node
                 pool(s) for a cluster.
             project_id (:class:`str`):
                 Required. Deprecated. The Google Developers Console
@@ -2027,7 +2045,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.container_v1beta1.types.GetJSONWebKeysRequest`):
-                The request object. GetJSONWebKeysRequest gets the
+                The request object.
+                GetJSONWebKeysRequest gets the
                 public component of the keys used by the cluster to sign
                 token requests. This will be the jwks_uri for the
                 discover document returned by getOpenIDConfig. See the
@@ -2090,7 +2109,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.container_v1beta1.types.GetNodePoolRequest`):
-                The request object. GetNodePoolRequest retrieves a node
+                The request object.
+                GetNodePoolRequest retrieves a node
                 pool for a cluster.
             project_id (:class:`str`):
                 Required. Deprecated. The Google Developers Console
@@ -2219,7 +2239,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.container_v1beta1.types.CreateNodePoolRequest`):
-                The request object. CreateNodePoolRequest creates a node
+                The request object.
+                CreateNodePoolRequest creates a node
                 pool for a cluster.
             project_id (:class:`str`):
                 Required. Deprecated. The Google Developers Console
@@ -2331,7 +2352,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.container_v1beta1.types.DeleteNodePoolRequest`):
-                The request object. DeleteNodePoolRequest deletes a node
+                The request object.
+                DeleteNodePoolRequest deletes a node
                 pool for a cluster.
             project_id (:class:`str`):
                 Required. Deprecated. The Google Developers Console
@@ -2456,7 +2478,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.container_v1beta1.types.RollbackNodePoolUpgradeRequest`):
-                The request object. RollbackNodePoolUpgradeRequest
+                The request object.
+                RollbackNodePoolUpgradeRequest
                 rollbacks the previously Aborted or Failed NodePool
                 upgrade. This will be an no-op if the last upgrade
                 successfully completed.
@@ -2576,7 +2599,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.container_v1beta1.types.SetNodePoolManagementRequest`):
-                The request object. SetNodePoolManagementRequest sets
+                The request object.
+                SetNodePoolManagementRequest sets
                 the node management properties of a node pool.
             project_id (:class:`str`):
                 Required. Deprecated. The Google Developers Console
@@ -2703,7 +2727,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.container_v1beta1.types.SetLabelsRequest`):
-                The request object. SetLabelsRequest sets the Google
+                The request object.
+                SetLabelsRequest sets the Google
                 Cloud Platform labels on a Google Container Engine
                 cluster, which will in turn set them for Google Compute
                 Engine resources used by that cluster
@@ -2836,7 +2861,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.container_v1beta1.types.SetLegacyAbacRequest`):
-                The request object. SetLegacyAbacRequest enables or
+                The request object.
+                SetLegacyAbacRequest enables or
                 disables the ABAC authorization mechanism for a cluster.
             project_id (:class:`str`):
                 Required. Deprecated. The Google Developers Console
@@ -2950,7 +2976,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.container_v1beta1.types.StartIPRotationRequest`):
-                The request object. StartIPRotationRequest creates a new
+                The request object.
+                StartIPRotationRequest creates a new
                 IP for the cluster and then performs a node upgrade on
                 each node pool to point to the new IP.
             project_id (:class:`str`):
@@ -3055,7 +3082,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.container_v1beta1.types.CompleteIPRotationRequest`):
-                The request object. CompleteIPRotationRequest moves the
+                The request object.
+                CompleteIPRotationRequest moves the
                 cluster master back into single-IP mode.
             project_id (:class:`str`):
                 Required. Deprecated. The Google Developers Console
@@ -3156,7 +3184,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.container_v1beta1.types.SetNodePoolSizeRequest`):
-                The request object. SetNodePoolSizeRequest sets the size
+                The request object.
+                SetNodePoolSizeRequest sets the size
                 a node pool.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -3217,7 +3246,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.container_v1beta1.types.SetNetworkPolicyRequest`):
-                The request object. SetNetworkPolicyRequest
+                The request object.
+                SetNetworkPolicyRequest
                 enables/disables network policy for a cluster.
             project_id (:class:`str`):
                 Required. Deprecated. The Google Developers Console
@@ -3331,7 +3361,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.container_v1beta1.types.SetMaintenancePolicyRequest`):
-                The request object. SetMaintenancePolicyRequest sets the
+                The request object.
+                SetMaintenancePolicyRequest sets the
                 maintenance policy for a cluster.
             project_id (:class:`str`):
                 Required. The Google Developers Console `project ID or
@@ -3439,7 +3470,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.container_v1beta1.types.ListUsableSubnetworksRequest`):
-                The request object. ListUsableSubnetworksRequest
+                The request object.
+                ListUsableSubnetworksRequest
                 requests the list of usable subnetworks. available to a
                 user for creating clusters.
             parent (:class:`str`):
@@ -3537,7 +3569,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.container_v1beta1.types.ListLocationsRequest`):
-                The request object. ListLocationsRequest is used to
+                The request object.
+                ListLocationsRequest is used to
                 request the locations that offer GKE.
             parent (:class:`str`):
                 Required. Contains the name of the resource requested.

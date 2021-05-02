@@ -247,7 +247,9 @@ class PredictionServiceGrpcAsyncIOTransport(PredictionServiceTransport):
     def predict(self) -> Callable[
             [prediction_service.PredictRequest],
             Awaitable[prediction_service.PredictResponse]]:
-        r"""Return a callable for the predict method over gRPC.
+        r"""Return a callable for the
+        predict
+          method over gRPC.
 
         Perform an online prediction. The prediction result is directly
         returned in the response. Available for following ML scenarios,
@@ -309,7 +311,9 @@ class PredictionServiceGrpcAsyncIOTransport(PredictionServiceTransport):
     def batch_predict(self) -> Callable[
             [prediction_service.BatchPredictRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the batch predict method over gRPC.
+        r"""Return a callable for the
+        batch predict
+          method over gRPC.
 
         Perform a batch prediction. Unlike the online
         [Predict][google.cloud.automl.v1.PredictionService.Predict],

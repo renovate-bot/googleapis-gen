@@ -709,7 +709,7 @@ class BatchCreateNotesRequest(proto.Message):
     notes = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=2,
+        number=2
         message='Note',
     )
 

@@ -178,7 +178,8 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.CreateCertificateRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.CreateCertificate][google.cloud.security.privateca.v1.CertificateAuthorityService.CreateCertificate].
             parent (:class:`str`):
                 Required. The resource name of the
@@ -280,7 +281,8 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.GetCertificateRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.GetCertificate][google.cloud.security.privateca.v1.CertificateAuthorityService.GetCertificate].
             name (:class:`str`):
                 Required. The
@@ -359,7 +361,8 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.ListCertificatesRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.ListCertificates][google.cloud.security.privateca.v1.CertificateAuthorityService.ListCertificates].
             parent (:class:`str`):
                 Required. The resource name of the location associated
@@ -449,7 +452,8 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.RevokeCertificateRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.RevokeCertificate][google.cloud.security.privateca.v1.CertificateAuthorityService.RevokeCertificate].
             name (:class:`str`):
                 Required. The resource name for this
@@ -531,7 +535,8 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.UpdateCertificateRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.UpdateCertificate][google.cloud.security.privateca.v1.CertificateAuthorityService.UpdateCertificate].
             certificate (:class:`google.cloud.security.privateca_v1.types.Certificate`):
                 Required.
@@ -625,7 +630,8 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.ActivateCertificateAuthorityRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.ActivateCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.ActivateCertificateAuthority].
             name (:class:`str`):
                 Required. The resource name for this
@@ -719,7 +725,8 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.CreateCertificateAuthorityRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.CreateCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.CreateCertificateAuthority].
             parent (:class:`str`):
                 Required. The resource name of the
@@ -830,7 +837,8 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.DisableCertificateAuthorityRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.DisableCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.DisableCertificateAuthority].
             name (:class:`str`):
                 Required. The resource name for this
@@ -921,7 +929,8 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.EnableCertificateAuthorityRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.EnableCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.EnableCertificateAuthority].
             name (:class:`str`):
                 Required. The resource name for this
@@ -1021,7 +1030,8 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.FetchCertificateAuthorityCsrRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.FetchCertificateAuthorityCsr][google.cloud.security.privateca.v1.CertificateAuthorityService.FetchCertificateAuthorityCsr].
             name (:class:`str`):
                 Required. The resource name for this
@@ -1099,7 +1109,8 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.GetCertificateAuthorityRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.GetCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.GetCertificateAuthority].
             name (:class:`str`):
                 Required. The
@@ -1181,7 +1192,8 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.ListCertificateAuthoritiesRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.ListCertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthorityService.ListCertificateAuthorities].
             parent (:class:`str`):
                 Required. The resource name of the
@@ -1273,7 +1285,8 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.UndeleteCertificateAuthorityRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.UndeleteCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.UndeleteCertificateAuthority].
             name (:class:`str`):
                 Required. The resource name for this
@@ -1364,7 +1377,8 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.DeleteCertificateAuthorityRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.DeleteCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.DeleteCertificateAuthority].
             name (:class:`str`):
                 Required. The resource name for this
@@ -1456,7 +1470,8 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.UpdateCertificateAuthorityRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.UpdateCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.UpdateCertificateAuthority].
             certificate_authority (:class:`google.cloud.security.privateca_v1.types.CertificateAuthority`):
                 Required.
@@ -1556,7 +1571,8 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.CreateCaPoolRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.CreateCaPool][google.cloud.security.privateca.v1.CertificateAuthorityService.CreateCaPool].
             parent (:class:`str`):
                 Required. The resource name of the location associated
@@ -1670,7 +1686,8 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.UpdateCaPoolRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.UpdateCaPool][google.cloud.security.privateca.v1.CertificateAuthorityService.UpdateCaPool].
             ca_pool (:class:`google.cloud.security.privateca_v1.types.CaPool`):
                 Required.
@@ -1772,7 +1789,8 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.GetCaPoolRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.GetCaPool][google.cloud.security.privateca.v1.CertificateAuthorityService.GetCaPool].
             name (:class:`str`):
                 Required. The
@@ -1857,7 +1875,8 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.ListCaPoolsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.ListCaPools][google.cloud.security.privateca.v1.CertificateAuthorityService.ListCaPools].
             parent (:class:`str`):
                 Required. The resource name of the location associated
@@ -1946,7 +1965,8 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.DeleteCaPoolRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.DeleteCaPool][google.cloud.security.privateca.v1.CertificateAuthorityService.DeleteCaPool].
             name (:class:`str`):
                 Required. The resource name for this
@@ -2044,7 +2064,8 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.FetchCaCertsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.FetchCaCerts][google.cloud.security.privateca.v1.CertificateAuthorityService.FetchCaCerts].
             ca_pool (:class:`str`):
                 Required. The resource name for the
@@ -2121,7 +2142,8 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.GetCertificateRevocationListRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.GetCertificateRevocationList][google.cloud.security.privateca.v1.CertificateAuthorityService.GetCertificateRevocationList].
             name (:class:`str`):
                 Required. The
@@ -2202,7 +2224,8 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.ListCertificateRevocationListsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.ListCertificateRevocationLists][google.cloud.security.privateca.v1.CertificateAuthorityService.ListCertificateRevocationLists].
             parent (:class:`str`):
                 Required. The resource name of the location associated
@@ -2294,7 +2317,8 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.UpdateCertificateRevocationListRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.UpdateCertificateRevocationList][google.cloud.security.privateca.v1.CertificateAuthorityService.UpdateCertificateRevocationList].
             certificate_revocation_list (:class:`google.cloud.security.privateca_v1.types.CertificateRevocationList`):
                 Required.
@@ -2395,7 +2419,8 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.CreateCertificateTemplateRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.CreateCertificateTemplate][google.cloud.security.privateca.v1.CertificateAuthorityService.CreateCertificateTemplate].
             parent (:class:`str`):
                 Required. The resource name of the location associated
@@ -2502,7 +2527,8 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.DeleteCertificateTemplateRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.DeleteCertificateTemplate][google.cloud.security.privateca.v1.CertificateAuthorityService.DeleteCertificateTemplate].
             name (:class:`str`):
                 Required. The resource name for this
@@ -2601,7 +2627,8 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.GetCertificateTemplateRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.GetCertificateTemplate][google.cloud.security.privateca.v1.CertificateAuthorityService.GetCertificateTemplate].
             name (:class:`str`):
                 Required. The
@@ -2680,7 +2707,8 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.ListCertificateTemplatesRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.ListCertificateTemplates][google.cloud.security.privateca.v1.CertificateAuthorityService.ListCertificateTemplates].
             parent (:class:`str`):
                 Required. The resource name of the location associated
@@ -2771,7 +2799,8 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.UpdateCertificateTemplateRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.UpdateCertificateTemplate][google.cloud.security.privateca.v1.CertificateAuthorityService.UpdateCertificateTemplate].
             certificate_template (:class:`google.cloud.security.privateca_v1.types.CertificateTemplate`):
                 Required.

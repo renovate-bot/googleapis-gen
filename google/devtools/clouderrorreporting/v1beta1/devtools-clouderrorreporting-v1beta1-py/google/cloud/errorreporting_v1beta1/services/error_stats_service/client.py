@@ -337,7 +337,8 @@ class ErrorStatsServiceClient(metaclass=ErrorStatsServiceClientMeta):
 
         Args:
             request (google.cloud.errorreporting_v1beta1.types.ListGroupStatsRequest):
-                The request object. Specifies a set of `ErrorGroupStats`
+                The request object.
+                Specifies a set of `ErrorGroupStats`
                 to return.
             project_name (str):
                 Required. The resource name of the Google Cloud Platform
@@ -394,7 +395,7 @@ class ErrorStatsServiceClient(metaclass=ErrorStatsServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, error_stats_service.ListGroupStatsRequest):
             request = error_stats_service.ListGroupStatsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_name is not None:
                 request.project_name = project_name
@@ -446,7 +447,8 @@ class ErrorStatsServiceClient(metaclass=ErrorStatsServiceClientMeta):
 
         Args:
             request (google.cloud.errorreporting_v1beta1.types.ListEventsRequest):
-                The request object. Specifies a set of error events to
+                The request object.
+                Specifies a set of error events to
                 return.
             project_name (str):
                 Required. The resource name of the Google Cloud Platform
@@ -495,7 +497,7 @@ class ErrorStatsServiceClient(metaclass=ErrorStatsServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, error_stats_service.ListEventsRequest):
             request = error_stats_service.ListEventsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_name is not None:
                 request.project_name = project_name
@@ -546,7 +548,8 @@ class ErrorStatsServiceClient(metaclass=ErrorStatsServiceClientMeta):
 
         Args:
             request (google.cloud.errorreporting_v1beta1.types.DeleteEventsRequest):
-                The request object. Deletes all events in the project.
+                The request object.
+                Deletes all events in the project.
             project_name (str):
                 Required. The resource name of the Google Cloud Platform
                 project. Written as ``projects/{projectID}``, where
@@ -584,7 +587,7 @@ class ErrorStatsServiceClient(metaclass=ErrorStatsServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, error_stats_service.DeleteEventsRequest):
             request = error_stats_service.DeleteEventsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_name is not None:
                 request.project_name = project_name

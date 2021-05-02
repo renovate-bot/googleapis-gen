@@ -273,7 +273,7 @@ class QueryParameters(proto.Message):
     webhook_headers = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=14,
+        number=14
     )
 
 

@@ -14,9 +14,8 @@
 # limitations under the License.
 #
 
-from google.cloud.asset_v1.services.asset_service.client import AssetServiceClient
 from google.cloud.asset_v1.services.asset_service.async_client import AssetServiceAsyncClient
-
+from google.cloud.asset_v1.services.asset_service.client import AssetServiceClient
 from google.cloud.asset_v1.types.asset_service import AnalyzeIamPolicyLongrunningRequest
 from google.cloud.asset_v1.types.asset_service import AnalyzeIamPolicyLongrunningResponse
 from google.cloud.asset_v1.types.asset_service import AnalyzeIamPolicyRequest
@@ -24,6 +23,7 @@ from google.cloud.asset_v1.types.asset_service import AnalyzeIamPolicyResponse
 from google.cloud.asset_v1.types.asset_service import BatchGetAssetsHistoryRequest
 from google.cloud.asset_v1.types.asset_service import BatchGetAssetsHistoryResponse
 from google.cloud.asset_v1.types.asset_service import BigQueryDestination
+from google.cloud.asset_v1.types.asset_service import ContentType
 from google.cloud.asset_v1.types.asset_service import CreateFeedRequest
 from google.cloud.asset_v1.types.asset_service import DeleteFeedRequest
 from google.cloud.asset_v1.types.asset_service import ExportAssetsRequest
@@ -46,7 +46,6 @@ from google.cloud.asset_v1.types.asset_service import SearchAllIamPoliciesRespon
 from google.cloud.asset_v1.types.asset_service import SearchAllResourcesRequest
 from google.cloud.asset_v1.types.asset_service import SearchAllResourcesResponse
 from google.cloud.asset_v1.types.asset_service import UpdateFeedRequest
-from google.cloud.asset_v1.types.asset_service import ContentType
 from google.cloud.asset_v1.types.assets import Asset
 from google.cloud.asset_v1.types.assets import IamPolicyAnalysisResult
 from google.cloud.asset_v1.types.assets import IamPolicyAnalysisState
@@ -56,15 +55,17 @@ from google.cloud.asset_v1.types.assets import ResourceSearchResult
 from google.cloud.asset_v1.types.assets import TemporalAsset
 from google.cloud.asset_v1.types.assets import TimeWindow
 
-__all__ = ('AssetServiceClient',
-    'AssetServiceAsyncClient',
-    'AnalyzeIamPolicyLongrunningRequest',
+__all__ = ('AnalyzeIamPolicyLongrunningRequest',
     'AnalyzeIamPolicyLongrunningResponse',
     'AnalyzeIamPolicyRequest',
     'AnalyzeIamPolicyResponse',
+    'Asset',
+    'AssetServiceAsyncClient',
+    'AssetServiceClient',
     'BatchGetAssetsHistoryRequest',
     'BatchGetAssetsHistoryResponse',
     'BigQueryDestination',
+    'ContentType',
     'CreateFeedRequest',
     'DeleteFeedRequest',
     'ExportAssetsRequest',
@@ -76,24 +77,22 @@ __all__ = ('AssetServiceClient',
     'GetFeedRequest',
     'IamPolicyAnalysisOutputConfig',
     'IamPolicyAnalysisQuery',
+    'IamPolicyAnalysisResult',
+    'IamPolicyAnalysisState',
+    'IamPolicySearchResult',
     'ListFeedsRequest',
     'ListFeedsResponse',
     'OutputConfig',
     'OutputResult',
     'PartitionSpec',
     'PubsubDestination',
+    'Resource',
+    'ResourceSearchResult',
     'SearchAllIamPoliciesRequest',
     'SearchAllIamPoliciesResponse',
     'SearchAllResourcesRequest',
     'SearchAllResourcesResponse',
-    'UpdateFeedRequest',
-    'ContentType',
-    'Asset',
-    'IamPolicyAnalysisResult',
-    'IamPolicyAnalysisState',
-    'IamPolicySearchResult',
-    'Resource',
-    'ResourceSearchResult',
     'TemporalAsset',
     'TimeWindow',
+    'UpdateFeedRequest',
 )

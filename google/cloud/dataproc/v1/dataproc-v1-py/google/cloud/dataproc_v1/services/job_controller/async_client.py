@@ -157,7 +157,8 @@ class JobControllerAsyncClient:
 
         Args:
             request (:class:`google.cloud.dataproc_v1.types.SubmitJobRequest`):
-                The request object. A request to submit a job.
+                The request object.
+                A request to submit a job.
             project_id (:class:`str`):
                 Required. The ID of the Google Cloud
                 Platform project that the job belongs
@@ -246,7 +247,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1.types.SubmitJobRequest`):
-                The request object. A request to submit a job.
+                The request object.
+                A request to submit a job.
             project_id (:class:`str`):
                 Required. The ID of the Google Cloud
                 Platform project that the job belongs
@@ -349,7 +351,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1.types.GetJobRequest`):
-                The request object. A request to get the resource
+                The request object.
+                A request to get the resource
                 representation for a job in a project.
             project_id (:class:`str`):
                 Required. The ID of the Google Cloud
@@ -441,7 +444,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1.types.ListJobsRequest`):
-                The request object. A request to list jobs in a project.
+                The request object.
+                A request to list jobs in a project.
             project_id (:class:`str`):
                 Required. The ID of the Google Cloud
                 Platform project that the job belongs
@@ -559,7 +563,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1.types.UpdateJobRequest`):
-                The request object. A request to update a job.
+                The request object.
+                A request to update a job.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -616,7 +621,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1.types.CancelJobRequest`):
-                The request object. A request to cancel a job.
+                The request object.
+                A request to cancel a job.
             project_id (:class:`str`):
                 Required. The ID of the Google Cloud
                 Platform project that the job belongs
@@ -708,7 +714,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1.types.DeleteJobRequest`):
-                The request object. A request to delete a job.
+                The request object.
+                A request to delete a job.
             project_id (:class:`str`):
                 Required. The ID of the Google Cloud
                 Platform project that the job belongs

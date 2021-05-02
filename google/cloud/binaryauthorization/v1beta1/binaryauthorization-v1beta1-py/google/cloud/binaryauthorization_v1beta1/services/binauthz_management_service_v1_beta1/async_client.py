@@ -178,7 +178,8 @@ class BinauthzManagementServiceV1Beta1AsyncClient:
 
         Args:
             request (:class:`google.cloud.binaryauthorization_v1beta1.types.GetPolicyRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [BinauthzManagementService.GetPolicy][].
             name (:class:`str`):
                 Required. The resource name of the
@@ -268,7 +269,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.binaryauthorization_v1beta1.types.UpdatePolicyRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [BinauthzManagementService.UpdatePolicy][].
             policy_ (:class:`google.cloud.binaryauthorization_v1beta1.types.Policy`):
                 Required. A new or updated
@@ -364,7 +366,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.binaryauthorization_v1beta1.types.CreateAttestorRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [BinauthzManagementService.CreateAttestor][].
             parent (:class:`str`):
                 Required. The parent of this
@@ -467,7 +470,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.binaryauthorization_v1beta1.types.GetAttestorRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [BinauthzManagementService.GetAttestor][].
             name (:class:`str`):
                 Required. The name of the
@@ -555,7 +559,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.binaryauthorization_v1beta1.types.UpdateAttestorRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [BinauthzManagementService.UpdateAttestor][].
             attestor (:class:`google.cloud.binaryauthorization_v1beta1.types.Attestor`):
                 Required. The updated
@@ -644,7 +649,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.binaryauthorization_v1beta1.types.ListAttestorsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [BinauthzManagementService.ListAttestors][].
             parent (:class:`str`):
                 Required. The resource name of the project associated
@@ -744,7 +750,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.binaryauthorization_v1beta1.types.DeleteAttestorRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [BinauthzManagementService.DeleteAttestor][].
             name (:class:`str`):
                 Required. The name of the

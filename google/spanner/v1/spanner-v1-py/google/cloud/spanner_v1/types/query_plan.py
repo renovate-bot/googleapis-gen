@@ -140,7 +140,7 @@ class PlanNode(proto.Message):
         subqueries = proto.MapField(
             proto.STRING,
             proto.INT32,
-            number=2,
+            number=2
         )
 
     index = proto.Field(

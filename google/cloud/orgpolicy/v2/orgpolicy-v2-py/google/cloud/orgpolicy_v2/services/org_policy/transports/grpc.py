@@ -242,7 +242,9 @@ class OrgPolicyGrpcTransport(OrgPolicyTransport):
     def list_constraints(self) -> Callable[
             [orgpolicy.ListConstraintsRequest],
             orgpolicy.ListConstraintsResponse]:
-        r"""Return a callable for the list constraints method over gRPC.
+        r"""Return a callable for the
+        list constraints
+          method over gRPC.
 
         Lists ``Constraints`` that could be applied on the specified
         resource.
@@ -269,7 +271,9 @@ class OrgPolicyGrpcTransport(OrgPolicyTransport):
     def list_policies(self) -> Callable[
             [orgpolicy.ListPoliciesRequest],
             orgpolicy.ListPoliciesResponse]:
-        r"""Return a callable for the list policies method over gRPC.
+        r"""Return a callable for the
+        list policies
+          method over gRPC.
 
         Retrieves all of the ``Policies`` that exist on a particular
         resource.
@@ -296,7 +300,9 @@ class OrgPolicyGrpcTransport(OrgPolicyTransport):
     def get_policy(self) -> Callable[
             [orgpolicy.GetPolicyRequest],
             orgpolicy.Policy]:
-        r"""Return a callable for the get policy method over gRPC.
+        r"""Return a callable for the
+        get policy
+          method over gRPC.
 
         Gets a ``Policy`` on a resource.
 
@@ -326,7 +332,9 @@ class OrgPolicyGrpcTransport(OrgPolicyTransport):
     def get_effective_policy(self) -> Callable[
             [orgpolicy.GetEffectivePolicyRequest],
             orgpolicy.Policy]:
-        r"""Return a callable for the get effective policy method over gRPC.
+        r"""Return a callable for the
+        get effective policy
+          method over gRPC.
 
         Gets the effective ``Policy`` on a resource. This is the result
         of merging ``Policies`` in the resource hierarchy and evaluating
@@ -357,7 +365,9 @@ class OrgPolicyGrpcTransport(OrgPolicyTransport):
     def create_policy(self) -> Callable[
             [orgpolicy.CreatePolicyRequest],
             orgpolicy.Policy]:
-        r"""Return a callable for the create policy method over gRPC.
+        r"""Return a callable for the
+        create policy
+          method over gRPC.
 
         Creates a Policy.
 
@@ -389,7 +399,9 @@ class OrgPolicyGrpcTransport(OrgPolicyTransport):
     def update_policy(self) -> Callable[
             [orgpolicy.UpdatePolicyRequest],
             orgpolicy.Policy]:
-        r"""Return a callable for the update policy method over gRPC.
+        r"""Return a callable for the
+        update policy
+          method over gRPC.
 
         Updates a Policy.
 
@@ -424,7 +436,9 @@ class OrgPolicyGrpcTransport(OrgPolicyTransport):
     def delete_policy(self) -> Callable[
             [orgpolicy.DeletePolicyRequest],
             empty.Empty]:
-        r"""Return a callable for the delete policy method over gRPC.
+        r"""Return a callable for the
+        delete policy
+          method over gRPC.
 
         Deletes a Policy.
 

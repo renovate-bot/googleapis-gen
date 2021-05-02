@@ -174,7 +174,8 @@ class HubServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.networkconnectivity_v1alpha1.types.ListHubsRequest`):
-                The request object. Request for
+                The request object.
+                Request for
                 [HubService.ListHubs][google.cloud.networkconnectivity.v1alpha1.HubService.ListHubs]
                 method.
             parent (:class:`str`):
@@ -261,7 +262,8 @@ class HubServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.networkconnectivity_v1alpha1.types.GetHubRequest`):
-                The request object. Request for
+                The request object.
+                Request for
                 [HubService.GetHub][google.cloud.networkconnectivity.v1alpha1.HubService.GetHub]
                 method.
             name (:class:`str`):
@@ -344,7 +346,8 @@ class HubServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.networkconnectivity_v1alpha1.types.CreateHubRequest`):
-                The request object. Request for
+                The request object.
+                Request for
                 [HubService.CreateHub][google.cloud.networkconnectivity.v1alpha1.HubService.CreateHub]
                 method.
             parent (:class:`str`):
@@ -452,7 +455,8 @@ class HubServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.networkconnectivity_v1alpha1.types.UpdateHubRequest`):
-                The request object. Request for
+                The request object.
+                Request for
                 [HubService.UpdateHub][google.cloud.networkconnectivity.v1alpha1.HubService.UpdateHub]
                 method.
             hub (:class:`google.cloud.networkconnectivity_v1alpha1.types.Hub`):
@@ -554,7 +558,8 @@ class HubServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.networkconnectivity_v1alpha1.types.DeleteHubRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [HubService.DeleteHub][google.cloud.networkconnectivity.v1alpha1.HubService.DeleteHub].
             name (:class:`str`):
                 Required. The name of the Hub to
@@ -650,7 +655,8 @@ class HubServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.networkconnectivity_v1alpha1.types.ListSpokesRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [HubService.ListSpokes][google.cloud.networkconnectivity.v1alpha1.HubService.ListSpokes].
             parent (:class:`str`):
                 Required. The parent's resource name.
@@ -735,7 +741,8 @@ class HubServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.networkconnectivity_v1alpha1.types.GetSpokeRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [HubService.GetSpoke][google.cloud.networkconnectivity.v1alpha1.HubService.GetSpoke].
             name (:class:`str`):
                 Required. The name of Spoke resource.
@@ -813,7 +820,8 @@ class HubServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.networkconnectivity_v1alpha1.types.CreateSpokeRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [HubService.CreateSpoke][google.cloud.networkconnectivity.v1alpha1.HubService.CreateSpoke].
             parent (:class:`str`):
                 Required. The parent's resource name
@@ -919,7 +927,8 @@ class HubServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.networkconnectivity_v1alpha1.types.UpdateSpokeRequest`):
-                The request object. Request for
+                The request object.
+                Request for
                 [HubService.UpdateSpoke][google.cloud.networkconnectivity.v1alpha1.HubService.UpdateSpoke]
                 method.
             spoke (:class:`google.cloud.networkconnectivity_v1alpha1.types.Spoke`):
@@ -1020,7 +1029,8 @@ class HubServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.networkconnectivity_v1alpha1.types.DeleteSpokeRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [HubService.DeleteSpoke][google.cloud.networkconnectivity.v1alpha1.HubService.DeleteSpoke].
             name (:class:`str`):
                 Required. The name of the Spoke to

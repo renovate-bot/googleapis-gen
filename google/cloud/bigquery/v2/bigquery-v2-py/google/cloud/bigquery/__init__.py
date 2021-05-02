@@ -14,9 +14,8 @@
 # limitations under the License.
 #
 
-from google.cloud.bigquery_v2.services.model_service.client import ModelServiceClient
 from google.cloud.bigquery_v2.services.model_service.async_client import ModelServiceAsyncClient
-
+from google.cloud.bigquery_v2.services.model_service.client import ModelServiceClient
 from google.cloud.bigquery_v2.types.encryption_config import EncryptionConfiguration
 from google.cloud.bigquery_v2.types.model import DeleteModelRequest
 from google.cloud.bigquery_v2.types.model import GetModelRequest
@@ -30,16 +29,16 @@ from google.cloud.bigquery_v2.types.standard_sql import StandardSqlField
 from google.cloud.bigquery_v2.types.standard_sql import StandardSqlStructType
 from google.cloud.bigquery_v2.types.table_reference import TableReference
 
-__all__ = ('ModelServiceClient',
-    'ModelServiceAsyncClient',
+__all__ = ('DeleteModelRequest',
     'EncryptionConfiguration',
-    'DeleteModelRequest',
     'GetModelRequest',
     'ListModelsRequest',
     'ListModelsResponse',
     'Model',
-    'PatchModelRequest',
     'ModelReference',
+    'ModelServiceAsyncClient',
+    'ModelServiceClient',
+    'PatchModelRequest',
     'StandardSqlDataType',
     'StandardSqlField',
     'StandardSqlStructType',

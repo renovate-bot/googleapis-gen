@@ -330,7 +330,8 @@ class PhishingProtectionServiceV1Beta1Client(metaclass=PhishingProtectionService
 
         Args:
             request (google.cloud.phishingprotection_v1beta1.types.ReportPhishingRequest):
-                The request object. The ReportPhishing request message.
+                The request object.
+                The ReportPhishing request message.
             parent (str):
                 Required. The name of the project for which the report
                 will be created, in the format
@@ -373,7 +374,7 @@ class PhishingProtectionServiceV1Beta1Client(metaclass=PhishingProtectionService
         # there are no flattened fields.
         if not isinstance(request, phishingprotection.ReportPhishingRequest):
             request = phishingprotection.ReportPhishingRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent

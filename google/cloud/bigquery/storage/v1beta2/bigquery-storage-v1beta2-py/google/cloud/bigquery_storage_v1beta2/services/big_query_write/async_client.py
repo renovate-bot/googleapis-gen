@@ -169,7 +169,8 @@ class BigQueryWriteAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery_storage_v1beta2.types.CreateWriteStreamRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `CreateWriteStream`.
             parent (:class:`str`):
                 Required. Reference to the table to which the stream
@@ -280,7 +281,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             requests (AsyncIterator[`google.cloud.bigquery_storage_v1beta2.types.AppendRowsRequest`]):
-                The request object AsyncIterator. Request message for `AppendRows`.
+                The request object AsyncIterator.
+                Request message for `AppendRows`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -337,7 +339,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery_storage_v1beta2.types.GetWriteStreamRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `GetWriteStreamRequest`.
             name (:class:`str`):
                 Required. Name of the stream to get, in the form of
@@ -421,7 +424,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery_storage_v1beta2.types.FinalizeWriteStreamRequest`):
-                The request object. Request message for invoking
+                The request object.
+                Request message for invoking
                 `FinalizeWriteStream`.
             name (:class:`str`):
                 Required. Name of the stream to finalize, in the form of
@@ -505,7 +509,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery_storage_v1beta2.types.BatchCommitWriteStreamsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `BatchCommitWriteStreams`.
             parent (:class:`str`):
                 Required. Parent table that all the streams should
@@ -591,7 +596,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery_storage_v1beta2.types.FlushRowsRequest`):
-                The request object. Request message for `FlushRows`.
+                The request object.
+                Request message for `FlushRows`.
             write_stream (:class:`str`):
                 Required. The stream that is the
                 target of the flush operation.

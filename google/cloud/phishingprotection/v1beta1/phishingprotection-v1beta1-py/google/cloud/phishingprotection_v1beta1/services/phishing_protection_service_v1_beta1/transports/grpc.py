@@ -220,7 +220,9 @@ class PhishingProtectionServiceV1Beta1GrpcTransport(PhishingProtectionServiceV1B
     def report_phishing(self) -> Callable[
             [phishingprotection.ReportPhishingRequest],
             phishingprotection.ReportPhishingResponse]:
-        r"""Return a callable for the report phishing method over gRPC.
+        r"""Return a callable for the
+        report phishing
+          method over gRPC.
 
         Reports a URI suspected of containing phishing content to be
         reviewed. Once the report review is complete, its result can be

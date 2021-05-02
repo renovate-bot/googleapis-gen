@@ -381,7 +381,8 @@ class FirestoreAdminClient(metaclass=FirestoreAdminClientMeta):
 
         Args:
             request (google.cloud.firestore_admin_v1.types.CreateIndexRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [FirestoreAdmin.CreateIndex][google.firestore.admin.v1.FirestoreAdmin.CreateIndex].
             parent (str):
                 Required. A parent name of the form
@@ -425,7 +426,7 @@ class FirestoreAdminClient(metaclass=FirestoreAdminClientMeta):
         # there are no flattened fields.
         if not isinstance(request, firestore_admin.CreateIndexRequest):
             request = firestore_admin.CreateIndexRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -475,7 +476,8 @@ class FirestoreAdminClient(metaclass=FirestoreAdminClientMeta):
 
         Args:
             request (google.cloud.firestore_admin_v1.types.ListIndexesRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [FirestoreAdmin.ListIndexes][google.firestore.admin.v1.FirestoreAdmin.ListIndexes].
             parent (str):
                 Required. A parent name of the form
@@ -513,7 +515,7 @@ class FirestoreAdminClient(metaclass=FirestoreAdminClientMeta):
         # there are no flattened fields.
         if not isinstance(request, firestore_admin.ListIndexesRequest):
             request = firestore_admin.ListIndexesRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -562,7 +564,8 @@ class FirestoreAdminClient(metaclass=FirestoreAdminClientMeta):
 
         Args:
             request (google.cloud.firestore_admin_v1.types.GetIndexRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [FirestoreAdmin.GetIndex][google.firestore.admin.v1.FirestoreAdmin.GetIndex].
             name (str):
                 Required. A name of the form
@@ -598,7 +601,7 @@ class FirestoreAdminClient(metaclass=FirestoreAdminClientMeta):
         # there are no flattened fields.
         if not isinstance(request, firestore_admin.GetIndexRequest):
             request = firestore_admin.GetIndexRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -638,7 +641,8 @@ class FirestoreAdminClient(metaclass=FirestoreAdminClientMeta):
 
         Args:
             request (google.cloud.firestore_admin_v1.types.DeleteIndexRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [FirestoreAdmin.DeleteIndex][google.firestore.admin.v1.FirestoreAdmin.DeleteIndex].
             name (str):
                 Required. A name of the form
@@ -667,7 +671,7 @@ class FirestoreAdminClient(metaclass=FirestoreAdminClientMeta):
         # there are no flattened fields.
         if not isinstance(request, firestore_admin.DeleteIndexRequest):
             request = firestore_admin.DeleteIndexRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -704,7 +708,8 @@ class FirestoreAdminClient(metaclass=FirestoreAdminClientMeta):
 
         Args:
             request (google.cloud.firestore_admin_v1.types.GetFieldRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [FirestoreAdmin.GetField][google.firestore.admin.v1.FirestoreAdmin.GetField].
             name (str):
                 Required. A name of the form
@@ -742,7 +747,7 @@ class FirestoreAdminClient(metaclass=FirestoreAdminClientMeta):
         # there are no flattened fields.
         if not isinstance(request, firestore_admin.GetFieldRequest):
             request = firestore_admin.GetFieldRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -797,7 +802,8 @@ class FirestoreAdminClient(metaclass=FirestoreAdminClientMeta):
 
         Args:
             request (google.cloud.firestore_admin_v1.types.UpdateFieldRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [FirestoreAdmin.UpdateField][google.firestore.admin.v1.FirestoreAdmin.UpdateField].
             field (google.cloud.firestore_admin_v1.types.Field):
                 Required. The field to be updated.
@@ -837,7 +843,7 @@ class FirestoreAdminClient(metaclass=FirestoreAdminClientMeta):
         # there are no flattened fields.
         if not isinstance(request, firestore_admin.UpdateFieldRequest):
             request = firestore_admin.UpdateFieldRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if field is not None:
                 request.field = field
@@ -892,7 +898,8 @@ class FirestoreAdminClient(metaclass=FirestoreAdminClientMeta):
 
         Args:
             request (google.cloud.firestore_admin_v1.types.ListFieldsRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [FirestoreAdmin.ListFields][google.firestore.admin.v1.FirestoreAdmin.ListFields].
             parent (str):
                 Required. A parent name of the form
@@ -930,7 +937,7 @@ class FirestoreAdminClient(metaclass=FirestoreAdminClientMeta):
         # there are no flattened fields.
         if not isinstance(request, firestore_admin.ListFieldsRequest):
             request = firestore_admin.ListFieldsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -988,7 +995,8 @@ class FirestoreAdminClient(metaclass=FirestoreAdminClientMeta):
 
         Args:
             request (google.cloud.firestore_admin_v1.types.ExportDocumentsRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [FirestoreAdmin.ExportDocuments][google.firestore.admin.v1.FirestoreAdmin.ExportDocuments].
             name (str):
                 Required. Database to export. Should be of the form:
@@ -1028,7 +1036,7 @@ class FirestoreAdminClient(metaclass=FirestoreAdminClientMeta):
         # there are no flattened fields.
         if not isinstance(request, firestore_admin.ExportDocumentsRequest):
             request = firestore_admin.ExportDocumentsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1082,7 +1090,8 @@ class FirestoreAdminClient(metaclass=FirestoreAdminClientMeta):
 
         Args:
             request (google.cloud.firestore_admin_v1.types.ImportDocumentsRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [FirestoreAdmin.ImportDocuments][google.firestore.admin.v1.FirestoreAdmin.ImportDocuments].
             name (str):
                 Required. Database to import into. Should be of the
@@ -1130,7 +1139,7 @@ class FirestoreAdminClient(metaclass=FirestoreAdminClientMeta):
         # there are no flattened fields.
         if not isinstance(request, firestore_admin.ImportDocumentsRequest):
             request = firestore_admin.ImportDocumentsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

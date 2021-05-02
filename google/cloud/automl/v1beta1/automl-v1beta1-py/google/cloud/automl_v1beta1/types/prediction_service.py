@@ -80,7 +80,7 @@ class PredictRequest(proto.Message):
     params = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=3,
+        number=3
     )
 
 
@@ -133,7 +133,7 @@ class PredictResponse(proto.Message):
     metadata = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=2,
+        number=2
     )
 
 
@@ -248,7 +248,7 @@ class BatchPredictRequest(proto.Message):
     params = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=5,
+        number=5
     )
 
 
@@ -274,7 +274,7 @@ class BatchPredictResult(proto.Message):
     metadata = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=1,
+        number=1
     )
 
 

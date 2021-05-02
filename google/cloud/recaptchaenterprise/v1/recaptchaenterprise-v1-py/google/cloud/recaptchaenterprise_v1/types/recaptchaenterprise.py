@@ -462,7 +462,7 @@ class Key(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=6,
+        number=6
     )
     create_time = proto.Field(
         proto.MESSAGE,

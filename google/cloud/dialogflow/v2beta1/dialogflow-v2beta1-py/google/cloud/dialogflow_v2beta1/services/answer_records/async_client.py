@@ -159,7 +159,8 @@ class AnswerRecordsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2beta1.types.GetAnswerRecordRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AnswerRecords.GetAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.GetAnswerRecord].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -248,7 +249,8 @@ class AnswerRecordsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2beta1.types.ListAnswerRecordsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AnswerRecords.ListAnswerRecords][google.cloud.dialogflow.v2beta1.AnswerRecords.ListAnswerRecords].
             parent (:class:`str`):
                 Required. The project to list all answer records for in
@@ -337,7 +339,8 @@ class AnswerRecordsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2beta1.types.UpdateAnswerRecordRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord].
             answer_record (:class:`google.cloud.dialogflow_v2beta1.types.AnswerRecord`):
                 Required. Answer record to update.

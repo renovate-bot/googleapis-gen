@@ -227,7 +227,9 @@ class AdMobApiGrpcAsyncIOTransport(AdMobApiTransport):
     def get_publisher_account(self) -> Callable[
             [admob_api.GetPublisherAccountRequest],
             Awaitable[admob_resources.PublisherAccount]]:
-        r"""Return a callable for the get publisher account method over gRPC.
+        r"""Return a callable for the
+        get publisher account
+          method over gRPC.
 
         Gets information about the specified AdMob publisher
         account.
@@ -254,7 +256,9 @@ class AdMobApiGrpcAsyncIOTransport(AdMobApiTransport):
     def list_publisher_accounts(self) -> Callable[
             [admob_api.ListPublisherAccountsRequest],
             Awaitable[admob_api.ListPublisherAccountsResponse]]:
-        r"""Return a callable for the list publisher accounts method over gRPC.
+        r"""Return a callable for the
+        list publisher accounts
+          method over gRPC.
 
         Lists the AdMob publisher account accessible with the
         client credential. Currently, all credentials have
@@ -282,7 +286,9 @@ class AdMobApiGrpcAsyncIOTransport(AdMobApiTransport):
     def generate_network_report(self) -> Callable[
             [admob_api.GenerateNetworkReportRequest],
             Awaitable[admob_api.GenerateNetworkReportResponse]]:
-        r"""Return a callable for the generate network report method over gRPC.
+        r"""Return a callable for the
+        generate network report
+          method over gRPC.
 
         Generates an AdMob Network report based on the
         provided report specification.
@@ -309,7 +315,9 @@ class AdMobApiGrpcAsyncIOTransport(AdMobApiTransport):
     def generate_mediation_report(self) -> Callable[
             [admob_api.GenerateMediationReportRequest],
             Awaitable[admob_api.GenerateMediationReportResponse]]:
-        r"""Return a callable for the generate mediation report method over gRPC.
+        r"""Return a callable for the
+        generate mediation report
+          method over gRPC.
 
         Generates an AdMob Mediation report based on the
         provided report specification.

@@ -145,7 +145,7 @@ class MarkInsightAcceptedRequest(proto.Message):
     state_metadata = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=2,
+        number=2
     )
     etag = proto.Field(
         proto.STRING,
@@ -264,7 +264,7 @@ class MarkRecommendationClaimedRequest(proto.Message):
     state_metadata = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=2,
+        number=2
     )
     etag = proto.Field(
         proto.STRING,
@@ -294,7 +294,7 @@ class MarkRecommendationSucceededRequest(proto.Message):
     state_metadata = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=2,
+        number=2
     )
     etag = proto.Field(
         proto.STRING,
@@ -324,7 +324,7 @@ class MarkRecommendationFailedRequest(proto.Message):
     state_metadata = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=2,
+        number=2
     )
     etag = proto.Field(
         proto.STRING,

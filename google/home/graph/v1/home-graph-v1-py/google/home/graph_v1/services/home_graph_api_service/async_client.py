@@ -170,7 +170,8 @@ class HomeGraphApiServiceAsyncClient:
 
         Args:
             request (:class:`google.home.graph_v1.types.RequestSyncDevicesRequest`):
-                The request object. Request type for the
+                The request object.
+                Request type for the
                 [`RequestSyncDevices`](#google.home.graph.v1.HomeGraphApiService.RequestSyncDevices)
                 call.
             agent_user_id (:class:`str`):
@@ -259,7 +260,8 @@ class HomeGraphApiServiceAsyncClient:
 
         Args:
             request (:class:`google.home.graph_v1.types.ReportStateAndNotificationRequest`):
-                The request object. Request type for the
+                The request object.
+                Request type for the
                 [`ReportStateAndNotification`](#google.home.graph.v1.HomeGraphApiService.ReportStateAndNotification)
                 call. It may include states, notifications, or both.
                 States and notifications are defined per `device_id`
@@ -386,7 +388,8 @@ class HomeGraphApiServiceAsyncClient:
 
         Args:
             request (:class:`google.home.graph_v1.types.DeleteAgentUserRequest`):
-                The request object. Request type for the
+                The request object.
+                Request type for the
                 [`DeleteAgentUser`](#google.home.graph.v1.HomeGraphApiService.DeleteAgentUser)
                 call.
             request_id (:class:`str`):
@@ -474,7 +477,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.home.graph_v1.types.QueryRequest`):
-                The request object. Request type for the
+                The request object.
+                Request type for the
                 [`Query`](#google.home.graph.v1.HomeGraphApiService.Query)
                 call.
             request_id (:class:`str`):
@@ -577,7 +581,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.home.graph_v1.types.SyncRequest`):
-                The request object. Request type for the
+                The request object.
+                Request type for the
                 [`Sync`](#google.home.graph.v1.HomeGraphApiService.Sync)
                 call.
             request_id (:class:`str`):

@@ -14,9 +14,8 @@
 # limitations under the License.
 #
 
-from google.cloud.managedidentities_v1.services.managed_identities_service.client import ManagedIdentitiesServiceClient
 from google.cloud.managedidentities_v1.services.managed_identities_service.async_client import ManagedIdentitiesServiceAsyncClient
-
+from google.cloud.managedidentities_v1.services.managed_identities_service.client import ManagedIdentitiesServiceClient
 from google.cloud.managedidentities_v1.types.managed_identities_service import AttachTrustRequest
 from google.cloud.managedidentities_v1.types.managed_identities_service import CreateMicrosoftAdDomainRequest
 from google.cloud.managedidentities_v1.types.managed_identities_service import DeleteDomainRequest
@@ -33,21 +32,21 @@ from google.cloud.managedidentities_v1.types.managed_identities_service import V
 from google.cloud.managedidentities_v1.types.resource import Domain
 from google.cloud.managedidentities_v1.types.resource import Trust
 
-__all__ = ('ManagedIdentitiesServiceClient',
-    'ManagedIdentitiesServiceAsyncClient',
-    'AttachTrustRequest',
+__all__ = ('AttachTrustRequest',
     'CreateMicrosoftAdDomainRequest',
     'DeleteDomainRequest',
     'DetachTrustRequest',
+    'Domain',
     'GetDomainRequest',
     'ListDomainsRequest',
     'ListDomainsResponse',
+    'ManagedIdentitiesServiceAsyncClient',
+    'ManagedIdentitiesServiceClient',
     'OpMetadata',
     'ReconfigureTrustRequest',
     'ResetAdminPasswordRequest',
     'ResetAdminPasswordResponse',
+    'Trust',
     'UpdateDomainRequest',
     'ValidateTrustRequest',
-    'Domain',
-    'Trust',
 )

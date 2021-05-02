@@ -14,9 +14,8 @@
 # limitations under the License.
 #
 
-from google.cloud.recommender_v1beta1.services.recommender.client import RecommenderClient
 from google.cloud.recommender_v1beta1.services.recommender.async_client import RecommenderAsyncClient
-
+from google.cloud.recommender_v1beta1.services.recommender.client import RecommenderClient
 from google.cloud.recommender_v1beta1.types.insight import Insight
 from google.cloud.recommender_v1beta1.types.insight import InsightStateInfo
 from google.cloud.recommender_v1beta1.types.recommendation import CostProjection
@@ -38,20 +37,12 @@ from google.cloud.recommender_v1beta1.types.recommender_service import MarkRecom
 from google.cloud.recommender_v1beta1.types.recommender_service import MarkRecommendationFailedRequest
 from google.cloud.recommender_v1beta1.types.recommender_service import MarkRecommendationSucceededRequest
 
-__all__ = ('RecommenderClient',
-    'RecommenderAsyncClient',
-    'Insight',
-    'InsightStateInfo',
-    'CostProjection',
-    'Impact',
-    'Operation',
-    'OperationGroup',
-    'Recommendation',
-    'RecommendationContent',
-    'RecommendationStateInfo',
-    'ValueMatcher',
+__all__ = ('CostProjection',
     'GetInsightRequest',
     'GetRecommendationRequest',
+    'Impact',
+    'Insight',
+    'InsightStateInfo',
     'ListInsightsRequest',
     'ListInsightsResponse',
     'ListRecommendationsRequest',
@@ -60,4 +51,12 @@ __all__ = ('RecommenderClient',
     'MarkRecommendationClaimedRequest',
     'MarkRecommendationFailedRequest',
     'MarkRecommendationSucceededRequest',
+    'Operation',
+    'OperationGroup',
+    'Recommendation',
+    'RecommendationContent',
+    'RecommendationStateInfo',
+    'RecommenderAsyncClient',
+    'RecommenderClient',
+    'ValueMatcher',
 )

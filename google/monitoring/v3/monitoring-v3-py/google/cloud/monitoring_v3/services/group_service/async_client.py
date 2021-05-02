@@ -170,7 +170,8 @@ class GroupServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.ListGroupsRequest`):
-                The request object. The `ListGroup` request.
+                The request object.
+                The `ListGroup` request.
             name (:class:`str`):
                 Required. The project whose groups are to be listed. The
                 format is:
@@ -266,7 +267,8 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.GetGroupRequest`):
-                The request object. The `GetGroup` request.
+                The request object.
+                The `GetGroup` request.
             name (:class:`str`):
                 Required. The group to retrieve. The format is:
 
@@ -382,7 +384,8 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.CreateGroupRequest`):
-                The request object. The `CreateGroup` request.
+                The request object.
+                The `CreateGroup` request.
             name (:class:`str`):
                 Required. The project in which to create the group. The
                 format is:
@@ -501,7 +504,8 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.UpdateGroupRequest`):
-                The request object. The `UpdateGroup` request.
+                The request object.
+                The `UpdateGroup` request.
             group (:class:`google.cloud.monitoring_v3.types.Group`):
                 Required. The new definition of the group. All fields of
                 the existing group, excepting ``name``, are replaced
@@ -614,7 +618,8 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.DeleteGroupRequest`):
-                The request object. The `DeleteGroup` request. The
+                The request object.
+                The `DeleteGroup` request. The
                 default behavior is to be able to delete a single group
                 without any descendants.
             name (:class:`str`):
@@ -692,7 +697,8 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.ListGroupMembersRequest`):
-                The request object. The `ListGroupMembers` request.
+                The request object.
+                The `ListGroupMembers` request.
             name (:class:`str`):
                 Required. The group whose members are listed. The format
                 is:

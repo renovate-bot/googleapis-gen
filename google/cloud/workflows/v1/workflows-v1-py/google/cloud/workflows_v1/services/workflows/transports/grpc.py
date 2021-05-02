@@ -241,7 +241,9 @@ class WorkflowsGrpcTransport(WorkflowsTransport):
     def list_workflows(self) -> Callable[
             [workflows.ListWorkflowsRequest],
             workflows.ListWorkflowsResponse]:
-        r"""Return a callable for the list workflows method over gRPC.
+        r"""Return a callable for the
+        list workflows
+          method over gRPC.
 
         Lists Workflows in a given project and location.
         The default order is not specified.
@@ -268,7 +270,9 @@ class WorkflowsGrpcTransport(WorkflowsTransport):
     def get_workflow(self) -> Callable[
             [workflows.GetWorkflowRequest],
             workflows.Workflow]:
-        r"""Return a callable for the get workflow method over gRPC.
+        r"""Return a callable for the
+        get workflow
+          method over gRPC.
 
         Gets details of a single Workflow.
 
@@ -294,7 +298,9 @@ class WorkflowsGrpcTransport(WorkflowsTransport):
     def create_workflow(self) -> Callable[
             [workflows.CreateWorkflowRequest],
             operations.Operation]:
-        r"""Return a callable for the create workflow method over gRPC.
+        r"""Return a callable for the
+        create workflow
+          method over gRPC.
 
         Creates a new workflow. If a workflow with the specified name
         already exists in the specified project and location, the long
@@ -323,7 +329,9 @@ class WorkflowsGrpcTransport(WorkflowsTransport):
     def delete_workflow(self) -> Callable[
             [workflows.DeleteWorkflowRequest],
             operations.Operation]:
-        r"""Return a callable for the delete workflow method over gRPC.
+        r"""Return a callable for the
+        delete workflow
+          method over gRPC.
 
         Deletes a workflow with the specified name.
         This method also cancels and deletes all running
@@ -351,7 +359,9 @@ class WorkflowsGrpcTransport(WorkflowsTransport):
     def update_workflow(self) -> Callable[
             [workflows.UpdateWorkflowRequest],
             operations.Operation]:
-        r"""Return a callable for the update workflow method over gRPC.
+        r"""Return a callable for the
+        update workflow
+          method over gRPC.
 
         Updates an existing workflow.
         Running this method has no impact on already running

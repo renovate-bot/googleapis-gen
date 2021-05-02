@@ -423,7 +423,8 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.CreateCustomJobRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [JobService.CreateCustomJob][google.cloud.aiplatform.v1.JobService.CreateCustomJob].
             parent (str):
                 Required. The resource name of the Location to create
@@ -470,7 +471,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, job_service.CreateCustomJobRequest):
             request = job_service.CreateCustomJobRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -512,7 +513,8 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.GetCustomJobRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [JobService.GetCustomJob][google.cloud.aiplatform.v1.JobService.GetCustomJob].
             name (str):
                 Required. The name of the CustomJob resource. Format:
@@ -553,7 +555,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, job_service.GetCustomJobRequest):
             request = job_service.GetCustomJobRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -593,7 +595,8 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.ListCustomJobsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [JobService.ListCustomJobs][google.cloud.aiplatform.v1.JobService.ListCustomJobs].
             parent (str):
                 Required. The resource name of the Location to list the
@@ -632,7 +635,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, job_service.ListCustomJobsRequest):
             request = job_service.ListCustomJobsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -681,7 +684,8 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.DeleteCustomJobRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [JobService.DeleteCustomJob][google.cloud.aiplatform.v1.JobService.DeleteCustomJob].
             name (str):
                 Required. The name of the CustomJob resource to be
@@ -730,7 +734,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, job_service.DeleteCustomJobRequest):
             request = job_service.DeleteCustomJobRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -790,7 +794,8 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.CancelCustomJobRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [JobService.CancelCustomJob][google.cloud.aiplatform.v1.JobService.CancelCustomJob].
             name (str):
                 Required. The name of the CustomJob to cancel. Format:
@@ -819,7 +824,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, job_service.CancelCustomJobRequest):
             request = job_service.CancelCustomJobRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -857,7 +862,8 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.CreateDataLabelingJobRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DataLabelingJobService.CreateDataLabelingJob][].
             parent (str):
                 Required. The parent of the DataLabelingJob. Format:
@@ -900,7 +906,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, job_service.CreateDataLabelingJobRequest):
             request = job_service.CreateDataLabelingJobRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -942,7 +948,8 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.GetDataLabelingJobRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DataLabelingJobService.GetDataLabelingJob][].
             name (str):
                 Required. The name of the DataLabelingJob. Format:
@@ -979,7 +986,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, job_service.GetDataLabelingJobRequest):
             request = job_service.GetDataLabelingJobRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1019,7 +1026,8 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.ListDataLabelingJobsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DataLabelingJobService.ListDataLabelingJobs][].
             parent (str):
                 Required. The parent of the DataLabelingJob. Format:
@@ -1057,7 +1065,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, job_service.ListDataLabelingJobsRequest):
             request = job_service.ListDataLabelingJobsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1106,7 +1114,8 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.DeleteDataLabelingJobRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [JobService.DeleteDataLabelingJob][google.cloud.aiplatform.v1.JobService.DeleteDataLabelingJob].
             name (str):
                 Required. The name of the DataLabelingJob to be deleted.
@@ -1156,7 +1165,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, job_service.DeleteDataLabelingJobRequest):
             request = job_service.DeleteDataLabelingJobRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1205,7 +1214,8 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.CancelDataLabelingJobRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DataLabelingJobService.CancelDataLabelingJob][].
             name (str):
                 Required. The name of the DataLabelingJob. Format:
@@ -1235,7 +1245,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, job_service.CancelDataLabelingJobRequest):
             request = job_service.CancelDataLabelingJobRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1273,7 +1283,8 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.CreateHyperparameterTuningJobRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [JobService.CreateHyperparameterTuningJob][google.cloud.aiplatform.v1.JobService.CreateHyperparameterTuningJob].
             parent (str):
                 Required. The resource name of the Location to create
@@ -1318,7 +1329,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, job_service.CreateHyperparameterTuningJobRequest):
             request = job_service.CreateHyperparameterTuningJobRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1360,7 +1371,8 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.GetHyperparameterTuningJobRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [JobService.GetHyperparameterTuningJob][google.cloud.aiplatform.v1.JobService.GetHyperparameterTuningJob].
             name (str):
                 Required. The name of the HyperparameterTuningJob
@@ -1399,7 +1411,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, job_service.GetHyperparameterTuningJobRequest):
             request = job_service.GetHyperparameterTuningJobRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1439,7 +1451,8 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.ListHyperparameterTuningJobsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [JobService.ListHyperparameterTuningJobs][google.cloud.aiplatform.v1.JobService.ListHyperparameterTuningJobs].
             parent (str):
                 Required. The resource name of the Location to list the
@@ -1478,7 +1491,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, job_service.ListHyperparameterTuningJobsRequest):
             request = job_service.ListHyperparameterTuningJobsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1527,7 +1540,8 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.DeleteHyperparameterTuningJobRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [JobService.DeleteHyperparameterTuningJob][google.cloud.aiplatform.v1.JobService.DeleteHyperparameterTuningJob].
             name (str):
                 Required. The name of the HyperparameterTuningJob
@@ -1577,7 +1591,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, job_service.DeleteHyperparameterTuningJobRequest):
             request = job_service.DeleteHyperparameterTuningJobRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1638,7 +1652,8 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.CancelHyperparameterTuningJobRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [JobService.CancelHyperparameterTuningJob][google.cloud.aiplatform.v1.JobService.CancelHyperparameterTuningJob].
             name (str):
                 Required. The name of the HyperparameterTuningJob to
@@ -1669,7 +1684,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, job_service.CancelHyperparameterTuningJobRequest):
             request = job_service.CancelHyperparameterTuningJobRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1708,7 +1723,8 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.CreateBatchPredictionJobRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [JobService.CreateBatchPredictionJob][google.cloud.aiplatform.v1.JobService.CreateBatchPredictionJob].
             parent (str):
                 Required. The resource name of the Location to create
@@ -1755,7 +1771,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, job_service.CreateBatchPredictionJobRequest):
             request = job_service.CreateBatchPredictionJobRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1797,7 +1813,8 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.GetBatchPredictionJobRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [JobService.GetBatchPredictionJob][google.cloud.aiplatform.v1.JobService.GetBatchPredictionJob].
             name (str):
                 Required. The name of the BatchPredictionJob resource.
@@ -1838,7 +1855,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, job_service.GetBatchPredictionJobRequest):
             request = job_service.GetBatchPredictionJobRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1878,7 +1895,8 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.ListBatchPredictionJobsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [JobService.ListBatchPredictionJobs][google.cloud.aiplatform.v1.JobService.ListBatchPredictionJobs].
             parent (str):
                 Required. The resource name of the Location to list the
@@ -1917,7 +1935,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, job_service.ListBatchPredictionJobsRequest):
             request = job_service.ListBatchPredictionJobsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1967,7 +1985,8 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.DeleteBatchPredictionJobRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [JobService.DeleteBatchPredictionJob][google.cloud.aiplatform.v1.JobService.DeleteBatchPredictionJob].
             name (str):
                 Required. The name of the BatchPredictionJob resource to
@@ -2017,7 +2036,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, job_service.DeleteBatchPredictionJobRequest):
             request = job_service.DeleteBatchPredictionJobRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -2076,7 +2095,8 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.CancelBatchPredictionJobRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [JobService.CancelBatchPredictionJob][google.cloud.aiplatform.v1.JobService.CancelBatchPredictionJob].
             name (str):
                 Required. The name of the BatchPredictionJob to cancel.
@@ -2107,7 +2127,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, job_service.CancelBatchPredictionJobRequest):
             request = job_service.CancelBatchPredictionJobRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

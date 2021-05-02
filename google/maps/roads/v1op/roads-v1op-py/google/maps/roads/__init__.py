@@ -14,22 +14,21 @@
 # limitations under the License.
 #
 
-from google.maps.roads_v1.services.roads_service.client import RoadsServiceClient
 from google.maps.roads_v1.services.roads_service.async_client import RoadsServiceAsyncClient
-
+from google.maps.roads_v1.services.roads_service.client import RoadsServiceClient
 from google.maps.roads_v1.types.roads import ListNearestRoadsRequest
 from google.maps.roads_v1.types.roads import ListNearestRoadsResponse
-from google.maps.roads_v1.types.roads import SnappedPoint
 from google.maps.roads_v1.types.roads import SnapToRoadsRequest
 from google.maps.roads_v1.types.roads import SnapToRoadsResponse
+from google.maps.roads_v1.types.roads import SnappedPoint
 from google.maps.roads_v1.types.roads import TravelMode
 
-__all__ = ('RoadsServiceClient',
-    'RoadsServiceAsyncClient',
-    'ListNearestRoadsRequest',
+__all__ = ('ListNearestRoadsRequest',
     'ListNearestRoadsResponse',
-    'SnappedPoint',
+    'RoadsServiceAsyncClient',
+    'RoadsServiceClient',
     'SnapToRoadsRequest',
     'SnapToRoadsResponse',
+    'SnappedPoint',
     'TravelMode',
 )

@@ -325,7 +325,8 @@ class ApplicationsClient(metaclass=ApplicationsClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.GetApplicationRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Applications.GetApplication`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -392,7 +393,8 @@ class ApplicationsClient(metaclass=ApplicationsClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.CreateApplicationRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Applications.CreateApplication`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -456,7 +458,8 @@ class ApplicationsClient(metaclass=ApplicationsClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.UpdateApplicationRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Applications.UpdateApplication`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -532,7 +535,8 @@ class ApplicationsClient(metaclass=ApplicationsClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.RepairApplicationRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 'Applications.RepairApplication'.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

@@ -383,7 +383,8 @@ class SecurityCenterSettingsServiceClient(metaclass=SecurityCenterSettingsServic
 
         Args:
             request (google.cloud.securitycenter.settings_v1beta1.types.GetServiceAccountRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GetServiceAccount.
             name (str):
                 Required. The relative resource name of the service
@@ -421,7 +422,7 @@ class SecurityCenterSettingsServiceClient(metaclass=SecurityCenterSettingsServic
         # there are no flattened fields.
         if not isinstance(request, securitycenter_settings_service.GetServiceAccountRequest):
             request = securitycenter_settings_service.GetServiceAccountRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -461,7 +462,8 @@ class SecurityCenterSettingsServiceClient(metaclass=SecurityCenterSettingsServic
 
         Args:
             request (google.cloud.securitycenter.settings_v1beta1.types.GetSettingsRequest):
-                The request object. Request message for GetSettings.
+                The request object.
+                Request message for GetSettings.
             name (str):
                 Required. The name of the settings to retrieve. Formats:
 
@@ -501,7 +503,7 @@ class SecurityCenterSettingsServiceClient(metaclass=SecurityCenterSettingsServic
         # there are no flattened fields.
         if not isinstance(request, securitycenter_settings_service.GetSettingsRequest):
             request = securitycenter_settings_service.GetSettingsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -542,7 +544,8 @@ class SecurityCenterSettingsServiceClient(metaclass=SecurityCenterSettingsServic
 
         Args:
             request (google.cloud.securitycenter.settings_v1beta1.types.UpdateSettingsRequest):
-                The request object. Request message for UpdateSettings.
+                The request object.
+                Request message for UpdateSettings.
             settings (google.cloud.securitycenter.settings_v1beta1.types.Settings):
                 Required. The settings to update.
 
@@ -592,7 +595,7 @@ class SecurityCenterSettingsServiceClient(metaclass=SecurityCenterSettingsServic
         # there are no flattened fields.
         if not isinstance(request, securitycenter_settings_service.UpdateSettingsRequest):
             request = securitycenter_settings_service.UpdateSettingsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if settings is not None:
                 request.settings = settings
@@ -643,7 +646,8 @@ class SecurityCenterSettingsServiceClient(metaclass=SecurityCenterSettingsServic
 
         Args:
             request (google.cloud.securitycenter.settings_v1beta1.types.ResetSettingsRequest):
-                The request object. Request message for ResetSettings.
+                The request object.
+                Request message for ResetSettings.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -689,7 +693,8 @@ class SecurityCenterSettingsServiceClient(metaclass=SecurityCenterSettingsServic
 
         Args:
             request (google.cloud.securitycenter.settings_v1beta1.types.BatchGetSettingsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 BatchGetSettings.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -757,7 +762,8 @@ class SecurityCenterSettingsServiceClient(metaclass=SecurityCenterSettingsServic
 
         Args:
             request (google.cloud.securitycenter.settings_v1beta1.types.CalculateEffectiveSettingsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 CalculateEffectiveSettings.
             name (str):
                 Required. The name of the effective settings to
@@ -799,7 +805,7 @@ class SecurityCenterSettingsServiceClient(metaclass=SecurityCenterSettingsServic
         # there are no flattened fields.
         if not isinstance(request, securitycenter_settings_service.CalculateEffectiveSettingsRequest):
             request = securitycenter_settings_service.CalculateEffectiveSettingsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -838,7 +844,8 @@ class SecurityCenterSettingsServiceClient(metaclass=SecurityCenterSettingsServic
 
         Args:
             request (google.cloud.securitycenter.settings_v1beta1.types.BatchCalculateEffectiveSettingsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 BatchGetEffectiveSettings.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -895,7 +902,8 @@ class SecurityCenterSettingsServiceClient(metaclass=SecurityCenterSettingsServic
 
         Args:
             request (google.cloud.securitycenter.settings_v1beta1.types.GetComponentSettingsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GetComponentSettings.
             name (str):
                 Required. The component settings to retrieve.
@@ -938,7 +946,7 @@ class SecurityCenterSettingsServiceClient(metaclass=SecurityCenterSettingsServic
         # there are no flattened fields.
         if not isinstance(request, securitycenter_settings_service.GetComponentSettingsRequest):
             request = securitycenter_settings_service.GetComponentSettingsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -979,7 +987,8 @@ class SecurityCenterSettingsServiceClient(metaclass=SecurityCenterSettingsServic
 
         Args:
             request (google.cloud.securitycenter.settings_v1beta1.types.UpdateComponentSettingsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 UpdateComponentSettings.
             component_settings (google.cloud.securitycenter.settings_v1beta1.types.ComponentSettings):
                 Required. The component settings to update.
@@ -1030,7 +1039,7 @@ class SecurityCenterSettingsServiceClient(metaclass=SecurityCenterSettingsServic
         # there are no flattened fields.
         if not isinstance(request, securitycenter_settings_service.UpdateComponentSettingsRequest):
             request = securitycenter_settings_service.UpdateComponentSettingsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if component_settings is not None:
                 request.component_settings = component_settings
@@ -1076,7 +1085,8 @@ class SecurityCenterSettingsServiceClient(metaclass=SecurityCenterSettingsServic
 
         Args:
             request (google.cloud.securitycenter.settings_v1beta1.types.ResetComponentSettingsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ResetComponentSettings.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1124,7 +1134,8 @@ class SecurityCenterSettingsServiceClient(metaclass=SecurityCenterSettingsServic
 
         Args:
             request (google.cloud.securitycenter.settings_v1beta1.types.CalculateEffectiveComponentSettingsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 CalculateEffectiveComponentSettings.
             name (str):
                 Required. The effective component settings to retrieve.
@@ -1167,7 +1178,7 @@ class SecurityCenterSettingsServiceClient(metaclass=SecurityCenterSettingsServic
         # there are no flattened fields.
         if not isinstance(request, securitycenter_settings_service.CalculateEffectiveComponentSettingsRequest):
             request = securitycenter_settings_service.CalculateEffectiveComponentSettingsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1207,7 +1218,8 @@ class SecurityCenterSettingsServiceClient(metaclass=SecurityCenterSettingsServic
 
         Args:
             request (google.cloud.securitycenter.settings_v1beta1.types.ListDetectorsRequest):
-                The request object. Request message for ListDetectors.
+                The request object.
+                Request message for ListDetectors.
             parent (str):
                 Required. The parent, which owns this collection of
                 detectors. Format:
@@ -1245,7 +1257,7 @@ class SecurityCenterSettingsServiceClient(metaclass=SecurityCenterSettingsServic
         # there are no flattened fields.
         if not isinstance(request, securitycenter_settings_service.ListDetectorsRequest):
             request = securitycenter_settings_service.ListDetectorsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1295,7 +1307,8 @@ class SecurityCenterSettingsServiceClient(metaclass=SecurityCenterSettingsServic
 
         Args:
             request (google.cloud.securitycenter.settings_v1beta1.types.ListComponentsRequest):
-                The request object. Request message for ListComponents.
+                The request object.
+                Request message for ListComponents.
             parent (str):
                 Required. The parent, which owns this collection of
                 components. Format:
@@ -1333,7 +1346,7 @@ class SecurityCenterSettingsServiceClient(metaclass=SecurityCenterSettingsServic
         # there are no flattened fields.
         if not isinstance(request, securitycenter_settings_service.ListComponentsRequest):
             request = securitycenter_settings_service.ListComponentsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent

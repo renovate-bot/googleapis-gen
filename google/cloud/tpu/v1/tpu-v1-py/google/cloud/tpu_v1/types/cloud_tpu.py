@@ -275,7 +275,7 @@ class Node(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=24,
+        number=24
     )
     use_service_networking = proto.Field(
         proto.BOOL,

@@ -249,7 +249,9 @@ class DatabaseAdminGrpcTransport(DatabaseAdminTransport):
     def list_databases(self) -> Callable[
             [spanner_database_admin.ListDatabasesRequest],
             spanner_database_admin.ListDatabasesResponse]:
-        r"""Return a callable for the list databases method over gRPC.
+        r"""Return a callable for the
+        list databases
+          method over gRPC.
 
         Lists Cloud Spanner databases.
 
@@ -275,7 +277,9 @@ class DatabaseAdminGrpcTransport(DatabaseAdminTransport):
     def create_database(self) -> Callable[
             [spanner_database_admin.CreateDatabaseRequest],
             operations.Operation]:
-        r"""Return a callable for the create database method over gRPC.
+        r"""Return a callable for the
+        create database
+          method over gRPC.
 
         Creates a new Cloud Spanner database and starts to prepare it
         for serving. The returned [long-running
@@ -310,7 +314,9 @@ class DatabaseAdminGrpcTransport(DatabaseAdminTransport):
     def get_database(self) -> Callable[
             [spanner_database_admin.GetDatabaseRequest],
             spanner_database_admin.Database]:
-        r"""Return a callable for the get database method over gRPC.
+        r"""Return a callable for the
+        get database
+          method over gRPC.
 
         Gets the state of a Cloud Spanner database.
 
@@ -336,7 +342,9 @@ class DatabaseAdminGrpcTransport(DatabaseAdminTransport):
     def update_database_ddl(self) -> Callable[
             [spanner_database_admin.UpdateDatabaseDdlRequest],
             operations.Operation]:
-        r"""Return a callable for the update database ddl method over gRPC.
+        r"""Return a callable for the
+        update database ddl
+          method over gRPC.
 
         Updates the schema of a Cloud Spanner database by
         creating/altering/dropping tables, columns, indexes, etc. The
@@ -370,7 +378,9 @@ class DatabaseAdminGrpcTransport(DatabaseAdminTransport):
     def drop_database(self) -> Callable[
             [spanner_database_admin.DropDatabaseRequest],
             empty.Empty]:
-        r"""Return a callable for the drop database method over gRPC.
+        r"""Return a callable for the
+        drop database
+          method over gRPC.
 
         Drops (aka deletes) a Cloud Spanner database. Completed backups
         for the database will be retained according to their
@@ -398,7 +408,9 @@ class DatabaseAdminGrpcTransport(DatabaseAdminTransport):
     def get_database_ddl(self) -> Callable[
             [spanner_database_admin.GetDatabaseDdlRequest],
             spanner_database_admin.GetDatabaseDdlResponse]:
-        r"""Return a callable for the get database ddl method over gRPC.
+        r"""Return a callable for the
+        get database ddl
+          method over gRPC.
 
         Returns the schema of a Cloud Spanner database as a list of
         formatted DDL statements. This method does not show pending
@@ -427,7 +439,9 @@ class DatabaseAdminGrpcTransport(DatabaseAdminTransport):
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
             gi_policy.Policy]:
-        r"""Return a callable for the set iam policy method over gRPC.
+        r"""Return a callable for the
+        set iam policy
+          method over gRPC.
 
         Sets the access control policy on a database or backup resource.
         Replaces any existing policy.
@@ -461,7 +475,9 @@ class DatabaseAdminGrpcTransport(DatabaseAdminTransport):
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
             gi_policy.Policy]:
-        r"""Return a callable for the get iam policy method over gRPC.
+        r"""Return a callable for the
+        get iam policy
+          method over gRPC.
 
         Gets the access control policy for a database or backup
         resource. Returns an empty policy if a database or backup exists
@@ -496,7 +512,9 @@ class DatabaseAdminGrpcTransport(DatabaseAdminTransport):
     def test_iam_permissions(self) -> Callable[
             [iam_policy.TestIamPermissionsRequest],
             iam_policy.TestIamPermissionsResponse]:
-        r"""Return a callable for the test iam permissions method over gRPC.
+        r"""Return a callable for the
+        test iam permissions
+          method over gRPC.
 
         Returns permissions that the caller has on the specified
         database or backup resource.
@@ -531,7 +549,9 @@ class DatabaseAdminGrpcTransport(DatabaseAdminTransport):
     def create_backup(self) -> Callable[
             [gsad_backup.CreateBackupRequest],
             operations.Operation]:
-        r"""Return a callable for the create backup method over gRPC.
+        r"""Return a callable for the
+        create backup
+          method over gRPC.
 
         Starts creating a new Cloud Spanner Backup. The returned backup
         [long-running operation][google.longrunning.Operation] will have
@@ -569,7 +589,9 @@ class DatabaseAdminGrpcTransport(DatabaseAdminTransport):
     def get_backup(self) -> Callable[
             [backup.GetBackupRequest],
             backup.Backup]:
-        r"""Return a callable for the get backup method over gRPC.
+        r"""Return a callable for the
+        get backup
+          method over gRPC.
 
         Gets metadata on a pending or completed
         [Backup][google.spanner.admin.database.v1.Backup].
@@ -596,7 +618,9 @@ class DatabaseAdminGrpcTransport(DatabaseAdminTransport):
     def update_backup(self) -> Callable[
             [gsad_backup.UpdateBackupRequest],
             gsad_backup.Backup]:
-        r"""Return a callable for the update backup method over gRPC.
+        r"""Return a callable for the
+        update backup
+          method over gRPC.
 
         Updates a pending or completed
         [Backup][google.spanner.admin.database.v1.Backup].
@@ -623,7 +647,9 @@ class DatabaseAdminGrpcTransport(DatabaseAdminTransport):
     def delete_backup(self) -> Callable[
             [backup.DeleteBackupRequest],
             empty.Empty]:
-        r"""Return a callable for the delete backup method over gRPC.
+        r"""Return a callable for the
+        delete backup
+          method over gRPC.
 
         Deletes a pending or completed
         [Backup][google.spanner.admin.database.v1.Backup].
@@ -650,7 +676,9 @@ class DatabaseAdminGrpcTransport(DatabaseAdminTransport):
     def list_backups(self) -> Callable[
             [backup.ListBackupsRequest],
             backup.ListBackupsResponse]:
-        r"""Return a callable for the list backups method over gRPC.
+        r"""Return a callable for the
+        list backups
+          method over gRPC.
 
         Lists completed and pending backups. Backups returned are
         ordered by ``create_time`` in descending order, starting from
@@ -678,7 +706,9 @@ class DatabaseAdminGrpcTransport(DatabaseAdminTransport):
     def restore_database(self) -> Callable[
             [spanner_database_admin.RestoreDatabaseRequest],
             operations.Operation]:
-        r"""Return a callable for the restore database method over gRPC.
+        r"""Return a callable for the
+        restore database
+          method over gRPC.
 
         Create a new database by restoring from a completed backup. The
         new database must be in the same project and in an instance with
@@ -722,7 +752,9 @@ class DatabaseAdminGrpcTransport(DatabaseAdminTransport):
     def list_database_operations(self) -> Callable[
             [spanner_database_admin.ListDatabaseOperationsRequest],
             spanner_database_admin.ListDatabaseOperationsResponse]:
-        r"""Return a callable for the list database operations method over gRPC.
+        r"""Return a callable for the
+        list database operations
+          method over gRPC.
 
         Lists database
         [longrunning-operations][google.longrunning.Operation]. A
@@ -757,7 +789,9 @@ class DatabaseAdminGrpcTransport(DatabaseAdminTransport):
     def list_backup_operations(self) -> Callable[
             [backup.ListBackupOperationsRequest],
             backup.ListBackupOperationsResponse]:
-        r"""Return a callable for the list backup operations method over gRPC.
+        r"""Return a callable for the
+        list backup operations
+          method over gRPC.
 
         Lists the backup [long-running
         operations][google.longrunning.Operation] in the given instance.

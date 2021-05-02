@@ -163,7 +163,8 @@ class DocumentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.ListDocumentsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [Documents.ListDocuments][google.cloud.dialogflow.v2.Documents.ListDocuments].
             parent (:class:`str`):
                 Required. The knowledge base to list all documents for.
@@ -251,7 +252,8 @@ class DocumentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.GetDocumentRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [Documents.GetDocument][google.cloud.dialogflow.v2.Documents.GetDocument].
             name (:class:`str`):
                 Required. The name of the document to retrieve. Format
@@ -338,7 +340,8 @@ class DocumentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.CreateDocumentRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [Documents.CreateDocument][google.cloud.dialogflow.v2.Documents.CreateDocument].
             parent (:class:`str`):
                 Required. The knowledge base to create a document for.
@@ -444,7 +447,8 @@ class DocumentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.DeleteDocumentRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [Documents.DeleteDocument][google.cloud.dialogflow.v2.Documents.DeleteDocument].
             name (:class:`str`):
                 Required. The name of the document to delete. Format:
@@ -545,7 +549,8 @@ class DocumentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.UpdateDocumentRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [Documents.UpdateDocument][google.cloud.dialogflow.v2.Documents.UpdateDocument].
             document (:class:`google.cloud.dialogflow_v2.types.Document`):
                 Required. The document to update.
@@ -659,7 +664,8 @@ class DocumentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.ReloadDocumentRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [Documents.ReloadDocument][google.cloud.dialogflow.v2.Documents.ReloadDocument].
             name (:class:`str`):
                 Required. The name of the document to reload. Format:

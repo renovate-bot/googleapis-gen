@@ -309,12 +309,12 @@ class Instance(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=21,
+        number=21
     )
     metadata = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=22,
+        number=22
     )
     create_time = proto.Field(
         proto.MESSAGE,

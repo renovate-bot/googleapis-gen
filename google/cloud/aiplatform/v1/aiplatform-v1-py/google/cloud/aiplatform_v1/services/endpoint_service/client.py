@@ -354,7 +354,8 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.CreateEndpointRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [EndpointService.CreateEndpoint][google.cloud.aiplatform.v1.EndpointService.CreateEndpoint].
             parent (str):
                 Required. The resource name of the Location to create
@@ -397,7 +398,7 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, endpoint_service.CreateEndpointRequest):
             request = endpoint_service.CreateEndpointRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -447,7 +448,8 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.GetEndpointRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [EndpointService.GetEndpoint][google.cloud.aiplatform.v1.EndpointService.GetEndpoint]
             name (str):
                 Required. The name of the Endpoint resource. Format:
@@ -483,7 +485,7 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, endpoint_service.GetEndpointRequest):
             request = endpoint_service.GetEndpointRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -523,7 +525,8 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.ListEndpointsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [EndpointService.ListEndpoints][google.cloud.aiplatform.v1.EndpointService.ListEndpoints].
             parent (str):
                 Required. The resource name of the Location from which
@@ -562,7 +565,7 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, endpoint_service.ListEndpointsRequest):
             request = endpoint_service.ListEndpointsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -612,7 +615,8 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.UpdateEndpointRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [EndpointService.UpdateEndpoint][google.cloud.aiplatform.v1.EndpointService.UpdateEndpoint].
             endpoint (google.cloud.aiplatform_v1.types.Endpoint):
                 Required. The Endpoint which replaces
@@ -655,7 +659,7 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, endpoint_service.UpdateEndpointRequest):
             request = endpoint_service.UpdateEndpointRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if endpoint is not None:
                 request.endpoint = endpoint
@@ -697,7 +701,8 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.DeleteEndpointRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [EndpointService.DeleteEndpoint][google.cloud.aiplatform.v1.EndpointService.DeleteEndpoint].
             name (str):
                 Required. The name of the Endpoint resource to be
@@ -746,7 +751,7 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, endpoint_service.DeleteEndpointRequest):
             request = endpoint_service.DeleteEndpointRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -797,7 +802,8 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.DeployModelRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel].
             endpoint (str):
                 Required. The name of the Endpoint resource into which
@@ -868,7 +874,7 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, endpoint_service.DeployModelRequest):
             request = endpoint_service.DeployModelRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if endpoint is not None:
                 request.endpoint = endpoint
@@ -924,7 +930,8 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
 
         Args:
             request (google.cloud.aiplatform_v1.types.UndeployModelRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel].
             endpoint (str):
                 Required. The name of the Endpoint resource from which
@@ -985,7 +992,7 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, endpoint_service.UndeployModelRequest):
             request = endpoint_service.UndeployModelRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if endpoint is not None:
                 request.endpoint = endpoint

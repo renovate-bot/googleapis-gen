@@ -23,10 +23,10 @@ from .types.media_translation import StreamingTranslateSpeechResult
 from .types.media_translation import TranslateSpeechConfig
 
 __all__ = (
-    'SpeechTranslationServiceClient',
     'StreamingTranslateSpeechConfig',
     'StreamingTranslateSpeechRequest',
     'StreamingTranslateSpeechResponse',
     'StreamingTranslateSpeechResult',
     'TranslateSpeechConfig',
+'SpeechTranslationServiceClient',
 )

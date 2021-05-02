@@ -164,7 +164,8 @@ class GameServerClustersServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.ListGameServerClustersRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GameServerClustersService.ListGameServerClusters.
             parent (:class:`str`):
                 Required. The parent resource name.
@@ -258,7 +259,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.GetGameServerClusterRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GameServerClustersService.GetGameServerCluster.
             name (:class:`str`):
                 Required. The name of the game server cluster to
@@ -342,7 +344,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.CreateGameServerClusterRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GameServerClustersService.CreateGameServerCluster.
             parent (:class:`str`):
                 Required. The parent resource name. Uses the form:
@@ -446,7 +449,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.PreviewCreateGameServerClusterRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GameServerClustersService.PreviewCreateGameServerCluster.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -508,7 +512,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.DeleteGameServerClusterRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GameServerClustersService.DeleteGameServerCluster.
             name (:class:`str`):
                 Required. The name of the game server cluster to delete.
@@ -604,7 +609,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.PreviewDeleteGameServerClusterRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GameServerClustersService.PreviewDeleteGameServerCluster.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -667,7 +673,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.UpdateGameServerClusterRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GameServerClustersService.UpdateGameServerCluster.
             game_server_cluster (:class:`google.cloud.gaming_v1beta.types.GameServerCluster`):
                 Required. The game server cluster to be updated. Only
@@ -765,7 +772,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.PreviewUpdateGameServerClusterRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GameServerClustersService.UpdateGameServerCluster.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

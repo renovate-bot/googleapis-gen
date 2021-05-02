@@ -229,7 +229,9 @@ class CompanyServiceGrpcAsyncIOTransport(CompanyServiceTransport):
     def create_company(self) -> Callable[
             [company_service.CreateCompanyRequest],
             Awaitable[gct_company.Company]]:
-        r"""Return a callable for the create company method over gRPC.
+        r"""Return a callable for the
+        create company
+          method over gRPC.
 
         Creates a new company entity.
 
@@ -255,7 +257,9 @@ class CompanyServiceGrpcAsyncIOTransport(CompanyServiceTransport):
     def get_company(self) -> Callable[
             [company_service.GetCompanyRequest],
             Awaitable[company.Company]]:
-        r"""Return a callable for the get company method over gRPC.
+        r"""Return a callable for the
+        get company
+          method over gRPC.
 
         Retrieves specified company.
 
@@ -281,7 +285,9 @@ class CompanyServiceGrpcAsyncIOTransport(CompanyServiceTransport):
     def update_company(self) -> Callable[
             [company_service.UpdateCompanyRequest],
             Awaitable[gct_company.Company]]:
-        r"""Return a callable for the update company method over gRPC.
+        r"""Return a callable for the
+        update company
+          method over gRPC.
 
         Updates specified company.
 
@@ -307,7 +313,9 @@ class CompanyServiceGrpcAsyncIOTransport(CompanyServiceTransport):
     def delete_company(self) -> Callable[
             [company_service.DeleteCompanyRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete company method over gRPC.
+        r"""Return a callable for the
+        delete company
+          method over gRPC.
 
         Deletes specified company.
         Prerequisite: The company has no jobs associated with
@@ -335,7 +343,9 @@ class CompanyServiceGrpcAsyncIOTransport(CompanyServiceTransport):
     def list_companies(self) -> Callable[
             [company_service.ListCompaniesRequest],
             Awaitable[company_service.ListCompaniesResponse]]:
-        r"""Return a callable for the list companies method over gRPC.
+        r"""Return a callable for the
+        list companies
+          method over gRPC.
 
         Lists all companies associated with the project.
 

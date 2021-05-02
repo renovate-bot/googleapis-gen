@@ -348,7 +348,7 @@ class Rollout(proto.Message):
         percentages = proto.MapField(
             proto.STRING,
             proto.DOUBLE,
-            number=1,
+            number=1
         )
 
     class DeleteServiceStrategy(proto.Message):

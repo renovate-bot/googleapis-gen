@@ -160,7 +160,8 @@ class TraceServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.trace_v1.types.ListTracesRequest`):
-                The request object. The request message for the
+                The request object.
+                The request message for the
                 `ListTraces` method. All fields are required unless
                 specified.
             project_id (:class:`str`):
@@ -247,7 +248,8 @@ initial=0.1,maximum=1.0,multiplier=1.2,                predicate=retries.if_exce
 
         Args:
             request (:class:`google.cloud.trace_v1.types.GetTraceRequest`):
-                The request object. The request message for the
+                The request object.
+                The request message for the
                 `GetTrace` method.
             project_id (:class:`str`):
                 Required. ID of the Cloud project
@@ -338,7 +340,8 @@ initial=0.1,maximum=1.0,multiplier=1.2,                predicate=retries.if_exce
 
         Args:
             request (:class:`google.cloud.trace_v1.types.PatchTracesRequest`):
-                The request object. The request message for the
+                The request object.
+                The request message for the
                 `PatchTraces` method.
             project_id (:class:`str`):
                 Required. ID of the Cloud project

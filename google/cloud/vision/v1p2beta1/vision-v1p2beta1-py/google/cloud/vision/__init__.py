@@ -14,9 +14,8 @@
 # limitations under the License.
 #
 
-from google.cloud.vision_v1p2beta1.services.image_annotator.client import ImageAnnotatorClient
 from google.cloud.vision_v1p2beta1.services.image_annotator.async_client import ImageAnnotatorAsyncClient
-
+from google.cloud.vision_v1p2beta1.services.image_annotator.client import ImageAnnotatorClient
 from google.cloud.vision_v1p2beta1.types.geometry import BoundingPoly
 from google.cloud.vision_v1p2beta1.types.geometry import NormalizedVertex
 from google.cloud.vision_v1p2beta1.types.geometry import Position
@@ -47,6 +46,7 @@ from google.cloud.vision_v1p2beta1.types.image_annotator import ImageProperties
 from google.cloud.vision_v1p2beta1.types.image_annotator import ImageSource
 from google.cloud.vision_v1p2beta1.types.image_annotator import InputConfig
 from google.cloud.vision_v1p2beta1.types.image_annotator import LatLongRect
+from google.cloud.vision_v1p2beta1.types.image_annotator import Likelihood
 from google.cloud.vision_v1p2beta1.types.image_annotator import LocationInfo
 from google.cloud.vision_v1p2beta1.types.image_annotator import OperationMetadata
 from google.cloud.vision_v1p2beta1.types.image_annotator import OutputConfig
@@ -54,7 +54,6 @@ from google.cloud.vision_v1p2beta1.types.image_annotator import Property
 from google.cloud.vision_v1p2beta1.types.image_annotator import SafeSearchAnnotation
 from google.cloud.vision_v1p2beta1.types.image_annotator import TextDetectionParams
 from google.cloud.vision_v1p2beta1.types.image_annotator import WebDetectionParams
-from google.cloud.vision_v1p2beta1.types.image_annotator import Likelihood
 from google.cloud.vision_v1p2beta1.types.text_annotation import Block
 from google.cloud.vision_v1p2beta1.types.text_annotation import Page
 from google.cloud.vision_v1p2beta1.types.text_annotation import Paragraph
@@ -63,13 +62,7 @@ from google.cloud.vision_v1p2beta1.types.text_annotation import TextAnnotation
 from google.cloud.vision_v1p2beta1.types.text_annotation import Word
 from google.cloud.vision_v1p2beta1.types.web_detection import WebDetection
 
-__all__ = ('ImageAnnotatorClient',
-    'ImageAnnotatorAsyncClient',
-    'BoundingPoly',
-    'NormalizedVertex',
-    'Position',
-    'Vertex',
-    'AnnotateFileResponse',
+__all__ = ('AnnotateFileResponse',
     'AnnotateImageRequest',
     'AnnotateImageResponse',
     'AsyncAnnotateFileRequest',
@@ -78,6 +71,8 @@ __all__ = ('ImageAnnotatorClient',
     'AsyncBatchAnnotateFilesResponse',
     'BatchAnnotateImagesRequest',
     'BatchAnnotateImagesResponse',
+    'Block',
+    'BoundingPoly',
     'ColorInfo',
     'CropHint',
     'CropHintsAnnotation',
@@ -90,24 +85,28 @@ __all__ = ('ImageAnnotatorClient',
     'GcsSource',
     'Image',
     'ImageAnnotationContext',
+    'ImageAnnotatorAsyncClient',
+    'ImageAnnotatorClient',
     'ImageContext',
     'ImageProperties',
     'ImageSource',
     'InputConfig',
     'LatLongRect',
+    'Likelihood',
     'LocationInfo',
+    'NormalizedVertex',
     'OperationMetadata',
     'OutputConfig',
-    'Property',
-    'SafeSearchAnnotation',
-    'TextDetectionParams',
-    'WebDetectionParams',
-    'Likelihood',
-    'Block',
     'Page',
     'Paragraph',
+    'Position',
+    'Property',
+    'SafeSearchAnnotation',
     'Symbol',
     'TextAnnotation',
-    'Word',
+    'TextDetectionParams',
+    'Vertex',
     'WebDetection',
+    'WebDetectionParams',
+    'Word',
 )

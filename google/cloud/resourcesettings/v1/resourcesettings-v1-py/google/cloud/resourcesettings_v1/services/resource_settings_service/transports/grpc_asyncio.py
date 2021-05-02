@@ -237,7 +237,9 @@ class ResourceSettingsServiceGrpcAsyncIOTransport(ResourceSettingsServiceTranspo
     def list_settings(self) -> Callable[
             [resource_settings.ListSettingsRequest],
             Awaitable[resource_settings.ListSettingsResponse]]:
-        r"""Return a callable for the list settings method over gRPC.
+        r"""Return a callable for the
+        list settings
+          method over gRPC.
 
         Lists all the settings that are available on the Cloud resource
         ``parent``.
@@ -264,7 +266,9 @@ class ResourceSettingsServiceGrpcAsyncIOTransport(ResourceSettingsServiceTranspo
     def get_setting(self) -> Callable[
             [resource_settings.GetSettingRequest],
             Awaitable[resource_settings.Setting]]:
-        r"""Return a callable for the get setting method over gRPC.
+        r"""Return a callable for the
+        get setting
+          method over gRPC.
 
         Gets a setting.
 
@@ -293,7 +297,9 @@ class ResourceSettingsServiceGrpcAsyncIOTransport(ResourceSettingsServiceTranspo
     def update_setting(self) -> Callable[
             [resource_settings.UpdateSettingRequest],
             Awaitable[resource_settings.Setting]]:
-        r"""Return a callable for the update setting method over gRPC.
+        r"""Return a callable for the
+        update setting
+          method over gRPC.
 
         Updates a setting.
 

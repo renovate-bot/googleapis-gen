@@ -246,7 +246,9 @@ class DocumentsGrpcAsyncIOTransport(DocumentsTransport):
     def list_documents(self) -> Callable[
             [document.ListDocumentsRequest],
             Awaitable[document.ListDocumentsResponse]]:
-        r"""Return a callable for the list documents method over gRPC.
+        r"""Return a callable for the
+        list documents
+          method over gRPC.
 
         Returns the list of all documents of the knowledge
         base.
@@ -273,7 +275,9 @@ class DocumentsGrpcAsyncIOTransport(DocumentsTransport):
     def get_document(self) -> Callable[
             [document.GetDocumentRequest],
             Awaitable[document.Document]]:
-        r"""Return a callable for the get document method over gRPC.
+        r"""Return a callable for the
+        get document
+          method over gRPC.
 
         Retrieves the specified document.
 
@@ -299,7 +303,9 @@ class DocumentsGrpcAsyncIOTransport(DocumentsTransport):
     def create_document(self) -> Callable[
             [gcd_document.CreateDocumentRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the create document method over gRPC.
+        r"""Return a callable for the
+        create document
+          method over gRPC.
 
         Creates a new document.
 
@@ -329,7 +335,9 @@ class DocumentsGrpcAsyncIOTransport(DocumentsTransport):
     def delete_document(self) -> Callable[
             [document.DeleteDocumentRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the delete document method over gRPC.
+        r"""Return a callable for the
+        delete document
+          method over gRPC.
 
         Deletes the specified document.
 
@@ -359,7 +367,9 @@ class DocumentsGrpcAsyncIOTransport(DocumentsTransport):
     def update_document(self) -> Callable[
             [gcd_document.UpdateDocumentRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the update document method over gRPC.
+        r"""Return a callable for the
+        update document
+          method over gRPC.
 
         Updates the specified document.
 
@@ -389,7 +399,9 @@ class DocumentsGrpcAsyncIOTransport(DocumentsTransport):
     def reload_document(self) -> Callable[
             [document.ReloadDocumentRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the reload document method over gRPC.
+        r"""Return a callable for the
+        reload document
+          method over gRPC.
 
         Reloads the specified document from its specified source,
         content_uri or content. The previously loaded content of the

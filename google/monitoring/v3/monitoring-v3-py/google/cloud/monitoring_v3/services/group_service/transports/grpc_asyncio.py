@@ -239,7 +239,9 @@ class GroupServiceGrpcAsyncIOTransport(GroupServiceTransport):
     def list_groups(self) -> Callable[
             [group_service.ListGroupsRequest],
             Awaitable[group_service.ListGroupsResponse]]:
-        r"""Return a callable for the list groups method over gRPC.
+        r"""Return a callable for the
+        list groups
+          method over gRPC.
 
         Lists the existing groups.
 
@@ -265,7 +267,9 @@ class GroupServiceGrpcAsyncIOTransport(GroupServiceTransport):
     def get_group(self) -> Callable[
             [group_service.GetGroupRequest],
             Awaitable[group.Group]]:
-        r"""Return a callable for the get group method over gRPC.
+        r"""Return a callable for the
+        get group
+          method over gRPC.
 
         Gets a single group.
 
@@ -291,7 +295,9 @@ class GroupServiceGrpcAsyncIOTransport(GroupServiceTransport):
     def create_group(self) -> Callable[
             [group_service.CreateGroupRequest],
             Awaitable[gm_group.Group]]:
-        r"""Return a callable for the create group method over gRPC.
+        r"""Return a callable for the
+        create group
+          method over gRPC.
 
         Creates a new group.
 
@@ -317,7 +323,9 @@ class GroupServiceGrpcAsyncIOTransport(GroupServiceTransport):
     def update_group(self) -> Callable[
             [group_service.UpdateGroupRequest],
             Awaitable[gm_group.Group]]:
-        r"""Return a callable for the update group method over gRPC.
+        r"""Return a callable for the
+        update group
+          method over gRPC.
 
         Updates an existing group. You can change any group attributes
         except ``name``.
@@ -344,7 +352,9 @@ class GroupServiceGrpcAsyncIOTransport(GroupServiceTransport):
     def delete_group(self) -> Callable[
             [group_service.DeleteGroupRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete group method over gRPC.
+        r"""Return a callable for the
+        delete group
+          method over gRPC.
 
         Deletes an existing group.
 
@@ -370,7 +380,9 @@ class GroupServiceGrpcAsyncIOTransport(GroupServiceTransport):
     def list_group_members(self) -> Callable[
             [group_service.ListGroupMembersRequest],
             Awaitable[group_service.ListGroupMembersResponse]]:
-        r"""Return a callable for the list group members method over gRPC.
+        r"""Return a callable for the
+        list group members
+          method over gRPC.
 
         Lists the monitored resources that are members of a
         group.

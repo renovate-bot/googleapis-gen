@@ -222,7 +222,9 @@ class AnswerRecordsGrpcTransport(AnswerRecordsTransport):
     def list_answer_records(self) -> Callable[
             [answer_record.ListAnswerRecordsRequest],
             answer_record.ListAnswerRecordsResponse]:
-        r"""Return a callable for the list answer records method over gRPC.
+        r"""Return a callable for the
+        list answer records
+          method over gRPC.
 
         Returns the list of all answer records in the
         specified project in reverse chronological order.
@@ -249,7 +251,9 @@ class AnswerRecordsGrpcTransport(AnswerRecordsTransport):
     def update_answer_record(self) -> Callable[
             [gcd_answer_record.UpdateAnswerRecordRequest],
             gcd_answer_record.AnswerRecord]:
-        r"""Return a callable for the update answer record method over gRPC.
+        r"""Return a callable for the
+        update answer record
+          method over gRPC.
 
         Updates the specified answer record.
 

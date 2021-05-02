@@ -161,7 +161,8 @@ class AgentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.GetAgentRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.GetAgent][google.cloud.dialogflow.v2.Agents.GetAgent].
             parent (:class:`str`):
                 Required. The project that the agent to fetch is
@@ -245,7 +246,8 @@ class AgentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.SetAgentRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.SetAgent][google.cloud.dialogflow.v2.Agents.SetAgent].
             agent (:class:`google.cloud.dialogflow_v2.types.Agent`):
                 Required. The agent to update.
@@ -327,7 +329,8 @@ class AgentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.DeleteAgentRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.DeleteAgent][google.cloud.dialogflow.v2.Agents.DeleteAgent].
             parent (:class:`str`):
                 Required. The project that the agent to delete is
@@ -399,7 +402,8 @@ class AgentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.SearchAgentsRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.SearchAgents][google.cloud.dialogflow.v2.Agents.SearchAgents].
             parent (:class:`str`):
                 Required. The project to list agents from. Format:
@@ -489,7 +493,8 @@ class AgentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.TrainAgentRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.TrainAgent][google.cloud.dialogflow.v2.Agents.TrainAgent].
             parent (:class:`str`):
                 Required. The project that the agent to train is
@@ -588,7 +593,8 @@ class AgentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.ExportAgentRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.ExportAgent][google.cloud.dialogflow.v2.Agents.ExportAgent].
             parent (:class:`str`):
                 Required. The project that the agent to export is
@@ -690,7 +696,8 @@ class AgentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.ImportAgentRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.ImportAgent][google.cloud.dialogflow.v2.Agents.ImportAgent].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -780,7 +787,8 @@ class AgentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.RestoreAgentRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.RestoreAgent][google.cloud.dialogflow.v2.Agents.RestoreAgent].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -858,7 +866,8 @@ class AgentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.GetValidationResultRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.GetValidationResult][google.cloud.dialogflow.v2.Agents.GetValidationResult].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

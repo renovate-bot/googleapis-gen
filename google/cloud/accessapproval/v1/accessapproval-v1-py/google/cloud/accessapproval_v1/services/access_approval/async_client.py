@@ -193,7 +193,8 @@ class AccessApprovalAsyncClient:
 
         Args:
             request (:class:`google.cloud.accessapproval_v1.types.ListApprovalRequestsMessage`):
-                The request object. Request to list approval requests.
+                The request object.
+                Request to list approval requests.
             parent (:class:`str`):
                 The parent resource. This may be
                 "projects/{project_id}", "folders/{folder_id}", or
@@ -287,7 +288,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.accessapproval_v1.types.GetApprovalRequestMessage`):
-                The request object. Request to get an approval request.
+                The request object.
+                Request to get an approval request.
             name (:class:`str`):
                 Name of the approval request to
                 retrieve.
@@ -370,7 +372,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.accessapproval_v1.types.ApproveApprovalRequestMessage`):
-                The request object. Request to approve an
+                The request object.
+                Request to approve an
                 ApprovalRequest.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -434,7 +437,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.accessapproval_v1.types.DismissApprovalRequestMessage`):
-                The request object. Request to dismiss an approval
+                The request object.
+                Request to dismiss an approval
                 request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -491,7 +495,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.accessapproval_v1.types.GetAccessApprovalSettingsMessage`):
-                The request object. Request to get access approval
+                The request object.
+                Request to get access approval
                 settings.
             name (:class:`str`):
                 Name of the AccessApprovalSettings to
@@ -576,7 +581,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.accessapproval_v1.types.UpdateAccessApprovalSettingsMessage`):
-                The request object. Request to update access approval
+                The request object.
+                Request to update access approval
                 settings.
             settings (:class:`google.cloud.accessapproval_v1.types.AccessApprovalSettings`):
                 The new AccessApprovalSettings.
@@ -675,7 +681,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.accessapproval_v1.types.DeleteAccessApprovalSettingsMessage`):
-                The request object. Request to delete access approval
+                The request object.
+                Request to delete access approval
                 settings.
             name (:class:`str`):
                 Name of the AccessApprovalSettings to

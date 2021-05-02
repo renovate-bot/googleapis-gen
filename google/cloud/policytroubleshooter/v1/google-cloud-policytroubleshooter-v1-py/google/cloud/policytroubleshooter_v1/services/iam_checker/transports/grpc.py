@@ -222,7 +222,9 @@ class IamCheckerGrpcTransport(IamCheckerTransport):
     def troubleshoot_iam_policy(self) -> Callable[
             [checker.TroubleshootIamPolicyRequest],
             checker.TroubleshootIamPolicyResponse]:
-        r"""Return a callable for the troubleshoot iam policy method over gRPC.
+        r"""Return a callable for the
+        troubleshoot iam policy
+          method over gRPC.
 
         Checks whether a member has a specific permission for
         a specific resource, and explains why the member does or

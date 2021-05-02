@@ -160,7 +160,8 @@ class DocumentUnderstandingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.documentai_v1beta2.types.BatchProcessDocumentsRequest`):
-                The request object. Request to batch process documents
+                The request object.
+                Request to batch process documents
                 as an asynchronous operation. The output is written to
                 Cloud Storage as JSON in the [Document] format.
             requests (:class:`Sequence[google.cloud.documentai_v1beta2.types.ProcessDocumentRequest]`):
@@ -252,7 +253,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.documentai_v1beta2.types.ProcessDocumentRequest`):
-                The request object. Request to process one document.
+                The request object.
+                Request to process one document.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.

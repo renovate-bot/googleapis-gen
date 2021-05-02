@@ -14,9 +14,8 @@
 # limitations under the License.
 #
 
-from google.cloud.osconfig.agentendpoint_v1beta.services.agent_endpoint_service.client import AgentEndpointServiceClient
 from google.cloud.osconfig.agentendpoint_v1beta.services.agent_endpoint_service.async_client import AgentEndpointServiceAsyncClient
-
+from google.cloud.osconfig.agentendpoint_v1beta.services.agent_endpoint_service.client import AgentEndpointServiceClient
 from google.cloud.osconfig.agentendpoint_v1beta.types.agentendpoint import ReceiveTaskNotificationRequest
 from google.cloud.osconfig.agentendpoint_v1beta.types.agentendpoint import ReceiveTaskNotificationResponse
 from google.cloud.osconfig.agentendpoint_v1beta.types.agentendpoint import RegisterAgentRequest
@@ -28,6 +27,7 @@ from google.cloud.osconfig.agentendpoint_v1beta.types.agentendpoint import Repor
 from google.cloud.osconfig.agentendpoint_v1beta.types.agentendpoint import StartNextTaskRequest
 from google.cloud.osconfig.agentendpoint_v1beta.types.agentendpoint import StartNextTaskResponse
 from google.cloud.osconfig.agentendpoint_v1beta.types.guest_policies import AptRepository
+from google.cloud.osconfig.agentendpoint_v1beta.types.guest_policies import DesiredState
 from google.cloud.osconfig.agentendpoint_v1beta.types.guest_policies import EffectiveGuestPolicy
 from google.cloud.osconfig.agentendpoint_v1beta.types.guest_policies import GooRepository
 from google.cloud.osconfig.agentendpoint_v1beta.types.guest_policies import LookupEffectiveGuestPolicyRequest
@@ -36,7 +36,6 @@ from google.cloud.osconfig.agentendpoint_v1beta.types.guest_policies import Pack
 from google.cloud.osconfig.agentendpoint_v1beta.types.guest_policies import SoftwareRecipe
 from google.cloud.osconfig.agentendpoint_v1beta.types.guest_policies import YumRepository
 from google.cloud.osconfig.agentendpoint_v1beta.types.guest_policies import ZypperRepository
-from google.cloud.osconfig.agentendpoint_v1beta.types.guest_policies import DesiredState
 from google.cloud.osconfig.agentendpoint_v1beta.types.patch_jobs import AptSettings
 from google.cloud.osconfig.agentendpoint_v1beta.types.patch_jobs import ExecStep
 from google.cloud.osconfig.agentendpoint_v1beta.types.patch_jobs import ExecStepConfig
@@ -57,8 +56,27 @@ from google.cloud.osconfig.agentendpoint_v1beta.types.tasks import Task
 from google.cloud.osconfig.agentendpoint_v1beta.types.tasks import TaskDirective
 from google.cloud.osconfig.agentendpoint_v1beta.types.tasks import TaskType
 
-__all__ = ('AgentEndpointServiceClient',
-    'AgentEndpointServiceAsyncClient',
+__all__ = ('AgentEndpointServiceAsyncClient',
+    'AgentEndpointServiceClient',
+    'ApplyPatchesTask',
+    'ApplyPatchesTaskOutput',
+    'ApplyPatchesTaskProgress',
+    'AptRepository',
+    'AptSettings',
+    'DesiredState',
+    'EffectiveGuestPolicy',
+    'ExecStep',
+    'ExecStepConfig',
+    'ExecStepTask',
+    'ExecStepTaskOutput',
+    'ExecStepTaskProgress',
+    'GcsObject',
+    'GooRepository',
+    'GooSettings',
+    'LookupEffectiveGuestPolicyRequest',
+    'Package',
+    'PackageRepository',
+    'PatchConfig',
     'ReceiveTaskNotificationRequest',
     'ReceiveTaskNotificationResponse',
     'RegisterAgentRequest',
@@ -67,35 +85,16 @@ __all__ = ('AgentEndpointServiceClient',
     'ReportTaskCompleteResponse',
     'ReportTaskProgressRequest',
     'ReportTaskProgressResponse',
+    'RetryStrategy',
+    'SoftwareRecipe',
     'StartNextTaskRequest',
     'StartNextTaskResponse',
-    'AptRepository',
-    'EffectiveGuestPolicy',
-    'GooRepository',
-    'LookupEffectiveGuestPolicyRequest',
-    'Package',
-    'PackageRepository',
-    'SoftwareRecipe',
-    'YumRepository',
-    'ZypperRepository',
-    'DesiredState',
-    'AptSettings',
-    'ExecStep',
-    'ExecStepConfig',
-    'GcsObject',
-    'GooSettings',
-    'PatchConfig',
-    'RetryStrategy',
-    'WindowsUpdateSettings',
-    'YumSettings',
-    'ZypperSettings',
-    'ApplyPatchesTask',
-    'ApplyPatchesTaskOutput',
-    'ApplyPatchesTaskProgress',
-    'ExecStepTask',
-    'ExecStepTaskOutput',
-    'ExecStepTaskProgress',
     'Task',
     'TaskDirective',
     'TaskType',
+    'WindowsUpdateSettings',
+    'YumRepository',
+    'YumSettings',
+    'ZypperRepository',
+    'ZypperSettings',
 )

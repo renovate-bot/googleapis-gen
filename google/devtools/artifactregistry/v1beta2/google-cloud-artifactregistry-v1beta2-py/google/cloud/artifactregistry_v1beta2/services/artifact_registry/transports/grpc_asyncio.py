@@ -265,7 +265,9 @@ class ArtifactRegistryGrpcAsyncIOTransport(ArtifactRegistryTransport):
     def list_repositories(self) -> Callable[
             [repository.ListRepositoriesRequest],
             Awaitable[repository.ListRepositoriesResponse]]:
-        r"""Return a callable for the list repositories method over gRPC.
+        r"""Return a callable for the
+        list repositories
+          method over gRPC.
 
         Lists repositories.
 
@@ -291,7 +293,9 @@ class ArtifactRegistryGrpcAsyncIOTransport(ArtifactRegistryTransport):
     def get_repository(self) -> Callable[
             [repository.GetRepositoryRequest],
             Awaitable[repository.Repository]]:
-        r"""Return a callable for the get repository method over gRPC.
+        r"""Return a callable for the
+        get repository
+          method over gRPC.
 
         Gets a repository.
 
@@ -317,7 +321,9 @@ class ArtifactRegistryGrpcAsyncIOTransport(ArtifactRegistryTransport):
     def create_repository(self) -> Callable[
             [gda_repository.CreateRepositoryRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the create repository method over gRPC.
+        r"""Return a callable for the
+        create repository
+          method over gRPC.
 
         Creates a repository. The returned Operation will
         finish once the repository has been created. Its
@@ -345,7 +351,9 @@ class ArtifactRegistryGrpcAsyncIOTransport(ArtifactRegistryTransport):
     def update_repository(self) -> Callable[
             [gda_repository.UpdateRepositoryRequest],
             Awaitable[gda_repository.Repository]]:
-        r"""Return a callable for the update repository method over gRPC.
+        r"""Return a callable for the
+        update repository
+          method over gRPC.
 
         Updates a repository.
 
@@ -371,7 +379,9 @@ class ArtifactRegistryGrpcAsyncIOTransport(ArtifactRegistryTransport):
     def delete_repository(self) -> Callable[
             [repository.DeleteRepositoryRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the delete repository method over gRPC.
+        r"""Return a callable for the
+        delete repository
+          method over gRPC.
 
         Deletes a repository and all of its contents. The
         returned Operation will finish once the repository has
@@ -400,7 +410,9 @@ class ArtifactRegistryGrpcAsyncIOTransport(ArtifactRegistryTransport):
     def list_packages(self) -> Callable[
             [package.ListPackagesRequest],
             Awaitable[package.ListPackagesResponse]]:
-        r"""Return a callable for the list packages method over gRPC.
+        r"""Return a callable for the
+        list packages
+          method over gRPC.
 
         Lists packages.
 
@@ -426,7 +438,9 @@ class ArtifactRegistryGrpcAsyncIOTransport(ArtifactRegistryTransport):
     def get_package(self) -> Callable[
             [package.GetPackageRequest],
             Awaitable[package.Package]]:
-        r"""Return a callable for the get package method over gRPC.
+        r"""Return a callable for the
+        get package
+          method over gRPC.
 
         Gets a package.
 
@@ -452,7 +466,9 @@ class ArtifactRegistryGrpcAsyncIOTransport(ArtifactRegistryTransport):
     def delete_package(self) -> Callable[
             [package.DeletePackageRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the delete package method over gRPC.
+        r"""Return a callable for the
+        delete package
+          method over gRPC.
 
         Deletes a package and all of its versions and tags.
         The returned operation will complete once the package
@@ -480,7 +496,9 @@ class ArtifactRegistryGrpcAsyncIOTransport(ArtifactRegistryTransport):
     def list_versions(self) -> Callable[
             [version.ListVersionsRequest],
             Awaitable[version.ListVersionsResponse]]:
-        r"""Return a callable for the list versions method over gRPC.
+        r"""Return a callable for the
+        list versions
+          method over gRPC.
 
         Lists versions.
 
@@ -506,7 +524,9 @@ class ArtifactRegistryGrpcAsyncIOTransport(ArtifactRegistryTransport):
     def get_version(self) -> Callable[
             [version.GetVersionRequest],
             Awaitable[version.Version]]:
-        r"""Return a callable for the get version method over gRPC.
+        r"""Return a callable for the
+        get version
+          method over gRPC.
 
         Gets a version
 
@@ -532,7 +552,9 @@ class ArtifactRegistryGrpcAsyncIOTransport(ArtifactRegistryTransport):
     def delete_version(self) -> Callable[
             [version.DeleteVersionRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the delete version method over gRPC.
+        r"""Return a callable for the
+        delete version
+          method over gRPC.
 
         Deletes a version and all of its content. The
         returned operation will complete once the version has
@@ -560,7 +582,9 @@ class ArtifactRegistryGrpcAsyncIOTransport(ArtifactRegistryTransport):
     def list_files(self) -> Callable[
             [file.ListFilesRequest],
             Awaitable[file.ListFilesResponse]]:
-        r"""Return a callable for the list files method over gRPC.
+        r"""Return a callable for the
+        list files
+          method over gRPC.
 
         Lists files.
 
@@ -586,7 +610,9 @@ class ArtifactRegistryGrpcAsyncIOTransport(ArtifactRegistryTransport):
     def get_file(self) -> Callable[
             [file.GetFileRequest],
             Awaitable[file.File]]:
-        r"""Return a callable for the get file method over gRPC.
+        r"""Return a callable for the
+        get file
+          method over gRPC.
 
         Gets a file.
 
@@ -612,7 +638,9 @@ class ArtifactRegistryGrpcAsyncIOTransport(ArtifactRegistryTransport):
     def list_tags(self) -> Callable[
             [tag.ListTagsRequest],
             Awaitable[tag.ListTagsResponse]]:
-        r"""Return a callable for the list tags method over gRPC.
+        r"""Return a callable for the
+        list tags
+          method over gRPC.
 
         Lists tags.
 
@@ -638,7 +666,9 @@ class ArtifactRegistryGrpcAsyncIOTransport(ArtifactRegistryTransport):
     def get_tag(self) -> Callable[
             [tag.GetTagRequest],
             Awaitable[tag.Tag]]:
-        r"""Return a callable for the get tag method over gRPC.
+        r"""Return a callable for the
+        get tag
+          method over gRPC.
 
         Gets a tag.
 
@@ -664,7 +694,9 @@ class ArtifactRegistryGrpcAsyncIOTransport(ArtifactRegistryTransport):
     def create_tag(self) -> Callable[
             [gda_tag.CreateTagRequest],
             Awaitable[gda_tag.Tag]]:
-        r"""Return a callable for the create tag method over gRPC.
+        r"""Return a callable for the
+        create tag
+          method over gRPC.
 
         Creates a tag.
 
@@ -690,7 +722,9 @@ class ArtifactRegistryGrpcAsyncIOTransport(ArtifactRegistryTransport):
     def update_tag(self) -> Callable[
             [gda_tag.UpdateTagRequest],
             Awaitable[gda_tag.Tag]]:
-        r"""Return a callable for the update tag method over gRPC.
+        r"""Return a callable for the
+        update tag
+          method over gRPC.
 
         Updates a tag.
 
@@ -716,7 +750,9 @@ class ArtifactRegistryGrpcAsyncIOTransport(ArtifactRegistryTransport):
     def delete_tag(self) -> Callable[
             [tag.DeleteTagRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete tag method over gRPC.
+        r"""Return a callable for the
+        delete tag
+          method over gRPC.
 
         Deletes a tag.
 
@@ -742,7 +778,9 @@ class ArtifactRegistryGrpcAsyncIOTransport(ArtifactRegistryTransport):
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
             Awaitable[giv_policy.Policy]]:
-        r"""Return a callable for the set iam policy method over gRPC.
+        r"""Return a callable for the
+        set iam policy
+          method over gRPC.
 
         Updates the IAM policy for a given resource.
 
@@ -768,7 +806,9 @@ class ArtifactRegistryGrpcAsyncIOTransport(ArtifactRegistryTransport):
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
             Awaitable[giv_policy.Policy]]:
-        r"""Return a callable for the get iam policy method over gRPC.
+        r"""Return a callable for the
+        get iam policy
+          method over gRPC.
 
         Gets the IAM policy for a given resource.
 
@@ -794,7 +834,9 @@ class ArtifactRegistryGrpcAsyncIOTransport(ArtifactRegistryTransport):
     def test_iam_permissions(self) -> Callable[
             [iam_policy.TestIamPermissionsRequest],
             Awaitable[iam_policy.TestIamPermissionsResponse]]:
-        r"""Return a callable for the test iam permissions method over gRPC.
+        r"""Return a callable for the
+        test iam permissions
+          method over gRPC.
 
         Tests if the caller has a list of permissions on a
         resource.

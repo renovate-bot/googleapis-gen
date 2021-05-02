@@ -223,7 +223,9 @@ class CursorServiceGrpcTransport(CursorServiceTransport):
     def streaming_commit_cursor(self) -> Callable[
             [cursor.StreamingCommitCursorRequest],
             cursor.StreamingCommitCursorResponse]:
-        r"""Return a callable for the streaming commit cursor method over gRPC.
+        r"""Return a callable for the
+        streaming commit cursor
+          method over gRPC.
 
         Establishes a stream with the server for managing
         committed cursors.
@@ -250,7 +252,9 @@ class CursorServiceGrpcTransport(CursorServiceTransport):
     def commit_cursor(self) -> Callable[
             [cursor.CommitCursorRequest],
             cursor.CommitCursorResponse]:
-        r"""Return a callable for the commit cursor method over gRPC.
+        r"""Return a callable for the
+        commit cursor
+          method over gRPC.
 
         Updates the committed cursor.
 
@@ -276,7 +280,9 @@ class CursorServiceGrpcTransport(CursorServiceTransport):
     def list_partition_cursors(self) -> Callable[
             [cursor.ListPartitionCursorsRequest],
             cursor.ListPartitionCursorsResponse]:
-        r"""Return a callable for the list partition cursors method over gRPC.
+        r"""Return a callable for the
+        list partition cursors
+          method over gRPC.
 
         Returns all committed cursor information for a
         subscription.

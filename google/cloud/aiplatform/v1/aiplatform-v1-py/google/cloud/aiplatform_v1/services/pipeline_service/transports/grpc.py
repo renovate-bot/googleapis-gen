@@ -242,7 +242,9 @@ class PipelineServiceGrpcTransport(PipelineServiceTransport):
     def create_training_pipeline(self) -> Callable[
             [pipeline_service.CreateTrainingPipelineRequest],
             gca_training_pipeline.TrainingPipeline]:
-        r"""Return a callable for the create training pipeline method over gRPC.
+        r"""Return a callable for the
+        create training pipeline
+          method over gRPC.
 
         Creates a TrainingPipeline. A created
         TrainingPipeline right away will be attempted to be run.
@@ -269,7 +271,9 @@ class PipelineServiceGrpcTransport(PipelineServiceTransport):
     def get_training_pipeline(self) -> Callable[
             [pipeline_service.GetTrainingPipelineRequest],
             training_pipeline.TrainingPipeline]:
-        r"""Return a callable for the get training pipeline method over gRPC.
+        r"""Return a callable for the
+        get training pipeline
+          method over gRPC.
 
         Gets a TrainingPipeline.
 
@@ -295,7 +299,9 @@ class PipelineServiceGrpcTransport(PipelineServiceTransport):
     def list_training_pipelines(self) -> Callable[
             [pipeline_service.ListTrainingPipelinesRequest],
             pipeline_service.ListTrainingPipelinesResponse]:
-        r"""Return a callable for the list training pipelines method over gRPC.
+        r"""Return a callable for the
+        list training pipelines
+          method over gRPC.
 
         Lists TrainingPipelines in a Location.
 
@@ -321,7 +327,9 @@ class PipelineServiceGrpcTransport(PipelineServiceTransport):
     def delete_training_pipeline(self) -> Callable[
             [pipeline_service.DeleteTrainingPipelineRequest],
             operations.Operation]:
-        r"""Return a callable for the delete training pipeline method over gRPC.
+        r"""Return a callable for the
+        delete training pipeline
+          method over gRPC.
 
         Deletes a TrainingPipeline.
 
@@ -347,7 +355,9 @@ class PipelineServiceGrpcTransport(PipelineServiceTransport):
     def cancel_training_pipeline(self) -> Callable[
             [pipeline_service.CancelTrainingPipelineRequest],
             empty.Empty]:
-        r"""Return a callable for the cancel training pipeline method over gRPC.
+        r"""Return a callable for the
+        cancel training pipeline
+          method over gRPC.
 
         Cancels a TrainingPipeline. Starts asynchronous cancellation on
         the TrainingPipeline. The server makes a best effort to cancel

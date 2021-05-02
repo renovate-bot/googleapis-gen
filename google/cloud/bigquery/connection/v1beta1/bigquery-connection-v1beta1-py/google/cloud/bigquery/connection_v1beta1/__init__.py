@@ -29,7 +29,6 @@ from .types.connection import UpdateConnectionCredentialRequest
 from .types.connection import UpdateConnectionRequest
 
 __all__ = (
-    'ConnectionServiceClient',
     'CloudSqlCredential',
     'CloudSqlProperties',
     'Connection',
@@ -41,4 +40,5 @@ __all__ = (
     'ListConnectionsResponse',
     'UpdateConnectionCredentialRequest',
     'UpdateConnectionRequest',
+'ConnectionServiceClient',
 )

@@ -97,7 +97,7 @@ class CommonMetadata(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=4,
+        number=4
     )
     state = proto.Field(
         proto.ENUM,
@@ -173,7 +173,7 @@ class ExportEntitiesRequest(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=2,
+        number=2
     )
     entity_filter = proto.Field(
         proto.MESSAGE,
@@ -227,7 +227,7 @@ class ImportEntitiesRequest(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=2,
+        number=2
     )
     input_url = proto.Field(
         proto.STRING,

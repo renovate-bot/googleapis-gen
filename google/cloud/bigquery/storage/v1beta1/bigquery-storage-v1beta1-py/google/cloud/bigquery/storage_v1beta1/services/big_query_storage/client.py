@@ -365,7 +365,8 @@ class BigQueryStorageClient(metaclass=BigQueryStorageClientMeta):
 
         Args:
             request (google.cloud.bigquery.storage_v1beta1.types.CreateReadSessionRequest):
-                The request object. Creates a new read session, which
+                The request object.
+                Creates a new read session, which
                 may include additional options such as requested
                 parallelism, projection filters and constraints.
             table_reference (google.cloud.bigquery.storage_v1beta1.types.TableReference):
@@ -423,7 +424,7 @@ class BigQueryStorageClient(metaclass=BigQueryStorageClientMeta):
         # there are no flattened fields.
         if not isinstance(request, storage.CreateReadSessionRequest):
             request = storage.CreateReadSessionRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if table_reference is not None:
                 request.table_reference = table_reference
@@ -478,7 +479,8 @@ class BigQueryStorageClient(metaclass=BigQueryStorageClientMeta):
 
         Args:
             request (google.cloud.bigquery.storage_v1beta1.types.ReadRowsRequest):
-                The request object. Requesting row data via `ReadRows`
+                The request object.
+                Requesting row data via `ReadRows`
                 must provide Stream position information.
             read_position (google.cloud.bigquery.storage_v1beta1.types.StreamPosition):
                 Required. Identifier of the position
@@ -516,7 +518,7 @@ class BigQueryStorageClient(metaclass=BigQueryStorageClientMeta):
         # there are no flattened fields.
         if not isinstance(request, storage.ReadRowsRequest):
             request = storage.ReadRowsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if read_position is not None:
                 request.read_position = read_position
@@ -560,7 +562,8 @@ class BigQueryStorageClient(metaclass=BigQueryStorageClientMeta):
 
         Args:
             request (google.cloud.bigquery.storage_v1beta1.types.BatchCreateReadSessionStreamsRequest):
-                The request object. Information needed to request
+                The request object.
+                Information needed to request
                 additional streams for an established read session.
             session (google.cloud.bigquery.storage_v1beta1.types.ReadSession):
                 Required. Must be a non-expired
@@ -607,7 +610,7 @@ class BigQueryStorageClient(metaclass=BigQueryStorageClientMeta):
         # there are no flattened fields.
         if not isinstance(request, storage.BatchCreateReadSessionStreamsRequest):
             request = storage.BatchCreateReadSessionStreamsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if session is not None:
                 request.session = session
@@ -665,7 +668,8 @@ class BigQueryStorageClient(metaclass=BigQueryStorageClientMeta):
 
         Args:
             request (google.cloud.bigquery.storage_v1beta1.types.FinalizeStreamRequest):
-                The request object. Request information for invoking
+                The request object.
+                Request information for invoking
                 `FinalizeStream`.
             stream (google.cloud.bigquery.storage_v1beta1.types.Stream):
                 Required. Stream to finalize.
@@ -692,7 +696,7 @@ class BigQueryStorageClient(metaclass=BigQueryStorageClientMeta):
         # there are no flattened fields.
         if not isinstance(request, storage.FinalizeStreamRequest):
             request = storage.FinalizeStreamRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if stream is not None:
                 request.stream = stream
@@ -742,7 +746,8 @@ class BigQueryStorageClient(metaclass=BigQueryStorageClientMeta):
 
         Args:
             request (google.cloud.bigquery.storage_v1beta1.types.SplitReadStreamRequest):
-                The request object. Request information for
+                The request object.
+                Request information for
                 `SplitReadStream`.
             original_stream (google.cloud.bigquery.storage_v1beta1.types.Stream):
                 Required. Stream to split.
@@ -773,7 +778,7 @@ class BigQueryStorageClient(metaclass=BigQueryStorageClientMeta):
         # there are no flattened fields.
         if not isinstance(request, storage.SplitReadStreamRequest):
             request = storage.SplitReadStreamRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if original_stream is not None:
                 request.original_stream = original_stream

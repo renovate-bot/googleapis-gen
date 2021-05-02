@@ -380,7 +380,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1beta1.types.CreateCertificateRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.CreateCertificate][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.CreateCertificate].
             parent (str):
                 Required. The resource name of the location and
@@ -439,7 +440,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.CreateCertificateRequest):
             request = service.CreateCertificateRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -484,7 +485,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1beta1.types.GetCertificateRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.GetCertificate][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.GetCertificate].
             name (str):
                 Required. The
@@ -522,7 +524,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.GetCertificateRequest):
             request = service.GetCertificateRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -563,7 +565,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1beta1.types.ListCertificatesRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.ListCertificates][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.ListCertificates].
             parent (str):
                 Required. The resource name of the location associated
@@ -604,7 +607,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.ListCertificatesRequest):
             request = service.ListCertificatesRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -654,7 +657,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1beta1.types.RevokeCertificateRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.RevokeCertificate][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.RevokeCertificate].
             name (str):
                 Required. The resource name for this
@@ -691,7 +695,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.RevokeCertificateRequest):
             request = service.RevokeCertificateRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -736,7 +740,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1beta1.types.UpdateCertificateRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.UpdateCertificate][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.UpdateCertificate].
             certificate (google.cloud.security.privateca_v1beta1.types.Certificate):
                 Required.
@@ -779,7 +784,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.UpdateCertificateRequest):
             request = service.UpdateCertificateRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if certificate is not None:
                 request.certificate = certificate
@@ -830,7 +835,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1beta1.types.ActivateCertificateAuthorityRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.ActivateCertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.ActivateCertificateAuthority].
             name (str):
                 Required. The resource name for this
@@ -872,7 +878,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.ActivateCertificateAuthorityRequest):
             request = service.ActivateCertificateAuthorityRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -924,7 +930,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1beta1.types.CreateCertificateAuthorityRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.CreateCertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.CreateCertificateAuthority].
             parent (str):
                 Required. The resource name of the location associated
@@ -981,7 +988,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.CreateCertificateAuthorityRequest):
             request = service.CreateCertificateAuthorityRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1034,7 +1041,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1beta1.types.DisableCertificateAuthorityRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.DisableCertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.DisableCertificateAuthority].
             name (str):
                 Required. The resource name for this
@@ -1076,7 +1084,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.DisableCertificateAuthorityRequest):
             request = service.DisableCertificateAuthorityRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1125,7 +1133,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1beta1.types.EnableCertificateAuthorityRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.EnableCertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.EnableCertificateAuthority].
             name (str):
                 Required. The resource name for this
@@ -1167,7 +1176,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.EnableCertificateAuthorityRequest):
             request = service.EnableCertificateAuthorityRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1225,7 +1234,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1beta1.types.FetchCertificateAuthorityCsrRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.FetchCertificateAuthorityCsr][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.FetchCertificateAuthorityCsr].
             name (str):
                 Required. The resource name for this
@@ -1262,7 +1272,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.FetchCertificateAuthorityCsrRequest):
             request = service.FetchCertificateAuthorityCsrRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1303,7 +1313,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1beta1.types.GetCertificateAuthorityRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.GetCertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.GetCertificateAuthority].
             name (str):
                 Required. The
@@ -1344,7 +1355,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.GetCertificateAuthorityRequest):
             request = service.GetCertificateAuthorityRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1385,7 +1396,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1beta1.types.ListCertificateAuthoritiesRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.ListCertificateAuthorities][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.ListCertificateAuthorities].
             parent (str):
                 Required. The resource name of the location associated
@@ -1425,7 +1437,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.ListCertificateAuthoritiesRequest):
             request = service.ListCertificateAuthoritiesRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1476,7 +1488,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1beta1.types.RestoreCertificateAuthorityRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.RestoreCertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.RestoreCertificateAuthority].
             name (str):
                 Required. The resource name for this
@@ -1518,7 +1531,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.RestoreCertificateAuthorityRequest):
             request = service.RestoreCertificateAuthorityRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1568,7 +1581,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1beta1.types.ScheduleDeleteCertificateAuthorityRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.ScheduleDeleteCertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.ScheduleDeleteCertificateAuthority].
             name (str):
                 Required. The resource name for this
@@ -1610,7 +1624,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.ScheduleDeleteCertificateAuthorityRequest):
             request = service.ScheduleDeleteCertificateAuthorityRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1660,7 +1674,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1beta1.types.UpdateCertificateAuthorityRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.UpdateCertificateAuthority][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.UpdateCertificateAuthority].
             certificate_authority (google.cloud.security.privateca_v1beta1.types.CertificateAuthority):
                 Required.
@@ -1708,7 +1723,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.UpdateCertificateAuthorityRequest):
             request = service.UpdateCertificateAuthorityRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if certificate_authority is not None:
                 request.certificate_authority = certificate_authority
@@ -1759,7 +1774,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1beta1.types.GetCertificateRevocationListRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.GetCertificateRevocationList][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.GetCertificateRevocationList].
             name (str):
                 Required. The
@@ -1799,7 +1815,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.GetCertificateRevocationListRequest):
             request = service.GetCertificateRevocationListRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1840,7 +1856,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1beta1.types.ListCertificateRevocationListsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.ListCertificateRevocationLists][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.ListCertificateRevocationLists].
             parent (str):
                 Required. The resource name of the location associated
@@ -1881,7 +1898,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.ListCertificateRevocationListsRequest):
             request = service.ListCertificateRevocationListsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1932,7 +1949,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1beta1.types.UpdateCertificateRevocationListRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.UpdateCertificateRevocationList][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.UpdateCertificateRevocationList].
             certificate_revocation_list (google.cloud.security.privateca_v1beta1.types.CertificateRevocationList):
                 Required.
@@ -1979,7 +1997,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.UpdateCertificateRevocationListRequest):
             request = service.UpdateCertificateRevocationListRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if certificate_revocation_list is not None:
                 request.certificate_revocation_list = certificate_revocation_list
@@ -2030,7 +2048,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1beta1.types.GetReusableConfigRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.GetReusableConfig][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.GetReusableConfig].
             name (str):
                 Required. The [name][ReusableConfigs.name] of the
@@ -2068,7 +2087,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.GetReusableConfigRequest):
             request = service.GetReusableConfigRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -2109,7 +2128,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         Args:
             request (google.cloud.security.privateca_v1beta1.types.ListReusableConfigsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CertificateAuthorityService.ListReusableConfigs][google.cloud.security.privateca.v1beta1.CertificateAuthorityService.ListReusableConfigs].
             parent (str):
                 Required. The resource name of the location associated
@@ -2149,7 +2169,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.ListReusableConfigsRequest):
             request = service.ListReusableConfigsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent

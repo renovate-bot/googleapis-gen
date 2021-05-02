@@ -163,7 +163,8 @@ class GameServerConfigsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.ListGameServerConfigsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GameServerConfigsService.ListGameServerConfigs.
             parent (:class:`str`):
                 Required. The parent resource name. Uses the form:
@@ -257,7 +258,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.GetGameServerConfigRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GameServerConfigsService.GetGameServerConfig.
             name (:class:`str`):
                 Required. The name of the game server config to
@@ -343,7 +345,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.CreateGameServerConfigRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GameServerConfigsService.CreateGameServerConfig.
             parent (:class:`str`):
                 Required. The parent resource name. Uses the form:
@@ -441,7 +444,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.DeleteGameServerConfigRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GameServerConfigsService.DeleteGameServerConfig.
             name (:class:`str`):
                 Required. The name of the game server config to delete.

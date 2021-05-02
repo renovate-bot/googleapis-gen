@@ -14,9 +14,8 @@
 # limitations under the License.
 #
 
-from google.cloud.securitycenter_v1p1beta1.services.security_center.client import SecurityCenterClient
 from google.cloud.securitycenter_v1p1beta1.services.security_center.async_client import SecurityCenterAsyncClient
-
+from google.cloud.securitycenter_v1p1beta1.services.security_center.client import SecurityCenterClient
 from google.cloud.securitycenter_v1p1beta1.types.asset import Asset
 from google.cloud.securitycenter_v1p1beta1.types.finding import Finding
 from google.cloud.securitycenter_v1p1beta1.types.notification_config import NotificationConfig
@@ -54,20 +53,12 @@ from google.cloud.securitycenter_v1p1beta1.types.securitycenter_service import U
 from google.cloud.securitycenter_v1p1beta1.types.securitycenter_service import UpdateSourceRequest
 from google.cloud.securitycenter_v1p1beta1.types.source import Source
 
-__all__ = ('SecurityCenterClient',
-    'SecurityCenterAsyncClient',
-    'Asset',
-    'Finding',
-    'NotificationConfig',
-    'NotificationMessage',
-    'OrganizationSettings',
-    'Resource',
-    'RunAssetDiscoveryResponse',
-    'SecurityMarks',
+__all__ = ('Asset',
     'CreateFindingRequest',
     'CreateNotificationConfigRequest',
     'CreateSourceRequest',
     'DeleteNotificationConfigRequest',
+    'Finding',
     'GetNotificationConfigRequest',
     'GetOrganizationSettingsRequest',
     'GetSourceRequest',
@@ -84,12 +75,20 @@ __all__ = ('SecurityCenterClient',
     'ListNotificationConfigsResponse',
     'ListSourcesRequest',
     'ListSourcesResponse',
+    'NotificationConfig',
+    'NotificationMessage',
+    'OrganizationSettings',
+    'Resource',
     'RunAssetDiscoveryRequest',
+    'RunAssetDiscoveryResponse',
+    'SecurityCenterAsyncClient',
+    'SecurityCenterClient',
+    'SecurityMarks',
     'SetFindingStateRequest',
+    'Source',
     'UpdateFindingRequest',
     'UpdateNotificationConfigRequest',
     'UpdateOrganizationSettingsRequest',
     'UpdateSecurityMarksRequest',
     'UpdateSourceRequest',
-    'Source',
 )

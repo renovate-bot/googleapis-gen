@@ -169,7 +169,8 @@ class LibraryServiceAsyncClient:
 
         Args:
             request (:class:`google.example.library_v1.types.CreateShelfRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 LibraryService.CreateShelf.
             shelf (:class:`google.example.library_v1.types.Shelf`):
                 The shelf to create.
@@ -239,7 +240,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.example.library_v1.types.GetShelfRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 LibraryService.GetShelf.
             name (:class:`str`):
                 The name of the shelf to retrieve.
@@ -320,7 +322,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.example.library_v1.types.ListShelvesRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 LibraryService.ListShelves.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -387,7 +390,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.example.library_v1.types.DeleteShelfRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 LibraryService.DeleteShelf.
             name (:class:`str`):
                 The name of the shelf to delete.
@@ -465,7 +469,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.example.library_v1.types.MergeShelvesRequest`):
-                The request object. Describes the shelf being removed
+                The request object.
+                Describes the shelf being removed
                 (other_shelf_name) and updated (name) in this merge.
             name (:class:`str`):
                 The name of the shelf we're adding
@@ -555,7 +560,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.example.library_v1.types.CreateBookRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 LibraryService.CreateBook.
             parent (:class:`str`):
                 The name of the shelf in which the
@@ -640,7 +646,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.example.library_v1.types.GetBookRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 LibraryService.GetBook.
             name (:class:`str`):
                 The name of the book to retrieve.
@@ -721,7 +728,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.example.library_v1.types.ListBooksRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 LibraryService.ListBooks.
             parent (:class:`str`):
                 The name of the shelf whose books
@@ -815,7 +823,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.example.library_v1.types.DeleteBookRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 LibraryService.DeleteBook.
             name (:class:`str`):
                 The name of the book to delete.
@@ -888,7 +897,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.example.library_v1.types.UpdateBookRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 LibraryService.UpdateBook.
             book (:class:`google.example.library_v1.types.Book`):
                 The name of the book to update.
@@ -976,7 +986,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.example.library_v1.types.MoveBookRequest`):
-                The request object. Describes what book to move (name)
+                The request object.
+                Describes what book to move (name)
                 and what shelf we're moving it to (other_shelf_name).
             name (:class:`str`):
                 The name of the book to move.

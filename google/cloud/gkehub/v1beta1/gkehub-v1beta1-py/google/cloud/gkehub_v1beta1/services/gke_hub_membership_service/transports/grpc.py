@@ -241,7 +241,9 @@ class GkeHubMembershipServiceGrpcTransport(GkeHubMembershipServiceTransport):
     def list_memberships(self) -> Callable[
             [membership.ListMembershipsRequest],
             membership.ListMembershipsResponse]:
-        r"""Return a callable for the list memberships method over gRPC.
+        r"""Return a callable for the
+        list memberships
+          method over gRPC.
 
         Lists Memberships in a given project and location.
 
@@ -267,7 +269,9 @@ class GkeHubMembershipServiceGrpcTransport(GkeHubMembershipServiceTransport):
     def get_membership(self) -> Callable[
             [membership.GetMembershipRequest],
             membership.Membership]:
-        r"""Return a callable for the get membership method over gRPC.
+        r"""Return a callable for the
+        get membership
+          method over gRPC.
 
         Gets the details of a Membership.
 
@@ -293,7 +297,9 @@ class GkeHubMembershipServiceGrpcTransport(GkeHubMembershipServiceTransport):
     def create_membership(self) -> Callable[
             [membership.CreateMembershipRequest],
             operations.Operation]:
-        r"""Return a callable for the create membership method over gRPC.
+        r"""Return a callable for the
+        create membership
+          method over gRPC.
 
         Adds a new Membership.
 
@@ -319,7 +325,9 @@ class GkeHubMembershipServiceGrpcTransport(GkeHubMembershipServiceTransport):
     def delete_membership(self) -> Callable[
             [membership.DeleteMembershipRequest],
             operations.Operation]:
-        r"""Return a callable for the delete membership method over gRPC.
+        r"""Return a callable for the
+        delete membership
+          method over gRPC.
 
         Removes a Membership.
 
@@ -345,7 +353,9 @@ class GkeHubMembershipServiceGrpcTransport(GkeHubMembershipServiceTransport):
     def update_membership(self) -> Callable[
             [membership.UpdateMembershipRequest],
             operations.Operation]:
-        r"""Return a callable for the update membership method over gRPC.
+        r"""Return a callable for the
+        update membership
+          method over gRPC.
 
         Updates an existing Membership.
 
@@ -371,7 +381,9 @@ class GkeHubMembershipServiceGrpcTransport(GkeHubMembershipServiceTransport):
     def generate_connect_manifest(self) -> Callable[
             [membership.GenerateConnectManifestRequest],
             membership.GenerateConnectManifestResponse]:
-        r"""Return a callable for the generate connect manifest method over gRPC.
+        r"""Return a callable for the
+        generate connect manifest
+          method over gRPC.
 
         Generates the manifest for deployment of the GKE
         connect agent.
@@ -398,7 +410,9 @@ class GkeHubMembershipServiceGrpcTransport(GkeHubMembershipServiceTransport):
     def validate_exclusivity(self) -> Callable[
             [membership.ValidateExclusivityRequest],
             membership.ValidateExclusivityResponse]:
-        r"""Return a callable for the validate exclusivity method over gRPC.
+        r"""Return a callable for the
+        validate exclusivity
+          method over gRPC.
 
         ValidateExclusivity validates the state of
         exclusivity in the cluster. The validation does not
@@ -426,7 +440,9 @@ class GkeHubMembershipServiceGrpcTransport(GkeHubMembershipServiceTransport):
     def generate_exclusivity_manifest(self) -> Callable[
             [membership.GenerateExclusivityManifestRequest],
             membership.GenerateExclusivityManifestResponse]:
-        r"""Return a callable for the generate exclusivity manifest method over gRPC.
+        r"""Return a callable for the
+        generate exclusivity manifest
+          method over gRPC.
 
         GenerateExclusivityManifest generates the manifests
         to update the exclusivity artifacts in the cluster if

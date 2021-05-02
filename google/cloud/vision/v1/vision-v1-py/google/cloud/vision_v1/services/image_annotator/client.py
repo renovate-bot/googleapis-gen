@@ -350,7 +350,8 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
 
         Args:
             request (google.cloud.vision_v1.types.BatchAnnotateImagesRequest):
-                The request object. Multiple image annotation requests
+                The request object.
+                Multiple image annotation requests
                 are batched into a single service call.
             requests (Sequence[google.cloud.vision_v1.types.AnnotateImageRequest]):
                 Required. Individual image annotation
@@ -385,7 +386,7 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
         # there are no flattened fields.
         if not isinstance(request, image_annotator.BatchAnnotateImagesRequest):
             request = image_annotator.BatchAnnotateImagesRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if requests is not None:
                 request.requests = requests
@@ -424,7 +425,8 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
 
         Args:
             request (google.cloud.vision_v1.types.BatchAnnotateFilesRequest):
-                The request object. A list of requests to annotate files
+                The request object.
+                A list of requests to annotate files
                 using the BatchAnnotateFiles API.
             requests (Sequence[google.cloud.vision_v1.types.AnnotateFileRequest]):
                 Required. The list of file annotation
@@ -459,7 +461,7 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
         # there are no flattened fields.
         if not isinstance(request, image_annotator.BatchAnnotateFilesRequest):
             request = image_annotator.BatchAnnotateFilesRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if requests is not None:
                 request.requests = requests
@@ -503,7 +505,8 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
 
         Args:
             request (google.cloud.vision_v1.types.AsyncBatchAnnotateImagesRequest):
-                The request object. Request for async image annotation
+                The request object.
+                Request for async image annotation
                 for a list of images.
             requests (Sequence[google.cloud.vision_v1.types.AnnotateImageRequest]):
                 Required. Individual image annotation
@@ -548,7 +551,7 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
         # there are no flattened fields.
         if not isinstance(request, image_annotator.AsyncBatchAnnotateImagesRequest):
             request = image_annotator.AsyncBatchAnnotateImagesRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if requests is not None:
                 request.requests = requests
@@ -596,7 +599,8 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
 
         Args:
             request (google.cloud.vision_v1.types.AsyncBatchAnnotateFilesRequest):
-                The request object. Multiple async file annotation
+                The request object.
+                Multiple async file annotation
                 requests are batched into a single service call.
             requests (Sequence[google.cloud.vision_v1.types.AsyncAnnotateFileRequest]):
                 Required. Individual async file
@@ -634,7 +638,7 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
         # there are no flattened fields.
         if not isinstance(request, image_annotator.AsyncBatchAnnotateFilesRequest):
             request = image_annotator.AsyncBatchAnnotateFilesRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if requests is not None:
                 request.requests = requests

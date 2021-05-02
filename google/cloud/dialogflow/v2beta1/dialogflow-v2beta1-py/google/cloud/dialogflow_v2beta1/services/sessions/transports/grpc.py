@@ -224,7 +224,9 @@ class SessionsGrpcTransport(SessionsTransport):
     def detect_intent(self) -> Callable[
             [gcd_session.DetectIntentRequest],
             gcd_session.DetectIntentResponse]:
-        r"""Return a callable for the detect intent method over gRPC.
+        r"""Return a callable for the
+        detect intent
+          method over gRPC.
 
         Processes a natural language query and returns structured,
         actionable data as a result. This method is not idempotent,
@@ -257,7 +259,9 @@ class SessionsGrpcTransport(SessionsTransport):
     def streaming_detect_intent(self) -> Callable[
             [session.StreamingDetectIntentRequest],
             session.StreamingDetectIntentResponse]:
-        r"""Return a callable for the streaming detect intent method over gRPC.
+        r"""Return a callable for the
+        streaming detect intent
+          method over gRPC.
 
         Processes a natural language query in audio format in a
         streaming fashion and returns structured, actionable data as a

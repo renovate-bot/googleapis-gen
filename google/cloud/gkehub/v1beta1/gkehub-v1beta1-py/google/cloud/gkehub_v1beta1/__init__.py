@@ -43,7 +43,6 @@ from .types.membership import ValidateExclusivityRequest
 from .types.membership import ValidateExclusivityResponse
 
 __all__ = (
-    'GkeHubMembershipServiceClient',
     'Authority',
     'ConnectAgent',
     'ConnectAgentResource',
@@ -69,4 +68,5 @@ __all__ = (
     'UpdateMembershipRequest',
     'ValidateExclusivityRequest',
     'ValidateExclusivityResponse',
+'GkeHubMembershipServiceClient',
 )

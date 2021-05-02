@@ -48,7 +48,7 @@ class Namespace(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=2,
+        number=2
     )
 
 

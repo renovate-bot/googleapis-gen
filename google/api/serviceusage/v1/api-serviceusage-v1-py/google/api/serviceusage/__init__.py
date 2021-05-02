@@ -14,9 +14,8 @@
 # limitations under the License.
 #
 
-from google.api.serviceusage_v1.services.service_usage.client import ServiceUsageClient
 from google.api.serviceusage_v1.services.service_usage.async_client import ServiceUsageAsyncClient
-
+from google.api.serviceusage_v1.services.service_usage.client import ServiceUsageClient
 from google.api.serviceusage_v1.types.resources import OperationMetadata
 from google.api.serviceusage_v1.types.resources import Service
 from google.api.serviceusage_v1.types.resources import ServiceConfig
@@ -33,13 +32,7 @@ from google.api.serviceusage_v1.types.serviceusage import GetServiceRequest
 from google.api.serviceusage_v1.types.serviceusage import ListServicesRequest
 from google.api.serviceusage_v1.types.serviceusage import ListServicesResponse
 
-__all__ = ('ServiceUsageClient',
-    'ServiceUsageAsyncClient',
-    'OperationMetadata',
-    'Service',
-    'ServiceConfig',
-    'State',
-    'BatchEnableServicesRequest',
+__all__ = ('BatchEnableServicesRequest',
     'BatchEnableServicesResponse',
     'BatchGetServicesRequest',
     'BatchGetServicesResponse',
@@ -50,4 +43,10 @@ __all__ = ('ServiceUsageClient',
     'GetServiceRequest',
     'ListServicesRequest',
     'ListServicesResponse',
+    'OperationMetadata',
+    'Service',
+    'ServiceConfig',
+    'ServiceUsageAsyncClient',
+    'ServiceUsageClient',
+    'State',
 )

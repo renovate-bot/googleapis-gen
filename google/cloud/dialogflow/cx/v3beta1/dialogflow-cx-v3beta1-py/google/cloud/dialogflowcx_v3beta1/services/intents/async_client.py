@@ -162,7 +162,8 @@ class IntentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.ListIntentsRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Intents.ListIntents][google.cloud.dialogflow.cx.v3beta1.Intents.ListIntents].
             parent (:class:`str`):
                 Required. The agent to list all intents for. Format:
@@ -249,7 +250,8 @@ class IntentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.GetIntentRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Intents.GetIntent][google.cloud.dialogflow.cx.v3beta1.Intents.GetIntent].
             name (:class:`str`):
                 Required. The name of the intent. Format:
@@ -330,7 +332,8 @@ class IntentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.CreateIntentRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Intents.CreateIntent][google.cloud.dialogflow.cx.v3beta1.Intents.CreateIntent].
             parent (:class:`str`):
                 Required. The agent to create an intent for. Format:
@@ -418,7 +421,8 @@ class IntentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.UpdateIntentRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Intents.UpdateIntent][google.cloud.dialogflow.cx.v3beta1.Intents.UpdateIntent].
             intent (:class:`google.cloud.dialogflowcx_v3beta1.types.Intent`):
                 Required. The intent to update.
@@ -506,7 +510,8 @@ class IntentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.DeleteIntentRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Intents.DeleteIntent][google.cloud.dialogflow.cx.v3beta1.Intents.DeleteIntent].
             name (:class:`str`):
                 Required. The name of the intent to delete. Format:

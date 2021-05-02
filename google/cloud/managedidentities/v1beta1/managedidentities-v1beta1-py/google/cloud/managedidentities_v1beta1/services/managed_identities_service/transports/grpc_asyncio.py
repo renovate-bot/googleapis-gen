@@ -243,7 +243,9 @@ class ManagedIdentitiesServiceGrpcAsyncIOTransport(ManagedIdentitiesServiceTrans
     def create_microsoft_ad_domain(self) -> Callable[
             [managed_identities_service.CreateMicrosoftAdDomainRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the create microsoft ad domain method over gRPC.
+        r"""Return a callable for the
+        create microsoft ad domain
+          method over gRPC.
 
         Creates a Microsoft AD domain.
 
@@ -269,7 +271,9 @@ class ManagedIdentitiesServiceGrpcAsyncIOTransport(ManagedIdentitiesServiceTrans
     def reset_admin_password(self) -> Callable[
             [managed_identities_service.ResetAdminPasswordRequest],
             Awaitable[managed_identities_service.ResetAdminPasswordResponse]]:
-        r"""Return a callable for the reset admin password method over gRPC.
+        r"""Return a callable for the
+        reset admin password
+          method over gRPC.
 
         Resets a domain's administrator password.
 
@@ -295,7 +299,9 @@ class ManagedIdentitiesServiceGrpcAsyncIOTransport(ManagedIdentitiesServiceTrans
     def list_domains(self) -> Callable[
             [managed_identities_service.ListDomainsRequest],
             Awaitable[managed_identities_service.ListDomainsResponse]]:
-        r"""Return a callable for the list domains method over gRPC.
+        r"""Return a callable for the
+        list domains
+          method over gRPC.
 
         Lists domains in a project.
 
@@ -321,7 +327,9 @@ class ManagedIdentitiesServiceGrpcAsyncIOTransport(ManagedIdentitiesServiceTrans
     def get_domain(self) -> Callable[
             [managed_identities_service.GetDomainRequest],
             Awaitable[resource.Domain]]:
-        r"""Return a callable for the get domain method over gRPC.
+        r"""Return a callable for the
+        get domain
+          method over gRPC.
 
         Gets information about a domain.
 
@@ -347,7 +355,9 @@ class ManagedIdentitiesServiceGrpcAsyncIOTransport(ManagedIdentitiesServiceTrans
     def update_domain(self) -> Callable[
             [managed_identities_service.UpdateDomainRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the update domain method over gRPC.
+        r"""Return a callable for the
+        update domain
+          method over gRPC.
 
         Updates the metadata and configuration of a domain.
 
@@ -373,7 +383,9 @@ class ManagedIdentitiesServiceGrpcAsyncIOTransport(ManagedIdentitiesServiceTrans
     def delete_domain(self) -> Callable[
             [managed_identities_service.DeleteDomainRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the delete domain method over gRPC.
+        r"""Return a callable for the
+        delete domain
+          method over gRPC.
 
         Deletes a domain.
 
@@ -399,7 +411,9 @@ class ManagedIdentitiesServiceGrpcAsyncIOTransport(ManagedIdentitiesServiceTrans
     def attach_trust(self) -> Callable[
             [managed_identities_service.AttachTrustRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the attach trust method over gRPC.
+        r"""Return a callable for the
+        attach trust
+          method over gRPC.
 
         Adds an AD trust to a domain.
 
@@ -425,7 +439,9 @@ class ManagedIdentitiesServiceGrpcAsyncIOTransport(ManagedIdentitiesServiceTrans
     def reconfigure_trust(self) -> Callable[
             [managed_identities_service.ReconfigureTrustRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the reconfigure trust method over gRPC.
+        r"""Return a callable for the
+        reconfigure trust
+          method over gRPC.
 
         Updates the DNS conditional forwarder.
 
@@ -451,7 +467,9 @@ class ManagedIdentitiesServiceGrpcAsyncIOTransport(ManagedIdentitiesServiceTrans
     def detach_trust(self) -> Callable[
             [managed_identities_service.DetachTrustRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the detach trust method over gRPC.
+        r"""Return a callable for the
+        detach trust
+          method over gRPC.
 
         Removes an AD trust.
 
@@ -477,7 +495,9 @@ class ManagedIdentitiesServiceGrpcAsyncIOTransport(ManagedIdentitiesServiceTrans
     def validate_trust(self) -> Callable[
             [managed_identities_service.ValidateTrustRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the validate trust method over gRPC.
+        r"""Return a callable for the
+        validate trust
+          method over gRPC.
 
         Validates a trust state, that the target domain is
         reachable, and that the target domain is able to accept

@@ -191,7 +191,8 @@ class ProductSearchAsyncClient:
 
         Args:
             request (:class:`google.cloud.vision_v1.types.CreateProductSetRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `CreateProductSet` method.
             parent (:class:`str`):
                 Required. The project in which the ProductSet should be
@@ -300,7 +301,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.vision_v1.types.ListProductSetsRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `ListProductSets` method.
             parent (:class:`str`):
                 Required. The project from which ProductSets should be
@@ -399,7 +401,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.vision_v1.types.GetProductSetRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `GetProductSet` method.
             name (:class:`str`):
                 Required. Resource name of the ProductSet to get.
@@ -495,7 +498,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.vision_v1.types.UpdateProductSetRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `UpdateProductSet` method.
             product_set (:class:`google.cloud.vision_v1.types.ProductSet`):
                 Required. The ProductSet resource
@@ -594,7 +598,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.vision_v1.types.DeleteProductSetRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `DeleteProductSet` method.
             name (:class:`str`):
                 Required. Resource name of the ProductSet to delete.
@@ -680,7 +685,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.vision_v1.types.CreateProductRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `CreateProduct` method.
             parent (:class:`str`):
                 Required. The project in which the Product should be
@@ -784,7 +790,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.vision_v1.types.ListProductsRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `ListProducts` method.
             parent (:class:`str`):
                 Required. The project OR ProductSet from which Products
@@ -883,7 +890,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.vision_v1.types.GetProductRequest`):
-                The request object. Request message for the `GetProduct`
+                The request object.
+                Request message for the `GetProduct`
                 method.
             name (:class:`str`):
                 Required. Resource name of the Product to get.
@@ -981,7 +989,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.vision_v1.types.UpdateProductRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `UpdateProduct` method.
             product (:class:`google.cloud.vision_v1.types.Product`):
                 Required. The Product resource which
@@ -1079,7 +1088,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.vision_v1.types.DeleteProductRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `DeleteProduct` method.
             name (:class:`str`):
                 Required. Resource name of product to delete.
@@ -1177,7 +1187,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.vision_v1.types.CreateReferenceImageRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `CreateReferenceImage` method.
             parent (:class:`str`):
                 Required. Resource name of the product in which to
@@ -1288,7 +1299,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.vision_v1.types.DeleteReferenceImageRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `DeleteReferenceImage` method.
             name (:class:`str`):
                 Required. The resource name of the reference image to
@@ -1370,7 +1382,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.vision_v1.types.ListReferenceImagesRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `ListReferenceImages` method.
             parent (:class:`str`):
                 Required. Resource name of the product containing the
@@ -1470,7 +1483,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.vision_v1.types.GetReferenceImageRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `GetReferenceImage` method.
             name (:class:`str`):
                 Required. The resource name of the ReferenceImage to
@@ -1564,7 +1578,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.vision_v1.types.AddProductToProductSetRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `AddProductToProductSet` method.
             name (:class:`str`):
                 Required. The resource name for the ProductSet to
@@ -1653,7 +1668,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.vision_v1.types.RemoveProductFromProductSetRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `RemoveProductFromProductSet` method.
             name (:class:`str`):
                 Required. The resource name for the ProductSet to
@@ -1748,7 +1764,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.vision_v1.types.ListProductsInProductSetRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `ListProductsInProductSet` method.
             name (:class:`str`):
                 Required. The ProductSet resource for which to retrieve
@@ -1857,7 +1874,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.vision_v1.types.ImportProductSetsRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `ImportProductSets` method.
             parent (:class:`str`):
                 Required. The project in which the ProductSets should be
@@ -1991,7 +2009,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.vision_v1.types.PurgeProductsRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `PurgeProducts` method.
             parent (:class:`str`):
                 Required. The project and location in which the Products

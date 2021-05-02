@@ -226,7 +226,9 @@ class LoggingServiceV2GrpcAsyncIOTransport(LoggingServiceV2Transport):
     def delete_log(self) -> Callable[
             [logging.DeleteLogRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete log method over gRPC.
+        r"""Return a callable for the
+        delete log
+          method over gRPC.
 
         Deletes all the log entries in a log. The log
         reappears if it receives new entries. Log entries
@@ -256,7 +258,9 @@ class LoggingServiceV2GrpcAsyncIOTransport(LoggingServiceV2Transport):
     def write_log_entries(self) -> Callable[
             [logging.WriteLogEntriesRequest],
             Awaitable[logging.WriteLogEntriesResponse]]:
-        r"""Return a callable for the write log entries method over gRPC.
+        r"""Return a callable for the
+        write log entries
+          method over gRPC.
 
         Writes log entries to Logging. This API method is the
         only way to send log entries to Logging. This method is
@@ -288,7 +292,9 @@ class LoggingServiceV2GrpcAsyncIOTransport(LoggingServiceV2Transport):
     def list_log_entries(self) -> Callable[
             [logging.ListLogEntriesRequest],
             Awaitable[logging.ListLogEntriesResponse]]:
-        r"""Return a callable for the list log entries method over gRPC.
+        r"""Return a callable for the
+        list log entries
+          method over gRPC.
 
         Lists log entries. Use this method to retrieve log entries that
         originated from a project/folder/organization/billing account.
@@ -317,8 +323,10 @@ class LoggingServiceV2GrpcAsyncIOTransport(LoggingServiceV2Transport):
     def list_monitored_resource_descriptors(self) -> Callable[
             [logging.ListMonitoredResourceDescriptorsRequest],
             Awaitable[logging.ListMonitoredResourceDescriptorsResponse]]:
-        r"""Return a callable for the list monitored resource
-        descriptors method over gRPC.
+        r"""Return a callable for the
+        list monitored resource
+        descriptors
+          method over gRPC.
 
         Lists the descriptors for monitored resource types
         used by Logging.
@@ -345,7 +353,9 @@ class LoggingServiceV2GrpcAsyncIOTransport(LoggingServiceV2Transport):
     def list_logs(self) -> Callable[
             [logging.ListLogsRequest],
             Awaitable[logging.ListLogsResponse]]:
-        r"""Return a callable for the list logs method over gRPC.
+        r"""Return a callable for the
+        list logs
+          method over gRPC.
 
         Lists the logs in projects, organizations, folders,
         or billing accounts. Only logs that have entries are
@@ -373,7 +383,9 @@ class LoggingServiceV2GrpcAsyncIOTransport(LoggingServiceV2Transport):
     def tail_log_entries(self) -> Callable[
             [logging.TailLogEntriesRequest],
             Awaitable[logging.TailLogEntriesResponse]]:
-        r"""Return a callable for the tail log entries method over gRPC.
+        r"""Return a callable for the
+        tail log entries
+          method over gRPC.
 
         Streaming read of log entries as they are ingested.
         Until the stream is terminated, it will continue reading

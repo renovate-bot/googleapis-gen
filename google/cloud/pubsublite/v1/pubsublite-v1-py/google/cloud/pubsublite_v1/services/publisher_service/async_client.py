@@ -164,7 +164,8 @@ class PublisherServiceAsyncClient:
 
         Args:
             requests (AsyncIterator[`google.cloud.pubsublite_v1.types.PublishRequest`]):
-                The request object AsyncIterator. Request sent from the client to the
+                The request object AsyncIterator.
+                Request sent from the client to the
                 server on a stream.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

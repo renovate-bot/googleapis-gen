@@ -166,7 +166,8 @@ class TagBindingsAsyncClient:
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.ListTagBindingsRequest`):
-                The request object. The request message to list all
+                The request object.
+                The request message to list all
                 TagBindings for a parent.
             parent (:class:`str`):
                 Required. The full resource name of a
@@ -253,7 +254,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.CreateTagBindingRequest`):
-                The request object. The request message to create a
+                The request object.
+                The request message to create a
                 TagBinding.
             tag_binding (:class:`google.cloud.resourcemanager_v3.types.TagBinding`):
                 Required. The TagBinding to be
@@ -333,7 +335,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.DeleteTagBindingRequest`):
-                The request object. The request message to delete a
+                The request object.
+                The request message to delete a
                 TagBinding.
             name (:class:`str`):
                 Required. The name of the TagBinding. This is a String

@@ -396,7 +396,8 @@ class DatastoreAdminClient(metaclass=DatastoreAdminClientMeta):
 
         Args:
             request (google.cloud.datastore_admin_v1.types.ExportEntitiesRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [google.datastore.admin.v1.DatastoreAdmin.ExportEntities][google.datastore.admin.v1.DatastoreAdmin.ExportEntities].
             project_id (str):
                 Required. Project ID against which to
@@ -474,7 +475,7 @@ class DatastoreAdminClient(metaclass=DatastoreAdminClientMeta):
         # there are no flattened fields.
         if not isinstance(request, datastore_admin.ExportEntitiesRequest):
             request = datastore_admin.ExportEntitiesRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -529,7 +530,8 @@ class DatastoreAdminClient(metaclass=DatastoreAdminClientMeta):
 
         Args:
             request (google.cloud.datastore_admin_v1.types.ImportEntitiesRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [google.datastore.admin.v1.DatastoreAdmin.ImportEntities][google.datastore.admin.v1.DatastoreAdmin.ImportEntities].
             project_id (str):
                 Required. Project ID against which to
@@ -613,7 +615,7 @@ class DatastoreAdminClient(metaclass=DatastoreAdminClientMeta):
         # there are no flattened fields.
         if not isinstance(request, datastore_admin.ImportEntitiesRequest):
             request = datastore_admin.ImportEntitiesRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -672,7 +674,8 @@ class DatastoreAdminClient(metaclass=DatastoreAdminClientMeta):
 
         Args:
             request (google.cloud.datastore_admin_v1.types.CreateIndexRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [google.datastore.admin.v1.DatastoreAdmin.CreateIndex][google.datastore.admin.v1.DatastoreAdmin.CreateIndex].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -744,7 +747,8 @@ class DatastoreAdminClient(metaclass=DatastoreAdminClientMeta):
 
         Args:
             request (google.cloud.datastore_admin_v1.types.DeleteIndexRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [google.datastore.admin.v1.DatastoreAdmin.DeleteIndex][google.datastore.admin.v1.DatastoreAdmin.DeleteIndex].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -803,7 +807,8 @@ class DatastoreAdminClient(metaclass=DatastoreAdminClientMeta):
 
         Args:
             request (google.cloud.datastore_admin_v1.types.GetIndexRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [google.datastore.admin.v1.DatastoreAdmin.GetIndex][google.datastore.admin.v1.DatastoreAdmin.GetIndex].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -852,7 +857,8 @@ class DatastoreAdminClient(metaclass=DatastoreAdminClientMeta):
 
         Args:
             request (google.cloud.datastore_admin_v1.types.ListIndexesRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [google.datastore.admin.v1.DatastoreAdmin.ListIndexes][google.datastore.admin.v1.DatastoreAdmin.ListIndexes].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

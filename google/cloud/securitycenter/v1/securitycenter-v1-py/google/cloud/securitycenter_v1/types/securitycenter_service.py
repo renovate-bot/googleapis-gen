@@ -679,7 +679,7 @@ class GroupResult(proto.Message):
     properties = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=1,
+        number=1
         message=struct.Value,
     )
     count = proto.Field(

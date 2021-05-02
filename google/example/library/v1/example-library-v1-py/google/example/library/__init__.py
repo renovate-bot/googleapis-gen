@@ -14,9 +14,8 @@
 # limitations under the License.
 #
 
-from google.example.library_v1.services.library_service.client import LibraryServiceClient
 from google.example.library_v1.services.library_service.async_client import LibraryServiceAsyncClient
-
+from google.example.library_v1.services.library_service.client import LibraryServiceClient
 from google.example.library_v1.types.library import Book
 from google.example.library_v1.types.library import CreateBookRequest
 from google.example.library_v1.types.library import CreateShelfRequest
@@ -33,15 +32,15 @@ from google.example.library_v1.types.library import MoveBookRequest
 from google.example.library_v1.types.library import Shelf
 from google.example.library_v1.types.library import UpdateBookRequest
 
-__all__ = ('LibraryServiceClient',
-    'LibraryServiceAsyncClient',
-    'Book',
+__all__ = ('Book',
     'CreateBookRequest',
     'CreateShelfRequest',
     'DeleteBookRequest',
     'DeleteShelfRequest',
     'GetBookRequest',
     'GetShelfRequest',
+    'LibraryServiceAsyncClient',
+    'LibraryServiceClient',
     'ListBooksRequest',
     'ListBooksResponse',
     'ListShelvesRequest',

@@ -164,7 +164,8 @@ class ExecutionsAsyncClient:
 
         Args:
             request (:class:`google.cloud.workflows.executions_v1.types.ListExecutionsRequest`):
-                The request object. Request for the
+                The request object.
+                Request for the
                 [ListExecutions][]
                 method.
             parent (:class:`str`):
@@ -257,7 +258,8 @@ class ExecutionsAsyncClient:
 
         Args:
             request (:class:`google.cloud.workflows.executions_v1.types.CreateExecutionRequest`):
-                The request object. Request for the
+                The request object.
+                Request for the
                 [CreateExecution][google.cloud.workflows.executions.v1.Executions.CreateExecution]
                 method.
             parent (:class:`str`):
@@ -344,7 +346,8 @@ class ExecutionsAsyncClient:
 
         Args:
             request (:class:`google.cloud.workflows.executions_v1.types.GetExecutionRequest`):
-                The request object. Request for the
+                The request object.
+                Request for the
                 [GetExecution][google.cloud.workflows.executions.v1.Executions.GetExecution]
                 method.
             name (:class:`str`):
@@ -421,7 +424,8 @@ class ExecutionsAsyncClient:
 
         Args:
             request (:class:`google.cloud.workflows.executions_v1.types.CancelExecutionRequest`):
-                The request object. Request for the
+                The request object.
+                Request for the
                 [CancelExecution][google.cloud.workflows.executions.v1.Executions.CancelExecution]
                 method.
             name (:class:`str`):

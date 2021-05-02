@@ -267,7 +267,9 @@ class InstanceAdminGrpcAsyncIOTransport(InstanceAdminTransport):
     def list_instance_configs(self) -> Callable[
             [spanner_instance_admin.ListInstanceConfigsRequest],
             Awaitable[spanner_instance_admin.ListInstanceConfigsResponse]]:
-        r"""Return a callable for the list instance configs method over gRPC.
+        r"""Return a callable for the
+        list instance configs
+          method over gRPC.
 
         Lists the supported instance configurations for a
         given project.
@@ -294,7 +296,9 @@ class InstanceAdminGrpcAsyncIOTransport(InstanceAdminTransport):
     def get_instance_config(self) -> Callable[
             [spanner_instance_admin.GetInstanceConfigRequest],
             Awaitable[spanner_instance_admin.InstanceConfig]]:
-        r"""Return a callable for the get instance config method over gRPC.
+        r"""Return a callable for the
+        get instance config
+          method over gRPC.
 
         Gets information about a particular instance
         configuration.
@@ -321,7 +325,9 @@ class InstanceAdminGrpcAsyncIOTransport(InstanceAdminTransport):
     def list_instances(self) -> Callable[
             [spanner_instance_admin.ListInstancesRequest],
             Awaitable[spanner_instance_admin.ListInstancesResponse]]:
-        r"""Return a callable for the list instances method over gRPC.
+        r"""Return a callable for the
+        list instances
+          method over gRPC.
 
         Lists all instances in the given project.
 
@@ -347,7 +353,9 @@ class InstanceAdminGrpcAsyncIOTransport(InstanceAdminTransport):
     def get_instance(self) -> Callable[
             [spanner_instance_admin.GetInstanceRequest],
             Awaitable[spanner_instance_admin.Instance]]:
-        r"""Return a callable for the get instance method over gRPC.
+        r"""Return a callable for the
+        get instance
+          method over gRPC.
 
         Gets information about a particular instance.
 
@@ -373,7 +381,9 @@ class InstanceAdminGrpcAsyncIOTransport(InstanceAdminTransport):
     def create_instance(self) -> Callable[
             [spanner_instance_admin.CreateInstanceRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the create instance method over gRPC.
+        r"""Return a callable for the
+        create instance
+          method over gRPC.
 
         Creates an instance and begins preparing it to begin serving.
         The returned [long-running
@@ -436,7 +446,9 @@ class InstanceAdminGrpcAsyncIOTransport(InstanceAdminTransport):
     def update_instance(self) -> Callable[
             [spanner_instance_admin.UpdateInstanceRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the update instance method over gRPC.
+        r"""Return a callable for the
+        update instance
+          method over gRPC.
 
         Updates an instance, and begins allocating or releasing
         resources as requested. The returned [long-running
@@ -506,7 +518,9 @@ class InstanceAdminGrpcAsyncIOTransport(InstanceAdminTransport):
     def delete_instance(self) -> Callable[
             [spanner_instance_admin.DeleteInstanceRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete instance method over gRPC.
+        r"""Return a callable for the
+        delete instance
+          method over gRPC.
 
         Deletes an instance.
 
@@ -542,7 +556,9 @@ class InstanceAdminGrpcAsyncIOTransport(InstanceAdminTransport):
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
             Awaitable[gi_policy.Policy]]:
-        r"""Return a callable for the set iam policy method over gRPC.
+        r"""Return a callable for the
+        set iam policy
+          method over gRPC.
 
         Sets the access control policy on an instance resource. Replaces
         any existing policy.
@@ -572,7 +588,9 @@ class InstanceAdminGrpcAsyncIOTransport(InstanceAdminTransport):
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
             Awaitable[gi_policy.Policy]]:
-        r"""Return a callable for the get iam policy method over gRPC.
+        r"""Return a callable for the
+        get iam policy
+          method over gRPC.
 
         Gets the access control policy for an instance resource. Returns
         an empty policy if an instance exists but does not have a policy
@@ -603,7 +621,9 @@ class InstanceAdminGrpcAsyncIOTransport(InstanceAdminTransport):
     def test_iam_permissions(self) -> Callable[
             [iam_policy.TestIamPermissionsRequest],
             Awaitable[iam_policy.TestIamPermissionsResponse]]:
-        r"""Return a callable for the test iam permissions method over gRPC.
+        r"""Return a callable for the
+        test iam permissions
+          method over gRPC.
 
         Returns permissions that the caller has on the specified
         instance resource.

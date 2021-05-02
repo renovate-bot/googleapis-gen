@@ -59,7 +59,7 @@ class Deployment(proto.Message):
     files = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=1,
+        number=1
         message='FileInfo',
     )
     container = proto.Field(

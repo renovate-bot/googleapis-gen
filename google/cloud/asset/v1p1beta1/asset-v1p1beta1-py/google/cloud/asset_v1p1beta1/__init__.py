@@ -25,12 +25,12 @@ from .types.assets import Permissions
 from .types.assets import StandardResourceMetadata
 
 __all__ = (
-    'AssetServiceClient',
+    'IamPolicySearchResult',
+    'Permissions',
     'SearchAllIamPoliciesRequest',
     'SearchAllIamPoliciesResponse',
     'SearchAllResourcesRequest',
     'SearchAllResourcesResponse',
-    'IamPolicySearchResult',
-    'Permissions',
     'StandardResourceMetadata',
+'AssetServiceClient',
 )

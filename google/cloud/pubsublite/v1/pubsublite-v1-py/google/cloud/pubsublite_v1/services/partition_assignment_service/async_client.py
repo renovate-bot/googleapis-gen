@@ -161,7 +161,8 @@ class PartitionAssignmentServiceAsyncClient:
 
         Args:
             requests (AsyncIterator[`google.cloud.pubsublite_v1.types.PartitionAssignmentRequest`]):
-                The request object AsyncIterator. A request on the PartitionAssignment
+                The request object AsyncIterator.
+                A request on the PartitionAssignment
                 stream.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

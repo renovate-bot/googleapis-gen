@@ -243,7 +243,9 @@ class ModelServiceGrpcTransport(ModelServiceTransport):
     def upload_model(self) -> Callable[
             [model_service.UploadModelRequest],
             operations.Operation]:
-        r"""Return a callable for the upload model method over gRPC.
+        r"""Return a callable for the
+        upload model
+          method over gRPC.
 
         Uploads a Model artifact into AI Platform.
 
@@ -269,7 +271,9 @@ class ModelServiceGrpcTransport(ModelServiceTransport):
     def get_model(self) -> Callable[
             [model_service.GetModelRequest],
             model.Model]:
-        r"""Return a callable for the get model method over gRPC.
+        r"""Return a callable for the
+        get model
+          method over gRPC.
 
         Gets a Model.
 
@@ -295,7 +299,9 @@ class ModelServiceGrpcTransport(ModelServiceTransport):
     def list_models(self) -> Callable[
             [model_service.ListModelsRequest],
             model_service.ListModelsResponse]:
-        r"""Return a callable for the list models method over gRPC.
+        r"""Return a callable for the
+        list models
+          method over gRPC.
 
         Lists Models in a Location.
 
@@ -321,7 +327,9 @@ class ModelServiceGrpcTransport(ModelServiceTransport):
     def update_model(self) -> Callable[
             [model_service.UpdateModelRequest],
             gca_model.Model]:
-        r"""Return a callable for the update model method over gRPC.
+        r"""Return a callable for the
+        update model
+          method over gRPC.
 
         Updates a Model.
 
@@ -347,7 +355,9 @@ class ModelServiceGrpcTransport(ModelServiceTransport):
     def delete_model(self) -> Callable[
             [model_service.DeleteModelRequest],
             operations.Operation]:
-        r"""Return a callable for the delete model method over gRPC.
+        r"""Return a callable for the
+        delete model
+          method over gRPC.
 
         Deletes a Model.
         Note: Model can only be deleted if there are no
@@ -375,7 +385,9 @@ class ModelServiceGrpcTransport(ModelServiceTransport):
     def export_model(self) -> Callable[
             [model_service.ExportModelRequest],
             operations.Operation]:
-        r"""Return a callable for the export model method over gRPC.
+        r"""Return a callable for the
+        export model
+          method over gRPC.
 
         Exports a trained, exportable, Model to a location specified by
         the user. A Model is considered to be exportable if it has at
@@ -404,7 +416,9 @@ class ModelServiceGrpcTransport(ModelServiceTransport):
     def get_model_evaluation(self) -> Callable[
             [model_service.GetModelEvaluationRequest],
             model_evaluation.ModelEvaluation]:
-        r"""Return a callable for the get model evaluation method over gRPC.
+        r"""Return a callable for the
+        get model evaluation
+          method over gRPC.
 
         Gets a ModelEvaluation.
 
@@ -430,7 +444,9 @@ class ModelServiceGrpcTransport(ModelServiceTransport):
     def list_model_evaluations(self) -> Callable[
             [model_service.ListModelEvaluationsRequest],
             model_service.ListModelEvaluationsResponse]:
-        r"""Return a callable for the list model evaluations method over gRPC.
+        r"""Return a callable for the
+        list model evaluations
+          method over gRPC.
 
         Lists ModelEvaluations in a Model.
 
@@ -456,7 +472,9 @@ class ModelServiceGrpcTransport(ModelServiceTransport):
     def get_model_evaluation_slice(self) -> Callable[
             [model_service.GetModelEvaluationSliceRequest],
             model_evaluation_slice.ModelEvaluationSlice]:
-        r"""Return a callable for the get model evaluation slice method over gRPC.
+        r"""Return a callable for the
+        get model evaluation slice
+          method over gRPC.
 
         Gets a ModelEvaluationSlice.
 
@@ -482,7 +500,9 @@ class ModelServiceGrpcTransport(ModelServiceTransport):
     def list_model_evaluation_slices(self) -> Callable[
             [model_service.ListModelEvaluationSlicesRequest],
             model_service.ListModelEvaluationSlicesResponse]:
-        r"""Return a callable for the list model evaluation slices method over gRPC.
+        r"""Return a callable for the
+        list model evaluation slices
+          method over gRPC.
 
         Lists ModelEvaluationSlices in a ModelEvaluation.
 

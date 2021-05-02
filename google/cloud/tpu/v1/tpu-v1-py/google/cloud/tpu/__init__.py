@@ -14,9 +14,8 @@
 # limitations under the License.
 #
 
-from google.cloud.tpu_v1.services.tpu.client import TpuClient
 from google.cloud.tpu_v1.services.tpu.async_client import TpuAsyncClient
-
+from google.cloud.tpu_v1.services.tpu.client import TpuClient
 from google.cloud.tpu_v1.types.cloud_tpu import AcceleratorType
 from google.cloud.tpu_v1.types.cloud_tpu import CreateNodeRequest
 from google.cloud.tpu_v1.types.cloud_tpu import DeleteNodeRequest
@@ -39,9 +38,7 @@ from google.cloud.tpu_v1.types.cloud_tpu import StopNodeRequest
 from google.cloud.tpu_v1.types.cloud_tpu import Symptom
 from google.cloud.tpu_v1.types.cloud_tpu import TensorFlowVersion
 
-__all__ = ('TpuClient',
-    'TpuAsyncClient',
-    'AcceleratorType',
+__all__ = ('AcceleratorType',
     'CreateNodeRequest',
     'DeleteNodeRequest',
     'GetAcceleratorTypeRequest',
@@ -62,4 +59,6 @@ __all__ = ('TpuClient',
     'StopNodeRequest',
     'Symptom',
     'TensorFlowVersion',
+    'TpuAsyncClient',
+    'TpuClient',
 )

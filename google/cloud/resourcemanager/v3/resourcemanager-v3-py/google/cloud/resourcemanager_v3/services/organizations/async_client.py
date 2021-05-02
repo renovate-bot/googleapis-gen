@@ -159,7 +159,8 @@ class OrganizationsAsyncClient:
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.GetOrganizationRequest`):
-                The request object. The request sent to the
+                The request object.
+                The request sent to the
                 `GetOrganization` method. The `name` field is required.
                 `organization_id` is no longer accepted.
             name (:class:`str`):
@@ -252,7 +253,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.SearchOrganizationsRequest`):
-                The request object. The request sent to the
+                The request object.
+                The request sent to the
                 `SearchOrganizations` method.
             query (:class:`str`):
                 Optional. An optional query string used to filter the
@@ -356,7 +358,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.GetIamPolicyRequest`):
-                The request object. Request message for `GetIamPolicy`
+                The request object.
+                Request message for `GetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -499,7 +502,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.SetIamPolicyRequest`):
-                The request object. Request message for `SetIamPolicy`
+                The request object.
+                Request message for `SetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -634,7 +638,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `TestIamPermissions` method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the

@@ -227,7 +227,9 @@ class QueryServiceGrpcAsyncIOTransport(QueryServiceTransport):
     def query_time_series(self) -> Callable[
             [metric_service.QueryTimeSeriesRequest],
             Awaitable[metric_service.QueryTimeSeriesResponse]]:
-        r"""Return a callable for the query time series method over gRPC.
+        r"""Return a callable for the
+        query time series
+          method over gRPC.
 
         Queries time series using Monitoring Query Language.
         This method does not require a Workspace.

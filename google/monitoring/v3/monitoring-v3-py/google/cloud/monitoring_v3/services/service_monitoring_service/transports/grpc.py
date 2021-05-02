@@ -226,7 +226,9 @@ class ServiceMonitoringServiceGrpcTransport(ServiceMonitoringServiceTransport):
     def create_service(self) -> Callable[
             [service_service.CreateServiceRequest],
             gm_service.Service]:
-        r"""Return a callable for the create service method over gRPC.
+        r"""Return a callable for the
+        create service
+          method over gRPC.
 
         Create a ``Service``.
 
@@ -252,7 +254,9 @@ class ServiceMonitoringServiceGrpcTransport(ServiceMonitoringServiceTransport):
     def get_service(self) -> Callable[
             [service_service.GetServiceRequest],
             service.Service]:
-        r"""Return a callable for the get service method over gRPC.
+        r"""Return a callable for the
+        get service
+          method over gRPC.
 
         Get the named ``Service``.
 
@@ -278,7 +282,9 @@ class ServiceMonitoringServiceGrpcTransport(ServiceMonitoringServiceTransport):
     def list_services(self) -> Callable[
             [service_service.ListServicesRequest],
             service_service.ListServicesResponse]:
-        r"""Return a callable for the list services method over gRPC.
+        r"""Return a callable for the
+        list services
+          method over gRPC.
 
         List ``Service``\ s for this workspace.
 
@@ -304,7 +310,9 @@ class ServiceMonitoringServiceGrpcTransport(ServiceMonitoringServiceTransport):
     def update_service(self) -> Callable[
             [service_service.UpdateServiceRequest],
             gm_service.Service]:
-        r"""Return a callable for the update service method over gRPC.
+        r"""Return a callable for the
+        update service
+          method over gRPC.
 
         Update this ``Service``.
 
@@ -330,7 +338,9 @@ class ServiceMonitoringServiceGrpcTransport(ServiceMonitoringServiceTransport):
     def delete_service(self) -> Callable[
             [service_service.DeleteServiceRequest],
             empty.Empty]:
-        r"""Return a callable for the delete service method over gRPC.
+        r"""Return a callable for the
+        delete service
+          method over gRPC.
 
         Soft delete this ``Service``.
 
@@ -356,7 +366,9 @@ class ServiceMonitoringServiceGrpcTransport(ServiceMonitoringServiceTransport):
     def create_service_level_objective(self) -> Callable[
             [service_service.CreateServiceLevelObjectiveRequest],
             service.ServiceLevelObjective]:
-        r"""Return a callable for the create service level objective method over gRPC.
+        r"""Return a callable for the
+        create service level objective
+          method over gRPC.
 
         Create a ``ServiceLevelObjective`` for the given ``Service``.
 
@@ -382,7 +394,9 @@ class ServiceMonitoringServiceGrpcTransport(ServiceMonitoringServiceTransport):
     def get_service_level_objective(self) -> Callable[
             [service_service.GetServiceLevelObjectiveRequest],
             service.ServiceLevelObjective]:
-        r"""Return a callable for the get service level objective method over gRPC.
+        r"""Return a callable for the
+        get service level objective
+          method over gRPC.
 
         Get a ``ServiceLevelObjective`` by name.
 
@@ -408,7 +422,9 @@ class ServiceMonitoringServiceGrpcTransport(ServiceMonitoringServiceTransport):
     def list_service_level_objectives(self) -> Callable[
             [service_service.ListServiceLevelObjectivesRequest],
             service_service.ListServiceLevelObjectivesResponse]:
-        r"""Return a callable for the list service level objectives method over gRPC.
+        r"""Return a callable for the
+        list service level objectives
+          method over gRPC.
 
         List the ``ServiceLevelObjective``\ s for the given ``Service``.
 
@@ -434,7 +450,9 @@ class ServiceMonitoringServiceGrpcTransport(ServiceMonitoringServiceTransport):
     def update_service_level_objective(self) -> Callable[
             [service_service.UpdateServiceLevelObjectiveRequest],
             service.ServiceLevelObjective]:
-        r"""Return a callable for the update service level objective method over gRPC.
+        r"""Return a callable for the
+        update service level objective
+          method over gRPC.
 
         Update the given ``ServiceLevelObjective``.
 
@@ -460,7 +478,9 @@ class ServiceMonitoringServiceGrpcTransport(ServiceMonitoringServiceTransport):
     def delete_service_level_objective(self) -> Callable[
             [service_service.DeleteServiceLevelObjectiveRequest],
             empty.Empty]:
-        r"""Return a callable for the delete service level objective method over gRPC.
+        r"""Return a callable for the
+        delete service level objective
+          method over gRPC.
 
         Delete the given ``ServiceLevelObjective``.
 

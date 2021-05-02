@@ -231,7 +231,9 @@ class SubscriberGrpcAsyncIOTransport(SubscriberTransport):
     def create_subscription(self) -> Callable[
             [pubsub.Subscription],
             Awaitable[pubsub.Subscription]]:
-        r"""Return a callable for the create subscription method over gRPC.
+        r"""Return a callable for the
+        create subscription
+          method over gRPC.
 
         Creates a subscription to a given topic. See the [resource name
         rules]
@@ -269,7 +271,9 @@ class SubscriberGrpcAsyncIOTransport(SubscriberTransport):
     def get_subscription(self) -> Callable[
             [pubsub.GetSubscriptionRequest],
             Awaitable[pubsub.Subscription]]:
-        r"""Return a callable for the get subscription method over gRPC.
+        r"""Return a callable for the
+        get subscription
+          method over gRPC.
 
         Gets the configuration details of a subscription.
 
@@ -295,7 +299,9 @@ class SubscriberGrpcAsyncIOTransport(SubscriberTransport):
     def update_subscription(self) -> Callable[
             [pubsub.UpdateSubscriptionRequest],
             Awaitable[pubsub.Subscription]]:
-        r"""Return a callable for the update subscription method over gRPC.
+        r"""Return a callable for the
+        update subscription
+          method over gRPC.
 
         Updates an existing subscription. Note that certain
         properties of a subscription, such as its topic, are not
@@ -323,7 +329,9 @@ class SubscriberGrpcAsyncIOTransport(SubscriberTransport):
     def list_subscriptions(self) -> Callable[
             [pubsub.ListSubscriptionsRequest],
             Awaitable[pubsub.ListSubscriptionsResponse]]:
-        r"""Return a callable for the list subscriptions method over gRPC.
+        r"""Return a callable for the
+        list subscriptions
+          method over gRPC.
 
         Lists matching subscriptions.
 
@@ -349,7 +357,9 @@ class SubscriberGrpcAsyncIOTransport(SubscriberTransport):
     def delete_subscription(self) -> Callable[
             [pubsub.DeleteSubscriptionRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete subscription method over gRPC.
+        r"""Return a callable for the
+        delete subscription
+          method over gRPC.
 
         Deletes an existing subscription. All messages retained in the
         subscription are immediately dropped. Calls to ``Pull`` after
@@ -380,7 +390,9 @@ class SubscriberGrpcAsyncIOTransport(SubscriberTransport):
     def modify_ack_deadline(self) -> Callable[
             [pubsub.ModifyAckDeadlineRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the modify ack deadline method over gRPC.
+        r"""Return a callable for the
+        modify ack deadline
+          method over gRPC.
 
         Modifies the ack deadline for a specific message. This method is
         useful to indicate that more time is needed to process a message
@@ -411,7 +423,9 @@ class SubscriberGrpcAsyncIOTransport(SubscriberTransport):
     def acknowledge(self) -> Callable[
             [pubsub.AcknowledgeRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the acknowledge method over gRPC.
+        r"""Return a callable for the
+        acknowledge
+          method over gRPC.
 
         Acknowledges the messages associated with the ``ack_ids`` in the
         ``AcknowledgeRequest``. The Pub/Sub system can remove the
@@ -444,7 +458,9 @@ class SubscriberGrpcAsyncIOTransport(SubscriberTransport):
     def pull(self) -> Callable[
             [pubsub.PullRequest],
             Awaitable[pubsub.PullResponse]]:
-        r"""Return a callable for the pull method over gRPC.
+        r"""Return a callable for the
+        pull
+          method over gRPC.
 
         Pulls messages from the server. The server may return
         ``UNAVAILABLE`` if there are too many concurrent pull requests
@@ -472,7 +488,9 @@ class SubscriberGrpcAsyncIOTransport(SubscriberTransport):
     def streaming_pull(self) -> Callable[
             [pubsub.StreamingPullRequest],
             Awaitable[pubsub.StreamingPullResponse]]:
-        r"""Return a callable for the streaming pull method over gRPC.
+        r"""Return a callable for the
+        streaming pull
+          method over gRPC.
 
         Establishes a stream with the server, which sends messages down
         to the client. The client streams acknowledgements and ack
@@ -505,7 +523,9 @@ class SubscriberGrpcAsyncIOTransport(SubscriberTransport):
     def modify_push_config(self) -> Callable[
             [pubsub.ModifyPushConfigRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the modify push config method over gRPC.
+        r"""Return a callable for the
+        modify push config
+          method over gRPC.
 
         Modifies the ``PushConfig`` for a specified subscription.
 
@@ -537,7 +557,9 @@ class SubscriberGrpcAsyncIOTransport(SubscriberTransport):
     def get_snapshot(self) -> Callable[
             [pubsub.GetSnapshotRequest],
             Awaitable[pubsub.Snapshot]]:
-        r"""Return a callable for the get snapshot method over gRPC.
+        r"""Return a callable for the
+        get snapshot
+          method over gRPC.
 
         Gets the configuration details of a snapshot.
         Snapshots are used in <a
@@ -569,7 +591,9 @@ class SubscriberGrpcAsyncIOTransport(SubscriberTransport):
     def list_snapshots(self) -> Callable[
             [pubsub.ListSnapshotsRequest],
             Awaitable[pubsub.ListSnapshotsResponse]]:
-        r"""Return a callable for the list snapshots method over gRPC.
+        r"""Return a callable for the
+        list snapshots
+          method over gRPC.
 
         Lists the existing snapshots. Snapshots are used in
         `Seek <https://cloud.google.com/pubsub/docs/replay-overview>`__
@@ -599,7 +623,9 @@ class SubscriberGrpcAsyncIOTransport(SubscriberTransport):
     def create_snapshot(self) -> Callable[
             [pubsub.CreateSnapshotRequest],
             Awaitable[pubsub.Snapshot]]:
-        r"""Return a callable for the create snapshot method over gRPC.
+        r"""Return a callable for the
+        create snapshot
+          method over gRPC.
 
         Creates a snapshot from the requested subscription. Snapshots
         are used in
@@ -643,7 +669,9 @@ class SubscriberGrpcAsyncIOTransport(SubscriberTransport):
     def update_snapshot(self) -> Callable[
             [pubsub.UpdateSnapshotRequest],
             Awaitable[pubsub.Snapshot]]:
-        r"""Return a callable for the update snapshot method over gRPC.
+        r"""Return a callable for the
+        update snapshot
+          method over gRPC.
 
         Updates an existing snapshot. Snapshots are used in
         <a href="https://cloud.google.com/pubsub/docs/replay-
@@ -675,7 +703,9 @@ class SubscriberGrpcAsyncIOTransport(SubscriberTransport):
     def delete_snapshot(self) -> Callable[
             [pubsub.DeleteSnapshotRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete snapshot method over gRPC.
+        r"""Return a callable for the
+        delete snapshot
+          method over gRPC.
 
         Removes an existing snapshot. Snapshots are used in [Seek]
         (https://cloud.google.com/pubsub/docs/replay-overview)
@@ -710,7 +740,9 @@ class SubscriberGrpcAsyncIOTransport(SubscriberTransport):
     def seek(self) -> Callable[
             [pubsub.SeekRequest],
             Awaitable[pubsub.SeekResponse]]:
-        r"""Return a callable for the seek method over gRPC.
+        r"""Return a callable for the
+        seek
+          method over gRPC.
 
         Seeks an existing subscription to a point in time or to a given
         snapshot, whichever is provided in the request. Snapshots are

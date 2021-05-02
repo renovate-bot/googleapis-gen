@@ -306,7 +306,7 @@ class WorkloadIdentityPoolProvider(proto.Message):
     attribute_mapping = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=6,
+        number=6
     )
     attribute_condition = proto.Field(
         proto.STRING,

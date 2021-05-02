@@ -14,9 +14,8 @@
 # limitations under the License.
 #
 
-from google.cloud.bigquery_reservation_v1.services.reservation_service.client import ReservationServiceClient
 from google.cloud.bigquery_reservation_v1.services.reservation_service.async_client import ReservationServiceAsyncClient
-
+from google.cloud.bigquery_reservation_v1.services.reservation_service.client import ReservationServiceClient
 from google.cloud.bigquery_reservation_v1.types.reservation import Assignment
 from google.cloud.bigquery_reservation_v1.types.reservation import BiReservation
 from google.cloud.bigquery_reservation_v1.types.reservation import CapacityCommitment
@@ -46,9 +45,7 @@ from google.cloud.bigquery_reservation_v1.types.reservation import UpdateBiReser
 from google.cloud.bigquery_reservation_v1.types.reservation import UpdateCapacityCommitmentRequest
 from google.cloud.bigquery_reservation_v1.types.reservation import UpdateReservationRequest
 
-__all__ = ('ReservationServiceClient',
-    'ReservationServiceAsyncClient',
-    'Assignment',
+__all__ = ('Assignment',
     'BiReservation',
     'CapacityCommitment',
     'CreateAssignmentRequest',
@@ -69,6 +66,8 @@ __all__ = ('ReservationServiceClient',
     'MergeCapacityCommitmentsRequest',
     'MoveAssignmentRequest',
     'Reservation',
+    'ReservationServiceAsyncClient',
+    'ReservationServiceClient',
     'SearchAssignmentsRequest',
     'SearchAssignmentsResponse',
     'SplitCapacityCommitmentRequest',

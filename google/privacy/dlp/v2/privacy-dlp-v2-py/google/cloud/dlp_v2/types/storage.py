@@ -950,7 +950,7 @@ class HybridOptions(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=3,
+        number=3
     )
     table_options = proto.Field(
         proto.MESSAGE,

@@ -182,7 +182,8 @@ class KeyManagementServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.kms_v1.types.ListKeyRingsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [KeyManagementService.ListKeyRings][google.cloud.kms.v1.KeyManagementService.ListKeyRings].
             parent (:class:`str`):
                 Required. The resource name of the location associated
@@ -277,7 +278,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.kms_v1.types.ListCryptoKeysRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [KeyManagementService.ListCryptoKeys][google.cloud.kms.v1.KeyManagementService.ListCryptoKeys].
             parent (:class:`str`):
                 Required. The resource name of the
@@ -372,7 +374,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.kms_v1.types.ListCryptoKeyVersionsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [KeyManagementService.ListCryptoKeyVersions][google.cloud.kms.v1.KeyManagementService.ListCryptoKeyVersions].
             parent (:class:`str`):
                 Required. The resource name of the
@@ -468,7 +471,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.kms_v1.types.ListImportJobsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [KeyManagementService.ListImportJobs][google.cloud.kms.v1.KeyManagementService.ListImportJobs].
             parent (:class:`str`):
                 Required. The resource name of the
@@ -564,7 +568,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.kms_v1.types.GetKeyRingRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [KeyManagementService.GetKeyRing][google.cloud.kms.v1.KeyManagementService.GetKeyRing].
             name (:class:`str`):
                 Required. The [name][google.cloud.kms.v1.KeyRing.name]
@@ -650,7 +655,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.kms_v1.types.GetCryptoKeyRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [KeyManagementService.GetCryptoKey][google.cloud.kms.v1.KeyManagementService.GetCryptoKey].
             name (:class:`str`):
                 Required. The [name][google.cloud.kms.v1.CryptoKey.name]
@@ -740,7 +746,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.kms_v1.types.GetCryptoKeyVersionRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [KeyManagementService.GetCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.GetCryptoKeyVersion].
             name (:class:`str`):
                 Required. The
@@ -841,7 +848,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.kms_v1.types.GetPublicKeyRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [KeyManagementService.GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
             name (:class:`str`):
                 Required. The
@@ -926,7 +934,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.kms_v1.types.GetImportJobRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [KeyManagementService.GetImportJob][google.cloud.kms.v1.KeyManagementService.GetImportJob].
             name (:class:`str`):
                 Required. The [name][google.cloud.kms.v1.ImportJob.name]
@@ -1055,7 +1064,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.kms_v1.types.CreateKeyRingRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [KeyManagementService.CreateKeyRing][google.cloud.kms.v1.KeyManagementService.CreateKeyRing].
             parent (:class:`str`):
                 Required. The resource name of the location associated
@@ -1164,7 +1174,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.kms_v1.types.CreateCryptoKeyRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [KeyManagementService.CreateCryptoKey][google.cloud.kms.v1.KeyManagementService.CreateCryptoKey].
             parent (:class:`str`):
                 Required. The [name][google.cloud.kms.v1.KeyRing.name]
@@ -1279,7 +1290,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.kms_v1.types.CreateCryptoKeyVersionRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [KeyManagementService.CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion].
             parent (:class:`str`):
                 Required. The [name][google.cloud.kms.v1.CryptoKey.name]
@@ -1382,7 +1394,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.kms_v1.types.ImportCryptoKeyVersionRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [KeyManagementService.ImportCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.ImportCryptoKeyVersion].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1455,7 +1468,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.kms_v1.types.CreateImportJobRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [KeyManagementService.CreateImportJob][google.cloud.kms.v1.KeyManagementService.CreateImportJob].
             parent (:class:`str`):
                 Required. The [name][google.cloud.kms.v1.KeyRing.name]
@@ -1600,7 +1614,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.kms_v1.types.UpdateCryptoKeyRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [KeyManagementService.UpdateCryptoKey][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKey].
             crypto_key (:class:`google.cloud.kms_v1.types.CryptoKey`):
                 Required. [CryptoKey][google.cloud.kms.v1.CryptoKey]
@@ -1711,7 +1726,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.kms_v1.types.UpdateCryptoKeyVersionRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [KeyManagementService.UpdateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyVersion].
             crypto_key_version (:class:`google.cloud.kms_v1.types.CryptoKeyVersion`):
                 Required.
@@ -1819,7 +1835,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.kms_v1.types.EncryptRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [KeyManagementService.Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
             name (:class:`str`):
                 Required. The resource name of the
@@ -1931,7 +1948,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.kms_v1.types.DecryptRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [KeyManagementService.Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt].
             name (:class:`str`):
                 Required. The resource name of the
@@ -2030,7 +2048,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.kms_v1.types.AsymmetricSignRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [KeyManagementService.AsymmetricSign][google.cloud.kms.v1.KeyManagementService.AsymmetricSign].
             name (:class:`str`):
                 Required. The resource name of the
@@ -2131,7 +2150,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.kms_v1.types.AsymmetricDecryptRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [KeyManagementService.AsymmetricDecrypt][google.cloud.kms.v1.KeyManagementService.AsymmetricDecrypt].
             name (:class:`str`):
                 Required. The resource name of the
@@ -2229,7 +2249,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.kms_v1.types.UpdateCryptoKeyPrimaryVersionRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [KeyManagementService.UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion].
             name (:class:`str`):
                 Required. The resource name of the
@@ -2347,7 +2368,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.kms_v1.types.DestroyCryptoKeyVersionRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [KeyManagementService.DestroyCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.DestroyCryptoKeyVersion].
             name (:class:`str`):
                 Required. The resource name of the
@@ -2452,7 +2474,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.kms_v1.types.RestoreCryptoKeyVersionRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [KeyManagementService.RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion].
             name (:class:`str`):
                 Required. The resource name of the

@@ -189,7 +189,7 @@ class Profile(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=6,
+        number=6
     )
 
 
@@ -240,7 +240,7 @@ class Deployment(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=3,
+        number=3
     )
 
 

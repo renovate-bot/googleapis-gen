@@ -356,7 +356,8 @@ class BigQueryWriteClient(metaclass=BigQueryWriteClientMeta):
 
         Args:
             request (google.cloud.bigquery.storage_v1alpha2.types.CreateWriteStreamRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `CreateWriteStream`.
             parent (str):
                 Required. Reference to the table to which the stream
@@ -398,7 +399,7 @@ class BigQueryWriteClient(metaclass=BigQueryWriteClientMeta):
         # there are no flattened fields.
         if not isinstance(request, storage.CreateWriteStreamRequest):
             request = storage.CreateWriteStreamRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -459,7 +460,8 @@ class BigQueryWriteClient(metaclass=BigQueryWriteClientMeta):
 
         Args:
             requests (Iterator[google.cloud.bigquery.storage_v1alpha2.types.AppendRowsRequest]):
-                The request object iterator. Request message for `AppendRows`.
+                The request object iterator.
+                Request message for `AppendRows`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -505,7 +507,8 @@ class BigQueryWriteClient(metaclass=BigQueryWriteClientMeta):
 
         Args:
             request (google.cloud.bigquery.storage_v1alpha2.types.GetWriteStreamRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `GetWriteStreamRequest`.
             name (str):
                 Required. Name of the stream to get, in the form of
@@ -541,7 +544,7 @@ class BigQueryWriteClient(metaclass=BigQueryWriteClientMeta):
         # there are no flattened fields.
         if not isinstance(request, storage.GetWriteStreamRequest):
             request = storage.GetWriteStreamRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -582,7 +585,8 @@ class BigQueryWriteClient(metaclass=BigQueryWriteClientMeta):
 
         Args:
             request (google.cloud.bigquery.storage_v1alpha2.types.FinalizeWriteStreamRequest):
-                The request object. Request message for invoking
+                The request object.
+                Request message for invoking
                 `FinalizeWriteStream`.
             name (str):
                 Required. Name of the stream to finalize, in the form of
@@ -615,7 +619,7 @@ class BigQueryWriteClient(metaclass=BigQueryWriteClientMeta):
         # there are no flattened fields.
         if not isinstance(request, storage.FinalizeWriteStreamRequest):
             request = storage.FinalizeWriteStreamRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -659,7 +663,8 @@ class BigQueryWriteClient(metaclass=BigQueryWriteClientMeta):
 
         Args:
             request (google.cloud.bigquery.storage_v1alpha2.types.BatchCommitWriteStreamsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `BatchCommitWriteStreams`.
             parent (str):
                 Required. Parent table that all the streams should
@@ -693,7 +698,7 @@ class BigQueryWriteClient(metaclass=BigQueryWriteClientMeta):
         # there are no flattened fields.
         if not isinstance(request, storage.BatchCommitWriteStreamsRequest):
             request = storage.BatchCommitWriteStreamsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -738,7 +743,8 @@ class BigQueryWriteClient(metaclass=BigQueryWriteClientMeta):
 
         Args:
             request (google.cloud.bigquery.storage_v1alpha2.types.FlushRowsRequest):
-                The request object. Request message for `FlushRows`.
+                The request object.
+                Request message for `FlushRows`.
             write_stream (str):
                 Required. The stream that is the
                 target of the flush operation.
@@ -770,7 +776,7 @@ class BigQueryWriteClient(metaclass=BigQueryWriteClientMeta):
         # there are no flattened fields.
         if not isinstance(request, storage.FlushRowsRequest):
             request = storage.FlushRowsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if write_stream is not None:
                 request.write_stream = write_stream

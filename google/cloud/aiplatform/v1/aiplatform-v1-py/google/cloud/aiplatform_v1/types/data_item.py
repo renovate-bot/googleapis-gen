@@ -85,7 +85,7 @@ class DataItem(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=3,
+        number=3
     )
     payload = proto.Field(
         proto.MESSAGE,

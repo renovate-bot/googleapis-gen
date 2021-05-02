@@ -157,7 +157,8 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1beta1.types.CreateMicrosoftAdDomainRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CreateMicrosoftAdDomain][google.cloud.managedidentities.v1beta1.CreateMicrosoftAdDomain]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -223,7 +224,8 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1beta1.types.ResetAdminPasswordRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ResetAdminPassword][google.cloud.managedidentities.v1beta1.ResetAdminPassword]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -278,7 +280,8 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1beta1.types.ListDomainsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ListDomains][google.cloud.managedidentities.v1beta1.ListDomains]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -345,7 +348,8 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1beta1.types.GetDomainRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [GetDomain][google.cloud.managedidentities.v1beta1.GetDomain]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -400,7 +404,8 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1beta1.types.UpdateDomainRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [UpdateDomain][google.cloud.managedidentities.v1beta1.UpdateDomain]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -466,7 +471,8 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1beta1.types.DeleteDomainRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DeleteDomain][google.cloud.managedidentities.v1beta1.DeleteDomain]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -542,7 +548,8 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1beta1.types.AttachTrustRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AttachTrust][google.cloud.managedidentities.v1beta1.AttachTrust]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -608,7 +615,8 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1beta1.types.ReconfigureTrustRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ReconfigureTrust][google.cloud.managedidentities.v1beta1.ReconfigureTrust]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -674,7 +682,8 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1beta1.types.DetachTrustRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DetachTrust][google.cloud.managedidentities.v1beta1.DetachTrust]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -742,7 +751,8 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1beta1.types.ValidateTrustRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ValidateTrust][google.cloud.managedidentities.v1beta1.ValidateTrust]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

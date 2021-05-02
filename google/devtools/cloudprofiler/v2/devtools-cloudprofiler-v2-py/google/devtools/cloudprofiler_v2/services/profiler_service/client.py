@@ -345,7 +345,8 @@ class ProfilerServiceClient(metaclass=ProfilerServiceClientMeta):
 
         Args:
             request (google.devtools.cloudprofiler_v2.types.CreateProfileRequest):
-                The request object. CreateProfileRequest describes a
+                The request object.
+                CreateProfileRequest describes a
                 profile resource online creation request. The deployment
                 field must be populated. The profile_type specifies the
                 list of profile types supported by the agent. The
@@ -406,7 +407,8 @@ class ProfilerServiceClient(metaclass=ProfilerServiceClientMeta):
 
         Args:
             request (google.devtools.cloudprofiler_v2.types.CreateOfflineProfileRequest):
-                The request object. CreateOfflineProfileRequest
+                The request object.
+                CreateOfflineProfileRequest
                 describes a profile resource offline creation request.
                 Profile field must be set.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -465,7 +467,8 @@ class ProfilerServiceClient(metaclass=ProfilerServiceClientMeta):
 
         Args:
             request (google.devtools.cloudprofiler_v2.types.UpdateProfileRequest):
-                The request object. UpdateProfileRequest contains the
+                The request object.
+                UpdateProfileRequest contains the
                 profile to update.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

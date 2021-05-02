@@ -344,7 +344,8 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
 
         Args:
             request (google.cloud.recommendationengine_v1beta1.types.WriteUserEventRequest):
-                The request object. Request message for WriteUserEvent
+                The request object.
+                Request message for WriteUserEvent
                 method.
             parent (str):
                 Required. The parent eventStore resource name, such as
@@ -386,7 +387,7 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, user_event_service.WriteUserEventRequest):
             request = user_event_service.WriteUserEventRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -436,7 +437,8 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
 
         Args:
             request (google.cloud.recommendationengine_v1beta1.types.CollectUserEventRequest):
-                The request object. Request message for CollectUserEvent
+                The request object.
+                Request message for CollectUserEvent
                 method.
             parent (str):
                 Required. The parent eventStore name, such as
@@ -544,7 +546,7 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, user_event_service.CollectUserEventRequest):
             request = user_event_service.CollectUserEventRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -592,7 +594,8 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
 
         Args:
             request (google.cloud.recommendationengine_v1beta1.types.ListUserEventsRequest):
-                The request object. Request message for ListUserEvents
+                The request object.
+                Request message for ListUserEvents
                 method.
             parent (str):
                 Required. The parent eventStore resource name, such as
@@ -671,7 +674,7 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, user_event_service.ListUserEventsRequest):
             request = user_event_service.ListUserEventsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -728,7 +731,8 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
 
         Args:
             request (google.cloud.recommendationengine_v1beta1.types.PurgeUserEventsRequest):
-                The request object. Request message for PurgeUserEvents
+                The request object.
+                Request message for PurgeUserEvents
                 method.
             parent (str):
                 Required. The resource name of the event_store under
@@ -801,7 +805,7 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, user_event_service.PurgeUserEventsRequest):
             request = user_event_service.PurgeUserEventsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -862,7 +866,8 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
 
         Args:
             request (google.cloud.recommendationengine_v1beta1.types.ImportUserEventsRequest):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 ImportUserEvents request.
             parent (str):
                 Required.
@@ -928,7 +933,7 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, import_.ImportUserEventsRequest):
             request = import_.ImportUserEventsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent

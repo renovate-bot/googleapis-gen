@@ -241,7 +241,9 @@ class GrafeasGrpcAsyncIOTransport(GrafeasTransport):
     def get_occurrence(self) -> Callable[
             [grafeas.GetOccurrenceRequest],
             Awaitable[grafeas.Occurrence]]:
-        r"""Return a callable for the get occurrence method over gRPC.
+        r"""Return a callable for the
+        get occurrence
+          method over gRPC.
 
         Gets the specified occurrence.
 
@@ -267,7 +269,9 @@ class GrafeasGrpcAsyncIOTransport(GrafeasTransport):
     def list_occurrences(self) -> Callable[
             [grafeas.ListOccurrencesRequest],
             Awaitable[grafeas.ListOccurrencesResponse]]:
-        r"""Return a callable for the list occurrences method over gRPC.
+        r"""Return a callable for the
+        list occurrences
+          method over gRPC.
 
         Lists occurrences for the specified project.
 
@@ -293,7 +297,9 @@ class GrafeasGrpcAsyncIOTransport(GrafeasTransport):
     def delete_occurrence(self) -> Callable[
             [grafeas.DeleteOccurrenceRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete occurrence method over gRPC.
+        r"""Return a callable for the
+        delete occurrence
+          method over gRPC.
 
         Deletes the specified occurrence. For example, use
         this method to delete an occurrence when the occurrence
@@ -321,7 +327,9 @@ class GrafeasGrpcAsyncIOTransport(GrafeasTransport):
     def create_occurrence(self) -> Callable[
             [grafeas.CreateOccurrenceRequest],
             Awaitable[grafeas.Occurrence]]:
-        r"""Return a callable for the create occurrence method over gRPC.
+        r"""Return a callable for the
+        create occurrence
+          method over gRPC.
 
         Creates a new occurrence.
 
@@ -347,7 +355,9 @@ class GrafeasGrpcAsyncIOTransport(GrafeasTransport):
     def batch_create_occurrences(self) -> Callable[
             [grafeas.BatchCreateOccurrencesRequest],
             Awaitable[grafeas.BatchCreateOccurrencesResponse]]:
-        r"""Return a callable for the batch create occurrences method over gRPC.
+        r"""Return a callable for the
+        batch create occurrences
+          method over gRPC.
 
         Creates new occurrences in batch.
 
@@ -373,7 +383,9 @@ class GrafeasGrpcAsyncIOTransport(GrafeasTransport):
     def update_occurrence(self) -> Callable[
             [grafeas.UpdateOccurrenceRequest],
             Awaitable[grafeas.Occurrence]]:
-        r"""Return a callable for the update occurrence method over gRPC.
+        r"""Return a callable for the
+        update occurrence
+          method over gRPC.
 
         Updates the specified occurrence.
 
@@ -399,7 +411,9 @@ class GrafeasGrpcAsyncIOTransport(GrafeasTransport):
     def get_occurrence_note(self) -> Callable[
             [grafeas.GetOccurrenceNoteRequest],
             Awaitable[grafeas.Note]]:
-        r"""Return a callable for the get occurrence note method over gRPC.
+        r"""Return a callable for the
+        get occurrence note
+          method over gRPC.
 
         Gets the note attached to the specified occurrence.
         Consumer projects can use this method to get a note that
@@ -427,7 +441,9 @@ class GrafeasGrpcAsyncIOTransport(GrafeasTransport):
     def get_note(self) -> Callable[
             [grafeas.GetNoteRequest],
             Awaitable[grafeas.Note]]:
-        r"""Return a callable for the get note method over gRPC.
+        r"""Return a callable for the
+        get note
+          method over gRPC.
 
         Gets the specified note.
 
@@ -453,7 +469,9 @@ class GrafeasGrpcAsyncIOTransport(GrafeasTransport):
     def list_notes(self) -> Callable[
             [grafeas.ListNotesRequest],
             Awaitable[grafeas.ListNotesResponse]]:
-        r"""Return a callable for the list notes method over gRPC.
+        r"""Return a callable for the
+        list notes
+          method over gRPC.
 
         Lists notes for the specified project.
 
@@ -479,7 +497,9 @@ class GrafeasGrpcAsyncIOTransport(GrafeasTransport):
     def delete_note(self) -> Callable[
             [grafeas.DeleteNoteRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete note method over gRPC.
+        r"""Return a callable for the
+        delete note
+          method over gRPC.
 
         Deletes the specified note.
 
@@ -505,7 +525,9 @@ class GrafeasGrpcAsyncIOTransport(GrafeasTransport):
     def create_note(self) -> Callable[
             [grafeas.CreateNoteRequest],
             Awaitable[grafeas.Note]]:
-        r"""Return a callable for the create note method over gRPC.
+        r"""Return a callable for the
+        create note
+          method over gRPC.
 
         Creates a new note.
 
@@ -531,7 +553,9 @@ class GrafeasGrpcAsyncIOTransport(GrafeasTransport):
     def batch_create_notes(self) -> Callable[
             [grafeas.BatchCreateNotesRequest],
             Awaitable[grafeas.BatchCreateNotesResponse]]:
-        r"""Return a callable for the batch create notes method over gRPC.
+        r"""Return a callable for the
+        batch create notes
+          method over gRPC.
 
         Creates new notes in batch.
 
@@ -557,7 +581,9 @@ class GrafeasGrpcAsyncIOTransport(GrafeasTransport):
     def update_note(self) -> Callable[
             [grafeas.UpdateNoteRequest],
             Awaitable[grafeas.Note]]:
-        r"""Return a callable for the update note method over gRPC.
+        r"""Return a callable for the
+        update note
+          method over gRPC.
 
         Updates the specified note.
 
@@ -583,7 +609,9 @@ class GrafeasGrpcAsyncIOTransport(GrafeasTransport):
     def list_note_occurrences(self) -> Callable[
             [grafeas.ListNoteOccurrencesRequest],
             Awaitable[grafeas.ListNoteOccurrencesResponse]]:
-        r"""Return a callable for the list note occurrences method over gRPC.
+        r"""Return a callable for the
+        list note occurrences
+          method over gRPC.
 
         Lists occurrences referencing the specified note.
         Provider projects can use this method to get all

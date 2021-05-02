@@ -191,7 +191,8 @@ class JobServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.aiplatform_v1.types.CreateCustomJobRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [JobService.CreateCustomJob][google.cloud.aiplatform.v1.JobService.CreateCustomJob].
             parent (:class:`str`):
                 Required. The resource name of the Location to create
@@ -280,7 +281,8 @@ class JobServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.aiplatform_v1.types.GetCustomJobRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [JobService.GetCustomJob][google.cloud.aiplatform.v1.JobService.GetCustomJob].
             name (:class:`str`):
                 Required. The name of the CustomJob resource. Format:
@@ -361,7 +363,8 @@ class JobServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.aiplatform_v1.types.ListCustomJobsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [JobService.ListCustomJobs][google.cloud.aiplatform.v1.JobService.ListCustomJobs].
             parent (:class:`str`):
                 Required. The resource name of the Location to list the
@@ -449,7 +452,8 @@ class JobServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.aiplatform_v1.types.DeleteCustomJobRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [JobService.DeleteCustomJob][google.cloud.aiplatform.v1.JobService.DeleteCustomJob].
             name (:class:`str`):
                 Required. The name of the CustomJob resource to be
@@ -558,7 +562,8 @@ class JobServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.aiplatform_v1.types.CancelCustomJobRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [JobService.CancelCustomJob][google.cloud.aiplatform.v1.JobService.CancelCustomJob].
             name (:class:`str`):
                 Required. The name of the CustomJob to cancel. Format:
@@ -625,7 +630,8 @@ class JobServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.aiplatform_v1.types.CreateDataLabelingJobRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DataLabelingJobService.CreateDataLabelingJob][].
             parent (:class:`str`):
                 Required. The parent of the DataLabelingJob. Format:
@@ -710,7 +716,8 @@ class JobServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.aiplatform_v1.types.GetDataLabelingJobRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DataLabelingJobService.GetDataLabelingJob][].
             name (:class:`str`):
                 Required. The name of the DataLabelingJob. Format:
@@ -787,7 +794,8 @@ class JobServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.aiplatform_v1.types.ListDataLabelingJobsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DataLabelingJobService.ListDataLabelingJobs][].
             parent (:class:`str`):
                 Required. The parent of the DataLabelingJob. Format:
@@ -874,7 +882,8 @@ class JobServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.aiplatform_v1.types.DeleteDataLabelingJobRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [JobService.DeleteDataLabelingJob][google.cloud.aiplatform.v1.JobService.DeleteDataLabelingJob].
             name (:class:`str`):
                 Required. The name of the DataLabelingJob to be deleted.
@@ -973,7 +982,8 @@ class JobServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.aiplatform_v1.types.CancelDataLabelingJobRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DataLabelingJobService.CancelDataLabelingJob][].
             name (:class:`str`):
                 Required. The name of the DataLabelingJob. Format:
@@ -1041,7 +1051,8 @@ class JobServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.aiplatform_v1.types.CreateHyperparameterTuningJobRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [JobService.CreateHyperparameterTuningJob][google.cloud.aiplatform.v1.JobService.CreateHyperparameterTuningJob].
             parent (:class:`str`):
                 Required. The resource name of the Location to create
@@ -1128,7 +1139,8 @@ class JobServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.aiplatform_v1.types.GetHyperparameterTuningJobRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [JobService.GetHyperparameterTuningJob][google.cloud.aiplatform.v1.JobService.GetHyperparameterTuningJob].
             name (:class:`str`):
                 Required. The name of the HyperparameterTuningJob
@@ -1207,7 +1219,8 @@ class JobServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.aiplatform_v1.types.ListHyperparameterTuningJobsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [JobService.ListHyperparameterTuningJobs][google.cloud.aiplatform.v1.JobService.ListHyperparameterTuningJobs].
             parent (:class:`str`):
                 Required. The resource name of the Location to list the
@@ -1295,7 +1308,8 @@ class JobServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.aiplatform_v1.types.DeleteHyperparameterTuningJobRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [JobService.DeleteHyperparameterTuningJob][google.cloud.aiplatform.v1.JobService.DeleteHyperparameterTuningJob].
             name (:class:`str`):
                 Required. The name of the HyperparameterTuningJob
@@ -1406,7 +1420,8 @@ class JobServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.aiplatform_v1.types.CancelHyperparameterTuningJobRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [JobService.CancelHyperparameterTuningJob][google.cloud.aiplatform.v1.JobService.CancelHyperparameterTuningJob].
             name (:class:`str`):
                 Required. The name of the HyperparameterTuningJob to
@@ -1476,7 +1491,8 @@ class JobServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.aiplatform_v1.types.CreateBatchPredictionJobRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [JobService.CreateBatchPredictionJob][google.cloud.aiplatform.v1.JobService.CreateBatchPredictionJob].
             parent (:class:`str`):
                 Required. The resource name of the Location to create
@@ -1565,7 +1581,8 @@ class JobServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.aiplatform_v1.types.GetBatchPredictionJobRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [JobService.GetBatchPredictionJob][google.cloud.aiplatform.v1.JobService.GetBatchPredictionJob].
             name (:class:`str`):
                 Required. The name of the BatchPredictionJob resource.
@@ -1646,7 +1663,8 @@ class JobServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.aiplatform_v1.types.ListBatchPredictionJobsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [JobService.ListBatchPredictionJobs][google.cloud.aiplatform.v1.JobService.ListBatchPredictionJobs].
             parent (:class:`str`):
                 Required. The resource name of the Location to list the
@@ -1735,7 +1753,8 @@ class JobServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.aiplatform_v1.types.DeleteBatchPredictionJobRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [JobService.DeleteBatchPredictionJob][google.cloud.aiplatform.v1.JobService.DeleteBatchPredictionJob].
             name (:class:`str`):
                 Required. The name of the BatchPredictionJob resource to
@@ -1844,7 +1863,8 @@ class JobServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.aiplatform_v1.types.CancelBatchPredictionJobRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [JobService.CancelBatchPredictionJob][google.cloud.aiplatform.v1.JobService.CancelBatchPredictionJob].
             name (:class:`str`):
                 Required. The name of the BatchPredictionJob to cancel.

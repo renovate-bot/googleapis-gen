@@ -163,7 +163,8 @@ class RealmsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.ListRealmsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 RealmsService.ListRealms.
             parent (:class:`str`):
                 Required. The parent resource name. Uses the form:
@@ -256,7 +257,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.GetRealmRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 RealmsService.GetRealm.
             name (:class:`str`):
                 Required. The name of the realm to retrieve. Uses the
@@ -338,7 +340,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.CreateRealmRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 RealmsService.CreateRealm.
             parent (:class:`str`):
                 Required. The parent resource name. Uses the form:
@@ -442,7 +445,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.DeleteRealmRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 RealmsService.DeleteRealm.
             name (:class:`str`):
                 Required. The name of the realm to delete. Uses the
@@ -540,7 +544,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.UpdateRealmRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 RealmsService.UpdateRealm.
             realm (:class:`google.cloud.gaming_v1beta.types.Realm`):
                 Required. The realm to be updated. Only fields specified
@@ -637,7 +642,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.PreviewRealmUpdateRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 RealmsService.PreviewRealmUpdate.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

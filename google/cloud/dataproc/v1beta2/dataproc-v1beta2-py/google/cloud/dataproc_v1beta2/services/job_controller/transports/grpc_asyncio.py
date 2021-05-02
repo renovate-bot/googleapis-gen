@@ -245,7 +245,9 @@ class JobControllerGrpcAsyncIOTransport(JobControllerTransport):
     def submit_job(self) -> Callable[
             [jobs.SubmitJobRequest],
             Awaitable[jobs.Job]]:
-        r"""Return a callable for the submit job method over gRPC.
+        r"""Return a callable for the
+        submit job
+          method over gRPC.
 
         Submits a job to a cluster.
 
@@ -271,7 +273,9 @@ class JobControllerGrpcAsyncIOTransport(JobControllerTransport):
     def submit_job_as_operation(self) -> Callable[
             [jobs.SubmitJobRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the submit job as operation method over gRPC.
+        r"""Return a callable for the
+        submit job as operation
+          method over gRPC.
 
         Submits job to a cluster.
 
@@ -297,7 +301,9 @@ class JobControllerGrpcAsyncIOTransport(JobControllerTransport):
     def get_job(self) -> Callable[
             [jobs.GetJobRequest],
             Awaitable[jobs.Job]]:
-        r"""Return a callable for the get job method over gRPC.
+        r"""Return a callable for the
+        get job
+          method over gRPC.
 
         Gets the resource representation for a job in a
         project.
@@ -324,7 +330,9 @@ class JobControllerGrpcAsyncIOTransport(JobControllerTransport):
     def list_jobs(self) -> Callable[
             [jobs.ListJobsRequest],
             Awaitable[jobs.ListJobsResponse]]:
-        r"""Return a callable for the list jobs method over gRPC.
+        r"""Return a callable for the
+        list jobs
+          method over gRPC.
 
         Lists regions/{region}/jobs in a project.
 
@@ -350,7 +358,9 @@ class JobControllerGrpcAsyncIOTransport(JobControllerTransport):
     def update_job(self) -> Callable[
             [jobs.UpdateJobRequest],
             Awaitable[jobs.Job]]:
-        r"""Return a callable for the update job method over gRPC.
+        r"""Return a callable for the
+        update job
+          method over gRPC.
 
         Updates a job in a project.
 
@@ -376,7 +386,9 @@ class JobControllerGrpcAsyncIOTransport(JobControllerTransport):
     def cancel_job(self) -> Callable[
             [jobs.CancelJobRequest],
             Awaitable[jobs.Job]]:
-        r"""Return a callable for the cancel job method over gRPC.
+        r"""Return a callable for the
+        cancel job
+          method over gRPC.
 
         Starts a job cancellation request. To access the job resource
         after cancellation, call
@@ -406,7 +418,9 @@ class JobControllerGrpcAsyncIOTransport(JobControllerTransport):
     def delete_job(self) -> Callable[
             [jobs.DeleteJobRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete job method over gRPC.
+        r"""Return a callable for the
+        delete job
+          method over gRPC.
 
         Deletes the job from the project. If the job is active, the
         delete fails, and the response returns ``FAILED_PRECONDITION``.

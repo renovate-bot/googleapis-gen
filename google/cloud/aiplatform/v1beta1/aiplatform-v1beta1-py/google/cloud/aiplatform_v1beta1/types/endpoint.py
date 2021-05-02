@@ -108,7 +108,7 @@ class Endpoint(proto.Message):
     traffic_split = proto.MapField(
         proto.STRING,
         proto.INT32,
-        number=5,
+        number=5
     )
     etag = proto.Field(
         proto.STRING,
@@ -117,7 +117,7 @@ class Endpoint(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=7,
+        number=7
     )
     create_time = proto.Field(
         proto.MESSAGE,

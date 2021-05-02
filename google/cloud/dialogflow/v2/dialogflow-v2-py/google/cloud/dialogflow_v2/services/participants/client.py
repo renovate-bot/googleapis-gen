@@ -383,7 +383,8 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.CreateParticipantRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Participants.CreateParticipant][google.cloud.dialogflow.v2.Participants.CreateParticipant].
             parent (str):
                 Required. Resource identifier of the conversation adding
@@ -424,7 +425,7 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_participant.CreateParticipantRequest):
             request = gcd_participant.CreateParticipantRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -466,7 +467,8 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.GetParticipantRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Participants.GetParticipant][google.cloud.dialogflow.v2.Participants.GetParticipant].
             name (str):
                 Required. The name of the participant. Format:
@@ -501,7 +503,7 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, participant.GetParticipantRequest):
             request = participant.GetParticipantRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -542,7 +544,8 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.ListParticipantsRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Participants.ListParticipants][google.cloud.dialogflow.v2.Participants.ListParticipants].
             parent (str):
                 Required. The conversation to list all participants
@@ -581,7 +584,7 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, participant.ListParticipantsRequest):
             request = participant.ListParticipantsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -631,7 +634,8 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.UpdateParticipantRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Participants.UpdateParticipant][google.cloud.dialogflow.v2.Participants.UpdateParticipant].
             participant (google.cloud.dialogflow_v2.types.Participant):
                 Required. The participant to update.
@@ -671,7 +675,7 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_participant.UpdateParticipantRequest):
             request = gcd_participant.UpdateParticipantRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if participant is not None:
                 request.participant = participant
@@ -720,7 +724,8 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.AnalyzeContentRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Participants.AnalyzeContent][google.cloud.dialogflow.v2.Participants.AnalyzeContent].
             participant (str):
                 Required. The name of the participant this text comes
@@ -768,7 +773,7 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_participant.AnalyzeContentRequest):
             request = gcd_participant.AnalyzeContentRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if participant is not None:
                 request.participant = participant
@@ -813,7 +818,8 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.SuggestArticlesRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Participants.SuggestArticles][google.cloud.dialogflow.v2.Participants.SuggestArticles].
             parent (str):
                 Required. The name of the participant to fetch
@@ -849,7 +855,7 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, participant.SuggestArticlesRequest):
             request = participant.SuggestArticlesRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -890,7 +896,8 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.SuggestFaqAnswersRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Participants.SuggestFaqAnswers][google.cloud.dialogflow.v2.Participants.SuggestFaqAnswers].
             parent (str):
                 Required. The name of the participant to fetch
@@ -926,7 +933,7 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, participant.SuggestFaqAnswersRequest):
             request = participant.SuggestFaqAnswersRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent

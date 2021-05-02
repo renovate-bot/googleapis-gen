@@ -244,7 +244,9 @@ class SpeechGrpcAsyncIOTransport(SpeechTransport):
     def recognize(self) -> Callable[
             [cloud_speech.RecognizeRequest],
             Awaitable[cloud_speech.RecognizeResponse]]:
-        r"""Return a callable for the recognize method over gRPC.
+        r"""Return a callable for the
+        recognize
+          method over gRPC.
 
         Performs synchronous speech recognition: receive
         results after all audio has been sent and processed.
@@ -271,7 +273,9 @@ class SpeechGrpcAsyncIOTransport(SpeechTransport):
     def long_running_recognize(self) -> Callable[
             [cloud_speech.LongRunningRecognizeRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the long running recognize method over gRPC.
+        r"""Return a callable for the
+        long running recognize
+          method over gRPC.
 
         Performs asynchronous speech recognition: receive results via
         the google.longrunning.Operations interface. Returns either an
@@ -302,7 +306,9 @@ class SpeechGrpcAsyncIOTransport(SpeechTransport):
     def streaming_recognize(self) -> Callable[
             [cloud_speech.StreamingRecognizeRequest],
             Awaitable[cloud_speech.StreamingRecognizeResponse]]:
-        r"""Return a callable for the streaming recognize method over gRPC.
+        r"""Return a callable for the
+        streaming recognize
+          method over gRPC.
 
         Performs bidirectional streaming speech recognition:
         receive results while sending audio. This method is only

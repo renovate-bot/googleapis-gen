@@ -245,7 +245,9 @@ class DomainsGrpcAsyncIOTransport(DomainsTransport):
     def search_domains(self) -> Callable[
             [domains.SearchDomainsRequest],
             Awaitable[domains.SearchDomainsResponse]]:
-        r"""Return a callable for the search domains method over gRPC.
+        r"""Return a callable for the
+        search domains
+          method over gRPC.
 
         Searches for available domain names similar to the provided
         query.
@@ -276,7 +278,9 @@ class DomainsGrpcAsyncIOTransport(DomainsTransport):
     def retrieve_register_parameters(self) -> Callable[
             [domains.RetrieveRegisterParametersRequest],
             Awaitable[domains.RetrieveRegisterParametersResponse]]:
-        r"""Return a callable for the retrieve register parameters method over gRPC.
+        r"""Return a callable for the
+        retrieve register parameters
+          method over gRPC.
 
         Gets parameters needed to register a new domain name, including
         price and up-to-date availability. Use the returned values to
@@ -304,7 +308,9 @@ class DomainsGrpcAsyncIOTransport(DomainsTransport):
     def register_domain(self) -> Callable[
             [domains.RegisterDomainRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the register domain method over gRPC.
+        r"""Return a callable for the
+        register domain
+          method over gRPC.
 
         Registers a new domain name and creates a corresponding
         ``Registration`` resource.
@@ -343,7 +349,9 @@ class DomainsGrpcAsyncIOTransport(DomainsTransport):
     def list_registrations(self) -> Callable[
             [domains.ListRegistrationsRequest],
             Awaitable[domains.ListRegistrationsResponse]]:
-        r"""Return a callable for the list registrations method over gRPC.
+        r"""Return a callable for the
+        list registrations
+          method over gRPC.
 
         Lists the ``Registration`` resources in a project.
 
@@ -369,7 +377,9 @@ class DomainsGrpcAsyncIOTransport(DomainsTransport):
     def get_registration(self) -> Callable[
             [domains.GetRegistrationRequest],
             Awaitable[domains.Registration]]:
-        r"""Return a callable for the get registration method over gRPC.
+        r"""Return a callable for the
+        get registration
+          method over gRPC.
 
         Gets the details of a ``Registration`` resource.
 
@@ -395,7 +405,9 @@ class DomainsGrpcAsyncIOTransport(DomainsTransport):
     def update_registration(self) -> Callable[
             [domains.UpdateRegistrationRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the update registration method over gRPC.
+        r"""Return a callable for the
+        update registration
+          method over gRPC.
 
         Updates select fields of a ``Registration`` resource, notably
         ``labels``. To update other fields, use the appropriate custom
@@ -429,7 +441,9 @@ class DomainsGrpcAsyncIOTransport(DomainsTransport):
     def configure_management_settings(self) -> Callable[
             [domains.ConfigureManagementSettingsRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the configure management settings method over gRPC.
+        r"""Return a callable for the
+        configure management settings
+          method over gRPC.
 
         Updates a ``Registration``'s management settings.
 
@@ -455,7 +469,9 @@ class DomainsGrpcAsyncIOTransport(DomainsTransport):
     def configure_dns_settings(self) -> Callable[
             [domains.ConfigureDnsSettingsRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the configure dns settings method over gRPC.
+        r"""Return a callable for the
+        configure dns settings
+          method over gRPC.
 
         Updates a ``Registration``'s DNS settings.
 
@@ -481,7 +497,9 @@ class DomainsGrpcAsyncIOTransport(DomainsTransport):
     def configure_contact_settings(self) -> Callable[
             [domains.ConfigureContactSettingsRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the configure contact settings method over gRPC.
+        r"""Return a callable for the
+        configure contact settings
+          method over gRPC.
 
         Updates a ``Registration``'s contact settings. Some changes
         require confirmation by the domain's registrant contact .
@@ -508,7 +526,9 @@ class DomainsGrpcAsyncIOTransport(DomainsTransport):
     def export_registration(self) -> Callable[
             [domains.ExportRegistrationRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the export registration method over gRPC.
+        r"""Return a callable for the
+        export registration
+          method over gRPC.
 
         Exports a ``Registration`` that you no longer want to use with
         Cloud Domains. You can continue to use the domain in `Google
@@ -547,7 +567,9 @@ class DomainsGrpcAsyncIOTransport(DomainsTransport):
     def delete_registration(self) -> Callable[
             [domains.DeleteRegistrationRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the delete registration method over gRPC.
+        r"""Return a callable for the
+        delete registration
+          method over gRPC.
 
         Deletes a ``Registration`` resource.
 
@@ -579,7 +601,9 @@ class DomainsGrpcAsyncIOTransport(DomainsTransport):
     def retrieve_authorization_code(self) -> Callable[
             [domains.RetrieveAuthorizationCodeRequest],
             Awaitable[domains.AuthorizationCode]]:
-        r"""Return a callable for the retrieve authorization code method over gRPC.
+        r"""Return a callable for the
+        retrieve authorization code
+          method over gRPC.
 
         Gets the authorization code of the ``Registration`` for the
         purpose of transferring the domain to another registrar.
@@ -609,7 +633,9 @@ class DomainsGrpcAsyncIOTransport(DomainsTransport):
     def reset_authorization_code(self) -> Callable[
             [domains.ResetAuthorizationCodeRequest],
             Awaitable[domains.AuthorizationCode]]:
-        r"""Return a callable for the reset authorization code method over gRPC.
+        r"""Return a callable for the
+        reset authorization code
+          method over gRPC.
 
         Resets the authorization code of the ``Registration`` to a new
         random string.

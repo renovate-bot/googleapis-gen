@@ -175,7 +175,8 @@ class DatasetServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.aiplatform_v1.types.CreateDatasetRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DatasetService.CreateDataset][google.cloud.aiplatform.v1.DatasetService.CreateDataset].
             parent (:class:`str`):
                 Required. The resource name of the Location to create
@@ -269,7 +270,8 @@ class DatasetServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.aiplatform_v1.types.GetDatasetRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DatasetService.GetDataset][google.cloud.aiplatform.v1.DatasetService.GetDataset].
             name (:class:`str`):
                 Required. The name of the Dataset
@@ -345,7 +347,8 @@ class DatasetServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.aiplatform_v1.types.UpdateDatasetRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DatasetService.UpdateDataset][google.cloud.aiplatform.v1.DatasetService.UpdateDataset].
             dataset (:class:`google.cloud.aiplatform_v1.types.Dataset`):
                 Required. The Dataset which replaces
@@ -435,7 +438,8 @@ class DatasetServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.aiplatform_v1.types.ListDatasetsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DatasetService.ListDatasets][google.cloud.aiplatform.v1.DatasetService.ListDatasets].
             parent (:class:`str`):
                 Required. The name of the Dataset's parent resource.
@@ -522,7 +526,8 @@ class DatasetServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.aiplatform_v1.types.DeleteDatasetRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DatasetService.DeleteDataset][google.cloud.aiplatform.v1.DatasetService.DeleteDataset].
             name (:class:`str`):
                 Required. The resource name of the Dataset to delete.
@@ -620,7 +625,8 @@ class DatasetServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.aiplatform_v1.types.ImportDataRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DatasetService.ImportData][google.cloud.aiplatform.v1.DatasetService.ImportData].
             name (:class:`str`):
                 Required. The name of the Dataset resource. Format:
@@ -718,7 +724,8 @@ class DatasetServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.aiplatform_v1.types.ExportDataRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DatasetService.ExportData][google.cloud.aiplatform.v1.DatasetService.ExportData].
             name (:class:`str`):
                 Required. The name of the Dataset resource. Format:
@@ -814,7 +821,8 @@ class DatasetServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.aiplatform_v1.types.ListDataItemsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DatasetService.ListDataItems][google.cloud.aiplatform.v1.DatasetService.ListDataItems].
             parent (:class:`str`):
                 Required. The resource name of the Dataset to list
@@ -902,7 +910,8 @@ class DatasetServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.aiplatform_v1.types.GetAnnotationSpecRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DatasetService.GetAnnotationSpec][google.cloud.aiplatform.v1.DatasetService.GetAnnotationSpec].
             name (:class:`str`):
                 Required. The name of the AnnotationSpec resource.
@@ -979,7 +988,8 @@ class DatasetServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.aiplatform_v1.types.ListAnnotationsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DatasetService.ListAnnotations][google.cloud.aiplatform.v1.DatasetService.ListAnnotations].
             parent (:class:`str`):
                 Required. The resource name of the DataItem to list

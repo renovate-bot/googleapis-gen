@@ -353,7 +353,8 @@ class IntentsClient(metaclass=IntentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.ListIntentsRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Intents.ListIntents][google.cloud.dialogflow.v2.Intents.ListIntents].
             parent (str):
                 Required. The agent to list all intents from. Format:
@@ -401,7 +402,7 @@ class IntentsClient(metaclass=IntentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, intent.ListIntentsRequest):
             request = intent.ListIntentsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -453,7 +454,8 @@ class IntentsClient(metaclass=IntentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.GetIntentRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Intents.GetIntent][google.cloud.dialogflow.v2.Intents.GetIntent].
             name (str):
                 Required. The name of the intent. Format:
@@ -507,7 +509,7 @@ class IntentsClient(metaclass=IntentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, intent.GetIntentRequest):
             request = intent.GetIntentRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -551,7 +553,8 @@ class IntentsClient(metaclass=IntentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.CreateIntentRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Intents.CreateIntent][google.cloud.dialogflow.v2.Intents.CreateIntent].
             parent (str):
                 Required. The agent to create a intent for. Format:
@@ -610,7 +613,7 @@ class IntentsClient(metaclass=IntentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_intent.CreateIntentRequest):
             request = gcd_intent.CreateIntentRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -656,7 +659,8 @@ class IntentsClient(metaclass=IntentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.UpdateIntentRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Intents.UpdateIntent][google.cloud.dialogflow.v2.Intents.UpdateIntent].
             intent (google.cloud.dialogflow_v2.types.Intent):
                 Required. The intent to update.
@@ -715,7 +719,7 @@ class IntentsClient(metaclass=IntentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_intent.UpdateIntentRequest):
             request = gcd_intent.UpdateIntentRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if intent is not None:
                 request.intent = intent
@@ -760,7 +764,8 @@ class IntentsClient(metaclass=IntentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.DeleteIntentRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Intents.DeleteIntent][google.cloud.dialogflow.v2.Intents.DeleteIntent].
             name (str):
                 Required. The name of the intent to delete. If this
@@ -791,7 +796,7 @@ class IntentsClient(metaclass=IntentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, intent.DeleteIntentRequest):
             request = intent.DeleteIntentRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -834,6 +839,7 @@ class IntentsClient(metaclass=IntentsClientMeta):
         Args:
             request (google.cloud.dialogflow_v2.types.BatchUpdateIntentsRequest):
                 The request object.
+
             parent (str):
                 Required. The name of the agent to update or create
                 intents in. Format: ``projects/<Project ID>/agent``.
@@ -889,7 +895,7 @@ class IntentsClient(metaclass=IntentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, intent.BatchUpdateIntentsRequest):
             request = intent.BatchUpdateIntentsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -945,7 +951,8 @@ class IntentsClient(metaclass=IntentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.BatchDeleteIntentsRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Intents.BatchDeleteIntents][google.cloud.dialogflow.v2.Intents.BatchDeleteIntents].
             parent (str):
                 Required. The name of the agent to delete all entities
@@ -1000,7 +1007,7 @@ class IntentsClient(metaclass=IntentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, intent.BatchDeleteIntentsRequest):
             request = intent.BatchDeleteIntentsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent

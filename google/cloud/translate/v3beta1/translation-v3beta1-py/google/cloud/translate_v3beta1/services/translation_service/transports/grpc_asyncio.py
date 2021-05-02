@@ -244,7 +244,9 @@ class TranslationServiceGrpcAsyncIOTransport(TranslationServiceTransport):
     def translate_text(self) -> Callable[
             [translation_service.TranslateTextRequest],
             Awaitable[translation_service.TranslateTextResponse]]:
-        r"""Return a callable for the translate text method over gRPC.
+        r"""Return a callable for the
+        translate text
+          method over gRPC.
 
         Translates input text and returns translated text.
 
@@ -270,7 +272,9 @@ class TranslationServiceGrpcAsyncIOTransport(TranslationServiceTransport):
     def detect_language(self) -> Callable[
             [translation_service.DetectLanguageRequest],
             Awaitable[translation_service.DetectLanguageResponse]]:
-        r"""Return a callable for the detect language method over gRPC.
+        r"""Return a callable for the
+        detect language
+          method over gRPC.
 
         Detects the language of text within a request.
 
@@ -296,7 +300,9 @@ class TranslationServiceGrpcAsyncIOTransport(TranslationServiceTransport):
     def get_supported_languages(self) -> Callable[
             [translation_service.GetSupportedLanguagesRequest],
             Awaitable[translation_service.SupportedLanguages]]:
-        r"""Return a callable for the get supported languages method over gRPC.
+        r"""Return a callable for the
+        get supported languages
+          method over gRPC.
 
         Returns a list of supported languages for
         translation.
@@ -323,7 +329,9 @@ class TranslationServiceGrpcAsyncIOTransport(TranslationServiceTransport):
     def translate_document(self) -> Callable[
             [translation_service.TranslateDocumentRequest],
             Awaitable[translation_service.TranslateDocumentResponse]]:
-        r"""Return a callable for the translate document method over gRPC.
+        r"""Return a callable for the
+        translate document
+          method over gRPC.
 
         Translates documents in synchronous mode.
 
@@ -349,7 +357,9 @@ class TranslationServiceGrpcAsyncIOTransport(TranslationServiceTransport):
     def batch_translate_text(self) -> Callable[
             [translation_service.BatchTranslateTextRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the batch translate text method over gRPC.
+        r"""Return a callable for the
+        batch translate text
+          method over gRPC.
 
         Translates a large volume of text in asynchronous
         batch mode. This function provides real-time output as
@@ -383,7 +393,9 @@ class TranslationServiceGrpcAsyncIOTransport(TranslationServiceTransport):
     def batch_translate_document(self) -> Callable[
             [translation_service.BatchTranslateDocumentRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the batch translate document method over gRPC.
+        r"""Return a callable for the
+        batch translate document
+          method over gRPC.
 
         Translates a large volume of documents in
         asynchronous batch mode. This function provides real-
@@ -417,7 +429,9 @@ class TranslationServiceGrpcAsyncIOTransport(TranslationServiceTransport):
     def create_glossary(self) -> Callable[
             [translation_service.CreateGlossaryRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the create glossary method over gRPC.
+        r"""Return a callable for the
+        create glossary
+          method over gRPC.
 
         Creates a glossary and returns the long-running operation.
         Returns NOT_FOUND, if the project doesn't exist.
@@ -444,7 +458,9 @@ class TranslationServiceGrpcAsyncIOTransport(TranslationServiceTransport):
     def list_glossaries(self) -> Callable[
             [translation_service.ListGlossariesRequest],
             Awaitable[translation_service.ListGlossariesResponse]]:
-        r"""Return a callable for the list glossaries method over gRPC.
+        r"""Return a callable for the
+        list glossaries
+          method over gRPC.
 
         Lists glossaries in a project. Returns NOT_FOUND, if the project
         doesn't exist.
@@ -471,7 +487,9 @@ class TranslationServiceGrpcAsyncIOTransport(TranslationServiceTransport):
     def get_glossary(self) -> Callable[
             [translation_service.GetGlossaryRequest],
             Awaitable[translation_service.Glossary]]:
-        r"""Return a callable for the get glossary method over gRPC.
+        r"""Return a callable for the
+        get glossary
+          method over gRPC.
 
         Gets a glossary. Returns NOT_FOUND, if the glossary doesn't
         exist.
@@ -498,7 +516,9 @@ class TranslationServiceGrpcAsyncIOTransport(TranslationServiceTransport):
     def delete_glossary(self) -> Callable[
             [translation_service.DeleteGlossaryRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the delete glossary method over gRPC.
+        r"""Return a callable for the
+        delete glossary
+          method over gRPC.
 
         Deletes a glossary, or cancels glossary construction if the
         glossary isn't created yet. Returns NOT_FOUND, if the glossary

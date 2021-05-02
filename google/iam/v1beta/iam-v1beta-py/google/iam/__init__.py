@@ -14,9 +14,8 @@
 # limitations under the License.
 #
 
-from google.iam_v1beta.services.workload_identity_pools.client import WorkloadIdentityPoolsClient
 from google.iam_v1beta.services.workload_identity_pools.async_client import WorkloadIdentityPoolsAsyncClient
-
+from google.iam_v1beta.services.workload_identity_pools.client import WorkloadIdentityPoolsClient
 from google.iam_v1beta.types.workload_identity_pool import CreateWorkloadIdentityPoolProviderRequest
 from google.iam_v1beta.types.workload_identity_pool import CreateWorkloadIdentityPoolRequest
 from google.iam_v1beta.types.workload_identity_pool import DeleteWorkloadIdentityPoolProviderRequest
@@ -36,9 +35,7 @@ from google.iam_v1beta.types.workload_identity_pool import WorkloadIdentityPoolO
 from google.iam_v1beta.types.workload_identity_pool import WorkloadIdentityPoolProvider
 from google.iam_v1beta.types.workload_identity_pool import WorkloadIdentityPoolProviderOperationMetadata
 
-__all__ = ('WorkloadIdentityPoolsClient',
-    'WorkloadIdentityPoolsAsyncClient',
-    'CreateWorkloadIdentityPoolProviderRequest',
+__all__ = ('CreateWorkloadIdentityPoolProviderRequest',
     'CreateWorkloadIdentityPoolRequest',
     'DeleteWorkloadIdentityPoolProviderRequest',
     'DeleteWorkloadIdentityPoolRequest',
@@ -56,4 +53,6 @@ __all__ = ('WorkloadIdentityPoolsClient',
     'WorkloadIdentityPoolOperationMetadata',
     'WorkloadIdentityPoolProvider',
     'WorkloadIdentityPoolProviderOperationMetadata',
+    'WorkloadIdentityPoolsAsyncClient',
+    'WorkloadIdentityPoolsClient',
 )

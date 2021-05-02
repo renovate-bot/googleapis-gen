@@ -337,7 +337,8 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
 
         Args:
             request (google.cloud.retail_v2.types.ListCatalogsRequest):
-                The request object. Request for
+                The request object.
+                Request for
                 [CatalogService.ListCatalogs][google.cloud.retail.v2.CatalogService.ListCatalogs]
                 method.
             parent (str):
@@ -382,7 +383,7 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, catalog_service.ListCatalogsRequest):
             request = catalog_service.ListCatalogsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -432,7 +433,8 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
 
         Args:
             request (google.cloud.retail_v2.types.UpdateCatalogRequest):
-                The request object. Request for
+                The request object.
+                Request for
                 [CatalogService.UpdateCatalog][google.cloud.retail.v2.CatalogService.UpdateCatalog]
                 method.
             catalog (google.cloud.retail_v2.types.Catalog):
@@ -488,7 +490,7 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, catalog_service.UpdateCatalogRequest):
             request = catalog_service.UpdateCatalogRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if catalog is not None:
                 request.catalog = catalog

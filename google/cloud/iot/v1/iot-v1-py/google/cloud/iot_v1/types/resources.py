@@ -286,7 +286,7 @@ class Device(proto.Message):
     metadata = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=17,
+        number=17
     )
     gateway_config = proto.Field(
         proto.MESSAGE,

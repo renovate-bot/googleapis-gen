@@ -391,7 +391,8 @@ class SessionsClient(metaclass=SessionsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.DetectIntentRequest):
-                The request object. The request to detect user's intent.
+                The request object.
+                The request to detect user's intent.
             session (str):
                 Required. The name of the session this query is sent to.
                 Supported formats:
@@ -463,7 +464,7 @@ class SessionsClient(metaclass=SessionsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_session.DetectIntentRequest):
             request = gcd_session.DetectIntentRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if session is not None:
                 request.session = session
@@ -511,7 +512,8 @@ class SessionsClient(metaclass=SessionsClientMeta):
 
         Args:
             requests (Iterator[google.cloud.dialogflow_v2beta1.types.StreamingDetectIntentRequest]):
-                The request object iterator. The top-level message sent by the
+                The request object iterator.
+                The top-level message sent by the
                 client to the
                 [Sessions.StreamingDetectIntent][google.cloud.dialogflow.v2beta1.Sessions.StreamingDetectIntent]
                 method.

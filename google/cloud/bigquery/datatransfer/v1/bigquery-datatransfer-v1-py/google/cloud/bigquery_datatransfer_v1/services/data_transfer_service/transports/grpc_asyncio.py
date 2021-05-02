@@ -230,7 +230,9 @@ class DataTransferServiceGrpcAsyncIOTransport(DataTransferServiceTransport):
     def get_data_source(self) -> Callable[
             [datatransfer.GetDataSourceRequest],
             Awaitable[datatransfer.DataSource]]:
-        r"""Return a callable for the get data source method over gRPC.
+        r"""Return a callable for the
+        get data source
+          method over gRPC.
 
         Retrieves a supported data source and returns its
         settings, which can be used for UI rendering.
@@ -257,7 +259,9 @@ class DataTransferServiceGrpcAsyncIOTransport(DataTransferServiceTransport):
     def list_data_sources(self) -> Callable[
             [datatransfer.ListDataSourcesRequest],
             Awaitable[datatransfer.ListDataSourcesResponse]]:
-        r"""Return a callable for the list data sources method over gRPC.
+        r"""Return a callable for the
+        list data sources
+          method over gRPC.
 
         Lists supported data sources and returns their
         settings, which can be used for UI rendering.
@@ -284,7 +288,9 @@ class DataTransferServiceGrpcAsyncIOTransport(DataTransferServiceTransport):
     def create_transfer_config(self) -> Callable[
             [datatransfer.CreateTransferConfigRequest],
             Awaitable[transfer.TransferConfig]]:
-        r"""Return a callable for the create transfer config method over gRPC.
+        r"""Return a callable for the
+        create transfer config
+          method over gRPC.
 
         Creates a new data transfer configuration.
 
@@ -310,7 +316,9 @@ class DataTransferServiceGrpcAsyncIOTransport(DataTransferServiceTransport):
     def update_transfer_config(self) -> Callable[
             [datatransfer.UpdateTransferConfigRequest],
             Awaitable[transfer.TransferConfig]]:
-        r"""Return a callable for the update transfer config method over gRPC.
+        r"""Return a callable for the
+        update transfer config
+          method over gRPC.
 
         Updates a data transfer configuration.
         All fields must be set, even if they are not updated.
@@ -337,7 +345,9 @@ class DataTransferServiceGrpcAsyncIOTransport(DataTransferServiceTransport):
     def delete_transfer_config(self) -> Callable[
             [datatransfer.DeleteTransferConfigRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete transfer config method over gRPC.
+        r"""Return a callable for the
+        delete transfer config
+          method over gRPC.
 
         Deletes a data transfer configuration,
         including any associated transfer runs and logs.
@@ -364,7 +374,9 @@ class DataTransferServiceGrpcAsyncIOTransport(DataTransferServiceTransport):
     def get_transfer_config(self) -> Callable[
             [datatransfer.GetTransferConfigRequest],
             Awaitable[transfer.TransferConfig]]:
-        r"""Return a callable for the get transfer config method over gRPC.
+        r"""Return a callable for the
+        get transfer config
+          method over gRPC.
 
         Returns information about a data transfer config.
 
@@ -390,7 +402,9 @@ class DataTransferServiceGrpcAsyncIOTransport(DataTransferServiceTransport):
     def list_transfer_configs(self) -> Callable[
             [datatransfer.ListTransferConfigsRequest],
             Awaitable[datatransfer.ListTransferConfigsResponse]]:
-        r"""Return a callable for the list transfer configs method over gRPC.
+        r"""Return a callable for the
+        list transfer configs
+          method over gRPC.
 
         Returns information about all data transfers in the
         project.
@@ -417,7 +431,9 @@ class DataTransferServiceGrpcAsyncIOTransport(DataTransferServiceTransport):
     def schedule_transfer_runs(self) -> Callable[
             [datatransfer.ScheduleTransferRunsRequest],
             Awaitable[datatransfer.ScheduleTransferRunsResponse]]:
-        r"""Return a callable for the schedule transfer runs method over gRPC.
+        r"""Return a callable for the
+        schedule transfer runs
+          method over gRPC.
 
         Creates transfer runs for a time range [start_time, end_time].
         For each date - or whatever granularity the data source supports
@@ -447,7 +463,9 @@ class DataTransferServiceGrpcAsyncIOTransport(DataTransferServiceTransport):
     def start_manual_transfer_runs(self) -> Callable[
             [datatransfer.StartManualTransferRunsRequest],
             Awaitable[datatransfer.StartManualTransferRunsResponse]]:
-        r"""Return a callable for the start manual transfer runs method over gRPC.
+        r"""Return a callable for the
+        start manual transfer runs
+          method over gRPC.
 
         Start manual transfer runs to be executed now with schedule_time
         equal to current time. The transfer runs can be created for a
@@ -476,7 +494,9 @@ class DataTransferServiceGrpcAsyncIOTransport(DataTransferServiceTransport):
     def get_transfer_run(self) -> Callable[
             [datatransfer.GetTransferRunRequest],
             Awaitable[transfer.TransferRun]]:
-        r"""Return a callable for the get transfer run method over gRPC.
+        r"""Return a callable for the
+        get transfer run
+          method over gRPC.
 
         Returns information about the particular transfer
         run.
@@ -503,7 +523,9 @@ class DataTransferServiceGrpcAsyncIOTransport(DataTransferServiceTransport):
     def delete_transfer_run(self) -> Callable[
             [datatransfer.DeleteTransferRunRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete transfer run method over gRPC.
+        r"""Return a callable for the
+        delete transfer run
+          method over gRPC.
 
         Deletes the specified transfer run.
 
@@ -529,7 +551,9 @@ class DataTransferServiceGrpcAsyncIOTransport(DataTransferServiceTransport):
     def list_transfer_runs(self) -> Callable[
             [datatransfer.ListTransferRunsRequest],
             Awaitable[datatransfer.ListTransferRunsResponse]]:
-        r"""Return a callable for the list transfer runs method over gRPC.
+        r"""Return a callable for the
+        list transfer runs
+          method over gRPC.
 
         Returns information about running and completed jobs.
 
@@ -555,7 +579,9 @@ class DataTransferServiceGrpcAsyncIOTransport(DataTransferServiceTransport):
     def list_transfer_logs(self) -> Callable[
             [datatransfer.ListTransferLogsRequest],
             Awaitable[datatransfer.ListTransferLogsResponse]]:
-        r"""Return a callable for the list transfer logs method over gRPC.
+        r"""Return a callable for the
+        list transfer logs
+          method over gRPC.
 
         Returns user facing log messages for the data
         transfer run.
@@ -582,7 +608,9 @@ class DataTransferServiceGrpcAsyncIOTransport(DataTransferServiceTransport):
     def check_valid_creds(self) -> Callable[
             [datatransfer.CheckValidCredsRequest],
             Awaitable[datatransfer.CheckValidCredsResponse]]:
-        r"""Return a callable for the check valid creds method over gRPC.
+        r"""Return a callable for the
+        check valid creds
+          method over gRPC.
 
         Returns true if valid credentials exist for the given
         data source and requesting user.

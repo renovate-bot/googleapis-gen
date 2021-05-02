@@ -14,11 +14,10 @@
 # limitations under the License.
 #
 
-from google.cloud.billing_v1.services.cloud_billing.client import CloudBillingClient
 from google.cloud.billing_v1.services.cloud_billing.async_client import CloudBillingAsyncClient
-from google.cloud.billing_v1.services.cloud_catalog.client import CloudCatalogClient
+from google.cloud.billing_v1.services.cloud_billing.client import CloudBillingClient
 from google.cloud.billing_v1.services.cloud_catalog.async_client import CloudCatalogAsyncClient
-
+from google.cloud.billing_v1.services.cloud_catalog.client import CloudCatalogClient
 from google.cloud.billing_v1.types.cloud_billing import BillingAccount
 from google.cloud.billing_v1.types.cloud_billing import CreateBillingAccountRequest
 from google.cloud.billing_v1.types.cloud_billing import GetBillingAccountRequest
@@ -41,11 +40,13 @@ from google.cloud.billing_v1.types.cloud_catalog import PricingInfo
 from google.cloud.billing_v1.types.cloud_catalog import Service
 from google.cloud.billing_v1.types.cloud_catalog import Sku
 
-__all__ = ('CloudBillingClient',
-    'CloudBillingAsyncClient',
-    'CloudCatalogClient',
-    'CloudCatalogAsyncClient',
+__all__ = ('AggregationInfo',
     'BillingAccount',
+    'Category',
+    'CloudBillingAsyncClient',
+    'CloudBillingClient',
+    'CloudCatalogAsyncClient',
+    'CloudCatalogClient',
     'CreateBillingAccountRequest',
     'GetBillingAccountRequest',
     'GetProjectBillingInfoRequest',
@@ -53,17 +54,15 @@ __all__ = ('CloudBillingClient',
     'ListBillingAccountsResponse',
     'ListProjectBillingInfoRequest',
     'ListProjectBillingInfoResponse',
-    'ProjectBillingInfo',
-    'UpdateBillingAccountRequest',
-    'UpdateProjectBillingInfoRequest',
-    'AggregationInfo',
-    'Category',
     'ListServicesRequest',
     'ListServicesResponse',
     'ListSkusRequest',
     'ListSkusResponse',
     'PricingExpression',
     'PricingInfo',
+    'ProjectBillingInfo',
     'Service',
     'Sku',
+    'UpdateBillingAccountRequest',
+    'UpdateProjectBillingInfoRequest',
 )

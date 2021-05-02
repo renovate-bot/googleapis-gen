@@ -169,7 +169,8 @@ class ParticipantsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.CreateParticipantRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Participants.CreateParticipant][google.cloud.dialogflow.v2.Participants.CreateParticipant].
             parent (:class:`str`):
                 Required. Resource identifier of the conversation adding
@@ -252,7 +253,8 @@ class ParticipantsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.GetParticipantRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Participants.GetParticipant][google.cloud.dialogflow.v2.Participants.GetParticipant].
             name (:class:`str`):
                 Required. The name of the participant. Format:
@@ -328,7 +330,8 @@ class ParticipantsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.ListParticipantsRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Participants.ListParticipants][google.cloud.dialogflow.v2.Participants.ListParticipants].
             parent (:class:`str`):
                 Required. The conversation to list all participants
@@ -417,7 +420,8 @@ class ParticipantsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.UpdateParticipantRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Participants.UpdateParticipant][google.cloud.dialogflow.v2.Participants.UpdateParticipant].
             participant (:class:`google.cloud.dialogflow_v2.types.Participant`):
                 Required. The participant to update.
@@ -506,7 +510,8 @@ class ParticipantsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.AnalyzeContentRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Participants.AnalyzeContent][google.cloud.dialogflow.v2.Participants.AnalyzeContent].
             participant (:class:`str`):
                 Required. The name of the participant this text comes
@@ -605,7 +610,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.SuggestArticlesRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Participants.SuggestArticles][google.cloud.dialogflow.v2.Participants.SuggestArticles].
             parent (:class:`str`):
                 Required. The name of the participant to fetch
@@ -682,7 +688,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.SuggestFaqAnswersRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Participants.SuggestFaqAnswers][google.cloud.dialogflow.v2.Participants.SuggestFaqAnswers].
             parent (:class:`str`):
                 Required. The name of the participant to fetch

@@ -16,6 +16,7 @@
 
 from .services.asset_service import AssetServiceClient
 
+from .types.asset_service import ContentType
 from .types.asset_service import CreateFeedRequest
 from .types.asset_service import DeleteFeedRequest
 from .types.asset_service import Feed
@@ -27,14 +28,14 @@ from .types.asset_service import ListFeedsResponse
 from .types.asset_service import OutputConfig
 from .types.asset_service import PubsubDestination
 from .types.asset_service import UpdateFeedRequest
-from .types.asset_service import ContentType
 from .types.assets import Asset
 from .types.assets import Resource
 from .types.assets import TemporalAsset
 from .types.assets import TimeWindow
 
 __all__ = (
-    'AssetServiceClient',
+    'Asset',
+    'ContentType',
     'CreateFeedRequest',
     'DeleteFeedRequest',
     'Feed',
@@ -45,10 +46,9 @@ __all__ = (
     'ListFeedsResponse',
     'OutputConfig',
     'PubsubDestination',
-    'UpdateFeedRequest',
-    'ContentType',
-    'Asset',
     'Resource',
     'TemporalAsset',
     'TimeWindow',
+    'UpdateFeedRequest',
+'AssetServiceClient',
 )

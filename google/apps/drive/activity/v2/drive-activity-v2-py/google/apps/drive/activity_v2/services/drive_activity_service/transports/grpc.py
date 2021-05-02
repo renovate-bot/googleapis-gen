@@ -223,7 +223,9 @@ class DriveActivityServiceGrpcTransport(DriveActivityServiceTransport):
     def query_drive_activity(self) -> Callable[
             [query_drive_activity_request.QueryDriveActivityRequest],
             query_drive_activity_response.QueryDriveActivityResponse]:
-        r"""Return a callable for the query drive activity method over gRPC.
+        r"""Return a callable for the
+        query drive activity
+          method over gRPC.
 
         Query past activity in Google Drive.
 

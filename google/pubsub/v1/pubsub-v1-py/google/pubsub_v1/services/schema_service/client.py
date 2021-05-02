@@ -338,7 +338,8 @@ class SchemaServiceClient(metaclass=SchemaServiceClientMeta):
 
         Args:
             request (google.pubsub_v1.types.CreateSchemaRequest):
-                The request object. Request for the CreateSchema method.
+                The request object.
+                Request for the CreateSchema method.
             parent (str):
                 Required. The name of the project in which to create the
                 schema. Format is ``projects/{project-id}``.
@@ -391,7 +392,7 @@ class SchemaServiceClient(metaclass=SchemaServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gp_schema.CreateSchemaRequest):
             request = gp_schema.CreateSchemaRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -435,7 +436,8 @@ class SchemaServiceClient(metaclass=SchemaServiceClientMeta):
 
         Args:
             request (google.pubsub_v1.types.GetSchemaRequest):
-                The request object. Request for the GetSchema method.
+                The request object.
+                Request for the GetSchema method.
             name (str):
                 Required. The name of the schema to get. Format is
                 ``projects/{project}/schemas/{schema}``.
@@ -467,7 +469,7 @@ class SchemaServiceClient(metaclass=SchemaServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, schema.GetSchemaRequest):
             request = schema.GetSchemaRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -507,7 +509,8 @@ class SchemaServiceClient(metaclass=SchemaServiceClientMeta):
 
         Args:
             request (google.pubsub_v1.types.ListSchemasRequest):
-                The request object. Request for the `ListSchemas`
+                The request object.
+                Request for the `ListSchemas`
                 method.
             parent (str):
                 Required. The name of the project in which to list
@@ -544,7 +547,7 @@ class SchemaServiceClient(metaclass=SchemaServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, schema.ListSchemasRequest):
             request = schema.ListSchemasRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -593,7 +596,8 @@ class SchemaServiceClient(metaclass=SchemaServiceClientMeta):
 
         Args:
             request (google.pubsub_v1.types.DeleteSchemaRequest):
-                The request object. Request for the `DeleteSchema`
+                The request object.
+                Request for the `DeleteSchema`
                 method.
             name (str):
                 Required. Name of the schema to delete. Format is
@@ -622,7 +626,7 @@ class SchemaServiceClient(metaclass=SchemaServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, schema.DeleteSchemaRequest):
             request = schema.DeleteSchemaRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -660,7 +664,8 @@ class SchemaServiceClient(metaclass=SchemaServiceClientMeta):
 
         Args:
             request (google.pubsub_v1.types.ValidateSchemaRequest):
-                The request object. Request for the `ValidateSchema`
+                The request object.
+                Request for the `ValidateSchema`
                 method.
             parent (str):
                 Required. The name of the project in which to validate
@@ -700,7 +705,7 @@ class SchemaServiceClient(metaclass=SchemaServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gp_schema.ValidateSchemaRequest):
             request = gp_schema.ValidateSchemaRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -741,7 +746,8 @@ class SchemaServiceClient(metaclass=SchemaServiceClientMeta):
 
         Args:
             request (google.pubsub_v1.types.ValidateMessageRequest):
-                The request object. Request for the `ValidateMessage`
+                The request object.
+                Request for the `ValidateMessage`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

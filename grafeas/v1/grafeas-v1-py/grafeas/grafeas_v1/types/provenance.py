@@ -136,7 +136,7 @@ class BuildProvenance(proto.Message):
     build_options = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=12,
+        number=12
     )
     builder_version = proto.Field(
         proto.STRING,
@@ -183,7 +183,7 @@ class Source(proto.Message):
     file_hashes = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=2,
+        number=2
         message='FileHashes',
     )
     context = proto.Field(
@@ -360,7 +360,7 @@ class SourceContext(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=4,
+        number=4
     )
 
 

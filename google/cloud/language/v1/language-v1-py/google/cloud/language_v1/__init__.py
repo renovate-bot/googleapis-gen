@@ -31,6 +31,7 @@ from .types.language_service import ClassifyTextRequest
 from .types.language_service import ClassifyTextResponse
 from .types.language_service import DependencyEdge
 from .types.language_service import Document
+from .types.language_service import EncodingType
 from .types.language_service import Entity
 from .types.language_service import EntityMention
 from .types.language_service import PartOfSpeech
@@ -38,10 +39,8 @@ from .types.language_service import Sentence
 from .types.language_service import Sentiment
 from .types.language_service import TextSpan
 from .types.language_service import Token
-from .types.language_service import EncodingType
 
 __all__ = (
-    'LanguageServiceClient',
     'AnalyzeEntitiesRequest',
     'AnalyzeEntitiesResponse',
     'AnalyzeEntitySentimentRequest',
@@ -57,6 +56,7 @@ __all__ = (
     'ClassifyTextResponse',
     'DependencyEdge',
     'Document',
+    'EncodingType',
     'Entity',
     'EntityMention',
     'PartOfSpeech',
@@ -64,5 +64,5 @@ __all__ = (
     'Sentiment',
     'TextSpan',
     'Token',
-    'EncodingType',
+'LanguageServiceClient',
 )

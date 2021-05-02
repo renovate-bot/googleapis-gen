@@ -334,7 +334,8 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
 
         Args:
             request (google.cloud.asset_v1p2beta1.types.CreateFeedRequest):
-                The request object. Create asset feed request.
+                The request object.
+                Create asset feed request.
             parent (str):
                 Required. The name of the
                 project/folder/organization where this
@@ -380,7 +381,7 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, asset_service.CreateFeedRequest):
             request = asset_service.CreateFeedRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -420,7 +421,8 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
 
         Args:
             request (google.cloud.asset_v1p2beta1.types.GetFeedRequest):
-                The request object. Get asset feed request.
+                The request object.
+                Get asset feed request.
             name (str):
                 Required. The name of the Feed and it must be in the
                 format of: projects/project_number/feeds/feed_id
@@ -461,7 +463,7 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, asset_service.GetFeedRequest):
             request = asset_service.GetFeedRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -502,7 +504,8 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
 
         Args:
             request (google.cloud.asset_v1p2beta1.types.ListFeedsRequest):
-                The request object. List asset feeds request.
+                The request object.
+                List asset feeds request.
             parent (str):
                 Required. The parent
                 project/folder/organization whose feeds
@@ -538,7 +541,7 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, asset_service.ListFeedsRequest):
             request = asset_service.ListFeedsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -578,7 +581,8 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
 
         Args:
             request (google.cloud.asset_v1p2beta1.types.UpdateFeedRequest):
-                The request object. Update asset feed request.
+                The request object.
+                Update asset feed request.
             feed (google.cloud.asset_v1p2beta1.types.Feed):
                 Required. The new values of feed details. It must match
                 an existing feed and the field ``name`` must be in the
@@ -620,7 +624,7 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, asset_service.UpdateFeedRequest):
             request = asset_service.UpdateFeedRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if feed is not None:
                 request.feed = feed
@@ -661,6 +665,7 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
         Args:
             request (google.cloud.asset_v1p2beta1.types.DeleteFeedRequest):
                 The request object.
+
             name (str):
                 Required. The name of the feed and it must be in the
                 format of: projects/project_number/feeds/feed_id
@@ -690,7 +695,7 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, asset_service.DeleteFeedRequest):
             request = asset_service.DeleteFeedRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

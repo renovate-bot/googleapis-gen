@@ -48,7 +48,6 @@ from .types.transfer import TransferState
 from .types.transfer import TransferType
 
 __all__ = (
-    'DataTransferServiceClient',
     'CheckValidCredsRequest',
     'CheckValidCredsResponse',
     'CreateTransferConfigRequest',
@@ -56,6 +55,7 @@ __all__ = (
     'DataSourceParameter',
     'DeleteTransferConfigRequest',
     'DeleteTransferRunRequest',
+    'EmailPreferences',
     'GetDataSourceRequest',
     'GetTransferConfigRequest',
     'GetTransferRunRequest',
@@ -67,16 +67,16 @@ __all__ = (
     'ListTransferLogsResponse',
     'ListTransferRunsRequest',
     'ListTransferRunsResponse',
+    'ScheduleOptions',
     'ScheduleTransferRunsRequest',
     'ScheduleTransferRunsResponse',
     'StartManualTransferRunsRequest',
     'StartManualTransferRunsResponse',
-    'UpdateTransferConfigRequest',
-    'EmailPreferences',
-    'ScheduleOptions',
     'TransferConfig',
     'TransferMessage',
     'TransferRun',
     'TransferState',
     'TransferType',
+    'UpdateTransferConfigRequest',
+'DataTransferServiceClient',
 )

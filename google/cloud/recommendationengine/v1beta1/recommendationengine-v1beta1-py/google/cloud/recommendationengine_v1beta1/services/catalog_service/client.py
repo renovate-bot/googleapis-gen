@@ -353,7 +353,8 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
 
         Args:
             request (google.cloud.recommendationengine_v1beta1.types.CreateCatalogItemRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 CreateCatalogItem method.
             parent (str):
                 Required. The parent catalog resource name, such as
@@ -393,7 +394,7 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, catalog_service.CreateCatalogItemRequest):
             request = catalog_service.CreateCatalogItemRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -435,7 +436,8 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
 
         Args:
             request (google.cloud.recommendationengine_v1beta1.types.GetCatalogItemRequest):
-                The request object. Request message for GetCatalogItem
+                The request object.
+                Request message for GetCatalogItem
                 method.
             name (str):
                 Required. Full resource name of catalog item, such as
@@ -470,7 +472,7 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, catalog_service.GetCatalogItemRequest):
             request = catalog_service.GetCatalogItemRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -511,7 +513,8 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
 
         Args:
             request (google.cloud.recommendationengine_v1beta1.types.ListCatalogItemsRequest):
-                The request object. Request message for ListCatalogItems
+                The request object.
+                Request message for ListCatalogItems
                 method.
             parent (str):
                 Required. The parent catalog resource name, such as
@@ -556,7 +559,7 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, catalog_service.ListCatalogItemsRequest):
             request = catalog_service.ListCatalogItemsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -610,7 +613,8 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
 
         Args:
             request (google.cloud.recommendationengine_v1beta1.types.UpdateCatalogItemRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 UpdateCatalogItem method.
             name (str):
                 Required. Full resource name of catalog item, such as
@@ -660,7 +664,7 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, catalog_service.UpdateCatalogItemRequest):
             request = catalog_service.UpdateCatalogItemRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -704,7 +708,8 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
 
         Args:
             request (google.cloud.recommendationengine_v1beta1.types.DeleteCatalogItemRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 DeleteCatalogItem method.
             name (str):
                 Required. Full resource name of catalog item, such as
@@ -733,7 +738,7 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, catalog_service.DeleteCatalogItemRequest):
             request = catalog_service.DeleteCatalogItemRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -779,7 +784,8 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
 
         Args:
             request (google.cloud.recommendationengine_v1beta1.types.ImportCatalogItemsRequest):
-                The request object. Request message for Import methods.
+                The request object.
+                Request message for Import methods.
             parent (str):
                 Required.
                 ``projects/1234/locations/global/catalogs/default_catalog``
@@ -844,7 +850,7 @@ class CatalogServiceClient(metaclass=CatalogServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, import_.ImportCatalogItemsRequest):
             request = import_.ImportCatalogItemsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent

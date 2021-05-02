@@ -975,7 +975,7 @@ class PatchInstanceFilter(proto.Message):
         labels = proto.MapField(
             proto.STRING,
             proto.STRING,
-            number=1,
+            number=1
         )
 
     all_ = proto.Field(

@@ -224,7 +224,9 @@ class CompanyServiceGrpcTransport(CompanyServiceTransport):
     def create_company(self) -> Callable[
             [company_service.CreateCompanyRequest],
             gct_company.Company]:
-        r"""Return a callable for the create company method over gRPC.
+        r"""Return a callable for the
+        create company
+          method over gRPC.
 
         Creates a new company entity.
 
@@ -250,7 +252,9 @@ class CompanyServiceGrpcTransport(CompanyServiceTransport):
     def get_company(self) -> Callable[
             [company_service.GetCompanyRequest],
             company.Company]:
-        r"""Return a callable for the get company method over gRPC.
+        r"""Return a callable for the
+        get company
+          method over gRPC.
 
         Retrieves specified company.
 
@@ -276,7 +280,9 @@ class CompanyServiceGrpcTransport(CompanyServiceTransport):
     def update_company(self) -> Callable[
             [company_service.UpdateCompanyRequest],
             gct_company.Company]:
-        r"""Return a callable for the update company method over gRPC.
+        r"""Return a callable for the
+        update company
+          method over gRPC.
 
         Updates specified company.
 
@@ -302,7 +308,9 @@ class CompanyServiceGrpcTransport(CompanyServiceTransport):
     def delete_company(self) -> Callable[
             [company_service.DeleteCompanyRequest],
             empty.Empty]:
-        r"""Return a callable for the delete company method over gRPC.
+        r"""Return a callable for the
+        delete company
+          method over gRPC.
 
         Deletes specified company.
         Prerequisite: The company has no jobs associated with
@@ -330,7 +338,9 @@ class CompanyServiceGrpcTransport(CompanyServiceTransport):
     def list_companies(self) -> Callable[
             [company_service.ListCompaniesRequest],
             company_service.ListCompaniesResponse]:
-        r"""Return a callable for the list companies method over gRPC.
+        r"""Return a callable for the
+        list companies
+          method over gRPC.
 
         Lists all companies associated with the project.
 

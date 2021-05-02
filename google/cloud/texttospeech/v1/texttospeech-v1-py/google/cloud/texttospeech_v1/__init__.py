@@ -17,26 +17,26 @@
 from .services.text_to_speech import TextToSpeechClient
 
 from .types.cloud_tts import AudioConfig
+from .types.cloud_tts import AudioEncoding
 from .types.cloud_tts import ListVoicesRequest
 from .types.cloud_tts import ListVoicesResponse
+from .types.cloud_tts import SsmlVoiceGender
 from .types.cloud_tts import SynthesisInput
 from .types.cloud_tts import SynthesizeSpeechRequest
 from .types.cloud_tts import SynthesizeSpeechResponse
 from .types.cloud_tts import Voice
 from .types.cloud_tts import VoiceSelectionParams
-from .types.cloud_tts import AudioEncoding
-from .types.cloud_tts import SsmlVoiceGender
 
 __all__ = (
-    'TextToSpeechClient',
     'AudioConfig',
+    'AudioEncoding',
     'ListVoicesRequest',
     'ListVoicesResponse',
+    'SsmlVoiceGender',
     'SynthesisInput',
     'SynthesizeSpeechRequest',
     'SynthesizeSpeechResponse',
     'Voice',
     'VoiceSelectionParams',
-    'AudioEncoding',
-    'SsmlVoiceGender',
+'TextToSpeechClient',
 )

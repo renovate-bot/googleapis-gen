@@ -224,7 +224,9 @@ class LicenseNotificationServiceGrpcAsyncIOTransport(LicenseNotificationServiceT
     def list(self) -> Callable[
             [services.LicenseNotificationListRequest],
             Awaitable[resources.LicenseNotificationList]]:
-        r"""Return a callable for the list method over gRPC.
+        r"""Return a callable for the
+        list
+          method over gRPC.
 
         Get a list of licensing notifications with regards to
         a given app.

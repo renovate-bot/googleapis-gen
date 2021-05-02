@@ -229,7 +229,9 @@ class PolicyTagManagerGrpcAsyncIOTransport(PolicyTagManagerTransport):
     def create_taxonomy(self) -> Callable[
             [policytagmanager.CreateTaxonomyRequest],
             Awaitable[policytagmanager.Taxonomy]]:
-        r"""Return a callable for the create taxonomy method over gRPC.
+        r"""Return a callable for the
+        create taxonomy
+          method over gRPC.
 
         Creates a taxonomy in the specified project.
 
@@ -255,7 +257,9 @@ class PolicyTagManagerGrpcAsyncIOTransport(PolicyTagManagerTransport):
     def delete_taxonomy(self) -> Callable[
             [policytagmanager.DeleteTaxonomyRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete taxonomy method over gRPC.
+        r"""Return a callable for the
+        delete taxonomy
+          method over gRPC.
 
         Deletes a taxonomy. This operation will also delete
         all policy tags in this taxonomy along with their
@@ -283,7 +287,9 @@ class PolicyTagManagerGrpcAsyncIOTransport(PolicyTagManagerTransport):
     def update_taxonomy(self) -> Callable[
             [policytagmanager.UpdateTaxonomyRequest],
             Awaitable[policytagmanager.Taxonomy]]:
-        r"""Return a callable for the update taxonomy method over gRPC.
+        r"""Return a callable for the
+        update taxonomy
+          method over gRPC.
 
         Updates a taxonomy.
 
@@ -309,7 +315,9 @@ class PolicyTagManagerGrpcAsyncIOTransport(PolicyTagManagerTransport):
     def list_taxonomies(self) -> Callable[
             [policytagmanager.ListTaxonomiesRequest],
             Awaitable[policytagmanager.ListTaxonomiesResponse]]:
-        r"""Return a callable for the list taxonomies method over gRPC.
+        r"""Return a callable for the
+        list taxonomies
+          method over gRPC.
 
         Lists all taxonomies in a project in a particular
         location that the caller has permission to view.
@@ -336,7 +344,9 @@ class PolicyTagManagerGrpcAsyncIOTransport(PolicyTagManagerTransport):
     def get_taxonomy(self) -> Callable[
             [policytagmanager.GetTaxonomyRequest],
             Awaitable[policytagmanager.Taxonomy]]:
-        r"""Return a callable for the get taxonomy method over gRPC.
+        r"""Return a callable for the
+        get taxonomy
+          method over gRPC.
 
         Gets a taxonomy.
 
@@ -362,7 +372,9 @@ class PolicyTagManagerGrpcAsyncIOTransport(PolicyTagManagerTransport):
     def create_policy_tag(self) -> Callable[
             [policytagmanager.CreatePolicyTagRequest],
             Awaitable[policytagmanager.PolicyTag]]:
-        r"""Return a callable for the create policy tag method over gRPC.
+        r"""Return a callable for the
+        create policy tag
+          method over gRPC.
 
         Creates a policy tag in the specified taxonomy.
 
@@ -388,7 +400,9 @@ class PolicyTagManagerGrpcAsyncIOTransport(PolicyTagManagerTransport):
     def delete_policy_tag(self) -> Callable[
             [policytagmanager.DeletePolicyTagRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete policy tag method over gRPC.
+        r"""Return a callable for the
+        delete policy tag
+          method over gRPC.
 
         Deletes a policy tag. Also deletes all of its
         descendant policy tags.
@@ -415,7 +429,9 @@ class PolicyTagManagerGrpcAsyncIOTransport(PolicyTagManagerTransport):
     def update_policy_tag(self) -> Callable[
             [policytagmanager.UpdatePolicyTagRequest],
             Awaitable[policytagmanager.PolicyTag]]:
-        r"""Return a callable for the update policy tag method over gRPC.
+        r"""Return a callable for the
+        update policy tag
+          method over gRPC.
 
         Updates a policy tag.
 
@@ -441,7 +457,9 @@ class PolicyTagManagerGrpcAsyncIOTransport(PolicyTagManagerTransport):
     def list_policy_tags(self) -> Callable[
             [policytagmanager.ListPolicyTagsRequest],
             Awaitable[policytagmanager.ListPolicyTagsResponse]]:
-        r"""Return a callable for the list policy tags method over gRPC.
+        r"""Return a callable for the
+        list policy tags
+          method over gRPC.
 
         Lists all policy tags in a taxonomy.
 
@@ -467,7 +485,9 @@ class PolicyTagManagerGrpcAsyncIOTransport(PolicyTagManagerTransport):
     def get_policy_tag(self) -> Callable[
             [policytagmanager.GetPolicyTagRequest],
             Awaitable[policytagmanager.PolicyTag]]:
-        r"""Return a callable for the get policy tag method over gRPC.
+        r"""Return a callable for the
+        get policy tag
+          method over gRPC.
 
         Gets a policy tag.
 
@@ -493,7 +513,9 @@ class PolicyTagManagerGrpcAsyncIOTransport(PolicyTagManagerTransport):
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
             Awaitable[giv_policy.Policy]]:
-        r"""Return a callable for the get iam policy method over gRPC.
+        r"""Return a callable for the
+        get iam policy
+          method over gRPC.
 
         Gets the IAM policy for a taxonomy or a policy tag.
 
@@ -519,7 +541,9 @@ class PolicyTagManagerGrpcAsyncIOTransport(PolicyTagManagerTransport):
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
             Awaitable[giv_policy.Policy]]:
-        r"""Return a callable for the set iam policy method over gRPC.
+        r"""Return a callable for the
+        set iam policy
+          method over gRPC.
 
         Sets the IAM policy for a taxonomy or a policy tag.
 
@@ -545,7 +569,9 @@ class PolicyTagManagerGrpcAsyncIOTransport(PolicyTagManagerTransport):
     def test_iam_permissions(self) -> Callable[
             [iam_policy.TestIamPermissionsRequest],
             Awaitable[iam_policy.TestIamPermissionsResponse]]:
-        r"""Return a callable for the test iam permissions method over gRPC.
+        r"""Return a callable for the
+        test iam permissions
+          method over gRPC.
 
         Returns the permissions that a caller has on the
         specified taxonomy or policy tag.

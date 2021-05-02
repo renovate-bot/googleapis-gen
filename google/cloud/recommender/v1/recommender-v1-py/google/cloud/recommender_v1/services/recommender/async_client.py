@@ -173,7 +173,8 @@ class RecommenderAsyncClient:
 
         Args:
             request (:class:`google.cloud.recommender_v1.types.ListInsightsRequest`):
-                The request object. Request for the `ListInsights`
+                The request object.
+                Request for the `ListInsights`
                 method.
             parent (:class:`str`):
                 Required. The container resource on which to execute the
@@ -276,7 +277,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.recommender_v1.types.GetInsightRequest`):
-                The request object. Request to the `GetInsight` method.
+                The request object.
+                Request to the `GetInsight` method.
             name (:class:`str`):
                 Required. Name of the insight.
                 This corresponds to the ``name`` field
@@ -366,7 +368,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.recommender_v1.types.MarkInsightAcceptedRequest`):
-                The request object. Request for the
+                The request object.
+                Request for the
                 `MarkInsightAccepted` method.
             name (:class:`str`):
                 Required. Name of the insight.
@@ -462,7 +465,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.recommender_v1.types.ListRecommendationsRequest`):
-                The request object. Request for the
+                The request object.
+                Request for the
                 `ListRecommendations` method.
             parent (:class:`str`):
                 Required. The container resource on which to execute the
@@ -576,7 +580,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.recommender_v1.types.GetRecommendationRequest`):
-                The request object. Request to the `GetRecommendation`
+                The request object.
+                Request to the `GetRecommendation`
                 method.
             name (:class:`str`):
                 Required. Name of the recommendation.
@@ -670,7 +675,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.recommender_v1.types.MarkRecommendationClaimedRequest`):
-                The request object. Request for the
+                The request object.
+                Request for the
                 `MarkRecommendationClaimed` Method.
             name (:class:`str`):
                 Required. Name of the recommendation.
@@ -779,7 +785,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.recommender_v1.types.MarkRecommendationSucceededRequest`):
-                The request object. Request for the
+                The request object.
+                Request for the
                 `MarkRecommendationSucceeded` Method.
             name (:class:`str`):
                 Required. Name of the recommendation.
@@ -888,7 +895,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.recommender_v1.types.MarkRecommendationFailedRequest`):
-                The request object. Request for the
+                The request object.
+                Request for the
                 `MarkRecommendationFailed` Method.
             name (:class:`str`):
                 Required. Name of the recommendation.

@@ -346,7 +346,8 @@ class UptimeCheckServiceClient(metaclass=UptimeCheckServiceClientMeta):
 
         Args:
             request (google.cloud.monitoring_v3.types.ListUptimeCheckConfigsRequest):
-                The request object. The protocol for the
+                The request object.
+                The protocol for the
                 `ListUptimeCheckConfigs` request.
             parent (str):
                 Required. The project whose Uptime check configurations
@@ -387,7 +388,7 @@ class UptimeCheckServiceClient(metaclass=UptimeCheckServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, uptime_service.ListUptimeCheckConfigsRequest):
             request = uptime_service.ListUptimeCheckConfigsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -436,7 +437,8 @@ class UptimeCheckServiceClient(metaclass=UptimeCheckServiceClientMeta):
 
         Args:
             request (google.cloud.monitoring_v3.types.GetUptimeCheckConfigRequest):
-                The request object. The protocol for the
+                The request object.
+                The protocol for the
                 `GetUptimeCheckConfig` request.
             name (str):
                 Required. The Uptime check configuration to retrieve.
@@ -476,7 +478,7 @@ class UptimeCheckServiceClient(metaclass=UptimeCheckServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, uptime_service.GetUptimeCheckConfigRequest):
             request = uptime_service.GetUptimeCheckConfigRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -517,7 +519,8 @@ class UptimeCheckServiceClient(metaclass=UptimeCheckServiceClientMeta):
 
         Args:
             request (google.cloud.monitoring_v3.types.CreateUptimeCheckConfigRequest):
-                The request object. The protocol for the
+                The request object.
+                The protocol for the
                 `CreateUptimeCheckConfig` request.
             parent (str):
                 Required. The project in which to create the Uptime
@@ -564,7 +567,7 @@ class UptimeCheckServiceClient(metaclass=UptimeCheckServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, uptime_service.CreateUptimeCheckConfigRequest):
             request = uptime_service.CreateUptimeCheckConfigRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -610,7 +613,8 @@ class UptimeCheckServiceClient(metaclass=UptimeCheckServiceClientMeta):
 
         Args:
             request (google.cloud.monitoring_v3.types.UpdateUptimeCheckConfigRequest):
-                The request object. The protocol for the
+                The request object.
+                The protocol for the
                 `UpdateUptimeCheckConfig` request.
             uptime_check_config (google.cloud.monitoring_v3.types.UptimeCheckConfig):
                 Required. If an ``updateMask`` has been specified, this
@@ -657,7 +661,7 @@ class UptimeCheckServiceClient(metaclass=UptimeCheckServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, uptime_service.UpdateUptimeCheckConfigRequest):
             request = uptime_service.UpdateUptimeCheckConfigRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if uptime_check_config is not None:
                 request.uptime_check_config = uptime_check_config
@@ -700,7 +704,8 @@ class UptimeCheckServiceClient(metaclass=UptimeCheckServiceClientMeta):
 
         Args:
             request (google.cloud.monitoring_v3.types.DeleteUptimeCheckConfigRequest):
-                The request object. The protocol for the
+                The request object.
+                The protocol for the
                 `DeleteUptimeCheckConfig` request.
             name (str):
                 Required. The Uptime check configuration to delete. The
@@ -733,7 +738,7 @@ class UptimeCheckServiceClient(metaclass=UptimeCheckServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, uptime_service.DeleteUptimeCheckConfigRequest):
             request = uptime_service.DeleteUptimeCheckConfigRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -770,7 +775,8 @@ class UptimeCheckServiceClient(metaclass=UptimeCheckServiceClientMeta):
 
         Args:
             request (google.cloud.monitoring_v3.types.ListUptimeCheckIpsRequest):
-                The request object. The protocol for the
+                The request object.
+                The protocol for the
                 `ListUptimeCheckIps` request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

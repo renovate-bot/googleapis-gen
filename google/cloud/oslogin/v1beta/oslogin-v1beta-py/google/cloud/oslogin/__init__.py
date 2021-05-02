@@ -14,9 +14,8 @@
 # limitations under the License.
 #
 
-from google.cloud.oslogin_v1beta.services.os_login_service.client import OsLoginServiceClient
 from google.cloud.oslogin_v1beta.services.os_login_service.async_client import OsLoginServiceAsyncClient
-
+from google.cloud.oslogin_v1beta.services.os_login_service.client import OsLoginServiceClient
 from google.cloud.oslogin_v1beta.types.oslogin import DeletePosixAccountRequest
 from google.cloud.oslogin_v1beta.types.oslogin import DeleteSshPublicKeyRequest
 from google.cloud.oslogin_v1beta.types.oslogin import GetLoginProfileRequest
@@ -26,14 +25,14 @@ from google.cloud.oslogin_v1beta.types.oslogin import ImportSshPublicKeyResponse
 from google.cloud.oslogin_v1beta.types.oslogin import LoginProfile
 from google.cloud.oslogin_v1beta.types.oslogin import UpdateSshPublicKeyRequest
 
-__all__ = ('OsLoginServiceClient',
-    'OsLoginServiceAsyncClient',
-    'DeletePosixAccountRequest',
+__all__ = ('DeletePosixAccountRequest',
     'DeleteSshPublicKeyRequest',
     'GetLoginProfileRequest',
     'GetSshPublicKeyRequest',
     'ImportSshPublicKeyRequest',
     'ImportSshPublicKeyResponse',
     'LoginProfile',
+    'OsLoginServiceAsyncClient',
+    'OsLoginServiceClient',
     'UpdateSshPublicKeyRequest',
 )

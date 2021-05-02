@@ -180,7 +180,8 @@ class DatabaseAdminAsyncClient:
 
         Args:
             request (:class:`google.cloud.spanner_admin_database_v1.types.ListDatabasesRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [ListDatabases][google.spanner.admin.database.v1.DatabaseAdmin.ListDatabases].
             parent (:class:`str`):
                 Required. The instance whose databases should be listed.
@@ -285,7 +286,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.spanner_admin_database_v1.types.CreateDatabaseRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [CreateDatabase][google.spanner.admin.database.v1.DatabaseAdmin.CreateDatabase].
             parent (:class:`str`):
                 Required. The name of the instance that will serve the
@@ -386,7 +388,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.spanner_admin_database_v1.types.GetDatabaseRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [GetDatabase][google.spanner.admin.database.v1.DatabaseAdmin.GetDatabase].
             name (:class:`str`):
                 Required. The name of the requested database. Values are
@@ -476,7 +479,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.spanner_admin_database_v1.types.UpdateDatabaseDdlRequest`):
-                The request object. Enqueues the given DDL statements to
+                The request object.
+                Enqueues the given DDL statements to
                 be applied, in order but not necessarily all at once, to
                 the database schema at some point (or points) in the
                 future. The server checks that the statements are
@@ -605,7 +609,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.spanner_admin_database_v1.types.DropDatabaseRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [DropDatabase][google.spanner.admin.database.v1.DatabaseAdmin.DropDatabase].
             database (:class:`str`):
                 Required. The database to be dropped.
@@ -679,7 +684,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.spanner_admin_database_v1.types.GetDatabaseDdlRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [GetDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.GetDatabaseDdl].
             database (:class:`str`):
                 Required. The database whose schema we wish to get.
@@ -770,7 +776,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.SetIamPolicyRequest`):
-                The request object. Request message for `SetIamPolicy`
+                The request object.
+                Request message for `SetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -909,7 +916,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.GetIamPolicyRequest`):
-                The request object. Request message for `GetIamPolicy`
+                The request object.
+                Request message for `GetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -1056,7 +1064,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `TestIamPermissions` method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -1154,7 +1163,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.spanner_admin_database_v1.types.CreateBackupRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup].
             parent (:class:`str`):
                 Required. The name of the instance in which the backup
@@ -1264,7 +1274,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.spanner_admin_database_v1.types.GetBackupRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [GetBackup][google.spanner.admin.database.v1.DatabaseAdmin.GetBackup].
             name (:class:`str`):
                 Required. Name of the backup. Values are of the form
@@ -1346,7 +1357,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.spanner_admin_database_v1.types.UpdateBackupRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [UpdateBackup][google.spanner.admin.database.v1.DatabaseAdmin.UpdateBackup].
             backup (:class:`google.cloud.spanner_admin_database_v1.types.Backup`):
                 Required. The backup to update. ``backup.name``, and the
@@ -1445,7 +1457,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.spanner_admin_database_v1.types.DeleteBackupRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [DeleteBackup][google.spanner.admin.database.v1.DatabaseAdmin.DeleteBackup].
             name (:class:`str`):
                 Required. Name of the backup to delete. Values are of
@@ -1521,7 +1534,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.spanner_admin_database_v1.types.ListBackupsRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [ListBackups][google.spanner.admin.database.v1.DatabaseAdmin.ListBackups].
             parent (:class:`str`):
                 Required. The instance to list backups from. Values are
@@ -1635,7 +1649,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.spanner_admin_database_v1.types.RestoreDatabaseRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [RestoreDatabase][google.spanner.admin.database.v1.DatabaseAdmin.RestoreDatabase].
             parent (:class:`str`):
                 Required. The name of the instance in which to create
@@ -1755,7 +1770,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.spanner_admin_database_v1.types.ListDatabaseOperationsRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [ListDatabaseOperations][google.spanner.admin.database.v1.DatabaseAdmin.ListDatabaseOperations].
             parent (:class:`str`):
                 Required. The instance of the database operations.
@@ -1861,7 +1877,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.spanner_admin_database_v1.types.ListBackupOperationsRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [ListBackupOperations][google.spanner.admin.database.v1.DatabaseAdmin.ListBackupOperations].
             parent (:class:`str`):
                 Required. The instance of the backup operations. Values

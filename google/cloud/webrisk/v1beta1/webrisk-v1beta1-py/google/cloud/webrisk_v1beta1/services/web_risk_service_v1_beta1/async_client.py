@@ -157,7 +157,8 @@ class WebRiskServiceV1Beta1AsyncClient:
 
         Args:
             request (:class:`google.cloud.webrisk_v1beta1.types.ComputeThreatListDiffRequest`):
-                The request object. Describes an API diff request.
+                The request object.
+                Describes an API diff request.
             threat_type (:class:`google.cloud.webrisk_v1beta1.types.ThreatType`):
                 The ThreatList to update.
                 This corresponds to the ``threat_type`` field
@@ -248,7 +249,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.webrisk_v1beta1.types.SearchUrisRequest`):
-                The request object. Request to check URI entries against
+                The request object.
+                Request to check URI entries against
                 threatLists.
             uri (:class:`str`):
                 Required. The URI to be checked for
@@ -335,7 +337,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.webrisk_v1beta1.types.SearchHashesRequest`):
-                The request object. Request to return full hashes
+                The request object.
+                Request to return full hashes
                 matched by the provided hash prefixes.
             hash_prefix (:class:`bytes`):
                 A hash prefix, consisting of the most

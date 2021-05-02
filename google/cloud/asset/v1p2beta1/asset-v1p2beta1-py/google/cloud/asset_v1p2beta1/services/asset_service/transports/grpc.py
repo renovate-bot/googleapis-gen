@@ -221,7 +221,9 @@ class AssetServiceGrpcTransport(AssetServiceTransport):
     def create_feed(self) -> Callable[
             [asset_service.CreateFeedRequest],
             asset_service.Feed]:
-        r"""Return a callable for the create feed method over gRPC.
+        r"""Return a callable for the
+        create feed
+          method over gRPC.
 
         Creates a feed in a parent
         project/folder/organization to listen to its asset
@@ -249,7 +251,9 @@ class AssetServiceGrpcTransport(AssetServiceTransport):
     def get_feed(self) -> Callable[
             [asset_service.GetFeedRequest],
             asset_service.Feed]:
-        r"""Return a callable for the get feed method over gRPC.
+        r"""Return a callable for the
+        get feed
+          method over gRPC.
 
         Gets details about an asset feed.
 
@@ -275,7 +279,9 @@ class AssetServiceGrpcTransport(AssetServiceTransport):
     def list_feeds(self) -> Callable[
             [asset_service.ListFeedsRequest],
             asset_service.ListFeedsResponse]:
-        r"""Return a callable for the list feeds method over gRPC.
+        r"""Return a callable for the
+        list feeds
+          method over gRPC.
 
         Lists all asset feeds in a parent
         project/folder/organization.
@@ -302,7 +308,9 @@ class AssetServiceGrpcTransport(AssetServiceTransport):
     def update_feed(self) -> Callable[
             [asset_service.UpdateFeedRequest],
             asset_service.Feed]:
-        r"""Return a callable for the update feed method over gRPC.
+        r"""Return a callable for the
+        update feed
+          method over gRPC.
 
         Updates an asset feed configuration.
 
@@ -328,7 +336,9 @@ class AssetServiceGrpcTransport(AssetServiceTransport):
     def delete_feed(self) -> Callable[
             [asset_service.DeleteFeedRequest],
             empty.Empty]:
-        r"""Return a callable for the delete feed method over gRPC.
+        r"""Return a callable for the
+        delete feed
+          method over gRPC.
 
         Deletes an asset feed.
 

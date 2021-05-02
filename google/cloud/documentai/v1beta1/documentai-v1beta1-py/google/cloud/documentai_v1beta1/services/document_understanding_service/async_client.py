@@ -157,7 +157,8 @@ class DocumentUnderstandingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.documentai_v1beta1.types.BatchProcessDocumentsRequest`):
-                The request object. Request to batch process documents
+                The request object.
+                Request to batch process documents
                 as an asynchronous operation.
             requests (:class:`Sequence[google.cloud.documentai_v1beta1.types.ProcessDocumentRequest]`):
                 Required. Individual requests for

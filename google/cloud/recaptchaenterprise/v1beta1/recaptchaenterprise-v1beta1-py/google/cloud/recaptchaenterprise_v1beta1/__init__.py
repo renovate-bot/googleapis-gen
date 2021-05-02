@@ -34,7 +34,6 @@ from .types.recaptchaenterprise import UpdateKeyRequest
 from .types.recaptchaenterprise import WebKeySettings
 
 __all__ = (
-    'RecaptchaEnterpriseServiceV1Beta1Client',
     'AndroidKeySettings',
     'AnnotateAssessmentRequest',
     'AnnotateAssessmentResponse',
@@ -51,4 +50,5 @@ __all__ = (
     'TokenProperties',
     'UpdateKeyRequest',
     'WebKeySettings',
+'RecaptchaEnterpriseServiceV1Beta1Client',
 )

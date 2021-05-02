@@ -633,7 +633,7 @@ class Row(proto.Message):
     values = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=2,
+        number=2
         message=struct.Value,
     )
 

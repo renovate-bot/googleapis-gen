@@ -158,7 +158,8 @@ class AutoscalingPolicyServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dataproc_v1beta2.types.CreateAutoscalingPolicyRequest`):
-                The request object. A request to create an autoscaling
+                The request object.
+                A request to create an autoscaling
                 policy.
             parent (:class:`str`):
                 Required. The "resource name" of the region or location,
@@ -255,7 +256,8 @@ class AutoscalingPolicyServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dataproc_v1beta2.types.UpdateAutoscalingPolicyRequest`):
-                The request object. A request to update an autoscaling
+                The request object.
+                A request to update an autoscaling
                 policy.
             policy_ (:class:`google.cloud.dataproc_v1beta2.types.AutoscalingPolicy`):
                 Required. The updated autoscaling
@@ -337,7 +339,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1beta2.types.GetAutoscalingPolicyRequest`):
-                The request object. A request to fetch an autoscaling
+                The request object.
+                A request to fetch an autoscaling
                 policy.
             name (:class:`str`):
                 Required. The "resource name" of the autoscaling policy,
@@ -429,7 +432,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1beta2.types.ListAutoscalingPoliciesRequest`):
-                The request object. A request to list autoscaling
+                The request object.
+                A request to list autoscaling
                 policies in a project.
             parent (:class:`str`):
                 Required. The "resource name" of the region or location,
@@ -535,7 +539,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1beta2.types.DeleteAutoscalingPolicyRequest`):
-                The request object. A request to delete an autoscaling
+                The request object.
+                A request to delete an autoscaling
                 policy.
                 Autoscaling policies in use by one or more clusters will
                 not be deleted.

@@ -159,7 +159,8 @@ class EssentialContactsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.essentialcontacts_v1.types.CreateContactRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 CreateContact method.
             parent (:class:`str`):
                 Required. The resource to save this contact for. Format:
@@ -247,7 +248,8 @@ class EssentialContactsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.essentialcontacts_v1.types.UpdateContactRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 UpdateContact method.
             contact (:class:`google.cloud.essentialcontacts_v1.types.Contact`):
                 Required. The contact resource to
@@ -334,7 +336,8 @@ class EssentialContactsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.essentialcontacts_v1.types.ListContactsRequest`):
-                The request object. Request message for the ListContacts
+                The request object.
+                Request message for the ListContacts
                 method.
             parent (:class:`str`):
                 Required. The parent resource name. Format:
@@ -428,7 +431,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.essentialcontacts_v1.types.GetContactRequest`):
-                The request object. Request message for the GetContact
+                The request object.
+                Request message for the GetContact
                 method.
             name (:class:`str`):
                 Required. The name of the contact to retrieve. Format:
@@ -511,7 +515,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.essentialcontacts_v1.types.DeleteContactRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 DeleteContact method.
             name (:class:`str`):
                 Required. The name of the contact to delete. Format:
@@ -580,7 +585,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.essentialcontacts_v1.types.ComputeContactsRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 ComputeContacts method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -648,7 +654,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.essentialcontacts_v1.types.SendTestMessageRequest`):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 SendTestMessage method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

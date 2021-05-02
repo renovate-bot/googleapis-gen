@@ -330,7 +330,8 @@ class PartitionAssignmentServiceClient(metaclass=PartitionAssignmentServiceClien
 
         Args:
             requests (Iterator[google.cloud.pubsublite_v1.types.PartitionAssignmentRequest]):
-                The request object iterator. A request on the PartitionAssignment
+                The request object iterator.
+                A request on the PartitionAssignment
                 stream.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

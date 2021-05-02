@@ -14,12 +14,12 @@
 # limitations under the License.
 #
 
-from google.cloud.functions_v1.services.cloud_functions_service.client import CloudFunctionsServiceClient
 from google.cloud.functions_v1.services.cloud_functions_service.async_client import CloudFunctionsServiceAsyncClient
-
+from google.cloud.functions_v1.services.cloud_functions_service.client import CloudFunctionsServiceClient
 from google.cloud.functions_v1.types.functions import CallFunctionRequest
 from google.cloud.functions_v1.types.functions import CallFunctionResponse
 from google.cloud.functions_v1.types.functions import CloudFunction
+from google.cloud.functions_v1.types.functions import CloudFunctionStatus
 from google.cloud.functions_v1.types.functions import CreateFunctionRequest
 from google.cloud.functions_v1.types.functions import DeleteFunctionRequest
 from google.cloud.functions_v1.types.functions import EventTrigger
@@ -34,15 +34,15 @@ from google.cloud.functions_v1.types.functions import ListFunctionsRequest
 from google.cloud.functions_v1.types.functions import ListFunctionsResponse
 from google.cloud.functions_v1.types.functions import SourceRepository
 from google.cloud.functions_v1.types.functions import UpdateFunctionRequest
-from google.cloud.functions_v1.types.functions import CloudFunctionStatus
 from google.cloud.functions_v1.types.operations import OperationMetadataV1
 from google.cloud.functions_v1.types.operations import OperationType
 
-__all__ = ('CloudFunctionsServiceClient',
-    'CloudFunctionsServiceAsyncClient',
-    'CallFunctionRequest',
+__all__ = ('CallFunctionRequest',
     'CallFunctionResponse',
     'CloudFunction',
+    'CloudFunctionStatus',
+    'CloudFunctionsServiceAsyncClient',
+    'CloudFunctionsServiceClient',
     'CreateFunctionRequest',
     'DeleteFunctionRequest',
     'EventTrigger',
@@ -55,9 +55,8 @@ __all__ = ('CloudFunctionsServiceClient',
     'HttpsTrigger',
     'ListFunctionsRequest',
     'ListFunctionsResponse',
-    'SourceRepository',
-    'UpdateFunctionRequest',
-    'CloudFunctionStatus',
     'OperationMetadataV1',
     'OperationType',
+    'SourceRepository',
+    'UpdateFunctionRequest',
 )

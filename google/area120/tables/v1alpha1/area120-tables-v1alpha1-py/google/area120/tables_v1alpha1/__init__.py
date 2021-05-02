@@ -39,11 +39,10 @@ from .types.tables import RelationshipDetails
 from .types.tables import Row
 from .types.tables import Table
 from .types.tables import UpdateRowRequest
-from .types.tables import Workspace
 from .types.tables import View
+from .types.tables import Workspace
 
 __all__ = (
-    'TablesServiceClient',
     'BatchCreateRowsRequest',
     'BatchCreateRowsResponse',
     'BatchDeleteRowsRequest',
@@ -67,6 +66,7 @@ __all__ = (
     'Row',
     'Table',
     'UpdateRowRequest',
-    'Workspace',
     'View',
+    'Workspace',
+'TablesServiceClient',
 )

@@ -76,7 +76,7 @@ class HistogramQueryResult(proto.Message):
     histogram = proto.MapField(
         proto.STRING,
         proto.INT64,
-        number=2,
+        number=2
     )
 
 

@@ -285,7 +285,7 @@ class StaticFilesHandler(proto.Message):
     http_headers = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=3,
+        number=3
     )
     mime_type = proto.Field(
         proto.STRING,

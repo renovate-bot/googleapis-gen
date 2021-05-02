@@ -157,7 +157,8 @@ class AuthorizedDomainsAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.ListAuthorizedDomainsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `AuthorizedDomains.ListAuthorizedDomains`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

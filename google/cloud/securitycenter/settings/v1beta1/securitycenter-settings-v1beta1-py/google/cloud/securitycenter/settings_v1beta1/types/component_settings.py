@@ -120,7 +120,7 @@ class ComponentSettings(proto.Message):
     detector_settings = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=4,
+        number=4
         message=DetectorSettings,
     )
     etag = proto.Field(

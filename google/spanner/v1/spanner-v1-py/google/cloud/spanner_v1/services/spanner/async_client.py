@@ -185,7 +185,8 @@ class SpannerAsyncClient:
 
         Args:
             request (:class:`google.cloud.spanner_v1.types.CreateSessionRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [CreateSession][google.spanner.v1.Spanner.CreateSession].
             database (:class:`str`):
                 Required. The database in which the
@@ -268,7 +269,8 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
 
         Args:
             request (:class:`google.cloud.spanner_v1.types.BatchCreateSessionsRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [BatchCreateSessions][google.spanner.v1.Spanner.BatchCreateSessions].
             database (:class:`str`):
                 Required. The database in which the
@@ -365,7 +367,8 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
 
         Args:
             request (:class:`google.cloud.spanner_v1.types.GetSessionRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [GetSession][google.spanner.v1.Spanner.GetSession].
             name (:class:`str`):
                 Required. The name of the session to
@@ -444,7 +447,8 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
 
         Args:
             request (:class:`google.cloud.spanner_v1.types.ListSessionsRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [ListSessions][google.spanner.v1.Spanner.ListSessions].
             database (:class:`str`):
                 Required. The database in which to
@@ -539,7 +543,8 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
 
         Args:
             request (:class:`google.cloud.spanner_v1.types.DeleteSessionRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [DeleteSession][google.spanner.v1.Spanner.DeleteSession].
             name (:class:`str`):
                 Required. The name of the session to
@@ -623,7 +628,8 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
 
         Args:
             request (:class:`google.cloud.spanner_v1.types.ExecuteSqlRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql] and
                 [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -690,7 +696,8 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
 
         Args:
             request (:class:`google.cloud.spanner_v1.types.ExecuteSqlRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql] and
                 [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -762,7 +769,8 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
 
         Args:
             request (:class:`google.cloud.spanner_v1.types.ExecuteBatchDmlRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [ExecuteBatchDml][google.spanner.v1.Spanner.ExecuteBatchDml].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -874,7 +882,8 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
 
         Args:
             request (:class:`google.cloud.spanner_v1.types.ReadRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [Read][google.spanner.v1.Spanner.Read] and
                 [StreamingRead][google.spanner.v1.Spanner.StreamingRead].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -941,7 +950,8 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
 
         Args:
             request (:class:`google.cloud.spanner_v1.types.ReadRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [Read][google.spanner.v1.Spanner.Read] and
                 [StreamingRead][google.spanner.v1.Spanner.StreamingRead].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1006,7 +1016,8 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
 
         Args:
             request (:class:`google.cloud.spanner_v1.types.BeginTransactionRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [BeginTransaction][google.spanner.v1.Spanner.BeginTransaction].
             session (:class:`str`):
                 Required. The session in which the
@@ -1112,7 +1123,8 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
 
         Args:
             request (:class:`google.cloud.spanner_v1.types.CommitRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [Commit][google.spanner.v1.Spanner.Commit].
             session (:class:`str`):
                 Required. The session in which the
@@ -1240,7 +1252,8 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
 
         Args:
             request (:class:`google.cloud.spanner_v1.types.RollbackRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [Rollback][google.spanner.v1.Spanner.Rollback].
             session (:class:`str`):
                 Required. The session in which the
@@ -1333,7 +1346,8 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
 
         Args:
             request (:class:`google.cloud.spanner_v1.types.PartitionQueryRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [PartitionQuery][google.spanner.v1.Spanner.PartitionQuery]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1411,7 +1425,8 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
 
         Args:
             request (:class:`google.cloud.spanner_v1.types.PartitionReadRequest`):
-                The request object. The request for
+                The request object.
+                The request for
                 [PartitionRead][google.spanner.v1.Spanner.PartitionRead]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

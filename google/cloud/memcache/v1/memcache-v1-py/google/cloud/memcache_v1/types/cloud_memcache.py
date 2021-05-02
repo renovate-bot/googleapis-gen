@@ -240,7 +240,7 @@ class Instance(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=3,
+        number=3
     )
     authorized_network = proto.Field(
         proto.STRING,
@@ -583,7 +583,7 @@ class MemcacheParameters(proto.Message):
     params = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=3,
+        number=3
     )
 
 

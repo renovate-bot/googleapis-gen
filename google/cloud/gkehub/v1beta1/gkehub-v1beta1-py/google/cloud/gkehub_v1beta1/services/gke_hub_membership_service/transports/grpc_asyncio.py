@@ -246,7 +246,9 @@ class GkeHubMembershipServiceGrpcAsyncIOTransport(GkeHubMembershipServiceTranspo
     def list_memberships(self) -> Callable[
             [membership.ListMembershipsRequest],
             Awaitable[membership.ListMembershipsResponse]]:
-        r"""Return a callable for the list memberships method over gRPC.
+        r"""Return a callable for the
+        list memberships
+          method over gRPC.
 
         Lists Memberships in a given project and location.
 
@@ -272,7 +274,9 @@ class GkeHubMembershipServiceGrpcAsyncIOTransport(GkeHubMembershipServiceTranspo
     def get_membership(self) -> Callable[
             [membership.GetMembershipRequest],
             Awaitable[membership.Membership]]:
-        r"""Return a callable for the get membership method over gRPC.
+        r"""Return a callable for the
+        get membership
+          method over gRPC.
 
         Gets the details of a Membership.
 
@@ -298,7 +302,9 @@ class GkeHubMembershipServiceGrpcAsyncIOTransport(GkeHubMembershipServiceTranspo
     def create_membership(self) -> Callable[
             [membership.CreateMembershipRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the create membership method over gRPC.
+        r"""Return a callable for the
+        create membership
+          method over gRPC.
 
         Adds a new Membership.
 
@@ -324,7 +330,9 @@ class GkeHubMembershipServiceGrpcAsyncIOTransport(GkeHubMembershipServiceTranspo
     def delete_membership(self) -> Callable[
             [membership.DeleteMembershipRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the delete membership method over gRPC.
+        r"""Return a callable for the
+        delete membership
+          method over gRPC.
 
         Removes a Membership.
 
@@ -350,7 +358,9 @@ class GkeHubMembershipServiceGrpcAsyncIOTransport(GkeHubMembershipServiceTranspo
     def update_membership(self) -> Callable[
             [membership.UpdateMembershipRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the update membership method over gRPC.
+        r"""Return a callable for the
+        update membership
+          method over gRPC.
 
         Updates an existing Membership.
 
@@ -376,7 +386,9 @@ class GkeHubMembershipServiceGrpcAsyncIOTransport(GkeHubMembershipServiceTranspo
     def generate_connect_manifest(self) -> Callable[
             [membership.GenerateConnectManifestRequest],
             Awaitable[membership.GenerateConnectManifestResponse]]:
-        r"""Return a callable for the generate connect manifest method over gRPC.
+        r"""Return a callable for the
+        generate connect manifest
+          method over gRPC.
 
         Generates the manifest for deployment of the GKE
         connect agent.
@@ -403,7 +415,9 @@ class GkeHubMembershipServiceGrpcAsyncIOTransport(GkeHubMembershipServiceTranspo
     def validate_exclusivity(self) -> Callable[
             [membership.ValidateExclusivityRequest],
             Awaitable[membership.ValidateExclusivityResponse]]:
-        r"""Return a callable for the validate exclusivity method over gRPC.
+        r"""Return a callable for the
+        validate exclusivity
+          method over gRPC.
 
         ValidateExclusivity validates the state of
         exclusivity in the cluster. The validation does not
@@ -431,7 +445,9 @@ class GkeHubMembershipServiceGrpcAsyncIOTransport(GkeHubMembershipServiceTranspo
     def generate_exclusivity_manifest(self) -> Callable[
             [membership.GenerateExclusivityManifestRequest],
             Awaitable[membership.GenerateExclusivityManifestResponse]]:
-        r"""Return a callable for the generate exclusivity manifest method over gRPC.
+        r"""Return a callable for the
+        generate exclusivity manifest
+          method over gRPC.
 
         GenerateExclusivityManifest generates the manifests
         to update the exclusivity artifacts in the cluster if

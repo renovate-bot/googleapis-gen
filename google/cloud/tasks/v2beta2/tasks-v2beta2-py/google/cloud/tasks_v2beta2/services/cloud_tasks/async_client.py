@@ -170,7 +170,8 @@ class CloudTasksAsyncClient:
 
         Args:
             request (:class:`google.cloud.tasks_v2beta2.types.ListQueuesRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues].
             parent (:class:`str`):
                 Required. The location name. For example:
@@ -264,7 +265,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.tasks_v2beta2.types.GetQueueRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [GetQueue][google.cloud.tasks.v2beta2.CloudTasks.GetQueue].
             name (:class:`str`):
                 Required. The resource name of the queue. For example:
@@ -361,7 +363,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.tasks_v2beta2.types.CreateQueueRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CreateQueue][google.cloud.tasks.v2beta2.CloudTasks.CreateQueue].
             parent (:class:`str`):
                 Required. The location name in which the queue will be
@@ -470,7 +473,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.tasks_v2beta2.types.UpdateQueueRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [UpdateQueue][google.cloud.tasks.v2beta2.CloudTasks.UpdateQueue].
             queue (:class:`google.cloud.tasks_v2beta2.types.Queue`):
                 Required. The queue to create or update.
@@ -580,7 +584,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.tasks_v2beta2.types.DeleteQueueRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DeleteQueue][google.cloud.tasks.v2beta2.CloudTasks.DeleteQueue].
             name (:class:`str`):
                 Required. The queue name. For example:
@@ -658,7 +663,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.tasks_v2beta2.types.PurgeQueueRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [PurgeQueue][google.cloud.tasks.v2beta2.CloudTasks.PurgeQueue].
             name (:class:`str`):
                 Required. The queue name. For example:
@@ -744,7 +750,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.tasks_v2beta2.types.PauseQueueRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [PauseQueue][google.cloud.tasks.v2beta2.CloudTasks.PauseQueue].
             name (:class:`str`):
                 Required. The queue name. For example:
@@ -837,7 +844,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.tasks_v2beta2.types.ResumeQueueRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ResumeQueue][google.cloud.tasks.v2beta2.CloudTasks.ResumeQueue].
             name (:class:`str`):
                 Required. The queue name. For example:
@@ -924,7 +932,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.GetIamPolicyRequest`):
-                The request object. Request message for `GetIamPolicy`
+                The request object.
+                Request message for `GetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -1073,7 +1082,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.SetIamPolicyRequest`):
-                The request object. Request message for `SetIamPolicy`
+                The request object.
+                Request message for `SetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -1212,7 +1222,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `TestIamPermissions` method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -1312,7 +1323,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.tasks_v2beta2.types.ListTasksRequest`):
-                The request object. Request message for listing tasks
+                The request object.
+                Request message for listing tasks
                 using
                 [ListTasks][google.cloud.tasks.v2beta2.CloudTasks.ListTasks].
             parent (:class:`str`):
@@ -1407,7 +1419,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.tasks_v2beta2.types.GetTaskRequest`):
-                The request object. Request message for getting a task
+                The request object.
+                Request message for getting a task
                 using
                 [GetTask][google.cloud.tasks.v2beta2.CloudTasks.GetTask].
             name (:class:`str`):
@@ -1498,7 +1511,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.tasks_v2beta2.types.CreateTaskRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
             parent (:class:`str`):
                 Required. The queue name. For example:
@@ -1624,7 +1638,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.tasks_v2beta2.types.DeleteTaskRequest`):
-                The request object. Request message for deleting a task
+                The request object.
+                Request message for deleting a task
                 using
                 [DeleteTask][google.cloud.tasks.v2beta2.CloudTasks.DeleteTask].
             name (:class:`str`):
@@ -1722,7 +1737,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.tasks_v2beta2.types.LeaseTasksRequest`):
-                The request object. Request message for leasing tasks
+                The request object.
+                Request message for leasing tasks
                 using
                 [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks].
             parent (:class:`str`):
@@ -1845,7 +1861,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.tasks_v2beta2.types.AcknowledgeTaskRequest`):
-                The request object. Request message for acknowledging a
+                The request object.
+                Request message for acknowledging a
                 task using
                 [AcknowledgeTask][google.cloud.tasks.v2beta2.CloudTasks.AcknowledgeTask].
             name (:class:`str`):
@@ -1935,7 +1952,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.tasks_v2beta2.types.RenewLeaseRequest`):
-                The request object. Request message for renewing a lease
+                The request object.
+                Request message for renewing a lease
                 using
                 [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease].
             name (:class:`str`):
@@ -2045,7 +2063,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.tasks_v2beta2.types.CancelLeaseRequest`):
-                The request object. Request message for canceling a
+                The request object.
+                Request message for canceling a
                 lease using
                 [CancelLease][google.cloud.tasks.v2beta2.CloudTasks.CancelLease].
             name (:class:`str`):
@@ -2167,7 +2186,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.tasks_v2beta2.types.RunTaskRequest`):
-                The request object. Request message for forcing a task
+                The request object.
+                Request message for forcing a task
                 to run now using
                 [RunTask][google.cloud.tasks.v2beta2.CloudTasks.RunTask].
             name (:class:`str`):

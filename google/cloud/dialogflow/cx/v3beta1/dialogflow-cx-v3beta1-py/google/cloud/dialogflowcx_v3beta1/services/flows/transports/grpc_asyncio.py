@@ -247,7 +247,9 @@ class FlowsGrpcAsyncIOTransport(FlowsTransport):
     def create_flow(self) -> Callable[
             [gcdc_flow.CreateFlowRequest],
             Awaitable[gcdc_flow.Flow]]:
-        r"""Return a callable for the create flow method over gRPC.
+        r"""Return a callable for the
+        create flow
+          method over gRPC.
 
         Creates a flow in the specified agent.
 
@@ -273,7 +275,9 @@ class FlowsGrpcAsyncIOTransport(FlowsTransport):
     def delete_flow(self) -> Callable[
             [flow.DeleteFlowRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete flow method over gRPC.
+        r"""Return a callable for the
+        delete flow
+          method over gRPC.
 
         Deletes a specified flow.
 
@@ -299,7 +303,9 @@ class FlowsGrpcAsyncIOTransport(FlowsTransport):
     def list_flows(self) -> Callable[
             [flow.ListFlowsRequest],
             Awaitable[flow.ListFlowsResponse]]:
-        r"""Return a callable for the list flows method over gRPC.
+        r"""Return a callable for the
+        list flows
+          method over gRPC.
 
         Returns the list of all flows in the specified agent.
 
@@ -325,7 +331,9 @@ class FlowsGrpcAsyncIOTransport(FlowsTransport):
     def get_flow(self) -> Callable[
             [flow.GetFlowRequest],
             Awaitable[flow.Flow]]:
-        r"""Return a callable for the get flow method over gRPC.
+        r"""Return a callable for the
+        get flow
+          method over gRPC.
 
         Retrieves the specified flow.
 
@@ -351,7 +359,9 @@ class FlowsGrpcAsyncIOTransport(FlowsTransport):
     def update_flow(self) -> Callable[
             [gcdc_flow.UpdateFlowRequest],
             Awaitable[gcdc_flow.Flow]]:
-        r"""Return a callable for the update flow method over gRPC.
+        r"""Return a callable for the
+        update flow
+          method over gRPC.
 
         Updates the specified flow.
 
@@ -377,7 +387,9 @@ class FlowsGrpcAsyncIOTransport(FlowsTransport):
     def train_flow(self) -> Callable[
             [flow.TrainFlowRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the train flow method over gRPC.
+        r"""Return a callable for the
+        train flow
+          method over gRPC.
 
         Trains the specified flow. Note that only the flow in
         'draft' environment is trained.
@@ -404,7 +416,9 @@ class FlowsGrpcAsyncIOTransport(FlowsTransport):
     def validate_flow(self) -> Callable[
             [flow.ValidateFlowRequest],
             Awaitable[flow.FlowValidationResult]]:
-        r"""Return a callable for the validate flow method over gRPC.
+        r"""Return a callable for the
+        validate flow
+          method over gRPC.
 
         Validates the specified flow and creates or updates
         validation results. Please call this API after the
@@ -433,7 +447,9 @@ class FlowsGrpcAsyncIOTransport(FlowsTransport):
     def get_flow_validation_result(self) -> Callable[
             [flow.GetFlowValidationResultRequest],
             Awaitable[flow.FlowValidationResult]]:
-        r"""Return a callable for the get flow validation result method over gRPC.
+        r"""Return a callable for the
+        get flow validation result
+          method over gRPC.
 
         Gets the latest flow validation result. Flow
         validation is performed when ValidateFlow is called.
@@ -460,7 +476,9 @@ class FlowsGrpcAsyncIOTransport(FlowsTransport):
     def import_flow(self) -> Callable[
             [flow.ImportFlowRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the import flow method over gRPC.
+        r"""Return a callable for the
+        import flow
+          method over gRPC.
 
         Imports the specified flow to the specified agent
         from a binary file.
@@ -487,7 +505,9 @@ class FlowsGrpcAsyncIOTransport(FlowsTransport):
     def export_flow(self) -> Callable[
             [flow.ExportFlowRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the export flow method over gRPC.
+        r"""Return a callable for the
+        export flow
+          method over gRPC.
 
         Exports the specified flow to a binary file.
         Note that resources (e.g. intents, entities, webhooks)

@@ -237,7 +237,9 @@ class PublishBuildEventGrpcTransport(PublishBuildEventTransport):
     def publish_lifecycle_event(self) -> Callable[
             [publish_build_event.PublishLifecycleEventRequest],
             empty.Empty]:
-        r"""Return a callable for the publish lifecycle event method over gRPC.
+        r"""Return a callable for the
+        publish lifecycle event
+          method over gRPC.
 
         Publish a build event stating the new state of a build
         (typically from the build queue). The BuildEnqueued event must
@@ -272,8 +274,10 @@ class PublishBuildEventGrpcTransport(PublishBuildEventTransport):
     def publish_build_tool_event_stream(self) -> Callable[
             [publish_build_event.PublishBuildToolEventStreamRequest],
             publish_build_event.PublishBuildToolEventStreamResponse]:
-        r"""Return a callable for the publish build tool event
-        stream method over gRPC.
+        r"""Return a callable for the
+        publish build tool event
+        stream
+          method over gRPC.
 
         Publish build tool events belonging to the same
         stream to a backend job using bidirectional streaming.

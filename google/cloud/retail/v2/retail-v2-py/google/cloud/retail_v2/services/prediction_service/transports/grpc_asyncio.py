@@ -225,7 +225,9 @@ class PredictionServiceGrpcAsyncIOTransport(PredictionServiceTransport):
     def predict(self) -> Callable[
             [prediction_service.PredictRequest],
             Awaitable[prediction_service.PredictResponse]]:
-        r"""Return a callable for the predict method over gRPC.
+        r"""Return a callable for the
+        predict
+          method over gRPC.
 
         Makes a recommendation prediction.
 

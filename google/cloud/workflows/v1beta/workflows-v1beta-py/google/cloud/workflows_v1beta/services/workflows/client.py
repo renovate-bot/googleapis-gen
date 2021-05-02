@@ -342,7 +342,8 @@ class WorkflowsClient(metaclass=WorkflowsClientMeta):
 
         Args:
             request (google.cloud.workflows_v1beta.types.ListWorkflowsRequest):
-                The request object. Request for the
+                The request object.
+                Request for the
                 [ListWorkflows][google.cloud.workflows.v1beta.Workflows.ListWorkflows]
                 method.
             parent (str):
@@ -384,7 +385,7 @@ class WorkflowsClient(metaclass=WorkflowsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, workflows.ListWorkflowsRequest):
             request = workflows.ListWorkflowsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -433,7 +434,8 @@ class WorkflowsClient(metaclass=WorkflowsClientMeta):
 
         Args:
             request (google.cloud.workflows_v1beta.types.GetWorkflowRequest):
-                The request object. Request for the
+                The request object.
+                Request for the
                 [GetWorkflow][google.cloud.workflows.v1beta.Workflows.GetWorkflow]
                 method.
             name (str):
@@ -470,7 +472,7 @@ class WorkflowsClient(metaclass=WorkflowsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, workflows.GetWorkflowRequest):
             request = workflows.GetWorkflowRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -515,7 +517,8 @@ class WorkflowsClient(metaclass=WorkflowsClientMeta):
 
         Args:
             request (google.cloud.workflows_v1beta.types.CreateWorkflowRequest):
-                The request object. Request for the
+                The request object.
+                Request for the
                 [CreateWorkflow][google.cloud.workflows.v1beta.Workflows.CreateWorkflow]
                 method.
             parent (str):
@@ -576,7 +579,7 @@ class WorkflowsClient(metaclass=WorkflowsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, workflows.CreateWorkflowRequest):
             request = workflows.CreateWorkflowRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -630,7 +633,8 @@ class WorkflowsClient(metaclass=WorkflowsClientMeta):
 
         Args:
             request (google.cloud.workflows_v1beta.types.DeleteWorkflowRequest):
-                The request object. Request for the
+                The request object.
+                Request for the
                 [DeleteWorkflow][google.cloud.workflows.v1beta.Workflows.DeleteWorkflow]
                 method.
             name (str):
@@ -680,7 +684,7 @@ class WorkflowsClient(metaclass=WorkflowsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, workflows.DeleteWorkflowRequest):
             request = workflows.DeleteWorkflowRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -734,7 +738,8 @@ class WorkflowsClient(metaclass=WorkflowsClientMeta):
 
         Args:
             request (google.cloud.workflows_v1beta.types.UpdateWorkflowRequest):
-                The request object. Request for the
+                The request object.
+                Request for the
                 [UpdateWorkflow][google.cloud.workflows.v1beta.Workflows.UpdateWorkflow]
                 method.
             workflow (google.cloud.workflows_v1beta.types.Workflow):
@@ -779,7 +784,7 @@ class WorkflowsClient(metaclass=WorkflowsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, workflows.UpdateWorkflowRequest):
             request = workflows.UpdateWorkflowRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if workflow is not None:
                 request.workflow = workflow

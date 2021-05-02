@@ -36,12 +36,12 @@ from .types.image_annotator import ImageContext
 from .types.image_annotator import ImageProperties
 from .types.image_annotator import ImageSource
 from .types.image_annotator import LatLongRect
+from .types.image_annotator import Likelihood
 from .types.image_annotator import LocationInfo
 from .types.image_annotator import Property
 from .types.image_annotator import SafeSearchAnnotation
 from .types.image_annotator import TextDetectionParams
 from .types.image_annotator import WebDetectionParams
-from .types.image_annotator import Likelihood
 from .types.text_annotation import Block
 from .types.text_annotation import Page
 from .types.text_annotation import Paragraph
@@ -51,14 +51,12 @@ from .types.text_annotation import Word
 from .types.web_detection import WebDetection
 
 __all__ = (
-    'ImageAnnotatorClient',
-    'BoundingPoly',
-    'Position',
-    'Vertex',
     'AnnotateImageRequest',
     'AnnotateImageResponse',
     'BatchAnnotateImagesRequest',
     'BatchAnnotateImagesResponse',
+    'Block',
+    'BoundingPoly',
     'ColorInfo',
     'CropHint',
     'CropHintsAnnotation',
@@ -72,17 +70,19 @@ __all__ = (
     'ImageProperties',
     'ImageSource',
     'LatLongRect',
-    'LocationInfo',
-    'Property',
-    'SafeSearchAnnotation',
-    'TextDetectionParams',
-    'WebDetectionParams',
     'Likelihood',
-    'Block',
+    'LocationInfo',
     'Page',
     'Paragraph',
+    'Position',
+    'Property',
+    'SafeSearchAnnotation',
     'Symbol',
     'TextAnnotation',
-    'Word',
+    'TextDetectionParams',
+    'Vertex',
     'WebDetection',
+    'WebDetectionParams',
+    'Word',
+'ImageAnnotatorClient',
 )

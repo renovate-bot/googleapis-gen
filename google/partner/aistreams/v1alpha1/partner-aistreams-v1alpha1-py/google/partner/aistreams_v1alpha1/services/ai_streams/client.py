@@ -349,7 +349,8 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
 
         Args:
             request (google.partner.aistreams_v1alpha1.types.ListClustersRequest):
-                The request object. Request message for 'ListClusters'.
+                The request object.
+                Request message for 'ListClusters'.
             parent (str):
                 Required. The parent that owns the
                 collection of Clusters.
@@ -385,7 +386,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, aistreams.ListClustersRequest):
             request = aistreams.ListClustersRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -434,7 +435,8 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
 
         Args:
             request (google.partner.aistreams_v1alpha1.types.GetClusterRequest):
-                The request object. Request message for 'GetCluster'.
+                The request object.
+                Request message for 'GetCluster'.
             name (str):
                 Required. The name of the Cluster
                 resource to get.
@@ -466,7 +468,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, aistreams.GetClusterRequest):
             request = aistreams.GetClusterRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -509,7 +511,8 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
 
         Args:
             request (google.partner.aistreams_v1alpha1.types.CreateClusterRequest):
-                The request object. Request message for 'CreateCluster'.
+                The request object.
+                Request message for 'CreateCluster'.
             parent (str):
                 Required. The parent that owns the
                 collection of Clusters.
@@ -558,7 +561,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, aistreams.CreateClusterRequest):
             request = aistreams.CreateClusterRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -611,7 +614,8 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
 
         Args:
             request (google.partner.aistreams_v1alpha1.types.UpdateClusterRequest):
-                The request object. Request message for 'UpdateCluster'.
+                The request object.
+                Request message for 'UpdateCluster'.
             cluster (google.partner.aistreams_v1alpha1.types.Cluster):
                 Required. The Cluster resource to
                 update.
@@ -659,7 +663,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, aistreams.UpdateClusterRequest):
             request = aistreams.UpdateClusterRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if cluster is not None:
                 request.cluster = cluster
@@ -709,7 +713,8 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
 
         Args:
             request (google.partner.aistreams_v1alpha1.types.DeleteClusterRequest):
-                The request object. Request message for 'DeleteCluster'.
+                The request object.
+                Request message for 'DeleteCluster'.
             name (str):
                 Required. The name of cluster to
                 delete.
@@ -756,7 +761,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, aistreams.DeleteClusterRequest):
             request = aistreams.DeleteClusterRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -805,7 +810,8 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
 
         Args:
             request (google.partner.aistreams_v1alpha1.types.ListStreamsRequest):
-                The request object. Request message for 'ListStreams'.
+                The request object.
+                Request message for 'ListStreams'.
             parent (str):
                 Required. The parent that owns the
                 collection of the Streams.
@@ -841,7 +847,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, aistreams.ListStreamsRequest):
             request = aistreams.ListStreamsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -890,7 +896,8 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
 
         Args:
             request (google.partner.aistreams_v1alpha1.types.GetStreamRequest):
-                The request object. Request message for 'GetStream'.
+                The request object.
+                Request message for 'GetStream'.
             name (str):
                 Required. The name of the stream.
                 This corresponds to the ``name`` field
@@ -920,7 +927,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, aistreams.GetStreamRequest):
             request = aistreams.GetStreamRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -962,7 +969,8 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
 
         Args:
             request (google.partner.aistreams_v1alpha1.types.CreateStreamRequest):
-                The request object. Request message for 'CreateStream'.
+                The request object.
+                Request message for 'CreateStream'.
             parent (str):
                 Required. The parent that owns the
                 collection of streams.
@@ -1009,7 +1017,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, aistreams.CreateStreamRequest):
             request = aistreams.CreateStreamRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1062,7 +1070,8 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
 
         Args:
             request (google.partner.aistreams_v1alpha1.types.UpdateStreamRequest):
-                The request object. Request message for 'UpdateStream'.
+                The request object.
+                Request message for 'UpdateStream'.
             stream (google.partner.aistreams_v1alpha1.types.Stream):
                 Required. The stream resource to
                 update.
@@ -1110,7 +1119,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, aistreams.UpdateStreamRequest):
             request = aistreams.UpdateStreamRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if stream is not None:
                 request.stream = stream
@@ -1160,7 +1169,8 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
 
         Args:
             request (google.partner.aistreams_v1alpha1.types.DeleteStreamRequest):
-                The request object. Request message for 'DeleteStream'.
+                The request object.
+                Request message for 'DeleteStream'.
             name (str):
                 Required. The name of the stream.
                 This corresponds to the ``name`` field
@@ -1205,7 +1215,7 @@ class AIStreamsClient(metaclass=AIStreamsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, aistreams.DeleteStreamRequest):
             request = aistreams.DeleteStreamRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

@@ -371,7 +371,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1beta.types.CreateScanConfigRequest):
-                The request object. Request for the `CreateScanConfig`
+                The request object.
+                Request for the `CreateScanConfig`
                 method.
             parent (str):
                 Required. The parent resource name
@@ -415,7 +416,7 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, web_security_scanner.CreateScanConfigRequest):
             request = web_security_scanner.CreateScanConfigRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -458,7 +459,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1beta.types.DeleteScanConfigRequest):
-                The request object. Request for the `DeleteScanConfig`
+                The request object.
+                Request for the `DeleteScanConfig`
                 method.
             name (str):
                 Required. The resource name of the
@@ -489,7 +491,7 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, web_security_scanner.DeleteScanConfigRequest):
             request = web_security_scanner.DeleteScanConfigRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -526,7 +528,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1beta.types.GetScanConfigRequest):
-                The request object. Request for the `GetScanConfig`
+                The request object.
+                Request for the `GetScanConfig`
                 method.
             name (str):
                 Required. The resource name of the
@@ -563,7 +566,7 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, web_security_scanner.GetScanConfigRequest):
             request = web_security_scanner.GetScanConfigRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -603,7 +606,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1beta.types.ListScanConfigsRequest):
-                The request object. Request for the `ListScanConfigs`
+                The request object.
+                Request for the `ListScanConfigs`
                 method.
             parent (str):
                 Required. The parent resource name,
@@ -641,7 +645,7 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, web_security_scanner.ListScanConfigsRequest):
             request = web_security_scanner.ListScanConfigsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -692,7 +696,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1beta.types.UpdateScanConfigRequest):
-                The request object. Request for the
+                The request object.
+                Request for the
                 `UpdateScanConfigRequest` method.
             scan_config (google.cloud.websecurityscanner_v1beta.types.ScanConfig):
                 Required. The ScanConfig to be
@@ -738,7 +743,7 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, web_security_scanner.UpdateScanConfigRequest):
             request = web_security_scanner.UpdateScanConfigRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if scan_config is not None:
                 request.scan_config = scan_config
@@ -780,7 +785,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1beta.types.StartScanRunRequest):
-                The request object. Request for the `StartScanRun`
+                The request object.
+                Request for the `StartScanRun`
                 method.
             name (str):
                 Required. The resource name of the
@@ -818,7 +824,7 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, web_security_scanner.StartScanRunRequest):
             request = web_security_scanner.StartScanRunRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -858,7 +864,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1beta.types.GetScanRunRequest):
-                The request object. Request for the `GetScanRun` method.
+                The request object.
+                Request for the `GetScanRun` method.
             name (str):
                 Required. The resource name of the
                 ScanRun to be returned. The name follows
@@ -895,7 +902,7 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, web_security_scanner.GetScanRunRequest):
             request = web_security_scanner.GetScanRunRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -936,7 +943,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1beta.types.ListScanRunsRequest):
-                The request object. Request for the `ListScanRuns`
+                The request object.
+                Request for the `ListScanRuns`
                 method.
             parent (str):
                 Required. The parent resource name,
@@ -975,7 +983,7 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, web_security_scanner.ListScanRunsRequest):
             request = web_security_scanner.ListScanRunsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1024,7 +1032,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1beta.types.StopScanRunRequest):
-                The request object. Request for the `StopScanRun`
+                The request object.
+                Request for the `StopScanRun`
                 method.
             name (str):
                 Required. The resource name of the
@@ -1062,7 +1071,7 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, web_security_scanner.StopScanRunRequest):
             request = web_security_scanner.StopScanRunRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1102,7 +1111,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1beta.types.ListCrawledUrlsRequest):
-                The request object. Request for the `ListCrawledUrls`
+                The request object.
+                Request for the `ListCrawledUrls`
                 method.
             parent (str):
                 Required. The parent resource name,
@@ -1141,7 +1151,7 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, web_security_scanner.ListCrawledUrlsRequest):
             request = web_security_scanner.ListCrawledUrlsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1190,7 +1200,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1beta.types.GetFindingRequest):
-                The request object. Request for the `GetFinding` method.
+                The request object.
+                Request for the `GetFinding` method.
             name (str):
                 Required. The resource name of the
                 Finding to be returned. The name follows
@@ -1227,7 +1238,7 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, web_security_scanner.GetFindingRequest):
             request = web_security_scanner.GetFindingRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1268,7 +1279,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1beta.types.ListFindingsRequest):
-                The request object. Request for the `ListFindings`
+                The request object.
+                Request for the `ListFindings`
                 method.
             parent (str):
                 Required. The parent resource name,
@@ -1315,7 +1327,7 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, web_security_scanner.ListFindingsRequest):
             request = web_security_scanner.ListFindingsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1366,7 +1378,8 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1beta.types.ListFindingTypeStatsRequest):
-                The request object. Request for the
+                The request object.
+                Request for the
                 `ListFindingTypeStats` method.
             parent (str):
                 Required. The parent resource name,
@@ -1401,7 +1414,7 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, web_security_scanner.ListFindingTypeStatsRequest):
             request = web_security_scanner.ListFindingTypeStatsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent

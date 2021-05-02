@@ -29,7 +29,6 @@ from .types.connection import ListConnectionsResponse
 from .types.connection import UpdateConnectionRequest
 
 __all__ = (
-    'ConnectionServiceClient',
     'AwsCrossAccountRole',
     'AwsProperties',
     'CloudSqlCredential',
@@ -41,4 +40,5 @@ __all__ = (
     'ListConnectionsRequest',
     'ListConnectionsResponse',
     'UpdateConnectionRequest',
+'ConnectionServiceClient',
 )

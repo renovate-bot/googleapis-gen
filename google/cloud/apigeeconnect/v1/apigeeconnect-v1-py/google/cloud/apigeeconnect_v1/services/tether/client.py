@@ -333,7 +333,8 @@ class TetherClient(metaclass=TetherClientMeta):
 
         Args:
             requests (Iterator[google.cloud.apigeeconnect_v1.types.EgressResponse]):
-                The request object iterator. gRPC response payload for tether.
+                The request object iterator.
+                gRPC response payload for tether.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.

@@ -350,7 +350,8 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.migration_v2alpha.types.CreateMigrationWorkflowRequest):
-                The request object. Request to create a migration
+                The request object.
+                Request to create a migration
                 workflow resource.
             parent (str):
                 Required. The name of the project to which this
@@ -394,7 +395,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, migration_service.CreateMigrationWorkflowRequest):
             request = migration_service.CreateMigrationWorkflowRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -436,7 +437,8 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.migration_v2alpha.types.GetMigrationWorkflowRequest):
-                The request object. A request to get a previously
+                The request object.
+                A request to get a previously
                 created migration workflow.
             name (str):
                 Required. The unique identifier for the migration
@@ -473,7 +475,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, migration_service.GetMigrationWorkflowRequest):
             request = migration_service.GetMigrationWorkflowRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -513,7 +515,8 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.migration_v2alpha.types.ListMigrationWorkflowsRequest):
-                The request object. A request to list previously created
+                The request object.
+                A request to list previously created
                 migration workflows.
             parent (str):
                 Required. The project and location of the migration
@@ -551,7 +554,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, migration_service.ListMigrationWorkflowsRequest):
             request = migration_service.ListMigrationWorkflowsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -600,7 +603,8 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.migration_v2alpha.types.DeleteMigrationWorkflowRequest):
-                The request object. A request to delete a previously
+                The request object.
+                A request to delete a previously
                 created migration workflow.
             name (str):
                 Required. The unique identifier for the migration
@@ -630,7 +634,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, migration_service.DeleteMigrationWorkflowRequest):
             request = migration_service.DeleteMigrationWorkflowRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -671,7 +675,8 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.migration_v2alpha.types.StartMigrationWorkflowRequest):
-                The request object. A request to start a previously
+                The request object.
+                A request to start a previously
                 created migration workflow.
             name (str):
                 Required. The unique identifier for the migration
@@ -701,7 +706,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, migration_service.StartMigrationWorkflowRequest):
             request = migration_service.StartMigrationWorkflowRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -738,7 +743,8 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.migration_v2alpha.types.GetMigrationSubtaskRequest):
-                The request object. A request to get a previously
+                The request object.
+                A request to get a previously
                 created migration subtasks.
             name (str):
                 Required. The unique identifier for the migration
@@ -778,7 +784,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, migration_service.GetMigrationSubtaskRequest):
             request = migration_service.GetMigrationSubtaskRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -818,7 +824,8 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.migration_v2alpha.types.ListMigrationSubtasksRequest):
-                The request object. A request to list previously created
+                The request object.
+                A request to list previously created
                 migration subtasks.
             parent (str):
                 Required. The migration task of the subtasks to list.
@@ -855,7 +862,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, migration_service.ListMigrationSubtasksRequest):
             request = migration_service.ListMigrationSubtasksRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent

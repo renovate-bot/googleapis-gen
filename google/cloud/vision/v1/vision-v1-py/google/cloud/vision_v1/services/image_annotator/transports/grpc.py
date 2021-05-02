@@ -242,7 +242,9 @@ class ImageAnnotatorGrpcTransport(ImageAnnotatorTransport):
     def batch_annotate_images(self) -> Callable[
             [image_annotator.BatchAnnotateImagesRequest],
             image_annotator.BatchAnnotateImagesResponse]:
-        r"""Return a callable for the batch annotate images method over gRPC.
+        r"""Return a callable for the
+        batch annotate images
+          method over gRPC.
 
         Run image detection and annotation for a batch of
         images.
@@ -269,7 +271,9 @@ class ImageAnnotatorGrpcTransport(ImageAnnotatorTransport):
     def batch_annotate_files(self) -> Callable[
             [image_annotator.BatchAnnotateFilesRequest],
             image_annotator.BatchAnnotateFilesResponse]:
-        r"""Return a callable for the batch annotate files method over gRPC.
+        r"""Return a callable for the
+        batch annotate files
+          method over gRPC.
 
         Service that performs image detection and annotation
         for a batch of files. Now only "application/pdf",
@@ -302,7 +306,9 @@ class ImageAnnotatorGrpcTransport(ImageAnnotatorTransport):
     def async_batch_annotate_images(self) -> Callable[
             [image_annotator.AsyncBatchAnnotateImagesRequest],
             operations.Operation]:
-        r"""Return a callable for the async batch annotate images method over gRPC.
+        r"""Return a callable for the
+        async batch annotate images
+          method over gRPC.
 
         Run asynchronous image detection and annotation for a list of
         images.
@@ -339,7 +345,9 @@ class ImageAnnotatorGrpcTransport(ImageAnnotatorTransport):
     def async_batch_annotate_files(self) -> Callable[
             [image_annotator.AsyncBatchAnnotateFilesRequest],
             operations.Operation]:
-        r"""Return a callable for the async batch annotate files method over gRPC.
+        r"""Return a callable for the
+        async batch annotate files
+          method over gRPC.
 
         Run asynchronous image detection and annotation for a list of
         generic files, such as PDF files, which may contain multiple

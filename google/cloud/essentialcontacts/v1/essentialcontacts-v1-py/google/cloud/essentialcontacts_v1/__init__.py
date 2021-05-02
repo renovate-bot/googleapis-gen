@@ -30,9 +30,6 @@ from .types.service import SendTestMessageRequest
 from .types.service import UpdateContactRequest
 
 __all__ = (
-    'EssentialContactsServiceClient',
-    'NotificationCategory',
-    'ValidationState',
     'ComputeContactsRequest',
     'ComputeContactsResponse',
     'Contact',
@@ -41,6 +38,9 @@ __all__ = (
     'GetContactRequest',
     'ListContactsRequest',
     'ListContactsResponse',
+    'NotificationCategory',
     'SendTestMessageRequest',
     'UpdateContactRequest',
+    'ValidationState',
+'EssentialContactsServiceClient',
 )

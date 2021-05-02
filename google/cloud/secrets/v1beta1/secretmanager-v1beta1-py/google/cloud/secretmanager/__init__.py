@@ -14,9 +14,8 @@
 # limitations under the License.
 #
 
-from google.cloud.secretmanager_v1beta1.services.secret_manager_service.client import SecretManagerServiceClient
 from google.cloud.secretmanager_v1beta1.services.secret_manager_service.async_client import SecretManagerServiceAsyncClient
-
+from google.cloud.secretmanager_v1beta1.services.secret_manager_service.client import SecretManagerServiceClient
 from google.cloud.secretmanager_v1beta1.types.resources import Replication
 from google.cloud.secretmanager_v1beta1.types.resources import Secret
 from google.cloud.secretmanager_v1beta1.types.resources import SecretPayload
@@ -31,19 +30,13 @@ from google.cloud.secretmanager_v1beta1.types.service import DisableSecretVersio
 from google.cloud.secretmanager_v1beta1.types.service import EnableSecretVersionRequest
 from google.cloud.secretmanager_v1beta1.types.service import GetSecretRequest
 from google.cloud.secretmanager_v1beta1.types.service import GetSecretVersionRequest
-from google.cloud.secretmanager_v1beta1.types.service import ListSecretsRequest
-from google.cloud.secretmanager_v1beta1.types.service import ListSecretsResponse
 from google.cloud.secretmanager_v1beta1.types.service import ListSecretVersionsRequest
 from google.cloud.secretmanager_v1beta1.types.service import ListSecretVersionsResponse
+from google.cloud.secretmanager_v1beta1.types.service import ListSecretsRequest
+from google.cloud.secretmanager_v1beta1.types.service import ListSecretsResponse
 from google.cloud.secretmanager_v1beta1.types.service import UpdateSecretRequest
 
-__all__ = ('SecretManagerServiceClient',
-    'SecretManagerServiceAsyncClient',
-    'Replication',
-    'Secret',
-    'SecretPayload',
-    'SecretVersion',
-    'AccessSecretVersionRequest',
+__all__ = ('AccessSecretVersionRequest',
     'AccessSecretVersionResponse',
     'AddSecretVersionRequest',
     'CreateSecretRequest',
@@ -53,9 +46,15 @@ __all__ = ('SecretManagerServiceClient',
     'EnableSecretVersionRequest',
     'GetSecretRequest',
     'GetSecretVersionRequest',
-    'ListSecretsRequest',
-    'ListSecretsResponse',
     'ListSecretVersionsRequest',
     'ListSecretVersionsResponse',
+    'ListSecretsRequest',
+    'ListSecretsResponse',
+    'Replication',
+    'Secret',
+    'SecretManagerServiceAsyncClient',
+    'SecretManagerServiceClient',
+    'SecretPayload',
+    'SecretVersion',
     'UpdateSecretRequest',
 )

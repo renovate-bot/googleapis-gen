@@ -228,7 +228,9 @@ class CloudBillingGrpcAsyncIOTransport(CloudBillingTransport):
     def get_billing_account(self) -> Callable[
             [cloud_billing.GetBillingAccountRequest],
             Awaitable[cloud_billing.BillingAccount]]:
-        r"""Return a callable for the get billing account method over gRPC.
+        r"""Return a callable for the
+        get billing account
+          method over gRPC.
 
         Gets information about a billing account. The current
         authenticated user must be a `viewer of the billing
@@ -256,7 +258,9 @@ class CloudBillingGrpcAsyncIOTransport(CloudBillingTransport):
     def list_billing_accounts(self) -> Callable[
             [cloud_billing.ListBillingAccountsRequest],
             Awaitable[cloud_billing.ListBillingAccountsResponse]]:
-        r"""Return a callable for the list billing accounts method over gRPC.
+        r"""Return a callable for the
+        list billing accounts
+          method over gRPC.
 
         Lists the billing accounts that the current authenticated user
         has permission to
@@ -284,7 +288,9 @@ class CloudBillingGrpcAsyncIOTransport(CloudBillingTransport):
     def update_billing_account(self) -> Callable[
             [cloud_billing.UpdateBillingAccountRequest],
             Awaitable[cloud_billing.BillingAccount]]:
-        r"""Return a callable for the update billing account method over gRPC.
+        r"""Return a callable for the
+        update billing account
+          method over gRPC.
 
         Updates a billing account's fields. Currently the only field
         that can be edited is ``display_name``. The current
@@ -315,7 +321,9 @@ class CloudBillingGrpcAsyncIOTransport(CloudBillingTransport):
     def create_billing_account(self) -> Callable[
             [cloud_billing.CreateBillingAccountRequest],
             Awaitable[cloud_billing.BillingAccount]]:
-        r"""Return a callable for the create billing account method over gRPC.
+        r"""Return a callable for the
+        create billing account
+          method over gRPC.
 
         Creates a billing account. This method can only be used to
         create `billing
@@ -350,7 +358,9 @@ class CloudBillingGrpcAsyncIOTransport(CloudBillingTransport):
     def list_project_billing_info(self) -> Callable[
             [cloud_billing.ListProjectBillingInfoRequest],
             Awaitable[cloud_billing.ListProjectBillingInfoResponse]]:
-        r"""Return a callable for the list project billing info method over gRPC.
+        r"""Return a callable for the
+        list project billing info
+          method over gRPC.
 
         Lists the projects associated with a billing account. The
         current authenticated user must have the
@@ -380,7 +390,9 @@ class CloudBillingGrpcAsyncIOTransport(CloudBillingTransport):
     def get_project_billing_info(self) -> Callable[
             [cloud_billing.GetProjectBillingInfoRequest],
             Awaitable[cloud_billing.ProjectBillingInfo]]:
-        r"""Return a callable for the get project billing info method over gRPC.
+        r"""Return a callable for the
+        get project billing info
+          method over gRPC.
 
         Gets the billing information for a project. The current
         authenticated user must have `permission to view the
@@ -408,7 +420,9 @@ class CloudBillingGrpcAsyncIOTransport(CloudBillingTransport):
     def update_project_billing_info(self) -> Callable[
             [cloud_billing.UpdateProjectBillingInfoRequest],
             Awaitable[cloud_billing.ProjectBillingInfo]]:
-        r"""Return a callable for the update project billing info method over gRPC.
+        r"""Return a callable for the
+        update project billing info
+          method over gRPC.
 
         Sets or updates the billing account associated with a project.
         You specify the new billing account by setting the
@@ -469,7 +483,9 @@ class CloudBillingGrpcAsyncIOTransport(CloudBillingTransport):
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
             Awaitable[gi_policy.Policy]]:
-        r"""Return a callable for the get iam policy method over gRPC.
+        r"""Return a callable for the
+        get iam policy
+          method over gRPC.
 
         Gets the access control policy for a billing account. The caller
         must have the ``billing.accounts.getIamPolicy`` permission on
@@ -498,7 +514,9 @@ class CloudBillingGrpcAsyncIOTransport(CloudBillingTransport):
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
             Awaitable[gi_policy.Policy]]:
-        r"""Return a callable for the set iam policy method over gRPC.
+        r"""Return a callable for the
+        set iam policy
+          method over gRPC.
 
         Sets the access control policy for a billing account. Replaces
         any existing policy. The caller must have the
@@ -528,7 +546,9 @@ class CloudBillingGrpcAsyncIOTransport(CloudBillingTransport):
     def test_iam_permissions(self) -> Callable[
             [iam_policy.TestIamPermissionsRequest],
             Awaitable[iam_policy.TestIamPermissionsResponse]]:
-        r"""Return a callable for the test iam permissions method over gRPC.
+        r"""Return a callable for the
+        test iam permissions
+          method over gRPC.
 
         Tests the access control policy for a billing
         account. This method takes the resource and a set of

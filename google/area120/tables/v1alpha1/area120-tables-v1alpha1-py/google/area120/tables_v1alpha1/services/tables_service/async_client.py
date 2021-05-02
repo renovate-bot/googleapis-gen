@@ -174,7 +174,8 @@ class TablesServiceAsyncClient:
 
         Args:
             request (:class:`google.area120.tables_v1alpha1.types.GetTableRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 TablesService.GetTable.
             name (:class:`str`):
                 Required. The name of the table to
@@ -246,7 +247,8 @@ class TablesServiceAsyncClient:
 
         Args:
             request (:class:`google.area120.tables_v1alpha1.types.ListTablesRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 TablesService.ListTables.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -307,7 +309,8 @@ class TablesServiceAsyncClient:
 
         Args:
             request (:class:`google.area120.tables_v1alpha1.types.GetWorkspaceRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 TablesService.GetWorkspace.
             name (:class:`str`):
                 Required. The name of the workspace
@@ -380,7 +383,8 @@ class TablesServiceAsyncClient:
 
         Args:
             request (:class:`google.area120.tables_v1alpha1.types.ListWorkspacesRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 TablesService.ListWorkspaces.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -441,7 +445,8 @@ class TablesServiceAsyncClient:
 
         Args:
             request (:class:`google.area120.tables_v1alpha1.types.GetRowRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 TablesService.GetRow.
             name (:class:`str`):
                 Required. The name of the row to
@@ -516,7 +521,8 @@ class TablesServiceAsyncClient:
 
         Args:
             request (:class:`google.area120.tables_v1alpha1.types.ListRowsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 TablesService.ListRows.
             parent (:class:`str`):
                 Required. The parent table.
@@ -604,7 +610,8 @@ class TablesServiceAsyncClient:
 
         Args:
             request (:class:`google.area120.tables_v1alpha1.types.CreateRowRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 TablesService.CreateRow.
             parent (:class:`str`):
                 Required. The parent table where this
@@ -684,7 +691,8 @@ class TablesServiceAsyncClient:
 
         Args:
             request (:class:`google.area120.tables_v1alpha1.types.BatchCreateRowsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 TablesService.BatchCreateRows.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -741,7 +749,8 @@ class TablesServiceAsyncClient:
 
         Args:
             request (:class:`google.area120.tables_v1alpha1.types.UpdateRowRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 TablesService.UpdateRow.
             row (:class:`google.area120.tables_v1alpha1.types.Row`):
                 Required. The row to update.
@@ -818,7 +827,8 @@ class TablesServiceAsyncClient:
 
         Args:
             request (:class:`google.area120.tables_v1alpha1.types.BatchUpdateRowsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 TablesService.BatchUpdateRows.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -874,7 +884,8 @@ class TablesServiceAsyncClient:
 
         Args:
             request (:class:`google.area120.tables_v1alpha1.types.DeleteRowRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 TablesService.DeleteRow
             name (:class:`str`):
                 Required. The name of the row to
@@ -940,7 +951,8 @@ class TablesServiceAsyncClient:
 
         Args:
             request (:class:`google.area120.tables_v1alpha1.types.BatchDeleteRowsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 TablesService.BatchDeleteRows
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

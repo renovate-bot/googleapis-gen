@@ -321,7 +321,7 @@ class Entity(proto.Message):
     properties = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=3,
+        number=3
         message='Value',
     )
 

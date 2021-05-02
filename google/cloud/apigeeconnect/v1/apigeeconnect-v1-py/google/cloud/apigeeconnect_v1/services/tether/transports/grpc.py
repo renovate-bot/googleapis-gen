@@ -223,7 +223,9 @@ class TetherGrpcTransport(TetherTransport):
     def egress(self) -> Callable[
             [tether.EgressResponse],
             tether.EgressRequest]:
-        r"""Return a callable for the egress method over gRPC.
+        r"""Return a callable for the
+        egress
+          method over gRPC.
 
         Egress streams egress requests and responses.
         Logically, this is not actually a streaming request, but

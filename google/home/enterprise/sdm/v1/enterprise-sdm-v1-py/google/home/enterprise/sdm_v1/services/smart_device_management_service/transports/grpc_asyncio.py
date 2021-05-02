@@ -228,7 +228,9 @@ class SmartDeviceManagementServiceGrpcAsyncIOTransport(SmartDeviceManagementServ
     def get_device(self) -> Callable[
             [smart_device_management_service.GetDeviceRequest],
             Awaitable[device.Device]]:
-        r"""Return a callable for the get device method over gRPC.
+        r"""Return a callable for the
+        get device
+          method over gRPC.
 
         Gets a device managed by the enterprise.
 
@@ -254,7 +256,9 @@ class SmartDeviceManagementServiceGrpcAsyncIOTransport(SmartDeviceManagementServ
     def list_devices(self) -> Callable[
             [smart_device_management_service.ListDevicesRequest],
             Awaitable[smart_device_management_service.ListDevicesResponse]]:
-        r"""Return a callable for the list devices method over gRPC.
+        r"""Return a callable for the
+        list devices
+          method over gRPC.
 
         Lists devices managed by the enterprise.
 
@@ -280,7 +284,9 @@ class SmartDeviceManagementServiceGrpcAsyncIOTransport(SmartDeviceManagementServ
     def execute_device_command(self) -> Callable[
             [smart_device_management_service.ExecuteDeviceCommandRequest],
             Awaitable[smart_device_management_service.ExecuteDeviceCommandResponse]]:
-        r"""Return a callable for the execute device command method over gRPC.
+        r"""Return a callable for the
+        execute device command
+          method over gRPC.
 
         Executes a command to device managed by the
         enterprise.
@@ -307,7 +313,9 @@ class SmartDeviceManagementServiceGrpcAsyncIOTransport(SmartDeviceManagementServ
     def get_structure(self) -> Callable[
             [smart_device_management_service.GetStructureRequest],
             Awaitable[site.Structure]]:
-        r"""Return a callable for the get structure method over gRPC.
+        r"""Return a callable for the
+        get structure
+          method over gRPC.
 
         Gets a structure managed by the enterprise.
 
@@ -333,7 +341,9 @@ class SmartDeviceManagementServiceGrpcAsyncIOTransport(SmartDeviceManagementServ
     def list_structures(self) -> Callable[
             [smart_device_management_service.ListStructuresRequest],
             Awaitable[smart_device_management_service.ListStructuresResponse]]:
-        r"""Return a callable for the list structures method over gRPC.
+        r"""Return a callable for the
+        list structures
+          method over gRPC.
 
         Lists structures managed by the enterprise.
 
@@ -359,7 +369,9 @@ class SmartDeviceManagementServiceGrpcAsyncIOTransport(SmartDeviceManagementServ
     def get_room(self) -> Callable[
             [smart_device_management_service.GetRoomRequest],
             Awaitable[site.Room]]:
-        r"""Return a callable for the get room method over gRPC.
+        r"""Return a callable for the
+        get room
+          method over gRPC.
 
         Gets a room managed by the enterprise.
 
@@ -385,7 +397,9 @@ class SmartDeviceManagementServiceGrpcAsyncIOTransport(SmartDeviceManagementServ
     def list_rooms(self) -> Callable[
             [smart_device_management_service.ListRoomsRequest],
             Awaitable[smart_device_management_service.ListRoomsResponse]]:
-        r"""Return a callable for the list rooms method over gRPC.
+        r"""Return a callable for the
+        list rooms
+          method over gRPC.
 
         Lists rooms managed by the enterprise.
 

@@ -364,7 +364,8 @@ class MetricServiceClient(metaclass=MetricServiceClientMeta):
 
         Args:
             request (google.cloud.monitoring_v3.types.ListMonitoredResourceDescriptorsRequest):
-                The request object. The
+                The request object.
+                The
                 `ListMonitoredResourceDescriptors` request.
             name (str):
                 Required. The project on which to execute the request.
@@ -405,7 +406,7 @@ class MetricServiceClient(metaclass=MetricServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, metric_service.ListMonitoredResourceDescriptorsRequest):
             request = metric_service.ListMonitoredResourceDescriptorsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -455,7 +456,8 @@ class MetricServiceClient(metaclass=MetricServiceClientMeta):
 
         Args:
             request (google.cloud.monitoring_v3.types.GetMonitoredResourceDescriptorRequest):
-                The request object. The `GetMonitoredResourceDescriptor`
+                The request object.
+                The `GetMonitoredResourceDescriptor`
                 request.
             name (str):
                 Required. The monitored resource descriptor to get. The
@@ -506,7 +508,7 @@ class MetricServiceClient(metaclass=MetricServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, metric_service.GetMonitoredResourceDescriptorRequest):
             request = metric_service.GetMonitoredResourceDescriptorRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -547,7 +549,8 @@ class MetricServiceClient(metaclass=MetricServiceClientMeta):
 
         Args:
             request (google.cloud.monitoring_v3.types.ListMetricDescriptorsRequest):
-                The request object. The `ListMetricDescriptors` request.
+                The request object.
+                The `ListMetricDescriptors` request.
             name (str):
                 Required. The project on which to execute the request.
                 The format is:
@@ -587,7 +590,7 @@ class MetricServiceClient(metaclass=MetricServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, metric_service.ListMetricDescriptorsRequest):
             request = metric_service.ListMetricDescriptorsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -637,7 +640,8 @@ class MetricServiceClient(metaclass=MetricServiceClientMeta):
 
         Args:
             request (google.cloud.monitoring_v3.types.GetMetricDescriptorRequest):
-                The request object. The `GetMetricDescriptor` request.
+                The request object.
+                The `GetMetricDescriptor` request.
             name (str):
                 Required. The metric descriptor on which to execute the
                 request. The format is:
@@ -681,7 +685,7 @@ class MetricServiceClient(metaclass=MetricServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, metric_service.GetMetricDescriptorRequest):
             request = metric_service.GetMetricDescriptorRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -724,7 +728,8 @@ class MetricServiceClient(metaclass=MetricServiceClientMeta):
 
         Args:
             request (google.cloud.monitoring_v3.types.CreateMetricDescriptorRequest):
-                The request object. The `CreateMetricDescriptor`
+                The request object.
+                The `CreateMetricDescriptor`
                 request.
             name (str):
                 Required. The project on which to execute the request.
@@ -774,7 +779,7 @@ class MetricServiceClient(metaclass=MetricServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, metric_service.CreateMetricDescriptorRequest):
             request = metric_service.CreateMetricDescriptorRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -818,7 +823,8 @@ class MetricServiceClient(metaclass=MetricServiceClientMeta):
 
         Args:
             request (google.cloud.monitoring_v3.types.DeleteMetricDescriptorRequest):
-                The request object. The `DeleteMetricDescriptor`
+                The request object.
+                The `DeleteMetricDescriptor`
                 request.
             name (str):
                 Required. The metric descriptor on which to execute the
@@ -854,7 +860,7 @@ class MetricServiceClient(metaclass=MetricServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, metric_service.DeleteMetricDescriptorRequest):
             request = metric_service.DeleteMetricDescriptorRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -895,7 +901,8 @@ class MetricServiceClient(metaclass=MetricServiceClientMeta):
 
         Args:
             request (google.cloud.monitoring_v3.types.ListTimeSeriesRequest):
-                The request object. The `ListTimeSeries` request.
+                The request object.
+                The `ListTimeSeries` request.
             name (str):
                 Required. The project, organization or folder on which
                 to execute the request. The format is:
@@ -970,7 +977,7 @@ class MetricServiceClient(metaclass=MetricServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, metric_service.ListTimeSeriesRequest):
             request = metric_service.ListTimeSeriesRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1030,7 +1037,8 @@ class MetricServiceClient(metaclass=MetricServiceClientMeta):
 
         Args:
             request (google.cloud.monitoring_v3.types.CreateTimeSeriesRequest):
-                The request object. The `CreateTimeSeries` request.
+                The request object.
+                The `CreateTimeSeries` request.
             name (str):
                 Required. The project on which to execute the request.
                 The format is:
@@ -1077,7 +1085,7 @@ class MetricServiceClient(metaclass=MetricServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, metric_service.CreateTimeSeriesRequest):
             request = metric_service.CreateTimeSeriesRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

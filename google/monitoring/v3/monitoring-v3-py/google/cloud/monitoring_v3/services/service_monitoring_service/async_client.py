@@ -166,7 +166,8 @@ class ServiceMonitoringServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.CreateServiceRequest`):
-                The request object. The `CreateService` request.
+                The request object.
+                The `CreateService` request.
             parent (:class:`str`):
                 Required. Resource name of the parent workspace. The
                 format is:
@@ -255,7 +256,8 @@ class ServiceMonitoringServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.GetServiceRequest`):
-                The request object. The `GetService` request.
+                The request object.
+                The `GetService` request.
             name (:class:`str`):
                 Required. Resource name of the ``Service``. The format
                 is:
@@ -344,7 +346,8 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.ListServicesRequest`):
-                The request object. The `ListServices` request.
+                The request object.
+                The `ListServices` request.
             parent (:class:`str`):
                 Required. Resource name of the parent containing the
                 listed services, either a project or a Monitoring
@@ -442,7 +445,8 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.UpdateServiceRequest`):
-                The request object. The `UpdateService` request.
+                The request object.
+                The `UpdateService` request.
             service (:class:`google.cloud.monitoring_v3.types.Service`):
                 Required. The ``Service`` to draw updates from. The
                 given ``name`` specifies the resource to update.
@@ -520,7 +524,8 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.DeleteServiceRequest`):
-                The request object. The `DeleteService` request.
+                The request object.
+                The `DeleteService` request.
             name (:class:`str`):
                 Required. Resource name of the ``Service`` to delete.
                 The format is:
@@ -597,7 +602,8 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.CreateServiceLevelObjectiveRequest`):
-                The request object. The `CreateServiceLevelObjective`
+                The request object.
+                The `CreateServiceLevelObjective`
                 request.
             parent (:class:`str`):
                 Required. Resource name of the parent ``Service``. The
@@ -697,7 +703,8 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.GetServiceLevelObjectiveRequest`):
-                The request object. The `GetServiceLevelObjective`
+                The request object.
+                The `GetServiceLevelObjective`
                 request.
             name (:class:`str`):
                 Required. Resource name of the ``ServiceLevelObjective``
@@ -794,7 +801,8 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.ListServiceLevelObjectivesRequest`):
-                The request object. The `ListServiceLevelObjectives`
+                The request object.
+                The `ListServiceLevelObjectives`
                 request.
             parent (:class:`str`):
                 Required. Resource name of the parent containing the
@@ -893,7 +901,8 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.UpdateServiceLevelObjectiveRequest`):
-                The request object. The `UpdateServiceLevelObjective`
+                The request object.
+                The `UpdateServiceLevelObjective`
                 request.
             service_level_objective (:class:`google.cloud.monitoring_v3.types.ServiceLevelObjective`):
                 Required. The ``ServiceLevelObjective`` to draw updates
@@ -980,7 +989,8 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.DeleteServiceLevelObjectiveRequest`):
-                The request object. The `DeleteServiceLevelObjective`
+                The request object.
+                The `DeleteServiceLevelObjective`
                 request.
             name (:class:`str`):
                 Required. Resource name of the ``ServiceLevelObjective``

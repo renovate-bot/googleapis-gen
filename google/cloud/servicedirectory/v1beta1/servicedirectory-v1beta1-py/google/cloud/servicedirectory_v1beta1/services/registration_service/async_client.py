@@ -186,7 +186,8 @@ class RegistrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicedirectory_v1beta1.types.CreateNamespaceRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [RegistrationService.CreateNamespace][google.cloud.servicedirectory.v1beta1.RegistrationService.CreateNamespace].
             parent (:class:`str`):
                 Required. The resource name of the
@@ -288,7 +289,8 @@ class RegistrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicedirectory_v1beta1.types.ListNamespacesRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [RegistrationService.ListNamespaces][google.cloud.servicedirectory.v1beta1.RegistrationService.ListNamespaces].
             parent (:class:`str`):
                 Required. The resource name of the
@@ -376,7 +378,8 @@ class RegistrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicedirectory_v1beta1.types.GetNamespaceRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [RegistrationService.GetNamespace][google.cloud.servicedirectory.v1beta1.RegistrationService.GetNamespace].
             name (:class:`str`):
                 Required. The name of the namespace
@@ -454,7 +457,8 @@ class RegistrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicedirectory_v1beta1.types.UpdateNamespaceRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [RegistrationService.UpdateNamespace][google.cloud.servicedirectory.v1beta1.RegistrationService.UpdateNamespace].
             namespace (:class:`google.cloud.servicedirectory_v1beta1.types.Namespace`):
                 Required. The updated namespace.
@@ -539,7 +543,8 @@ class RegistrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicedirectory_v1beta1.types.DeleteNamespaceRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [RegistrationService.DeleteNamespace][google.cloud.servicedirectory.v1beta1.RegistrationService.DeleteNamespace].
             name (:class:`str`):
                 Required. The name of the namespace
@@ -607,7 +612,8 @@ class RegistrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicedirectory_v1beta1.types.CreateServiceRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [RegistrationService.CreateService][google.cloud.servicedirectory.v1beta1.RegistrationService.CreateService].
             parent (:class:`str`):
                 Required. The resource name of the
@@ -708,7 +714,8 @@ class RegistrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicedirectory_v1beta1.types.ListServicesRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [RegistrationService.ListServices][google.cloud.servicedirectory.v1beta1.RegistrationService.ListServices].
             parent (:class:`str`):
                 Required. The resource name of the
@@ -796,7 +803,8 @@ class RegistrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicedirectory_v1beta1.types.GetServiceRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [RegistrationService.GetService][google.cloud.servicedirectory.v1beta1.RegistrationService.GetService].
                 This should not be used for looking up a service.
                 Insead, use the `resolve` method as it will contain all
@@ -877,7 +885,8 @@ class RegistrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicedirectory_v1beta1.types.UpdateServiceRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [RegistrationService.UpdateService][google.cloud.servicedirectory.v1beta1.RegistrationService.UpdateService].
             service (:class:`google.cloud.servicedirectory_v1beta1.types.Service`):
                 Required. The updated service.
@@ -962,7 +971,8 @@ class RegistrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicedirectory_v1beta1.types.DeleteServiceRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [RegistrationService.DeleteService][google.cloud.servicedirectory.v1beta1.RegistrationService.DeleteService].
             name (:class:`str`):
                 Required. The name of the service to
@@ -1030,7 +1040,8 @@ class RegistrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicedirectory_v1beta1.types.CreateEndpointRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [RegistrationService.CreateEndpoint][google.cloud.servicedirectory.v1beta1.RegistrationService.CreateEndpoint].
             parent (:class:`str`):
                 Required. The resource name of the
@@ -1130,7 +1141,8 @@ class RegistrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicedirectory_v1beta1.types.ListEndpointsRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
             parent (:class:`str`):
                 Required. The resource name of the
@@ -1218,7 +1230,8 @@ class RegistrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicedirectory_v1beta1.types.GetEndpointRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [RegistrationService.GetEndpoint][google.cloud.servicedirectory.v1beta1.RegistrationService.GetEndpoint].
                 This should not be used to lookup endpoints at runtime.
                 Instead, use the `resolve` method.
@@ -1297,7 +1310,8 @@ class RegistrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicedirectory_v1beta1.types.UpdateEndpointRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [RegistrationService.UpdateEndpoint][google.cloud.servicedirectory.v1beta1.RegistrationService.UpdateEndpoint].
             endpoint (:class:`google.cloud.servicedirectory_v1beta1.types.Endpoint`):
                 Required. The updated endpoint.
@@ -1380,7 +1394,8 @@ class RegistrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicedirectory_v1beta1.types.DeleteEndpointRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [RegistrationService.DeleteEndpoint][google.cloud.servicedirectory.v1beta1.RegistrationService.DeleteEndpoint].
             name (:class:`str`):
                 Required. The name of the endpoint to
@@ -1446,7 +1461,8 @@ class RegistrationServiceAsyncClient:
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.GetIamPolicyRequest`):
-                The request object. Request message for `GetIamPolicy`
+                The request object.
+                Request message for `GetIamPolicy`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1558,7 +1574,8 @@ class RegistrationServiceAsyncClient:
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.SetIamPolicyRequest`):
-                The request object. Request message for `SetIamPolicy`
+                The request object.
+                Request message for `SetIamPolicy`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1670,7 +1687,8 @@ class RegistrationServiceAsyncClient:
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `TestIamPermissions` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

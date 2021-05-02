@@ -241,7 +241,9 @@ class ProjectsGrpcTransport(ProjectsTransport):
     def get_project(self) -> Callable[
             [projects.GetProjectRequest],
             projects.Project]:
-        r"""Return a callable for the get project method over gRPC.
+        r"""Return a callable for the
+        get project
+          method over gRPC.
 
         Retrieves the project identified by the specified ``name`` (for
         example, ``projects/415104041262``).
@@ -271,7 +273,9 @@ class ProjectsGrpcTransport(ProjectsTransport):
     def list_projects(self) -> Callable[
             [projects.ListProjectsRequest],
             projects.ListProjectsResponse]:
-        r"""Return a callable for the list projects method over gRPC.
+        r"""Return a callable for the
+        list projects
+          method over gRPC.
 
         Lists projects that are direct children of the specified folder
         or organization resource. ``list()`` provides a strongly
@@ -303,7 +307,9 @@ class ProjectsGrpcTransport(ProjectsTransport):
     def search_projects(self) -> Callable[
             [projects.SearchProjectsRequest],
             projects.SearchProjectsResponse]:
-        r"""Return a callable for the search projects method over gRPC.
+        r"""Return a callable for the
+        search projects
+          method over gRPC.
 
         Search for projects that the caller has both
         ``resourcemanager.projects.get`` permission on, and also satisfy
@@ -341,7 +347,9 @@ class ProjectsGrpcTransport(ProjectsTransport):
     def create_project(self) -> Callable[
             [projects.CreateProjectRequest],
             operations.Operation]:
-        r"""Return a callable for the create project method over gRPC.
+        r"""Return a callable for the
+        create project
+          method over gRPC.
 
         Request that a new project be created. The result is an
         ``Operation`` which can be used to track the creation process.
@@ -372,7 +380,9 @@ class ProjectsGrpcTransport(ProjectsTransport):
     def update_project(self) -> Callable[
             [projects.UpdateProjectRequest],
             operations.Operation]:
-        r"""Return a callable for the update project method over gRPC.
+        r"""Return a callable for the
+        update project
+          method over gRPC.
 
         Updates the ``display_name`` and labels of the project
         identified by the specified ``name`` (for example,
@@ -404,7 +414,9 @@ class ProjectsGrpcTransport(ProjectsTransport):
     def move_project(self) -> Callable[
             [projects.MoveProjectRequest],
             operations.Operation]:
-        r"""Return a callable for the move project method over gRPC.
+        r"""Return a callable for the
+        move project
+          method over gRPC.
 
         Move a project to another place in your resource hierarchy,
         under a new resource parent.
@@ -441,7 +453,9 @@ class ProjectsGrpcTransport(ProjectsTransport):
     def delete_project(self) -> Callable[
             [projects.DeleteProjectRequest],
             operations.Operation]:
-        r"""Return a callable for the delete project method over gRPC.
+        r"""Return a callable for the
+        delete project
+          method over gRPC.
 
         Marks the project identified by the specified ``name`` (for
         example, ``projects/415104041262``) for deletion.
@@ -501,7 +515,9 @@ class ProjectsGrpcTransport(ProjectsTransport):
     def undelete_project(self) -> Callable[
             [projects.UndeleteProjectRequest],
             operations.Operation]:
-        r"""Return a callable for the undelete project method over gRPC.
+        r"""Return a callable for the
+        undelete project
+          method over gRPC.
 
         Restores the project identified by the specified ``name`` (for
         example, ``projects/415104041262``). You can only use this
@@ -534,7 +550,9 @@ class ProjectsGrpcTransport(ProjectsTransport):
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
             giv_policy.Policy]:
-        r"""Return a callable for the get iam policy method over gRPC.
+        r"""Return a callable for the
+        get iam policy
+          method over gRPC.
 
         Returns the IAM access control policy for the
         specified project. Permission is denied if the policy or
@@ -562,7 +580,9 @@ class ProjectsGrpcTransport(ProjectsTransport):
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
             giv_policy.Policy]:
-        r"""Return a callable for the set iam policy method over gRPC.
+        r"""Return a callable for the
+        set iam policy
+          method over gRPC.
 
         Sets the IAM access control policy for the specified project.
 
@@ -639,7 +659,9 @@ class ProjectsGrpcTransport(ProjectsTransport):
     def test_iam_permissions(self) -> Callable[
             [iam_policy.TestIamPermissionsRequest],
             iam_policy.TestIamPermissionsResponse]:
-        r"""Return a callable for the test iam permissions method over gRPC.
+        r"""Return a callable for the
+        test iam permissions
+          method over gRPC.
 
         Returns permissions that a caller has on the
         specified project.

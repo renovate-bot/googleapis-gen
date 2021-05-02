@@ -192,7 +192,8 @@ class DataCatalogAsyncClient:
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.SearchCatalogRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [SearchCatalog][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog].
             scope (:class:`google.cloud.datacatalog_v1beta1.types.SearchCatalogRequest.Scope`):
                 Required. The scope of this search request. A ``scope``
@@ -304,7 +305,8 @@ class DataCatalogAsyncClient:
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.CreateEntryGroupRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CreateEntryGroup][google.cloud.datacatalog.v1beta1.DataCatalog.CreateEntryGroup].
             parent (:class:`str`):
                 Required. The name of the project this entry group is
@@ -414,7 +416,8 @@ class DataCatalogAsyncClient:
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.UpdateEntryGroupRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [UpdateEntryGroup][google.cloud.datacatalog.v1beta1.DataCatalog.UpdateEntryGroup].
             entry_group (:class:`google.cloud.datacatalog_v1beta1.types.EntryGroup`):
                 Required. The updated entry group.
@@ -503,7 +506,8 @@ class DataCatalogAsyncClient:
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.GetEntryGroupRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [GetEntryGroup][google.cloud.datacatalog.v1beta1.DataCatalog.GetEntryGroup].
             name (:class:`str`):
                 Required. The name of the entry group. For example,
@@ -602,7 +606,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.DeleteEntryGroupRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DeleteEntryGroup][google.cloud.datacatalog.v1beta1.DataCatalog.DeleteEntryGroup].
             name (:class:`str`):
                 Required. The name of the entry group. For example,
@@ -675,7 +680,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.ListEntryGroupsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ListEntryGroups][google.cloud.datacatalog.v1beta1.DataCatalog.ListEntryGroups].
             parent (:class:`str`):
                 Required. The name of the location that contains the
@@ -776,7 +782,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.CreateEntryRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CreateEntry][google.cloud.datacatalog.v1beta1.DataCatalog.CreateEntry].
             parent (:class:`str`):
                 Required. The name of the entry group this entry is in.
@@ -887,7 +894,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.UpdateEntryRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [UpdateEntry][google.cloud.datacatalog.v1beta1.DataCatalog.UpdateEntry].
             entry (:class:`google.cloud.datacatalog_v1beta1.types.Entry`):
                 Required. The updated entry. The
@@ -1011,7 +1019,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.DeleteEntryRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DeleteEntry][google.cloud.datacatalog.v1beta1.DataCatalog.DeleteEntry].
             name (:class:`str`):
                 Required. The name of the entry. Example:
@@ -1085,7 +1094,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.GetEntryRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [GetEntry][google.cloud.datacatalog.v1beta1.DataCatalog.GetEntry].
             name (:class:`str`):
                 Required. The name of the entry. Example:
@@ -1180,7 +1190,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.LookupEntryRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [LookupEntry][google.cloud.datacatalog.v1beta1.DataCatalog.LookupEntry].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1245,7 +1256,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.ListEntriesRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ListEntries][google.cloud.datacatalog.v1beta1.DataCatalog.ListEntries].
             parent (:class:`str`):
                 Required. The name of the entry group that contains the
@@ -1340,7 +1352,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.CreateTagTemplateRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CreateTagTemplate][google.cloud.datacatalog.v1beta1.DataCatalog.CreateTagTemplate].
             parent (:class:`str`):
                 Required. The name of the project and the template
@@ -1443,7 +1456,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.GetTagTemplateRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [GetTagTemplate][google.cloud.datacatalog.v1beta1.DataCatalog.GetTagTemplate].
             name (:class:`str`):
                 Required. The name of the tag template. Example:
@@ -1542,7 +1556,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.UpdateTagTemplateRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [UpdateTagTemplate][google.cloud.datacatalog.v1beta1.DataCatalog.UpdateTagTemplate].
             tag_template (:class:`google.cloud.datacatalog_v1beta1.types.TagTemplate`):
                 Required. The template to update. The
@@ -1645,7 +1660,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.DeleteTagTemplateRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DeleteTagTemplate][google.cloud.datacatalog.v1beta1.DataCatalog.DeleteTagTemplate].
             name (:class:`str`):
                 Required. The name of the tag template to delete.
@@ -1737,7 +1753,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.CreateTagTemplateFieldRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CreateTagTemplateField][google.cloud.datacatalog.v1beta1.DataCatalog.CreateTagTemplateField].
             parent (:class:`str`):
                 Required. The name of the project and the template
@@ -1846,7 +1863,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.UpdateTagTemplateFieldRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [UpdateTagTemplateField][google.cloud.datacatalog.v1beta1.DataCatalog.UpdateTagTemplateField].
             name (:class:`str`):
                 Required. The name of the tag template field. Example:
@@ -1956,7 +1974,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.RenameTagTemplateFieldRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [RenameTagTemplateField][google.cloud.datacatalog.v1beta1.DataCatalog.RenameTagTemplateField].
             name (:class:`str`):
                 Required. The name of the tag template. Example:
@@ -2047,7 +2066,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.DeleteTagTemplateFieldRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DeleteTagTemplateField][google.cloud.datacatalog.v1beta1.DataCatalog.DeleteTagTemplateField].
             name (:class:`str`):
                 Required. The name of the tag template field to delete.
@@ -2140,7 +2160,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.CreateTagRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CreateTag][google.cloud.datacatalog.v1beta1.DataCatalog.CreateTag].
             parent (:class:`str`):
                 Required. The name of the resource to attach this tag
@@ -2234,7 +2255,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.UpdateTagRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [UpdateTag][google.cloud.datacatalog.v1beta1.DataCatalog.UpdateTag].
             tag (:class:`google.cloud.datacatalog_v1beta1.types.Tag`):
                 Required. The updated tag. The "name"
@@ -2325,7 +2347,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.DeleteTagRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DeleteTag][google.cloud.datacatalog.v1beta1.DataCatalog.DeleteTag].
             name (:class:`str`):
                 Required. The name of the tag to delete. Example:
@@ -2400,7 +2423,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.ListTagsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ListTags][google.cloud.datacatalog.v1beta1.DataCatalog.ListTags].
             parent (:class:`str`):
                 Required. The name of the Data Catalog resource to list
@@ -2517,7 +2541,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.SetIamPolicyRequest`):
-                The request object. Request message for `SetIamPolicy`
+                The request object.
+                Request message for `SetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -2667,7 +2692,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.GetIamPolicyRequest`):
-                The request object. Request message for `GetIamPolicy`
+                The request object.
+                Request message for `GetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -2809,7 +2835,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `TestIamPermissions` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

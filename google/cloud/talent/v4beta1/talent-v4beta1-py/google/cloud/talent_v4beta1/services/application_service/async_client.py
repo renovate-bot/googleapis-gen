@@ -170,7 +170,8 @@ class ApplicationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.talent_v4beta1.types.CreateApplicationRequest`):
-                The request object. The Request of the CreateApplication
+                The request object.
+                The Request of the CreateApplication
                 method.
             parent (:class:`str`):
                 Required. Resource name of the profile under which the
@@ -258,7 +259,8 @@ class ApplicationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.talent_v4beta1.types.GetApplicationRequest`):
-                The request object. Request for getting a application by
+                The request object.
+                Request for getting a application by
                 name.
             name (:class:`str`):
                 Required. The resource name of the application to be
@@ -345,7 +347,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.talent_v4beta1.types.UpdateApplicationRequest`):
-                The request object. Request for updating a specified
+                The request object.
+                Request for updating a specified
                 application.
             application (:class:`google.cloud.talent_v4beta1.types.Application`):
                 Required. The application resource to
@@ -421,7 +424,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.talent_v4beta1.types.DeleteApplicationRequest`):
-                The request object. Request to delete a application.
+                The request object.
+                Request to delete a application.
             name (:class:`str`):
                 Required. The resource name of the application to be
                 deleted.
@@ -498,7 +502,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.talent_v4beta1.types.ListApplicationsRequest`):
-                The request object. List applications for which the
+                The request object.
+                List applications for which the
                 client has ACL visibility.
             parent (:class:`str`):
                 Required. Resource name of the profile under which the

@@ -14,13 +14,12 @@
 # limitations under the License.
 #
 
-from ccc.hosted.marketplace_v2.services.customer_license_service.client import CustomerLicenseServiceClient
 from ccc.hosted.marketplace_v2.services.customer_license_service.async_client import CustomerLicenseServiceAsyncClient
-from ccc.hosted.marketplace_v2.services.license_notification_service.client import LicenseNotificationServiceClient
+from ccc.hosted.marketplace_v2.services.customer_license_service.client import CustomerLicenseServiceClient
 from ccc.hosted.marketplace_v2.services.license_notification_service.async_client import LicenseNotificationServiceAsyncClient
-from ccc.hosted.marketplace_v2.services.user_license_service.client import UserLicenseServiceClient
+from ccc.hosted.marketplace_v2.services.license_notification_service.client import LicenseNotificationServiceClient
 from ccc.hosted.marketplace_v2.services.user_license_service.async_client import UserLicenseServiceAsyncClient
-
+from ccc.hosted.marketplace_v2.services.user_license_service.client import UserLicenseServiceClient
 from ccc.hosted.marketplace_v2.types.resources import CustomerLicense
 from ccc.hosted.marketplace_v2.types.resources import LicenseNotification
 from ccc.hosted.marketplace_v2.types.resources import LicenseNotificationList
@@ -29,17 +28,17 @@ from ccc.hosted.marketplace_v2.types.services import CustomerLicenseGetRequest
 from ccc.hosted.marketplace_v2.types.services import LicenseNotificationListRequest
 from ccc.hosted.marketplace_v2.types.services import UserLicenseGetRequest
 
-__all__ = ('CustomerLicenseServiceClient',
+__all__ = ('CustomerLicense',
+    'CustomerLicenseGetRequest',
     'CustomerLicenseServiceAsyncClient',
-    'LicenseNotificationServiceClient',
-    'LicenseNotificationServiceAsyncClient',
-    'UserLicenseServiceClient',
-    'UserLicenseServiceAsyncClient',
-    'CustomerLicense',
+    'CustomerLicenseServiceClient',
     'LicenseNotification',
     'LicenseNotificationList',
-    'UserLicense',
-    'CustomerLicenseGetRequest',
     'LicenseNotificationListRequest',
+    'LicenseNotificationServiceAsyncClient',
+    'LicenseNotificationServiceClient',
+    'UserLicense',
     'UserLicenseGetRequest',
+    'UserLicenseServiceAsyncClient',
+    'UserLicenseServiceClient',
 )

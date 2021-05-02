@@ -159,7 +159,8 @@ class MetricsServiceV2AsyncClient:
 
         Args:
             request (:class:`google.cloud.logging_v2.types.ListLogMetricsRequest`):
-                The request object. The parameters to ListLogMetrics.
+                The request object.
+                The parameters to ListLogMetrics.
             parent (:class:`str`):
                 Required. The name of the project containing the
                 metrics:
@@ -256,7 +257,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.logging_v2.types.GetLogMetricRequest`):
-                The request object. The parameters to GetLogMetric.
+                The request object.
+                The parameters to GetLogMetric.
             metric_name (:class:`str`):
                 Required. The resource name of the desired metric:
 
@@ -351,7 +353,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.logging_v2.types.CreateLogMetricRequest`):
-                The request object. The parameters to CreateLogMetric.
+                The request object.
+                The parameters to CreateLogMetric.
             parent (:class:`str`):
                 Required. The resource name of the project in which to
                 create the metric:
@@ -451,7 +454,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.logging_v2.types.UpdateLogMetricRequest`):
-                The request object. The parameters to UpdateLogMetric.
+                The request object.
+                The parameters to UpdateLogMetric.
             metric_name (:class:`str`):
                 Required. The resource name of the metric to update:
 
@@ -557,7 +561,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.logging_v2.types.DeleteLogMetricRequest`):
-                The request object. The parameters to DeleteLogMetric.
+                The request object.
+                The parameters to DeleteLogMetric.
             metric_name (:class:`str`):
                 Required. The resource name of the metric to delete:
 

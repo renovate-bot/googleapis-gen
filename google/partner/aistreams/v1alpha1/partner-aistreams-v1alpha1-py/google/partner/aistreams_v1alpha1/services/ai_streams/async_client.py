@@ -162,7 +162,8 @@ class AIStreamsAsyncClient:
 
         Args:
             request (:class:`google.partner.aistreams_v1alpha1.types.ListClustersRequest`):
-                The request object. Request message for 'ListClusters'.
+                The request object.
+                Request message for 'ListClusters'.
             parent (:class:`str`):
                 Required. The parent that owns the
                 collection of Clusters.
@@ -247,7 +248,8 @@ class AIStreamsAsyncClient:
 
         Args:
             request (:class:`google.partner.aistreams_v1alpha1.types.GetClusterRequest`):
-                The request object. Request message for 'GetCluster'.
+                The request object.
+                Request message for 'GetCluster'.
             name (:class:`str`):
                 Required. The name of the Cluster
                 resource to get.
@@ -322,7 +324,8 @@ class AIStreamsAsyncClient:
 
         Args:
             request (:class:`google.partner.aistreams_v1alpha1.types.CreateClusterRequest`):
-                The request object. Request message for 'CreateCluster'.
+                The request object.
+                Request message for 'CreateCluster'.
             parent (:class:`str`):
                 Required. The parent that owns the
                 collection of Clusters.
@@ -424,7 +427,8 @@ class AIStreamsAsyncClient:
 
         Args:
             request (:class:`google.partner.aistreams_v1alpha1.types.UpdateClusterRequest`):
-                The request object. Request message for 'UpdateCluster'.
+                The request object.
+                Request message for 'UpdateCluster'.
             cluster (:class:`google.partner.aistreams_v1alpha1.types.Cluster`):
                 Required. The Cluster resource to
                 update.
@@ -522,7 +526,8 @@ class AIStreamsAsyncClient:
 
         Args:
             request (:class:`google.partner.aistreams_v1alpha1.types.DeleteClusterRequest`):
-                The request object. Request message for 'DeleteCluster'.
+                The request object.
+                Request message for 'DeleteCluster'.
             name (:class:`str`):
                 Required. The name of cluster to
                 delete.
@@ -618,7 +623,8 @@ class AIStreamsAsyncClient:
 
         Args:
             request (:class:`google.partner.aistreams_v1alpha1.types.ListStreamsRequest`):
-                The request object. Request message for 'ListStreams'.
+                The request object.
+                Request message for 'ListStreams'.
             parent (:class:`str`):
                 Required. The parent that owns the
                 collection of the Streams.
@@ -703,7 +709,8 @@ class AIStreamsAsyncClient:
 
         Args:
             request (:class:`google.partner.aistreams_v1alpha1.types.GetStreamRequest`):
-                The request object. Request message for 'GetStream'.
+                The request object.
+                Request message for 'GetStream'.
             name (:class:`str`):
                 Required. The name of the stream.
                 This corresponds to the ``name`` field
@@ -775,7 +782,8 @@ class AIStreamsAsyncClient:
 
         Args:
             request (:class:`google.partner.aistreams_v1alpha1.types.CreateStreamRequest`):
-                The request object. Request message for 'CreateStream'.
+                The request object.
+                Request message for 'CreateStream'.
             parent (:class:`str`):
                 Required. The parent that owns the
                 collection of streams.
@@ -875,7 +883,8 @@ class AIStreamsAsyncClient:
 
         Args:
             request (:class:`google.partner.aistreams_v1alpha1.types.UpdateStreamRequest`):
-                The request object. Request message for 'UpdateStream'.
+                The request object.
+                Request message for 'UpdateStream'.
             stream (:class:`google.partner.aistreams_v1alpha1.types.Stream`):
                 Required. The stream resource to
                 update.
@@ -973,7 +982,8 @@ class AIStreamsAsyncClient:
 
         Args:
             request (:class:`google.partner.aistreams_v1alpha1.types.DeleteStreamRequest`):
-                The request object. Request message for 'DeleteStream'.
+                The request object.
+                Request message for 'DeleteStream'.
             name (:class:`str`):
                 Required. The name of the stream.
                 This corresponds to the ``name`` field

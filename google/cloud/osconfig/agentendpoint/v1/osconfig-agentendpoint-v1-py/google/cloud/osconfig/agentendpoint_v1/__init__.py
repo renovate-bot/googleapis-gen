@@ -28,9 +28,9 @@ from .types.agentendpoint import ReportTaskProgressRequest
 from .types.agentendpoint import ReportTaskProgressResponse
 from .types.agentendpoint import StartNextTaskRequest
 from .types.agentendpoint import StartNextTaskResponse
+from .types.config_common import OSPolicyComplianceState
 from .types.config_common import OSPolicyResourceCompliance
 from .types.config_common import OSPolicyResourceConfigStep
-from .types.config_common import OSPolicyComplianceState
 from .types.inventory import Inventory
 from .types.os_policy import OSPolicy
 from .types.patch_jobs import AptSettings
@@ -57,7 +57,26 @@ from .types.tasks import TaskDirective
 from .types.tasks import TaskType
 
 __all__ = (
-    'AgentEndpointServiceClient',
+    'ApplyConfigTask',
+    'ApplyConfigTaskOutput',
+    'ApplyConfigTaskProgress',
+    'ApplyPatchesTask',
+    'ApplyPatchesTaskOutput',
+    'ApplyPatchesTaskProgress',
+    'AptSettings',
+    'ExecStep',
+    'ExecStepConfig',
+    'ExecStepTask',
+    'ExecStepTaskOutput',
+    'ExecStepTaskProgress',
+    'GcsObject',
+    'GooSettings',
+    'Inventory',
+    'OSPolicy',
+    'OSPolicyComplianceState',
+    'OSPolicyResourceCompliance',
+    'OSPolicyResourceConfigStep',
+    'PatchConfig',
     'ReceiveTaskNotificationRequest',
     'ReceiveTaskNotificationResponse',
     'RegisterAgentRequest',
@@ -68,33 +87,14 @@ __all__ = (
     'ReportTaskCompleteResponse',
     'ReportTaskProgressRequest',
     'ReportTaskProgressResponse',
+    'RetryStrategy',
     'StartNextTaskRequest',
     'StartNextTaskResponse',
-    'OSPolicyResourceCompliance',
-    'OSPolicyResourceConfigStep',
-    'OSPolicyComplianceState',
-    'Inventory',
-    'OSPolicy',
-    'AptSettings',
-    'ExecStep',
-    'ExecStepConfig',
-    'GcsObject',
-    'GooSettings',
-    'PatchConfig',
-    'RetryStrategy',
-    'WindowsUpdateSettings',
-    'YumSettings',
-    'ZypperSettings',
-    'ApplyConfigTask',
-    'ApplyConfigTaskOutput',
-    'ApplyConfigTaskProgress',
-    'ApplyPatchesTask',
-    'ApplyPatchesTaskOutput',
-    'ApplyPatchesTaskProgress',
-    'ExecStepTask',
-    'ExecStepTaskOutput',
-    'ExecStepTaskProgress',
     'Task',
     'TaskDirective',
     'TaskType',
+    'WindowsUpdateSettings',
+    'YumSettings',
+    'ZypperSettings',
+'AgentEndpointServiceClient',
 )

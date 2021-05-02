@@ -110,7 +110,7 @@ class LogEntry(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=13,
+        number=13
     )
     proto_payload = proto.Field(
         proto.MESSAGE,

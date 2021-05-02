@@ -326,7 +326,8 @@ class IamCheckerClient(metaclass=IamCheckerClientMeta):
 
         Args:
             request (google.cloud.policytroubleshooter_v1.types.TroubleshootIamPolicyRequest):
-                The request object. Request for
+                The request object.
+                Request for
                 [TroubleshootIamPolicy][google.cloud.policytroubleshooter.v1.IamChecker.TroubleshootIamPolicy].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

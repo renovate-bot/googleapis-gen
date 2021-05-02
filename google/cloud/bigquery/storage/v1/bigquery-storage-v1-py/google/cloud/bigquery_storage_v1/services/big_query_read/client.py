@@ -384,7 +384,8 @@ class BigQueryReadClient(metaclass=BigQueryReadClientMeta):
 
         Args:
             request (google.cloud.bigquery_storage_v1.types.CreateReadSessionRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `CreateReadSession`.
             parent (str):
                 Required. The request project that owns the session, in
@@ -441,7 +442,7 @@ class BigQueryReadClient(metaclass=BigQueryReadClientMeta):
         # there are no flattened fields.
         if not isinstance(request, storage.CreateReadSessionRequest):
             request = storage.CreateReadSessionRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -493,7 +494,8 @@ class BigQueryReadClient(metaclass=BigQueryReadClientMeta):
 
         Args:
             request (google.cloud.bigquery_storage_v1.types.ReadRowsRequest):
-                The request object. Request message for `ReadRows`.
+                The request object.
+                Request message for `ReadRows`.
             read_stream (str):
                 Required. Stream to read rows from.
                 This corresponds to the ``read_stream`` field
@@ -535,7 +537,7 @@ class BigQueryReadClient(metaclass=BigQueryReadClientMeta):
         # there are no flattened fields.
         if not isinstance(request, storage.ReadRowsRequest):
             request = storage.ReadRowsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if read_stream is not None:
                 request.read_stream = read_stream
@@ -588,7 +590,8 @@ class BigQueryReadClient(metaclass=BigQueryReadClientMeta):
 
         Args:
             request (google.cloud.bigquery_storage_v1.types.SplitReadStreamRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `SplitReadStream`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

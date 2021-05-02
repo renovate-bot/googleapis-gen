@@ -14,11 +14,10 @@
 # limitations under the License.
 #
 
-from google.cloud.vision_v1.services.image_annotator.client import ImageAnnotatorClient
 from google.cloud.vision_v1.services.image_annotator.async_client import ImageAnnotatorAsyncClient
-from google.cloud.vision_v1.services.product_search.client import ProductSearchClient
+from google.cloud.vision_v1.services.image_annotator.client import ImageAnnotatorClient
 from google.cloud.vision_v1.services.product_search.async_client import ProductSearchAsyncClient
-
+from google.cloud.vision_v1.services.product_search.client import ProductSearchClient
 from google.cloud.vision_v1.types.geometry import BoundingPoly
 from google.cloud.vision_v1.types.geometry import NormalizedVertex
 from google.cloud.vision_v1.types.geometry import Position
@@ -54,6 +53,7 @@ from google.cloud.vision_v1.types.image_annotator import ImageProperties
 from google.cloud.vision_v1.types.image_annotator import ImageSource
 from google.cloud.vision_v1.types.image_annotator import InputConfig
 from google.cloud.vision_v1.types.image_annotator import LatLongRect
+from google.cloud.vision_v1.types.image_annotator import Likelihood
 from google.cloud.vision_v1.types.image_annotator import LocalizedObjectAnnotation
 from google.cloud.vision_v1.types.image_annotator import LocationInfo
 from google.cloud.vision_v1.types.image_annotator import OperationMetadata
@@ -62,7 +62,6 @@ from google.cloud.vision_v1.types.image_annotator import Property
 from google.cloud.vision_v1.types.image_annotator import SafeSearchAnnotation
 from google.cloud.vision_v1.types.image_annotator import TextDetectionParams
 from google.cloud.vision_v1.types.image_annotator import WebDetectionParams
-from google.cloud.vision_v1.types.image_annotator import Likelihood
 from google.cloud.vision_v1.types.product_search import ProductSearchParams
 from google.cloud.vision_v1.types.product_search import ProductSearchResults
 from google.cloud.vision_v1.types.product_search_service import AddProductToProductSetRequest
@@ -104,14 +103,7 @@ from google.cloud.vision_v1.types.text_annotation import TextAnnotation
 from google.cloud.vision_v1.types.text_annotation import Word
 from google.cloud.vision_v1.types.web_detection import WebDetection
 
-__all__ = ('ImageAnnotatorClient',
-    'ImageAnnotatorAsyncClient',
-    'ProductSearchClient',
-    'ProductSearchAsyncClient',
-    'BoundingPoly',
-    'NormalizedVertex',
-    'Position',
-    'Vertex',
+__all__ = ('AddProductToProductSetRequest',
     'AnnotateFileRequest',
     'AnnotateFileResponse',
     'AnnotateImageRequest',
@@ -126,49 +118,42 @@ __all__ = ('ImageAnnotatorClient',
     'BatchAnnotateFilesResponse',
     'BatchAnnotateImagesRequest',
     'BatchAnnotateImagesResponse',
+    'BatchOperationMetadata',
+    'Block',
+    'BoundingPoly',
     'ColorInfo',
+    'CreateProductRequest',
+    'CreateProductSetRequest',
+    'CreateReferenceImageRequest',
     'CropHint',
     'CropHintsAnnotation',
     'CropHintsParams',
+    'DeleteProductRequest',
+    'DeleteProductSetRequest',
+    'DeleteReferenceImageRequest',
     'DominantColorsAnnotation',
     'EntityAnnotation',
     'FaceAnnotation',
     'Feature',
     'GcsDestination',
     'GcsSource',
-    'Image',
-    'ImageAnnotationContext',
-    'ImageContext',
-    'ImageProperties',
-    'ImageSource',
-    'InputConfig',
-    'LatLongRect',
-    'LocalizedObjectAnnotation',
-    'LocationInfo',
-    'OperationMetadata',
-    'OutputConfig',
-    'Property',
-    'SafeSearchAnnotation',
-    'TextDetectionParams',
-    'WebDetectionParams',
-    'Likelihood',
-    'ProductSearchParams',
-    'ProductSearchResults',
-    'AddProductToProductSetRequest',
-    'BatchOperationMetadata',
-    'CreateProductRequest',
-    'CreateProductSetRequest',
-    'CreateReferenceImageRequest',
-    'DeleteProductRequest',
-    'DeleteProductSetRequest',
-    'DeleteReferenceImageRequest',
     'GetProductRequest',
     'GetProductSetRequest',
     'GetReferenceImageRequest',
+    'Image',
+    'ImageAnnotationContext',
+    'ImageAnnotatorAsyncClient',
+    'ImageAnnotatorClient',
+    'ImageContext',
+    'ImageProperties',
+    'ImageSource',
     'ImportProductSetsGcsSource',
     'ImportProductSetsInputConfig',
     'ImportProductSetsRequest',
     'ImportProductSetsResponse',
+    'InputConfig',
+    'LatLongRect',
+    'Likelihood',
     'ListProductSetsRequest',
     'ListProductSetsResponse',
     'ListProductsInProductSetRequest',
@@ -177,19 +162,33 @@ __all__ = ('ImageAnnotatorClient',
     'ListProductsResponse',
     'ListReferenceImagesRequest',
     'ListReferenceImagesResponse',
+    'LocalizedObjectAnnotation',
+    'LocationInfo',
+    'NormalizedVertex',
+    'OperationMetadata',
+    'OutputConfig',
+    'Page',
+    'Paragraph',
+    'Position',
     'Product',
+    'ProductSearchAsyncClient',
+    'ProductSearchClient',
+    'ProductSearchParams',
+    'ProductSearchResults',
     'ProductSet',
     'ProductSetPurgeConfig',
+    'Property',
     'PurgeProductsRequest',
     'ReferenceImage',
     'RemoveProductFromProductSetRequest',
-    'UpdateProductRequest',
-    'UpdateProductSetRequest',
-    'Block',
-    'Page',
-    'Paragraph',
+    'SafeSearchAnnotation',
     'Symbol',
     'TextAnnotation',
-    'Word',
+    'TextDetectionParams',
+    'UpdateProductRequest',
+    'UpdateProductSetRequest',
+    'Vertex',
     'WebDetection',
+    'WebDetectionParams',
+    'Word',
 )

@@ -14,15 +14,14 @@
 # limitations under the License.
 #
 
-from google.cloud.metastore_v1alpha.services.dataproc_metastore.client import DataprocMetastoreClient
 from google.cloud.metastore_v1alpha.services.dataproc_metastore.async_client import DataprocMetastoreAsyncClient
-
+from google.cloud.metastore_v1alpha.services.dataproc_metastore.client import DataprocMetastoreClient
 from google.cloud.metastore_v1alpha.types.metastore import Backup
 from google.cloud.metastore_v1alpha.types.metastore import CreateBackupRequest
 from google.cloud.metastore_v1alpha.types.metastore import CreateMetadataImportRequest
 from google.cloud.metastore_v1alpha.types.metastore import CreateServiceRequest
-from google.cloud.metastore_v1alpha.types.metastore import DatabaseDumpSpec
 from google.cloud.metastore_v1alpha.types.metastore import DataCatalogConfig
+from google.cloud.metastore_v1alpha.types.metastore import DatabaseDumpSpec
 from google.cloud.metastore_v1alpha.types.metastore import DeleteBackupRequest
 from google.cloud.metastore_v1alpha.types.metastore import DeleteServiceRequest
 from google.cloud.metastore_v1alpha.types.metastore import ExportMetadataRequest
@@ -51,14 +50,14 @@ from google.cloud.metastore_v1alpha.types.metastore import Service
 from google.cloud.metastore_v1alpha.types.metastore import UpdateMetadataImportRequest
 from google.cloud.metastore_v1alpha.types.metastore import UpdateServiceRequest
 
-__all__ = ('DataprocMetastoreClient',
-    'DataprocMetastoreAsyncClient',
-    'Backup',
+__all__ = ('Backup',
     'CreateBackupRequest',
     'CreateMetadataImportRequest',
     'CreateServiceRequest',
-    'DatabaseDumpSpec',
     'DataCatalogConfig',
+    'DatabaseDumpSpec',
+    'DataprocMetastoreAsyncClient',
+    'DataprocMetastoreClient',
     'DeleteBackupRequest',
     'DeleteServiceRequest',
     'ExportMetadataRequest',

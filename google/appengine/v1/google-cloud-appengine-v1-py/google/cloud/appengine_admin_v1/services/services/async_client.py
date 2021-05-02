@@ -158,7 +158,8 @@ class ServicesAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.ListServicesRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Services.ListServices`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -225,7 +226,8 @@ class ServicesAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.GetServiceRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Services.GetService`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -290,7 +292,8 @@ class ServicesAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.UpdateServiceRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Services.UpdateService`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -363,7 +366,8 @@ class ServicesAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.DeleteServiceRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `Services.DeleteService`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

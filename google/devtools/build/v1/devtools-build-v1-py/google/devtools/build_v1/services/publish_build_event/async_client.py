@@ -178,7 +178,8 @@ class PublishBuildEventAsyncClient:
 
         Args:
             request (:class:`google.devtools.build_v1.types.PublishLifecycleEventRequest`):
-                The request object. Publishes 'lifecycle events' that
+                The request object.
+                Publishes 'lifecycle events' that
                 update the high-level state of a build: - BuildEnqueued:
                 When a build is scheduled. - InvocationAttemptStarted:
                 When work for a build starts; there can be     multiple
@@ -230,7 +231,8 @@ class PublishBuildEventAsyncClient:
 
         Args:
             requests (AsyncIterator[`google.devtools.build_v1.types.PublishBuildToolEventStreamRequest`]):
-                The request object AsyncIterator. Streaming request message for
+                The request object AsyncIterator.
+                Streaming request message for
                 PublishBuildToolEventStream.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

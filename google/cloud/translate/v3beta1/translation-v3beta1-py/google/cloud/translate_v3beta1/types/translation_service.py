@@ -196,7 +196,7 @@ class TranslateTextRequest(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=10,
+        number=10
     )
 
 
@@ -339,7 +339,7 @@ class DetectLanguageRequest(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=6,
+        number=6
     )
 
 
@@ -879,7 +879,7 @@ class TranslateDocumentRequest(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=8,
+        number=8
     )
 
 
@@ -1042,7 +1042,7 @@ class BatchTranslateTextRequest(proto.Message):
     models = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=4,
+        number=4
     )
     input_configs = proto.RepeatedField(
         proto.MESSAGE,
@@ -1057,13 +1057,13 @@ class BatchTranslateTextRequest(proto.Message):
     glossaries = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=7,
+        number=7
         message='TranslateTextGlossaryConfig',
     )
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=9,
+        number=9
     )
 
 
@@ -1644,12 +1644,12 @@ class BatchTranslateDocumentRequest(proto.Message):
     models = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=6,
+        number=6
     )
     glossaries = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=7,
+        number=7
         message='TranslateTextGlossaryConfig',
     )
 

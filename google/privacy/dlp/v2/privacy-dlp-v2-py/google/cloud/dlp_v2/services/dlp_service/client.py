@@ -418,7 +418,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         Args:
             request (google.cloud.dlp_v2.types.InspectContentRequest):
-                The request object. Request to search for potentially
+                The request object.
+                Request to search for potentially
                 sensitive info in a ContentItem.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -481,7 +482,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         Args:
             request (google.cloud.dlp_v2.types.RedactImageRequest):
-                The request object. Request to search for potentially
+                The request object.
+                Request to search for potentially
                 sensitive info in an image and redact it by covering it
                 with a colored rectangle.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -545,7 +547,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         Args:
             request (google.cloud.dlp_v2.types.DeidentifyContentRequest):
-                The request object. Request to de-identify a list of
+                The request object.
+                Request to de-identify a list of
                 items.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -603,7 +606,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         Args:
             request (google.cloud.dlp_v2.types.ReidentifyContentRequest):
-                The request object. Request to re-identify an item.
+                The request object.
+                Request to re-identify an item.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -660,7 +664,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         Args:
             request (google.cloud.dlp_v2.types.ListInfoTypesRequest):
-                The request object. Request for the list of infoTypes.
+                The request object.
+                Request for the list of infoTypes.
             parent (str):
                 The parent resource name.
 
@@ -699,7 +704,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.ListInfoTypesRequest):
             request = dlp.ListInfoTypesRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -735,7 +740,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         Args:
             request (google.cloud.dlp_v2.types.CreateInspectTemplateRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 CreateInspectTemplate.
             parent (str):
                 Required. Parent resource name.
@@ -804,7 +810,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.CreateInspectTemplateRequest):
             request = dlp.CreateInspectTemplateRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -850,7 +856,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         Args:
             request (google.cloud.dlp_v2.types.UpdateInspectTemplateRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 UpdateInspectTemplate.
             name (str):
                 Required. Resource name of organization and
@@ -904,7 +911,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.UpdateInspectTemplateRequest):
             request = dlp.UpdateInspectTemplateRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -950,7 +957,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         Args:
             request (google.cloud.dlp_v2.types.GetInspectTemplateRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GetInspectTemplate.
             name (str):
                 Required. Resource name of the organization and
@@ -992,7 +1000,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.GetInspectTemplateRequest):
             request = dlp.GetInspectTemplateRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1034,7 +1042,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         Args:
             request (google.cloud.dlp_v2.types.ListInspectTemplatesRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ListInspectTemplates.
             parent (str):
                 Required. Parent resource name.
@@ -1094,7 +1103,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.ListInspectTemplatesRequest):
             request = dlp.ListInspectTemplatesRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1145,7 +1154,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         Args:
             request (google.cloud.dlp_v2.types.DeleteInspectTemplateRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 DeleteInspectTemplate.
             name (str):
                 Required. Resource name of the organization and
@@ -1176,7 +1186,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.DeleteInspectTemplateRequest):
             request = dlp.DeleteInspectTemplateRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1218,7 +1228,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         Args:
             request (google.cloud.dlp_v2.types.CreateDeidentifyTemplateRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 CreateDeidentifyTemplate.
             parent (str):
                 Required. Parent resource name.
@@ -1285,7 +1296,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.CreateDeidentifyTemplateRequest):
             request = dlp.CreateDeidentifyTemplateRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1331,7 +1342,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         Args:
             request (google.cloud.dlp_v2.types.UpdateDeidentifyTemplateRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 UpdateDeidentifyTemplate.
             name (str):
                 Required. Resource name of organization and deidentify
@@ -1383,7 +1395,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.UpdateDeidentifyTemplateRequest):
             request = dlp.UpdateDeidentifyTemplateRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1429,7 +1441,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         Args:
             request (google.cloud.dlp_v2.types.GetDeidentifyTemplateRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GetDeidentifyTemplate.
             name (str):
                 Required. Resource name of the organization and
@@ -1469,7 +1482,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.GetDeidentifyTemplateRequest):
             request = dlp.GetDeidentifyTemplateRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1511,7 +1524,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         Args:
             request (google.cloud.dlp_v2.types.ListDeidentifyTemplatesRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ListDeidentifyTemplates.
             parent (str):
                 Required. Parent resource name.
@@ -1571,7 +1585,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.ListDeidentifyTemplatesRequest):
             request = dlp.ListDeidentifyTemplatesRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1622,7 +1636,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         Args:
             request (google.cloud.dlp_v2.types.DeleteDeidentifyTemplateRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 DeleteDeidentifyTemplate.
             name (str):
                 Required. Resource name of the organization and
@@ -1653,7 +1668,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.DeleteDeidentifyTemplateRequest):
             request = dlp.DeleteDeidentifyTemplateRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1695,7 +1710,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         Args:
             request (google.cloud.dlp_v2.types.CreateJobTriggerRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 CreateJobTrigger.
             parent (str):
                 Required. Parent resource name.
@@ -1754,7 +1770,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.CreateJobTriggerRequest):
             request = dlp.CreateJobTriggerRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1800,7 +1816,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         Args:
             request (google.cloud.dlp_v2.types.UpdateJobTriggerRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 UpdateJobTrigger.
             name (str):
                 Required. Resource name of the project and the
@@ -1850,7 +1867,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.UpdateJobTriggerRequest):
             request = dlp.UpdateJobTriggerRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1901,7 +1918,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         Args:
             request (google.cloud.dlp_v2.types.HybridInspectJobTriggerRequest):
-                The request object. Request to search for potentially
+                The request object.
+                Request to search for potentially
                 sensitive info in a custom location.
             name (str):
                 Required. Resource name of the trigger to execute a
@@ -1937,7 +1955,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.HybridInspectJobTriggerRequest):
             request = dlp.HybridInspectJobTriggerRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1979,7 +1997,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         Args:
             request (google.cloud.dlp_v2.types.GetJobTriggerRequest):
-                The request object. Request message for GetJobTrigger.
+                The request object.
+                Request message for GetJobTrigger.
             name (str):
                 Required. Resource name of the project and the
                 triggeredJob, for example
@@ -2016,7 +2035,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.GetJobTriggerRequest):
             request = dlp.GetJobTriggerRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -2058,7 +2077,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         Args:
             request (google.cloud.dlp_v2.types.ListJobTriggersRequest):
-                The request object. Request message for ListJobTriggers.
+                The request object.
+                Request message for ListJobTriggers.
             parent (str):
                 Required. Parent resource name.
 
@@ -2111,7 +2131,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.ListJobTriggersRequest):
             request = dlp.ListJobTriggersRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -2162,7 +2182,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         Args:
             request (google.cloud.dlp_v2.types.DeleteJobTriggerRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 DeleteJobTrigger.
             name (str):
                 Required. Resource name of the project and the
@@ -2192,7 +2213,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.DeleteJobTriggerRequest):
             request = dlp.DeleteJobTriggerRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -2230,7 +2251,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         Args:
             request (google.cloud.dlp_v2.types.ActivateJobTriggerRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ActivateJobTrigger.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -2297,7 +2319,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         Args:
             request (google.cloud.dlp_v2.types.CreateDlpJobRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 CreateDlpJobRequest. Used to initiate long running jobs
                 such as calculating risk metrics or inspecting Google
                 Cloud Storage.
@@ -2365,7 +2388,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.CreateDlpJobRequest):
             request = dlp.CreateDlpJobRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -2413,7 +2436,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         Args:
             request (google.cloud.dlp_v2.types.ListDlpJobsRequest):
-                The request object. The request message for listing DLP
+                The request object.
+                The request message for listing DLP
                 jobs.
             parent (str):
                 Required. Parent resource name.
@@ -2468,7 +2492,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.ListDlpJobsRequest):
             request = dlp.ListDlpJobsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -2520,7 +2544,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         Args:
             request (google.cloud.dlp_v2.types.GetDlpJobRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [DlpJobs.GetDlpJob][].
             name (str):
                 Required. The name of the DlpJob
@@ -2555,7 +2580,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.GetDlpJobRequest):
             request = dlp.GetDlpJobRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -2600,7 +2625,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         Args:
             request (google.cloud.dlp_v2.types.DeleteDlpJobRequest):
-                The request object. The request message for deleting a
+                The request object.
+                The request message for deleting a
                 DLP job.
             name (str):
                 Required. The name of the DlpJob
@@ -2629,7 +2655,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.DeleteDlpJobRequest):
             request = dlp.DeleteDlpJobRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -2670,7 +2696,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         Args:
             request (google.cloud.dlp_v2.types.CancelDlpJobRequest):
-                The request object. The request message for canceling a
+                The request object.
+                The request message for canceling a
                 DLP job.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -2722,7 +2749,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         Args:
             request (google.cloud.dlp_v2.types.CreateStoredInfoTypeRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 CreateStoredInfoType.
             parent (str):
                 Required. Parent resource name.
@@ -2787,7 +2815,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.CreateStoredInfoTypeRequest):
             request = dlp.CreateStoredInfoTypeRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -2835,7 +2863,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         Args:
             request (google.cloud.dlp_v2.types.UpdateStoredInfoTypeRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 UpdateStoredInfoType.
             name (str):
                 Required. Resource name of organization and
@@ -2889,7 +2918,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.UpdateStoredInfoTypeRequest):
             request = dlp.UpdateStoredInfoTypeRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -2935,7 +2964,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         Args:
             request (google.cloud.dlp_v2.types.GetStoredInfoTypeRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 GetStoredInfoType.
             name (str):
                 Required. Resource name of the organization and
@@ -2973,7 +3003,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.GetStoredInfoTypeRequest):
             request = dlp.GetStoredInfoTypeRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -3015,7 +3045,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         Args:
             request (google.cloud.dlp_v2.types.ListStoredInfoTypesRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 ListStoredInfoTypes.
             parent (str):
                 Required. Parent resource name.
@@ -3075,7 +3106,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.ListStoredInfoTypesRequest):
             request = dlp.ListStoredInfoTypesRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -3126,7 +3157,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         Args:
             request (google.cloud.dlp_v2.types.DeleteStoredInfoTypeRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 DeleteStoredInfoType.
             name (str):
                 Required. Resource name of the organization and
@@ -3157,7 +3189,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.DeleteStoredInfoTypeRequest):
             request = dlp.DeleteStoredInfoTypeRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -3200,7 +3232,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         Args:
             request (google.cloud.dlp_v2.types.HybridInspectDlpJobRequest):
-                The request object. Request to search for potentially
+                The request object.
+                Request to search for potentially
                 sensitive info in a custom location.
             name (str):
                 Required. Resource name of the job to execute a hybrid
@@ -3236,7 +3269,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.HybridInspectDlpJobRequest):
             request = dlp.HybridInspectDlpJobRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -3280,7 +3313,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         Args:
             request (google.cloud.dlp_v2.types.FinishDlpJobRequest):
-                The request object. The request message for finishing a
+                The request object.
+                The request message for finishing a
                 DLP hybrid job.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

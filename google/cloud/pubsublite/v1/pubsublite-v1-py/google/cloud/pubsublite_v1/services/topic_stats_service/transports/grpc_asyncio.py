@@ -226,7 +226,9 @@ class TopicStatsServiceGrpcAsyncIOTransport(TopicStatsServiceTransport):
     def compute_message_stats(self) -> Callable[
             [topic_stats.ComputeMessageStatsRequest],
             Awaitable[topic_stats.ComputeMessageStatsResponse]]:
-        r"""Return a callable for the compute message stats method over gRPC.
+        r"""Return a callable for the
+        compute message stats
+          method over gRPC.
 
         Compute statistics about a range of messages in a
         given topic and partition.
@@ -253,7 +255,9 @@ class TopicStatsServiceGrpcAsyncIOTransport(TopicStatsServiceTransport):
     def compute_head_cursor(self) -> Callable[
             [topic_stats.ComputeHeadCursorRequest],
             Awaitable[topic_stats.ComputeHeadCursorResponse]]:
-        r"""Return a callable for the compute head cursor method over gRPC.
+        r"""Return a callable for the
+        compute head cursor
+          method over gRPC.
 
         Compute the head cursor for the partition.
         The head cursor's offset is guaranteed to be less than
@@ -285,7 +289,9 @@ class TopicStatsServiceGrpcAsyncIOTransport(TopicStatsServiceTransport):
     def compute_time_cursor(self) -> Callable[
             [topic_stats.ComputeTimeCursorRequest],
             Awaitable[topic_stats.ComputeTimeCursorResponse]]:
-        r"""Return a callable for the compute time cursor method over gRPC.
+        r"""Return a callable for the
+        compute time cursor
+          method over gRPC.
 
         Compute the corresponding cursor for a publish or
         event time in a topic partition.

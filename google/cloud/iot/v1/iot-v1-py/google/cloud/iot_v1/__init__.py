@@ -29,10 +29,10 @@ from .types.device_manager import ListDeviceConfigVersionsRequest
 from .types.device_manager import ListDeviceConfigVersionsResponse
 from .types.device_manager import ListDeviceRegistriesRequest
 from .types.device_manager import ListDeviceRegistriesResponse
-from .types.device_manager import ListDevicesRequest
-from .types.device_manager import ListDevicesResponse
 from .types.device_manager import ListDeviceStatesRequest
 from .types.device_manager import ListDeviceStatesResponse
+from .types.device_manager import ListDevicesRequest
+from .types.device_manager import ListDevicesResponse
 from .types.device_manager import ModifyCloudToDeviceConfigRequest
 from .types.device_manager import SendCommandToDeviceRequest
 from .types.device_manager import SendCommandToDeviceResponse
@@ -46,67 +46,67 @@ from .types.resources import DeviceCredential
 from .types.resources import DeviceRegistry
 from .types.resources import DeviceState
 from .types.resources import EventNotificationConfig
+from .types.resources import GatewayAuthMethod
 from .types.resources import GatewayConfig
+from .types.resources import GatewayType
 from .types.resources import HttpConfig
+from .types.resources import HttpState
+from .types.resources import LogLevel
 from .types.resources import MqttConfig
+from .types.resources import MqttState
 from .types.resources import PublicKeyCertificate
+from .types.resources import PublicKeyCertificateFormat
 from .types.resources import PublicKeyCredential
+from .types.resources import PublicKeyFormat
 from .types.resources import RegistryCredential
 from .types.resources import StateNotificationConfig
 from .types.resources import X509CertificateDetails
-from .types.resources import GatewayAuthMethod
-from .types.resources import GatewayType
-from .types.resources import HttpState
-from .types.resources import LogLevel
-from .types.resources import MqttState
-from .types.resources import PublicKeyCertificateFormat
-from .types.resources import PublicKeyFormat
 
 __all__ = (
-    'DeviceManagerClient',
     'BindDeviceToGatewayRequest',
     'BindDeviceToGatewayResponse',
     'CreateDeviceRegistryRequest',
     'CreateDeviceRequest',
     'DeleteDeviceRegistryRequest',
     'DeleteDeviceRequest',
-    'GatewayListOptions',
-    'GetDeviceRegistryRequest',
-    'GetDeviceRequest',
-    'ListDeviceConfigVersionsRequest',
-    'ListDeviceConfigVersionsResponse',
-    'ListDeviceRegistriesRequest',
-    'ListDeviceRegistriesResponse',
-    'ListDevicesRequest',
-    'ListDevicesResponse',
-    'ListDeviceStatesRequest',
-    'ListDeviceStatesResponse',
-    'ModifyCloudToDeviceConfigRequest',
-    'SendCommandToDeviceRequest',
-    'SendCommandToDeviceResponse',
-    'UnbindDeviceFromGatewayRequest',
-    'UnbindDeviceFromGatewayResponse',
-    'UpdateDeviceRegistryRequest',
-    'UpdateDeviceRequest',
     'Device',
     'DeviceConfig',
     'DeviceCredential',
     'DeviceRegistry',
     'DeviceState',
     'EventNotificationConfig',
-    'GatewayConfig',
-    'HttpConfig',
-    'MqttConfig',
-    'PublicKeyCertificate',
-    'PublicKeyCredential',
-    'RegistryCredential',
-    'StateNotificationConfig',
-    'X509CertificateDetails',
     'GatewayAuthMethod',
+    'GatewayConfig',
+    'GatewayListOptions',
     'GatewayType',
+    'GetDeviceRegistryRequest',
+    'GetDeviceRequest',
+    'HttpConfig',
     'HttpState',
+    'ListDeviceConfigVersionsRequest',
+    'ListDeviceConfigVersionsResponse',
+    'ListDeviceRegistriesRequest',
+    'ListDeviceRegistriesResponse',
+    'ListDeviceStatesRequest',
+    'ListDeviceStatesResponse',
+    'ListDevicesRequest',
+    'ListDevicesResponse',
     'LogLevel',
+    'ModifyCloudToDeviceConfigRequest',
+    'MqttConfig',
     'MqttState',
+    'PublicKeyCertificate',
     'PublicKeyCertificateFormat',
+    'PublicKeyCredential',
     'PublicKeyFormat',
+    'RegistryCredential',
+    'SendCommandToDeviceRequest',
+    'SendCommandToDeviceResponse',
+    'StateNotificationConfig',
+    'UnbindDeviceFromGatewayRequest',
+    'UnbindDeviceFromGatewayResponse',
+    'UpdateDeviceRegistryRequest',
+    'UpdateDeviceRequest',
+    'X509CertificateDetails',
+'DeviceManagerClient',
 )

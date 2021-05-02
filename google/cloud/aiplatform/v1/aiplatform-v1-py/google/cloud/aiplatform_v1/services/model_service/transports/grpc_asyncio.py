@@ -248,7 +248,9 @@ class ModelServiceGrpcAsyncIOTransport(ModelServiceTransport):
     def upload_model(self) -> Callable[
             [model_service.UploadModelRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the upload model method over gRPC.
+        r"""Return a callable for the
+        upload model
+          method over gRPC.
 
         Uploads a Model artifact into AI Platform.
 
@@ -274,7 +276,9 @@ class ModelServiceGrpcAsyncIOTransport(ModelServiceTransport):
     def get_model(self) -> Callable[
             [model_service.GetModelRequest],
             Awaitable[model.Model]]:
-        r"""Return a callable for the get model method over gRPC.
+        r"""Return a callable for the
+        get model
+          method over gRPC.
 
         Gets a Model.
 
@@ -300,7 +304,9 @@ class ModelServiceGrpcAsyncIOTransport(ModelServiceTransport):
     def list_models(self) -> Callable[
             [model_service.ListModelsRequest],
             Awaitable[model_service.ListModelsResponse]]:
-        r"""Return a callable for the list models method over gRPC.
+        r"""Return a callable for the
+        list models
+          method over gRPC.
 
         Lists Models in a Location.
 
@@ -326,7 +332,9 @@ class ModelServiceGrpcAsyncIOTransport(ModelServiceTransport):
     def update_model(self) -> Callable[
             [model_service.UpdateModelRequest],
             Awaitable[gca_model.Model]]:
-        r"""Return a callable for the update model method over gRPC.
+        r"""Return a callable for the
+        update model
+          method over gRPC.
 
         Updates a Model.
 
@@ -352,7 +360,9 @@ class ModelServiceGrpcAsyncIOTransport(ModelServiceTransport):
     def delete_model(self) -> Callable[
             [model_service.DeleteModelRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the delete model method over gRPC.
+        r"""Return a callable for the
+        delete model
+          method over gRPC.
 
         Deletes a Model.
         Note: Model can only be deleted if there are no
@@ -380,7 +390,9 @@ class ModelServiceGrpcAsyncIOTransport(ModelServiceTransport):
     def export_model(self) -> Callable[
             [model_service.ExportModelRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the export model method over gRPC.
+        r"""Return a callable for the
+        export model
+          method over gRPC.
 
         Exports a trained, exportable, Model to a location specified by
         the user. A Model is considered to be exportable if it has at
@@ -409,7 +421,9 @@ class ModelServiceGrpcAsyncIOTransport(ModelServiceTransport):
     def get_model_evaluation(self) -> Callable[
             [model_service.GetModelEvaluationRequest],
             Awaitable[model_evaluation.ModelEvaluation]]:
-        r"""Return a callable for the get model evaluation method over gRPC.
+        r"""Return a callable for the
+        get model evaluation
+          method over gRPC.
 
         Gets a ModelEvaluation.
 
@@ -435,7 +449,9 @@ class ModelServiceGrpcAsyncIOTransport(ModelServiceTransport):
     def list_model_evaluations(self) -> Callable[
             [model_service.ListModelEvaluationsRequest],
             Awaitable[model_service.ListModelEvaluationsResponse]]:
-        r"""Return a callable for the list model evaluations method over gRPC.
+        r"""Return a callable for the
+        list model evaluations
+          method over gRPC.
 
         Lists ModelEvaluations in a Model.
 
@@ -461,7 +477,9 @@ class ModelServiceGrpcAsyncIOTransport(ModelServiceTransport):
     def get_model_evaluation_slice(self) -> Callable[
             [model_service.GetModelEvaluationSliceRequest],
             Awaitable[model_evaluation_slice.ModelEvaluationSlice]]:
-        r"""Return a callable for the get model evaluation slice method over gRPC.
+        r"""Return a callable for the
+        get model evaluation slice
+          method over gRPC.
 
         Gets a ModelEvaluationSlice.
 
@@ -487,7 +505,9 @@ class ModelServiceGrpcAsyncIOTransport(ModelServiceTransport):
     def list_model_evaluation_slices(self) -> Callable[
             [model_service.ListModelEvaluationSlicesRequest],
             Awaitable[model_service.ListModelEvaluationSlicesResponse]]:
-        r"""Return a callable for the list model evaluation slices method over gRPC.
+        r"""Return a callable for the
+        list model evaluation slices
+          method over gRPC.
 
         Lists ModelEvaluationSlices in a ModelEvaluation.
 

@@ -32,7 +32,6 @@ from .types.gsuiteaddons import ReplaceDeploymentRequest
 from .types.gsuiteaddons import UninstallDeploymentRequest
 
 __all__ = (
-    'GSuiteAddOnsClient',
     'AddOns',
     'Authorization',
     'CreateDeploymentRequest',
@@ -47,4 +46,5 @@ __all__ = (
     'ListDeploymentsResponse',
     'ReplaceDeploymentRequest',
     'UninstallDeploymentRequest',
+'GSuiteAddOnsClient',
 )

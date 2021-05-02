@@ -229,7 +229,9 @@ class ApplicationServiceGrpcAsyncIOTransport(ApplicationServiceTransport):
     def create_application(self) -> Callable[
             [application_service.CreateApplicationRequest],
             Awaitable[gct_application.Application]]:
-        r"""Return a callable for the create application method over gRPC.
+        r"""Return a callable for the
+        create application
+          method over gRPC.
 
         Creates a new application entity.
 
@@ -255,7 +257,9 @@ class ApplicationServiceGrpcAsyncIOTransport(ApplicationServiceTransport):
     def get_application(self) -> Callable[
             [application_service.GetApplicationRequest],
             Awaitable[application.Application]]:
-        r"""Return a callable for the get application method over gRPC.
+        r"""Return a callable for the
+        get application
+          method over gRPC.
 
         Retrieves specified application.
 
@@ -281,7 +285,9 @@ class ApplicationServiceGrpcAsyncIOTransport(ApplicationServiceTransport):
     def update_application(self) -> Callable[
             [application_service.UpdateApplicationRequest],
             Awaitable[gct_application.Application]]:
-        r"""Return a callable for the update application method over gRPC.
+        r"""Return a callable for the
+        update application
+          method over gRPC.
 
         Updates specified application.
 
@@ -307,7 +313,9 @@ class ApplicationServiceGrpcAsyncIOTransport(ApplicationServiceTransport):
     def delete_application(self) -> Callable[
             [application_service.DeleteApplicationRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete application method over gRPC.
+        r"""Return a callable for the
+        delete application
+          method over gRPC.
 
         Deletes specified application.
 
@@ -333,7 +341,9 @@ class ApplicationServiceGrpcAsyncIOTransport(ApplicationServiceTransport):
     def list_applications(self) -> Callable[
             [application_service.ListApplicationsRequest],
             Awaitable[application_service.ListApplicationsResponse]]:
-        r"""Return a callable for the list applications method over gRPC.
+        r"""Return a callable for the
+        list applications
+          method over gRPC.
 
         Lists all applications associated with the profile.
 

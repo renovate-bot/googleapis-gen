@@ -240,7 +240,9 @@ class QuestionServiceGrpcTransport(QuestionServiceTransport):
     def get_question(self) -> Callable[
             [question_service.GetQuestionRequest],
             question.Question]:
-        r"""Return a callable for the get question method over gRPC.
+        r"""Return a callable for the
+        get question
+          method over gRPC.
 
         Gets a previously created question.
 
@@ -266,7 +268,9 @@ class QuestionServiceGrpcTransport(QuestionServiceTransport):
     def create_question(self) -> Callable[
             [question_service.CreateQuestionRequest],
             gcd_question.Question]:
-        r"""Return a callable for the create question method over gRPC.
+        r"""Return a callable for the
+        create question
+          method over gRPC.
 
         Creates a question.
 
@@ -292,7 +296,9 @@ class QuestionServiceGrpcTransport(QuestionServiceTransport):
     def execute_question(self) -> Callable[
             [question_service.ExecuteQuestionRequest],
             question.Question]:
-        r"""Return a callable for the execute question method over gRPC.
+        r"""Return a callable for the
+        execute question
+          method over gRPC.
 
         Executes an interpretation.
 
@@ -318,7 +324,9 @@ class QuestionServiceGrpcTransport(QuestionServiceTransport):
     def get_user_feedback(self) -> Callable[
             [question_service.GetUserFeedbackRequest],
             user_feedback.UserFeedback]:
-        r"""Return a callable for the get user feedback method over gRPC.
+        r"""Return a callable for the
+        get user feedback
+          method over gRPC.
 
         Gets previously created user feedback.
 
@@ -344,7 +352,9 @@ class QuestionServiceGrpcTransport(QuestionServiceTransport):
     def update_user_feedback(self) -> Callable[
             [question_service.UpdateUserFeedbackRequest],
             gcd_user_feedback.UserFeedback]:
-        r"""Return a callable for the update user feedback method over gRPC.
+        r"""Return a callable for the
+        update user feedback
+          method over gRPC.
 
         Updates user feedback. This creates user feedback if
         there was none before (upsert).

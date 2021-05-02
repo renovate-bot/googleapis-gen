@@ -3292,14 +3292,7 @@ def test_tables_service_base_transport_with_credentials_file():
         )
         load_creds.assert_called_once_with("credentials.json",
             scopes=None,
-            default_scopes=(
-            'https://www.googleapis.com/auth/drive',
-            'https://www.googleapis.com/auth/drive.file',
-            'https://www.googleapis.com/auth/drive.readonly',
-            'https://www.googleapis.com/auth/spreadsheets',
-            'https://www.googleapis.com/auth/spreadsheets.readonly',
-            'https://www.googleapis.com/auth/tables',
-),
+            default_scopes=(            'https://www.googleapis.com/auth/drive',            'https://www.googleapis.com/auth/drive.file',            'https://www.googleapis.com/auth/drive.readonly',            'https://www.googleapis.com/auth/spreadsheets',            'https://www.googleapis.com/auth/spreadsheets.readonly',            'https://www.googleapis.com/auth/tables',            ),
             quota_project_id="octopus",
         )
 
@@ -3351,6 +3344,7 @@ def test_tables_service_auth_adc():
             'https://www.googleapis.com/auth/spreadsheets.readonly',
             'https://www.googleapis.com/auth/tables',
 ),
+
             quota_project_id=None,
         )
 
@@ -3436,18 +3430,11 @@ def test_tables_service_transport_create_channel(transport_class, grpc_helpers):
         )
 
         create_channel.assert_called_with(
-            "area120tables.googleapis.com:443",
+            "area120tables.googleapis.com",
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",
-            default_scopes=(
-                'https://www.googleapis.com/auth/drive',
-                'https://www.googleapis.com/auth/drive.file',
-                'https://www.googleapis.com/auth/drive.readonly',
-                'https://www.googleapis.com/auth/spreadsheets',
-                'https://www.googleapis.com/auth/spreadsheets.readonly',
-                'https://www.googleapis.com/auth/tables',
-),
+            default_scopes=(                'https://www.googleapis.com/auth/drive',                'https://www.googleapis.com/auth/drive.file',                'https://www.googleapis.com/auth/drive.readonly',                'https://www.googleapis.com/auth/spreadsheets',                'https://www.googleapis.com/auth/spreadsheets.readonly',                'https://www.googleapis.com/auth/tables',),
             scopes=["1", "2"],
             default_host="area120tables.googleapis.com",
             ssl_credentials=None,
@@ -3481,14 +3468,7 @@ def test_tables_service_transport_create_channel_old_api_core(transport_class, g
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",
-            scopes=(
-                'https://www.googleapis.com/auth/drive',
-                'https://www.googleapis.com/auth/drive.file',
-                'https://www.googleapis.com/auth/drive.readonly',
-                'https://www.googleapis.com/auth/spreadsheets',
-                'https://www.googleapis.com/auth/spreadsheets.readonly',
-                'https://www.googleapis.com/auth/tables',
-),
+            scopes=(                'https://www.googleapis.com/auth/drive',                'https://www.googleapis.com/auth/drive.file',                'https://www.googleapis.com/auth/drive.readonly',                'https://www.googleapis.com/auth/spreadsheets',                'https://www.googleapis.com/auth/spreadsheets.readonly',                'https://www.googleapis.com/auth/tables',),
             ssl_credentials=None,
             options=[
                 ("grpc.max_send_message_length", -1),

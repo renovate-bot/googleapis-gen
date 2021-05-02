@@ -165,7 +165,8 @@ class CloudShellServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.shell_v1.types.GetEnvironmentRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [GetEnvironment][google.cloud.shell.v1.CloudShellService.GetEnvironment].
             name (:class:`str`):
                 Required. Name of the requested resource, for example
@@ -260,7 +261,8 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.shell_v1.types.StartEnvironmentRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [StartEnvironment][google.cloud.shell.v1.CloudShellService.StartEnvironment].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -330,7 +332,8 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.shell_v1.types.AuthorizeEnvironmentRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AuthorizeEnvironment][google.cloud.shell.v1.CloudShellService.AuthorizeEnvironment].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -398,7 +401,8 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.shell_v1.types.AddPublicKeyRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AddPublicKey][google.cloud.shell.v1.CloudShellService.AddPublicKey].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -466,7 +470,8 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.shell_v1.types.RemovePublicKeyRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [RemovePublicKey][google.cloud.shell.v1.CloudShellService.RemovePublicKey].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

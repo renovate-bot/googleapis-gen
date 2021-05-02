@@ -222,7 +222,9 @@ class PolicyTagManagerSerializationGrpcTransport(PolicyTagManagerSerializationTr
     def import_taxonomies(self) -> Callable[
             [policytagmanagerserialization.ImportTaxonomiesRequest],
             policytagmanagerserialization.ImportTaxonomiesResponse]:
-        r"""Return a callable for the import taxonomies method over gRPC.
+        r"""Return a callable for the
+        import taxonomies
+          method over gRPC.
 
         Imports all taxonomies and their policy tags to a
         project as new taxonomies.
@@ -252,7 +254,9 @@ class PolicyTagManagerSerializationGrpcTransport(PolicyTagManagerSerializationTr
     def export_taxonomies(self) -> Callable[
             [policytagmanagerserialization.ExportTaxonomiesRequest],
             policytagmanagerserialization.ExportTaxonomiesResponse]:
-        r"""Return a callable for the export taxonomies method over gRPC.
+        r"""Return a callable for the
+        export taxonomies
+          method over gRPC.
 
         Exports all taxonomies and their policy tags in a
         project.

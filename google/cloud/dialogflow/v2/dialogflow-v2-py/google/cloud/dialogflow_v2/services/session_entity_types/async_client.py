@@ -164,7 +164,8 @@ class SessionEntityTypesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.ListSessionEntityTypesRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [SessionEntityTypes.ListSessionEntityTypes][google.cloud.dialogflow.v2.SessionEntityTypes.ListSessionEntityTypes].
             parent (:class:`str`):
                 Required. The session to list all session entity types
@@ -259,7 +260,8 @@ class SessionEntityTypesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.GetSessionEntityTypeRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [SessionEntityTypes.GetSessionEntityType][google.cloud.dialogflow.v2.SessionEntityTypes.GetSessionEntityType].
             name (:class:`str`):
                 Required. The name of the session entity type. Format:
@@ -354,7 +356,8 @@ class SessionEntityTypesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.CreateSessionEntityTypeRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [SessionEntityTypes.CreateSessionEntityType][google.cloud.dialogflow.v2.SessionEntityTypes.CreateSessionEntityType].
             parent (:class:`str`):
                 Required. The session to create a session entity type
@@ -455,7 +458,8 @@ class SessionEntityTypesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.UpdateSessionEntityTypeRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [SessionEntityTypes.UpdateSessionEntityType][google.cloud.dialogflow.v2.SessionEntityTypes.UpdateSessionEntityType].
             session_entity_type (:class:`google.cloud.dialogflow_v2.types.SessionEntityType`):
                 Required. The session entity type to
@@ -550,7 +554,8 @@ class SessionEntityTypesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.DeleteSessionEntityTypeRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [SessionEntityTypes.DeleteSessionEntityType][google.cloud.dialogflow.v2.SessionEntityTypes.DeleteSessionEntityType].
             name (:class:`str`):
                 Required. The name of the entity type to delete. Format:

@@ -369,7 +369,7 @@ class InputConfig(proto.Message):
     params = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=2,
+        number=2
     )
 
 
@@ -1039,7 +1039,7 @@ class ModelExportOutputConfig(proto.Message):
     params = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=2,
+        number=2
     )
 
 

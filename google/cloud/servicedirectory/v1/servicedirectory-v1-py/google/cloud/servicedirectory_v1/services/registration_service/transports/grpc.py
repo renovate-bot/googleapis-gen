@@ -243,7 +243,9 @@ class RegistrationServiceGrpcTransport(RegistrationServiceTransport):
     def create_namespace(self) -> Callable[
             [registration_service.CreateNamespaceRequest],
             gcs_namespace.Namespace]:
-        r"""Return a callable for the create namespace method over gRPC.
+        r"""Return a callable for the
+        create namespace
+          method over gRPC.
 
         Creates a namespace, and returns the new Namespace.
 
@@ -269,7 +271,9 @@ class RegistrationServiceGrpcTransport(RegistrationServiceTransport):
     def list_namespaces(self) -> Callable[
             [registration_service.ListNamespacesRequest],
             registration_service.ListNamespacesResponse]:
-        r"""Return a callable for the list namespaces method over gRPC.
+        r"""Return a callable for the
+        list namespaces
+          method over gRPC.
 
         Lists all namespaces.
 
@@ -295,7 +299,9 @@ class RegistrationServiceGrpcTransport(RegistrationServiceTransport):
     def get_namespace(self) -> Callable[
             [registration_service.GetNamespaceRequest],
             namespace.Namespace]:
-        r"""Return a callable for the get namespace method over gRPC.
+        r"""Return a callable for the
+        get namespace
+          method over gRPC.
 
         Gets a namespace.
 
@@ -321,7 +327,9 @@ class RegistrationServiceGrpcTransport(RegistrationServiceTransport):
     def update_namespace(self) -> Callable[
             [registration_service.UpdateNamespaceRequest],
             gcs_namespace.Namespace]:
-        r"""Return a callable for the update namespace method over gRPC.
+        r"""Return a callable for the
+        update namespace
+          method over gRPC.
 
         Updates a namespace.
 
@@ -347,7 +355,9 @@ class RegistrationServiceGrpcTransport(RegistrationServiceTransport):
     def delete_namespace(self) -> Callable[
             [registration_service.DeleteNamespaceRequest],
             empty.Empty]:
-        r"""Return a callable for the delete namespace method over gRPC.
+        r"""Return a callable for the
+        delete namespace
+          method over gRPC.
 
         Deletes a namespace. This also deletes all services
         and endpoints in the namespace.
@@ -374,7 +384,9 @@ class RegistrationServiceGrpcTransport(RegistrationServiceTransport):
     def create_service(self) -> Callable[
             [registration_service.CreateServiceRequest],
             gcs_service.Service]:
-        r"""Return a callable for the create service method over gRPC.
+        r"""Return a callable for the
+        create service
+          method over gRPC.
 
         Creates a service, and returns the new Service.
 
@@ -400,7 +412,9 @@ class RegistrationServiceGrpcTransport(RegistrationServiceTransport):
     def list_services(self) -> Callable[
             [registration_service.ListServicesRequest],
             registration_service.ListServicesResponse]:
-        r"""Return a callable for the list services method over gRPC.
+        r"""Return a callable for the
+        list services
+          method over gRPC.
 
         Lists all services belonging to a namespace.
 
@@ -426,7 +440,9 @@ class RegistrationServiceGrpcTransport(RegistrationServiceTransport):
     def get_service(self) -> Callable[
             [registration_service.GetServiceRequest],
             service.Service]:
-        r"""Return a callable for the get service method over gRPC.
+        r"""Return a callable for the
+        get service
+          method over gRPC.
 
         Gets a service.
 
@@ -452,7 +468,9 @@ class RegistrationServiceGrpcTransport(RegistrationServiceTransport):
     def update_service(self) -> Callable[
             [registration_service.UpdateServiceRequest],
             gcs_service.Service]:
-        r"""Return a callable for the update service method over gRPC.
+        r"""Return a callable for the
+        update service
+          method over gRPC.
 
         Updates a service.
 
@@ -478,7 +496,9 @@ class RegistrationServiceGrpcTransport(RegistrationServiceTransport):
     def delete_service(self) -> Callable[
             [registration_service.DeleteServiceRequest],
             empty.Empty]:
-        r"""Return a callable for the delete service method over gRPC.
+        r"""Return a callable for the
+        delete service
+          method over gRPC.
 
         Deletes a service. This also deletes all endpoints
         associated with the service.
@@ -505,7 +525,9 @@ class RegistrationServiceGrpcTransport(RegistrationServiceTransport):
     def create_endpoint(self) -> Callable[
             [registration_service.CreateEndpointRequest],
             gcs_endpoint.Endpoint]:
-        r"""Return a callable for the create endpoint method over gRPC.
+        r"""Return a callable for the
+        create endpoint
+          method over gRPC.
 
         Creates a endpoint, and returns the new Endpoint.
 
@@ -531,7 +553,9 @@ class RegistrationServiceGrpcTransport(RegistrationServiceTransport):
     def list_endpoints(self) -> Callable[
             [registration_service.ListEndpointsRequest],
             registration_service.ListEndpointsResponse]:
-        r"""Return a callable for the list endpoints method over gRPC.
+        r"""Return a callable for the
+        list endpoints
+          method over gRPC.
 
         Lists all endpoints.
 
@@ -557,7 +581,9 @@ class RegistrationServiceGrpcTransport(RegistrationServiceTransport):
     def get_endpoint(self) -> Callable[
             [registration_service.GetEndpointRequest],
             endpoint.Endpoint]:
-        r"""Return a callable for the get endpoint method over gRPC.
+        r"""Return a callable for the
+        get endpoint
+          method over gRPC.
 
         Gets a endpoint.
 
@@ -583,7 +609,9 @@ class RegistrationServiceGrpcTransport(RegistrationServiceTransport):
     def update_endpoint(self) -> Callable[
             [registration_service.UpdateEndpointRequest],
             gcs_endpoint.Endpoint]:
-        r"""Return a callable for the update endpoint method over gRPC.
+        r"""Return a callable for the
+        update endpoint
+          method over gRPC.
 
         Updates a endpoint.
 
@@ -609,7 +637,9 @@ class RegistrationServiceGrpcTransport(RegistrationServiceTransport):
     def delete_endpoint(self) -> Callable[
             [registration_service.DeleteEndpointRequest],
             empty.Empty]:
-        r"""Return a callable for the delete endpoint method over gRPC.
+        r"""Return a callable for the
+        delete endpoint
+          method over gRPC.
 
         Deletes a endpoint.
 
@@ -635,7 +665,9 @@ class RegistrationServiceGrpcTransport(RegistrationServiceTransport):
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
             gi_policy.Policy]:
-        r"""Return a callable for the get iam policy method over gRPC.
+        r"""Return a callable for the
+        get iam policy
+          method over gRPC.
 
         Gets the IAM Policy for a resource (namespace or
         service only).
@@ -662,7 +694,9 @@ class RegistrationServiceGrpcTransport(RegistrationServiceTransport):
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
             gi_policy.Policy]:
-        r"""Return a callable for the set iam policy method over gRPC.
+        r"""Return a callable for the
+        set iam policy
+          method over gRPC.
 
         Sets the IAM Policy for a resource (namespace or
         service only).
@@ -689,7 +723,9 @@ class RegistrationServiceGrpcTransport(RegistrationServiceTransport):
     def test_iam_permissions(self) -> Callable[
             [iam_policy.TestIamPermissionsRequest],
             iam_policy.TestIamPermissionsResponse]:
-        r"""Return a callable for the test iam permissions method over gRPC.
+        r"""Return a callable for the
+        test iam permissions
+          method over gRPC.
 
         Tests IAM permissions for a resource (namespace or
         service only).

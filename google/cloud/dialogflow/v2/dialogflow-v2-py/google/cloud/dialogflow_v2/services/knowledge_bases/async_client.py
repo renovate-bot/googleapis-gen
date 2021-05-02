@@ -160,7 +160,8 @@ class KnowledgeBasesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.ListKnowledgeBasesRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [KnowledgeBases.ListKnowledgeBases][google.cloud.dialogflow.v2.KnowledgeBases.ListKnowledgeBases].
             parent (:class:`str`):
                 Required. The project to list of knowledge bases for.
@@ -248,7 +249,8 @@ class KnowledgeBasesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.GetKnowledgeBaseRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [KnowledgeBases.GetKnowledgeBase][google.cloud.dialogflow.v2.KnowledgeBases.GetKnowledgeBase].
             name (:class:`str`):
                 Required. The name of the knowledge base to retrieve.
@@ -335,7 +337,8 @@ class KnowledgeBasesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.CreateKnowledgeBaseRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [KnowledgeBases.CreateKnowledgeBase][google.cloud.dialogflow.v2.KnowledgeBases.CreateKnowledgeBase].
             parent (:class:`str`):
                 Required. The project to create a knowledge base for.
@@ -430,7 +433,8 @@ class KnowledgeBasesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.DeleteKnowledgeBaseRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [KnowledgeBases.DeleteKnowledgeBase][google.cloud.dialogflow.v2.KnowledgeBases.DeleteKnowledgeBase].
             name (:class:`str`):
                 Required. The name of the knowledge base to delete.
@@ -498,7 +502,8 @@ class KnowledgeBasesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.UpdateKnowledgeBaseRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [KnowledgeBases.UpdateKnowledgeBase][google.cloud.dialogflow.v2.KnowledgeBases.UpdateKnowledgeBase].
             knowledge_base (:class:`google.cloud.dialogflow_v2.types.KnowledgeBase`):
                 Required. The knowledge base to

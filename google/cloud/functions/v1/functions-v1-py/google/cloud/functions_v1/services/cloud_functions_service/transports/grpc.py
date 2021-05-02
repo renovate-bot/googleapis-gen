@@ -242,7 +242,9 @@ class CloudFunctionsServiceGrpcTransport(CloudFunctionsServiceTransport):
     def list_functions(self) -> Callable[
             [functions.ListFunctionsRequest],
             functions.ListFunctionsResponse]:
-        r"""Return a callable for the list functions method over gRPC.
+        r"""Return a callable for the
+        list functions
+          method over gRPC.
 
         Returns a list of functions that belong to the
         requested project.
@@ -269,7 +271,9 @@ class CloudFunctionsServiceGrpcTransport(CloudFunctionsServiceTransport):
     def get_function(self) -> Callable[
             [functions.GetFunctionRequest],
             functions.CloudFunction]:
-        r"""Return a callable for the get function method over gRPC.
+        r"""Return a callable for the
+        get function
+          method over gRPC.
 
         Returns a function with the given name from the
         requested project.
@@ -296,7 +300,9 @@ class CloudFunctionsServiceGrpcTransport(CloudFunctionsServiceTransport):
     def create_function(self) -> Callable[
             [functions.CreateFunctionRequest],
             operations.Operation]:
-        r"""Return a callable for the create function method over gRPC.
+        r"""Return a callable for the
+        create function
+          method over gRPC.
 
         Creates a new function. If a function with the given name
         already exists in the specified project, the long running
@@ -324,7 +330,9 @@ class CloudFunctionsServiceGrpcTransport(CloudFunctionsServiceTransport):
     def update_function(self) -> Callable[
             [functions.UpdateFunctionRequest],
             operations.Operation]:
-        r"""Return a callable for the update function method over gRPC.
+        r"""Return a callable for the
+        update function
+          method over gRPC.
 
         Updates existing function.
 
@@ -350,7 +358,9 @@ class CloudFunctionsServiceGrpcTransport(CloudFunctionsServiceTransport):
     def delete_function(self) -> Callable[
             [functions.DeleteFunctionRequest],
             operations.Operation]:
-        r"""Return a callable for the delete function method over gRPC.
+        r"""Return a callable for the
+        delete function
+          method over gRPC.
 
         Deletes a function with the given name from the
         specified project. If the given function is used by some
@@ -379,7 +389,9 @@ class CloudFunctionsServiceGrpcTransport(CloudFunctionsServiceTransport):
     def call_function(self) -> Callable[
             [functions.CallFunctionRequest],
             functions.CallFunctionResponse]:
-        r"""Return a callable for the call function method over gRPC.
+        r"""Return a callable for the
+        call function
+          method over gRPC.
 
         Synchronously invokes a deployed Cloud Function. To be used for
         testing purposes as very limited traffic is allowed. For more
@@ -408,7 +420,9 @@ class CloudFunctionsServiceGrpcTransport(CloudFunctionsServiceTransport):
     def generate_upload_url(self) -> Callable[
             [functions.GenerateUploadUrlRequest],
             functions.GenerateUploadUrlResponse]:
-        r"""Return a callable for the generate upload url method over gRPC.
+        r"""Return a callable for the
+        generate upload url
+          method over gRPC.
 
         Returns a signed URL for uploading a function source code. For
         more information about the signed URL usage see:
@@ -461,7 +475,9 @@ class CloudFunctionsServiceGrpcTransport(CloudFunctionsServiceTransport):
     def generate_download_url(self) -> Callable[
             [functions.GenerateDownloadUrlRequest],
             functions.GenerateDownloadUrlResponse]:
-        r"""Return a callable for the generate download url method over gRPC.
+        r"""Return a callable for the
+        generate download url
+          method over gRPC.
 
         Returns a signed URL for downloading deployed
         function source code. The URL is only valid for a
@@ -493,7 +509,9 @@ class CloudFunctionsServiceGrpcTransport(CloudFunctionsServiceTransport):
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
             gi_policy.Policy]:
-        r"""Return a callable for the set iam policy method over gRPC.
+        r"""Return a callable for the
+        set iam policy
+          method over gRPC.
 
         Sets the IAM access control policy on the specified
         function. Replaces any existing policy.
@@ -520,7 +538,9 @@ class CloudFunctionsServiceGrpcTransport(CloudFunctionsServiceTransport):
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
             gi_policy.Policy]:
-        r"""Return a callable for the get iam policy method over gRPC.
+        r"""Return a callable for the
+        get iam policy
+          method over gRPC.
 
         Gets the IAM access control policy for a function.
         Returns an empty policy if the function exists and does
@@ -548,7 +568,9 @@ class CloudFunctionsServiceGrpcTransport(CloudFunctionsServiceTransport):
     def test_iam_permissions(self) -> Callable[
             [iam_policy.TestIamPermissionsRequest],
             iam_policy.TestIamPermissionsResponse]:
-        r"""Return a callable for the test iam permissions method over gRPC.
+        r"""Return a callable for the
+        test iam permissions
+          method over gRPC.
 
         Tests the specified permissions against the IAM access control
         policy for a function. If the function does not exist, this will

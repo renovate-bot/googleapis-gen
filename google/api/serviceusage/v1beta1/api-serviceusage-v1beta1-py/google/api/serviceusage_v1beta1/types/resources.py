@@ -411,7 +411,7 @@ class QuotaBucket(proto.Message):
     dimensions = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=6,
+        number=6
     )
 
 
@@ -487,7 +487,7 @@ class QuotaOverride(proto.Message):
     dimensions = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=3,
+        number=3
     )
     metric = proto.Field(
         proto.STRING,
@@ -579,7 +579,7 @@ class AdminQuotaPolicy(proto.Message):
     dimensions = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=3,
+        number=3
     )
     metric = proto.Field(
         proto.STRING,

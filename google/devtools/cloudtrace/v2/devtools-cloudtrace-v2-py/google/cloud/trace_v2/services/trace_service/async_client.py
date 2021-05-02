@@ -166,7 +166,8 @@ class TraceServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.trace_v2.types.BatchWriteSpansRequest`):
-                The request object. The request message for the
+                The request object.
+                The request message for the
                 `BatchWriteSpans` method.
             name (:class:`str`):
                 Required. The name of the project where the spans
@@ -241,7 +242,8 @@ class TraceServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.trace_v2.types.Span`):
-                The request object. A span represents a single operation
+                The request object.
+                A span represents a single operation
                 within a trace. Spans can be nested to form a trace
                 tree. Often, a trace contains a root span that describes
                 the end-to-end latency, and one or more subspans for its

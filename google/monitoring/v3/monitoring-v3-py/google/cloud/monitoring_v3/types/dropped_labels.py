@@ -52,7 +52,7 @@ class DroppedLabels(proto.Message):
     label = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=1,
+        number=1
     )
 
 

@@ -159,7 +159,8 @@ class ContextsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.ListContextsRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Contexts.ListContexts][google.cloud.dialogflow.v2.Contexts.ListContexts].
             parent (:class:`str`):
                 Required. The session to list all contexts from. Format:
@@ -250,7 +251,8 @@ class ContextsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.GetContextRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Contexts.GetContext][google.cloud.dialogflow.v2.Contexts.GetContext].
             name (:class:`str`):
                 Required. The name of the context. Format:
@@ -350,7 +352,8 @@ class ContextsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.CreateContextRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Contexts.CreateContext][google.cloud.dialogflow.v2.Contexts.CreateContext].
             parent (:class:`str`):
                 Required. The session to create a context for. Format:
@@ -454,7 +457,8 @@ class ContextsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.UpdateContextRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Contexts.UpdateContext][google.cloud.dialogflow.v2.Contexts.UpdateContext].
             context (:class:`google.cloud.dialogflow_v2.types.Context`):
                 Required. The context to update.
@@ -553,7 +557,8 @@ class ContextsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.DeleteContextRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Contexts.DeleteContext][google.cloud.dialogflow.v2.Contexts.DeleteContext].
             name (:class:`str`):
                 Required. The name of the context to delete. Format:
@@ -624,7 +629,8 @@ class ContextsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.DeleteAllContextsRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Contexts.DeleteAllContexts][google.cloud.dialogflow.v2.Contexts.DeleteAllContexts].
             parent (:class:`str`):
                 Required. The name of the session to delete all contexts

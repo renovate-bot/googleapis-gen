@@ -156,7 +156,7 @@ class Project(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=10,
+        number=10
     )
 
 

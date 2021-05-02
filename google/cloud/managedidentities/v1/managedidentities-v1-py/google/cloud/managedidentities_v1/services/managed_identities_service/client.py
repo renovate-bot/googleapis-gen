@@ -376,7 +376,8 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
 
         Args:
             request (google.cloud.managedidentities_v1.types.CreateMicrosoftAdDomainRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CreateMicrosoftAdDomain][google.cloud.managedidentities.v1.CreateMicrosoftAdDomain]
             parent (str):
                 Required. The resource project name and location using
@@ -440,7 +441,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, managed_identities_service.CreateMicrosoftAdDomainRequest):
             request = managed_identities_service.CreateMicrosoftAdDomainRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -492,7 +493,8 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
 
         Args:
             request (google.cloud.managedidentities_v1.types.ResetAdminPasswordRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ResetAdminPassword][google.cloud.managedidentities.v1.ResetAdminPassword]
             name (str):
                 Required. The domain resource name using the form:
@@ -527,7 +529,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, managed_identities_service.ResetAdminPasswordRequest):
             request = managed_identities_service.ResetAdminPasswordRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -567,7 +569,8 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
 
         Args:
             request (google.cloud.managedidentities_v1.types.ListDomainsRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ListDomains][google.cloud.managedidentities.v1.ListDomains]
             parent (str):
                 Required. The resource name of the domain location using
@@ -605,7 +608,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, managed_identities_service.ListDomainsRequest):
             request = managed_identities_service.ListDomainsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -654,7 +657,8 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
 
         Args:
             request (google.cloud.managedidentities_v1.types.GetDomainRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [GetDomain][google.cloud.managedidentities.v1.GetDomain]
             name (str):
                 Required. The domain resource name using the form:
@@ -689,7 +693,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, managed_identities_service.GetDomainRequest):
             request = managed_identities_service.GetDomainRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -730,7 +734,8 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
 
         Args:
             request (google.cloud.managedidentities_v1.types.UpdateDomainRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [UpdateDomain][google.cloud.managedidentities.v1.UpdateDomain]
             domain (google.cloud.managedidentities_v1.types.Domain):
                 Required. Domain message with updated fields. Only
@@ -781,7 +786,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, managed_identities_service.UpdateDomainRequest):
             request = managed_identities_service.UpdateDomainRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if domain is not None:
                 request.domain = domain
@@ -831,7 +836,8 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
 
         Args:
             request (google.cloud.managedidentities_v1.types.DeleteDomainRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DeleteDomain][google.cloud.managedidentities.v1.DeleteDomain]
             name (str):
                 Required. The domain resource name using the form:
@@ -879,7 +885,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, managed_identities_service.DeleteDomainRequest):
             request = managed_identities_service.DeleteDomainRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -928,7 +934,8 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
 
         Args:
             request (google.cloud.managedidentities_v1.types.AttachTrustRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [AttachTrust][google.cloud.managedidentities.v1.AttachTrust]
             name (str):
                 Required. The resource domain name, project name and
@@ -972,7 +979,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, managed_identities_service.AttachTrustRequest):
             request = managed_identities_service.AttachTrustRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1024,7 +1031,8 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
 
         Args:
             request (google.cloud.managedidentities_v1.types.ReconfigureTrustRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ReconfigureTrust][google.cloud.managedidentities.v1.ReconfigureTrust]
             name (str):
                 Required. The resource domain name, project name and
@@ -1079,7 +1087,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, managed_identities_service.ReconfigureTrustRequest):
             request = managed_identities_service.ReconfigureTrustRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1132,7 +1140,8 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
 
         Args:
             request (google.cloud.managedidentities_v1.types.DetachTrustRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DetachTrust][google.cloud.managedidentities.v1.DetachTrust]
             name (str):
                 Required. The resource domain name, project name, and
@@ -1178,7 +1187,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, managed_identities_service.DetachTrustRequest):
             request = managed_identities_service.DetachTrustRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1231,7 +1240,8 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
 
         Args:
             request (google.cloud.managedidentities_v1.types.ValidateTrustRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ValidateTrust][google.cloud.managedidentities.v1.ValidateTrust]
             name (str):
                 Required. The resource domain name, project name, and
@@ -1277,7 +1287,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, managed_identities_service.ValidateTrustRequest):
             request = managed_identities_service.ValidateTrustRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

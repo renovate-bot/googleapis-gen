@@ -240,7 +240,9 @@ class VersionsGrpcTransport(VersionsTransport):
     def list_versions(self) -> Callable[
             [appengine.ListVersionsRequest],
             appengine.ListVersionsResponse]:
-        r"""Return a callable for the list versions method over gRPC.
+        r"""Return a callable for the
+        list versions
+          method over gRPC.
 
         Lists the versions of a service.
 
@@ -266,7 +268,9 @@ class VersionsGrpcTransport(VersionsTransport):
     def get_version(self) -> Callable[
             [appengine.GetVersionRequest],
             version.Version]:
-        r"""Return a callable for the get version method over gRPC.
+        r"""Return a callable for the
+        get version
+          method over gRPC.
 
         Gets the specified Version resource. By default, only a
         ``BASIC_VIEW`` will be returned. Specify the ``FULL_VIEW``
@@ -294,7 +298,9 @@ class VersionsGrpcTransport(VersionsTransport):
     def create_version(self) -> Callable[
             [appengine.CreateVersionRequest],
             operations.Operation]:
-        r"""Return a callable for the create version method over gRPC.
+        r"""Return a callable for the
+        create version
+          method over gRPC.
 
         Deploys code and resource files to a new version.
 
@@ -320,7 +326,9 @@ class VersionsGrpcTransport(VersionsTransport):
     def update_version(self) -> Callable[
             [appengine.UpdateVersionRequest],
             operations.Operation]:
-        r"""Return a callable for the update version method over gRPC.
+        r"""Return a callable for the
+        update version
+          method over gRPC.
 
         Updates the specified Version resource. You can specify the
         following fields depending on the App Engine environment and
@@ -381,7 +389,9 @@ class VersionsGrpcTransport(VersionsTransport):
     def delete_version(self) -> Callable[
             [appengine.DeleteVersionRequest],
             operations.Operation]:
-        r"""Return a callable for the delete version method over gRPC.
+        r"""Return a callable for the
+        delete version
+          method over gRPC.
 
         Deletes an existing Version resource.
 

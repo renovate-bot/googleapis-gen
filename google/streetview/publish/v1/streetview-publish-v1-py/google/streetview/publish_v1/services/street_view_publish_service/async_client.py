@@ -181,7 +181,8 @@ class StreetViewPublishServiceAsyncClient:
 
         Args:
             request (:class:`google.protobuf.empty_pb2.Empty`):
-                The request object. A generic empty message that you can
+                The request object.
+                A generic empty message that you can
                 re-use to avoid defining duplicated empty messages in
                 your APIs. A typical example is to use it as the request
                 or the response type of an API method. For instance:
@@ -266,7 +267,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.streetview.publish_v1.types.CreatePhotoRequest`):
-                The request object. Request to create a
+                The request object.
+                Request to create a
                 [Photo][google.streetview.publish.v1.Photo].
             photo (:class:`google.streetview.publish_v1.types.Photo`):
                 Required. Photo to create.
@@ -350,7 +352,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.streetview.publish_v1.types.GetPhotoRequest`):
-                The request object. Request to get a
+                The request object.
+                Request to get a
                 [Photo][google.streetview.publish.v1.Photo].
                 By default
 
@@ -457,7 +460,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.streetview.publish_v1.types.BatchGetPhotosRequest`):
-                The request object. Request to get one or more
+                The request object.
+                Request to get one or more
                 [Photos][google.streetview.publish.v1.Photo]. By default
                 * does not return the download URL for the photo bytes.
                 Parameters:
@@ -555,7 +559,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.streetview.publish_v1.types.ListPhotosRequest`):
-                The request object. Request to list all photos that
+                The request object.
+                Request to list all photos that
                 belong to the user sending the request.
                 By default
 
@@ -687,7 +692,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.streetview.publish_v1.types.UpdatePhotoRequest`):
-                The request object. Request to update the metadata of a
+                The request object.
+                Request to update the metadata of a
                 [Photo][google.streetview.publish.v1.Photo]. Updating
                 the pixels of a photo is not supported.
             photo (:class:`google.streetview.publish_v1.types.Photo`):
@@ -833,7 +839,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.streetview.publish_v1.types.BatchUpdatePhotosRequest`):
-                The request object. Request to update the metadata of
+                The request object.
+                Request to update the metadata of
                 photos. Updating the pixels of photos is not supported.
             update_photo_requests (:class:`Sequence[google.streetview.publish_v1.types.UpdatePhotoRequest]`):
                 Required. List of
@@ -913,7 +920,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.streetview.publish_v1.types.DeletePhotoRequest`):
-                The request object. Request to delete a
+                The request object.
+                Request to delete a
                 [Photo][google.streetview.publish.v1.Photo].
             photo_id (:class:`str`):
                 Required. ID of the
@@ -993,7 +1001,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.streetview.publish_v1.types.BatchDeletePhotosRequest`):
-                The request object. Request to delete multiple
+                The request object.
+                Request to delete multiple
                 [Photos][google.streetview.publish.v1.Photo].
             photo_ids (:class:`Sequence[str]`):
                 Required. IDs of the

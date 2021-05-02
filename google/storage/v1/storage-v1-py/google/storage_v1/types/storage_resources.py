@@ -574,7 +574,7 @@ class Bucket(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=15,
+        number=15
     )
     website = proto.Field(
         proto.MESSAGE,
@@ -818,7 +818,7 @@ class Channel(proto.Message):
     params = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=8,
+        number=8
     )
     payload = proto.Field(
         proto.BOOL,
@@ -1096,7 +1096,7 @@ class Notification(proto.Message):
     custom_attributes = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=3,
+        number=3
     )
     etag = proto.Field(
         proto.STRING,
@@ -1398,7 +1398,7 @@ class Object(proto.Message):
     metadata = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=21,
+        number=21
     )
     event_based_hold = proto.Field(
         proto.MESSAGE,

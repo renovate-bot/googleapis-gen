@@ -162,7 +162,8 @@ class AssetServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.asset_v1p1beta1.types.SearchAllResourcesRequest`):
-                The request object. Search all resources request.
+                The request object.
+                Search all resources request.
             scope (:class:`str`):
                 Required. The relative name of an asset. The search is
                 limited to the resources within the ``scope``. The
@@ -286,7 +287,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.asset_v1p1beta1.types.SearchAllIamPoliciesRequest`):
-                The request object. Search all IAM policies request.
+                The request object.
+                Search all IAM policies request.
             scope (:class:`str`):
                 Required. The relative name of an asset. The search is
                 limited to the resources within the ``scope``. The

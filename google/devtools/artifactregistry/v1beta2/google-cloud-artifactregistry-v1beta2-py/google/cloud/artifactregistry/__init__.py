@@ -14,9 +14,8 @@
 # limitations under the License.
 #
 
-from google.cloud.artifactregistry_v1beta2.services.artifact_registry.client import ArtifactRegistryClient
 from google.cloud.artifactregistry_v1beta2.services.artifact_registry.async_client import ArtifactRegistryAsyncClient
-
+from google.cloud.artifactregistry_v1beta2.services.artifact_registry.client import ArtifactRegistryClient
 from google.cloud.artifactregistry_v1beta2.types.file import File
 from google.cloud.artifactregistry_v1beta2.types.file import GetFileRequest
 from google.cloud.artifactregistry_v1beta2.types.file import Hash
@@ -49,37 +48,37 @@ from google.cloud.artifactregistry_v1beta2.types.version import ListVersionsResp
 from google.cloud.artifactregistry_v1beta2.types.version import Version
 from google.cloud.artifactregistry_v1beta2.types.version import VersionView
 
-__all__ = ('ArtifactRegistryClient',
-    'ArtifactRegistryAsyncClient',
+__all__ = ('ArtifactRegistryAsyncClient',
+    'ArtifactRegistryClient',
+    'CreateRepositoryRequest',
+    'CreateTagRequest',
+    'DeletePackageRequest',
+    'DeleteRepositoryRequest',
+    'DeleteTagRequest',
+    'DeleteVersionRequest',
     'File',
     'GetFileRequest',
+    'GetPackageRequest',
+    'GetRepositoryRequest',
+    'GetTagRequest',
+    'GetVersionRequest',
     'Hash',
     'ListFilesRequest',
     'ListFilesResponse',
-    'DeletePackageRequest',
-    'GetPackageRequest',
     'ListPackagesRequest',
     'ListPackagesResponse',
-    'Package',
-    'CreateRepositoryRequest',
-    'DeleteRepositoryRequest',
-    'GetRepositoryRequest',
     'ListRepositoriesRequest',
     'ListRepositoriesResponse',
-    'Repository',
-    'UpdateRepositoryRequest',
-    'OperationMetadata',
-    'CreateTagRequest',
-    'DeleteTagRequest',
-    'GetTagRequest',
     'ListTagsRequest',
     'ListTagsResponse',
-    'Tag',
-    'UpdateTagRequest',
-    'DeleteVersionRequest',
-    'GetVersionRequest',
     'ListVersionsRequest',
     'ListVersionsResponse',
+    'OperationMetadata',
+    'Package',
+    'Repository',
+    'Tag',
+    'UpdateRepositoryRequest',
+    'UpdateTagRequest',
     'Version',
     'VersionView',
 )

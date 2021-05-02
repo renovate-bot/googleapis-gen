@@ -342,7 +342,8 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
 
         Args:
             request (google.cloud.retail_v2.types.WriteUserEventRequest):
-                The request object. Request message for WriteUserEvent
+                The request object.
+                Request message for WriteUserEvent
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -405,7 +406,8 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
 
         Args:
             request (google.cloud.retail_v2.types.CollectUserEventRequest):
-                The request object. Request message for CollectUserEvent
+                The request object.
+                Request message for CollectUserEvent
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -508,7 +510,8 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
 
         Args:
             request (google.cloud.retail_v2.types.PurgeUserEventsRequest):
-                The request object. Request message for PurgeUserEvents
+                The request object.
+                Request message for PurgeUserEvents
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -581,7 +584,8 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
 
         Args:
             request (google.cloud.retail_v2.types.ImportUserEventsRequest):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 ImportUserEvents request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -659,7 +663,8 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
 
         Args:
             request (google.cloud.retail_v2.types.RejoinUserEventsRequest):
-                The request object. Request message for RejoinUserEvents
+                The request object.
+                Request message for RejoinUserEvents
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

@@ -14,9 +14,8 @@
 # limitations under the License.
 #
 
-from google.cloud.datastore_v1.services.datastore.client import DatastoreClient
 from google.cloud.datastore_v1.services.datastore.async_client import DatastoreAsyncClient
-
+from google.cloud.datastore_v1.services.datastore.client import DatastoreClient
 from google.cloud.datastore_v1.types.datastore import AllocateIdsRequest
 from google.cloud.datastore_v1.types.datastore import AllocateIdsResponse
 from google.cloud.datastore_v1.types.datastore import BeginTransactionRequest
@@ -53,18 +52,34 @@ from google.cloud.datastore_v1.types.query import PropertyReference
 from google.cloud.datastore_v1.types.query import Query
 from google.cloud.datastore_v1.types.query import QueryResultBatch
 
-__all__ = ('DatastoreClient',
-    'DatastoreAsyncClient',
-    'AllocateIdsRequest',
+__all__ = ('AllocateIdsRequest',
     'AllocateIdsResponse',
+    'ArrayValue',
     'BeginTransactionRequest',
     'BeginTransactionResponse',
     'CommitRequest',
     'CommitResponse',
+    'CompositeFilter',
+    'DatastoreAsyncClient',
+    'DatastoreClient',
+    'Entity',
+    'EntityResult',
+    'Filter',
+    'GqlQuery',
+    'GqlQueryParameter',
+    'Key',
+    'KindExpression',
     'LookupRequest',
     'LookupResponse',
     'Mutation',
     'MutationResult',
+    'PartitionId',
+    'Projection',
+    'PropertyFilter',
+    'PropertyOrder',
+    'PropertyReference',
+    'Query',
+    'QueryResultBatch',
     'ReadOptions',
     'ReserveIdsRequest',
     'ReserveIdsResponse',
@@ -73,21 +88,5 @@ __all__ = ('DatastoreClient',
     'RunQueryRequest',
     'RunQueryResponse',
     'TransactionOptions',
-    'ArrayValue',
-    'Entity',
-    'Key',
-    'PartitionId',
     'Value',
-    'CompositeFilter',
-    'EntityResult',
-    'Filter',
-    'GqlQuery',
-    'GqlQueryParameter',
-    'KindExpression',
-    'Projection',
-    'PropertyFilter',
-    'PropertyOrder',
-    'PropertyReference',
-    'Query',
-    'QueryResultBatch',
 )

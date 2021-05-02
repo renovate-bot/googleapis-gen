@@ -15,16 +15,16 @@
 #
 
 
-from .types.bundle import BundledDocumentMetadata
-from .types.bundle import BundledQuery
 from .types.bundle import BundleElement
 from .types.bundle import BundleMetadata
+from .types.bundle import BundledDocumentMetadata
+from .types.bundle import BundledQuery
 from .types.bundle import NamedQuery
 
 __all__ = (
-    'BundledDocumentMetadata',
-    'BundledQuery',
     'BundleElement',
     'BundleMetadata',
+    'BundledDocumentMetadata',
     'NamedQuery',
+'BundledQuery',
 )

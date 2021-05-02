@@ -245,7 +245,9 @@ class WorkloadIdentityPoolsGrpcAsyncIOTransport(WorkloadIdentityPoolsTransport):
     def list_workload_identity_pools(self) -> Callable[
             [workload_identity_pool.ListWorkloadIdentityPoolsRequest],
             Awaitable[workload_identity_pool.ListWorkloadIdentityPoolsResponse]]:
-        r"""Return a callable for the list workload identity pools method over gRPC.
+        r"""Return a callable for the
+        list workload identity pools
+          method over gRPC.
 
         Lists all non-deleted
         [WorkloadIdentityPool][google.iam.v1beta.WorkloadIdentityPool]s
@@ -274,7 +276,9 @@ class WorkloadIdentityPoolsGrpcAsyncIOTransport(WorkloadIdentityPoolsTransport):
     def get_workload_identity_pool(self) -> Callable[
             [workload_identity_pool.GetWorkloadIdentityPoolRequest],
             Awaitable[workload_identity_pool.WorkloadIdentityPool]]:
-        r"""Return a callable for the get workload identity pool method over gRPC.
+        r"""Return a callable for the
+        get workload identity pool
+          method over gRPC.
 
         Gets an individual
         [WorkloadIdentityPool][google.iam.v1beta.WorkloadIdentityPool].
@@ -301,7 +305,9 @@ class WorkloadIdentityPoolsGrpcAsyncIOTransport(WorkloadIdentityPoolsTransport):
     def create_workload_identity_pool(self) -> Callable[
             [gi_workload_identity_pool.CreateWorkloadIdentityPoolRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the create workload identity pool method over gRPC.
+        r"""Return a callable for the
+        create workload identity pool
+          method over gRPC.
 
         Creates a new
         [WorkloadIdentityPool][google.iam.v1beta.WorkloadIdentityPool].
@@ -331,7 +337,9 @@ class WorkloadIdentityPoolsGrpcAsyncIOTransport(WorkloadIdentityPoolsTransport):
     def update_workload_identity_pool(self) -> Callable[
             [gi_workload_identity_pool.UpdateWorkloadIdentityPoolRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the update workload identity pool method over gRPC.
+        r"""Return a callable for the
+        update workload identity pool
+          method over gRPC.
 
         Updates an existing
         [WorkloadIdentityPool][google.iam.v1beta.WorkloadIdentityPool].
@@ -358,7 +366,9 @@ class WorkloadIdentityPoolsGrpcAsyncIOTransport(WorkloadIdentityPoolsTransport):
     def delete_workload_identity_pool(self) -> Callable[
             [workload_identity_pool.DeleteWorkloadIdentityPoolRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the delete workload identity pool method over gRPC.
+        r"""Return a callable for the
+        delete workload identity pool
+          method over gRPC.
 
         Deletes a
         [WorkloadIdentityPool][google.iam.v1beta.WorkloadIdentityPool].
@@ -394,8 +404,10 @@ class WorkloadIdentityPoolsGrpcAsyncIOTransport(WorkloadIdentityPoolsTransport):
     def undelete_workload_identity_pool(self) -> Callable[
             [workload_identity_pool.UndeleteWorkloadIdentityPoolRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the undelete workload identity
-        pool method over gRPC.
+        r"""Return a callable for the
+        undelete workload identity
+        pool
+          method over gRPC.
 
         Undeletes a
         [WorkloadIdentityPool][google.iam.v1beta.WorkloadIdentityPool],
@@ -423,8 +435,10 @@ class WorkloadIdentityPoolsGrpcAsyncIOTransport(WorkloadIdentityPoolsTransport):
     def list_workload_identity_pool_providers(self) -> Callable[
             [workload_identity_pool.ListWorkloadIdentityPoolProvidersRequest],
             Awaitable[workload_identity_pool.ListWorkloadIdentityPoolProvidersResponse]]:
-        r"""Return a callable for the list workload identity pool
-        providers method over gRPC.
+        r"""Return a callable for the
+        list workload identity pool
+        providers
+          method over gRPC.
 
         Lists all non-deleted
         [WorkloadIdentityPoolProvider][google.iam.v1beta.WorkloadIdentityPoolProvider]s
@@ -455,8 +469,10 @@ class WorkloadIdentityPoolsGrpcAsyncIOTransport(WorkloadIdentityPoolsTransport):
     def get_workload_identity_pool_provider(self) -> Callable[
             [workload_identity_pool.GetWorkloadIdentityPoolProviderRequest],
             Awaitable[workload_identity_pool.WorkloadIdentityPoolProvider]]:
-        r"""Return a callable for the get workload identity pool
-        provider method over gRPC.
+        r"""Return a callable for the
+        get workload identity pool
+        provider
+          method over gRPC.
 
         Gets an individual
         [WorkloadIdentityPoolProvider][google.iam.v1beta.WorkloadIdentityPoolProvider].
@@ -483,8 +499,10 @@ class WorkloadIdentityPoolsGrpcAsyncIOTransport(WorkloadIdentityPoolsTransport):
     def create_workload_identity_pool_provider(self) -> Callable[
             [workload_identity_pool.CreateWorkloadIdentityPoolProviderRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the create workload identity pool
-        provider method over gRPC.
+        r"""Return a callable for the
+        create workload identity pool
+        provider
+          method over gRPC.
 
         Creates a new
         [WorkloadIdentityPoolProvider][google.iam.v1beta.WorkloadIdentityProvider]
@@ -516,8 +534,10 @@ class WorkloadIdentityPoolsGrpcAsyncIOTransport(WorkloadIdentityPoolsTransport):
     def update_workload_identity_pool_provider(self) -> Callable[
             [workload_identity_pool.UpdateWorkloadIdentityPoolProviderRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the update workload identity pool
-        provider method over gRPC.
+        r"""Return a callable for the
+        update workload identity pool
+        provider
+          method over gRPC.
 
         Updates an existing
         [WorkloadIdentityPoolProvider][google.iam.v1beta.WorkloadIdentityProvider].
@@ -544,8 +564,10 @@ class WorkloadIdentityPoolsGrpcAsyncIOTransport(WorkloadIdentityPoolsTransport):
     def delete_workload_identity_pool_provider(self) -> Callable[
             [workload_identity_pool.DeleteWorkloadIdentityPoolProviderRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the delete workload identity pool
-        provider method over gRPC.
+        r"""Return a callable for the
+        delete workload identity pool
+        provider
+          method over gRPC.
 
         Deletes a
         [WorkloadIdentityPoolProvider][google.iam.v1beta.WorkloadIdentityProvider].
@@ -577,8 +599,10 @@ class WorkloadIdentityPoolsGrpcAsyncIOTransport(WorkloadIdentityPoolsTransport):
     def undelete_workload_identity_pool_provider(self) -> Callable[
             [workload_identity_pool.UndeleteWorkloadIdentityPoolProviderRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the undelete workload identity
-        pool provider method over gRPC.
+        r"""Return a callable for the
+        undelete workload identity
+        pool provider
+          method over gRPC.
 
         Undeletes a
         [WorkloadIdentityPoolProvider][google.iam.v1beta.WorkloadIdentityProvider],

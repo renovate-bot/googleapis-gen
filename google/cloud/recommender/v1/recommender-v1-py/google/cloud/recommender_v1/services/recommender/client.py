@@ -378,7 +378,8 @@ class RecommenderClient(metaclass=RecommenderClientMeta):
 
         Args:
             request (google.cloud.recommender_v1.types.ListInsightsRequest):
-                The request object. Request for the `ListInsights`
+                The request object.
+                Request for the `ListInsights`
                 method.
             parent (str):
                 Required. The container resource on which to execute the
@@ -424,7 +425,7 @@ class RecommenderClient(metaclass=RecommenderClientMeta):
         # there are no flattened fields.
         if not isinstance(request, recommender_service.ListInsightsRequest):
             request = recommender_service.ListInsightsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -474,7 +475,8 @@ class RecommenderClient(metaclass=RecommenderClientMeta):
 
         Args:
             request (google.cloud.recommender_v1.types.GetInsightRequest):
-                The request object. Request to the `GetInsight` method.
+                The request object.
+                Request to the `GetInsight` method.
             name (str):
                 Required. Name of the insight.
                 This corresponds to the ``name`` field
@@ -508,7 +510,7 @@ class RecommenderClient(metaclass=RecommenderClientMeta):
         # there are no flattened fields.
         if not isinstance(request, recommender_service.GetInsightRequest):
             request = recommender_service.GetInsightRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -557,7 +559,8 @@ class RecommenderClient(metaclass=RecommenderClientMeta):
 
         Args:
             request (google.cloud.recommender_v1.types.MarkInsightAcceptedRequest):
-                The request object. Request for the
+                The request object.
+                Request for the
                 `MarkInsightAccepted` method.
             name (str):
                 Required. Name of the insight.
@@ -606,7 +609,7 @@ class RecommenderClient(metaclass=RecommenderClientMeta):
         # there are no flattened fields.
         if not isinstance(request, recommender_service.MarkInsightAcceptedRequest):
             request = recommender_service.MarkInsightAcceptedRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -652,7 +655,8 @@ class RecommenderClient(metaclass=RecommenderClientMeta):
 
         Args:
             request (google.cloud.recommender_v1.types.ListRecommendationsRequest):
-                The request object. Request for the
+                The request object.
+                Request for the
                 `ListRecommendations` method.
             parent (str):
                 Required. The container resource on which to execute the
@@ -707,7 +711,7 @@ class RecommenderClient(metaclass=RecommenderClientMeta):
         # there are no flattened fields.
         if not isinstance(request, recommender_service.ListRecommendationsRequest):
             request = recommender_service.ListRecommendationsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -759,7 +763,8 @@ class RecommenderClient(metaclass=RecommenderClientMeta):
 
         Args:
             request (google.cloud.recommender_v1.types.GetRecommendationRequest):
-                The request object. Request to the `GetRecommendation`
+                The request object.
+                Request to the `GetRecommendation`
                 method.
             name (str):
                 Required. Name of the recommendation.
@@ -794,7 +799,7 @@ class RecommenderClient(metaclass=RecommenderClientMeta):
         # there are no flattened fields.
         if not isinstance(request, recommender_service.GetRecommendationRequest):
             request = recommender_service.GetRecommendationRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -846,7 +851,8 @@ class RecommenderClient(metaclass=RecommenderClientMeta):
 
         Args:
             request (google.cloud.recommender_v1.types.MarkRecommendationClaimedRequest):
-                The request object. Request for the
+                The request object.
+                Request for the
                 `MarkRecommendationClaimed` Method.
             name (str):
                 Required. Name of the recommendation.
@@ -898,7 +904,7 @@ class RecommenderClient(metaclass=RecommenderClientMeta):
         # there are no flattened fields.
         if not isinstance(request, recommender_service.MarkRecommendationClaimedRequest):
             request = recommender_service.MarkRecommendationClaimedRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -954,7 +960,8 @@ class RecommenderClient(metaclass=RecommenderClientMeta):
 
         Args:
             request (google.cloud.recommender_v1.types.MarkRecommendationSucceededRequest):
-                The request object. Request for the
+                The request object.
+                Request for the
                 `MarkRecommendationSucceeded` Method.
             name (str):
                 Required. Name of the recommendation.
@@ -1006,7 +1013,7 @@ class RecommenderClient(metaclass=RecommenderClientMeta):
         # there are no flattened fields.
         if not isinstance(request, recommender_service.MarkRecommendationSucceededRequest):
             request = recommender_service.MarkRecommendationSucceededRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1062,7 +1069,8 @@ class RecommenderClient(metaclass=RecommenderClientMeta):
 
         Args:
             request (google.cloud.recommender_v1.types.MarkRecommendationFailedRequest):
-                The request object. Request for the
+                The request object.
+                Request for the
                 `MarkRecommendationFailed` Method.
             name (str):
                 Required. Name of the recommendation.
@@ -1114,7 +1122,7 @@ class RecommenderClient(metaclass=RecommenderClientMeta):
         # there are no flattened fields.
         if not isinstance(request, recommender_service.MarkRecommendationFailedRequest):
             request = recommender_service.MarkRecommendationFailedRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

@@ -351,7 +351,8 @@ class PredictionApiKeyRegistryClient(metaclass=PredictionApiKeyRegistryClientMet
 
         Args:
             request (google.cloud.recommendationengine_v1beta1.types.CreatePredictionApiKeyRegistrationRequest):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `CreatePredictionApiKeyRegistration` method.
             parent (str):
                 Required. The parent resource path.
@@ -391,7 +392,7 @@ class PredictionApiKeyRegistryClient(metaclass=PredictionApiKeyRegistryClientMet
         # there are no flattened fields.
         if not isinstance(request, prediction_apikey_registry_service.CreatePredictionApiKeyRegistrationRequest):
             request = prediction_apikey_registry_service.CreatePredictionApiKeyRegistrationRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -434,7 +435,8 @@ class PredictionApiKeyRegistryClient(metaclass=PredictionApiKeyRegistryClientMet
 
         Args:
             request (google.cloud.recommendationengine_v1beta1.types.ListPredictionApiKeyRegistrationsRequest):
-                The request object. Request message for the
+                The request object.
+                Request message for the
                 `ListPredictionApiKeyRegistrations`.
             parent (str):
                 Required. The parent placement resource name such as
@@ -472,7 +474,7 @@ class PredictionApiKeyRegistryClient(metaclass=PredictionApiKeyRegistryClientMet
         # there are no flattened fields.
         if not isinstance(request, prediction_apikey_registry_service.ListPredictionApiKeyRegistrationsRequest):
             request = prediction_apikey_registry_service.ListPredictionApiKeyRegistrationsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -521,7 +523,8 @@ class PredictionApiKeyRegistryClient(metaclass=PredictionApiKeyRegistryClientMet
 
         Args:
             request (google.cloud.recommendationengine_v1beta1.types.DeletePredictionApiKeyRegistrationRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 `DeletePredictionApiKeyRegistration` method.
             name (str):
                 Required. The API key to unregister including full
@@ -551,7 +554,7 @@ class PredictionApiKeyRegistryClient(metaclass=PredictionApiKeyRegistryClientMet
         # there are no flattened fields.
         if not isinstance(request, prediction_apikey_registry_service.DeletePredictionApiKeyRegistrationRequest):
             request = prediction_apikey_registry_service.DeletePredictionApiKeyRegistrationRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

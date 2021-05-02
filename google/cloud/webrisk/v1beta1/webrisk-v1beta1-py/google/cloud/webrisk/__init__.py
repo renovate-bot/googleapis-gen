@@ -14,9 +14,9 @@
 # limitations under the License.
 #
 
-from google.cloud.webrisk_v1beta1.services.web_risk_service_v1_beta1.client import WebRiskServiceV1Beta1Client
 from google.cloud.webrisk_v1beta1.services.web_risk_service_v1_beta1.async_client import WebRiskServiceV1Beta1AsyncClient
-
+from google.cloud.webrisk_v1beta1.services.web_risk_service_v1_beta1.client import WebRiskServiceV1Beta1Client
+from google.cloud.webrisk_v1beta1.types.webrisk import CompressionType
 from google.cloud.webrisk_v1beta1.types.webrisk import ComputeThreatListDiffRequest
 from google.cloud.webrisk_v1beta1.types.webrisk import ComputeThreatListDiffResponse
 from google.cloud.webrisk_v1beta1.types.webrisk import RawHashes
@@ -28,11 +28,9 @@ from google.cloud.webrisk_v1beta1.types.webrisk import SearchUrisRequest
 from google.cloud.webrisk_v1beta1.types.webrisk import SearchUrisResponse
 from google.cloud.webrisk_v1beta1.types.webrisk import ThreatEntryAdditions
 from google.cloud.webrisk_v1beta1.types.webrisk import ThreatEntryRemovals
-from google.cloud.webrisk_v1beta1.types.webrisk import CompressionType
 from google.cloud.webrisk_v1beta1.types.webrisk import ThreatType
 
-__all__ = ('WebRiskServiceV1Beta1Client',
-    'WebRiskServiceV1Beta1AsyncClient',
+__all__ = ('CompressionType',
     'ComputeThreatListDiffRequest',
     'ComputeThreatListDiffResponse',
     'RawHashes',
@@ -44,6 +42,7 @@ __all__ = ('WebRiskServiceV1Beta1Client',
     'SearchUrisResponse',
     'ThreatEntryAdditions',
     'ThreatEntryRemovals',
-    'CompressionType',
     'ThreatType',
+    'WebRiskServiceV1Beta1AsyncClient',
+    'WebRiskServiceV1Beta1Client',
 )

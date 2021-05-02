@@ -326,7 +326,8 @@ class JobControllerClient(metaclass=JobControllerClientMeta):
 
         Args:
             request (google.cloud.dataproc_v1beta2.types.SubmitJobRequest):
-                The request object. A request to submit a job.
+                The request object.
+                A request to submit a job.
             project_id (str):
                 Required. The ID of the Google Cloud
                 Platform project that the job belongs
@@ -371,7 +372,7 @@ class JobControllerClient(metaclass=JobControllerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, jobs.SubmitJobRequest):
             request = jobs.SubmitJobRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -409,7 +410,8 @@ class JobControllerClient(metaclass=JobControllerClientMeta):
 
         Args:
             request (google.cloud.dataproc_v1beta2.types.SubmitJobRequest):
-                The request object. A request to submit a job.
+                The request object.
+                A request to submit a job.
             project_id (str):
                 Required. The ID of the Google Cloud
                 Platform project that the job belongs
@@ -459,7 +461,7 @@ class JobControllerClient(metaclass=JobControllerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, jobs.SubmitJobRequest):
             request = jobs.SubmitJobRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -506,7 +508,8 @@ class JobControllerClient(metaclass=JobControllerClientMeta):
 
         Args:
             request (google.cloud.dataproc_v1beta2.types.GetJobRequest):
-                The request object. A request to get the resource
+                The request object.
+                A request to get the resource
                 representation for a job in a project.
             project_id (str):
                 Required. The ID of the Google Cloud
@@ -552,7 +555,7 @@ class JobControllerClient(metaclass=JobControllerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, jobs.GetJobRequest):
             request = jobs.GetJobRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -590,7 +593,8 @@ class JobControllerClient(metaclass=JobControllerClientMeta):
 
         Args:
             request (google.cloud.dataproc_v1beta2.types.ListJobsRequest):
-                The request object. A request to list jobs in a project.
+                The request object.
+                A request to list jobs in a project.
             project_id (str):
                 Required. The ID of the Google Cloud
                 Platform project that the job belongs
@@ -656,7 +660,7 @@ class JobControllerClient(metaclass=JobControllerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, jobs.ListJobsRequest):
             request = jobs.ListJobsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -700,7 +704,8 @@ class JobControllerClient(metaclass=JobControllerClientMeta):
 
         Args:
             request (google.cloud.dataproc_v1beta2.types.UpdateJobRequest):
-                The request object. A request to update a job.
+                The request object.
+                A request to update a job.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -752,7 +757,8 @@ class JobControllerClient(metaclass=JobControllerClientMeta):
 
         Args:
             request (google.cloud.dataproc_v1beta2.types.CancelJobRequest):
-                The request object. A request to cancel a job.
+                The request object.
+                A request to cancel a job.
             project_id (str):
                 Required. The ID of the Google Cloud
                 Platform project that the job belongs
@@ -797,7 +803,7 @@ class JobControllerClient(metaclass=JobControllerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, jobs.CancelJobRequest):
             request = jobs.CancelJobRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -836,7 +842,8 @@ class JobControllerClient(metaclass=JobControllerClientMeta):
 
         Args:
             request (google.cloud.dataproc_v1beta2.types.DeleteJobRequest):
-                The request object. A request to delete a job.
+                The request object.
+                A request to delete a job.
             project_id (str):
                 Required. The ID of the Google Cloud
                 Platform project that the job belongs
@@ -877,7 +884,7 @@ class JobControllerClient(metaclass=JobControllerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, jobs.DeleteJobRequest):
             request = jobs.DeleteJobRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id

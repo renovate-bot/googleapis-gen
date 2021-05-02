@@ -163,7 +163,8 @@ class SmartDeviceManagementServiceAsyncClient:
 
         Args:
             request (:class:`google.home.enterprise.sdm_v1.types.GetDeviceRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 SmartDeviceManagementService.GetDevice
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -225,7 +226,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.home.enterprise.sdm_v1.types.ListDevicesRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 SmartDeviceManagementService.ListDevices
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -299,7 +301,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.home.enterprise.sdm_v1.types.ExecuteDeviceCommandRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 SmartDeviceManagementService.ExecuteDeviceCommand
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -354,7 +357,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.home.enterprise.sdm_v1.types.GetStructureRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 SmartDeviceManagementService.GetStructure
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -416,7 +420,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.home.enterprise.sdm_v1.types.ListStructuresRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 SmartDeviceManagementService.ListStructures
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -489,7 +494,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.home.enterprise.sdm_v1.types.GetRoomRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 SmartDeviceManagementService.GetRoom
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -552,7 +558,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.home.enterprise.sdm_v1.types.ListRoomsRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 SmartDeviceManagementService.ListRooms
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

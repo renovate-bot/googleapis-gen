@@ -14,15 +14,14 @@
 # limitations under the License.
 #
 
-from google.cloud.recommendationengine_v1beta1.services.catalog_service.client import CatalogServiceClient
 from google.cloud.recommendationengine_v1beta1.services.catalog_service.async_client import CatalogServiceAsyncClient
-from google.cloud.recommendationengine_v1beta1.services.prediction_api_key_registry.client import PredictionApiKeyRegistryClient
+from google.cloud.recommendationengine_v1beta1.services.catalog_service.client import CatalogServiceClient
 from google.cloud.recommendationengine_v1beta1.services.prediction_api_key_registry.async_client import PredictionApiKeyRegistryAsyncClient
-from google.cloud.recommendationengine_v1beta1.services.prediction_service.client import PredictionServiceClient
+from google.cloud.recommendationengine_v1beta1.services.prediction_api_key_registry.client import PredictionApiKeyRegistryClient
 from google.cloud.recommendationengine_v1beta1.services.prediction_service.async_client import PredictionServiceAsyncClient
-from google.cloud.recommendationengine_v1beta1.services.user_event_service.client import UserEventServiceClient
+from google.cloud.recommendationengine_v1beta1.services.prediction_service.client import PredictionServiceClient
 from google.cloud.recommendationengine_v1beta1.services.user_event_service.async_client import UserEventServiceAsyncClient
-
+from google.cloud.recommendationengine_v1beta1.services.user_event_service.client import UserEventServiceClient
 from google.cloud.recommendationengine_v1beta1.types.catalog import CatalogItem
 from google.cloud.recommendationengine_v1beta1.types.catalog import Image
 from google.cloud.recommendationengine_v1beta1.types.catalog import ProductCatalogItem
@@ -65,26 +64,20 @@ from google.cloud.recommendationengine_v1beta1.types.user_event_service import P
 from google.cloud.recommendationengine_v1beta1.types.user_event_service import PurgeUserEventsResponse
 from google.cloud.recommendationengine_v1beta1.types.user_event_service import WriteUserEventRequest
 
-__all__ = ('CatalogServiceClient',
-    'CatalogServiceAsyncClient',
-    'PredictionApiKeyRegistryClient',
-    'PredictionApiKeyRegistryAsyncClient',
-    'PredictionServiceClient',
-    'PredictionServiceAsyncClient',
-    'UserEventServiceClient',
-    'UserEventServiceAsyncClient',
+__all__ = ('CatalogInlineSource',
     'CatalogItem',
-    'Image',
-    'ProductCatalogItem',
+    'CatalogServiceAsyncClient',
+    'CatalogServiceClient',
+    'CollectUserEventRequest',
     'CreateCatalogItemRequest',
+    'CreatePredictionApiKeyRegistrationRequest',
     'DeleteCatalogItemRequest',
-    'GetCatalogItemRequest',
-    'ListCatalogItemsRequest',
-    'ListCatalogItemsResponse',
-    'UpdateCatalogItemRequest',
+    'DeletePredictionApiKeyRegistrationRequest',
+    'EventDetail',
     'FeatureMap',
-    'CatalogInlineSource',
     'GcsSource',
+    'GetCatalogItemRequest',
+    'Image',
     'ImportCatalogItemsRequest',
     'ImportCatalogItemsResponse',
     'ImportErrorsConfig',
@@ -92,26 +85,32 @@ __all__ = ('CatalogServiceClient',
     'ImportUserEventsRequest',
     'ImportUserEventsResponse',
     'InputConfig',
-    'UserEventImportSummary',
-    'UserEventInlineSource',
-    'CreatePredictionApiKeyRegistrationRequest',
-    'DeletePredictionApiKeyRegistrationRequest',
+    'ListCatalogItemsRequest',
+    'ListCatalogItemsResponse',
     'ListPredictionApiKeyRegistrationsRequest',
     'ListPredictionApiKeyRegistrationsResponse',
-    'PredictionApiKeyRegistration',
+    'ListUserEventsRequest',
+    'ListUserEventsResponse',
     'PredictRequest',
     'PredictResponse',
-    'EventDetail',
+    'PredictionApiKeyRegistration',
+    'PredictionApiKeyRegistryAsyncClient',
+    'PredictionApiKeyRegistryClient',
+    'PredictionServiceAsyncClient',
+    'PredictionServiceClient',
+    'ProductCatalogItem',
     'ProductDetail',
     'ProductEventDetail',
     'PurchaseTransaction',
-    'UserEvent',
-    'UserInfo',
-    'CollectUserEventRequest',
-    'ListUserEventsRequest',
-    'ListUserEventsResponse',
     'PurgeUserEventsMetadata',
     'PurgeUserEventsRequest',
     'PurgeUserEventsResponse',
+    'UpdateCatalogItemRequest',
+    'UserEvent',
+    'UserEventImportSummary',
+    'UserEventInlineSource',
+    'UserEventServiceAsyncClient',
+    'UserEventServiceClient',
+    'UserInfo',
     'WriteUserEventRequest',
 )

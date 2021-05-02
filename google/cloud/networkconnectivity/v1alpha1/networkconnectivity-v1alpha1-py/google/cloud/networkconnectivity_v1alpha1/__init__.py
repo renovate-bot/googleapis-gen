@@ -30,13 +30,11 @@ from .types.hub import ListSpokesRequest
 from .types.hub import ListSpokesResponse
 from .types.hub import RouterApplianceInstance
 from .types.hub import Spoke
+from .types.hub import State
 from .types.hub import UpdateHubRequest
 from .types.hub import UpdateSpokeRequest
-from .types.hub import State
 
 __all__ = (
-    'HubServiceClient',
-    'OperationMetadata',
     'CreateHubRequest',
     'CreateSpokeRequest',
     'DeleteHubRequest',
@@ -48,9 +46,11 @@ __all__ = (
     'ListHubsResponse',
     'ListSpokesRequest',
     'ListSpokesResponse',
+    'OperationMetadata',
     'RouterApplianceInstance',
     'Spoke',
+    'State',
     'UpdateHubRequest',
     'UpdateSpokeRequest',
-    'State',
+'HubServiceClient',
 )

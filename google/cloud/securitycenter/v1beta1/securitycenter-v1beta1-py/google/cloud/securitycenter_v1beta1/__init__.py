@@ -45,14 +45,10 @@ from .types.securitycenter_service import UpdateSourceRequest
 from .types.source import Source
 
 __all__ = (
-    'SecurityCenterClient',
     'Asset',
-    'Finding',
-    'OrganizationSettings',
-    'RunAssetDiscoveryResponse',
-    'SecurityMarks',
     'CreateFindingRequest',
     'CreateSourceRequest',
+    'Finding',
     'GetOrganizationSettingsRequest',
     'GetSourceRequest',
     'GroupAssetsRequest',
@@ -66,11 +62,15 @@ __all__ = (
     'ListFindingsResponse',
     'ListSourcesRequest',
     'ListSourcesResponse',
+    'OrganizationSettings',
     'RunAssetDiscoveryRequest',
+    'RunAssetDiscoveryResponse',
+    'SecurityMarks',
     'SetFindingStateRequest',
+    'Source',
     'UpdateFindingRequest',
     'UpdateOrganizationSettingsRequest',
     'UpdateSecurityMarksRequest',
     'UpdateSourceRequest',
-    'Source',
+'SecurityCenterClient',
 )

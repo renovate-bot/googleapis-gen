@@ -259,7 +259,9 @@ class CloudRedisGrpcTransport(CloudRedisTransport):
     def list_instances(self) -> Callable[
             [cloud_redis.ListInstancesRequest],
             cloud_redis.ListInstancesResponse]:
-        r"""Return a callable for the list instances method over gRPC.
+        r"""Return a callable for the
+        list instances
+          method over gRPC.
 
         Lists all Redis instances owned by a project in either the
         specified location (region) or all locations.
@@ -294,7 +296,9 @@ class CloudRedisGrpcTransport(CloudRedisTransport):
     def get_instance(self) -> Callable[
             [cloud_redis.GetInstanceRequest],
             cloud_redis.Instance]:
-        r"""Return a callable for the get instance method over gRPC.
+        r"""Return a callable for the
+        get instance
+          method over gRPC.
 
         Gets the details of a specific Redis instance.
 
@@ -320,7 +324,9 @@ class CloudRedisGrpcTransport(CloudRedisTransport):
     def create_instance(self) -> Callable[
             [cloud_redis.CreateInstanceRequest],
             operations.Operation]:
-        r"""Return a callable for the create instance method over gRPC.
+        r"""Return a callable for the
+        create instance
+          method over gRPC.
 
         Creates a Redis instance based on the specified tier and memory
         size.
@@ -359,7 +365,9 @@ class CloudRedisGrpcTransport(CloudRedisTransport):
     def update_instance(self) -> Callable[
             [cloud_redis.UpdateInstanceRequest],
             operations.Operation]:
-        r"""Return a callable for the update instance method over gRPC.
+        r"""Return a callable for the
+        update instance
+          method over gRPC.
 
         Updates the metadata and configuration of a specific
         Redis instance.
@@ -390,7 +398,9 @@ class CloudRedisGrpcTransport(CloudRedisTransport):
     def upgrade_instance(self) -> Callable[
             [cloud_redis.UpgradeInstanceRequest],
             operations.Operation]:
-        r"""Return a callable for the upgrade instance method over gRPC.
+        r"""Return a callable for the
+        upgrade instance
+          method over gRPC.
 
         Upgrades Redis instance to the newer Redis version
         specified in the request.
@@ -417,7 +427,9 @@ class CloudRedisGrpcTransport(CloudRedisTransport):
     def import_instance(self) -> Callable[
             [cloud_redis.ImportInstanceRequest],
             operations.Operation]:
-        r"""Return a callable for the import instance method over gRPC.
+        r"""Return a callable for the
+        import instance
+          method over gRPC.
 
         Import a Redis RDB snapshot file from Cloud Storage
         into a Redis instance.
@@ -451,7 +463,9 @@ class CloudRedisGrpcTransport(CloudRedisTransport):
     def export_instance(self) -> Callable[
             [cloud_redis.ExportInstanceRequest],
             operations.Operation]:
-        r"""Return a callable for the export instance method over gRPC.
+        r"""Return a callable for the
+        export instance
+          method over gRPC.
 
         Export Redis instance data into a Redis RDB format
         file in Cloud Storage.
@@ -481,7 +495,9 @@ class CloudRedisGrpcTransport(CloudRedisTransport):
     def failover_instance(self) -> Callable[
             [cloud_redis.FailoverInstanceRequest],
             operations.Operation]:
-        r"""Return a callable for the failover instance method over gRPC.
+        r"""Return a callable for the
+        failover instance
+          method over gRPC.
 
         Initiates a failover of the master node to current
         replica node for a specific STANDARD tier Cloud
@@ -509,7 +525,9 @@ class CloudRedisGrpcTransport(CloudRedisTransport):
     def delete_instance(self) -> Callable[
             [cloud_redis.DeleteInstanceRequest],
             operations.Operation]:
-        r"""Return a callable for the delete instance method over gRPC.
+        r"""Return a callable for the
+        delete instance
+          method over gRPC.
 
         Deletes a specific Redis instance.  Instance stops
         serving and data is deleted.

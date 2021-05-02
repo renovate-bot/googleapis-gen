@@ -236,7 +236,9 @@ class LibraryServiceGrpcAsyncIOTransport(LibraryServiceTransport):
     def create_shelf(self) -> Callable[
             [library.CreateShelfRequest],
             Awaitable[library.Shelf]]:
-        r"""Return a callable for the create shelf method over gRPC.
+        r"""Return a callable for the
+        create shelf
+          method over gRPC.
 
         Creates a shelf, and returns the new Shelf.
 
@@ -262,7 +264,9 @@ class LibraryServiceGrpcAsyncIOTransport(LibraryServiceTransport):
     def get_shelf(self) -> Callable[
             [library.GetShelfRequest],
             Awaitable[library.Shelf]]:
-        r"""Return a callable for the get shelf method over gRPC.
+        r"""Return a callable for the
+        get shelf
+          method over gRPC.
 
         Gets a shelf. Returns NOT_FOUND if the shelf does not exist.
 
@@ -288,7 +292,9 @@ class LibraryServiceGrpcAsyncIOTransport(LibraryServiceTransport):
     def list_shelves(self) -> Callable[
             [library.ListShelvesRequest],
             Awaitable[library.ListShelvesResponse]]:
-        r"""Return a callable for the list shelves method over gRPC.
+        r"""Return a callable for the
+        list shelves
+          method over gRPC.
 
         Lists shelves. The order is unspecified but
         deterministic. Newly created shelves will not
@@ -316,7 +322,9 @@ class LibraryServiceGrpcAsyncIOTransport(LibraryServiceTransport):
     def delete_shelf(self) -> Callable[
             [library.DeleteShelfRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete shelf method over gRPC.
+        r"""Return a callable for the
+        delete shelf
+          method over gRPC.
 
         Deletes a shelf. Returns NOT_FOUND if the shelf does not exist.
 
@@ -342,7 +350,9 @@ class LibraryServiceGrpcAsyncIOTransport(LibraryServiceTransport):
     def merge_shelves(self) -> Callable[
             [library.MergeShelvesRequest],
             Awaitable[library.Shelf]]:
-        r"""Return a callable for the merge shelves method over gRPC.
+        r"""Return a callable for the
+        merge shelves
+          method over gRPC.
 
         Merges two shelves by adding all books from the shelf named
         ``other_shelf_name`` to shelf ``name``, and deletes
@@ -374,7 +384,9 @@ class LibraryServiceGrpcAsyncIOTransport(LibraryServiceTransport):
     def create_book(self) -> Callable[
             [library.CreateBookRequest],
             Awaitable[library.Book]]:
-        r"""Return a callable for the create book method over gRPC.
+        r"""Return a callable for the
+        create book
+          method over gRPC.
 
         Creates a book, and returns the new Book.
 
@@ -400,7 +412,9 @@ class LibraryServiceGrpcAsyncIOTransport(LibraryServiceTransport):
     def get_book(self) -> Callable[
             [library.GetBookRequest],
             Awaitable[library.Book]]:
-        r"""Return a callable for the get book method over gRPC.
+        r"""Return a callable for the
+        get book
+          method over gRPC.
 
         Gets a book. Returns NOT_FOUND if the book does not exist.
 
@@ -426,7 +440,9 @@ class LibraryServiceGrpcAsyncIOTransport(LibraryServiceTransport):
     def list_books(self) -> Callable[
             [library.ListBooksRequest],
             Awaitable[library.ListBooksResponse]]:
-        r"""Return a callable for the list books method over gRPC.
+        r"""Return a callable for the
+        list books
+          method over gRPC.
 
         Lists books in a shelf. The order is unspecified but
         deterministic. Newly created books will not necessarily be added
@@ -455,7 +471,9 @@ class LibraryServiceGrpcAsyncIOTransport(LibraryServiceTransport):
     def delete_book(self) -> Callable[
             [library.DeleteBookRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete book method over gRPC.
+        r"""Return a callable for the
+        delete book
+          method over gRPC.
 
         Deletes a book. Returns NOT_FOUND if the book does not exist.
 
@@ -481,7 +499,9 @@ class LibraryServiceGrpcAsyncIOTransport(LibraryServiceTransport):
     def update_book(self) -> Callable[
             [library.UpdateBookRequest],
             Awaitable[library.Book]]:
-        r"""Return a callable for the update book method over gRPC.
+        r"""Return a callable for the
+        update book
+          method over gRPC.
 
         Updates a book. Returns INVALID_ARGUMENT if the name of the book
         is non-empty and does not equal the existing name.
@@ -508,7 +528,9 @@ class LibraryServiceGrpcAsyncIOTransport(LibraryServiceTransport):
     def move_book(self) -> Callable[
             [library.MoveBookRequest],
             Awaitable[library.Book]]:
-        r"""Return a callable for the move book method over gRPC.
+        r"""Return a callable for the
+        move book
+          method over gRPC.
 
         Moves a book to another shelf, and returns the new
         book. The book id of the new book may not be the same as

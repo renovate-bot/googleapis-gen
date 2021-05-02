@@ -14,9 +14,8 @@
 # limitations under the License.
 #
 
-from google.area120.tables_v1alpha1.services.tables_service.client import TablesServiceClient
 from google.area120.tables_v1alpha1.services.tables_service.async_client import TablesServiceAsyncClient
-
+from google.area120.tables_v1alpha1.services.tables_service.client import TablesServiceClient
 from google.area120.tables_v1alpha1.types.tables import BatchCreateRowsRequest
 from google.area120.tables_v1alpha1.types.tables import BatchCreateRowsResponse
 from google.area120.tables_v1alpha1.types.tables import BatchDeleteRowsRequest
@@ -40,12 +39,10 @@ from google.area120.tables_v1alpha1.types.tables import RelationshipDetails
 from google.area120.tables_v1alpha1.types.tables import Row
 from google.area120.tables_v1alpha1.types.tables import Table
 from google.area120.tables_v1alpha1.types.tables import UpdateRowRequest
-from google.area120.tables_v1alpha1.types.tables import Workspace
 from google.area120.tables_v1alpha1.types.tables import View
+from google.area120.tables_v1alpha1.types.tables import Workspace
 
-__all__ = ('TablesServiceClient',
-    'TablesServiceAsyncClient',
-    'BatchCreateRowsRequest',
+__all__ = ('BatchCreateRowsRequest',
     'BatchCreateRowsResponse',
     'BatchDeleteRowsRequest',
     'BatchUpdateRowsRequest',
@@ -67,7 +64,9 @@ __all__ = ('TablesServiceClient',
     'RelationshipDetails',
     'Row',
     'Table',
+    'TablesServiceAsyncClient',
+    'TablesServiceClient',
     'UpdateRowRequest',
-    'Workspace',
     'View',
+    'Workspace',
 )

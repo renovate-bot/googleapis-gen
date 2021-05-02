@@ -29,9 +29,9 @@ from .types.translation_service import CreateGlossaryRequest
 from .types.translation_service import DeleteGlossaryMetadata
 from .types.translation_service import DeleteGlossaryRequest
 from .types.translation_service import DeleteGlossaryResponse
-from .types.translation_service import DetectedLanguage
 from .types.translation_service import DetectLanguageRequest
 from .types.translation_service import DetectLanguageResponse
+from .types.translation_service import DetectedLanguage
 from .types.translation_service import DocumentInputConfig
 from .types.translation_service import DocumentOutputConfig
 from .types.translation_service import DocumentTranslation
@@ -55,7 +55,6 @@ from .types.translation_service import TranslateTextResponse
 from .types.translation_service import Translation
 
 __all__ = (
-    'TranslationServiceClient',
     'BatchDocumentInputConfig',
     'BatchDocumentOutputConfig',
     'BatchTranslateDocumentMetadata',
@@ -69,9 +68,9 @@ __all__ = (
     'DeleteGlossaryMetadata',
     'DeleteGlossaryRequest',
     'DeleteGlossaryResponse',
-    'DetectedLanguage',
     'DetectLanguageRequest',
     'DetectLanguageResponse',
+    'DetectedLanguage',
     'DocumentInputConfig',
     'DocumentOutputConfig',
     'DocumentTranslation',
@@ -93,4 +92,5 @@ __all__ = (
     'TranslateTextRequest',
     'TranslateTextResponse',
     'Translation',
+'TranslationServiceClient',
 )

@@ -14,9 +14,8 @@
 # limitations under the License.
 #
 
-from google.analytics.data_v1beta.services.beta_analytics_data.client import BetaAnalyticsDataClient
 from google.analytics.data_v1beta.services.beta_analytics_data.async_client import BetaAnalyticsDataAsyncClient
-
+from google.analytics.data_v1beta.services.beta_analytics_data.client import BetaAnalyticsDataClient
 from google.analytics.data_v1beta.types.analytics_data_api import BatchRunPivotReportsRequest
 from google.analytics.data_v1beta.types.analytics_data_api import BatchRunPivotReportsResponse
 from google.analytics.data_v1beta.types.analytics_data_api import BatchRunReportsRequest
@@ -43,8 +42,10 @@ from google.analytics.data_v1beta.types.data import Filter
 from google.analytics.data_v1beta.types.data import FilterExpression
 from google.analytics.data_v1beta.types.data import FilterExpressionList
 from google.analytics.data_v1beta.types.data import Metric
+from google.analytics.data_v1beta.types.data import MetricAggregation
 from google.analytics.data_v1beta.types.data import MetricHeader
 from google.analytics.data_v1beta.types.data import MetricMetadata
+from google.analytics.data_v1beta.types.data import MetricType
 from google.analytics.data_v1beta.types.data import MetricValue
 from google.analytics.data_v1beta.types.data import NumericValue
 from google.analytics.data_v1beta.types.data import OrderBy
@@ -55,23 +56,13 @@ from google.analytics.data_v1beta.types.data import PropertyQuota
 from google.analytics.data_v1beta.types.data import QuotaStatus
 from google.analytics.data_v1beta.types.data import ResponseMetaData
 from google.analytics.data_v1beta.types.data import Row
-from google.analytics.data_v1beta.types.data import MetricAggregation
-from google.analytics.data_v1beta.types.data import MetricType
 
-__all__ = ('BetaAnalyticsDataClient',
-    'BetaAnalyticsDataAsyncClient',
-    'BatchRunPivotReportsRequest',
+__all__ = ('BatchRunPivotReportsRequest',
     'BatchRunPivotReportsResponse',
     'BatchRunReportsRequest',
     'BatchRunReportsResponse',
-    'GetMetadataRequest',
-    'Metadata',
-    'RunPivotReportRequest',
-    'RunPivotReportResponse',
-    'RunRealtimeReportRequest',
-    'RunRealtimeReportResponse',
-    'RunReportRequest',
-    'RunReportResponse',
+    'BetaAnalyticsDataAsyncClient',
+    'BetaAnalyticsDataClient',
     'Cohort',
     'CohortReportSettings',
     'CohortSpec',
@@ -85,9 +76,13 @@ __all__ = ('BetaAnalyticsDataClient',
     'Filter',
     'FilterExpression',
     'FilterExpressionList',
+    'GetMetadataRequest',
+    'Metadata',
     'Metric',
+    'MetricAggregation',
     'MetricHeader',
     'MetricMetadata',
+    'MetricType',
     'MetricValue',
     'NumericValue',
     'OrderBy',
@@ -98,6 +93,10 @@ __all__ = ('BetaAnalyticsDataClient',
     'QuotaStatus',
     'ResponseMetaData',
     'Row',
-    'MetricAggregation',
-    'MetricType',
+    'RunPivotReportRequest',
+    'RunPivotReportResponse',
+    'RunRealtimeReportRequest',
+    'RunRealtimeReportResponse',
+    'RunReportRequest',
+    'RunReportResponse',
 )

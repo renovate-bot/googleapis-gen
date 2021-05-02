@@ -356,7 +356,8 @@ class ProductServiceClient(metaclass=ProductServiceClientMeta):
 
         Args:
             request (google.cloud.retail_v2alpha.types.CreateProductRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [CreateProduct][] method.
             parent (str):
                 Required. The parent catalog resource name, such as
@@ -424,7 +425,7 @@ class ProductServiceClient(metaclass=ProductServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, product_service.CreateProductRequest):
             request = product_service.CreateProductRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -468,7 +469,8 @@ class ProductServiceClient(metaclass=ProductServiceClientMeta):
 
         Args:
             request (google.cloud.retail_v2alpha.types.GetProductRequest):
-                The request object. Request message for [GetProduct][]
+                The request object.
+                Request message for [GetProduct][]
                 method.
             name (str):
                 Required. Full resource name of
@@ -514,7 +516,7 @@ class ProductServiceClient(metaclass=ProductServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, product_service.GetProductRequest):
             request = product_service.GetProductRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -555,7 +557,8 @@ class ProductServiceClient(metaclass=ProductServiceClientMeta):
 
         Args:
             request (google.cloud.retail_v2alpha.types.UpdateProductRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [UpdateProduct][] method.
             product (google.cloud.retail_v2alpha.types.Product):
                 Required. The product to update/create.
@@ -611,7 +614,7 @@ class ProductServiceClient(metaclass=ProductServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, product_service.UpdateProductRequest):
             request = product_service.UpdateProductRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if product is not None:
                 request.product = product
@@ -653,7 +656,8 @@ class ProductServiceClient(metaclass=ProductServiceClientMeta):
 
         Args:
             request (google.cloud.retail_v2alpha.types.DeleteProductRequest):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [DeleteProduct][] method.
             name (str):
                 Required. Full resource name of
@@ -691,7 +695,7 @@ class ProductServiceClient(metaclass=ProductServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, product_service.DeleteProductRequest):
             request = product_service.DeleteProductRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -735,7 +739,8 @@ class ProductServiceClient(metaclass=ProductServiceClientMeta):
 
         Args:
             request (google.cloud.retail_v2alpha.types.ImportProductsRequest):
-                The request object. Request message for Import methods.
+                The request object.
+                Request message for Import methods.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.

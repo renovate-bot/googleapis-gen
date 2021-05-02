@@ -14,9 +14,8 @@
 # limitations under the License.
 #
 
-from google.cloud.gsuiteaddons_v1.services.g_suite_add_ons.client import GSuiteAddOnsClient
 from google.cloud.gsuiteaddons_v1.services.g_suite_add_ons.async_client import GSuiteAddOnsAsyncClient
-
+from google.cloud.gsuiteaddons_v1.services.g_suite_add_ons.client import GSuiteAddOnsClient
 from google.cloud.gsuiteaddons_v1.types.gsuiteaddons import AddOns
 from google.cloud.gsuiteaddons_v1.types.gsuiteaddons import Authorization
 from google.cloud.gsuiteaddons_v1.types.gsuiteaddons import CreateDeploymentRequest
@@ -32,13 +31,13 @@ from google.cloud.gsuiteaddons_v1.types.gsuiteaddons import ListDeploymentsRespo
 from google.cloud.gsuiteaddons_v1.types.gsuiteaddons import ReplaceDeploymentRequest
 from google.cloud.gsuiteaddons_v1.types.gsuiteaddons import UninstallDeploymentRequest
 
-__all__ = ('GSuiteAddOnsClient',
-    'GSuiteAddOnsAsyncClient',
-    'AddOns',
+__all__ = ('AddOns',
     'Authorization',
     'CreateDeploymentRequest',
     'DeleteDeploymentRequest',
     'Deployment',
+    'GSuiteAddOnsAsyncClient',
+    'GSuiteAddOnsClient',
     'GetAuthorizationRequest',
     'GetDeploymentRequest',
     'GetInstallStatusRequest',

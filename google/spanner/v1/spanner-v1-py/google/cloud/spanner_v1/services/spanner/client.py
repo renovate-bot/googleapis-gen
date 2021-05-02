@@ -372,7 +372,8 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         Args:
             request (google.cloud.spanner_v1.types.CreateSessionRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [CreateSession][google.spanner.v1.Spanner.CreateSession].
             database (str):
                 Required. The database in which the
@@ -405,7 +406,7 @@ class SpannerClient(metaclass=SpannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, spanner.CreateSessionRequest):
             request = spanner.CreateSessionRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if database is not None:
                 request.database = database
@@ -449,7 +450,8 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         Args:
             request (google.cloud.spanner_v1.types.BatchCreateSessionsRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [BatchCreateSessions][google.spanner.v1.Spanner.BatchCreateSessions].
             database (str):
                 Required. The database in which the
@@ -496,7 +498,7 @@ class SpannerClient(metaclass=SpannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, spanner.BatchCreateSessionsRequest):
             request = spanner.BatchCreateSessionsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if database is not None:
                 request.database = database
@@ -540,7 +542,8 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         Args:
             request (google.cloud.spanner_v1.types.GetSessionRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [GetSession][google.spanner.v1.Spanner.GetSession].
             name (str):
                 Required. The name of the session to
@@ -573,7 +576,7 @@ class SpannerClient(metaclass=SpannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, spanner.GetSessionRequest):
             request = spanner.GetSessionRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -613,7 +616,8 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         Args:
             request (google.cloud.spanner_v1.types.ListSessionsRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [ListSessions][google.spanner.v1.Spanner.ListSessions].
             database (str):
                 Required. The database in which to
@@ -651,7 +655,7 @@ class SpannerClient(metaclass=SpannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, spanner.ListSessionsRequest):
             request = spanner.ListSessionsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if database is not None:
                 request.database = database
@@ -702,7 +706,8 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         Args:
             request (google.cloud.spanner_v1.types.DeleteSessionRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [DeleteSession][google.spanner.v1.Spanner.DeleteSession].
             name (str):
                 Required. The name of the session to
@@ -731,7 +736,7 @@ class SpannerClient(metaclass=SpannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, spanner.DeleteSessionRequest):
             request = spanner.DeleteSessionRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -780,7 +785,8 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         Args:
             request (google.cloud.spanner_v1.types.ExecuteSqlRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql] and
                 [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -842,7 +848,8 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         Args:
             request (google.cloud.spanner_v1.types.ExecuteSqlRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql] and
                 [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -915,7 +922,8 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         Args:
             request (google.cloud.spanner_v1.types.ExecuteBatchDmlRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [ExecuteBatchDml][google.spanner.v1.Spanner.ExecuteBatchDml].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1022,7 +1030,8 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         Args:
             request (google.cloud.spanner_v1.types.ReadRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [Read][google.spanner.v1.Spanner.Read] and
                 [StreamingRead][google.spanner.v1.Spanner.StreamingRead].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1084,7 +1093,8 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         Args:
             request (google.cloud.spanner_v1.types.ReadRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [Read][google.spanner.v1.Spanner.Read] and
                 [StreamingRead][google.spanner.v1.Spanner.StreamingRead].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1150,7 +1160,8 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         Args:
             request (google.cloud.spanner_v1.types.BeginTransactionRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [BeginTransaction][google.spanner.v1.Spanner.BeginTransaction].
             session (str):
                 Required. The session in which the
@@ -1190,7 +1201,7 @@ class SpannerClient(metaclass=SpannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, spanner.BeginTransactionRequest):
             request = spanner.BeginTransactionRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if session is not None:
                 request.session = session
@@ -1250,7 +1261,8 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         Args:
             request (google.cloud.spanner_v1.types.CommitRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [Commit][google.spanner.v1.Spanner.Commit].
             session (str):
                 Required. The session in which the
@@ -1316,7 +1328,7 @@ class SpannerClient(metaclass=SpannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, spanner.CommitRequest):
             request = spanner.CommitRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if session is not None:
                 request.session = session
@@ -1372,7 +1384,8 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         Args:
             request (google.cloud.spanner_v1.types.RollbackRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [Rollback][google.spanner.v1.Spanner.Rollback].
             session (str):
                 Required. The session in which the
@@ -1408,7 +1421,7 @@ class SpannerClient(metaclass=SpannerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, spanner.RollbackRequest):
             request = spanner.RollbackRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if session is not None:
                 request.session = session
@@ -1459,7 +1472,8 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         Args:
             request (google.cloud.spanner_v1.types.PartitionQueryRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [PartitionQuery][google.spanner.v1.Spanner.PartitionQuery]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1532,7 +1546,8 @@ class SpannerClient(metaclass=SpannerClientMeta):
 
         Args:
             request (google.cloud.spanner_v1.types.PartitionReadRequest):
-                The request object. The request for
+                The request object.
+                The request for
                 [PartitionRead][google.spanner.v1.Spanner.PartitionRead]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

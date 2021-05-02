@@ -248,7 +248,9 @@ class HubServiceGrpcAsyncIOTransport(HubServiceTransport):
     def list_hubs(self) -> Callable[
             [hub.ListHubsRequest],
             Awaitable[hub.ListHubsResponse]]:
-        r"""Return a callable for the list hubs method over gRPC.
+        r"""Return a callable for the
+        list hubs
+          method over gRPC.
 
         Lists Hubs in a given project and location.
 
@@ -274,7 +276,9 @@ class HubServiceGrpcAsyncIOTransport(HubServiceTransport):
     def get_hub(self) -> Callable[
             [hub.GetHubRequest],
             Awaitable[hub.Hub]]:
-        r"""Return a callable for the get hub method over gRPC.
+        r"""Return a callable for the
+        get hub
+          method over gRPC.
 
         Gets details of a single Hub.
 
@@ -300,7 +304,9 @@ class HubServiceGrpcAsyncIOTransport(HubServiceTransport):
     def create_hub(self) -> Callable[
             [gcn_hub.CreateHubRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the create hub method over gRPC.
+        r"""Return a callable for the
+        create hub
+          method over gRPC.
 
         Creates a new Hub in a given project and location.
 
@@ -326,7 +332,9 @@ class HubServiceGrpcAsyncIOTransport(HubServiceTransport):
     def update_hub(self) -> Callable[
             [gcn_hub.UpdateHubRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the update hub method over gRPC.
+        r"""Return a callable for the
+        update hub
+          method over gRPC.
 
         Updates the parameters of a single Hub.
 
@@ -352,7 +360,9 @@ class HubServiceGrpcAsyncIOTransport(HubServiceTransport):
     def delete_hub(self) -> Callable[
             [hub.DeleteHubRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the delete hub method over gRPC.
+        r"""Return a callable for the
+        delete hub
+          method over gRPC.
 
         Deletes a single Hub.
 
@@ -378,7 +388,9 @@ class HubServiceGrpcAsyncIOTransport(HubServiceTransport):
     def list_spokes(self) -> Callable[
             [hub.ListSpokesRequest],
             Awaitable[hub.ListSpokesResponse]]:
-        r"""Return a callable for the list spokes method over gRPC.
+        r"""Return a callable for the
+        list spokes
+          method over gRPC.
 
         Lists Spokes in a given project and location.
 
@@ -404,7 +416,9 @@ class HubServiceGrpcAsyncIOTransport(HubServiceTransport):
     def get_spoke(self) -> Callable[
             [hub.GetSpokeRequest],
             Awaitable[hub.Spoke]]:
-        r"""Return a callable for the get spoke method over gRPC.
+        r"""Return a callable for the
+        get spoke
+          method over gRPC.
 
         Gets details of a single Spoke.
 
@@ -430,7 +444,9 @@ class HubServiceGrpcAsyncIOTransport(HubServiceTransport):
     def create_spoke(self) -> Callable[
             [hub.CreateSpokeRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the create spoke method over gRPC.
+        r"""Return a callable for the
+        create spoke
+          method over gRPC.
 
         Creates a new Spoke in a given project and location.
 
@@ -456,7 +472,9 @@ class HubServiceGrpcAsyncIOTransport(HubServiceTransport):
     def update_spoke(self) -> Callable[
             [hub.UpdateSpokeRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the update spoke method over gRPC.
+        r"""Return a callable for the
+        update spoke
+          method over gRPC.
 
         Updates the parameters of a single Spoke.
 
@@ -482,7 +500,9 @@ class HubServiceGrpcAsyncIOTransport(HubServiceTransport):
     def delete_spoke(self) -> Callable[
             [hub.DeleteSpokeRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the delete spoke method over gRPC.
+        r"""Return a callable for the
+        delete spoke
+          method over gRPC.
 
         Deletes a single Spoke.
 

@@ -224,7 +224,9 @@ class BudgetServiceGrpcTransport(BudgetServiceTransport):
     def create_budget(self) -> Callable[
             [budget_service.CreateBudgetRequest],
             budget_model.Budget]:
-        r"""Return a callable for the create budget method over gRPC.
+        r"""Return a callable for the
+        create budget
+          method over gRPC.
 
         Creates a new budget. See
         <a href="https://cloud.google.com/billing/quotas">Quotas
@@ -253,7 +255,9 @@ class BudgetServiceGrpcTransport(BudgetServiceTransport):
     def update_budget(self) -> Callable[
             [budget_service.UpdateBudgetRequest],
             budget_model.Budget]:
-        r"""Return a callable for the update budget method over gRPC.
+        r"""Return a callable for the
+        update budget
+          method over gRPC.
 
         Updates a budget and returns the updated budget.
         WARNING: There are some fields exposed on the Google
@@ -283,7 +287,9 @@ class BudgetServiceGrpcTransport(BudgetServiceTransport):
     def get_budget(self) -> Callable[
             [budget_service.GetBudgetRequest],
             budget_model.Budget]:
-        r"""Return a callable for the get budget method over gRPC.
+        r"""Return a callable for the
+        get budget
+          method over gRPC.
 
         Returns a budget.
         WARNING: There are some fields exposed on the Google
@@ -314,7 +320,9 @@ class BudgetServiceGrpcTransport(BudgetServiceTransport):
     def list_budgets(self) -> Callable[
             [budget_service.ListBudgetsRequest],
             budget_service.ListBudgetsResponse]:
-        r"""Return a callable for the list budgets method over gRPC.
+        r"""Return a callable for the
+        list budgets
+          method over gRPC.
 
         Returns a list of budgets for a billing account.
         WARNING: There are some fields exposed on the Google
@@ -345,7 +353,9 @@ class BudgetServiceGrpcTransport(BudgetServiceTransport):
     def delete_budget(self) -> Callable[
             [budget_service.DeleteBudgetRequest],
             empty.Empty]:
-        r"""Return a callable for the delete budget method over gRPC.
+        r"""Return a callable for the
+        delete budget
+          method over gRPC.
 
         Deletes a budget. Returns successfully if already
         deleted.

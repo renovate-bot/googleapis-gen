@@ -38,13 +38,12 @@ from .types.homegraph import SyncResponse
 from .types.homegraph import SyncResponsePayload
 
 __all__ = (
-    'HomeGraphApiServiceClient',
+    'AgentDeviceId',
     'AgentOtherDeviceId',
+    'DeleteAgentUserRequest',
     'Device',
     'DeviceInfo',
     'DeviceNames',
-    'AgentDeviceId',
-    'DeleteAgentUserRequest',
     'QueryRequest',
     'QueryRequestInput',
     'QueryRequestPayload',
@@ -59,4 +58,5 @@ __all__ = (
     'SyncRequest',
     'SyncResponse',
     'SyncResponsePayload',
+'HomeGraphApiServiceClient',
 )

@@ -161,7 +161,8 @@ class PolicyTagManagerSerializationAsyncClient:
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.ImportTaxonomiesRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ImportTaxonomies][google.cloud.datacatalog.v1beta1.PolicyTagManagerSerialization.ImportTaxonomies].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -220,7 +221,8 @@ class PolicyTagManagerSerializationAsyncClient:
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.ExportTaxonomiesRequest`):
-                The request object. Request message for
+                The request object.
+                Request message for
                 [ExportTaxonomies][google.cloud.datacatalog.v1beta1.PolicyTagManagerSerialization.ExportTaxonomies].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

@@ -175,7 +175,7 @@ class Document(proto.Message):
     metadata = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=7,
+        number=7
     )
 
 
