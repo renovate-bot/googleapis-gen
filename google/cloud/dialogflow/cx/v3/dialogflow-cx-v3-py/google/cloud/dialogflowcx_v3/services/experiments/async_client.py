@@ -164,7 +164,8 @@ class ExperimentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.ListExperimentsRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Experiments.ListExperiments][google.cloud.dialogflow.cx.v3.Experiments.ListExperiments].
             parent (:class:`str`):
                 Required. The
@@ -254,7 +255,8 @@ class ExperimentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.GetExperimentRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Experiments.GetExperiment][google.cloud.dialogflow.cx.v3.Experiments.GetExperiment].
             name (:class:`str`):
                 Required. The name of the
@@ -335,7 +337,8 @@ class ExperimentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.CreateExperimentRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Experiments.CreateExperiment][google.cloud.dialogflow.cx.v3.Experiments.CreateExperiment].
             parent (:class:`str`):
                 Required. The
@@ -423,7 +426,8 @@ class ExperimentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.UpdateExperimentRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Experiments.UpdateExperiment][google.cloud.dialogflow.cx.v3.Experiments.UpdateExperiment].
             experiment (:class:`google.cloud.dialogflowcx_v3.types.Experiment`):
                 Required. The experiment to update.
@@ -506,7 +510,8 @@ class ExperimentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.DeleteExperimentRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Experiments.DeleteExperiment][google.cloud.dialogflow.cx.v3.Experiments.DeleteExperiment].
             name (:class:`str`):
                 Required. The name of the
@@ -576,7 +581,8 @@ class ExperimentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.StartExperimentRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Experiments.StartExperiment][google.cloud.dialogflow.cx.v3.Experiments.StartExperiment].
             name (:class:`str`):
                 Required. Resource name of the experiment to start.
@@ -654,7 +660,8 @@ class ExperimentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.StopExperimentRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Experiments.StopExperiment][google.cloud.dialogflow.cx.v3.Experiments.StopExperiment].
             name (:class:`str`):
                 Required. Resource name of the experiment to stop.

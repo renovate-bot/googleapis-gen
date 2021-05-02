@@ -351,7 +351,8 @@ class ExperimentsClient(metaclass=ExperimentsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.ListExperimentsRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Experiments.ListExperiments][google.cloud.dialogflow.cx.v3.Experiments.ListExperiments].
             parent (str):
                 Required. The
@@ -391,7 +392,7 @@ class ExperimentsClient(metaclass=ExperimentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, experiment.ListExperimentsRequest):
             request = experiment.ListExperimentsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -441,7 +442,8 @@ class ExperimentsClient(metaclass=ExperimentsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.GetExperimentRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Experiments.GetExperiment][google.cloud.dialogflow.cx.v3.Experiments.GetExperiment].
             name (str):
                 Required. The name of the
@@ -478,7 +480,7 @@ class ExperimentsClient(metaclass=ExperimentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, experiment.GetExperimentRequest):
             request = experiment.GetExperimentRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -522,7 +524,8 @@ class ExperimentsClient(metaclass=ExperimentsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.CreateExperimentRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Experiments.CreateExperiment][google.cloud.dialogflow.cx.v3.Experiments.CreateExperiment].
             parent (str):
                 Required. The
@@ -566,7 +569,7 @@ class ExperimentsClient(metaclass=ExperimentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcdc_experiment.CreateExperimentRequest):
             request = gcdc_experiment.CreateExperimentRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -610,7 +613,8 @@ class ExperimentsClient(metaclass=ExperimentsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.UpdateExperimentRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Experiments.UpdateExperiment][google.cloud.dialogflow.cx.v3.Experiments.UpdateExperiment].
             experiment (google.cloud.dialogflowcx_v3.types.Experiment):
                 Required. The experiment to update.
@@ -650,7 +654,7 @@ class ExperimentsClient(metaclass=ExperimentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcdc_experiment.UpdateExperimentRequest):
             request = gcdc_experiment.UpdateExperimentRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if experiment is not None:
                 request.experiment = experiment
@@ -693,7 +697,8 @@ class ExperimentsClient(metaclass=ExperimentsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.DeleteExperimentRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Experiments.DeleteExperiment][google.cloud.dialogflow.cx.v3.Experiments.DeleteExperiment].
             name (str):
                 Required. The name of the
@@ -724,7 +729,7 @@ class ExperimentsClient(metaclass=ExperimentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, experiment.DeleteExperimentRequest):
             request = experiment.DeleteExperimentRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -763,7 +768,8 @@ class ExperimentsClient(metaclass=ExperimentsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.StartExperimentRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Experiments.StartExperiment][google.cloud.dialogflow.cx.v3.Experiments.StartExperiment].
             name (str):
                 Required. Resource name of the experiment to start.
@@ -799,7 +805,7 @@ class ExperimentsClient(metaclass=ExperimentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, experiment.StartExperimentRequest):
             request = experiment.StartExperimentRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -841,7 +847,8 @@ class ExperimentsClient(metaclass=ExperimentsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.StopExperimentRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Experiments.StopExperiment][google.cloud.dialogflow.cx.v3.Experiments.StopExperiment].
             name (str):
                 Required. Resource name of the experiment to stop.
@@ -877,7 +884,7 @@ class ExperimentsClient(metaclass=ExperimentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, experiment.StopExperimentRequest):
             request = experiment.StopExperimentRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

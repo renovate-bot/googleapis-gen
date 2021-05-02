@@ -1,0 +1,41 @@
+// Copyright 2021 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     https://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+// Generated code. DO NOT EDIT!
+
+namespace Google.Ads.GoogleAds.V7.Services.Snippets
+{
+    using Google.Ads.GoogleAds.V7.Resources;
+    using System.Threading.Tasks;
+
+    public sealed partial class GeneratedAdGroupCriterionServiceClientStandaloneSnippets
+    {
+        /// <summary>Snippet for GetAdGroupCriterionAsync</summary>
+        public async Task GetAdGroupCriterionRequestObjectAsync()
+        {
+            // Snippet: GetAdGroupCriterionAsync(GetAdGroupCriterionRequest, CallSettings)
+            // Additional: GetAdGroupCriterionAsync(GetAdGroupCriterionRequest, CancellationToken)
+            // Create client
+            AdGroupCriterionServiceClient adGroupCriterionServiceClient = await AdGroupCriterionServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            GetAdGroupCriterionRequest request = new GetAdGroupCriterionRequest
+            {
+                ResourceNameAsAdGroupCriterionName = AdGroupCriterionName.FromCustomerAdGroupCriterion("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]"),
+            };
+            // Make the request
+            AdGroupCriterion response = await adGroupCriterionServiceClient.GetAdGroupCriterionAsync(request);
+            // End snippet
+        }
+    }
+}

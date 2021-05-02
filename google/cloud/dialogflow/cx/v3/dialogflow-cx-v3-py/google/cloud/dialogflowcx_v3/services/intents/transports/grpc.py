@@ -223,7 +223,9 @@ class IntentsGrpcTransport(IntentsTransport):
     def list_intents(self) -> Callable[
             [intent.ListIntentsRequest],
             intent.ListIntentsResponse]:
-        r"""Return a callable for the list intents method over gRPC.
+        r"""Return a callable for the
+        list intents
+          method over gRPC.
 
         Returns the list of all intents in the specified
         agent.
@@ -250,7 +252,9 @@ class IntentsGrpcTransport(IntentsTransport):
     def get_intent(self) -> Callable[
             [intent.GetIntentRequest],
             intent.Intent]:
-        r"""Return a callable for the get intent method over gRPC.
+        r"""Return a callable for the
+        get intent
+          method over gRPC.
 
         Retrieves the specified intent.
 
@@ -276,7 +280,9 @@ class IntentsGrpcTransport(IntentsTransport):
     def create_intent(self) -> Callable[
             [gcdc_intent.CreateIntentRequest],
             gcdc_intent.Intent]:
-        r"""Return a callable for the create intent method over gRPC.
+        r"""Return a callable for the
+        create intent
+          method over gRPC.
 
         Creates an intent in the specified agent.
 
@@ -302,7 +308,9 @@ class IntentsGrpcTransport(IntentsTransport):
     def update_intent(self) -> Callable[
             [gcdc_intent.UpdateIntentRequest],
             gcdc_intent.Intent]:
-        r"""Return a callable for the update intent method over gRPC.
+        r"""Return a callable for the
+        update intent
+          method over gRPC.
 
         Updates the specified intent.
 
@@ -328,7 +336,9 @@ class IntentsGrpcTransport(IntentsTransport):
     def delete_intent(self) -> Callable[
             [intent.DeleteIntentRequest],
             empty.Empty]:
-        r"""Return a callable for the delete intent method over gRPC.
+        r"""Return a callable for the
+        delete intent
+          method over gRPC.
 
         Deletes the specified intent.
 

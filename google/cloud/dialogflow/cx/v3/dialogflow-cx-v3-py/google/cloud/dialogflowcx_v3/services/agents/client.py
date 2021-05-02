@@ -396,7 +396,8 @@ class AgentsClient(metaclass=AgentsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.ListAgentsRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.ListAgents][google.cloud.dialogflow.cx.v3.Agents.ListAgents].
             parent (str):
                 Required. The location to list all agents for. Format:
@@ -434,7 +435,7 @@ class AgentsClient(metaclass=AgentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, agent.ListAgentsRequest):
             request = agent.ListAgentsRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -483,7 +484,8 @@ class AgentsClient(metaclass=AgentsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.GetAgentRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.GetAgent][google.cloud.dialogflow.cx.v3.Agents.GetAgent].
             name (str):
                 Required. The name of the agent. Format:
@@ -530,7 +532,7 @@ class AgentsClient(metaclass=AgentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, agent.GetAgentRequest):
             request = agent.GetAgentRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -571,7 +573,8 @@ class AgentsClient(metaclass=AgentsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.CreateAgentRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.CreateAgent][google.cloud.dialogflow.cx.v3.Agents.CreateAgent].
             parent (str):
                 Required. The location to create a agent for. Format:
@@ -623,7 +626,7 @@ class AgentsClient(metaclass=AgentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcdc_agent.CreateAgentRequest):
             request = gcdc_agent.CreateAgentRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -666,7 +669,8 @@ class AgentsClient(metaclass=AgentsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.UpdateAgentRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent].
             agent (google.cloud.dialogflowcx_v3.types.Agent):
                 Required. The agent to update.
@@ -719,7 +723,7 @@ class AgentsClient(metaclass=AgentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcdc_agent.UpdateAgentRequest):
             request = gcdc_agent.UpdateAgentRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if agent is not None:
                 request.agent = agent
@@ -761,7 +765,8 @@ class AgentsClient(metaclass=AgentsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.DeleteAgentRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.DeleteAgent][google.cloud.dialogflow.cx.v3.Agents.DeleteAgent].
             name (str):
                 Required. The name of the agent to delete. Format:
@@ -790,7 +795,7 @@ class AgentsClient(metaclass=AgentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, agent.DeleteAgentRequest):
             request = agent.DeleteAgentRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -826,7 +831,8 @@ class AgentsClient(metaclass=AgentsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.ExportAgentRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.ExportAgent][google.cloud.dialogflow.cx.v3.Agents.ExportAgent].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -897,7 +903,8 @@ class AgentsClient(metaclass=AgentsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.RestoreAgentRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.RestoreAgent][google.cloud.dialogflow.cx.v3.Agents.RestoreAgent].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -977,7 +984,8 @@ class AgentsClient(metaclass=AgentsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.ValidateAgentRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.ValidateAgent][google.cloud.dialogflow.cx.v3.Agents.ValidateAgent].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1035,7 +1043,8 @@ class AgentsClient(metaclass=AgentsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.GetAgentValidationResultRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.GetAgentValidationResult][google.cloud.dialogflow.cx.v3.Agents.GetAgentValidationResult].
             name (str):
                 Required. The agent name. Format:
@@ -1070,7 +1079,7 @@ class AgentsClient(metaclass=AgentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, agent.GetAgentValidationResultRequest):
             request = agent.GetAgentValidationResultRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

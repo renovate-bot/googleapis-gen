@@ -1,0 +1,48 @@
+// Copyright 2021 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     https://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+// Generated code. DO NOT EDIT!
+
+namespace Google.Ads.GoogleAds.V7.Services.Snippets
+{
+    using Google.Ads.GoogleAds.V7.Enums;
+    using System.Threading.Tasks;
+
+    public sealed partial class GeneratedCustomerFeedServiceClientStandaloneSnippets
+    {
+        /// <summary>Snippet for MutateCustomerFeedsAsync</summary>
+        public async Task MutateCustomerFeedsRequestObjectAsync()
+        {
+            // Snippet: MutateCustomerFeedsAsync(MutateCustomerFeedsRequest, CallSettings)
+            // Additional: MutateCustomerFeedsAsync(MutateCustomerFeedsRequest, CancellationToken)
+            // Create client
+            CustomerFeedServiceClient customerFeedServiceClient = await CustomerFeedServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            MutateCustomerFeedsRequest request = new MutateCustomerFeedsRequest
+            {
+                CustomerId = "",
+                Operations =
+                {
+                    new CustomerFeedOperation(),
+                },
+                PartialFailure = false,
+                ValidateOnly = false,
+                ResponseContentType = ResponseContentTypeEnum.Types.ResponseContentType.Unspecified,
+            };
+            // Make the request
+            MutateCustomerFeedsResponse response = await customerFeedServiceClient.MutateCustomerFeedsAsync(request);
+            // End snippet
+        }
+    }
+}

@@ -158,7 +158,8 @@ class SecuritySettingsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.CreateSecuritySettingsRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [SecuritySettings.CreateSecuritySettings][].
             parent (:class:`str`):
                 Required. The location to create an
@@ -250,7 +251,8 @@ class SecuritySettingsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.GetSecuritySettingsRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [SecuritySettingsService.GetSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.GetSecuritySettings].
             name (:class:`str`):
                 Required. Resource name of the settings. Format:
@@ -331,7 +333,8 @@ class SecuritySettingsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.UpdateSecuritySettingsRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.UpdateSecuritySettings].
             security_settings (:class:`google.cloud.dialogflowcx_v3.types.SecuritySettings`):
                 Required. [SecuritySettings] object that contains values
@@ -421,7 +424,8 @@ class SecuritySettingsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.ListSecuritySettingsRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [SecuritySettings.ListSecuritySettings][].
             parent (:class:`str`):
                 Required. The location to list all security settings
@@ -510,7 +514,8 @@ class SecuritySettingsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.DeleteSecuritySettingsRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [SecuritySettings.DeleteSecuritySettings][].
             name (:class:`str`):
                 Required. The name of the

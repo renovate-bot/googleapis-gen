@@ -1,0 +1,41 @@
+// Copyright 2021 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     https://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+// Generated code. DO NOT EDIT!
+
+namespace Google.Ads.GoogleAds.V7.Services.Snippets
+{
+    using Google.Ads.GoogleAds.V7.Resources;
+    using System.Threading.Tasks;
+
+    public sealed partial class GeneratedConversionCustomVariableServiceClientStandaloneSnippets
+    {
+        /// <summary>Snippet for GetConversionCustomVariableAsync</summary>
+        public async Task GetConversionCustomVariableRequestObjectAsync()
+        {
+            // Snippet: GetConversionCustomVariableAsync(GetConversionCustomVariableRequest, CallSettings)
+            // Additional: GetConversionCustomVariableAsync(GetConversionCustomVariableRequest, CancellationToken)
+            // Create client
+            ConversionCustomVariableServiceClient conversionCustomVariableServiceClient = await ConversionCustomVariableServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            GetConversionCustomVariableRequest request = new GetConversionCustomVariableRequest
+            {
+                ResourceNameAsConversionCustomVariableName = ConversionCustomVariableName.FromCustomerConversionCustomVariable("[CUSTOMER_ID]", "[CONVERSION_CUSTOM_VARIABLE_ID]"),
+            };
+            // Make the request
+            ConversionCustomVariable response = await conversionCustomVariableServiceClient.GetConversionCustomVariableAsync(request);
+            // End snippet
+        }
+    }
+}

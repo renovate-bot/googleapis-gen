@@ -241,7 +241,9 @@ class FlowsGrpcTransport(FlowsTransport):
     def create_flow(self) -> Callable[
             [gcdc_flow.CreateFlowRequest],
             gcdc_flow.Flow]:
-        r"""Return a callable for the create flow method over gRPC.
+        r"""Return a callable for the
+        create flow
+          method over gRPC.
 
         Creates a flow in the specified agent.
 
@@ -267,7 +269,9 @@ class FlowsGrpcTransport(FlowsTransport):
     def delete_flow(self) -> Callable[
             [flow.DeleteFlowRequest],
             empty.Empty]:
-        r"""Return a callable for the delete flow method over gRPC.
+        r"""Return a callable for the
+        delete flow
+          method over gRPC.
 
         Deletes a specified flow.
 
@@ -293,7 +297,9 @@ class FlowsGrpcTransport(FlowsTransport):
     def list_flows(self) -> Callable[
             [flow.ListFlowsRequest],
             flow.ListFlowsResponse]:
-        r"""Return a callable for the list flows method over gRPC.
+        r"""Return a callable for the
+        list flows
+          method over gRPC.
 
         Returns the list of all flows in the specified agent.
 
@@ -319,7 +325,9 @@ class FlowsGrpcTransport(FlowsTransport):
     def get_flow(self) -> Callable[
             [flow.GetFlowRequest],
             flow.Flow]:
-        r"""Return a callable for the get flow method over gRPC.
+        r"""Return a callable for the
+        get flow
+          method over gRPC.
 
         Retrieves the specified flow.
 
@@ -345,7 +353,9 @@ class FlowsGrpcTransport(FlowsTransport):
     def update_flow(self) -> Callable[
             [gcdc_flow.UpdateFlowRequest],
             gcdc_flow.Flow]:
-        r"""Return a callable for the update flow method over gRPC.
+        r"""Return a callable for the
+        update flow
+          method over gRPC.
 
         Updates the specified flow.
 
@@ -371,7 +381,9 @@ class FlowsGrpcTransport(FlowsTransport):
     def train_flow(self) -> Callable[
             [flow.TrainFlowRequest],
             operations.Operation]:
-        r"""Return a callable for the train flow method over gRPC.
+        r"""Return a callable for the
+        train flow
+          method over gRPC.
 
         Trains the specified flow. Note that only the flow in
         'draft' environment is trained.
@@ -398,7 +410,9 @@ class FlowsGrpcTransport(FlowsTransport):
     def validate_flow(self) -> Callable[
             [flow.ValidateFlowRequest],
             flow.FlowValidationResult]:
-        r"""Return a callable for the validate flow method over gRPC.
+        r"""Return a callable for the
+        validate flow
+          method over gRPC.
 
         Validates the specified flow and creates or updates
         validation results. Please call this API after the
@@ -427,7 +441,9 @@ class FlowsGrpcTransport(FlowsTransport):
     def get_flow_validation_result(self) -> Callable[
             [flow.GetFlowValidationResultRequest],
             flow.FlowValidationResult]:
-        r"""Return a callable for the get flow validation result method over gRPC.
+        r"""Return a callable for the
+        get flow validation result
+          method over gRPC.
 
         Gets the latest flow validation result. Flow
         validation is performed when ValidateFlow is called.
@@ -454,7 +470,9 @@ class FlowsGrpcTransport(FlowsTransport):
     def import_flow(self) -> Callable[
             [flow.ImportFlowRequest],
             operations.Operation]:
-        r"""Return a callable for the import flow method over gRPC.
+        r"""Return a callable for the
+        import flow
+          method over gRPC.
 
         Imports the specified flow to the specified agent
         from a binary file.
@@ -481,7 +499,9 @@ class FlowsGrpcTransport(FlowsTransport):
     def export_flow(self) -> Callable[
             [flow.ExportFlowRequest],
             operations.Operation]:
-        r"""Return a callable for the export flow method over gRPC.
+        r"""Return a callable for the
+        export flow
+          method over gRPC.
 
         Exports the specified flow to a binary file.
         Note that resources (e.g. intents, entities, webhooks)

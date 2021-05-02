@@ -169,7 +169,8 @@ class TransitionRouteGroupsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.ListTransitionRouteGroupsRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [TransitionRouteGroups.ListTransitionRouteGroups][google.cloud.dialogflow.cx.v3.TransitionRouteGroups.ListTransitionRouteGroups].
             parent (:class:`str`):
                 Required. The flow to list all transition route groups
@@ -258,7 +259,8 @@ class TransitionRouteGroupsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.GetTransitionRouteGroupRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [TransitionRouteGroups.GetTransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroups.GetTransitionRouteGroup].
             name (:class:`str`):
                 Required. The name of the
@@ -340,7 +342,8 @@ class TransitionRouteGroupsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.CreateTransitionRouteGroupRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [TransitionRouteGroups.CreateTransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroups.CreateTransitionRouteGroup].
             parent (:class:`str`):
                 Required. The flow to create an
@@ -430,7 +433,8 @@ class TransitionRouteGroupsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.UpdateTransitionRouteGroupRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [TransitionRouteGroups.UpdateTransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroups.UpdateTransitionRouteGroup].
             transition_route_group (:class:`google.cloud.dialogflowcx_v3.types.TransitionRouteGroup`):
                 Required. The transition route group
@@ -517,7 +521,8 @@ class TransitionRouteGroupsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.DeleteTransitionRouteGroupRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [TransitionRouteGroups.DeleteTransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroups.DeleteTransitionRouteGroup].
             name (:class:`str`):
                 Required. The name of the

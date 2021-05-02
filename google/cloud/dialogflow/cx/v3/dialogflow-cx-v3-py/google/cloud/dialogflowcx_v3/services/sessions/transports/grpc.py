@@ -223,7 +223,9 @@ class SessionsGrpcTransport(SessionsTransport):
     def detect_intent(self) -> Callable[
             [session.DetectIntentRequest],
             session.DetectIntentResponse]:
-        r"""Return a callable for the detect intent method over gRPC.
+        r"""Return a callable for the
+        detect intent
+          method over gRPC.
 
         Processes a natural language query and returns structured,
         actionable data as a result. This method is not idempotent,
@@ -256,7 +258,9 @@ class SessionsGrpcTransport(SessionsTransport):
     def streaming_detect_intent(self) -> Callable[
             [session.StreamingDetectIntentRequest],
             session.StreamingDetectIntentResponse]:
-        r"""Return a callable for the streaming detect intent method over gRPC.
+        r"""Return a callable for the
+        streaming detect intent
+          method over gRPC.
 
         Processes a natural language query in audio format in a
         streaming fashion and returns structured, actionable data as a
@@ -289,7 +293,9 @@ class SessionsGrpcTransport(SessionsTransport):
     def match_intent(self) -> Callable[
             [session.MatchIntentRequest],
             session.MatchIntentResponse]:
-        r"""Return a callable for the match intent method over gRPC.
+        r"""Return a callable for the
+        match intent
+          method over gRPC.
 
         Returns preliminary intent match results, doesn't
         change the session status.
@@ -316,7 +322,9 @@ class SessionsGrpcTransport(SessionsTransport):
     def fulfill_intent(self) -> Callable[
             [session.FulfillIntentRequest],
             session.FulfillIntentResponse]:
-        r"""Return a callable for the fulfill intent method over gRPC.
+        r"""Return a callable for the
+        fulfill intent
+          method over gRPC.
 
         Fulfills a matched intent returned by
         [MatchIntent][google.cloud.dialogflow.cx.v3.Sessions.MatchIntent].

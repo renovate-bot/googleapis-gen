@@ -223,7 +223,9 @@ class SessionEntityTypesGrpcTransport(SessionEntityTypesTransport):
     def list_session_entity_types(self) -> Callable[
             [session_entity_type.ListSessionEntityTypesRequest],
             session_entity_type.ListSessionEntityTypesResponse]:
-        r"""Return a callable for the list session entity types method over gRPC.
+        r"""Return a callable for the
+        list session entity types
+          method over gRPC.
 
         Returns the list of all session entity types in the
         specified session.
@@ -250,7 +252,9 @@ class SessionEntityTypesGrpcTransport(SessionEntityTypesTransport):
     def get_session_entity_type(self) -> Callable[
             [session_entity_type.GetSessionEntityTypeRequest],
             session_entity_type.SessionEntityType]:
-        r"""Return a callable for the get session entity type method over gRPC.
+        r"""Return a callable for the
+        get session entity type
+          method over gRPC.
 
         Retrieves the specified session entity type.
 
@@ -276,7 +280,9 @@ class SessionEntityTypesGrpcTransport(SessionEntityTypesTransport):
     def create_session_entity_type(self) -> Callable[
             [gcdc_session_entity_type.CreateSessionEntityTypeRequest],
             gcdc_session_entity_type.SessionEntityType]:
-        r"""Return a callable for the create session entity type method over gRPC.
+        r"""Return a callable for the
+        create session entity type
+          method over gRPC.
 
         Creates a session entity type.
 
@@ -302,7 +308,9 @@ class SessionEntityTypesGrpcTransport(SessionEntityTypesTransport):
     def update_session_entity_type(self) -> Callable[
             [gcdc_session_entity_type.UpdateSessionEntityTypeRequest],
             gcdc_session_entity_type.SessionEntityType]:
-        r"""Return a callable for the update session entity type method over gRPC.
+        r"""Return a callable for the
+        update session entity type
+          method over gRPC.
 
         Updates the specified session entity type.
 
@@ -328,7 +336,9 @@ class SessionEntityTypesGrpcTransport(SessionEntityTypesTransport):
     def delete_session_entity_type(self) -> Callable[
             [session_entity_type.DeleteSessionEntityTypeRequest],
             empty.Empty]:
-        r"""Return a callable for the delete session entity type method over gRPC.
+        r"""Return a callable for the
+        delete session entity type
+          method over gRPC.
 
         Deletes the specified session entity type.
 

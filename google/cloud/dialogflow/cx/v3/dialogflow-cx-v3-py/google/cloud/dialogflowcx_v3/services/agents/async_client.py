@@ -173,7 +173,8 @@ class AgentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.ListAgentsRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.ListAgents][google.cloud.dialogflow.cx.v3.Agents.ListAgents].
             parent (:class:`str`):
                 Required. The location to list all agents for. Format:
@@ -260,7 +261,8 @@ class AgentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.GetAgentRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.GetAgent][google.cloud.dialogflow.cx.v3.Agents.GetAgent].
             name (:class:`str`):
                 Required. The name of the agent. Format:
@@ -348,7 +350,8 @@ class AgentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.CreateAgentRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.CreateAgent][google.cloud.dialogflow.cx.v3.Agents.CreateAgent].
             parent (:class:`str`):
                 Required. The location to create a agent for. Format:
@@ -443,7 +446,8 @@ class AgentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.UpdateAgentRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3.Agents.UpdateAgent].
             agent (:class:`google.cloud.dialogflowcx_v3.types.Agent`):
                 Required. The agent to update.
@@ -538,7 +542,8 @@ class AgentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.DeleteAgentRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.DeleteAgent][google.cloud.dialogflow.cx.v3.Agents.DeleteAgent].
             name (:class:`str`):
                 Required. The name of the agent to delete. Format:
@@ -603,7 +608,8 @@ class AgentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.ExportAgentRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.ExportAgent][google.cloud.dialogflow.cx.v3.Agents.ExportAgent].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -673,7 +679,8 @@ class AgentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.RestoreAgentRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.RestoreAgent][google.cloud.dialogflow.cx.v3.Agents.RestoreAgent].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -752,7 +759,8 @@ class AgentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.ValidateAgentRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.ValidateAgent][google.cloud.dialogflow.cx.v3.Agents.ValidateAgent].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -809,7 +817,8 @@ class AgentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.GetAgentValidationResultRequest`):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Agents.GetAgentValidationResult][google.cloud.dialogflow.cx.v3.Agents.GetAgentValidationResult].
             name (:class:`str`):
                 Required. The agent name. Format:

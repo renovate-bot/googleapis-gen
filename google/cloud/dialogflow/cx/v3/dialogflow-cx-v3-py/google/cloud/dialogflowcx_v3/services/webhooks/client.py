@@ -339,7 +339,8 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.ListWebhooksRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Webhooks.ListWebhooks][google.cloud.dialogflow.cx.v3.Webhooks.ListWebhooks].
             parent (str):
                 Required. The agent to list all webhooks for. Format:
@@ -377,7 +378,7 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
         # there are no flattened fields.
         if not isinstance(request, webhook.ListWebhooksRequest):
             request = webhook.ListWebhooksRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -426,7 +427,8 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.GetWebhookRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Webhooks.GetWebhook][google.cloud.dialogflow.cx.v3.Webhooks.GetWebhook].
             name (str):
                 Required. The name of the webhook. Format:
@@ -466,7 +468,7 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
         # there are no flattened fields.
         if not isinstance(request, webhook.GetWebhookRequest):
             request = webhook.GetWebhookRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -507,7 +509,8 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.CreateWebhookRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Webhooks.CreateWebhook][google.cloud.dialogflow.cx.v3.Webhooks.CreateWebhook].
             parent (str):
                 Required. The agent to create a webhook for. Format:
@@ -552,7 +555,7 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcdc_webhook.CreateWebhookRequest):
             request = gcdc_webhook.CreateWebhookRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -595,7 +598,8 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.UpdateWebhookRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Webhooks.UpdateWebhook][google.cloud.dialogflow.cx.v3.Webhooks.UpdateWebhook].
             webhook (google.cloud.dialogflowcx_v3.types.Webhook):
                 Required. The webhook to update.
@@ -641,7 +645,7 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcdc_webhook.UpdateWebhookRequest):
             request = gcdc_webhook.UpdateWebhookRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if webhook is not None:
                 request.webhook = webhook
@@ -683,7 +687,8 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.DeleteWebhookRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [Webhooks.DeleteWebhook][google.cloud.dialogflow.cx.v3.Webhooks.DeleteWebhook].
             name (str):
                 Required. The name of the webhook to delete. Format:
@@ -712,7 +717,7 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
         # there are no flattened fields.
         if not isinstance(request, webhook.DeleteWebhookRequest):
             request = webhook.DeleteWebhookRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

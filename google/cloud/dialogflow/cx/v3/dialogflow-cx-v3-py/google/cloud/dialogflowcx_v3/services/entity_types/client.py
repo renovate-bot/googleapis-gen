@@ -338,7 +338,8 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.ListEntityTypesRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [EntityTypes.ListEntityTypes][google.cloud.dialogflow.cx.v3.EntityTypes.ListEntityTypes].
             parent (str):
                 Required. The agent to list all entity types for.
@@ -377,7 +378,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, entity_type.ListEntityTypesRequest):
             request = entity_type.ListEntityTypesRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -426,7 +427,8 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.GetEntityTypeRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [EntityTypes.GetEntityType][google.cloud.dialogflow.cx.v3.EntityTypes.GetEntityType].
             name (str):
                 Required. The name of the entity type. Format:
@@ -493,7 +495,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, entity_type.GetEntityTypeRequest):
             request = entity_type.GetEntityTypeRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -534,7 +536,8 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.CreateEntityTypeRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [EntityTypes.CreateEntityType][google.cloud.dialogflow.cx.v3.EntityTypes.CreateEntityType].
             parent (str):
                 Required. The agent to create a entity type for. Format:
@@ -606,7 +609,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcdc_entity_type.CreateEntityTypeRequest):
             request = gcdc_entity_type.CreateEntityTypeRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -649,7 +652,8 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.UpdateEntityTypeRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [EntityTypes.UpdateEntityType][google.cloud.dialogflow.cx.v3.EntityTypes.UpdateEntityType].
             entity_type (google.cloud.dialogflowcx_v3.types.EntityType):
                 Required. The entity type to update.
@@ -721,7 +725,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcdc_entity_type.UpdateEntityTypeRequest):
             request = gcdc_entity_type.UpdateEntityTypeRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if entity_type is not None:
                 request.entity_type = entity_type
@@ -763,7 +767,8 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.DeleteEntityTypeRequest):
-                The request object. The request message for
+                The request object.
+                The request message for
                 [EntityTypes.DeleteEntityType][google.cloud.dialogflow.cx.v3.EntityTypes.DeleteEntityType].
             name (str):
                 Required. The name of the entity type to delete. Format:
@@ -792,7 +797,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, entity_type.DeleteEntityTypeRequest):
             request = entity_type.DeleteEntityTypeRequest(request)
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
