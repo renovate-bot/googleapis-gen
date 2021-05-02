@@ -48,7 +48,7 @@ iam_policy (2.google.iam.v1.Policy
 parent (	%
 data (2.google.protobuf.StructB´
  com.google.cloud.asset.v1p2beta1B
-AssetProtoPZAgoogle.golang.org/genproto/googleapis/cloud/asset/v1p2beta1;assetøªGoogle.Cloud.Asset.v1p2beta1ÊGoogle\\Cloud\\Asset\\v1p2beta1bproto3'
+AssetProtoPZAgoogle.golang.org/genproto/googleapis/cloud/asset/v1p2beta1;assetøªGoogle.Cloud.Asset.v1p2beta1ÊGoogle\\Cloud\\Asset\\V1p2beta1bproto3'
         , true);
 
         static::$is_initialized = true;

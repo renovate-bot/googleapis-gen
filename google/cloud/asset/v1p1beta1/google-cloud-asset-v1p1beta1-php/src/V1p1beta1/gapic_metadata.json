@@ -1,0 +1,28 @@
+{
+    "schema": "1.0",
+    "comment": "This file maps proto services\/RPCs to the corresponding library clients\/methods",
+    "language": "php",
+    "protoPackage": "google.cloud.asset.v1p1beta1",
+    "libraryPackage": "Google\\Cloud\\Asset\\V1p1beta1",
+    "services": {
+        "AssetService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "AssetServiceGapicClient",
+                    "rpcs": {
+                        "SearchAllIamPolicies": {
+                            "methods": [
+                                "searchAllIamPolicies"
+                            ]
+                        },
+                        "SearchAllResources": {
+                            "methods": [
+                                "searchAllResources"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

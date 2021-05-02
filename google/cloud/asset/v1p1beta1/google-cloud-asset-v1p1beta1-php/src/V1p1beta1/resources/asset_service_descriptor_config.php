@@ -3,7 +3,7 @@
 return [
     'interfaces' => [
         'google.cloud.asset.v1p1beta1.AssetService' => [
-            'SearchAllResources' => [
+            'SearchAllIamPolicies' => [
                 'pageStreaming' => [
                     'requestPageTokenGetMethod' => 'getPageToken',
                     'requestPageTokenSetMethod' => 'setPageToken',
@@ -13,7 +13,7 @@ return [
                     'resourcesGetMethod' => 'getResults',
                 ],
             ],
-            'SearchAllIamPolicies' => [
+            'SearchAllResources' => [
                 'pageStreaming' => [
                     'requestPageTokenGetMethod' => 'getPageToken',
                     'requestPageTokenSetMethod' => 'setPageToken',

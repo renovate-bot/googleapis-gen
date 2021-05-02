@@ -3,17 +3,6 @@
 return [
     'interfaces' => [
         'google.cloud.asset.v1p2beta1.AssetService' => [
-            'DeleteFeed' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1p2beta1/{name=*/*/feeds/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
             'CreateFeed' => [
                 'method' => 'post',
                 'uriTemplate' => '/v1p2beta1/{parent=*/*}/feeds',
@@ -22,6 +11,17 @@ return [
                     'parent' => [
                         'getters' => [
                             'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'DeleteFeed' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1p2beta1/{name=*/*/feeds/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
                         ],
                     ],
                 ],
