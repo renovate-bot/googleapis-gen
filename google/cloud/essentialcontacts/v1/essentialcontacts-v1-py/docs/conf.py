@@ -16,7 +16,7 @@
 #
 
 #
-# google-cloud-essentialcontacts documentation build configuration file
+# google-cloud-essential-contacts documentation build configuration file
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -80,7 +80,7 @@ source_suffix = [".rst", ".md"]
 master_doc = "index"
 
 # General information about the project.
-project = u"google-cloud-essentialcontacts"
+project = u"google-cloud-essential-contacts"
 copyright = u"2020, Google, LLC"
 author = u"Google APIs"         # TODO: autogenerate this bit
 
@@ -242,7 +242,7 @@ html_static_path = ["_static"]
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "google-cloud-essentialcontacts-doc"
+htmlhelp_basename = "google-cloud-essential-contacts-doc"
 
 # -- Options for warnings ------------------------------------------------------
 
@@ -275,8 +275,8 @@ latex_elements = {
 latex_documents = [
     (
         master_doc,
-        "google-cloud-essentialcontacts.tex",
-        u"google-cloud-essentialcontacts Documentation",
+        "google-cloud-essential-contacts.tex",
+        u"google-cloud-essential-contacts Documentation",
         author,
         "manual",
     )
@@ -310,8 +310,8 @@ latex_documents = [
 man_pages = [
     (
         master_doc,
-        "google-cloud-essentialcontacts",
-        u"Google Cloud Essentialcontacts Documentation",
+        "google-cloud-essential-contacts",
+        u"Google Cloud Essential Contacts Documentation",
         [author],
         1,
     )
@@ -329,11 +329,11 @@ man_pages = [
 texinfo_documents = [
     (
         master_doc,
-        "google-cloud-essentialcontacts",
-        u"google-cloud-essentialcontacts Documentation",
+        "google-cloud-essential-contacts",
+        u"google-cloud-essential-contacts Documentation",
         author,
-        "google-cloud-essentialcontacts",
-        "GAPIC library for Google Cloud Essentialcontacts API",
+        "google-cloud-essential-contacts",
+        "GAPIC library for Google Cloud Essential Contacts API",
         "APIs",
     )
 ]

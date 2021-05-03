@@ -31,7 +31,7 @@ def unit(session):
     session.run(
         'py.test',
         '--quiet',
-        '--cov=google/cloud/essentialcontacts_v1/',
+        '--cov=google/cloud/essential_contacts_v1/',
         '--cov-config=.coveragerc',
         '--cov-report=term',
         '--cov-report=html',

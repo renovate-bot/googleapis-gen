@@ -17,14 +17,14 @@
 
 from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
 
-from google.cloud.essentialcontacts_v1.types import service
+from google.cloud.essential_contacts_v1.types import service
 
 
 class ListContactsPager:
     """A pager for iterating through ``list_contacts`` requests.
 
     This class thinly wraps an initial
-    :class:`google.cloud.essentialcontacts_v1.types.ListContactsResponse` object, and
+    :class:`google.cloud.essential_contacts_v1.types.ListContactsResponse` object, and
     provides an ``__iter__`` method to iterate through its
     ``contacts`` field.
 
@@ -33,7 +33,7 @@ class ListContactsPager:
     through the ``contacts`` field on the
     corresponding responses.
 
-    All the usual :class:`google.cloud.essentialcontacts_v1.types.ListContactsResponse`
+    All the usual :class:`google.cloud.essential_contacts_v1.types.ListContactsResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -48,9 +48,9 @@ class ListContactsPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.cloud.essentialcontacts_v1.types.ListContactsRequest):
+            request (google.cloud.essential_contacts_v1.types.ListContactsRequest):
                 The initial request object.
-            response (google.cloud.essentialcontacts_v1.types.ListContactsResponse):
+            response (google.cloud.essential_contacts_v1.types.ListContactsResponse):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
@@ -83,7 +83,7 @@ class ListContactsAsyncPager:
     """A pager for iterating through ``list_contacts`` requests.
 
     This class thinly wraps an initial
-    :class:`google.cloud.essentialcontacts_v1.types.ListContactsResponse` object, and
+    :class:`google.cloud.essential_contacts_v1.types.ListContactsResponse` object, and
     provides an ``__aiter__`` method to iterate through its
     ``contacts`` field.
 
@@ -92,7 +92,7 @@ class ListContactsAsyncPager:
     through the ``contacts`` field on the
     corresponding responses.
 
-    All the usual :class:`google.cloud.essentialcontacts_v1.types.ListContactsResponse`
+    All the usual :class:`google.cloud.essential_contacts_v1.types.ListContactsResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -107,9 +107,9 @@ class ListContactsAsyncPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.cloud.essentialcontacts_v1.types.ListContactsRequest):
+            request (google.cloud.essential_contacts_v1.types.ListContactsRequest):
                 The initial request object.
-            response (google.cloud.essentialcontacts_v1.types.ListContactsResponse):
+            response (google.cloud.essential_contacts_v1.types.ListContactsResponse):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
@@ -146,7 +146,7 @@ class ComputeContactsPager:
     """A pager for iterating through ``compute_contacts`` requests.
 
     This class thinly wraps an initial
-    :class:`google.cloud.essentialcontacts_v1.types.ComputeContactsResponse` object, and
+    :class:`google.cloud.essential_contacts_v1.types.ComputeContactsResponse` object, and
     provides an ``__iter__`` method to iterate through its
     ``contacts`` field.
 
@@ -155,7 +155,7 @@ class ComputeContactsPager:
     through the ``contacts`` field on the
     corresponding responses.
 
-    All the usual :class:`google.cloud.essentialcontacts_v1.types.ComputeContactsResponse`
+    All the usual :class:`google.cloud.essential_contacts_v1.types.ComputeContactsResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -170,9 +170,9 @@ class ComputeContactsPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.cloud.essentialcontacts_v1.types.ComputeContactsRequest):
+            request (google.cloud.essential_contacts_v1.types.ComputeContactsRequest):
                 The initial request object.
-            response (google.cloud.essentialcontacts_v1.types.ComputeContactsResponse):
+            response (google.cloud.essential_contacts_v1.types.ComputeContactsResponse):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
@@ -205,7 +205,7 @@ class ComputeContactsAsyncPager:
     """A pager for iterating through ``compute_contacts`` requests.
 
     This class thinly wraps an initial
-    :class:`google.cloud.essentialcontacts_v1.types.ComputeContactsResponse` object, and
+    :class:`google.cloud.essential_contacts_v1.types.ComputeContactsResponse` object, and
     provides an ``__aiter__`` method to iterate through its
     ``contacts`` field.
 
@@ -214,7 +214,7 @@ class ComputeContactsAsyncPager:
     through the ``contacts`` field on the
     corresponding responses.
 
-    All the usual :class:`google.cloud.essentialcontacts_v1.types.ComputeContactsResponse`
+    All the usual :class:`google.cloud.essential_contacts_v1.types.ComputeContactsResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -229,9 +229,9 @@ class ComputeContactsAsyncPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.cloud.essentialcontacts_v1.types.ComputeContactsRequest):
+            request (google.cloud.essential_contacts_v1.types.ComputeContactsRequest):
                 The initial request object.
-            response (google.cloud.essentialcontacts_v1.types.ComputeContactsResponse):
+            response (google.cloud.essential_contacts_v1.types.ComputeContactsResponse):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.

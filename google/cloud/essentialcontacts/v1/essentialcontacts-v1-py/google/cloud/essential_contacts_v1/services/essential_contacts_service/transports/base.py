@@ -25,14 +25,14 @@ from google.api_core import gapic_v1    # type: ignore
 from google.api_core import retry as retries  # type: ignore
 from google.auth import credentials  # type: ignore
 
-from google.cloud.essentialcontacts_v1.types import service
+from google.cloud.essential_contacts_v1.types import service
 from google.protobuf import empty_pb2 as empty  # type: ignore
 
 
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-essentialcontacts',
+            'google-cloud-essential-contacts',
         ).version,
     )
 except pkg_resources.DistributionNotFound:

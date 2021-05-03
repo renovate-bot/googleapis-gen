@@ -26,7 +26,7 @@ from google.auth.transport.grpc import SslCredentials  # type: ignore
 
 import grpc  # type: ignore
 
-from google.cloud.essentialcontacts_v1.types import service
+from google.cloud.essential_contacts_v1.types import service
 from google.protobuf import empty_pb2 as empty  # type: ignore
 
 from .base import EssentialContactsServiceTransport, DEFAULT_CLIENT_INFO

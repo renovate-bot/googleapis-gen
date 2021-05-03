@@ -32,9 +32,9 @@ from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
-from google.cloud.essentialcontacts_v1.services.essential_contacts_service import pagers
-from google.cloud.essentialcontacts_v1.types import enums
-from google.cloud.essentialcontacts_v1.types import service
+from google.cloud.essential_contacts_v1.services.essential_contacts_service import pagers
+from google.cloud.essential_contacts_v1.types import enums
+from google.cloud.essential_contacts_v1.types import service
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
@@ -339,7 +339,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
         r"""Adds a new contact for a resource.
 
         Args:
-            request (google.cloud.essentialcontacts_v1.types.CreateContactRequest):
+            request (google.cloud.essential_contacts_v1.types.CreateContactRequest):
                 The request object. Request message for the
                 CreateContact method.
             parent (str):
@@ -350,7 +350,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            contact (google.cloud.essentialcontacts_v1.types.Contact):
+            contact (google.cloud.essential_contacts_v1.types.Contact):
                 Required. The contact to create. Must
                 specify an email address and language
                 tag.
@@ -366,7 +366,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.essentialcontacts_v1.types.Contact:
+            google.cloud.essential_contacts_v1.types.Contact:
                 A contact that will receive
                 notifications from Google Cloud.
 
@@ -430,10 +430,10 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
         Note: A contact's email address cannot be changed.
 
         Args:
-            request (google.cloud.essentialcontacts_v1.types.UpdateContactRequest):
+            request (google.cloud.essential_contacts_v1.types.UpdateContactRequest):
                 The request object. Request message for the
                 UpdateContact method.
-            contact (google.cloud.essentialcontacts_v1.types.Contact):
+            contact (google.cloud.essential_contacts_v1.types.Contact):
                 Required. The contact resource to
                 replace the existing saved contact.
                 Note: the email address of the contact
@@ -458,7 +458,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.essentialcontacts_v1.types.Contact:
+            google.cloud.essential_contacts_v1.types.Contact:
                 A contact that will receive
                 notifications from Google Cloud.
 
@@ -520,7 +520,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
         r"""Lists the contacts that have been set on a resource.
 
         Args:
-            request (google.cloud.essentialcontacts_v1.types.ListContactsRequest):
+            request (google.cloud.essential_contacts_v1.types.ListContactsRequest):
                 The request object. Request message for the ListContacts
                 method.
             parent (str):
@@ -539,7 +539,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.essentialcontacts_v1.services.essential_contacts_service.pagers.ListContactsPager:
+            google.cloud.essential_contacts_v1.services.essential_contacts_service.pagers.ListContactsPager:
                 Response message for the ListContacts
                 method.
                 Iterating over this object will yield
@@ -611,7 +611,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
         r"""Gets a single contact.
 
         Args:
-            request (google.cloud.essentialcontacts_v1.types.GetContactRequest):
+            request (google.cloud.essential_contacts_v1.types.GetContactRequest):
                 The request object. Request message for the GetContact
                 method.
             name (str):
@@ -631,7 +631,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.essentialcontacts_v1.types.Contact:
+            google.cloud.essential_contacts_v1.types.Contact:
                 A contact that will receive
                 notifications from Google Cloud.
 
@@ -691,7 +691,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
         r"""Deletes a contact.
 
         Args:
-            request (google.cloud.essentialcontacts_v1.types.DeleteContactRequest):
+            request (google.cloud.essential_contacts_v1.types.DeleteContactRequest):
                 The request object. Request message for the
                 DeleteContact method.
             name (str):
@@ -763,7 +763,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
         including contacts inherited from any parent resources.
 
         Args:
-            request (google.cloud.essentialcontacts_v1.types.ComputeContactsRequest):
+            request (google.cloud.essential_contacts_v1.types.ComputeContactsRequest):
                 The request object. Request message for the
                 ComputeContacts method.
 
@@ -774,7 +774,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.essentialcontacts_v1.services.essential_contacts_service.pagers.ComputeContactsPager:
+            google.cloud.essential_contacts_v1.services.essential_contacts_service.pagers.ComputeContactsPager:
                 Response message for the
                 ComputeContacts method.
                 Iterating over this object will yield
@@ -834,7 +834,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
         contact to verify that it has been configured correctly.
 
         Args:
-            request (google.cloud.essentialcontacts_v1.types.SendTestMessageRequest):
+            request (google.cloud.essential_contacts_v1.types.SendTestMessageRequest):
                 The request object. Request message for the
                 SendTestMessage method.
 
@@ -882,7 +882,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-essentialcontacts',
+            'google-cloud-essential-contacts',
         ).version,
     )
 except pkg_resources.DistributionNotFound:

@@ -18,7 +18,7 @@
 import proto  # type: ignore
 
 
-from google.cloud.essentialcontacts_v1.types import enums
+from google.cloud.essential_contacts_v1.types import enums
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
@@ -51,7 +51,7 @@ class Contact(proto.Message):
             Required. The email address to send
             notifications to. This does not need to be a
             Google account.
-        notification_category_subscriptions (Sequence[google.cloud.essentialcontacts_v1.types.NotificationCategory]):
+        notification_category_subscriptions (Sequence[google.cloud.essential_contacts_v1.types.NotificationCategory]):
             The categories of notifications that the
             contact will receive communications for.
         language_tag (str):
@@ -59,7 +59,7 @@ class Contact(proto.Message):
             language code. See `Supported
             languages <https://cloud.google.com/resource-manager/docs/managing-notification-contacts#supported-languages>`__
             for a list of supported languages.
-        validation_state (google.cloud.essentialcontacts_v1.types.ValidationState):
+        validation_state (google.cloud.essential_contacts_v1.types.ValidationState):
             The validity of the contact. A contact is
             considered valid if it is the correct recipient
             for notifications for a particular resource.
@@ -121,7 +121,7 @@ class ListContactsResponse(proto.Message):
     r"""Response message for the ListContacts method.
 
     Attributes:
-        contacts (Sequence[google.cloud.essentialcontacts_v1.types.Contact]):
+        contacts (Sequence[google.cloud.essential_contacts_v1.types.Contact]):
             The contacts for the specified resource.
         next_page_token (str):
             If there are more results than those appearing in this
@@ -178,7 +178,7 @@ class CreateContactRequest(proto.Message):
             Required. The resource to save this contact for. Format:
             organizations/{organization_id}, folders/{folder_id} or
             projects/{project_id}
-        contact (google.cloud.essentialcontacts_v1.types.Contact):
+        contact (google.cloud.essential_contacts_v1.types.Contact):
             Required. The contact to create. Must specify
             an email address and language tag.
     """
@@ -194,7 +194,7 @@ class UpdateContactRequest(proto.Message):
     r"""Request message for the UpdateContact method.
 
     Attributes:
-        contact (google.cloud.essentialcontacts_v1.types.Contact):
+        contact (google.cloud.essential_contacts_v1.types.Contact):
             Required. The contact resource to replace the
             existing saved contact. Note: the email address
             of the contact cannot be modified.
@@ -221,7 +221,7 @@ class ComputeContactsRequest(proto.Message):
             Required. The name of the resource to compute contacts for.
             Format: organizations/{organization_id}, folders/{folder_id}
             or projects/{project_id}
-        notification_categories (Sequence[google.cloud.essentialcontacts_v1.types.NotificationCategory]):
+        notification_categories (Sequence[google.cloud.essential_contacts_v1.types.NotificationCategory]):
             The categories of notifications to compute
             contacts for. If ALL is included in this list,
             contacts subscribed to any notification category
@@ -255,7 +255,7 @@ class ComputeContactsResponse(proto.Message):
     r"""Response message for the ComputeContacts method.
 
     Attributes:
-        contacts (Sequence[google.cloud.essentialcontacts_v1.types.Contact]):
+        contacts (Sequence[google.cloud.essential_contacts_v1.types.Contact]):
             All contacts for the resource that are
             subscribed to the specified notification
             categories, including contacts inherited from
@@ -296,7 +296,7 @@ class SendTestMessageRequest(proto.Message):
             ancestor of this one. Format:
             organizations/{organization_id}, folders/{folder_id} or
             projects/{project_id}
-        notification_category (google.cloud.essentialcontacts_v1.types.NotificationCategory):
+        notification_category (google.cloud.essential_contacts_v1.types.NotificationCategory):
             Required. The notification category to send
             the test message for. All contacts must be
             subscribed to this category.
