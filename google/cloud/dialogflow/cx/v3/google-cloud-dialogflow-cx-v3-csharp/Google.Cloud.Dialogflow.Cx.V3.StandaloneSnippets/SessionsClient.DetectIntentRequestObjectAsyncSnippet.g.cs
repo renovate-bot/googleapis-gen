@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSessionsClientStandaloneSnippets
     {
         /// <summary>Snippet for DetectIntentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DetectIntentRequestObjectAsync()
         {
-            // Snippet: DetectIntentAsync(DetectIntentRequest, CallSettings)
-            // Additional: DetectIntentAsync(DetectIntentRequest, CancellationToken)
             // Create client
             SessionsClient sessionsClient = await SessionsClient.CreateAsync();
             // Initialize request argument(s)
@@ -37,7 +40,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
             };
             // Make the request
             DetectIntentResponse response = await sessionsClient.DetectIntentAsync(request);
-            // End snippet
         }
     }
 }

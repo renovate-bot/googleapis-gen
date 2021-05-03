@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3;
+
     public sealed partial class GeneratedVersionsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetVersion</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetVersion()
         {
-            // Snippet: GetVersion(string, CallSettings)
             // Create client
             VersionsClient versionsClient = VersionsClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/agents/[AGENT]/flows/[FLOW]/versions/[VERSION]";
             // Make the request
             Version response = versionsClient.GetVersion(name);
-            // End snippet
         }
     }
 }

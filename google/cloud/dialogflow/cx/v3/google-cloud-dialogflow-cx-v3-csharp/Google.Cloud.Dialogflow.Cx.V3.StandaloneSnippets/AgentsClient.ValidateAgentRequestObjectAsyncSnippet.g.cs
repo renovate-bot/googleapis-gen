@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAgentsClientStandaloneSnippets
     {
         /// <summary>Snippet for ValidateAgentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ValidateAgentRequestObjectAsync()
         {
-            // Snippet: ValidateAgentAsync(ValidateAgentRequest, CallSettings)
-            // Additional: ValidateAgentAsync(ValidateAgentRequest, CancellationToken)
             // Create client
             AgentsClient agentsClient = await AgentsClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
             };
             // Make the request
             AgentValidationResult response = await agentsClient.ValidateAgentAsync(request);
-            // End snippet
         }
     }
 }

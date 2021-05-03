@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3;
+
     public sealed partial class GeneratedTransitionRouteGroupsClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteTransitionRouteGroup</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteTransitionRouteGroupResourceNames()
         {
-            // Snippet: DeleteTransitionRouteGroup(TransitionRouteGroupName, CallSettings)
             // Create client
             TransitionRouteGroupsClient transitionRouteGroupsClient = TransitionRouteGroupsClient.Create();
             // Initialize request argument(s)
             TransitionRouteGroupName name = TransitionRouteGroupName.FromProjectLocationAgentFlowTransitionRouteGroup("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[TRANSITION_ROUTE_GROUP]");
             // Make the request
             transitionRouteGroupsClient.DeleteTransitionRouteGroup(name);
-            // End snippet
         }
     }
 }

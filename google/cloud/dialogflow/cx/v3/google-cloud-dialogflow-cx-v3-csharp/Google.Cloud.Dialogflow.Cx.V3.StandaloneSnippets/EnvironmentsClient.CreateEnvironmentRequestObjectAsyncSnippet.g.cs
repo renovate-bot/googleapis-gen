@@ -16,6 +16,7 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
@@ -23,10 +24,12 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
     public sealed partial class GeneratedEnvironmentsClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateEnvironmentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateEnvironmentRequestObjectAsync()
         {
-            // Snippet: CreateEnvironmentAsync(CreateEnvironmentRequest, CallSettings)
-            // Additional: CreateEnvironmentAsync(CreateEnvironmentRequest, CancellationToken)
             // Create client
             EnvironmentsClient environmentsClient = await EnvironmentsClient.CreateAsync();
             // Initialize request argument(s)
@@ -53,7 +56,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
                 // If it has completed, then access the result
                 Environment retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

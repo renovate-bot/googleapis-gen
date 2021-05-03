@@ -16,17 +16,19 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3;
     using Google.LongRunning;
-    using Google.Protobuf;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTestCasesClientStandaloneSnippets
     {
         /// <summary>Snippet for ImportTestCasesAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ImportTestCasesRequestObjectAsync()
         {
-            // Snippet: ImportTestCasesAsync(ImportTestCasesRequest, CallSettings)
-            // Additional: ImportTestCasesAsync(ImportTestCasesRequest, CancellationToken)
             // Create client
             TestCasesClient testCasesClient = await TestCasesClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +36,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
             {
                 ParentAsAgentName = AgentName.FromProjectLocationAgent("[PROJECT]", "[LOCATION]", "[AGENT]"),
                 GcsUri = "",
-                Content = ByteString.Empty,
             };
             // Make the request
             Operation<ImportTestCasesResponse, ImportTestCasesMetadata> response = await testCasesClient.ImportTestCasesAsync(request);
@@ -54,7 +55,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
                 // If it has completed, then access the result
                 ImportTestCasesResponse retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

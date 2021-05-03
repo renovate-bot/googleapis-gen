@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedEnvironmentsClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteEnvironmentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteEnvironmentRequestObjectAsync()
         {
-            // Snippet: DeleteEnvironmentAsync(DeleteEnvironmentRequest, CallSettings)
-            // Additional: DeleteEnvironmentAsync(DeleteEnvironmentRequest, CancellationToken)
             // Create client
             EnvironmentsClient environmentsClient = await EnvironmentsClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
             };
             // Make the request
             await environmentsClient.DeleteEnvironmentAsync(request);
-            // End snippet
         }
     }
 }

@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTransitionRouteGroupsClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateTransitionRouteGroupAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateTransitionRouteGroupAsync()
         {
-            // Snippet: UpdateTransitionRouteGroupAsync(TransitionRouteGroup, FieldMask, CallSettings)
-            // Additional: UpdateTransitionRouteGroupAsync(TransitionRouteGroup, FieldMask, CancellationToken)
             // Create client
             TransitionRouteGroupsClient transitionRouteGroupsClient = await TransitionRouteGroupsClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             TransitionRouteGroup response = await transitionRouteGroupsClient.UpdateTransitionRouteGroupAsync(transitionRouteGroup, updateMask);
-            // End snippet
         }
     }
 }

@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3;
+
     public sealed partial class GeneratedEntityTypesClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateEntityType</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateEntityTypeResourceNames()
         {
-            // Snippet: CreateEntityType(AgentName, EntityType, CallSettings)
             // Create client
             EntityTypesClient entityTypesClient = EntityTypesClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
             EntityType entityType = new EntityType();
             // Make the request
             EntityType response = entityTypesClient.CreateEntityType(parent, entityType);
-            // End snippet
         }
     }
 }

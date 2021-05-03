@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedExperimentsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetExperimentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetExperimentAsync()
         {
-            // Snippet: GetExperimentAsync(string, CallSettings)
-            // Additional: GetExperimentAsync(string, CancellationToken)
             // Create client
             ExperimentsClient experimentsClient = await ExperimentsClient.CreateAsync();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/agents/[AGENT]/environments/[ENVIRONMENT]/experiments/[EXPERIMENT]";
             // Make the request
             Experiment response = await experimentsClient.GetExperimentAsync(name);
-            // End snippet
         }
     }
 }

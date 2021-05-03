@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedVersionsClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateVersion</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateVersionRequestObject()
         {
-            // Snippet: UpdateVersion(UpdateVersionRequest, CallSettings)
             // Create client
             VersionsClient versionsClient = VersionsClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
             };
             // Make the request
             Version response = versionsClient.UpdateVersion(request);
-            // End snippet
         }
     }
 }

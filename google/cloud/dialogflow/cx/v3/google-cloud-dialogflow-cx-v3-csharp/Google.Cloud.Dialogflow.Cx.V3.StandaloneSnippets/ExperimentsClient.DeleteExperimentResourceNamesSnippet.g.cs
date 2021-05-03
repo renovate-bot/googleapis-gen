@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3;
+
     public sealed partial class GeneratedExperimentsClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteExperiment</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteExperimentResourceNames()
         {
-            // Snippet: DeleteExperiment(ExperimentName, CallSettings)
             // Create client
             ExperimentsClient experimentsClient = ExperimentsClient.Create();
             // Initialize request argument(s)
             ExperimentName name = ExperimentName.FromProjectLocationAgentEnvironmentExperiment("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]");
             // Make the request
             experimentsClient.DeleteExperiment(name);
-            // End snippet
         }
     }
 }

@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3;
+
     public sealed partial class GeneratedFlowsClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateFlow</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateFlow()
         {
-            // Snippet: CreateFlow(string, Flow, CallSettings)
             // Create client
             FlowsClient flowsClient = FlowsClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
             Flow flow = new Flow();
             // Make the request
             Flow response = flowsClient.CreateFlow(parent, flow);
-            // End snippet
         }
     }
 }

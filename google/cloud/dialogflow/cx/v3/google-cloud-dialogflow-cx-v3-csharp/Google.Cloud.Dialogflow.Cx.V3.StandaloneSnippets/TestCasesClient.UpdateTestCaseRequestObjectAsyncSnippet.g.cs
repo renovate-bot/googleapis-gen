@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTestCasesClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateTestCaseAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateTestCaseRequestObjectAsync()
         {
-            // Snippet: UpdateTestCaseAsync(UpdateTestCaseRequest, CallSettings)
-            // Additional: UpdateTestCaseAsync(UpdateTestCaseRequest, CancellationToken)
             // Create client
             TestCasesClient testCasesClient = await TestCasesClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
             };
             // Make the request
             TestCase response = await testCasesClient.UpdateTestCaseAsync(request);
-            // End snippet
         }
     }
 }

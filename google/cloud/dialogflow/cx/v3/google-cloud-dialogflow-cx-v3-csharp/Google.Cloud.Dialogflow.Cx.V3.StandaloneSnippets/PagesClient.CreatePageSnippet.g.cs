@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3;
+
     public sealed partial class GeneratedPagesClientStandaloneSnippets
     {
         /// <summary>Snippet for CreatePage</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreatePage()
         {
-            // Snippet: CreatePage(string, Page, CallSettings)
             // Create client
             PagesClient pagesClient = PagesClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
             Page page = new Page();
             // Make the request
             Page response = pagesClient.CreatePage(parent, page);
-            // End snippet
         }
     }
 }

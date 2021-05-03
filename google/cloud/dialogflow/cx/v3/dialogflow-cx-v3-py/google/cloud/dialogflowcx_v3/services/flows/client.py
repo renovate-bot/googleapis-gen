@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -41,6 +43,7 @@ from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import struct_pb2 as struct  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+
 from .transports.base import FlowsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import FlowsGrpcTransport
 from .transports.grpc_asyncio import FlowsGrpcAsyncIOTransport
@@ -398,8 +401,7 @@ class FlowsClient(metaclass=FlowsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.CreateFlowRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Flows.CreateFlow][google.cloud.dialogflow.cx.v3.Flows.CreateFlow].
             parent (str):
                 Required. The agent to create a flow for. Format:
@@ -413,6 +415,7 @@ class FlowsClient(metaclass=FlowsClientMeta):
                 This corresponds to the ``flow`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -460,8 +463,10 @@ class FlowsClient(metaclass=FlowsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcdc_flow.CreateFlowRequest):
             request = gcdc_flow.CreateFlowRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
             if flow is not None:
@@ -502,8 +507,7 @@ class FlowsClient(metaclass=FlowsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.DeleteFlowRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Flows.DeleteFlow][google.cloud.dialogflow.cx.v3.Flows.DeleteFlow].
             name (str):
                 Required. The name of the flow to delete. Format:
@@ -512,6 +516,7 @@ class FlowsClient(metaclass=FlowsClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -532,8 +537,10 @@ class FlowsClient(metaclass=FlowsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, flow.DeleteFlowRequest):
             request = flow.DeleteFlowRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -569,8 +576,7 @@ class FlowsClient(metaclass=FlowsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.ListFlowsRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Flows.ListFlows][google.cloud.dialogflow.cx.v3.Flows.ListFlows].
             parent (str):
                 Required. The agent containing the flows. Format:
@@ -579,6 +585,7 @@ class FlowsClient(metaclass=FlowsClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -608,8 +615,10 @@ class FlowsClient(metaclass=FlowsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, flow.ListFlowsRequest):
             request = flow.ListFlowsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
 
@@ -657,8 +666,7 @@ class FlowsClient(metaclass=FlowsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.GetFlowRequest):
-                The request object.
-                The response message for
+                The request object. The response message for
                 [Flows.GetFlow][google.cloud.dialogflow.cx.v3.Flows.GetFlow].
             name (str):
                 Required. The name of the flow to get. Format:
@@ -667,6 +675,7 @@ class FlowsClient(metaclass=FlowsClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -714,8 +723,10 @@ class FlowsClient(metaclass=FlowsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, flow.GetFlowRequest):
             request = flow.GetFlowRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -755,8 +766,7 @@ class FlowsClient(metaclass=FlowsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.UpdateFlowRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Flows.UpdateFlow][google.cloud.dialogflow.cx.v3.Flows.UpdateFlow].
             flow (google.cloud.dialogflowcx_v3.types.Flow):
                 Required. The flow to update.
@@ -771,6 +781,7 @@ class FlowsClient(metaclass=FlowsClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -818,8 +829,10 @@ class FlowsClient(metaclass=FlowsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcdc_flow.UpdateFlowRequest):
             request = gcdc_flow.UpdateFlowRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if flow is not None:
                 request.flow = flow
             if update_mask is not None:
@@ -861,8 +874,7 @@ class FlowsClient(metaclass=FlowsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.TrainFlowRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Flows.TrainFlow][google.cloud.dialogflow.cx.v3.Flows.TrainFlow].
             name (str):
                 Required. The flow to train. Format:
@@ -871,6 +883,7 @@ class FlowsClient(metaclass=FlowsClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -910,8 +923,10 @@ class FlowsClient(metaclass=FlowsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, flow.TrainFlowRequest):
             request = flow.TrainFlowRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -960,9 +975,9 @@ class FlowsClient(metaclass=FlowsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.ValidateFlowRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Flows.ValidateFlow][google.cloud.dialogflow.cx.v3.Flows.ValidateFlow].
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -976,6 +991,7 @@ class FlowsClient(metaclass=FlowsClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a flow.ValidateFlowRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1019,8 +1035,7 @@ class FlowsClient(metaclass=FlowsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.GetFlowValidationResultRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Flows.GetFlowValidationResult][google.cloud.dialogflow.cx.v3.Flows.GetFlowValidationResult].
             name (str):
                 Required. The flow name. Format:
@@ -1029,6 +1044,7 @@ class FlowsClient(metaclass=FlowsClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1055,8 +1071,10 @@ class FlowsClient(metaclass=FlowsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, flow.GetFlowValidationResultRequest):
             request = flow.GetFlowValidationResultRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -1095,9 +1113,9 @@ class FlowsClient(metaclass=FlowsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.ImportFlowRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Flows.ImportFlow][google.cloud.dialogflow.cx.v3.Flows.ImportFlow].
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1115,6 +1133,7 @@ class FlowsClient(metaclass=FlowsClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a flow.ImportFlowRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1166,9 +1185,9 @@ class FlowsClient(metaclass=FlowsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.ExportFlowRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Flows.ExportFlow][google.cloud.dialogflow.cx.v3.Flows.ExportFlow].
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1186,6 +1205,7 @@ class FlowsClient(metaclass=FlowsClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a flow.ExportFlowRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1223,6 +1243,8 @@ class FlowsClient(metaclass=FlowsClientMeta):
 
         # Done; return the response.
         return response
+
+
 
 
 

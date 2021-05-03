@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3;
+
     public sealed partial class GeneratedIntentsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetIntent</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetIntentRequestObject()
         {
-            // Snippet: GetIntent(GetIntentRequest, CallSettings)
             // Create client
             IntentsClient intentsClient = IntentsClient.Create();
             // Initialize request argument(s)
@@ -32,7 +37,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
             };
             // Make the request
             Intent response = intentsClient.GetIntent(request);
-            // End snippet
         }
     }
 }

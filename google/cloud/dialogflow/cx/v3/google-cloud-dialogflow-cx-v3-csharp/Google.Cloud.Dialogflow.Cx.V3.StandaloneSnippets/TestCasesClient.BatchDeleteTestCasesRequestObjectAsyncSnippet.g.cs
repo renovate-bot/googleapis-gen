@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTestCasesClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchDeleteTestCasesAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task BatchDeleteTestCasesRequestObjectAsync()
         {
-            // Snippet: BatchDeleteTestCasesAsync(BatchDeleteTestCasesRequest, CallSettings)
-            // Additional: BatchDeleteTestCasesAsync(BatchDeleteTestCasesRequest, CancellationToken)
             // Create client
             TestCasesClient testCasesClient = await TestCasesClient.CreateAsync();
             // Initialize request argument(s)
@@ -38,7 +41,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
             };
             // Make the request
             await testCasesClient.BatchDeleteTestCasesAsync(request);
-            // End snippet
         }
     }
 }

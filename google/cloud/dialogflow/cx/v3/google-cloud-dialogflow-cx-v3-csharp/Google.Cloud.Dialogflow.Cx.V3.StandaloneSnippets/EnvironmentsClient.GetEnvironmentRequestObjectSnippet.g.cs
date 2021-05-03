@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3;
+
     public sealed partial class GeneratedEnvironmentsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetEnvironment</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetEnvironmentRequestObject()
         {
-            // Snippet: GetEnvironment(GetEnvironmentRequest, CallSettings)
             // Create client
             EnvironmentsClient environmentsClient = EnvironmentsClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
             };
             // Make the request
             Environment response = environmentsClient.GetEnvironment(request);
-            // End snippet
         }
     }
 }

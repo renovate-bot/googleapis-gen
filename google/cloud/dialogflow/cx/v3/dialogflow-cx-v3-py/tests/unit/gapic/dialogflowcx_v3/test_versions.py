@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 import mock
-import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
-
 
 from google import auth
 from google.api_core import client_options
@@ -39,8 +39,6 @@ from google.cloud.dialogflowcx_v3.services.versions import VersionsAsyncClient
 from google.cloud.dialogflowcx_v3.services.versions import VersionsClient
 from google.cloud.dialogflowcx_v3.services.versions import pagers
 from google.cloud.dialogflowcx_v3.services.versions import transports
-from google.cloud.dialogflowcx_v3.services.versions.transports.base import _API_CORE_VERSION
-from google.cloud.dialogflowcx_v3.services.versions.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.dialogflowcx_v3.types import flow
 from google.cloud.dialogflowcx_v3.types import version
 from google.cloud.dialogflowcx_v3.types import version as gcdc_version
@@ -50,28 +48,6 @@ from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import struct_pb2 as struct  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
-
-# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
-# - Delete all the api-core and auth "less than" test cases
-# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
-requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth < 1.25.0",
-)
-requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth >= 1.25.0",
-)
-
-requires_api_core_lt_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core < 1.26.0",
-)
-
-requires_api_core_gte_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core >= 1.26.0",
-)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -239,10 +215,12 @@ def test_versions_client_client_options(client_class, transport_class, transport
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
+
     (VersionsClient, transports.VersionsGrpcTransport, "grpc", "true"),
     (VersionsAsyncClient, transports.VersionsGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (VersionsClient, transports.VersionsGrpcTransport, "grpc", "false"),
     (VersionsAsyncClient, transports.VersionsGrpcAsyncIOTransport, "grpc_asyncio", "false"),
+
 ])
 @mock.patch.object(VersionsClient, "DEFAULT_ENDPOINT", modify_default_endpoint(VersionsClient))
 @mock.patch.object(VersionsAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(VersionsAsyncClient))
@@ -397,16 +375,21 @@ def test_list_versions(transport: str = 'grpc', request_type=version.ListVersion
         # Designate an appropriate return value for the call.
         call.return_value = version.ListVersionsResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.list_versions(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == version.ListVersionsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListVersionsPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -429,8 +412,8 @@ def test_list_versions_empty_call():
         client.list_versions()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == version.ListVersionsRequest()
 
+        assert args[0] == version.ListVersionsRequest()
 
 @pytest.mark.asyncio
 async def test_list_versions_async(transport: str = 'grpc_asyncio', request_type=version.ListVersionsRequest):
@@ -448,18 +431,21 @@ async def test_list_versions_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.list_versions),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(version.ListVersionsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(version.ListVersionsResponse(
             next_page_token='next_page_token_value',
         ))
+
         response = await client.list_versions(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == version.ListVersionsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListVersionsAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -476,7 +462,6 @@ def test_list_versions_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = version.ListVersionsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -484,6 +469,7 @@ def test_list_versions_field_headers():
             type(client.transport.list_versions),
             '__call__') as call:
         call.return_value = version.ListVersionsResponse()
+
         client.list_versions(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -508,7 +494,6 @@ async def test_list_versions_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = version.ListVersionsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -516,6 +501,7 @@ async def test_list_versions_field_headers_async():
             type(client.transport.list_versions),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(version.ListVersionsResponse())
+
         await client.list_versions(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -542,6 +528,7 @@ def test_list_versions_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = version.ListVersionsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_versions(
@@ -552,6 +539,7 @@ def test_list_versions_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -593,6 +581,7 @@ async def test_list_versions_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -797,6 +786,7 @@ async def test_list_versions_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_get_version(transport: str = 'grpc', request_type=version.GetVersionRequest):
     client = VersionsClient(
         credentials=credentials.AnonymousCredentials(),
@@ -814,22 +804,33 @@ def test_get_version(transport: str = 'grpc', request_type=version.GetVersionReq
         # Designate an appropriate return value for the call.
         call.return_value = version.Version(
             name='name_value',
+
             display_name='display_name_value',
+
             description='description_value',
+
             state=version.Version.State.RUNNING,
+
         )
+
         response = client.get_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == version.GetVersionRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, version.Version)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.description == 'description_value'
+
     assert response.state == version.Version.State.RUNNING
 
 
@@ -852,8 +853,8 @@ def test_get_version_empty_call():
         client.get_version()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == version.GetVersionRequest()
 
+        assert args[0] == version.GetVersionRequest()
 
 @pytest.mark.asyncio
 async def test_get_version_async(transport: str = 'grpc_asyncio', request_type=version.GetVersionRequest):
@@ -871,24 +872,30 @@ async def test_get_version_async(transport: str = 'grpc_asyncio', request_type=v
             type(client.transport.get_version),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(version.Version(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(version.Version(
             name='name_value',
             display_name='display_name_value',
             description='description_value',
             state=version.Version.State.RUNNING,
         ))
+
         response = await client.get_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == version.GetVersionRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, version.Version)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.description == 'description_value'
+
     assert response.state == version.Version.State.RUNNING
 
 
@@ -905,7 +912,6 @@ def test_get_version_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = version.GetVersionRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -913,6 +919,7 @@ def test_get_version_field_headers():
             type(client.transport.get_version),
             '__call__') as call:
         call.return_value = version.Version()
+
         client.get_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -937,7 +944,6 @@ async def test_get_version_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = version.GetVersionRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -945,6 +951,7 @@ async def test_get_version_field_headers_async():
             type(client.transport.get_version),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(version.Version())
+
         await client.get_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -971,6 +978,7 @@ def test_get_version_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = version.Version()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_version(
@@ -981,6 +989,7 @@ def test_get_version_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1022,6 +1031,7 @@ async def test_get_version_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1056,11 +1066,13 @@ def test_create_version(transport: str = 'grpc', request_type=gcdc_version.Creat
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
+
         response = client.create_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == gcdc_version.CreateVersionRequest()
 
     # Establish that the response is the type that we expect.
@@ -1086,8 +1098,8 @@ def test_create_version_empty_call():
         client.create_version()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == gcdc_version.CreateVersionRequest()
 
+        assert args[0] == gcdc_version.CreateVersionRequest()
 
 @pytest.mark.asyncio
 async def test_create_version_async(transport: str = 'grpc_asyncio', request_type=gcdc_version.CreateVersionRequest):
@@ -1108,11 +1120,13 @@ async def test_create_version_async(transport: str = 'grpc_asyncio', request_typ
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
+
         response = await client.create_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == gcdc_version.CreateVersionRequest()
 
     # Establish that the response is the type that we expect.
@@ -1132,7 +1146,6 @@ def test_create_version_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gcdc_version.CreateVersionRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1140,6 +1153,7 @@ def test_create_version_field_headers():
             type(client.transport.create_version),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         client.create_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1164,7 +1178,6 @@ async def test_create_version_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gcdc_version.CreateVersionRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1172,6 +1185,7 @@ async def test_create_version_field_headers_async():
             type(client.transport.create_version),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
+
         await client.create_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1198,6 +1212,7 @@ def test_create_version_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_version(
@@ -1209,7 +1224,9 @@ def test_create_version_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].version == gcdc_version.Version(name='name_value')
 
 
@@ -1255,7 +1272,9 @@ async def test_create_version_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].version == gcdc_version.Version(name='name_value')
 
 
@@ -1292,22 +1311,33 @@ def test_update_version(transport: str = 'grpc', request_type=gcdc_version.Updat
         # Designate an appropriate return value for the call.
         call.return_value = gcdc_version.Version(
             name='name_value',
+
             display_name='display_name_value',
+
             description='description_value',
+
             state=gcdc_version.Version.State.RUNNING,
+
         )
+
         response = client.update_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == gcdc_version.UpdateVersionRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, gcdc_version.Version)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.description == 'description_value'
+
     assert response.state == gcdc_version.Version.State.RUNNING
 
 
@@ -1330,8 +1360,8 @@ def test_update_version_empty_call():
         client.update_version()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == gcdc_version.UpdateVersionRequest()
 
+        assert args[0] == gcdc_version.UpdateVersionRequest()
 
 @pytest.mark.asyncio
 async def test_update_version_async(transport: str = 'grpc_asyncio', request_type=gcdc_version.UpdateVersionRequest):
@@ -1349,24 +1379,30 @@ async def test_update_version_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.update_version),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gcdc_version.Version(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gcdc_version.Version(
             name='name_value',
             display_name='display_name_value',
             description='description_value',
             state=gcdc_version.Version.State.RUNNING,
         ))
+
         response = await client.update_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == gcdc_version.UpdateVersionRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gcdc_version.Version)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.description == 'description_value'
+
     assert response.state == gcdc_version.Version.State.RUNNING
 
 
@@ -1383,7 +1419,6 @@ def test_update_version_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gcdc_version.UpdateVersionRequest()
-
     request.version.name = 'version.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1391,6 +1426,7 @@ def test_update_version_field_headers():
             type(client.transport.update_version),
             '__call__') as call:
         call.return_value = gcdc_version.Version()
+
         client.update_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1415,7 +1451,6 @@ async def test_update_version_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gcdc_version.UpdateVersionRequest()
-
     request.version.name = 'version.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1423,6 +1458,7 @@ async def test_update_version_field_headers_async():
             type(client.transport.update_version),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gcdc_version.Version())
+
         await client.update_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1449,6 +1485,7 @@ def test_update_version_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gcdc_version.Version()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_version(
@@ -1460,7 +1497,9 @@ def test_update_version_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].version == gcdc_version.Version(name='name_value')
+
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -1504,7 +1543,9 @@ async def test_update_version_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].version == gcdc_version.Version(name='name_value')
+
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -1540,11 +1581,13 @@ def test_delete_version(transport: str = 'grpc', request_type=version.DeleteVers
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         response = client.delete_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == version.DeleteVersionRequest()
 
     # Establish that the response is the type that we expect.
@@ -1570,8 +1613,8 @@ def test_delete_version_empty_call():
         client.delete_version()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == version.DeleteVersionRequest()
 
+        assert args[0] == version.DeleteVersionRequest()
 
 @pytest.mark.asyncio
 async def test_delete_version_async(transport: str = 'grpc_asyncio', request_type=version.DeleteVersionRequest):
@@ -1590,11 +1633,13 @@ async def test_delete_version_async(transport: str = 'grpc_asyncio', request_typ
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         response = await client.delete_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == version.DeleteVersionRequest()
 
     # Establish that the response is the type that we expect.
@@ -1614,7 +1659,6 @@ def test_delete_version_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = version.DeleteVersionRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1622,6 +1666,7 @@ def test_delete_version_field_headers():
             type(client.transport.delete_version),
             '__call__') as call:
         call.return_value = None
+
         client.delete_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1646,7 +1691,6 @@ async def test_delete_version_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = version.DeleteVersionRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1654,6 +1698,7 @@ async def test_delete_version_field_headers_async():
             type(client.transport.delete_version),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         await client.delete_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1680,6 +1725,7 @@ def test_delete_version_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_version(
@@ -1690,6 +1736,7 @@ def test_delete_version_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1731,6 +1778,7 @@ async def test_delete_version_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1765,11 +1813,13 @@ def test_load_version(transport: str = 'grpc', request_type=version.LoadVersionR
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
+
         response = client.load_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == version.LoadVersionRequest()
 
     # Establish that the response is the type that we expect.
@@ -1795,8 +1845,8 @@ def test_load_version_empty_call():
         client.load_version()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == version.LoadVersionRequest()
 
+        assert args[0] == version.LoadVersionRequest()
 
 @pytest.mark.asyncio
 async def test_load_version_async(transport: str = 'grpc_asyncio', request_type=version.LoadVersionRequest):
@@ -1817,11 +1867,13 @@ async def test_load_version_async(transport: str = 'grpc_asyncio', request_type=
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
+
         response = await client.load_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == version.LoadVersionRequest()
 
     # Establish that the response is the type that we expect.
@@ -1841,7 +1893,6 @@ def test_load_version_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = version.LoadVersionRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1849,6 +1900,7 @@ def test_load_version_field_headers():
             type(client.transport.load_version),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         client.load_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1873,7 +1925,6 @@ async def test_load_version_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = version.LoadVersionRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1881,6 +1932,7 @@ async def test_load_version_field_headers_async():
             type(client.transport.load_version),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
+
         await client.load_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1907,6 +1959,7 @@ def test_load_version_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.load_version(
@@ -1917,6 +1970,7 @@ def test_load_version_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1960,6 +2014,7 @@ async def test_load_version_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -2018,6 +2073,7 @@ def test_transport_instance():
     client = VersionsClient(transport=transport)
     assert client.transport is transport
 
+
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.VersionsGrpcTransport(
@@ -2032,6 +2088,7 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
+
 @pytest.mark.parametrize("transport_class", [
     transports.VersionsGrpcTransport,
     transports.VersionsGrpcAsyncIOTransport,
@@ -2043,6 +2100,7 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
+
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = VersionsClient(
@@ -2052,6 +2110,7 @@ def test_transport_grpc_default():
         client.transport,
         transports.VersionsGrpcTransport,
     )
+
 
 def test_versions_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -2079,7 +2138,7 @@ def test_versions_base_transport():
         'update_version',
         'delete_version',
         'load_version',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -2090,27 +2149,9 @@ def test_versions_base_transport():
         transport.operations_client
 
 
-@requires_google_auth_gte_1_25_0
 def test_versions_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.dialogflowcx_v3.services.versions.transports.VersionsTransport._prep_wrapped_messages') as Transport:
-        Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
-        transport = transports.VersionsTransport(
-            credentials_file="credentials.json",
-            quota_project_id="octopus",
-        )
-        load_creds.assert_called_once_with("credentials.json",
-            scopes=None,
-            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            'https://www.googleapis.com/auth/dialogflow',            ),
-            quota_project_id="octopus",
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_versions_base_transport_with_credentials_file_old_google_auth():
-    # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.dialogflowcx_v3.services.versions.transports.VersionsTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.dialogflowcx_v3.services.versions.transports.VersionsTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.VersionsTransport(
@@ -2127,184 +2168,35 @@ def test_versions_base_transport_with_credentials_file_old_google_auth():
 
 def test_versions_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.dialogflowcx_v3.services.versions.transports.VersionsTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.dialogflowcx_v3.services.versions.transports.VersionsTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.VersionsTransport()
         adc.assert_called_once()
 
 
-@requires_google_auth_gte_1_25_0
 def test_versions_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
+    with mock.patch.object(auth, 'default') as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         VersionsClient()
-        adc.assert_called_once_with(
-            scopes=None,
-            default_scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-            'https://www.googleapis.com/auth/dialogflow',
-),
-
-            quota_project_id=None,
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_versions_auth_adc_old_google_auth():
-    # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        VersionsClient()
-        adc.assert_called_once_with(
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/dialogflow',),
-            quota_project_id=None,
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.VersionsGrpcTransport,
-        transports.VersionsGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_gte_1_25_0
-def test_versions_transport_auth_adc(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-        adc.assert_called_once_with(
-            scopes=["1", "2"],
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/dialogflow',),
-            quota_project_id="octopus",
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.VersionsGrpcTransport,
-        transports.VersionsGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_lt_1_25_0
-def test_versions_transport_auth_adc_old_google_auth(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/cloud-platform',
-            'https://www.googleapis.com/auth/dialogflow',
-),
-            quota_project_id="octopus",
+            'https://www.googleapis.com/auth/dialogflow',),
+            quota_project_id=None,
         )
 
 
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.VersionsGrpcTransport, grpc_helpers),
-        (transports.VersionsGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_gte_1_26_0
-def test_versions_transport_create_channel(transport_class, grpc_helpers):
+def test_versions_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(
+    with mock.patch.object(auth, 'default') as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transports.VersionsGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+            'https://www.googleapis.com/auth/dialogflow',),
             quota_project_id="octopus",
-            scopes=["1", "2"]
-        )
-
-        create_channel.assert_called_with(
-            "dialogflow.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/dialogflow',),
-            scopes=["1", "2"],
-            default_host="dialogflow.googleapis.com",
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.VersionsGrpcTransport, grpc_helpers),
-        (transports.VersionsGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_versions_transport_create_channel_old_api_core(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(quota_project_id="octopus")
-
-        create_channel.assert_called_with(
-            "dialogflow.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/dialogflow',),
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.VersionsGrpcTransport, grpc_helpers),
-        (transports.VersionsGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_versions_transport_create_channel_user_scopes(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-
-        create_channel.assert_called_with(
-            "dialogflow.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=["1", "2"],
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
         )
 
 
@@ -2367,6 +2259,7 @@ def test_versions_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='dialogflow.googleapis.com:8000'),
     )
     assert client.transport._host == 'dialogflow.googleapis.com:8000'
+
 
 def test_versions_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -2524,6 +2417,7 @@ def test_version_path():
     agent = "whelk"
     flow = "octopus"
     version = "oyster"
+
     expected = "projects/{project}/locations/{location}/agents/{agent}/flows/{flow}/versions/{version}".format(project=project, location=location, agent=agent, flow=flow, version=version, )
     actual = VersionsClient.version_path(project, location, agent, flow, version)
     assert expected == actual
@@ -2531,11 +2425,12 @@ def test_version_path():
 
 def test_parse_version_path():
     expected = {
-        "project": "nudibranch",
-        "location": "cuttlefish",
-        "agent": "mussel",
-        "flow": "winkle",
-        "version": "nautilus",
+    "project": "nudibranch",
+    "location": "cuttlefish",
+    "agent": "mussel",
+    "flow": "winkle",
+    "version": "nautilus",
+
     }
     path = VersionsClient.version_path(**expected)
 
@@ -2545,6 +2440,7 @@ def test_parse_version_path():
 
 def test_common_billing_account_path():
     billing_account = "scallop"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = VersionsClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -2552,7 +2448,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "abalone",
+    "billing_account": "abalone",
+
     }
     path = VersionsClient.common_billing_account_path(**expected)
 
@@ -2562,6 +2459,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "squid"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = VersionsClient.common_folder_path(folder)
     assert expected == actual
@@ -2569,7 +2467,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "clam",
+    "folder": "clam",
+
     }
     path = VersionsClient.common_folder_path(**expected)
 
@@ -2579,6 +2478,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "whelk"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = VersionsClient.common_organization_path(organization)
     assert expected == actual
@@ -2586,7 +2486,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "octopus",
+    "organization": "octopus",
+
     }
     path = VersionsClient.common_organization_path(**expected)
 
@@ -2596,6 +2497,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "oyster"
+
     expected = "projects/{project}".format(project=project, )
     actual = VersionsClient.common_project_path(project)
     assert expected == actual
@@ -2603,7 +2505,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "nudibranch",
+    "project": "nudibranch",
+
     }
     path = VersionsClient.common_project_path(**expected)
 
@@ -2614,6 +2517,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "cuttlefish"
     location = "mussel"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = VersionsClient.common_location_path(project, location)
     assert expected == actual
@@ -2621,8 +2525,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "winkle",
-        "location": "nautilus",
+    "project": "winkle",
+    "location": "nautilus",
+
     }
     path = VersionsClient.common_location_path(**expected)
 

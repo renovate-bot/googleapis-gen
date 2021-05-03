@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedPagesClientStandaloneSnippets
     {
         /// <summary>Snippet for DeletePageAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeletePageResourceNamesAsync()
         {
-            // Snippet: DeletePageAsync(PageName, CallSettings)
-            // Additional: DeletePageAsync(PageName, CancellationToken)
             // Create client
             PagesClient pagesClient = await PagesClient.CreateAsync();
             // Initialize request argument(s)
             PageName name = PageName.FromProjectLocationAgentFlowPage("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[PAGE]");
             // Make the request
             await pagesClient.DeletePageAsync(name);
-            // End snippet
         }
     }
 }

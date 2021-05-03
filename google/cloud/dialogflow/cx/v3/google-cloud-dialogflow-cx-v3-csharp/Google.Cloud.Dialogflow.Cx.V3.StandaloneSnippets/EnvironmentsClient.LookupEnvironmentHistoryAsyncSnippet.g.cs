@@ -24,10 +24,13 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
 
     public sealed partial class GeneratedEnvironmentsClientStandaloneSnippets
     {
-        /// <summary>Snippet for LookupEnvironmentHistory</summary>
+        /// <summary>Snippet for LookupEnvironmentHistoryAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task LookupEnvironmentHistoryAsync()
         {
-            // Snippet: LookupEnvironmentHistoryAsync(string, string, int?, CallSettings)
             // Create client
             EnvironmentsClient environmentsClient = await EnvironmentsClient.CreateAsync();
             // Initialize request argument(s)
@@ -66,7 +69,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

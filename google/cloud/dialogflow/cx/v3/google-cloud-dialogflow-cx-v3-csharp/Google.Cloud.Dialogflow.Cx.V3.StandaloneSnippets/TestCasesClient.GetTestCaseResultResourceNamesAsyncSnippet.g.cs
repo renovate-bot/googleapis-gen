@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTestCasesClientStandaloneSnippets
     {
         /// <summary>Snippet for GetTestCaseResultAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetTestCaseResultResourceNamesAsync()
         {
-            // Snippet: GetTestCaseResultAsync(TestCaseResultName, CallSettings)
-            // Additional: GetTestCaseResultAsync(TestCaseResultName, CancellationToken)
             // Create client
             TestCasesClient testCasesClient = await TestCasesClient.CreateAsync();
             // Initialize request argument(s)
             TestCaseResultName name = TestCaseResultName.FromProjectLocationAgentTestCaseResult("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]", "[RESULT]");
             // Make the request
             TestCaseResult response = await testCasesClient.GetTestCaseResultAsync(name);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -34,6 +36,7 @@ from google.cloud.dialogflowcx_v3.services.security_settings_service import page
 from google.cloud.dialogflowcx_v3.types import security_settings
 from google.cloud.dialogflowcx_v3.types import security_settings as gcdc_security_settings
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
+
 from .transports.base import SecuritySettingsServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import SecuritySettingsServiceGrpcTransport
 from .transports.grpc_asyncio import SecuritySettingsServiceGrpcAsyncIOTransport
@@ -336,8 +339,7 @@ class SecuritySettingsServiceClient(metaclass=SecuritySettingsServiceClientMeta)
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.CreateSecuritySettingsRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [SecuritySettings.CreateSecuritySettings][].
             parent (str):
                 Required. The location to create an
@@ -355,6 +357,7 @@ class SecuritySettingsServiceClient(metaclass=SecuritySettingsServiceClientMeta)
                 This corresponds to the ``security_settings`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -385,8 +388,10 @@ class SecuritySettingsServiceClient(metaclass=SecuritySettingsServiceClientMeta)
         # there are no flattened fields.
         if not isinstance(request, gcdc_security_settings.CreateSecuritySettingsRequest):
             request = gcdc_security_settings.CreateSecuritySettingsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
             if security_settings is not None:
@@ -429,8 +434,7 @@ class SecuritySettingsServiceClient(metaclass=SecuritySettingsServiceClientMeta)
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.GetSecuritySettingsRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [SecuritySettingsService.GetSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.GetSecuritySettings].
             name (str):
                 Required. Resource name of the settings. Format:
@@ -439,6 +443,7 @@ class SecuritySettingsServiceClient(metaclass=SecuritySettingsServiceClientMeta)
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -469,8 +474,10 @@ class SecuritySettingsServiceClient(metaclass=SecuritySettingsServiceClientMeta)
         # there are no flattened fields.
         if not isinstance(request, security_settings.GetSecuritySettingsRequest):
             request = security_settings.GetSecuritySettingsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -511,8 +518,7 @@ class SecuritySettingsServiceClient(metaclass=SecuritySettingsServiceClientMeta)
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.UpdateSecuritySettingsRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettingsService.UpdateSecuritySettings].
             security_settings (google.cloud.dialogflowcx_v3.types.SecuritySettings):
                 Required. [SecuritySettings] object that contains values
@@ -529,6 +535,7 @@ class SecuritySettingsServiceClient(metaclass=SecuritySettingsServiceClientMeta)
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -559,8 +566,10 @@ class SecuritySettingsServiceClient(metaclass=SecuritySettingsServiceClientMeta)
         # there are no flattened fields.
         if not isinstance(request, gcdc_security_settings.UpdateSecuritySettingsRequest):
             request = gcdc_security_settings.UpdateSecuritySettingsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if security_settings is not None:
                 request.security_settings = security_settings
             if update_mask is not None:
@@ -602,8 +611,7 @@ class SecuritySettingsServiceClient(metaclass=SecuritySettingsServiceClientMeta)
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.ListSecuritySettingsRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [SecuritySettings.ListSecuritySettings][].
             parent (str):
                 Required. The location to list all security settings
@@ -613,6 +621,7 @@ class SecuritySettingsServiceClient(metaclass=SecuritySettingsServiceClientMeta)
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -642,8 +651,10 @@ class SecuritySettingsServiceClient(metaclass=SecuritySettingsServiceClientMeta)
         # there are no flattened fields.
         if not isinstance(request, security_settings.ListSecuritySettingsRequest):
             request = security_settings.ListSecuritySettingsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
 
@@ -692,8 +703,7 @@ class SecuritySettingsServiceClient(metaclass=SecuritySettingsServiceClientMeta)
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.DeleteSecuritySettingsRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [SecuritySettings.DeleteSecuritySettings][].
             name (str):
                 Required. The name of the
@@ -704,6 +714,7 @@ class SecuritySettingsServiceClient(metaclass=SecuritySettingsServiceClientMeta)
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -724,8 +735,10 @@ class SecuritySettingsServiceClient(metaclass=SecuritySettingsServiceClientMeta)
         # there are no flattened fields.
         if not isinstance(request, security_settings.DeleteSecuritySettingsRequest):
             request = security_settings.DeleteSecuritySettingsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -748,6 +761,8 @@ class SecuritySettingsServiceClient(metaclass=SecuritySettingsServiceClientMeta)
             timeout=timeout,
             metadata=metadata,
         )
+
+
 
 
 

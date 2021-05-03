@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAgentsClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateAgentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateAgentAsync()
         {
-            // Snippet: CreateAgentAsync(string, Agent, CallSettings)
-            // Additional: CreateAgentAsync(string, Agent, CancellationToken)
             // Create client
             AgentsClient agentsClient = await AgentsClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
             Agent agent = new Agent();
             // Make the request
             Agent response = await agentsClient.CreateAgentAsync(parent, agent);
-            // End snippet
         }
     }
 }

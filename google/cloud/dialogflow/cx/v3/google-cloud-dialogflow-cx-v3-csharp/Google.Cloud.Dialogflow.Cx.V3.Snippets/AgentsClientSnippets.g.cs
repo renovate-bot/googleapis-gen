@@ -19,7 +19,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
     using Google.Api.Gax;
     using Google.Api.Gax.ResourceNames;
     using Google.LongRunning;
-    using Google.Protobuf;
     using Google.Protobuf.WellKnownTypes;
     using System;
     using System.Linq;
@@ -76,7 +75,7 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListAgents</summary>
+        /// <summary>Snippet for ListAgentsAsync</summary>
         public async Task ListAgentsRequestObjectAsync()
         {
             // Snippet: ListAgentsAsync(ListAgentsRequest, CallSettings)
@@ -169,7 +168,7 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListAgents</summary>
+        /// <summary>Snippet for ListAgentsAsync</summary>
         public async Task ListAgentsAsync()
         {
             // Snippet: ListAgentsAsync(string, string, int?, CallSettings)
@@ -259,7 +258,7 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListAgents</summary>
+        /// <summary>Snippet for ListAgentsAsync</summary>
         public async Task ListAgentsResourceNamesAsync()
         {
             // Snippet: ListAgentsAsync(LocationName, string, int?, CallSettings)
@@ -715,7 +714,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
             {
                 AgentName = AgentName.FromProjectLocationAgent("[PROJECT]", "[LOCATION]", "[AGENT]"),
                 AgentUri = "",
-                AgentContent = ByteString.Empty,
                 RestoreOption = RestoreAgentRequest.Types.RestoreOption.Unspecified,
             };
             // Make the request
@@ -751,7 +749,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
             {
                 AgentName = AgentName.FromProjectLocationAgent("[PROJECT]", "[LOCATION]", "[AGENT]"),
                 AgentUri = "",
-                AgentContent = ByteString.Empty,
                 RestoreOption = RestoreAgentRequest.Types.RestoreOption.Unspecified,
             };
             // Make the request

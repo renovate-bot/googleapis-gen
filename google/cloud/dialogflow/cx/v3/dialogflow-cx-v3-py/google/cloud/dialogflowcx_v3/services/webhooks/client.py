@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -35,6 +37,7 @@ from google.cloud.dialogflowcx_v3.types import webhook
 from google.cloud.dialogflowcx_v3.types import webhook as gcdc_webhook
 from google.protobuf import duration_pb2 as duration  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
+
 from .transports.base import WebhooksTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import WebhooksGrpcTransport
 from .transports.grpc_asyncio import WebhooksGrpcAsyncIOTransport
@@ -339,8 +342,7 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.ListWebhooksRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Webhooks.ListWebhooks][google.cloud.dialogflow.cx.v3.Webhooks.ListWebhooks].
             parent (str):
                 Required. The agent to list all webhooks for. Format:
@@ -349,6 +351,7 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -378,8 +381,10 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
         # there are no flattened fields.
         if not isinstance(request, webhook.ListWebhooksRequest):
             request = webhook.ListWebhooksRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
 
@@ -427,8 +432,7 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.GetWebhookRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Webhooks.GetWebhook][google.cloud.dialogflow.cx.v3.Webhooks.GetWebhook].
             name (str):
                 Required. The name of the webhook. Format:
@@ -437,6 +441,7 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -468,8 +473,10 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
         # there are no flattened fields.
         if not isinstance(request, webhook.GetWebhookRequest):
             request = webhook.GetWebhookRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -509,8 +516,7 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.CreateWebhookRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Webhooks.CreateWebhook][google.cloud.dialogflow.cx.v3.Webhooks.CreateWebhook].
             parent (str):
                 Required. The agent to create a webhook for. Format:
@@ -524,6 +530,7 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
                 This corresponds to the ``webhook`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -555,8 +562,10 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcdc_webhook.CreateWebhookRequest):
             request = gcdc_webhook.CreateWebhookRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
             if webhook is not None:
@@ -598,8 +607,7 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.UpdateWebhookRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Webhooks.UpdateWebhook][google.cloud.dialogflow.cx.v3.Webhooks.UpdateWebhook].
             webhook (google.cloud.dialogflowcx_v3.types.Webhook):
                 Required. The webhook to update.
@@ -614,6 +622,7 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -645,8 +654,10 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcdc_webhook.UpdateWebhookRequest):
             request = gcdc_webhook.UpdateWebhookRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if webhook is not None:
                 request.webhook = webhook
             if update_mask is not None:
@@ -687,8 +698,7 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.DeleteWebhookRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Webhooks.DeleteWebhook][google.cloud.dialogflow.cx.v3.Webhooks.DeleteWebhook].
             name (str):
                 Required. The name of the webhook to delete. Format:
@@ -697,6 +707,7 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -717,8 +728,10 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
         # there are no flattened fields.
         if not isinstance(request, webhook.DeleteWebhookRequest):
             request = webhook.DeleteWebhookRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -741,6 +754,8 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
             timeout=timeout,
             metadata=metadata,
         )
+
+
 
 
 

@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedFlowsClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateFlowAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateFlowAsync()
         {
-            // Snippet: CreateFlowAsync(string, Flow, CallSettings)
-            // Additional: CreateFlowAsync(string, Flow, CancellationToken)
             // Create client
             FlowsClient flowsClient = await FlowsClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
             Flow flow = new Flow();
             // Make the request
             Flow response = await flowsClient.CreateFlowAsync(parent, flow);
-            // End snippet
         }
     }
 }

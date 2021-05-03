@@ -18,7 +18,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
 {
     using Google.Api.Gax;
     using Google.LongRunning;
-    using Google.Protobuf;
     using Google.Protobuf.WellKnownTypes;
     using System;
     using System.Linq;
@@ -260,7 +259,7 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListFlows</summary>
+        /// <summary>Snippet for ListFlowsAsync</summary>
         public async Task ListFlowsRequestObjectAsync()
         {
             // Snippet: ListFlowsAsync(ListFlowsRequest, CallSettings)
@@ -354,7 +353,7 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListFlows</summary>
+        /// <summary>Snippet for ListFlowsAsync</summary>
         public async Task ListFlowsAsync()
         {
             // Snippet: ListFlowsAsync(string, string, int?, CallSettings)
@@ -444,7 +443,7 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListFlows</summary>
+        /// <summary>Snippet for ListFlowsAsync</summary>
         public async Task ListFlowsResourceNamesAsync()
         {
             // Snippet: ListFlowsAsync(AgentName, string, int?, CallSettings)
@@ -962,7 +961,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
             {
                 ParentAsAgentName = AgentName.FromProjectLocationAgent("[PROJECT]", "[LOCATION]", "[AGENT]"),
                 FlowUri = "",
-                FlowContent = ByteString.Empty,
                 ImportOption = ImportFlowRequest.Types.ImportOption.Unspecified,
             };
             // Make the request
@@ -998,7 +996,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
             {
                 ParentAsAgentName = AgentName.FromProjectLocationAgent("[PROJECT]", "[LOCATION]", "[AGENT]"),
                 FlowUri = "",
-                FlowContent = ByteString.Empty,
                 ImportOption = ImportFlowRequest.Types.ImportOption.Unspecified,
             };
             // Make the request

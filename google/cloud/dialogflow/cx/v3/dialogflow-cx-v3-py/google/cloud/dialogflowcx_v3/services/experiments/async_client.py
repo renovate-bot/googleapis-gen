@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -32,6 +34,7 @@ from google.cloud.dialogflowcx_v3.types import experiment as gcdc_experiment
 from google.protobuf import duration_pb2 as duration  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+
 from .transports.base import ExperimentsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import ExperimentsGrpcAsyncIOTransport
 from .client import ExperimentsClient
@@ -51,14 +54,19 @@ class ExperimentsAsyncClient:
     parse_experiment_path = staticmethod(ExperimentsClient.parse_experiment_path)
     version_path = staticmethod(ExperimentsClient.version_path)
     parse_version_path = staticmethod(ExperimentsClient.parse_version_path)
+
     common_billing_account_path = staticmethod(ExperimentsClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(ExperimentsClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(ExperimentsClient.common_folder_path)
     parse_common_folder_path = staticmethod(ExperimentsClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(ExperimentsClient.common_organization_path)
     parse_common_organization_path = staticmethod(ExperimentsClient.parse_common_organization_path)
+
     common_project_path = staticmethod(ExperimentsClient.common_project_path)
     parse_common_project_path = staticmethod(ExperimentsClient.parse_common_project_path)
+
     common_location_path = staticmethod(ExperimentsClient.common_location_path)
     parse_common_location_path = staticmethod(ExperimentsClient.parse_common_location_path)
 
@@ -143,6 +151,7 @@ class ExperimentsAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = ExperimentsClient(
             credentials=credentials,
             transport=transport,
@@ -164,8 +173,7 @@ class ExperimentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.ListExperimentsRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Experiments.ListExperiments][google.cloud.dialogflow.cx.v3.Experiments.ListExperiments].
             parent (:class:`str`):
                 Required. The
@@ -176,6 +184,7 @@ class ExperimentsAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -203,6 +212,7 @@ class ExperimentsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -255,8 +265,7 @@ class ExperimentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.GetExperimentRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Experiments.GetExperiment][google.cloud.dialogflow.cx.v3.Experiments.GetExperiment].
             name (:class:`str`):
                 Required. The name of the
@@ -267,6 +276,7 @@ class ExperimentsAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -291,6 +301,7 @@ class ExperimentsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -337,8 +348,7 @@ class ExperimentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.CreateExperimentRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Experiments.CreateExperiment][google.cloud.dialogflow.cx.v3.Experiments.CreateExperiment].
             parent (:class:`str`):
                 Required. The
@@ -356,6 +366,7 @@ class ExperimentsAsyncClient:
                 This corresponds to the ``experiment`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -380,6 +391,7 @@ class ExperimentsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if experiment is not None:
@@ -426,8 +438,7 @@ class ExperimentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.UpdateExperimentRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Experiments.UpdateExperiment][google.cloud.dialogflow.cx.v3.Experiments.UpdateExperiment].
             experiment (:class:`google.cloud.dialogflowcx_v3.types.Experiment`):
                 Required. The experiment to update.
@@ -441,6 +452,7 @@ class ExperimentsAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -465,6 +477,7 @@ class ExperimentsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if experiment is not None:
             request.experiment = experiment
         if update_mask is not None:
@@ -510,8 +523,7 @@ class ExperimentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.DeleteExperimentRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Experiments.DeleteExperiment][google.cloud.dialogflow.cx.v3.Experiments.DeleteExperiment].
             name (:class:`str`):
                 Required. The name of the
@@ -522,6 +534,7 @@ class ExperimentsAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -540,6 +553,7 @@ class ExperimentsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -581,8 +595,7 @@ class ExperimentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.StartExperimentRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Experiments.StartExperiment][google.cloud.dialogflow.cx.v3.Experiments.StartExperiment].
             name (:class:`str`):
                 Required. Resource name of the experiment to start.
@@ -592,6 +605,7 @@ class ExperimentsAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -616,6 +630,7 @@ class ExperimentsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -660,8 +675,7 @@ class ExperimentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.StopExperimentRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Experiments.StopExperiment][google.cloud.dialogflow.cx.v3.Experiments.StopExperiment].
             name (:class:`str`):
                 Required. Resource name of the experiment to stop.
@@ -671,6 +685,7 @@ class ExperimentsAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -695,6 +710,7 @@ class ExperimentsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -724,6 +740,8 @@ class ExperimentsAsyncClient:
 
         # Done; return the response.
         return response
+
+
 
 
 

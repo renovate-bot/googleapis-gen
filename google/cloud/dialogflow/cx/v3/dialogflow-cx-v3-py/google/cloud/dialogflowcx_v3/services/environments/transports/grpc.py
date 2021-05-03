@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import operations_v1  # type: ignore
@@ -29,6 +31,7 @@ from google.cloud.dialogflowcx_v3.types import environment
 from google.cloud.dialogflowcx_v3.types import environment as gcdc_environment
 from google.longrunning import operations_pb2 as operations  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
+
 from .base import EnvironmentsTransport, DEFAULT_CLIENT_INFO
 
 
@@ -63,8 +66,7 @@ class EnvironmentsGrpcTransport(EnvironmentsTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -204,15 +206,13 @@ class EnvironmentsGrpcTransport(EnvironmentsTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -242,9 +242,7 @@ class EnvironmentsGrpcTransport(EnvironmentsTransport):
     def list_environments(self) -> Callable[
             [environment.ListEnvironmentsRequest],
             environment.ListEnvironmentsResponse]:
-        r"""Return a callable for the
-        list environments
-          method over gRPC.
+        r"""Return a callable for the list environments method over gRPC.
 
         Returns the list of all environments in the specified
         [Agent][google.cloud.dialogflow.cx.v3.Agent].
@@ -271,9 +269,7 @@ class EnvironmentsGrpcTransport(EnvironmentsTransport):
     def get_environment(self) -> Callable[
             [environment.GetEnvironmentRequest],
             environment.Environment]:
-        r"""Return a callable for the
-        get environment
-          method over gRPC.
+        r"""Return a callable for the get environment method over gRPC.
 
         Retrieves the specified
         [Environment][google.cloud.dialogflow.cx.v3.Environment].
@@ -300,9 +296,7 @@ class EnvironmentsGrpcTransport(EnvironmentsTransport):
     def create_environment(self) -> Callable[
             [gcdc_environment.CreateEnvironmentRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        create environment
-          method over gRPC.
+        r"""Return a callable for the create environment method over gRPC.
 
         Creates an
         [Environment][google.cloud.dialogflow.cx.v3.Environment] in the
@@ -330,9 +324,7 @@ class EnvironmentsGrpcTransport(EnvironmentsTransport):
     def update_environment(self) -> Callable[
             [gcdc_environment.UpdateEnvironmentRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        update environment
-          method over gRPC.
+        r"""Return a callable for the update environment method over gRPC.
 
         Updates the specified
         [Environment][google.cloud.dialogflow.cx.v3.Environment].
@@ -359,9 +351,7 @@ class EnvironmentsGrpcTransport(EnvironmentsTransport):
     def delete_environment(self) -> Callable[
             [environment.DeleteEnvironmentRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete environment
-          method over gRPC.
+        r"""Return a callable for the delete environment method over gRPC.
 
         Deletes the specified
         [Environment][google.cloud.dialogflow.cx.v3.Environment].
@@ -388,9 +378,7 @@ class EnvironmentsGrpcTransport(EnvironmentsTransport):
     def lookup_environment_history(self) -> Callable[
             [environment.LookupEnvironmentHistoryRequest],
             environment.LookupEnvironmentHistoryResponse]:
-        r"""Return a callable for the
-        lookup environment history
-          method over gRPC.
+        r"""Return a callable for the lookup environment history method over gRPC.
 
         Looks up the history of the specified
         [Environment][google.cloud.dialogflow.cx.v3.Environment].

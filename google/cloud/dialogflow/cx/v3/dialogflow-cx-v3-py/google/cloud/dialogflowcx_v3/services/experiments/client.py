@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -36,6 +38,7 @@ from google.cloud.dialogflowcx_v3.types import experiment as gcdc_experiment
 from google.protobuf import duration_pb2 as duration  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+
 from .transports.base import ExperimentsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import ExperimentsGrpcTransport
 from .transports.grpc_asyncio import ExperimentsGrpcAsyncIOTransport
@@ -351,8 +354,7 @@ class ExperimentsClient(metaclass=ExperimentsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.ListExperimentsRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Experiments.ListExperiments][google.cloud.dialogflow.cx.v3.Experiments.ListExperiments].
             parent (str):
                 Required. The
@@ -363,6 +365,7 @@ class ExperimentsClient(metaclass=ExperimentsClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -392,8 +395,10 @@ class ExperimentsClient(metaclass=ExperimentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, experiment.ListExperimentsRequest):
             request = experiment.ListExperimentsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
 
@@ -442,8 +447,7 @@ class ExperimentsClient(metaclass=ExperimentsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.GetExperimentRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Experiments.GetExperiment][google.cloud.dialogflow.cx.v3.Experiments.GetExperiment].
             name (str):
                 Required. The name of the
@@ -454,6 +458,7 @@ class ExperimentsClient(metaclass=ExperimentsClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -480,8 +485,10 @@ class ExperimentsClient(metaclass=ExperimentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, experiment.GetExperimentRequest):
             request = experiment.GetExperimentRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -524,8 +531,7 @@ class ExperimentsClient(metaclass=ExperimentsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.CreateExperimentRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Experiments.CreateExperiment][google.cloud.dialogflow.cx.v3.Experiments.CreateExperiment].
             parent (str):
                 Required. The
@@ -543,6 +549,7 @@ class ExperimentsClient(metaclass=ExperimentsClientMeta):
                 This corresponds to the ``experiment`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -569,8 +576,10 @@ class ExperimentsClient(metaclass=ExperimentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcdc_experiment.CreateExperimentRequest):
             request = gcdc_experiment.CreateExperimentRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
             if experiment is not None:
@@ -613,8 +622,7 @@ class ExperimentsClient(metaclass=ExperimentsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.UpdateExperimentRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Experiments.UpdateExperiment][google.cloud.dialogflow.cx.v3.Experiments.UpdateExperiment].
             experiment (google.cloud.dialogflowcx_v3.types.Experiment):
                 Required. The experiment to update.
@@ -628,6 +636,7 @@ class ExperimentsClient(metaclass=ExperimentsClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -654,8 +663,10 @@ class ExperimentsClient(metaclass=ExperimentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcdc_experiment.UpdateExperimentRequest):
             request = gcdc_experiment.UpdateExperimentRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if experiment is not None:
                 request.experiment = experiment
             if update_mask is not None:
@@ -697,8 +708,7 @@ class ExperimentsClient(metaclass=ExperimentsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.DeleteExperimentRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Experiments.DeleteExperiment][google.cloud.dialogflow.cx.v3.Experiments.DeleteExperiment].
             name (str):
                 Required. The name of the
@@ -709,6 +719,7 @@ class ExperimentsClient(metaclass=ExperimentsClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -729,8 +740,10 @@ class ExperimentsClient(metaclass=ExperimentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, experiment.DeleteExperimentRequest):
             request = experiment.DeleteExperimentRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -768,8 +781,7 @@ class ExperimentsClient(metaclass=ExperimentsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.StartExperimentRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Experiments.StartExperiment][google.cloud.dialogflow.cx.v3.Experiments.StartExperiment].
             name (str):
                 Required. Resource name of the experiment to start.
@@ -779,6 +791,7 @@ class ExperimentsClient(metaclass=ExperimentsClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -805,8 +818,10 @@ class ExperimentsClient(metaclass=ExperimentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, experiment.StartExperimentRequest):
             request = experiment.StartExperimentRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -847,8 +862,7 @@ class ExperimentsClient(metaclass=ExperimentsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.StopExperimentRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Experiments.StopExperiment][google.cloud.dialogflow.cx.v3.Experiments.StopExperiment].
             name (str):
                 Required. Resource name of the experiment to stop.
@@ -858,6 +872,7 @@ class ExperimentsClient(metaclass=ExperimentsClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -884,8 +899,10 @@ class ExperimentsClient(metaclass=ExperimentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, experiment.StopExperimentRequest):
             request = experiment.StopExperimentRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -911,6 +928,8 @@ class ExperimentsClient(metaclass=ExperimentsClientMeta):
 
         # Done; return the response.
         return response
+
+
 
 
 

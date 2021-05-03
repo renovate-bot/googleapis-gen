@@ -16,6 +16,7 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
@@ -23,10 +24,12 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
     public sealed partial class GeneratedFlowsClientStandaloneSnippets
     {
         /// <summary>Snippet for ExportFlowAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ExportFlowRequestObjectAsync()
         {
-            // Snippet: ExportFlowAsync(ExportFlowRequest, CallSettings)
-            // Additional: ExportFlowAsync(ExportFlowRequest, CancellationToken)
             // Create client
             FlowsClient flowsClient = await FlowsClient.CreateAsync();
             // Initialize request argument(s)
@@ -54,7 +57,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
                 // If it has completed, then access the result
                 ExportFlowResponse retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

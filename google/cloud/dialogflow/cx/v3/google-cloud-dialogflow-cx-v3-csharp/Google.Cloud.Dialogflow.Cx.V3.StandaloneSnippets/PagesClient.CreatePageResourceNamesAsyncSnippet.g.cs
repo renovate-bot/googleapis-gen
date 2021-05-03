@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedPagesClientStandaloneSnippets
     {
         /// <summary>Snippet for CreatePageAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreatePageResourceNamesAsync()
         {
-            // Snippet: CreatePageAsync(FlowName, Page, CallSettings)
-            // Additional: CreatePageAsync(FlowName, Page, CancellationToken)
             // Create client
             PagesClient pagesClient = await PagesClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
             Page page = new Page();
             // Make the request
             Page response = await pagesClient.CreatePageAsync(parent, page);
-            // End snippet
         }
     }
 }

@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3;
     using Google.LongRunning;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTestCasesClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchRunTestCasesAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task BatchRunTestCasesRequestObjectAsync()
         {
-            // Snippet: BatchRunTestCasesAsync(BatchRunTestCasesRequest, CallSettings)
-            // Additional: BatchRunTestCasesAsync(BatchRunTestCasesRequest, CancellationToken)
             // Create client
             TestCasesClient testCasesClient = await TestCasesClient.CreateAsync();
             // Initialize request argument(s)
@@ -56,7 +59,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
                 // If it has completed, then access the result
                 BatchRunTestCasesResponse retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

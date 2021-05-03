@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -31,6 +33,7 @@ from google.cloud.dialogflowcx_v3.types import page
 from google.cloud.dialogflowcx_v3.types import transition_route_group
 from google.cloud.dialogflowcx_v3.types import transition_route_group as gcdc_transition_route_group
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
+
 from .transports.base import TransitionRouteGroupsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import TransitionRouteGroupsGrpcAsyncIOTransport
 from .client import TransitionRouteGroupsClient
@@ -56,14 +59,19 @@ class TransitionRouteGroupsAsyncClient:
     parse_transition_route_group_path = staticmethod(TransitionRouteGroupsClient.parse_transition_route_group_path)
     webhook_path = staticmethod(TransitionRouteGroupsClient.webhook_path)
     parse_webhook_path = staticmethod(TransitionRouteGroupsClient.parse_webhook_path)
+
     common_billing_account_path = staticmethod(TransitionRouteGroupsClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(TransitionRouteGroupsClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(TransitionRouteGroupsClient.common_folder_path)
     parse_common_folder_path = staticmethod(TransitionRouteGroupsClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(TransitionRouteGroupsClient.common_organization_path)
     parse_common_organization_path = staticmethod(TransitionRouteGroupsClient.parse_common_organization_path)
+
     common_project_path = staticmethod(TransitionRouteGroupsClient.common_project_path)
     parse_common_project_path = staticmethod(TransitionRouteGroupsClient.parse_common_project_path)
+
     common_location_path = staticmethod(TransitionRouteGroupsClient.common_location_path)
     parse_common_location_path = staticmethod(TransitionRouteGroupsClient.parse_common_location_path)
 
@@ -148,6 +156,7 @@ class TransitionRouteGroupsAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = TransitionRouteGroupsClient(
             credentials=credentials,
             transport=transport,
@@ -169,8 +178,7 @@ class TransitionRouteGroupsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.ListTransitionRouteGroupsRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TransitionRouteGroups.ListTransitionRouteGroups][google.cloud.dialogflow.cx.v3.TransitionRouteGroups.ListTransitionRouteGroups].
             parent (:class:`str`):
                 Required. The flow to list all transition route groups
@@ -180,6 +188,7 @@ class TransitionRouteGroupsAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -207,6 +216,7 @@ class TransitionRouteGroupsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -259,8 +269,7 @@ class TransitionRouteGroupsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.GetTransitionRouteGroupRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TransitionRouteGroups.GetTransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroups.GetTransitionRouteGroup].
             name (:class:`str`):
                 Required. The name of the
@@ -271,6 +280,7 @@ class TransitionRouteGroupsAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -297,6 +307,7 @@ class TransitionRouteGroupsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -342,8 +353,7 @@ class TransitionRouteGroupsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.CreateTransitionRouteGroupRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TransitionRouteGroups.CreateTransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroups.CreateTransitionRouteGroup].
             parent (:class:`str`):
                 Required. The flow to create an
@@ -361,6 +371,7 @@ class TransitionRouteGroupsAsyncClient:
                 This corresponds to the ``transition_route_group`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -387,6 +398,7 @@ class TransitionRouteGroupsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if transition_route_group is not None:
@@ -433,8 +445,7 @@ class TransitionRouteGroupsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.UpdateTransitionRouteGroupRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TransitionRouteGroups.UpdateTransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroups.UpdateTransitionRouteGroup].
             transition_route_group (:class:`google.cloud.dialogflowcx_v3.types.TransitionRouteGroup`):
                 Required. The transition route group
@@ -450,6 +461,7 @@ class TransitionRouteGroupsAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -476,6 +488,7 @@ class TransitionRouteGroupsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if transition_route_group is not None:
             request.transition_route_group = transition_route_group
         if update_mask is not None:
@@ -521,8 +534,7 @@ class TransitionRouteGroupsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.DeleteTransitionRouteGroupRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TransitionRouteGroups.DeleteTransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroups.DeleteTransitionRouteGroup].
             name (:class:`str`):
                 Required. The name of the
@@ -533,6 +545,7 @@ class TransitionRouteGroupsAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -551,6 +564,7 @@ class TransitionRouteGroupsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -577,6 +591,8 @@ class TransitionRouteGroupsAsyncClient:
             timeout=timeout,
             metadata=metadata,
         )
+
+
 
 
 

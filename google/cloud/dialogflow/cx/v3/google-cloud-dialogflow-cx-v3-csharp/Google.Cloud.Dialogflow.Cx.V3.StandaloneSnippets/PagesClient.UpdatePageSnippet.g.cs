@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedPagesClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdatePage</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdatePage()
         {
-            // Snippet: UpdatePage(Page, FieldMask, CallSettings)
             // Create client
             PagesClient pagesClient = PagesClient.Create();
             // Initialize request argument(s)
@@ -31,7 +35,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             Page response = pagesClient.UpdatePage(page, updateMask);
-            // End snippet
         }
     }
 }

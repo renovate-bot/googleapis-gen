@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 import mock
-import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
-
 
 from google import auth
 from google.api_core import client_options
@@ -39,8 +39,6 @@ from google.cloud.dialogflowcx_v3.services.test_cases import TestCasesAsyncClien
 from google.cloud.dialogflowcx_v3.services.test_cases import TestCasesClient
 from google.cloud.dialogflowcx_v3.services.test_cases import pagers
 from google.cloud.dialogflowcx_v3.services.test_cases import transports
-from google.cloud.dialogflowcx_v3.services.test_cases.transports.base import _API_CORE_VERSION
-from google.cloud.dialogflowcx_v3.services.test_cases.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.dialogflowcx_v3.types import audio_config
 from google.cloud.dialogflowcx_v3.types import fulfillment
 from google.cloud.dialogflowcx_v3.types import intent
@@ -57,28 +55,6 @@ from google.protobuf import struct_pb2 as struct  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.rpc import status_pb2 as status  # type: ignore
 
-
-# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
-# - Delete all the api-core and auth "less than" test cases
-# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
-requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth < 1.25.0",
-)
-requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth >= 1.25.0",
-)
-
-requires_api_core_lt_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core < 1.26.0",
-)
-
-requires_api_core_gte_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core >= 1.26.0",
-)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -246,10 +222,12 @@ def test_test_cases_client_client_options(client_class, transport_class, transpo
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
+
     (TestCasesClient, transports.TestCasesGrpcTransport, "grpc", "true"),
     (TestCasesAsyncClient, transports.TestCasesGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (TestCasesClient, transports.TestCasesGrpcTransport, "grpc", "false"),
     (TestCasesAsyncClient, transports.TestCasesGrpcAsyncIOTransport, "grpc_asyncio", "false"),
+
 ])
 @mock.patch.object(TestCasesClient, "DEFAULT_ENDPOINT", modify_default_endpoint(TestCasesClient))
 @mock.patch.object(TestCasesAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(TestCasesAsyncClient))
@@ -404,16 +382,21 @@ def test_list_test_cases(transport: str = 'grpc', request_type=test_case.ListTes
         # Designate an appropriate return value for the call.
         call.return_value = test_case.ListTestCasesResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.list_test_cases(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == test_case.ListTestCasesRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListTestCasesPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -436,8 +419,8 @@ def test_list_test_cases_empty_call():
         client.list_test_cases()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == test_case.ListTestCasesRequest()
 
+        assert args[0] == test_case.ListTestCasesRequest()
 
 @pytest.mark.asyncio
 async def test_list_test_cases_async(transport: str = 'grpc_asyncio', request_type=test_case.ListTestCasesRequest):
@@ -455,18 +438,21 @@ async def test_list_test_cases_async(transport: str = 'grpc_asyncio', request_ty
             type(client.transport.list_test_cases),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(test_case.ListTestCasesResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(test_case.ListTestCasesResponse(
             next_page_token='next_page_token_value',
         ))
+
         response = await client.list_test_cases(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == test_case.ListTestCasesRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListTestCasesAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -483,7 +469,6 @@ def test_list_test_cases_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = test_case.ListTestCasesRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -491,6 +476,7 @@ def test_list_test_cases_field_headers():
             type(client.transport.list_test_cases),
             '__call__') as call:
         call.return_value = test_case.ListTestCasesResponse()
+
         client.list_test_cases(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -515,7 +501,6 @@ async def test_list_test_cases_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = test_case.ListTestCasesRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -523,6 +508,7 @@ async def test_list_test_cases_field_headers_async():
             type(client.transport.list_test_cases),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(test_case.ListTestCasesResponse())
+
         await client.list_test_cases(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -549,6 +535,7 @@ def test_list_test_cases_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = test_case.ListTestCasesResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_test_cases(
@@ -559,6 +546,7 @@ def test_list_test_cases_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -600,6 +588,7 @@ async def test_list_test_cases_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -804,6 +793,7 @@ async def test_list_test_cases_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_batch_delete_test_cases(transport: str = 'grpc', request_type=test_case.BatchDeleteTestCasesRequest):
     client = TestCasesClient(
         credentials=credentials.AnonymousCredentials(),
@@ -820,11 +810,13 @@ def test_batch_delete_test_cases(transport: str = 'grpc', request_type=test_case
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         response = client.batch_delete_test_cases(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == test_case.BatchDeleteTestCasesRequest()
 
     # Establish that the response is the type that we expect.
@@ -850,8 +842,8 @@ def test_batch_delete_test_cases_empty_call():
         client.batch_delete_test_cases()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == test_case.BatchDeleteTestCasesRequest()
 
+        assert args[0] == test_case.BatchDeleteTestCasesRequest()
 
 @pytest.mark.asyncio
 async def test_batch_delete_test_cases_async(transport: str = 'grpc_asyncio', request_type=test_case.BatchDeleteTestCasesRequest):
@@ -870,11 +862,13 @@ async def test_batch_delete_test_cases_async(transport: str = 'grpc_asyncio', re
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         response = await client.batch_delete_test_cases(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == test_case.BatchDeleteTestCasesRequest()
 
     # Establish that the response is the type that we expect.
@@ -894,7 +888,6 @@ def test_batch_delete_test_cases_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = test_case.BatchDeleteTestCasesRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -902,6 +895,7 @@ def test_batch_delete_test_cases_field_headers():
             type(client.transport.batch_delete_test_cases),
             '__call__') as call:
         call.return_value = None
+
         client.batch_delete_test_cases(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -926,7 +920,6 @@ async def test_batch_delete_test_cases_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = test_case.BatchDeleteTestCasesRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -934,6 +927,7 @@ async def test_batch_delete_test_cases_field_headers_async():
             type(client.transport.batch_delete_test_cases),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         await client.batch_delete_test_cases(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -960,6 +954,7 @@ def test_batch_delete_test_cases_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.batch_delete_test_cases(
@@ -970,6 +965,7 @@ def test_batch_delete_test_cases_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -1011,6 +1007,7 @@ async def test_batch_delete_test_cases_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -1046,22 +1043,33 @@ def test_get_test_case(transport: str = 'grpc', request_type=test_case.GetTestCa
         # Designate an appropriate return value for the call.
         call.return_value = test_case.TestCase(
             name='name_value',
+
             tags=['tags_value'],
+
             display_name='display_name_value',
+
             notes='notes_value',
+
         )
+
         response = client.get_test_case(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == test_case.GetTestCaseRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, test_case.TestCase)
+
     assert response.name == 'name_value'
+
     assert response.tags == ['tags_value']
+
     assert response.display_name == 'display_name_value'
+
     assert response.notes == 'notes_value'
 
 
@@ -1084,8 +1092,8 @@ def test_get_test_case_empty_call():
         client.get_test_case()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == test_case.GetTestCaseRequest()
 
+        assert args[0] == test_case.GetTestCaseRequest()
 
 @pytest.mark.asyncio
 async def test_get_test_case_async(transport: str = 'grpc_asyncio', request_type=test_case.GetTestCaseRequest):
@@ -1103,24 +1111,30 @@ async def test_get_test_case_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.get_test_case),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(test_case.TestCase(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(test_case.TestCase(
             name='name_value',
             tags=['tags_value'],
             display_name='display_name_value',
             notes='notes_value',
         ))
+
         response = await client.get_test_case(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == test_case.GetTestCaseRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, test_case.TestCase)
+
     assert response.name == 'name_value'
+
     assert response.tags == ['tags_value']
+
     assert response.display_name == 'display_name_value'
+
     assert response.notes == 'notes_value'
 
 
@@ -1137,7 +1151,6 @@ def test_get_test_case_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = test_case.GetTestCaseRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1145,6 +1158,7 @@ def test_get_test_case_field_headers():
             type(client.transport.get_test_case),
             '__call__') as call:
         call.return_value = test_case.TestCase()
+
         client.get_test_case(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1169,7 +1183,6 @@ async def test_get_test_case_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = test_case.GetTestCaseRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1177,6 +1190,7 @@ async def test_get_test_case_field_headers_async():
             type(client.transport.get_test_case),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(test_case.TestCase())
+
         await client.get_test_case(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1203,6 +1217,7 @@ def test_get_test_case_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = test_case.TestCase()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_test_case(
@@ -1213,6 +1228,7 @@ def test_get_test_case_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1254,6 +1270,7 @@ async def test_get_test_case_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1289,22 +1306,33 @@ def test_create_test_case(transport: str = 'grpc', request_type=gcdc_test_case.C
         # Designate an appropriate return value for the call.
         call.return_value = gcdc_test_case.TestCase(
             name='name_value',
+
             tags=['tags_value'],
+
             display_name='display_name_value',
+
             notes='notes_value',
+
         )
+
         response = client.create_test_case(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == gcdc_test_case.CreateTestCaseRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, gcdc_test_case.TestCase)
+
     assert response.name == 'name_value'
+
     assert response.tags == ['tags_value']
+
     assert response.display_name == 'display_name_value'
+
     assert response.notes == 'notes_value'
 
 
@@ -1327,8 +1355,8 @@ def test_create_test_case_empty_call():
         client.create_test_case()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == gcdc_test_case.CreateTestCaseRequest()
 
+        assert args[0] == gcdc_test_case.CreateTestCaseRequest()
 
 @pytest.mark.asyncio
 async def test_create_test_case_async(transport: str = 'grpc_asyncio', request_type=gcdc_test_case.CreateTestCaseRequest):
@@ -1346,24 +1374,30 @@ async def test_create_test_case_async(transport: str = 'grpc_asyncio', request_t
             type(client.transport.create_test_case),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gcdc_test_case.TestCase(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gcdc_test_case.TestCase(
             name='name_value',
             tags=['tags_value'],
             display_name='display_name_value',
             notes='notes_value',
         ))
+
         response = await client.create_test_case(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == gcdc_test_case.CreateTestCaseRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gcdc_test_case.TestCase)
+
     assert response.name == 'name_value'
+
     assert response.tags == ['tags_value']
+
     assert response.display_name == 'display_name_value'
+
     assert response.notes == 'notes_value'
 
 
@@ -1380,7 +1414,6 @@ def test_create_test_case_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gcdc_test_case.CreateTestCaseRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1388,6 +1421,7 @@ def test_create_test_case_field_headers():
             type(client.transport.create_test_case),
             '__call__') as call:
         call.return_value = gcdc_test_case.TestCase()
+
         client.create_test_case(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1412,7 +1446,6 @@ async def test_create_test_case_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gcdc_test_case.CreateTestCaseRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1420,6 +1453,7 @@ async def test_create_test_case_field_headers_async():
             type(client.transport.create_test_case),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gcdc_test_case.TestCase())
+
         await client.create_test_case(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1446,6 +1480,7 @@ def test_create_test_case_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gcdc_test_case.TestCase()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_test_case(
@@ -1457,7 +1492,9 @@ def test_create_test_case_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].test_case == gcdc_test_case.TestCase(name='name_value')
 
 
@@ -1501,7 +1538,9 @@ async def test_create_test_case_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].test_case == gcdc_test_case.TestCase(name='name_value')
 
 
@@ -1538,22 +1577,33 @@ def test_update_test_case(transport: str = 'grpc', request_type=gcdc_test_case.U
         # Designate an appropriate return value for the call.
         call.return_value = gcdc_test_case.TestCase(
             name='name_value',
+
             tags=['tags_value'],
+
             display_name='display_name_value',
+
             notes='notes_value',
+
         )
+
         response = client.update_test_case(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == gcdc_test_case.UpdateTestCaseRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, gcdc_test_case.TestCase)
+
     assert response.name == 'name_value'
+
     assert response.tags == ['tags_value']
+
     assert response.display_name == 'display_name_value'
+
     assert response.notes == 'notes_value'
 
 
@@ -1576,8 +1626,8 @@ def test_update_test_case_empty_call():
         client.update_test_case()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == gcdc_test_case.UpdateTestCaseRequest()
 
+        assert args[0] == gcdc_test_case.UpdateTestCaseRequest()
 
 @pytest.mark.asyncio
 async def test_update_test_case_async(transport: str = 'grpc_asyncio', request_type=gcdc_test_case.UpdateTestCaseRequest):
@@ -1595,24 +1645,30 @@ async def test_update_test_case_async(transport: str = 'grpc_asyncio', request_t
             type(client.transport.update_test_case),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gcdc_test_case.TestCase(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gcdc_test_case.TestCase(
             name='name_value',
             tags=['tags_value'],
             display_name='display_name_value',
             notes='notes_value',
         ))
+
         response = await client.update_test_case(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == gcdc_test_case.UpdateTestCaseRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gcdc_test_case.TestCase)
+
     assert response.name == 'name_value'
+
     assert response.tags == ['tags_value']
+
     assert response.display_name == 'display_name_value'
+
     assert response.notes == 'notes_value'
 
 
@@ -1629,7 +1685,6 @@ def test_update_test_case_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gcdc_test_case.UpdateTestCaseRequest()
-
     request.test_case.name = 'test_case.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1637,6 +1692,7 @@ def test_update_test_case_field_headers():
             type(client.transport.update_test_case),
             '__call__') as call:
         call.return_value = gcdc_test_case.TestCase()
+
         client.update_test_case(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1661,7 +1717,6 @@ async def test_update_test_case_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gcdc_test_case.UpdateTestCaseRequest()
-
     request.test_case.name = 'test_case.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1669,6 +1724,7 @@ async def test_update_test_case_field_headers_async():
             type(client.transport.update_test_case),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gcdc_test_case.TestCase())
+
         await client.update_test_case(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1695,6 +1751,7 @@ def test_update_test_case_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gcdc_test_case.TestCase()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_test_case(
@@ -1706,7 +1763,9 @@ def test_update_test_case_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].test_case == gcdc_test_case.TestCase(name='name_value')
+
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -1750,7 +1809,9 @@ async def test_update_test_case_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].test_case == gcdc_test_case.TestCase(name='name_value')
+
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -1786,11 +1847,13 @@ def test_run_test_case(transport: str = 'grpc', request_type=test_case.RunTestCa
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
+
         response = client.run_test_case(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == test_case.RunTestCaseRequest()
 
     # Establish that the response is the type that we expect.
@@ -1816,8 +1879,8 @@ def test_run_test_case_empty_call():
         client.run_test_case()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == test_case.RunTestCaseRequest()
 
+        assert args[0] == test_case.RunTestCaseRequest()
 
 @pytest.mark.asyncio
 async def test_run_test_case_async(transport: str = 'grpc_asyncio', request_type=test_case.RunTestCaseRequest):
@@ -1838,11 +1901,13 @@ async def test_run_test_case_async(transport: str = 'grpc_asyncio', request_type
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
+
         response = await client.run_test_case(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == test_case.RunTestCaseRequest()
 
     # Establish that the response is the type that we expect.
@@ -1862,7 +1927,6 @@ def test_run_test_case_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = test_case.RunTestCaseRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1870,6 +1934,7 @@ def test_run_test_case_field_headers():
             type(client.transport.run_test_case),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         client.run_test_case(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1894,7 +1959,6 @@ async def test_run_test_case_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = test_case.RunTestCaseRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1902,6 +1966,7 @@ async def test_run_test_case_field_headers_async():
             type(client.transport.run_test_case),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
+
         await client.run_test_case(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1933,11 +1998,13 @@ def test_batch_run_test_cases(transport: str = 'grpc', request_type=test_case.Ba
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
+
         response = client.batch_run_test_cases(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == test_case.BatchRunTestCasesRequest()
 
     # Establish that the response is the type that we expect.
@@ -1963,8 +2030,8 @@ def test_batch_run_test_cases_empty_call():
         client.batch_run_test_cases()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == test_case.BatchRunTestCasesRequest()
 
+        assert args[0] == test_case.BatchRunTestCasesRequest()
 
 @pytest.mark.asyncio
 async def test_batch_run_test_cases_async(transport: str = 'grpc_asyncio', request_type=test_case.BatchRunTestCasesRequest):
@@ -1985,11 +2052,13 @@ async def test_batch_run_test_cases_async(transport: str = 'grpc_asyncio', reque
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
+
         response = await client.batch_run_test_cases(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == test_case.BatchRunTestCasesRequest()
 
     # Establish that the response is the type that we expect.
@@ -2009,7 +2078,6 @@ def test_batch_run_test_cases_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = test_case.BatchRunTestCasesRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2017,6 +2085,7 @@ def test_batch_run_test_cases_field_headers():
             type(client.transport.batch_run_test_cases),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         client.batch_run_test_cases(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2041,7 +2110,6 @@ async def test_batch_run_test_cases_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = test_case.BatchRunTestCasesRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2049,6 +2117,7 @@ async def test_batch_run_test_cases_field_headers_async():
             type(client.transport.batch_run_test_cases),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
+
         await client.batch_run_test_cases(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2081,17 +2150,22 @@ def test_calculate_coverage(transport: str = 'grpc', request_type=test_case.Calc
         # Designate an appropriate return value for the call.
         call.return_value = test_case.CalculateCoverageResponse(
             agent='agent_value',
+
             intent_coverage=test_case.IntentCoverage(intents=[test_case.IntentCoverage.Intent(intent='intent_value')]),
         )
+
         response = client.calculate_coverage(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == test_case.CalculateCoverageRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, test_case.CalculateCoverageResponse)
+
     assert response.agent == 'agent_value'
 
 
@@ -2114,8 +2188,8 @@ def test_calculate_coverage_empty_call():
         client.calculate_coverage()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == test_case.CalculateCoverageRequest()
 
+        assert args[0] == test_case.CalculateCoverageRequest()
 
 @pytest.mark.asyncio
 async def test_calculate_coverage_async(transport: str = 'grpc_asyncio', request_type=test_case.CalculateCoverageRequest):
@@ -2133,18 +2207,21 @@ async def test_calculate_coverage_async(transport: str = 'grpc_asyncio', request
             type(client.transport.calculate_coverage),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(test_case.CalculateCoverageResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(test_case.CalculateCoverageResponse(
             agent='agent_value',
         ))
+
         response = await client.calculate_coverage(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == test_case.CalculateCoverageRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, test_case.CalculateCoverageResponse)
+
     assert response.agent == 'agent_value'
 
 
@@ -2161,7 +2238,6 @@ def test_calculate_coverage_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = test_case.CalculateCoverageRequest()
-
     request.agent = 'agent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2169,6 +2245,7 @@ def test_calculate_coverage_field_headers():
             type(client.transport.calculate_coverage),
             '__call__') as call:
         call.return_value = test_case.CalculateCoverageResponse()
+
         client.calculate_coverage(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2193,7 +2270,6 @@ async def test_calculate_coverage_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = test_case.CalculateCoverageRequest()
-
     request.agent = 'agent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2201,6 +2277,7 @@ async def test_calculate_coverage_field_headers_async():
             type(client.transport.calculate_coverage),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(test_case.CalculateCoverageResponse())
+
         await client.calculate_coverage(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2232,11 +2309,13 @@ def test_import_test_cases(transport: str = 'grpc', request_type=test_case.Impor
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
+
         response = client.import_test_cases(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == test_case.ImportTestCasesRequest()
 
     # Establish that the response is the type that we expect.
@@ -2262,8 +2341,8 @@ def test_import_test_cases_empty_call():
         client.import_test_cases()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == test_case.ImportTestCasesRequest()
 
+        assert args[0] == test_case.ImportTestCasesRequest()
 
 @pytest.mark.asyncio
 async def test_import_test_cases_async(transport: str = 'grpc_asyncio', request_type=test_case.ImportTestCasesRequest):
@@ -2284,11 +2363,13 @@ async def test_import_test_cases_async(transport: str = 'grpc_asyncio', request_
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
+
         response = await client.import_test_cases(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == test_case.ImportTestCasesRequest()
 
     # Establish that the response is the type that we expect.
@@ -2308,7 +2389,6 @@ def test_import_test_cases_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = test_case.ImportTestCasesRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2316,6 +2396,7 @@ def test_import_test_cases_field_headers():
             type(client.transport.import_test_cases),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         client.import_test_cases(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2340,7 +2421,6 @@ async def test_import_test_cases_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = test_case.ImportTestCasesRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2348,6 +2428,7 @@ async def test_import_test_cases_field_headers_async():
             type(client.transport.import_test_cases),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
+
         await client.import_test_cases(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2379,11 +2460,13 @@ def test_export_test_cases(transport: str = 'grpc', request_type=test_case.Expor
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
+
         response = client.export_test_cases(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == test_case.ExportTestCasesRequest()
 
     # Establish that the response is the type that we expect.
@@ -2409,8 +2492,8 @@ def test_export_test_cases_empty_call():
         client.export_test_cases()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == test_case.ExportTestCasesRequest()
 
+        assert args[0] == test_case.ExportTestCasesRequest()
 
 @pytest.mark.asyncio
 async def test_export_test_cases_async(transport: str = 'grpc_asyncio', request_type=test_case.ExportTestCasesRequest):
@@ -2431,11 +2514,13 @@ async def test_export_test_cases_async(transport: str = 'grpc_asyncio', request_
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
+
         response = await client.export_test_cases(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == test_case.ExportTestCasesRequest()
 
     # Establish that the response is the type that we expect.
@@ -2455,7 +2540,6 @@ def test_export_test_cases_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = test_case.ExportTestCasesRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2463,6 +2547,7 @@ def test_export_test_cases_field_headers():
             type(client.transport.export_test_cases),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         client.export_test_cases(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2487,7 +2572,6 @@ async def test_export_test_cases_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = test_case.ExportTestCasesRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2495,6 +2579,7 @@ async def test_export_test_cases_field_headers_async():
             type(client.transport.export_test_cases),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
+
         await client.export_test_cases(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2527,16 +2612,21 @@ def test_list_test_case_results(transport: str = 'grpc', request_type=test_case.
         # Designate an appropriate return value for the call.
         call.return_value = test_case.ListTestCaseResultsResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.list_test_case_results(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == test_case.ListTestCaseResultsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListTestCaseResultsPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -2559,8 +2649,8 @@ def test_list_test_case_results_empty_call():
         client.list_test_case_results()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == test_case.ListTestCaseResultsRequest()
 
+        assert args[0] == test_case.ListTestCaseResultsRequest()
 
 @pytest.mark.asyncio
 async def test_list_test_case_results_async(transport: str = 'grpc_asyncio', request_type=test_case.ListTestCaseResultsRequest):
@@ -2578,18 +2668,21 @@ async def test_list_test_case_results_async(transport: str = 'grpc_asyncio', req
             type(client.transport.list_test_case_results),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(test_case.ListTestCaseResultsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(test_case.ListTestCaseResultsResponse(
             next_page_token='next_page_token_value',
         ))
+
         response = await client.list_test_case_results(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == test_case.ListTestCaseResultsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListTestCaseResultsAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -2606,7 +2699,6 @@ def test_list_test_case_results_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = test_case.ListTestCaseResultsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2614,6 +2706,7 @@ def test_list_test_case_results_field_headers():
             type(client.transport.list_test_case_results),
             '__call__') as call:
         call.return_value = test_case.ListTestCaseResultsResponse()
+
         client.list_test_case_results(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2638,7 +2731,6 @@ async def test_list_test_case_results_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = test_case.ListTestCaseResultsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2646,6 +2738,7 @@ async def test_list_test_case_results_field_headers_async():
             type(client.transport.list_test_case_results),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(test_case.ListTestCaseResultsResponse())
+
         await client.list_test_case_results(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2672,6 +2765,7 @@ def test_list_test_case_results_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = test_case.ListTestCaseResultsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_test_case_results(
@@ -2682,6 +2776,7 @@ def test_list_test_case_results_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -2723,6 +2818,7 @@ async def test_list_test_case_results_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -2927,6 +3023,7 @@ async def test_list_test_case_results_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_get_test_case_result(transport: str = 'grpc', request_type=test_case.GetTestCaseResultRequest):
     client = TestCasesClient(
         credentials=credentials.AnonymousCredentials(),
@@ -2944,20 +3041,29 @@ def test_get_test_case_result(transport: str = 'grpc', request_type=test_case.Ge
         # Designate an appropriate return value for the call.
         call.return_value = test_case.TestCaseResult(
             name='name_value',
+
             environment='environment_value',
+
             test_result=test_case.TestResult.PASSED,
+
         )
+
         response = client.get_test_case_result(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == test_case.GetTestCaseResultRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, test_case.TestCaseResult)
+
     assert response.name == 'name_value'
+
     assert response.environment == 'environment_value'
+
     assert response.test_result == test_case.TestResult.PASSED
 
 
@@ -2980,8 +3086,8 @@ def test_get_test_case_result_empty_call():
         client.get_test_case_result()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == test_case.GetTestCaseResultRequest()
 
+        assert args[0] == test_case.GetTestCaseResultRequest()
 
 @pytest.mark.asyncio
 async def test_get_test_case_result_async(transport: str = 'grpc_asyncio', request_type=test_case.GetTestCaseResultRequest):
@@ -2999,22 +3105,27 @@ async def test_get_test_case_result_async(transport: str = 'grpc_asyncio', reque
             type(client.transport.get_test_case_result),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(test_case.TestCaseResult(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(test_case.TestCaseResult(
             name='name_value',
             environment='environment_value',
             test_result=test_case.TestResult.PASSED,
         ))
+
         response = await client.get_test_case_result(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == test_case.GetTestCaseResultRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, test_case.TestCaseResult)
+
     assert response.name == 'name_value'
+
     assert response.environment == 'environment_value'
+
     assert response.test_result == test_case.TestResult.PASSED
 
 
@@ -3031,7 +3142,6 @@ def test_get_test_case_result_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = test_case.GetTestCaseResultRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3039,6 +3149,7 @@ def test_get_test_case_result_field_headers():
             type(client.transport.get_test_case_result),
             '__call__') as call:
         call.return_value = test_case.TestCaseResult()
+
         client.get_test_case_result(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3063,7 +3174,6 @@ async def test_get_test_case_result_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = test_case.GetTestCaseResultRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3071,6 +3181,7 @@ async def test_get_test_case_result_field_headers_async():
             type(client.transport.get_test_case_result),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(test_case.TestCaseResult())
+
         await client.get_test_case_result(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3097,6 +3208,7 @@ def test_get_test_case_result_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = test_case.TestCaseResult()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_test_case_result(
@@ -3107,6 +3219,7 @@ def test_get_test_case_result_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -3148,6 +3261,7 @@ async def test_get_test_case_result_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -3206,6 +3320,7 @@ def test_transport_instance():
     client = TestCasesClient(transport=transport)
     assert client.transport is transport
 
+
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.TestCasesGrpcTransport(
@@ -3220,6 +3335,7 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
+
 @pytest.mark.parametrize("transport_class", [
     transports.TestCasesGrpcTransport,
     transports.TestCasesGrpcAsyncIOTransport,
@@ -3231,6 +3347,7 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
+
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = TestCasesClient(
@@ -3240,6 +3357,7 @@ def test_transport_grpc_default():
         client.transport,
         transports.TestCasesGrpcTransport,
     )
+
 
 def test_test_cases_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -3273,7 +3391,7 @@ def test_test_cases_base_transport():
         'export_test_cases',
         'list_test_case_results',
         'get_test_case_result',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -3284,27 +3402,9 @@ def test_test_cases_base_transport():
         transport.operations_client
 
 
-@requires_google_auth_gte_1_25_0
 def test_test_cases_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.dialogflowcx_v3.services.test_cases.transports.TestCasesTransport._prep_wrapped_messages') as Transport:
-        Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
-        transport = transports.TestCasesTransport(
-            credentials_file="credentials.json",
-            quota_project_id="octopus",
-        )
-        load_creds.assert_called_once_with("credentials.json",
-            scopes=None,
-            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            'https://www.googleapis.com/auth/dialogflow',            ),
-            quota_project_id="octopus",
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_test_cases_base_transport_with_credentials_file_old_google_auth():
-    # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.dialogflowcx_v3.services.test_cases.transports.TestCasesTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.dialogflowcx_v3.services.test_cases.transports.TestCasesTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.TestCasesTransport(
@@ -3321,184 +3421,35 @@ def test_test_cases_base_transport_with_credentials_file_old_google_auth():
 
 def test_test_cases_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.dialogflowcx_v3.services.test_cases.transports.TestCasesTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.dialogflowcx_v3.services.test_cases.transports.TestCasesTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.TestCasesTransport()
         adc.assert_called_once()
 
 
-@requires_google_auth_gte_1_25_0
 def test_test_cases_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
+    with mock.patch.object(auth, 'default') as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         TestCasesClient()
-        adc.assert_called_once_with(
-            scopes=None,
-            default_scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-            'https://www.googleapis.com/auth/dialogflow',
-),
-
-            quota_project_id=None,
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_test_cases_auth_adc_old_google_auth():
-    # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        TestCasesClient()
-        adc.assert_called_once_with(
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/dialogflow',),
-            quota_project_id=None,
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.TestCasesGrpcTransport,
-        transports.TestCasesGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_gte_1_25_0
-def test_test_cases_transport_auth_adc(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-        adc.assert_called_once_with(
-            scopes=["1", "2"],
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/dialogflow',),
-            quota_project_id="octopus",
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.TestCasesGrpcTransport,
-        transports.TestCasesGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_lt_1_25_0
-def test_test_cases_transport_auth_adc_old_google_auth(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/cloud-platform',
-            'https://www.googleapis.com/auth/dialogflow',
-),
-            quota_project_id="octopus",
+            'https://www.googleapis.com/auth/dialogflow',),
+            quota_project_id=None,
         )
 
 
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.TestCasesGrpcTransport, grpc_helpers),
-        (transports.TestCasesGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_gte_1_26_0
-def test_test_cases_transport_create_channel(transport_class, grpc_helpers):
+def test_test_cases_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(
+    with mock.patch.object(auth, 'default') as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transports.TestCasesGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+            'https://www.googleapis.com/auth/dialogflow',),
             quota_project_id="octopus",
-            scopes=["1", "2"]
-        )
-
-        create_channel.assert_called_with(
-            "dialogflow.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/dialogflow',),
-            scopes=["1", "2"],
-            default_host="dialogflow.googleapis.com",
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.TestCasesGrpcTransport, grpc_helpers),
-        (transports.TestCasesGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_test_cases_transport_create_channel_old_api_core(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(quota_project_id="octopus")
-
-        create_channel.assert_called_with(
-            "dialogflow.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/dialogflow',),
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.TestCasesGrpcTransport, grpc_helpers),
-        (transports.TestCasesGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_test_cases_transport_create_channel_user_scopes(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-
-        create_channel.assert_called_with(
-            "dialogflow.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=["1", "2"],
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
         )
 
 
@@ -3561,6 +3512,7 @@ def test_test_cases_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='dialogflow.googleapis.com:8000'),
     )
     assert client.transport._host == 'dialogflow.googleapis.com:8000'
+
 
 def test_test_cases_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -3716,6 +3668,7 @@ def test_agent_path():
     project = "squid"
     location = "clam"
     agent = "whelk"
+
     expected = "projects/{project}/locations/{location}/agents/{agent}".format(project=project, location=location, agent=agent, )
     actual = TestCasesClient.agent_path(project, location, agent)
     assert expected == actual
@@ -3723,9 +3676,10 @@ def test_agent_path():
 
 def test_parse_agent_path():
     expected = {
-        "project": "octopus",
-        "location": "oyster",
-        "agent": "nudibranch",
+    "project": "octopus",
+    "location": "oyster",
+    "agent": "nudibranch",
+
     }
     path = TestCasesClient.agent_path(**expected)
 
@@ -3738,6 +3692,7 @@ def test_entity_type_path():
     location = "mussel"
     agent = "winkle"
     entity_type = "nautilus"
+
     expected = "projects/{project}/locations/{location}/agents/{agent}/entityTypes/{entity_type}".format(project=project, location=location, agent=agent, entity_type=entity_type, )
     actual = TestCasesClient.entity_type_path(project, location, agent, entity_type)
     assert expected == actual
@@ -3745,10 +3700,11 @@ def test_entity_type_path():
 
 def test_parse_entity_type_path():
     expected = {
-        "project": "scallop",
-        "location": "abalone",
-        "agent": "squid",
-        "entity_type": "clam",
+    "project": "scallop",
+    "location": "abalone",
+    "agent": "squid",
+    "entity_type": "clam",
+
     }
     path = TestCasesClient.entity_type_path(**expected)
 
@@ -3761,6 +3717,7 @@ def test_environment_path():
     location = "octopus"
     agent = "oyster"
     environment = "nudibranch"
+
     expected = "projects/{project}/locations/{location}/agents/{agent}/environments/{environment}".format(project=project, location=location, agent=agent, environment=environment, )
     actual = TestCasesClient.environment_path(project, location, agent, environment)
     assert expected == actual
@@ -3768,10 +3725,11 @@ def test_environment_path():
 
 def test_parse_environment_path():
     expected = {
-        "project": "cuttlefish",
-        "location": "mussel",
-        "agent": "winkle",
-        "environment": "nautilus",
+    "project": "cuttlefish",
+    "location": "mussel",
+    "agent": "winkle",
+    "environment": "nautilus",
+
     }
     path = TestCasesClient.environment_path(**expected)
 
@@ -3784,6 +3742,7 @@ def test_flow_path():
     location = "abalone"
     agent = "squid"
     flow = "clam"
+
     expected = "projects/{project}/locations/{location}/agents/{agent}/flows/{flow}".format(project=project, location=location, agent=agent, flow=flow, )
     actual = TestCasesClient.flow_path(project, location, agent, flow)
     assert expected == actual
@@ -3791,10 +3750,11 @@ def test_flow_path():
 
 def test_parse_flow_path():
     expected = {
-        "project": "whelk",
-        "location": "octopus",
-        "agent": "oyster",
-        "flow": "nudibranch",
+    "project": "whelk",
+    "location": "octopus",
+    "agent": "oyster",
+    "flow": "nudibranch",
+
     }
     path = TestCasesClient.flow_path(**expected)
 
@@ -3807,6 +3767,7 @@ def test_intent_path():
     location = "mussel"
     agent = "winkle"
     intent = "nautilus"
+
     expected = "projects/{project}/locations/{location}/agents/{agent}/intents/{intent}".format(project=project, location=location, agent=agent, intent=intent, )
     actual = TestCasesClient.intent_path(project, location, agent, intent)
     assert expected == actual
@@ -3814,10 +3775,11 @@ def test_intent_path():
 
 def test_parse_intent_path():
     expected = {
-        "project": "scallop",
-        "location": "abalone",
-        "agent": "squid",
-        "intent": "clam",
+    "project": "scallop",
+    "location": "abalone",
+    "agent": "squid",
+    "intent": "clam",
+
     }
     path = TestCasesClient.intent_path(**expected)
 
@@ -3831,6 +3793,7 @@ def test_page_path():
     agent = "oyster"
     flow = "nudibranch"
     page = "cuttlefish"
+
     expected = "projects/{project}/locations/{location}/agents/{agent}/flows/{flow}/pages/{page}".format(project=project, location=location, agent=agent, flow=flow, page=page, )
     actual = TestCasesClient.page_path(project, location, agent, flow, page)
     assert expected == actual
@@ -3838,11 +3801,12 @@ def test_page_path():
 
 def test_parse_page_path():
     expected = {
-        "project": "mussel",
-        "location": "winkle",
-        "agent": "nautilus",
-        "flow": "scallop",
-        "page": "abalone",
+    "project": "mussel",
+    "location": "winkle",
+    "agent": "nautilus",
+    "flow": "scallop",
+    "page": "abalone",
+
     }
     path = TestCasesClient.page_path(**expected)
 
@@ -3855,6 +3819,7 @@ def test_test_case_path():
     location = "clam"
     agent = "whelk"
     test_case = "octopus"
+
     expected = "projects/{project}/locations/{location}/agents/{agent}/testCases/{test_case}".format(project=project, location=location, agent=agent, test_case=test_case, )
     actual = TestCasesClient.test_case_path(project, location, agent, test_case)
     assert expected == actual
@@ -3862,10 +3827,11 @@ def test_test_case_path():
 
 def test_parse_test_case_path():
     expected = {
-        "project": "oyster",
-        "location": "nudibranch",
-        "agent": "cuttlefish",
-        "test_case": "mussel",
+    "project": "oyster",
+    "location": "nudibranch",
+    "agent": "cuttlefish",
+    "test_case": "mussel",
+
     }
     path = TestCasesClient.test_case_path(**expected)
 
@@ -3879,6 +3845,7 @@ def test_test_case_result_path():
     agent = "scallop"
     test_case = "abalone"
     result = "squid"
+
     expected = "projects/{project}/locations/{location}/agents/{agent}/testCases/{test_case}/results/{result}".format(project=project, location=location, agent=agent, test_case=test_case, result=result, )
     actual = TestCasesClient.test_case_result_path(project, location, agent, test_case, result)
     assert expected == actual
@@ -3886,11 +3853,12 @@ def test_test_case_result_path():
 
 def test_parse_test_case_result_path():
     expected = {
-        "project": "clam",
-        "location": "whelk",
-        "agent": "octopus",
-        "test_case": "oyster",
-        "result": "nudibranch",
+    "project": "clam",
+    "location": "whelk",
+    "agent": "octopus",
+    "test_case": "oyster",
+    "result": "nudibranch",
+
     }
     path = TestCasesClient.test_case_result_path(**expected)
 
@@ -3904,6 +3872,7 @@ def test_transition_route_group_path():
     agent = "winkle"
     flow = "nautilus"
     transition_route_group = "scallop"
+
     expected = "projects/{project}/locations/{location}/agents/{agent}/flows/{flow}/transitionRouteGroups/{transition_route_group}".format(project=project, location=location, agent=agent, flow=flow, transition_route_group=transition_route_group, )
     actual = TestCasesClient.transition_route_group_path(project, location, agent, flow, transition_route_group)
     assert expected == actual
@@ -3911,11 +3880,12 @@ def test_transition_route_group_path():
 
 def test_parse_transition_route_group_path():
     expected = {
-        "project": "abalone",
-        "location": "squid",
-        "agent": "clam",
-        "flow": "whelk",
-        "transition_route_group": "octopus",
+    "project": "abalone",
+    "location": "squid",
+    "agent": "clam",
+    "flow": "whelk",
+    "transition_route_group": "octopus",
+
     }
     path = TestCasesClient.transition_route_group_path(**expected)
 
@@ -3928,6 +3898,7 @@ def test_webhook_path():
     location = "nudibranch"
     agent = "cuttlefish"
     webhook = "mussel"
+
     expected = "projects/{project}/locations/{location}/agents/{agent}/webhooks/{webhook}".format(project=project, location=location, agent=agent, webhook=webhook, )
     actual = TestCasesClient.webhook_path(project, location, agent, webhook)
     assert expected == actual
@@ -3935,10 +3906,11 @@ def test_webhook_path():
 
 def test_parse_webhook_path():
     expected = {
-        "project": "winkle",
-        "location": "nautilus",
-        "agent": "scallop",
-        "webhook": "abalone",
+    "project": "winkle",
+    "location": "nautilus",
+    "agent": "scallop",
+    "webhook": "abalone",
+
     }
     path = TestCasesClient.webhook_path(**expected)
 
@@ -3948,6 +3920,7 @@ def test_parse_webhook_path():
 
 def test_common_billing_account_path():
     billing_account = "squid"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = TestCasesClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -3955,7 +3928,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "clam",
+    "billing_account": "clam",
+
     }
     path = TestCasesClient.common_billing_account_path(**expected)
 
@@ -3965,6 +3939,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "whelk"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = TestCasesClient.common_folder_path(folder)
     assert expected == actual
@@ -3972,7 +3947,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "octopus",
+    "folder": "octopus",
+
     }
     path = TestCasesClient.common_folder_path(**expected)
 
@@ -3982,6 +3958,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "oyster"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = TestCasesClient.common_organization_path(organization)
     assert expected == actual
@@ -3989,7 +3966,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nudibranch",
+    "organization": "nudibranch",
+
     }
     path = TestCasesClient.common_organization_path(**expected)
 
@@ -3999,6 +3977,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "cuttlefish"
+
     expected = "projects/{project}".format(project=project, )
     actual = TestCasesClient.common_project_path(project)
     assert expected == actual
@@ -4006,7 +3985,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "mussel",
+    "project": "mussel",
+
     }
     path = TestCasesClient.common_project_path(**expected)
 
@@ -4017,6 +3997,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "winkle"
     location = "nautilus"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = TestCasesClient.common_location_path(project, location)
     assert expected == actual
@@ -4024,8 +4005,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "scallop",
-        "location": "abalone",
+    "project": "scallop",
+    "location": "abalone",
+
     }
     path = TestCasesClient.common_location_path(**expected)
 

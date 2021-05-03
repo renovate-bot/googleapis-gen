@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -37,6 +39,7 @@ from google.cloud.dialogflowcx_v3.types import test_case
 from google.cloud.dialogflowcx_v3.types import test_case as gcdc_test_case
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+
 from .transports.base import TestCasesTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import TestCasesGrpcTransport
 from .transports.grpc_asyncio import TestCasesGrpcAsyncIOTransport
@@ -440,8 +443,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.ListTestCasesRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TestCases.ListTestCases][google.cloud.dialogflow.cx.v3.TestCases.ListTestCases].
             parent (str):
                 Required. The agent to list all pages for. Format:
@@ -450,6 +452,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -479,8 +482,10 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, test_case.ListTestCasesRequest):
             request = test_case.ListTestCasesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
 
@@ -528,8 +533,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.BatchDeleteTestCasesRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TestCases.BatchDeleteTestCases][google.cloud.dialogflow.cx.v3.TestCases.BatchDeleteTestCases].
             parent (str):
                 Required. The agent to delete test cases from. Format:
@@ -538,6 +542,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -558,8 +563,10 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, test_case.BatchDeleteTestCasesRequest):
             request = test_case.BatchDeleteTestCasesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
 
@@ -595,8 +602,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.GetTestCaseRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TestCases.GetTestCase][google.cloud.dialogflow.cx.v3.TestCases.GetTestCase].
             name (str):
                 Required. The name of the testcase. Format:
@@ -605,6 +611,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -629,8 +636,10 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, test_case.GetTestCaseRequest):
             request = test_case.GetTestCaseRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -670,8 +679,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.CreateTestCaseRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TestCases.CreateTestCase][google.cloud.dialogflow.cx.v3.TestCases.CreateTestCase].
             parent (str):
                 Required. The agent to create the test case for. Format:
@@ -685,6 +693,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
                 This corresponds to the ``test_case`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -709,8 +718,10 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcdc_test_case.CreateTestCaseRequest):
             request = gcdc_test_case.CreateTestCaseRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
             if test_case is not None:
@@ -752,8 +763,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.UpdateTestCaseRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TestCases.UpdateTestCase][google.cloud.dialogflow.cx.v3.TestCases.UpdateTestCase].
             test_case (google.cloud.dialogflowcx_v3.types.TestCase):
                 Required. The test case to update.
@@ -771,6 +781,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -795,8 +806,10 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcdc_test_case.UpdateTestCaseRequest):
             request = gcdc_test_case.UpdateTestCaseRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if test_case is not None:
                 request.test_case = test_case
             if update_mask is not None:
@@ -836,9 +849,9 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.RunTestCaseRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TestCases.RunTestCase][google.cloud.dialogflow.cx.v3.TestCases.RunTestCase].
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -856,6 +869,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a test_case.RunTestCaseRequest.
         # There's no risk of modifying the input as we've already verified
@@ -905,9 +919,9 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.BatchRunTestCasesRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TestCases.BatchRunTestCases][google.cloud.dialogflow.cx.v3.TestCases.BatchRunTestCases].
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -925,6 +939,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a test_case.BatchRunTestCasesRequest.
         # There's no risk of modifying the input as we've already verified
@@ -974,9 +989,9 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.CalculateCoverageRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TestCases.CalculateCoverage][google.cloud.dialogflow.cx.v3.TestCases.CalculateCoverage].
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -990,6 +1005,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a test_case.CalculateCoverageRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1034,9 +1050,9 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.ImportTestCasesRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TestCases.ImportTestCases][google.cloud.dialogflow.cx.v3.TestCases.ImportTestCases].
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1054,6 +1070,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a test_case.ImportTestCasesRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1105,9 +1122,9 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.ExportTestCasesRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TestCases.ExportTestCases][google.cloud.dialogflow.cx.v3.TestCases.ExportTestCases].
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1125,6 +1142,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a test_case.ExportTestCasesRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1175,8 +1193,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.ListTestCaseResultsRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TestCases.ListTestCaseResults][google.cloud.dialogflow.cx.v3.TestCases.ListTestCaseResults].
             parent (str):
                 Required. The test case to list results for. Format:
@@ -1187,6 +1204,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1216,8 +1234,10 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, test_case.ListTestCaseResultsRequest):
             request = test_case.ListTestCaseResultsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
 
@@ -1265,8 +1285,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.GetTestCaseResultRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TestCases.GetTestCaseResult][google.cloud.dialogflow.cx.v3.TestCases.GetTestCaseResult].
             name (str):
                 Required. The name of the testcase. Format:
@@ -1275,6 +1294,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1301,8 +1321,10 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, test_case.GetTestCaseResultRequest):
             request = test_case.GetTestCaseResultRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -1328,6 +1350,8 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
 
         # Done; return the response.
         return response
+
+
 
 
 

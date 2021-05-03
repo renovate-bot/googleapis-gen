@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -36,6 +38,7 @@ from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import struct_pb2 as struct  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+
 from .transports.base import VersionsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import VersionsGrpcAsyncIOTransport
 from .client import VersionsClient
@@ -53,14 +56,19 @@ class VersionsAsyncClient:
 
     version_path = staticmethod(VersionsClient.version_path)
     parse_version_path = staticmethod(VersionsClient.parse_version_path)
+
     common_billing_account_path = staticmethod(VersionsClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(VersionsClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(VersionsClient.common_folder_path)
     parse_common_folder_path = staticmethod(VersionsClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(VersionsClient.common_organization_path)
     parse_common_organization_path = staticmethod(VersionsClient.parse_common_organization_path)
+
     common_project_path = staticmethod(VersionsClient.common_project_path)
     parse_common_project_path = staticmethod(VersionsClient.parse_common_project_path)
+
     common_location_path = staticmethod(VersionsClient.common_location_path)
     parse_common_location_path = staticmethod(VersionsClient.parse_common_location_path)
 
@@ -145,6 +153,7 @@ class VersionsAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = VersionsClient(
             credentials=credentials,
             transport=transport,
@@ -166,8 +175,7 @@ class VersionsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.ListVersionsRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Versions.ListVersions][google.cloud.dialogflow.cx.v3.Versions.ListVersions].
             parent (:class:`str`):
                 Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow]
@@ -177,6 +185,7 @@ class VersionsAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -204,6 +213,7 @@ class VersionsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -256,8 +266,7 @@ class VersionsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.GetVersionRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Versions.GetVersion][google.cloud.dialogflow.cx.v3.Versions.GetVersion].
             name (:class:`str`):
                 Required. The name of the
@@ -268,6 +277,7 @@ class VersionsAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -290,6 +300,7 @@ class VersionsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -334,8 +345,7 @@ class VersionsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.CreateVersionRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Versions.CreateVersion][google.cloud.dialogflow.cx.v3.Versions.CreateVersion].
             parent (:class:`str`):
                 Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow]
@@ -352,6 +362,7 @@ class VersionsAsyncClient:
                 This corresponds to the ``version`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -379,6 +390,7 @@ class VersionsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if version is not None:
@@ -433,8 +445,7 @@ class VersionsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.UpdateVersionRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Versions.UpdateVersion][google.cloud.dialogflow.cx.v3.Versions.UpdateVersion].
             version (:class:`google.cloud.dialogflowcx_v3.types.Version`):
                 Required. The version to update.
@@ -449,6 +460,7 @@ class VersionsAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -471,6 +483,7 @@ class VersionsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if version is not None:
             request.version = version
         if update_mask is not None:
@@ -516,8 +529,7 @@ class VersionsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.DeleteVersionRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Versions.DeleteVersion][google.cloud.dialogflow.cx.v3.Versions.DeleteVersion].
             name (:class:`str`):
                 Required. The name of the
@@ -528,6 +540,7 @@ class VersionsAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -546,6 +559,7 @@ class VersionsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -586,8 +600,7 @@ class VersionsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.LoadVersionRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Versions.LoadVersion][google.cloud.dialogflow.cx.v3.Versions.LoadVersion].
             name (:class:`str`):
                 Required. The
@@ -598,6 +611,7 @@ class VersionsAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -635,6 +649,7 @@ class VersionsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -672,6 +687,8 @@ class VersionsAsyncClient:
 
         # Done; return the response.
         return response
+
+
 
 
 
