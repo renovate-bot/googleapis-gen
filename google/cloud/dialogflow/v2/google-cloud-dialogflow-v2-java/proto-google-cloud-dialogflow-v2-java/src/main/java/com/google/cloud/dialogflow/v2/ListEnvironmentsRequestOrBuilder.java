@@ -10,7 +10,9 @@ public interface ListEnvironmentsRequestOrBuilder extends
   /**
    * <pre>
    * Required. The agent to list all environments from.
-   * Format: `projects/&lt;Project ID&gt;/agent`.
+   * Format:
+   * - `projects/&lt;Project ID&gt;/agent`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -20,7 +22,9 @@ public interface ListEnvironmentsRequestOrBuilder extends
   /**
    * <pre>
    * Required. The agent to list all environments from.
-   * Format: `projects/&lt;Project ID&gt;/agent`.
+   * Format:
+   * - `projects/&lt;Project ID&gt;/agent`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent`
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

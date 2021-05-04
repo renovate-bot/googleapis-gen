@@ -31,6 +31,8 @@ from google.cloud.dialogflow_v2.services.entity_types.async_client import Entity
 from google.cloud.dialogflow_v2.services.entity_types.client import EntityTypesClient
 from google.cloud.dialogflow_v2.services.environments.async_client import EnvironmentsAsyncClient
 from google.cloud.dialogflow_v2.services.environments.client import EnvironmentsClient
+from google.cloud.dialogflow_v2.services.fulfillments.async_client import FulfillmentsAsyncClient
+from google.cloud.dialogflow_v2.services.fulfillments.client import FulfillmentsClient
 from google.cloud.dialogflow_v2.services.intents.async_client import IntentsAsyncClient
 from google.cloud.dialogflow_v2.services.intents.client import IntentsClient
 from google.cloud.dialogflow_v2.services.knowledge_bases.async_client import KnowledgeBasesAsyncClient
@@ -41,6 +43,8 @@ from google.cloud.dialogflow_v2.services.session_entity_types.async_client impor
 from google.cloud.dialogflow_v2.services.session_entity_types.client import SessionEntityTypesClient
 from google.cloud.dialogflow_v2.services.sessions.async_client import SessionsAsyncClient
 from google.cloud.dialogflow_v2.services.sessions.client import SessionsClient
+from google.cloud.dialogflow_v2.services.versions.async_client import VersionsAsyncClient
+from google.cloud.dialogflow_v2.services.versions.client import VersionsClient
 from google.cloud.dialogflow_v2.types.agent import Agent
 from google.cloud.dialogflow_v2.types.agent import DeleteAgentRequest
 from google.cloud.dialogflow_v2.types.agent import ExportAgentRequest
@@ -125,9 +129,19 @@ from google.cloud.dialogflow_v2.types.entity_type import GetEntityTypeRequest
 from google.cloud.dialogflow_v2.types.entity_type import ListEntityTypesRequest
 from google.cloud.dialogflow_v2.types.entity_type import ListEntityTypesResponse
 from google.cloud.dialogflow_v2.types.entity_type import UpdateEntityTypeRequest
+from google.cloud.dialogflow_v2.types.environment import CreateEnvironmentRequest
+from google.cloud.dialogflow_v2.types.environment import DeleteEnvironmentRequest
 from google.cloud.dialogflow_v2.types.environment import Environment
+from google.cloud.dialogflow_v2.types.environment import EnvironmentHistory
+from google.cloud.dialogflow_v2.types.environment import GetEnvironmentHistoryRequest
+from google.cloud.dialogflow_v2.types.environment import GetEnvironmentRequest
 from google.cloud.dialogflow_v2.types.environment import ListEnvironmentsRequest
 from google.cloud.dialogflow_v2.types.environment import ListEnvironmentsResponse
+from google.cloud.dialogflow_v2.types.environment import TextToSpeechSettings
+from google.cloud.dialogflow_v2.types.environment import UpdateEnvironmentRequest
+from google.cloud.dialogflow_v2.types.fulfillment import Fulfillment
+from google.cloud.dialogflow_v2.types.fulfillment import GetFulfillmentRequest
+from google.cloud.dialogflow_v2.types.fulfillment import UpdateFulfillmentRequest
 from google.cloud.dialogflow_v2.types.human_agent_assistant_event import HumanAgentAssistantEvent
 from google.cloud.dialogflow_v2.types.intent import BatchDeleteIntentsRequest
 from google.cloud.dialogflow_v2.types.intent import BatchUpdateIntentsRequest
@@ -191,6 +205,13 @@ from google.cloud.dialogflow_v2.types.session_entity_type import SessionEntityTy
 from google.cloud.dialogflow_v2.types.session_entity_type import UpdateSessionEntityTypeRequest
 from google.cloud.dialogflow_v2.types.validation_result import ValidationError
 from google.cloud.dialogflow_v2.types.validation_result import ValidationResult
+from google.cloud.dialogflow_v2.types.version import CreateVersionRequest
+from google.cloud.dialogflow_v2.types.version import DeleteVersionRequest
+from google.cloud.dialogflow_v2.types.version import GetVersionRequest
+from google.cloud.dialogflow_v2.types.version import ListVersionsRequest
+from google.cloud.dialogflow_v2.types.version import ListVersionsResponse
+from google.cloud.dialogflow_v2.types.version import UpdateVersionRequest
+from google.cloud.dialogflow_v2.types.version import Version
 from google.cloud.dialogflow_v2.types.webhook import OriginalDetectIntentRequest
 from google.cloud.dialogflow_v2.types.webhook import WebhookRequest
 from google.cloud.dialogflow_v2.types.webhook import WebhookResponse
@@ -238,19 +259,23 @@ __all__ = (
     'CreateConversationRequest',
     'CreateDocumentRequest',
     'CreateEntityTypeRequest',
+    'CreateEnvironmentRequest',
     'CreateIntentRequest',
     'CreateKnowledgeBaseRequest',
     'CreateParticipantRequest',
     'CreateSessionEntityTypeRequest',
+    'CreateVersionRequest',
     'DeleteAgentRequest',
     'DeleteAllContextsRequest',
     'DeleteContextRequest',
     'DeleteConversationProfileRequest',
     'DeleteDocumentRequest',
     'DeleteEntityTypeRequest',
+    'DeleteEnvironmentRequest',
     'DeleteIntentRequest',
     'DeleteKnowledgeBaseRequest',
     'DeleteSessionEntityTypeRequest',
+    'DeleteVersionRequest',
     'DetectIntentRequest',
     'DetectIntentResponse',
     'Document',
@@ -262,23 +287,31 @@ __all__ = (
     'EntityTypesAsyncClient',
     'EntityTypesClient',
     'Environment',
+    'EnvironmentHistory',
     'EnvironmentsAsyncClient',
     'EnvironmentsClient',
     'EventInput',
     'ExportAgentRequest',
     'ExportAgentResponse',
     'FaqAnswer',
+    'Fulfillment',
+    'FulfillmentsAsyncClient',
+    'FulfillmentsClient',
     'GetAgentRequest',
     'GetContextRequest',
     'GetConversationProfileRequest',
     'GetConversationRequest',
     'GetDocumentRequest',
     'GetEntityTypeRequest',
+    'GetEnvironmentHistoryRequest',
+    'GetEnvironmentRequest',
+    'GetFulfillmentRequest',
     'GetIntentRequest',
     'GetKnowledgeBaseRequest',
     'GetParticipantRequest',
     'GetSessionEntityTypeRequest',
     'GetValidationResultRequest',
+    'GetVersionRequest',
     'HumanAgentAssistantConfig',
     'HumanAgentAssistantEvent',
     'HumanAgentHandoffConfig',
@@ -317,6 +350,8 @@ __all__ = (
     'ListParticipantsResponse',
     'ListSessionEntityTypesRequest',
     'ListSessionEntityTypesResponse',
+    'ListVersionsRequest',
+    'ListVersionsResponse',
     'LoggingConfig',
     'Message',
     'MessageAnnotation',
@@ -360,18 +395,25 @@ __all__ = (
     'SuggestionResult',
     'SynthesizeSpeechConfig',
     'TextInput',
+    'TextToSpeechSettings',
     'TrainAgentRequest',
     'UpdateAnswerRecordRequest',
     'UpdateContextRequest',
     'UpdateConversationProfileRequest',
     'UpdateDocumentRequest',
     'UpdateEntityTypeRequest',
+    'UpdateEnvironmentRequest',
+    'UpdateFulfillmentRequest',
     'UpdateIntentRequest',
     'UpdateKnowledgeBaseRequest',
     'UpdateParticipantRequest',
     'UpdateSessionEntityTypeRequest',
+    'UpdateVersionRequest',
     'ValidationError',
     'ValidationResult',
+    'Version',
+    'VersionsAsyncClient',
+    'VersionsClient',
     'VoiceSelectionParams',
     'WebhookRequest',
     'WebhookResponse',

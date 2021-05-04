@@ -106,6 +106,32 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 58: {
+            com.google.cloud.dialogflow.v2.TextToSpeechSettings.Builder subBuilder = null;
+            if (textToSpeechSettings_ != null) {
+              subBuilder = textToSpeechSettings_.toBuilder();
+            }
+            textToSpeechSettings_ = input.readMessage(com.google.cloud.dialogflow.v2.TextToSpeechSettings.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(textToSpeechSettings_);
+              textToSpeechSettings_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 66: {
+            com.google.cloud.dialogflow.v2.Fulfillment.Builder subBuilder = null;
+            if (fulfillment_ != null) {
+              subBuilder = fulfillment_.toBuilder();
+            }
+            fulfillment_ = input.readMessage(com.google.cloud.dialogflow.v2.Fulfillment.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(fulfillment_);
+              fulfillment_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -309,8 +335,10 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. The unique identifier of this agent environment.
-   * Format: `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`.
-   * For Environment ID, "-" is reserved for 'draft' environment.
+   * Supported formats:
+   * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -332,8 +360,10 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. The unique identifier of this agent environment.
-   * Format: `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`.
-   * For Environment ID, "-" is reserved for 'draft' environment.
+   * Supported formats:
+   * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -407,7 +437,10 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. The agent version loaded into this environment.
-   * Format: `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`.
+   * Supported formats:
+   * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
+   *   ID&gt;`
    * </pre>
    *
    * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -429,7 +462,10 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. The agent version loaded into this environment.
-   * Format: `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`.
+   * Supported formats:
+   * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
+   * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
+   *   ID&gt;`
    * </pre>
    *
    * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -520,6 +556,82 @@ private static final long serialVersionUID = 0L;
     return getUpdateTime();
   }
 
+  public static final int TEXT_TO_SPEECH_SETTINGS_FIELD_NUMBER = 7;
+  private com.google.cloud.dialogflow.v2.TextToSpeechSettings textToSpeechSettings_;
+  /**
+   * <pre>
+   * Optional. Text to speech settings for this environment.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.TextToSpeechSettings text_to_speech_settings = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the textToSpeechSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasTextToSpeechSettings() {
+    return textToSpeechSettings_ != null;
+  }
+  /**
+   * <pre>
+   * Optional. Text to speech settings for this environment.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.TextToSpeechSettings text_to_speech_settings = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The textToSpeechSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.TextToSpeechSettings getTextToSpeechSettings() {
+    return textToSpeechSettings_ == null ? com.google.cloud.dialogflow.v2.TextToSpeechSettings.getDefaultInstance() : textToSpeechSettings_;
+  }
+  /**
+   * <pre>
+   * Optional. Text to speech settings for this environment.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.TextToSpeechSettings text_to_speech_settings = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.TextToSpeechSettingsOrBuilder getTextToSpeechSettingsOrBuilder() {
+    return getTextToSpeechSettings();
+  }
+
+  public static final int FULFILLMENT_FIELD_NUMBER = 8;
+  private com.google.cloud.dialogflow.v2.Fulfillment fulfillment_;
+  /**
+   * <pre>
+   * Optional. The fulfillment settings to use for this environment.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.Fulfillment fulfillment = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the fulfillment field is set.
+   */
+  @java.lang.Override
+  public boolean hasFulfillment() {
+    return fulfillment_ != null;
+  }
+  /**
+   * <pre>
+   * Optional. The fulfillment settings to use for this environment.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.Fulfillment fulfillment = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The fulfillment.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.Fulfillment getFulfillment() {
+    return fulfillment_ == null ? com.google.cloud.dialogflow.v2.Fulfillment.getDefaultInstance() : fulfillment_;
+  }
+  /**
+   * <pre>
+   * Optional. The fulfillment settings to use for this environment.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.Fulfillment fulfillment = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.FulfillmentOrBuilder getFulfillmentOrBuilder() {
+    return getFulfillment();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -549,6 +661,12 @@ private static final long serialVersionUID = 0L;
     if (updateTime_ != null) {
       output.writeMessage(5, getUpdateTime());
     }
+    if (textToSpeechSettings_ != null) {
+      output.writeMessage(7, getTextToSpeechSettings());
+    }
+    if (fulfillment_ != null) {
+      output.writeMessage(8, getFulfillment());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -574,6 +692,14 @@ private static final long serialVersionUID = 0L;
     if (updateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getUpdateTime());
+    }
+    if (textToSpeechSettings_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, getTextToSpeechSettings());
+    }
+    if (fulfillment_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, getFulfillment());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -602,6 +728,16 @@ private static final long serialVersionUID = 0L;
       if (!getUpdateTime()
           .equals(other.getUpdateTime())) return false;
     }
+    if (hasTextToSpeechSettings() != other.hasTextToSpeechSettings()) return false;
+    if (hasTextToSpeechSettings()) {
+      if (!getTextToSpeechSettings()
+          .equals(other.getTextToSpeechSettings())) return false;
+    }
+    if (hasFulfillment() != other.hasFulfillment()) return false;
+    if (hasFulfillment()) {
+      if (!getFulfillment()
+          .equals(other.getFulfillment())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -624,6 +760,14 @@ private static final long serialVersionUID = 0L;
     if (hasUpdateTime()) {
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
+    }
+    if (hasTextToSpeechSettings()) {
+      hash = (37 * hash) + TEXT_TO_SPEECH_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getTextToSpeechSettings().hashCode();
+    }
+    if (hasFulfillment()) {
+      hash = (37 * hash) + FULFILLMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getFulfillment().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -789,6 +933,18 @@ private static final long serialVersionUID = 0L;
         updateTime_ = null;
         updateTimeBuilder_ = null;
       }
+      if (textToSpeechSettingsBuilder_ == null) {
+        textToSpeechSettings_ = null;
+      } else {
+        textToSpeechSettings_ = null;
+        textToSpeechSettingsBuilder_ = null;
+      }
+      if (fulfillmentBuilder_ == null) {
+        fulfillment_ = null;
+      } else {
+        fulfillment_ = null;
+        fulfillmentBuilder_ = null;
+      }
       return this;
     }
 
@@ -823,6 +979,16 @@ private static final long serialVersionUID = 0L;
         result.updateTime_ = updateTime_;
       } else {
         result.updateTime_ = updateTimeBuilder_.build();
+      }
+      if (textToSpeechSettingsBuilder_ == null) {
+        result.textToSpeechSettings_ = textToSpeechSettings_;
+      } else {
+        result.textToSpeechSettings_ = textToSpeechSettingsBuilder_.build();
+      }
+      if (fulfillmentBuilder_ == null) {
+        result.fulfillment_ = fulfillment_;
+      } else {
+        result.fulfillment_ = fulfillmentBuilder_.build();
       }
       onBuilt();
       return result;
@@ -890,6 +1056,12 @@ private static final long serialVersionUID = 0L;
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
       }
+      if (other.hasTextToSpeechSettings()) {
+        mergeTextToSpeechSettings(other.getTextToSpeechSettings());
+      }
+      if (other.hasFulfillment()) {
+        mergeFulfillment(other.getFulfillment());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -923,8 +1095,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The unique identifier of this agent environment.
-     * Format: `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`.
-     * For Environment ID, "-" is reserved for 'draft' environment.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+     *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -945,8 +1119,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The unique identifier of this agent environment.
-     * Format: `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`.
-     * For Environment ID, "-" is reserved for 'draft' environment.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+     *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -968,8 +1144,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The unique identifier of this agent environment.
-     * Format: `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`.
-     * For Environment ID, "-" is reserved for 'draft' environment.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+     *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -989,8 +1167,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The unique identifier of this agent environment.
-     * Format: `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`.
-     * For Environment ID, "-" is reserved for 'draft' environment.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+     *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1005,8 +1185,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The unique identifier of this agent environment.
-     * Format: `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`.
-     * For Environment ID, "-" is reserved for 'draft' environment.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location
+     *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1130,7 +1312,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. The agent version loaded into this environment.
-     * Format: `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
+     *   ID&gt;`
      * </pre>
      *
      * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1151,7 +1336,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. The agent version loaded into this environment.
-     * Format: `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
+     *   ID&gt;`
      * </pre>
      *
      * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1173,7 +1361,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. The agent version loaded into this environment.
-     * Format: `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
+     *   ID&gt;`
      * </pre>
      *
      * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1193,7 +1384,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. The agent version loaded into this environment.
-     * Format: `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
+     *   ID&gt;`
      * </pre>
      *
      * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1208,7 +1402,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. The agent version loaded into this environment.
-     * Format: `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`.
+     * Supported formats:
+     * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
+     * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
+     *   ID&gt;`
      * </pre>
      *
      * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1468,6 +1665,316 @@ private static final long serialVersionUID = 0L;
         updateTime_ = null;
       }
       return updateTimeBuilder_;
+    }
+
+    private com.google.cloud.dialogflow.v2.TextToSpeechSettings textToSpeechSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.dialogflow.v2.TextToSpeechSettings, com.google.cloud.dialogflow.v2.TextToSpeechSettings.Builder, com.google.cloud.dialogflow.v2.TextToSpeechSettingsOrBuilder> textToSpeechSettingsBuilder_;
+    /**
+     * <pre>
+     * Optional. Text to speech settings for this environment.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.TextToSpeechSettings text_to_speech_settings = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the textToSpeechSettings field is set.
+     */
+    public boolean hasTextToSpeechSettings() {
+      return textToSpeechSettingsBuilder_ != null || textToSpeechSettings_ != null;
+    }
+    /**
+     * <pre>
+     * Optional. Text to speech settings for this environment.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.TextToSpeechSettings text_to_speech_settings = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The textToSpeechSettings.
+     */
+    public com.google.cloud.dialogflow.v2.TextToSpeechSettings getTextToSpeechSettings() {
+      if (textToSpeechSettingsBuilder_ == null) {
+        return textToSpeechSettings_ == null ? com.google.cloud.dialogflow.v2.TextToSpeechSettings.getDefaultInstance() : textToSpeechSettings_;
+      } else {
+        return textToSpeechSettingsBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Text to speech settings for this environment.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.TextToSpeechSettings text_to_speech_settings = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setTextToSpeechSettings(com.google.cloud.dialogflow.v2.TextToSpeechSettings value) {
+      if (textToSpeechSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        textToSpeechSettings_ = value;
+        onChanged();
+      } else {
+        textToSpeechSettingsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Text to speech settings for this environment.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.TextToSpeechSettings text_to_speech_settings = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setTextToSpeechSettings(
+        com.google.cloud.dialogflow.v2.TextToSpeechSettings.Builder builderForValue) {
+      if (textToSpeechSettingsBuilder_ == null) {
+        textToSpeechSettings_ = builderForValue.build();
+        onChanged();
+      } else {
+        textToSpeechSettingsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Text to speech settings for this environment.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.TextToSpeechSettings text_to_speech_settings = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder mergeTextToSpeechSettings(com.google.cloud.dialogflow.v2.TextToSpeechSettings value) {
+      if (textToSpeechSettingsBuilder_ == null) {
+        if (textToSpeechSettings_ != null) {
+          textToSpeechSettings_ =
+            com.google.cloud.dialogflow.v2.TextToSpeechSettings.newBuilder(textToSpeechSettings_).mergeFrom(value).buildPartial();
+        } else {
+          textToSpeechSettings_ = value;
+        }
+        onChanged();
+      } else {
+        textToSpeechSettingsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Text to speech settings for this environment.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.TextToSpeechSettings text_to_speech_settings = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder clearTextToSpeechSettings() {
+      if (textToSpeechSettingsBuilder_ == null) {
+        textToSpeechSettings_ = null;
+        onChanged();
+      } else {
+        textToSpeechSettings_ = null;
+        textToSpeechSettingsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Text to speech settings for this environment.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.TextToSpeechSettings text_to_speech_settings = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.cloud.dialogflow.v2.TextToSpeechSettings.Builder getTextToSpeechSettingsBuilder() {
+      
+      onChanged();
+      return getTextToSpeechSettingsFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Optional. Text to speech settings for this environment.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.TextToSpeechSettings text_to_speech_settings = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.cloud.dialogflow.v2.TextToSpeechSettingsOrBuilder getTextToSpeechSettingsOrBuilder() {
+      if (textToSpeechSettingsBuilder_ != null) {
+        return textToSpeechSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return textToSpeechSettings_ == null ?
+            com.google.cloud.dialogflow.v2.TextToSpeechSettings.getDefaultInstance() : textToSpeechSettings_;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Text to speech settings for this environment.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.TextToSpeechSettings text_to_speech_settings = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.dialogflow.v2.TextToSpeechSettings, com.google.cloud.dialogflow.v2.TextToSpeechSettings.Builder, com.google.cloud.dialogflow.v2.TextToSpeechSettingsOrBuilder> 
+        getTextToSpeechSettingsFieldBuilder() {
+      if (textToSpeechSettingsBuilder_ == null) {
+        textToSpeechSettingsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.TextToSpeechSettings, com.google.cloud.dialogflow.v2.TextToSpeechSettings.Builder, com.google.cloud.dialogflow.v2.TextToSpeechSettingsOrBuilder>(
+                getTextToSpeechSettings(),
+                getParentForChildren(),
+                isClean());
+        textToSpeechSettings_ = null;
+      }
+      return textToSpeechSettingsBuilder_;
+    }
+
+    private com.google.cloud.dialogflow.v2.Fulfillment fulfillment_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.dialogflow.v2.Fulfillment, com.google.cloud.dialogflow.v2.Fulfillment.Builder, com.google.cloud.dialogflow.v2.FulfillmentOrBuilder> fulfillmentBuilder_;
+    /**
+     * <pre>
+     * Optional. The fulfillment settings to use for this environment.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.Fulfillment fulfillment = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return Whether the fulfillment field is set.
+     */
+    public boolean hasFulfillment() {
+      return fulfillmentBuilder_ != null || fulfillment_ != null;
+    }
+    /**
+     * <pre>
+     * Optional. The fulfillment settings to use for this environment.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.Fulfillment fulfillment = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The fulfillment.
+     */
+    public com.google.cloud.dialogflow.v2.Fulfillment getFulfillment() {
+      if (fulfillmentBuilder_ == null) {
+        return fulfillment_ == null ? com.google.cloud.dialogflow.v2.Fulfillment.getDefaultInstance() : fulfillment_;
+      } else {
+        return fulfillmentBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Optional. The fulfillment settings to use for this environment.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.Fulfillment fulfillment = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setFulfillment(com.google.cloud.dialogflow.v2.Fulfillment value) {
+      if (fulfillmentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        fulfillment_ = value;
+        onChanged();
+      } else {
+        fulfillmentBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. The fulfillment settings to use for this environment.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.Fulfillment fulfillment = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setFulfillment(
+        com.google.cloud.dialogflow.v2.Fulfillment.Builder builderForValue) {
+      if (fulfillmentBuilder_ == null) {
+        fulfillment_ = builderForValue.build();
+        onChanged();
+      } else {
+        fulfillmentBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. The fulfillment settings to use for this environment.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.Fulfillment fulfillment = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder mergeFulfillment(com.google.cloud.dialogflow.v2.Fulfillment value) {
+      if (fulfillmentBuilder_ == null) {
+        if (fulfillment_ != null) {
+          fulfillment_ =
+            com.google.cloud.dialogflow.v2.Fulfillment.newBuilder(fulfillment_).mergeFrom(value).buildPartial();
+        } else {
+          fulfillment_ = value;
+        }
+        onChanged();
+      } else {
+        fulfillmentBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. The fulfillment settings to use for this environment.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.Fulfillment fulfillment = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder clearFulfillment() {
+      if (fulfillmentBuilder_ == null) {
+        fulfillment_ = null;
+        onChanged();
+      } else {
+        fulfillment_ = null;
+        fulfillmentBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. The fulfillment settings to use for this environment.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.Fulfillment fulfillment = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.cloud.dialogflow.v2.Fulfillment.Builder getFulfillmentBuilder() {
+      
+      onChanged();
+      return getFulfillmentFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Optional. The fulfillment settings to use for this environment.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.Fulfillment fulfillment = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.cloud.dialogflow.v2.FulfillmentOrBuilder getFulfillmentOrBuilder() {
+      if (fulfillmentBuilder_ != null) {
+        return fulfillmentBuilder_.getMessageOrBuilder();
+      } else {
+        return fulfillment_ == null ?
+            com.google.cloud.dialogflow.v2.Fulfillment.getDefaultInstance() : fulfillment_;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. The fulfillment settings to use for this environment.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2.Fulfillment fulfillment = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.dialogflow.v2.Fulfillment, com.google.cloud.dialogflow.v2.Fulfillment.Builder, com.google.cloud.dialogflow.v2.FulfillmentOrBuilder> 
+        getFulfillmentFieldBuilder() {
+      if (fulfillmentBuilder_ == null) {
+        fulfillmentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.Fulfillment, com.google.cloud.dialogflow.v2.Fulfillment.Builder, com.google.cloud.dialogflow.v2.FulfillmentOrBuilder>(
+                getFulfillment(),
+                getParentForChildren(),
+                isClean());
+        fulfillment_ = null;
+      }
+      return fulfillmentBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

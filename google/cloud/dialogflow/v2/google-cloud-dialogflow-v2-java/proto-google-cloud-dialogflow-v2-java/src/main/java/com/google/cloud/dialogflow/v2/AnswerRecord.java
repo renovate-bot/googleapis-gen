@@ -19,11 +19,9 @@ package com.google.cloud.dialogflow.v2;
  * agent assistant suggestion generated.
  * A typical workflow for customers provide feedback to an answer is:
  * 1. For human agent assistant, customers get suggestion via ListSuggestions
- *    API. Together with the answers,
- *    [AnswerRecord.name][google.cloud.dialogflow.v2.AnswerRecord.name] are
- *    returned to the customers.
- * 2. The customer uses the
- * [AnswerRecord.name][google.cloud.dialogflow.v2.AnswerRecord.name] to call the
+ *    API. Together with the answers, [AnswerRecord.name][google.cloud.dialogflow.v2.AnswerRecord.name] are returned to the
+ *    customers.
+ * 2. The customer uses the [AnswerRecord.name][google.cloud.dialogflow.v2.AnswerRecord.name] to call the
  *    [UpdateAnswerRecord][] method to send feedback about a specific answer
  *    that they believe is wrong.
  * </pre>
@@ -232,8 +230,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The AnswerFeedback for this record. You can set this with
-   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord]
-   * in order to give us feedback about this answer.
+   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
+   * this answer.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.AnswerFeedback answer_feedback = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -246,8 +244,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The AnswerFeedback for this record. You can set this with
-   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord]
-   * in order to give us feedback about this answer.
+   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
+   * this answer.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.AnswerFeedback answer_feedback = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -260,8 +258,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The AnswerFeedback for this record. You can set this with
-   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord]
-   * in order to give us feedback about this answer.
+   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
+   * this answer.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.AnswerFeedback answer_feedback = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -524,11 +522,9 @@ private static final long serialVersionUID = 0L;
    * agent assistant suggestion generated.
    * A typical workflow for customers provide feedback to an answer is:
    * 1. For human agent assistant, customers get suggestion via ListSuggestions
-   *    API. Together with the answers,
-   *    [AnswerRecord.name][google.cloud.dialogflow.v2.AnswerRecord.name] are
-   *    returned to the customers.
-   * 2. The customer uses the
-   * [AnswerRecord.name][google.cloud.dialogflow.v2.AnswerRecord.name] to call the
+   *    API. Together with the answers, [AnswerRecord.name][google.cloud.dialogflow.v2.AnswerRecord.name] are returned to the
+   *    customers.
+   * 2. The customer uses the [AnswerRecord.name][google.cloud.dialogflow.v2.AnswerRecord.name] to call the
    *    [UpdateAnswerRecord][] method to send feedback about a specific answer
    *    that they believe is wrong.
    * </pre>
@@ -840,8 +836,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The AnswerFeedback for this record. You can set this with
-     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord]
-     * in order to give us feedback about this answer.
+     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
+     * this answer.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.AnswerFeedback answer_feedback = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -853,8 +849,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The AnswerFeedback for this record. You can set this with
-     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord]
-     * in order to give us feedback about this answer.
+     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
+     * this answer.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.AnswerFeedback answer_feedback = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -870,8 +866,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The AnswerFeedback for this record. You can set this with
-     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord]
-     * in order to give us feedback about this answer.
+     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
+     * this answer.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.AnswerFeedback answer_feedback = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -892,8 +888,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The AnswerFeedback for this record. You can set this with
-     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord]
-     * in order to give us feedback about this answer.
+     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
+     * this answer.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.AnswerFeedback answer_feedback = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -912,8 +908,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The AnswerFeedback for this record. You can set this with
-     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord]
-     * in order to give us feedback about this answer.
+     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
+     * this answer.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.AnswerFeedback answer_feedback = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -936,8 +932,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The AnswerFeedback for this record. You can set this with
-     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord]
-     * in order to give us feedback about this answer.
+     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
+     * this answer.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.AnswerFeedback answer_feedback = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -956,8 +952,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The AnswerFeedback for this record. You can set this with
-     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord]
-     * in order to give us feedback about this answer.
+     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
+     * this answer.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.AnswerFeedback answer_feedback = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -970,8 +966,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The AnswerFeedback for this record. You can set this with
-     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord]
-     * in order to give us feedback about this answer.
+     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
+     * this answer.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.AnswerFeedback answer_feedback = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -987,8 +983,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The AnswerFeedback for this record. You can set this with
-     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord]
-     * in order to give us feedback about this answer.
+     * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
+     * this answer.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.AnswerFeedback answer_feedback = 2 [(.google.api.field_behavior) = REQUIRED];</code>

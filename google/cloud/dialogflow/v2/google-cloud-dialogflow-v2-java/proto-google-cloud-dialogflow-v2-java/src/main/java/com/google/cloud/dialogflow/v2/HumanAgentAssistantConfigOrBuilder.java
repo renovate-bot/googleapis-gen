@@ -64,6 +64,8 @@ public interface HumanAgentAssistantConfigOrBuilder extends
   /**
    * <pre>
    * Configuration for agent assistance of end user participant.
+   * Currently, this feature is not general available, please contact Google
+   * to get access.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig end_user_suggestion_config = 4;</code>
@@ -73,6 +75,8 @@ public interface HumanAgentAssistantConfigOrBuilder extends
   /**
    * <pre>
    * Configuration for agent assistance of end user participant.
+   * Currently, this feature is not general available, please contact Google
+   * to get access.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig end_user_suggestion_config = 4;</code>
@@ -82,6 +86,8 @@ public interface HumanAgentAssistantConfigOrBuilder extends
   /**
    * <pre>
    * Configuration for agent assistance of end user participant.
+   * Currently, this feature is not general available, please contact Google
+   * to get access.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig end_user_suggestion_config = 4;</code>

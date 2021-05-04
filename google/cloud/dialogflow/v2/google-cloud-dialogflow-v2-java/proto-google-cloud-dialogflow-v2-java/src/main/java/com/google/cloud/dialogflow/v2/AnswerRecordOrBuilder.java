@@ -34,8 +34,8 @@ public interface AnswerRecordOrBuilder extends
   /**
    * <pre>
    * Required. The AnswerFeedback for this record. You can set this with
-   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord]
-   * in order to give us feedback about this answer.
+   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
+   * this answer.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.AnswerFeedback answer_feedback = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -45,8 +45,8 @@ public interface AnswerRecordOrBuilder extends
   /**
    * <pre>
    * Required. The AnswerFeedback for this record. You can set this with
-   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord]
-   * in order to give us feedback about this answer.
+   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
+   * this answer.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.AnswerFeedback answer_feedback = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -56,8 +56,8 @@ public interface AnswerRecordOrBuilder extends
   /**
    * <pre>
    * Required. The AnswerFeedback for this record. You can set this with
-   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord]
-   * in order to give us feedback about this answer.
+   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
+   * this answer.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.AnswerFeedback answer_feedback = 2 [(.google.api.field_behavior) = REQUIRED];</code>
