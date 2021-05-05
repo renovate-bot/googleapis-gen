@@ -81,12 +81,31 @@ module Google
         # @!attribute [r] final_measurement
         #   @return [::Google::Cloud::Aiplatform::V1beta1::Measurement]
         #     Output only. The final measurement containing the objective value.
+        # @!attribute [r] measurements
+        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::Measurement>]
+        #     Output only. A list of measurements that are strictly lexicographically
+        #     ordered by their induced tuples (steps, elapsed_duration).
+        #     These are used for early stopping computations.
         # @!attribute [r] start_time
         #   @return [::Google::Protobuf::Timestamp]
         #     Output only. Time when the Trial was started.
         # @!attribute [r] end_time
         #   @return [::Google::Protobuf::Timestamp]
         #     Output only. Time when the Trial's status changed to `SUCCEEDED` or `INFEASIBLE`.
+        # @!attribute [r] client_id
+        #   @return [::String]
+        #     Output only. The identifier of the client that originally requested this Trial.
+        #     Each client is identified by a unique client_id. When a client
+        #     asks for a suggestion, Vizier will assign it a Trial. The client should
+        #     evaluate the Trial, complete it, and report back to Vizier.
+        #     If suggestion is asked again by same client_id before the Trial is
+        #     completed, the same Trial will be returned. Multiple clients with
+        #     different client_ids can ask for suggestions simultaneously, each of them
+        #     will get their own Trial.
+        # @!attribute [r] infeasible_reason
+        #   @return [::String]
+        #     Output only. A human readable string describing why the Trial is
+        #     infeasible. This is set only if Trial state is `INFEASIBLE`.
         # @!attribute [r] custom_job
         #   @return [::String]
         #     Output only. The CustomJob name linked to the Trial.
@@ -351,7 +370,7 @@ module Google
           # low probability to exceed the optimal value found so far.
           # @!attribute [rw] use_elapsed_duration
           #   @return [::Boolean]
-          #     True if [Measurement.elapsed_duration][google.cloud.aiplatform.v1beta1.Measurement.elapsed_duration] is used as the x-axis of each
+          #     True if {::Google::Cloud::Aiplatform::V1beta1::Measurement#elapsed_duration Measurement.elapsed_duration} is used as the x-axis of each
           #     Trials Decay Curve. Otherwise, {::Google::Cloud::Aiplatform::V1beta1::Measurement#step_count Measurement.step_count} will be used
           #     as the x-axis.
           class DecayCurveAutomatedStoppingSpec
@@ -367,7 +386,7 @@ module Google
           # @!attribute [rw] use_elapsed_duration
           #   @return [::Boolean]
           #     True if median automated stopping rule applies on
-          #     [Measurement.elapsed_duration][google.cloud.aiplatform.v1beta1.Measurement.elapsed_duration]. It means that elapsed_duration
+          #     {::Google::Cloud::Aiplatform::V1beta1::Measurement#elapsed_duration Measurement.elapsed_duration}. It means that elapsed_duration
           #     field of latest measurement of current Trial is used to compute median
           #     objective value for each completed Trials.
           class MedianAutomatedStoppingSpec
@@ -474,6 +493,9 @@ module Google
         # A message representing a Measurement of a Trial. A Measurement contains
         # the Metrics got by executing a Trial using suggested hyperparameter
         # values.
+        # @!attribute [r] elapsed_duration
+        #   @return [::Google::Protobuf::Duration]
+        #     Output only. Time that the Trial has been running at the point of this Measurement.
         # @!attribute [r] step_count
         #   @return [::Integer]
         #     Output only. The number of steps the machine learning model has been trained for.

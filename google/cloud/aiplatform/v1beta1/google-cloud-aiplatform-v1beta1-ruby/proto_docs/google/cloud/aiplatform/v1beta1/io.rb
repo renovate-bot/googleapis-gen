@@ -21,6 +21,24 @@ module Google
   module Cloud
     module Aiplatform
       module V1beta1
+        # The storage details for Avro input content.
+        # @!attribute [rw] gcs_source
+        #   @return [::Google::Cloud::Aiplatform::V1beta1::GcsSource]
+        #     Required. Google Cloud Storage location.
+        class AvroSource
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # The storage details for CSV input content.
+        # @!attribute [rw] gcs_source
+        #   @return [::Google::Cloud::Aiplatform::V1beta1::GcsSource]
+        #     Required. Google Cloud Storage location.
+        class CsvSource
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
         # The Google Cloud Storage location for the input content.
         # @!attribute [rw] uris
         #   @return [::Array<::String>]
@@ -69,6 +87,24 @@ module Google
         #     *  BigQuery path. For example:
         #     `bq://projectId` or `bq://projectId.bqDatasetId.bqTableId`.
         class BigQueryDestination
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # The storage details for CSV output content.
+        # @!attribute [rw] gcs_destination
+        #   @return [::Google::Cloud::Aiplatform::V1beta1::GcsDestination]
+        #     Required. Google Cloud Storage location.
+        class CsvDestination
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # The storage details for TFRecord output content.
+        # @!attribute [rw] gcs_destination
+        #   @return [::Google::Cloud::Aiplatform::V1beta1::GcsDestination]
+        #     Required. Google Cloud Storage location.
+        class TFRecordDestination
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end

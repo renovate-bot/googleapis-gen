@@ -57,7 +57,7 @@ class Visualization extends \Google\Protobuf\Internal\Message
     protected $clip_percent_upperbound = 0.0;
     /**
      * Excludes attributions below the specified percentile, from the
-     * highlighted areas. Defaults to 35.
+     * highlighted areas. Defaults to 62.
      *
      * Generated from protobuf field <code>float clip_percent_lowerbound = 5;</code>
      */
@@ -103,7 +103,7 @@ class Visualization extends \Google\Protobuf\Internal\Message
      *           99.9.
      *     @type float $clip_percent_lowerbound
      *           Excludes attributions below the specified percentile, from the
-     *           highlighted areas. Defaults to 35.
+     *           highlighted areas. Defaults to 62.
      *     @type int $overlay_type
      *           How the original image is displayed in the visualization.
      *           Adjusting the overlay can help increase visual clarity if the original
@@ -253,7 +253,7 @@ class Visualization extends \Google\Protobuf\Internal\Message
 
     /**
      * Excludes attributions below the specified percentile, from the
-     * highlighted areas. Defaults to 35.
+     * highlighted areas. Defaults to 62.
      *
      * Generated from protobuf field <code>float clip_percent_lowerbound = 5;</code>
      * @return float
@@ -265,7 +265,7 @@ class Visualization extends \Google\Protobuf\Internal\Message
 
     /**
      * Excludes attributions below the specified percentile, from the
-     * highlighted areas. Defaults to 35.
+     * highlighted areas. Defaults to 62.
      *
      * Generated from protobuf field <code>float clip_percent_lowerbound = 5;</code>
      * @param float $var

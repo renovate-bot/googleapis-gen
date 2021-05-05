@@ -3,7 +3,7 @@
         "google.cloud.aiplatform.v1beta1.ModelService": {
             "retry_codes": {
                 "no_retry_codes": [],
-                "no_retry_4_codes": []
+                "no_retry_8_codes": []
             },
             "retry_params": {
                 "no_retry_params": {
@@ -15,7 +15,7 @@
                     "max_rpc_timeout_millis": 0,
                     "total_timeout_millis": 0
                 },
-                "no_retry_4_params": {
+                "no_retry_8_params": {
                     "initial_retry_delay_millis": 0,
                     "retry_delay_multiplier": 0.0,
                     "max_retry_delay_millis": 0,
@@ -28,53 +28,53 @@
             "methods": {
                 "DeleteModel": {
                     "timeout_millis": 5000,
-                    "retry_codes_name": "no_retry_4_codes",
-                    "retry_params_name": "no_retry_4_params"
+                    "retry_codes_name": "no_retry_8_codes",
+                    "retry_params_name": "no_retry_8_params"
                 },
                 "ExportModel": {
                     "timeout_millis": 5000,
-                    "retry_codes_name": "no_retry_4_codes",
-                    "retry_params_name": "no_retry_4_params"
+                    "retry_codes_name": "no_retry_8_codes",
+                    "retry_params_name": "no_retry_8_params"
                 },
                 "GetModel": {
                     "timeout_millis": 5000,
-                    "retry_codes_name": "no_retry_4_codes",
-                    "retry_params_name": "no_retry_4_params"
+                    "retry_codes_name": "no_retry_8_codes",
+                    "retry_params_name": "no_retry_8_params"
                 },
                 "GetModelEvaluation": {
                     "timeout_millis": 5000,
-                    "retry_codes_name": "no_retry_4_codes",
-                    "retry_params_name": "no_retry_4_params"
+                    "retry_codes_name": "no_retry_8_codes",
+                    "retry_params_name": "no_retry_8_params"
                 },
                 "GetModelEvaluationSlice": {
                     "timeout_millis": 5000,
-                    "retry_codes_name": "no_retry_4_codes",
-                    "retry_params_name": "no_retry_4_params"
+                    "retry_codes_name": "no_retry_8_codes",
+                    "retry_params_name": "no_retry_8_params"
                 },
                 "ListModelEvaluationSlices": {
                     "timeout_millis": 5000,
-                    "retry_codes_name": "no_retry_4_codes",
-                    "retry_params_name": "no_retry_4_params"
+                    "retry_codes_name": "no_retry_8_codes",
+                    "retry_params_name": "no_retry_8_params"
                 },
                 "ListModelEvaluations": {
                     "timeout_millis": 5000,
-                    "retry_codes_name": "no_retry_4_codes",
-                    "retry_params_name": "no_retry_4_params"
+                    "retry_codes_name": "no_retry_8_codes",
+                    "retry_params_name": "no_retry_8_params"
                 },
                 "ListModels": {
                     "timeout_millis": 5000,
-                    "retry_codes_name": "no_retry_4_codes",
-                    "retry_params_name": "no_retry_4_params"
+                    "retry_codes_name": "no_retry_8_codes",
+                    "retry_params_name": "no_retry_8_params"
                 },
                 "UpdateModel": {
                     "timeout_millis": 5000,
-                    "retry_codes_name": "no_retry_4_codes",
-                    "retry_params_name": "no_retry_4_params"
+                    "retry_codes_name": "no_retry_8_codes",
+                    "retry_params_name": "no_retry_8_params"
                 },
                 "UploadModel": {
                     "timeout_millis": 5000,
-                    "retry_codes_name": "no_retry_4_codes",
-                    "retry_params_name": "no_retry_4_params"
+                    "retry_codes_name": "no_retry_8_codes",
+                    "retry_params_name": "no_retry_8_params"
                 }
             }
         }

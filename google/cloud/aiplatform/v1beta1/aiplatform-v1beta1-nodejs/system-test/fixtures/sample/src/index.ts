@@ -16,7 +16,7 @@
 // ** https://github.com/googleapis/gapic-generator-typescript **
 // ** All changes to this file may be overwritten. **
 
-import {DatasetServiceClient, EndpointServiceClient, JobServiceClient, MigrationServiceClient, ModelServiceClient, PipelineServiceClient, PredictionServiceClient, SpecialistPoolServiceClient, VizierServiceClient} from '@google-cloud/aiplatform';
+import {DatasetServiceClient, EndpointServiceClient, FeaturestoreOnlineServingServiceClient, FeaturestoreServiceClient, IndexEndpointServiceClient, IndexServiceClient, JobServiceClient, MetadataServiceClient, MigrationServiceClient, ModelServiceClient, PipelineServiceClient, PredictionServiceClient, SpecialistPoolServiceClient, TensorboardServiceClient, VizierServiceClient} from '@google-cloud/aiplatform';
 
 // check that the client class type name can be used
 function doStuffWithDatasetServiceClient(client: DatasetServiceClient) {
@@ -25,7 +25,22 @@ function doStuffWithDatasetServiceClient(client: DatasetServiceClient) {
 function doStuffWithEndpointServiceClient(client: EndpointServiceClient) {
   client.close();
 }
+function doStuffWithFeaturestoreOnlineServingServiceClient(client: FeaturestoreOnlineServingServiceClient) {
+  client.close();
+}
+function doStuffWithFeaturestoreServiceClient(client: FeaturestoreServiceClient) {
+  client.close();
+}
+function doStuffWithIndexEndpointServiceClient(client: IndexEndpointServiceClient) {
+  client.close();
+}
+function doStuffWithIndexServiceClient(client: IndexServiceClient) {
+  client.close();
+}
 function doStuffWithJobServiceClient(client: JobServiceClient) {
+  client.close();
+}
+function doStuffWithMetadataServiceClient(client: MetadataServiceClient) {
   client.close();
 }
 function doStuffWithMigrationServiceClient(client: MigrationServiceClient) {
@@ -43,6 +58,9 @@ function doStuffWithPredictionServiceClient(client: PredictionServiceClient) {
 function doStuffWithSpecialistPoolServiceClient(client: SpecialistPoolServiceClient) {
   client.close();
 }
+function doStuffWithTensorboardServiceClient(client: TensorboardServiceClient) {
+  client.close();
+}
 function doStuffWithVizierServiceClient(client: VizierServiceClient) {
   client.close();
 }
@@ -55,8 +73,23 @@ function main() {
   const endpointServiceClient = new EndpointServiceClient();
   doStuffWithEndpointServiceClient(endpointServiceClient);
   // check that the client instance can be created
+  const featurestoreOnlineServingServiceClient = new FeaturestoreOnlineServingServiceClient();
+  doStuffWithFeaturestoreOnlineServingServiceClient(featurestoreOnlineServingServiceClient);
+  // check that the client instance can be created
+  const featurestoreServiceClient = new FeaturestoreServiceClient();
+  doStuffWithFeaturestoreServiceClient(featurestoreServiceClient);
+  // check that the client instance can be created
+  const indexEndpointServiceClient = new IndexEndpointServiceClient();
+  doStuffWithIndexEndpointServiceClient(indexEndpointServiceClient);
+  // check that the client instance can be created
+  const indexServiceClient = new IndexServiceClient();
+  doStuffWithIndexServiceClient(indexServiceClient);
+  // check that the client instance can be created
   const jobServiceClient = new JobServiceClient();
   doStuffWithJobServiceClient(jobServiceClient);
+  // check that the client instance can be created
+  const metadataServiceClient = new MetadataServiceClient();
+  doStuffWithMetadataServiceClient(metadataServiceClient);
   // check that the client instance can be created
   const migrationServiceClient = new MigrationServiceClient();
   doStuffWithMigrationServiceClient(migrationServiceClient);
@@ -72,6 +105,9 @@ function main() {
   // check that the client instance can be created
   const specialistPoolServiceClient = new SpecialistPoolServiceClient();
   doStuffWithSpecialistPoolServiceClient(specialistPoolServiceClient);
+  // check that the client instance can be created
+  const tensorboardServiceClient = new TensorboardServiceClient();
+  doStuffWithTensorboardServiceClient(tensorboardServiceClient);
   // check that the client instance can be created
   const vizierServiceClient = new VizierServiceClient();
   doStuffWithVizierServiceClient(vizierServiceClient);

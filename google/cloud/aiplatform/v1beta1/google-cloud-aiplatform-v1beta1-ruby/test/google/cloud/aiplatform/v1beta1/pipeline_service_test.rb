@@ -357,6 +357,316 @@ class ::Google::Cloud::Aiplatform::V1beta1::PipelineService::ClientTest < Minite
     end
   end
 
+  def test_create_pipeline_job
+    # Create GRPC objects.
+    grpc_response = ::Google::Cloud::Aiplatform::V1beta1::PipelineJob.new
+    grpc_operation = GRPC::ActiveCall::Operation.new nil
+    grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    grpc_options = {}
+
+    # Create request parameters for a unary method.
+    parent = "hello world"
+    pipeline_job = {}
+    pipeline_job_id = "hello world"
+
+    create_pipeline_job_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
+      assert_equal :create_pipeline_job, name
+      assert_kind_of ::Google::Cloud::Aiplatform::V1beta1::CreatePipelineJobRequest, request
+      assert_equal "hello world", request["parent"]
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Aiplatform::V1beta1::PipelineJob), request["pipeline_job"]
+      assert_equal "hello world", request["pipeline_job_id"]
+      refute_nil options
+    end
+
+    Gapic::ServiceStub.stub :new, create_pipeline_job_client_stub do
+      # Create client
+      client = ::Google::Cloud::Aiplatform::V1beta1::PipelineService::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      # Use hash object
+      client.create_pipeline_job({ parent: parent, pipeline_job: pipeline_job, pipeline_job_id: pipeline_job_id }) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use named arguments
+      client.create_pipeline_job parent: parent, pipeline_job: pipeline_job, pipeline_job_id: pipeline_job_id do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object
+      client.create_pipeline_job ::Google::Cloud::Aiplatform::V1beta1::CreatePipelineJobRequest.new(parent: parent, pipeline_job: pipeline_job, pipeline_job_id: pipeline_job_id) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use hash object with options
+      client.create_pipeline_job({ parent: parent, pipeline_job: pipeline_job, pipeline_job_id: pipeline_job_id }, grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object with options
+      client.create_pipeline_job(::Google::Cloud::Aiplatform::V1beta1::CreatePipelineJobRequest.new(parent: parent, pipeline_job: pipeline_job, pipeline_job_id: pipeline_job_id), grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Verify method calls
+      assert_equal 5, create_pipeline_job_client_stub.call_rpc_count
+    end
+  end
+
+  def test_get_pipeline_job
+    # Create GRPC objects.
+    grpc_response = ::Google::Cloud::Aiplatform::V1beta1::PipelineJob.new
+    grpc_operation = GRPC::ActiveCall::Operation.new nil
+    grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    grpc_options = {}
+
+    # Create request parameters for a unary method.
+    name = "hello world"
+
+    get_pipeline_job_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
+      assert_equal :get_pipeline_job, name
+      assert_kind_of ::Google::Cloud::Aiplatform::V1beta1::GetPipelineJobRequest, request
+      assert_equal "hello world", request["name"]
+      refute_nil options
+    end
+
+    Gapic::ServiceStub.stub :new, get_pipeline_job_client_stub do
+      # Create client
+      client = ::Google::Cloud::Aiplatform::V1beta1::PipelineService::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      # Use hash object
+      client.get_pipeline_job({ name: name }) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use named arguments
+      client.get_pipeline_job name: name do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object
+      client.get_pipeline_job ::Google::Cloud::Aiplatform::V1beta1::GetPipelineJobRequest.new(name: name) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use hash object with options
+      client.get_pipeline_job({ name: name }, grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object with options
+      client.get_pipeline_job(::Google::Cloud::Aiplatform::V1beta1::GetPipelineJobRequest.new(name: name), grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Verify method calls
+      assert_equal 5, get_pipeline_job_client_stub.call_rpc_count
+    end
+  end
+
+  def test_list_pipeline_jobs
+    # Create GRPC objects.
+    grpc_response = ::Google::Cloud::Aiplatform::V1beta1::ListPipelineJobsResponse.new
+    grpc_operation = GRPC::ActiveCall::Operation.new nil
+    grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    grpc_options = {}
+
+    # Create request parameters for a unary method.
+    parent = "hello world"
+    filter = "hello world"
+    page_size = 42
+    page_token = "hello world"
+
+    list_pipeline_jobs_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
+      assert_equal :list_pipeline_jobs, name
+      assert_kind_of ::Google::Cloud::Aiplatform::V1beta1::ListPipelineJobsRequest, request
+      assert_equal "hello world", request["parent"]
+      assert_equal "hello world", request["filter"]
+      assert_equal 42, request["page_size"]
+      assert_equal "hello world", request["page_token"]
+      refute_nil options
+    end
+
+    Gapic::ServiceStub.stub :new, list_pipeline_jobs_client_stub do
+      # Create client
+      client = ::Google::Cloud::Aiplatform::V1beta1::PipelineService::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      # Use hash object
+      client.list_pipeline_jobs({ parent: parent, filter: filter, page_size: page_size, page_token: page_token }) do |response, operation|
+        assert_kind_of Gapic::PagedEnumerable, response
+        assert_equal grpc_response, response.response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use named arguments
+      client.list_pipeline_jobs parent: parent, filter: filter, page_size: page_size, page_token: page_token do |response, operation|
+        assert_kind_of Gapic::PagedEnumerable, response
+        assert_equal grpc_response, response.response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object
+      client.list_pipeline_jobs ::Google::Cloud::Aiplatform::V1beta1::ListPipelineJobsRequest.new(parent: parent, filter: filter, page_size: page_size, page_token: page_token) do |response, operation|
+        assert_kind_of Gapic::PagedEnumerable, response
+        assert_equal grpc_response, response.response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use hash object with options
+      client.list_pipeline_jobs({ parent: parent, filter: filter, page_size: page_size, page_token: page_token }, grpc_options) do |response, operation|
+        assert_kind_of Gapic::PagedEnumerable, response
+        assert_equal grpc_response, response.response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object with options
+      client.list_pipeline_jobs(::Google::Cloud::Aiplatform::V1beta1::ListPipelineJobsRequest.new(parent: parent, filter: filter, page_size: page_size, page_token: page_token), grpc_options) do |response, operation|
+        assert_kind_of Gapic::PagedEnumerable, response
+        assert_equal grpc_response, response.response
+        assert_equal grpc_operation, operation
+      end
+
+      # Verify method calls
+      assert_equal 5, list_pipeline_jobs_client_stub.call_rpc_count
+    end
+  end
+
+  def test_delete_pipeline_job
+    # Create GRPC objects.
+    grpc_response = ::Google::Longrunning::Operation.new
+    grpc_operation = GRPC::ActiveCall::Operation.new nil
+    grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    grpc_options = {}
+
+    # Create request parameters for a unary method.
+    name = "hello world"
+
+    delete_pipeline_job_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
+      assert_equal :delete_pipeline_job, name
+      assert_kind_of ::Google::Cloud::Aiplatform::V1beta1::DeletePipelineJobRequest, request
+      assert_equal "hello world", request["name"]
+      refute_nil options
+    end
+
+    Gapic::ServiceStub.stub :new, delete_pipeline_job_client_stub do
+      # Create client
+      client = ::Google::Cloud::Aiplatform::V1beta1::PipelineService::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      # Use hash object
+      client.delete_pipeline_job({ name: name }) do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Use named arguments
+      client.delete_pipeline_job name: name do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object
+      client.delete_pipeline_job ::Google::Cloud::Aiplatform::V1beta1::DeletePipelineJobRequest.new(name: name) do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Use hash object with options
+      client.delete_pipeline_job({ name: name }, grpc_options) do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object with options
+      client.delete_pipeline_job(::Google::Cloud::Aiplatform::V1beta1::DeletePipelineJobRequest.new(name: name), grpc_options) do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Verify method calls
+      assert_equal 5, delete_pipeline_job_client_stub.call_rpc_count
+    end
+  end
+
+  def test_cancel_pipeline_job
+    # Create GRPC objects.
+    grpc_response = ::Google::Protobuf::Empty.new
+    grpc_operation = GRPC::ActiveCall::Operation.new nil
+    grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    grpc_options = {}
+
+    # Create request parameters for a unary method.
+    name = "hello world"
+
+    cancel_pipeline_job_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
+      assert_equal :cancel_pipeline_job, name
+      assert_kind_of ::Google::Cloud::Aiplatform::V1beta1::CancelPipelineJobRequest, request
+      assert_equal "hello world", request["name"]
+      refute_nil options
+    end
+
+    Gapic::ServiceStub.stub :new, cancel_pipeline_job_client_stub do
+      # Create client
+      client = ::Google::Cloud::Aiplatform::V1beta1::PipelineService::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      # Use hash object
+      client.cancel_pipeline_job({ name: name }) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use named arguments
+      client.cancel_pipeline_job name: name do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object
+      client.cancel_pipeline_job ::Google::Cloud::Aiplatform::V1beta1::CancelPipelineJobRequest.new(name: name) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use hash object with options
+      client.cancel_pipeline_job({ name: name }, grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object with options
+      client.cancel_pipeline_job(::Google::Cloud::Aiplatform::V1beta1::CancelPipelineJobRequest.new(name: name), grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Verify method calls
+      assert_equal 5, cancel_pipeline_job_client_stub.call_rpc_count
+    end
+  end
+
   def test_configure
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
 

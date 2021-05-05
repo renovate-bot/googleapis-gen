@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Request message for [DataLabelingJobService.ListDataLabelingJobs][].
+ * Request message for [JobService.ListDataLabelingJobs][google.cloud.aiplatform.v1beta1.JobService.ListDataLabelingJobs].
  *
  * Generated from protobuf message <code>google.cloud.aiplatform.v1beta1.ListDataLabelingJobsRequest</code>
  */

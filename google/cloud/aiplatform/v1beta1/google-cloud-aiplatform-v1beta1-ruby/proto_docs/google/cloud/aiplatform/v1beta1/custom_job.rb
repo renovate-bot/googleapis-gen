@@ -135,6 +135,12 @@ module Google
         #       * AIP_MODEL_DIR = `<base_output_directory>/<trial_id>/model/`
         #       * AIP_CHECKPOINT_DIR = `<base_output_directory>/<trial_id>/checkpoints/`
         #       * AIP_TENSORBOARD_LOG_DIR = `<base_output_directory>/<trial_id>/logs/`
+        # @!attribute [rw] tensorboard
+        #   @return [::String]
+        #     Optional. The name of an AI Platform {::Google::Cloud::Aiplatform::V1beta1::Tensorboard Tensorboard} resource to which this CustomJob
+        #     will upload Tensorboard logs.
+        #     Format:
+        #     `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
         class CustomJobSpec
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

@@ -8,6 +8,7 @@ require 'google/api/resource_pb'
 require 'google/cloud/aiplatform/v1beta1/encryption_spec_pb'
 require 'google/cloud/aiplatform/v1beta1/explanation_pb'
 require 'google/cloud/aiplatform/v1beta1/machine_resources_pb'
+require 'google/cloud/aiplatform/v1beta1/model_deployment_monitoring_job_pb'
 require 'google/protobuf/timestamp_pb'
 require 'google/api/annotations_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do

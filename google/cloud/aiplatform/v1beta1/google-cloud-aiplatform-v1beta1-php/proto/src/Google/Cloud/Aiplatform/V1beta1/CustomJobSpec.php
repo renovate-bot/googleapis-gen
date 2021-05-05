@@ -49,7 +49,7 @@ class CustomJobSpec extends \Google\Protobuf\Internal\Message
      * Private services access must already be configured for the network. If left
      * unspecified, the job is not peered with any network.
      *
-     * Generated from protobuf field <code>string network = 5;</code>
+     * Generated from protobuf field <code>string network = 5 [(.google.api.resource_reference) = {</code>
      */
     protected $network = '';
     /**
@@ -73,6 +73,15 @@ class CustomJobSpec extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.GcsDestination base_output_directory = 6;</code>
      */
     protected $base_output_directory = null;
+    /**
+     * Optional. The name of an AI Platform [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to which this CustomJob
+     * will upload Tensorboard logs.
+     * Format:
+     * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+     *
+     * Generated from protobuf field <code>string tensorboard = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = {</code>
+     */
+    protected $tensorboard = '';
 
     /**
      * Constructor.
@@ -118,6 +127,11 @@ class CustomJobSpec extends \Google\Protobuf\Internal\Message
      *             * AIP_MODEL_DIR = `<base_output_directory>/<trial_id>/model/`
      *             * AIP_CHECKPOINT_DIR = `<base_output_directory>/<trial_id>/checkpoints/`
      *             * AIP_TENSORBOARD_LOG_DIR = `<base_output_directory>/<trial_id>/logs/`
+     *     @type string $tensorboard
+     *           Optional. The name of an AI Platform [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to which this CustomJob
+     *           will upload Tensorboard logs.
+     *           Format:
+     *           `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
      * }
      */
     public function __construct($data = NULL) {
@@ -234,7 +248,7 @@ class CustomJobSpec extends \Google\Protobuf\Internal\Message
      * Private services access must already be configured for the network. If left
      * unspecified, the job is not peered with any network.
      *
-     * Generated from protobuf field <code>string network = 5;</code>
+     * Generated from protobuf field <code>string network = 5 [(.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getNetwork()
@@ -253,7 +267,7 @@ class CustomJobSpec extends \Google\Protobuf\Internal\Message
      * Private services access must already be configured for the network. If left
      * unspecified, the job is not peered with any network.
      *
-     * Generated from protobuf field <code>string network = 5;</code>
+     * Generated from protobuf field <code>string network = 5 [(.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -327,6 +341,38 @@ class CustomJobSpec extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\Aiplatform\V1beta1\GcsDestination::class);
         $this->base_output_directory = $var;
+
+        return $this;
+    }
+
+    /**
+     * Optional. The name of an AI Platform [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to which this CustomJob
+     * will upload Tensorboard logs.
+     * Format:
+     * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+     *
+     * Generated from protobuf field <code>string tensorboard = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = {</code>
+     * @return string
+     */
+    public function getTensorboard()
+    {
+        return $this->tensorboard;
+    }
+
+    /**
+     * Optional. The name of an AI Platform [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to which this CustomJob
+     * will upload Tensorboard logs.
+     * Format:
+     * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+     *
+     * Generated from protobuf field <code>string tensorboard = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = {</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTensorboard($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->tensorboard = $var;
 
         return $this;
     }

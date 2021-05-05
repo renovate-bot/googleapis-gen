@@ -1,0 +1,132 @@
+{
+    "interfaces": {
+        "google.cloud.aiplatform.v1beta1.FeaturestoreService": {
+            "retry_codes": {
+                "no_retry_codes": [],
+                "no_retry_13_codes": []
+            },
+            "retry_params": {
+                "no_retry_params": {
+                    "initial_retry_delay_millis": 0,
+                    "retry_delay_multiplier": 0.0,
+                    "max_retry_delay_millis": 0,
+                    "initial_rpc_timeout_millis": 0,
+                    "rpc_timeout_multiplier": 1.0,
+                    "max_rpc_timeout_millis": 0,
+                    "total_timeout_millis": 0
+                },
+                "no_retry_13_params": {
+                    "initial_retry_delay_millis": 0,
+                    "retry_delay_multiplier": 0.0,
+                    "max_retry_delay_millis": 0,
+                    "initial_rpc_timeout_millis": 5000,
+                    "rpc_timeout_multiplier": 1.0,
+                    "max_rpc_timeout_millis": 5000,
+                    "total_timeout_millis": 5000
+                }
+            },
+            "methods": {
+                "BatchCreateFeatures": {
+                    "timeout_millis": 5000,
+                    "retry_codes_name": "no_retry_13_codes",
+                    "retry_params_name": "no_retry_13_params"
+                },
+                "BatchReadFeatureValues": {
+                    "timeout_millis": 5000,
+                    "retry_codes_name": "no_retry_13_codes",
+                    "retry_params_name": "no_retry_13_params"
+                },
+                "CreateEntityType": {
+                    "timeout_millis": 5000,
+                    "retry_codes_name": "no_retry_13_codes",
+                    "retry_params_name": "no_retry_13_params"
+                },
+                "CreateFeature": {
+                    "timeout_millis": 5000,
+                    "retry_codes_name": "no_retry_13_codes",
+                    "retry_params_name": "no_retry_13_params"
+                },
+                "CreateFeaturestore": {
+                    "timeout_millis": 5000,
+                    "retry_codes_name": "no_retry_13_codes",
+                    "retry_params_name": "no_retry_13_params"
+                },
+                "DeleteEntityType": {
+                    "timeout_millis": 5000,
+                    "retry_codes_name": "no_retry_13_codes",
+                    "retry_params_name": "no_retry_13_params"
+                },
+                "DeleteFeature": {
+                    "timeout_millis": 5000,
+                    "retry_codes_name": "no_retry_13_codes",
+                    "retry_params_name": "no_retry_13_params"
+                },
+                "DeleteFeaturestore": {
+                    "timeout_millis": 5000,
+                    "retry_codes_name": "no_retry_13_codes",
+                    "retry_params_name": "no_retry_13_params"
+                },
+                "ExportFeatureValues": {
+                    "timeout_millis": 60000,
+                    "retry_codes_name": "no_retry_codes",
+                    "retry_params_name": "no_retry_params"
+                },
+                "GetEntityType": {
+                    "timeout_millis": 5000,
+                    "retry_codes_name": "no_retry_13_codes",
+                    "retry_params_name": "no_retry_13_params"
+                },
+                "GetFeature": {
+                    "timeout_millis": 5000,
+                    "retry_codes_name": "no_retry_13_codes",
+                    "retry_params_name": "no_retry_13_params"
+                },
+                "GetFeaturestore": {
+                    "timeout_millis": 5000,
+                    "retry_codes_name": "no_retry_13_codes",
+                    "retry_params_name": "no_retry_13_params"
+                },
+                "ImportFeatureValues": {
+                    "timeout_millis": 5000,
+                    "retry_codes_name": "no_retry_13_codes",
+                    "retry_params_name": "no_retry_13_params"
+                },
+                "ListEntityTypes": {
+                    "timeout_millis": 5000,
+                    "retry_codes_name": "no_retry_13_codes",
+                    "retry_params_name": "no_retry_13_params"
+                },
+                "ListFeatures": {
+                    "timeout_millis": 5000,
+                    "retry_codes_name": "no_retry_13_codes",
+                    "retry_params_name": "no_retry_13_params"
+                },
+                "ListFeaturestores": {
+                    "timeout_millis": 5000,
+                    "retry_codes_name": "no_retry_13_codes",
+                    "retry_params_name": "no_retry_13_params"
+                },
+                "SearchFeatures": {
+                    "timeout_millis": 5000,
+                    "retry_codes_name": "no_retry_13_codes",
+                    "retry_params_name": "no_retry_13_params"
+                },
+                "UpdateEntityType": {
+                    "timeout_millis": 5000,
+                    "retry_codes_name": "no_retry_13_codes",
+                    "retry_params_name": "no_retry_13_params"
+                },
+                "UpdateFeature": {
+                    "timeout_millis": 5000,
+                    "retry_codes_name": "no_retry_13_codes",
+                    "retry_params_name": "no_retry_13_params"
+                },
+                "UpdateFeaturestore": {
+                    "timeout_millis": 5000,
+                    "retry_codes_name": "no_retry_13_codes",
+                    "retry_params_name": "no_retry_13_params"
+                }
+            }
+        }
+    }
+}

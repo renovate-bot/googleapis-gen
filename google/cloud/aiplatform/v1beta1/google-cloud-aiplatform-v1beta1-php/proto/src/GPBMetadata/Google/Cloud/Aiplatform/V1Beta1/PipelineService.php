@@ -18,14 +18,15 @@ class PipelineService
         \GPBMetadata\Google\Api\Client::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
+        \GPBMetadata\Google\Cloud\Aiplatform\V1Beta1\PipelineJob::initOnce();
         \GPBMetadata\Google\Cloud\Aiplatform\V1Beta1\TrainingPipeline::initOnce();
         \GPBMetadata\Google\Longrunning\Operations::initOnce();
         \GPBMetadata\Google\Protobuf\GPBEmpty::initOnce();
         \GPBMetadata\Google\Protobuf\FieldMask::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ü
-6google/cloud/aiplatform/v1beta1/pipeline_service.protogoogle.cloud.aiplatform.v1beta1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto7google/cloud/aiplatform/v1beta1/training_pipeline.proto#google/longrunning/operations.protogoogle/protobuf/empty.proto google/protobuf/field_mask.proto"­
+ÿ!
+6google/cloud/aiplatform/v1beta1/pipeline_service.protogoogle.cloud.aiplatform.v1beta1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto2google/cloud/aiplatform/v1beta1/pipeline_job.proto7google/cloud/aiplatform/v1beta1/training_pipeline.proto#google/longrunning/operations.protogoogle/protobuf/empty.proto google/protobuf/field_mask.proto"­
 CreateTrainingPipelineRequest9
 parent (	B)àAúA#
 !locations.googleapis.com/LocationQ
@@ -49,14 +50,44 @@ page_token (	-
 *aiplatform.googleapis.com/TrainingPipeline"a
 CancelTrainingPipelineRequest@
 name (	B2àAúA,
-*aiplatform.googleapis.com/TrainingPipeline2Ù	
+*aiplatform.googleapis.com/TrainingPipeline"·
+CreatePipelineJobRequest9
+parent (	B)àAúA#
+!locations.googleapis.com/LocationG
+pipeline_job (2,.google.cloud.aiplatform.v1beta1.PipelineJobBàA
+pipeline_job_id (	"T
+GetPipelineJobRequest;
+name (	B-àAúA\'
+%aiplatform.googleapis.com/PipelineJob"‹
+ListPipelineJobsRequest9
+parent (	B)àAúA#
+!locations.googleapis.com/Location
+filter (	
+	page_size (
+
+page_token (	"x
+ListPipelineJobsResponseC
+pipeline_jobs (2,.google.cloud.aiplatform.v1beta1.PipelineJob
+next_page_token (	"W
+DeletePipelineJobRequest;
+name (	B-àAúA\'
+%aiplatform.googleapis.com/PipelineJob"W
+CancelPipelineJobRequest;
+name (	B-àAúA\'
+%aiplatform.googleapis.com/PipelineJob2þ
 PipelineServiceý
 CreateTrainingPipeline>.google.cloud.aiplatform.v1beta1.CreateTrainingPipelineRequest1.google.cloud.aiplatform.v1beta1.TrainingPipeline"p‚Óä“O":/v1beta1/{parent=projects/*/locations/*}/trainingPipelines:training_pipelineÚAparent,training_pipelineÐ
 GetTrainingPipeline;.google.cloud.aiplatform.v1beta1.GetTrainingPipelineRequest1.google.cloud.aiplatform.v1beta1.TrainingPipeline"I‚Óä“<:/v1beta1/{name=projects/*/locations/*/trainingPipelines/*}ÚAnameã
 ListTrainingPipelines=.google.cloud.aiplatform.v1beta1.ListTrainingPipelinesRequest>.google.cloud.aiplatform.v1beta1.ListTrainingPipelinesResponse"K‚Óä“<:/v1beta1/{parent=projects/*/locations/*}/trainingPipelinesÚAparentõ
 DeleteTrainingPipeline>.google.cloud.aiplatform.v1beta1.DeleteTrainingPipelineRequest.google.longrunning.Operation"|‚Óä“<*:/v1beta1/{name=projects/*/locations/*/trainingPipelines/*}ÚAnameÊA0
 google.protobuf.EmptyDeleteOperationMetadataÅ
-CancelTrainingPipeline>.google.cloud.aiplatform.v1beta1.CancelTrainingPipelineRequest.google.protobuf.Empty"S‚Óä“F"A/v1beta1/{name=projects/*/locations/*/trainingPipelines/*}:cancel:*ÚAnameMÊAaiplatform.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformBˆ
+CancelTrainingPipeline>.google.cloud.aiplatform.v1beta1.CancelTrainingPipelineRequest.google.protobuf.Empty"S‚Óä“F"A/v1beta1/{name=projects/*/locations/*/trainingPipelines/*}:cancel:*ÚAnameï
+CreatePipelineJob9.google.cloud.aiplatform.v1beta1.CreatePipelineJobRequest,.google.cloud.aiplatform.v1beta1.PipelineJob"q‚Óä“E"5/v1beta1/{parent=projects/*/locations/*}/pipelineJobs:pipeline_jobÚA#parent,pipeline_job,pipeline_job_id¼
+GetPipelineJob6.google.cloud.aiplatform.v1beta1.GetPipelineJobRequest,.google.cloud.aiplatform.v1beta1.PipelineJob"D‚Óä“75/v1beta1/{name=projects/*/locations/*/pipelineJobs/*}ÚAnameÏ
+ListPipelineJobs8.google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest9.google.cloud.aiplatform.v1beta1.ListPipelineJobsResponse"F‚Óä“75/v1beta1/{parent=projects/*/locations/*}/pipelineJobsÚAparentæ
+DeletePipelineJob9.google.cloud.aiplatform.v1beta1.DeletePipelineJobRequest.google.longrunning.Operation"w‚Óä“7*5/v1beta1/{name=projects/*/locations/*/pipelineJobs/*}ÚAnameÊA0
+google.protobuf.EmptyDeleteOperationMetadata¶
+CancelPipelineJob9.google.cloud.aiplatform.v1beta1.CancelPipelineJobRequest.google.protobuf.Empty"N‚Óä“A"</v1beta1/{name=projects/*/locations/*/pipelineJobs/*}:cancel:*ÚAnameMÊAaiplatform.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformBˆ
 #com.google.cloud.aiplatform.v1beta1BPipelineServiceProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformbproto3'
         , true);
 

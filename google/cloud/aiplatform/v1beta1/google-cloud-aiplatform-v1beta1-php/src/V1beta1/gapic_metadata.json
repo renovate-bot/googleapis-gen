@@ -108,6 +108,212 @@
                 }
             }
         },
+        "FeaturestoreOnlineServingService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "FeaturestoreOnlineServingServiceGapicClient",
+                    "rpcs": {
+                        "ReadFeatureValues": {
+                            "methods": [
+                                "readFeatureValues"
+                            ]
+                        },
+                        "StreamingReadFeatureValues": {
+                            "methods": [
+                                "streamingReadFeatureValues"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "FeaturestoreService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "FeaturestoreServiceGapicClient",
+                    "rpcs": {
+                        "BatchCreateFeatures": {
+                            "methods": [
+                                "batchCreateFeatures"
+                            ]
+                        },
+                        "BatchReadFeatureValues": {
+                            "methods": [
+                                "batchReadFeatureValues"
+                            ]
+                        },
+                        "CreateEntityType": {
+                            "methods": [
+                                "createEntityType"
+                            ]
+                        },
+                        "CreateFeature": {
+                            "methods": [
+                                "createFeature"
+                            ]
+                        },
+                        "CreateFeaturestore": {
+                            "methods": [
+                                "createFeaturestore"
+                            ]
+                        },
+                        "DeleteEntityType": {
+                            "methods": [
+                                "deleteEntityType"
+                            ]
+                        },
+                        "DeleteFeature": {
+                            "methods": [
+                                "deleteFeature"
+                            ]
+                        },
+                        "DeleteFeaturestore": {
+                            "methods": [
+                                "deleteFeaturestore"
+                            ]
+                        },
+                        "ExportFeatureValues": {
+                            "methods": [
+                                "exportFeatureValues"
+                            ]
+                        },
+                        "GetEntityType": {
+                            "methods": [
+                                "getEntityType"
+                            ]
+                        },
+                        "GetFeature": {
+                            "methods": [
+                                "getFeature"
+                            ]
+                        },
+                        "GetFeaturestore": {
+                            "methods": [
+                                "getFeaturestore"
+                            ]
+                        },
+                        "ImportFeatureValues": {
+                            "methods": [
+                                "importFeatureValues"
+                            ]
+                        },
+                        "ListEntityTypes": {
+                            "methods": [
+                                "listEntityTypes"
+                            ]
+                        },
+                        "ListFeatures": {
+                            "methods": [
+                                "listFeatures"
+                            ]
+                        },
+                        "ListFeaturestores": {
+                            "methods": [
+                                "listFeaturestores"
+                            ]
+                        },
+                        "SearchFeatures": {
+                            "methods": [
+                                "searchFeatures"
+                            ]
+                        },
+                        "UpdateEntityType": {
+                            "methods": [
+                                "updateEntityType"
+                            ]
+                        },
+                        "UpdateFeature": {
+                            "methods": [
+                                "updateFeature"
+                            ]
+                        },
+                        "UpdateFeaturestore": {
+                            "methods": [
+                                "updateFeaturestore"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "IndexEndpointService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "IndexEndpointServiceGapicClient",
+                    "rpcs": {
+                        "CreateIndexEndpoint": {
+                            "methods": [
+                                "createIndexEndpoint"
+                            ]
+                        },
+                        "DeleteIndexEndpoint": {
+                            "methods": [
+                                "deleteIndexEndpoint"
+                            ]
+                        },
+                        "DeployIndex": {
+                            "methods": [
+                                "deployIndex"
+                            ]
+                        },
+                        "GetIndexEndpoint": {
+                            "methods": [
+                                "getIndexEndpoint"
+                            ]
+                        },
+                        "ListIndexEndpoints": {
+                            "methods": [
+                                "listIndexEndpoints"
+                            ]
+                        },
+                        "UndeployIndex": {
+                            "methods": [
+                                "undeployIndex"
+                            ]
+                        },
+                        "UpdateIndexEndpoint": {
+                            "methods": [
+                                "updateIndexEndpoint"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "IndexService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "IndexServiceGapicClient",
+                    "rpcs": {
+                        "CreateIndex": {
+                            "methods": [
+                                "createIndex"
+                            ]
+                        },
+                        "DeleteIndex": {
+                            "methods": [
+                                "deleteIndex"
+                            ]
+                        },
+                        "GetIndex": {
+                            "methods": [
+                                "getIndex"
+                            ]
+                        },
+                        "ListIndexes": {
+                            "methods": [
+                                "listIndexes"
+                            ]
+                        },
+                        "UpdateIndex": {
+                            "methods": [
+                                "updateIndex"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
         "JobService": {
             "clients": {
                 "grpc": {
@@ -153,6 +359,11 @@
                                 "createHyperparameterTuningJob"
                             ]
                         },
+                        "CreateModelDeploymentMonitoringJob": {
+                            "methods": [
+                                "createModelDeploymentMonitoringJob"
+                            ]
+                        },
                         "DeleteBatchPredictionJob": {
                             "methods": [
                                 "deleteBatchPredictionJob"
@@ -171,6 +382,11 @@
                         "DeleteHyperparameterTuningJob": {
                             "methods": [
                                 "deleteHyperparameterTuningJob"
+                            ]
+                        },
+                        "DeleteModelDeploymentMonitoringJob": {
+                            "methods": [
+                                "deleteModelDeploymentMonitoringJob"
                             ]
                         },
                         "GetBatchPredictionJob": {
@@ -193,6 +409,11 @@
                                 "getHyperparameterTuningJob"
                             ]
                         },
+                        "GetModelDeploymentMonitoringJob": {
+                            "methods": [
+                                "getModelDeploymentMonitoringJob"
+                            ]
+                        },
                         "ListBatchPredictionJobs": {
                             "methods": [
                                 "listBatchPredictionJobs"
@@ -211,6 +432,170 @@
                         "ListHyperparameterTuningJobs": {
                             "methods": [
                                 "listHyperparameterTuningJobs"
+                            ]
+                        },
+                        "ListModelDeploymentMonitoringJobs": {
+                            "methods": [
+                                "listModelDeploymentMonitoringJobs"
+                            ]
+                        },
+                        "PauseModelDeploymentMonitoringJob": {
+                            "methods": [
+                                "pauseModelDeploymentMonitoringJob"
+                            ]
+                        },
+                        "ResumeModelDeploymentMonitoringJob": {
+                            "methods": [
+                                "resumeModelDeploymentMonitoringJob"
+                            ]
+                        },
+                        "SearchModelDeploymentMonitoringStatsAnomalies": {
+                            "methods": [
+                                "searchModelDeploymentMonitoringStatsAnomalies"
+                            ]
+                        },
+                        "UpdateModelDeploymentMonitoringJob": {
+                            "methods": [
+                                "updateModelDeploymentMonitoringJob"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "MetadataService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "MetadataServiceGapicClient",
+                    "rpcs": {
+                        "AddContextArtifactsAndExecutions": {
+                            "methods": [
+                                "addContextArtifactsAndExecutions"
+                            ]
+                        },
+                        "AddContextChildren": {
+                            "methods": [
+                                "addContextChildren"
+                            ]
+                        },
+                        "AddExecutionEvents": {
+                            "methods": [
+                                "addExecutionEvents"
+                            ]
+                        },
+                        "CreateArtifact": {
+                            "methods": [
+                                "createArtifact"
+                            ]
+                        },
+                        "CreateContext": {
+                            "methods": [
+                                "createContext"
+                            ]
+                        },
+                        "CreateExecution": {
+                            "methods": [
+                                "createExecution"
+                            ]
+                        },
+                        "CreateMetadataSchema": {
+                            "methods": [
+                                "createMetadataSchema"
+                            ]
+                        },
+                        "CreateMetadataStore": {
+                            "methods": [
+                                "createMetadataStore"
+                            ]
+                        },
+                        "DeleteContext": {
+                            "methods": [
+                                "deleteContext"
+                            ]
+                        },
+                        "DeleteMetadataStore": {
+                            "methods": [
+                                "deleteMetadataStore"
+                            ]
+                        },
+                        "GetArtifact": {
+                            "methods": [
+                                "getArtifact"
+                            ]
+                        },
+                        "GetContext": {
+                            "methods": [
+                                "getContext"
+                            ]
+                        },
+                        "GetExecution": {
+                            "methods": [
+                                "getExecution"
+                            ]
+                        },
+                        "GetMetadataSchema": {
+                            "methods": [
+                                "getMetadataSchema"
+                            ]
+                        },
+                        "GetMetadataStore": {
+                            "methods": [
+                                "getMetadataStore"
+                            ]
+                        },
+                        "ListArtifacts": {
+                            "methods": [
+                                "listArtifacts"
+                            ]
+                        },
+                        "ListContexts": {
+                            "methods": [
+                                "listContexts"
+                            ]
+                        },
+                        "ListExecutions": {
+                            "methods": [
+                                "listExecutions"
+                            ]
+                        },
+                        "ListMetadataSchemas": {
+                            "methods": [
+                                "listMetadataSchemas"
+                            ]
+                        },
+                        "ListMetadataStores": {
+                            "methods": [
+                                "listMetadataStores"
+                            ]
+                        },
+                        "QueryArtifactLineageSubgraph": {
+                            "methods": [
+                                "queryArtifactLineageSubgraph"
+                            ]
+                        },
+                        "QueryContextLineageSubgraph": {
+                            "methods": [
+                                "queryContextLineageSubgraph"
+                            ]
+                        },
+                        "QueryExecutionInputsAndOutputs": {
+                            "methods": [
+                                "queryExecutionInputsAndOutputs"
+                            ]
+                        },
+                        "UpdateArtifact": {
+                            "methods": [
+                                "updateArtifact"
+                            ]
+                        },
+                        "UpdateContext": {
+                            "methods": [
+                                "updateContext"
+                            ]
+                        },
+                        "UpdateExecution": {
+                            "methods": [
+                                "updateExecution"
                             ]
                         }
                     }
@@ -300,9 +685,19 @@
                 "grpc": {
                     "libraryClient": "PipelineServiceGapicClient",
                     "rpcs": {
+                        "CancelPipelineJob": {
+                            "methods": [
+                                "cancelPipelineJob"
+                            ]
+                        },
                         "CancelTrainingPipeline": {
                             "methods": [
                                 "cancelTrainingPipeline"
+                            ]
+                        },
+                        "CreatePipelineJob": {
+                            "methods": [
+                                "createPipelineJob"
                             ]
                         },
                         "CreateTrainingPipeline": {
@@ -310,14 +705,29 @@
                                 "createTrainingPipeline"
                             ]
                         },
+                        "DeletePipelineJob": {
+                            "methods": [
+                                "deletePipelineJob"
+                            ]
+                        },
                         "DeleteTrainingPipeline": {
                             "methods": [
                                 "deleteTrainingPipeline"
                             ]
                         },
+                        "GetPipelineJob": {
+                            "methods": [
+                                "getPipelineJob"
+                            ]
+                        },
                         "GetTrainingPipeline": {
                             "methods": [
                                 "getTrainingPipeline"
+                            ]
+                        },
+                        "ListPipelineJobs": {
+                            "methods": [
+                                "listPipelineJobs"
                             ]
                         },
                         "ListTrainingPipelines": {
@@ -376,6 +786,135 @@
                         "UpdateSpecialistPool": {
                             "methods": [
                                 "updateSpecialistPool"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "TensorboardService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "TensorboardServiceGapicClient",
+                    "rpcs": {
+                        "CreateTensorboard": {
+                            "methods": [
+                                "createTensorboard"
+                            ]
+                        },
+                        "CreateTensorboardExperiment": {
+                            "methods": [
+                                "createTensorboardExperiment"
+                            ]
+                        },
+                        "CreateTensorboardRun": {
+                            "methods": [
+                                "createTensorboardRun"
+                            ]
+                        },
+                        "CreateTensorboardTimeSeries": {
+                            "methods": [
+                                "createTensorboardTimeSeries"
+                            ]
+                        },
+                        "DeleteTensorboard": {
+                            "methods": [
+                                "deleteTensorboard"
+                            ]
+                        },
+                        "DeleteTensorboardExperiment": {
+                            "methods": [
+                                "deleteTensorboardExperiment"
+                            ]
+                        },
+                        "DeleteTensorboardRun": {
+                            "methods": [
+                                "deleteTensorboardRun"
+                            ]
+                        },
+                        "DeleteTensorboardTimeSeries": {
+                            "methods": [
+                                "deleteTensorboardTimeSeries"
+                            ]
+                        },
+                        "ExportTensorboardTimeSeriesData": {
+                            "methods": [
+                                "exportTensorboardTimeSeriesData"
+                            ]
+                        },
+                        "GetTensorboard": {
+                            "methods": [
+                                "getTensorboard"
+                            ]
+                        },
+                        "GetTensorboardExperiment": {
+                            "methods": [
+                                "getTensorboardExperiment"
+                            ]
+                        },
+                        "GetTensorboardRun": {
+                            "methods": [
+                                "getTensorboardRun"
+                            ]
+                        },
+                        "GetTensorboardTimeSeries": {
+                            "methods": [
+                                "getTensorboardTimeSeries"
+                            ]
+                        },
+                        "ListTensorboardExperiments": {
+                            "methods": [
+                                "listTensorboardExperiments"
+                            ]
+                        },
+                        "ListTensorboardRuns": {
+                            "methods": [
+                                "listTensorboardRuns"
+                            ]
+                        },
+                        "ListTensorboardTimeSeries": {
+                            "methods": [
+                                "listTensorboardTimeSeries"
+                            ]
+                        },
+                        "ListTensorboards": {
+                            "methods": [
+                                "listTensorboards"
+                            ]
+                        },
+                        "ReadTensorboardBlobData": {
+                            "methods": [
+                                "readTensorboardBlobData"
+                            ]
+                        },
+                        "ReadTensorboardTimeSeriesData": {
+                            "methods": [
+                                "readTensorboardTimeSeriesData"
+                            ]
+                        },
+                        "UpdateTensorboard": {
+                            "methods": [
+                                "updateTensorboard"
+                            ]
+                        },
+                        "UpdateTensorboardExperiment": {
+                            "methods": [
+                                "updateTensorboardExperiment"
+                            ]
+                        },
+                        "UpdateTensorboardRun": {
+                            "methods": [
+                                "updateTensorboardRun"
+                            ]
+                        },
+                        "UpdateTensorboardTimeSeries": {
+                            "methods": [
+                                "updateTensorboardTimeSeries"
+                            ]
+                        },
+                        "WriteTensorboardRunData": {
+                            "methods": [
+                                "writeTensorboardRunData"
                             ]
                         }
                     }

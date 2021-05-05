@@ -551,6 +551,382 @@ module Google
             end
 
             ##
+            # Creates a PipelineJob. A PipelineJob will run immediately when created.
+            #
+            # @overload create_pipeline_job(request, options = nil)
+            #   Pass arguments to `create_pipeline_job` via a request object, either of type
+            #   {::Google::Cloud::Aiplatform::V1beta1::CreatePipelineJobRequest} or an equivalent Hash.
+            #
+            #   @param request [::Google::Cloud::Aiplatform::V1beta1::CreatePipelineJobRequest, ::Hash]
+            #     A request object representing the call parameters. Required. To specify no
+            #     parameters, or to keep all the default parameter values, pass an empty Hash.
+            #   @param options [::Gapic::CallOptions, ::Hash]
+            #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+            #
+            # @overload create_pipeline_job(parent: nil, pipeline_job: nil, pipeline_job_id: nil)
+            #   Pass arguments to `create_pipeline_job` via keyword arguments. Note that at
+            #   least one keyword argument is required. To specify no parameters, or to keep all
+            #   the default parameter values, pass an empty Hash as a request object (see above).
+            #
+            #   @param parent [::String]
+            #     Required. The resource name of the Location to create the PipelineJob in.
+            #     Format: `projects/{project}/locations/{location}`
+            #   @param pipeline_job [::Google::Cloud::Aiplatform::V1beta1::PipelineJob, ::Hash]
+            #     Required. The PipelineJob to create.
+            #   @param pipeline_job_id [::String]
+            #     The ID to use for the PipelineJob, which will become the final component of
+            #     the PipelineJob name. If not provided, an ID will be automatically
+            #     generated.
+            #
+            #     This value should be less than 128 characters, and valid characters
+            #     are /[a-z][0-9]-/.
+            #
+            # @yield [response, operation] Access the result along with the RPC operation
+            # @yieldparam response [::Google::Cloud::Aiplatform::V1beta1::PipelineJob]
+            # @yieldparam operation [::GRPC::ActiveCall::Operation]
+            #
+            # @return [::Google::Cloud::Aiplatform::V1beta1::PipelineJob]
+            #
+            # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            def create_pipeline_job request, options = nil
+              raise ::ArgumentError, "request must be provided" if request.nil?
+
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Aiplatform::V1beta1::CreatePipelineJobRequest
+
+              # Converts hash and nil to an options object
+              options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+              # Customize the options with defaults
+              metadata = @config.rpcs.create_pipeline_job.metadata.to_h
+
+              # Set x-goog-api-client and x-goog-user-project headers
+              metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                lib_name: @config.lib_name, lib_version: @config.lib_version,
+                gapic_version: ::Google::Cloud::Aiplatform::V1beta1::VERSION
+              metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {
+                "parent" => request.parent
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
+              options.apply_defaults timeout:      @config.rpcs.create_pipeline_job.timeout,
+                                     metadata:     metadata,
+                                     retry_policy: @config.rpcs.create_pipeline_job.retry_policy
+              options.apply_defaults metadata:     @config.metadata,
+                                     retry_policy: @config.retry_policy
+
+              @pipeline_service_stub.call_rpc :create_pipeline_job, request, options: options do |response, operation|
+                yield response, operation if block_given?
+                return response
+              end
+            rescue ::GRPC::BadStatus => e
+              raise ::Google::Cloud::Error.from_error(e)
+            end
+
+            ##
+            # Gets a PipelineJob.
+            #
+            # @overload get_pipeline_job(request, options = nil)
+            #   Pass arguments to `get_pipeline_job` via a request object, either of type
+            #   {::Google::Cloud::Aiplatform::V1beta1::GetPipelineJobRequest} or an equivalent Hash.
+            #
+            #   @param request [::Google::Cloud::Aiplatform::V1beta1::GetPipelineJobRequest, ::Hash]
+            #     A request object representing the call parameters. Required. To specify no
+            #     parameters, or to keep all the default parameter values, pass an empty Hash.
+            #   @param options [::Gapic::CallOptions, ::Hash]
+            #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+            #
+            # @overload get_pipeline_job(name: nil)
+            #   Pass arguments to `get_pipeline_job` via keyword arguments. Note that at
+            #   least one keyword argument is required. To specify no parameters, or to keep all
+            #   the default parameter values, pass an empty Hash as a request object (see above).
+            #
+            #   @param name [::String]
+            #     Required. The name of the PipelineJob resource.
+            #     Format:
+            #     `projects/{project}/locations/{location}/pipelineJobs/{pipeline_job}`
+            #
+            # @yield [response, operation] Access the result along with the RPC operation
+            # @yieldparam response [::Google::Cloud::Aiplatform::V1beta1::PipelineJob]
+            # @yieldparam operation [::GRPC::ActiveCall::Operation]
+            #
+            # @return [::Google::Cloud::Aiplatform::V1beta1::PipelineJob]
+            #
+            # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            def get_pipeline_job request, options = nil
+              raise ::ArgumentError, "request must be provided" if request.nil?
+
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Aiplatform::V1beta1::GetPipelineJobRequest
+
+              # Converts hash and nil to an options object
+              options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+              # Customize the options with defaults
+              metadata = @config.rpcs.get_pipeline_job.metadata.to_h
+
+              # Set x-goog-api-client and x-goog-user-project headers
+              metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                lib_name: @config.lib_name, lib_version: @config.lib_version,
+                gapic_version: ::Google::Cloud::Aiplatform::V1beta1::VERSION
+              metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {
+                "name" => request.name
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
+              options.apply_defaults timeout:      @config.rpcs.get_pipeline_job.timeout,
+                                     metadata:     metadata,
+                                     retry_policy: @config.rpcs.get_pipeline_job.retry_policy
+              options.apply_defaults metadata:     @config.metadata,
+                                     retry_policy: @config.retry_policy
+
+              @pipeline_service_stub.call_rpc :get_pipeline_job, request, options: options do |response, operation|
+                yield response, operation if block_given?
+                return response
+              end
+            rescue ::GRPC::BadStatus => e
+              raise ::Google::Cloud::Error.from_error(e)
+            end
+
+            ##
+            # Lists PipelineJobs in a Location.
+            #
+            # @overload list_pipeline_jobs(request, options = nil)
+            #   Pass arguments to `list_pipeline_jobs` via a request object, either of type
+            #   {::Google::Cloud::Aiplatform::V1beta1::ListPipelineJobsRequest} or an equivalent Hash.
+            #
+            #   @param request [::Google::Cloud::Aiplatform::V1beta1::ListPipelineJobsRequest, ::Hash]
+            #     A request object representing the call parameters. Required. To specify no
+            #     parameters, or to keep all the default parameter values, pass an empty Hash.
+            #   @param options [::Gapic::CallOptions, ::Hash]
+            #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+            #
+            # @overload list_pipeline_jobs(parent: nil, filter: nil, page_size: nil, page_token: nil)
+            #   Pass arguments to `list_pipeline_jobs` via keyword arguments. Note that at
+            #   least one keyword argument is required. To specify no parameters, or to keep all
+            #   the default parameter values, pass an empty Hash as a request object (see above).
+            #
+            #   @param parent [::String]
+            #     Required. The resource name of the Location to list the PipelineJobs from.
+            #     Format: `projects/{project}/locations/{location}`
+            #   @param filter [::String]
+            #     The standard list filter.
+            #     Supported fields:
+            #       * `display_name` supports = and !=.
+            #       * `state` supports = and !=.
+            #
+            #     Some examples of using the filter are:
+            #      * `state="PIPELINE_STATE_SUCCEEDED" AND display_name="my_pipeline"`
+            #      * `state="PIPELINE_STATE_RUNNING" OR display_name="my_pipeline"`
+            #      * `NOT display_name="my_pipeline"`
+            #      * `state="PIPELINE_STATE_FAILED"`
+            #   @param page_size [::Integer]
+            #     The standard list page size.
+            #   @param page_token [::String]
+            #     The standard list page token.
+            #     Typically obtained via
+            #     {::Google::Cloud::Aiplatform::V1beta1::ListPipelineJobsResponse#next_page_token ListPipelineJobsResponse.next_page_token} of the previous
+            #     {::Google::Cloud::Aiplatform::V1beta1::PipelineService::Client#list_pipeline_jobs PipelineService.ListPipelineJobs} call.
+            #
+            # @yield [response, operation] Access the result along with the RPC operation
+            # @yieldparam response [::Gapic::PagedEnumerable<::Google::Cloud::Aiplatform::V1beta1::PipelineJob>]
+            # @yieldparam operation [::GRPC::ActiveCall::Operation]
+            #
+            # @return [::Gapic::PagedEnumerable<::Google::Cloud::Aiplatform::V1beta1::PipelineJob>]
+            #
+            # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            def list_pipeline_jobs request, options = nil
+              raise ::ArgumentError, "request must be provided" if request.nil?
+
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Aiplatform::V1beta1::ListPipelineJobsRequest
+
+              # Converts hash and nil to an options object
+              options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+              # Customize the options with defaults
+              metadata = @config.rpcs.list_pipeline_jobs.metadata.to_h
+
+              # Set x-goog-api-client and x-goog-user-project headers
+              metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                lib_name: @config.lib_name, lib_version: @config.lib_version,
+                gapic_version: ::Google::Cloud::Aiplatform::V1beta1::VERSION
+              metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {
+                "parent" => request.parent
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
+              options.apply_defaults timeout:      @config.rpcs.list_pipeline_jobs.timeout,
+                                     metadata:     metadata,
+                                     retry_policy: @config.rpcs.list_pipeline_jobs.retry_policy
+              options.apply_defaults metadata:     @config.metadata,
+                                     retry_policy: @config.retry_policy
+
+              @pipeline_service_stub.call_rpc :list_pipeline_jobs, request, options: options do |response, operation|
+                response = ::Gapic::PagedEnumerable.new @pipeline_service_stub, :list_pipeline_jobs, request, response, operation, options
+                yield response, operation if block_given?
+                return response
+              end
+            rescue ::GRPC::BadStatus => e
+              raise ::Google::Cloud::Error.from_error(e)
+            end
+
+            ##
+            # Deletes a PipelineJob.
+            #
+            # @overload delete_pipeline_job(request, options = nil)
+            #   Pass arguments to `delete_pipeline_job` via a request object, either of type
+            #   {::Google::Cloud::Aiplatform::V1beta1::DeletePipelineJobRequest} or an equivalent Hash.
+            #
+            #   @param request [::Google::Cloud::Aiplatform::V1beta1::DeletePipelineJobRequest, ::Hash]
+            #     A request object representing the call parameters. Required. To specify no
+            #     parameters, or to keep all the default parameter values, pass an empty Hash.
+            #   @param options [::Gapic::CallOptions, ::Hash]
+            #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+            #
+            # @overload delete_pipeline_job(name: nil)
+            #   Pass arguments to `delete_pipeline_job` via keyword arguments. Note that at
+            #   least one keyword argument is required. To specify no parameters, or to keep all
+            #   the default parameter values, pass an empty Hash as a request object (see above).
+            #
+            #   @param name [::String]
+            #     Required. The name of the PipelineJob resource to be deleted.
+            #     Format:
+            #     `projects/{project}/locations/{location}/pipelineJobs/{pipeline_job}`
+            #
+            # @yield [response, operation] Access the result along with the RPC operation
+            # @yieldparam response [::Gapic::Operation]
+            # @yieldparam operation [::GRPC::ActiveCall::Operation]
+            #
+            # @return [::Gapic::Operation]
+            #
+            # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            def delete_pipeline_job request, options = nil
+              raise ::ArgumentError, "request must be provided" if request.nil?
+
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Aiplatform::V1beta1::DeletePipelineJobRequest
+
+              # Converts hash and nil to an options object
+              options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+              # Customize the options with defaults
+              metadata = @config.rpcs.delete_pipeline_job.metadata.to_h
+
+              # Set x-goog-api-client and x-goog-user-project headers
+              metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                lib_name: @config.lib_name, lib_version: @config.lib_version,
+                gapic_version: ::Google::Cloud::Aiplatform::V1beta1::VERSION
+              metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {
+                "name" => request.name
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
+              options.apply_defaults timeout:      @config.rpcs.delete_pipeline_job.timeout,
+                                     metadata:     metadata,
+                                     retry_policy: @config.rpcs.delete_pipeline_job.retry_policy
+              options.apply_defaults metadata:     @config.metadata,
+                                     retry_policy: @config.retry_policy
+
+              @pipeline_service_stub.call_rpc :delete_pipeline_job, request, options: options do |response, operation|
+                response = ::Gapic::Operation.new response, @operations_client, options: options
+                yield response, operation if block_given?
+                return response
+              end
+            rescue ::GRPC::BadStatus => e
+              raise ::Google::Cloud::Error.from_error(e)
+            end
+
+            ##
+            # Cancels a PipelineJob.
+            # Starts asynchronous cancellation on the PipelineJob. The server
+            # makes a best effort to cancel the pipeline, but success is not
+            # guaranteed. Clients can use {::Google::Cloud::Aiplatform::V1beta1::PipelineService::Client#get_pipeline_job PipelineService.GetPipelineJob} or
+            # other methods to check whether the cancellation succeeded or whether the
+            # pipeline completed despite cancellation. On successful cancellation,
+            # the PipelineJob is not deleted; instead it becomes a pipeline with
+            # a {::Google::Cloud::Aiplatform::V1beta1::PipelineJob#error PipelineJob.error} value with a {::Google::Rpc::Status#code google.rpc.Status.code} of 1,
+            # corresponding to `Code.CANCELLED`, and {::Google::Cloud::Aiplatform::V1beta1::PipelineJob#state PipelineJob.state} is set to
+            # `CANCELLED`.
+            #
+            # @overload cancel_pipeline_job(request, options = nil)
+            #   Pass arguments to `cancel_pipeline_job` via a request object, either of type
+            #   {::Google::Cloud::Aiplatform::V1beta1::CancelPipelineJobRequest} or an equivalent Hash.
+            #
+            #   @param request [::Google::Cloud::Aiplatform::V1beta1::CancelPipelineJobRequest, ::Hash]
+            #     A request object representing the call parameters. Required. To specify no
+            #     parameters, or to keep all the default parameter values, pass an empty Hash.
+            #   @param options [::Gapic::CallOptions, ::Hash]
+            #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+            #
+            # @overload cancel_pipeline_job(name: nil)
+            #   Pass arguments to `cancel_pipeline_job` via keyword arguments. Note that at
+            #   least one keyword argument is required. To specify no parameters, or to keep all
+            #   the default parameter values, pass an empty Hash as a request object (see above).
+            #
+            #   @param name [::String]
+            #     Required. The name of the PipelineJob to cancel.
+            #     Format:
+            #     `projects/{project}/locations/{location}/pipelineJobs/{pipeline_job}`
+            #
+            # @yield [response, operation] Access the result along with the RPC operation
+            # @yieldparam response [::Google::Protobuf::Empty]
+            # @yieldparam operation [::GRPC::ActiveCall::Operation]
+            #
+            # @return [::Google::Protobuf::Empty]
+            #
+            # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            def cancel_pipeline_job request, options = nil
+              raise ::ArgumentError, "request must be provided" if request.nil?
+
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Aiplatform::V1beta1::CancelPipelineJobRequest
+
+              # Converts hash and nil to an options object
+              options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+              # Customize the options with defaults
+              metadata = @config.rpcs.cancel_pipeline_job.metadata.to_h
+
+              # Set x-goog-api-client and x-goog-user-project headers
+              metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                lib_name: @config.lib_name, lib_version: @config.lib_version,
+                gapic_version: ::Google::Cloud::Aiplatform::V1beta1::VERSION
+              metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {
+                "name" => request.name
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
+              options.apply_defaults timeout:      @config.rpcs.cancel_pipeline_job.timeout,
+                                     metadata:     metadata,
+                                     retry_policy: @config.rpcs.cancel_pipeline_job.retry_policy
+              options.apply_defaults metadata:     @config.metadata,
+                                     retry_policy: @config.retry_policy
+
+              @pipeline_service_stub.call_rpc :cancel_pipeline_job, request, options: options do |response, operation|
+                yield response, operation if block_given?
+                return response
+              end
+            rescue ::GRPC::BadStatus => e
+              raise ::Google::Cloud::Error.from_error(e)
+            end
+
+            ##
             # Configuration class for the PipelineService API.
             #
             # This class represents the configuration for PipelineService,
@@ -711,6 +1087,31 @@ module Google
                 # @return [::Gapic::Config::Method]
                 #
                 attr_reader :cancel_training_pipeline
+                ##
+                # RPC-specific configuration for `create_pipeline_job`
+                # @return [::Gapic::Config::Method]
+                #
+                attr_reader :create_pipeline_job
+                ##
+                # RPC-specific configuration for `get_pipeline_job`
+                # @return [::Gapic::Config::Method]
+                #
+                attr_reader :get_pipeline_job
+                ##
+                # RPC-specific configuration for `list_pipeline_jobs`
+                # @return [::Gapic::Config::Method]
+                #
+                attr_reader :list_pipeline_jobs
+                ##
+                # RPC-specific configuration for `delete_pipeline_job`
+                # @return [::Gapic::Config::Method]
+                #
+                attr_reader :delete_pipeline_job
+                ##
+                # RPC-specific configuration for `cancel_pipeline_job`
+                # @return [::Gapic::Config::Method]
+                #
+                attr_reader :cancel_pipeline_job
 
                 # @private
                 def initialize parent_rpcs = nil
@@ -724,6 +1125,16 @@ module Google
                   @delete_training_pipeline = ::Gapic::Config::Method.new delete_training_pipeline_config
                   cancel_training_pipeline_config = parent_rpcs.cancel_training_pipeline if parent_rpcs.respond_to? :cancel_training_pipeline
                   @cancel_training_pipeline = ::Gapic::Config::Method.new cancel_training_pipeline_config
+                  create_pipeline_job_config = parent_rpcs.create_pipeline_job if parent_rpcs.respond_to? :create_pipeline_job
+                  @create_pipeline_job = ::Gapic::Config::Method.new create_pipeline_job_config
+                  get_pipeline_job_config = parent_rpcs.get_pipeline_job if parent_rpcs.respond_to? :get_pipeline_job
+                  @get_pipeline_job = ::Gapic::Config::Method.new get_pipeline_job_config
+                  list_pipeline_jobs_config = parent_rpcs.list_pipeline_jobs if parent_rpcs.respond_to? :list_pipeline_jobs
+                  @list_pipeline_jobs = ::Gapic::Config::Method.new list_pipeline_jobs_config
+                  delete_pipeline_job_config = parent_rpcs.delete_pipeline_job if parent_rpcs.respond_to? :delete_pipeline_job
+                  @delete_pipeline_job = ::Gapic::Config::Method.new delete_pipeline_job_config
+                  cancel_pipeline_job_config = parent_rpcs.cancel_pipeline_job if parent_rpcs.respond_to? :cancel_pipeline_job
+                  @cancel_pipeline_job = ::Gapic::Config::Method.new cancel_pipeline_job_config
 
                   yield self if block_given?
                 end

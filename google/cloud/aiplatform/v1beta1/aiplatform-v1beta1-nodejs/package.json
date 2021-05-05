@@ -23,12 +23,18 @@
     "aiplatform",
     "dataset service",
     "endpoint service",
+    "featurestore online serving service",
+    "featurestore service",
+    "index endpoint service",
+    "index service",
     "job service",
+    "metadata service",
     "migration service",
     "model service",
     "pipeline service",
     "prediction service",
     "specialist pool service",
+    "tensorboard service",
     "vizier service"
   ],
   "scripts": {

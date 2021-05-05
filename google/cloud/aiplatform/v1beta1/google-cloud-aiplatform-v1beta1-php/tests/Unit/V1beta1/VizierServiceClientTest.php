@@ -95,10 +95,14 @@ class VizierServiceClientTest extends GeneratedTest
         // Mock response
         $name = 'name3373707';
         $id = 'id3355';
+        $clientId = 'clientId-1904089585';
+        $infeasibleReason = 'infeasibleReason1225702715';
         $customJob = 'customJob-1581369873';
         $expectedResponse = new Trial();
         $expectedResponse->setName($name);
         $expectedResponse->setId($id);
+        $expectedResponse->setClientId($clientId);
+        $expectedResponse->setInfeasibleReason($infeasibleReason);
         $expectedResponse->setCustomJob($customJob);
         $transport->addResponse($expectedResponse);
         // Mock request
@@ -290,10 +294,14 @@ class VizierServiceClientTest extends GeneratedTest
         // Mock response
         $name2 = 'name2-1052831874';
         $id = 'id3355';
+        $clientId = 'clientId-1904089585';
+        $infeasibleReason = 'infeasibleReason1225702715';
         $customJob = 'customJob-1581369873';
         $expectedResponse = new Trial();
         $expectedResponse->setName($name2);
         $expectedResponse->setId($id);
+        $expectedResponse->setClientId($clientId);
+        $expectedResponse->setInfeasibleReason($infeasibleReason);
         $expectedResponse->setCustomJob($customJob);
         $transport->addResponse($expectedResponse);
         // Mock request
@@ -430,10 +438,14 @@ class VizierServiceClientTest extends GeneratedTest
         // Mock response
         $name = 'name3373707';
         $id = 'id3355';
+        $clientId = 'clientId-1904089585';
+        $infeasibleReason = 'infeasibleReason1225702715';
         $customJob = 'customJob-1581369873';
         $expectedResponse = new Trial();
         $expectedResponse->setName($name);
         $expectedResponse->setId($id);
+        $expectedResponse->setClientId($clientId);
+        $expectedResponse->setInfeasibleReason($infeasibleReason);
         $expectedResponse->setCustomJob($customJob);
         $transport->addResponse($expectedResponse);
         // Mock request
@@ -692,10 +704,14 @@ class VizierServiceClientTest extends GeneratedTest
         // Mock response
         $name2 = 'name2-1052831874';
         $id = 'id3355';
+        $clientId = 'clientId-1904089585';
+        $infeasibleReason = 'infeasibleReason1225702715';
         $customJob = 'customJob-1581369873';
         $expectedResponse = new Trial();
         $expectedResponse->setName($name2);
         $expectedResponse->setId($id);
+        $expectedResponse->setClientId($clientId);
+        $expectedResponse->setInfeasibleReason($infeasibleReason);
         $expectedResponse->setCustomJob($customJob);
         $transport->addResponse($expectedResponse);
         // Mock request
@@ -1038,10 +1054,14 @@ class VizierServiceClientTest extends GeneratedTest
         // Mock response
         $name2 = 'name2-1052831874';
         $id = 'id3355';
+        $clientId = 'clientId-1904089585';
+        $infeasibleReason = 'infeasibleReason1225702715';
         $customJob = 'customJob-1581369873';
         $expectedResponse = new Trial();
         $expectedResponse->setName($name2);
         $expectedResponse->setId($id);
+        $expectedResponse->setClientId($clientId);
+        $expectedResponse->setInfeasibleReason($infeasibleReason);
         $expectedResponse->setCustomJob($customJob);
         $transport->addResponse($expectedResponse);
         // Mock request

@@ -51,8 +51,8 @@ type UserActionReference struct {
 	//	*UserActionReference_Operation
 	//	*UserActionReference_DataLabelingJob
 	Reference isUserActionReference_Reference `protobuf_oneof:"reference"`
-	// The method name of the API call. For example,
-	// "/google.cloud.aiplatform.v1alpha1.DatasetService.CreateDataset"
+	// The method name of the API RPC call. For example,
+	// "/google.cloud.aiplatform.{apiVersion}.DatasetService.CreateDataset"
 	Method string `protobuf:"bytes,3,opt,name=method,proto3" json:"method,omitempty"`
 }
 

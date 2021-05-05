@@ -99,6 +99,18 @@ return [
                     ],
                 ],
             ],
+            'CreateModelDeploymentMonitoringJob' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta1/{parent=projects/*/locations/*}/modelDeploymentMonitoringJobs',
+                'body' => 'model_deployment_monitoring_job',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
             'DeleteBatchPredictionJob' => [
                 'method' => 'delete',
                 'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/batchPredictionJobs/*}',
@@ -135,6 +147,17 @@ return [
             'DeleteHyperparameterTuningJob' => [
                 'method' => 'delete',
                 'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/hyperparameterTuningJobs/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'DeleteModelDeploymentMonitoringJob' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/modelDeploymentMonitoringJobs/*}',
                 'placeholders' => [
                     'name' => [
                         'getters' => [
@@ -187,6 +210,17 @@ return [
                     ],
                 ],
             ],
+            'GetModelDeploymentMonitoringJob' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/modelDeploymentMonitoringJobs/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
             'ListBatchPredictionJobs' => [
                 'method' => 'get',
                 'uriTemplate' => '/v1beta1/{parent=projects/*/locations/*}/batchPredictionJobs',
@@ -227,6 +261,66 @@ return [
                     'parent' => [
                         'getters' => [
                             'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'ListModelDeploymentMonitoringJobs' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta1/{parent=projects/*/locations/*}/modelDeploymentMonitoringJobs',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'PauseModelDeploymentMonitoringJob' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/modelDeploymentMonitoringJobs/*}:pause',
+                'body' => '*',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'ResumeModelDeploymentMonitoringJob' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/modelDeploymentMonitoringJobs/*}:resume',
+                'body' => '*',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'SearchModelDeploymentMonitoringStatsAnomalies' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta1/{model_deployment_monitoring_job=projects/*/locations/*/modelDeploymentMonitoringJobs/*}:searchModelDeploymentMonitoringStatsAnomalies',
+                'body' => '*',
+                'placeholders' => [
+                    'model_deployment_monitoring_job' => [
+                        'getters' => [
+                            'getModelDeploymentMonitoringJob',
+                        ],
+                    ],
+                ],
+            ],
+            'UpdateModelDeploymentMonitoringJob' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v1beta1/{model_deployment_monitoring_job.name=projects/*/locations/*/modelDeploymentMonitoringJobs/*}',
+                'body' => 'model_deployment_monitoring_job',
+                'placeholders' => [
+                    'model_deployment_monitoring_job.name' => [
+                        'getters' => [
+                            'getModelDeploymentMonitoringJob',
+                            'getName',
                         ],
                     ],
                 ],

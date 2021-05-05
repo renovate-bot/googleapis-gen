@@ -5,7 +5,7 @@ package com.google.cloud.aiplatform.v1beta1;
 
 /**
  * <pre>
- * Request message for [DataLabelingJobService.CancelDataLabelingJob][].
+ * Request message for [JobService.CancelDataLabelingJob][google.cloud.aiplatform.v1beta1.JobService.CancelDataLabelingJob].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.CancelDataLabelingJobRequest}
@@ -297,7 +297,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Request message for [DataLabelingJobService.CancelDataLabelingJob][].
+   * Request message for [JobService.CancelDataLabelingJob][google.cloud.aiplatform.v1beta1.JobService.CancelDataLabelingJob].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.CancelDataLabelingJobRequest}

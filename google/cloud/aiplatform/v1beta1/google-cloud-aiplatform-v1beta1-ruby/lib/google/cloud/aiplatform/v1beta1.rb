@@ -18,12 +18,18 @@
 
 require "google/cloud/aiplatform/v1beta1/dataset_service"
 require "google/cloud/aiplatform/v1beta1/endpoint_service"
+require "google/cloud/aiplatform/v1beta1/featurestore_online_serving_service"
+require "google/cloud/aiplatform/v1beta1/featurestore_service"
+require "google/cloud/aiplatform/v1beta1/index_endpoint_service"
+require "google/cloud/aiplatform/v1beta1/index_service"
 require "google/cloud/aiplatform/v1beta1/job_service"
+require "google/cloud/aiplatform/v1beta1/metadata_service"
 require "google/cloud/aiplatform/v1beta1/migration_service"
 require "google/cloud/aiplatform/v1beta1/model_service"
 require "google/cloud/aiplatform/v1beta1/pipeline_service"
 require "google/cloud/aiplatform/v1beta1/prediction_service"
 require "google/cloud/aiplatform/v1beta1/specialist_pool_service"
+require "google/cloud/aiplatform/v1beta1/tensorboard_service"
 require "google/cloud/aiplatform/v1beta1/vizier_service"
 require "google/cloud/aiplatform/v1beta1/version"
 

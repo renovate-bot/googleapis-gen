@@ -926,7 +926,7 @@ type ExplanationMetadata_InputMetadata_Visualization struct {
 	// 99.9.
 	ClipPercentUpperbound float32 `protobuf:"fixed32,4,opt,name=clip_percent_upperbound,json=clipPercentUpperbound,proto3" json:"clip_percent_upperbound,omitempty"`
 	// Excludes attributions below the specified percentile, from the
-	// highlighted areas. Defaults to 35.
+	// highlighted areas. Defaults to 62.
 	ClipPercentLowerbound float32 `protobuf:"fixed32,5,opt,name=clip_percent_lowerbound,json=clipPercentLowerbound,proto3" json:"clip_percent_lowerbound,omitempty"`
 	// How the original image is displayed in the visualization.
 	// Adjusting the overlay can help increase visual clarity if the original

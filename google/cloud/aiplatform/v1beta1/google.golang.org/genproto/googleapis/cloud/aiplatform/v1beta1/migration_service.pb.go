@@ -63,15 +63,18 @@ type SearchMigratableResourcesRequest struct {
 	PageSize int32 `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
 	// The standard page token.
 	PageToken string `protobuf:"bytes,3,opt,name=page_token,json=pageToken,proto3" json:"page_token,omitempty"`
-	// Supported filters are:
-	// * Resource type: For a specific type of MigratableResource.
-	//   * `ml_engine_model_version:*`
-	//   * `automl_model:*`,
-	//   * `automl_dataset:*`
-	//   * `data_labeling_dataset:*`.
-	// * Migrated or not: Filter migrated resource or not by last_migrate_time.
-	//   * `last_migrate_time:*` will filter migrated resources.
-	//   * `NOT last_migrate_time:*` will filter not yet migrated resources.
+	// A filter for your search. You can use the following types of filters:
+	//
+	// *   Resource type filters. The following strings filter for a specific type
+	//     of [MigratableResource][google.cloud.aiplatform.v1beta1.MigratableResource]:
+	//     *   `ml_engine_model_version:*`
+	//     *   `automl_model:*`
+	//     *   `automl_dataset:*`
+	//     *   `data_labeling_dataset:*`
+	// *   "Migrated or not" filters. The following strings filter for resources
+	//     that either have or have not already been migrated:
+	//     *   `last_migrate_time:*` filters for migrated resources.
+	//     *   `NOT last_migrate_time:*` filters for not yet migrated resources.
 	Filter string `protobuf:"bytes,4,opt,name=filter,proto3" json:"filter,omitempty"`
 }
 

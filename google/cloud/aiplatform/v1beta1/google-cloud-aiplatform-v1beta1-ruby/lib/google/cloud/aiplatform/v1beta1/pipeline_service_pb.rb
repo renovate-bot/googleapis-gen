@@ -7,6 +7,7 @@ require 'google/api/annotations_pb'
 require 'google/api/client_pb'
 require 'google/api/field_behavior_pb'
 require 'google/api/resource_pb'
+require 'google/cloud/aiplatform/v1beta1/pipeline_job_pb'
 require 'google/cloud/aiplatform/v1beta1/training_pipeline_pb'
 require 'google/longrunning/operations_pb'
 require 'google/protobuf/empty_pb'
@@ -37,6 +38,30 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.aiplatform.v1beta1.CancelTrainingPipelineRequest" do
       optional :name, :string, 1
     end
+    add_message "google.cloud.aiplatform.v1beta1.CreatePipelineJobRequest" do
+      optional :parent, :string, 1
+      optional :pipeline_job, :message, 2, "google.cloud.aiplatform.v1beta1.PipelineJob"
+      optional :pipeline_job_id, :string, 3
+    end
+    add_message "google.cloud.aiplatform.v1beta1.GetPipelineJobRequest" do
+      optional :name, :string, 1
+    end
+    add_message "google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest" do
+      optional :parent, :string, 1
+      optional :filter, :string, 2
+      optional :page_size, :int32, 3
+      optional :page_token, :string, 4
+    end
+    add_message "google.cloud.aiplatform.v1beta1.ListPipelineJobsResponse" do
+      repeated :pipeline_jobs, :message, 1, "google.cloud.aiplatform.v1beta1.PipelineJob"
+      optional :next_page_token, :string, 2
+    end
+    add_message "google.cloud.aiplatform.v1beta1.DeletePipelineJobRequest" do
+      optional :name, :string, 1
+    end
+    add_message "google.cloud.aiplatform.v1beta1.CancelPipelineJobRequest" do
+      optional :name, :string, 1
+    end
   end
 end
 
@@ -50,6 +75,12 @@ module Google
         ListTrainingPipelinesResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.ListTrainingPipelinesResponse").msgclass
         DeleteTrainingPipelineRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.DeleteTrainingPipelineRequest").msgclass
         CancelTrainingPipelineRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.CancelTrainingPipelineRequest").msgclass
+        CreatePipelineJobRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.CreatePipelineJobRequest").msgclass
+        GetPipelineJobRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.GetPipelineJobRequest").msgclass
+        ListPipelineJobsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest").msgclass
+        ListPipelineJobsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.ListPipelineJobsResponse").msgclass
+        DeletePipelineJobRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.DeletePipelineJobRequest").msgclass
+        CancelPipelineJobRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.CancelPipelineJobRequest").msgclass
       end
     end
   end

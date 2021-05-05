@@ -214,7 +214,7 @@ module Google
             # @!attribute [rw] clip_percent_lowerbound
             #   @return [::Float]
             #     Excludes attributions below the specified percentile, from the
-            #     highlighted areas. Defaults to 35.
+            #     highlighted areas. Defaults to 62.
             # @!attribute [rw] overlay_type
             #   @return [::Google::Cloud::Aiplatform::V1beta1::ExplanationMetadata::InputMetadata::Visualization::OverlayType]
             #     How the original image is displayed in the visualization.

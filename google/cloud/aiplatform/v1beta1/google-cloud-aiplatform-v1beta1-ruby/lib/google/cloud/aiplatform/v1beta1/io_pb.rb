@@ -7,6 +7,12 @@ require 'google/api/field_behavior_pb'
 require 'google/api/annotations_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("google/cloud/aiplatform/v1beta1/io.proto", :syntax => :proto3) do
+    add_message "google.cloud.aiplatform.v1beta1.AvroSource" do
+      optional :gcs_source, :message, 1, "google.cloud.aiplatform.v1beta1.GcsSource"
+    end
+    add_message "google.cloud.aiplatform.v1beta1.CsvSource" do
+      optional :gcs_source, :message, 1, "google.cloud.aiplatform.v1beta1.GcsSource"
+    end
     add_message "google.cloud.aiplatform.v1beta1.GcsSource" do
       repeated :uris, :string, 1
     end
@@ -19,6 +25,12 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.aiplatform.v1beta1.BigQueryDestination" do
       optional :output_uri, :string, 1
     end
+    add_message "google.cloud.aiplatform.v1beta1.CsvDestination" do
+      optional :gcs_destination, :message, 1, "google.cloud.aiplatform.v1beta1.GcsDestination"
+    end
+    add_message "google.cloud.aiplatform.v1beta1.TFRecordDestination" do
+      optional :gcs_destination, :message, 1, "google.cloud.aiplatform.v1beta1.GcsDestination"
+    end
     add_message "google.cloud.aiplatform.v1beta1.ContainerRegistryDestination" do
       optional :output_uri, :string, 1
     end
@@ -29,10 +41,14 @@ module Google
   module Cloud
     module Aiplatform
       module V1beta1
+        AvroSource = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.AvroSource").msgclass
+        CsvSource = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.CsvSource").msgclass
         GcsSource = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.GcsSource").msgclass
         GcsDestination = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.GcsDestination").msgclass
         BigQuerySource = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.BigQuerySource").msgclass
         BigQueryDestination = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.BigQueryDestination").msgclass
+        CsvDestination = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.CsvDestination").msgclass
+        TFRecordDestination = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.TFRecordDestination").msgclass
         ContainerRegistryDestination = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.ContainerRegistryDestination").msgclass
       end
     end

@@ -37,8 +37,8 @@ module Google
         #     'projects/\\{project}/locations/\\{location}/dataLabelingJobs/\\{data_labeling_job}'
         # @!attribute [rw] method
         #   @return [::String]
-        #     The method name of the API call. For example,
-        #     "/google.cloud.aiplatform.v1alpha1.DatasetService.CreateDataset"
+        #     The method name of the API RPC call. For example,
+        #     "/google.cloud.aiplatform.\\{apiVersion}.DatasetService.CreateDataset"
         class UserActionReference
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

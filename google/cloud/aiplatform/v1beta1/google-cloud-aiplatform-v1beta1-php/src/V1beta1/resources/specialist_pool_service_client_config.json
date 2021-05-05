@@ -3,7 +3,7 @@
         "google.cloud.aiplatform.v1beta1.SpecialistPoolService": {
             "retry_codes": {
                 "no_retry_codes": [],
-                "no_retry_7_codes": []
+                "no_retry_11_codes": []
             },
             "retry_params": {
                 "no_retry_params": {
@@ -15,7 +15,7 @@
                     "max_rpc_timeout_millis": 0,
                     "total_timeout_millis": 0
                 },
-                "no_retry_7_params": {
+                "no_retry_11_params": {
                     "initial_retry_delay_millis": 0,
                     "retry_delay_multiplier": 0.0,
                     "max_retry_delay_millis": 0,
@@ -28,28 +28,28 @@
             "methods": {
                 "CreateSpecialistPool": {
                     "timeout_millis": 5000,
-                    "retry_codes_name": "no_retry_7_codes",
-                    "retry_params_name": "no_retry_7_params"
+                    "retry_codes_name": "no_retry_11_codes",
+                    "retry_params_name": "no_retry_11_params"
                 },
                 "DeleteSpecialistPool": {
                     "timeout_millis": 5000,
-                    "retry_codes_name": "no_retry_7_codes",
-                    "retry_params_name": "no_retry_7_params"
+                    "retry_codes_name": "no_retry_11_codes",
+                    "retry_params_name": "no_retry_11_params"
                 },
                 "GetSpecialistPool": {
                     "timeout_millis": 5000,
-                    "retry_codes_name": "no_retry_7_codes",
-                    "retry_params_name": "no_retry_7_params"
+                    "retry_codes_name": "no_retry_11_codes",
+                    "retry_params_name": "no_retry_11_params"
                 },
                 "ListSpecialistPools": {
                     "timeout_millis": 5000,
-                    "retry_codes_name": "no_retry_7_codes",
-                    "retry_params_name": "no_retry_7_params"
+                    "retry_codes_name": "no_retry_11_codes",
+                    "retry_params_name": "no_retry_11_params"
                 },
                 "UpdateSpecialistPool": {
                     "timeout_millis": 5000,
-                    "retry_codes_name": "no_retry_7_codes",
-                    "retry_params_name": "no_retry_7_params"
+                    "retry_codes_name": "no_retry_11_codes",
+                    "retry_params_name": "no_retry_11_params"
                 }
             }
         }

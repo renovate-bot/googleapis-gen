@@ -362,4 +362,129 @@ class JobServiceGrpcClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * Creates a ModelDeploymentMonitoringJob. It will run periodically on a
+     * configured interval.
+     * @param \Google\Cloud\Aiplatform\V1beta1\CreateModelDeploymentMonitoringJobRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function CreateModelDeploymentMonitoringJob(\Google\Cloud\Aiplatform\V1beta1\CreateModelDeploymentMonitoringJobRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.aiplatform.v1beta1.JobService/CreateModelDeploymentMonitoringJob',
+        $argument,
+        ['\Google\Cloud\Aiplatform\V1beta1\ModelDeploymentMonitoringJob', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Searches Model Monitoring Statistics generated within a given time window.
+     * @param \Google\Cloud\Aiplatform\V1beta1\SearchModelDeploymentMonitoringStatsAnomaliesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function SearchModelDeploymentMonitoringStatsAnomalies(\Google\Cloud\Aiplatform\V1beta1\SearchModelDeploymentMonitoringStatsAnomaliesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.aiplatform.v1beta1.JobService/SearchModelDeploymentMonitoringStatsAnomalies',
+        $argument,
+        ['\Google\Cloud\Aiplatform\V1beta1\SearchModelDeploymentMonitoringStatsAnomaliesResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Gets a ModelDeploymentMonitoringJob.
+     * @param \Google\Cloud\Aiplatform\V1beta1\GetModelDeploymentMonitoringJobRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetModelDeploymentMonitoringJob(\Google\Cloud\Aiplatform\V1beta1\GetModelDeploymentMonitoringJobRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.aiplatform.v1beta1.JobService/GetModelDeploymentMonitoringJob',
+        $argument,
+        ['\Google\Cloud\Aiplatform\V1beta1\ModelDeploymentMonitoringJob', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Lists ModelDeploymentMonitoringJobs in a Location.
+     * @param \Google\Cloud\Aiplatform\V1beta1\ListModelDeploymentMonitoringJobsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListModelDeploymentMonitoringJobs(\Google\Cloud\Aiplatform\V1beta1\ListModelDeploymentMonitoringJobsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.aiplatform.v1beta1.JobService/ListModelDeploymentMonitoringJobs',
+        $argument,
+        ['\Google\Cloud\Aiplatform\V1beta1\ListModelDeploymentMonitoringJobsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Updates a ModelDeploymentMonitoringJob.
+     * @param \Google\Cloud\Aiplatform\V1beta1\UpdateModelDeploymentMonitoringJobRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function UpdateModelDeploymentMonitoringJob(\Google\Cloud\Aiplatform\V1beta1\UpdateModelDeploymentMonitoringJobRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.aiplatform.v1beta1.JobService/UpdateModelDeploymentMonitoringJob',
+        $argument,
+        ['\Google\LongRunning\Operation', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Deletes a ModelDeploymentMonitoringJob.
+     * @param \Google\Cloud\Aiplatform\V1beta1\DeleteModelDeploymentMonitoringJobRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteModelDeploymentMonitoringJob(\Google\Cloud\Aiplatform\V1beta1\DeleteModelDeploymentMonitoringJobRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.aiplatform.v1beta1.JobService/DeleteModelDeploymentMonitoringJob',
+        $argument,
+        ['\Google\LongRunning\Operation', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Pauses a ModelDeploymentMonitoringJob. If the job is running, the server
+     * makes a best effort to cancel the job. Will mark
+     * [ModelDeploymentMonitoringJob.state][google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob.state] to 'PAUSED'.
+     * @param \Google\Cloud\Aiplatform\V1beta1\PauseModelDeploymentMonitoringJobRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PauseModelDeploymentMonitoringJob(\Google\Cloud\Aiplatform\V1beta1\PauseModelDeploymentMonitoringJobRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.aiplatform.v1beta1.JobService/PauseModelDeploymentMonitoringJob',
+        $argument,
+        ['\Google\Protobuf\GPBEmpty', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Resumes a paused ModelDeploymentMonitoringJob. It will start to run from
+     * next scheduled time. A deleted ModelDeploymentMonitoringJob can't be
+     * resumed.
+     * @param \Google\Cloud\Aiplatform\V1beta1\ResumeModelDeploymentMonitoringJobRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ResumeModelDeploymentMonitoringJob(\Google\Cloud\Aiplatform\V1beta1\ResumeModelDeploymentMonitoringJobRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.aiplatform.v1beta1.JobService/ResumeModelDeploymentMonitoringJob',
+        $argument,
+        ['\Google\Protobuf\GPBEmpty', 'decode'],
+        $metadata, $options);
+    }
+
 }

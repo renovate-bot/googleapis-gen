@@ -18,8 +18,15 @@ class Io
         \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-”
-(google/cloud/aiplatform/v1beta1/io.protogoogle.cloud.aiplatform.v1beta1google/api/annotations.proto"
+ø
+(google/cloud/aiplatform/v1beta1/io.protogoogle.cloud.aiplatform.v1beta1google/api/annotations.proto"Q
+
+AvroSourceC
+
+gcs_source (2*.google.cloud.aiplatform.v1beta1.GcsSourceB‡A"P
+	CsvSourceC
+
+gcs_source (2*.google.cloud.aiplatform.v1beta1.GcsSourceB‡A"
 	GcsSource
 uris (	B‡A"0
 GcsDestination
@@ -28,7 +35,11 @@ class Io
 	input_uri (	B‡A".
 BigQueryDestination
 
-output_uri (	B‡A"7
+output_uri (	B‡A"_
+CsvDestinationM
+gcs_destination (2/.google.cloud.aiplatform.v1beta1.GcsDestinationB‡A"d
+TFRecordDestinationM
+gcs_destination (2/.google.cloud.aiplatform.v1beta1.GcsDestinationB‡A"7
 ContainerRegistryDestination
 
 output_uri (	B‡AB{

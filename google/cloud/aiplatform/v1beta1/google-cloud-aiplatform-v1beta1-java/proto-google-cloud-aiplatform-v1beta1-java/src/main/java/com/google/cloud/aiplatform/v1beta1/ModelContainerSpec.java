@@ -5,8 +5,8 @@ package com.google.cloud.aiplatform.v1beta1;
 
 /**
  * <pre>
- * Specification of a container for serving predictions. This message is a
- * subset of the Kubernetes Container v1 core
+ * Specification of a container for serving predictions. Some fields in this
+ * message correspond to fields in the Kubernetes Container v1 core
  * [specification](https://tinyurl.com/k8s-io-api/v1.18/#container-v1-core).
  * </pre>
  *
@@ -1299,8 +1299,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Specification of a container for serving predictions. This message is a
-   * subset of the Kubernetes Container v1 core
+   * Specification of a container for serving predictions. Some fields in this
+   * message correspond to fields in the Kubernetes Container v1 core
    * [specification](https://tinyurl.com/k8s-io-api/v1.18/#container-v1-core).
    * </pre>
    *

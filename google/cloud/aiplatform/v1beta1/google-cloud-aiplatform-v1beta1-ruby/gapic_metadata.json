@@ -108,6 +108,212 @@
         }
       }
     },
+    "FeaturestoreOnlineServingService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Aiplatform::V1beta1::FeaturestoreOnlineServingService::Client",
+          "rpcs": {
+            "ReadFeatureValues": {
+              "methods": [
+                "read_feature_values"
+              ]
+            },
+            "StreamingReadFeatureValues": {
+              "methods": [
+                "streaming_read_feature_values"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "FeaturestoreService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client",
+          "rpcs": {
+            "CreateFeaturestore": {
+              "methods": [
+                "create_featurestore"
+              ]
+            },
+            "GetFeaturestore": {
+              "methods": [
+                "get_featurestore"
+              ]
+            },
+            "ListFeaturestores": {
+              "methods": [
+                "list_featurestores"
+              ]
+            },
+            "UpdateFeaturestore": {
+              "methods": [
+                "update_featurestore"
+              ]
+            },
+            "DeleteFeaturestore": {
+              "methods": [
+                "delete_featurestore"
+              ]
+            },
+            "CreateEntityType": {
+              "methods": [
+                "create_entity_type"
+              ]
+            },
+            "GetEntityType": {
+              "methods": [
+                "get_entity_type"
+              ]
+            },
+            "ListEntityTypes": {
+              "methods": [
+                "list_entity_types"
+              ]
+            },
+            "UpdateEntityType": {
+              "methods": [
+                "update_entity_type"
+              ]
+            },
+            "DeleteEntityType": {
+              "methods": [
+                "delete_entity_type"
+              ]
+            },
+            "CreateFeature": {
+              "methods": [
+                "create_feature"
+              ]
+            },
+            "BatchCreateFeatures": {
+              "methods": [
+                "batch_create_features"
+              ]
+            },
+            "GetFeature": {
+              "methods": [
+                "get_feature"
+              ]
+            },
+            "ListFeatures": {
+              "methods": [
+                "list_features"
+              ]
+            },
+            "UpdateFeature": {
+              "methods": [
+                "update_feature"
+              ]
+            },
+            "DeleteFeature": {
+              "methods": [
+                "delete_feature"
+              ]
+            },
+            "ImportFeatureValues": {
+              "methods": [
+                "import_feature_values"
+              ]
+            },
+            "BatchReadFeatureValues": {
+              "methods": [
+                "batch_read_feature_values"
+              ]
+            },
+            "ExportFeatureValues": {
+              "methods": [
+                "export_feature_values"
+              ]
+            },
+            "SearchFeatures": {
+              "methods": [
+                "search_features"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "IndexEndpointService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Aiplatform::V1beta1::IndexEndpointService::Client",
+          "rpcs": {
+            "CreateIndexEndpoint": {
+              "methods": [
+                "create_index_endpoint"
+              ]
+            },
+            "GetIndexEndpoint": {
+              "methods": [
+                "get_index_endpoint"
+              ]
+            },
+            "ListIndexEndpoints": {
+              "methods": [
+                "list_index_endpoints"
+              ]
+            },
+            "UpdateIndexEndpoint": {
+              "methods": [
+                "update_index_endpoint"
+              ]
+            },
+            "DeleteIndexEndpoint": {
+              "methods": [
+                "delete_index_endpoint"
+              ]
+            },
+            "DeployIndex": {
+              "methods": [
+                "deploy_index"
+              ]
+            },
+            "UndeployIndex": {
+              "methods": [
+                "undeploy_index"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "IndexService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Aiplatform::V1beta1::IndexService::Client",
+          "rpcs": {
+            "CreateIndex": {
+              "methods": [
+                "create_index"
+              ]
+            },
+            "GetIndex": {
+              "methods": [
+                "get_index"
+              ]
+            },
+            "ListIndexes": {
+              "methods": [
+                "list_indexes"
+              ]
+            },
+            "UpdateIndex": {
+              "methods": [
+                "update_index"
+              ]
+            },
+            "DeleteIndex": {
+              "methods": [
+                "delete_index"
+              ]
+            }
+          }
+        }
+      }
+    },
     "JobService": {
       "clients": {
         "grpc": {
@@ -211,6 +417,185 @@
             "CancelBatchPredictionJob": {
               "methods": [
                 "cancel_batch_prediction_job"
+              ]
+            },
+            "CreateModelDeploymentMonitoringJob": {
+              "methods": [
+                "create_model_deployment_monitoring_job"
+              ]
+            },
+            "SearchModelDeploymentMonitoringStatsAnomalies": {
+              "methods": [
+                "search_model_deployment_monitoring_stats_anomalies"
+              ]
+            },
+            "GetModelDeploymentMonitoringJob": {
+              "methods": [
+                "get_model_deployment_monitoring_job"
+              ]
+            },
+            "ListModelDeploymentMonitoringJobs": {
+              "methods": [
+                "list_model_deployment_monitoring_jobs"
+              ]
+            },
+            "UpdateModelDeploymentMonitoringJob": {
+              "methods": [
+                "update_model_deployment_monitoring_job"
+              ]
+            },
+            "DeleteModelDeploymentMonitoringJob": {
+              "methods": [
+                "delete_model_deployment_monitoring_job"
+              ]
+            },
+            "PauseModelDeploymentMonitoringJob": {
+              "methods": [
+                "pause_model_deployment_monitoring_job"
+              ]
+            },
+            "ResumeModelDeploymentMonitoringJob": {
+              "methods": [
+                "resume_model_deployment_monitoring_job"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "MetadataService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Aiplatform::V1beta1::MetadataService::Client",
+          "rpcs": {
+            "CreateMetadataStore": {
+              "methods": [
+                "create_metadata_store"
+              ]
+            },
+            "GetMetadataStore": {
+              "methods": [
+                "get_metadata_store"
+              ]
+            },
+            "ListMetadataStores": {
+              "methods": [
+                "list_metadata_stores"
+              ]
+            },
+            "DeleteMetadataStore": {
+              "methods": [
+                "delete_metadata_store"
+              ]
+            },
+            "CreateArtifact": {
+              "methods": [
+                "create_artifact"
+              ]
+            },
+            "GetArtifact": {
+              "methods": [
+                "get_artifact"
+              ]
+            },
+            "ListArtifacts": {
+              "methods": [
+                "list_artifacts"
+              ]
+            },
+            "UpdateArtifact": {
+              "methods": [
+                "update_artifact"
+              ]
+            },
+            "CreateContext": {
+              "methods": [
+                "create_context"
+              ]
+            },
+            "GetContext": {
+              "methods": [
+                "get_context"
+              ]
+            },
+            "ListContexts": {
+              "methods": [
+                "list_contexts"
+              ]
+            },
+            "UpdateContext": {
+              "methods": [
+                "update_context"
+              ]
+            },
+            "DeleteContext": {
+              "methods": [
+                "delete_context"
+              ]
+            },
+            "AddContextArtifactsAndExecutions": {
+              "methods": [
+                "add_context_artifacts_and_executions"
+              ]
+            },
+            "AddContextChildren": {
+              "methods": [
+                "add_context_children"
+              ]
+            },
+            "QueryContextLineageSubgraph": {
+              "methods": [
+                "query_context_lineage_subgraph"
+              ]
+            },
+            "CreateExecution": {
+              "methods": [
+                "create_execution"
+              ]
+            },
+            "GetExecution": {
+              "methods": [
+                "get_execution"
+              ]
+            },
+            "ListExecutions": {
+              "methods": [
+                "list_executions"
+              ]
+            },
+            "UpdateExecution": {
+              "methods": [
+                "update_execution"
+              ]
+            },
+            "AddExecutionEvents": {
+              "methods": [
+                "add_execution_events"
+              ]
+            },
+            "QueryExecutionInputsAndOutputs": {
+              "methods": [
+                "query_execution_inputs_and_outputs"
+              ]
+            },
+            "CreateMetadataSchema": {
+              "methods": [
+                "create_metadata_schema"
+              ]
+            },
+            "GetMetadataSchema": {
+              "methods": [
+                "get_metadata_schema"
+              ]
+            },
+            "ListMetadataSchemas": {
+              "methods": [
+                "list_metadata_schemas"
+              ]
+            },
+            "QueryArtifactLineageSubgraph": {
+              "methods": [
+                "query_artifact_lineage_subgraph"
               ]
             }
           }
@@ -324,6 +709,31 @@
               "methods": [
                 "cancel_training_pipeline"
               ]
+            },
+            "CreatePipelineJob": {
+              "methods": [
+                "create_pipeline_job"
+              ]
+            },
+            "GetPipelineJob": {
+              "methods": [
+                "get_pipeline_job"
+              ]
+            },
+            "ListPipelineJobs": {
+              "methods": [
+                "list_pipeline_jobs"
+              ]
+            },
+            "DeletePipelineJob": {
+              "methods": [
+                "delete_pipeline_job"
+              ]
+            },
+            "CancelPipelineJob": {
+              "methods": [
+                "cancel_pipeline_job"
+              ]
             }
           }
         }
@@ -376,6 +786,135 @@
             "UpdateSpecialistPool": {
               "methods": [
                 "update_specialist_pool"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "TensorboardService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client",
+          "rpcs": {
+            "CreateTensorboard": {
+              "methods": [
+                "create_tensorboard"
+              ]
+            },
+            "GetTensorboard": {
+              "methods": [
+                "get_tensorboard"
+              ]
+            },
+            "UpdateTensorboard": {
+              "methods": [
+                "update_tensorboard"
+              ]
+            },
+            "ListTensorboards": {
+              "methods": [
+                "list_tensorboards"
+              ]
+            },
+            "DeleteTensorboard": {
+              "methods": [
+                "delete_tensorboard"
+              ]
+            },
+            "CreateTensorboardExperiment": {
+              "methods": [
+                "create_tensorboard_experiment"
+              ]
+            },
+            "GetTensorboardExperiment": {
+              "methods": [
+                "get_tensorboard_experiment"
+              ]
+            },
+            "UpdateTensorboardExperiment": {
+              "methods": [
+                "update_tensorboard_experiment"
+              ]
+            },
+            "ListTensorboardExperiments": {
+              "methods": [
+                "list_tensorboard_experiments"
+              ]
+            },
+            "DeleteTensorboardExperiment": {
+              "methods": [
+                "delete_tensorboard_experiment"
+              ]
+            },
+            "CreateTensorboardRun": {
+              "methods": [
+                "create_tensorboard_run"
+              ]
+            },
+            "GetTensorboardRun": {
+              "methods": [
+                "get_tensorboard_run"
+              ]
+            },
+            "UpdateTensorboardRun": {
+              "methods": [
+                "update_tensorboard_run"
+              ]
+            },
+            "ListTensorboardRuns": {
+              "methods": [
+                "list_tensorboard_runs"
+              ]
+            },
+            "DeleteTensorboardRun": {
+              "methods": [
+                "delete_tensorboard_run"
+              ]
+            },
+            "CreateTensorboardTimeSeries": {
+              "methods": [
+                "create_tensorboard_time_series"
+              ]
+            },
+            "GetTensorboardTimeSeries": {
+              "methods": [
+                "get_tensorboard_time_series"
+              ]
+            },
+            "UpdateTensorboardTimeSeries": {
+              "methods": [
+                "update_tensorboard_time_series"
+              ]
+            },
+            "ListTensorboardTimeSeries": {
+              "methods": [
+                "list_tensorboard_time_series"
+              ]
+            },
+            "DeleteTensorboardTimeSeries": {
+              "methods": [
+                "delete_tensorboard_time_series"
+              ]
+            },
+            "ReadTensorboardTimeSeriesData": {
+              "methods": [
+                "read_tensorboard_time_series_data"
+              ]
+            },
+            "ReadTensorboardBlobData": {
+              "methods": [
+                "read_tensorboard_blob_data"
+              ]
+            },
+            "WriteTensorboardRunData": {
+              "methods": [
+                "write_tensorboard_run_data"
+              ]
+            },
+            "ExportTensorboardTimeSeriesData": {
+              "methods": [
+                "export_tensorboard_time_series_data"
               ]
             }
           }

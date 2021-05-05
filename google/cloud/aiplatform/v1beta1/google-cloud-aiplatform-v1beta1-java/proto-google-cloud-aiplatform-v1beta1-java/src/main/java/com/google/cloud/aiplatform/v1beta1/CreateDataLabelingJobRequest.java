@@ -5,7 +5,7 @@ package com.google.cloud.aiplatform.v1beta1;
 
 /**
  * <pre>
- * Request message for [DataLabelingJobService.CreateDataLabelingJob][].
+ * Request message for [JobService.CreateDataLabelingJob][google.cloud.aiplatform.v1beta1.JobService.CreateDataLabelingJob].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.CreateDataLabelingJobRequest}
@@ -362,7 +362,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Request message for [DataLabelingJobService.CreateDataLabelingJob][].
+   * Request message for [JobService.CreateDataLabelingJob][google.cloud.aiplatform.v1beta1.JobService.CreateDataLabelingJob].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.CreateDataLabelingJobRequest}

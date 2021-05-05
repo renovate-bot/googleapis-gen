@@ -44,6 +44,7 @@ from google.cloud.aiplatform_v1beta1.types import study as gca_study
 from google.cloud.aiplatform_v1beta1.types import vizier_service
 from google.longrunning import operations_pb2
 from google.oauth2 import service_account
+from google.protobuf import duration_pb2 as duration  # type: ignore
 from google.protobuf import struct_pb2 as struct  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
@@ -1988,6 +1989,10 @@ def test_create_trial(transport: str = 'grpc', request_type=vizier_service.Creat
 
             state=study.Trial.State.REQUESTED,
 
+            client_id='client_id_value',
+
+            infeasible_reason='infeasible_reason_value',
+
             custom_job='custom_job_value',
 
         )
@@ -2009,6 +2014,10 @@ def test_create_trial(transport: str = 'grpc', request_type=vizier_service.Creat
     assert response.id == 'id_value'
 
     assert response.state == study.Trial.State.REQUESTED
+
+    assert response.client_id == 'client_id_value'
+
+    assert response.infeasible_reason == 'infeasible_reason_value'
 
     assert response.custom_job == 'custom_job_value'
 
@@ -2055,6 +2064,8 @@ async def test_create_trial_async(transport: str = 'grpc_asyncio', request_type=
             name='name_value',
             id='id_value',
             state=study.Trial.State.REQUESTED,
+            client_id='client_id_value',
+            infeasible_reason='infeasible_reason_value',
             custom_job='custom_job_value',
         ))
 
@@ -2074,6 +2085,10 @@ async def test_create_trial_async(transport: str = 'grpc_asyncio', request_type=
     assert response.id == 'id_value'
 
     assert response.state == study.Trial.State.REQUESTED
+
+    assert response.client_id == 'client_id_value'
+
+    assert response.infeasible_reason == 'infeasible_reason_value'
 
     assert response.custom_job == 'custom_job_value'
 
@@ -2259,6 +2274,10 @@ def test_get_trial(transport: str = 'grpc', request_type=vizier_service.GetTrial
 
             state=study.Trial.State.REQUESTED,
 
+            client_id='client_id_value',
+
+            infeasible_reason='infeasible_reason_value',
+
             custom_job='custom_job_value',
 
         )
@@ -2280,6 +2299,10 @@ def test_get_trial(transport: str = 'grpc', request_type=vizier_service.GetTrial
     assert response.id == 'id_value'
 
     assert response.state == study.Trial.State.REQUESTED
+
+    assert response.client_id == 'client_id_value'
+
+    assert response.infeasible_reason == 'infeasible_reason_value'
 
     assert response.custom_job == 'custom_job_value'
 
@@ -2326,6 +2349,8 @@ async def test_get_trial_async(transport: str = 'grpc_asyncio', request_type=viz
             name='name_value',
             id='id_value',
             state=study.Trial.State.REQUESTED,
+            client_id='client_id_value',
+            infeasible_reason='infeasible_reason_value',
             custom_job='custom_job_value',
         ))
 
@@ -2345,6 +2370,10 @@ async def test_get_trial_async(transport: str = 'grpc_asyncio', request_type=viz
     assert response.id == 'id_value'
 
     assert response.state == study.Trial.State.REQUESTED
+
+    assert response.client_id == 'client_id_value'
+
+    assert response.infeasible_reason == 'infeasible_reason_value'
 
     assert response.custom_job == 'custom_job_value'
 
@@ -2951,6 +2980,10 @@ def test_add_trial_measurement(transport: str = 'grpc', request_type=vizier_serv
 
             state=study.Trial.State.REQUESTED,
 
+            client_id='client_id_value',
+
+            infeasible_reason='infeasible_reason_value',
+
             custom_job='custom_job_value',
 
         )
@@ -2972,6 +3005,10 @@ def test_add_trial_measurement(transport: str = 'grpc', request_type=vizier_serv
     assert response.id == 'id_value'
 
     assert response.state == study.Trial.State.REQUESTED
+
+    assert response.client_id == 'client_id_value'
+
+    assert response.infeasible_reason == 'infeasible_reason_value'
 
     assert response.custom_job == 'custom_job_value'
 
@@ -3018,6 +3055,8 @@ async def test_add_trial_measurement_async(transport: str = 'grpc_asyncio', requ
             name='name_value',
             id='id_value',
             state=study.Trial.State.REQUESTED,
+            client_id='client_id_value',
+            infeasible_reason='infeasible_reason_value',
             custom_job='custom_job_value',
         ))
 
@@ -3037,6 +3076,10 @@ async def test_add_trial_measurement_async(transport: str = 'grpc_asyncio', requ
     assert response.id == 'id_value'
 
     assert response.state == study.Trial.State.REQUESTED
+
+    assert response.client_id == 'client_id_value'
+
+    assert response.infeasible_reason == 'infeasible_reason_value'
 
     assert response.custom_job == 'custom_job_value'
 
@@ -3131,6 +3174,10 @@ def test_complete_trial(transport: str = 'grpc', request_type=vizier_service.Com
 
             state=study.Trial.State.REQUESTED,
 
+            client_id='client_id_value',
+
+            infeasible_reason='infeasible_reason_value',
+
             custom_job='custom_job_value',
 
         )
@@ -3152,6 +3199,10 @@ def test_complete_trial(transport: str = 'grpc', request_type=vizier_service.Com
     assert response.id == 'id_value'
 
     assert response.state == study.Trial.State.REQUESTED
+
+    assert response.client_id == 'client_id_value'
+
+    assert response.infeasible_reason == 'infeasible_reason_value'
 
     assert response.custom_job == 'custom_job_value'
 
@@ -3198,6 +3249,8 @@ async def test_complete_trial_async(transport: str = 'grpc_asyncio', request_typ
             name='name_value',
             id='id_value',
             state=study.Trial.State.REQUESTED,
+            client_id='client_id_value',
+            infeasible_reason='infeasible_reason_value',
             custom_job='custom_job_value',
         ))
 
@@ -3217,6 +3270,10 @@ async def test_complete_trial_async(transport: str = 'grpc_asyncio', request_typ
     assert response.id == 'id_value'
 
     assert response.state == study.Trial.State.REQUESTED
+
+    assert response.client_id == 'client_id_value'
+
+    assert response.infeasible_reason == 'infeasible_reason_value'
 
     assert response.custom_job == 'custom_job_value'
 
@@ -3694,6 +3751,10 @@ def test_stop_trial(transport: str = 'grpc', request_type=vizier_service.StopTri
 
             state=study.Trial.State.REQUESTED,
 
+            client_id='client_id_value',
+
+            infeasible_reason='infeasible_reason_value',
+
             custom_job='custom_job_value',
 
         )
@@ -3715,6 +3776,10 @@ def test_stop_trial(transport: str = 'grpc', request_type=vizier_service.StopTri
     assert response.id == 'id_value'
 
     assert response.state == study.Trial.State.REQUESTED
+
+    assert response.client_id == 'client_id_value'
+
+    assert response.infeasible_reason == 'infeasible_reason_value'
 
     assert response.custom_job == 'custom_job_value'
 
@@ -3761,6 +3826,8 @@ async def test_stop_trial_async(transport: str = 'grpc_asyncio', request_type=vi
             name='name_value',
             id='id_value',
             state=study.Trial.State.REQUESTED,
+            client_id='client_id_value',
+            infeasible_reason='infeasible_reason_value',
             custom_job='custom_job_value',
         ))
 
@@ -3780,6 +3847,10 @@ async def test_stop_trial_async(transport: str = 'grpc_asyncio', request_type=vi
     assert response.id == 'id_value'
 
     assert response.state == study.Trial.State.REQUESTED
+
+    assert response.client_id == 'client_id_value'
+
+    assert response.infeasible_reason == 'infeasible_reason_value'
 
     assert response.custom_job == 'custom_job_value'
 

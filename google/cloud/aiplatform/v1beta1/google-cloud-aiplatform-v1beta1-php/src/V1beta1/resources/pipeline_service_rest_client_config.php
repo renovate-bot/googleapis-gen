@@ -3,6 +3,18 @@
 return [
     'interfaces' => [
         'google.cloud.aiplatform.v1beta1.PipelineService' => [
+            'CancelPipelineJob' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/pipelineJobs/*}:cancel',
+                'body' => '*',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
             'CancelTrainingPipeline' => [
                 'method' => 'post',
                 'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/trainingPipelines/*}:cancel',
@@ -11,6 +23,18 @@ return [
                     'name' => [
                         'getters' => [
                             'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'CreatePipelineJob' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta1/{parent=projects/*/locations/*}/pipelineJobs',
+                'body' => 'pipeline_job',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
                         ],
                     ],
                 ],
@@ -27,9 +51,31 @@ return [
                     ],
                 ],
             ],
+            'DeletePipelineJob' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/pipelineJobs/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
             'DeleteTrainingPipeline' => [
                 'method' => 'delete',
                 'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/trainingPipelines/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'GetPipelineJob' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/pipelineJobs/*}',
                 'placeholders' => [
                     'name' => [
                         'getters' => [
@@ -45,6 +91,17 @@ return [
                     'name' => [
                         'getters' => [
                             'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'ListPipelineJobs' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta1/{parent=projects/*/locations/*}/pipelineJobs',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
                         ],
                     ],
                 ],

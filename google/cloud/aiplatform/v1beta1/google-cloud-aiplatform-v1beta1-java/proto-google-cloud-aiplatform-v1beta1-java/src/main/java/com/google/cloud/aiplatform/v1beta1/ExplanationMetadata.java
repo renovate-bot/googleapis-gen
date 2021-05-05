@@ -2008,7 +2008,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Excludes attributions below the specified percentile, from the
-       * highlighted areas. Defaults to 35.
+       * highlighted areas. Defaults to 62.
        * </pre>
        *
        * <code>float clip_percent_lowerbound = 5;</code>
@@ -3003,7 +3003,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Excludes attributions below the specified percentile, from the
-       * highlighted areas. Defaults to 35.
+       * highlighted areas. Defaults to 62.
        * </pre>
        *
        * <code>float clip_percent_lowerbound = 5;</code>
@@ -3777,7 +3777,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * Excludes attributions below the specified percentile, from the
-         * highlighted areas. Defaults to 35.
+         * highlighted areas. Defaults to 62.
          * </pre>
          *
          * <code>float clip_percent_lowerbound = 5;</code>
@@ -3790,7 +3790,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * Excludes attributions below the specified percentile, from the
-         * highlighted areas. Defaults to 35.
+         * highlighted areas. Defaults to 62.
          * </pre>
          *
          * <code>float clip_percent_lowerbound = 5;</code>
@@ -3806,7 +3806,7 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * Excludes attributions below the specified percentile, from the
-         * highlighted areas. Defaults to 35.
+         * highlighted areas. Defaults to 62.
          * </pre>
          *
          * <code>float clip_percent_lowerbound = 5;</code>

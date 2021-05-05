@@ -230,15 +230,17 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object filter_;
   /**
    * <pre>
-   * Supported filters are:
-   * * Resource type: For a specific type of MigratableResource.
-   *   * `ml_engine_model_version:*`
-   *   * `automl_model:*`,
-   *   * `automl_dataset:*`
-   *   * `data_labeling_dataset:*`.
-   * * Migrated or not: Filter migrated resource or not by last_migrate_time.
-   *   * `last_migrate_time:*` will filter migrated resources.
-   *   * `NOT last_migrate_time:*` will filter not yet migrated resources.
+   * A filter for your search. You can use the following types of filters:
+   * *   Resource type filters. The following strings filter for a specific type
+   *     of [MigratableResource][google.cloud.aiplatform.v1beta1.MigratableResource]:
+   *     *   `ml_engine_model_version:*`
+   *     *   `automl_model:*`
+   *     *   `automl_dataset:*`
+   *     *   `data_labeling_dataset:*`
+   * *   "Migrated or not" filters. The following strings filter for resources
+   *     that either have or have not already been migrated:
+   *     *   `last_migrate_time:*` filters for migrated resources.
+   *     *   `NOT last_migrate_time:*` filters for not yet migrated resources.
    * </pre>
    *
    * <code>string filter = 4;</code>
@@ -259,15 +261,17 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Supported filters are:
-   * * Resource type: For a specific type of MigratableResource.
-   *   * `ml_engine_model_version:*`
-   *   * `automl_model:*`,
-   *   * `automl_dataset:*`
-   *   * `data_labeling_dataset:*`.
-   * * Migrated or not: Filter migrated resource or not by last_migrate_time.
-   *   * `last_migrate_time:*` will filter migrated resources.
-   *   * `NOT last_migrate_time:*` will filter not yet migrated resources.
+   * A filter for your search. You can use the following types of filters:
+   * *   Resource type filters. The following strings filter for a specific type
+   *     of [MigratableResource][google.cloud.aiplatform.v1beta1.MigratableResource]:
+   *     *   `ml_engine_model_version:*`
+   *     *   `automl_model:*`
+   *     *   `automl_dataset:*`
+   *     *   `data_labeling_dataset:*`
+   * *   "Migrated or not" filters. The following strings filter for resources
+   *     that either have or have not already been migrated:
+   *     *   `last_migrate_time:*` filters for migrated resources.
+   *     *   `NOT last_migrate_time:*` filters for not yet migrated resources.
    * </pre>
    *
    * <code>string filter = 4;</code>
@@ -906,15 +910,17 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object filter_ = "";
     /**
      * <pre>
-     * Supported filters are:
-     * * Resource type: For a specific type of MigratableResource.
-     *   * `ml_engine_model_version:*`
-     *   * `automl_model:*`,
-     *   * `automl_dataset:*`
-     *   * `data_labeling_dataset:*`.
-     * * Migrated or not: Filter migrated resource or not by last_migrate_time.
-     *   * `last_migrate_time:*` will filter migrated resources.
-     *   * `NOT last_migrate_time:*` will filter not yet migrated resources.
+     * A filter for your search. You can use the following types of filters:
+     * *   Resource type filters. The following strings filter for a specific type
+     *     of [MigratableResource][google.cloud.aiplatform.v1beta1.MigratableResource]:
+     *     *   `ml_engine_model_version:*`
+     *     *   `automl_model:*`
+     *     *   `automl_dataset:*`
+     *     *   `data_labeling_dataset:*`
+     * *   "Migrated or not" filters. The following strings filter for resources
+     *     that either have or have not already been migrated:
+     *     *   `last_migrate_time:*` filters for migrated resources.
+     *     *   `NOT last_migrate_time:*` filters for not yet migrated resources.
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -934,15 +940,17 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Supported filters are:
-     * * Resource type: For a specific type of MigratableResource.
-     *   * `ml_engine_model_version:*`
-     *   * `automl_model:*`,
-     *   * `automl_dataset:*`
-     *   * `data_labeling_dataset:*`.
-     * * Migrated or not: Filter migrated resource or not by last_migrate_time.
-     *   * `last_migrate_time:*` will filter migrated resources.
-     *   * `NOT last_migrate_time:*` will filter not yet migrated resources.
+     * A filter for your search. You can use the following types of filters:
+     * *   Resource type filters. The following strings filter for a specific type
+     *     of [MigratableResource][google.cloud.aiplatform.v1beta1.MigratableResource]:
+     *     *   `ml_engine_model_version:*`
+     *     *   `automl_model:*`
+     *     *   `automl_dataset:*`
+     *     *   `data_labeling_dataset:*`
+     * *   "Migrated or not" filters. The following strings filter for resources
+     *     that either have or have not already been migrated:
+     *     *   `last_migrate_time:*` filters for migrated resources.
+     *     *   `NOT last_migrate_time:*` filters for not yet migrated resources.
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -963,15 +971,17 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Supported filters are:
-     * * Resource type: For a specific type of MigratableResource.
-     *   * `ml_engine_model_version:*`
-     *   * `automl_model:*`,
-     *   * `automl_dataset:*`
-     *   * `data_labeling_dataset:*`.
-     * * Migrated or not: Filter migrated resource or not by last_migrate_time.
-     *   * `last_migrate_time:*` will filter migrated resources.
-     *   * `NOT last_migrate_time:*` will filter not yet migrated resources.
+     * A filter for your search. You can use the following types of filters:
+     * *   Resource type filters. The following strings filter for a specific type
+     *     of [MigratableResource][google.cloud.aiplatform.v1beta1.MigratableResource]:
+     *     *   `ml_engine_model_version:*`
+     *     *   `automl_model:*`
+     *     *   `automl_dataset:*`
+     *     *   `data_labeling_dataset:*`
+     * *   "Migrated or not" filters. The following strings filter for resources
+     *     that either have or have not already been migrated:
+     *     *   `last_migrate_time:*` filters for migrated resources.
+     *     *   `NOT last_migrate_time:*` filters for not yet migrated resources.
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -990,15 +1000,17 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Supported filters are:
-     * * Resource type: For a specific type of MigratableResource.
-     *   * `ml_engine_model_version:*`
-     *   * `automl_model:*`,
-     *   * `automl_dataset:*`
-     *   * `data_labeling_dataset:*`.
-     * * Migrated or not: Filter migrated resource or not by last_migrate_time.
-     *   * `last_migrate_time:*` will filter migrated resources.
-     *   * `NOT last_migrate_time:*` will filter not yet migrated resources.
+     * A filter for your search. You can use the following types of filters:
+     * *   Resource type filters. The following strings filter for a specific type
+     *     of [MigratableResource][google.cloud.aiplatform.v1beta1.MigratableResource]:
+     *     *   `ml_engine_model_version:*`
+     *     *   `automl_model:*`
+     *     *   `automl_dataset:*`
+     *     *   `data_labeling_dataset:*`
+     * *   "Migrated or not" filters. The following strings filter for resources
+     *     that either have or have not already been migrated:
+     *     *   `last_migrate_time:*` filters for migrated resources.
+     *     *   `NOT last_migrate_time:*` filters for not yet migrated resources.
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -1012,15 +1024,17 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Supported filters are:
-     * * Resource type: For a specific type of MigratableResource.
-     *   * `ml_engine_model_version:*`
-     *   * `automl_model:*`,
-     *   * `automl_dataset:*`
-     *   * `data_labeling_dataset:*`.
-     * * Migrated or not: Filter migrated resource or not by last_migrate_time.
-     *   * `last_migrate_time:*` will filter migrated resources.
-     *   * `NOT last_migrate_time:*` will filter not yet migrated resources.
+     * A filter for your search. You can use the following types of filters:
+     * *   Resource type filters. The following strings filter for a specific type
+     *     of [MigratableResource][google.cloud.aiplatform.v1beta1.MigratableResource]:
+     *     *   `ml_engine_model_version:*`
+     *     *   `automl_model:*`
+     *     *   `automl_dataset:*`
+     *     *   `data_labeling_dataset:*`
+     * *   "Migrated or not" filters. The following strings filter for resources
+     *     that either have or have not already been migrated:
+     *     *   `last_migrate_time:*` filters for migrated resources.
+     *     *   `NOT last_migrate_time:*` filters for not yet migrated resources.
      * </pre>
      *
      * <code>string filter = 4;</code>

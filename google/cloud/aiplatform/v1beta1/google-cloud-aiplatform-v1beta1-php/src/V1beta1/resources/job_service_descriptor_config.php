@@ -43,6 +43,26 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
+            'DeleteModelDeploymentMonitoringJob' => [
+                'longRunning' => [
+                    'operationReturnType' => '\Google\Protobuf\GPBEmpty',
+                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\DeleteOperationMetadata',
+                    'initialPollDelayMillis' => '500',
+                    'pollDelayMultiplier' => '1.5',
+                    'maxPollDelayMillis' => '5000',
+                    'totalPollTimeoutMillis' => '300000',
+                ],
+            ],
+            'UpdateModelDeploymentMonitoringJob' => [
+                'longRunning' => [
+                    'operationReturnType' => '\Google\Cloud\Aiplatform\V1beta1\ModelDeploymentMonitoringJob',
+                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\UpdateModelDeploymentMonitoringJobOperationMetadata',
+                    'initialPollDelayMillis' => '500',
+                    'pollDelayMultiplier' => '1.5',
+                    'maxPollDelayMillis' => '5000',
+                    'totalPollTimeoutMillis' => '300000',
+                ],
+            ],
             'ListBatchPredictionJobs' => [
                 'pageStreaming' => [
                     'requestPageTokenGetMethod' => 'getPageToken',
@@ -81,6 +101,26 @@ return [
                     'requestPageSizeSetMethod' => 'setPageSize',
                     'responsePageTokenGetMethod' => 'getNextPageToken',
                     'resourcesGetMethod' => 'getHyperparameterTuningJobs',
+                ],
+            ],
+            'ListModelDeploymentMonitoringJobs' => [
+                'pageStreaming' => [
+                    'requestPageTokenGetMethod' => 'getPageToken',
+                    'requestPageTokenSetMethod' => 'setPageToken',
+                    'requestPageSizeGetMethod' => 'getPageSize',
+                    'requestPageSizeSetMethod' => 'setPageSize',
+                    'responsePageTokenGetMethod' => 'getNextPageToken',
+                    'resourcesGetMethod' => 'getModelDeploymentMonitoringJobs',
+                ],
+            ],
+            'SearchModelDeploymentMonitoringStatsAnomalies' => [
+                'pageStreaming' => [
+                    'requestPageTokenGetMethod' => 'getPageToken',
+                    'requestPageTokenSetMethod' => 'setPageToken',
+                    'requestPageSizeGetMethod' => 'getPageSize',
+                    'requestPageSizeSetMethod' => 'setPageSize',
+                    'responsePageTokenGetMethod' => 'getNextPageToken',
+                    'resourcesGetMethod' => 'getMonitoringStats',
                 ],
             ],
         ],

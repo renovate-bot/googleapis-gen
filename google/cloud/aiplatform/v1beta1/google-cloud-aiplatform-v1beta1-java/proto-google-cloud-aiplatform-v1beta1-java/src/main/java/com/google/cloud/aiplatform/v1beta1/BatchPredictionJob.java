@@ -1790,8 +1790,8 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * The BigQuery project location where the output is to be written to.
-     * In the given project a new dataset is created with name
+     * The BigQuery project or dataset location where the output is to be
+     * written to. If project is provided, a new dataset is created with name
      * `prediction_&lt;model-display-name&gt;_&lt;job-create-time&gt;`
      * where &lt;model-display-name&gt; is made
      * BigQuery-dataset-name compatible (for example, most special characters
@@ -1816,8 +1816,8 @@ private static final long serialVersionUID = 0L;
     boolean hasBigqueryDestination();
     /**
      * <pre>
-     * The BigQuery project location where the output is to be written to.
-     * In the given project a new dataset is created with name
+     * The BigQuery project or dataset location where the output is to be
+     * written to. If project is provided, a new dataset is created with name
      * `prediction_&lt;model-display-name&gt;_&lt;job-create-time&gt;`
      * where &lt;model-display-name&gt; is made
      * BigQuery-dataset-name compatible (for example, most special characters
@@ -1842,8 +1842,8 @@ private static final long serialVersionUID = 0L;
     com.google.cloud.aiplatform.v1beta1.BigQueryDestination getBigqueryDestination();
     /**
      * <pre>
-     * The BigQuery project location where the output is to be written to.
-     * In the given project a new dataset is created with name
+     * The BigQuery project or dataset location where the output is to be
+     * written to. If project is provided, a new dataset is created with name
      * `prediction_&lt;model-display-name&gt;_&lt;job-create-time&gt;`
      * where &lt;model-display-name&gt; is made
      * BigQuery-dataset-name compatible (for example, most special characters
@@ -2157,8 +2157,8 @@ private static final long serialVersionUID = 0L;
     public static final int BIGQUERY_DESTINATION_FIELD_NUMBER = 3;
     /**
      * <pre>
-     * The BigQuery project location where the output is to be written to.
-     * In the given project a new dataset is created with name
+     * The BigQuery project or dataset location where the output is to be
+     * written to. If project is provided, a new dataset is created with name
      * `prediction_&lt;model-display-name&gt;_&lt;job-create-time&gt;`
      * where &lt;model-display-name&gt; is made
      * BigQuery-dataset-name compatible (for example, most special characters
@@ -2186,8 +2186,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The BigQuery project location where the output is to be written to.
-     * In the given project a new dataset is created with name
+     * The BigQuery project or dataset location where the output is to be
+     * written to. If project is provided, a new dataset is created with name
      * `prediction_&lt;model-display-name&gt;_&lt;job-create-time&gt;`
      * where &lt;model-display-name&gt; is made
      * BigQuery-dataset-name compatible (for example, most special characters
@@ -2218,8 +2218,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The BigQuery project location where the output is to be written to.
-     * In the given project a new dataset is created with name
+     * The BigQuery project or dataset location where the output is to be
+     * written to. If project is provided, a new dataset is created with name
      * `prediction_&lt;model-display-name&gt;_&lt;job-create-time&gt;`
      * where &lt;model-display-name&gt; is made
      * BigQuery-dataset-name compatible (for example, most special characters
@@ -3051,8 +3051,8 @@ private static final long serialVersionUID = 0L;
           com.google.cloud.aiplatform.v1beta1.BigQueryDestination, com.google.cloud.aiplatform.v1beta1.BigQueryDestination.Builder, com.google.cloud.aiplatform.v1beta1.BigQueryDestinationOrBuilder> bigqueryDestinationBuilder_;
       /**
        * <pre>
-       * The BigQuery project location where the output is to be written to.
-       * In the given project a new dataset is created with name
+       * The BigQuery project or dataset location where the output is to be
+       * written to. If project is provided, a new dataset is created with name
        * `prediction_&lt;model-display-name&gt;_&lt;job-create-time&gt;`
        * where &lt;model-display-name&gt; is made
        * BigQuery-dataset-name compatible (for example, most special characters
@@ -3080,8 +3080,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The BigQuery project location where the output is to be written to.
-       * In the given project a new dataset is created with name
+       * The BigQuery project or dataset location where the output is to be
+       * written to. If project is provided, a new dataset is created with name
        * `prediction_&lt;model-display-name&gt;_&lt;job-create-time&gt;`
        * where &lt;model-display-name&gt; is made
        * BigQuery-dataset-name compatible (for example, most special characters
@@ -3119,8 +3119,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The BigQuery project location where the output is to be written to.
-       * In the given project a new dataset is created with name
+       * The BigQuery project or dataset location where the output is to be
+       * written to. If project is provided, a new dataset is created with name
        * `prediction_&lt;model-display-name&gt;_&lt;job-create-time&gt;`
        * where &lt;model-display-name&gt; is made
        * BigQuery-dataset-name compatible (for example, most special characters
@@ -3156,8 +3156,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The BigQuery project location where the output is to be written to.
-       * In the given project a new dataset is created with name
+       * The BigQuery project or dataset location where the output is to be
+       * written to. If project is provided, a new dataset is created with name
        * `prediction_&lt;model-display-name&gt;_&lt;job-create-time&gt;`
        * where &lt;model-display-name&gt; is made
        * BigQuery-dataset-name compatible (for example, most special characters
@@ -3191,8 +3191,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The BigQuery project location where the output is to be written to.
-       * In the given project a new dataset is created with name
+       * The BigQuery project or dataset location where the output is to be
+       * written to. If project is provided, a new dataset is created with name
        * `prediction_&lt;model-display-name&gt;_&lt;job-create-time&gt;`
        * where &lt;model-display-name&gt; is made
        * BigQuery-dataset-name compatible (for example, most special characters
@@ -3234,8 +3234,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The BigQuery project location where the output is to be written to.
-       * In the given project a new dataset is created with name
+       * The BigQuery project or dataset location where the output is to be
+       * written to. If project is provided, a new dataset is created with name
        * `prediction_&lt;model-display-name&gt;_&lt;job-create-time&gt;`
        * where &lt;model-display-name&gt; is made
        * BigQuery-dataset-name compatible (for example, most special characters
@@ -3274,8 +3274,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The BigQuery project location where the output is to be written to.
-       * In the given project a new dataset is created with name
+       * The BigQuery project or dataset location where the output is to be
+       * written to. If project is provided, a new dataset is created with name
        * `prediction_&lt;model-display-name&gt;_&lt;job-create-time&gt;`
        * where &lt;model-display-name&gt; is made
        * BigQuery-dataset-name compatible (for example, most special characters
@@ -3301,8 +3301,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The BigQuery project location where the output is to be written to.
-       * In the given project a new dataset is created with name
+       * The BigQuery project or dataset location where the output is to be
+       * written to. If project is provided, a new dataset is created with name
        * `prediction_&lt;model-display-name&gt;_&lt;job-create-time&gt;`
        * where &lt;model-display-name&gt; is made
        * BigQuery-dataset-name compatible (for example, most special characters
@@ -3336,8 +3336,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * The BigQuery project location where the output is to be written to.
-       * In the given project a new dataset is created with name
+       * The BigQuery project or dataset location where the output is to be
+       * written to. If project is provided, a new dataset is created with name
        * `prediction_&lt;model-display-name&gt;_&lt;job-create-time&gt;`
        * where &lt;model-display-name&gt; is made
        * BigQuery-dataset-name compatible (for example, most special characters

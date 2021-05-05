@@ -36,6 +36,7 @@ use Google\ApiCore\LongRunning\OperationsClient;
 use Google\ApiCore\OperationResponse;
 
 use Google\ApiCore\PathTemplate;
+
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
@@ -50,16 +51,19 @@ use Google\Cloud\Aiplatform\V1beta1\CreateBatchPredictionJobRequest;
 use Google\Cloud\Aiplatform\V1beta1\CreateCustomJobRequest;
 use Google\Cloud\Aiplatform\V1beta1\CreateDataLabelingJobRequest;
 use Google\Cloud\Aiplatform\V1beta1\CreateHyperparameterTuningJobRequest;
+use Google\Cloud\Aiplatform\V1beta1\CreateModelDeploymentMonitoringJobRequest;
 use Google\Cloud\Aiplatform\V1beta1\CustomJob;
 use Google\Cloud\Aiplatform\V1beta1\DataLabelingJob;
 use Google\Cloud\Aiplatform\V1beta1\DeleteBatchPredictionJobRequest;
 use Google\Cloud\Aiplatform\V1beta1\DeleteCustomJobRequest;
 use Google\Cloud\Aiplatform\V1beta1\DeleteDataLabelingJobRequest;
 use Google\Cloud\Aiplatform\V1beta1\DeleteHyperparameterTuningJobRequest;
+use Google\Cloud\Aiplatform\V1beta1\DeleteModelDeploymentMonitoringJobRequest;
 use Google\Cloud\Aiplatform\V1beta1\GetBatchPredictionJobRequest;
 use Google\Cloud\Aiplatform\V1beta1\GetCustomJobRequest;
 use Google\Cloud\Aiplatform\V1beta1\GetDataLabelingJobRequest;
 use Google\Cloud\Aiplatform\V1beta1\GetHyperparameterTuningJobRequest;
+use Google\Cloud\Aiplatform\V1beta1\GetModelDeploymentMonitoringJobRequest;
 use Google\Cloud\Aiplatform\V1beta1\HyperparameterTuningJob;
 use Google\Cloud\Aiplatform\V1beta1\ListBatchPredictionJobsRequest;
 use Google\Cloud\Aiplatform\V1beta1\ListBatchPredictionJobsResponse;
@@ -69,9 +73,19 @@ use Google\Cloud\Aiplatform\V1beta1\ListDataLabelingJobsRequest;
 use Google\Cloud\Aiplatform\V1beta1\ListDataLabelingJobsResponse;
 use Google\Cloud\Aiplatform\V1beta1\ListHyperparameterTuningJobsRequest;
 use Google\Cloud\Aiplatform\V1beta1\ListHyperparameterTuningJobsResponse;
+use Google\Cloud\Aiplatform\V1beta1\ListModelDeploymentMonitoringJobsRequest;
+use Google\Cloud\Aiplatform\V1beta1\ListModelDeploymentMonitoringJobsResponse;
+use Google\Cloud\Aiplatform\V1beta1\ModelDeploymentMonitoringJob;
+use Google\Cloud\Aiplatform\V1beta1\PauseModelDeploymentMonitoringJobRequest;
+use Google\Cloud\Aiplatform\V1beta1\ResumeModelDeploymentMonitoringJobRequest;
+use Google\Cloud\Aiplatform\V1beta1\SearchModelDeploymentMonitoringStatsAnomaliesRequest;
+use Google\Cloud\Aiplatform\V1beta1\SearchModelDeploymentMonitoringStatsAnomaliesRequest\StatsAnomaliesObjective;
+use Google\Cloud\Aiplatform\V1beta1\SearchModelDeploymentMonitoringStatsAnomaliesResponse;
+use Google\Cloud\Aiplatform\V1beta1\UpdateModelDeploymentMonitoringJobRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
 use Google\Protobuf\GPBEmpty;
+use Google\Protobuf\Timestamp;
 
 /**
  * Service Description: A service for creating and managing AI Platform's jobs.
@@ -135,11 +149,15 @@ class JobServiceGapicClient
 
     private static $datasetNameTemplate;
 
+    private static $endpointNameTemplate;
+
     private static $hyperparameterTuningJobNameTemplate;
 
     private static $locationNameTemplate;
 
     private static $modelNameTemplate;
+
+    private static $modelDeploymentMonitoringJobNameTemplate;
 
     private static $pathTemplateMap;
 
@@ -200,6 +218,15 @@ class JobServiceGapicClient
         return self::$datasetNameTemplate;
     }
 
+    private static function getEndpointNameTemplate()
+    {
+        if (self::$endpointNameTemplate == null) {
+            self::$endpointNameTemplate = new PathTemplate('projects/{project}/locations/{location}/endpoints/{endpoint}');
+        }
+
+        return self::$endpointNameTemplate;
+    }
+
     private static function getHyperparameterTuningJobNameTemplate()
     {
         if (self::$hyperparameterTuningJobNameTemplate == null) {
@@ -227,6 +254,15 @@ class JobServiceGapicClient
         return self::$modelNameTemplate;
     }
 
+    private static function getModelDeploymentMonitoringJobNameTemplate()
+    {
+        if (self::$modelDeploymentMonitoringJobNameTemplate == null) {
+            self::$modelDeploymentMonitoringJobNameTemplate = new PathTemplate('projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}');
+        }
+
+        return self::$modelDeploymentMonitoringJobNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
@@ -235,9 +271,11 @@ class JobServiceGapicClient
                 'customJob' => self::getCustomJobNameTemplate(),
                 'dataLabelingJob' => self::getDataLabelingJobNameTemplate(),
                 'dataset' => self::getDatasetNameTemplate(),
+                'endpoint' => self::getEndpointNameTemplate(),
                 'hyperparameterTuningJob' => self::getHyperparameterTuningJobNameTemplate(),
                 'location' => self::getLocationNameTemplate(),
                 'model' => self::getModelNameTemplate(),
+                'modelDeploymentMonitoringJob' => self::getModelDeploymentMonitoringJobNameTemplate(),
             ];
         }
 
@@ -329,6 +367,27 @@ class JobServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a endpoint
+     * resource.
+     *
+     * @param string $project
+     * @param string $location
+     * @param string $endpoint
+     *
+     * @return string The formatted endpoint resource.
+     *
+     * @experimental
+     */
+    public static function endpointName($project, $location, $endpoint)
+    {
+        return self::getEndpointNameTemplate()->render([
+            'project' => $project,
+            'location' => $location,
+            'endpoint' => $endpoint,
+        ]);
+    }
+
+    /**
      * Formats a string containing the fully-qualified path to represent a
      * hyperparameter_tuning_job resource.
      *
@@ -390,6 +449,27 @@ class JobServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a
+     * model_deployment_monitoring_job resource.
+     *
+     * @param string $project
+     * @param string $location
+     * @param string $modelDeploymentMonitoringJob
+     *
+     * @return string The formatted model_deployment_monitoring_job resource.
+     *
+     * @experimental
+     */
+    public static function modelDeploymentMonitoringJobName($project, $location, $modelDeploymentMonitoringJob)
+    {
+        return self::getModelDeploymentMonitoringJobNameTemplate()->render([
+            'project' => $project,
+            'location' => $location,
+            'model_deployment_monitoring_job' => $modelDeploymentMonitoringJob,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
@@ -397,9 +477,11 @@ class JobServiceGapicClient
      * - customJob: projects/{project}/locations/{location}/customJobs/{custom_job}
      * - dataLabelingJob: projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}
      * - dataset: projects/{project}/locations/{location}/datasets/{dataset}
+     * - endpoint: projects/{project}/locations/{location}/endpoints/{endpoint}
      * - hyperparameterTuningJob: projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}
      * - location: projects/{project}/locations/{location}
      * - model: projects/{project}/locations/{location}/models/{model}
+     * - modelDeploymentMonitoringJob: projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is
@@ -913,6 +995,53 @@ class JobServiceGapicClient
     }
 
     /**
+     * Creates a ModelDeploymentMonitoringJob. It will run periodically on a
+     * configured interval.
+     *
+     * Sample code:
+     * ```
+     * $jobServiceClient = new JobServiceClient();
+     * try {
+     *     $formattedParent = $jobServiceClient->locationName('[PROJECT]', '[LOCATION]');
+     *     $modelDeploymentMonitoringJob = new ModelDeploymentMonitoringJob();
+     *     $response = $jobServiceClient->createModelDeploymentMonitoringJob($formattedParent, $modelDeploymentMonitoringJob);
+     * } finally {
+     *     $jobServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string                       $parent                       Required. The parent of the ModelDeploymentMonitoringJob.
+     *                                                                   Format: `projects/{project}/locations/{location}`
+     * @param ModelDeploymentMonitoringJob $modelDeploymentMonitoringJob Required. The ModelDeploymentMonitoringJob to create
+     * @param array                        $optionalArgs                 {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Aiplatform\V1beta1\ModelDeploymentMonitoringJob
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function createModelDeploymentMonitoringJob($parent, $modelDeploymentMonitoringJob, array $optionalArgs = [])
+    {
+        $request = new CreateModelDeploymentMonitoringJobRequest();
+        $requestParamHeaders = [];
+        $request->setParent($parent);
+        $request->setModelDeploymentMonitoringJob($modelDeploymentMonitoringJob);
+        $requestParamHeaders['parent'] = $parent;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('CreateModelDeploymentMonitoringJob', ModelDeploymentMonitoringJob::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
      * Deletes a BatchPredictionJob. Can only be called on jobs that already
      * finished.
      *
@@ -1182,6 +1311,73 @@ class JobServiceGapicClient
     }
 
     /**
+     * Deletes a ModelDeploymentMonitoringJob.
+     *
+     * Sample code:
+     * ```
+     * $jobServiceClient = new JobServiceClient();
+     * try {
+     *     $formattedName = $jobServiceClient->modelDeploymentMonitoringJobName('[PROJECT]', '[LOCATION]', '[MODEL_DEPLOYMENT_MONITORING_JOB]');
+     *     $operationResponse = $jobServiceClient->deleteModelDeploymentMonitoringJob($formattedName);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // operation succeeded and returns no value
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $jobServiceClient->deleteModelDeploymentMonitoringJob($formattedName);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $jobServiceClient->resumeOperation($operationName, 'deleteModelDeploymentMonitoringJob');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // operation succeeded and returns no value
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
+     * } finally {
+     *     $jobServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The resource name of the model monitoring job to delete.
+     *                             Format:
+     *                             `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\OperationResponse
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function deleteModelDeploymentMonitoringJob($name, array $optionalArgs = [])
+    {
+        $request = new DeleteModelDeploymentMonitoringJobRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('DeleteModelDeploymentMonitoringJob', $optionalArgs, $request, $this->getOperationsClient())->wait();
+    }
+
+    /**
      * Gets a BatchPredictionJob
      *
      * Sample code:
@@ -1355,6 +1551,50 @@ class JobServiceGapicClient
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('GetHyperparameterTuningJob', HyperparameterTuningJob::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Gets a ModelDeploymentMonitoringJob.
+     *
+     * Sample code:
+     * ```
+     * $jobServiceClient = new JobServiceClient();
+     * try {
+     *     $formattedName = $jobServiceClient->modelDeploymentMonitoringJobName('[PROJECT]', '[LOCATION]', '[MODEL_DEPLOYMENT_MONITORING_JOB]');
+     *     $response = $jobServiceClient->getModelDeploymentMonitoringJob($formattedName);
+     * } finally {
+     *     $jobServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The resource name of the ModelDeploymentMonitoringJob.
+     *                             Format:
+     *                             `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Aiplatform\V1beta1\ModelDeploymentMonitoringJob
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function getModelDeploymentMonitoringJob($name, array $optionalArgs = [])
+    {
+        $request = new GetModelDeploymentMonitoringJobRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GetModelDeploymentMonitoringJob', ModelDeploymentMonitoringJob::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -1768,5 +2008,351 @@ class JobServiceGapicClient
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->getPagedListResponse('ListHyperparameterTuningJobs', $optionalArgs, ListHyperparameterTuningJobsResponse::class, $request);
+    }
+
+    /**
+     * Lists ModelDeploymentMonitoringJobs in a Location.
+     *
+     * Sample code:
+     * ```
+     * $jobServiceClient = new JobServiceClient();
+     * try {
+     *     $formattedParent = $jobServiceClient->locationName('[PROJECT]', '[LOCATION]');
+     *     // Iterate over pages of elements
+     *     $pagedResponse = $jobServiceClient->listModelDeploymentMonitoringJobs($formattedParent);
+     *     foreach ($pagedResponse->iteratePages() as $page) {
+     *         foreach ($page as $element) {
+     *             // doSomethingWith($element);
+     *         }
+     *     }
+     *     // Alternatively:
+     *     // Iterate through all elements
+     *     $pagedResponse = $jobServiceClient->listModelDeploymentMonitoringJobs($formattedParent);
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     * } finally {
+     *     $jobServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $parent       Required. The parent of the ModelDeploymentMonitoringJob.
+     *                             Format: `projects/{project}/locations/{location}`
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type string $filter
+     *           The standard list filter.
+     *     @type int $pageSize
+     *           The maximum number of resources contained in the underlying API
+     *           response. The API may return fewer values in a page, even if
+     *           there are additional values to be retrieved.
+     *     @type string $pageToken
+     *           A page token is used to specify a page of values to be returned.
+     *           If no page token is specified (the default), the first page
+     *           of values will be returned. Any page token used here must have
+     *           been generated by a previous call to the API.
+     *     @type FieldMask $readMask
+     *           Mask specifying which fields to read
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\PagedListResponse
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function listModelDeploymentMonitoringJobs($parent, array $optionalArgs = [])
+    {
+        $request = new ListModelDeploymentMonitoringJobsRequest();
+        $requestParamHeaders = [];
+        $request->setParent($parent);
+        $requestParamHeaders['parent'] = $parent;
+        if (isset($optionalArgs['filter'])) {
+            $request->setFilter($optionalArgs['filter']);
+        }
+
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+
+        if (isset($optionalArgs['readMask'])) {
+            $request->setReadMask($optionalArgs['readMask']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->getPagedListResponse('ListModelDeploymentMonitoringJobs', $optionalArgs, ListModelDeploymentMonitoringJobsResponse::class, $request);
+    }
+
+    /**
+     * Pauses a ModelDeploymentMonitoringJob. If the job is running, the server
+     * makes a best effort to cancel the job. Will mark
+     * [ModelDeploymentMonitoringJob.state][google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob.state] to 'PAUSED'.
+     *
+     * Sample code:
+     * ```
+     * $jobServiceClient = new JobServiceClient();
+     * try {
+     *     $formattedName = $jobServiceClient->modelDeploymentMonitoringJobName('[PROJECT]', '[LOCATION]', '[MODEL_DEPLOYMENT_MONITORING_JOB]');
+     *     $jobServiceClient->pauseModelDeploymentMonitoringJob($formattedName);
+     * } finally {
+     *     $jobServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The resource name of the ModelDeploymentMonitoringJob to pause.
+     *                             Format:
+     *                             `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function pauseModelDeploymentMonitoringJob($name, array $optionalArgs = [])
+    {
+        $request = new PauseModelDeploymentMonitoringJobRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('PauseModelDeploymentMonitoringJob', GPBEmpty::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Resumes a paused ModelDeploymentMonitoringJob. It will start to run from
+     * next scheduled time. A deleted ModelDeploymentMonitoringJob can't be
+     * resumed.
+     *
+     * Sample code:
+     * ```
+     * $jobServiceClient = new JobServiceClient();
+     * try {
+     *     $formattedName = $jobServiceClient->modelDeploymentMonitoringJobName('[PROJECT]', '[LOCATION]', '[MODEL_DEPLOYMENT_MONITORING_JOB]');
+     *     $jobServiceClient->resumeModelDeploymentMonitoringJob($formattedName);
+     * } finally {
+     *     $jobServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The resource name of the ModelDeploymentMonitoringJob to resume.
+     *                             Format:
+     *                             `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function resumeModelDeploymentMonitoringJob($name, array $optionalArgs = [])
+    {
+        $request = new ResumeModelDeploymentMonitoringJobRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('ResumeModelDeploymentMonitoringJob', GPBEmpty::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Searches Model Monitoring Statistics generated within a given time window.
+     *
+     * Sample code:
+     * ```
+     * $jobServiceClient = new JobServiceClient();
+     * try {
+     *     $formattedModelDeploymentMonitoringJob = $jobServiceClient->modelDeploymentMonitoringJobName('[PROJECT]', '[LOCATION]', '[MODEL_DEPLOYMENT_MONITORING_JOB]');
+     *     $deployedModelId = 'deployed_model_id';
+     *     $objectives = [];
+     *     // Iterate over pages of elements
+     *     $pagedResponse = $jobServiceClient->searchModelDeploymentMonitoringStatsAnomalies($formattedModelDeploymentMonitoringJob, $deployedModelId, $objectives);
+     *     foreach ($pagedResponse->iteratePages() as $page) {
+     *         foreach ($page as $element) {
+     *             // doSomethingWith($element);
+     *         }
+     *     }
+     *     // Alternatively:
+     *     // Iterate through all elements
+     *     $pagedResponse = $jobServiceClient->searchModelDeploymentMonitoringStatsAnomalies($formattedModelDeploymentMonitoringJob, $deployedModelId, $objectives);
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     * } finally {
+     *     $jobServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string                    $modelDeploymentMonitoringJob Required. ModelDeploymentMonitoring Job resource name.
+     *                                                                Format:
+     *                                                                `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}
+     * @param string                    $deployedModelId              Required. The DeployedModel ID of the
+     *                                                                [google.cloud.aiplatform.master.ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
+     * @param StatsAnomaliesObjective[] $objectives                   Required. Objectives of the stats to retrieve.
+     * @param array                     $optionalArgs                 {
+     *     Optional.
+     *
+     *     @type string $featureDisplayName
+     *           The feature display name. If specified, only return the stats belonging to
+     *           this feature. Format:
+     *           [ModelMonitoringStatsAnomalies.FeatureHistoricStatsAnomalies.feature_display_name][google.cloud.aiplatform.v1beta1.ModelMonitoringStatsAnomalies.FeatureHistoricStatsAnomalies.feature_display_name],
+     *           example: "user_destination".
+     *     @type int $pageSize
+     *           The maximum number of resources contained in the underlying API
+     *           response. The API may return fewer values in a page, even if
+     *           there are additional values to be retrieved.
+     *     @type string $pageToken
+     *           A page token is used to specify a page of values to be returned.
+     *           If no page token is specified (the default), the first page
+     *           of values will be returned. Any page token used here must have
+     *           been generated by a previous call to the API.
+     *     @type Timestamp $startTime
+     *           The earliest timestamp of stats being generated.
+     *           If not set, indicates fetching stats till the earliest possible one.
+     *     @type Timestamp $endTime
+     *           The latest timestamp of stats being generated.
+     *           If not set, indicates feching stats till the latest possible one.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\PagedListResponse
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function searchModelDeploymentMonitoringStatsAnomalies($modelDeploymentMonitoringJob, $deployedModelId, $objectives, array $optionalArgs = [])
+    {
+        $request = new SearchModelDeploymentMonitoringStatsAnomaliesRequest();
+        $requestParamHeaders = [];
+        $request->setModelDeploymentMonitoringJob($modelDeploymentMonitoringJob);
+        $request->setDeployedModelId($deployedModelId);
+        $request->setObjectives($objectives);
+        $requestParamHeaders['model_deployment_monitoring_job'] = $modelDeploymentMonitoringJob;
+        if (isset($optionalArgs['featureDisplayName'])) {
+            $request->setFeatureDisplayName($optionalArgs['featureDisplayName']);
+        }
+
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+
+        if (isset($optionalArgs['startTime'])) {
+            $request->setStartTime($optionalArgs['startTime']);
+        }
+
+        if (isset($optionalArgs['endTime'])) {
+            $request->setEndTime($optionalArgs['endTime']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->getPagedListResponse('SearchModelDeploymentMonitoringStatsAnomalies', $optionalArgs, SearchModelDeploymentMonitoringStatsAnomaliesResponse::class, $request);
+    }
+
+    /**
+     * Updates a ModelDeploymentMonitoringJob.
+     *
+     * Sample code:
+     * ```
+     * $jobServiceClient = new JobServiceClient();
+     * try {
+     *     $modelDeploymentMonitoringJob = new ModelDeploymentMonitoringJob();
+     *     $updateMask = new FieldMask();
+     *     $operationResponse = $jobServiceClient->updateModelDeploymentMonitoringJob($modelDeploymentMonitoringJob, $updateMask);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         $result = $operationResponse->getResult();
+     *     // doSomethingWith($result)
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $jobServiceClient->updateModelDeploymentMonitoringJob($modelDeploymentMonitoringJob, $updateMask);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $jobServiceClient->resumeOperation($operationName, 'updateModelDeploymentMonitoringJob');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         $result = $newOperationResponse->getResult();
+     *     // doSomethingWith($result)
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
+     * } finally {
+     *     $jobServiceClient->close();
+     * }
+     * ```
+     *
+     * @param ModelDeploymentMonitoringJob $modelDeploymentMonitoringJob Required. The model monitoring configuration which replaces the resource on the
+     *                                                                   server.
+     * @param FieldMask                    $updateMask                   Required. The update mask applies to the resource.
+     * @param array                        $optionalArgs                 {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\OperationResponse
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function updateModelDeploymentMonitoringJob($modelDeploymentMonitoringJob, $updateMask, array $optionalArgs = [])
+    {
+        $request = new UpdateModelDeploymentMonitoringJobRequest();
+        $requestParamHeaders = [];
+        $request->setModelDeploymentMonitoringJob($modelDeploymentMonitoringJob);
+        $request->setUpdateMask($updateMask);
+        $requestParamHeaders['model_deployment_monitoring_job.name'] = $modelDeploymentMonitoringJob->getName();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('UpdateModelDeploymentMonitoringJob', $optionalArgs, $request, $this->getOperationsClient())->wait();
     }
 }

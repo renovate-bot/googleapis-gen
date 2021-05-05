@@ -71,6 +71,18 @@ class ::Google::Cloud::Aiplatform::V1beta1::JobService::ClientPathsTest < Minite
     end
   end
 
+  def test_endpoint_path
+    grpc_channel = ::GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    ::Gapic::ServiceStub.stub :new, nil do
+      client = ::Google::Cloud::Aiplatform::V1beta1::JobService::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      path = client.endpoint_path project: "value0", location: "value1", endpoint: "value2"
+      assert_equal "projects/value0/locations/value1/endpoints/value2", path
+    end
+  end
+
   def test_hyperparameter_tuning_job_path
     grpc_channel = ::GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     ::Gapic::ServiceStub.stub :new, nil do
@@ -104,6 +116,42 @@ class ::Google::Cloud::Aiplatform::V1beta1::JobService::ClientPathsTest < Minite
 
       path = client.model_path project: "value0", location: "value1", model: "value2"
       assert_equal "projects/value0/locations/value1/models/value2", path
+    end
+  end
+
+  def test_model_deployment_monitoring_job_path
+    grpc_channel = ::GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    ::Gapic::ServiceStub.stub :new, nil do
+      client = ::Google::Cloud::Aiplatform::V1beta1::JobService::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      path = client.model_deployment_monitoring_job_path project: "value0", location: "value1", model_deployment_monitoring_job: "value2"
+      assert_equal "projects/value0/locations/value1/modelDeploymentMonitoringJobs/value2", path
+    end
+  end
+
+  def test_network_path
+    grpc_channel = ::GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    ::Gapic::ServiceStub.stub :new, nil do
+      client = ::Google::Cloud::Aiplatform::V1beta1::JobService::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      path = client.network_path project: "value0", network: "value1"
+      assert_equal "projects/value0/global/networks/value1", path
+    end
+  end
+
+  def test_tensorboard_path
+    grpc_channel = ::GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    ::Gapic::ServiceStub.stub :new, nil do
+      client = ::Google::Cloud::Aiplatform::V1beta1::JobService::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      path = client.tensorboard_path project: "value0", location: "value1", tensorboard: "value2"
+      assert_equal "projects/value0/locations/value1/tensorboards/value2", path
     end
   end
 
