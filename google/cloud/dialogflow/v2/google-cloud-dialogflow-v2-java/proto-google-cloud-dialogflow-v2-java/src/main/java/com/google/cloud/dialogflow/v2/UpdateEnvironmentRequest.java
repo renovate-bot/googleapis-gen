@@ -122,7 +122,7 @@ private static final long serialVersionUID = 0L;
    * Required. The environment to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * <code>.google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the environment field is set.
    */
   @java.lang.Override
@@ -134,7 +134,7 @@ private static final long serialVersionUID = 0L;
    * Required. The environment to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * <code>.google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The environment.
    */
   @java.lang.Override
@@ -146,7 +146,7 @@ private static final long serialVersionUID = 0L;
    * Required. The environment to update.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * <code>.google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.EnvironmentOrBuilder getEnvironmentOrBuilder() {
@@ -584,7 +584,7 @@ private static final long serialVersionUID = 0L;
      * Required. The environment to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>.google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the environment field is set.
      */
     public boolean hasEnvironment() {
@@ -595,7 +595,7 @@ private static final long serialVersionUID = 0L;
      * Required. The environment to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>.google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The environment.
      */
     public com.google.cloud.dialogflow.v2.Environment getEnvironment() {
@@ -610,7 +610,7 @@ private static final long serialVersionUID = 0L;
      * Required. The environment to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>.google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setEnvironment(com.google.cloud.dialogflow.v2.Environment value) {
       if (environmentBuilder_ == null) {
@@ -630,7 +630,7 @@ private static final long serialVersionUID = 0L;
      * Required. The environment to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>.google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setEnvironment(
         com.google.cloud.dialogflow.v2.Environment.Builder builderForValue) {
@@ -648,7 +648,7 @@ private static final long serialVersionUID = 0L;
      * Required. The environment to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>.google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeEnvironment(com.google.cloud.dialogflow.v2.Environment value) {
       if (environmentBuilder_ == null) {
@@ -670,7 +670,7 @@ private static final long serialVersionUID = 0L;
      * Required. The environment to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>.google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearEnvironment() {
       if (environmentBuilder_ == null) {
@@ -688,7 +688,7 @@ private static final long serialVersionUID = 0L;
      * Required. The environment to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>.google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloud.dialogflow.v2.Environment.Builder getEnvironmentBuilder() {
       
@@ -700,7 +700,7 @@ private static final long serialVersionUID = 0L;
      * Required. The environment to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>.google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloud.dialogflow.v2.EnvironmentOrBuilder getEnvironmentOrBuilder() {
       if (environmentBuilder_ != null) {
@@ -715,7 +715,7 @@ private static final long serialVersionUID = 0L;
      * Required. The environment to update.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>.google.cloud.dialogflow.v2.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.cloud.dialogflow.v2.Environment, com.google.cloud.dialogflow.v2.Environment.Builder, com.google.cloud.dialogflow.v2.EnvironmentOrBuilder> 

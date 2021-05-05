@@ -33,7 +33,7 @@ namespace Google.Cloud.Dialogflow.V2.Snippets
             // Initialize request argument(s)
             UpdateEnvironmentRequest request = new UpdateEnvironmentRequest
             {
-                EnvironmentAsEnvironmentName = EnvironmentName.FromProjectEnvironment("[PROJECT]", "[ENVIRONMENT]"),
+                Environment = new Environment(),
                 UpdateMask = new FieldMask(),
                 AllowLoadToDraftAndDiscardChanges = false,
             };
