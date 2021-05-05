@@ -30,6 +30,12 @@ module Google
         #   @return [::Integer]
         #     The partition from which to receive messages. Partitions are zero indexed,
         #     so `partition` must be in the range [0, topic.num_partitions).
+        # @!attribute [rw] initial_cursor
+        #   @return [::Google::Cloud::PubSubLite::V1::Cursor]
+        #     Optional. Initial stream delivery cursor, pointing to anywhere in the topic
+        #     partition. Cursors past head result in stream breakage. If not set,
+        #     messages will be delivered from the commit cursor for the given
+        #     subscription and partition.
         class InitialSubscribeRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

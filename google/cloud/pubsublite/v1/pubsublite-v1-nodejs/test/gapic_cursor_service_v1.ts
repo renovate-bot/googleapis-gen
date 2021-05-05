@@ -182,7 +182,15 @@ describe('v1.CursorServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.CommitCursorRequest());
-            const expectedOptions = {};
+            request.subscription = '';
+            const expectedHeaderRequestParams = "subscription=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
             const expectedResponse = generateSampleMessage(new protos.google.cloud.pubsublite.v1.CommitCursorResponse());
             client.innerApiCalls.commitCursor = stubSimpleCall(expectedResponse);
             const [response] = await client.commitCursor(request);
@@ -198,7 +206,15 @@ describe('v1.CursorServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.CommitCursorRequest());
-            const expectedOptions = {};
+            request.subscription = '';
+            const expectedHeaderRequestParams = "subscription=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
             const expectedResponse = generateSampleMessage(new protos.google.cloud.pubsublite.v1.CommitCursorResponse());
             client.innerApiCalls.commitCursor = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -225,7 +241,15 @@ describe('v1.CursorServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.CommitCursorRequest());
-            const expectedOptions = {};
+            request.subscription = '';
+            const expectedHeaderRequestParams = "subscription=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
             const expectedError = new Error('expected');
             client.innerApiCalls.commitCursor = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.commitCursor(request), expectedError);

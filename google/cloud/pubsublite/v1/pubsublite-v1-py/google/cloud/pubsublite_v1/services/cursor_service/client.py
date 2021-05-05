@@ -406,6 +406,14 @@ class CursorServiceClient(metaclass=CursorServiceClientMeta):
         # and friendly error handling.
         rpc = self._transport._wrapped_methods[self._transport.commit_cursor]
 
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ('subscription', request.subscription),
+            )),
+        )
+
         # Send the request.
         response = rpc(
             request,

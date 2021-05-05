@@ -73,9 +73,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (dialogflow.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (dialogflow.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -120,8 +120,7 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
       updateEnvironmentOperationSettings;
   private final UnaryCallSettings<DeleteEnvironmentRequest, Empty> deleteEnvironmentSettings;
   private final PagedCallSettings<
-          LookupEnvironmentHistoryRequest,
-          LookupEnvironmentHistoryResponse,
+          LookupEnvironmentHistoryRequest, LookupEnvironmentHistoryResponse,
           LookupEnvironmentHistoryPagedResponse>
       lookupEnvironmentHistorySettings;
 
@@ -230,13 +229,11 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
           };
 
   private static final PagedListResponseFactory<
-          LookupEnvironmentHistoryRequest,
-          LookupEnvironmentHistoryResponse,
+          LookupEnvironmentHistoryRequest, LookupEnvironmentHistoryResponse,
           LookupEnvironmentHistoryPagedResponse>
       LOOKUP_ENVIRONMENT_HISTORY_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              LookupEnvironmentHistoryRequest,
-              LookupEnvironmentHistoryResponse,
+              LookupEnvironmentHistoryRequest, LookupEnvironmentHistoryResponse,
               LookupEnvironmentHistoryPagedResponse>() {
             @Override
             public ApiFuture<LookupEnvironmentHistoryPagedResponse> getFuturePagedResponse(
@@ -246,8 +243,7 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
                 ApiCallContext context,
                 ApiFuture<LookupEnvironmentHistoryResponse> futureResponse) {
               PageContext<
-                      LookupEnvironmentHistoryRequest,
-                      LookupEnvironmentHistoryResponse,
+                      LookupEnvironmentHistoryRequest, LookupEnvironmentHistoryResponse,
                       Environment>
                   pageContext =
                       PageContext.create(
@@ -297,8 +293,7 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
 
   /** Returns the object with the settings used for calls to lookupEnvironmentHistory. */
   public PagedCallSettings<
-          LookupEnvironmentHistoryRequest,
-          LookupEnvironmentHistoryResponse,
+          LookupEnvironmentHistoryRequest, LookupEnvironmentHistoryResponse,
           LookupEnvironmentHistoryPagedResponse>
       lookupEnvironmentHistorySettings() {
     return lookupEnvironmentHistorySettings;
@@ -404,8 +399,7 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     private final UnaryCallSettings.Builder<DeleteEnvironmentRequest, Empty>
         deleteEnvironmentSettings;
     private final PagedCallSettings.Builder<
-            LookupEnvironmentHistoryRequest,
-            LookupEnvironmentHistoryResponse,
+            LookupEnvironmentHistoryRequest, LookupEnvironmentHistoryResponse,
             LookupEnvironmentHistoryPagedResponse>
         lookupEnvironmentHistorySettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
@@ -645,8 +639,7 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
 
     /** Returns the builder for the settings used for calls to lookupEnvironmentHistory. */
     public PagedCallSettings.Builder<
-            LookupEnvironmentHistoryRequest,
-            LookupEnvironmentHistoryResponse,
+            LookupEnvironmentHistoryRequest, LookupEnvironmentHistoryResponse,
             LookupEnvironmentHistoryPagedResponse>
         lookupEnvironmentHistorySettings() {
       return lookupEnvironmentHistorySettings;

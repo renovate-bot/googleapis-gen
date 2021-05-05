@@ -441,7 +441,7 @@ namespace Google.Cloud.PubSubLite.V1
             _callStreamingCommitCursor = clientHelper.BuildApiCall<StreamingCommitCursorRequest, StreamingCommitCursorResponse>(grpcClient.StreamingCommitCursor, effectiveSettings.StreamingCommitCursorSettings, effectiveSettings.StreamingCommitCursorStreamingSettings);
             Modify_ApiCall(ref _callStreamingCommitCursor);
             Modify_StreamingCommitCursorApiCall(ref _callStreamingCommitCursor);
-            _callCommitCursor = clientHelper.BuildApiCall<CommitCursorRequest, CommitCursorResponse>(grpcClient.CommitCursorAsync, grpcClient.CommitCursor, effectiveSettings.CommitCursorSettings);
+            _callCommitCursor = clientHelper.BuildApiCall<CommitCursorRequest, CommitCursorResponse>(grpcClient.CommitCursorAsync, grpcClient.CommitCursor, effectiveSettings.CommitCursorSettings).WithGoogleRequestParam("subscription", request => request.Subscription);
             Modify_ApiCall(ref _callCommitCursor);
             Modify_CommitCursorApiCall(ref _callCommitCursor);
             _callListPartitionCursors = clientHelper.BuildApiCall<ListPartitionCursorsRequest, ListPartitionCursorsResponse>(grpcClient.ListPartitionCursorsAsync, grpcClient.ListPartitionCursors, effectiveSettings.ListPartitionCursorsSettings).WithGoogleRequestParam("parent", request => request.Parent);

@@ -367,6 +367,13 @@ export class CursorServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'subscription': request.subscription || '',
+    });
     this.initialize();
     return this.innerApiCalls.commitCursor(request, options, callback);
   }
