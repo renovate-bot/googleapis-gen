@@ -18,7 +18,7 @@
 
 
 /* eslint-disable node/no-missing-require, no-unused-vars */
-const executions = require('@google-cloud/executions');
+const executions = require('@google-cloud/workflow-executions');
 
 function main() {
   const executionsClient = new executions.ExecutionsClient();

@@ -16,7 +16,7 @@
 // ** https://github.com/googleapis/gapic-generator-typescript **
 // ** All changes to this file may be overwritten. **
 
-import {ExecutionsClient} from '@google-cloud/executions';
+import {ExecutionsClient} from '@google-cloud/workflow-executions';
 
 // check that the client class type name can be used
 function doStuffWithExecutionsClient(client: ExecutionsClient) {

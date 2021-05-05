@@ -1,5 +1,5 @@
 {
-  "name": "@google-cloud/executions",
+  "name": "@google-cloud/workflow-executions",
   "version": "0.1.0",
   "description": "Executions client for Node.js",
   "repository": "googleapis/nodejs-executions",
