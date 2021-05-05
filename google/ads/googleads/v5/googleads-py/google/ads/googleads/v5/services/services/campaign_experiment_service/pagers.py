@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from typing import Any, Callable, Iterable, Sequence, Tuple
 
 from google.ads.googleads.v5.services.types import campaign_experiment_service
-from google.rpc import status_pb2 as status  # type: ignore
-
+from google.rpc import status_pb2  # type: ignore
 
 class ListCampaignExperimentAsyncErrorsPager:
     """A pager for iterating through ``list_campaign_experiment_async_errors`` requests.
@@ -71,7 +68,7 @@ class ListCampaignExperimentAsyncErrorsPager:
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[status.Status]:
+    def __iter__(self) -> Iterable[status_pb2.Status]:
         for page in self.pages:
             yield from page.errors
 

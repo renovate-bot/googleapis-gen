@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,13 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
 from google.cloud.essential_contacts_v1.types import enums
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -42,7 +39,6 @@ __protobuf__ = proto.module(
 
 class Contact(proto.Message):
     r"""A contact that will receive notifications from Google Cloud.
-
     Attributes:
         name (str):
             The identifier for the contact. Format:
@@ -69,28 +65,37 @@ class Contact(proto.Message):
             its validation state was updated more than 1 year ago.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    email = proto.Field(proto.STRING, number=2)
-
-    notification_category_subscriptions = proto.RepeatedField(proto.ENUM, number=3,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    email = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    notification_category_subscriptions = proto.RepeatedField(
+        proto.ENUM,
+        number=3,
         enum=enums.NotificationCategory,
     )
-
-    language_tag = proto.Field(proto.STRING, number=4)
-
-    validation_state = proto.Field(proto.ENUM, number=8,
+    language_tag = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    validation_state = proto.Field(
+        proto.ENUM,
+        number=8,
         enum=enums.ValidationState,
     )
-
-    validate_time = proto.Field(proto.MESSAGE, number=9,
-        message=timestamp.Timestamp,
+    validate_time = proto.Field(
+        proto.MESSAGE,
+        number=9,
+        message=timestamp_pb2.Timestamp,
     )
 
 
 class ListContactsRequest(proto.Message):
     r"""Request message for the ListContacts method.
-
     Attributes:
         parent (str):
             Required. The parent resource name. Format:
@@ -110,16 +115,22 @@ class ListContactsRequest(proto.Message):
             identical to those in the previous call.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class ListContactsResponse(proto.Message):
     r"""Response message for the ListContacts method.
-
     Attributes:
         contacts (Sequence[google.cloud.essential_contacts_v1.types.Contact]):
             The contacts for the specified resource.
@@ -135,16 +146,19 @@ class ListContactsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    contacts = proto.RepeatedField(proto.MESSAGE, number=1,
+    contacts = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Contact',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class GetContactRequest(proto.Message):
     r"""Request message for the GetContact method.
-
     Attributes:
         name (str):
             Required. The name of the contact to retrieve. Format:
@@ -153,12 +167,14 @@ class GetContactRequest(proto.Message):
             projects/{project_id}/contacts/{contact_id}
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class DeleteContactRequest(proto.Message):
     r"""Request message for the DeleteContact method.
-
     Attributes:
         name (str):
             Required. The name of the contact to delete. Format:
@@ -167,12 +183,14 @@ class DeleteContactRequest(proto.Message):
             projects/{project_id}/contacts/{contact_id}
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class CreateContactRequest(proto.Message):
     r"""Request message for the CreateContact method.
-
     Attributes:
         parent (str):
             Required. The resource to save this contact for. Format:
@@ -183,16 +201,19 @@ class CreateContactRequest(proto.Message):
             an email address and language tag.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    contact = proto.Field(proto.MESSAGE, number=2,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    contact = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='Contact',
     )
 
 
 class UpdateContactRequest(proto.Message):
     r"""Request message for the UpdateContact method.
-
     Attributes:
         contact (google.cloud.essential_contacts_v1.types.Contact):
             Required. The contact resource to replace the
@@ -204,18 +225,20 @@ class UpdateContactRequest(proto.Message):
             https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
     """
 
-    contact = proto.Field(proto.MESSAGE, number=2,
+    contact = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='Contact',
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=3,
-        message=field_mask.FieldMask,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=field_mask_pb2.FieldMask,
     )
 
 
 class ComputeContactsRequest(proto.Message):
     r"""Request message for the ComputeContacts method.
-
     Attributes:
         parent (str):
             Required. The name of the resource to compute contacts for.
@@ -240,20 +263,27 @@ class ComputeContactsRequest(proto.Message):
             identical to those in the previous call.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    notification_categories = proto.RepeatedField(proto.ENUM, number=6,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    notification_categories = proto.RepeatedField(
+        proto.ENUM,
+        number=6,
         enum=enums.NotificationCategory,
     )
-
-    page_size = proto.Field(proto.INT32, number=3)
-
-    page_token = proto.Field(proto.STRING, number=4)
+    page_size = proto.Field(
+        proto.INT32,
+        number=3,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=4,
+    )
 
 
 class ComputeContactsResponse(proto.Message):
     r"""Response message for the ComputeContacts method.
-
     Attributes:
         contacts (Sequence[google.cloud.essential_contacts_v1.types.Contact]):
             All contacts for the resource that are
@@ -272,16 +302,19 @@ class ComputeContactsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    contacts = proto.RepeatedField(proto.MESSAGE, number=1,
+    contacts = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Contact',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class SendTestMessageRequest(proto.Message):
     r"""Request message for the SendTestMessage method.
-
     Attributes:
         contacts (Sequence[str]):
             Required. The list of names of the contacts to send a test
@@ -302,11 +335,17 @@ class SendTestMessageRequest(proto.Message):
             subscribed to this category.
     """
 
-    contacts = proto.RepeatedField(proto.STRING, number=1)
-
-    resource = proto.Field(proto.STRING, number=2)
-
-    notification_category = proto.Field(proto.ENUM, number=3,
+    contacts = proto.RepeatedField(
+        proto.STRING,
+        number=1,
+    )
+    resource = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    notification_category = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=enums.NotificationCategory,
     )
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,8 @@
 #
 
 from .services.agent_endpoint_service import AgentEndpointServiceClient
+from .services.agent_endpoint_service import AgentEndpointServiceAsyncClient
+
 from .types.agentendpoint import ReceiveTaskNotificationRequest
 from .types.agentendpoint import ReceiveTaskNotificationResponse
 from .types.agentendpoint import RegisterAgentRequest
@@ -28,9 +29,9 @@ from .types.agentendpoint import ReportTaskProgressRequest
 from .types.agentendpoint import ReportTaskProgressResponse
 from .types.agentendpoint import StartNextTaskRequest
 from .types.agentendpoint import StartNextTaskResponse
-from .types.config_common import OSPolicyComplianceState
 from .types.config_common import OSPolicyResourceCompliance
 from .types.config_common import OSPolicyResourceConfigStep
+from .types.config_common import OSPolicyComplianceState
 from .types.inventory import Inventory
 from .types.os_policy import OSPolicy
 from .types.patch_jobs import AptSettings
@@ -56,46 +57,45 @@ from .types.tasks import Task
 from .types.tasks import TaskDirective
 from .types.tasks import TaskType
 
-
 __all__ = (
-    'ApplyConfigTask',
-    'ApplyConfigTaskOutput',
-    'ApplyConfigTaskProgress',
-    'ApplyPatchesTask',
-    'ApplyPatchesTaskOutput',
-    'ApplyPatchesTaskProgress',
-    'AptSettings',
-    'ExecStep',
-    'ExecStepConfig',
-    'ExecStepTask',
-    'ExecStepTaskOutput',
-    'ExecStepTaskProgress',
-    'GcsObject',
-    'GooSettings',
-    'Inventory',
-    'OSPolicy',
-    'OSPolicyComplianceState',
-    'OSPolicyResourceCompliance',
-    'OSPolicyResourceConfigStep',
-    'PatchConfig',
-    'ReceiveTaskNotificationRequest',
-    'ReceiveTaskNotificationResponse',
-    'RegisterAgentRequest',
-    'RegisterAgentResponse',
-    'ReportInventoryRequest',
-    'ReportInventoryResponse',
-    'ReportTaskCompleteRequest',
-    'ReportTaskCompleteResponse',
-    'ReportTaskProgressRequest',
-    'ReportTaskProgressResponse',
-    'RetryStrategy',
-    'StartNextTaskRequest',
-    'StartNextTaskResponse',
-    'Task',
-    'TaskDirective',
-    'TaskType',
-    'WindowsUpdateSettings',
-    'YumSettings',
-    'ZypperSettings',
 'AgentEndpointServiceClient',
+'ApplyConfigTask',
+'ApplyConfigTaskOutput',
+'ApplyConfigTaskProgress',
+'ApplyPatchesTask',
+'ApplyPatchesTaskOutput',
+'ApplyPatchesTaskProgress',
+'AptSettings',
+'ExecStep',
+'ExecStepConfig',
+'ExecStepTask',
+'ExecStepTaskOutput',
+'ExecStepTaskProgress',
+'GcsObject',
+'GooSettings',
+'Inventory',
+'OSPolicy',
+'OSPolicyComplianceState',
+'OSPolicyResourceCompliance',
+'OSPolicyResourceConfigStep',
+'PatchConfig',
+'ReceiveTaskNotificationRequest',
+'ReceiveTaskNotificationResponse',
+'RegisterAgentRequest',
+'RegisterAgentResponse',
+'ReportInventoryRequest',
+'ReportInventoryResponse',
+'ReportTaskCompleteRequest',
+'ReportTaskCompleteResponse',
+'ReportTaskProgressRequest',
+'ReportTaskProgressResponse',
+'RetryStrategy',
+'StartNextTaskRequest',
+'StartNextTaskResponse',
+'Task',
+'TaskDirective',
+'TaskType',
+'WindowsUpdateSettings',
+'YumSettings',
+'ZypperSettings',
 )

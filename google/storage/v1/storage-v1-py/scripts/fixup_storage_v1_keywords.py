@@ -1,6 +1,5 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +14,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import argparse
 import os
 import libcst as cst
@@ -41,63 +39,62 @@ def partition(
 class storageCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-    'compose_object': ('destination_bucket', 'destination_object', 'destination_predefined_acl', 'destination', 'source_objects', 'if_generation_match', 'if_metageneration_match', 'kms_key_name', 'common_object_request_params', 'common_request_params', ),
-    'copy_object': ('destination_bucket', 'destination_object', 'source_bucket', 'source_object', 'destination_predefined_acl', 'if_generation_match', 'if_generation_not_match', 'if_metageneration_match', 'if_metageneration_not_match', 'if_source_generation_match', 'if_source_generation_not_match', 'if_source_metageneration_match', 'if_source_metageneration_not_match', 'projection', 'source_generation', 'destination', 'destination_kms_key_name', 'common_object_request_params', 'common_request_params', ),
-    'create_hmac_key': ('project_id', 'service_account_email', 'common_request_params', ),
-    'delete_bucket': ('bucket', 'if_metageneration_match', 'if_metageneration_not_match', 'common_request_params', ),
-    'delete_bucket_access_control': ('bucket', 'entity', 'common_request_params', ),
-    'delete_default_object_access_control': ('bucket', 'entity', 'common_request_params', ),
-    'delete_hmac_key': ('access_id', 'project_id', 'common_request_params', ),
-    'delete_notification': ('bucket', 'notification', 'common_request_params', ),
-    'delete_object': ('bucket', 'object_', 'upload_id', 'generation', 'if_generation_match', 'if_generation_not_match', 'if_metageneration_match', 'if_metageneration_not_match', 'common_object_request_params', 'common_request_params', ),
-    'delete_object_access_control': ('bucket', 'entity', 'object_', 'generation', 'common_request_params', ),
-    'get_bucket': ('bucket', 'if_metageneration_match', 'if_metageneration_not_match', 'projection', 'common_request_params', ),
-    'get_bucket_access_control': ('bucket', 'entity', 'common_request_params', ),
-    'get_bucket_iam_policy': ('iam_request', 'common_request_params', ),
-    'get_default_object_access_control': ('bucket', 'entity', 'common_request_params', ),
-    'get_hmac_key': ('access_id', 'project_id', 'common_request_params', ),
-    'get_notification': ('bucket', 'notification', 'common_request_params', ),
-    'get_object': ('bucket', 'object_', 'generation', 'if_generation_match', 'if_generation_not_match', 'if_metageneration_match', 'if_metageneration_not_match', 'projection', 'common_object_request_params', 'common_request_params', ),
-    'get_object_access_control': ('bucket', 'entity', 'object_', 'generation', 'common_request_params', ),
-    'get_object_iam_policy': ('iam_request', 'common_request_params', ),
-    'get_object_media': ('bucket', 'object_', 'generation', 'read_offset', 'read_limit', 'if_generation_match', 'if_generation_not_match', 'if_metageneration_match', 'if_metageneration_not_match', 'common_object_request_params', 'common_request_params', ),
-    'get_service_account': ('project_id', 'common_request_params', ),
-    'insert_bucket': ('project', 'predefined_acl', 'predefined_default_object_acl', 'projection', 'bucket', 'common_request_params', ),
-    'insert_bucket_access_control': ('bucket', 'bucket_access_control', 'common_request_params', ),
-    'insert_default_object_access_control': ('bucket', 'object_access_control', 'common_request_params', ),
-    'insert_notification': ('bucket', 'notification', 'common_request_params', ),
-    'insert_object': ('write_offset', 'upload_id', 'insert_object_spec', 'checksummed_data', 'reference', 'object_checksums', 'finish_write', 'common_object_request_params', 'common_request_params', ),
-    'insert_object_access_control': ('bucket', 'object_', 'generation', 'object_access_control', 'common_request_params', ),
-    'list_bucket_access_controls': ('bucket', 'common_request_params', ),
-    'list_buckets': ('project', 'max_results', 'page_token', 'prefix', 'projection', 'common_request_params', ),
-    'list_channels': ('bucket', 'common_request_params', ),
-    'list_default_object_access_controls': ('bucket', 'if_metageneration_match', 'if_metageneration_not_match', 'common_request_params', ),
-    'list_hmac_keys': ('project_id', 'service_account_email', 'show_deleted_keys', 'max_results', 'page_token', 'common_request_params', ),
-    'list_notifications': ('bucket', 'common_request_params', ),
-    'list_object_access_controls': ('bucket', 'object_', 'generation', 'common_request_params', ),
-    'list_objects': ('bucket', 'delimiter', 'include_trailing_delimiter', 'max_results', 'page_token', 'prefix', 'projection', 'versions', 'common_request_params', ),
-    'lock_bucket_retention_policy': ('bucket', 'if_metageneration_match', 'common_request_params', ),
-    'patch_bucket': ('bucket', 'if_metageneration_match', 'if_metageneration_not_match', 'predefined_acl', 'predefined_default_object_acl', 'projection', 'metadata', 'update_mask', 'common_request_params', ),
-    'patch_bucket_access_control': ('bucket', 'entity', 'bucket_access_control', 'update_mask', 'common_request_params', ),
-    'patch_default_object_access_control': ('bucket', 'entity', 'object_access_control', 'update_mask', 'common_request_params', ),
-    'patch_object': ('bucket', 'object_', 'generation', 'if_generation_match', 'if_generation_not_match', 'if_metageneration_match', 'if_metageneration_not_match', 'predefined_acl', 'projection', 'metadata', 'update_mask', 'common_object_request_params', 'common_request_params', ),
-    'patch_object_access_control': ('bucket', 'entity', 'object_', 'generation', 'object_access_control', 'common_request_params', 'update_mask', ),
-    'query_write_status': ('upload_id', 'common_object_request_params', 'common_request_params', ),
-    'rewrite_object': ('destination_bucket', 'destination_object', 'source_bucket', 'source_object', 'destination_kms_key_name', 'destination_predefined_acl', 'if_generation_match', 'if_generation_not_match', 'if_metageneration_match', 'if_metageneration_not_match', 'if_source_generation_match', 'if_source_generation_not_match', 'if_source_metageneration_match', 'if_source_metageneration_not_match', 'max_bytes_rewritten_per_call', 'projection', 'rewrite_token', 'source_generation', 'object_', 'copy_source_encryption_algorithm', 'copy_source_encryption_key', 'copy_source_encryption_key_sha256', 'common_object_request_params', 'common_request_params', ),
-    'set_bucket_iam_policy': ('iam_request', 'common_request_params', ),
-    'set_object_iam_policy': ('iam_request', 'common_request_params', ),
-    'start_resumable_write': ('insert_object_spec', 'common_object_request_params', 'common_request_params', ),
-    'stop_channel': ('channel', 'common_request_params', ),
-    'test_bucket_iam_permissions': ('iam_request', 'common_request_params', ),
-    'test_object_iam_permissions': ('iam_request', 'common_request_params', ),
-    'update_bucket': ('bucket', 'if_metageneration_match', 'if_metageneration_not_match', 'predefined_acl', 'predefined_default_object_acl', 'projection', 'metadata', 'common_request_params', ),
-    'update_bucket_access_control': ('bucket', 'entity', 'bucket_access_control', 'common_request_params', ),
-    'update_default_object_access_control': ('bucket', 'entity', 'object_access_control', 'common_request_params', ),
-    'update_hmac_key': ('access_id', 'project_id', 'metadata', 'common_request_params', ),
-    'update_object': ('bucket', 'object_', 'generation', 'if_generation_match', 'if_generation_not_match', 'if_metageneration_match', 'if_metageneration_not_match', 'predefined_acl', 'projection', 'metadata', 'common_object_request_params', 'common_request_params', ),
-    'update_object_access_control': ('bucket', 'entity', 'object_', 'generation', 'object_access_control', 'common_request_params', 'update_mask', ),
-    'watch_all_objects': ('bucket', 'versions', 'delimiter', 'max_results', 'prefix', 'include_trailing_delimiter', 'page_token', 'projection', 'channel', 'common_request_params', ),
-
+          'compose_object': ('destination_bucket', 'destination_object', 'destination_predefined_acl', 'destination', 'source_objects', 'if_generation_match', 'if_metageneration_match', 'kms_key_name', 'common_object_request_params', 'common_request_params', ),
+          'copy_object': ('destination_bucket', 'destination_object', 'source_bucket', 'source_object', 'destination_predefined_acl', 'if_generation_match', 'if_generation_not_match', 'if_metageneration_match', 'if_metageneration_not_match', 'if_source_generation_match', 'if_source_generation_not_match', 'if_source_metageneration_match', 'if_source_metageneration_not_match', 'projection', 'source_generation', 'destination', 'destination_kms_key_name', 'common_object_request_params', 'common_request_params', ),
+          'create_hmac_key': ('project_id', 'service_account_email', 'common_request_params', ),
+          'delete_bucket': ('bucket', 'if_metageneration_match', 'if_metageneration_not_match', 'common_request_params', ),
+          'delete_bucket_access_control': ('bucket', 'entity', 'common_request_params', ),
+          'delete_default_object_access_control': ('bucket', 'entity', 'common_request_params', ),
+          'delete_hmac_key': ('access_id', 'project_id', 'common_request_params', ),
+          'delete_notification': ('bucket', 'notification', 'common_request_params', ),
+          'delete_object': ('bucket', 'object_', 'upload_id', 'generation', 'if_generation_match', 'if_generation_not_match', 'if_metageneration_match', 'if_metageneration_not_match', 'common_object_request_params', 'common_request_params', ),
+          'delete_object_access_control': ('bucket', 'entity', 'object_', 'generation', 'common_request_params', ),
+          'get_bucket': ('bucket', 'if_metageneration_match', 'if_metageneration_not_match', 'projection', 'common_request_params', ),
+          'get_bucket_access_control': ('bucket', 'entity', 'common_request_params', ),
+          'get_bucket_iam_policy': ('iam_request', 'common_request_params', ),
+          'get_default_object_access_control': ('bucket', 'entity', 'common_request_params', ),
+          'get_hmac_key': ('access_id', 'project_id', 'common_request_params', ),
+          'get_notification': ('bucket', 'notification', 'common_request_params', ),
+          'get_object': ('bucket', 'object_', 'generation', 'if_generation_match', 'if_generation_not_match', 'if_metageneration_match', 'if_metageneration_not_match', 'projection', 'common_object_request_params', 'common_request_params', ),
+          'get_object_access_control': ('bucket', 'entity', 'object_', 'generation', 'common_request_params', ),
+          'get_object_iam_policy': ('iam_request', 'common_request_params', ),
+          'get_object_media': ('bucket', 'object_', 'generation', 'read_offset', 'read_limit', 'if_generation_match', 'if_generation_not_match', 'if_metageneration_match', 'if_metageneration_not_match', 'common_object_request_params', 'common_request_params', ),
+          'get_service_account': ('project_id', 'common_request_params', ),
+          'insert_bucket': ('project', 'predefined_acl', 'predefined_default_object_acl', 'projection', 'bucket', 'common_request_params', ),
+          'insert_bucket_access_control': ('bucket', 'bucket_access_control', 'common_request_params', ),
+          'insert_default_object_access_control': ('bucket', 'object_access_control', 'common_request_params', ),
+          'insert_notification': ('bucket', 'notification', 'common_request_params', ),
+          'insert_object': ('write_offset', 'upload_id', 'insert_object_spec', 'checksummed_data', 'reference', 'object_checksums', 'finish_write', 'common_object_request_params', 'common_request_params', ),
+          'insert_object_access_control': ('bucket', 'object_', 'generation', 'object_access_control', 'common_request_params', ),
+          'list_bucket_access_controls': ('bucket', 'common_request_params', ),
+          'list_buckets': ('project', 'max_results', 'page_token', 'prefix', 'projection', 'common_request_params', ),
+          'list_channels': ('bucket', 'common_request_params', ),
+          'list_default_object_access_controls': ('bucket', 'if_metageneration_match', 'if_metageneration_not_match', 'common_request_params', ),
+          'list_hmac_keys': ('project_id', 'service_account_email', 'show_deleted_keys', 'max_results', 'page_token', 'common_request_params', ),
+          'list_notifications': ('bucket', 'common_request_params', ),
+          'list_object_access_controls': ('bucket', 'object_', 'generation', 'common_request_params', ),
+          'list_objects': ('bucket', 'delimiter', 'include_trailing_delimiter', 'max_results', 'page_token', 'prefix', 'projection', 'versions', 'common_request_params', ),
+          'lock_bucket_retention_policy': ('bucket', 'if_metageneration_match', 'common_request_params', ),
+          'patch_bucket': ('bucket', 'if_metageneration_match', 'if_metageneration_not_match', 'predefined_acl', 'predefined_default_object_acl', 'projection', 'metadata', 'update_mask', 'common_request_params', ),
+          'patch_bucket_access_control': ('bucket', 'entity', 'bucket_access_control', 'update_mask', 'common_request_params', ),
+          'patch_default_object_access_control': ('bucket', 'entity', 'object_access_control', 'update_mask', 'common_request_params', ),
+          'patch_object': ('bucket', 'object_', 'generation', 'if_generation_match', 'if_generation_not_match', 'if_metageneration_match', 'if_metageneration_not_match', 'predefined_acl', 'projection', 'metadata', 'update_mask', 'common_object_request_params', 'common_request_params', ),
+          'patch_object_access_control': ('bucket', 'entity', 'object_', 'generation', 'object_access_control', 'common_request_params', 'update_mask', ),
+          'query_write_status': ('upload_id', 'common_object_request_params', 'common_request_params', ),
+          'rewrite_object': ('destination_bucket', 'destination_object', 'source_bucket', 'source_object', 'destination_kms_key_name', 'destination_predefined_acl', 'if_generation_match', 'if_generation_not_match', 'if_metageneration_match', 'if_metageneration_not_match', 'if_source_generation_match', 'if_source_generation_not_match', 'if_source_metageneration_match', 'if_source_metageneration_not_match', 'max_bytes_rewritten_per_call', 'projection', 'rewrite_token', 'source_generation', 'object_', 'copy_source_encryption_algorithm', 'copy_source_encryption_key', 'copy_source_encryption_key_sha256', 'common_object_request_params', 'common_request_params', ),
+          'set_bucket_iam_policy': ('iam_request', 'common_request_params', ),
+          'set_object_iam_policy': ('iam_request', 'common_request_params', ),
+          'start_resumable_write': ('insert_object_spec', 'common_object_request_params', 'common_request_params', ),
+          'stop_channel': ('channel', 'common_request_params', ),
+          'test_bucket_iam_permissions': ('iam_request', 'common_request_params', ),
+          'test_object_iam_permissions': ('iam_request', 'common_request_params', ),
+          'update_bucket': ('bucket', 'if_metageneration_match', 'if_metageneration_not_match', 'predefined_acl', 'predefined_default_object_acl', 'projection', 'metadata', 'common_request_params', ),
+          'update_bucket_access_control': ('bucket', 'entity', 'bucket_access_control', 'common_request_params', ),
+          'update_default_object_access_control': ('bucket', 'entity', 'object_access_control', 'common_request_params', ),
+          'update_hmac_key': ('access_id', 'project_id', 'metadata', 'common_request_params', ),
+          'update_object': ('bucket', 'object_', 'generation', 'if_generation_match', 'if_generation_not_match', 'if_metageneration_match', 'if_metageneration_not_match', 'predefined_acl', 'projection', 'metadata', 'common_object_request_params', 'common_request_params', ),
+          'update_object_access_control': ('bucket', 'entity', 'object_', 'generation', 'object_access_control', 'common_request_params', 'update_mask', ),
+          'watch_all_objects': ('bucket', 'versions', 'delimiter', 'max_results', 'prefix', 'include_trailing_delimiter', 'page_token', 'projection', 'channel', 'common_request_params', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -128,7 +125,7 @@ class storageCallTransformer(cst.CSTTransformer):
             value=cst.Dict([
                 cst.DictElement(
                     cst.SimpleString("'{}'".format(name)),
-                    cst.Element(value=arg.value)
+cst.Element(value=arg.value)
                 )
                 # Note: the args + kwargs looks silly, but keep in mind that
                 # the control parameters had to be stripped out, and that

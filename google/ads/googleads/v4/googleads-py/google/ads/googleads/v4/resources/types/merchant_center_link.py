@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
 from google.ads.googleads.v4.enums.types import merchant_center_link_status
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -51,14 +48,23 @@ class MerchantCenterLink(proto.Message):
             The status of the link.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    id = proto.Field(proto.MESSAGE, number=3,
-        message=wrappers.Int64Value,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
     )
-    merchant_center_account_name = proto.Field(proto.MESSAGE, number=4,
-        message=wrappers.StringValue,
+    id = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=wrappers_pb2.Int64Value,
     )
-    status = proto.Field(proto.ENUM, number=5,
+    merchant_center_account_name = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=wrappers_pb2.StringValue,
+    )
+    status = proto.Field(
+        proto.ENUM,
+        number=5,
         enum=merchant_center_link_status.MerchantCenterLinkStatusEnum.MerchantCenterLinkStatus,
     )
 

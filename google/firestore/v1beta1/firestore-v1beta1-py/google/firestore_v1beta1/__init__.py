@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,8 @@
 #
 
 from .services.firestore import FirestoreClient
+from .services.firestore import FirestoreAsyncClient
+
 from .types.common import DocumentMask
 from .types.common import Precondition
 from .types.common import TransactionOptions
@@ -60,50 +61,49 @@ from .types.write import ExistenceFilter
 from .types.write import Write
 from .types.write import WriteResult
 
-
 __all__ = (
-    'ArrayValue',
-    'BatchGetDocumentsRequest',
-    'BatchGetDocumentsResponse',
-    'BatchWriteRequest',
-    'BatchWriteResponse',
-    'BeginTransactionRequest',
-    'BeginTransactionResponse',
-    'CommitRequest',
-    'CommitResponse',
-    'CreateDocumentRequest',
-    'Cursor',
-    'DeleteDocumentRequest',
-    'Document',
-    'DocumentChange',
-    'DocumentDelete',
-    'DocumentMask',
-    'DocumentRemove',
-    'DocumentTransform',
-    'ExistenceFilter',
-    'GetDocumentRequest',
-    'ListCollectionIdsRequest',
-    'ListCollectionIdsResponse',
-    'ListDocumentsRequest',
-    'ListDocumentsResponse',
-    'ListenRequest',
-    'ListenResponse',
-    'MapValue',
-    'PartitionQueryRequest',
-    'PartitionQueryResponse',
-    'Precondition',
-    'RollbackRequest',
-    'RunQueryRequest',
-    'RunQueryResponse',
-    'StructuredQuery',
-    'Target',
-    'TargetChange',
-    'TransactionOptions',
-    'UpdateDocumentRequest',
-    'Value',
-    'Write',
-    'WriteRequest',
-    'WriteResponse',
-    'WriteResult',
+'ArrayValue',
+'BatchGetDocumentsRequest',
+'BatchGetDocumentsResponse',
+'BatchWriteRequest',
+'BatchWriteResponse',
+'BeginTransactionRequest',
+'BeginTransactionResponse',
+'CommitRequest',
+'CommitResponse',
+'CreateDocumentRequest',
+'Cursor',
+'DeleteDocumentRequest',
+'Document',
+'DocumentChange',
+'DocumentDelete',
+'DocumentMask',
+'DocumentRemove',
+'DocumentTransform',
+'ExistenceFilter',
 'FirestoreClient',
+'GetDocumentRequest',
+'ListCollectionIdsRequest',
+'ListCollectionIdsResponse',
+'ListDocumentsRequest',
+'ListDocumentsResponse',
+'ListenRequest',
+'ListenResponse',
+'MapValue',
+'PartitionQueryRequest',
+'PartitionQueryResponse',
+'Precondition',
+'RollbackRequest',
+'RunQueryRequest',
+'RunQueryResponse',
+'StructuredQuery',
+'Target',
+'TargetChange',
+'TransactionOptions',
+'UpdateDocumentRequest',
+'Value',
+'Write',
+'WriteRequest',
+'WriteResponse',
+'WriteResult',
 )

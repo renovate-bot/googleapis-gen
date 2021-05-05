@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -23,10 +21,10 @@ from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
-from google.api_core import exceptions                            # type: ignore
+from google.api_core import exceptions as core_exceptions         # type: ignore
 from google.api_core import gapic_v1                              # type: ignore
 from google.api_core import retry as retries                      # type: ignore
-from google.auth import credentials                               # type: ignore
+from google.auth import credentials as ga_credentials             # type: ignore
 from google.auth.transport import mtls                            # type: ignore
 from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
@@ -34,7 +32,6 @@ from google.oauth2 import service_account                         # type: ignore
 
 from google.container_v1.services.cluster_manager import pagers
 from google.container_v1.types import cluster_service
-
 from .transports.base import ClusterManagerTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import ClusterManagerGrpcTransport
 from .transports.grpc_asyncio import ClusterManagerGrpcAsyncIOTransport
@@ -211,7 +208,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         return m.groupdict() if m else {}
 
     def __init__(self, *,
-            credentials: Optional[credentials.Credentials] = None,
+            credentials: Optional[ga_credentials.Credentials] = None,
             transport: Union[str, ClusterManagerTransport, None] = None,
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -358,7 +355,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -385,10 +381,8 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.ListClustersRequest):
             request = cluster_service.ListClustersRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if project_id is not None:
                 request.project_id = project_id
             if zone is not None:
@@ -472,7 +466,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -497,10 +490,8 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.GetClusterRequest):
             request = cluster_service.GetClusterRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if project_id is not None:
                 request.project_id = project_id
             if zone is not None:
@@ -596,7 +587,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -625,10 +615,8 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.CreateClusterRequest):
             request = cluster_service.CreateClusterRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if project_id is not None:
                 request.project_id = project_id
             if zone is not None:
@@ -722,7 +710,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -751,10 +738,8 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.UpdateClusterRequest):
             request = cluster_service.UpdateClusterRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if project_id is not None:
                 request.project_id = project_id
             if zone is not None:
@@ -803,7 +788,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
             request (google.container_v1.types.UpdateNodePoolRequest):
                 The request object. UpdateNodePoolRequests update a node
                 pool's image and/or version.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -819,7 +803,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a cluster_service.UpdateNodePoolRequest.
         # There's no risk of modifying the input as we've already verified
@@ -864,7 +847,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
             request (google.container_v1.types.SetNodePoolAutoscalingRequest):
                 The request object. SetNodePoolAutoscalingRequest sets
                 the autoscaler settings of a node pool.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -880,7 +862,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a cluster_service.SetNodePoolAutoscalingRequest.
         # There's no risk of modifying the input as we've already verified
@@ -984,7 +965,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1013,10 +993,8 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.SetLoggingServiceRequest):
             request = cluster_service.SetLoggingServiceRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if project_id is not None:
                 request.project_id = project_id
             if zone is not None:
@@ -1126,7 +1104,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1155,10 +1132,8 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.SetMonitoringServiceRequest):
             request = cluster_service.SetMonitoringServiceRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if project_id is not None:
                 request.project_id = project_id
             if zone is not None:
@@ -1255,7 +1230,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1284,10 +1258,8 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.SetAddonsConfigRequest):
             request = cluster_service.SetAddonsConfigRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if project_id is not None:
                 request.project_id = project_id
             if zone is not None:
@@ -1392,7 +1364,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1421,10 +1392,8 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.SetLocationsRequest):
             request = cluster_service.SetLocationsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if project_id is not None:
                 request.project_id = project_id
             if zone is not None:
@@ -1532,7 +1501,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1561,10 +1529,8 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.UpdateMasterRequest):
             request = cluster_service.UpdateMasterRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if project_id is not None:
                 request.project_id = project_id
             if zone is not None:
@@ -1615,7 +1581,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
             request (google.container_v1.types.SetMasterAuthRequest):
                 The request object. SetMasterAuthRequest updates the
                 admin password of a cluster.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1631,7 +1596,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a cluster_service.SetMasterAuthRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1724,7 +1688,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1753,10 +1716,8 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.DeleteClusterRequest):
             request = cluster_service.DeleteClusterRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if project_id is not None:
                 request.project_id = project_id
             if zone is not None:
@@ -1825,7 +1786,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
                 This corresponds to the ``zone`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1852,10 +1812,8 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.ListOperationsRequest):
             request = cluster_service.ListOperationsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if project_id is not None:
                 request.project_id = project_id
             if zone is not None:
@@ -1936,7 +1894,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1965,10 +1922,8 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.GetOperationRequest):
             request = cluster_service.GetOperationRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if project_id is not None:
                 request.project_id = project_id
             if zone is not None:
@@ -2053,7 +2008,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2074,10 +2028,8 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.CancelOperationRequest):
             request = cluster_service.CancelOperationRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if project_id is not None:
                 request.project_id = project_id
             if zone is not None:
@@ -2150,7 +2102,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2177,10 +2128,8 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.GetServerConfigRequest):
             request = cluster_service.GetServerConfigRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if project_id is not None:
                 request.project_id = project_id
             if zone is not None:
@@ -2230,7 +2179,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
                 token requests. This will be the jwks_uri for the
                 discover document returned by getOpenIDConfig. See the
                 OpenID Connect Discovery 1.0 specification for details.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2245,7 +2193,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a cluster_service.GetJSONWebKeysRequest.
         # There's no risk of modifying the input as we've already verified
@@ -2328,7 +2275,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2355,10 +2301,8 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.ListNodePoolsRequest):
             request = cluster_service.ListNodePoolsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if project_id is not None:
                 request.project_id = project_id
             if zone is not None:
@@ -2452,7 +2396,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2487,10 +2430,8 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.GetNodePoolRequest):
             request = cluster_service.GetNodePoolRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if project_id is not None:
                 request.project_id = project_id
             if zone is not None:
@@ -2583,7 +2524,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2612,10 +2552,8 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.CreateNodePoolRequest):
             request = cluster_service.CreateNodePoolRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if project_id is not None:
                 request.project_id = project_id
             if zone is not None:
@@ -2712,7 +2650,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2741,10 +2678,8 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.DeleteNodePoolRequest):
             request = cluster_service.DeleteNodePoolRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if project_id is not None:
                 request.project_id = project_id
             if zone is not None:
@@ -2847,7 +2782,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2876,10 +2810,8 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.RollbackNodePoolUpgradeRequest):
             request = cluster_service.RollbackNodePoolUpgradeRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if project_id is not None:
                 request.project_id = project_id
             if zone is not None:
@@ -2927,7 +2859,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
             request (google.container_v1.types.SetNodePoolManagementRequest):
                 The request object. SetNodePoolManagementRequest sets
                 the node management properties of a node pool.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2943,7 +2874,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a cluster_service.SetNodePoolManagementRequest.
         # There's no risk of modifying the input as we've already verified
@@ -2989,7 +2919,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
                 Cloud Platform labels on a Google Container Engine
                 cluster, which will in turn set them for Google Compute
                 Engine resources used by that cluster
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3005,7 +2934,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a cluster_service.SetLabelsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -3098,7 +3026,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3127,10 +3054,8 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.SetLegacyAbacRequest):
             request = cluster_service.SetLegacyAbacRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if project_id is not None:
                 request.project_id = project_id
             if zone is not None:
@@ -3218,7 +3143,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3247,10 +3171,8 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.StartIPRotationRequest):
             request = cluster_service.StartIPRotationRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if project_id is not None:
                 request.project_id = project_id
             if zone is not None:
@@ -3335,7 +3257,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3364,10 +3285,8 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.CompleteIPRotationRequest):
             request = cluster_service.CompleteIPRotationRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if project_id is not None:
                 request.project_id = project_id
             if zone is not None:
@@ -3413,7 +3332,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
             request (google.container_v1.types.SetNodePoolSizeRequest):
                 The request object. SetNodePoolSizeRequest sets the size
                 a node pool.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3429,7 +3347,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a cluster_service.SetNodePoolSizeRequest.
         # There's no risk of modifying the input as we've already verified
@@ -3520,7 +3437,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3549,10 +3465,8 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.SetNetworkPolicyRequest):
             request = cluster_service.SetNetworkPolicyRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if project_id is not None:
                 request.project_id = project_id
             if zone is not None:
@@ -3644,7 +3558,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3673,10 +3586,8 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.SetMaintenancePolicyRequest):
             request = cluster_service.SetMaintenancePolicyRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if project_id is not None:
                 request.project_id = project_id
             if zone is not None:
@@ -3726,7 +3637,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
                 The request object. ListUsableSubnetworksRequest
                 requests the list of usable subnetworks available to a
                 user for creating clusters.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3745,7 +3655,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a cluster_service.ListUsableSubnetworksRequest.
         # There's no risk of modifying the input as we've already verified
@@ -3784,8 +3693,6 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

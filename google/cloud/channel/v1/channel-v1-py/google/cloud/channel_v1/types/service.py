@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.cloud.channel_v1.types import channel_partner_links as gcc_channel_partner_links
 from google.cloud.channel_v1.types import common
@@ -24,7 +21,7 @@ from google.cloud.channel_v1.types import customers as gcc_customers
 from google.cloud.channel_v1.types import entitlements as gcc_entitlements
 from google.cloud.channel_v1.types import offers as gcc_offers
 from google.cloud.channel_v1.types import products as gcc_products
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -99,9 +96,14 @@ class CheckCloudIdentityAccountsExistRequest(proto.Message):
             account customer.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    domain = proto.Field(proto.STRING, number=2)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    domain = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class CloudIdentityCustomerAccount(proto.Message):
@@ -125,13 +127,22 @@ class CloudIdentityCustomerAccount(proto.Message):
             the customer.
     """
 
-    existing = proto.Field(proto.BOOL, number=1)
-
-    owned = proto.Field(proto.BOOL, number=2)
-
-    customer_name = proto.Field(proto.STRING, number=3)
-
-    customer_cloud_identity_id = proto.Field(proto.STRING, number=4)
+    existing = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
+    owned = proto.Field(
+        proto.BOOL,
+        number=2,
+    )
+    customer_name = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    customer_cloud_identity_id = proto.Field(
+        proto.STRING,
+        number=4,
+    )
 
 
 class CheckCloudIdentityAccountsExistResponse(proto.Message):
@@ -144,7 +155,9 @@ class CheckCloudIdentityAccountsExistResponse(proto.Message):
             the domain.
     """
 
-    cloud_identity_accounts = proto.RepeatedField(proto.MESSAGE, number=1,
+    cloud_identity_accounts = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='CloudIdentityCustomerAccount',
     )
 
@@ -172,11 +185,18 @@ class ListCustomersRequest(proto.Message):
             call.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class ListCustomersResponse(proto.Message):
@@ -197,11 +217,15 @@ class ListCustomersResponse(proto.Message):
     def raw_page(self):
         return self
 
-    customers = proto.RepeatedField(proto.MESSAGE, number=1,
+    customers = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=gcc_customers.Customer,
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class GetCustomerRequest(proto.Message):
@@ -215,7 +239,10 @@ class GetCustomerRequest(proto.Message):
             accounts/{account_id}/customers/{customer_id}
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class CreateCustomerRequest(proto.Message):
@@ -231,9 +258,13 @@ class CreateCustomerRequest(proto.Message):
             Required. The customer to create.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    customer = proto.Field(proto.MESSAGE, number=2,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    customer = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=gcc_customers.Customer,
     )
 
@@ -250,12 +281,15 @@ class UpdateCustomerRequest(proto.Message):
             Optional.
     """
 
-    customer = proto.Field(proto.MESSAGE, number=2,
+    customer = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=gcc_customers.Customer,
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=3,
-        message=field_mask.FieldMask,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=field_mask_pb2.FieldMask,
     )
 
 
@@ -269,7 +303,10 @@ class DeleteCustomerRequest(proto.Message):
             to delete.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class ProvisionCloudIdentityRequest(proto.Message):
@@ -289,17 +326,24 @@ class ProvisionCloudIdentityRequest(proto.Message):
             but do not post it.
     """
 
-    customer = proto.Field(proto.STRING, number=1)
-
-    cloud_identity_info = proto.Field(proto.MESSAGE, number=2,
+    customer = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    cloud_identity_info = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=common.CloudIdentityInfo,
     )
-
-    user = proto.Field(proto.MESSAGE, number=3,
+    user = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=common.AdminUser,
     )
-
-    validate_only = proto.Field(proto.BOOL, number=4)
+    validate_only = proto.Field(
+        proto.BOOL,
+        number=4,
+    )
 
 
 class ListEntitlementsRequest(proto.Message):
@@ -326,11 +370,18 @@ class ListEntitlementsRequest(proto.Message):
             call.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class ListEntitlementsResponse(proto.Message):
@@ -350,11 +401,15 @@ class ListEntitlementsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    entitlements = proto.RepeatedField(proto.MESSAGE, number=1,
+    entitlements = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=gcc_entitlements.Entitlement,
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class ListTransferableSkusRequest(proto.Message):
@@ -401,19 +456,36 @@ class ListTransferableSkusRequest(proto.Message):
             Optional.
     """
 
-    cloud_identity_id = proto.Field(proto.STRING, number=4, oneof='transferred_customer_identity')
-
-    customer_name = proto.Field(proto.STRING, number=7, oneof='transferred_customer_identity')
-
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
-
-    auth_token = proto.Field(proto.STRING, number=5)
-
-    language_code = proto.Field(proto.STRING, number=6)
+    cloud_identity_id = proto.Field(
+        proto.STRING,
+        number=4,
+        oneof='transferred_customer_identity',
+    )
+    customer_name = proto.Field(
+        proto.STRING,
+        number=7,
+        oneof='transferred_customer_identity',
+    )
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    auth_token = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    language_code = proto.Field(
+        proto.STRING,
+        number=6,
+    )
 
 
 class ListTransferableSkusResponse(proto.Message):
@@ -434,11 +506,15 @@ class ListTransferableSkusResponse(proto.Message):
     def raw_page(self):
         return self
 
-    transferable_skus = proto.RepeatedField(proto.MESSAGE, number=1,
+    transferable_skus = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=gcc_entitlements.TransferableSku,
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class ListTransferableOffersRequest(proto.Message):
@@ -475,19 +551,36 @@ class ListTransferableOffersRequest(proto.Message):
             default value is "en-US".
     """
 
-    cloud_identity_id = proto.Field(proto.STRING, number=4, oneof='transferred_customer_identity')
-
-    customer_name = proto.Field(proto.STRING, number=5, oneof='transferred_customer_identity')
-
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
-
-    sku = proto.Field(proto.STRING, number=6)
-
-    language_code = proto.Field(proto.STRING, number=7)
+    cloud_identity_id = proto.Field(
+        proto.STRING,
+        number=4,
+        oneof='transferred_customer_identity',
+    )
+    customer_name = proto.Field(
+        proto.STRING,
+        number=5,
+        oneof='transferred_customer_identity',
+    )
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    sku = proto.Field(
+        proto.STRING,
+        number=6,
+    )
+    language_code = proto.Field(
+        proto.STRING,
+        number=7,
+    )
 
 
 class ListTransferableOffersResponse(proto.Message):
@@ -508,11 +601,15 @@ class ListTransferableOffersResponse(proto.Message):
     def raw_page(self):
         return self
 
-    transferable_offers = proto.RepeatedField(proto.MESSAGE, number=1,
+    transferable_offers = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='TransferableOffer',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class TransferableOffer(proto.Message):
@@ -525,7 +622,9 @@ class TransferableOffer(proto.Message):
             allow the Transfer.
     """
 
-    offer = proto.Field(proto.MESSAGE, number=1,
+    offer = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=gcc_offers.Offer,
     )
 
@@ -541,7 +640,10 @@ class GetEntitlementRequest(proto.Message):
             accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id}
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class ListChannelPartnerLinksRequest(proto.Message):
@@ -571,13 +673,21 @@ class ListChannelPartnerLinksRequest(proto.Message):
             ChannelPartnerLink will display.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
-
-    view = proto.Field(proto.ENUM, number=4,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    view = proto.Field(
+        proto.ENUM,
+        number=4,
         enum=gcc_channel_partner_links.ChannelPartnerLinkView,
     )
 
@@ -599,11 +709,15 @@ class ListChannelPartnerLinksResponse(proto.Message):
     def raw_page(self):
         return self
 
-    channel_partner_links = proto.RepeatedField(proto.MESSAGE, number=1,
+    channel_partner_links = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=gcc_channel_partner_links.ChannelPartnerLink,
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class GetChannelPartnerLinkRequest(proto.Message):
@@ -621,9 +735,13 @@ class GetChannelPartnerLinkRequest(proto.Message):
             ChannelPartnerLink will display.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    view = proto.Field(proto.ENUM, number=2,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    view = proto.Field(
+        proto.ENUM,
+        number=2,
         enum=gcc_channel_partner_links.ChannelPartnerLinkView,
     )
 
@@ -643,9 +761,13 @@ class CreateChannelPartnerLinkRequest(proto.Message):
             can be used to create a link.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    channel_partner_link = proto.Field(proto.MESSAGE, number=2,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    channel_partner_link = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=gcc_channel_partner_links.ChannelPartnerLink,
     )
 
@@ -669,14 +791,19 @@ class UpdateChannelPartnerLinkRequest(proto.Message):
             channel_partner_link.link_state.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    channel_partner_link = proto.Field(proto.MESSAGE, number=2,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    channel_partner_link = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=gcc_channel_partner_links.ChannelPartnerLink,
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=3,
-        message=field_mask.FieldMask,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=field_mask_pb2.FieldMask,
     )
 
 
@@ -708,13 +835,19 @@ class CreateEntitlementRequest(proto.Message):
             (``00000000-0000-0000-0000-000000000000``).
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    entitlement = proto.Field(proto.MESSAGE, number=2,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    entitlement = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=gcc_entitlements.Entitlement,
     )
-
-    request_id = proto.Field(proto.STRING, number=5)
+    request_id = proto.Field(
+        proto.STRING,
+        number=5,
+    )
 
 
 class TransferEntitlementsRequest(proto.Message):
@@ -755,15 +888,23 @@ class TransferEntitlementsRequest(proto.Message):
             (``00000000-0000-0000-0000-000000000000``).
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    entitlements = proto.RepeatedField(proto.MESSAGE, number=2,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    entitlements = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message=gcc_entitlements.Entitlement,
     )
-
-    auth_token = proto.Field(proto.STRING, number=4)
-
-    request_id = proto.Field(proto.STRING, number=6)
+    auth_token = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    request_id = proto.Field(
+        proto.STRING,
+        number=6,
+    )
 
 
 class TransferEntitlementsResponse(proto.Message):
@@ -776,7 +917,9 @@ class TransferEntitlementsResponse(proto.Message):
             The transferred entitlements.
     """
 
-    entitlements = proto.RepeatedField(proto.MESSAGE, number=1,
+    entitlements = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=gcc_entitlements.Entitlement,
     )
 
@@ -810,18 +953,23 @@ class TransferEntitlementsToGoogleRequest(proto.Message):
             (``00000000-0000-0000-0000-000000000000``).
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    entitlements = proto.RepeatedField(proto.MESSAGE, number=2,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    entitlements = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message=gcc_entitlements.Entitlement,
     )
-
-    request_id = proto.Field(proto.STRING, number=3)
+    request_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class ChangeParametersRequest(proto.Message):
     r"""Request message for [CloudChannelService.ChangeParametersRequest][].
-
     Attributes:
         name (str):
             Required. The name of the entitlement to update. Name uses
@@ -850,15 +998,23 @@ class ChangeParametersRequest(proto.Message):
             reseller.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    parameters = proto.RepeatedField(proto.MESSAGE, number=2,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    parameters = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message=gcc_entitlements.Parameter,
     )
-
-    request_id = proto.Field(proto.STRING, number=4)
-
-    purchase_order_id = proto.Field(proto.STRING, number=5)
+    request_id = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    purchase_order_id = proto.Field(
+        proto.STRING,
+        number=5,
+    )
 
 
 class ChangeRenewalSettingsRequest(proto.Message):
@@ -889,13 +1045,19 @@ class ChangeRenewalSettingsRequest(proto.Message):
             (``00000000-0000-0000-0000-000000000000``).
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    renewal_settings = proto.Field(proto.MESSAGE, number=4,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    renewal_settings = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=gcc_entitlements.RenewalSettings,
     )
-
-    request_id = proto.Field(proto.STRING, number=5)
+    request_id = proto.Field(
+        proto.STRING,
+        number=5,
+    )
 
 
 class ChangeOfferRequest(proto.Message):
@@ -933,17 +1095,27 @@ class ChangeOfferRequest(proto.Message):
             (``00000000-0000-0000-0000-000000000000``).
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    offer = proto.Field(proto.STRING, number=2)
-
-    parameters = proto.RepeatedField(proto.MESSAGE, number=3,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    offer = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    parameters = proto.RepeatedField(
+        proto.MESSAGE,
+        number=3,
         message=gcc_entitlements.Parameter,
     )
-
-    purchase_order_id = proto.Field(proto.STRING, number=5)
-
-    request_id = proto.Field(proto.STRING, number=6)
+    purchase_order_id = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    request_id = proto.Field(
+        proto.STRING,
+        number=6,
+    )
 
 
 class StartPaidServiceRequest(proto.Message):
@@ -972,9 +1144,14 @@ class StartPaidServiceRequest(proto.Message):
             (``00000000-0000-0000-0000-000000000000``).
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    request_id = proto.Field(proto.STRING, number=3)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    request_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class CancelEntitlementRequest(proto.Message):
@@ -1003,9 +1180,14 @@ class CancelEntitlementRequest(proto.Message):
             (``00000000-0000-0000-0000-000000000000``).
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    request_id = proto.Field(proto.STRING, number=3)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    request_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class SuspendEntitlementRequest(proto.Message):
@@ -1034,9 +1216,14 @@ class SuspendEntitlementRequest(proto.Message):
             (``00000000-0000-0000-0000-000000000000``).
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    request_id = proto.Field(proto.STRING, number=3)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    request_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class ActivateEntitlementRequest(proto.Message):
@@ -1065,14 +1252,18 @@ class ActivateEntitlementRequest(proto.Message):
             (``00000000-0000-0000-0000-000000000000``).
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    request_id = proto.Field(proto.STRING, number=3)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    request_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class ListProductsRequest(proto.Message):
     r"""Request message for ListProducts.
-
     Attributes:
         account (str):
             Required. The resource name of the reseller account. Format:
@@ -1093,18 +1284,26 @@ class ListProductsRequest(proto.Message):
             The default value is "en-US".
     """
 
-    account = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
-
-    language_code = proto.Field(proto.STRING, number=4)
+    account = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    language_code = proto.Field(
+        proto.STRING,
+        number=4,
+    )
 
 
 class ListProductsResponse(proto.Message):
     r"""Response message for ListProducts.
-
     Attributes:
         products (Sequence[google.cloud.channel_v1.types.Product]):
             List of Products requested.
@@ -1116,16 +1315,19 @@ class ListProductsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    products = proto.RepeatedField(proto.MESSAGE, number=1,
+    products = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=gcc_products.Product,
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class ListSkusRequest(proto.Message):
     r"""Request message for ListSkus.
-
     Attributes:
         parent (str):
             Required. The resource name of the Product to list SKUs for.
@@ -1150,20 +1352,30 @@ class ListSkusRequest(proto.Message):
             The default value is "en-US".
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    account = proto.Field(proto.STRING, number=2)
-
-    page_size = proto.Field(proto.INT32, number=3)
-
-    page_token = proto.Field(proto.STRING, number=4)
-
-    language_code = proto.Field(proto.STRING, number=5)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    account = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=3,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    language_code = proto.Field(
+        proto.STRING,
+        number=5,
+    )
 
 
 class ListSkusResponse(proto.Message):
     r"""Response message for ListSkus.
-
     Attributes:
         skus (Sequence[google.cloud.channel_v1.types.Sku]):
             The list of SKUs requested.
@@ -1175,16 +1387,19 @@ class ListSkusResponse(proto.Message):
     def raw_page(self):
         return self
 
-    skus = proto.RepeatedField(proto.MESSAGE, number=1,
+    skus = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=gcc_products.Sku,
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class ListOffersRequest(proto.Message):
     r"""Request message for ListOffers.
-
     Attributes:
         parent (str):
             Required. The resource name of the reseller account from
@@ -1213,20 +1428,30 @@ class ListOffersRequest(proto.Message):
             The default value is "en-US".
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
-
-    filter = proto.Field(proto.STRING, number=4)
-
-    language_code = proto.Field(proto.STRING, number=5)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    filter = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    language_code = proto.Field(
+        proto.STRING,
+        number=5,
+    )
 
 
 class ListOffersResponse(proto.Message):
     r"""Response message for ListOffers.
-
     Attributes:
         offers (Sequence[google.cloud.channel_v1.types.Offer]):
             The list of Offers requested.
@@ -1238,16 +1463,19 @@ class ListOffersResponse(proto.Message):
     def raw_page(self):
         return self
 
-    offers = proto.RepeatedField(proto.MESSAGE, number=1,
+    offers = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=gcc_offers.Offer,
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class ListPurchasableSkusRequest(proto.Message):
     r"""Request message for ListPurchasableSkus.
-
     Attributes:
         create_entitlement_purchase (google.cloud.channel_v1.types.ListPurchasableSkusRequest.CreateEntitlementPurchase):
             List SKUs for CreateEntitlement purchase.
@@ -1272,6 +1500,7 @@ class ListPurchasableSkusRequest(proto.Message):
             the corresponding language code, if specified.
             The default value is "en-US".
     """
+
     class CreateEntitlementPurchase(proto.Message):
         r"""List SKUs for a new entitlement. Make the purchase using
         [CloudChannelService.CreateEntitlement][google.cloud.channel.v1.CloudChannelService.CreateEntitlement].
@@ -1283,7 +1512,10 @@ class ListPurchasableSkusRequest(proto.Message):
                 for all products.
         """
 
-        product = proto.Field(proto.STRING, number=1)
+        product = proto.Field(
+            proto.STRING,
+            number=1,
+        )
 
     class ChangeOfferPurchase(proto.Message):
         r"""List SKUs for upgrading or downgrading an entitlement. Make the
@@ -1303,32 +1535,48 @@ class ListPurchasableSkusRequest(proto.Message):
             UPGRADE = 1
             DOWNGRADE = 2
 
-        entitlement = proto.Field(proto.STRING, number=1)
-
-        change_type = proto.Field(proto.ENUM, number=2,
+        entitlement = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        change_type = proto.Field(
+            proto.ENUM,
+            number=2,
             enum='ListPurchasableSkusRequest.ChangeOfferPurchase.ChangeType',
         )
 
-    create_entitlement_purchase = proto.Field(proto.MESSAGE, number=2, oneof='purchase_option',
+    create_entitlement_purchase = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='purchase_option',
         message=CreateEntitlementPurchase,
     )
-
-    change_offer_purchase = proto.Field(proto.MESSAGE, number=3, oneof='purchase_option',
+    change_offer_purchase = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        oneof='purchase_option',
         message=ChangeOfferPurchase,
     )
-
-    customer = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=4)
-
-    page_token = proto.Field(proto.STRING, number=5)
-
-    language_code = proto.Field(proto.STRING, number=6)
+    customer = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=4,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    language_code = proto.Field(
+        proto.STRING,
+        number=6,
+    )
 
 
 class ListPurchasableSkusResponse(proto.Message):
     r"""Response message for ListPurchasableSkus.
-
     Attributes:
         purchasable_skus (Sequence[google.cloud.channel_v1.types.PurchasableSku]):
             The list of SKUs requested.
@@ -1340,11 +1588,15 @@ class ListPurchasableSkusResponse(proto.Message):
     def raw_page(self):
         return self
 
-    purchasable_skus = proto.RepeatedField(proto.MESSAGE, number=1,
+    purchasable_skus = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='PurchasableSku',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class PurchasableSku(proto.Message):
@@ -1356,14 +1608,15 @@ class PurchasableSku(proto.Message):
             SKU
     """
 
-    sku = proto.Field(proto.MESSAGE, number=1,
+    sku = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=gcc_products.Sku,
     )
 
 
 class ListPurchasableOffersRequest(proto.Message):
     r"""Request message for ListPurchasableOffers.
-
     Attributes:
         create_entitlement_purchase (google.cloud.channel_v1.types.ListPurchasableOffersRequest.CreateEntitlementPurchase):
             List Offers for CreateEntitlement purchase.
@@ -1387,20 +1640,22 @@ class ListPurchasableOffersRequest(proto.Message):
             the corresponding language code, if specified.
             The default value is "en-US".
     """
+
     class CreateEntitlementPurchase(proto.Message):
         r"""List Offers for CreateEntitlement purchase.
-
         Attributes:
             sku (str):
                 Required. SKU that the result should be restricted to.
                 Format: products/{product_id}/skus/{sku_id}.
         """
 
-        sku = proto.Field(proto.STRING, number=1)
+        sku = proto.Field(
+            proto.STRING,
+            number=1,
+        )
 
     class ChangeOfferPurchase(proto.Message):
         r"""List Offers for ChangeOffer purchase.
-
         Attributes:
             entitlement (str):
                 Required. Resource name of the entitlement. Format:
@@ -1411,30 +1666,47 @@ class ListPurchasableOffersRequest(proto.Message):
                 products/{product_id}/skus/{sku_id}
         """
 
-        entitlement = proto.Field(proto.STRING, number=1)
+        entitlement = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        new_sku = proto.Field(
+            proto.STRING,
+            number=2,
+        )
 
-        new_sku = proto.Field(proto.STRING, number=2)
-
-    create_entitlement_purchase = proto.Field(proto.MESSAGE, number=2, oneof='purchase_option',
+    create_entitlement_purchase = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='purchase_option',
         message=CreateEntitlementPurchase,
     )
-
-    change_offer_purchase = proto.Field(proto.MESSAGE, number=3, oneof='purchase_option',
+    change_offer_purchase = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        oneof='purchase_option',
         message=ChangeOfferPurchase,
     )
-
-    customer = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=4)
-
-    page_token = proto.Field(proto.STRING, number=5)
-
-    language_code = proto.Field(proto.STRING, number=6)
+    customer = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=4,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    language_code = proto.Field(
+        proto.STRING,
+        number=6,
+    )
 
 
 class ListPurchasableOffersResponse(proto.Message):
     r"""Response message for ListPurchasableOffers.
-
     Attributes:
         purchasable_offers (Sequence[google.cloud.channel_v1.types.PurchasableOffer]):
             The list of Offers requested.
@@ -1446,11 +1718,15 @@ class ListPurchasableOffersResponse(proto.Message):
     def raw_page(self):
         return self
 
-    purchasable_offers = proto.RepeatedField(proto.MESSAGE, number=1,
+    purchasable_offers = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='PurchasableOffer',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class PurchasableOffer(proto.Message):
@@ -1462,14 +1738,15 @@ class PurchasableOffer(proto.Message):
             Offer.
     """
 
-    offer = proto.Field(proto.MESSAGE, number=1,
+    offer = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=gcc_offers.Offer,
     )
 
 
 class RegisterSubscriberRequest(proto.Message):
     r"""Request Message for RegisterSubscriber.
-
     Attributes:
         account (str):
             Required. Resource name of the account.
@@ -1478,26 +1755,32 @@ class RegisterSubscriberRequest(proto.Message):
             subscriber access to the registered topic.
     """
 
-    account = proto.Field(proto.STRING, number=1)
-
-    service_account = proto.Field(proto.STRING, number=2)
+    account = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    service_account = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class RegisterSubscriberResponse(proto.Message):
     r"""Response Message for RegisterSubscriber.
-
     Attributes:
         topic (str):
             Name of the topic the subscriber will listen
             to.
     """
 
-    topic = proto.Field(proto.STRING, number=1)
+    topic = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class UnregisterSubscriberRequest(proto.Message):
     r"""Request Message for UnregisterSubscriber.
-
     Attributes:
         account (str):
             Required. Resource name of the account.
@@ -1506,26 +1789,32 @@ class UnregisterSubscriberRequest(proto.Message):
             subscriber access to the topic.
     """
 
-    account = proto.Field(proto.STRING, number=1)
-
-    service_account = proto.Field(proto.STRING, number=2)
+    account = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    service_account = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class UnregisterSubscriberResponse(proto.Message):
     r"""Response Message for UnregisterSubscriber.
-
     Attributes:
         topic (str):
             Name of the topic the service account
             subscriber access was removed from.
     """
 
-    topic = proto.Field(proto.STRING, number=1)
+    topic = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class ListSubscribersRequest(proto.Message):
     r"""Request Message for ListSubscribers.
-
     Attributes:
         account (str):
             Required. Resource name of the account.
@@ -1545,16 +1834,22 @@ class ListSubscribersRequest(proto.Message):
             page token.
     """
 
-    account = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
+    account = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class ListSubscribersResponse(proto.Message):
     r"""Response Message for ListSubscribers.
-
     Attributes:
         topic (str):
             Name of the topic registered with the
@@ -1572,11 +1867,18 @@ class ListSubscribersResponse(proto.Message):
     def raw_page(self):
         return self
 
-    topic = proto.Field(proto.STRING, number=1)
-
-    service_accounts = proto.RepeatedField(proto.STRING, number=2)
-
-    next_page_token = proto.Field(proto.STRING, number=3)
+    topic = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    service_accounts = proto.RepeatedField(
+        proto.STRING,
+        number=2,
+    )
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

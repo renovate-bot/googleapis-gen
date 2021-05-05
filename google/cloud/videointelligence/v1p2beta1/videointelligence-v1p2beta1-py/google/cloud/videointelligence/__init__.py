@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.cloud.videointelligence_v1p2beta1.services.video_intelligence_service.async_client import VideoIntelligenceServiceAsyncClient
 from google.cloud.videointelligence_v1p2beta1.services.video_intelligence_service.client import VideoIntelligenceServiceClient
+from google.cloud.videointelligence_v1p2beta1.services.video_intelligence_service.async_client import VideoIntelligenceServiceAsyncClient
+
 from google.cloud.videointelligence_v1p2beta1.types.video_intelligence import AnnotateVideoProgress
 from google.cloud.videointelligence_v1p2beta1.types.video_intelligence import AnnotateVideoRequest
 from google.cloud.videointelligence_v1p2beta1.types.video_intelligence import AnnotateVideoResponse
@@ -24,13 +24,10 @@ from google.cloud.videointelligence_v1p2beta1.types.video_intelligence import En
 from google.cloud.videointelligence_v1p2beta1.types.video_intelligence import ExplicitContentAnnotation
 from google.cloud.videointelligence_v1p2beta1.types.video_intelligence import ExplicitContentDetectionConfig
 from google.cloud.videointelligence_v1p2beta1.types.video_intelligence import ExplicitContentFrame
-from google.cloud.videointelligence_v1p2beta1.types.video_intelligence import Feature
 from google.cloud.videointelligence_v1p2beta1.types.video_intelligence import LabelAnnotation
 from google.cloud.videointelligence_v1p2beta1.types.video_intelligence import LabelDetectionConfig
-from google.cloud.videointelligence_v1p2beta1.types.video_intelligence import LabelDetectionMode
 from google.cloud.videointelligence_v1p2beta1.types.video_intelligence import LabelFrame
 from google.cloud.videointelligence_v1p2beta1.types.video_intelligence import LabelSegment
-from google.cloud.videointelligence_v1p2beta1.types.video_intelligence import Likelihood
 from google.cloud.videointelligence_v1p2beta1.types.video_intelligence import NormalizedBoundingBox
 from google.cloud.videointelligence_v1p2beta1.types.video_intelligence import NormalizedBoundingPoly
 from google.cloud.videointelligence_v1p2beta1.types.video_intelligence import NormalizedVertex
@@ -45,8 +42,12 @@ from google.cloud.videointelligence_v1p2beta1.types.video_intelligence import Vi
 from google.cloud.videointelligence_v1p2beta1.types.video_intelligence import VideoAnnotationResults
 from google.cloud.videointelligence_v1p2beta1.types.video_intelligence import VideoContext
 from google.cloud.videointelligence_v1p2beta1.types.video_intelligence import VideoSegment
+from google.cloud.videointelligence_v1p2beta1.types.video_intelligence import Feature
+from google.cloud.videointelligence_v1p2beta1.types.video_intelligence import LabelDetectionMode
+from google.cloud.videointelligence_v1p2beta1.types.video_intelligence import Likelihood
 
-__all__ = (
+__all__ = ('VideoIntelligenceServiceClient',
+    'VideoIntelligenceServiceAsyncClient',
     'AnnotateVideoProgress',
     'AnnotateVideoRequest',
     'AnnotateVideoResponse',
@@ -54,13 +55,10 @@ __all__ = (
     'ExplicitContentAnnotation',
     'ExplicitContentDetectionConfig',
     'ExplicitContentFrame',
-    'Feature',
     'LabelAnnotation',
     'LabelDetectionConfig',
-    'LabelDetectionMode',
     'LabelFrame',
     'LabelSegment',
-    'Likelihood',
     'NormalizedBoundingBox',
     'NormalizedBoundingPoly',
     'NormalizedVertex',
@@ -74,7 +72,8 @@ __all__ = (
     'VideoAnnotationProgress',
     'VideoAnnotationResults',
     'VideoContext',
-    'VideoIntelligenceServiceAsyncClient',
-    'VideoIntelligenceServiceClient',
     'VideoSegment',
+    'Feature',
+    'LabelDetectionMode',
+    'Likelihood',
 )

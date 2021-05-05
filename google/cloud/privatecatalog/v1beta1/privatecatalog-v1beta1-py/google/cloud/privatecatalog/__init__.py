@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.cloud.privatecatalog_v1beta1.services.private_catalog.async_client import PrivateCatalogAsyncClient
 from google.cloud.privatecatalog_v1beta1.services.private_catalog.client import PrivateCatalogClient
+from google.cloud.privatecatalog_v1beta1.services.private_catalog.async_client import PrivateCatalogAsyncClient
+
 from google.cloud.privatecatalog_v1beta1.types.private_catalog import AssetReference
 from google.cloud.privatecatalog_v1beta1.types.private_catalog import Catalog
 from google.cloud.privatecatalog_v1beta1.types.private_catalog import GcsSource
@@ -31,14 +31,13 @@ from google.cloud.privatecatalog_v1beta1.types.private_catalog import SearchVers
 from google.cloud.privatecatalog_v1beta1.types.private_catalog import SearchVersionsResponse
 from google.cloud.privatecatalog_v1beta1.types.private_catalog import Version
 
-__all__ = (
+__all__ = ('PrivateCatalogClient',
+    'PrivateCatalogAsyncClient',
     'AssetReference',
     'Catalog',
     'GcsSource',
     'GitSource',
     'Inputs',
-    'PrivateCatalogAsyncClient',
-    'PrivateCatalogClient',
     'Product',
     'SearchCatalogsRequest',
     'SearchCatalogsResponse',

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -28,7 +26,7 @@ __protobuf__ = proto.module(
 
 
 class LanguageCodeErrorEnum(proto.Message):
-    r"""Container for enum describing language code errors."""
+    r"""Container for enum describing language code errors.    """
     class LanguageCodeError(proto.Enum):
         r"""Enum describing language code errors."""
         UNSPECIFIED = 0

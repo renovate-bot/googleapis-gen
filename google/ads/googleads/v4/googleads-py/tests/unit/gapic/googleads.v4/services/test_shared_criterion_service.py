@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 from unittest import mock
 
@@ -23,7 +21,6 @@ import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
-from google import auth
 from google.ads.googleads.v4.common.types import criteria
 from google.ads.googleads.v4.enums.types import criterion_type
 from google.ads.googleads.v4.enums.types import keyword_match_type
@@ -34,11 +31,12 @@ from google.ads.googleads.v4.services.types import shared_criterion_service
 from google.api_core import client_options
 from google.api_core import gapic_v1
 from google.api_core import grpc_helpers
-from google.auth import credentials
+from google.auth import credentials as ga_credentials
 from google.auth.exceptions import MutualTLSChannelError
 from google.oauth2 import service_account
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
-from google.rpc import status_pb2 as status  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
+from google.rpc import status_pb2  # type: ignore
+import google.auth
 
 
 def client_cert_source_callback():
@@ -68,7 +66,7 @@ def test__get_default_mtls_endpoint():
 
 
 def test_shared_criterion_service_client_from_service_account_info():
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
@@ -79,7 +77,7 @@ def test_shared_criterion_service_client_from_service_account_info():
 
 
 def test_shared_criterion_service_client_from_service_account_file():
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_file') as factory:
         factory.return_value = creds
         client = SharedCriterionServiceClient.from_service_account_file("dummy/file/path.json")
@@ -104,7 +102,7 @@ def test_shared_criterion_service_client_client_options():
     # Check that if channel is provided we won't create a new one.
     with mock.patch('google.ads.googleads.v4.services.services.shared_criterion_service.SharedCriterionServiceClient.get_transport_class') as gtc:
         transport = transports.SharedCriterionServiceGrpcTransport(
-            credentials=credentials.AnonymousCredentials()
+            credentials=ga_credentials.AnonymousCredentials()
         )
         client = SharedCriterionServiceClient(transport=transport)
         gtc.assert_not_called()
@@ -254,7 +252,7 @@ def test_shared_criterion_service_client_client_options_from_dict():
 
 def test_get_shared_criterion(transport: str = 'grpc', request_type=shared_criterion_service.GetSharedCriterionRequest):
     client = SharedCriterionServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -269,26 +267,19 @@ def test_get_shared_criterion(transport: str = 'grpc', request_type=shared_crite
         # Designate an appropriate return value for the call.
         call.return_value = shared_criterion.SharedCriterion(
             resource_name='resource_name_value',
-
             type_=criterion_type.CriterionTypeEnum.CriterionType.UNKNOWN,
-
-            keyword=criteria.KeywordInfo(text=wrappers.StringValue(value='value_value')),
+            keyword=criteria.KeywordInfo(text=wrappers_pb2.StringValue(value='value_value')),
         )
-
         response = client.get_shared_criterion(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == shared_criterion_service.GetSharedCriterionRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, shared_criterion.SharedCriterion)
-
     assert response.resource_name == 'resource_name_value'
-
     assert response.type_ == criterion_type.CriterionTypeEnum.CriterionType.UNKNOWN
 
 
@@ -298,12 +289,13 @@ def test_get_shared_criterion_from_dict():
 
 def test_get_shared_criterion_field_headers():
     client = SharedCriterionServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = shared_criterion_service.GetSharedCriterionRequest()
+
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -311,7 +303,6 @@ def test_get_shared_criterion_field_headers():
             type(client.transport.get_shared_criterion),
             '__call__') as call:
         call.return_value = shared_criterion.SharedCriterion()
-
         client.get_shared_criterion(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -329,7 +320,7 @@ def test_get_shared_criterion_field_headers():
 
 def test_get_shared_criterion_flattened():
     client = SharedCriterionServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -338,7 +329,6 @@ def test_get_shared_criterion_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = shared_criterion.SharedCriterion()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_shared_criterion(
@@ -349,13 +339,12 @@ def test_get_shared_criterion_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource_name == 'resource_name_value'
 
 
 def test_get_shared_criterion_flattened_error():
     client = SharedCriterionServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -369,7 +358,7 @@ def test_get_shared_criterion_flattened_error():
 
 def test_mutate_shared_criteria(transport: str = 'grpc', request_type=shared_criterion_service.MutateSharedCriteriaRequest):
     client = SharedCriterionServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -384,17 +373,14 @@ def test_mutate_shared_criteria(transport: str = 'grpc', request_type=shared_cri
         # Designate an appropriate return value for the call.
         call.return_value = shared_criterion_service.MutateSharedCriteriaResponse(
         )
-
         response = client.mutate_shared_criteria(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == shared_criterion_service.MutateSharedCriteriaRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, shared_criterion_service.MutateSharedCriteriaResponse)
 
 
@@ -404,12 +390,13 @@ def test_mutate_shared_criteria_from_dict():
 
 def test_mutate_shared_criteria_field_headers():
     client = SharedCriterionServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = shared_criterion_service.MutateSharedCriteriaRequest()
+
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -417,7 +404,6 @@ def test_mutate_shared_criteria_field_headers():
             type(client.transport.mutate_shared_criteria),
             '__call__') as call:
         call.return_value = shared_criterion_service.MutateSharedCriteriaResponse()
-
         client.mutate_shared_criteria(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -435,7 +421,7 @@ def test_mutate_shared_criteria_field_headers():
 
 def test_mutate_shared_criteria_flattened():
     client = SharedCriterionServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -444,7 +430,6 @@ def test_mutate_shared_criteria_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = shared_criterion_service.MutateSharedCriteriaResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_shared_criteria(
@@ -456,15 +441,13 @@ def test_mutate_shared_criteria_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].customer_id == 'customer_id_value'
-
         assert args[0].operations == [shared_criterion_service.SharedCriterionOperation(create=shared_criterion.SharedCriterion(resource_name='resource_name_value'))]
 
 
 def test_mutate_shared_criteria_flattened_error():
     client = SharedCriterionServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -480,11 +463,11 @@ def test_mutate_shared_criteria_flattened_error():
 def test_credentials_transport_error():
     # It is an error to provide credentials and a transport instance.
     transport = transports.SharedCriterionServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = SharedCriterionServiceClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             transport=transport,
         )
 
@@ -492,7 +475,7 @@ def test_credentials_transport_error():
 def test_transport_instance():
     # A client may be instantiated with a custom transport instance.
     transport = transports.SharedCriterionServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     client = SharedCriterionServiceClient(transport=transport)
     assert client.transport is transport
@@ -501,7 +484,7 @@ def test_transport_instance():
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.SharedCriterionServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     channel = transport.grpc_channel
     assert channel
@@ -510,7 +493,7 @@ def test_transport_get_channel():
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = SharedCriterionServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     assert isinstance(
         client.transport,
@@ -522,8 +505,8 @@ def test_transport_grpc_default():
 ])
 def test_transport_adc(transport_class):
     # Test default credentials are used if not provided.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport_class()
         adc.assert_called_once()
 
@@ -533,7 +516,7 @@ def test_shared_criterion_service_base_transport():
     with mock.patch('google.ads.googleads.v4.services.services.shared_criterion_service.transports.SharedCriterionServiceTransport.__init__') as Transport:
         Transport.return_value = None
         transport = transports.SharedCriterionServiceTransport(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
         )
 
     # Every method on the transport should just blindly
@@ -541,7 +524,7 @@ def test_shared_criterion_service_base_transport():
     methods = (
         'get_shared_criterion',
         'mutate_shared_criteria',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -549,17 +532,17 @@ def test_shared_criterion_service_base_transport():
 
 def test_shared_criterion_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.ads.googleads.v4.services.services.shared_criterion_service.transports.SharedCriterionServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'default') as adc, mock.patch('google.ads.googleads.v4.services.services.shared_criterion_service.transports.SharedCriterionServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.SharedCriterionServiceTransport()
         adc.assert_called_once()
 
 
 def test_shared_criterion_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         SharedCriterionServiceClient()
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/adwords',
@@ -569,8 +552,8 @@ def test_shared_criterion_service_auth_adc():
 def test_shared_criterion_service_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transports.SharedCriterionServiceGrpcTransport(host="squid.clam.whelk")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/adwords',
@@ -579,7 +562,7 @@ def test_shared_criterion_service_transport_auth_adc():
 
 def test_shared_criterion_service_host_no_port():
     client = SharedCriterionServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='googleads.googleapis.com'),
     )
     assert client.transport._host == 'googleads.googleapis.com:443'
@@ -587,7 +570,7 @@ def test_shared_criterion_service_host_no_port():
 
 def test_shared_criterion_service_host_with_port():
     client = SharedCriterionServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='googleads.googleapis.com:8000'),
     )
     assert client.transport._host == 'googleads.googleapis.com:8000'
@@ -618,9 +601,9 @@ def test_shared_criterion_service_transport_channel_mtls_with_client_cert_source
             mock_grpc_channel = mock.Mock()
             grpc_create_channel.return_value = mock_grpc_channel
 
-            cred = credentials.AnonymousCredentials()
+            cred = ga_credentials.AnonymousCredentials()
             with pytest.warns(DeprecationWarning):
-                with mock.patch.object(auth, 'default') as adc:
+                with mock.patch.object(google.auth, 'default') as adc:
                     adc.return_value = (cred, None)
                     transport = transport_class(
                         host="squid.clam.whelk",
@@ -693,7 +676,6 @@ def test_shared_criterion_service_transport_channel_mtls_with_adc(
 def test_shared_criterion_path():
     customer = "squid"
     shared_criterion = "clam"
-
     expected = "customers/{customer}/sharedCriteria/{shared_criterion}".format(customer=customer, shared_criterion=shared_criterion, )
     actual = SharedCriterionServiceClient.shared_criterion_path(customer, shared_criterion)
     assert expected == actual
@@ -701,9 +683,8 @@ def test_shared_criterion_path():
 
 def test_parse_shared_criterion_path():
     expected = {
-    "customer": "whelk",
-    "shared_criterion": "octopus",
-
+        "customer": "whelk",
+        "shared_criterion": "octopus",
     }
     path = SharedCriterionServiceClient.shared_criterion_path(**expected)
 
@@ -714,7 +695,6 @@ def test_parse_shared_criterion_path():
 def test_shared_set_path():
     customer = "oyster"
     shared_set = "nudibranch"
-
     expected = "customers/{customer}/sharedSets/{shared_set}".format(customer=customer, shared_set=shared_set, )
     actual = SharedCriterionServiceClient.shared_set_path(customer, shared_set)
     assert expected == actual
@@ -722,9 +702,8 @@ def test_shared_set_path():
 
 def test_parse_shared_set_path():
     expected = {
-    "customer": "cuttlefish",
-    "shared_set": "mussel",
-
+        "customer": "cuttlefish",
+        "shared_set": "mussel",
     }
     path = SharedCriterionServiceClient.shared_set_path(**expected)
 
@@ -734,7 +713,6 @@ def test_parse_shared_set_path():
 
 def test_common_billing_account_path():
     billing_account = "winkle"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = SharedCriterionServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -742,8 +720,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "nautilus",
-
+        "billing_account": "nautilus",
     }
     path = SharedCriterionServiceClient.common_billing_account_path(**expected)
 
@@ -753,7 +730,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "scallop"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = SharedCriterionServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -761,8 +737,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "abalone",
-
+        "folder": "abalone",
     }
     path = SharedCriterionServiceClient.common_folder_path(**expected)
 
@@ -772,7 +747,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "squid"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = SharedCriterionServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -780,8 +754,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "clam",
-
+        "organization": "clam",
     }
     path = SharedCriterionServiceClient.common_organization_path(**expected)
 
@@ -791,7 +764,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "whelk"
-
     expected = "projects/{project}".format(project=project, )
     actual = SharedCriterionServiceClient.common_project_path(project)
     assert expected == actual
@@ -799,8 +771,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "octopus",
-
+        "project": "octopus",
     }
     path = SharedCriterionServiceClient.common_project_path(**expected)
 
@@ -811,7 +782,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "oyster"
     location = "nudibranch"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = SharedCriterionServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -819,9 +789,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "cuttlefish",
-    "location": "mussel",
-
+        "project": "cuttlefish",
+        "location": "mussel",
     }
     path = SharedCriterionServiceClient.common_location_path(**expected)
 
@@ -835,7 +804,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
 
     with mock.patch.object(transports.SharedCriterionServiceTransport, '_prep_wrapped_messages') as prep:
         client = SharedCriterionServiceClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)
@@ -843,7 +812,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
     with mock.patch.object(transports.SharedCriterionServiceTransport, '_prep_wrapped_messages') as prep:
         transport_class = SharedCriterionServiceClient.get_transport_class()
         transport = transport_class(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)

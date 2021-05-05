@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -41,7 +39,9 @@ class NetworkSettings(proto.Message):
         INGRESS_TRAFFIC_ALLOWED_INTERNAL_ONLY = 2
         INGRESS_TRAFFIC_ALLOWED_INTERNAL_AND_LB = 3
 
-    ingress_traffic_allowed = proto.Field(proto.ENUM, number=1,
+    ingress_traffic_allowed = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=IngressTrafficAllowed,
     )
 

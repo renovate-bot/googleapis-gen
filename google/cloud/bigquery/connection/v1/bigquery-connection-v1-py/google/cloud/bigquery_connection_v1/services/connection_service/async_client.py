@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -22,19 +20,18 @@ from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
 import google.api_core.client_options as ClientOptions # type: ignore
-from google.api_core import exceptions                 # type: ignore
+from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
 from google.cloud.bigquery_connection_v1.services.connection_service import pagers
 from google.cloud.bigquery_connection_v1.types import connection
 from google.cloud.bigquery_connection_v1.types import connection as gcbc_connection
-from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
-from google.iam.v1 import policy_pb2 as gi_policy  # type: ignore
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-
+from google.iam.v1 import iam_policy_pb2  # type: ignore
+from google.iam.v1 import policy_pb2  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
 from .transports.base import ConnectionServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import ConnectionServiceGrpcAsyncIOTransport
 from .client import ConnectionServiceClient
@@ -50,19 +47,14 @@ class ConnectionServiceAsyncClient:
 
     connection_path = staticmethod(ConnectionServiceClient.connection_path)
     parse_connection_path = staticmethod(ConnectionServiceClient.parse_connection_path)
-
     common_billing_account_path = staticmethod(ConnectionServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(ConnectionServiceClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(ConnectionServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(ConnectionServiceClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(ConnectionServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(ConnectionServiceClient.parse_common_organization_path)
-
     common_project_path = staticmethod(ConnectionServiceClient.common_project_path)
     parse_common_project_path = staticmethod(ConnectionServiceClient.parse_common_project_path)
-
     common_location_path = staticmethod(ConnectionServiceClient.common_location_path)
     parse_common_location_path = staticmethod(ConnectionServiceClient.parse_common_location_path)
 
@@ -110,7 +102,7 @@ class ConnectionServiceAsyncClient:
     get_transport_class = functools.partial(type(ConnectionServiceClient).get_transport_class, type(ConnectionServiceClient))
 
     def __init__(self, *,
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             transport: Union[str, ConnectionServiceTransport] = 'grpc_asyncio',
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -147,7 +139,6 @@ class ConnectionServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = ConnectionServiceClient(
             credentials=credentials,
             transport=transport,
@@ -191,7 +182,6 @@ class ConnectionServiceAsyncClient:
                 This corresponds to the ``connection_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -217,7 +207,6 @@ class ConnectionServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if connection is not None:
@@ -273,7 +262,6 @@ class ConnectionServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -299,7 +287,6 @@ class ConnectionServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -308,10 +295,7 @@ class ConnectionServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_connection,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -361,7 +345,6 @@ class ConnectionServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -389,7 +372,6 @@ class ConnectionServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -398,10 +380,7 @@ class ConnectionServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_connections,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -444,7 +423,7 @@ class ConnectionServiceAsyncClient:
             *,
             name: str = None,
             connection: gcbc_connection.Connection = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -478,7 +457,6 @@ class ConnectionServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -504,7 +482,6 @@ class ConnectionServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
         if connection is not None:
@@ -560,7 +537,6 @@ class ConnectionServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -579,7 +555,6 @@ class ConnectionServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -588,10 +563,7 @@ class ConnectionServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_connection,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -618,13 +590,13 @@ class ConnectionServiceAsyncClient:
         )
 
     async def get_iam_policy(self,
-            request: iam_policy.GetIamPolicyRequest = None,
+            request: iam_policy_pb2.GetIamPolicyRequest = None,
             *,
             resource: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> gi_policy.Policy:
+            ) -> policy_pb2.Policy:
         r"""Gets the access control policy for a resource.
         Returns an empty policy if the resource exists and does
         not have a policy set.
@@ -642,7 +614,6 @@ class ConnectionServiceAsyncClient:
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -716,13 +687,12 @@ class ConnectionServiceAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # The request isn't a proto-plus wrapped type,
+         # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
-            request = iam_policy.GetIamPolicyRequest(**request)
-
+            request = iam_policy_pb2.GetIamPolicyRequest(**request)
         elif not request:
-            request = iam_policy.GetIamPolicyRequest(resource=resource, )
+            request = iam_policy_pb2.GetIamPolicyRequest(resource=resource, )
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -752,13 +722,13 @@ class ConnectionServiceAsyncClient:
         return response
 
     async def set_iam_policy(self,
-            request: iam_policy.SetIamPolicyRequest = None,
+            request: iam_policy_pb2.SetIamPolicyRequest = None,
             *,
             resource: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> gi_policy.Policy:
+            ) -> policy_pb2.Policy:
         r"""Sets the access control policy on the specified resource.
         Replaces any existing policy.
 
@@ -778,7 +748,6 @@ class ConnectionServiceAsyncClient:
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -852,13 +821,12 @@ class ConnectionServiceAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # The request isn't a proto-plus wrapped type,
+         # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
-            request = iam_policy.SetIamPolicyRequest(**request)
-
+            request = iam_policy_pb2.SetIamPolicyRequest(**request)
         elif not request:
-            request = iam_policy.SetIamPolicyRequest(resource=resource, )
+            request = iam_policy_pb2.SetIamPolicyRequest(resource=resource, )
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -888,14 +856,14 @@ class ConnectionServiceAsyncClient:
         return response
 
     async def test_iam_permissions(self,
-            request: iam_policy.TestIamPermissionsRequest = None,
+            request: iam_policy_pb2.TestIamPermissionsRequest = None,
             *,
             resource: str = None,
             permissions: Sequence[str] = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> iam_policy.TestIamPermissionsResponse:
+            ) -> iam_policy_pb2.TestIamPermissionsResponse:
         r"""Returns permissions that a caller has on the specified resource.
         If the resource does not exist, this will return an empty set of
         permissions, not a ``NOT_FOUND`` error.
@@ -927,7 +895,6 @@ class ConnectionServiceAsyncClient:
                 This corresponds to the ``permissions`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -946,13 +913,12 @@ class ConnectionServiceAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # The request isn't a proto-plus wrapped type,
+         # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
-            request = iam_policy.TestIamPermissionsRequest(**request)
-
+            request = iam_policy_pb2.TestIamPermissionsRequest(**request)
         elif not request:
-            request = iam_policy.TestIamPermissionsRequest(resource=resource, permissions=permissions, )
+            request = iam_policy_pb2.TestIamPermissionsRequest(resource=resource, permissions=permissions, )
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -980,8 +946,6 @@ class ConnectionServiceAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

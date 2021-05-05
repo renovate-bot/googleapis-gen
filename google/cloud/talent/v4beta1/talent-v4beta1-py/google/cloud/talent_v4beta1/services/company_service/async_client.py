@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -22,10 +20,10 @@ from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
 import google.api_core.client_options as ClientOptions # type: ignore
-from google.api_core import exceptions                 # type: ignore
+from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
 from google.cloud.talent_v4beta1.services.company_service import pagers
@@ -33,7 +31,6 @@ from google.cloud.talent_v4beta1.types import common
 from google.cloud.talent_v4beta1.types import company
 from google.cloud.talent_v4beta1.types import company as gct_company
 from google.cloud.talent_v4beta1.types import company_service
-
 from .transports.base import CompanyServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import CompanyServiceGrpcAsyncIOTransport
 from .client import CompanyServiceClient
@@ -51,19 +48,14 @@ class CompanyServiceAsyncClient:
 
     company_path = staticmethod(CompanyServiceClient.company_path)
     parse_company_path = staticmethod(CompanyServiceClient.parse_company_path)
-
     common_billing_account_path = staticmethod(CompanyServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(CompanyServiceClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(CompanyServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(CompanyServiceClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(CompanyServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(CompanyServiceClient.parse_common_organization_path)
-
     common_project_path = staticmethod(CompanyServiceClient.common_project_path)
     parse_common_project_path = staticmethod(CompanyServiceClient.parse_common_project_path)
-
     common_location_path = staticmethod(CompanyServiceClient.common_location_path)
     parse_common_location_path = staticmethod(CompanyServiceClient.parse_common_location_path)
 
@@ -111,7 +103,7 @@ class CompanyServiceAsyncClient:
     get_transport_class = functools.partial(type(CompanyServiceClient).get_transport_class, type(CompanyServiceClient))
 
     def __init__(self, *,
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             transport: Union[str, CompanyServiceTransport] = 'grpc_asyncio',
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -148,7 +140,6 @@ class CompanyServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = CompanyServiceClient(
             credentials=credentials,
             transport=transport,
@@ -190,7 +181,6 @@ class CompanyServiceAsyncClient:
                 This corresponds to the ``company`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -219,7 +209,6 @@ class CompanyServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if company is not None:
@@ -281,7 +270,6 @@ class CompanyServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -310,7 +298,6 @@ class CompanyServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -319,10 +306,7 @@ class CompanyServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_company,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -373,7 +357,6 @@ class CompanyServiceAsyncClient:
                 This corresponds to the ``company`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -402,7 +385,6 @@ class CompanyServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if company is not None:
             request.company = company
 
@@ -462,7 +444,6 @@ class CompanyServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -481,7 +462,6 @@ class CompanyServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -490,10 +470,7 @@ class CompanyServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_company,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -547,7 +524,6 @@ class CompanyServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -574,7 +550,6 @@ class CompanyServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -583,10 +558,7 @@ class CompanyServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_companies,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -623,8 +595,6 @@ class CompanyServiceAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,14 +13,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v5.enums.types import response_content_type as gage_response_content_type
 from google.ads.googleads.v5.resources.types import campaign as gagr_campaign
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.rpc import status_pb2 as status  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.rpc import status_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -47,7 +44,10 @@ class GetCampaignRequest(proto.Message):
             to fetch.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class MutateCampaignsRequest(proto.Message):
@@ -76,20 +76,32 @@ class MutateCampaignsRequest(proto.Message):
             resource name should be returned post mutation.
     """
 
-    customer_id = proto.Field(proto.STRING, number=1)
-    operations = proto.RepeatedField(proto.MESSAGE, number=2,
+    customer_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    operations = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='CampaignOperation',
     )
-    partial_failure = proto.Field(proto.BOOL, number=3)
-    validate_only = proto.Field(proto.BOOL, number=4)
-    response_content_type = proto.Field(proto.ENUM, number=5,
+    partial_failure = proto.Field(
+        proto.BOOL,
+        number=3,
+    )
+    validate_only = proto.Field(
+        proto.BOOL,
+        number=4,
+    )
+    response_content_type = proto.Field(
+        proto.ENUM,
+        number=5,
         enum=gage_response_content_type.ResponseContentTypeEnum.ResponseContentType,
     )
 
 
 class CampaignOperation(proto.Message):
     r"""A single operation (create, update, remove) on a campaign.
-
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             FieldMask that determines which resource
@@ -107,21 +119,32 @@ class CampaignOperation(proto.Message):
             ``customers/{customer_id}/campaigns/{campaign_id}``
     """
 
-    update_mask = proto.Field(proto.MESSAGE, number=4,
-        message=field_mask.FieldMask,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=field_mask_pb2.FieldMask,
     )
-    create = proto.Field(proto.MESSAGE, number=1, oneof='operation',
+    create = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='operation',
         message=gagr_campaign.Campaign,
     )
-    update = proto.Field(proto.MESSAGE, number=2, oneof='operation',
+    update = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='operation',
         message=gagr_campaign.Campaign,
     )
-    remove = proto.Field(proto.STRING, number=3, oneof='operation')
+    remove = proto.Field(
+        proto.STRING,
+        number=3,
+        oneof='operation',
+    )
 
 
 class MutateCampaignsResponse(proto.Message):
     r"""Response message for campaign mutate.
-
     Attributes:
         partial_failure_error (google.rpc.status_pb2.Status):
             Errors that pertain to operation failures in the partial
@@ -133,17 +156,20 @@ class MutateCampaignsResponse(proto.Message):
             All results for the mutate.
     """
 
-    partial_failure_error = proto.Field(proto.MESSAGE, number=3,
-        message=status.Status,
+    partial_failure_error = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=status_pb2.Status,
     )
-    results = proto.RepeatedField(proto.MESSAGE, number=2,
+    results = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='MutateCampaignResult',
     )
 
 
 class MutateCampaignResult(proto.Message):
     r"""The result for the campaign mutate.
-
     Attributes:
         resource_name (str):
             Returned for successful operations.
@@ -153,8 +179,13 @@ class MutateCampaignResult(proto.Message):
             is set to "MUTABLE_RESOURCE".
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    campaign = proto.Field(proto.MESSAGE, number=2,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    campaign = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=gagr_campaign.Campaign,
     )
 

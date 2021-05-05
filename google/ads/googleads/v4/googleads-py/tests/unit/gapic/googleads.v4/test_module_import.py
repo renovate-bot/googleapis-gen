@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,8 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
-
 import pytest
 
 
@@ -23,7 +20,6 @@ def test_module_level_imports():
     expected_names = []
 
     # Message types
-
     from google.ads.googleads import ServedAssetFieldTypeEnum
     expected_names.append(ServedAssetFieldTypeEnum.__name__)
     from google.ads.googleads import AdTextAsset
@@ -2869,7 +2865,6 @@ def test_versionsed_module_level_imports():
     expected_names = []
 
     # Message types
-
     from google.ads.googleads.v4 import ServedAssetFieldTypeEnum
     expected_names.append(ServedAssetFieldTypeEnum.__name__)
     from google.ads.googleads.v4 import AdTextAsset

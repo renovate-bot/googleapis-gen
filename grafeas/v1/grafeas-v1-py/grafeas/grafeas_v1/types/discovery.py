@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-from google.rpc import status_pb2 as status  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
+from google.rpc import status_pb2  # type: ignore
 from grafeas.grafeas_v1.types import common
 
 
@@ -43,7 +40,9 @@ class DiscoveryNote(proto.Message):
             that is handled by this discovery.
     """
 
-    analysis_kind = proto.Field(proto.ENUM, number=1,
+    analysis_kind = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=common.NoteKind,
     )
 
@@ -85,22 +84,29 @@ class DiscoveryOccurrence(proto.Message):
         FINISHED_FAILED = 4
         FINISHED_UNSUPPORTED = 5
 
-    continuous_analysis = proto.Field(proto.ENUM, number=1,
+    continuous_analysis = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=ContinuousAnalysis,
     )
-
-    analysis_status = proto.Field(proto.ENUM, number=2,
+    analysis_status = proto.Field(
+        proto.ENUM,
+        number=2,
         enum=AnalysisStatus,
     )
-
-    analysis_status_error = proto.Field(proto.MESSAGE, number=3,
-        message=status.Status,
+    analysis_status_error = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=status_pb2.Status,
     )
-
-    cpe = proto.Field(proto.STRING, number=4)
-
-    last_scan_time = proto.Field(proto.MESSAGE, number=5,
-        message=timestamp.Timestamp,
+    cpe = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    last_scan_time = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        message=timestamp_pb2.Timestamp,
     )
 
 

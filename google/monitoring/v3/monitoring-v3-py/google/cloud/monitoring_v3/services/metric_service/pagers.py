@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,11 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
 
-from google.api import metric_pb2 as ga_metric  # type: ignore
-from google.api import monitored_resource_pb2 as monitored_resource  # type: ignore
+from google.api import metric_pb2  # type: ignore
+from google.api import monitored_resource_pb2  # type: ignore
 from google.cloud.monitoring_v3.types import metric as gm_metric
 from google.cloud.monitoring_v3.types import metric_service
 
@@ -74,7 +72,7 @@ class ListMonitoredResourceDescriptorsPager:
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[monitored_resource.MonitoredResourceDescriptor]:
+    def __iter__(self) -> Iterable[monitored_resource_pb2.MonitoredResourceDescriptor]:
         for page in self.pages:
             yield from page.resource_descriptors
 
@@ -133,7 +131,7 @@ class ListMonitoredResourceDescriptorsAsyncPager:
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[monitored_resource.MonitoredResourceDescriptor]:
+    def __aiter__(self) -> AsyncIterable[monitored_resource_pb2.MonitoredResourceDescriptor]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.resource_descriptors:

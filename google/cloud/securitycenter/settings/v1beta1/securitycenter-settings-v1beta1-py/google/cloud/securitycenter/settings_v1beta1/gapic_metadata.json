@@ -1,0 +1,153 @@
+ {
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "python",
+  "libraryPackage": "google.cloud.securitycenter.settings_v1beta1",
+  "protoPackage": "google.cloud.securitycenter.settings.v1beta1",
+  "schema": "1.0",
+  "services": {
+    "SecurityCenterSettingsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SecurityCenterSettingsServiceClient",
+          "rpcs": {
+            "BatchCalculateEffectiveSettings": {
+              "methods": [
+                "batch_calculate_effective_settings"
+              ]
+            },
+            "BatchGetSettings": {
+              "methods": [
+                "batch_get_settings"
+              ]
+            },
+            "CalculateEffectiveComponentSettings": {
+              "methods": [
+                "calculate_effective_component_settings"
+              ]
+            },
+            "CalculateEffectiveSettings": {
+              "methods": [
+                "calculate_effective_settings"
+              ]
+            },
+            "GetComponentSettings": {
+              "methods": [
+                "get_component_settings"
+              ]
+            },
+            "GetServiceAccount": {
+              "methods": [
+                "get_service_account"
+              ]
+            },
+            "GetSettings": {
+              "methods": [
+                "get_settings"
+              ]
+            },
+            "ListComponents": {
+              "methods": [
+                "list_components"
+              ]
+            },
+            "ListDetectors": {
+              "methods": [
+                "list_detectors"
+              ]
+            },
+            "ResetComponentSettings": {
+              "methods": [
+                "reset_component_settings"
+              ]
+            },
+            "ResetSettings": {
+              "methods": [
+                "reset_settings"
+              ]
+            },
+            "UpdateComponentSettings": {
+              "methods": [
+                "update_component_settings"
+              ]
+            },
+            "UpdateSettings": {
+              "methods": [
+                "update_settings"
+              ]
+            }
+          }
+        },
+        "grpc-async": {
+          "libraryClient": "SecurityCenterSettingsServiceAsyncClient",
+          "rpcs": {
+            "BatchCalculateEffectiveSettings": {
+              "methods": [
+                "batch_calculate_effective_settings"
+              ]
+            },
+            "BatchGetSettings": {
+              "methods": [
+                "batch_get_settings"
+              ]
+            },
+            "CalculateEffectiveComponentSettings": {
+              "methods": [
+                "calculate_effective_component_settings"
+              ]
+            },
+            "CalculateEffectiveSettings": {
+              "methods": [
+                "calculate_effective_settings"
+              ]
+            },
+            "GetComponentSettings": {
+              "methods": [
+                "get_component_settings"
+              ]
+            },
+            "GetServiceAccount": {
+              "methods": [
+                "get_service_account"
+              ]
+            },
+            "GetSettings": {
+              "methods": [
+                "get_settings"
+              ]
+            },
+            "ListComponents": {
+              "methods": [
+                "list_components"
+              ]
+            },
+            "ListDetectors": {
+              "methods": [
+                "list_detectors"
+              ]
+            },
+            "ResetComponentSettings": {
+              "methods": [
+                "reset_component_settings"
+              ]
+            },
+            "ResetSettings": {
+              "methods": [
+                "reset_settings"
+              ]
+            },
+            "UpdateComponentSettings": {
+              "methods": [
+                "update_component_settings"
+              ]
+            },
+            "UpdateSettings": {
+              "methods": [
+                "update_settings"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

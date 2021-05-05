@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,11 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -39,7 +36,6 @@ __protobuf__ = proto.module(
 
 class OfflineUserAddressInfo(proto.Message):
     r"""Address identifier of offline data.
-
     Attributes:
         hashed_first_name (google.protobuf.wrappers_pb2.StringValue):
             First name of the user, which is hashed as
@@ -63,29 +59,40 @@ class OfflineUserAddressInfo(proto.Message):
             Postal code of the user's address.
     """
 
-    hashed_first_name = proto.Field(proto.MESSAGE, number=1,
-        message=wrappers.StringValue,
+    hashed_first_name = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=wrappers_pb2.StringValue,
     )
-    hashed_last_name = proto.Field(proto.MESSAGE, number=2,
-        message=wrappers.StringValue,
+    hashed_last_name = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=wrappers_pb2.StringValue,
     )
-    city = proto.Field(proto.MESSAGE, number=3,
-        message=wrappers.StringValue,
+    city = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=wrappers_pb2.StringValue,
     )
-    state = proto.Field(proto.MESSAGE, number=4,
-        message=wrappers.StringValue,
+    state = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=wrappers_pb2.StringValue,
     )
-    country_code = proto.Field(proto.MESSAGE, number=5,
-        message=wrappers.StringValue,
+    country_code = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        message=wrappers_pb2.StringValue,
     )
-    postal_code = proto.Field(proto.MESSAGE, number=6,
-        message=wrappers.StringValue,
+    postal_code = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        message=wrappers_pb2.StringValue,
     )
 
 
 class UserIdentifier(proto.Message):
     r"""Hashed user identifying information.
-
     Attributes:
         hashed_email (google.protobuf.wrappers_pb2.StringValue):
             Hashed email address using SHA-256 hash
@@ -103,26 +110,40 @@ class UserIdentifier(proto.Message):
             Address information.
     """
 
-    hashed_email = proto.Field(proto.MESSAGE, number=1, oneof='identifier',
-        message=wrappers.StringValue,
+    hashed_email = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='identifier',
+        message=wrappers_pb2.StringValue,
     )
-    hashed_phone_number = proto.Field(proto.MESSAGE, number=2, oneof='identifier',
-        message=wrappers.StringValue,
+    hashed_phone_number = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='identifier',
+        message=wrappers_pb2.StringValue,
     )
-    mobile_id = proto.Field(proto.MESSAGE, number=3, oneof='identifier',
-        message=wrappers.StringValue,
+    mobile_id = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        oneof='identifier',
+        message=wrappers_pb2.StringValue,
     )
-    third_party_user_id = proto.Field(proto.MESSAGE, number=4, oneof='identifier',
-        message=wrappers.StringValue,
+    third_party_user_id = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        oneof='identifier',
+        message=wrappers_pb2.StringValue,
     )
-    address_info = proto.Field(proto.MESSAGE, number=5, oneof='identifier',
+    address_info = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        oneof='identifier',
         message='OfflineUserAddressInfo',
     )
 
 
 class TransactionAttribute(proto.Message):
     r"""Attribute of the store sales transaction.
-
     Attributes:
         transaction_date_time (google.protobuf.wrappers_pb2.StringValue):
             Timestamp when transaction occurred.
@@ -149,46 +170,60 @@ class TransactionAttribute(proto.Message):
             allow-list.
     """
 
-    transaction_date_time = proto.Field(proto.MESSAGE, number=1,
-        message=wrappers.StringValue,
+    transaction_date_time = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=wrappers_pb2.StringValue,
     )
-    transaction_amount_micros = proto.Field(proto.MESSAGE, number=2,
-        message=wrappers.DoubleValue,
+    transaction_amount_micros = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=wrappers_pb2.DoubleValue,
     )
-    currency_code = proto.Field(proto.MESSAGE, number=3,
-        message=wrappers.StringValue,
+    currency_code = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=wrappers_pb2.StringValue,
     )
-    conversion_action = proto.Field(proto.MESSAGE, number=4,
-        message=wrappers.StringValue,
+    conversion_action = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=wrappers_pb2.StringValue,
     )
-    order_id = proto.Field(proto.MESSAGE, number=5,
-        message=wrappers.StringValue,
+    order_id = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        message=wrappers_pb2.StringValue,
     )
-    store_attribute = proto.Field(proto.MESSAGE, number=6,
+    store_attribute = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message='StoreAttribute',
     )
-    custom_value = proto.Field(proto.MESSAGE, number=7,
-        message=wrappers.StringValue,
+    custom_value = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        message=wrappers_pb2.StringValue,
     )
 
 
 class StoreAttribute(proto.Message):
     r"""Store attributes of the transaction.
-
     Attributes:
         store_code (google.protobuf.wrappers_pb2.StringValue):
             Store code from
             https://support.google.com/business/answer/3370250#storecode
     """
 
-    store_code = proto.Field(proto.MESSAGE, number=1,
-        message=wrappers.StringValue,
+    store_code = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=wrappers_pb2.StringValue,
     )
 
 
 class UserData(proto.Message):
     r"""User data holding user identifiers and attributes.
-
     Attributes:
         user_identifiers (Sequence[google.ads.googleads.v4.common.types.UserIdentifier]):
             User identification info. Required.
@@ -198,31 +233,35 @@ class UserData(proto.Message):
             sales data.
     """
 
-    user_identifiers = proto.RepeatedField(proto.MESSAGE, number=1,
+    user_identifiers = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='UserIdentifier',
     )
-    transaction_attribute = proto.Field(proto.MESSAGE, number=2,
+    transaction_attribute = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='TransactionAttribute',
     )
 
 
 class CustomerMatchUserListMetadata(proto.Message):
     r"""Metadata for customer match user list.
-
     Attributes:
         user_list (google.protobuf.wrappers_pb2.StringValue):
             The resource name of remarketing list to update data.
             Required for job of CUSTOMER_MATCH_USER_LIST type.
     """
 
-    user_list = proto.Field(proto.MESSAGE, number=1,
-        message=wrappers.StringValue,
+    user_list = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=wrappers_pb2.StringValue,
     )
 
 
 class StoreSalesMetadata(proto.Message):
     r"""Metadata for Store Sales Direct.
-
     Attributes:
         loyalty_fraction (google.protobuf.wrappers_pb2.DoubleValue):
             This is the fraction of all transactions that
@@ -249,16 +288,24 @@ class StoreSalesMetadata(proto.Message):
             upload.
     """
 
-    loyalty_fraction = proto.Field(proto.MESSAGE, number=1,
-        message=wrappers.DoubleValue,
+    loyalty_fraction = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=wrappers_pb2.DoubleValue,
     )
-    transaction_upload_fraction = proto.Field(proto.MESSAGE, number=2,
-        message=wrappers.DoubleValue,
+    transaction_upload_fraction = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=wrappers_pb2.DoubleValue,
     )
-    custom_key = proto.Field(proto.MESSAGE, number=4,
-        message=wrappers.StringValue,
+    custom_key = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=wrappers_pb2.StringValue,
     )
-    third_party_metadata = proto.Field(proto.MESSAGE, number=3,
+    third_party_metadata = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='StoreSalesThirdPartyMetadata',
     )
 
@@ -301,23 +348,35 @@ class StoreSalesThirdPartyMetadata(proto.Message):
             transaction feed.
     """
 
-    advertiser_upload_date_time = proto.Field(proto.MESSAGE, number=1,
-        message=wrappers.StringValue,
+    advertiser_upload_date_time = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=wrappers_pb2.StringValue,
     )
-    valid_transaction_fraction = proto.Field(proto.MESSAGE, number=2,
-        message=wrappers.DoubleValue,
+    valid_transaction_fraction = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=wrappers_pb2.DoubleValue,
     )
-    partner_match_fraction = proto.Field(proto.MESSAGE, number=3,
-        message=wrappers.DoubleValue,
+    partner_match_fraction = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=wrappers_pb2.DoubleValue,
     )
-    partner_upload_fraction = proto.Field(proto.MESSAGE, number=4,
-        message=wrappers.DoubleValue,
+    partner_upload_fraction = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=wrappers_pb2.DoubleValue,
     )
-    bridge_map_version_id = proto.Field(proto.MESSAGE, number=5,
-        message=wrappers.StringValue,
+    bridge_map_version_id = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        message=wrappers_pb2.StringValue,
     )
-    partner_id = proto.Field(proto.MESSAGE, number=6,
-        message=wrappers.Int64Value,
+    partner_id = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        message=wrappers_pb2.Int64Value,
     )
 
 

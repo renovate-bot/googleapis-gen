@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,13 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.cloud.vision_v1.types import geometry
 from google.cloud.vision_v1.types import product_search_service
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -34,7 +31,6 @@ __protobuf__ = proto.module(
 
 class ProductSearchParams(proto.Message):
     r"""Parameters for a product search request.
-
     Attributes:
         bounding_poly (google.cloud.vision_v1.types.BoundingPoly):
             The bounding polygon around the area of
@@ -73,20 +69,27 @@ class ProductSearchParams(proto.Message):
             instead of an '='.
     """
 
-    bounding_poly = proto.Field(proto.MESSAGE, number=9,
+    bounding_poly = proto.Field(
+        proto.MESSAGE,
+        number=9,
         message=geometry.BoundingPoly,
     )
-
-    product_set = proto.Field(proto.STRING, number=6)
-
-    product_categories = proto.RepeatedField(proto.STRING, number=7)
-
-    filter = proto.Field(proto.STRING, number=8)
+    product_set = proto.Field(
+        proto.STRING,
+        number=6,
+    )
+    product_categories = proto.RepeatedField(
+        proto.STRING,
+        number=7,
+    )
+    filter = proto.Field(
+        proto.STRING,
+        number=8,
+    )
 
 
 class ProductSearchResults(proto.Message):
     r"""Results for a product search request.
-
     Attributes:
         index_time (google.protobuf.timestamp_pb2.Timestamp):
             Timestamp of the index which provided these
@@ -103,9 +106,9 @@ class ProductSearchResults(proto.Message):
             region. There may be duplicate product matches
             in the union of all the per-product results.
     """
+
     class Result(proto.Message):
         r"""Information about a product.
-
         Attributes:
             product (google.cloud.vision_v1.types.Product):
                 The Product.
@@ -117,17 +120,22 @@ class ProductSearchResults(proto.Message):
                 product that is the closest match to the query.
         """
 
-        product = proto.Field(proto.MESSAGE, number=1,
+        product = proto.Field(
+            proto.MESSAGE,
+            number=1,
             message=product_search_service.Product,
         )
-
-        score = proto.Field(proto.FLOAT, number=2)
-
-        image = proto.Field(proto.STRING, number=3)
+        score = proto.Field(
+            proto.FLOAT,
+            number=2,
+        )
+        image = proto.Field(
+            proto.STRING,
+            number=3,
+        )
 
     class ObjectAnnotation(proto.Message):
         r"""Prediction for what the object in the bounding box is.
-
         Attributes:
             mid (str):
                 Object ID that should align with
@@ -142,13 +150,22 @@ class ProductSearchResults(proto.Message):
                 Score of the result. Range [0, 1].
         """
 
-        mid = proto.Field(proto.STRING, number=1)
-
-        language_code = proto.Field(proto.STRING, number=2)
-
-        name = proto.Field(proto.STRING, number=3)
-
-        score = proto.Field(proto.FLOAT, number=4)
+        mid = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        language_code = proto.Field(
+            proto.STRING,
+            number=2,
+        )
+        name = proto.Field(
+            proto.STRING,
+            number=3,
+        )
+        score = proto.Field(
+            proto.FLOAT,
+            number=4,
+        )
 
     class GroupedResult(proto.Message):
         r"""Information about the products similar to a single product in
@@ -165,27 +182,35 @@ class ProductSearchResults(proto.Message):
                 the bounding box.
         """
 
-        bounding_poly = proto.Field(proto.MESSAGE, number=1,
+        bounding_poly = proto.Field(
+            proto.MESSAGE,
+            number=1,
             message=geometry.BoundingPoly,
         )
-
-        results = proto.RepeatedField(proto.MESSAGE, number=2,
+        results = proto.RepeatedField(
+            proto.MESSAGE,
+            number=2,
             message='ProductSearchResults.Result',
         )
-
-        object_annotations = proto.RepeatedField(proto.MESSAGE, number=3,
+        object_annotations = proto.RepeatedField(
+            proto.MESSAGE,
+            number=3,
             message='ProductSearchResults.ObjectAnnotation',
         )
 
-    index_time = proto.Field(proto.MESSAGE, number=2,
-        message=timestamp.Timestamp,
+    index_time = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=timestamp_pb2.Timestamp,
     )
-
-    results = proto.RepeatedField(proto.MESSAGE, number=5,
+    results = proto.RepeatedField(
+        proto.MESSAGE,
+        number=5,
         message=Result,
     )
-
-    product_grouped_results = proto.RepeatedField(proto.MESSAGE, number=6,
+    product_grouped_results = proto.RepeatedField(
+        proto.MESSAGE,
+        number=6,
         message=GroupedResult,
     )
 

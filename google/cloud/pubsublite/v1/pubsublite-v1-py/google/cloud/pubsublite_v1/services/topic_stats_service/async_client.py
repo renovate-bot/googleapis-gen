@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -22,16 +20,15 @@ from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
 import google.api_core.client_options as ClientOptions # type: ignore
-from google.api_core import exceptions                 # type: ignore
+from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
 from google.cloud.pubsublite_v1.types import common
 from google.cloud.pubsublite_v1.types import topic_stats
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
+from google.protobuf import timestamp_pb2  # type: ignore
 from .transports.base import TopicStatsServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import TopicStatsServiceGrpcAsyncIOTransport
 from .client import TopicStatsServiceClient
@@ -49,19 +46,14 @@ class TopicStatsServiceAsyncClient:
 
     topic_path = staticmethod(TopicStatsServiceClient.topic_path)
     parse_topic_path = staticmethod(TopicStatsServiceClient.parse_topic_path)
-
     common_billing_account_path = staticmethod(TopicStatsServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(TopicStatsServiceClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(TopicStatsServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(TopicStatsServiceClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(TopicStatsServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(TopicStatsServiceClient.parse_common_organization_path)
-
     common_project_path = staticmethod(TopicStatsServiceClient.common_project_path)
     parse_common_project_path = staticmethod(TopicStatsServiceClient.parse_common_project_path)
-
     common_location_path = staticmethod(TopicStatsServiceClient.common_location_path)
     parse_common_location_path = staticmethod(TopicStatsServiceClient.parse_common_location_path)
 
@@ -109,7 +101,7 @@ class TopicStatsServiceAsyncClient:
     get_transport_class = functools.partial(type(TopicStatsServiceClient).get_transport_class, type(TopicStatsServiceClient))
 
     def __init__(self, *,
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             transport: Union[str, TopicStatsServiceTransport] = 'grpc_asyncio',
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -146,7 +138,6 @@ class TopicStatsServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = TopicStatsServiceClient(
             credentials=credentials,
             transport=transport,
@@ -169,7 +160,6 @@ class TopicStatsServiceAsyncClient:
             request (:class:`google.cloud.pubsublite_v1.types.ComputeMessageStatsRequest`):
                 The request object. Compute statistics about a range of
                 messages in a given topic and partition.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -184,7 +174,6 @@ class TopicStatsServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = topic_stats.ComputeMessageStatsRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -233,7 +222,6 @@ class TopicStatsServiceAsyncClient:
             request (:class:`google.cloud.pubsublite_v1.types.ComputeHeadCursorRequest`):
                 The request object. Compute the current head cursor for
                 a partition.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -247,7 +235,6 @@ class TopicStatsServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = topic_stats.ComputeHeadCursorRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -291,7 +278,6 @@ class TopicStatsServiceAsyncClient:
             request (:class:`google.cloud.pubsublite_v1.types.ComputeTimeCursorRequest`):
                 The request object. Compute the corresponding cursor for
                 a publish or event time in a topic partition.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -306,7 +292,6 @@ class TopicStatsServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = topic_stats.ComputeTimeCursorRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -335,8 +320,6 @@ class TopicStatsServiceAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,13 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
 from google.cloud.orgpolicy_v2.types import constraint
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-from google.type import expr_pb2 as expr  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
+from google.type import expr_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -74,13 +71,18 @@ class Policy(proto.Message):
             run/darklaunch.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    spec = proto.Field(proto.MESSAGE, number=2,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    spec = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='PolicySpec',
     )
-
-    alternate = proto.Field(proto.MESSAGE, number=3,
+    alternate = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='AlternatePolicySpec',
     )
 
@@ -100,9 +102,13 @@ class AlternatePolicySpec(proto.Message):
             resources.
     """
 
-    launch = proto.Field(proto.STRING, number=1)
-
-    spec = proto.Field(proto.MESSAGE, number=2,
+    launch = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    spec = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='PolicySpec',
     )
 
@@ -158,9 +164,9 @@ class PolicySpec(proto.Message):
             ``rules`` must be empty and ``inherit_from_parent`` must be
             set to false.
     """
+
     class PolicyRule(proto.Message):
         r"""A rule used to express this policy.
-
         Attributes:
             values (google.cloud.orgpolicy_v2.types.PolicySpec.PolicyRule.StringValues):
                 List of values to be used for this
@@ -190,6 +196,7 @@ class PolicySpec(proto.Message):
                 Service. An example expression is:
                 "resource.matchLabels('labelKeys/123, 'labelValues/456')".
         """
+
         class StringValues(proto.Message):
             r"""A message that holds specific allowed and denied values. This
             message can define specific values and subtrees of Cloud Resource
@@ -212,37 +219,64 @@ class PolicySpec(proto.Message):
                     List of values denied at this resource.
             """
 
-            allowed_values = proto.RepeatedField(proto.STRING, number=1)
+            allowed_values = proto.RepeatedField(
+                proto.STRING,
+                number=1,
+            )
+            denied_values = proto.RepeatedField(
+                proto.STRING,
+                number=2,
+            )
 
-            denied_values = proto.RepeatedField(proto.STRING, number=2)
-
-        values = proto.Field(proto.MESSAGE, number=1, oneof='kind',
+        values = proto.Field(
+            proto.MESSAGE,
+            number=1,
+            oneof='kind',
             message='PolicySpec.PolicyRule.StringValues',
         )
-
-        allow_all = proto.Field(proto.BOOL, number=2, oneof='kind')
-
-        deny_all = proto.Field(proto.BOOL, number=3, oneof='kind')
-
-        enforce = proto.Field(proto.BOOL, number=4, oneof='kind')
-
-        condition = proto.Field(proto.MESSAGE, number=5,
-            message=expr.Expr,
+        allow_all = proto.Field(
+            proto.BOOL,
+            number=2,
+            oneof='kind',
+        )
+        deny_all = proto.Field(
+            proto.BOOL,
+            number=3,
+            oneof='kind',
+        )
+        enforce = proto.Field(
+            proto.BOOL,
+            number=4,
+            oneof='kind',
+        )
+        condition = proto.Field(
+            proto.MESSAGE,
+            number=5,
+            message=expr_pb2.Expr,
         )
 
-    etag = proto.Field(proto.STRING, number=1)
-
-    update_time = proto.Field(proto.MESSAGE, number=2,
-        message=timestamp.Timestamp,
+    etag = proto.Field(
+        proto.STRING,
+        number=1,
     )
-
-    rules = proto.RepeatedField(proto.MESSAGE, number=3,
+    update_time = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=timestamp_pb2.Timestamp,
+    )
+    rules = proto.RepeatedField(
+        proto.MESSAGE,
+        number=3,
         message=PolicyRule,
     )
-
-    inherit_from_parent = proto.Field(proto.BOOL, number=4)
-
-    reset = proto.Field(proto.BOOL, number=5)
+    inherit_from_parent = proto.Field(
+        proto.BOOL,
+        number=4,
+    )
+    reset = proto.Field(
+        proto.BOOL,
+        number=5,
+    )
 
 
 class ListConstraintsRequest(proto.Message):
@@ -270,11 +304,18 @@ class ListConstraintsRequest(proto.Message):
             this field.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class ListConstraintsResponse(proto.Message):
@@ -294,11 +335,15 @@ class ListConstraintsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    constraints = proto.RepeatedField(proto.MESSAGE, number=1,
+    constraints = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=constraint.Constraint,
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class ListPoliciesRequest(proto.Message):
@@ -327,11 +372,18 @@ class ListPoliciesRequest(proto.Message):
             this field.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class ListPoliciesResponse(proto.Message):
@@ -353,11 +405,15 @@ class ListPoliciesResponse(proto.Message):
     def raw_page(self):
         return self
 
-    policies = proto.RepeatedField(proto.MESSAGE, number=1,
+    policies = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Policy',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class GetPolicyRequest(proto.Message):
@@ -370,7 +426,10 @@ class GetPolicyRequest(proto.Message):
             naming requirements.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class GetEffectivePolicyRequest(proto.Message):
@@ -383,7 +442,10 @@ class GetEffectivePolicyRequest(proto.Message):
             for naming rules.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class CreatePolicyRequest(proto.Message):
@@ -399,13 +461,17 @@ class CreatePolicyRequest(proto.Message):
             -  ``projects/{project_id}``
             -  ``folders/{folder_id}``
             -  ``organizations/{organization_id}``
-        policy_ (google.cloud.orgpolicy_v2.types.Policy):
+        policy (google.cloud.orgpolicy_v2.types.Policy):
             Required. ``Policy`` to create.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    policy_ = proto.Field(proto.MESSAGE, number=3,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    policy = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='Policy',
     )
 
@@ -415,11 +481,13 @@ class UpdatePolicyRequest(proto.Message):
     [google.cloud.orgpolicy.v2.OrgPolicy.UpdatePolicy] method.
 
     Attributes:
-        policy_ (google.cloud.orgpolicy_v2.types.Policy):
+        policy (google.cloud.orgpolicy_v2.types.Policy):
             Required. ``Policy`` to update.
     """
 
-    policy_ = proto.Field(proto.MESSAGE, number=1,
+    policy = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='Policy',
     )
 
@@ -434,7 +502,10 @@ class DeletePolicyRequest(proto.Message):
             naming rules.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

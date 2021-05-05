@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v5.enums.types import affiliate_location_feed_relationship_type
 from google.ads.googleads.v5.enums.types import feed_attribute_type
 from google.ads.googleads.v5.enums.types import feed_origin
 from google.ads.googleads.v5.enums.types import feed_status
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -38,7 +35,6 @@ __protobuf__ = proto.module(
 
 class Feed(proto.Message):
     r"""A feed.
-
     Attributes:
         resource_name (str):
             Immutable. The resource name of the feed. Feed resource
@@ -73,6 +69,7 @@ class Feed(proto.Message):
             Data used to configure an affiliate location
             feed populated with the specified chains.
     """
+
     class PlacesLocationFeedData(proto.Message):
         r"""Data used to configure a location feed populated from Google
         My Business Locations.
@@ -110,9 +107,9 @@ class Feed(proto.Message):
                 FeedItems. If no entries exist in label_filters, then all
                 listings are candidates for syncing.
         """
+
         class OAuthInfo(proto.Message):
             r"""Data used for authorization using OAuth.
-
             Attributes:
                 http_method (google.protobuf.wrappers_pb2.StringValue):
                     The HTTP method used to obtain authorization.
@@ -124,33 +121,51 @@ class Feed(proto.Message):
                     authorization.
             """
 
-            http_method = proto.Field(proto.MESSAGE, number=1,
-                message=wrappers.StringValue,
+            http_method = proto.Field(
+                proto.MESSAGE,
+                number=1,
+                message=wrappers_pb2.StringValue,
             )
-            http_request_url = proto.Field(proto.MESSAGE, number=2,
-                message=wrappers.StringValue,
+            http_request_url = proto.Field(
+                proto.MESSAGE,
+                number=2,
+                message=wrappers_pb2.StringValue,
             )
-            http_authorization_header = proto.Field(proto.MESSAGE, number=3,
-                message=wrappers.StringValue,
+            http_authorization_header = proto.Field(
+                proto.MESSAGE,
+                number=3,
+                message=wrappers_pb2.StringValue,
             )
 
-        oauth_info = proto.Field(proto.MESSAGE, number=1,
+        oauth_info = proto.Field(
+            proto.MESSAGE,
+            number=1,
             message='Feed.PlacesLocationFeedData.OAuthInfo',
         )
-        email_address = proto.Field(proto.MESSAGE, number=2,
-            message=wrappers.StringValue,
+        email_address = proto.Field(
+            proto.MESSAGE,
+            number=2,
+            message=wrappers_pb2.StringValue,
         )
-        business_account_id = proto.Field(proto.MESSAGE, number=10,
-            message=wrappers.StringValue,
+        business_account_id = proto.Field(
+            proto.MESSAGE,
+            number=10,
+            message=wrappers_pb2.StringValue,
         )
-        business_name_filter = proto.Field(proto.MESSAGE, number=4,
-            message=wrappers.StringValue,
+        business_name_filter = proto.Field(
+            proto.MESSAGE,
+            number=4,
+            message=wrappers_pb2.StringValue,
         )
-        category_filters = proto.RepeatedField(proto.MESSAGE, number=5,
-            message=wrappers.StringValue,
+        category_filters = proto.RepeatedField(
+            proto.MESSAGE,
+            number=5,
+            message=wrappers_pb2.StringValue,
         )
-        label_filters = proto.RepeatedField(proto.MESSAGE, number=6,
-            message=wrappers.StringValue,
+        label_filters = proto.RepeatedField(
+            proto.MESSAGE,
+            number=6,
+            message=wrappers_pb2.StringValue,
         )
 
     class AffiliateLocationFeedData(proto.Message):
@@ -166,36 +181,61 @@ class Feed(proto.Message):
                 advertiser.
         """
 
-        chain_ids = proto.RepeatedField(proto.MESSAGE, number=1,
-            message=wrappers.Int64Value,
+        chain_ids = proto.RepeatedField(
+            proto.MESSAGE,
+            number=1,
+            message=wrappers_pb2.Int64Value,
         )
-        relationship_type = proto.Field(proto.ENUM, number=2,
+        relationship_type = proto.Field(
+            proto.ENUM,
+            number=2,
             enum=affiliate_location_feed_relationship_type.AffiliateLocationFeedRelationshipTypeEnum.AffiliateLocationFeedRelationshipType,
         )
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    id = proto.Field(proto.MESSAGE, number=2,
-        message=wrappers.Int64Value,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
     )
-    name = proto.Field(proto.MESSAGE, number=3,
-        message=wrappers.StringValue,
+    id = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=wrappers_pb2.Int64Value,
     )
-    attributes = proto.RepeatedField(proto.MESSAGE, number=4,
+    name = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=wrappers_pb2.StringValue,
+    )
+    attributes = proto.RepeatedField(
+        proto.MESSAGE,
+        number=4,
         message='FeedAttribute',
     )
-    attribute_operations = proto.RepeatedField(proto.MESSAGE, number=9,
+    attribute_operations = proto.RepeatedField(
+        proto.MESSAGE,
+        number=9,
         message='FeedAttributeOperation',
     )
-    origin = proto.Field(proto.ENUM, number=5,
+    origin = proto.Field(
+        proto.ENUM,
+        number=5,
         enum=feed_origin.FeedOriginEnum.FeedOrigin,
     )
-    status = proto.Field(proto.ENUM, number=8,
+    status = proto.Field(
+        proto.ENUM,
+        number=8,
         enum=feed_status.FeedStatusEnum.FeedStatus,
     )
-    places_location_feed_data = proto.Field(proto.MESSAGE, number=6, oneof='system_feed_generation_data',
+    places_location_feed_data = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        oneof='system_feed_generation_data',
         message=PlacesLocationFeedData,
     )
-    affiliate_location_feed_data = proto.Field(proto.MESSAGE, number=7, oneof='system_feed_generation_data',
+    affiliate_location_feed_data = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        oneof='system_feed_generation_data',
         message=AffiliateLocationFeedData,
     )
 
@@ -222,17 +262,25 @@ class FeedAttribute(proto.Message):
             referenced by their feed_item_id.
     """
 
-    id = proto.Field(proto.MESSAGE, number=1,
-        message=wrappers.Int64Value,
+    id = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=wrappers_pb2.Int64Value,
     )
-    name = proto.Field(proto.MESSAGE, number=2,
-        message=wrappers.StringValue,
+    name = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=wrappers_pb2.StringValue,
     )
-    type_ = proto.Field(proto.ENUM, number=3,
+    type_ = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=feed_attribute_type.FeedAttributeTypeEnum.FeedAttributeType,
     )
-    is_part_of_key = proto.Field(proto.MESSAGE, number=4,
-        message=wrappers.BoolValue,
+    is_part_of_key = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=wrappers_pb2.BoolValue,
     )
 
 
@@ -254,10 +302,14 @@ class FeedAttributeOperation(proto.Message):
         UNKNOWN = 1
         ADD = 2
 
-    operator = proto.Field(proto.ENUM, number=1,
+    operator = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=Operator,
     )
-    value = proto.Field(proto.MESSAGE, number=2,
+    value = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='FeedAttribute',
     )
 

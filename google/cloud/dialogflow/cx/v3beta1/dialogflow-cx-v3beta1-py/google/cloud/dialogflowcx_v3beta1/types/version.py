@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,13 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
 from google.cloud.dialogflowcx_v3beta1.types import flow
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -49,12 +46,14 @@ class CreateVersionOperationMetadata(proto.Message):
             ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/versions/<Version ID>``.
     """
 
-    version = proto.Field(proto.STRING, number=1)
+    version = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class Version(proto.Message):
     r"""Represents a version of a flow.
-
     Attributes:
         name (str):
             Format: projects/<Project
@@ -86,21 +85,31 @@ class Version(proto.Message):
         SUCCEEDED = 2
         FAILED = 3
 
-    name = proto.Field(proto.STRING, number=1)
-
-    display_name = proto.Field(proto.STRING, number=2)
-
-    description = proto.Field(proto.STRING, number=3)
-
-    nlu_settings = proto.Field(proto.MESSAGE, number=4,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    display_name = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    description = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    nlu_settings = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=flow.NluSettings,
     )
-
-    create_time = proto.Field(proto.MESSAGE, number=5,
-        message=timestamp.Timestamp,
+    create_time = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        message=timestamp_pb2.Timestamp,
     )
-
-    state = proto.Field(proto.ENUM, number=6,
+    state = proto.Field(
+        proto.ENUM,
+        number=6,
         enum=State,
     )
 
@@ -123,11 +132,18 @@ class ListVersionsRequest(proto.Message):
             request.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class ListVersionsResponse(proto.Message):
@@ -150,11 +166,15 @@ class ListVersionsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    versions = proto.RepeatedField(proto.MESSAGE, number=1,
+    versions = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Version',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class GetVersionRequest(proto.Message):
@@ -169,7 +189,10 @@ class GetVersionRequest(proto.Message):
             ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/versions/<Version ID>``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class CreateVersionRequest(proto.Message):
@@ -187,9 +210,13 @@ class CreateVersionRequest(proto.Message):
             Required. The version to create.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    version = proto.Field(proto.MESSAGE, number=2,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    version = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='Version',
     )
 
@@ -207,12 +234,15 @@ class UpdateVersionRequest(proto.Message):
             updated.
     """
 
-    version = proto.Field(proto.MESSAGE, number=1,
+    version = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='Version',
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=2,
-        message=field_mask.FieldMask,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=field_mask_pb2.FieldMask,
     )
 
 
@@ -228,7 +258,10 @@ class DeleteVersionRequest(proto.Message):
             ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/versions/<Version ID>``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class LoadVersionRequest(proto.Message):
@@ -249,9 +282,14 @@ class LoadVersionRequest(proto.Message):
             (i.e. intents, entities, webhooks).
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    allow_override_agent_resources = proto.Field(proto.BOOL, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    allow_override_agent_resources = proto.Field(
+        proto.BOOL,
+        number=2,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

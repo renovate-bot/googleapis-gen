@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,14 +13,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
 from google.cloud.talent_v4.types import common
-from google.protobuf import duration_pb2 as duration  # type: ignore
-from google.type import latlng_pb2 as latlng  # type: ignore
-from google.type import timeofday_pb2 as timeofday  # type: ignore
+from google.protobuf import duration_pb2  # type: ignore
+from google.type import latlng_pb2  # type: ignore
+from google.type import timeofday_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -37,7 +34,6 @@ __protobuf__ = proto.module(
 
 class JobQuery(proto.Message):
     r"""The query required to perform a search query.
-
     Attributes:
         query (str):
             The query string that matches against the job
@@ -194,50 +190,72 @@ class JobQuery(proto.Message):
             At most 400 excluded job names are allowed.
     """
 
-    query = proto.Field(proto.STRING, number=1)
-
-    query_language_code = proto.Field(proto.STRING, number=14)
-
-    companies = proto.RepeatedField(proto.STRING, number=2)
-
-    location_filters = proto.RepeatedField(proto.MESSAGE, number=3,
+    query = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    query_language_code = proto.Field(
+        proto.STRING,
+        number=14,
+    )
+    companies = proto.RepeatedField(
+        proto.STRING,
+        number=2,
+    )
+    location_filters = proto.RepeatedField(
+        proto.MESSAGE,
+        number=3,
         message='LocationFilter',
     )
-
-    job_categories = proto.RepeatedField(proto.ENUM, number=4,
+    job_categories = proto.RepeatedField(
+        proto.ENUM,
+        number=4,
         enum=common.JobCategory,
     )
-
-    commute_filter = proto.Field(proto.MESSAGE, number=5,
+    commute_filter = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message='CommuteFilter',
     )
-
-    company_display_names = proto.RepeatedField(proto.STRING, number=6)
-
-    compensation_filter = proto.Field(proto.MESSAGE, number=7,
+    company_display_names = proto.RepeatedField(
+        proto.STRING,
+        number=6,
+    )
+    compensation_filter = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message='CompensationFilter',
     )
-
-    custom_attribute_filter = proto.Field(proto.STRING, number=8)
-
-    disable_spell_check = proto.Field(proto.BOOL, number=9)
-
-    employment_types = proto.RepeatedField(proto.ENUM, number=10,
+    custom_attribute_filter = proto.Field(
+        proto.STRING,
+        number=8,
+    )
+    disable_spell_check = proto.Field(
+        proto.BOOL,
+        number=9,
+    )
+    employment_types = proto.RepeatedField(
+        proto.ENUM,
+        number=10,
         enum=common.EmploymentType,
     )
-
-    language_codes = proto.RepeatedField(proto.STRING, number=11)
-
-    publish_time_range = proto.Field(proto.MESSAGE, number=12,
+    language_codes = proto.RepeatedField(
+        proto.STRING,
+        number=11,
+    )
+    publish_time_range = proto.Field(
+        proto.MESSAGE,
+        number=12,
         message=common.TimestampRange,
     )
-
-    excluded_jobs = proto.RepeatedField(proto.STRING, number=13)
+    excluded_jobs = proto.RepeatedField(
+        proto.STRING,
+        number=13,
+    )
 
 
 class LocationFilter(proto.Message):
     r"""Geographic region of the search.
-
     Attributes:
         address (str):
             The address name, such as "Mountain View" or
@@ -295,24 +313,32 @@ class LocationFilter(proto.Message):
         TELECOMMUTE_EXCLUDED = 1
         TELECOMMUTE_ALLOWED = 2
 
-    address = proto.Field(proto.STRING, number=1)
-
-    region_code = proto.Field(proto.STRING, number=2)
-
-    lat_lng = proto.Field(proto.MESSAGE, number=3,
-        message=latlng.LatLng,
+    address = proto.Field(
+        proto.STRING,
+        number=1,
     )
-
-    distance_in_miles = proto.Field(proto.DOUBLE, number=4)
-
-    telecommute_preference = proto.Field(proto.ENUM, number=5,
+    region_code = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    lat_lng = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=latlng_pb2.LatLng,
+    )
+    distance_in_miles = proto.Field(
+        proto.DOUBLE,
+        number=4,
+    )
+    telecommute_preference = proto.Field(
+        proto.ENUM,
+        number=5,
         enum=TelecommutePreference,
     )
 
 
 class CompensationFilter(proto.Message):
     r"""Filter on job compensation type and amount.
-
     Attributes:
         type_ (google.cloud.talent_v4.types.CompensationFilter.FilterType):
             Required. Type of filter.
@@ -333,24 +359,29 @@ class CompensationFilter(proto.Message):
         ANNUALIZED_BASE_AMOUNT = 3
         ANNUALIZED_TOTAL_AMOUNT = 4
 
-    type_ = proto.Field(proto.ENUM, number=1,
+    type_ = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=FilterType,
     )
-
-    units = proto.RepeatedField(proto.ENUM, number=2,
+    units = proto.RepeatedField(
+        proto.ENUM,
+        number=2,
         enum=common.CompensationInfo.CompensationUnit,
     )
-
-    range_ = proto.Field(proto.MESSAGE, number=3,
+    range_ = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=common.CompensationInfo.CompensationRange,
     )
-
-    include_jobs_with_unspecified_compensation_range = proto.Field(proto.BOOL, number=4)
+    include_jobs_with_unspecified_compensation_range = proto.Field(
+        proto.BOOL,
+        number=4,
+    )
 
 
 class CommuteFilter(proto.Message):
     r"""Parameters needed for commute search.
-
     Attributes:
         commute_method (google.cloud.talent_v4.types.CommuteMethod):
             Required. The method of transportation to
@@ -386,26 +417,36 @@ class CommuteFilter(proto.Message):
         TRAFFIC_FREE = 1
         BUSY_HOUR = 2
 
-    commute_method = proto.Field(proto.ENUM, number=1,
+    commute_method = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=common.CommuteMethod,
     )
-
-    start_coordinates = proto.Field(proto.MESSAGE, number=2,
-        message=latlng.LatLng,
+    start_coordinates = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=latlng_pb2.LatLng,
     )
-
-    travel_duration = proto.Field(proto.MESSAGE, number=3,
-        message=duration.Duration,
+    travel_duration = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=duration_pb2.Duration,
     )
-
-    allow_imprecise_addresses = proto.Field(proto.BOOL, number=4)
-
-    road_traffic = proto.Field(proto.ENUM, number=5, oneof='traffic_option',
+    allow_imprecise_addresses = proto.Field(
+        proto.BOOL,
+        number=4,
+    )
+    road_traffic = proto.Field(
+        proto.ENUM,
+        number=5,
+        oneof='traffic_option',
         enum=RoadTraffic,
     )
-
-    departure_time = proto.Field(proto.MESSAGE, number=6, oneof='traffic_option',
-        message=timeofday.TimeOfDay,
+    departure_time = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        oneof='traffic_option',
+        message=timeofday_pb2.TimeOfDay,
     )
 
 

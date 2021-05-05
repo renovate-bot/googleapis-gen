@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,11 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -31,7 +28,6 @@ __protobuf__ = proto.module(
 
 class CommitResponse(proto.Message):
     r"""The response for [Commit][google.spanner.v1.Spanner.Commit].
-
     Attributes:
         commit_timestamp (google.protobuf.timestamp_pb2.Timestamp):
             The Cloud Spanner timestamp at which the
@@ -41,9 +37,9 @@ class CommitResponse(proto.Message):
             For more information, see
             [CommitRequest.return_commit_stats][google.spanner.v1.CommitRequest.return_commit_stats].
     """
+
     class CommitStats(proto.Message):
         r"""Additional statistics about a commit.
-
         Attributes:
             mutation_count (int):
                 The total number of mutations for the transaction. Knowing
@@ -57,13 +53,19 @@ class CommitResponse(proto.Message):
                 `INVALID_ARGUMENT <http://cloud.google.com/spanner/docs/reference/rest/v1/Code#ENUM_VALUES.INVALID_ARGUMENT>`__.
         """
 
-        mutation_count = proto.Field(proto.INT64, number=1)
+        mutation_count = proto.Field(
+            proto.INT64,
+            number=1,
+        )
 
-    commit_timestamp = proto.Field(proto.MESSAGE, number=1,
-        message=timestamp.Timestamp,
+    commit_timestamp = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=timestamp_pb2.Timestamp,
     )
-
-    commit_stats = proto.Field(proto.MESSAGE, number=2,
+    commit_stats = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=CommitStats,
     )
 

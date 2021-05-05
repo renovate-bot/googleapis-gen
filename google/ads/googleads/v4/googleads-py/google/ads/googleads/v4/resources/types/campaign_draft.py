@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
 from google.ads.googleads.v4.enums.types import campaign_draft_status
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -33,7 +30,6 @@ __protobuf__ = proto.module(
 
 class CampaignDraft(proto.Message):
     r"""A campaign draft.
-
     Attributes:
         resource_name (str):
             Immutable. The resource name of the campaign draft. Campaign
@@ -75,27 +71,44 @@ class CampaignDraft(proto.Message):
             finished.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    draft_id = proto.Field(proto.MESSAGE, number=2,
-        message=wrappers.Int64Value,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
     )
-    base_campaign = proto.Field(proto.MESSAGE, number=3,
-        message=wrappers.StringValue,
+    draft_id = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=wrappers_pb2.Int64Value,
     )
-    name = proto.Field(proto.MESSAGE, number=4,
-        message=wrappers.StringValue,
+    base_campaign = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=wrappers_pb2.StringValue,
     )
-    draft_campaign = proto.Field(proto.MESSAGE, number=5,
-        message=wrappers.StringValue,
+    name = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=wrappers_pb2.StringValue,
     )
-    status = proto.Field(proto.ENUM, number=6,
+    draft_campaign = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        message=wrappers_pb2.StringValue,
+    )
+    status = proto.Field(
+        proto.ENUM,
+        number=6,
         enum=campaign_draft_status.CampaignDraftStatusEnum.CampaignDraftStatus,
     )
-    has_experiment_running = proto.Field(proto.MESSAGE, number=7,
-        message=wrappers.BoolValue,
+    has_experiment_running = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        message=wrappers_pb2.BoolValue,
     )
-    long_running_operation = proto.Field(proto.MESSAGE, number=8,
-        message=wrappers.StringValue,
+    long_running_operation = proto.Field(
+        proto.MESSAGE,
+        number=8,
+        message=wrappers_pb2.StringValue,
     )
 
 

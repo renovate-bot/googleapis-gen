@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -23,10 +21,10 @@ from typing import Callable, Dict, Optional, Iterable, Iterator, Sequence, Tuple
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
-from google.api_core import exceptions                            # type: ignore
+from google.api_core import exceptions as core_exceptions         # type: ignore
 from google.api_core import gapic_v1                              # type: ignore
 from google.api_core import retry as retries                      # type: ignore
-from google.auth import credentials                               # type: ignore
+from google.auth import credentials as ga_credentials             # type: ignore
 from google.auth.transport import mtls                            # type: ignore
 from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
@@ -39,9 +37,8 @@ from google.cloud.firestore_v1.types import document as gf_document
 from google.cloud.firestore_v1.types import firestore
 from google.cloud.firestore_v1.types import query
 from google.cloud.firestore_v1.types import write as gf_write
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-from google.rpc import status_pb2 as status  # type: ignore
-
+from google.protobuf import timestamp_pb2  # type: ignore
+from google.rpc import status_pb2  # type: ignore
 from .transports.base import FirestoreTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import FirestoreGrpcTransport
 from .transports.grpc_asyncio import FirestoreGrpcAsyncIOTransport
@@ -226,7 +223,7 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
         return m.groupdict() if m else {}
 
     def __init__(self, *,
-            credentials: Optional[credentials.Credentials] = None,
+            credentials: Optional[ga_credentials.Credentials] = None,
             transport: Union[str, FirestoreTransport, None] = None,
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -341,7 +338,6 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
             request (google.cloud.firestore_v1.types.GetDocumentRequest):
                 The request object. The request for
                 [Firestore.GetDocument][google.firestore.v1.Firestore.GetDocument].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -355,7 +351,6 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a firestore.GetDocumentRequest.
         # There's no risk of modifying the input as we've already verified
@@ -399,7 +394,6 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
             request (google.cloud.firestore_v1.types.ListDocumentsRequest):
                 The request object. The request for
                 [Firestore.ListDocuments][google.firestore.v1.Firestore.ListDocuments].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -416,7 +410,6 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a firestore.ListDocumentsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -493,7 +486,6 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -520,10 +512,8 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
         # there are no flattened fields.
         if not isinstance(request, firestore.UpdateDocumentRequest):
             request = firestore.UpdateDocumentRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if document is not None:
                 request.document = document
             if update_mask is not None:
@@ -574,7 +564,6 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -595,10 +584,8 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
         # there are no flattened fields.
         if not isinstance(request, firestore.DeleteDocumentRequest):
             request = firestore.DeleteDocumentRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -637,7 +624,6 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
             request (google.cloud.firestore_v1.types.BatchGetDocumentsRequest):
                 The request object. The request for
                 [Firestore.BatchGetDocuments][google.firestore.v1.Firestore.BatchGetDocuments].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -651,7 +637,6 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a firestore.BatchGetDocumentsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -703,7 +688,6 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
                 This corresponds to the ``database`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -730,10 +714,8 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
         # there are no flattened fields.
         if not isinstance(request, firestore.BeginTransactionRequest):
             request = firestore.BeginTransactionRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if database is not None:
                 request.database = database
 
@@ -790,7 +772,6 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
                 This corresponds to the ``writes`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -817,10 +798,8 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
         # there are no flattened fields.
         if not isinstance(request, firestore.CommitRequest):
             request = firestore.CommitRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if database is not None:
                 request.database = database
             if writes is not None:
@@ -878,7 +857,6 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
                 This corresponds to the ``transaction`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -899,10 +877,8 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
         # there are no flattened fields.
         if not isinstance(request, firestore.RollbackRequest):
             request = firestore.RollbackRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if database is not None:
                 request.database = database
             if transaction is not None:
@@ -941,7 +917,6 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
             request (google.cloud.firestore_v1.types.RunQueryRequest):
                 The request object. The request for
                 [Firestore.RunQuery][google.firestore.v1.Firestore.RunQuery].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -955,7 +930,6 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a firestore.RunQueryRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1003,7 +977,6 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
             request (google.cloud.firestore_v1.types.PartitionQueryRequest):
                 The request object. The request for
                 [Firestore.PartitionQuery][google.firestore.v1.Firestore.PartitionQuery].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1020,7 +993,6 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a firestore.PartitionQueryRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1190,7 +1162,6 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1220,10 +1191,8 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
         # there are no flattened fields.
         if not isinstance(request, firestore.ListCollectionIdsRequest):
             request = firestore.ListCollectionIdsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -1282,7 +1251,6 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
             request (google.cloud.firestore_v1.types.BatchWriteRequest):
                 The request object. The request for
                 [Firestore.BatchWrite][google.firestore.v1.Firestore.BatchWrite].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1296,7 +1264,6 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a firestore.BatchWriteRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1340,7 +1307,6 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
             request (google.cloud.firestore_v1.types.CreateDocumentRequest):
                 The request object. The request for
                 [Firestore.CreateDocument][google.firestore.v1.Firestore.CreateDocument].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1354,7 +1320,6 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a firestore.CreateDocumentRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1384,8 +1349,6 @@ class FirestoreClient(metaclass=FirestoreClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

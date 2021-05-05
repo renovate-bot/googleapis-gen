@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,17 +14,17 @@
 # limitations under the License.
 #
 
-from .types.bundle import BundleElement
-from .types.bundle import BundleMetadata
+
 from .types.bundle import BundledDocumentMetadata
 from .types.bundle import BundledQuery
+from .types.bundle import BundleElement
+from .types.bundle import BundleMetadata
 from .types.bundle import NamedQuery
 
-
 __all__ = (
-    'BundleElement',
-    'BundleMetadata',
-    'BundledDocumentMetadata',
-    'NamedQuery',
+'BundleElement',
+'BundleMetadata',
+'BundledDocumentMetadata',
 'BundledQuery',
+'NamedQuery',
 )

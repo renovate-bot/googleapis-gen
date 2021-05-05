@@ -1,0 +1,113 @@
+ {
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "python",
+  "libraryPackage": "google.streetview.publish_v1",
+  "protoPackage": "google.streetview.publish.v1",
+  "schema": "1.0",
+  "services": {
+    "StreetViewPublishService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "StreetViewPublishServiceClient",
+          "rpcs": {
+            "BatchDeletePhotos": {
+              "methods": [
+                "batch_delete_photos"
+              ]
+            },
+            "BatchGetPhotos": {
+              "methods": [
+                "batch_get_photos"
+              ]
+            },
+            "BatchUpdatePhotos": {
+              "methods": [
+                "batch_update_photos"
+              ]
+            },
+            "CreatePhoto": {
+              "methods": [
+                "create_photo"
+              ]
+            },
+            "DeletePhoto": {
+              "methods": [
+                "delete_photo"
+              ]
+            },
+            "GetPhoto": {
+              "methods": [
+                "get_photo"
+              ]
+            },
+            "ListPhotos": {
+              "methods": [
+                "list_photos"
+              ]
+            },
+            "StartUpload": {
+              "methods": [
+                "start_upload"
+              ]
+            },
+            "UpdatePhoto": {
+              "methods": [
+                "update_photo"
+              ]
+            }
+          }
+        },
+        "grpc-async": {
+          "libraryClient": "StreetViewPublishServiceAsyncClient",
+          "rpcs": {
+            "BatchDeletePhotos": {
+              "methods": [
+                "batch_delete_photos"
+              ]
+            },
+            "BatchGetPhotos": {
+              "methods": [
+                "batch_get_photos"
+              ]
+            },
+            "BatchUpdatePhotos": {
+              "methods": [
+                "batch_update_photos"
+              ]
+            },
+            "CreatePhoto": {
+              "methods": [
+                "create_photo"
+              ]
+            },
+            "DeletePhoto": {
+              "methods": [
+                "delete_photo"
+              ]
+            },
+            "GetPhoto": {
+              "methods": [
+                "get_photo"
+              ]
+            },
+            "ListPhotos": {
+              "methods": [
+                "list_photos"
+              ]
+            },
+            "StartUpload": {
+              "methods": [
+                "start_upload"
+              ]
+            },
+            "UpdatePhoto": {
+              "methods": [
+                "update_photo"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

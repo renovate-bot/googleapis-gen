@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -53,20 +51,26 @@ class TagBinding(proto.Message):
             ``tagValues/456``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    parent = proto.Field(proto.STRING, number=2)
-
-    tag_value = proto.Field(proto.STRING, number=3)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    parent = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    tag_value = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class CreateTagBindingMetadata(proto.Message):
-    r"""Runtime operation information for creating a TagValue."""
+    r"""Runtime operation information for creating a TagValue.    """
 
 
 class CreateTagBindingRequest(proto.Message):
     r"""The request message to create a TagBinding.
-
     Attributes:
         tag_binding (google.cloud.resourcemanager_v3.types.TagBinding):
             Required. The TagBinding to be created.
@@ -76,20 +80,23 @@ class CreateTagBindingRequest(proto.Message):
             but not actually perform the action.
     """
 
-    tag_binding = proto.Field(proto.MESSAGE, number=1,
+    tag_binding = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='TagBinding',
     )
-
-    validate_only = proto.Field(proto.BOOL, number=2)
+    validate_only = proto.Field(
+        proto.BOOL,
+        number=2,
+    )
 
 
 class DeleteTagBindingMetadata(proto.Message):
-    r"""Runtime operation information for deleting a TagBinding."""
+    r"""Runtime operation information for deleting a TagBinding.    """
 
 
 class DeleteTagBindingRequest(proto.Message):
     r"""The request message to delete a TagBinding.
-
     Attributes:
         name (str):
             Required. The name of the TagBinding. This is a String of
@@ -97,12 +104,14 @@ class DeleteTagBindingRequest(proto.Message):
             ``tagBindings/%2F%2Fcloudresourcemanager.googleapis.com%2Fprojects%2F123/tagValues/456``).
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class ListTagBindingsRequest(proto.Message):
     r"""The request message to list all TagBindings for a parent.
-
     Attributes:
         parent (str):
             Required. The full resource name of a
@@ -121,16 +130,22 @@ class ListTagBindingsRequest(proto.Message):
             should continue from.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class ListTagBindingsResponse(proto.Message):
     r"""The ListTagBindings response.
-
     Attributes:
         tag_bindings (Sequence[google.cloud.resourcemanager_v3.types.TagBinding]):
             A possibly paginated list of TagBindings for
@@ -155,11 +170,15 @@ class ListTagBindingsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    tag_bindings = proto.RepeatedField(proto.MESSAGE, number=1,
+    tag_bindings = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='TagBinding',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

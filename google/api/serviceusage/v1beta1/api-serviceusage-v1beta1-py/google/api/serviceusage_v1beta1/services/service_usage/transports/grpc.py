@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,23 +13,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import operations_v1  # type: ignore
 from google.api_core import gapic_v1       # type: ignore
-from google import auth                    # type: ignore
-from google.auth import credentials        # type: ignore
+import google.auth                         # type: ignore
+from google.auth import credentials as ga_credentials  # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
 
 import grpc  # type: ignore
 
 from google.api.serviceusage_v1beta1.types import resources
 from google.api.serviceusage_v1beta1.types import serviceusage
-from google.longrunning import operations_pb2 as operations  # type: ignore
-
+from google.longrunning import operations_pb2  # type: ignore
 from .base import ServiceUsageTransport, DEFAULT_CLIENT_INFO
 
 
@@ -50,7 +47,7 @@ class ServiceUsageGrpcTransport(ServiceUsageTransport):
 
     def __init__(self, *,
             host: str = 'serviceusage.googleapis.com',
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             credentials_file: str = None,
             scopes: Sequence[str] = None,
             channel: grpc.Channel = None,
@@ -64,7 +61,8 @@ class ServiceUsageGrpcTransport(ServiceUsageTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -174,7 +172,7 @@ class ServiceUsageGrpcTransport(ServiceUsageTransport):
     @classmethod
     def create_channel(cls,
                        host: str = 'serviceusage.googleapis.com',
-                       credentials: credentials.Credentials = None,
+                       credentials: ga_credentials.Credentials = None,
                        credentials_file: str = None,
                        scopes: Optional[Sequence[str]] = None,
                        quota_project_id: Optional[str] = None,
@@ -204,13 +202,15 @@ class ServiceUsageGrpcTransport(ServiceUsageTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -239,7 +239,7 @@ class ServiceUsageGrpcTransport(ServiceUsageTransport):
     @property
     def enable_service(self) -> Callable[
             [serviceusage.EnableServiceRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         r"""Return a callable for the enable service method over gRPC.
 
         Enables a service so that it can be used with a project.
@@ -260,14 +260,14 @@ class ServiceUsageGrpcTransport(ServiceUsageTransport):
             self._stubs['enable_service'] = self.grpc_channel.unary_unary(
                 '/google.api.serviceusage.v1beta1.ServiceUsage/EnableService',
                 request_serializer=serviceusage.EnableServiceRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['enable_service']
 
     @property
     def disable_service(self) -> Callable[
             [serviceusage.DisableServiceRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         r"""Return a callable for the disable service method over gRPC.
 
         Disables a service so that it can no longer be used with a
@@ -295,7 +295,7 @@ class ServiceUsageGrpcTransport(ServiceUsageTransport):
             self._stubs['disable_service'] = self.grpc_channel.unary_unary(
                 '/google.api.serviceusage.v1beta1.ServiceUsage/DisableService',
                 request_serializer=serviceusage.DisableServiceRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['disable_service']
 
@@ -362,7 +362,7 @@ class ServiceUsageGrpcTransport(ServiceUsageTransport):
     @property
     def batch_enable_services(self) -> Callable[
             [serviceusage.BatchEnableServicesRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         r"""Return a callable for the batch enable services method over gRPC.
 
         Enables multiple services on a project. The operation is atomic:
@@ -385,7 +385,7 @@ class ServiceUsageGrpcTransport(ServiceUsageTransport):
             self._stubs['batch_enable_services'] = self.grpc_channel.unary_unary(
                 '/google.api.serviceusage.v1beta1.ServiceUsage/BatchEnableServices',
                 request_serializer=serviceusage.BatchEnableServicesRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['batch_enable_services']
 
@@ -478,7 +478,7 @@ class ServiceUsageGrpcTransport(ServiceUsageTransport):
     @property
     def create_admin_override(self) -> Callable[
             [serviceusage.CreateAdminOverrideRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         r"""Return a callable for the create admin override method over gRPC.
 
         Creates an admin override.
@@ -503,14 +503,14 @@ class ServiceUsageGrpcTransport(ServiceUsageTransport):
             self._stubs['create_admin_override'] = self.grpc_channel.unary_unary(
                 '/google.api.serviceusage.v1beta1.ServiceUsage/CreateAdminOverride',
                 request_serializer=serviceusage.CreateAdminOverrideRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['create_admin_override']
 
     @property
     def update_admin_override(self) -> Callable[
             [serviceusage.UpdateAdminOverrideRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         r"""Return a callable for the update admin override method over gRPC.
 
         Updates an admin override.
@@ -529,14 +529,14 @@ class ServiceUsageGrpcTransport(ServiceUsageTransport):
             self._stubs['update_admin_override'] = self.grpc_channel.unary_unary(
                 '/google.api.serviceusage.v1beta1.ServiceUsage/UpdateAdminOverride',
                 request_serializer=serviceusage.UpdateAdminOverrideRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['update_admin_override']
 
     @property
     def delete_admin_override(self) -> Callable[
             [serviceusage.DeleteAdminOverrideRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         r"""Return a callable for the delete admin override method over gRPC.
 
         Deletes an admin override.
@@ -555,7 +555,7 @@ class ServiceUsageGrpcTransport(ServiceUsageTransport):
             self._stubs['delete_admin_override'] = self.grpc_channel.unary_unary(
                 '/google.api.serviceusage.v1beta1.ServiceUsage/DeleteAdminOverride',
                 request_serializer=serviceusage.DeleteAdminOverrideRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['delete_admin_override']
 
@@ -588,7 +588,7 @@ class ServiceUsageGrpcTransport(ServiceUsageTransport):
     @property
     def import_admin_overrides(self) -> Callable[
             [serviceusage.ImportAdminOverridesRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         r"""Return a callable for the import admin overrides method over gRPC.
 
         Creates or updates multiple admin overrides
@@ -610,14 +610,14 @@ class ServiceUsageGrpcTransport(ServiceUsageTransport):
             self._stubs['import_admin_overrides'] = self.grpc_channel.unary_unary(
                 '/google.api.serviceusage.v1beta1.ServiceUsage/ImportAdminOverrides',
                 request_serializer=serviceusage.ImportAdminOverridesRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['import_admin_overrides']
 
     @property
     def create_consumer_override(self) -> Callable[
             [serviceusage.CreateConsumerOverrideRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         r"""Return a callable for the create consumer override method over gRPC.
 
         Creates a consumer override.
@@ -641,14 +641,14 @@ class ServiceUsageGrpcTransport(ServiceUsageTransport):
             self._stubs['create_consumer_override'] = self.grpc_channel.unary_unary(
                 '/google.api.serviceusage.v1beta1.ServiceUsage/CreateConsumerOverride',
                 request_serializer=serviceusage.CreateConsumerOverrideRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['create_consumer_override']
 
     @property
     def update_consumer_override(self) -> Callable[
             [serviceusage.UpdateConsumerOverrideRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         r"""Return a callable for the update consumer override method over gRPC.
 
         Updates a consumer override.
@@ -667,14 +667,14 @@ class ServiceUsageGrpcTransport(ServiceUsageTransport):
             self._stubs['update_consumer_override'] = self.grpc_channel.unary_unary(
                 '/google.api.serviceusage.v1beta1.ServiceUsage/UpdateConsumerOverride',
                 request_serializer=serviceusage.UpdateConsumerOverrideRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['update_consumer_override']
 
     @property
     def delete_consumer_override(self) -> Callable[
             [serviceusage.DeleteConsumerOverrideRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         r"""Return a callable for the delete consumer override method over gRPC.
 
         Deletes a consumer override.
@@ -693,7 +693,7 @@ class ServiceUsageGrpcTransport(ServiceUsageTransport):
             self._stubs['delete_consumer_override'] = self.grpc_channel.unary_unary(
                 '/google.api.serviceusage.v1beta1.ServiceUsage/DeleteConsumerOverride',
                 request_serializer=serviceusage.DeleteConsumerOverrideRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['delete_consumer_override']
 
@@ -726,7 +726,7 @@ class ServiceUsageGrpcTransport(ServiceUsageTransport):
     @property
     def import_consumer_overrides(self) -> Callable[
             [serviceusage.ImportConsumerOverridesRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         r"""Return a callable for the import consumer overrides method over gRPC.
 
         Creates or updates multiple consumer overrides
@@ -748,14 +748,14 @@ class ServiceUsageGrpcTransport(ServiceUsageTransport):
             self._stubs['import_consumer_overrides'] = self.grpc_channel.unary_unary(
                 '/google.api.serviceusage.v1beta1.ServiceUsage/ImportConsumerOverrides',
                 request_serializer=serviceusage.ImportConsumerOverridesRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['import_consumer_overrides']
 
     @property
     def generate_service_identity(self) -> Callable[
             [serviceusage.GenerateServiceIdentityRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         r"""Return a callable for the generate service identity method over gRPC.
 
         Generates service identity for service.
@@ -774,7 +774,7 @@ class ServiceUsageGrpcTransport(ServiceUsageTransport):
             self._stubs['generate_service_identity'] = self.grpc_channel.unary_unary(
                 '/google.api.serviceusage.v1beta1.ServiceUsage/GenerateServiceIdentity',
                 request_serializer=serviceusage.GenerateServiceIdentityRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['generate_service_identity']
 

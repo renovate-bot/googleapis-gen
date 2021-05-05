@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.cloud.vpcaccess_v1.services.vpc_access_service.async_client import VpcAccessServiceAsyncClient
 from google.cloud.vpcaccess_v1.services.vpc_access_service.client import VpcAccessServiceClient
+from google.cloud.vpcaccess_v1.services.vpc_access_service.async_client import VpcAccessServiceAsyncClient
+
 from google.cloud.vpcaccess_v1.types.vpc_access import Connector
 from google.cloud.vpcaccess_v1.types.vpc_access import CreateConnectorRequest
 from google.cloud.vpcaccess_v1.types.vpc_access import DeleteConnectorRequest
@@ -25,7 +25,8 @@ from google.cloud.vpcaccess_v1.types.vpc_access import ListConnectorsRequest
 from google.cloud.vpcaccess_v1.types.vpc_access import ListConnectorsResponse
 from google.cloud.vpcaccess_v1.types.vpc_access import OperationMetadata
 
-__all__ = (
+__all__ = ('VpcAccessServiceClient',
+    'VpcAccessServiceAsyncClient',
     'Connector',
     'CreateConnectorRequest',
     'DeleteConnectorRequest',
@@ -33,6 +34,4 @@ __all__ = (
     'ListConnectorsRequest',
     'ListConnectorsResponse',
     'OperationMetadata',
-    'VpcAccessServiceAsyncClient',
-    'VpcAccessServiceClient',
 )

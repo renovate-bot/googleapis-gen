@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,13 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
 from google.chromeos.moblab_v1beta1.types import resources
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -39,7 +36,6 @@ __protobuf__ = proto.module(
 
 class ListBuildsRequest(proto.Message):
     r"""Request message for listing builds.
-
     Attributes:
         parent (str):
             Required. The full resource name of the
@@ -71,26 +67,36 @@ class ListBuildsRequest(proto.Message):
             same as the read_mask field in convention of SQL.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
-
-    filter = proto.Field(proto.STRING, number=4)
-
-    read_mask = proto.Field(proto.MESSAGE, number=5,
-        message=field_mask.FieldMask,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
     )
-
-    group_by = proto.Field(proto.MESSAGE, number=6,
-        message=field_mask.FieldMask,
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    filter = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    read_mask = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        message=field_mask_pb2.FieldMask,
+    )
+    group_by = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        message=field_mask_pb2.FieldMask,
     )
 
 
 class ListBuildsResponse(proto.Message):
     r"""Response message for listing builds.
-
     Attributes:
         builds (Sequence[google.chromeos.moblab_v1beta1.types.Build]):
             The list of builds.
@@ -106,18 +112,23 @@ class ListBuildsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    builds = proto.RepeatedField(proto.MESSAGE, number=1,
+    builds = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=resources.Build,
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
-
-    total_size = proto.Field(proto.INT32, number=3)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    total_size = proto.Field(
+        proto.INT32,
+        number=3,
+    )
 
 
 class CheckBuildStageStatusRequest(proto.Message):
     r"""Request message for checking if the build artifact is staged.
-
     Attributes:
         name (str):
             Required. The full resource name of the build
@@ -130,9 +141,14 @@ class CheckBuildStageStatusRequest(proto.Message):
             ``filter='type=release'`` to only check the release builds.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    filter = proto.Field(proto.STRING, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    filter = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class CheckBuildStageStatusResponse(proto.Message):
@@ -151,20 +167,24 @@ class CheckBuildStageStatusResponse(proto.Message):
             bucket.
     """
 
-    is_build_staged = proto.Field(proto.BOOL, number=1)
-
-    staged_build_artifact = proto.Field(proto.MESSAGE, number=2,
+    is_build_staged = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
+    staged_build_artifact = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=resources.BuildArtifact,
     )
-
-    source_build_artifact = proto.Field(proto.MESSAGE, number=3,
+    source_build_artifact = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=resources.BuildArtifact,
     )
 
 
 class StageBuildRequest(proto.Message):
     r"""Request message for staging a build artifact.
-
     Attributes:
         name (str):
             Required. The full resource name of the build
@@ -177,27 +197,32 @@ class StageBuildRequest(proto.Message):
             ``filter='type=release'`` to only check the release builds.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    filter = proto.Field(proto.STRING, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    filter = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class StageBuildResponse(proto.Message):
     r"""Response message for staging a build artifact.
-
     Attributes:
         staged_build_artifact (google.chromeos.moblab_v1beta1.types.BuildArtifact):
             The staged build in the destination bucket.
     """
 
-    staged_build_artifact = proto.Field(proto.MESSAGE, number=1,
+    staged_build_artifact = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=resources.BuildArtifact,
     )
 
 
 class StageBuildMetadata(proto.Message):
     r"""Metadata message for staging a build artifact.
-
     Attributes:
         progress_percent (float):
             Approximate percentage of progress, e.g. "50"
@@ -208,14 +233,19 @@ class StageBuildMetadata(proto.Message):
             Build stage end time.
     """
 
-    progress_percent = proto.Field(proto.FLOAT, number=1)
-
-    start_time = proto.Field(proto.MESSAGE, number=2,
-        message=timestamp.Timestamp,
+    progress_percent = proto.Field(
+        proto.FLOAT,
+        number=1,
     )
-
-    end_time = proto.Field(proto.MESSAGE, number=3,
-        message=timestamp.Timestamp,
+    start_time = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=timestamp_pb2.Timestamp,
+    )
+    end_time = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=timestamp_pb2.Timestamp,
     )
 
 

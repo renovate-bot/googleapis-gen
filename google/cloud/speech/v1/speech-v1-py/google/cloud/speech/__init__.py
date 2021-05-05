@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.cloud.speech_v1.services.speech.async_client import SpeechAsyncClient
 from google.cloud.speech_v1.services.speech.client import SpeechClient
+from google.cloud.speech_v1.services.speech.async_client import SpeechAsyncClient
+
 from google.cloud.speech_v1.types.cloud_speech import LongRunningRecognizeMetadata
 from google.cloud.speech_v1.types.cloud_speech import LongRunningRecognizeRequest
 from google.cloud.speech_v1.types.cloud_speech import LongRunningRecognizeResponse
@@ -35,7 +35,8 @@ from google.cloud.speech_v1.types.cloud_speech import StreamingRecognizeRequest
 from google.cloud.speech_v1.types.cloud_speech import StreamingRecognizeResponse
 from google.cloud.speech_v1.types.cloud_speech import WordInfo
 
-__all__ = (
+__all__ = ('SpeechClient',
+    'SpeechAsyncClient',
     'LongRunningRecognizeMetadata',
     'LongRunningRecognizeRequest',
     'LongRunningRecognizeResponse',
@@ -45,8 +46,6 @@ __all__ = (
     'RecognizeRequest',
     'RecognizeResponse',
     'SpeakerDiarizationConfig',
-    'SpeechAsyncClient',
-    'SpeechClient',
     'SpeechContext',
     'SpeechRecognitionAlternative',
     'SpeechRecognitionResult',

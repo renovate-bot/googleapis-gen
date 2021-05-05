@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.home.graph_v1.services.home_graph_api_service.async_client import HomeGraphApiServiceAsyncClient
 from google.home.graph_v1.services.home_graph_api_service.client import HomeGraphApiServiceClient
+from google.home.graph_v1.services.home_graph_api_service.async_client import HomeGraphApiServiceAsyncClient
+
 from google.home.graph_v1.types.device import AgentOtherDeviceId
 from google.home.graph_v1.types.device import Device
 from google.home.graph_v1.types.device import DeviceInfo
@@ -38,15 +38,14 @@ from google.home.graph_v1.types.homegraph import SyncRequest
 from google.home.graph_v1.types.homegraph import SyncResponse
 from google.home.graph_v1.types.homegraph import SyncResponsePayload
 
-__all__ = (
-    'AgentDeviceId',
+__all__ = ('HomeGraphApiServiceClient',
+    'HomeGraphApiServiceAsyncClient',
     'AgentOtherDeviceId',
-    'DeleteAgentUserRequest',
     'Device',
     'DeviceInfo',
     'DeviceNames',
-    'HomeGraphApiServiceAsyncClient',
-    'HomeGraphApiServiceClient',
+    'AgentDeviceId',
+    'DeleteAgentUserRequest',
     'QueryRequest',
     'QueryRequestInput',
     'QueryRequestPayload',

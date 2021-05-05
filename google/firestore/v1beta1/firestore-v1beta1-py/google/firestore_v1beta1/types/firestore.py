@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,16 +13,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.firestore_v1beta1.types import common
 from google.firestore_v1beta1.types import document as gf_document
 from google.firestore_v1beta1.types import query as gf_query
 from google.firestore_v1beta1.types import write
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-from google.rpc import status_pb2 as gr_status  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
+from google.rpc import status_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -83,16 +80,25 @@ class GetDocumentRequest(proto.Message):
             seconds.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    mask = proto.Field(proto.MESSAGE, number=2,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=common.DocumentMask,
     )
-
-    transaction = proto.Field(proto.BYTES, number=3, oneof='consistency_selector')
-
-    read_time = proto.Field(proto.MESSAGE, number=5, oneof='consistency_selector',
-        message=timestamp.Timestamp,
+    transaction = proto.Field(
+        proto.BYTES,
+        number=3,
+        oneof='consistency_selector',
+    )
+    read_time = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        oneof='consistency_selector',
+        message=timestamp_pb2.Timestamp,
     )
 
 
@@ -145,27 +151,46 @@ class ListDocumentsRequest(proto.Message):
             ``order_by``.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    collection_id = proto.Field(proto.STRING, number=2)
-
-    page_size = proto.Field(proto.INT32, number=3)
-
-    page_token = proto.Field(proto.STRING, number=4)
-
-    order_by = proto.Field(proto.STRING, number=6)
-
-    mask = proto.Field(proto.MESSAGE, number=7,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    collection_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=3,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    order_by = proto.Field(
+        proto.STRING,
+        number=6,
+    )
+    mask = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message=common.DocumentMask,
     )
-
-    transaction = proto.Field(proto.BYTES, number=8, oneof='consistency_selector')
-
-    read_time = proto.Field(proto.MESSAGE, number=10, oneof='consistency_selector',
-        message=timestamp.Timestamp,
+    transaction = proto.Field(
+        proto.BYTES,
+        number=8,
+        oneof='consistency_selector',
     )
-
-    show_missing = proto.Field(proto.BOOL, number=12)
+    read_time = proto.Field(
+        proto.MESSAGE,
+        number=10,
+        oneof='consistency_selector',
+        message=timestamp_pb2.Timestamp,
+    )
+    show_missing = proto.Field(
+        proto.BOOL,
+        number=12,
+    )
 
 
 class ListDocumentsResponse(proto.Message):
@@ -183,11 +208,15 @@ class ListDocumentsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    documents = proto.RepeatedField(proto.MESSAGE, number=1,
+    documents = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=gf_document.Document,
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class CreateDocumentRequest(proto.Message):
@@ -218,17 +247,26 @@ class CreateDocumentRequest(proto.Message):
             the response.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    collection_id = proto.Field(proto.STRING, number=2)
-
-    document_id = proto.Field(proto.STRING, number=3)
-
-    document = proto.Field(proto.MESSAGE, number=4,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    collection_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    document_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    document = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=gf_document.Document,
     )
-
-    mask = proto.Field(proto.MESSAGE, number=5,
+    mask = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=common.DocumentMask,
     )
 
@@ -264,19 +302,24 @@ class UpdateDocumentRequest(proto.Message):
             by the target document.
     """
 
-    document = proto.Field(proto.MESSAGE, number=1,
+    document = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=gf_document.Document,
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=2,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=common.DocumentMask,
     )
-
-    mask = proto.Field(proto.MESSAGE, number=3,
+    mask = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=common.DocumentMask,
     )
-
-    current_document = proto.Field(proto.MESSAGE, number=4,
+    current_document = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=common.Precondition,
     )
 
@@ -296,9 +339,13 @@ class DeleteDocumentRequest(proto.Message):
             by the target document.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    current_document = proto.Field(proto.MESSAGE, number=2,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    current_document = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=common.Precondition,
     )
 
@@ -335,22 +382,35 @@ class BatchGetDocumentsRequest(proto.Message):
             time. This may not be older than 270 seconds.
     """
 
-    database = proto.Field(proto.STRING, number=1)
-
-    documents = proto.RepeatedField(proto.STRING, number=2)
-
-    mask = proto.Field(proto.MESSAGE, number=3,
+    database = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    documents = proto.RepeatedField(
+        proto.STRING,
+        number=2,
+    )
+    mask = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=common.DocumentMask,
     )
-
-    transaction = proto.Field(proto.BYTES, number=4, oneof='consistency_selector')
-
-    new_transaction = proto.Field(proto.MESSAGE, number=5, oneof='consistency_selector',
+    transaction = proto.Field(
+        proto.BYTES,
+        number=4,
+        oneof='consistency_selector',
+    )
+    new_transaction = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        oneof='consistency_selector',
         message=common.TransactionOptions,
     )
-
-    read_time = proto.Field(proto.MESSAGE, number=7, oneof='consistency_selector',
-        message=timestamp.Timestamp,
+    read_time = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        oneof='consistency_selector',
+        message=timestamp_pb2.Timestamp,
     )
 
 
@@ -377,16 +437,25 @@ class BatchGetDocumentsResponse(proto.Message):
             between their read_time and this one.
     """
 
-    found = proto.Field(proto.MESSAGE, number=1, oneof='result',
+    found = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='result',
         message=gf_document.Document,
     )
-
-    missing = proto.Field(proto.STRING, number=2, oneof='result')
-
-    transaction = proto.Field(proto.BYTES, number=3)
-
-    read_time = proto.Field(proto.MESSAGE, number=4,
-        message=timestamp.Timestamp,
+    missing = proto.Field(
+        proto.STRING,
+        number=2,
+        oneof='result',
+    )
+    transaction = proto.Field(
+        proto.BYTES,
+        number=3,
+    )
+    read_time = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=timestamp_pb2.Timestamp,
     )
 
 
@@ -398,14 +467,18 @@ class BeginTransactionRequest(proto.Message):
         database (str):
             Required. The database name. In the format:
             ``projects/{project_id}/databases/{database_id}``.
-        options_ (google.firestore_v1beta1.types.TransactionOptions):
+        options (google.firestore_v1beta1.types.TransactionOptions):
             The options for the transaction.
             Defaults to a read-write transaction.
     """
 
-    database = proto.Field(proto.STRING, number=1)
-
-    options_ = proto.Field(proto.MESSAGE, number=2,
+    database = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    options = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=common.TransactionOptions,
     )
 
@@ -419,7 +492,10 @@ class BeginTransactionResponse(proto.Message):
             The transaction that was started.
     """
 
-    transaction = proto.Field(proto.BYTES, number=1)
+    transaction = proto.Field(
+        proto.BYTES,
+        number=1,
+    )
 
 
 class CommitRequest(proto.Message):
@@ -438,13 +514,19 @@ class CommitRequest(proto.Message):
             transaction, and commits it.
     """
 
-    database = proto.Field(proto.STRING, number=1)
-
-    writes = proto.RepeatedField(proto.MESSAGE, number=2,
+    database = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    writes = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message=write.Write,
     )
-
-    transaction = proto.Field(proto.BYTES, number=3)
+    transaction = proto.Field(
+        proto.BYTES,
+        number=3,
+    )
 
 
 class CommitResponse(proto.Message):
@@ -462,12 +544,15 @@ class CommitResponse(proto.Message):
             effects of the commit.
     """
 
-    write_results = proto.RepeatedField(proto.MESSAGE, number=1,
+    write_results = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=write.WriteResult,
     )
-
-    commit_time = proto.Field(proto.MESSAGE, number=2,
-        message=timestamp.Timestamp,
+    commit_time = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=timestamp_pb2.Timestamp,
     )
 
 
@@ -483,9 +568,14 @@ class RollbackRequest(proto.Message):
             Required. The transaction to roll back.
     """
 
-    database = proto.Field(proto.STRING, number=1)
-
-    transaction = proto.Field(proto.BYTES, number=2)
+    database = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    transaction = proto.Field(
+        proto.BYTES,
+        number=2,
+    )
 
 
 class RunQueryRequest(proto.Message):
@@ -515,20 +605,32 @@ class RunQueryRequest(proto.Message):
             time. This may not be older than 270 seconds.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    structured_query = proto.Field(proto.MESSAGE, number=2, oneof='query_type',
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    structured_query = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='query_type',
         message=gf_query.StructuredQuery,
     )
-
-    transaction = proto.Field(proto.BYTES, number=5, oneof='consistency_selector')
-
-    new_transaction = proto.Field(proto.MESSAGE, number=6, oneof='consistency_selector',
+    transaction = proto.Field(
+        proto.BYTES,
+        number=5,
+        oneof='consistency_selector',
+    )
+    new_transaction = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        oneof='consistency_selector',
         message=common.TransactionOptions,
     )
-
-    read_time = proto.Field(proto.MESSAGE, number=7, oneof='consistency_selector',
-        message=timestamp.Timestamp,
+    read_time = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        oneof='consistency_selector',
+        message=timestamp_pb2.Timestamp,
     )
 
 
@@ -561,17 +663,24 @@ class RunQueryResponse(proto.Message):
             the current response.
     """
 
-    transaction = proto.Field(proto.BYTES, number=2)
-
-    document = proto.Field(proto.MESSAGE, number=1,
+    transaction = proto.Field(
+        proto.BYTES,
+        number=2,
+    )
+    document = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=gf_document.Document,
     )
-
-    read_time = proto.Field(proto.MESSAGE, number=3,
-        message=timestamp.Timestamp,
+    read_time = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=timestamp_pb2.Timestamp,
     )
-
-    skipped_results = proto.Field(proto.INT32, number=4)
+    skipped_results = proto.Field(
+        proto.INT32,
+        number=4,
+    )
 
 
 class PartitionQueryRequest(proto.Message):
@@ -631,17 +740,28 @@ class PartitionQueryRequest(proto.Message):
             ``partition_count``.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    structured_query = proto.Field(proto.MESSAGE, number=2, oneof='query_type',
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    structured_query = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='query_type',
         message=gf_query.StructuredQuery,
     )
-
-    partition_count = proto.Field(proto.INT64, number=3)
-
-    page_token = proto.Field(proto.STRING, number=4)
-
-    page_size = proto.Field(proto.INT32, number=5)
+    partition_count = proto.Field(
+        proto.INT64,
+        number=3,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=5,
+    )
 
 
 class PartitionQueryResponse(proto.Message):
@@ -678,11 +798,15 @@ class PartitionQueryResponse(proto.Message):
     def raw_page(self):
         return self
 
-    partitions = proto.RepeatedField(proto.MESSAGE, number=1,
+    partitions = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=gf_query.Cursor,
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class WriteRequest(proto.Message):
@@ -736,17 +860,28 @@ class WriteRequest(proto.Message):
             Labels associated with this write request.
     """
 
-    database = proto.Field(proto.STRING, number=1)
-
-    stream_id = proto.Field(proto.STRING, number=2)
-
-    writes = proto.RepeatedField(proto.MESSAGE, number=3,
+    database = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    stream_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    writes = proto.RepeatedField(
+        proto.MESSAGE,
+        number=3,
         message=write.Write,
     )
-
-    stream_token = proto.Field(proto.BYTES, number=4)
-
-    labels = proto.MapField(proto.STRING, proto.STRING, number=5)
+    stream_token = proto.Field(
+        proto.BYTES,
+        number=4,
+    )
+    labels = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=5,
+    )
 
 
 class WriteResponse(proto.Message):
@@ -773,16 +908,23 @@ class WriteResponse(proto.Message):
             effects of the write.
     """
 
-    stream_id = proto.Field(proto.STRING, number=1)
-
-    stream_token = proto.Field(proto.BYTES, number=2)
-
-    write_results = proto.RepeatedField(proto.MESSAGE, number=3,
+    stream_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    stream_token = proto.Field(
+        proto.BYTES,
+        number=2,
+    )
+    write_results = proto.RepeatedField(
+        proto.MESSAGE,
+        number=3,
         message=write.WriteResult,
     )
-
-    commit_time = proto.Field(proto.MESSAGE, number=4,
-        message=timestamp.Timestamp,
+    commit_time = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=timestamp_pb2.Timestamp,
     )
 
 
@@ -803,15 +945,26 @@ class ListenRequest(proto.Message):
             Labels associated with this target change.
     """
 
-    database = proto.Field(proto.STRING, number=1)
-
-    add_target = proto.Field(proto.MESSAGE, number=2, oneof='target_change',
+    database = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    add_target = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='target_change',
         message='Target',
     )
-
-    remove_target = proto.Field(proto.INT32, number=3, oneof='target_change')
-
-    labels = proto.MapField(proto.STRING, proto.STRING, number=4)
+    remove_target = proto.Field(
+        proto.INT32,
+        number=3,
+        oneof='target_change',
+    )
+    labels = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=4,
+    )
 
 
 class ListenResponse(proto.Message):
@@ -839,30 +992,40 @@ class ListenResponse(proto.Message):
             are unknown.
     """
 
-    target_change = proto.Field(proto.MESSAGE, number=2, oneof='response_type',
+    target_change = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='response_type',
         message='TargetChange',
     )
-
-    document_change = proto.Field(proto.MESSAGE, number=3, oneof='response_type',
+    document_change = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        oneof='response_type',
         message=write.DocumentChange,
     )
-
-    document_delete = proto.Field(proto.MESSAGE, number=4, oneof='response_type',
+    document_delete = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        oneof='response_type',
         message=write.DocumentDelete,
     )
-
-    document_remove = proto.Field(proto.MESSAGE, number=6, oneof='response_type',
+    document_remove = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        oneof='response_type',
         message=write.DocumentRemove,
     )
-
-    filter = proto.Field(proto.MESSAGE, number=5, oneof='response_type',
+    filter = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        oneof='response_type',
         message=write.ExistenceFilter,
     )
 
 
 class Target(proto.Message):
     r"""A specification of a set of documents to listen to.
-
     Attributes:
         query (google.firestore_v1beta1.types.Target.QueryTarget):
             A target specified by a query.
@@ -889,9 +1052,9 @@ class Target(proto.Message):
             If the target should be removed once it is
             current and consistent.
     """
+
     class DocumentsTarget(proto.Message):
         r"""A target specified by a set of documents names.
-
         Attributes:
             documents (Sequence[str]):
                 The names of the documents to retrieve. In the format:
@@ -901,11 +1064,13 @@ class Target(proto.Message):
                 elided.
         """
 
-        documents = proto.RepeatedField(proto.STRING, number=2)
+        documents = proto.RepeatedField(
+            proto.STRING,
+            number=2,
+        )
 
     class QueryTarget(proto.Message):
         r"""A target specified by a query.
-
         Attributes:
             parent (str):
                 The parent resource name. In the format:
@@ -919,34 +1084,52 @@ class Target(proto.Message):
                 A structured query.
         """
 
-        parent = proto.Field(proto.STRING, number=1)
-
-        structured_query = proto.Field(proto.MESSAGE, number=2, oneof='query_type',
+        parent = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        structured_query = proto.Field(
+            proto.MESSAGE,
+            number=2,
+            oneof='query_type',
             message=gf_query.StructuredQuery,
         )
 
-    query = proto.Field(proto.MESSAGE, number=2, oneof='target_type',
+    query = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='target_type',
         message=QueryTarget,
     )
-
-    documents = proto.Field(proto.MESSAGE, number=3, oneof='target_type',
+    documents = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        oneof='target_type',
         message=DocumentsTarget,
     )
-
-    resume_token = proto.Field(proto.BYTES, number=4, oneof='resume_type')
-
-    read_time = proto.Field(proto.MESSAGE, number=11, oneof='resume_type',
-        message=timestamp.Timestamp,
+    resume_token = proto.Field(
+        proto.BYTES,
+        number=4,
+        oneof='resume_type',
     )
-
-    target_id = proto.Field(proto.INT32, number=5)
-
-    once = proto.Field(proto.BOOL, number=6)
+    read_time = proto.Field(
+        proto.MESSAGE,
+        number=11,
+        oneof='resume_type',
+        message=timestamp_pb2.Timestamp,
+    )
+    target_id = proto.Field(
+        proto.INT32,
+        number=5,
+    )
+    once = proto.Field(
+        proto.BOOL,
+        number=6,
+    )
 
 
 class TargetChange(proto.Message):
     r"""Targets being watched have changed.
-
     Attributes:
         target_change_type (google.firestore_v1beta1.types.TargetChange.TargetChangeType):
             The type of change that occurred.
@@ -985,20 +1168,28 @@ class TargetChange(proto.Message):
         CURRENT = 3
         RESET = 4
 
-    target_change_type = proto.Field(proto.ENUM, number=1,
+    target_change_type = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=TargetChangeType,
     )
-
-    target_ids = proto.RepeatedField(proto.INT32, number=2)
-
-    cause = proto.Field(proto.MESSAGE, number=3,
+    target_ids = proto.RepeatedField(
+        proto.INT32,
+        number=2,
+    )
+    cause = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=gr_status.Status,
     )
-
-    resume_token = proto.Field(proto.BYTES, number=4)
-
-    read_time = proto.Field(proto.MESSAGE, number=6,
-        message=timestamp.Timestamp,
+    resume_token = proto.Field(
+        proto.BYTES,
+        number=4,
+    )
+    read_time = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        message=timestamp_pb2.Timestamp,
     )
 
 
@@ -1019,11 +1210,18 @@ class ListCollectionIdsRequest(proto.Message):
             [ListCollectionIdsResponse][google.firestore.v1beta1.ListCollectionIdsResponse].
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class ListCollectionIdsResponse(proto.Message):
@@ -1042,9 +1240,14 @@ class ListCollectionIdsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    collection_ids = proto.RepeatedField(proto.STRING, number=1)
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    collection_ids = proto.RepeatedField(
+        proto.STRING,
+        number=1,
+    )
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class BatchWriteRequest(proto.Message):
@@ -1065,13 +1268,20 @@ class BatchWriteRequest(proto.Message):
             Labels associated with this batch write.
     """
 
-    database = proto.Field(proto.STRING, number=1)
-
-    writes = proto.RepeatedField(proto.MESSAGE, number=2,
+    database = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    writes = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message=write.Write,
     )
-
-    labels = proto.MapField(proto.STRING, proto.STRING, number=3)
+    labels = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=3,
+    )
 
 
 class BatchWriteResponse(proto.Message):
@@ -1089,11 +1299,14 @@ class BatchWriteResponse(proto.Message):
             write in the request.
     """
 
-    write_results = proto.RepeatedField(proto.MESSAGE, number=1,
+    write_results = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=write.WriteResult,
     )
-
-    status = proto.RepeatedField(proto.MESSAGE, number=2,
+    status = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message=gr_status.Status,
     )
 

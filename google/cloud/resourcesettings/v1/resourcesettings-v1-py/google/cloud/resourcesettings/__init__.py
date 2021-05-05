@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,26 +14,26 @@
 # limitations under the License.
 #
 
-from google.cloud.resourcesettings_v1.services.resource_settings_service.async_client import ResourceSettingsServiceAsyncClient
 from google.cloud.resourcesettings_v1.services.resource_settings_service.client import ResourceSettingsServiceClient
+from google.cloud.resourcesettings_v1.services.resource_settings_service.async_client import ResourceSettingsServiceAsyncClient
+
 from google.cloud.resourcesettings_v1.types.resource_settings import GetSettingRequest
 from google.cloud.resourcesettings_v1.types.resource_settings import ListSettingsRequest
 from google.cloud.resourcesettings_v1.types.resource_settings import ListSettingsResponse
 from google.cloud.resourcesettings_v1.types.resource_settings import Setting
 from google.cloud.resourcesettings_v1.types.resource_settings import SettingMetadata
-from google.cloud.resourcesettings_v1.types.resource_settings import SettingView
 from google.cloud.resourcesettings_v1.types.resource_settings import UpdateSettingRequest
 from google.cloud.resourcesettings_v1.types.resource_settings import Value
+from google.cloud.resourcesettings_v1.types.resource_settings import SettingView
 
-__all__ = (
+__all__ = ('ResourceSettingsServiceClient',
+    'ResourceSettingsServiceAsyncClient',
     'GetSettingRequest',
     'ListSettingsRequest',
     'ListSettingsResponse',
-    'ResourceSettingsServiceAsyncClient',
-    'ResourceSettingsServiceClient',
     'Setting',
     'SettingMetadata',
-    'SettingView',
     'UpdateSettingRequest',
     'Value',
+    'SettingView',
 )

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,13 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v6.enums.types import response_content_type as gage_response_content_type
 from google.ads.googleads.v6.resources.types import asset as gagr_asset
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -46,7 +43,10 @@ class GetAssetRequest(proto.Message):
             fetch.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class MutateAssetsRequest(proto.Message):
@@ -66,11 +66,18 @@ class MutateAssetsRequest(proto.Message):
             resource name should be returned post mutation.
     """
 
-    customer_id = proto.Field(proto.STRING, number=1)
-    operations = proto.RepeatedField(proto.MESSAGE, number=2,
+    customer_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    operations = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='AssetOperation',
     )
-    response_content_type = proto.Field(proto.ENUM, number=3,
+    response_content_type = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=gage_response_content_type.ResponseContentTypeEnum.ResponseContentType,
     )
 
@@ -94,33 +101,41 @@ class AssetOperation(proto.Message):
             ``customers/{customer_id}/assets/{asset_id}``
     """
 
-    update_mask = proto.Field(proto.MESSAGE, number=3,
-        message=field_mask.FieldMask,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=field_mask_pb2.FieldMask,
     )
-    create = proto.Field(proto.MESSAGE, number=1, oneof='operation',
+    create = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='operation',
         message=gagr_asset.Asset,
     )
-    update = proto.Field(proto.MESSAGE, number=2, oneof='operation',
+    update = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='operation',
         message=gagr_asset.Asset,
     )
 
 
 class MutateAssetsResponse(proto.Message):
     r"""Response message for an asset mutate.
-
     Attributes:
         results (Sequence[google.ads.googleads.v6.services.types.MutateAssetResult]):
             All results for the mutate.
     """
 
-    results = proto.RepeatedField(proto.MESSAGE, number=2,
+    results = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='MutateAssetResult',
     )
 
 
 class MutateAssetResult(proto.Message):
     r"""The result for the asset mutate.
-
     Attributes:
         resource_name (str):
             The resource name returned for successful
@@ -131,8 +146,13 @@ class MutateAssetResult(proto.Message):
             set to "MUTABLE_RESOURCE".
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    asset = proto.Field(proto.MESSAGE, number=2,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    asset = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=gagr_asset.Asset,
     )
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.cloud.security.privateca_v1.services.certificate_authority_service.async_client import CertificateAuthorityServiceAsyncClient
 from google.cloud.security.privateca_v1.services.certificate_authority_service.client import CertificateAuthorityServiceClient
+from google.cloud.security.privateca_v1.services.certificate_authority_service.async_client import CertificateAuthorityServiceAsyncClient
+
 from google.cloud.security.privateca_v1.types.resources import CaPool
 from google.cloud.security.privateca_v1.types.resources import Certificate
 from google.cloud.security.privateca_v1.types.resources import CertificateAuthority
@@ -29,13 +29,13 @@ from google.cloud.security.privateca_v1.types.resources import CertificateTempla
 from google.cloud.security.privateca_v1.types.resources import KeyUsage
 from google.cloud.security.privateca_v1.types.resources import ObjectId
 from google.cloud.security.privateca_v1.types.resources import PublicKey
-from google.cloud.security.privateca_v1.types.resources import RevocationReason
 from google.cloud.security.privateca_v1.types.resources import Subject
 from google.cloud.security.privateca_v1.types.resources import SubjectAltNames
-from google.cloud.security.privateca_v1.types.resources import SubjectRequestMode
 from google.cloud.security.privateca_v1.types.resources import SubordinateConfig
 from google.cloud.security.privateca_v1.types.resources import X509Extension
 from google.cloud.security.privateca_v1.types.resources import X509Parameters
+from google.cloud.security.privateca_v1.types.resources import RevocationReason
+from google.cloud.security.privateca_v1.types.resources import SubjectRequestMode
 from google.cloud.security.privateca_v1.types.service import ActivateCertificateAuthorityRequest
 from google.cloud.security.privateca_v1.types.service import CreateCaPoolRequest
 from google.cloud.security.privateca_v1.types.service import CreateCertificateAuthorityRequest
@@ -61,10 +61,10 @@ from google.cloud.security.privateca_v1.types.service import ListCertificateAuth
 from google.cloud.security.privateca_v1.types.service import ListCertificateAuthoritiesResponse
 from google.cloud.security.privateca_v1.types.service import ListCertificateRevocationListsRequest
 from google.cloud.security.privateca_v1.types.service import ListCertificateRevocationListsResponse
-from google.cloud.security.privateca_v1.types.service import ListCertificateTemplatesRequest
-from google.cloud.security.privateca_v1.types.service import ListCertificateTemplatesResponse
 from google.cloud.security.privateca_v1.types.service import ListCertificatesRequest
 from google.cloud.security.privateca_v1.types.service import ListCertificatesResponse
+from google.cloud.security.privateca_v1.types.service import ListCertificateTemplatesRequest
+from google.cloud.security.privateca_v1.types.service import ListCertificateTemplatesResponse
 from google.cloud.security.privateca_v1.types.service import OperationMetadata
 from google.cloud.security.privateca_v1.types.service import RevokeCertificateRequest
 from google.cloud.security.privateca_v1.types.service import UndeleteCertificateAuthorityRequest
@@ -74,19 +74,28 @@ from google.cloud.security.privateca_v1.types.service import UpdateCertificateRe
 from google.cloud.security.privateca_v1.types.service import UpdateCertificateRevocationListRequest
 from google.cloud.security.privateca_v1.types.service import UpdateCertificateTemplateRequest
 
-__all__ = (
-    'ActivateCertificateAuthorityRequest',
+__all__ = ('CertificateAuthorityServiceClient',
+    'CertificateAuthorityServiceAsyncClient',
     'CaPool',
     'Certificate',
     'CertificateAuthority',
-    'CertificateAuthorityServiceAsyncClient',
-    'CertificateAuthorityServiceClient',
     'CertificateConfig',
     'CertificateDescription',
     'CertificateExtensionConstraints',
     'CertificateIdentityConstraints',
     'CertificateRevocationList',
     'CertificateTemplate',
+    'KeyUsage',
+    'ObjectId',
+    'PublicKey',
+    'Subject',
+    'SubjectAltNames',
+    'SubordinateConfig',
+    'X509Extension',
+    'X509Parameters',
+    'RevocationReason',
+    'SubjectRequestMode',
+    'ActivateCertificateAuthorityRequest',
     'CreateCaPoolRequest',
     'CreateCertificateAuthorityRequest',
     'CreateCertificateRequest',
@@ -105,32 +114,22 @@ __all__ = (
     'GetCertificateRequest',
     'GetCertificateRevocationListRequest',
     'GetCertificateTemplateRequest',
-    'KeyUsage',
     'ListCaPoolsRequest',
     'ListCaPoolsResponse',
     'ListCertificateAuthoritiesRequest',
     'ListCertificateAuthoritiesResponse',
     'ListCertificateRevocationListsRequest',
     'ListCertificateRevocationListsResponse',
-    'ListCertificateTemplatesRequest',
-    'ListCertificateTemplatesResponse',
     'ListCertificatesRequest',
     'ListCertificatesResponse',
-    'ObjectId',
+    'ListCertificateTemplatesRequest',
+    'ListCertificateTemplatesResponse',
     'OperationMetadata',
-    'PublicKey',
-    'RevocationReason',
     'RevokeCertificateRequest',
-    'Subject',
-    'SubjectAltNames',
-    'SubjectRequestMode',
-    'SubordinateConfig',
     'UndeleteCertificateAuthorityRequest',
     'UpdateCaPoolRequest',
     'UpdateCertificateAuthorityRequest',
     'UpdateCertificateRequest',
     'UpdateCertificateRevocationListRequest',
     'UpdateCertificateTemplateRequest',
-    'X509Extension',
-    'X509Parameters',
 )

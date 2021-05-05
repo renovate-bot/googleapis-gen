@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,8 @@
 #
 
 from .services.assured_workloads_service import AssuredWorkloadsServiceClient
+from .services.assured_workloads_service import AssuredWorkloadsServiceAsyncClient
+
 from .types.assuredworkloads_v1beta1 import CreateWorkloadOperationMetadata
 from .types.assuredworkloads_v1beta1 import CreateWorkloadRequest
 from .types.assuredworkloads_v1beta1 import DeleteWorkloadRequest
@@ -25,15 +26,14 @@ from .types.assuredworkloads_v1beta1 import ListWorkloadsResponse
 from .types.assuredworkloads_v1beta1 import UpdateWorkloadRequest
 from .types.assuredworkloads_v1beta1 import Workload
 
-
 __all__ = (
-    'CreateWorkloadOperationMetadata',
-    'CreateWorkloadRequest',
-    'DeleteWorkloadRequest',
-    'GetWorkloadRequest',
-    'ListWorkloadsRequest',
-    'ListWorkloadsResponse',
-    'UpdateWorkloadRequest',
-    'Workload',
 'AssuredWorkloadsServiceClient',
+'CreateWorkloadOperationMetadata',
+'CreateWorkloadRequest',
+'DeleteWorkloadRequest',
+'GetWorkloadRequest',
+'ListWorkloadsRequest',
+'ListWorkloadsResponse',
+'UpdateWorkloadRequest',
+'Workload',
 )

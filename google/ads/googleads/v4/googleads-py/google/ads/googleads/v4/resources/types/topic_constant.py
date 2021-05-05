@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,11 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -56,15 +53,24 @@ class TopicConstant(proto.Message):
             https://developers.google.com/adwords/api/docs/appendix/verticals
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    id = proto.Field(proto.MESSAGE, number=2,
-        message=wrappers.Int64Value,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
     )
-    topic_constant_parent = proto.Field(proto.MESSAGE, number=3,
-        message=wrappers.StringValue,
+    id = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=wrappers_pb2.Int64Value,
     )
-    path = proto.RepeatedField(proto.MESSAGE, number=4,
-        message=wrappers.StringValue,
+    topic_constant_parent = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=wrappers_pb2.StringValue,
+    )
+    path = proto.RepeatedField(
+        proto.MESSAGE,
+        number=4,
+        message=wrappers_pb2.StringValue,
     )
 
 

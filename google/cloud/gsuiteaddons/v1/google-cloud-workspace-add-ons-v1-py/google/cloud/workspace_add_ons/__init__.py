@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.cloud.workspace_add_ons_v1.services.g_suite_add_ons.async_client import GSuiteAddOnsAsyncClient
 from google.cloud.workspace_add_ons_v1.services.g_suite_add_ons.client import GSuiteAddOnsClient
+from google.cloud.workspace_add_ons_v1.services.g_suite_add_ons.async_client import GSuiteAddOnsAsyncClient
+
 from google.cloud.workspace_add_ons_v1.types.gsuiteaddons import AddOns
 from google.cloud.workspace_add_ons_v1.types.gsuiteaddons import Authorization
 from google.cloud.workspace_add_ons_v1.types.gsuiteaddons import CreateDeploymentRequest
@@ -32,14 +32,13 @@ from google.cloud.workspace_add_ons_v1.types.gsuiteaddons import ListDeployments
 from google.cloud.workspace_add_ons_v1.types.gsuiteaddons import ReplaceDeploymentRequest
 from google.cloud.workspace_add_ons_v1.types.gsuiteaddons import UninstallDeploymentRequest
 
-__all__ = (
+__all__ = ('GSuiteAddOnsClient',
+    'GSuiteAddOnsAsyncClient',
     'AddOns',
     'Authorization',
     'CreateDeploymentRequest',
     'DeleteDeploymentRequest',
     'Deployment',
-    'GSuiteAddOnsAsyncClient',
-    'GSuiteAddOnsClient',
     'GetAuthorizationRequest',
     'GetDeploymentRequest',
     'GetInstallStatusRequest',

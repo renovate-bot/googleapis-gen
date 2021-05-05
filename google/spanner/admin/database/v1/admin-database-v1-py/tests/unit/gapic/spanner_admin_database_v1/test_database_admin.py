@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 import mock
+import packaging.version
 
 import grpc
 from grpc.experimental import aio
@@ -24,37 +23,62 @@ import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
-from google import auth
+
 from google.api_core import client_options
-from google.api_core import exceptions
+from google.api_core import exceptions as core_exceptions
 from google.api_core import future
 from google.api_core import gapic_v1
 from google.api_core import grpc_helpers
 from google.api_core import grpc_helpers_async
 from google.api_core import operation_async  # type: ignore
 from google.api_core import operations_v1
-from google.auth import credentials
+from google.auth import credentials as ga_credentials
 from google.auth.exceptions import MutualTLSChannelError
 from google.cloud.spanner_admin_database_v1.services.database_admin import DatabaseAdminAsyncClient
 from google.cloud.spanner_admin_database_v1.services.database_admin import DatabaseAdminClient
 from google.cloud.spanner_admin_database_v1.services.database_admin import pagers
 from google.cloud.spanner_admin_database_v1.services.database_admin import transports
+from google.cloud.spanner_admin_database_v1.services.database_admin.transports.base import _API_CORE_VERSION
+from google.cloud.spanner_admin_database_v1.services.database_admin.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.spanner_admin_database_v1.types import backup
 from google.cloud.spanner_admin_database_v1.types import backup as gsad_backup
 from google.cloud.spanner_admin_database_v1.types import common
 from google.cloud.spanner_admin_database_v1.types import spanner_database_admin
-from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
-from google.iam.v1 import options_pb2 as gi_options  # type: ignore
-from google.iam.v1 import policy_pb2 as gi_policy  # type: ignore
+from google.iam.v1 import iam_policy_pb2  # type: ignore
+from google.iam.v1 import options_pb2  # type: ignore
+from google.iam.v1 import policy_pb2  # type: ignore
 from google.longrunning import operations_pb2
-from google.longrunning import operations_pb2 as operations  # type: ignore
+from google.longrunning import operations_pb2  # type: ignore
 from google.oauth2 import service_account
-from google.protobuf import any_pb2 as gp_any  # type: ignore
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-from google.rpc import status_pb2 as status  # type: ignore
-from google.type import expr_pb2 as expr  # type: ignore
+from google.protobuf import any_pb2  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
+from google.rpc import status_pb2  # type: ignore
+from google.type import expr_pb2  # type: ignore
+import google.auth
 
+
+# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
+# - Delete all the api-core and auth "less than" test cases
+# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
+requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth < 1.25.0",
+)
+requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth >= 1.25.0",
+)
+
+requires_api_core_lt_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core < 1.26.0",
+)
+
+requires_api_core_gte_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core >= 1.26.0",
+)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -87,7 +111,7 @@ def test__get_default_mtls_endpoint():
     DatabaseAdminAsyncClient,
 ])
 def test_database_admin_client_from_service_account_info(client_class):
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
@@ -103,7 +127,7 @@ def test_database_admin_client_from_service_account_info(client_class):
     DatabaseAdminAsyncClient,
 ])
 def test_database_admin_client_from_service_account_file(client_class):
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_file') as factory:
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
@@ -138,7 +162,7 @@ def test_database_admin_client_client_options(client_class, transport_class, tra
     # Check that if channel is provided we won't create a new one.
     with mock.patch.object(DatabaseAdminClient, 'get_transport_class') as gtc:
         transport = transport_class(
-            credentials=credentials.AnonymousCredentials()
+            credentials=ga_credentials.AnonymousCredentials()
         )
         client = client_class(transport=transport)
         gtc.assert_not_called()
@@ -222,12 +246,10 @@ def test_database_admin_client_client_options(client_class, transport_class, tra
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
-
     (DatabaseAdminClient, transports.DatabaseAdminGrpcTransport, "grpc", "true"),
     (DatabaseAdminAsyncClient, transports.DatabaseAdminGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (DatabaseAdminClient, transports.DatabaseAdminGrpcTransport, "grpc", "false"),
     (DatabaseAdminAsyncClient, transports.DatabaseAdminGrpcAsyncIOTransport, "grpc_asyncio", "false"),
-
 ])
 @mock.patch.object(DatabaseAdminClient, "DEFAULT_ENDPOINT", modify_default_endpoint(DatabaseAdminClient))
 @mock.patch.object(DatabaseAdminAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(DatabaseAdminAsyncClient))
@@ -367,7 +389,7 @@ def test_database_admin_client_client_options_from_dict():
 
 def test_list_databases(transport: str = 'grpc', request_type=spanner_database_admin.ListDatabasesRequest):
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -382,21 +404,16 @@ def test_list_databases(transport: str = 'grpc', request_type=spanner_database_a
         # Designate an appropriate return value for the call.
         call.return_value = spanner_database_admin.ListDatabasesResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_databases(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == spanner_database_admin.ListDatabasesRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListDatabasesPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -408,7 +425,7 @@ def test_list_databases_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -419,13 +436,13 @@ def test_list_databases_empty_call():
         client.list_databases()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == spanner_database_admin.ListDatabasesRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_databases_async(transport: str = 'grpc_asyncio', request_type=spanner_database_admin.ListDatabasesRequest):
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -438,21 +455,18 @@ async def test_list_databases_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.list_databases),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(spanner_database_admin.ListDatabasesResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(spanner_database_admin.ListDatabasesResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_databases(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == spanner_database_admin.ListDatabasesRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListDatabasesAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -463,12 +477,13 @@ async def test_list_databases_async_from_dict():
 
 def test_list_databases_field_headers():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = spanner_database_admin.ListDatabasesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -476,7 +491,6 @@ def test_list_databases_field_headers():
             type(client.transport.list_databases),
             '__call__') as call:
         call.return_value = spanner_database_admin.ListDatabasesResponse()
-
         client.list_databases(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -495,12 +509,13 @@ def test_list_databases_field_headers():
 @pytest.mark.asyncio
 async def test_list_databases_field_headers_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = spanner_database_admin.ListDatabasesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -508,7 +523,6 @@ async def test_list_databases_field_headers_async():
             type(client.transport.list_databases),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(spanner_database_admin.ListDatabasesResponse())
-
         await client.list_databases(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -526,7 +540,7 @@ async def test_list_databases_field_headers_async():
 
 def test_list_databases_flattened():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -535,7 +549,6 @@ def test_list_databases_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = spanner_database_admin.ListDatabasesResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_databases(
@@ -546,13 +559,12 @@ def test_list_databases_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
 def test_list_databases_flattened_error():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -567,7 +579,7 @@ def test_list_databases_flattened_error():
 @pytest.mark.asyncio
 async def test_list_databases_flattened_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -588,14 +600,13 @@ async def test_list_databases_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
 @pytest.mark.asyncio
 async def test_list_databases_flattened_error_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -609,7 +620,7 @@ async def test_list_databases_flattened_error_async():
 
 def test_list_databases_pager():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -662,7 +673,7 @@ def test_list_databases_pager():
 
 def test_list_databases_pages():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -704,7 +715,7 @@ def test_list_databases_pages():
 @pytest.mark.asyncio
 async def test_list_databases_async_pager():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -752,7 +763,7 @@ async def test_list_databases_async_pager():
 @pytest.mark.asyncio
 async def test_list_databases_async_pages():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -793,10 +804,9 @@ async def test_list_databases_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_create_database(transport: str = 'grpc', request_type=spanner_database_admin.CreateDatabaseRequest):
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -810,13 +820,11 @@ def test_create_database(transport: str = 'grpc', request_type=spanner_database_
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.create_database(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == spanner_database_admin.CreateDatabaseRequest()
 
     # Establish that the response is the type that we expect.
@@ -831,7 +839,7 @@ def test_create_database_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -842,13 +850,13 @@ def test_create_database_empty_call():
         client.create_database()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == spanner_database_admin.CreateDatabaseRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_database_async(transport: str = 'grpc_asyncio', request_type=spanner_database_admin.CreateDatabaseRequest):
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -864,13 +872,11 @@ async def test_create_database_async(transport: str = 'grpc_asyncio', request_ty
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.create_database(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == spanner_database_admin.CreateDatabaseRequest()
 
     # Establish that the response is the type that we expect.
@@ -884,12 +890,13 @@ async def test_create_database_async_from_dict():
 
 def test_create_database_field_headers():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = spanner_database_admin.CreateDatabaseRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -897,7 +904,6 @@ def test_create_database_field_headers():
             type(client.transport.create_database),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.create_database(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -916,12 +922,13 @@ def test_create_database_field_headers():
 @pytest.mark.asyncio
 async def test_create_database_field_headers_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = spanner_database_admin.CreateDatabaseRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -929,7 +936,6 @@ async def test_create_database_field_headers_async():
             type(client.transport.create_database),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.create_database(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -947,7 +953,7 @@ async def test_create_database_field_headers_async():
 
 def test_create_database_flattened():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -956,7 +962,6 @@ def test_create_database_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_database(
@@ -968,15 +973,13 @@ def test_create_database_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].create_statement == 'create_statement_value'
 
 
 def test_create_database_flattened_error():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -992,7 +995,7 @@ def test_create_database_flattened_error():
 @pytest.mark.asyncio
 async def test_create_database_flattened_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1016,16 +1019,14 @@ async def test_create_database_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].create_statement == 'create_statement_value'
 
 
 @pytest.mark.asyncio
 async def test_create_database_flattened_error_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1040,7 +1041,7 @@ async def test_create_database_flattened_error_async():
 
 def test_get_database(transport: str = 'grpc', request_type=spanner_database_admin.GetDatabaseRequest):
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1055,29 +1056,20 @@ def test_get_database(transport: str = 'grpc', request_type=spanner_database_adm
         # Designate an appropriate return value for the call.
         call.return_value = spanner_database_admin.Database(
             name='name_value',
-
             state=spanner_database_admin.Database.State.CREATING,
-
             version_retention_period='version_retention_period_value',
-
         )
-
         response = client.get_database(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == spanner_database_admin.GetDatabaseRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, spanner_database_admin.Database)
-
     assert response.name == 'name_value'
-
     assert response.state == spanner_database_admin.Database.State.CREATING
-
     assert response.version_retention_period == 'version_retention_period_value'
 
 
@@ -1089,7 +1081,7 @@ def test_get_database_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -1100,13 +1092,13 @@ def test_get_database_empty_call():
         client.get_database()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == spanner_database_admin.GetDatabaseRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_database_async(transport: str = 'grpc_asyncio', request_type=spanner_database_admin.GetDatabaseRequest):
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1119,27 +1111,22 @@ async def test_get_database_async(transport: str = 'grpc_asyncio', request_type=
             type(client.transport.get_database),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(spanner_database_admin.Database(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(spanner_database_admin.Database(
             name='name_value',
             state=spanner_database_admin.Database.State.CREATING,
             version_retention_period='version_retention_period_value',
         ))
-
         response = await client.get_database(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == spanner_database_admin.GetDatabaseRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, spanner_database_admin.Database)
-
     assert response.name == 'name_value'
-
     assert response.state == spanner_database_admin.Database.State.CREATING
-
     assert response.version_retention_period == 'version_retention_period_value'
 
 
@@ -1150,12 +1137,13 @@ async def test_get_database_async_from_dict():
 
 def test_get_database_field_headers():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = spanner_database_admin.GetDatabaseRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1163,7 +1151,6 @@ def test_get_database_field_headers():
             type(client.transport.get_database),
             '__call__') as call:
         call.return_value = spanner_database_admin.Database()
-
         client.get_database(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1182,12 +1169,13 @@ def test_get_database_field_headers():
 @pytest.mark.asyncio
 async def test_get_database_field_headers_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = spanner_database_admin.GetDatabaseRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1195,7 +1183,6 @@ async def test_get_database_field_headers_async():
             type(client.transport.get_database),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(spanner_database_admin.Database())
-
         await client.get_database(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1213,7 +1200,7 @@ async def test_get_database_field_headers_async():
 
 def test_get_database_flattened():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1222,7 +1209,6 @@ def test_get_database_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = spanner_database_admin.Database()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_database(
@@ -1233,13 +1219,12 @@ def test_get_database_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 def test_get_database_flattened_error():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1254,7 +1239,7 @@ def test_get_database_flattened_error():
 @pytest.mark.asyncio
 async def test_get_database_flattened_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1275,14 +1260,13 @@ async def test_get_database_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 @pytest.mark.asyncio
 async def test_get_database_flattened_error_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1296,7 +1280,7 @@ async def test_get_database_flattened_error_async():
 
 def test_update_database_ddl(transport: str = 'grpc', request_type=spanner_database_admin.UpdateDatabaseDdlRequest):
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1310,13 +1294,11 @@ def test_update_database_ddl(transport: str = 'grpc', request_type=spanner_datab
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.update_database_ddl(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == spanner_database_admin.UpdateDatabaseDdlRequest()
 
     # Establish that the response is the type that we expect.
@@ -1331,7 +1313,7 @@ def test_update_database_ddl_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -1342,13 +1324,13 @@ def test_update_database_ddl_empty_call():
         client.update_database_ddl()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == spanner_database_admin.UpdateDatabaseDdlRequest()
+
 
 @pytest.mark.asyncio
 async def test_update_database_ddl_async(transport: str = 'grpc_asyncio', request_type=spanner_database_admin.UpdateDatabaseDdlRequest):
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1364,13 +1346,11 @@ async def test_update_database_ddl_async(transport: str = 'grpc_asyncio', reques
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.update_database_ddl(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == spanner_database_admin.UpdateDatabaseDdlRequest()
 
     # Establish that the response is the type that we expect.
@@ -1384,12 +1364,13 @@ async def test_update_database_ddl_async_from_dict():
 
 def test_update_database_ddl_field_headers():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = spanner_database_admin.UpdateDatabaseDdlRequest()
+
     request.database = 'database/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1397,7 +1378,6 @@ def test_update_database_ddl_field_headers():
             type(client.transport.update_database_ddl),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.update_database_ddl(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1416,12 +1396,13 @@ def test_update_database_ddl_field_headers():
 @pytest.mark.asyncio
 async def test_update_database_ddl_field_headers_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = spanner_database_admin.UpdateDatabaseDdlRequest()
+
     request.database = 'database/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1429,7 +1410,6 @@ async def test_update_database_ddl_field_headers_async():
             type(client.transport.update_database_ddl),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.update_database_ddl(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1447,7 +1427,7 @@ async def test_update_database_ddl_field_headers_async():
 
 def test_update_database_ddl_flattened():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1456,7 +1436,6 @@ def test_update_database_ddl_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_database_ddl(
@@ -1468,15 +1447,13 @@ def test_update_database_ddl_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].database == 'database_value'
-
         assert args[0].statements == ['statements_value']
 
 
 def test_update_database_ddl_flattened_error():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1492,7 +1469,7 @@ def test_update_database_ddl_flattened_error():
 @pytest.mark.asyncio
 async def test_update_database_ddl_flattened_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1516,16 +1493,14 @@ async def test_update_database_ddl_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].database == 'database_value'
-
         assert args[0].statements == ['statements_value']
 
 
 @pytest.mark.asyncio
 async def test_update_database_ddl_flattened_error_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1540,7 +1515,7 @@ async def test_update_database_ddl_flattened_error_async():
 
 def test_drop_database(transport: str = 'grpc', request_type=spanner_database_admin.DropDatabaseRequest):
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1554,13 +1529,11 @@ def test_drop_database(transport: str = 'grpc', request_type=spanner_database_ad
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         response = client.drop_database(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == spanner_database_admin.DropDatabaseRequest()
 
     # Establish that the response is the type that we expect.
@@ -1575,7 +1548,7 @@ def test_drop_database_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -1586,13 +1559,13 @@ def test_drop_database_empty_call():
         client.drop_database()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == spanner_database_admin.DropDatabaseRequest()
+
 
 @pytest.mark.asyncio
 async def test_drop_database_async(transport: str = 'grpc_asyncio', request_type=spanner_database_admin.DropDatabaseRequest):
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1606,13 +1579,11 @@ async def test_drop_database_async(transport: str = 'grpc_asyncio', request_type
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         response = await client.drop_database(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == spanner_database_admin.DropDatabaseRequest()
 
     # Establish that the response is the type that we expect.
@@ -1626,12 +1597,13 @@ async def test_drop_database_async_from_dict():
 
 def test_drop_database_field_headers():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = spanner_database_admin.DropDatabaseRequest()
+
     request.database = 'database/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1639,7 +1611,6 @@ def test_drop_database_field_headers():
             type(client.transport.drop_database),
             '__call__') as call:
         call.return_value = None
-
         client.drop_database(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1658,12 +1629,13 @@ def test_drop_database_field_headers():
 @pytest.mark.asyncio
 async def test_drop_database_field_headers_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = spanner_database_admin.DropDatabaseRequest()
+
     request.database = 'database/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1671,7 +1643,6 @@ async def test_drop_database_field_headers_async():
             type(client.transport.drop_database),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         await client.drop_database(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1689,7 +1660,7 @@ async def test_drop_database_field_headers_async():
 
 def test_drop_database_flattened():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1698,7 +1669,6 @@ def test_drop_database_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.drop_database(
@@ -1709,13 +1679,12 @@ def test_drop_database_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].database == 'database_value'
 
 
 def test_drop_database_flattened_error():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1730,7 +1699,7 @@ def test_drop_database_flattened_error():
 @pytest.mark.asyncio
 async def test_drop_database_flattened_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1751,14 +1720,13 @@ async def test_drop_database_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].database == 'database_value'
 
 
 @pytest.mark.asyncio
 async def test_drop_database_flattened_error_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1772,7 +1740,7 @@ async def test_drop_database_flattened_error_async():
 
 def test_get_database_ddl(transport: str = 'grpc', request_type=spanner_database_admin.GetDatabaseDdlRequest):
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1787,21 +1755,16 @@ def test_get_database_ddl(transport: str = 'grpc', request_type=spanner_database
         # Designate an appropriate return value for the call.
         call.return_value = spanner_database_admin.GetDatabaseDdlResponse(
             statements=['statements_value'],
-
         )
-
         response = client.get_database_ddl(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == spanner_database_admin.GetDatabaseDdlRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, spanner_database_admin.GetDatabaseDdlResponse)
-
     assert response.statements == ['statements_value']
 
 
@@ -1813,7 +1776,7 @@ def test_get_database_ddl_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -1824,13 +1787,13 @@ def test_get_database_ddl_empty_call():
         client.get_database_ddl()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == spanner_database_admin.GetDatabaseDdlRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_database_ddl_async(transport: str = 'grpc_asyncio', request_type=spanner_database_admin.GetDatabaseDdlRequest):
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1843,21 +1806,18 @@ async def test_get_database_ddl_async(transport: str = 'grpc_asyncio', request_t
             type(client.transport.get_database_ddl),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(spanner_database_admin.GetDatabaseDdlResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(spanner_database_admin.GetDatabaseDdlResponse(
             statements=['statements_value'],
         ))
-
         response = await client.get_database_ddl(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == spanner_database_admin.GetDatabaseDdlRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, spanner_database_admin.GetDatabaseDdlResponse)
-
     assert response.statements == ['statements_value']
 
 
@@ -1868,12 +1828,13 @@ async def test_get_database_ddl_async_from_dict():
 
 def test_get_database_ddl_field_headers():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = spanner_database_admin.GetDatabaseDdlRequest()
+
     request.database = 'database/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1881,7 +1842,6 @@ def test_get_database_ddl_field_headers():
             type(client.transport.get_database_ddl),
             '__call__') as call:
         call.return_value = spanner_database_admin.GetDatabaseDdlResponse()
-
         client.get_database_ddl(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1900,12 +1860,13 @@ def test_get_database_ddl_field_headers():
 @pytest.mark.asyncio
 async def test_get_database_ddl_field_headers_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = spanner_database_admin.GetDatabaseDdlRequest()
+
     request.database = 'database/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1913,7 +1874,6 @@ async def test_get_database_ddl_field_headers_async():
             type(client.transport.get_database_ddl),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(spanner_database_admin.GetDatabaseDdlResponse())
-
         await client.get_database_ddl(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1931,7 +1891,7 @@ async def test_get_database_ddl_field_headers_async():
 
 def test_get_database_ddl_flattened():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1940,7 +1900,6 @@ def test_get_database_ddl_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = spanner_database_admin.GetDatabaseDdlResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_database_ddl(
@@ -1951,13 +1910,12 @@ def test_get_database_ddl_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].database == 'database_value'
 
 
 def test_get_database_ddl_flattened_error():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1972,7 +1930,7 @@ def test_get_database_ddl_flattened_error():
 @pytest.mark.asyncio
 async def test_get_database_ddl_flattened_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1993,14 +1951,13 @@ async def test_get_database_ddl_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].database == 'database_value'
 
 
 @pytest.mark.asyncio
 async def test_get_database_ddl_flattened_error_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -2012,9 +1969,9 @@ async def test_get_database_ddl_flattened_error_async():
         )
 
 
-def test_set_iam_policy(transport: str = 'grpc', request_type=iam_policy.SetIamPolicyRequest):
+def test_set_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.SetIamPolicyRequest):
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2027,27 +1984,20 @@ def test_set_iam_policy(transport: str = 'grpc', request_type=iam_policy.SetIamP
             type(client.transport.set_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = gi_policy.Policy(
+        call.return_value = policy_pb2.Policy(
             version=774,
-
             etag=b'etag_blob',
-
         )
-
         response = client.set_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
-        assert args[0] == iam_policy.SetIamPolicyRequest()
+        assert args[0] == iam_policy_pb2.SetIamPolicyRequest()
 
     # Establish that the response is the type that we expect.
-
-    assert isinstance(response, gi_policy.Policy)
-
+    assert isinstance(response, policy_pb2.Policy)
     assert response.version == 774
-
     assert response.etag == b'etag_blob'
 
 
@@ -2059,7 +2009,7 @@ def test_set_iam_policy_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -2070,13 +2020,13 @@ def test_set_iam_policy_empty_call():
         client.set_iam_policy()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
+        assert args[0] == iam_policy_pb2.SetIamPolicyRequest()
 
-        assert args[0] == iam_policy.SetIamPolicyRequest()
 
 @pytest.mark.asyncio
-async def test_set_iam_policy_async(transport: str = 'grpc_asyncio', request_type=iam_policy.SetIamPolicyRequest):
+async def test_set_iam_policy_async(transport: str = 'grpc_asyncio', request_type=iam_policy_pb2.SetIamPolicyRequest):
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2089,24 +2039,20 @@ async def test_set_iam_policy_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.set_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gi_policy.Policy(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(policy_pb2.Policy(
             version=774,
             etag=b'etag_blob',
         ))
-
         response = await client.set_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
-        assert args[0] == iam_policy.SetIamPolicyRequest()
+        assert args[0] == iam_policy_pb2.SetIamPolicyRequest()
 
     # Establish that the response is the type that we expect.
-    assert isinstance(response, gi_policy.Policy)
-
+    assert isinstance(response, policy_pb2.Policy)
     assert response.version == 774
-
     assert response.etag == b'etag_blob'
 
 
@@ -2117,20 +2063,20 @@ async def test_set_iam_policy_async_from_dict():
 
 def test_set_iam_policy_field_headers():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
-    request = iam_policy.SetIamPolicyRequest()
+    request = iam_policy_pb2.SetIamPolicyRequest()
+
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
     with mock.patch.object(
             type(client.transport.set_iam_policy),
             '__call__') as call:
-        call.return_value = gi_policy.Policy()
-
+        call.return_value = policy_pb2.Policy()
         client.set_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2149,20 +2095,20 @@ def test_set_iam_policy_field_headers():
 @pytest.mark.asyncio
 async def test_set_iam_policy_field_headers_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
-    request = iam_policy.SetIamPolicyRequest()
+    request = iam_policy_pb2.SetIamPolicyRequest()
+
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
     with mock.patch.object(
             type(client.transport.set_iam_policy),
             '__call__') as call:
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gi_policy.Policy())
-
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(policy_pb2.Policy())
         await client.set_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2177,21 +2123,19 @@ async def test_set_iam_policy_field_headers_async():
         'resource=resource/value',
     ) in kw['metadata']
 
-
 def test_set_iam_policy_from_dict_foreign():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     # Mock the actual call within the gRPC stub, and fake the request.
     with mock.patch.object(
             type(client.transport.set_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = gi_policy.Policy()
-
+        call.return_value = policy_pb2.Policy()
         response = client.set_iam_policy(request={
             'resource': 'resource_value',
-            'policy_': gi_policy.Policy(version=774),
+            'policy': policy_pb2.Policy(version=774),
             }
         )
         call.assert_called()
@@ -2199,7 +2143,7 @@ def test_set_iam_policy_from_dict_foreign():
 
 def test_set_iam_policy_flattened():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2207,8 +2151,7 @@ def test_set_iam_policy_flattened():
             type(client.transport.set_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = gi_policy.Policy()
-
+        call.return_value = policy_pb2.Policy()
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.set_iam_policy(
@@ -2219,20 +2162,19 @@ def test_set_iam_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource == 'resource_value'
 
 
 def test_set_iam_policy_flattened_error():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
         client.set_iam_policy(
-            iam_policy.SetIamPolicyRequest(),
+            iam_policy_pb2.SetIamPolicyRequest(),
             resource='resource_value',
         )
 
@@ -2240,7 +2182,7 @@ def test_set_iam_policy_flattened_error():
 @pytest.mark.asyncio
 async def test_set_iam_policy_flattened_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2248,9 +2190,9 @@ async def test_set_iam_policy_flattened_async():
             type(client.transport.set_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = gi_policy.Policy()
+        call.return_value = policy_pb2.Policy()
 
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gi_policy.Policy())
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(policy_pb2.Policy())
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         response = await client.set_iam_policy(
@@ -2261,28 +2203,27 @@ async def test_set_iam_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource == 'resource_value'
 
 
 @pytest.mark.asyncio
 async def test_set_iam_policy_flattened_error_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
         await client.set_iam_policy(
-            iam_policy.SetIamPolicyRequest(),
+            iam_policy_pb2.SetIamPolicyRequest(),
             resource='resource_value',
         )
 
 
-def test_get_iam_policy(transport: str = 'grpc', request_type=iam_policy.GetIamPolicyRequest):
+def test_get_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.GetIamPolicyRequest):
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2295,27 +2236,20 @@ def test_get_iam_policy(transport: str = 'grpc', request_type=iam_policy.GetIamP
             type(client.transport.get_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = gi_policy.Policy(
+        call.return_value = policy_pb2.Policy(
             version=774,
-
             etag=b'etag_blob',
-
         )
-
         response = client.get_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
-        assert args[0] == iam_policy.GetIamPolicyRequest()
+        assert args[0] == iam_policy_pb2.GetIamPolicyRequest()
 
     # Establish that the response is the type that we expect.
-
-    assert isinstance(response, gi_policy.Policy)
-
+    assert isinstance(response, policy_pb2.Policy)
     assert response.version == 774
-
     assert response.etag == b'etag_blob'
 
 
@@ -2327,7 +2261,7 @@ def test_get_iam_policy_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -2338,13 +2272,13 @@ def test_get_iam_policy_empty_call():
         client.get_iam_policy()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
+        assert args[0] == iam_policy_pb2.GetIamPolicyRequest()
 
-        assert args[0] == iam_policy.GetIamPolicyRequest()
 
 @pytest.mark.asyncio
-async def test_get_iam_policy_async(transport: str = 'grpc_asyncio', request_type=iam_policy.GetIamPolicyRequest):
+async def test_get_iam_policy_async(transport: str = 'grpc_asyncio', request_type=iam_policy_pb2.GetIamPolicyRequest):
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2357,24 +2291,20 @@ async def test_get_iam_policy_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.get_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gi_policy.Policy(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(policy_pb2.Policy(
             version=774,
             etag=b'etag_blob',
         ))
-
         response = await client.get_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
-        assert args[0] == iam_policy.GetIamPolicyRequest()
+        assert args[0] == iam_policy_pb2.GetIamPolicyRequest()
 
     # Establish that the response is the type that we expect.
-    assert isinstance(response, gi_policy.Policy)
-
+    assert isinstance(response, policy_pb2.Policy)
     assert response.version == 774
-
     assert response.etag == b'etag_blob'
 
 
@@ -2385,20 +2315,20 @@ async def test_get_iam_policy_async_from_dict():
 
 def test_get_iam_policy_field_headers():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
-    request = iam_policy.GetIamPolicyRequest()
+    request = iam_policy_pb2.GetIamPolicyRequest()
+
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
     with mock.patch.object(
             type(client.transport.get_iam_policy),
             '__call__') as call:
-        call.return_value = gi_policy.Policy()
-
+        call.return_value = policy_pb2.Policy()
         client.get_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2417,20 +2347,20 @@ def test_get_iam_policy_field_headers():
 @pytest.mark.asyncio
 async def test_get_iam_policy_field_headers_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
-    request = iam_policy.GetIamPolicyRequest()
+    request = iam_policy_pb2.GetIamPolicyRequest()
+
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
     with mock.patch.object(
             type(client.transport.get_iam_policy),
             '__call__') as call:
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gi_policy.Policy())
-
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(policy_pb2.Policy())
         await client.get_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2445,21 +2375,19 @@ async def test_get_iam_policy_field_headers_async():
         'resource=resource/value',
     ) in kw['metadata']
 
-
 def test_get_iam_policy_from_dict_foreign():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     # Mock the actual call within the gRPC stub, and fake the request.
     with mock.patch.object(
             type(client.transport.get_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = gi_policy.Policy()
-
+        call.return_value = policy_pb2.Policy()
         response = client.get_iam_policy(request={
             'resource': 'resource_value',
-            'options_': gi_options.GetPolicyOptions(requested_policy_version=2598),
+            'options': options_pb2.GetPolicyOptions(requested_policy_version=2598),
             }
         )
         call.assert_called()
@@ -2467,7 +2395,7 @@ def test_get_iam_policy_from_dict_foreign():
 
 def test_get_iam_policy_flattened():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2475,8 +2403,7 @@ def test_get_iam_policy_flattened():
             type(client.transport.get_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = gi_policy.Policy()
-
+        call.return_value = policy_pb2.Policy()
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_iam_policy(
@@ -2487,20 +2414,19 @@ def test_get_iam_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource == 'resource_value'
 
 
 def test_get_iam_policy_flattened_error():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
         client.get_iam_policy(
-            iam_policy.GetIamPolicyRequest(),
+            iam_policy_pb2.GetIamPolicyRequest(),
             resource='resource_value',
         )
 
@@ -2508,7 +2434,7 @@ def test_get_iam_policy_flattened_error():
 @pytest.mark.asyncio
 async def test_get_iam_policy_flattened_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2516,9 +2442,9 @@ async def test_get_iam_policy_flattened_async():
             type(client.transport.get_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = gi_policy.Policy()
+        call.return_value = policy_pb2.Policy()
 
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gi_policy.Policy())
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(policy_pb2.Policy())
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         response = await client.get_iam_policy(
@@ -2529,28 +2455,27 @@ async def test_get_iam_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource == 'resource_value'
 
 
 @pytest.mark.asyncio
 async def test_get_iam_policy_flattened_error_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
         await client.get_iam_policy(
-            iam_policy.GetIamPolicyRequest(),
+            iam_policy_pb2.GetIamPolicyRequest(),
             resource='resource_value',
         )
 
 
-def test_test_iam_permissions(transport: str = 'grpc', request_type=iam_policy.TestIamPermissionsRequest):
+def test_test_iam_permissions(transport: str = 'grpc', request_type=iam_policy_pb2.TestIamPermissionsRequest):
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2563,23 +2488,18 @@ def test_test_iam_permissions(transport: str = 'grpc', request_type=iam_policy.T
             type(client.transport.test_iam_permissions),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = iam_policy.TestIamPermissionsResponse(
+        call.return_value = iam_policy_pb2.TestIamPermissionsResponse(
             permissions=['permissions_value'],
-
         )
-
         response = client.test_iam_permissions(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
-        assert args[0] == iam_policy.TestIamPermissionsRequest()
+        assert args[0] == iam_policy_pb2.TestIamPermissionsRequest()
 
     # Establish that the response is the type that we expect.
-
-    assert isinstance(response, iam_policy.TestIamPermissionsResponse)
-
+    assert isinstance(response, iam_policy_pb2.TestIamPermissionsResponse)
     assert response.permissions == ['permissions_value']
 
 
@@ -2591,7 +2511,7 @@ def test_test_iam_permissions_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -2602,13 +2522,13 @@ def test_test_iam_permissions_empty_call():
         client.test_iam_permissions()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
+        assert args[0] == iam_policy_pb2.TestIamPermissionsRequest()
 
-        assert args[0] == iam_policy.TestIamPermissionsRequest()
 
 @pytest.mark.asyncio
-async def test_test_iam_permissions_async(transport: str = 'grpc_asyncio', request_type=iam_policy.TestIamPermissionsRequest):
+async def test_test_iam_permissions_async(transport: str = 'grpc_asyncio', request_type=iam_policy_pb2.TestIamPermissionsRequest):
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2621,21 +2541,18 @@ async def test_test_iam_permissions_async(transport: str = 'grpc_asyncio', reque
             type(client.transport.test_iam_permissions),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(iam_policy.TestIamPermissionsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(iam_policy_pb2.TestIamPermissionsResponse(
             permissions=['permissions_value'],
         ))
-
         response = await client.test_iam_permissions(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
-        assert args[0] == iam_policy.TestIamPermissionsRequest()
+        assert args[0] == iam_policy_pb2.TestIamPermissionsRequest()
 
     # Establish that the response is the type that we expect.
-    assert isinstance(response, iam_policy.TestIamPermissionsResponse)
-
+    assert isinstance(response, iam_policy_pb2.TestIamPermissionsResponse)
     assert response.permissions == ['permissions_value']
 
 
@@ -2646,20 +2563,20 @@ async def test_test_iam_permissions_async_from_dict():
 
 def test_test_iam_permissions_field_headers():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
-    request = iam_policy.TestIamPermissionsRequest()
+    request = iam_policy_pb2.TestIamPermissionsRequest()
+
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
     with mock.patch.object(
             type(client.transport.test_iam_permissions),
             '__call__') as call:
-        call.return_value = iam_policy.TestIamPermissionsResponse()
-
+        call.return_value = iam_policy_pb2.TestIamPermissionsResponse()
         client.test_iam_permissions(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2678,20 +2595,20 @@ def test_test_iam_permissions_field_headers():
 @pytest.mark.asyncio
 async def test_test_iam_permissions_field_headers_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
-    request = iam_policy.TestIamPermissionsRequest()
+    request = iam_policy_pb2.TestIamPermissionsRequest()
+
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
     with mock.patch.object(
             type(client.transport.test_iam_permissions),
             '__call__') as call:
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(iam_policy.TestIamPermissionsResponse())
-
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(iam_policy_pb2.TestIamPermissionsResponse())
         await client.test_iam_permissions(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2706,18 +2623,16 @@ async def test_test_iam_permissions_field_headers_async():
         'resource=resource/value',
     ) in kw['metadata']
 
-
 def test_test_iam_permissions_from_dict_foreign():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     # Mock the actual call within the gRPC stub, and fake the request.
     with mock.patch.object(
             type(client.transport.test_iam_permissions),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = iam_policy.TestIamPermissionsResponse()
-
+        call.return_value = iam_policy_pb2.TestIamPermissionsResponse()
         response = client.test_iam_permissions(request={
             'resource': 'resource_value',
             'permissions': ['permissions_value'],
@@ -2728,7 +2643,7 @@ def test_test_iam_permissions_from_dict_foreign():
 
 def test_test_iam_permissions_flattened():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2736,8 +2651,7 @@ def test_test_iam_permissions_flattened():
             type(client.transport.test_iam_permissions),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = iam_policy.TestIamPermissionsResponse()
-
+        call.return_value = iam_policy_pb2.TestIamPermissionsResponse()
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.test_iam_permissions(
@@ -2749,22 +2663,20 @@ def test_test_iam_permissions_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource == 'resource_value'
-
         assert args[0].permissions == ['permissions_value']
 
 
 def test_test_iam_permissions_flattened_error():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
         client.test_iam_permissions(
-            iam_policy.TestIamPermissionsRequest(),
+            iam_policy_pb2.TestIamPermissionsRequest(),
             resource='resource_value',
             permissions=['permissions_value'],
         )
@@ -2773,7 +2685,7 @@ def test_test_iam_permissions_flattened_error():
 @pytest.mark.asyncio
 async def test_test_iam_permissions_flattened_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2781,9 +2693,9 @@ async def test_test_iam_permissions_flattened_async():
             type(client.transport.test_iam_permissions),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = iam_policy.TestIamPermissionsResponse()
+        call.return_value = iam_policy_pb2.TestIamPermissionsResponse()
 
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(iam_policy.TestIamPermissionsResponse())
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(iam_policy_pb2.TestIamPermissionsResponse())
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         response = await client.test_iam_permissions(
@@ -2795,23 +2707,21 @@ async def test_test_iam_permissions_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource == 'resource_value'
-
         assert args[0].permissions == ['permissions_value']
 
 
 @pytest.mark.asyncio
 async def test_test_iam_permissions_flattened_error_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
         await client.test_iam_permissions(
-            iam_policy.TestIamPermissionsRequest(),
+            iam_policy_pb2.TestIamPermissionsRequest(),
             resource='resource_value',
             permissions=['permissions_value'],
         )
@@ -2819,7 +2729,7 @@ async def test_test_iam_permissions_flattened_error_async():
 
 def test_create_backup(transport: str = 'grpc', request_type=gsad_backup.CreateBackupRequest):
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2833,13 +2743,11 @@ def test_create_backup(transport: str = 'grpc', request_type=gsad_backup.CreateB
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.create_backup(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == gsad_backup.CreateBackupRequest()
 
     # Establish that the response is the type that we expect.
@@ -2854,7 +2762,7 @@ def test_create_backup_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -2865,13 +2773,13 @@ def test_create_backup_empty_call():
         client.create_backup()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == gsad_backup.CreateBackupRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_backup_async(transport: str = 'grpc_asyncio', request_type=gsad_backup.CreateBackupRequest):
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2887,13 +2795,11 @@ async def test_create_backup_async(transport: str = 'grpc_asyncio', request_type
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.create_backup(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == gsad_backup.CreateBackupRequest()
 
     # Establish that the response is the type that we expect.
@@ -2907,12 +2813,13 @@ async def test_create_backup_async_from_dict():
 
 def test_create_backup_field_headers():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gsad_backup.CreateBackupRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2920,7 +2827,6 @@ def test_create_backup_field_headers():
             type(client.transport.create_backup),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.create_backup(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2939,12 +2845,13 @@ def test_create_backup_field_headers():
 @pytest.mark.asyncio
 async def test_create_backup_field_headers_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gsad_backup.CreateBackupRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2952,7 +2859,6 @@ async def test_create_backup_field_headers_async():
             type(client.transport.create_backup),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.create_backup(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2970,7 +2876,7 @@ async def test_create_backup_field_headers_async():
 
 def test_create_backup_flattened():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2979,7 +2885,6 @@ def test_create_backup_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_backup(
@@ -2992,17 +2897,14 @@ def test_create_backup_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].backup == gsad_backup.Backup(database='database_value')
-
         assert args[0].backup_id == 'backup_id_value'
 
 
 def test_create_backup_flattened_error():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -3019,7 +2921,7 @@ def test_create_backup_flattened_error():
 @pytest.mark.asyncio
 async def test_create_backup_flattened_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3044,18 +2946,15 @@ async def test_create_backup_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].backup == gsad_backup.Backup(database='database_value')
-
         assert args[0].backup_id == 'backup_id_value'
 
 
 @pytest.mark.asyncio
 async def test_create_backup_flattened_error_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -3071,7 +2970,7 @@ async def test_create_backup_flattened_error_async():
 
 def test_get_backup(transport: str = 'grpc', request_type=backup.GetBackupRequest):
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3086,37 +2985,24 @@ def test_get_backup(transport: str = 'grpc', request_type=backup.GetBackupReques
         # Designate an appropriate return value for the call.
         call.return_value = backup.Backup(
             database='database_value',
-
             name='name_value',
-
             size_bytes=1089,
-
             state=backup.Backup.State.CREATING,
-
             referencing_databases=['referencing_databases_value'],
-
         )
-
         response = client.get_backup(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == backup.GetBackupRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, backup.Backup)
-
     assert response.database == 'database_value'
-
     assert response.name == 'name_value'
-
     assert response.size_bytes == 1089
-
     assert response.state == backup.Backup.State.CREATING
-
     assert response.referencing_databases == ['referencing_databases_value']
 
 
@@ -3128,7 +3014,7 @@ def test_get_backup_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -3139,13 +3025,13 @@ def test_get_backup_empty_call():
         client.get_backup()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == backup.GetBackupRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_backup_async(transport: str = 'grpc_asyncio', request_type=backup.GetBackupRequest):
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3158,33 +3044,26 @@ async def test_get_backup_async(transport: str = 'grpc_asyncio', request_type=ba
             type(client.transport.get_backup),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(backup.Backup(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(backup.Backup(
             database='database_value',
             name='name_value',
             size_bytes=1089,
             state=backup.Backup.State.CREATING,
             referencing_databases=['referencing_databases_value'],
         ))
-
         response = await client.get_backup(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == backup.GetBackupRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, backup.Backup)
-
     assert response.database == 'database_value'
-
     assert response.name == 'name_value'
-
     assert response.size_bytes == 1089
-
     assert response.state == backup.Backup.State.CREATING
-
     assert response.referencing_databases == ['referencing_databases_value']
 
 
@@ -3195,12 +3074,13 @@ async def test_get_backup_async_from_dict():
 
 def test_get_backup_field_headers():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = backup.GetBackupRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3208,7 +3088,6 @@ def test_get_backup_field_headers():
             type(client.transport.get_backup),
             '__call__') as call:
         call.return_value = backup.Backup()
-
         client.get_backup(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3227,12 +3106,13 @@ def test_get_backup_field_headers():
 @pytest.mark.asyncio
 async def test_get_backup_field_headers_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = backup.GetBackupRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3240,7 +3120,6 @@ async def test_get_backup_field_headers_async():
             type(client.transport.get_backup),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(backup.Backup())
-
         await client.get_backup(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3258,7 +3137,7 @@ async def test_get_backup_field_headers_async():
 
 def test_get_backup_flattened():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3267,7 +3146,6 @@ def test_get_backup_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = backup.Backup()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_backup(
@@ -3278,13 +3156,12 @@ def test_get_backup_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 def test_get_backup_flattened_error():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -3299,7 +3176,7 @@ def test_get_backup_flattened_error():
 @pytest.mark.asyncio
 async def test_get_backup_flattened_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3320,14 +3197,13 @@ async def test_get_backup_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 @pytest.mark.asyncio
 async def test_get_backup_flattened_error_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -3341,7 +3217,7 @@ async def test_get_backup_flattened_error_async():
 
 def test_update_backup(transport: str = 'grpc', request_type=gsad_backup.UpdateBackupRequest):
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3356,37 +3232,24 @@ def test_update_backup(transport: str = 'grpc', request_type=gsad_backup.UpdateB
         # Designate an appropriate return value for the call.
         call.return_value = gsad_backup.Backup(
             database='database_value',
-
             name='name_value',
-
             size_bytes=1089,
-
             state=gsad_backup.Backup.State.CREATING,
-
             referencing_databases=['referencing_databases_value'],
-
         )
-
         response = client.update_backup(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == gsad_backup.UpdateBackupRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, gsad_backup.Backup)
-
     assert response.database == 'database_value'
-
     assert response.name == 'name_value'
-
     assert response.size_bytes == 1089
-
     assert response.state == gsad_backup.Backup.State.CREATING
-
     assert response.referencing_databases == ['referencing_databases_value']
 
 
@@ -3398,7 +3261,7 @@ def test_update_backup_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -3409,13 +3272,13 @@ def test_update_backup_empty_call():
         client.update_backup()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == gsad_backup.UpdateBackupRequest()
+
 
 @pytest.mark.asyncio
 async def test_update_backup_async(transport: str = 'grpc_asyncio', request_type=gsad_backup.UpdateBackupRequest):
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3428,33 +3291,26 @@ async def test_update_backup_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.update_backup),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gsad_backup.Backup(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gsad_backup.Backup(
             database='database_value',
             name='name_value',
             size_bytes=1089,
             state=gsad_backup.Backup.State.CREATING,
             referencing_databases=['referencing_databases_value'],
         ))
-
         response = await client.update_backup(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == gsad_backup.UpdateBackupRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gsad_backup.Backup)
-
     assert response.database == 'database_value'
-
     assert response.name == 'name_value'
-
     assert response.size_bytes == 1089
-
     assert response.state == gsad_backup.Backup.State.CREATING
-
     assert response.referencing_databases == ['referencing_databases_value']
 
 
@@ -3465,12 +3321,13 @@ async def test_update_backup_async_from_dict():
 
 def test_update_backup_field_headers():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gsad_backup.UpdateBackupRequest()
+
     request.backup.name = 'backup.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3478,7 +3335,6 @@ def test_update_backup_field_headers():
             type(client.transport.update_backup),
             '__call__') as call:
         call.return_value = gsad_backup.Backup()
-
         client.update_backup(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3497,12 +3353,13 @@ def test_update_backup_field_headers():
 @pytest.mark.asyncio
 async def test_update_backup_field_headers_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gsad_backup.UpdateBackupRequest()
+
     request.backup.name = 'backup.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3510,7 +3367,6 @@ async def test_update_backup_field_headers_async():
             type(client.transport.update_backup),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gsad_backup.Backup())
-
         await client.update_backup(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3528,7 +3384,7 @@ async def test_update_backup_field_headers_async():
 
 def test_update_backup_flattened():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3537,27 +3393,24 @@ def test_update_backup_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gsad_backup.Backup()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_backup(
             backup=gsad_backup.Backup(database='database_value'),
-            update_mask=field_mask.FieldMask(paths=['paths_value']),
+            update_mask=field_mask_pb2.FieldMask(paths=['paths_value']),
         )
 
         # Establish that the underlying call was made with the expected
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].backup == gsad_backup.Backup(database='database_value')
-
-        assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
+        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
 
 
 def test_update_backup_flattened_error():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -3566,14 +3419,14 @@ def test_update_backup_flattened_error():
         client.update_backup(
             gsad_backup.UpdateBackupRequest(),
             backup=gsad_backup.Backup(database='database_value'),
-            update_mask=field_mask.FieldMask(paths=['paths_value']),
+            update_mask=field_mask_pb2.FieldMask(paths=['paths_value']),
         )
 
 
 @pytest.mark.asyncio
 async def test_update_backup_flattened_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3588,23 +3441,21 @@ async def test_update_backup_flattened_async():
         # using the keyword arguments to the method.
         response = await client.update_backup(
             backup=gsad_backup.Backup(database='database_value'),
-            update_mask=field_mask.FieldMask(paths=['paths_value']),
+            update_mask=field_mask_pb2.FieldMask(paths=['paths_value']),
         )
 
         # Establish that the underlying call was made with the expected
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].backup == gsad_backup.Backup(database='database_value')
-
-        assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
+        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
 
 
 @pytest.mark.asyncio
 async def test_update_backup_flattened_error_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -3613,13 +3464,13 @@ async def test_update_backup_flattened_error_async():
         await client.update_backup(
             gsad_backup.UpdateBackupRequest(),
             backup=gsad_backup.Backup(database='database_value'),
-            update_mask=field_mask.FieldMask(paths=['paths_value']),
+            update_mask=field_mask_pb2.FieldMask(paths=['paths_value']),
         )
 
 
 def test_delete_backup(transport: str = 'grpc', request_type=backup.DeleteBackupRequest):
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3633,13 +3484,11 @@ def test_delete_backup(transport: str = 'grpc', request_type=backup.DeleteBackup
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         response = client.delete_backup(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == backup.DeleteBackupRequest()
 
     # Establish that the response is the type that we expect.
@@ -3654,7 +3503,7 @@ def test_delete_backup_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -3665,13 +3514,13 @@ def test_delete_backup_empty_call():
         client.delete_backup()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == backup.DeleteBackupRequest()
+
 
 @pytest.mark.asyncio
 async def test_delete_backup_async(transport: str = 'grpc_asyncio', request_type=backup.DeleteBackupRequest):
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3685,13 +3534,11 @@ async def test_delete_backup_async(transport: str = 'grpc_asyncio', request_type
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         response = await client.delete_backup(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == backup.DeleteBackupRequest()
 
     # Establish that the response is the type that we expect.
@@ -3705,12 +3552,13 @@ async def test_delete_backup_async_from_dict():
 
 def test_delete_backup_field_headers():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = backup.DeleteBackupRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3718,7 +3566,6 @@ def test_delete_backup_field_headers():
             type(client.transport.delete_backup),
             '__call__') as call:
         call.return_value = None
-
         client.delete_backup(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3737,12 +3584,13 @@ def test_delete_backup_field_headers():
 @pytest.mark.asyncio
 async def test_delete_backup_field_headers_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = backup.DeleteBackupRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3750,7 +3598,6 @@ async def test_delete_backup_field_headers_async():
             type(client.transport.delete_backup),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         await client.delete_backup(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3768,7 +3615,7 @@ async def test_delete_backup_field_headers_async():
 
 def test_delete_backup_flattened():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3777,7 +3624,6 @@ def test_delete_backup_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_backup(
@@ -3788,13 +3634,12 @@ def test_delete_backup_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 def test_delete_backup_flattened_error():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -3809,7 +3654,7 @@ def test_delete_backup_flattened_error():
 @pytest.mark.asyncio
 async def test_delete_backup_flattened_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3830,14 +3675,13 @@ async def test_delete_backup_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 @pytest.mark.asyncio
 async def test_delete_backup_flattened_error_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -3851,7 +3695,7 @@ async def test_delete_backup_flattened_error_async():
 
 def test_list_backups(transport: str = 'grpc', request_type=backup.ListBackupsRequest):
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3866,21 +3710,16 @@ def test_list_backups(transport: str = 'grpc', request_type=backup.ListBackupsRe
         # Designate an appropriate return value for the call.
         call.return_value = backup.ListBackupsResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_backups(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == backup.ListBackupsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListBackupsPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -3892,7 +3731,7 @@ def test_list_backups_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -3903,13 +3742,13 @@ def test_list_backups_empty_call():
         client.list_backups()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == backup.ListBackupsRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_backups_async(transport: str = 'grpc_asyncio', request_type=backup.ListBackupsRequest):
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3922,21 +3761,18 @@ async def test_list_backups_async(transport: str = 'grpc_asyncio', request_type=
             type(client.transport.list_backups),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(backup.ListBackupsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(backup.ListBackupsResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_backups(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == backup.ListBackupsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListBackupsAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -3947,12 +3783,13 @@ async def test_list_backups_async_from_dict():
 
 def test_list_backups_field_headers():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = backup.ListBackupsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3960,7 +3797,6 @@ def test_list_backups_field_headers():
             type(client.transport.list_backups),
             '__call__') as call:
         call.return_value = backup.ListBackupsResponse()
-
         client.list_backups(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3979,12 +3815,13 @@ def test_list_backups_field_headers():
 @pytest.mark.asyncio
 async def test_list_backups_field_headers_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = backup.ListBackupsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3992,7 +3829,6 @@ async def test_list_backups_field_headers_async():
             type(client.transport.list_backups),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(backup.ListBackupsResponse())
-
         await client.list_backups(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4010,7 +3846,7 @@ async def test_list_backups_field_headers_async():
 
 def test_list_backups_flattened():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4019,7 +3855,6 @@ def test_list_backups_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = backup.ListBackupsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_backups(
@@ -4030,13 +3865,12 @@ def test_list_backups_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
 def test_list_backups_flattened_error():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -4051,7 +3885,7 @@ def test_list_backups_flattened_error():
 @pytest.mark.asyncio
 async def test_list_backups_flattened_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4072,14 +3906,13 @@ async def test_list_backups_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
 @pytest.mark.asyncio
 async def test_list_backups_flattened_error_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -4093,7 +3926,7 @@ async def test_list_backups_flattened_error_async():
 
 def test_list_backups_pager():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4146,7 +3979,7 @@ def test_list_backups_pager():
 
 def test_list_backups_pages():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4188,7 +4021,7 @@ def test_list_backups_pages():
 @pytest.mark.asyncio
 async def test_list_backups_async_pager():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4236,7 +4069,7 @@ async def test_list_backups_async_pager():
 @pytest.mark.asyncio
 async def test_list_backups_async_pages():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4277,10 +4110,9 @@ async def test_list_backups_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_restore_database(transport: str = 'grpc', request_type=spanner_database_admin.RestoreDatabaseRequest):
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -4294,13 +4126,11 @@ def test_restore_database(transport: str = 'grpc', request_type=spanner_database
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.restore_database(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == spanner_database_admin.RestoreDatabaseRequest()
 
     # Establish that the response is the type that we expect.
@@ -4315,7 +4145,7 @@ def test_restore_database_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -4326,13 +4156,13 @@ def test_restore_database_empty_call():
         client.restore_database()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == spanner_database_admin.RestoreDatabaseRequest()
+
 
 @pytest.mark.asyncio
 async def test_restore_database_async(transport: str = 'grpc_asyncio', request_type=spanner_database_admin.RestoreDatabaseRequest):
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -4348,13 +4178,11 @@ async def test_restore_database_async(transport: str = 'grpc_asyncio', request_t
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.restore_database(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == spanner_database_admin.RestoreDatabaseRequest()
 
     # Establish that the response is the type that we expect.
@@ -4368,12 +4196,13 @@ async def test_restore_database_async_from_dict():
 
 def test_restore_database_field_headers():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = spanner_database_admin.RestoreDatabaseRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4381,7 +4210,6 @@ def test_restore_database_field_headers():
             type(client.transport.restore_database),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.restore_database(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4400,12 +4228,13 @@ def test_restore_database_field_headers():
 @pytest.mark.asyncio
 async def test_restore_database_field_headers_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = spanner_database_admin.RestoreDatabaseRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4413,7 +4242,6 @@ async def test_restore_database_field_headers_async():
             type(client.transport.restore_database),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.restore_database(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4431,7 +4259,7 @@ async def test_restore_database_field_headers_async():
 
 def test_restore_database_flattened():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4440,7 +4268,6 @@ def test_restore_database_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.restore_database(
@@ -4453,17 +4280,14 @@ def test_restore_database_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].database_id == 'database_id_value'
-
         assert args[0].backup == 'backup_value'
 
 
 def test_restore_database_flattened_error():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -4480,7 +4304,7 @@ def test_restore_database_flattened_error():
 @pytest.mark.asyncio
 async def test_restore_database_flattened_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4505,18 +4329,15 @@ async def test_restore_database_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].database_id == 'database_id_value'
-
         assert args[0].backup == 'backup_value'
 
 
 @pytest.mark.asyncio
 async def test_restore_database_flattened_error_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -4532,7 +4353,7 @@ async def test_restore_database_flattened_error_async():
 
 def test_list_database_operations(transport: str = 'grpc', request_type=spanner_database_admin.ListDatabaseOperationsRequest):
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -4547,21 +4368,16 @@ def test_list_database_operations(transport: str = 'grpc', request_type=spanner_
         # Designate an appropriate return value for the call.
         call.return_value = spanner_database_admin.ListDatabaseOperationsResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_database_operations(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == spanner_database_admin.ListDatabaseOperationsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListDatabaseOperationsPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -4573,7 +4389,7 @@ def test_list_database_operations_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -4584,13 +4400,13 @@ def test_list_database_operations_empty_call():
         client.list_database_operations()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == spanner_database_admin.ListDatabaseOperationsRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_database_operations_async(transport: str = 'grpc_asyncio', request_type=spanner_database_admin.ListDatabaseOperationsRequest):
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -4603,21 +4419,18 @@ async def test_list_database_operations_async(transport: str = 'grpc_asyncio', r
             type(client.transport.list_database_operations),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(spanner_database_admin.ListDatabaseOperationsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(spanner_database_admin.ListDatabaseOperationsResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_database_operations(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == spanner_database_admin.ListDatabaseOperationsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListDatabaseOperationsAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -4628,12 +4441,13 @@ async def test_list_database_operations_async_from_dict():
 
 def test_list_database_operations_field_headers():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = spanner_database_admin.ListDatabaseOperationsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4641,7 +4455,6 @@ def test_list_database_operations_field_headers():
             type(client.transport.list_database_operations),
             '__call__') as call:
         call.return_value = spanner_database_admin.ListDatabaseOperationsResponse()
-
         client.list_database_operations(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4660,12 +4473,13 @@ def test_list_database_operations_field_headers():
 @pytest.mark.asyncio
 async def test_list_database_operations_field_headers_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = spanner_database_admin.ListDatabaseOperationsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4673,7 +4487,6 @@ async def test_list_database_operations_field_headers_async():
             type(client.transport.list_database_operations),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(spanner_database_admin.ListDatabaseOperationsResponse())
-
         await client.list_database_operations(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4691,7 +4504,7 @@ async def test_list_database_operations_field_headers_async():
 
 def test_list_database_operations_flattened():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4700,7 +4513,6 @@ def test_list_database_operations_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = spanner_database_admin.ListDatabaseOperationsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_database_operations(
@@ -4711,13 +4523,12 @@ def test_list_database_operations_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
 def test_list_database_operations_flattened_error():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -4732,7 +4543,7 @@ def test_list_database_operations_flattened_error():
 @pytest.mark.asyncio
 async def test_list_database_operations_flattened_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4753,14 +4564,13 @@ async def test_list_database_operations_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
 @pytest.mark.asyncio
 async def test_list_database_operations_flattened_error_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -4774,7 +4584,7 @@ async def test_list_database_operations_flattened_error_async():
 
 def test_list_database_operations_pager():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4785,9 +4595,9 @@ def test_list_database_operations_pager():
         call.side_effect = (
             spanner_database_admin.ListDatabaseOperationsResponse(
                 operations=[
-                    operations.Operation(),
-                    operations.Operation(),
-                    operations.Operation(),
+                    operations_pb2.Operation(),
+                    operations_pb2.Operation(),
+                    operations_pb2.Operation(),
                 ],
                 next_page_token='abc',
             ),
@@ -4797,14 +4607,14 @@ def test_list_database_operations_pager():
             ),
             spanner_database_admin.ListDatabaseOperationsResponse(
                 operations=[
-                    operations.Operation(),
+                    operations_pb2.Operation(),
                 ],
                 next_page_token='ghi',
             ),
             spanner_database_admin.ListDatabaseOperationsResponse(
                 operations=[
-                    operations.Operation(),
-                    operations.Operation(),
+                    operations_pb2.Operation(),
+                    operations_pb2.Operation(),
                 ],
             ),
             RuntimeError,
@@ -4822,12 +4632,12 @@ def test_list_database_operations_pager():
 
         results = [i for i in pager]
         assert len(results) == 6
-        assert all(isinstance(i, operations.Operation)
+        assert all(isinstance(i, operations_pb2.Operation)
                    for i in results)
 
 def test_list_database_operations_pages():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4838,9 +4648,9 @@ def test_list_database_operations_pages():
         call.side_effect = (
             spanner_database_admin.ListDatabaseOperationsResponse(
                 operations=[
-                    operations.Operation(),
-                    operations.Operation(),
-                    operations.Operation(),
+                    operations_pb2.Operation(),
+                    operations_pb2.Operation(),
+                    operations_pb2.Operation(),
                 ],
                 next_page_token='abc',
             ),
@@ -4850,14 +4660,14 @@ def test_list_database_operations_pages():
             ),
             spanner_database_admin.ListDatabaseOperationsResponse(
                 operations=[
-                    operations.Operation(),
+                    operations_pb2.Operation(),
                 ],
                 next_page_token='ghi',
             ),
             spanner_database_admin.ListDatabaseOperationsResponse(
                 operations=[
-                    operations.Operation(),
-                    operations.Operation(),
+                    operations_pb2.Operation(),
+                    operations_pb2.Operation(),
                 ],
             ),
             RuntimeError,
@@ -4869,7 +4679,7 @@ def test_list_database_operations_pages():
 @pytest.mark.asyncio
 async def test_list_database_operations_async_pager():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4880,9 +4690,9 @@ async def test_list_database_operations_async_pager():
         call.side_effect = (
             spanner_database_admin.ListDatabaseOperationsResponse(
                 operations=[
-                    operations.Operation(),
-                    operations.Operation(),
-                    operations.Operation(),
+                    operations_pb2.Operation(),
+                    operations_pb2.Operation(),
+                    operations_pb2.Operation(),
                 ],
                 next_page_token='abc',
             ),
@@ -4892,14 +4702,14 @@ async def test_list_database_operations_async_pager():
             ),
             spanner_database_admin.ListDatabaseOperationsResponse(
                 operations=[
-                    operations.Operation(),
+                    operations_pb2.Operation(),
                 ],
                 next_page_token='ghi',
             ),
             spanner_database_admin.ListDatabaseOperationsResponse(
                 operations=[
-                    operations.Operation(),
-                    operations.Operation(),
+                    operations_pb2.Operation(),
+                    operations_pb2.Operation(),
                 ],
             ),
             RuntimeError,
@@ -4911,13 +4721,13 @@ async def test_list_database_operations_async_pager():
             responses.append(response)
 
         assert len(responses) == 6
-        assert all(isinstance(i, operations.Operation)
+        assert all(isinstance(i, operations_pb2.Operation)
                    for i in responses)
 
 @pytest.mark.asyncio
 async def test_list_database_operations_async_pages():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4928,9 +4738,9 @@ async def test_list_database_operations_async_pages():
         call.side_effect = (
             spanner_database_admin.ListDatabaseOperationsResponse(
                 operations=[
-                    operations.Operation(),
-                    operations.Operation(),
-                    operations.Operation(),
+                    operations_pb2.Operation(),
+                    operations_pb2.Operation(),
+                    operations_pb2.Operation(),
                 ],
                 next_page_token='abc',
             ),
@@ -4940,14 +4750,14 @@ async def test_list_database_operations_async_pages():
             ),
             spanner_database_admin.ListDatabaseOperationsResponse(
                 operations=[
-                    operations.Operation(),
+                    operations_pb2.Operation(),
                 ],
                 next_page_token='ghi',
             ),
             spanner_database_admin.ListDatabaseOperationsResponse(
                 operations=[
-                    operations.Operation(),
-                    operations.Operation(),
+                    operations_pb2.Operation(),
+                    operations_pb2.Operation(),
                 ],
             ),
             RuntimeError,
@@ -4958,10 +4768,9 @@ async def test_list_database_operations_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_list_backup_operations(transport: str = 'grpc', request_type=backup.ListBackupOperationsRequest):
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -4976,21 +4785,16 @@ def test_list_backup_operations(transport: str = 'grpc', request_type=backup.Lis
         # Designate an appropriate return value for the call.
         call.return_value = backup.ListBackupOperationsResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_backup_operations(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == backup.ListBackupOperationsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListBackupOperationsPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -5002,7 +4806,7 @@ def test_list_backup_operations_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -5013,13 +4817,13 @@ def test_list_backup_operations_empty_call():
         client.list_backup_operations()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == backup.ListBackupOperationsRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_backup_operations_async(transport: str = 'grpc_asyncio', request_type=backup.ListBackupOperationsRequest):
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -5032,21 +4836,18 @@ async def test_list_backup_operations_async(transport: str = 'grpc_asyncio', req
             type(client.transport.list_backup_operations),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(backup.ListBackupOperationsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(backup.ListBackupOperationsResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_backup_operations(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == backup.ListBackupOperationsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListBackupOperationsAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -5057,12 +4858,13 @@ async def test_list_backup_operations_async_from_dict():
 
 def test_list_backup_operations_field_headers():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = backup.ListBackupOperationsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5070,7 +4872,6 @@ def test_list_backup_operations_field_headers():
             type(client.transport.list_backup_operations),
             '__call__') as call:
         call.return_value = backup.ListBackupOperationsResponse()
-
         client.list_backup_operations(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5089,12 +4890,13 @@ def test_list_backup_operations_field_headers():
 @pytest.mark.asyncio
 async def test_list_backup_operations_field_headers_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = backup.ListBackupOperationsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5102,7 +4904,6 @@ async def test_list_backup_operations_field_headers_async():
             type(client.transport.list_backup_operations),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(backup.ListBackupOperationsResponse())
-
         await client.list_backup_operations(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5120,7 +4921,7 @@ async def test_list_backup_operations_field_headers_async():
 
 def test_list_backup_operations_flattened():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5129,7 +4930,6 @@ def test_list_backup_operations_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = backup.ListBackupOperationsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_backup_operations(
@@ -5140,13 +4940,12 @@ def test_list_backup_operations_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
 def test_list_backup_operations_flattened_error():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -5161,7 +4960,7 @@ def test_list_backup_operations_flattened_error():
 @pytest.mark.asyncio
 async def test_list_backup_operations_flattened_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5182,14 +4981,13 @@ async def test_list_backup_operations_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
 @pytest.mark.asyncio
 async def test_list_backup_operations_flattened_error_async():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -5203,7 +5001,7 @@ async def test_list_backup_operations_flattened_error_async():
 
 def test_list_backup_operations_pager():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5214,9 +5012,9 @@ def test_list_backup_operations_pager():
         call.side_effect = (
             backup.ListBackupOperationsResponse(
                 operations=[
-                    operations.Operation(),
-                    operations.Operation(),
-                    operations.Operation(),
+                    operations_pb2.Operation(),
+                    operations_pb2.Operation(),
+                    operations_pb2.Operation(),
                 ],
                 next_page_token='abc',
             ),
@@ -5226,14 +5024,14 @@ def test_list_backup_operations_pager():
             ),
             backup.ListBackupOperationsResponse(
                 operations=[
-                    operations.Operation(),
+                    operations_pb2.Operation(),
                 ],
                 next_page_token='ghi',
             ),
             backup.ListBackupOperationsResponse(
                 operations=[
-                    operations.Operation(),
-                    operations.Operation(),
+                    operations_pb2.Operation(),
+                    operations_pb2.Operation(),
                 ],
             ),
             RuntimeError,
@@ -5251,12 +5049,12 @@ def test_list_backup_operations_pager():
 
         results = [i for i in pager]
         assert len(results) == 6
-        assert all(isinstance(i, operations.Operation)
+        assert all(isinstance(i, operations_pb2.Operation)
                    for i in results)
 
 def test_list_backup_operations_pages():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5267,9 +5065,9 @@ def test_list_backup_operations_pages():
         call.side_effect = (
             backup.ListBackupOperationsResponse(
                 operations=[
-                    operations.Operation(),
-                    operations.Operation(),
-                    operations.Operation(),
+                    operations_pb2.Operation(),
+                    operations_pb2.Operation(),
+                    operations_pb2.Operation(),
                 ],
                 next_page_token='abc',
             ),
@@ -5279,14 +5077,14 @@ def test_list_backup_operations_pages():
             ),
             backup.ListBackupOperationsResponse(
                 operations=[
-                    operations.Operation(),
+                    operations_pb2.Operation(),
                 ],
                 next_page_token='ghi',
             ),
             backup.ListBackupOperationsResponse(
                 operations=[
-                    operations.Operation(),
-                    operations.Operation(),
+                    operations_pb2.Operation(),
+                    operations_pb2.Operation(),
                 ],
             ),
             RuntimeError,
@@ -5298,7 +5096,7 @@ def test_list_backup_operations_pages():
 @pytest.mark.asyncio
 async def test_list_backup_operations_async_pager():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5309,9 +5107,9 @@ async def test_list_backup_operations_async_pager():
         call.side_effect = (
             backup.ListBackupOperationsResponse(
                 operations=[
-                    operations.Operation(),
-                    operations.Operation(),
-                    operations.Operation(),
+                    operations_pb2.Operation(),
+                    operations_pb2.Operation(),
+                    operations_pb2.Operation(),
                 ],
                 next_page_token='abc',
             ),
@@ -5321,14 +5119,14 @@ async def test_list_backup_operations_async_pager():
             ),
             backup.ListBackupOperationsResponse(
                 operations=[
-                    operations.Operation(),
+                    operations_pb2.Operation(),
                 ],
                 next_page_token='ghi',
             ),
             backup.ListBackupOperationsResponse(
                 operations=[
-                    operations.Operation(),
-                    operations.Operation(),
+                    operations_pb2.Operation(),
+                    operations_pb2.Operation(),
                 ],
             ),
             RuntimeError,
@@ -5340,13 +5138,13 @@ async def test_list_backup_operations_async_pager():
             responses.append(response)
 
         assert len(responses) == 6
-        assert all(isinstance(i, operations.Operation)
+        assert all(isinstance(i, operations_pb2.Operation)
                    for i in responses)
 
 @pytest.mark.asyncio
 async def test_list_backup_operations_async_pages():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5357,9 +5155,9 @@ async def test_list_backup_operations_async_pages():
         call.side_effect = (
             backup.ListBackupOperationsResponse(
                 operations=[
-                    operations.Operation(),
-                    operations.Operation(),
-                    operations.Operation(),
+                    operations_pb2.Operation(),
+                    operations_pb2.Operation(),
+                    operations_pb2.Operation(),
                 ],
                 next_page_token='abc',
             ),
@@ -5369,14 +5167,14 @@ async def test_list_backup_operations_async_pages():
             ),
             backup.ListBackupOperationsResponse(
                 operations=[
-                    operations.Operation(),
+                    operations_pb2.Operation(),
                 ],
                 next_page_token='ghi',
             ),
             backup.ListBackupOperationsResponse(
                 operations=[
-                    operations.Operation(),
-                    operations.Operation(),
+                    operations_pb2.Operation(),
+                    operations_pb2.Operation(),
                 ],
             ),
             RuntimeError,
@@ -5391,17 +5189,17 @@ async def test_list_backup_operations_async_pages():
 def test_credentials_transport_error():
     # It is an error to provide credentials and a transport instance.
     transport = transports.DatabaseAdminGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = DatabaseAdminClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             transport=transport,
         )
 
     # It is an error to provide a credentials file and a transport instance.
     transport = transports.DatabaseAdminGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = DatabaseAdminClient(
@@ -5411,7 +5209,7 @@ def test_credentials_transport_error():
 
     # It is an error to provide scopes and a transport instance.
     transport = transports.DatabaseAdminGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = DatabaseAdminClient(
@@ -5423,26 +5221,24 @@ def test_credentials_transport_error():
 def test_transport_instance():
     # A client may be instantiated with a custom transport instance.
     transport = transports.DatabaseAdminGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     client = DatabaseAdminClient(transport=transport)
     assert client.transport is transport
 
-
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.DatabaseAdminGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     channel = transport.grpc_channel
     assert channel
 
     transport = transports.DatabaseAdminGrpcAsyncIOTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     channel = transport.grpc_channel
     assert channel
-
 
 @pytest.mark.parametrize("transport_class", [
     transports.DatabaseAdminGrpcTransport,
@@ -5450,28 +5246,26 @@ def test_transport_get_channel():
 ])
 def test_transport_adc(transport_class):
     # Test default credentials are used if not provided.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport_class()
         adc.assert_called_once()
-
 
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     assert isinstance(
         client.transport,
         transports.DatabaseAdminGrpcTransport,
     )
 
-
 def test_database_admin_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
-    with pytest.raises(exceptions.DuplicateCredentialArgs):
+    with pytest.raises(core_exceptions.DuplicateCredentialArgs):
         transport = transports.DatabaseAdminTransport(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             credentials_file="credentials.json"
         )
 
@@ -5481,7 +5275,7 @@ def test_database_admin_base_transport():
     with mock.patch('google.cloud.spanner_admin_database_v1.services.database_admin.transports.DatabaseAdminTransport.__init__') as Transport:
         Transport.return_value = None
         transport = transports.DatabaseAdminTransport(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
         )
 
     # Every method on the transport should just blindly
@@ -5504,7 +5298,7 @@ def test_database_admin_base_transport():
         'restore_database',
         'list_database_operations',
         'list_backup_operations',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -5515,11 +5309,32 @@ def test_database_admin_base_transport():
         transport.operations_client
 
 
+@requires_google_auth_gte_1_25_0
 def test_database_admin_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.spanner_admin_database_v1.services.database_admin.transports.DatabaseAdminTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.spanner_admin_database_v1.services.database_admin.transports.DatabaseAdminTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
+        load_creds.return_value = (ga_credentials.AnonymousCredentials(), None)
+        transport = transports.DatabaseAdminTransport(
+            credentials_file="credentials.json",
+            quota_project_id="octopus",
+        )
+        load_creds.assert_called_once_with("credentials.json",
+            scopes=None,
+            default_scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+            'https://www.googleapis.com/auth/spanner.admin',
+),
+            quota_project_id="octopus",
+        )
+
+
+@requires_google_auth_lt_1_25_0
+def test_database_admin_base_transport_with_credentials_file_old_google_auth():
+    # Instantiate the base transport with a credentials file
+    with mock.patch.object(google.auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.spanner_admin_database_v1.services.database_admin.transports.DatabaseAdminTransport._prep_wrapped_messages') as Transport:
+        Transport.return_value = None
+        load_creds.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.DatabaseAdminTransport(
             credentials_file="credentials.json",
             quota_project_id="octopus",
@@ -5534,35 +5349,189 @@ def test_database_admin_base_transport_with_credentials_file():
 
 def test_database_admin_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.spanner_admin_database_v1.services.database_admin.transports.DatabaseAdminTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc, mock.patch('google.cloud.spanner_admin_database_v1.services.database_admin.transports.DatabaseAdminTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.DatabaseAdminTransport()
         adc.assert_called_once()
 
 
+@requires_google_auth_gte_1_25_0
 def test_database_admin_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         DatabaseAdminClient()
-        adc.assert_called_once_with(scopes=(
+        adc.assert_called_once_with(
+            scopes=None,
+            default_scopes=(
             'https://www.googleapis.com/auth/cloud-platform',
-            'https://www.googleapis.com/auth/spanner.admin',),
+            'https://www.googleapis.com/auth/spanner.admin',
+),
             quota_project_id=None,
         )
 
 
-def test_database_admin_transport_auth_adc():
+@requires_google_auth_lt_1_25_0
+def test_database_admin_auth_adc_old_google_auth():
+    # If no credentials are provided, we should use ADC credentials.
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
+        DatabaseAdminClient()
+        adc.assert_called_once_with(
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/spanner.admin',),
+            quota_project_id=None,
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.DatabaseAdminGrpcTransport,
+        transports.DatabaseAdminGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_gte_1_25_0
+def test_database_admin_transport_auth_adc(transport_class):
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transports.DatabaseAdminGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+        adc.assert_called_once_with(
+            scopes=["1", "2"],
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/spanner.admin',),
+            quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.DatabaseAdminGrpcTransport,
+        transports.DatabaseAdminGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_lt_1_25_0
+def test_database_admin_transport_auth_adc_old_google_auth(transport_class):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/cloud-platform',
-            'https://www.googleapis.com/auth/spanner.admin',),
+            'https://www.googleapis.com/auth/spanner.admin',
+),
             quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.DatabaseAdminGrpcTransport, grpc_helpers),
+        (transports.DatabaseAdminGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_gte_1_26_0
+def test_database_admin_transport_create_channel(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = ga_credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(
+            quota_project_id="octopus",
+            scopes=["1", "2"]
+        )
+
+        create_channel.assert_called_with(
+            "spanner.googleapis.com:443",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            default_scopes=(
+                'https://www.googleapis.com/auth/cloud-platform',
+                'https://www.googleapis.com/auth/spanner.admin',
+),
+            scopes=["1", "2"],
+            default_host="spanner.googleapis.com",
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.DatabaseAdminGrpcTransport, grpc_helpers),
+        (transports.DatabaseAdminGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_database_admin_transport_create_channel_old_api_core(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = ga_credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(quota_project_id="octopus")
+
+        create_channel.assert_called_with(
+            "spanner.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=(
+                'https://www.googleapis.com/auth/cloud-platform',
+                'https://www.googleapis.com/auth/spanner.admin',
+),
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.DatabaseAdminGrpcTransport, grpc_helpers),
+        (transports.DatabaseAdminGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_database_admin_transport_create_channel_user_scopes(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = ga_credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+
+        create_channel.assert_called_with(
+            "spanner.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=["1", "2"],
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
         )
 
 
@@ -5570,7 +5539,7 @@ def test_database_admin_transport_auth_adc():
 def test_database_admin_grpc_transport_client_cert_source_for_mtls(
     transport_class
 ):
-    cred = credentials.AnonymousCredentials()
+    cred = ga_credentials.AnonymousCredentials()
 
     # Check ssl_channel_credentials is used if provided.
     with mock.patch.object(transport_class, "create_channel") as mock_create_channel:
@@ -5613,7 +5582,7 @@ def test_database_admin_grpc_transport_client_cert_source_for_mtls(
 
 def test_database_admin_host_no_port():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='spanner.googleapis.com'),
     )
     assert client.transport._host == 'spanner.googleapis.com:443'
@@ -5621,11 +5590,10 @@ def test_database_admin_host_no_port():
 
 def test_database_admin_host_with_port():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='spanner.googleapis.com:8000'),
     )
     assert client.transport._host == 'spanner.googleapis.com:8000'
-
 
 def test_database_admin_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -5667,9 +5635,9 @@ def test_database_admin_transport_channel_mtls_with_client_cert_source(
             mock_grpc_channel = mock.Mock()
             grpc_create_channel.return_value = mock_grpc_channel
 
-            cred = credentials.AnonymousCredentials()
+            cred = ga_credentials.AnonymousCredentials()
             with pytest.warns(DeprecationWarning):
-                with mock.patch.object(auth, 'default') as adc:
+                with mock.patch.object(google.auth, 'default') as adc:
                     adc.return_value = (cred, None)
                     transport = transport_class(
                         host="squid.clam.whelk",
@@ -5745,7 +5713,7 @@ def test_database_admin_transport_channel_mtls_with_adc(
 
 def test_database_admin_grpc_lro_client():
     client = DatabaseAdminClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
     transport = client.transport
@@ -5762,7 +5730,7 @@ def test_database_admin_grpc_lro_client():
 
 def test_database_admin_grpc_lro_async_client():
     client = DatabaseAdminAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc_asyncio',
     )
     transport = client.transport
@@ -5781,7 +5749,6 @@ def test_backup_path():
     project = "squid"
     instance = "clam"
     backup = "whelk"
-
     expected = "projects/{project}/instances/{instance}/backups/{backup}".format(project=project, instance=instance, backup=backup, )
     actual = DatabaseAdminClient.backup_path(project, instance, backup)
     assert expected == actual
@@ -5789,10 +5756,9 @@ def test_backup_path():
 
 def test_parse_backup_path():
     expected = {
-    "project": "octopus",
-    "instance": "oyster",
-    "backup": "nudibranch",
-
+        "project": "octopus",
+        "instance": "oyster",
+        "backup": "nudibranch",
     }
     path = DatabaseAdminClient.backup_path(**expected)
 
@@ -5805,7 +5771,6 @@ def test_crypto_key_path():
     location = "mussel"
     key_ring = "winkle"
     crypto_key = "nautilus"
-
     expected = "projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}".format(project=project, location=location, key_ring=key_ring, crypto_key=crypto_key, )
     actual = DatabaseAdminClient.crypto_key_path(project, location, key_ring, crypto_key)
     assert expected == actual
@@ -5813,11 +5778,10 @@ def test_crypto_key_path():
 
 def test_parse_crypto_key_path():
     expected = {
-    "project": "scallop",
-    "location": "abalone",
-    "key_ring": "squid",
-    "crypto_key": "clam",
-
+        "project": "scallop",
+        "location": "abalone",
+        "key_ring": "squid",
+        "crypto_key": "clam",
     }
     path = DatabaseAdminClient.crypto_key_path(**expected)
 
@@ -5831,7 +5795,6 @@ def test_crypto_key_version_path():
     key_ring = "oyster"
     crypto_key = "nudibranch"
     crypto_key_version = "cuttlefish"
-
     expected = "projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoKeyVersions/{crypto_key_version}".format(project=project, location=location, key_ring=key_ring, crypto_key=crypto_key, crypto_key_version=crypto_key_version, )
     actual = DatabaseAdminClient.crypto_key_version_path(project, location, key_ring, crypto_key, crypto_key_version)
     assert expected == actual
@@ -5839,12 +5802,11 @@ def test_crypto_key_version_path():
 
 def test_parse_crypto_key_version_path():
     expected = {
-    "project": "mussel",
-    "location": "winkle",
-    "key_ring": "nautilus",
-    "crypto_key": "scallop",
-    "crypto_key_version": "abalone",
-
+        "project": "mussel",
+        "location": "winkle",
+        "key_ring": "nautilus",
+        "crypto_key": "scallop",
+        "crypto_key_version": "abalone",
     }
     path = DatabaseAdminClient.crypto_key_version_path(**expected)
 
@@ -5856,7 +5818,6 @@ def test_database_path():
     project = "squid"
     instance = "clam"
     database = "whelk"
-
     expected = "projects/{project}/instances/{instance}/databases/{database}".format(project=project, instance=instance, database=database, )
     actual = DatabaseAdminClient.database_path(project, instance, database)
     assert expected == actual
@@ -5864,10 +5825,9 @@ def test_database_path():
 
 def test_parse_database_path():
     expected = {
-    "project": "octopus",
-    "instance": "oyster",
-    "database": "nudibranch",
-
+        "project": "octopus",
+        "instance": "oyster",
+        "database": "nudibranch",
     }
     path = DatabaseAdminClient.database_path(**expected)
 
@@ -5878,7 +5838,6 @@ def test_parse_database_path():
 def test_instance_path():
     project = "cuttlefish"
     instance = "mussel"
-
     expected = "projects/{project}/instances/{instance}".format(project=project, instance=instance, )
     actual = DatabaseAdminClient.instance_path(project, instance)
     assert expected == actual
@@ -5886,9 +5845,8 @@ def test_instance_path():
 
 def test_parse_instance_path():
     expected = {
-    "project": "winkle",
-    "instance": "nautilus",
-
+        "project": "winkle",
+        "instance": "nautilus",
     }
     path = DatabaseAdminClient.instance_path(**expected)
 
@@ -5898,7 +5856,6 @@ def test_parse_instance_path():
 
 def test_common_billing_account_path():
     billing_account = "scallop"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = DatabaseAdminClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -5906,8 +5863,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "abalone",
-
+        "billing_account": "abalone",
     }
     path = DatabaseAdminClient.common_billing_account_path(**expected)
 
@@ -5917,7 +5873,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "squid"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = DatabaseAdminClient.common_folder_path(folder)
     assert expected == actual
@@ -5925,8 +5880,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "clam",
-
+        "folder": "clam",
     }
     path = DatabaseAdminClient.common_folder_path(**expected)
 
@@ -5936,7 +5890,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "whelk"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = DatabaseAdminClient.common_organization_path(organization)
     assert expected == actual
@@ -5944,8 +5897,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "octopus",
-
+        "organization": "octopus",
     }
     path = DatabaseAdminClient.common_organization_path(**expected)
 
@@ -5955,7 +5907,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "oyster"
-
     expected = "projects/{project}".format(project=project, )
     actual = DatabaseAdminClient.common_project_path(project)
     assert expected == actual
@@ -5963,8 +5914,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "nudibranch",
-
+        "project": "nudibranch",
     }
     path = DatabaseAdminClient.common_project_path(**expected)
 
@@ -5975,7 +5925,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "cuttlefish"
     location = "mussel"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = DatabaseAdminClient.common_location_path(project, location)
     assert expected == actual
@@ -5983,9 +5932,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "winkle",
-    "location": "nautilus",
-
+        "project": "winkle",
+        "location": "nautilus",
     }
     path = DatabaseAdminClient.common_location_path(**expected)
 
@@ -5999,7 +5947,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
 
     with mock.patch.object(transports.DatabaseAdminTransport, '_prep_wrapped_messages') as prep:
         client = DatabaseAdminClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)
@@ -6007,7 +5955,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
     with mock.patch.object(transports.DatabaseAdminTransport, '_prep_wrapped_messages') as prep:
         transport_class = DatabaseAdminClient.get_transport_class()
         transport = transport_class(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)

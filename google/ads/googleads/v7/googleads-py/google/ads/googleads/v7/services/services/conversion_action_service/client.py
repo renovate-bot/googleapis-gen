@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -23,10 +21,10 @@ from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
-from google.api_core import exceptions                            # type: ignore
+from google.api_core import exceptions as core_exceptions         # type: ignore
 from google.api_core import gapic_v1                              # type: ignore
 from google.api_core import retry as retries                      # type: ignore
-from google.auth import credentials                               # type: ignore
+from google.auth import credentials as ga_credentials             # type: ignore
 from google.auth.transport import mtls                            # type: ignore
 from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
@@ -40,8 +38,7 @@ from google.ads.googleads.v7.enums.types import conversion_action_type
 from google.ads.googleads.v7.enums.types import mobile_app_vendor
 from google.ads.googleads.v7.resources.types import conversion_action
 from google.ads.googleads.v7.services.types import conversion_action_service
-from google.rpc import status_pb2 as status  # type: ignore
-
+from google.rpc import status_pb2  # type: ignore
 from .transports.base import ConversionActionServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import ConversionActionServiceGrpcTransport
 
@@ -180,7 +177,6 @@ class ConversionActionServiceClient(metaclass=ConversionActionServiceClientMeta)
         """Parse a customer path into its component segments."""
         m = re.match(r"^customers/(?P<customer_id>.+?)$", path)
         return m.groupdict() if m else {}
-
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
         """Return a fully-qualified billing_account string."""
@@ -237,7 +233,7 @@ class ConversionActionServiceClient(metaclass=ConversionActionServiceClientMeta)
         return m.groupdict() if m else {}
 
     def __init__(self, *,
-            credentials: Optional[credentials.Credentials] = None,
+            credentials: Optional[ga_credentials.Credentials] = None,
             transport: Union[str, ConversionActionServiceTransport, None] = None,
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -366,7 +362,6 @@ class ConversionActionServiceClient(metaclass=ConversionActionServiceClientMeta)
                 This corresponds to the ``resource_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -384,16 +379,14 @@ class ConversionActionServiceClient(metaclass=ConversionActionServiceClientMeta)
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # Minor optimization to avoid making a copy if the user passes
+           # Minor optimization to avoid making a copy if the user passes
         # in a conversion_action_service.GetConversionActionRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
         if not isinstance(request, conversion_action_service.GetConversionActionRequest):
             request = conversion_action_service.GetConversionActionRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if resource_name is not None:
                 request.resource_name = resource_name
 
@@ -412,7 +405,7 @@ class ConversionActionServiceClient(metaclass=ConversionActionServiceClientMeta)
         # Send the request.
         response = rpc(
             request,
-            retry=retry,
+             retry=retry,
             timeout=timeout,
             metadata=metadata,
         )
@@ -460,7 +453,6 @@ class ConversionActionServiceClient(metaclass=ConversionActionServiceClientMeta)
                 This corresponds to the ``operations`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -480,16 +472,14 @@ class ConversionActionServiceClient(metaclass=ConversionActionServiceClientMeta)
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # Minor optimization to avoid making a copy if the user passes
+           # Minor optimization to avoid making a copy if the user passes
         # in a conversion_action_service.MutateConversionActionsRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
         if not isinstance(request, conversion_action_service.MutateConversionActionsRequest):
             request = conversion_action_service.MutateConversionActionsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if customer_id is not None:
                 request.customer_id = customer_id
             if operations is not None:
@@ -510,7 +500,7 @@ class ConversionActionServiceClient(metaclass=ConversionActionServiceClientMeta)
         # Send the request.
         response = rpc(
             request,
-            retry=retry,
+             retry=retry,
             timeout=timeout,
             metadata=metadata,
         )

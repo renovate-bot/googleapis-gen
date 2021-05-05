@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -23,10 +21,10 @@ from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
-from google.api_core import exceptions                            # type: ignore
+from google.api_core import exceptions as core_exceptions         # type: ignore
 from google.api_core import gapic_v1                              # type: ignore
 from google.api_core import retry as retries                      # type: ignore
-from google.auth import credentials                               # type: ignore
+from google.auth import credentials as ga_credentials             # type: ignore
 from google.auth.transport import mtls                            # type: ignore
 from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
@@ -39,8 +37,7 @@ from google.cloud.appengine_admin_v1.types import appengine
 from google.cloud.appengine_admin_v1.types import network_settings
 from google.cloud.appengine_admin_v1.types import operation as ga_operation
 from google.cloud.appengine_admin_v1.types import service
-from google.protobuf import empty_pb2 as empty  # type: ignore
-
+from google.protobuf import empty_pb2  # type: ignore
 from .transports.base import ServicesTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import ServicesGrpcTransport
 from .transports.grpc_asyncio import ServicesGrpcAsyncIOTransport
@@ -217,7 +214,7 @@ class ServicesClient(metaclass=ServicesClientMeta):
         return m.groupdict() if m else {}
 
     def __init__(self, *,
-            credentials: Optional[credentials.Credentials] = None,
+            credentials: Optional[ga_credentials.Credentials] = None,
             transport: Union[str, ServicesTransport, None] = None,
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -332,7 +329,6 @@ class ServicesClient(metaclass=ServicesClientMeta):
             request (google.cloud.appengine_admin_v1.types.ListServicesRequest):
                 The request object. Request message for
                 `Services.ListServices`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -348,7 +344,6 @@ class ServicesClient(metaclass=ServicesClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a appengine.ListServicesRequest.
         # There's no risk of modifying the input as we've already verified
@@ -402,7 +397,6 @@ class ServicesClient(metaclass=ServicesClientMeta):
             request (google.cloud.appengine_admin_v1.types.GetServiceRequest):
                 The request object. Request message for
                 `Services.GetService`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -426,7 +420,6 @@ class ServicesClient(metaclass=ServicesClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a appengine.GetServiceRequest.
         # There's no risk of modifying the input as we've already verified
@@ -470,7 +463,6 @@ class ServicesClient(metaclass=ServicesClientMeta):
             request (google.cloud.appengine_admin_v1.types.UpdateServiceRequest):
                 The request object. Request message for
                 `Services.UpdateService`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -493,7 +485,6 @@ class ServicesClient(metaclass=ServicesClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a appengine.UpdateServiceRequest.
         # There's no risk of modifying the input as we've already verified
@@ -546,7 +537,6 @@ class ServicesClient(metaclass=ServicesClientMeta):
             request (google.cloud.appengine_admin_v1.types.DeleteServiceRequest):
                 The request object. Request message for
                 `Services.DeleteService`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -573,7 +563,6 @@ class ServicesClient(metaclass=ServicesClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a appengine.DeleteServiceRequest.
         # There's no risk of modifying the input as we've already verified
@@ -605,14 +594,12 @@ class ServicesClient(metaclass=ServicesClientMeta):
         response = gac_operation.from_gapic(
             response,
             self._transport.operations_client,
-            empty.Empty,
+            empty_pb2.Empty,
             metadata_type=ga_operation.OperationMetadataV1,
         )
 
         # Done; return the response.
         return response
-
-
 
 
 

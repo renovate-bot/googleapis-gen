@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,8 @@
 #
 
 from .services.os_login_service import OsLoginServiceClient
+from .services.os_login_service import OsLoginServiceAsyncClient
+
 from .types.oslogin import DeletePosixAccountRequest
 from .types.oslogin import DeleteSshPublicKeyRequest
 from .types.oslogin import GetLoginProfileRequest
@@ -25,15 +26,14 @@ from .types.oslogin import ImportSshPublicKeyResponse
 from .types.oslogin import LoginProfile
 from .types.oslogin import UpdateSshPublicKeyRequest
 
-
 __all__ = (
-    'DeletePosixAccountRequest',
-    'DeleteSshPublicKeyRequest',
-    'GetLoginProfileRequest',
-    'GetSshPublicKeyRequest',
-    'ImportSshPublicKeyRequest',
-    'ImportSshPublicKeyResponse',
-    'LoginProfile',
-    'UpdateSshPublicKeyRequest',
+'DeletePosixAccountRequest',
+'DeleteSshPublicKeyRequest',
+'GetLoginProfileRequest',
+'GetSshPublicKeyRequest',
+'ImportSshPublicKeyRequest',
+'ImportSshPublicKeyResponse',
+'LoginProfile',
 'OsLoginServiceClient',
+'UpdateSshPublicKeyRequest',
 )

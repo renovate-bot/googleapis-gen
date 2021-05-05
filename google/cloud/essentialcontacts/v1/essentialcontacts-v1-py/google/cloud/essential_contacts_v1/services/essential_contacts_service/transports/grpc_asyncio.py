@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,22 +13,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
-from google import auth                                # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
+import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
 
 from google.cloud.essential_contacts_v1.types import service
-from google.protobuf import empty_pb2 as empty  # type: ignore
-
+from google.protobuf import empty_pb2  # type: ignore
 from .base import EssentialContactsServiceTransport, DEFAULT_CLIENT_INFO
 from .grpc import EssentialContactsServiceGrpcTransport
 
@@ -53,7 +50,7 @@ class EssentialContactsServiceGrpcAsyncIOTransport(EssentialContactsServiceTrans
     @classmethod
     def create_channel(cls,
                        host: str = 'essentialcontacts.googleapis.com',
-                       credentials: credentials.Credentials = None,
+                       credentials: ga_credentials.Credentials = None,
                        credentials_file: Optional[str] = None,
                        scopes: Optional[Sequence[str]] = None,
                        quota_project_id: Optional[str] = None,
@@ -79,19 +76,21 @@ class EssentialContactsServiceGrpcAsyncIOTransport(EssentialContactsServiceTrans
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
     def __init__(self, *,
             host: str = 'essentialcontacts.googleapis.com',
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             credentials_file: Optional[str] = None,
             scopes: Optional[Sequence[str]] = None,
             channel: aio.Channel = None,
@@ -105,7 +104,8 @@ class EssentialContactsServiceGrpcAsyncIOTransport(EssentialContactsServiceTrans
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -163,7 +163,6 @@ class EssentialContactsServiceGrpcAsyncIOTransport(EssentialContactsServiceTrans
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
-
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -330,7 +329,7 @@ class EssentialContactsServiceGrpcAsyncIOTransport(EssentialContactsServiceTrans
     @property
     def delete_contact(self) -> Callable[
             [service.DeleteContactRequest],
-            Awaitable[empty.Empty]]:
+            Awaitable[empty_pb2.Empty]]:
         r"""Return a callable for the delete contact method over gRPC.
 
         Deletes a contact.
@@ -349,7 +348,7 @@ class EssentialContactsServiceGrpcAsyncIOTransport(EssentialContactsServiceTrans
             self._stubs['delete_contact'] = self.grpc_channel.unary_unary(
                 '/google.cloud.essentialcontacts.v1.EssentialContactsService/DeleteContact',
                 request_serializer=service.DeleteContactRequest.serialize,
-                response_deserializer=empty.Empty.FromString,
+                response_deserializer=empty_pb2.Empty.FromString,
             )
         return self._stubs['delete_contact']
 
@@ -384,7 +383,7 @@ class EssentialContactsServiceGrpcAsyncIOTransport(EssentialContactsServiceTrans
     @property
     def send_test_message(self) -> Callable[
             [service.SendTestMessageRequest],
-            Awaitable[empty.Empty]]:
+            Awaitable[empty_pb2.Empty]]:
         r"""Return a callable for the send test message method over gRPC.
 
         Allows a contact admin to send a test message to
@@ -404,7 +403,7 @@ class EssentialContactsServiceGrpcAsyncIOTransport(EssentialContactsServiceTrans
             self._stubs['send_test_message'] = self.grpc_channel.unary_unary(
                 '/google.cloud.essentialcontacts.v1.EssentialContactsService/SendTestMessage',
                 request_serializer=service.SendTestMessageRequest.serialize,
-                response_deserializer=empty.Empty.FromString,
+                response_deserializer=empty_pb2.Empty.FromString,
             )
         return self._stubs['send_test_message']
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 from unittest import mock
 
@@ -23,7 +21,6 @@ import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
-from google import auth
 from google.ads.googleads.v5.enums.types import manager_link_status
 from google.ads.googleads.v5.resources.types import customer_manager_link
 from google.ads.googleads.v5.services.services.customer_manager_link_service import CustomerManagerLinkServiceClient
@@ -32,11 +29,12 @@ from google.ads.googleads.v5.services.types import customer_manager_link_service
 from google.api_core import client_options
 from google.api_core import gapic_v1
 from google.api_core import grpc_helpers
-from google.auth import credentials
+from google.auth import credentials as ga_credentials
 from google.auth.exceptions import MutualTLSChannelError
 from google.oauth2 import service_account
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
+import google.auth
 
 
 def client_cert_source_callback():
@@ -66,7 +64,7 @@ def test__get_default_mtls_endpoint():
 
 
 def test_customer_manager_link_service_client_from_service_account_info():
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
@@ -77,7 +75,7 @@ def test_customer_manager_link_service_client_from_service_account_info():
 
 
 def test_customer_manager_link_service_client_from_service_account_file():
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_file') as factory:
         factory.return_value = creds
         client = CustomerManagerLinkServiceClient.from_service_account_file("dummy/file/path.json")
@@ -102,7 +100,7 @@ def test_customer_manager_link_service_client_client_options():
     # Check that if channel is provided we won't create a new one.
     with mock.patch('google.ads.googleads.v5.services.services.customer_manager_link_service.CustomerManagerLinkServiceClient.get_transport_class') as gtc:
         transport = transports.CustomerManagerLinkServiceGrpcTransport(
-            credentials=credentials.AnonymousCredentials()
+            credentials=ga_credentials.AnonymousCredentials()
         )
         client = CustomerManagerLinkServiceClient(transport=transport)
         gtc.assert_not_called()
@@ -252,7 +250,7 @@ def test_customer_manager_link_service_client_client_options_from_dict():
 
 def test_get_customer_manager_link(transport: str = 'grpc', request_type=customer_manager_link_service.GetCustomerManagerLinkRequest):
     client = CustomerManagerLinkServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -267,25 +265,18 @@ def test_get_customer_manager_link(transport: str = 'grpc', request_type=custome
         # Designate an appropriate return value for the call.
         call.return_value = customer_manager_link.CustomerManagerLink(
             resource_name='resource_name_value',
-
             status=manager_link_status.ManagerLinkStatusEnum.ManagerLinkStatus.UNKNOWN,
-
         )
-
         response = client.get_customer_manager_link(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == customer_manager_link_service.GetCustomerManagerLinkRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, customer_manager_link.CustomerManagerLink)
-
     assert response.resource_name == 'resource_name_value'
-
     assert response.status == manager_link_status.ManagerLinkStatusEnum.ManagerLinkStatus.UNKNOWN
 
 
@@ -295,12 +286,13 @@ def test_get_customer_manager_link_from_dict():
 
 def test_get_customer_manager_link_field_headers():
     client = CustomerManagerLinkServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = customer_manager_link_service.GetCustomerManagerLinkRequest()
+
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -308,7 +300,6 @@ def test_get_customer_manager_link_field_headers():
             type(client.transport.get_customer_manager_link),
             '__call__') as call:
         call.return_value = customer_manager_link.CustomerManagerLink()
-
         client.get_customer_manager_link(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -326,7 +317,7 @@ def test_get_customer_manager_link_field_headers():
 
 def test_get_customer_manager_link_flattened():
     client = CustomerManagerLinkServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -335,7 +326,6 @@ def test_get_customer_manager_link_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = customer_manager_link.CustomerManagerLink()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_customer_manager_link(
@@ -346,13 +336,12 @@ def test_get_customer_manager_link_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource_name == 'resource_name_value'
 
 
 def test_get_customer_manager_link_flattened_error():
     client = CustomerManagerLinkServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -366,7 +355,7 @@ def test_get_customer_manager_link_flattened_error():
 
 def test_mutate_customer_manager_link(transport: str = 'grpc', request_type=customer_manager_link_service.MutateCustomerManagerLinkRequest):
     client = CustomerManagerLinkServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -381,17 +370,14 @@ def test_mutate_customer_manager_link(transport: str = 'grpc', request_type=cust
         # Designate an appropriate return value for the call.
         call.return_value = customer_manager_link_service.MutateCustomerManagerLinkResponse(
         )
-
         response = client.mutate_customer_manager_link(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == customer_manager_link_service.MutateCustomerManagerLinkRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, customer_manager_link_service.MutateCustomerManagerLinkResponse)
 
 
@@ -401,12 +387,13 @@ def test_mutate_customer_manager_link_from_dict():
 
 def test_mutate_customer_manager_link_field_headers():
     client = CustomerManagerLinkServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = customer_manager_link_service.MutateCustomerManagerLinkRequest()
+
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -414,7 +401,6 @@ def test_mutate_customer_manager_link_field_headers():
             type(client.transport.mutate_customer_manager_link),
             '__call__') as call:
         call.return_value = customer_manager_link_service.MutateCustomerManagerLinkResponse()
-
         client.mutate_customer_manager_link(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -432,7 +418,7 @@ def test_mutate_customer_manager_link_field_headers():
 
 def test_mutate_customer_manager_link_flattened():
     client = CustomerManagerLinkServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -441,27 +427,24 @@ def test_mutate_customer_manager_link_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = customer_manager_link_service.MutateCustomerManagerLinkResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_customer_manager_link(
             customer_id='customer_id_value',
-            operations=[customer_manager_link_service.CustomerManagerLinkOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))],
+            operations=[customer_manager_link_service.CustomerManagerLinkOperation(update_mask=field_mask_pb2.FieldMask(paths=['paths_value']))],
         )
 
         # Establish that the underlying call was made with the expected
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].customer_id == 'customer_id_value'
-
-        assert args[0].operations == [customer_manager_link_service.CustomerManagerLinkOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))]
+        assert args[0].operations == [customer_manager_link_service.CustomerManagerLinkOperation(update_mask=field_mask_pb2.FieldMask(paths=['paths_value']))]
 
 
 def test_mutate_customer_manager_link_flattened_error():
     client = CustomerManagerLinkServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -470,13 +453,13 @@ def test_mutate_customer_manager_link_flattened_error():
         client.mutate_customer_manager_link(
             customer_manager_link_service.MutateCustomerManagerLinkRequest(),
             customer_id='customer_id_value',
-            operations=[customer_manager_link_service.CustomerManagerLinkOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))],
+            operations=[customer_manager_link_service.CustomerManagerLinkOperation(update_mask=field_mask_pb2.FieldMask(paths=['paths_value']))],
         )
 
 
 def test_move_manager_link(transport: str = 'grpc', request_type=customer_manager_link_service.MoveManagerLinkRequest):
     client = CustomerManagerLinkServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -491,21 +474,16 @@ def test_move_manager_link(transport: str = 'grpc', request_type=customer_manage
         # Designate an appropriate return value for the call.
         call.return_value = customer_manager_link_service.MoveManagerLinkResponse(
             resource_name='resource_name_value',
-
         )
-
         response = client.move_manager_link(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == customer_manager_link_service.MoveManagerLinkRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, customer_manager_link_service.MoveManagerLinkResponse)
-
     assert response.resource_name == 'resource_name_value'
 
 
@@ -515,12 +493,13 @@ def test_move_manager_link_from_dict():
 
 def test_move_manager_link_field_headers():
     client = CustomerManagerLinkServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = customer_manager_link_service.MoveManagerLinkRequest()
+
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -528,7 +507,6 @@ def test_move_manager_link_field_headers():
             type(client.transport.move_manager_link),
             '__call__') as call:
         call.return_value = customer_manager_link_service.MoveManagerLinkResponse()
-
         client.move_manager_link(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -546,7 +524,7 @@ def test_move_manager_link_field_headers():
 
 def test_move_manager_link_flattened():
     client = CustomerManagerLinkServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -555,7 +533,6 @@ def test_move_manager_link_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = customer_manager_link_service.MoveManagerLinkResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.move_manager_link(
@@ -568,17 +545,14 @@ def test_move_manager_link_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].customer_id == 'customer_id_value'
-
         assert args[0].previous_customer_manager_link == 'previous_customer_manager_link_value'
-
         assert args[0].new_manager == 'new_manager_value'
 
 
 def test_move_manager_link_flattened_error():
     client = CustomerManagerLinkServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -595,11 +569,11 @@ def test_move_manager_link_flattened_error():
 def test_credentials_transport_error():
     # It is an error to provide credentials and a transport instance.
     transport = transports.CustomerManagerLinkServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = CustomerManagerLinkServiceClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             transport=transport,
         )
 
@@ -607,7 +581,7 @@ def test_credentials_transport_error():
 def test_transport_instance():
     # A client may be instantiated with a custom transport instance.
     transport = transports.CustomerManagerLinkServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     client = CustomerManagerLinkServiceClient(transport=transport)
     assert client.transport is transport
@@ -616,7 +590,7 @@ def test_transport_instance():
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.CustomerManagerLinkServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     channel = transport.grpc_channel
     assert channel
@@ -625,7 +599,7 @@ def test_transport_get_channel():
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = CustomerManagerLinkServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     assert isinstance(
         client.transport,
@@ -637,8 +611,8 @@ def test_transport_grpc_default():
 ])
 def test_transport_adc(transport_class):
     # Test default credentials are used if not provided.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport_class()
         adc.assert_called_once()
 
@@ -648,7 +622,7 @@ def test_customer_manager_link_service_base_transport():
     with mock.patch('google.ads.googleads.v5.services.services.customer_manager_link_service.transports.CustomerManagerLinkServiceTransport.__init__') as Transport:
         Transport.return_value = None
         transport = transports.CustomerManagerLinkServiceTransport(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
         )
 
     # Every method on the transport should just blindly
@@ -657,7 +631,7 @@ def test_customer_manager_link_service_base_transport():
         'get_customer_manager_link',
         'mutate_customer_manager_link',
         'move_manager_link',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -665,17 +639,17 @@ def test_customer_manager_link_service_base_transport():
 
 def test_customer_manager_link_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.ads.googleads.v5.services.services.customer_manager_link_service.transports.CustomerManagerLinkServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'default') as adc, mock.patch('google.ads.googleads.v5.services.services.customer_manager_link_service.transports.CustomerManagerLinkServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.CustomerManagerLinkServiceTransport()
         adc.assert_called_once()
 
 
 def test_customer_manager_link_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         CustomerManagerLinkServiceClient()
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/adwords',
@@ -685,8 +659,8 @@ def test_customer_manager_link_service_auth_adc():
 def test_customer_manager_link_service_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transports.CustomerManagerLinkServiceGrpcTransport(host="squid.clam.whelk")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/adwords',
@@ -695,7 +669,7 @@ def test_customer_manager_link_service_transport_auth_adc():
 
 def test_customer_manager_link_service_host_no_port():
     client = CustomerManagerLinkServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='googleads.googleapis.com'),
     )
     assert client.transport._host == 'googleads.googleapis.com:443'
@@ -703,7 +677,7 @@ def test_customer_manager_link_service_host_no_port():
 
 def test_customer_manager_link_service_host_with_port():
     client = CustomerManagerLinkServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='googleads.googleapis.com:8000'),
     )
     assert client.transport._host == 'googleads.googleapis.com:8000'
@@ -734,9 +708,9 @@ def test_customer_manager_link_service_transport_channel_mtls_with_client_cert_s
             mock_grpc_channel = mock.Mock()
             grpc_create_channel.return_value = mock_grpc_channel
 
-            cred = credentials.AnonymousCredentials()
+            cred = ga_credentials.AnonymousCredentials()
             with pytest.warns(DeprecationWarning):
-                with mock.patch.object(auth, 'default') as adc:
+                with mock.patch.object(google.auth, 'default') as adc:
                     adc.return_value = (cred, None)
                     transport = transport_class(
                         host="squid.clam.whelk",
@@ -808,7 +782,6 @@ def test_customer_manager_link_service_transport_channel_mtls_with_adc(
 
 def test_customer_path():
     customer = "squid"
-
     expected = "customers/{customer}".format(customer=customer, )
     actual = CustomerManagerLinkServiceClient.customer_path(customer)
     assert expected == actual
@@ -816,8 +789,7 @@ def test_customer_path():
 
 def test_parse_customer_path():
     expected = {
-    "customer": "clam",
-
+        "customer": "clam",
     }
     path = CustomerManagerLinkServiceClient.customer_path(**expected)
 
@@ -828,7 +800,6 @@ def test_parse_customer_path():
 def test_customer_manager_link_path():
     customer = "whelk"
     customer_manager_link = "octopus"
-
     expected = "customers/{customer}/customerManagerLinks/{customer_manager_link}".format(customer=customer, customer_manager_link=customer_manager_link, )
     actual = CustomerManagerLinkServiceClient.customer_manager_link_path(customer, customer_manager_link)
     assert expected == actual
@@ -836,9 +807,8 @@ def test_customer_manager_link_path():
 
 def test_parse_customer_manager_link_path():
     expected = {
-    "customer": "oyster",
-    "customer_manager_link": "nudibranch",
-
+        "customer": "oyster",
+        "customer_manager_link": "nudibranch",
     }
     path = CustomerManagerLinkServiceClient.customer_manager_link_path(**expected)
 
@@ -848,7 +818,6 @@ def test_parse_customer_manager_link_path():
 
 def test_common_billing_account_path():
     billing_account = "cuttlefish"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = CustomerManagerLinkServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -856,8 +825,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "mussel",
-
+        "billing_account": "mussel",
     }
     path = CustomerManagerLinkServiceClient.common_billing_account_path(**expected)
 
@@ -867,7 +835,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "winkle"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = CustomerManagerLinkServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -875,8 +842,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "nautilus",
-
+        "folder": "nautilus",
     }
     path = CustomerManagerLinkServiceClient.common_folder_path(**expected)
 
@@ -886,7 +852,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "scallop"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = CustomerManagerLinkServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -894,8 +859,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "abalone",
-
+        "organization": "abalone",
     }
     path = CustomerManagerLinkServiceClient.common_organization_path(**expected)
 
@@ -905,7 +869,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "squid"
-
     expected = "projects/{project}".format(project=project, )
     actual = CustomerManagerLinkServiceClient.common_project_path(project)
     assert expected == actual
@@ -913,8 +876,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "clam",
-
+        "project": "clam",
     }
     path = CustomerManagerLinkServiceClient.common_project_path(**expected)
 
@@ -925,7 +887,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "whelk"
     location = "octopus"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = CustomerManagerLinkServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -933,9 +894,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "oyster",
-    "location": "nudibranch",
-
+        "project": "oyster",
+        "location": "nudibranch",
     }
     path = CustomerManagerLinkServiceClient.common_location_path(**expected)
 
@@ -949,7 +909,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
 
     with mock.patch.object(transports.CustomerManagerLinkServiceTransport, '_prep_wrapped_messages') as prep:
         client = CustomerManagerLinkServiceClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)
@@ -957,7 +917,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
     with mock.patch.object(transports.CustomerManagerLinkServiceTransport, '_prep_wrapped_messages') as prep:
         transport_class = CustomerManagerLinkServiceClient.get_transport_class()
         transport = transport_class(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)

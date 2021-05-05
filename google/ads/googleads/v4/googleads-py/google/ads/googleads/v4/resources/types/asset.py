@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,13 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v4.common.types import asset_types
 from google.ads.googleads.v4.enums.types import asset_type
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -61,29 +58,53 @@ class Asset(proto.Message):
             A book on google asset.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    id = proto.Field(proto.MESSAGE, number=2,
-        message=wrappers.Int64Value,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
     )
-    name = proto.Field(proto.MESSAGE, number=3,
-        message=wrappers.StringValue,
+    id = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=wrappers_pb2.Int64Value,
     )
-    type_ = proto.Field(proto.ENUM, number=4,
+    name = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=wrappers_pb2.StringValue,
+    )
+    type_ = proto.Field(
+        proto.ENUM,
+        number=4,
         enum=asset_type.AssetTypeEnum.AssetType,
     )
-    youtube_video_asset = proto.Field(proto.MESSAGE, number=5, oneof='asset_data',
+    youtube_video_asset = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        oneof='asset_data',
         message=asset_types.YoutubeVideoAsset,
     )
-    media_bundle_asset = proto.Field(proto.MESSAGE, number=6, oneof='asset_data',
+    media_bundle_asset = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        oneof='asset_data',
         message=asset_types.MediaBundleAsset,
     )
-    image_asset = proto.Field(proto.MESSAGE, number=7, oneof='asset_data',
+    image_asset = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        oneof='asset_data',
         message=asset_types.ImageAsset,
     )
-    text_asset = proto.Field(proto.MESSAGE, number=8, oneof='asset_data',
+    text_asset = proto.Field(
+        proto.MESSAGE,
+        number=8,
+        oneof='asset_data',
         message=asset_types.TextAsset,
     )
-    book_on_google_asset = proto.Field(proto.MESSAGE, number=10, oneof='asset_data',
+    book_on_google_asset = proto.Field(
+        proto.MESSAGE,
+        number=10,
+        oneof='asset_data',
         message=asset_types.BookOnGoogleAsset,
     )
 

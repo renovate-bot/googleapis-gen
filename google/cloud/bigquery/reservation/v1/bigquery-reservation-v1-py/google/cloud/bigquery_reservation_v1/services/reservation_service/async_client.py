@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -22,19 +20,18 @@ from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
 import google.api_core.client_options as ClientOptions # type: ignore
-from google.api_core import exceptions                 # type: ignore
+from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
 from google.cloud.bigquery_reservation_v1.services.reservation_service import pagers
 from google.cloud.bigquery_reservation_v1.types import reservation
 from google.cloud.bigquery_reservation_v1.types import reservation as gcbr_reservation
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-from google.rpc import status_pb2 as status  # type: ignore
-
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
+from google.rpc import status_pb2  # type: ignore
 from .transports.base import ReservationServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import ReservationServiceGrpcAsyncIOTransport
 from .client import ReservationServiceClient
@@ -73,19 +70,14 @@ class ReservationServiceAsyncClient:
     parse_capacity_commitment_path = staticmethod(ReservationServiceClient.parse_capacity_commitment_path)
     reservation_path = staticmethod(ReservationServiceClient.reservation_path)
     parse_reservation_path = staticmethod(ReservationServiceClient.parse_reservation_path)
-
     common_billing_account_path = staticmethod(ReservationServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(ReservationServiceClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(ReservationServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(ReservationServiceClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(ReservationServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(ReservationServiceClient.parse_common_organization_path)
-
     common_project_path = staticmethod(ReservationServiceClient.common_project_path)
     parse_common_project_path = staticmethod(ReservationServiceClient.parse_common_project_path)
-
     common_location_path = staticmethod(ReservationServiceClient.common_location_path)
     parse_common_location_path = staticmethod(ReservationServiceClient.parse_common_location_path)
 
@@ -133,7 +125,7 @@ class ReservationServiceAsyncClient:
     get_transport_class = functools.partial(type(ReservationServiceClient).get_transport_class, type(ReservationServiceClient))
 
     def __init__(self, *,
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             transport: Union[str, ReservationServiceTransport] = 'grpc_asyncio',
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -170,7 +162,6 @@ class ReservationServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = ReservationServiceClient(
             credentials=credentials,
             transport=transport,
@@ -218,7 +209,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``reservation_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -243,7 +233,6 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if reservation is not None:
@@ -300,7 +289,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -328,7 +316,6 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -337,10 +324,7 @@ class ReservationServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_reservations,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -400,7 +384,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -425,7 +408,6 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -434,10 +416,7 @@ class ReservationServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_reservation,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -490,7 +469,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -509,7 +487,6 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -518,10 +495,7 @@ class ReservationServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_reservation,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -551,7 +525,7 @@ class ReservationServiceAsyncClient:
             request: gcbr_reservation.UpdateReservationRequest = None,
             *,
             reservation: gcbr_reservation.Reservation = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -574,7 +548,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -599,7 +572,6 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if reservation is not None:
             request.reservation = reservation
         if update_mask is not None:
@@ -661,7 +633,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``capacity_commitment`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -698,7 +669,6 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if capacity_commitment is not None:
@@ -753,7 +723,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -781,7 +750,6 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -790,10 +758,7 @@ class ReservationServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_capacity_commitments,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -853,7 +818,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -890,7 +854,6 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -899,10 +862,7 @@ class ReservationServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_capacity_commitment,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -955,7 +915,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -974,7 +933,6 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -983,10 +941,7 @@ class ReservationServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_capacity_commitment,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1016,7 +971,7 @@ class ReservationServiceAsyncClient:
             request: reservation.UpdateCapacityCommitmentRequest = None,
             *,
             capacity_commitment: reservation.CapacityCommitment = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -1048,7 +1003,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1085,7 +1039,6 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if capacity_commitment is not None:
             request.capacity_commitment = capacity_commitment
         if update_mask is not None:
@@ -1155,7 +1108,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``slot_count`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1180,7 +1132,6 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
         if slot_count is not None:
@@ -1256,7 +1207,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``capacity_commitment_ids`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1293,10 +1243,8 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
-
         if capacity_commitment_ids:
             request.capacity_commitment_ids.extend(capacity_commitment_ids)
 
@@ -1388,7 +1336,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``assignment`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1414,7 +1361,6 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if assignment is not None:
@@ -1494,7 +1440,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1522,7 +1467,6 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -1531,10 +1475,7 @@ class ReservationServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_assignments,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1610,7 +1551,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1629,7 +1569,6 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1638,10 +1577,7 @@ class ReservationServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_assignment,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1728,7 +1664,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``query`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1756,7 +1691,6 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if query is not None:
@@ -1767,10 +1701,7 @@ class ReservationServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.search_assignments,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1847,7 +1778,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``destination_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1873,7 +1803,6 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
         if destination_id is not None:
@@ -1928,7 +1857,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1951,7 +1879,6 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1960,10 +1887,7 @@ class ReservationServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_bi_reservation,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1996,7 +1920,7 @@ class ReservationServiceAsyncClient:
             request: reservation.UpdateBiReservationRequest = None,
             *,
             bi_reservation: reservation.BiReservation = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -2026,7 +1950,6 @@ class ReservationServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2049,7 +1972,6 @@ class ReservationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if bi_reservation is not None:
             request.bi_reservation = bi_reservation
         if update_mask is not None:
@@ -2081,8 +2003,6 @@ class ReservationServiceAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,20 +15,21 @@
 #
 
 from .services.profiler_service import ProfilerServiceClient
+from .services.profiler_service import ProfilerServiceAsyncClient
+
 from .types.profiler import CreateOfflineProfileRequest
 from .types.profiler import CreateProfileRequest
 from .types.profiler import Deployment
 from .types.profiler import Profile
-from .types.profiler import ProfileType
 from .types.profiler import UpdateProfileRequest
-
+from .types.profiler import ProfileType
 
 __all__ = (
-    'CreateOfflineProfileRequest',
-    'CreateProfileRequest',
-    'Deployment',
-    'Profile',
-    'ProfileType',
-    'UpdateProfileRequest',
+'CreateOfflineProfileRequest',
+'CreateProfileRequest',
+'Deployment',
+'Profile',
+'ProfileType',
 'ProfilerServiceClient',
+'UpdateProfileRequest',
 )

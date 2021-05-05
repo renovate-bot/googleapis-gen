@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v7.enums.types import shared_set_status
 from google.ads.googleads.v7.enums.types import shared_set_type
@@ -65,17 +62,40 @@ class SharedSet(proto.Message):
             associated with this shared set. Read only.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    id = proto.Field(proto.INT64, number=8, optional=True)
-    type_ = proto.Field(proto.ENUM, number=3,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    id = proto.Field(
+        proto.INT64,
+        number=8,
+        optional=True,
+    )
+    type_ = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=shared_set_type.SharedSetTypeEnum.SharedSetType,
     )
-    name = proto.Field(proto.STRING, number=9, optional=True)
-    status = proto.Field(proto.ENUM, number=5,
+    name = proto.Field(
+        proto.STRING,
+        number=9,
+        optional=True,
+    )
+    status = proto.Field(
+        proto.ENUM,
+        number=5,
         enum=shared_set_status.SharedSetStatusEnum.SharedSetStatus,
     )
-    member_count = proto.Field(proto.INT64, number=10, optional=True)
-    reference_count = proto.Field(proto.INT64, number=11, optional=True)
+    member_count = proto.Field(
+        proto.INT64,
+        number=10,
+        optional=True,
+    )
+    reference_count = proto.Field(
+        proto.INT64,
+        number=11,
+        optional=True,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

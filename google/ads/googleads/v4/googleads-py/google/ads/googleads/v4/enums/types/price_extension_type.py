@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -28,7 +26,7 @@ __protobuf__ = proto.module(
 
 
 class PriceExtensionTypeEnum(proto.Message):
-    r"""Container for enum describing types for a price extension."""
+    r"""Container for enum describing types for a price extension.    """
     class PriceExtensionType(proto.Enum):
         r"""Price extension type."""
         UNSPECIFIED = 0

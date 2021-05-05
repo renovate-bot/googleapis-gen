@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -23,10 +21,10 @@ from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
-from google.api_core import exceptions                            # type: ignore
+from google.api_core import exceptions as core_exceptions         # type: ignore
 from google.api_core import gapic_v1                              # type: ignore
 from google.api_core import retry as retries                      # type: ignore
-from google.auth import credentials                               # type: ignore
+from google.auth import credentials as ga_credentials             # type: ignore
 from google.auth.transport import mtls                            # type: ignore
 from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
@@ -36,11 +34,10 @@ from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.resourcemanager_v3.services.projects import pagers
 from google.cloud.resourcemanager_v3.types import projects
-from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
-from google.iam.v1 import policy_pb2 as giv_policy  # type: ignore
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
+from google.iam.v1 import iam_policy_pb2  # type: ignore
+from google.iam.v1 import policy_pb2  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 from .transports.base import ProjectsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import ProjectsGrpcTransport
 from .transports.grpc_asyncio import ProjectsGrpcAsyncIOTransport
@@ -228,7 +225,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
         return m.groupdict() if m else {}
 
     def __init__(self, *,
-            credentials: Optional[credentials.Credentials] = None,
+            credentials: Optional[ga_credentials.Credentials] = None,
             transport: Union[str, ProjectsTransport, None] = None,
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -356,7 +353,6 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -385,10 +381,8 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, projects.GetProjectRequest):
             request = projects.GetProjectRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -446,7 +440,6 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -484,10 +477,8 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, projects.ListProjectsRequest):
             request = projects.ListProjectsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -587,7 +578,6 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
                 This corresponds to the ``query`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -622,10 +612,8 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, projects.SearchProjectsRequest):
             request = projects.SearchProjectsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if query is not None:
                 request.query = query
 
@@ -688,7 +676,6 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
                 This corresponds to the ``project`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -718,10 +705,8 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, projects.CreateProjectRequest):
             request = projects.CreateProjectRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if project is not None:
                 request.project = project
 
@@ -752,7 +737,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
             request: projects.UpdateProjectRequest = None,
             *,
             project: projects.Project = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -789,7 +774,6 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -819,10 +803,8 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, projects.UpdateProjectRequest):
             request = projects.UpdateProjectRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if project is not None:
                 request.project = project
             if update_mask is not None:
@@ -900,7 +882,6 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
                 This corresponds to the ``destination_parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -930,10 +911,8 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, projects.MoveProjectRequest):
             request = projects.MoveProjectRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
             if destination_parent is not None:
@@ -1025,7 +1004,6 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1055,10 +1033,8 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, projects.DeleteProjectRequest):
             request = projects.DeleteProjectRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1125,7 +1101,6 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1155,10 +1130,8 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, projects.UndeleteProjectRequest):
             request = projects.UndeleteProjectRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1194,13 +1167,13 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
         return response
 
     def get_iam_policy(self,
-            request: iam_policy.GetIamPolicyRequest = None,
+            request: iam_policy_pb2.GetIamPolicyRequest = None,
             *,
             resource: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> giv_policy.Policy:
+            ) -> policy_pb2.Policy:
         r"""Returns the IAM access control policy for the
         specified project. Permission is denied if the policy or
         the resource do not exist.
@@ -1218,7 +1191,6 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1295,11 +1267,10 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
         if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
-            request = iam_policy.GetIamPolicyRequest(**request)
+            request = iam_policy_pb2.GetIamPolicyRequest(**request)
         elif not request:
             # Null request, just make one.
-            request = iam_policy.GetIamPolicyRequest()
-
+            request = iam_policy_pb2.GetIamPolicyRequest()
             if resource is not None:
                 request.resource = resource
 
@@ -1327,13 +1298,13 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
         return response
 
     def set_iam_policy(self,
-            request: iam_policy.SetIamPolicyRequest = None,
+            request: iam_policy_pb2.SetIamPolicyRequest = None,
             *,
             resource: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> giv_policy.Policy:
+            ) -> policy_pb2.Policy:
         r"""Sets the IAM access control policy for the specified project.
 
         CAUTION: This method will replace the existing policy, and
@@ -1400,7 +1371,6 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1477,11 +1447,10 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
         if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
-            request = iam_policy.SetIamPolicyRequest(**request)
+            request = iam_policy_pb2.SetIamPolicyRequest(**request)
         elif not request:
             # Null request, just make one.
-            request = iam_policy.SetIamPolicyRequest()
-
+            request = iam_policy_pb2.SetIamPolicyRequest()
             if resource is not None:
                 request.resource = resource
 
@@ -1509,14 +1478,14 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
         return response
 
     def test_iam_permissions(self,
-            request: iam_policy.TestIamPermissionsRequest = None,
+            request: iam_policy_pb2.TestIamPermissionsRequest = None,
             *,
             resource: str = None,
             permissions: Sequence[str] = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> iam_policy.TestIamPermissionsResponse:
+            ) -> iam_policy_pb2.TestIamPermissionsResponse:
         r"""Returns permissions that a caller has on the
         specified project.
 
@@ -1542,7 +1511,6 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
                 This corresponds to the ``permissions`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1564,14 +1532,12 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
         if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
-            request = iam_policy.TestIamPermissionsRequest(**request)
+            request = iam_policy_pb2.TestIamPermissionsRequest(**request)
         elif not request:
             # Null request, just make one.
-            request = iam_policy.TestIamPermissionsRequest()
-
+            request = iam_policy_pb2.TestIamPermissionsRequest()
             if resource is not None:
                 request.resource = resource
-
             if permissions:
                 request.permissions.extend(permissions)
 
@@ -1597,8 +1563,6 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

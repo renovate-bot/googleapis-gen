@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.cloud.osconfig.agentendpoint_v1.types import config_common
 from google.cloud.osconfig.agentendpoint_v1.types import os_policy
@@ -59,7 +56,6 @@ class TaskType(proto.Enum):
 
 class Task(proto.Message):
     r"""A unit of work to be performed by the agent.
-
     Attributes:
         task_id (str):
             Unique task id.
@@ -85,34 +81,47 @@ class Task(proto.Message):
             by the agent.
     """
 
-    task_id = proto.Field(proto.STRING, number=1)
-
-    task_type = proto.Field(proto.ENUM, number=2,
+    task_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    task_type = proto.Field(
+        proto.ENUM,
+        number=2,
         enum='TaskType',
     )
-
-    task_directive = proto.Field(proto.ENUM, number=3,
+    task_directive = proto.Field(
+        proto.ENUM,
+        number=3,
         enum='TaskDirective',
     )
-
-    apply_patches_task = proto.Field(proto.MESSAGE, number=4, oneof='task_details',
+    apply_patches_task = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        oneof='task_details',
         message='ApplyPatchesTask',
     )
-
-    exec_step_task = proto.Field(proto.MESSAGE, number=5, oneof='task_details',
+    exec_step_task = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        oneof='task_details',
         message='ExecStepTask',
     )
-
-    apply_config_task = proto.Field(proto.MESSAGE, number=7, oneof='task_details',
+    apply_config_task = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        oneof='task_details',
         message='ApplyConfigTask',
     )
-
-    service_labels = proto.MapField(proto.STRING, proto.STRING, number=6)
+    service_labels = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=6,
+    )
 
 
 class ApplyPatchesTask(proto.Message):
     r"""Message which instructs agent to apply patches.
-
     Attributes:
         patch_config (google.cloud.osconfig.agentendpoint_v1.types.PatchConfig):
             Specific information about how patches should
@@ -123,11 +132,15 @@ class ApplyPatchesTask(proto.Message):
             run any updates or perform any reboots.
     """
 
-    patch_config = proto.Field(proto.MESSAGE, number=1,
+    patch_config = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=patch_jobs.PatchConfig,
     )
-
-    dry_run = proto.Field(proto.BOOL, number=3)
+    dry_run = proto.Field(
+        proto.BOOL,
+        number=3,
+    )
 
 
 class ApplyPatchesTaskProgress(proto.Message):
@@ -147,7 +160,9 @@ class ApplyPatchesTaskProgress(proto.Message):
         APPLYING_PATCHES = 2
         REBOOTING = 3
 
-    state = proto.Field(proto.ENUM, number=1,
+    state = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=State,
     )
 
@@ -167,7 +182,9 @@ class ApplyPatchesTaskOutput(proto.Message):
         SUCCEEDED_REBOOT_REQUIRED = 2
         FAILED = 3
 
-    state = proto.Field(proto.ENUM, number=1,
+    state = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=State,
     )
 
@@ -181,7 +198,9 @@ class ExecStepTask(proto.Message):
             Details of the exec step to run.
     """
 
-    exec_step = proto.Field(proto.MESSAGE, number=1,
+    exec_step = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=patch_jobs.ExecStep,
     )
 
@@ -200,7 +219,9 @@ class ExecStepTaskProgress(proto.Message):
         STATE_UNSPECIFIED = 0
         STARTED = 1
 
-    state = proto.Field(proto.ENUM, number=1,
+    state = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=State,
     )
 
@@ -223,11 +244,15 @@ class ExecStepTaskOutput(proto.Message):
         TIMED_OUT = 2
         CANCELLED = 3
 
-    state = proto.Field(proto.ENUM, number=1,
+    state = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=State,
     )
-
-    exit_code = proto.Field(proto.INT32, number=2)
+    exit_code = proto.Field(
+        proto.INT32,
+        number=2,
+    )
 
 
 class ApplyConfigTask(proto.Message):
@@ -239,9 +264,9 @@ class ApplyConfigTask(proto.Message):
             List of os policies to be applied for the
             instance.
     """
+
     class OSPolicy(proto.Message):
         r"""Message representing an OS policy.
-
         Attributes:
             id (str):
                 User provided policy id.
@@ -258,19 +283,28 @@ class ApplyConfigTask(proto.Message):
                 to be set to their desired state.
         """
 
-        id = proto.Field(proto.STRING, number=1)
-
-        mode = proto.Field(proto.ENUM, number=2,
+        id = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        mode = proto.Field(
+            proto.ENUM,
+            number=2,
             enum=os_policy.OSPolicy.Mode,
         )
-
-        os_policy_assignment = proto.Field(proto.STRING, number=3)
-
-        resources = proto.RepeatedField(proto.MESSAGE, number=4,
+        os_policy_assignment = proto.Field(
+            proto.STRING,
+            number=3,
+        )
+        resources = proto.RepeatedField(
+            proto.MESSAGE,
+            number=4,
             message=os_policy.OSPolicy.Resource,
         )
 
-    os_policies = proto.RepeatedField(proto.MESSAGE, number=1,
+    os_policies = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=OSPolicy,
     )
 
@@ -289,7 +323,9 @@ class ApplyConfigTaskProgress(proto.Message):
         STARTED = 1
         APPLYING_CONFIG = 2
 
-    state = proto.Field(proto.ENUM, number=1,
+    state = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=State,
     )
 
@@ -314,7 +350,6 @@ class ApplyConfigTaskOutput(proto.Message):
 
     class OSPolicyResult(proto.Message):
         r"""Result of applying desired state config for an OS policy.
-
         Attributes:
             os_policy_id (str):
                 The OS policy id
@@ -328,19 +363,28 @@ class ApplyConfigTaskOutput(proto.Message):
                 the OS policy resources.
         """
 
-        os_policy_id = proto.Field(proto.STRING, number=1)
-
-        os_policy_assignment = proto.Field(proto.STRING, number=2)
-
-        os_policy_resource_compliances = proto.RepeatedField(proto.MESSAGE, number=3,
+        os_policy_id = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        os_policy_assignment = proto.Field(
+            proto.STRING,
+            number=2,
+        )
+        os_policy_resource_compliances = proto.RepeatedField(
+            proto.MESSAGE,
+            number=3,
             message=config_common.OSPolicyResourceCompliance,
         )
 
-    state = proto.Field(proto.ENUM, number=1,
+    state = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=State,
     )
-
-    os_policy_results = proto.RepeatedField(proto.MESSAGE, number=2,
+    os_policy_results = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message=OSPolicyResult,
     )
 

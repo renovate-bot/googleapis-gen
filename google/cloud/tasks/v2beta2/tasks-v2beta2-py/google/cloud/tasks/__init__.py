@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.cloud.tasks_v2beta2.services.cloud_tasks.async_client import CloudTasksAsyncClient
 from google.cloud.tasks_v2beta2.services.cloud_tasks.client import CloudTasksClient
+from google.cloud.tasks_v2beta2.services.cloud_tasks.async_client import CloudTasksAsyncClient
+
 from google.cloud.tasks_v2beta2.types.cloudtasks import AcknowledgeTaskRequest
 from google.cloud.tasks_v2beta2.types.cloudtasks import CancelLeaseRequest
 from google.cloud.tasks_v2beta2.types.cloudtasks import CreateQueueRequest
@@ -44,29 +44,23 @@ from google.cloud.tasks_v2beta2.types.queue import RetryConfig
 from google.cloud.tasks_v2beta2.types.target import AppEngineHttpRequest
 from google.cloud.tasks_v2beta2.types.target import AppEngineHttpTarget
 from google.cloud.tasks_v2beta2.types.target import AppEngineRouting
-from google.cloud.tasks_v2beta2.types.target import HttpMethod
 from google.cloud.tasks_v2beta2.types.target import PullMessage
 from google.cloud.tasks_v2beta2.types.target import PullTarget
+from google.cloud.tasks_v2beta2.types.target import HttpMethod
 from google.cloud.tasks_v2beta2.types.task import AttemptStatus
 from google.cloud.tasks_v2beta2.types.task import Task
 from google.cloud.tasks_v2beta2.types.task import TaskStatus
 
-__all__ = (
-    'AcknowledgeTaskRequest',
-    'AppEngineHttpRequest',
-    'AppEngineHttpTarget',
-    'AppEngineRouting',
-    'AttemptStatus',
-    'CancelLeaseRequest',
+__all__ = ('CloudTasksClient',
     'CloudTasksAsyncClient',
-    'CloudTasksClient',
+    'AcknowledgeTaskRequest',
+    'CancelLeaseRequest',
     'CreateQueueRequest',
     'CreateTaskRequest',
     'DeleteQueueRequest',
     'DeleteTaskRequest',
     'GetQueueRequest',
     'GetTaskRequest',
-    'HttpMethod',
     'LeaseTasksRequest',
     'LeaseTasksResponse',
     'ListQueuesRequest',
@@ -74,17 +68,22 @@ __all__ = (
     'ListTasksRequest',
     'ListTasksResponse',
     'PauseQueueRequest',
-    'PullMessage',
-    'PullTarget',
     'PurgeQueueRequest',
+    'RenewLeaseRequest',
+    'ResumeQueueRequest',
+    'RunTaskRequest',
+    'UpdateQueueRequest',
     'Queue',
     'QueueStats',
     'RateLimits',
-    'RenewLeaseRequest',
-    'ResumeQueueRequest',
     'RetryConfig',
-    'RunTaskRequest',
+    'AppEngineHttpRequest',
+    'AppEngineHttpTarget',
+    'AppEngineRouting',
+    'PullMessage',
+    'PullTarget',
+    'HttpMethod',
+    'AttemptStatus',
     'Task',
     'TaskStatus',
-    'UpdateQueueRequest',
 )

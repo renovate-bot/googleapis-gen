@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,8 @@
 #
 
 from .services.recaptcha_enterprise_service_v1_beta1 import RecaptchaEnterpriseServiceV1Beta1Client
+from .services.recaptcha_enterprise_service_v1_beta1 import RecaptchaEnterpriseServiceV1Beta1AsyncClient
+
 from .types.recaptchaenterprise import AndroidKeySettings
 from .types.recaptchaenterprise import AnnotateAssessmentRequest
 from .types.recaptchaenterprise import AnnotateAssessmentResponse
@@ -33,23 +34,22 @@ from .types.recaptchaenterprise import TokenProperties
 from .types.recaptchaenterprise import UpdateKeyRequest
 from .types.recaptchaenterprise import WebKeySettings
 
-
 __all__ = (
-    'AndroidKeySettings',
-    'AnnotateAssessmentRequest',
-    'AnnotateAssessmentResponse',
-    'Assessment',
-    'CreateAssessmentRequest',
-    'CreateKeyRequest',
-    'DeleteKeyRequest',
-    'Event',
-    'GetKeyRequest',
-    'IOSKeySettings',
-    'Key',
-    'ListKeysRequest',
-    'ListKeysResponse',
-    'TokenProperties',
-    'UpdateKeyRequest',
-    'WebKeySettings',
+'AndroidKeySettings',
+'AnnotateAssessmentRequest',
+'AnnotateAssessmentResponse',
+'Assessment',
+'CreateAssessmentRequest',
+'CreateKeyRequest',
+'DeleteKeyRequest',
+'Event',
+'GetKeyRequest',
+'IOSKeySettings',
+'Key',
+'ListKeysRequest',
+'ListKeysResponse',
 'RecaptchaEnterpriseServiceV1Beta1Client',
+'TokenProperties',
+'UpdateKeyRequest',
+'WebKeySettings',
 )

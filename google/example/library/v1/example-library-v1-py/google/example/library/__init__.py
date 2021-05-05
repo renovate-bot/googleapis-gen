@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.example.library_v1.services.library_service.async_client import LibraryServiceAsyncClient
 from google.example.library_v1.services.library_service.client import LibraryServiceClient
+from google.example.library_v1.services.library_service.async_client import LibraryServiceAsyncClient
+
 from google.example.library_v1.types.library import Book
 from google.example.library_v1.types.library import CreateBookRequest
 from google.example.library_v1.types.library import CreateShelfRequest
@@ -33,7 +33,8 @@ from google.example.library_v1.types.library import MoveBookRequest
 from google.example.library_v1.types.library import Shelf
 from google.example.library_v1.types.library import UpdateBookRequest
 
-__all__ = (
+__all__ = ('LibraryServiceClient',
+    'LibraryServiceAsyncClient',
     'Book',
     'CreateBookRequest',
     'CreateShelfRequest',
@@ -41,8 +42,6 @@ __all__ = (
     'DeleteShelfRequest',
     'GetBookRequest',
     'GetShelfRequest',
-    'LibraryServiceAsyncClient',
-    'LibraryServiceClient',
     'ListBooksRequest',
     'ListBooksResponse',
     'ListShelvesRequest',

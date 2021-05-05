@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,8 @@
 #
 
 from .services.cloud_channel_service import CloudChannelServiceClient
+from .services.cloud_channel_service import CloudChannelServiceAsyncClient
+
 from .types.channel_partner_links import ChannelPartnerLink
 from .types.channel_partner_links import ChannelPartnerLinkState
 from .types.channel_partner_links import ChannelPartnerLinkView
@@ -31,30 +32,30 @@ from .types.entitlements import Entitlement
 from .types.entitlements import Parameter
 from .types.entitlements import ProvisionedService
 from .types.entitlements import RenewalSettings
-from .types.entitlements import TransferEligibility
 from .types.entitlements import TransferableSku
+from .types.entitlements import TransferEligibility
 from .types.entitlements import TrialSettings
 from .types.offers import Constraints
 from .types.offers import CustomerConstraints
 from .types.offers import Offer
 from .types.offers import ParameterDefinition
-from .types.offers import PaymentPlan
-from .types.offers import PaymentType
 from .types.offers import Period
-from .types.offers import PeriodType
 from .types.offers import Plan
 from .types.offers import Price
 from .types.offers import PriceByResource
 from .types.offers import PricePhase
 from .types.offers import PriceTier
+from .types.offers import PaymentPlan
+from .types.offers import PaymentType
+from .types.offers import PeriodType
 from .types.offers import PromotionalOrderType
 from .types.offers import ResourceType
 from .types.operations import OperationMetadata
 from .types.products import MarketingInfo
 from .types.products import Media
-from .types.products import MediaType
 from .types.products import Product
 from .types.products import Sku
+from .types.products import MediaType
 from .types.service import ActivateEntitlementRequest
 from .types.service import CancelEntitlementRequest
 from .types.service import ChangeOfferRequest
@@ -99,10 +100,10 @@ from .types.service import RegisterSubscriberRequest
 from .types.service import RegisterSubscriberResponse
 from .types.service import StartPaidServiceRequest
 from .types.service import SuspendEntitlementRequest
+from .types.service import TransferableOffer
 from .types.service import TransferEntitlementsRequest
 from .types.service import TransferEntitlementsResponse
 from .types.service import TransferEntitlementsToGoogleRequest
-from .types.service import TransferableOffer
 from .types.service import UnregisterSubscriberRequest
 from .types.service import UnregisterSubscriberResponse
 from .types.service import UpdateChannelPartnerLinkRequest
@@ -111,101 +112,100 @@ from .types.subscriber_event import CustomerEvent
 from .types.subscriber_event import EntitlementEvent
 from .types.subscriber_event import SubscriberEvent
 
-
 __all__ = (
-    'ActivateEntitlementRequest',
-    'AdminUser',
-    'AssociationInfo',
-    'CancelEntitlementRequest',
-    'ChangeOfferRequest',
-    'ChangeParametersRequest',
-    'ChangeRenewalSettingsRequest',
-    'ChannelPartnerLink',
-    'ChannelPartnerLinkState',
-    'ChannelPartnerLinkView',
-    'CheckCloudIdentityAccountsExistRequest',
-    'CheckCloudIdentityAccountsExistResponse',
-    'CloudIdentityCustomerAccount',
-    'CloudIdentityInfo',
-    'CommitmentSettings',
-    'Constraints',
-    'ContactInfo',
-    'CreateChannelPartnerLinkRequest',
-    'CreateCustomerRequest',
-    'CreateEntitlementRequest',
-    'Customer',
-    'CustomerConstraints',
-    'CustomerEvent',
-    'DeleteCustomerRequest',
-    'EduData',
-    'Entitlement',
-    'EntitlementEvent',
-    'GetChannelPartnerLinkRequest',
-    'GetCustomerRequest',
-    'GetEntitlementRequest',
-    'ListChannelPartnerLinksRequest',
-    'ListChannelPartnerLinksResponse',
-    'ListCustomersRequest',
-    'ListCustomersResponse',
-    'ListEntitlementsRequest',
-    'ListEntitlementsResponse',
-    'ListOffersRequest',
-    'ListOffersResponse',
-    'ListProductsRequest',
-    'ListProductsResponse',
-    'ListPurchasableOffersRequest',
-    'ListPurchasableOffersResponse',
-    'ListPurchasableSkusRequest',
-    'ListPurchasableSkusResponse',
-    'ListSkusRequest',
-    'ListSkusResponse',
-    'ListSubscribersRequest',
-    'ListSubscribersResponse',
-    'ListTransferableOffersRequest',
-    'ListTransferableOffersResponse',
-    'ListTransferableSkusRequest',
-    'ListTransferableSkusResponse',
-    'MarketingInfo',
-    'Media',
-    'MediaType',
-    'Offer',
-    'OperationMetadata',
-    'Parameter',
-    'ParameterDefinition',
-    'PaymentPlan',
-    'PaymentType',
-    'Period',
-    'PeriodType',
-    'Plan',
-    'Price',
-    'PriceByResource',
-    'PricePhase',
-    'PriceTier',
-    'Product',
-    'PromotionalOrderType',
-    'ProvisionCloudIdentityRequest',
-    'ProvisionedService',
-    'PurchasableOffer',
-    'PurchasableSku',
-    'RegisterSubscriberRequest',
-    'RegisterSubscriberResponse',
-    'RenewalSettings',
-    'ResourceType',
-    'Sku',
-    'StartPaidServiceRequest',
-    'SubscriberEvent',
-    'SuspendEntitlementRequest',
-    'TransferEligibility',
-    'TransferEntitlementsRequest',
-    'TransferEntitlementsResponse',
-    'TransferEntitlementsToGoogleRequest',
-    'TransferableOffer',
-    'TransferableSku',
-    'TrialSettings',
-    'UnregisterSubscriberRequest',
-    'UnregisterSubscriberResponse',
-    'UpdateChannelPartnerLinkRequest',
-    'UpdateCustomerRequest',
-    'Value',
+'ActivateEntitlementRequest',
+'AdminUser',
+'AssociationInfo',
+'CancelEntitlementRequest',
+'ChangeOfferRequest',
+'ChangeParametersRequest',
+'ChangeRenewalSettingsRequest',
+'ChannelPartnerLink',
+'ChannelPartnerLinkState',
+'ChannelPartnerLinkView',
+'CheckCloudIdentityAccountsExistRequest',
+'CheckCloudIdentityAccountsExistResponse',
 'CloudChannelServiceClient',
+'CloudIdentityCustomerAccount',
+'CloudIdentityInfo',
+'CommitmentSettings',
+'Constraints',
+'ContactInfo',
+'CreateChannelPartnerLinkRequest',
+'CreateCustomerRequest',
+'CreateEntitlementRequest',
+'Customer',
+'CustomerConstraints',
+'CustomerEvent',
+'DeleteCustomerRequest',
+'EduData',
+'Entitlement',
+'EntitlementEvent',
+'GetChannelPartnerLinkRequest',
+'GetCustomerRequest',
+'GetEntitlementRequest',
+'ListChannelPartnerLinksRequest',
+'ListChannelPartnerLinksResponse',
+'ListCustomersRequest',
+'ListCustomersResponse',
+'ListEntitlementsRequest',
+'ListEntitlementsResponse',
+'ListOffersRequest',
+'ListOffersResponse',
+'ListProductsRequest',
+'ListProductsResponse',
+'ListPurchasableOffersRequest',
+'ListPurchasableOffersResponse',
+'ListPurchasableSkusRequest',
+'ListPurchasableSkusResponse',
+'ListSkusRequest',
+'ListSkusResponse',
+'ListSubscribersRequest',
+'ListSubscribersResponse',
+'ListTransferableOffersRequest',
+'ListTransferableOffersResponse',
+'ListTransferableSkusRequest',
+'ListTransferableSkusResponse',
+'MarketingInfo',
+'Media',
+'MediaType',
+'Offer',
+'OperationMetadata',
+'Parameter',
+'ParameterDefinition',
+'PaymentPlan',
+'PaymentType',
+'Period',
+'PeriodType',
+'Plan',
+'Price',
+'PriceByResource',
+'PricePhase',
+'PriceTier',
+'Product',
+'PromotionalOrderType',
+'ProvisionCloudIdentityRequest',
+'ProvisionedService',
+'PurchasableOffer',
+'PurchasableSku',
+'RegisterSubscriberRequest',
+'RegisterSubscriberResponse',
+'RenewalSettings',
+'ResourceType',
+'Sku',
+'StartPaidServiceRequest',
+'SubscriberEvent',
+'SuspendEntitlementRequest',
+'TransferEligibility',
+'TransferEntitlementsRequest',
+'TransferEntitlementsResponse',
+'TransferEntitlementsToGoogleRequest',
+'TransferableOffer',
+'TransferableSku',
+'TrialSettings',
+'UnregisterSubscriberRequest',
+'UnregisterSubscriberResponse',
+'UpdateChannelPartnerLinkRequest',
+'UpdateCustomerRequest',
+'Value',
 )

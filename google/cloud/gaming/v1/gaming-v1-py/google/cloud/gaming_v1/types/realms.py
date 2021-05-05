@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,13 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
 from google.cloud.gaming_v1.types import common
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -41,7 +38,6 @@ __protobuf__ = proto.module(
 
 class ListRealmsRequest(proto.Message):
     r"""Request message for RealmsService.ListRealms.
-
     Attributes:
         parent (str):
             Required. The parent resource name. Uses the form:
@@ -65,20 +61,30 @@ class ListRealmsRequest(proto.Message):
             https://cloud.google.com/apis/design/design_patterns#sorting_order.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
-
-    filter = proto.Field(proto.STRING, number=4)
-
-    order_by = proto.Field(proto.STRING, number=5)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    filter = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    order_by = proto.Field(
+        proto.STRING,
+        number=5,
+    )
 
 
 class ListRealmsResponse(proto.Message):
     r"""Response message for RealmsService.ListRealms.
-
     Attributes:
         realms (Sequence[google.cloud.gaming_v1.types.Realm]):
             The list of realms.
@@ -94,30 +100,37 @@ class ListRealmsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    realms = proto.RepeatedField(proto.MESSAGE, number=1,
+    realms = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Realm',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
-
-    unreachable = proto.RepeatedField(proto.STRING, number=3)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    unreachable = proto.RepeatedField(
+        proto.STRING,
+        number=3,
+    )
 
 
 class GetRealmRequest(proto.Message):
     r"""Request message for RealmsService.GetRealm.
-
     Attributes:
         name (str):
             Required. The name of the realm to retrieve. Uses the form:
             ``projects/{project}/locations/{location}/realms/{realm}``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class CreateRealmRequest(proto.Message):
     r"""Request message for RealmsService.CreateRealm.
-
     Attributes:
         parent (str):
             Required. The parent resource name. Uses the form:
@@ -129,30 +142,37 @@ class CreateRealmRequest(proto.Message):
             Required. The realm resource to be created.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    realm_id = proto.Field(proto.STRING, number=2)
-
-    realm = proto.Field(proto.MESSAGE, number=3,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    realm_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    realm = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='Realm',
     )
 
 
 class DeleteRealmRequest(proto.Message):
     r"""Request message for RealmsService.DeleteRealm.
-
     Attributes:
         name (str):
             Required. The name of the realm to delete. Uses the form:
             ``projects/{project}/locations/{location}/realms/{realm}``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class UpdateRealmRequest(proto.Message):
     r"""Request message for RealmsService.UpdateRealm.
-
     Attributes:
         realm (google.cloud.gaming_v1.types.Realm):
             Required. The realm to be updated. Only fields specified in
@@ -165,18 +185,20 @@ class UpdateRealmRequest(proto.Message):
             /docs/reference/google.protobuf#fieldmask
     """
 
-    realm = proto.Field(proto.MESSAGE, number=1,
+    realm = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='Realm',
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=2,
-        message=field_mask.FieldMask,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=field_mask_pb2.FieldMask,
     )
 
 
 class PreviewRealmUpdateRequest(proto.Message):
     r"""Request message for RealmsService.PreviewRealmUpdate.
-
     Attributes:
         realm (google.cloud.gaming_v1.types.Realm):
             Required. The realm to be updated. Only fields specified in
@@ -192,22 +214,25 @@ class PreviewRealmUpdateRequest(proto.Message):
             preview.
     """
 
-    realm = proto.Field(proto.MESSAGE, number=1,
+    realm = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='Realm',
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=2,
-        message=field_mask.FieldMask,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=field_mask_pb2.FieldMask,
     )
-
-    preview_time = proto.Field(proto.MESSAGE, number=3,
-        message=timestamp.Timestamp,
+    preview_time = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=timestamp_pb2.Timestamp,
     )
 
 
 class PreviewRealmUpdateResponse(proto.Message):
     r"""Response message for RealmsService.PreviewRealmUpdate.
-
     Attributes:
         etag (str):
             ETag of the realm.
@@ -215,16 +240,19 @@ class PreviewRealmUpdateResponse(proto.Message):
             The target state.
     """
 
-    etag = proto.Field(proto.STRING, number=2)
-
-    target_state = proto.Field(proto.MESSAGE, number=3,
+    etag = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    target_state = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=common.TargetState,
     )
 
 
 class Realm(proto.Message):
     r"""A realm resource.
-
     Attributes:
         name (str):
             The resource name of the realm. Uses the form:
@@ -249,23 +277,37 @@ class Realm(proto.Message):
             Human readable description of the realm.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    create_time = proto.Field(proto.MESSAGE, number=2,
-        message=timestamp.Timestamp,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
     )
-
-    update_time = proto.Field(proto.MESSAGE, number=3,
-        message=timestamp.Timestamp,
+    create_time = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=timestamp_pb2.Timestamp,
     )
-
-    labels = proto.MapField(proto.STRING, proto.STRING, number=4)
-
-    time_zone = proto.Field(proto.STRING, number=6)
-
-    etag = proto.Field(proto.STRING, number=7)
-
-    description = proto.Field(proto.STRING, number=8)
+    update_time = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=timestamp_pb2.Timestamp,
+    )
+    labels = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=4,
+    )
+    time_zone = proto.Field(
+        proto.STRING,
+        number=6,
+    )
+    etag = proto.Field(
+        proto.STRING,
+        number=7,
+    )
+    description = proto.Field(
+        proto.STRING,
+        number=8,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

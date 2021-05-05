@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,11 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -75,22 +72,31 @@ class WorkloadIdentityPool(proto.Message):
         ACTIVE = 1
         DELETED = 2
 
-    name = proto.Field(proto.STRING, number=1)
-
-    display_name = proto.Field(proto.STRING, number=2)
-
-    description = proto.Field(proto.STRING, number=3)
-
-    state = proto.Field(proto.ENUM, number=4,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    display_name = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    description = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    state = proto.Field(
+        proto.ENUM,
+        number=4,
         enum=State,
     )
-
-    disabled = proto.Field(proto.BOOL, number=5)
+    disabled = proto.Field(
+        proto.BOOL,
+        number=5,
+    )
 
 
 class WorkloadIdentityPoolProvider(proto.Message):
     r"""A configuration for an external identity provider.
-
     Attributes:
         name (str):
             Output only. The resource name of the
@@ -234,17 +240,18 @@ class WorkloadIdentityPoolProvider(proto.Message):
 
     class Aws(proto.Message):
         r"""Represents an Amazon Web Services identity provider.
-
         Attributes:
             account_id (str):
                 Required. The AWS account ID.
         """
 
-        account_id = proto.Field(proto.STRING, number=1)
+        account_id = proto.Field(
+            proto.STRING,
+            number=1,
+        )
 
     class Oidc(proto.Message):
         r"""Represents an OpenId Connect 1.0 identity provider.
-
         Attributes:
             issuer_uri (str):
                 Required. The OIDC issuer URL.
@@ -266,38 +273,61 @@ class WorkloadIdentityPoolProvider(proto.Message):
                    https://iam.googleapis.com/projects/<project-number>/locations/<location>/workloadIdentityPools/<pool-id>/providers/<provider-id>
         """
 
-        issuer_uri = proto.Field(proto.STRING, number=1)
+        issuer_uri = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        allowed_audiences = proto.RepeatedField(
+            proto.STRING,
+            number=2,
+        )
 
-        allowed_audiences = proto.RepeatedField(proto.STRING, number=2)
-
-    name = proto.Field(proto.STRING, number=1)
-
-    display_name = proto.Field(proto.STRING, number=2)
-
-    description = proto.Field(proto.STRING, number=3)
-
-    state = proto.Field(proto.ENUM, number=4,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    display_name = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    description = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    state = proto.Field(
+        proto.ENUM,
+        number=4,
         enum=State,
     )
-
-    disabled = proto.Field(proto.BOOL, number=5)
-
-    attribute_mapping = proto.MapField(proto.STRING, proto.STRING, number=6)
-
-    attribute_condition = proto.Field(proto.STRING, number=7)
-
-    aws = proto.Field(proto.MESSAGE, number=8, oneof='provider_config',
+    disabled = proto.Field(
+        proto.BOOL,
+        number=5,
+    )
+    attribute_mapping = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=6,
+    )
+    attribute_condition = proto.Field(
+        proto.STRING,
+        number=7,
+    )
+    aws = proto.Field(
+        proto.MESSAGE,
+        number=8,
+        oneof='provider_config',
         message=Aws,
     )
-
-    oidc = proto.Field(proto.MESSAGE, number=9, oneof='provider_config',
+    oidc = proto.Field(
+        proto.MESSAGE,
+        number=9,
+        oneof='provider_config',
         message=Oidc,
     )
 
 
 class ListWorkloadIdentityPoolsRequest(proto.Message):
     r"""Request message for ListWorkloadIdentityPools.
-
     Attributes:
         parent (str):
             Required. The parent resource to list pools
@@ -315,18 +345,26 @@ class ListWorkloadIdentityPoolsRequest(proto.Message):
             Whether to return soft-deleted pools.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
-
-    show_deleted = proto.Field(proto.BOOL, number=4)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    show_deleted = proto.Field(
+        proto.BOOL,
+        number=4,
+    )
 
 
 class ListWorkloadIdentityPoolsResponse(proto.Message):
     r"""Response message for ListWorkloadIdentityPools.
-
     Attributes:
         workload_identity_pools (Sequence[google.iam_v1beta.types.WorkloadIdentityPool]):
             A list of pools.
@@ -340,27 +378,32 @@ class ListWorkloadIdentityPoolsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    workload_identity_pools = proto.RepeatedField(proto.MESSAGE, number=1,
+    workload_identity_pools = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='WorkloadIdentityPool',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class GetWorkloadIdentityPoolRequest(proto.Message):
     r"""Request message for GetWorkloadIdentityPool.
-
     Attributes:
         name (str):
             Required. The name of the pool to retrieve.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class CreateWorkloadIdentityPoolRequest(proto.Message):
     r"""Request message for CreateWorkloadIdentityPool.
-
     Attributes:
         parent (str):
             Required. The parent resource to create the pool in. The
@@ -375,18 +418,23 @@ class CreateWorkloadIdentityPoolRequest(proto.Message):
             not be specified.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    workload_identity_pool = proto.Field(proto.MESSAGE, number=2,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    workload_identity_pool = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='WorkloadIdentityPool',
     )
-
-    workload_identity_pool_id = proto.Field(proto.STRING, number=3)
+    workload_identity_pool_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class UpdateWorkloadIdentityPoolRequest(proto.Message):
     r"""Request message for UpdateWorkloadIdentityPool.
-
     Attributes:
         workload_identity_pool (google.iam_v1beta.types.WorkloadIdentityPool):
             Required. The pool to update. The ``name`` field is used to
@@ -395,40 +443,46 @@ class UpdateWorkloadIdentityPoolRequest(proto.Message):
             Required. The list of fields update.
     """
 
-    workload_identity_pool = proto.Field(proto.MESSAGE, number=1,
+    workload_identity_pool = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='WorkloadIdentityPool',
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=2,
-        message=field_mask.FieldMask,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=field_mask_pb2.FieldMask,
     )
 
 
 class DeleteWorkloadIdentityPoolRequest(proto.Message):
     r"""Request message for DeleteWorkloadIdentityPool.
-
     Attributes:
         name (str):
             Required. The name of the pool to delete.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class UndeleteWorkloadIdentityPoolRequest(proto.Message):
     r"""Request message for UndeleteWorkloadIdentityPool.
-
     Attributes:
         name (str):
             Required. The name of the pool to undelete.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class ListWorkloadIdentityPoolProvidersRequest(proto.Message):
     r"""Request message for ListWorkloadIdentityPoolProviders.
-
     Attributes:
         parent (str):
             Required. The pool to list providers for.
@@ -445,18 +499,26 @@ class ListWorkloadIdentityPoolProvidersRequest(proto.Message):
             Whether to return soft-deleted providers.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
-
-    show_deleted = proto.Field(proto.BOOL, number=4)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    show_deleted = proto.Field(
+        proto.BOOL,
+        number=4,
+    )
 
 
 class ListWorkloadIdentityPoolProvidersResponse(proto.Message):
     r"""Response message for ListWorkloadIdentityPoolProviders.
-
     Attributes:
         workload_identity_pool_providers (Sequence[google.iam_v1beta.types.WorkloadIdentityPoolProvider]):
             A list of providers.
@@ -470,28 +532,33 @@ class ListWorkloadIdentityPoolProvidersResponse(proto.Message):
     def raw_page(self):
         return self
 
-    workload_identity_pool_providers = proto.RepeatedField(proto.MESSAGE, number=1,
+    workload_identity_pool_providers = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='WorkloadIdentityPoolProvider',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class GetWorkloadIdentityPoolProviderRequest(proto.Message):
     r"""Request message for GetWorkloadIdentityPoolProvider.
-
     Attributes:
         name (str):
             Required. The name of the provider to
             retrieve.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class CreateWorkloadIdentityPoolProviderRequest(proto.Message):
     r"""Request message for CreateWorkloadIdentityPoolProvider.
-
     Attributes:
         parent (str):
             Required. The pool to create this provider
@@ -506,18 +573,23 @@ class CreateWorkloadIdentityPoolProviderRequest(proto.Message):
             be specified.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    workload_identity_pool_provider = proto.Field(proto.MESSAGE, number=2,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    workload_identity_pool_provider = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='WorkloadIdentityPoolProvider',
     )
-
-    workload_identity_pool_provider_id = proto.Field(proto.STRING, number=3)
+    workload_identity_pool_provider_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class UpdateWorkloadIdentityPoolProviderRequest(proto.Message):
     r"""Request message for UpdateWorkloadIdentityPoolProvider.
-
     Attributes:
         workload_identity_pool_provider (google.iam_v1beta.types.WorkloadIdentityPoolProvider):
             Required. The provider to update.
@@ -525,46 +597,53 @@ class UpdateWorkloadIdentityPoolProviderRequest(proto.Message):
             Required. The list of fields to update.
     """
 
-    workload_identity_pool_provider = proto.Field(proto.MESSAGE, number=1,
+    workload_identity_pool_provider = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='WorkloadIdentityPoolProvider',
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=2,
-        message=field_mask.FieldMask,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=field_mask_pb2.FieldMask,
     )
 
 
 class DeleteWorkloadIdentityPoolProviderRequest(proto.Message):
     r"""Request message for DeleteWorkloadIdentityPoolProvider.
-
     Attributes:
         name (str):
             Required. The name of the provider to delete.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class UndeleteWorkloadIdentityPoolProviderRequest(proto.Message):
     r"""Request message for UndeleteWorkloadIdentityPoolProvider.
-
     Attributes:
         name (str):
             Required. The name of the provider to
             undelete.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class WorkloadIdentityPoolOperationMetadata(proto.Message):
-    r"""Metadata for long-running WorkloadIdentityPool operations."""
+    r"""Metadata for long-running WorkloadIdentityPool operations.    """
 
 
 class WorkloadIdentityPoolProviderOperationMetadata(proto.Message):
     r"""Metadata for long-running WorkloadIdentityPoolProvider
     operations.
-    """
+        """
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

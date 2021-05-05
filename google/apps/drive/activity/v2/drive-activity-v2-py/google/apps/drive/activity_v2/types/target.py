@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.apps.drive.activity_v2.types import actor
 from google.apps.drive.activity_v2.types import common
@@ -41,7 +38,6 @@ __protobuf__ = proto.module(
 
 class Target(proto.Message):
     r"""Information about the target of activity.
-
     Attributes:
         drive_item (google.apps.drive.activity_v2.types.DriveItem):
             The target is a Drive item.
@@ -54,26 +50,33 @@ class Target(proto.Message):
             instead.
     """
 
-    drive_item = proto.Field(proto.MESSAGE, number=1, oneof='object',
+    drive_item = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='object',
         message='DriveItem',
     )
-
-    drive = proto.Field(proto.MESSAGE, number=5, oneof='object',
+    drive = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        oneof='object',
         message='Drive',
     )
-
-    file_comment = proto.Field(proto.MESSAGE, number=3, oneof='object',
+    file_comment = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        oneof='object',
         message='FileComment',
     )
-
-    team_drive = proto.Field(proto.MESSAGE, number=2,
+    team_drive = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='TeamDrive',
     )
 
 
 class TargetReference(proto.Message):
     r"""A lightweight reference to the target of activity.
-
     Attributes:
         drive_item (google.apps.drive.activity_v2.types.DriveItemReference):
             The target is a Drive item.
@@ -84,22 +87,27 @@ class TargetReference(proto.Message):
             instead.
     """
 
-    drive_item = proto.Field(proto.MESSAGE, number=1, oneof='object',
+    drive_item = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='object',
         message='DriveItemReference',
     )
-
-    drive = proto.Field(proto.MESSAGE, number=3, oneof='object',
+    drive = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        oneof='object',
         message='DriveReference',
     )
-
-    team_drive = proto.Field(proto.MESSAGE, number=2,
+    team_drive = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='TeamDriveReference',
     )
 
 
 class FileComment(proto.Message):
     r"""A comment on a file.
-
     Attributes:
         legacy_comment_id (str):
             The comment in the discussion thread. This
@@ -120,20 +128,27 @@ class FileComment(proto.Message):
             The Drive item containing this comment.
     """
 
-    legacy_comment_id = proto.Field(proto.STRING, number=1)
-
-    legacy_discussion_id = proto.Field(proto.STRING, number=2)
-
-    link_to_discussion = proto.Field(proto.STRING, number=3)
-
-    parent = proto.Field(proto.MESSAGE, number=4,
+    legacy_comment_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    legacy_discussion_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    link_to_discussion = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    parent = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='DriveItem',
     )
 
 
 class DriveItem(proto.Message):
     r"""A Drive item, such as a file or folder.
-
     Attributes:
         name (str):
             The target Drive item. The format is ``items/ITEM_ID``.
@@ -158,12 +173,12 @@ class DriveItem(proto.Message):
             Information about the owner of this Drive
             item.
     """
+
     class File(proto.Message):
-        r"""This item is deprecated; please see ``DriveFile`` instead."""
+        r"""This item is deprecated; please see ``DriveFile`` instead.    """
 
     class Folder(proto.Message):
         r"""This item is deprecated; please see ``DriveFolder`` instead.
-
         Attributes:
             type_ (google.apps.drive.activity_v2.types.DriveItem.Folder.Type):
                 This field is deprecated; please see ``DriveFolder.type``
@@ -171,22 +186,23 @@ class DriveItem(proto.Message):
         """
         class Type(proto.Enum):
             r"""This item is deprecated; please see ``DriveFolder.Type`` instead."""
-            _pb_options = {'deprecated': True}
+             _pb_options = {'deprecated': True}
             TYPE_UNSPECIFIED = 0
             MY_DRIVE_ROOT = 1
             TEAM_DRIVE_ROOT = 2
             STANDARD_FOLDER = 3
 
-        type_ = proto.Field(proto.ENUM, number=6,
+        type_ = proto.Field(
+            proto.ENUM,
+            number=6,
             enum='DriveItem.Folder.Type',
         )
 
     class DriveFile(proto.Message):
-        r"""A Drive item which is a file."""
+        r"""A Drive item which is a file.    """
 
     class DriveFolder(proto.Message):
         r"""A Drive item which is a folder.
-
         Attributes:
             type_ (google.apps.drive.activity_v2.types.DriveItem.DriveFolder.Type):
                 The type of Drive folder.
@@ -198,40 +214,55 @@ class DriveItem(proto.Message):
             SHARED_DRIVE_ROOT = 2
             STANDARD_FOLDER = 3
 
-        type_ = proto.Field(proto.ENUM, number=6,
+        type_ = proto.Field(
+            proto.ENUM,
+            number=6,
             enum='DriveItem.DriveFolder.Type',
         )
 
-    name = proto.Field(proto.STRING, number=1)
-
-    title = proto.Field(proto.STRING, number=2)
-
-    file = proto.Field(proto.MESSAGE, number=3,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    title = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    file = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=File,
     )
-
-    folder = proto.Field(proto.MESSAGE, number=4,
+    folder = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=Folder,
     )
-
-    drive_file = proto.Field(proto.MESSAGE, number=8, oneof='item_type',
+    drive_file = proto.Field(
+        proto.MESSAGE,
+        number=8,
+        oneof='item_type',
         message=DriveFile,
     )
-
-    drive_folder = proto.Field(proto.MESSAGE, number=9, oneof='item_type',
+    drive_folder = proto.Field(
+        proto.MESSAGE,
+        number=9,
+        oneof='item_type',
         message=DriveFolder,
     )
-
-    mime_type = proto.Field(proto.STRING, number=6)
-
-    owner = proto.Field(proto.MESSAGE, number=7,
+    mime_type = proto.Field(
+        proto.STRING,
+        number=6,
+    )
+    owner = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message='Owner',
     )
 
 
 class Owner(proto.Message):
     r"""Information about the owner of a Drive item.
-
     Attributes:
         user (google.apps.drive.activity_v2.types.User):
             The user that owns the Drive item.
@@ -244,26 +275,32 @@ class Owner(proto.Message):
             The domain of the Drive item owner.
     """
 
-    user = proto.Field(proto.MESSAGE, number=1, oneof='owner',
+    user = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='owner',
         message=actor.User,
     )
-
-    drive = proto.Field(proto.MESSAGE, number=4, oneof='owner',
+    drive = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        oneof='owner',
         message='DriveReference',
     )
-
-    team_drive = proto.Field(proto.MESSAGE, number=2,
+    team_drive = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='TeamDriveReference',
     )
-
-    domain = proto.Field(proto.MESSAGE, number=3,
+    domain = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=common.Domain,
     )
 
 
 class TeamDrive(proto.Message):
     r"""This item is deprecated; please see ``Drive`` instead.
-
     Attributes:
         name (str):
             This field is deprecated; please see ``Drive.name`` instead.
@@ -274,18 +311,23 @@ class TeamDrive(proto.Message):
             This field is deprecated; please see ``Drive.root`` instead.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    title = proto.Field(proto.STRING, number=2)
-
-    root = proto.Field(proto.MESSAGE, number=3,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    title = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    root = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='DriveItem',
     )
 
 
 class Drive(proto.Message):
     r"""Information about a shared drive.
-
     Attributes:
         name (str):
             The resource name of the shared drive. The format is
@@ -297,11 +339,17 @@ class Drive(proto.Message):
             The root of this shared drive.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    title = proto.Field(proto.STRING, number=2)
-
-    root = proto.Field(proto.MESSAGE, number=3,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    title = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    root = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='DriveItem',
     )
 
@@ -328,30 +376,40 @@ class DriveItemReference(proto.Message):
             information about the type of folder.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    title = proto.Field(proto.STRING, number=2)
-
-    file = proto.Field(proto.MESSAGE, number=3,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    title = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    file = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='DriveItem.File',
     )
-
-    folder = proto.Field(proto.MESSAGE, number=4,
+    folder = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='DriveItem.Folder',
     )
-
-    drive_file = proto.Field(proto.MESSAGE, number=8, oneof='item_type',
+    drive_file = proto.Field(
+        proto.MESSAGE,
+        number=8,
+        oneof='item_type',
         message='DriveItem.DriveFile',
     )
-
-    drive_folder = proto.Field(proto.MESSAGE, number=9, oneof='item_type',
+    drive_folder = proto.Field(
+        proto.MESSAGE,
+        number=9,
+        oneof='item_type',
         message='DriveItem.DriveFolder',
     )
 
 
 class TeamDriveReference(proto.Message):
     r"""This item is deprecated; please see ``DriveReference`` instead.
-
     Attributes:
         name (str):
             This field is deprecated; please see ``DriveReference.name``
@@ -361,14 +419,18 @@ class TeamDriveReference(proto.Message):
             ``DriveReference.title`` instead.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    title = proto.Field(proto.STRING, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    title = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class DriveReference(proto.Message):
     r"""A lightweight reference to a shared drive.
-
     Attributes:
         name (str):
             The resource name of the shared drive. The format is
@@ -378,9 +440,14 @@ class DriveReference(proto.Message):
             The title of the shared drive.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    title = proto.Field(proto.STRING, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    title = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
 from google.ads.googleads.v5.resources.types import campaign_asset
-from google.rpc import status_pb2 as status  # type: ignore
+from google.rpc import status_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -45,7 +42,10 @@ class GetCampaignAssetRequest(proto.Message):
             asset to fetch.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class MutateCampaignAssetsRequest(proto.Message):
@@ -70,17 +70,27 @@ class MutateCampaignAssetsRequest(proto.Message):
             executed. Only errors are returned, not results.
     """
 
-    customer_id = proto.Field(proto.STRING, number=1)
-    operations = proto.RepeatedField(proto.MESSAGE, number=2,
+    customer_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    operations = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='CampaignAssetOperation',
     )
-    partial_failure = proto.Field(proto.BOOL, number=3)
-    validate_only = proto.Field(proto.BOOL, number=4)
+    partial_failure = proto.Field(
+        proto.BOOL,
+        number=3,
+    )
+    validate_only = proto.Field(
+        proto.BOOL,
+        number=4,
+    )
 
 
 class CampaignAssetOperation(proto.Message):
     r"""A single operation (create, remove) on a campaign asset.
-
     Attributes:
         create (google.ads.googleads.v5.resources.types.CampaignAsset):
             Create operation: No resource name is
@@ -92,15 +102,21 @@ class CampaignAssetOperation(proto.Message):
             ``customers/{customer_id}/campaignAssets/{campaign_id}~{asset_id}~{field_type}``
     """
 
-    create = proto.Field(proto.MESSAGE, number=1, oneof='operation',
+    create = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='operation',
         message=campaign_asset.CampaignAsset,
     )
-    remove = proto.Field(proto.STRING, number=2, oneof='operation')
+    remove = proto.Field(
+        proto.STRING,
+        number=2,
+        oneof='operation',
+    )
 
 
 class MutateCampaignAssetsResponse(proto.Message):
     r"""Response message for a campaign asset mutate.
-
     Attributes:
         partial_failure_error (google.rpc.status_pb2.Status):
             Errors that pertain to operation failures in the partial
@@ -112,23 +128,29 @@ class MutateCampaignAssetsResponse(proto.Message):
             All results for the mutate.
     """
 
-    partial_failure_error = proto.Field(proto.MESSAGE, number=1,
-        message=status.Status,
+    partial_failure_error = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=status_pb2.Status,
     )
-    results = proto.RepeatedField(proto.MESSAGE, number=2,
+    results = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='MutateCampaignAssetResult',
     )
 
 
 class MutateCampaignAssetResult(proto.Message):
     r"""The result for the campaign asset mutate.
-
     Attributes:
         resource_name (str):
             Returned for successful operations.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

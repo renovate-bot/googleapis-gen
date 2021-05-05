@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,8 @@
 #
 
 from .services.private_catalog import PrivateCatalogClient
+from .services.private_catalog import PrivateCatalogAsyncClient
+
 from .types.private_catalog import AssetReference
 from .types.private_catalog import Catalog
 from .types.private_catalog import GcsSource
@@ -30,20 +31,19 @@ from .types.private_catalog import SearchVersionsRequest
 from .types.private_catalog import SearchVersionsResponse
 from .types.private_catalog import Version
 
-
 __all__ = (
-    'AssetReference',
-    'Catalog',
-    'GcsSource',
-    'GitSource',
-    'Inputs',
-    'Product',
-    'SearchCatalogsRequest',
-    'SearchCatalogsResponse',
-    'SearchProductsRequest',
-    'SearchProductsResponse',
-    'SearchVersionsRequest',
-    'SearchVersionsResponse',
-    'Version',
+'AssetReference',
+'Catalog',
+'GcsSource',
+'GitSource',
+'Inputs',
 'PrivateCatalogClient',
+'Product',
+'SearchCatalogsRequest',
+'SearchCatalogsResponse',
+'SearchProductsRequest',
+'SearchProductsResponse',
+'SearchVersionsRequest',
+'SearchVersionsResponse',
+'Version',
 )

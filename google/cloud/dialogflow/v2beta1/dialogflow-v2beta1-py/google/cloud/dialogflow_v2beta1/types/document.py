@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,14 +13,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
 from google.cloud.dialogflow_v2beta1.types import gcs
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-from google.rpc import status_pb2 as gr_status  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
+from google.rpc import status_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -127,7 +124,6 @@ class Document(proto.Message):
 
     class ReloadStatus(proto.Message):
         r"""The status of a reload attempt.
-
         Attributes:
             time (google.protobuf.timestamp_pb2.Timestamp):
                 Output only. The time of a reload attempt.
@@ -139,37 +135,63 @@ class Document(proto.Message):
                 or the initial load.
         """
 
-        time = proto.Field(proto.MESSAGE, number=1,
-            message=timestamp.Timestamp,
+        time = proto.Field(
+            proto.MESSAGE,
+            number=1,
+            message=timestamp_pb2.Timestamp,
         )
-
-        status = proto.Field(proto.MESSAGE, number=2,
+        status = proto.Field(
+            proto.MESSAGE,
+            number=2,
             message=gr_status.Status,
         )
 
-    name = proto.Field(proto.STRING, number=1)
-
-    display_name = proto.Field(proto.STRING, number=2)
-
-    mime_type = proto.Field(proto.STRING, number=3)
-
-    knowledge_types = proto.RepeatedField(proto.ENUM, number=4,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    display_name = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    mime_type = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    knowledge_types = proto.RepeatedField(
+        proto.ENUM,
+        number=4,
         enum=KnowledgeType,
     )
-
-    content_uri = proto.Field(proto.STRING, number=5, oneof='source')
-
-    content = proto.Field(proto.STRING, number=6, oneof='source')
-
-    raw_content = proto.Field(proto.BYTES, number=9, oneof='source')
-
-    enable_auto_reload = proto.Field(proto.BOOL, number=11)
-
-    latest_reload_status = proto.Field(proto.MESSAGE, number=12,
+    content_uri = proto.Field(
+        proto.STRING,
+        number=5,
+        oneof='source',
+    )
+    content = proto.Field(
+        proto.STRING,
+        number=6,
+        oneof='source',
+    )
+    raw_content = proto.Field(
+        proto.BYTES,
+        number=9,
+        oneof='source',
+    )
+    enable_auto_reload = proto.Field(
+        proto.BOOL,
+        number=11,
+    )
+    latest_reload_status = proto.Field(
+        proto.MESSAGE,
+        number=12,
         message=ReloadStatus,
     )
-
-    metadata = proto.MapField(proto.STRING, proto.STRING, number=7)
+    metadata = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=7,
+    )
 
 
 class GetDocumentRequest(proto.Message):
@@ -182,7 +204,10 @@ class GetDocumentRequest(proto.Message):
             ``projects/<Project ID>/locations/<Location ID>/knowledgeBases/<Knowledge Base ID>/documents/<Document ID>``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class ListDocumentsRequest(proto.Message):
@@ -226,13 +251,22 @@ class ListDocumentsRequest(proto.Message):
             Filtering <https://aip.dev/160>`__.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
-
-    filter = proto.Field(proto.STRING, number=4)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    filter = proto.Field(
+        proto.STRING,
+        number=4,
+    )
 
 
 class ListDocumentsResponse(proto.Message):
@@ -252,11 +286,15 @@ class ListDocumentsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    documents = proto.RepeatedField(proto.MESSAGE, number=1,
+    documents = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Document',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class CreateDocumentRequest(proto.Message):
@@ -276,13 +314,19 @@ class CreateDocumentRequest(proto.Message):
             source is Google Cloud Storage URI.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    document = proto.Field(proto.MESSAGE, number=2,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    document = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='Document',
     )
-
-    import_gcs_custom_metadata = proto.Field(proto.BOOL, number=3)
+    import_gcs_custom_metadata = proto.Field(
+        proto.BOOL,
+        number=3,
+    )
 
 
 class ImportDocumentsRequest(proto.Message):
@@ -310,22 +354,29 @@ class ImportDocumentsRequest(proto.Message):
             source is Google Cloud Storage URI.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    gcs_source = proto.Field(proto.MESSAGE, number=2, oneof='source',
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    gcs_source = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='source',
         message=gcs.GcsSources,
     )
-
-    document_template = proto.Field(proto.MESSAGE, number=3,
+    document_template = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='ImportDocumentTemplate',
     )
-
-    import_gcs_custom_metadata = proto.Field(proto.BOOL, number=4)
+    import_gcs_custom_metadata = proto.Field(
+        proto.BOOL,
+        number=4,
+    )
 
 
 class ImportDocumentTemplate(proto.Message):
     r"""The template used for importing documents.
-
     Attributes:
         mime_type (str):
             Required. The MIME type of the document.
@@ -340,13 +391,20 @@ class ImportDocumentTemplate(proto.Message):
             ``value`` of the metadata is 1024 bytes.
     """
 
-    mime_type = proto.Field(proto.STRING, number=1)
-
-    knowledge_types = proto.RepeatedField(proto.ENUM, number=2,
+    mime_type = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    knowledge_types = proto.RepeatedField(
+        proto.ENUM,
+        number=2,
         enum='Document.KnowledgeType',
     )
-
-    metadata = proto.MapField(proto.STRING, proto.STRING, number=3)
+    metadata = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=3,
+    )
 
 
 class ImportDocumentsResponse(proto.Message):
@@ -359,7 +417,9 @@ class ImportDocumentsResponse(proto.Message):
             any other warnings.
     """
 
-    warnings = proto.RepeatedField(proto.MESSAGE, number=1,
+    warnings = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=gr_status.Status,
     )
 
@@ -374,7 +434,10 @@ class DeleteDocumentRequest(proto.Message):
             ``projects/<Project ID>/locations/<Location ID>/knowledgeBases/<Knowledge Base ID>/documents/<Document ID>``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class UpdateDocumentRequest(proto.Message):
@@ -390,12 +453,15 @@ class UpdateDocumentRequest(proto.Message):
             will be returned for attempting to update other fields.
     """
 
-    document = proto.Field(proto.MESSAGE, number=1,
+    document = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='Document',
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=2,
-        message=field_mask.FieldMask,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=field_mask_pb2.FieldMask,
     )
 
 
@@ -415,7 +481,9 @@ class KnowledgeOperationMetadata(proto.Message):
         RUNNING = 2
         DONE = 3
 
-    state = proto.Field(proto.ENUM, number=1,
+    state = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=State,
     )
 
@@ -438,13 +506,20 @@ class ReloadDocumentRequest(proto.Message):
             source is Google Cloud Storage URI.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    gcs_source = proto.Field(proto.MESSAGE, number=3, oneof='source',
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    gcs_source = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        oneof='source',
         message=gcs.GcsSource,
     )
-
-    import_gcs_custom_metadata = proto.Field(proto.BOOL, number=4)
+    import_gcs_custom_metadata = proto.Field(
+        proto.BOOL,
+        number=4,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

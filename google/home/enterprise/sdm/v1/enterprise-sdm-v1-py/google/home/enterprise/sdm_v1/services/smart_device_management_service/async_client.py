@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -22,18 +20,17 @@ from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
 import google.api_core.client_options as ClientOptions # type: ignore
-from google.api_core import exceptions                 # type: ignore
+from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
 from google.home.enterprise.sdm_v1.services.smart_device_management_service import pagers
 from google.home.enterprise.sdm_v1.types import device
 from google.home.enterprise.sdm_v1.types import site
 from google.home.enterprise.sdm_v1.types import smart_device_management_service
-from google.protobuf import struct_pb2 as struct  # type: ignore
-
+from google.protobuf import struct_pb2  # type: ignore
 from .transports.base import SmartDeviceManagementServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import SmartDeviceManagementServiceGrpcAsyncIOTransport
 from .client import SmartDeviceManagementServiceClient
@@ -55,19 +52,14 @@ class SmartDeviceManagementServiceAsyncClient:
     parse_room_path = staticmethod(SmartDeviceManagementServiceClient.parse_room_path)
     structure_path = staticmethod(SmartDeviceManagementServiceClient.structure_path)
     parse_structure_path = staticmethod(SmartDeviceManagementServiceClient.parse_structure_path)
-
     common_billing_account_path = staticmethod(SmartDeviceManagementServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(SmartDeviceManagementServiceClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(SmartDeviceManagementServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(SmartDeviceManagementServiceClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(SmartDeviceManagementServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(SmartDeviceManagementServiceClient.parse_common_organization_path)
-
     common_project_path = staticmethod(SmartDeviceManagementServiceClient.common_project_path)
     parse_common_project_path = staticmethod(SmartDeviceManagementServiceClient.parse_common_project_path)
-
     common_location_path = staticmethod(SmartDeviceManagementServiceClient.common_location_path)
     parse_common_location_path = staticmethod(SmartDeviceManagementServiceClient.parse_common_location_path)
 
@@ -115,7 +107,7 @@ class SmartDeviceManagementServiceAsyncClient:
     get_transport_class = functools.partial(type(SmartDeviceManagementServiceClient).get_transport_class, type(SmartDeviceManagementServiceClient))
 
     def __init__(self, *,
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             transport: Union[str, SmartDeviceManagementServiceTransport] = 'grpc_asyncio',
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -152,7 +144,6 @@ class SmartDeviceManagementServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = SmartDeviceManagementServiceClient(
             credentials=credentials,
             transport=transport,
@@ -174,7 +165,6 @@ class SmartDeviceManagementServiceAsyncClient:
             request (:class:`google.home.enterprise.sdm_v1.types.GetDeviceRequest`):
                 The request object. Request message for
                 SmartDeviceManagementService.GetDevice
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -189,7 +179,6 @@ class SmartDeviceManagementServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = smart_device_management_service.GetDeviceRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -197,10 +186,7 @@ class SmartDeviceManagementServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_device,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=10.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -241,7 +227,6 @@ class SmartDeviceManagementServiceAsyncClient:
             request (:class:`google.home.enterprise.sdm_v1.types.ListDevicesRequest`):
                 The request object. Request message for
                 SmartDeviceManagementService.ListDevices
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -258,7 +243,6 @@ class SmartDeviceManagementServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = smart_device_management_service.ListDevicesRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -266,10 +250,7 @@ class SmartDeviceManagementServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_devices,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=10.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -320,7 +301,6 @@ class SmartDeviceManagementServiceAsyncClient:
             request (:class:`google.home.enterprise.sdm_v1.types.ExecuteDeviceCommandRequest`):
                 The request object. Request message for
                 SmartDeviceManagementService.ExecuteDeviceCommand
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -334,7 +314,6 @@ class SmartDeviceManagementServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = smart_device_management_service.ExecuteDeviceCommandRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -377,7 +356,6 @@ class SmartDeviceManagementServiceAsyncClient:
             request (:class:`google.home.enterprise.sdm_v1.types.GetStructureRequest`):
                 The request object. Request message for
                 SmartDeviceManagementService.GetStructure
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -392,7 +370,6 @@ class SmartDeviceManagementServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = smart_device_management_service.GetStructureRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -400,10 +377,7 @@ class SmartDeviceManagementServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_structure,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=10.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -444,7 +418,6 @@ class SmartDeviceManagementServiceAsyncClient:
             request (:class:`google.home.enterprise.sdm_v1.types.ListStructuresRequest`):
                 The request object. Request message for
                 SmartDeviceManagementService.ListStructures
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -461,7 +434,6 @@ class SmartDeviceManagementServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = smart_device_management_service.ListStructuresRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -469,10 +441,7 @@ class SmartDeviceManagementServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_structures,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=10.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -522,7 +491,6 @@ class SmartDeviceManagementServiceAsyncClient:
             request (:class:`google.home.enterprise.sdm_v1.types.GetRoomRequest`):
                 The request object. Request message for
                 SmartDeviceManagementService.GetRoom
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -538,7 +506,6 @@ class SmartDeviceManagementServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = smart_device_management_service.GetRoomRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -546,10 +513,7 @@ class SmartDeviceManagementServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_room,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=10.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -590,7 +554,6 @@ class SmartDeviceManagementServiceAsyncClient:
             request (:class:`google.home.enterprise.sdm_v1.types.ListRoomsRequest`):
                 The request object. Request message for
                 SmartDeviceManagementService.ListRooms
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -607,7 +570,6 @@ class SmartDeviceManagementServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = smart_device_management_service.ListRoomsRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -615,10 +577,7 @@ class SmartDeviceManagementServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_rooms,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=10.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -654,8 +613,6 @@ class SmartDeviceManagementServiceAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

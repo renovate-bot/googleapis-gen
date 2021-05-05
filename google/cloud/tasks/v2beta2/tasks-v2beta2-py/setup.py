@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import io
 import os
 import setuptools  # type: ignore
@@ -39,8 +37,7 @@ setuptools.setup(
         'google-api-core[grpc] >= 1.22.2, < 2.0.0dev',
         'libcst >= 0.2.5',
         'proto-plus >= 1.15.0',
-        'grpc-google-iam-v1',
-    ),
+        'packaging >= 14.3',        'grpc-google-iam-v1 >= 0.12.3, < 0.13dev',    ),
     python_requires='>=3.6',
     classifiers=[
         'Development Status :: 3 - Alpha',

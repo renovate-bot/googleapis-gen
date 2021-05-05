@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -23,10 +21,10 @@ from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
-from google.api_core import exceptions                            # type: ignore
+from google.api_core import exceptions as core_exceptions         # type: ignore
 from google.api_core import gapic_v1                              # type: ignore
 from google.api_core import retry as retries                      # type: ignore
-from google.auth import credentials                               # type: ignore
+from google.auth import credentials as ga_credentials             # type: ignore
 from google.auth.transport import mtls                            # type: ignore
 from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
@@ -37,9 +35,8 @@ from google.api_core import operation_async  # type: ignore
 from google.cloud.managedidentities_v1beta1.services.managed_identities_service import pagers
 from google.cloud.managedidentities_v1beta1.types import managed_identities_service
 from google.cloud.managedidentities_v1beta1.types import resource
-from google.protobuf import empty_pb2 as empty  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
+from google.protobuf import empty_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 from .transports.base import ManagedIdentitiesServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import ManagedIdentitiesServiceGrpcTransport
 from .transports.grpc_asyncio import ManagedIdentitiesServiceGrpcAsyncIOTransport
@@ -216,7 +213,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
         return m.groupdict() if m else {}
 
     def __init__(self, *,
-            credentials: Optional[credentials.Credentials] = None,
+            credentials: Optional[ga_credentials.Credentials] = None,
             transport: Union[str, ManagedIdentitiesServiceTransport, None] = None,
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -331,7 +328,6 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
             request (google.cloud.managedidentities_v1beta1.types.CreateMicrosoftAdDomainRequest):
                 The request object. Request message for
                 [CreateMicrosoftAdDomain][google.cloud.managedidentities.v1beta1.CreateMicrosoftAdDomain]
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -348,7 +344,6 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a managed_identities_service.CreateMicrosoftAdDomainRequest.
         # There's no risk of modifying the input as we've already verified
@@ -400,7 +395,6 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
             request (google.cloud.managedidentities_v1beta1.types.ResetAdminPasswordRequest):
                 The request object. Request message for
                 [ResetAdminPassword][google.cloud.managedidentities.v1beta1.ResetAdminPassword]
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -414,7 +408,6 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a managed_identities_service.ResetAdminPasswordRequest.
         # There's no risk of modifying the input as we've already verified
@@ -458,7 +451,6 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
             request (google.cloud.managedidentities_v1beta1.types.ListDomainsRequest):
                 The request object. Request message for
                 [ListDomains][google.cloud.managedidentities.v1beta1.ListDomains]
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -475,7 +467,6 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a managed_identities_service.ListDomainsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -528,7 +519,6 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
             request (google.cloud.managedidentities_v1beta1.types.GetDomainRequest):
                 The request object. Request message for
                 [GetDomain][google.cloud.managedidentities.v1beta1.GetDomain]
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -542,7 +532,6 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a managed_identities_service.GetDomainRequest.
         # There's no risk of modifying the input as we've already verified
@@ -586,7 +575,6 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
             request (google.cloud.managedidentities_v1beta1.types.UpdateDomainRequest):
                 The request object. Request message for
                 [UpdateDomain][google.cloud.managedidentities.v1beta1.UpdateDomain]
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -603,7 +591,6 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a managed_identities_service.UpdateDomainRequest.
         # There's no risk of modifying the input as we've already verified
@@ -655,7 +642,6 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
             request (google.cloud.managedidentities_v1beta1.types.DeleteDomainRequest):
                 The request object. Request message for
                 [DeleteDomain][google.cloud.managedidentities.v1beta1.DeleteDomain]
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -682,7 +668,6 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a managed_identities_service.DeleteDomainRequest.
         # There's no risk of modifying the input as we've already verified
@@ -714,7 +699,7 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
         response = operation.from_gapic(
             response,
             self._transport.operations_client,
-            empty.Empty,
+            empty_pb2.Empty,
             metadata_type=managed_identities_service.OpMetadata,
         )
 
@@ -734,7 +719,6 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
             request (google.cloud.managedidentities_v1beta1.types.AttachTrustRequest):
                 The request object. Request message for
                 [AttachTrust][google.cloud.managedidentities.v1beta1.AttachTrust]
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -751,7 +735,6 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a managed_identities_service.AttachTrustRequest.
         # There's no risk of modifying the input as we've already verified
@@ -803,7 +786,6 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
             request (google.cloud.managedidentities_v1beta1.types.ReconfigureTrustRequest):
                 The request object. Request message for
                 [ReconfigureTrust][google.cloud.managedidentities.v1beta1.ReconfigureTrust]
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -820,7 +802,6 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a managed_identities_service.ReconfigureTrustRequest.
         # There's no risk of modifying the input as we've already verified
@@ -872,7 +853,6 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
             request (google.cloud.managedidentities_v1beta1.types.DetachTrustRequest):
                 The request object. Request message for
                 [DetachTrust][google.cloud.managedidentities.v1beta1.DetachTrust]
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -889,7 +869,6 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a managed_identities_service.DetachTrustRequest.
         # There's no risk of modifying the input as we've already verified
@@ -943,7 +922,6 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
             request (google.cloud.managedidentities_v1beta1.types.ValidateTrustRequest):
                 The request object. Request message for
                 [ValidateTrust][google.cloud.managedidentities.v1beta1.ValidateTrust]
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -960,7 +938,6 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a managed_identities_service.ValidateTrustRequest.
         # There's no risk of modifying the input as we've already verified
@@ -998,8 +975,6 @@ class ManagedIdentitiesServiceClient(metaclass=ManagedIdentitiesServiceClientMet
 
         # Done; return the response.
         return response
-
-
 
 
 

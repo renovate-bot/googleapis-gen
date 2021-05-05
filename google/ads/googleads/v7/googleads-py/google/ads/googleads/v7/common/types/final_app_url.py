@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v7.enums.types import app_url_operating_system_type
 
@@ -49,10 +46,16 @@ class FinalAppUrl(proto.Message):
             Required.
     """
 
-    os_type = proto.Field(proto.ENUM, number=1,
+    os_type = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=app_url_operating_system_type.AppUrlOperatingSystemTypeEnum.AppUrlOperatingSystemType,
     )
-    url = proto.Field(proto.STRING, number=3, optional=True)
+    url = proto.Field(
+        proto.STRING,
+        number=3,
+        optional=True,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

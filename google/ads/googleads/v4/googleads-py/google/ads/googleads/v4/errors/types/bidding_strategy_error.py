@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -30,7 +28,7 @@ __protobuf__ = proto.module(
 class BiddingStrategyErrorEnum(proto.Message):
     r"""Container for enum describing possible bidding strategy
     errors.
-    """
+        """
     class BiddingStrategyError(proto.Enum):
         r"""Enum describing possible bidding strategy errors."""
         UNSPECIFIED = 0

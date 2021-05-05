@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 from unittest import mock
 
@@ -23,7 +21,6 @@ import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
-from google import auth
 from google.ads.googleads.v7.enums.types import placement_type
 from google.ads.googleads.v7.resources.types import detail_placement_view
 from google.ads.googleads.v7.services.services.detail_placement_view_service import DetailPlacementViewServiceClient
@@ -32,9 +29,10 @@ from google.ads.googleads.v7.services.types import detail_placement_view_service
 from google.api_core import client_options
 from google.api_core import gapic_v1
 from google.api_core import grpc_helpers
-from google.auth import credentials
+from google.auth import credentials as ga_credentials
 from google.auth.exceptions import MutualTLSChannelError
 from google.oauth2 import service_account
+import google.auth
 
 
 def client_cert_source_callback():
@@ -64,7 +62,7 @@ def test__get_default_mtls_endpoint():
 
 
 def test_detail_placement_view_service_client_from_service_account_info():
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
@@ -75,7 +73,7 @@ def test_detail_placement_view_service_client_from_service_account_info():
 
 
 def test_detail_placement_view_service_client_from_service_account_file():
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_file') as factory:
         factory.return_value = creds
         client = DetailPlacementViewServiceClient.from_service_account_file("dummy/file/path.json")
@@ -100,7 +98,7 @@ def test_detail_placement_view_service_client_client_options():
     # Check that if channel is provided we won't create a new one.
     with mock.patch('google.ads.googleads.v7.services.services.detail_placement_view_service.DetailPlacementViewServiceClient.get_transport_class') as gtc:
         transport = transports.DetailPlacementViewServiceGrpcTransport(
-            credentials=credentials.AnonymousCredentials()
+            credentials=ga_credentials.AnonymousCredentials()
         )
         client = DetailPlacementViewServiceClient(transport=transport)
         gtc.assert_not_called()
@@ -250,7 +248,7 @@ def test_detail_placement_view_service_client_client_options_from_dict():
 
 def test_get_detail_placement_view(transport: str = 'grpc', request_type=detail_placement_view_service.GetDetailPlacementViewRequest):
     client = DetailPlacementViewServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -265,41 +263,26 @@ def test_get_detail_placement_view(transport: str = 'grpc', request_type=detail_
         # Designate an appropriate return value for the call.
         call.return_value = detail_placement_view.DetailPlacementView(
             resource_name='resource_name_value',
-
             placement='placement_value',
-
             display_name='display_name_value',
-
             group_placement_target_url='group_placement_target_url_value',
-
             target_url='target_url_value',
-
             placement_type=placement_type.PlacementTypeEnum.PlacementType.UNKNOWN,
-
         )
-
         response = client.get_detail_placement_view(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == detail_placement_view_service.GetDetailPlacementViewRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, detail_placement_view.DetailPlacementView)
-
     assert response.resource_name == 'resource_name_value'
-
     assert response.placement == 'placement_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.group_placement_target_url == 'group_placement_target_url_value'
-
     assert response.target_url == 'target_url_value'
-
     assert response.placement_type == placement_type.PlacementTypeEnum.PlacementType.UNKNOWN
 
 
@@ -309,12 +292,13 @@ def test_get_detail_placement_view_from_dict():
 
 def test_get_detail_placement_view_field_headers():
     client = DetailPlacementViewServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = detail_placement_view_service.GetDetailPlacementViewRequest()
+
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -322,7 +306,6 @@ def test_get_detail_placement_view_field_headers():
             type(client.transport.get_detail_placement_view),
             '__call__') as call:
         call.return_value = detail_placement_view.DetailPlacementView()
-
         client.get_detail_placement_view(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -340,7 +323,7 @@ def test_get_detail_placement_view_field_headers():
 
 def test_get_detail_placement_view_flattened():
     client = DetailPlacementViewServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -349,7 +332,6 @@ def test_get_detail_placement_view_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = detail_placement_view.DetailPlacementView()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_detail_placement_view(
@@ -360,13 +342,12 @@ def test_get_detail_placement_view_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource_name == 'resource_name_value'
 
 
 def test_get_detail_placement_view_flattened_error():
     client = DetailPlacementViewServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -381,11 +362,11 @@ def test_get_detail_placement_view_flattened_error():
 def test_credentials_transport_error():
     # It is an error to provide credentials and a transport instance.
     transport = transports.DetailPlacementViewServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = DetailPlacementViewServiceClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             transport=transport,
         )
 
@@ -393,7 +374,7 @@ def test_credentials_transport_error():
 def test_transport_instance():
     # A client may be instantiated with a custom transport instance.
     transport = transports.DetailPlacementViewServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     client = DetailPlacementViewServiceClient(transport=transport)
     assert client.transport is transport
@@ -402,7 +383,7 @@ def test_transport_instance():
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.DetailPlacementViewServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     channel = transport.grpc_channel
     assert channel
@@ -411,7 +392,7 @@ def test_transport_get_channel():
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = DetailPlacementViewServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     assert isinstance(
         client.transport,
@@ -423,8 +404,8 @@ def test_transport_grpc_default():
 ])
 def test_transport_adc(transport_class):
     # Test default credentials are used if not provided.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport_class()
         adc.assert_called_once()
 
@@ -434,14 +415,14 @@ def test_detail_placement_view_service_base_transport():
     with mock.patch('google.ads.googleads.v7.services.services.detail_placement_view_service.transports.DetailPlacementViewServiceTransport.__init__') as Transport:
         Transport.return_value = None
         transport = transports.DetailPlacementViewServiceTransport(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
         )
 
     # Every method on the transport should just blindly
     # raise NotImplementedError.
     methods = (
         'get_detail_placement_view',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -449,17 +430,17 @@ def test_detail_placement_view_service_base_transport():
 
 def test_detail_placement_view_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.ads.googleads.v7.services.services.detail_placement_view_service.transports.DetailPlacementViewServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'default') as adc, mock.patch('google.ads.googleads.v7.services.services.detail_placement_view_service.transports.DetailPlacementViewServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.DetailPlacementViewServiceTransport()
         adc.assert_called_once()
 
 
 def test_detail_placement_view_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         DetailPlacementViewServiceClient()
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/adwords',
@@ -469,8 +450,8 @@ def test_detail_placement_view_service_auth_adc():
 def test_detail_placement_view_service_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transports.DetailPlacementViewServiceGrpcTransport(host="squid.clam.whelk")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/adwords',
@@ -479,7 +460,7 @@ def test_detail_placement_view_service_transport_auth_adc():
 
 def test_detail_placement_view_service_host_no_port():
     client = DetailPlacementViewServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='googleads.googleapis.com'),
     )
     assert client.transport._host == 'googleads.googleapis.com:443'
@@ -487,7 +468,7 @@ def test_detail_placement_view_service_host_no_port():
 
 def test_detail_placement_view_service_host_with_port():
     client = DetailPlacementViewServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='googleads.googleapis.com:8000'),
     )
     assert client.transport._host == 'googleads.googleapis.com:8000'
@@ -518,9 +499,9 @@ def test_detail_placement_view_service_transport_channel_mtls_with_client_cert_s
             mock_grpc_channel = mock.Mock()
             grpc_create_channel.return_value = mock_grpc_channel
 
-            cred = credentials.AnonymousCredentials()
+            cred = ga_credentials.AnonymousCredentials()
             with pytest.warns(DeprecationWarning):
-                with mock.patch.object(auth, 'default') as adc:
+                with mock.patch.object(google.auth, 'default') as adc:
                     adc.return_value = (cred, None)
                     transport = transport_class(
                         host="squid.clam.whelk",
@@ -594,7 +575,6 @@ def test_detail_placement_view_path():
     customer_id = "squid"
     ad_group_id = "clam"
     base64_placement = "whelk"
-
     expected = "customers/{customer_id}/detailPlacementViews/{ad_group_id}~{base64_placement}".format(customer_id=customer_id, ad_group_id=ad_group_id, base64_placement=base64_placement, )
     actual = DetailPlacementViewServiceClient.detail_placement_view_path(customer_id, ad_group_id, base64_placement)
     assert expected == actual
@@ -602,10 +582,9 @@ def test_detail_placement_view_path():
 
 def test_parse_detail_placement_view_path():
     expected = {
-    "customer_id": "octopus",
-    "ad_group_id": "oyster",
-    "base64_placement": "nudibranch",
-
+        "customer_id": "octopus",
+        "ad_group_id": "oyster",
+        "base64_placement": "nudibranch",
     }
     path = DetailPlacementViewServiceClient.detail_placement_view_path(**expected)
 
@@ -615,7 +594,6 @@ def test_parse_detail_placement_view_path():
 
 def test_common_billing_account_path():
     billing_account = "cuttlefish"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = DetailPlacementViewServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -623,8 +601,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "mussel",
-
+        "billing_account": "mussel",
     }
     path = DetailPlacementViewServiceClient.common_billing_account_path(**expected)
 
@@ -634,7 +611,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "winkle"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = DetailPlacementViewServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -642,8 +618,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "nautilus",
-
+        "folder": "nautilus",
     }
     path = DetailPlacementViewServiceClient.common_folder_path(**expected)
 
@@ -653,7 +628,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "scallop"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = DetailPlacementViewServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -661,8 +635,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "abalone",
-
+        "organization": "abalone",
     }
     path = DetailPlacementViewServiceClient.common_organization_path(**expected)
 
@@ -672,7 +645,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "squid"
-
     expected = "projects/{project}".format(project=project, )
     actual = DetailPlacementViewServiceClient.common_project_path(project)
     assert expected == actual
@@ -680,8 +652,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "clam",
-
+        "project": "clam",
     }
     path = DetailPlacementViewServiceClient.common_project_path(**expected)
 
@@ -692,7 +663,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "whelk"
     location = "octopus"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = DetailPlacementViewServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -700,9 +670,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "oyster",
-    "location": "nudibranch",
-
+        "project": "oyster",
+        "location": "nudibranch",
     }
     path = DetailPlacementViewServiceClient.common_location_path(**expected)
 
@@ -716,7 +685,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
 
     with mock.patch.object(transports.DetailPlacementViewServiceTransport, '_prep_wrapped_messages') as prep:
         client = DetailPlacementViewServiceClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)
@@ -724,7 +693,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
     with mock.patch.object(transports.DetailPlacementViewServiceTransport, '_prep_wrapped_messages') as prep:
         transport_class = DetailPlacementViewServiceClient.get_transport_class()
         transport = transport_class(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)

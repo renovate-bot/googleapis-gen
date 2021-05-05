@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -23,10 +21,10 @@ from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
-from google.api_core import exceptions                            # type: ignore
+from google.api_core import exceptions as core_exceptions         # type: ignore
 from google.api_core import gapic_v1                              # type: ignore
 from google.api_core import retry as retries                      # type: ignore
-from google.auth import credentials                               # type: ignore
+from google.auth import credentials as ga_credentials             # type: ignore
 from google.auth.transport import mtls                            # type: ignore
 from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
@@ -49,9 +47,8 @@ from google.cloud.datalabeling_v1beta1.types import human_annotation_config
 from google.cloud.datalabeling_v1beta1.types import instruction
 from google.cloud.datalabeling_v1beta1.types import instruction as gcd_instruction
 from google.cloud.datalabeling_v1beta1.types import operations
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 from .transports.base import DataLabelingServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import DataLabelingServiceGrpcTransport
 from .transports.grpc_asyncio import DataLabelingServiceGrpcAsyncIOTransport
@@ -316,7 +313,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         return m.groupdict() if m else {}
 
     def __init__(self, *,
-            credentials: Optional[credentials.Credentials] = None,
+            credentials: Optional[ga_credentials.Credentials] = None,
             transport: Union[str, DataLabelingServiceTransport, None] = None,
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -445,7 +442,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``dataset`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -474,10 +470,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.CreateDatasetRequest):
             request = data_labeling_service.CreateDatasetRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if dataset is not None:
@@ -526,7 +520,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -555,10 +548,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.GetDatasetRequest):
             request = data_labeling_service.GetDatasetRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -614,7 +605,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -644,10 +634,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.ListDatasetsRequest):
             request = data_labeling_service.ListDatasetsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if filter is not None:
@@ -705,7 +693,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -726,10 +713,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.DeleteDatasetRequest):
             request = data_labeling_service.DeleteDatasetRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -786,7 +771,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``input_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -816,10 +800,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.ImportDataRequest):
             request = data_labeling_service.ImportDataRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
             if input_config is not None:
@@ -903,7 +885,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``output_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -933,10 +914,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.ExportDataRequest):
             request = data_labeling_service.ExportDataRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
             if annotated_dataset is not None:
@@ -998,7 +977,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1025,10 +1003,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.GetDataItemRequest):
             request = data_labeling_service.GetDataItemRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1085,7 +1061,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1115,10 +1090,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.ListDataItemsRequest):
             request = data_labeling_service.ListDataItemsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if filter is not None:
@@ -1178,7 +1151,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1208,10 +1180,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.GetAnnotatedDatasetRequest):
             request = data_labeling_service.GetAnnotatedDatasetRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1269,7 +1239,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1299,10 +1268,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.ListAnnotatedDatasetsRequest):
             request = data_labeling_service.ListAnnotatedDatasetsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if filter is not None:
@@ -1353,7 +1320,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             request (google.cloud.datalabeling_v1beta1.types.DeleteAnnotatedDatasetRequest):
                 The request object. Request message for
                 DeleteAnnotatedDataset.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1361,7 +1327,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 sent along with the request as metadata.
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a data_labeling_service.DeleteAnnotatedDatasetRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1427,7 +1392,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``feature`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1457,10 +1421,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.LabelImageRequest):
             request = data_labeling_service.LabelImageRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if basic_config is not None:
@@ -1536,7 +1498,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``feature`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1566,10 +1527,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.LabelVideoRequest):
             request = data_labeling_service.LabelVideoRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if basic_config is not None:
@@ -1645,7 +1604,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``feature`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1675,10 +1633,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.LabelTextRequest):
             request = data_labeling_service.LabelTextRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if basic_config is not None:
@@ -1748,7 +1704,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1776,10 +1731,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.GetExampleRequest):
             request = data_labeling_service.GetExampleRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
             if filter is not None:
@@ -1837,7 +1790,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1867,10 +1819,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.ListExamplesRequest):
             request = data_labeling_service.ListExamplesRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if filter is not None:
@@ -1939,7 +1889,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``annotation_spec_set`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1970,10 +1919,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.CreateAnnotationSpecSetRequest):
             request = data_labeling_service.CreateAnnotationSpecSetRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if annotation_spec_set is not None:
@@ -2023,7 +1970,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2054,10 +2000,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.GetAnnotationSpecSetRequest):
             request = data_labeling_service.GetAnnotationSpecSetRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -2114,7 +2058,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2144,10 +2087,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.ListAnnotationSpecSetsRequest):
             request = data_labeling_service.ListAnnotationSpecSetsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if filter is not None:
@@ -2206,7 +2147,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2227,10 +2167,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.DeleteAnnotationSpecSetRequest):
             request = data_labeling_service.DeleteAnnotationSpecSetRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -2284,7 +2222,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``instruction`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2313,10 +2250,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.CreateInstructionRequest):
             request = data_labeling_service.CreateInstructionRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if instruction is not None:
@@ -2373,7 +2308,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2402,10 +2336,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.GetInstructionRequest):
             request = data_labeling_service.GetInstructionRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -2462,7 +2394,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2492,10 +2423,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.ListInstructionsRequest):
             request = data_labeling_service.ListInstructionsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if filter is not None:
@@ -2554,7 +2483,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2575,10 +2503,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.DeleteInstructionRequest):
             request = data_labeling_service.DeleteInstructionRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -2624,7 +2550,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2653,10 +2578,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.GetEvaluationRequest):
             request = data_labeling_service.GetEvaluationRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -2745,7 +2668,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2774,10 +2696,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.SearchEvaluationsRequest):
             request = data_labeling_service.SearchEvaluationsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if filter is not None:
@@ -2842,7 +2762,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2872,10 +2791,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.SearchExampleComparisonsRequest):
             request = data_labeling_service.SearchExampleComparisonsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -2940,7 +2857,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``job`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2971,10 +2887,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.CreateEvaluationJobRequest):
             request = data_labeling_service.CreateEvaluationJobRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if job is not None:
@@ -3007,7 +2921,7 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
             request: data_labeling_service.UpdateEvaluationJobRequest = None,
             *,
             evaluation_job: gcd_evaluation_job.EvaluationJob = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -3046,7 +2960,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3077,10 +2990,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.UpdateEvaluationJobRequest):
             request = data_labeling_service.UpdateEvaluationJobRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if evaluation_job is not None:
                 request.evaluation_job = evaluation_job
             if update_mask is not None:
@@ -3131,7 +3042,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3162,10 +3072,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.GetEvaluationJobRequest):
             request = data_labeling_service.GetEvaluationJobRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -3216,7 +3124,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3237,10 +3144,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.PauseEvaluationJobRequest):
             request = data_labeling_service.PauseEvaluationJobRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -3288,7 +3193,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3309,10 +3213,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.ResumeEvaluationJobRequest):
             request = data_labeling_service.ResumeEvaluationJobRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -3358,7 +3260,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3379,10 +3280,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.DeleteEvaluationJobRequest):
             request = data_labeling_service.DeleteEvaluationJobRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -3444,7 +3343,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3473,10 +3371,8 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, data_labeling_service.ListEvaluationJobsRequest):
             request = data_labeling_service.ListEvaluationJobsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if filter is not None:
@@ -3513,8 +3409,6 @@ class DataLabelingServiceClient(metaclass=DataLabelingServiceClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

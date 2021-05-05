@@ -1,0 +1,73 @@
+ {
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "python",
+  "libraryPackage": "google.home.graph_v1",
+  "protoPackage": "google.home.graph.v1",
+  "schema": "1.0",
+  "services": {
+    "HomeGraphApiService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "HomeGraphApiServiceClient",
+          "rpcs": {
+            "DeleteAgentUser": {
+              "methods": [
+                "delete_agent_user"
+              ]
+            },
+            "Query": {
+              "methods": [
+                "query"
+              ]
+            },
+            "ReportStateAndNotification": {
+              "methods": [
+                "report_state_and_notification"
+              ]
+            },
+            "RequestSyncDevices": {
+              "methods": [
+                "request_sync_devices"
+              ]
+            },
+            "Sync": {
+              "methods": [
+                "sync"
+              ]
+            }
+          }
+        },
+        "grpc-async": {
+          "libraryClient": "HomeGraphApiServiceAsyncClient",
+          "rpcs": {
+            "DeleteAgentUser": {
+              "methods": [
+                "delete_agent_user"
+              ]
+            },
+            "Query": {
+              "methods": [
+                "query"
+              ]
+            },
+            "ReportStateAndNotification": {
+              "methods": [
+                "report_state_and_notification"
+              ]
+            },
+            "RequestSyncDevices": {
+              "methods": [
+                "request_sync_devices"
+              ]
+            },
+            "Sync": {
+              "methods": [
+                "sync"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

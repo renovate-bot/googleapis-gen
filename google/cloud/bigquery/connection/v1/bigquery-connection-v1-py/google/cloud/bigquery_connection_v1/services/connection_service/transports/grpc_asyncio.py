@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,25 +13,23 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
-from google import auth                                # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
+import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
 
 from google.cloud.bigquery_connection_v1.types import connection
 from google.cloud.bigquery_connection_v1.types import connection as gcbc_connection
-from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
-from google.iam.v1 import policy_pb2 as gi_policy  # type: ignore
-from google.protobuf import empty_pb2 as empty  # type: ignore
-
+from google.iam.v1 import iam_policy_pb2  # type: ignore
+from google.iam.v1 import policy_pb2  # type: ignore
+from google.protobuf import empty_pb2  # type: ignore
 from .base import ConnectionServiceTransport, DEFAULT_CLIENT_INFO
 from .grpc import ConnectionServiceGrpcTransport
 
@@ -56,7 +53,7 @@ class ConnectionServiceGrpcAsyncIOTransport(ConnectionServiceTransport):
     @classmethod
     def create_channel(cls,
                        host: str = 'bigqueryconnection.googleapis.com',
-                       credentials: credentials.Credentials = None,
+                       credentials: ga_credentials.Credentials = None,
                        credentials_file: Optional[str] = None,
                        scopes: Optional[Sequence[str]] = None,
                        quota_project_id: Optional[str] = None,
@@ -82,19 +79,21 @@ class ConnectionServiceGrpcAsyncIOTransport(ConnectionServiceTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
     def __init__(self, *,
             host: str = 'bigqueryconnection.googleapis.com',
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             credentials_file: Optional[str] = None,
             scopes: Optional[Sequence[str]] = None,
             channel: aio.Channel = None,
@@ -108,7 +107,8 @@ class ConnectionServiceGrpcAsyncIOTransport(ConnectionServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -166,7 +166,6 @@ class ConnectionServiceGrpcAsyncIOTransport(ConnectionServiceTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
-
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -334,7 +333,7 @@ class ConnectionServiceGrpcAsyncIOTransport(ConnectionServiceTransport):
     @property
     def delete_connection(self) -> Callable[
             [connection.DeleteConnectionRequest],
-            Awaitable[empty.Empty]]:
+            Awaitable[empty_pb2.Empty]]:
         r"""Return a callable for the delete connection method over gRPC.
 
         Deletes connection and associated credential.
@@ -353,14 +352,14 @@ class ConnectionServiceGrpcAsyncIOTransport(ConnectionServiceTransport):
             self._stubs['delete_connection'] = self.grpc_channel.unary_unary(
                 '/google.cloud.bigquery.connection.v1.ConnectionService/DeleteConnection',
                 request_serializer=connection.DeleteConnectionRequest.serialize,
-                response_deserializer=empty.Empty.FromString,
+                response_deserializer=empty_pb2.Empty.FromString,
             )
         return self._stubs['delete_connection']
 
     @property
     def get_iam_policy(self) -> Callable[
-            [iam_policy.GetIamPolicyRequest],
-            Awaitable[gi_policy.Policy]]:
+            [iam_policy_pb2.GetIamPolicyRequest],
+            Awaitable[policy_pb2.Policy]]:
         r"""Return a callable for the get iam policy method over gRPC.
 
         Gets the access control policy for a resource.
@@ -380,15 +379,15 @@ class ConnectionServiceGrpcAsyncIOTransport(ConnectionServiceTransport):
         if 'get_iam_policy' not in self._stubs:
             self._stubs['get_iam_policy'] = self.grpc_channel.unary_unary(
                 '/google.cloud.bigquery.connection.v1.ConnectionService/GetIamPolicy',
-                request_serializer=iam_policy.GetIamPolicyRequest.SerializeToString,
-                response_deserializer=gi_policy.Policy.FromString,
+                request_serializer=iam_policy_pb2.GetIamPolicyRequest.SerializeToString,
+                response_deserializer=policy_pb2.Policy.FromString,
             )
         return self._stubs['get_iam_policy']
 
     @property
     def set_iam_policy(self) -> Callable[
-            [iam_policy.SetIamPolicyRequest],
-            Awaitable[gi_policy.Policy]]:
+            [iam_policy_pb2.SetIamPolicyRequest],
+            Awaitable[policy_pb2.Policy]]:
         r"""Return a callable for the set iam policy method over gRPC.
 
         Sets the access control policy on the specified resource.
@@ -410,15 +409,15 @@ class ConnectionServiceGrpcAsyncIOTransport(ConnectionServiceTransport):
         if 'set_iam_policy' not in self._stubs:
             self._stubs['set_iam_policy'] = self.grpc_channel.unary_unary(
                 '/google.cloud.bigquery.connection.v1.ConnectionService/SetIamPolicy',
-                request_serializer=iam_policy.SetIamPolicyRequest.SerializeToString,
-                response_deserializer=gi_policy.Policy.FromString,
+                request_serializer=iam_policy_pb2.SetIamPolicyRequest.SerializeToString,
+                response_deserializer=policy_pb2.Policy.FromString,
             )
         return self._stubs['set_iam_policy']
 
     @property
     def test_iam_permissions(self) -> Callable[
-            [iam_policy.TestIamPermissionsRequest],
-            Awaitable[iam_policy.TestIamPermissionsResponse]]:
+            [iam_policy_pb2.TestIamPermissionsRequest],
+            Awaitable[iam_policy_pb2.TestIamPermissionsResponse]]:
         r"""Return a callable for the test iam permissions method over gRPC.
 
         Returns permissions that a caller has on the specified resource.
@@ -443,8 +442,8 @@ class ConnectionServiceGrpcAsyncIOTransport(ConnectionServiceTransport):
         if 'test_iam_permissions' not in self._stubs:
             self._stubs['test_iam_permissions'] = self.grpc_channel.unary_unary(
                 '/google.cloud.bigquery.connection.v1.ConnectionService/TestIamPermissions',
-                request_serializer=iam_policy.TestIamPermissionsRequest.SerializeToString,
-                response_deserializer=iam_policy.TestIamPermissionsResponse.FromString,
+                request_serializer=iam_policy_pb2.TestIamPermissionsRequest.SerializeToString,
+                response_deserializer=iam_policy_pb2.TestIamPermissionsResponse.FromString,
             )
         return self._stubs['test_iam_permissions']
 

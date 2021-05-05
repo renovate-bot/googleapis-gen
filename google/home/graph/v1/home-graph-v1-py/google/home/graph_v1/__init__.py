@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,8 @@
 #
 
 from .services.home_graph_api_service import HomeGraphApiServiceClient
+from .services.home_graph_api_service import HomeGraphApiServiceAsyncClient
+
 from .types.device import AgentOtherDeviceId
 from .types.device import Device
 from .types.device import DeviceInfo
@@ -37,27 +38,26 @@ from .types.homegraph import SyncRequest
 from .types.homegraph import SyncResponse
 from .types.homegraph import SyncResponsePayload
 
-
 __all__ = (
-    'AgentDeviceId',
-    'AgentOtherDeviceId',
-    'DeleteAgentUserRequest',
-    'Device',
-    'DeviceInfo',
-    'DeviceNames',
-    'QueryRequest',
-    'QueryRequestInput',
-    'QueryRequestPayload',
-    'QueryResponse',
-    'QueryResponsePayload',
-    'ReportStateAndNotificationDevice',
-    'ReportStateAndNotificationRequest',
-    'ReportStateAndNotificationResponse',
-    'RequestSyncDevicesRequest',
-    'RequestSyncDevicesResponse',
-    'StateAndNotificationPayload',
-    'SyncRequest',
-    'SyncResponse',
-    'SyncResponsePayload',
+'AgentDeviceId',
+'AgentOtherDeviceId',
+'DeleteAgentUserRequest',
+'Device',
+'DeviceInfo',
+'DeviceNames',
 'HomeGraphApiServiceClient',
+'QueryRequest',
+'QueryRequestInput',
+'QueryRequestPayload',
+'QueryResponse',
+'QueryResponsePayload',
+'ReportStateAndNotificationDevice',
+'ReportStateAndNotificationRequest',
+'ReportStateAndNotificationResponse',
+'RequestSyncDevicesRequest',
+'RequestSyncDevicesResponse',
+'StateAndNotificationPayload',
+'SyncRequest',
+'SyncResponse',
+'SyncResponsePayload',
 )

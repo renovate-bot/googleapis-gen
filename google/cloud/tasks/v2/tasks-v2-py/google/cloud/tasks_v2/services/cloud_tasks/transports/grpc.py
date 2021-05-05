@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,14 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
-from google import auth                    # type: ignore
-from google.auth import credentials        # type: ignore
+import google.auth                         # type: ignore
+from google.auth import credentials as ga_credentials  # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
 
 import grpc  # type: ignore
@@ -31,10 +29,9 @@ from google.cloud.tasks_v2.types import queue
 from google.cloud.tasks_v2.types import queue as gct_queue
 from google.cloud.tasks_v2.types import task
 from google.cloud.tasks_v2.types import task as gct_task
-from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
-from google.iam.v1 import policy_pb2 as giv_policy  # type: ignore
-from google.protobuf import empty_pb2 as empty  # type: ignore
-
+from google.iam.v1 import iam_policy_pb2  # type: ignore
+from google.iam.v1 import policy_pb2  # type: ignore
+from google.protobuf import empty_pb2  # type: ignore
 from .base import CloudTasksTransport, DEFAULT_CLIENT_INFO
 
 
@@ -55,7 +52,7 @@ class CloudTasksGrpcTransport(CloudTasksTransport):
 
     def __init__(self, *,
             host: str = 'cloudtasks.googleapis.com',
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             credentials_file: str = None,
             scopes: Sequence[str] = None,
             channel: grpc.Channel = None,
@@ -69,7 +66,8 @@ class CloudTasksGrpcTransport(CloudTasksTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -178,7 +176,7 @@ class CloudTasksGrpcTransport(CloudTasksTransport):
     @classmethod
     def create_channel(cls,
                        host: str = 'cloudtasks.googleapis.com',
-                       credentials: credentials.Credentials = None,
+                       credentials: ga_credentials.Credentials = None,
                        credentials_file: str = None,
                        scopes: Optional[Sequence[str]] = None,
                        quota_project_id: Optional[str] = None,
@@ -208,13 +206,15 @@ class CloudTasksGrpcTransport(CloudTasksTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -355,7 +355,7 @@ class CloudTasksGrpcTransport(CloudTasksTransport):
     @property
     def delete_queue(self) -> Callable[
             [cloudtasks.DeleteQueueRequest],
-            empty.Empty]:
+            empty_pb2.Empty]:
         r"""Return a callable for the delete queue method over gRPC.
 
         Deletes a queue.
@@ -385,7 +385,7 @@ class CloudTasksGrpcTransport(CloudTasksTransport):
             self._stubs['delete_queue'] = self.grpc_channel.unary_unary(
                 '/google.cloud.tasks.v2.CloudTasks/DeleteQueue',
                 request_serializer=cloudtasks.DeleteQueueRequest.serialize,
-                response_deserializer=empty.Empty.FromString,
+                response_deserializer=empty_pb2.Empty.FromString,
             )
         return self._stubs['delete_queue']
 
@@ -495,8 +495,8 @@ class CloudTasksGrpcTransport(CloudTasksTransport):
 
     @property
     def get_iam_policy(self) -> Callable[
-            [iam_policy.GetIamPolicyRequest],
-            giv_policy.Policy]:
+            [iam_policy_pb2.GetIamPolicyRequest],
+            policy_pb2.Policy]:
         r"""Return a callable for the get iam policy method over gRPC.
 
         Gets the access control policy for a
@@ -522,15 +522,15 @@ class CloudTasksGrpcTransport(CloudTasksTransport):
         if 'get_iam_policy' not in self._stubs:
             self._stubs['get_iam_policy'] = self.grpc_channel.unary_unary(
                 '/google.cloud.tasks.v2.CloudTasks/GetIamPolicy',
-                request_serializer=iam_policy.GetIamPolicyRequest.SerializeToString,
-                response_deserializer=giv_policy.Policy.FromString,
+                request_serializer=iam_policy_pb2.GetIamPolicyRequest.SerializeToString,
+                response_deserializer=policy_pb2.Policy.FromString,
             )
         return self._stubs['get_iam_policy']
 
     @property
     def set_iam_policy(self) -> Callable[
-            [iam_policy.SetIamPolicyRequest],
-            giv_policy.Policy]:
+            [iam_policy_pb2.SetIamPolicyRequest],
+            policy_pb2.Policy]:
         r"""Return a callable for the set iam policy method over gRPC.
 
         Sets the access control policy for a
@@ -560,15 +560,15 @@ class CloudTasksGrpcTransport(CloudTasksTransport):
         if 'set_iam_policy' not in self._stubs:
             self._stubs['set_iam_policy'] = self.grpc_channel.unary_unary(
                 '/google.cloud.tasks.v2.CloudTasks/SetIamPolicy',
-                request_serializer=iam_policy.SetIamPolicyRequest.SerializeToString,
-                response_deserializer=giv_policy.Policy.FromString,
+                request_serializer=iam_policy_pb2.SetIamPolicyRequest.SerializeToString,
+                response_deserializer=policy_pb2.Policy.FromString,
             )
         return self._stubs['set_iam_policy']
 
     @property
     def test_iam_permissions(self) -> Callable[
-            [iam_policy.TestIamPermissionsRequest],
-            iam_policy.TestIamPermissionsResponse]:
+            [iam_policy_pb2.TestIamPermissionsRequest],
+            iam_policy_pb2.TestIamPermissionsResponse]:
         r"""Return a callable for the test iam permissions method over gRPC.
 
         Returns permissions that a caller has on a
@@ -594,8 +594,8 @@ class CloudTasksGrpcTransport(CloudTasksTransport):
         if 'test_iam_permissions' not in self._stubs:
             self._stubs['test_iam_permissions'] = self.grpc_channel.unary_unary(
                 '/google.cloud.tasks.v2.CloudTasks/TestIamPermissions',
-                request_serializer=iam_policy.TestIamPermissionsRequest.SerializeToString,
-                response_deserializer=iam_policy.TestIamPermissionsResponse.FromString,
+                request_serializer=iam_policy_pb2.TestIamPermissionsRequest.SerializeToString,
+                response_deserializer=iam_policy_pb2.TestIamPermissionsResponse.FromString,
             )
         return self._stubs['test_iam_permissions']
 
@@ -694,7 +694,7 @@ class CloudTasksGrpcTransport(CloudTasksTransport):
     @property
     def delete_task(self) -> Callable[
             [cloudtasks.DeleteTaskRequest],
-            empty.Empty]:
+            empty_pb2.Empty]:
         r"""Return a callable for the delete task method over gRPC.
 
         Deletes a task.
@@ -716,7 +716,7 @@ class CloudTasksGrpcTransport(CloudTasksTransport):
             self._stubs['delete_task'] = self.grpc_channel.unary_unary(
                 '/google.cloud.tasks.v2.CloudTasks/DeleteTask',
                 request_serializer=cloudtasks.DeleteTaskRequest.serialize,
-                response_deserializer=empty.Empty.FromString,
+                response_deserializer=empty_pb2.Empty.FromString,
             )
         return self._stubs['delete_task']
 

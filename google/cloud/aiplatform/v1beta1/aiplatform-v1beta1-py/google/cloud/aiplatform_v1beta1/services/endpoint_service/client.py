@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -23,10 +21,10 @@ from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
-from google.api_core import exceptions                            # type: ignore
+from google.api_core import exceptions as core_exceptions         # type: ignore
 from google.api_core import gapic_v1                              # type: ignore
 from google.api_core import retry as retries                      # type: ignore
-from google.auth import credentials                               # type: ignore
+from google.auth import credentials as ga_credentials             # type: ignore
 from google.auth.transport import mtls                            # type: ignore
 from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
@@ -40,10 +38,9 @@ from google.cloud.aiplatform_v1beta1.types import endpoint
 from google.cloud.aiplatform_v1beta1.types import endpoint as gca_endpoint
 from google.cloud.aiplatform_v1beta1.types import endpoint_service
 from google.cloud.aiplatform_v1beta1.types import operation as gca_operation
-from google.protobuf import empty_pb2 as empty  # type: ignore
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
+from google.protobuf import empty_pb2  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 from .transports.base import EndpointServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import EndpointServiceGrpcTransport
 from .transports.grpc_asyncio import EndpointServiceGrpcAsyncIOTransport
@@ -242,7 +239,7 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
         return m.groupdict() if m else {}
 
     def __init__(self, *,
-            credentials: Optional[credentials.Credentials] = None,
+            credentials: Optional[ga_credentials.Credentials] = None,
             transport: Union[str, EndpointServiceTransport, None] = None,
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -372,7 +369,6 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
                 This corresponds to the ``endpoint`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -401,10 +397,8 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, endpoint_service.CreateEndpointRequest):
             request = endpoint_service.CreateEndpointRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if endpoint is not None:
@@ -462,7 +456,6 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -490,10 +483,8 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, endpoint_service.GetEndpointRequest):
             request = endpoint_service.GetEndpointRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -542,7 +533,6 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -572,10 +562,8 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, endpoint_service.ListEndpointsRequest):
             request = endpoint_service.ListEndpointsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -615,7 +603,7 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
             request: endpoint_service.UpdateEndpointRequest = None,
             *,
             endpoint: gca_endpoint.Endpoint = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -640,7 +628,6 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -668,10 +655,8 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, endpoint_service.UpdateEndpointRequest):
             request = endpoint_service.UpdateEndpointRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if endpoint is not None:
                 request.endpoint = endpoint
             if update_mask is not None:
@@ -722,7 +707,6 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -762,10 +746,8 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, endpoint_service.DeleteEndpointRequest):
             request = endpoint_service.DeleteEndpointRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -793,7 +775,7 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
         response = gac_operation.from_gapic(
             response,
             self._transport.operations_client,
-            empty.Empty,
+            empty_pb2.Empty,
             metadata_type=gca_operation.DeleteOperationMetadata,
         )
 
@@ -856,7 +838,6 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
                 This corresponds to the ``traffic_split`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -887,10 +868,8 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, endpoint_service.DeployModelRequest):
             request = endpoint_service.DeployModelRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if endpoint is not None:
                 request.endpoint = endpoint
             if deployed_model is not None:
@@ -976,7 +955,6 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
                 This corresponds to the ``traffic_split`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1007,10 +985,8 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, endpoint_service.UndeployModelRequest):
             request = endpoint_service.UndeployModelRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if endpoint is not None:
                 request.endpoint = endpoint
             if deployed_model_id is not None:
@@ -1048,8 +1024,6 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

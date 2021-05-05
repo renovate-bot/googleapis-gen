@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,8 @@
 #
 
 from .services.managed_identities_service import ManagedIdentitiesServiceClient
+from .services.managed_identities_service import ManagedIdentitiesServiceAsyncClient
+
 from .types.managed_identities_service import AttachTrustRequest
 from .types.managed_identities_service import CreateMicrosoftAdDomainRequest
 from .types.managed_identities_service import DeleteDomainRequest
@@ -32,22 +33,21 @@ from .types.managed_identities_service import ValidateTrustRequest
 from .types.resource import Domain
 from .types.resource import Trust
 
-
 __all__ = (
-    'AttachTrustRequest',
-    'CreateMicrosoftAdDomainRequest',
-    'DeleteDomainRequest',
-    'DetachTrustRequest',
-    'Domain',
-    'GetDomainRequest',
-    'ListDomainsRequest',
-    'ListDomainsResponse',
-    'OpMetadata',
-    'ReconfigureTrustRequest',
-    'ResetAdminPasswordRequest',
-    'ResetAdminPasswordResponse',
-    'Trust',
-    'UpdateDomainRequest',
-    'ValidateTrustRequest',
+'AttachTrustRequest',
+'CreateMicrosoftAdDomainRequest',
+'DeleteDomainRequest',
+'DetachTrustRequest',
+'Domain',
+'GetDomainRequest',
+'ListDomainsRequest',
+'ListDomainsResponse',
 'ManagedIdentitiesServiceClient',
+'OpMetadata',
+'ReconfigureTrustRequest',
+'ResetAdminPasswordRequest',
+'ResetAdminPasswordResponse',
+'Trust',
+'UpdateDomainRequest',
+'ValidateTrustRequest',
 )

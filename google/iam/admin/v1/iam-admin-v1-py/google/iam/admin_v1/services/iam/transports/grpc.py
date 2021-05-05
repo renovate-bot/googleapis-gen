@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,23 +13,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
-from google import auth                    # type: ignore
-from google.auth import credentials        # type: ignore
+import google.auth                         # type: ignore
+from google.auth import credentials as ga_credentials  # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
 
 import grpc  # type: ignore
 
 from google.iam.admin_v1.types import iam
-from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
-from google.iam.v1 import policy_pb2 as gi_policy  # type: ignore
-from google.protobuf import empty_pb2 as empty  # type: ignore
-
+from google.iam.v1 import iam_policy_pb2  # type: ignore
+from google.iam.v1 import policy_pb2  # type: ignore
+from google.protobuf import empty_pb2  # type: ignore
 from .base import IAMTransport, DEFAULT_CLIENT_INFO
 
 
@@ -69,7 +66,7 @@ class IAMGrpcTransport(IAMTransport):
 
     def __init__(self, *,
             host: str = 'iam.googleapis.com',
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             credentials_file: str = None,
             scopes: Sequence[str] = None,
             channel: grpc.Channel = None,
@@ -83,7 +80,8 @@ class IAMGrpcTransport(IAMTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -192,7 +190,7 @@ class IAMGrpcTransport(IAMTransport):
     @classmethod
     def create_channel(cls,
                        host: str = 'iam.googleapis.com',
-                       credentials: credentials.Credentials = None,
+                       credentials: ga_credentials.Credentials = None,
                        credentials_file: str = None,
                        scopes: Optional[Sequence[str]] = None,
                        quota_project_id: Optional[str] = None,
@@ -222,13 +220,15 @@ class IAMGrpcTransport(IAMTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -379,7 +379,7 @@ class IAMGrpcTransport(IAMTransport):
     @property
     def delete_service_account(self) -> Callable[
             [iam.DeleteServiceAccountRequest],
-            empty.Empty]:
+            empty_pb2.Empty]:
         r"""Return a callable for the delete service account method over gRPC.
 
         Deletes a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
@@ -416,7 +416,7 @@ class IAMGrpcTransport(IAMTransport):
             self._stubs['delete_service_account'] = self.grpc_channel.unary_unary(
                 '/google.iam.admin.v1.IAM/DeleteServiceAccount',
                 request_serializer=iam.DeleteServiceAccountRequest.serialize,
-                response_deserializer=empty.Empty.FromString,
+                response_deserializer=empty_pb2.Empty.FromString,
             )
         return self._stubs['delete_service_account']
 
@@ -457,7 +457,7 @@ class IAMGrpcTransport(IAMTransport):
     @property
     def enable_service_account(self) -> Callable[
             [iam.EnableServiceAccountRequest],
-            empty.Empty]:
+            empty_pb2.Empty]:
         r"""Return a callable for the enable service account method over gRPC.
 
         Enables a [ServiceAccount][google.iam.admin.v1.ServiceAccount]
@@ -486,14 +486,14 @@ class IAMGrpcTransport(IAMTransport):
             self._stubs['enable_service_account'] = self.grpc_channel.unary_unary(
                 '/google.iam.admin.v1.IAM/EnableServiceAccount',
                 request_serializer=iam.EnableServiceAccountRequest.serialize,
-                response_deserializer=empty.Empty.FromString,
+                response_deserializer=empty_pb2.Empty.FromString,
             )
         return self._stubs['enable_service_account']
 
     @property
     def disable_service_account(self) -> Callable[
             [iam.DisableServiceAccountRequest],
-            empty.Empty]:
+            empty_pb2.Empty]:
         r"""Return a callable for the disable service account method over gRPC.
 
         Disables a [ServiceAccount][google.iam.admin.v1.ServiceAccount]
@@ -530,7 +530,7 @@ class IAMGrpcTransport(IAMTransport):
             self._stubs['disable_service_account'] = self.grpc_channel.unary_unary(
                 '/google.iam.admin.v1.IAM/DisableServiceAccount',
                 request_serializer=iam.DisableServiceAccountRequest.serialize,
-                response_deserializer=empty.Empty.FromString,
+                response_deserializer=empty_pb2.Empty.FromString,
             )
         return self._stubs['disable_service_account']
 
@@ -647,7 +647,7 @@ class IAMGrpcTransport(IAMTransport):
     @property
     def delete_service_account_key(self) -> Callable[
             [iam.DeleteServiceAccountKeyRequest],
-            empty.Empty]:
+            empty_pb2.Empty]:
         r"""Return a callable for the delete service account key method over gRPC.
 
         Deletes a
@@ -670,7 +670,7 @@ class IAMGrpcTransport(IAMTransport):
             self._stubs['delete_service_account_key'] = self.grpc_channel.unary_unary(
                 '/google.iam.admin.v1.IAM/DeleteServiceAccountKey',
                 request_serializer=iam.DeleteServiceAccountKeyRequest.serialize,
-                response_deserializer=empty.Empty.FromString,
+                response_deserializer=empty_pb2.Empty.FromString,
             )
         return self._stubs['delete_service_account_key']
 
@@ -744,8 +744,8 @@ class IAMGrpcTransport(IAMTransport):
 
     @property
     def get_iam_policy(self) -> Callable[
-            [iam_policy.GetIamPolicyRequest],
-            gi_policy.Policy]:
+            [iam_policy_pb2.GetIamPolicyRequest],
+            policy_pb2.Policy]:
         r"""Return a callable for the get iam policy method over gRPC.
 
         Gets the IAM policy that is attached to a
@@ -774,15 +774,15 @@ class IAMGrpcTransport(IAMTransport):
         if 'get_iam_policy' not in self._stubs:
             self._stubs['get_iam_policy'] = self.grpc_channel.unary_unary(
                 '/google.iam.admin.v1.IAM/GetIamPolicy',
-                request_serializer=iam_policy.GetIamPolicyRequest.SerializeToString,
-                response_deserializer=gi_policy.Policy.FromString,
+                request_serializer=iam_policy_pb2.GetIamPolicyRequest.SerializeToString,
+                response_deserializer=policy_pb2.Policy.FromString,
             )
         return self._stubs['get_iam_policy']
 
     @property
     def set_iam_policy(self) -> Callable[
-            [iam_policy.SetIamPolicyRequest],
-            gi_policy.Policy]:
+            [iam_policy_pb2.SetIamPolicyRequest],
+            policy_pb2.Policy]:
         r"""Return a callable for the set iam policy method over gRPC.
 
         Sets the IAM policy that is attached to a
@@ -820,15 +820,15 @@ class IAMGrpcTransport(IAMTransport):
         if 'set_iam_policy' not in self._stubs:
             self._stubs['set_iam_policy'] = self.grpc_channel.unary_unary(
                 '/google.iam.admin.v1.IAM/SetIamPolicy',
-                request_serializer=iam_policy.SetIamPolicyRequest.SerializeToString,
-                response_deserializer=gi_policy.Policy.FromString,
+                request_serializer=iam_policy_pb2.SetIamPolicyRequest.SerializeToString,
+                response_deserializer=policy_pb2.Policy.FromString,
             )
         return self._stubs['set_iam_policy']
 
     @property
     def test_iam_permissions(self) -> Callable[
-            [iam_policy.TestIamPermissionsRequest],
-            iam_policy.TestIamPermissionsResponse]:
+            [iam_policy_pb2.TestIamPermissionsRequest],
+            iam_policy_pb2.TestIamPermissionsResponse]:
         r"""Return a callable for the test iam permissions method over gRPC.
 
         Tests whether the caller has the specified permissions on a
@@ -847,8 +847,8 @@ class IAMGrpcTransport(IAMTransport):
         if 'test_iam_permissions' not in self._stubs:
             self._stubs['test_iam_permissions'] = self.grpc_channel.unary_unary(
                 '/google.iam.admin.v1.IAM/TestIamPermissions',
-                request_serializer=iam_policy.TestIamPermissionsRequest.SerializeToString,
-                response_deserializer=iam_policy.TestIamPermissionsResponse.FromString,
+                request_serializer=iam_policy_pb2.TestIamPermissionsRequest.SerializeToString,
+                response_deserializer=iam_policy_pb2.TestIamPermissionsResponse.FromString,
             )
         return self._stubs['test_iam_permissions']
 

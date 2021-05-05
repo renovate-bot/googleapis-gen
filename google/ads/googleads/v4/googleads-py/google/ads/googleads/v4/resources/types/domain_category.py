@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,11 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -80,30 +77,49 @@ class DomainCategory(proto.Message):
             for the category.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    campaign = proto.Field(proto.MESSAGE, number=2,
-        message=wrappers.StringValue,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
     )
-    category = proto.Field(proto.MESSAGE, number=3,
-        message=wrappers.StringValue,
+    campaign = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=wrappers_pb2.StringValue,
     )
-    language_code = proto.Field(proto.MESSAGE, number=4,
-        message=wrappers.StringValue,
+    category = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=wrappers_pb2.StringValue,
     )
-    domain = proto.Field(proto.MESSAGE, number=5,
-        message=wrappers.StringValue,
+    language_code = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=wrappers_pb2.StringValue,
     )
-    coverage_fraction = proto.Field(proto.MESSAGE, number=6,
-        message=wrappers.DoubleValue,
+    domain = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        message=wrappers_pb2.StringValue,
     )
-    category_rank = proto.Field(proto.MESSAGE, number=7,
-        message=wrappers.Int64Value,
+    coverage_fraction = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        message=wrappers_pb2.DoubleValue,
     )
-    has_children = proto.Field(proto.MESSAGE, number=8,
-        message=wrappers.BoolValue,
+    category_rank = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        message=wrappers_pb2.Int64Value,
     )
-    recommended_cpc_bid_micros = proto.Field(proto.MESSAGE, number=9,
-        message=wrappers.Int64Value,
+    has_children = proto.Field(
+        proto.MESSAGE,
+        number=8,
+        message=wrappers_pb2.BoolValue,
+    )
+    recommended_cpc_bid_micros = proto.Field(
+        proto.MESSAGE,
+        number=9,
+        message=wrappers_pb2.Int64Value,
     )
 
 

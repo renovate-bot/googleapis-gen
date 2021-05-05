@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -30,7 +28,7 @@ __protobuf__ = proto.module(
 class FrequencyCapLevelEnum(proto.Message):
     r"""Container for enum describing the level on which the cap is
     to be applied.
-    """
+        """
     class FrequencyCapLevel(proto.Enum):
         r"""The level on which the cap is to be applied (e.g ad group ad,
         ad group). Cap is applied to all the resources of this level.

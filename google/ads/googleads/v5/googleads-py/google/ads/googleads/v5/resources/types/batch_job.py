@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
 from google.ads.googleads.v5.enums.types import batch_job_status
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -60,6 +57,7 @@ class BatchJob(proto.Message):
             completion. Only set when the batch job status
             is RUNNING or DONE.
     """
+
     class BatchJobMetadata(proto.Message):
         r"""Additional information about the batch job. This message is
         also used as metadata returned in batch job Long Running
@@ -91,38 +89,65 @@ class BatchJob(proto.Message):
                 job has started running.
         """
 
-        creation_date_time = proto.Field(proto.MESSAGE, number=1,
-            message=wrappers.StringValue,
+        creation_date_time = proto.Field(
+            proto.MESSAGE,
+            number=1,
+            message=wrappers_pb2.StringValue,
         )
-        start_date_time = proto.Field(proto.STRING, number=7, optional=True)
-        completion_date_time = proto.Field(proto.MESSAGE, number=2,
-            message=wrappers.StringValue,
+        start_date_time = proto.Field(
+            proto.STRING,
+            number=7,
+            optional=True,
         )
-        estimated_completion_ratio = proto.Field(proto.MESSAGE, number=3,
-            message=wrappers.DoubleValue,
+        completion_date_time = proto.Field(
+            proto.MESSAGE,
+            number=2,
+            message=wrappers_pb2.StringValue,
         )
-        operation_count = proto.Field(proto.MESSAGE, number=4,
-            message=wrappers.Int64Value,
+        estimated_completion_ratio = proto.Field(
+            proto.MESSAGE,
+            number=3,
+            message=wrappers_pb2.DoubleValue,
         )
-        executed_operation_count = proto.Field(proto.MESSAGE, number=5,
-            message=wrappers.Int64Value,
+        operation_count = proto.Field(
+            proto.MESSAGE,
+            number=4,
+            message=wrappers_pb2.Int64Value,
+        )
+        executed_operation_count = proto.Field(
+            proto.MESSAGE,
+            number=5,
+            message=wrappers_pb2.Int64Value,
         )
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    id = proto.Field(proto.MESSAGE, number=2,
-        message=wrappers.Int64Value,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
     )
-    next_add_sequence_token = proto.Field(proto.MESSAGE, number=3,
-        message=wrappers.StringValue,
+    id = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=wrappers_pb2.Int64Value,
     )
-    metadata = proto.Field(proto.MESSAGE, number=4,
+    next_add_sequence_token = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=wrappers_pb2.StringValue,
+    )
+    metadata = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=BatchJobMetadata,
     )
-    status = proto.Field(proto.ENUM, number=5,
+    status = proto.Field(
+        proto.ENUM,
+        number=5,
         enum=batch_job_status.BatchJobStatusEnum.BatchJobStatus,
     )
-    long_running_operation = proto.Field(proto.MESSAGE, number=6,
-        message=wrappers.StringValue,
+    long_running_operation = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        message=wrappers_pb2.StringValue,
     )
 
 

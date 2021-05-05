@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -23,10 +21,10 @@ from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
-from google.api_core import exceptions                            # type: ignore
+from google.api_core import exceptions as core_exceptions         # type: ignore
 from google.api_core import gapic_v1                              # type: ignore
 from google.api_core import retry as retries                      # type: ignore
-from google.auth import credentials                               # type: ignore
+from google.auth import credentials as ga_credentials             # type: ignore
 from google.auth.transport import mtls                            # type: ignore
 from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
@@ -36,8 +34,7 @@ from google.cloud.dialogflow_v2beta1.services.conversations import pagers
 from google.cloud.dialogflow_v2beta1.types import conversation
 from google.cloud.dialogflow_v2beta1.types import conversation as gcd_conversation
 from google.cloud.dialogflow_v2beta1.types import participant
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
+from google.protobuf import timestamp_pb2  # type: ignore
 from .transports.base import ConversationsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import ConversationsGrpcTransport
 from .transports.grpc_asyncio import ConversationsGrpcAsyncIOTransport
@@ -249,7 +246,7 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
         return m.groupdict() if m else {}
 
     def __init__(self, *,
-            credentials: Optional[credentials.Credentials] = None,
+            credentials: Optional[ga_credentials.Credentials] = None,
             transport: Union[str, ConversationsTransport, None] = None,
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -399,7 +396,6 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
                 This corresponds to the ``conversation`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -431,10 +427,8 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_conversation.CreateConversationRequest):
             request = gcd_conversation.CreateConversationRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if conversation is not None:
@@ -486,7 +480,6 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -516,10 +509,8 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, conversation.ListConversationsRequest):
             request = conversation.ListConversationsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -576,7 +567,6 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -608,10 +598,8 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, conversation.GetConversationRequest):
             request = conversation.GetConversationRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -662,7 +650,6 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -694,10 +681,8 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, conversation.CompleteConversationRequest):
             request = conversation.CompleteConversationRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -748,7 +733,6 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -775,10 +759,8 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, conversation.BatchCreateMessagesRequest):
             request = conversation.BatchCreateMessagesRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -831,7 +813,6 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -861,10 +842,8 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, conversation.ListMessagesRequest):
             request = conversation.ListMessagesRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -899,8 +878,6 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

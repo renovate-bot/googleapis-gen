@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,14 +13,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.apps.drive.activity_v2.types import actor as gada_actor
 from google.apps.drive.activity_v2.types import common
 from google.apps.drive.activity_v2.types import target as gada_target
-from google.protobuf import timestamp_pb2 as gp_timestamp  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -47,7 +44,6 @@ __protobuf__ = proto.module(
 
 class Action(proto.Message):
     r"""Information about the action.
-
     Attributes:
         detail (google.apps.drive.activity_v2.types.ActionDetail):
             The type and detailed information about the
@@ -66,23 +62,31 @@ class Action(proto.Message):
             The action occurred over this time range.
     """
 
-    detail = proto.Field(proto.MESSAGE, number=1,
+    detail = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='ActionDetail',
     )
-
-    actor = proto.Field(proto.MESSAGE, number=3,
+    actor = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=gada_actor.Actor,
     )
-
-    target = proto.Field(proto.MESSAGE, number=4,
+    target = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=gada_target.Target,
     )
-
-    timestamp = proto.Field(proto.MESSAGE, number=5, oneof='time',
+    timestamp = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        oneof='time',
         message=gp_timestamp.Timestamp,
     )
-
-    time_range = proto.Field(proto.MESSAGE, number=6, oneof='time',
+    time_range = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        oneof='time',
         message=common.TimeRange,
     )
 
@@ -118,54 +122,76 @@ class ActionDetail(proto.Message):
             Settings were changed.
     """
 
-    create = proto.Field(proto.MESSAGE, number=1, oneof='action_detail',
+    create = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='action_detail',
         message='Create',
     )
-
-    edit = proto.Field(proto.MESSAGE, number=2, oneof='action_detail',
+    edit = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='action_detail',
         message='Edit',
     )
-
-    move = proto.Field(proto.MESSAGE, number=3, oneof='action_detail',
+    move = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        oneof='action_detail',
         message='Move',
     )
-
-    rename = proto.Field(proto.MESSAGE, number=4, oneof='action_detail',
+    rename = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        oneof='action_detail',
         message='Rename',
     )
-
-    delete = proto.Field(proto.MESSAGE, number=5, oneof='action_detail',
+    delete = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        oneof='action_detail',
         message='Delete',
     )
-
-    restore = proto.Field(proto.MESSAGE, number=6, oneof='action_detail',
+    restore = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        oneof='action_detail',
         message='Restore',
     )
-
-    permission_change = proto.Field(proto.MESSAGE, number=7, oneof='action_detail',
+    permission_change = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        oneof='action_detail',
         message='PermissionChange',
     )
-
-    comment = proto.Field(proto.MESSAGE, number=8, oneof='action_detail',
+    comment = proto.Field(
+        proto.MESSAGE,
+        number=8,
+        oneof='action_detail',
         message='Comment',
     )
-
-    dlp_change = proto.Field(proto.MESSAGE, number=9, oneof='action_detail',
+    dlp_change = proto.Field(
+        proto.MESSAGE,
+        number=9,
+        oneof='action_detail',
         message='DataLeakPreventionChange',
     )
-
-    reference = proto.Field(proto.MESSAGE, number=12, oneof='action_detail',
+    reference = proto.Field(
+        proto.MESSAGE,
+        number=12,
+        oneof='action_detail',
         message='ApplicationReference',
     )
-
-    settings_change = proto.Field(proto.MESSAGE, number=13, oneof='action_detail',
+    settings_change = proto.Field(
+        proto.MESSAGE,
+        number=13,
+        oneof='action_detail',
         message='SettingsChange',
     )
 
 
 class Create(proto.Message):
     r"""An object was created.
-
     Attributes:
         new (google.apps.drive.activity_v2.types.Create.New):
             If present, indicates the object was newly
@@ -178,44 +204,52 @@ class Create(proto.Message):
             If present, indicates the object was created
             by copying an existing Drive object.
     """
+
     class New(proto.Message):
-        r"""An object was created from scratch."""
+        r"""An object was created from scratch.    """
 
     class Upload(proto.Message):
-        r"""An object was uploaded into Drive."""
+        r"""An object was uploaded into Drive.    """
 
     class Copy(proto.Message):
         r"""An object was created by copying an existing object.
-
         Attributes:
             original_object (google.apps.drive.activity_v2.types.TargetReference):
                 The original object.
         """
 
-        original_object = proto.Field(proto.MESSAGE, number=1,
+        original_object = proto.Field(
+            proto.MESSAGE,
+            number=1,
             message=gada_target.TargetReference,
         )
 
-    new = proto.Field(proto.MESSAGE, number=1, oneof='origin',
+    new = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='origin',
         message=New,
     )
-
-    upload = proto.Field(proto.MESSAGE, number=2, oneof='origin',
+    upload = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='origin',
         message=Upload,
     )
-
-    copy = proto.Field(proto.MESSAGE, number=3, oneof='origin',
+    copy = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        oneof='origin',
         message=Copy,
     )
 
 
 class Edit(proto.Message):
-    r"""An empty message indicating an object was edited."""
+    r"""An empty message indicating an object was edited.    """
 
 
 class Move(proto.Message):
     r"""An object was moved.
-
     Attributes:
         added_parents (Sequence[google.apps.drive.activity_v2.types.TargetReference]):
             The added parent object(s).
@@ -223,18 +257,20 @@ class Move(proto.Message):
             The removed parent object(s).
     """
 
-    added_parents = proto.RepeatedField(proto.MESSAGE, number=1,
+    added_parents = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=gada_target.TargetReference,
     )
-
-    removed_parents = proto.RepeatedField(proto.MESSAGE, number=2,
+    removed_parents = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message=gada_target.TargetReference,
     )
 
 
 class Rename(proto.Message):
     r"""An object was renamed.
-
     Attributes:
         old_title (str):
             The previous title of the drive object.
@@ -242,14 +278,18 @@ class Rename(proto.Message):
             The new title of the drive object.
     """
 
-    old_title = proto.Field(proto.STRING, number=1)
-
-    new_title = proto.Field(proto.STRING, number=2)
+    old_title = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    new_title = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class Delete(proto.Message):
     r"""An object was deleted.
-
     Attributes:
         type_ (google.apps.drive.activity_v2.types.Delete.Type):
             The type of delete action taken.
@@ -260,14 +300,15 @@ class Delete(proto.Message):
         TRASH = 1
         PERMANENT_DELETE = 2
 
-    type_ = proto.Field(proto.ENUM, number=1,
+    type_ = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=Type,
     )
 
 
 class Restore(proto.Message):
     r"""A deleted object was restored.
-
     Attributes:
         type_ (google.apps.drive.activity_v2.types.Restore.Type):
             The type of restore action taken.
@@ -277,14 +318,15 @@ class Restore(proto.Message):
         TYPE_UNSPECIFIED = 0
         UNTRASH = 1
 
-    type_ = proto.Field(proto.ENUM, number=1,
+    type_ = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=Type,
     )
 
 
 class PermissionChange(proto.Message):
     r"""A change of the permission setting on an item.
-
     Attributes:
         added_permissions (Sequence[google.apps.drive.activity_v2.types.Permission]):
             The set of permissions added by this change.
@@ -293,18 +335,20 @@ class PermissionChange(proto.Message):
             change.
     """
 
-    added_permissions = proto.RepeatedField(proto.MESSAGE, number=1,
+    added_permissions = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Permission',
     )
-
-    removed_permissions = proto.RepeatedField(proto.MESSAGE, number=2,
+    removed_permissions = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='Permission',
     )
 
 
 class Permission(proto.Message):
     r"""The permission setting of an object.
-
     Attributes:
         role (google.apps.drive.activity_v2.types.Permission.Role):
             Indicates the `Google Drive permissions
@@ -339,34 +383,45 @@ class Permission(proto.Message):
         PUBLISHED_VIEWER = 7
 
     class Anyone(proto.Message):
-        r"""Represents any user (including a logged out user)."""
+        r"""Represents any user (including a logged out user).    """
 
-    role = proto.Field(proto.ENUM, number=1,
+    role = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=Role,
     )
-
-    user = proto.Field(proto.MESSAGE, number=2, oneof='scope',
+    user = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='scope',
         message=gada_actor.User,
     )
-
-    group = proto.Field(proto.MESSAGE, number=3, oneof='scope',
+    group = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        oneof='scope',
         message=common.Group,
     )
-
-    domain = proto.Field(proto.MESSAGE, number=4, oneof='scope',
+    domain = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        oneof='scope',
         message=common.Domain,
     )
-
-    anyone = proto.Field(proto.MESSAGE, number=5, oneof='scope',
+    anyone = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        oneof='scope',
         message=Anyone,
     )
-
-    allow_discovery = proto.Field(proto.BOOL, number=6)
+    allow_discovery = proto.Field(
+        proto.BOOL,
+        number=6,
+    )
 
 
 class Comment(proto.Message):
     r"""A change about comments on an object.
-
     Attributes:
         post (google.apps.drive.activity_v2.types.Comment.Post):
             A change on a regular posted comment.
@@ -377,9 +432,9 @@ class Comment(proto.Message):
         mentioned_users (Sequence[google.apps.drive.activity_v2.types.User]):
             Users who are mentioned in this comment.
     """
+
     class Post(proto.Message):
         r"""A regular posted comment.
-
         Attributes:
             subtype (google.apps.drive.activity_v2.types.Comment.Post.Subtype):
                 The sub-type of this event.
@@ -394,13 +449,14 @@ class Comment(proto.Message):
             RESOLVED = 5
             REOPENED = 6
 
-        subtype = proto.Field(proto.ENUM, number=1,
+        subtype = proto.Field(
+            proto.ENUM,
+            number=1,
             enum='Comment.Post.Subtype',
         )
 
     class Assignment(proto.Message):
         r"""A comment with an assignment.
-
         Attributes:
             subtype (google.apps.drive.activity_v2.types.Comment.Assignment.Subtype):
                 The sub-type of this event.
@@ -418,17 +474,19 @@ class Comment(proto.Message):
             REOPENED = 6
             REASSIGNED = 7
 
-        subtype = proto.Field(proto.ENUM, number=1,
+        subtype = proto.Field(
+            proto.ENUM,
+            number=1,
             enum='Comment.Assignment.Subtype',
         )
-
-        assigned_user = proto.Field(proto.MESSAGE, number=7,
+        assigned_user = proto.Field(
+            proto.MESSAGE,
+            number=7,
             message=gada_actor.User,
         )
 
     class Suggestion(proto.Message):
         r"""A suggestion.
-
         Attributes:
             subtype (google.apps.drive.activity_v2.types.Comment.Suggestion.Subtype):
                 The sub-type of this event.
@@ -445,30 +503,39 @@ class Comment(proto.Message):
             ACCEPT_DELETED = 9
             REJECT_DELETED = 10
 
-        subtype = proto.Field(proto.ENUM, number=1,
+        subtype = proto.Field(
+            proto.ENUM,
+            number=1,
             enum='Comment.Suggestion.Subtype',
         )
 
-    post = proto.Field(proto.MESSAGE, number=1, oneof='type',
+    post = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='type',
         message=Post,
     )
-
-    assignment = proto.Field(proto.MESSAGE, number=2, oneof='type',
+    assignment = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='type',
         message=Assignment,
     )
-
-    suggestion = proto.Field(proto.MESSAGE, number=3, oneof='type',
+    suggestion = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        oneof='type',
         message=Suggestion,
     )
-
-    mentioned_users = proto.RepeatedField(proto.MESSAGE, number=7,
+    mentioned_users = proto.RepeatedField(
+        proto.MESSAGE,
+        number=7,
         message=gada_actor.User,
     )
 
 
 class DataLeakPreventionChange(proto.Message):
     r"""A change in the object's data leak prevention status.
-
     Attributes:
         type_ (google.apps.drive.activity_v2.types.DataLeakPreventionChange.Type):
             The type of Data Leak Prevention (DLP)
@@ -480,14 +547,15 @@ class DataLeakPreventionChange(proto.Message):
         FLAGGED = 1
         CLEARED = 2
 
-    type_ = proto.Field(proto.ENUM, number=1,
+    type_ = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=Type,
     )
 
 
 class ApplicationReference(proto.Message):
     r"""Activity in applications other than Drive.
-
     Attributes:
         type_ (google.apps.drive.activity_v2.types.ApplicationReference.Type):
             The reference type corresponding to this
@@ -499,21 +567,22 @@ class ApplicationReference(proto.Message):
         LINK = 1
         DISCUSS = 2
 
-    type_ = proto.Field(proto.ENUM, number=1,
+    type_ = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=Type,
     )
 
 
 class SettingsChange(proto.Message):
     r"""Information about settings changes.
-
     Attributes:
         restriction_changes (Sequence[google.apps.drive.activity_v2.types.SettingsChange.RestrictionChange]):
             The set of changes made to restrictions.
     """
+
     class RestrictionChange(proto.Message):
         r"""Information about restriction policy changes to a feature.
-
         Attributes:
             feature (google.apps.drive.activity_v2.types.SettingsChange.RestrictionChange.Feature):
                 The feature which had a change in restriction
@@ -535,15 +604,20 @@ class SettingsChange(proto.Message):
             UNRESTRICTED = 1
             FULLY_RESTRICTED = 2
 
-        feature = proto.Field(proto.ENUM, number=1,
+        feature = proto.Field(
+            proto.ENUM,
+            number=1,
             enum='SettingsChange.RestrictionChange.Feature',
         )
-
-        new_restriction = proto.Field(proto.ENUM, number=2,
+        new_restriction = proto.Field(
+            proto.ENUM,
+            number=2,
             enum='SettingsChange.RestrictionChange.Restriction',
         )
 
-    restriction_changes = proto.RepeatedField(proto.MESSAGE, number=1,
+    restriction_changes = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=RestrictionChange,
     )
 

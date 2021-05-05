@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,11 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -103,25 +100,43 @@ class Environment(proto.Message):
         RUNNING = 3
         DELETING = 4
 
-    name = proto.Field(proto.STRING, number=1)
-
-    id = proto.Field(proto.STRING, number=2)
-
-    docker_image = proto.Field(proto.STRING, number=3)
-
-    state = proto.Field(proto.ENUM, number=4,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    docker_image = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    state = proto.Field(
+        proto.ENUM,
+        number=4,
         enum=State,
     )
-
-    web_host = proto.Field(proto.STRING, number=12)
-
-    ssh_username = proto.Field(proto.STRING, number=5)
-
-    ssh_host = proto.Field(proto.STRING, number=6)
-
-    ssh_port = proto.Field(proto.INT32, number=7)
-
-    public_keys = proto.RepeatedField(proto.STRING, number=8)
+    web_host = proto.Field(
+        proto.STRING,
+        number=12,
+    )
+    ssh_username = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    ssh_host = proto.Field(
+        proto.STRING,
+        number=6,
+    )
+    ssh_port = proto.Field(
+        proto.INT32,
+        number=7,
+    )
+    public_keys = proto.RepeatedField(
+        proto.STRING,
+        number=8,
+    )
 
 
 class GetEnvironmentRequest(proto.Message):
@@ -135,19 +150,22 @@ class GetEnvironmentRequest(proto.Message):
             ``users/someone@example.com/environments/default``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class CreateEnvironmentMetadata(proto.Message):
     r"""Message included in the metadata field of operations returned from
     [CreateEnvironment][google.cloud.shell.v1.CloudShellService.CreateEnvironment].
-    """
+        """
 
 
 class DeleteEnvironmentMetadata(proto.Message):
     r"""Message included in the metadata field of operations returned from
     [DeleteEnvironment][google.cloud.shell.v1.CloudShellService.DeleteEnvironment].
-    """
+        """
 
 
 class StartEnvironmentRequest(proto.Message):
@@ -172,11 +190,18 @@ class StartEnvironmentRequest(proto.Message):
             environment before it is started.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    access_token = proto.Field(proto.STRING, number=2)
-
-    public_keys = proto.RepeatedField(proto.STRING, number=3)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    access_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    public_keys = proto.RepeatedField(
+        proto.STRING,
+        number=3,
+    )
 
 
 class AuthorizeEnvironmentRequest(proto.Message):
@@ -200,27 +225,35 @@ class AuthorizeEnvironmentRequest(proto.Message):
             received the request.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    access_token = proto.Field(proto.STRING, number=2)
-
-    id_token = proto.Field(proto.STRING, number=4)
-
-    expire_time = proto.Field(proto.MESSAGE, number=3,
-        message=timestamp.Timestamp,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    access_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    id_token = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    expire_time = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=timestamp_pb2.Timestamp,
     )
 
 
 class AuthorizeEnvironmentResponse(proto.Message):
     r"""Response message for
     [AuthorizeEnvironment][google.cloud.shell.v1.CloudShellService.AuthorizeEnvironment].
-    """
+        """
 
 
 class AuthorizeEnvironmentMetadata(proto.Message):
     r"""Message included in the metadata field of operations returned from
     [AuthorizeEnvironment][google.cloud.shell.v1.CloudShellService.AuthorizeEnvironment].
-    """
+        """
 
 
 class StartEnvironmentMetadata(proto.Message):
@@ -245,7 +278,9 @@ class StartEnvironmentMetadata(proto.Message):
         AWAITING_COMPUTE_RESOURCES = 4
         FINISHED = 3
 
-    state = proto.Field(proto.ENUM, number=1,
+    state = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=State,
     )
 
@@ -260,7 +295,9 @@ class StartEnvironmentResponse(proto.Message):
             Environment that was started.
     """
 
-    environment = proto.Field(proto.MESSAGE, number=1,
+    environment = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='Environment',
     )
 
@@ -283,9 +320,14 @@ class AddPublicKeyRequest(proto.Message):
             encoded with Base64.
     """
 
-    environment = proto.Field(proto.STRING, number=1)
-
-    key = proto.Field(proto.STRING, number=2)
+    environment = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    key = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class AddPublicKeyResponse(proto.Message):
@@ -297,13 +339,16 @@ class AddPublicKeyResponse(proto.Message):
             Key that was added to the environment.
     """
 
-    key = proto.Field(proto.STRING, number=1)
+    key = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class AddPublicKeyMetadata(proto.Message):
     r"""Message included in the metadata field of operations returned from
     [AddPublicKey][google.cloud.shell.v1.CloudShellService.AddPublicKey].
-    """
+        """
 
 
 class RemovePublicKeyRequest(proto.Message):
@@ -319,21 +364,26 @@ class RemovePublicKeyRequest(proto.Message):
             environment.
     """
 
-    environment = proto.Field(proto.STRING, number=1)
-
-    key = proto.Field(proto.STRING, number=2)
+    environment = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    key = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class RemovePublicKeyResponse(proto.Message):
     r"""Response message for
     [RemovePublicKey][google.cloud.shell.v1.CloudShellService.RemovePublicKey].
-    """
+        """
 
 
 class RemovePublicKeyMetadata(proto.Message):
     r"""Message included in the metadata field of operations returned from
     [RemovePublicKey][google.cloud.shell.v1.CloudShellService.RemovePublicKey].
-    """
+        """
 
 
 class CloudShellErrorDetails(proto.Message):
@@ -353,7 +403,9 @@ class CloudShellErrorDetails(proto.Message):
         TOS_VIOLATION = 4
         QUOTA_EXCEEDED = 5
 
-    code = proto.Field(proto.ENUM, number=1,
+    code = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=CloudShellErrorCode,
     )
 

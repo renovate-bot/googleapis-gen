@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,13 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v4.enums.types import change_status_operation
 from google.ads.googleads.v4.enums.types import change_status_resource_type
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -84,45 +81,74 @@ class ChangeStatus(proto.Message):
             by this change.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    last_change_date_time = proto.Field(proto.MESSAGE, number=3,
-        message=wrappers.StringValue,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
     )
-    resource_type = proto.Field(proto.ENUM, number=4,
+    last_change_date_time = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=wrappers_pb2.StringValue,
+    )
+    resource_type = proto.Field(
+        proto.ENUM,
+        number=4,
         enum=change_status_resource_type.ChangeStatusResourceTypeEnum.ChangeStatusResourceType,
     )
-    campaign = proto.Field(proto.MESSAGE, number=5,
-        message=wrappers.StringValue,
+    campaign = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        message=wrappers_pb2.StringValue,
     )
-    ad_group = proto.Field(proto.MESSAGE, number=6,
-        message=wrappers.StringValue,
+    ad_group = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        message=wrappers_pb2.StringValue,
     )
-    resource_status = proto.Field(proto.ENUM, number=8,
+    resource_status = proto.Field(
+        proto.ENUM,
+        number=8,
         enum=change_status_operation.ChangeStatusOperationEnum.ChangeStatusOperation,
     )
-    ad_group_ad = proto.Field(proto.MESSAGE, number=9,
-        message=wrappers.StringValue,
+    ad_group_ad = proto.Field(
+        proto.MESSAGE,
+        number=9,
+        message=wrappers_pb2.StringValue,
     )
-    ad_group_criterion = proto.Field(proto.MESSAGE, number=10,
-        message=wrappers.StringValue,
+    ad_group_criterion = proto.Field(
+        proto.MESSAGE,
+        number=10,
+        message=wrappers_pb2.StringValue,
     )
-    campaign_criterion = proto.Field(proto.MESSAGE, number=11,
-        message=wrappers.StringValue,
+    campaign_criterion = proto.Field(
+        proto.MESSAGE,
+        number=11,
+        message=wrappers_pb2.StringValue,
     )
-    feed = proto.Field(proto.MESSAGE, number=12,
-        message=wrappers.StringValue,
+    feed = proto.Field(
+        proto.MESSAGE,
+        number=12,
+        message=wrappers_pb2.StringValue,
     )
-    feed_item = proto.Field(proto.MESSAGE, number=13,
-        message=wrappers.StringValue,
+    feed_item = proto.Field(
+        proto.MESSAGE,
+        number=13,
+        message=wrappers_pb2.StringValue,
     )
-    ad_group_feed = proto.Field(proto.MESSAGE, number=14,
-        message=wrappers.StringValue,
+    ad_group_feed = proto.Field(
+        proto.MESSAGE,
+        number=14,
+        message=wrappers_pb2.StringValue,
     )
-    campaign_feed = proto.Field(proto.MESSAGE, number=15,
-        message=wrappers.StringValue,
+    campaign_feed = proto.Field(
+        proto.MESSAGE,
+        number=15,
+        message=wrappers_pb2.StringValue,
     )
-    ad_group_bid_modifier = proto.Field(proto.MESSAGE, number=16,
-        message=wrappers.StringValue,
+    ad_group_bid_modifier = proto.Field(
+        proto.MESSAGE,
+        number=16,
+        message=wrappers_pb2.StringValue,
     )
 
 

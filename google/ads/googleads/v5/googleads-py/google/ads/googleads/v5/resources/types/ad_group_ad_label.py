@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,11 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -32,7 +29,6 @@ __protobuf__ = proto.module(
 
 class AdGroupAdLabel(proto.Message):
     r"""A relationship between an ad group ad and a label.
-
     Attributes:
         resource_name (str):
             Immutable. The resource name of the ad group ad label. Ad
@@ -46,12 +42,19 @@ class AdGroupAdLabel(proto.Message):
             ad.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    ad_group_ad = proto.Field(proto.MESSAGE, number=2,
-        message=wrappers.StringValue,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
     )
-    label = proto.Field(proto.MESSAGE, number=3,
-        message=wrappers.StringValue,
+    ad_group_ad = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=wrappers_pb2.StringValue,
+    )
+    label = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=wrappers_pb2.StringValue,
     )
 
 

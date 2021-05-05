@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -23,10 +21,10 @@ from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
-from google.api_core import exceptions                            # type: ignore
+from google.api_core import exceptions as core_exceptions         # type: ignore
 from google.api_core import gapic_v1                              # type: ignore
 from google.api_core import retry as retries                      # type: ignore
-from google.auth import credentials                               # type: ignore
+from google.auth import credentials as ga_credentials             # type: ignore
 from google.auth.transport import mtls                            # type: ignore
 from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
@@ -43,10 +41,9 @@ from google.cloud.channel_v1.types import offers
 from google.cloud.channel_v1.types import operations
 from google.cloud.channel_v1.types import products
 from google.cloud.channel_v1.types import service
-from google.protobuf import empty_pb2 as empty  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-from google.type import postal_address_pb2 as postal_address  # type: ignore
-
+from google.protobuf import empty_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
+from google.type import postal_address_pb2  # type: ignore
 from .transports.base import CloudChannelServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import CloudChannelServiceGrpcTransport
 from .transports.grpc_asyncio import CloudChannelServiceGrpcAsyncIOTransport
@@ -301,7 +298,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         return m.groupdict() if m else {}
 
     def __init__(self, *,
-            credentials: Optional[credentials.Credentials] = None,
+            credentials: Optional[ga_credentials.Credentials] = None,
             transport: Union[str, CloudChannelServiceTransport, None] = None,
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -427,7 +424,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
             request (google.cloud.channel_v1.types.ListCustomersRequest):
                 The request object. Request message for
                 [CloudChannelService.ListCustomers][google.cloud.channel.v1.CloudChannelService.ListCustomers]
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -444,7 +440,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a service.ListCustomersRequest.
         # There's no risk of modifying the input as we've already verified
@@ -519,7 +514,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -546,10 +540,8 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.GetCustomerRequest):
             request = service.GetCustomerRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -608,7 +600,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
             request (google.cloud.channel_v1.types.CheckCloudIdentityAccountsExistRequest):
                 The request object. Request message for
                 [CloudChannelService.CheckCloudIdentityAccountsExist][google.cloud.channel.v1.CloudChannelService.CheckCloudIdentityAccountsExist].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -622,7 +613,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a service.CheckCloudIdentityAccountsExistRequest.
         # There's no risk of modifying the input as we've already verified
@@ -679,7 +669,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
             request (google.cloud.channel_v1.types.CreateCustomerRequest):
                 The request object. Request message for
                 [CloudChannelService.CreateCustomer][google.cloud.channel.v1.CloudChannelService.CreateCustomer]
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -693,7 +682,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a service.CreateCustomerRequest.
         # There's no risk of modifying the input as we've already verified
@@ -750,7 +738,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
             request (google.cloud.channel_v1.types.UpdateCustomerRequest):
                 The request object. Request message for
                 [CloudChannelService.UpdateCustomer][google.cloud.channel.v1.CloudChannelService.UpdateCustomer].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -764,7 +751,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a service.UpdateCustomerRequest.
         # There's no risk of modifying the input as we've already verified
@@ -827,7 +813,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -848,10 +833,8 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.DeleteCustomerRequest):
             request = service.DeleteCustomerRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -910,7 +893,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
             request (google.cloud.channel_v1.types.ProvisionCloudIdentityRequest):
                 The request object. Request message for
                 [CloudChannelService.ProvisionCloudIdentity][google.cloud.channel.v1.CloudChannelService.ProvisionCloudIdentity]
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -927,7 +909,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a service.ProvisionCloudIdentityRequest.
         # There's no risk of modifying the input as we've already verified
@@ -990,7 +971,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
             request (google.cloud.channel_v1.types.ListEntitlementsRequest):
                 The request object. Request message for
                 [CloudChannelService.ListEntitlements][google.cloud.channel.v1.CloudChannelService.ListEntitlements]
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1007,7 +987,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a service.ListEntitlementsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1082,7 +1061,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
             request (google.cloud.channel_v1.types.ListTransferableSkusRequest):
                 The request object. Request message for
                 [CloudChannelService.ListTransferableSkus][google.cloud.channel.v1.CloudChannelService.ListTransferableSkus]
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1099,7 +1077,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a service.ListTransferableSkusRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1176,7 +1153,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
             request (google.cloud.channel_v1.types.ListTransferableOffersRequest):
                 The request object. Request message for
                 [CloudChannelService.ListTransferableOffers][google.cloud.channel.v1.CloudChannelService.ListTransferableOffers]
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1193,7 +1169,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a service.ListTransferableOffersRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1258,7 +1233,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
             request (google.cloud.channel_v1.types.GetEntitlementRequest):
                 The request object. Request message for
                 [CloudChannelService.GetEntitlement][google.cloud.channel.v1.CloudChannelService.GetEntitlement].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1272,7 +1246,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a service.GetEntitlementRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1360,7 +1333,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
             request (google.cloud.channel_v1.types.CreateEntitlementRequest):
                 The request object. Request message for
                 [CloudChannelService.CreateEntitlement][google.cloud.channel.v1.CloudChannelService.CreateEntitlement]
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1378,7 +1350,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a service.CreateEntitlementRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1454,7 +1425,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
             request (google.cloud.channel_v1.types.ChangeParametersRequest):
                 The request object. Request message for
                 [CloudChannelService.ChangeParametersRequest][].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1472,7 +1442,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a service.ChangeParametersRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1550,7 +1519,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
             request (google.cloud.channel_v1.types.ChangeRenewalSettingsRequest):
                 The request object. Request message for
                 [CloudChannelService.ChangeRenewalSettings][google.cloud.channel.v1.CloudChannelService.ChangeRenewalSettings].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1568,7 +1536,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a service.ChangeRenewalSettingsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1642,7 +1609,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
             request (google.cloud.channel_v1.types.ChangeOfferRequest):
                 The request object. Request message for
                 [CloudChannelService.ChangeOffer][google.cloud.channel.v1.CloudChannelService.ChangeOffer].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1660,7 +1626,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a service.ChangeOfferRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1737,7 +1702,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
             request (google.cloud.channel_v1.types.StartPaidServiceRequest):
                 The request object. Request message for
                 [CloudChannelService.StartPaidService][google.cloud.channel.v1.CloudChannelService.StartPaidService].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1755,7 +1719,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a service.StartPaidServiceRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1829,7 +1792,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
             request (google.cloud.channel_v1.types.SuspendEntitlementRequest):
                 The request object. Request message for
                 [CloudChannelService.SuspendEntitlement][google.cloud.channel.v1.CloudChannelService.SuspendEntitlement].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1847,7 +1809,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a service.SuspendEntitlementRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1926,7 +1887,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
             request (google.cloud.channel_v1.types.CancelEntitlementRequest):
                 The request object. Request message for
                 [CloudChannelService.CancelEntitlement][google.cloud.channel.v1.CloudChannelService.CancelEntitlement].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1953,7 +1913,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a service.CancelEntitlementRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1985,7 +1944,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         response = operation.from_gapic(
             response,
             self._transport.operations_client,
-            empty.Empty,
+            empty_pb2.Empty,
             metadata_type=operations.OperationMetadata,
         )
 
@@ -2034,7 +1993,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
             request (google.cloud.channel_v1.types.ActivateEntitlementRequest):
                 The request object. Request message for
                 [CloudChannelService.ActivateEntitlement][google.cloud.channel.v1.CloudChannelService.ActivateEntitlement].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2052,7 +2010,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a service.ActivateEntitlementRequest.
         # There's no risk of modifying the input as we've already verified
@@ -2139,7 +2096,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
             request (google.cloud.channel_v1.types.TransferEntitlementsRequest):
                 The request object. Request message for
                 [CloudChannelService.TransferEntitlements][google.cloud.channel.v1.CloudChannelService.TransferEntitlements].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2156,7 +2112,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a service.TransferEntitlementsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -2243,7 +2198,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
             request (google.cloud.channel_v1.types.TransferEntitlementsToGoogleRequest):
                 The request object. Request message for
                 [CloudChannelService.TransferEntitlementsToGoogle][google.cloud.channel.v1.CloudChannelService.TransferEntitlementsToGoogle].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2270,7 +2224,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a service.TransferEntitlementsToGoogleRequest.
         # There's no risk of modifying the input as we've already verified
@@ -2302,7 +2255,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         response = operation.from_gapic(
             response,
             self._transport.operations_client,
-            empty.Empty,
+            empty_pb2.Empty,
             metadata_type=operations.OperationMetadata,
         )
 
@@ -2336,7 +2289,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
             request (google.cloud.channel_v1.types.ListChannelPartnerLinksRequest):
                 The request object. Request message for
                 [CloudChannelService.ListChannelPartnerLinks][google.cloud.channel.v1.CloudChannelService.ListChannelPartnerLinks]
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2353,7 +2305,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a service.ListChannelPartnerLinksRequest.
         # There's no risk of modifying the input as we've already verified
@@ -2421,7 +2372,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
             request (google.cloud.channel_v1.types.GetChannelPartnerLinkRequest):
                 The request object. Request message for
                 [CloudChannelService.GetChannelPartnerLink][google.cloud.channel.v1.CloudChannelService.GetChannelPartnerLink].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2436,7 +2386,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a service.GetChannelPartnerLinkRequest.
         # There's no risk of modifying the input as we've already verified
@@ -2504,7 +2453,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
             request (google.cloud.channel_v1.types.CreateChannelPartnerLinkRequest):
                 The request object. Request message for
                 [CloudChannelService.CreateChannelPartnerLink][google.cloud.channel.v1.CloudChannelService.CreateChannelPartnerLink]
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2519,7 +2467,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a service.CreateChannelPartnerLinkRequest.
         # There's no risk of modifying the input as we've already verified
@@ -2587,7 +2534,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
             request (google.cloud.channel_v1.types.UpdateChannelPartnerLinkRequest):
                 The request object. Request message for
                 [CloudChannelService.UpdateChannelPartnerLink][google.cloud.channel.v1.CloudChannelService.UpdateChannelPartnerLink]
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2602,7 +2548,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a service.UpdateChannelPartnerLinkRequest.
         # There's no risk of modifying the input as we've already verified
@@ -2650,7 +2595,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         Args:
             request (google.cloud.channel_v1.types.ListProductsRequest):
                 The request object. Request message for ListProducts.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2666,7 +2610,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a service.ListProductsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -2715,7 +2658,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         Args:
             request (google.cloud.channel_v1.types.ListSkusRequest):
                 The request object. Request message for ListSkus.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2731,7 +2673,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a service.ListSkusRequest.
         # There's no risk of modifying the input as we've already verified
@@ -2788,7 +2729,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         Args:
             request (google.cloud.channel_v1.types.ListOffersRequest):
                 The request object. Request message for ListOffers.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2804,7 +2744,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a service.ListOffersRequest.
         # There's no risk of modifying the input as we've already verified
@@ -2867,7 +2806,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
             request (google.cloud.channel_v1.types.ListPurchasableSkusRequest):
                 The request object. Request message for
                 ListPurchasableSkus.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2884,7 +2822,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a service.ListPurchasableSkusRequest.
         # There's no risk of modifying the input as we've already verified
@@ -2947,7 +2884,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
             request (google.cloud.channel_v1.types.ListPurchasableOffersRequest):
                 The request object. Request message for
                 ListPurchasableOffers.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2964,7 +2900,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a service.ListPurchasableOffersRequest.
         # There's no risk of modifying the input as we've already verified
@@ -3035,7 +2970,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
             request (google.cloud.channel_v1.types.RegisterSubscriberRequest):
                 The request object. Request Message for
                 RegisterSubscriber.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3049,7 +2983,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a service.RegisterSubscriberRequest.
         # There's no risk of modifying the input as we've already verified
@@ -3114,7 +3047,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
             request (google.cloud.channel_v1.types.UnregisterSubscriberRequest):
                 The request object. Request Message for
                 UnregisterSubscriber.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3128,7 +3060,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a service.UnregisterSubscriberRequest.
         # There's no risk of modifying the input as we've already verified
@@ -3187,7 +3118,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         Args:
             request (google.cloud.channel_v1.types.ListSubscribersRequest):
                 The request object. Request Message for ListSubscribers.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3203,7 +3133,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a service.ListSubscribersRequest.
         # There's no risk of modifying the input as we've already verified
@@ -3242,8 +3171,6 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

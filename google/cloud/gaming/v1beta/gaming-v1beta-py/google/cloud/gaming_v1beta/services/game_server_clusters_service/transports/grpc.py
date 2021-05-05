@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,22 +13,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import operations_v1  # type: ignore
 from google.api_core import gapic_v1       # type: ignore
-from google import auth                    # type: ignore
-from google.auth import credentials        # type: ignore
+import google.auth                         # type: ignore
+from google.auth import credentials as ga_credentials  # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
 
 import grpc  # type: ignore
 
 from google.cloud.gaming_v1beta.types import game_server_clusters
-from google.longrunning import operations_pb2 as operations  # type: ignore
-
+from google.longrunning import operations_pb2  # type: ignore
 from .base import GameServerClustersServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -50,7 +47,7 @@ class GameServerClustersServiceGrpcTransport(GameServerClustersServiceTransport)
 
     def __init__(self, *,
             host: str = 'gameservices.googleapis.com',
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             credentials_file: str = None,
             scopes: Sequence[str] = None,
             channel: grpc.Channel = None,
@@ -64,7 +61,8 @@ class GameServerClustersServiceGrpcTransport(GameServerClustersServiceTransport)
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -174,7 +172,7 @@ class GameServerClustersServiceGrpcTransport(GameServerClustersServiceTransport)
     @classmethod
     def create_channel(cls,
                        host: str = 'gameservices.googleapis.com',
-                       credentials: credentials.Credentials = None,
+                       credentials: ga_credentials.Credentials = None,
                        credentials_file: str = None,
                        scopes: Optional[Sequence[str]] = None,
                        quota_project_id: Optional[str] = None,
@@ -204,13 +202,15 @@ class GameServerClustersServiceGrpcTransport(GameServerClustersServiceTransport)
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -292,7 +292,7 @@ class GameServerClustersServiceGrpcTransport(GameServerClustersServiceTransport)
     @property
     def create_game_server_cluster(self) -> Callable[
             [game_server_clusters.CreateGameServerClusterRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         r"""Return a callable for the create game server cluster method over gRPC.
 
         Creates a new game server cluster in a given project
@@ -312,7 +312,7 @@ class GameServerClustersServiceGrpcTransport(GameServerClustersServiceTransport)
             self._stubs['create_game_server_cluster'] = self.grpc_channel.unary_unary(
                 '/google.cloud.gaming.v1beta.GameServerClustersService/CreateGameServerCluster',
                 request_serializer=game_server_clusters.CreateGameServerClusterRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['create_game_server_cluster']
 
@@ -347,7 +347,7 @@ class GameServerClustersServiceGrpcTransport(GameServerClustersServiceTransport)
     @property
     def delete_game_server_cluster(self) -> Callable[
             [game_server_clusters.DeleteGameServerClusterRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         r"""Return a callable for the delete game server cluster method over gRPC.
 
         Deletes a single game server cluster.
@@ -366,7 +366,7 @@ class GameServerClustersServiceGrpcTransport(GameServerClustersServiceTransport)
             self._stubs['delete_game_server_cluster'] = self.grpc_channel.unary_unary(
                 '/google.cloud.gaming.v1beta.GameServerClustersService/DeleteGameServerCluster',
                 request_serializer=game_server_clusters.DeleteGameServerClusterRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['delete_game_server_cluster']
 
@@ -400,7 +400,7 @@ class GameServerClustersServiceGrpcTransport(GameServerClustersServiceTransport)
     @property
     def update_game_server_cluster(self) -> Callable[
             [game_server_clusters.UpdateGameServerClusterRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         r"""Return a callable for the update game server cluster method over gRPC.
 
         Patches a single game server cluster.
@@ -419,7 +419,7 @@ class GameServerClustersServiceGrpcTransport(GameServerClustersServiceTransport)
             self._stubs['update_game_server_cluster'] = self.grpc_channel.unary_unary(
                 '/google.cloud.gaming.v1beta.GameServerClustersService/UpdateGameServerCluster',
                 request_serializer=game_server_clusters.UpdateGameServerClusterRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['update_game_server_cluster']
 

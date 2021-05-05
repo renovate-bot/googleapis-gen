@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,13 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.cloud.servicecontrol_v1.types import check_error
 from google.cloud.servicecontrol_v1.types import operation as gas_operation
-from google.rpc import status_pb2 as gr_status  # type: ignore
+from google.rpc import status_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -36,7 +33,6 @@ __protobuf__ = proto.module(
 
 class CheckRequest(proto.Message):
     r"""Request message for the Check method.
-
     Attributes:
         service_name (str):
             The service name as specified in its service configuration.
@@ -55,18 +51,23 @@ class CheckRequest(proto.Message):
             found, the latest one will be used.
     """
 
-    service_name = proto.Field(proto.STRING, number=1)
-
-    operation = proto.Field(proto.MESSAGE, number=2,
+    service_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    operation = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=gas_operation.Operation,
     )
-
-    service_config_id = proto.Field(proto.STRING, number=4)
+    service_config_id = proto.Field(
+        proto.STRING,
+        number=4,
+    )
 
 
 class CheckResponse(proto.Message):
     r"""Response message for the Check method.
-
     Attributes:
         operation_id (str):
             The same operation_id value used in the
@@ -88,9 +89,9 @@ class CheckResponse(proto.Message):
             Feedback data returned from the server during
             processing a Check request.
     """
+
     class CheckInfo(proto.Message):
         r"""Contains additional information about the check operation.
-
         Attributes:
             unused_arguments (Sequence[str]):
                 A list of fields and label keys that are
@@ -101,15 +102,18 @@ class CheckResponse(proto.Message):
                 Consumer info of this check.
         """
 
-        unused_arguments = proto.RepeatedField(proto.STRING, number=1)
-
-        consumer_info = proto.Field(proto.MESSAGE, number=2,
+        unused_arguments = proto.RepeatedField(
+            proto.STRING,
+            number=1,
+        )
+        consumer_info = proto.Field(
+            proto.MESSAGE,
+            number=2,
             message='CheckResponse.ConsumerInfo',
         )
 
     class ConsumerInfo(proto.Message):
         r"""``ConsumerInfo`` provides information about the consumer.
-
         Attributes:
             project_number (int):
                 The Google cloud project number, e.g.
@@ -138,32 +142,46 @@ class CheckResponse(proto.Message):
             ORGANIZATION = 3
             SERVICE_SPECIFIC = 4
 
-        project_number = proto.Field(proto.INT64, number=1)
-
-        type_ = proto.Field(proto.ENUM, number=2,
+        project_number = proto.Field(
+            proto.INT64,
+            number=1,
+        )
+        type_ = proto.Field(
+            proto.ENUM,
+            number=2,
             enum='CheckResponse.ConsumerInfo.ConsumerType',
         )
+        consumer_number = proto.Field(
+            proto.INT64,
+            number=3,
+        )
 
-        consumer_number = proto.Field(proto.INT64, number=3)
-
-    operation_id = proto.Field(proto.STRING, number=1)
-
-    check_errors = proto.RepeatedField(proto.MESSAGE, number=2,
+    operation_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    check_errors = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message=check_error.CheckError,
     )
-
-    service_config_id = proto.Field(proto.STRING, number=5)
-
-    service_rollout_id = proto.Field(proto.STRING, number=11)
-
-    check_info = proto.Field(proto.MESSAGE, number=6,
+    service_config_id = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    service_rollout_id = proto.Field(
+        proto.STRING,
+        number=11,
+    )
+    check_info = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message=CheckInfo,
     )
 
 
 class ReportRequest(proto.Message):
     r"""Request message for the Report method.
-
     Attributes:
         service_name (str):
             The service name as specified in its service configuration.
@@ -193,18 +211,23 @@ class ReportRequest(proto.Message):
             found, the latest one will be used.
     """
 
-    service_name = proto.Field(proto.STRING, number=1)
-
-    operations = proto.RepeatedField(proto.MESSAGE, number=2,
+    service_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    operations = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message=gas_operation.Operation,
     )
-
-    service_config_id = proto.Field(proto.STRING, number=3)
+    service_config_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class ReportResponse(proto.Message):
     r"""Response message for the Report method.
-
     Attributes:
         report_errors (Sequence[google.cloud.servicecontrol_v1.types.ReportResponse.ReportError]):
             Partial failures, one for each ``Operation`` in the request
@@ -230,6 +253,7 @@ class ReportResponse(proto.Message):
             The current service rollout id used to
             process the request.
     """
+
     class ReportError(proto.Message):
         r"""Represents the processing error of one
         [Operation][google.api.servicecontrol.v1.Operation] in the request.
@@ -244,19 +268,29 @@ class ReportResponse(proto.Message):
                 [Operation][google.api.servicecontrol.v1.Operation].
         """
 
-        operation_id = proto.Field(proto.STRING, number=1)
-
-        status = proto.Field(proto.MESSAGE, number=2,
+        operation_id = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        status = proto.Field(
+            proto.MESSAGE,
+            number=2,
             message=gr_status.Status,
         )
 
-    report_errors = proto.RepeatedField(proto.MESSAGE, number=1,
+    report_errors = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=ReportError,
     )
-
-    service_config_id = proto.Field(proto.STRING, number=2)
-
-    service_rollout_id = proto.Field(proto.STRING, number=4)
+    service_config_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    service_rollout_id = proto.Field(
+        proto.STRING,
+        number=4,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

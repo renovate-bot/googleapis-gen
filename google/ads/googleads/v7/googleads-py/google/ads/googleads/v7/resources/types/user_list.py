@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v7.common.types import user_lists
 from google.ads.googleads.v7.enums.types import access_reason as gage_access_reason
@@ -38,7 +35,6 @@ __protobuf__ = proto.module(
 
 class UserList(proto.Message):
     r"""A user list. This is a list of users a customer may target.
-
     Attributes:
         resource_name (str):
             Immutable. The resource name of the user list. User list
@@ -152,52 +148,128 @@ class UserList(proto.Message):
             conversion or remarketing actions.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    id = proto.Field(proto.INT64, number=25, optional=True)
-    read_only = proto.Field(proto.BOOL, number=26, optional=True)
-    name = proto.Field(proto.STRING, number=27, optional=True)
-    description = proto.Field(proto.STRING, number=28, optional=True)
-    membership_status = proto.Field(proto.ENUM, number=6,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    id = proto.Field(
+        proto.INT64,
+        number=25,
+        optional=True,
+    )
+    read_only = proto.Field(
+        proto.BOOL,
+        number=26,
+        optional=True,
+    )
+    name = proto.Field(
+        proto.STRING,
+        number=27,
+        optional=True,
+    )
+    description = proto.Field(
+        proto.STRING,
+        number=28,
+        optional=True,
+    )
+    membership_status = proto.Field(
+        proto.ENUM,
+        number=6,
         enum=user_list_membership_status.UserListMembershipStatusEnum.UserListMembershipStatus,
     )
-    integration_code = proto.Field(proto.STRING, number=29, optional=True)
-    membership_life_span = proto.Field(proto.INT64, number=30, optional=True)
-    size_for_display = proto.Field(proto.INT64, number=31, optional=True)
-    size_range_for_display = proto.Field(proto.ENUM, number=10,
+    integration_code = proto.Field(
+        proto.STRING,
+        number=29,
+        optional=True,
+    )
+    membership_life_span = proto.Field(
+        proto.INT64,
+        number=30,
+        optional=True,
+    )
+    size_for_display = proto.Field(
+        proto.INT64,
+        number=31,
+        optional=True,
+    )
+    size_range_for_display = proto.Field(
+        proto.ENUM,
+        number=10,
         enum=user_list_size_range.UserListSizeRangeEnum.UserListSizeRange,
     )
-    size_for_search = proto.Field(proto.INT64, number=32, optional=True)
-    size_range_for_search = proto.Field(proto.ENUM, number=12,
+    size_for_search = proto.Field(
+        proto.INT64,
+        number=32,
+        optional=True,
+    )
+    size_range_for_search = proto.Field(
+        proto.ENUM,
+        number=12,
         enum=user_list_size_range.UserListSizeRangeEnum.UserListSizeRange,
     )
-    type_ = proto.Field(proto.ENUM, number=13,
+    type_ = proto.Field(
+        proto.ENUM,
+        number=13,
         enum=user_list_type.UserListTypeEnum.UserListType,
     )
-    closing_reason = proto.Field(proto.ENUM, number=14,
+    closing_reason = proto.Field(
+        proto.ENUM,
+        number=14,
         enum=user_list_closing_reason.UserListClosingReasonEnum.UserListClosingReason,
     )
-    access_reason = proto.Field(proto.ENUM, number=15,
+    access_reason = proto.Field(
+        proto.ENUM,
+        number=15,
         enum=gage_access_reason.AccessReasonEnum.AccessReason,
     )
-    account_user_list_status = proto.Field(proto.ENUM, number=16,
+    account_user_list_status = proto.Field(
+        proto.ENUM,
+        number=16,
         enum=user_list_access_status.UserListAccessStatusEnum.UserListAccessStatus,
     )
-    eligible_for_search = proto.Field(proto.BOOL, number=33, optional=True)
-    eligible_for_display = proto.Field(proto.BOOL, number=34, optional=True)
-    match_rate_percentage = proto.Field(proto.INT32, number=24, optional=True)
-    crm_based_user_list = proto.Field(proto.MESSAGE, number=19, oneof='user_list',
+    eligible_for_search = proto.Field(
+        proto.BOOL,
+        number=33,
+        optional=True,
+    )
+    eligible_for_display = proto.Field(
+        proto.BOOL,
+        number=34,
+        optional=True,
+    )
+    match_rate_percentage = proto.Field(
+        proto.INT32,
+        number=24,
+        optional=True,
+    )
+    crm_based_user_list = proto.Field(
+        proto.MESSAGE,
+        number=19,
+        oneof='user_list',
         message=user_lists.CrmBasedUserListInfo,
     )
-    similar_user_list = proto.Field(proto.MESSAGE, number=20, oneof='user_list',
+    similar_user_list = proto.Field(
+        proto.MESSAGE,
+        number=20,
+        oneof='user_list',
         message=user_lists.SimilarUserListInfo,
     )
-    rule_based_user_list = proto.Field(proto.MESSAGE, number=21, oneof='user_list',
+    rule_based_user_list = proto.Field(
+        proto.MESSAGE,
+        number=21,
+        oneof='user_list',
         message=user_lists.RuleBasedUserListInfo,
     )
-    logical_user_list = proto.Field(proto.MESSAGE, number=22, oneof='user_list',
+    logical_user_list = proto.Field(
+        proto.MESSAGE,
+        number=22,
+        oneof='user_list',
         message=user_lists.LogicalUserListInfo,
     )
-    basic_user_list = proto.Field(proto.MESSAGE, number=23, oneof='user_list',
+    basic_user_list = proto.Field(
+        proto.MESSAGE,
+        number=23,
+        oneof='user_list',
         message=user_lists.BasicUserListInfo,
     )
 

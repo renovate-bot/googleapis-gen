@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,11 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
-from google.protobuf import struct_pb2 as struct  # type: ignore
+from google.protobuf import struct_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -34,7 +31,6 @@ __protobuf__ = proto.module(
 
 class Device(proto.Message):
     r"""Third-party device definition.
-
     Attributes:
         id (str):
             Third-party device ID.
@@ -86,44 +82,63 @@ class Device(proto.Message):
             [RequestSyncDevices][google.home.graph.v1.HomeGraphApiService.RequestSyncDevices].
     """
 
-    id = proto.Field(proto.STRING, number=1)
-
-    type_ = proto.Field(proto.STRING, number=2)
-
-    traits = proto.RepeatedField(proto.STRING, number=3)
-
-    name = proto.Field(proto.MESSAGE, number=4,
+    id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    type_ = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    traits = proto.RepeatedField(
+        proto.STRING,
+        number=3,
+    )
+    name = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='DeviceNames',
     )
-
-    will_report_state = proto.Field(proto.BOOL, number=5)
-
-    room_hint = proto.Field(proto.STRING, number=6)
-
-    structure_hint = proto.Field(proto.STRING, number=7)
-
-    device_info = proto.Field(proto.MESSAGE, number=8,
+    will_report_state = proto.Field(
+        proto.BOOL,
+        number=5,
+    )
+    room_hint = proto.Field(
+        proto.STRING,
+        number=6,
+    )
+    structure_hint = proto.Field(
+        proto.STRING,
+        number=7,
+    )
+    device_info = proto.Field(
+        proto.MESSAGE,
+        number=8,
         message='DeviceInfo',
     )
-
-    attributes = proto.Field(proto.MESSAGE, number=9,
-        message=struct.Struct,
+    attributes = proto.Field(
+        proto.MESSAGE,
+        number=9,
+        message=struct_pb2.Struct,
     )
-
-    custom_data = proto.Field(proto.MESSAGE, number=10,
-        message=struct.Struct,
+    custom_data = proto.Field(
+        proto.MESSAGE,
+        number=10,
+        message=struct_pb2.Struct,
     )
-
-    other_device_ids = proto.RepeatedField(proto.MESSAGE, number=11,
+    other_device_ids = proto.RepeatedField(
+        proto.MESSAGE,
+        number=11,
         message='AgentOtherDeviceId',
     )
-
-    notification_supported_by_agent = proto.Field(proto.BOOL, number=12)
+    notification_supported_by_agent = proto.Field(
+        proto.BOOL,
+        number=12,
+    )
 
 
 class DeviceNames(proto.Message):
     r"""Identifiers used to describe the device.
-
     Attributes:
         name (str):
             Primary name of the device, generally
@@ -137,16 +152,22 @@ class DeviceNames(proto.Message):
             SKUs, etc.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    nicknames = proto.RepeatedField(proto.STRING, number=2)
-
-    default_names = proto.RepeatedField(proto.STRING, number=3)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    nicknames = proto.RepeatedField(
+        proto.STRING,
+        number=2,
+    )
+    default_names = proto.RepeatedField(
+        proto.STRING,
+        number=3,
+    )
 
 
 class DeviceInfo(proto.Message):
     r"""Device information.
-
     Attributes:
         manufacturer (str):
             Device manufacturer.
@@ -158,18 +179,26 @@ class DeviceInfo(proto.Message):
             Device software version.
     """
 
-    manufacturer = proto.Field(proto.STRING, number=1)
-
-    model = proto.Field(proto.STRING, number=2)
-
-    hw_version = proto.Field(proto.STRING, number=3)
-
-    sw_version = proto.Field(proto.STRING, number=4)
+    manufacturer = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    model = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    hw_version = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    sw_version = proto.Field(
+        proto.STRING,
+        number=4,
+    )
 
 
 class AgentOtherDeviceId(proto.Message):
     r"""Alternate third-party device ID.
-
     Attributes:
         agent_id (str):
             Project ID for your smart home Action.
@@ -177,9 +206,14 @@ class AgentOtherDeviceId(proto.Message):
             Unique third-party device ID.
     """
 
-    agent_id = proto.Field(proto.STRING, number=1)
-
-    device_id = proto.Field(proto.STRING, number=2)
+    agent_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    device_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

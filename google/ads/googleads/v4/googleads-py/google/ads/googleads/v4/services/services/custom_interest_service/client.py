@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -23,10 +21,10 @@ from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
-from google.api_core import exceptions                            # type: ignore
+from google.api_core import exceptions as core_exceptions         # type: ignore
 from google.api_core import gapic_v1                              # type: ignore
 from google.api_core import retry as retries                      # type: ignore
-from google.auth import credentials                               # type: ignore
+from google.auth import credentials as ga_credentials             # type: ignore
 from google.auth.transport import mtls                            # type: ignore
 from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
@@ -36,8 +34,7 @@ from google.ads.googleads.v4.enums.types import custom_interest_status
 from google.ads.googleads.v4.enums.types import custom_interest_type
 from google.ads.googleads.v4.resources.types import custom_interest
 from google.ads.googleads.v4.services.types import custom_interest_service
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
-
+from google.protobuf import wrappers_pb2  # type: ignore
 from .transports.base import CustomInterestServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import CustomInterestServiceGrpcTransport
 
@@ -166,7 +163,6 @@ class CustomInterestServiceClient(metaclass=CustomInterestServiceClientMeta):
         """Parse a custom_interest path into its component segments."""
         m = re.match(r"^customers/(?P<customer>.+?)/customInterests/(?P<custom_interest>.+?)$", path)
         return m.groupdict() if m else {}
-
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
         """Return a fully-qualified billing_account string."""
@@ -223,7 +219,7 @@ class CustomInterestServiceClient(metaclass=CustomInterestServiceClientMeta):
         return m.groupdict() if m else {}
 
     def __init__(self, *,
-            credentials: Optional[credentials.Credentials] = None,
+            credentials: Optional[ga_credentials.Credentials] = None,
             transport: Union[str, CustomInterestServiceTransport, None] = None,
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -348,7 +344,6 @@ class CustomInterestServiceClient(metaclass=CustomInterestServiceClientMeta):
                 This corresponds to the ``resource_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -368,16 +363,14 @@ class CustomInterestServiceClient(metaclass=CustomInterestServiceClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # Minor optimization to avoid making a copy if the user passes
+           # Minor optimization to avoid making a copy if the user passes
         # in a custom_interest_service.GetCustomInterestRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
         if not isinstance(request, custom_interest_service.GetCustomInterestRequest):
             request = custom_interest_service.GetCustomInterestRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if resource_name is not None:
                 request.resource_name = resource_name
 
@@ -396,7 +389,7 @@ class CustomInterestServiceClient(metaclass=CustomInterestServiceClientMeta):
         # Send the request.
         response = rpc(
             request,
-            retry=retry,
+             retry=retry,
             timeout=timeout,
             metadata=metadata,
         )
@@ -435,7 +428,6 @@ class CustomInterestServiceClient(metaclass=CustomInterestServiceClientMeta):
                 This corresponds to the ``operations`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -455,16 +447,14 @@ class CustomInterestServiceClient(metaclass=CustomInterestServiceClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # Minor optimization to avoid making a copy if the user passes
+           # Minor optimization to avoid making a copy if the user passes
         # in a custom_interest_service.MutateCustomInterestsRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
         if not isinstance(request, custom_interest_service.MutateCustomInterestsRequest):
             request = custom_interest_service.MutateCustomInterestsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if customer_id is not None:
                 request.customer_id = customer_id
             if operations is not None:
@@ -485,7 +475,7 @@ class CustomInterestServiceClient(metaclass=CustomInterestServiceClientMeta):
         # Send the request.
         response = rpc(
             request,
-            retry=retry,
+             retry=retry,
             timeout=timeout,
             metadata=metadata,
         )

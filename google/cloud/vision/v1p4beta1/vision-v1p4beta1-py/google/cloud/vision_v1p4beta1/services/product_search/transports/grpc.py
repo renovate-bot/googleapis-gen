@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,23 +13,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import operations_v1  # type: ignore
 from google.api_core import gapic_v1       # type: ignore
-from google import auth                    # type: ignore
-from google.auth import credentials        # type: ignore
+import google.auth                         # type: ignore
+from google.auth import credentials as ga_credentials  # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
 
 import grpc  # type: ignore
 
 from google.cloud.vision_v1p4beta1.types import product_search_service
-from google.longrunning import operations_pb2 as operations  # type: ignore
-from google.protobuf import empty_pb2 as empty  # type: ignore
-
+from google.longrunning import operations_pb2  # type: ignore
+from google.protobuf import empty_pb2  # type: ignore
 from .base import ProductSearchTransport, DEFAULT_CLIENT_INFO
 
 
@@ -69,7 +66,7 @@ class ProductSearchGrpcTransport(ProductSearchTransport):
 
     def __init__(self, *,
             host: str = 'vision.googleapis.com',
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             credentials_file: str = None,
             scopes: Sequence[str] = None,
             channel: grpc.Channel = None,
@@ -83,7 +80,8 @@ class ProductSearchGrpcTransport(ProductSearchTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -193,7 +191,7 @@ class ProductSearchGrpcTransport(ProductSearchTransport):
     @classmethod
     def create_channel(cls,
                        host: str = 'vision.googleapis.com',
-                       credentials: credentials.Credentials = None,
+                       credentials: ga_credentials.Credentials = None,
                        credentials_file: str = None,
                        scopes: Optional[Sequence[str]] = None,
                        quota_project_id: Optional[str] = None,
@@ -223,13 +221,15 @@ class ProductSearchGrpcTransport(ProductSearchTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -384,7 +384,7 @@ class ProductSearchGrpcTransport(ProductSearchTransport):
     @property
     def delete_product_set(self) -> Callable[
             [product_search_service.DeleteProductSetRequest],
-            empty.Empty]:
+            empty_pb2.Empty]:
         r"""Return a callable for the delete product set method over gRPC.
 
         Permanently deletes a ProductSet. Products and
@@ -406,7 +406,7 @@ class ProductSearchGrpcTransport(ProductSearchTransport):
             self._stubs['delete_product_set'] = self.grpc_channel.unary_unary(
                 '/google.cloud.vision.v1p4beta1.ProductSearch/DeleteProductSet',
                 request_serializer=product_search_service.DeleteProductSetRequest.serialize,
-                response_deserializer=empty.Empty.FromString,
+                response_deserializer=empty_pb2.Empty.FromString,
             )
         return self._stubs['delete_product_set']
 
@@ -550,7 +550,7 @@ class ProductSearchGrpcTransport(ProductSearchTransport):
     @property
     def delete_product(self) -> Callable[
             [product_search_service.DeleteProductRequest],
-            empty.Empty]:
+            empty_pb2.Empty]:
         r"""Return a callable for the delete product method over gRPC.
 
         Permanently deletes a product and its reference
@@ -574,7 +574,7 @@ class ProductSearchGrpcTransport(ProductSearchTransport):
             self._stubs['delete_product'] = self.grpc_channel.unary_unary(
                 '/google.cloud.vision.v1p4beta1.ProductSearch/DeleteProduct',
                 request_serializer=product_search_service.DeleteProductRequest.serialize,
-                response_deserializer=empty.Empty.FromString,
+                response_deserializer=empty_pb2.Empty.FromString,
             )
         return self._stubs['delete_product']
 
@@ -628,7 +628,7 @@ class ProductSearchGrpcTransport(ProductSearchTransport):
     @property
     def delete_reference_image(self) -> Callable[
             [product_search_service.DeleteReferenceImageRequest],
-            empty.Empty]:
+            empty_pb2.Empty]:
         r"""Return a callable for the delete reference image method over gRPC.
 
         Permanently deletes a reference image.
@@ -653,7 +653,7 @@ class ProductSearchGrpcTransport(ProductSearchTransport):
             self._stubs['delete_reference_image'] = self.grpc_channel.unary_unary(
                 '/google.cloud.vision.v1p4beta1.ProductSearch/DeleteReferenceImage',
                 request_serializer=product_search_service.DeleteReferenceImageRequest.serialize,
-                response_deserializer=empty.Empty.FromString,
+                response_deserializer=empty_pb2.Empty.FromString,
             )
         return self._stubs['delete_reference_image']
 
@@ -722,7 +722,7 @@ class ProductSearchGrpcTransport(ProductSearchTransport):
     @property
     def add_product_to_product_set(self) -> Callable[
             [product_search_service.AddProductToProductSetRequest],
-            empty.Empty]:
+            empty_pb2.Empty]:
         r"""Return a callable for the add product to product set method over gRPC.
 
         Adds a Product to the specified ProductSet. If the Product is
@@ -749,14 +749,14 @@ class ProductSearchGrpcTransport(ProductSearchTransport):
             self._stubs['add_product_to_product_set'] = self.grpc_channel.unary_unary(
                 '/google.cloud.vision.v1p4beta1.ProductSearch/AddProductToProductSet',
                 request_serializer=product_search_service.AddProductToProductSetRequest.serialize,
-                response_deserializer=empty.Empty.FromString,
+                response_deserializer=empty_pb2.Empty.FromString,
             )
         return self._stubs['add_product_to_product_set']
 
     @property
     def remove_product_from_product_set(self) -> Callable[
             [product_search_service.RemoveProductFromProductSetRequest],
-            empty.Empty]:
+            empty_pb2.Empty]:
         r"""Return a callable for the remove product from product
         set method over gRPC.
 
@@ -776,7 +776,7 @@ class ProductSearchGrpcTransport(ProductSearchTransport):
             self._stubs['remove_product_from_product_set'] = self.grpc_channel.unary_unary(
                 '/google.cloud.vision.v1p4beta1.ProductSearch/RemoveProductFromProductSet',
                 request_serializer=product_search_service.RemoveProductFromProductSetRequest.serialize,
-                response_deserializer=empty.Empty.FromString,
+                response_deserializer=empty_pb2.Empty.FromString,
             )
         return self._stubs['remove_product_from_product_set']
 
@@ -816,7 +816,7 @@ class ProductSearchGrpcTransport(ProductSearchTransport):
     @property
     def import_product_sets(self) -> Callable[
             [product_search_service.ImportProductSetsRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         r"""Return a callable for the import product sets method over gRPC.
 
         Asynchronous API that imports a list of reference images to
@@ -846,14 +846,14 @@ class ProductSearchGrpcTransport(ProductSearchTransport):
             self._stubs['import_product_sets'] = self.grpc_channel.unary_unary(
                 '/google.cloud.vision.v1p4beta1.ProductSearch/ImportProductSets',
                 request_serializer=product_search_service.ImportProductSetsRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['import_product_sets']
 
     @property
     def purge_products(self) -> Callable[
             [product_search_service.PurgeProductsRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         r"""Return a callable for the purge products method over gRPC.
 
         Asynchronous API to delete all Products in a ProductSet or all
@@ -898,7 +898,7 @@ class ProductSearchGrpcTransport(ProductSearchTransport):
             self._stubs['purge_products'] = self.grpc_channel.unary_unary(
                 '/google.cloud.vision.v1p4beta1.ProductSearch/PurgeProducts',
                 request_serializer=product_search_service.PurgeProductsRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['purge_products']
 

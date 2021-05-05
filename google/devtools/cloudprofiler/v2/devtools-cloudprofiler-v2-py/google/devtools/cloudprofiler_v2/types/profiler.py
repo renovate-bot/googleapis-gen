@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
-from google.protobuf import duration_pb2 as gp_duration  # type: ignore
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
+from google.protobuf import duration_pb2  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -68,13 +65,18 @@ class CreateProfileRequest(proto.Message):
             capable of providing.
     """
 
-    parent = proto.Field(proto.STRING, number=4)
-
-    deployment = proto.Field(proto.MESSAGE, number=1,
+    parent = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    deployment = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='Deployment',
     )
-
-    profile_type = proto.RepeatedField(proto.ENUM, number=2,
+    profile_type = proto.RepeatedField(
+        proto.ENUM,
+        number=2,
         enum='ProfileType',
     )
 
@@ -90,16 +92,19 @@ class CreateOfflineProfileRequest(proto.Message):
             Contents of the profile to create.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    profile = proto.Field(proto.MESSAGE, number=2,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    profile = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='Profile',
     )
 
 
 class UpdateProfileRequest(proto.Message):
     r"""UpdateProfileRequest contains the profile to update.
-
     Attributes:
         profile (google.devtools.cloudprofiler_v2.types.Profile):
             Profile to update
@@ -111,18 +116,20 @@ class UpdateProfileRequest(proto.Message):
             overwritten.
     """
 
-    profile = proto.Field(proto.MESSAGE, number=1,
+    profile = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='Profile',
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=2,
-        message=field_mask.FieldMask,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=field_mask_pb2.FieldMask,
     )
 
 
 class Profile(proto.Message):
     r"""Profile resource.
-
     Attributes:
         name (str):
             Output only. Opaque, server-assigned, unique
@@ -156,23 +163,34 @@ class Profile(proto.Message):
             validation rules and limits.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    profile_type = proto.Field(proto.ENUM, number=2,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    profile_type = proto.Field(
+        proto.ENUM,
+        number=2,
         enum='ProfileType',
     )
-
-    deployment = proto.Field(proto.MESSAGE, number=3,
+    deployment = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='Deployment',
     )
-
-    duration = proto.Field(proto.MESSAGE, number=4,
+    duration = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=gp_duration.Duration,
     )
-
-    profile_bytes = proto.Field(proto.BYTES, number=5)
-
-    labels = proto.MapField(proto.STRING, proto.STRING, number=6)
+    profile_bytes = proto.Field(
+        proto.BYTES,
+        number=5,
+    )
+    labels = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=6,
+    )
 
 
 class Deployment(proto.Message):
@@ -211,11 +229,19 @@ class Deployment(proto.Message):
             example of a region is "us-central1" or "us-central".
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    target = proto.Field(proto.STRING, number=2)
-
-    labels = proto.MapField(proto.STRING, proto.STRING, number=3)
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    target = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    labels = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=3,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

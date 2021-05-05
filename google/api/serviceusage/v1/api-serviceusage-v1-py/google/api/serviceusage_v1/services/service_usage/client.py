@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -23,10 +21,10 @@ from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
-from google.api_core import exceptions                            # type: ignore
+from google.api_core import exceptions as core_exceptions         # type: ignore
 from google.api_core import gapic_v1                              # type: ignore
 from google.api_core import retry as retries                      # type: ignore
-from google.auth import credentials                               # type: ignore
+from google.auth import credentials as ga_credentials             # type: ignore
 from google.auth.transport import mtls                            # type: ignore
 from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
@@ -37,7 +35,6 @@ from google.api.serviceusage_v1.types import resources
 from google.api.serviceusage_v1.types import serviceusage
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
-
 from .transports.base import ServiceUsageTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import ServiceUsageGrpcTransport
 from .transports.grpc_asyncio import ServiceUsageGrpcAsyncIOTransport
@@ -214,7 +211,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
         return m.groupdict() if m else {}
 
     def __init__(self, *,
-            credentials: Optional[credentials.Credentials] = None,
+            credentials: Optional[ga_credentials.Credentials] = None,
             transport: Union[str, ServiceUsageTransport, None] = None,
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -330,7 +327,6 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
             request (google.api.serviceusage_v1.types.EnableServiceRequest):
                 The request object. Request message for the
                 `EnableService` method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -348,7 +344,6 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a serviceusage.EnableServiceRequest.
         # There's no risk of modifying the input as we've already verified
@@ -407,7 +402,6 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
             request (google.api.serviceusage_v1.types.DisableServiceRequest):
                 The request object. Request message for the
                 `DisableService` method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -425,7 +419,6 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a serviceusage.DisableServiceRequest.
         # There's no risk of modifying the input as we've already verified
@@ -478,7 +471,6 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
             request (google.api.serviceusage_v1.types.GetServiceRequest):
                 The request object. Request message for the `GetService`
                 method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -492,7 +484,6 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a serviceusage.GetServiceRequest.
         # There's no risk of modifying the input as we've already verified
@@ -549,7 +540,6 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
             request (google.api.serviceusage_v1.types.ListServicesRequest):
                 The request object. Request message for the
                 `ListServices` method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -565,7 +555,6 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a serviceusage.ListServicesRequest.
         # There's no risk of modifying the input as we've already verified
@@ -621,7 +610,6 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
             request (google.api.serviceusage_v1.types.BatchEnableServicesRequest):
                 The request object. Request message for the
                 `BatchEnableServices` method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -639,7 +627,6 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a serviceusage.BatchEnableServicesRequest.
         # There's no risk of modifying the input as we've already verified
@@ -692,7 +679,6 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
             request (google.api.serviceusage_v1.types.BatchGetServicesRequest):
                 The request object. Request message for the
                 `BatchGetServices` method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -704,7 +690,6 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
                 Response message for the BatchGetServices method.
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a serviceusage.BatchGetServicesRequest.
         # There's no risk of modifying the input as we've already verified
@@ -734,8 +719,6 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

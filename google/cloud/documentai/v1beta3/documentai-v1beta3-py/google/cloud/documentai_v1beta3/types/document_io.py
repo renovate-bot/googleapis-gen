@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -33,7 +31,6 @@ __protobuf__ = proto.module(
 
 class RawDocument(proto.Message):
     r"""Payload message of raw document content (bytes).
-
     Attributes:
         content (bytes):
             Inline document content.
@@ -42,14 +39,18 @@ class RawDocument(proto.Message):
             of the [content].
     """
 
-    content = proto.Field(proto.BYTES, number=1)
-
-    mime_type = proto.Field(proto.STRING, number=2)
+    content = proto.Field(
+        proto.BYTES,
+        number=1,
+    )
+    mime_type = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class GcsDocument(proto.Message):
     r"""Specifies a document stored on Cloud Storage.
-
     Attributes:
         gcs_uri (str):
             The Cloud Storage object uri.
@@ -57,20 +58,26 @@ class GcsDocument(proto.Message):
             An IANA MIME type (RFC6838) of the content.
     """
 
-    gcs_uri = proto.Field(proto.STRING, number=1)
-
-    mime_type = proto.Field(proto.STRING, number=2)
+    gcs_uri = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    mime_type = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class GcsDocuments(proto.Message):
     r"""Specifies a set of documents on Cloud Storage.
-
     Attributes:
         documents (Sequence[google.cloud.documentai_v1beta3.types.GcsDocument]):
             The list of documents.
     """
 
-    documents = proto.RepeatedField(proto.MESSAGE, number=1,
+    documents = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='GcsDocument',
     )
 
@@ -84,7 +91,10 @@ class GcsPrefix(proto.Message):
             The URI prefix.
     """
 
-    gcs_uri_prefix = proto.Field(proto.STRING, number=1)
+    gcs_uri_prefix = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class BatchDocumentsInputConfig(proto.Message):
@@ -100,11 +110,16 @@ class BatchDocumentsInputConfig(proto.Message):
             on Cloud Storage.
     """
 
-    gcs_prefix = proto.Field(proto.MESSAGE, number=1, oneof='source',
+    gcs_prefix = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='source',
         message='GcsPrefix',
     )
-
-    gcs_documents = proto.Field(proto.MESSAGE, number=2, oneof='source',
+    gcs_documents = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='source',
         message='GcsDocuments',
     )
 
@@ -118,18 +133,24 @@ class DocumentOutputConfig(proto.Message):
             Output config to write the results to Cloud
             Storage.
     """
+
     class GcsOutputConfig(proto.Message):
         r"""The configuration used when outputting documents.
-
         Attributes:
             gcs_uri (str):
                 The Cloud Storage uri (a directory) of the
                 output.
         """
 
-        gcs_uri = proto.Field(proto.STRING, number=1)
+        gcs_uri = proto.Field(
+            proto.STRING,
+            number=1,
+        )
 
-    gcs_output_config = proto.Field(proto.MESSAGE, number=1, oneof='destination',
+    gcs_output_config = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='destination',
         message=GcsOutputConfig,
     )
 

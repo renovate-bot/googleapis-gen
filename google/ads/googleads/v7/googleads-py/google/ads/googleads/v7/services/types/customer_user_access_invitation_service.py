@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v7.resources.types import customer_user_access_invitation
 
@@ -44,7 +41,10 @@ class GetCustomerUserAccessInvitationRequest(proto.Message):
             invitation.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class MutateCustomerUserAccessInvitationRequest(proto.Message):
@@ -60,8 +60,13 @@ class MutateCustomerUserAccessInvitationRequest(proto.Message):
             access invitation
     """
 
-    customer_id = proto.Field(proto.STRING, number=1)
-    operation = proto.Field(proto.MESSAGE, number=2,
+    customer_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    operation = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='CustomerUserAccessInvitationOperation',
     )
 
@@ -81,34 +86,44 @@ class CustomerUserAccessInvitationOperation(proto.Message):
             ``customers/{customer_id}/customerUserAccessInvitations/{invitation_id}``
     """
 
-    create = proto.Field(proto.MESSAGE, number=1, oneof='operation',
+    create = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='operation',
         message=customer_user_access_invitation.CustomerUserAccessInvitation,
     )
-    remove = proto.Field(proto.STRING, number=2, oneof='operation')
+    remove = proto.Field(
+        proto.STRING,
+        number=2,
+        oneof='operation',
+    )
 
 
 class MutateCustomerUserAccessInvitationResponse(proto.Message):
     r"""Response message for access invitation mutate.
-
     Attributes:
         result (google.ads.googleads.v7.services.types.MutateCustomerUserAccessInvitationResult):
             Result for the mutate.
     """
 
-    result = proto.Field(proto.MESSAGE, number=1,
+    result = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='MutateCustomerUserAccessInvitationResult',
     )
 
 
 class MutateCustomerUserAccessInvitationResult(proto.Message):
     r"""The result for the access invitation mutate.
-
     Attributes:
         resource_name (str):
             Returned for successful operations.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

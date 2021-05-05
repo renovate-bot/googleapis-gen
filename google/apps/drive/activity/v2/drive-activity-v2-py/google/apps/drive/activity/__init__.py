@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.apps.drive.activity_v2.services.drive_activity_service.async_client import DriveActivityServiceAsyncClient
 from google.apps.drive.activity_v2.services.drive_activity_service.client import DriveActivityServiceClient
+from google.apps.drive.activity_v2.services.drive_activity_service.async_client import DriveActivityServiceAsyncClient
+
 from google.apps.drive.activity_v2.types.action import Action
 from google.apps.drive.activity_v2.types.action import ActionDetail
 from google.apps.drive.activity_v2.types.action import ApplicationReference
@@ -55,44 +55,43 @@ from google.apps.drive.activity_v2.types.target import TargetReference
 from google.apps.drive.activity_v2.types.target import TeamDrive
 from google.apps.drive.activity_v2.types.target import TeamDriveReference
 
-__all__ = (
+__all__ = ('DriveActivityServiceClient',
+    'DriveActivityServiceAsyncClient',
     'Action',
     'ActionDetail',
-    'Actor',
-    'Administrator',
-    'AnonymousUser',
     'ApplicationReference',
     'Comment',
-    'ConsolidationStrategy',
     'Create',
     'DataLeakPreventionChange',
     'Delete',
-    'Domain',
-    'Drive',
-    'DriveActivity',
-    'DriveActivityServiceAsyncClient',
-    'DriveActivityServiceClient',
-    'DriveItem',
-    'DriveItemReference',
-    'DriveReference',
     'Edit',
-    'FileComment',
-    'Group',
-    'Impersonation',
     'Move',
-    'Owner',
     'Permission',
     'PermissionChange',
-    'QueryDriveActivityRequest',
-    'QueryDriveActivityResponse',
     'Rename',
     'Restore',
     'SettingsChange',
+    'Actor',
+    'Administrator',
+    'AnonymousUser',
+    'Impersonation',
     'SystemEvent',
+    'User',
+    'Domain',
+    'Group',
+    'TimeRange',
+    'ConsolidationStrategy',
+    'QueryDriveActivityRequest',
+    'DriveActivity',
+    'QueryDriveActivityResponse',
+    'Drive',
+    'DriveItem',
+    'DriveItemReference',
+    'DriveReference',
+    'FileComment',
+    'Owner',
     'Target',
     'TargetReference',
     'TeamDrive',
     'TeamDriveReference',
-    'TimeRange',
-    'User',
 )

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v4.enums.types import budget_delivery_method
 from google.ads.googleads.v4.enums.types import budget_period
 from google.ads.googleads.v4.enums.types import budget_status
 from google.ads.googleads.v4.enums.types import budget_type
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -36,7 +33,6 @@ __protobuf__ = proto.module(
 
 class CampaignBudget(proto.Message):
     r"""A campaign budget.
-
     Attributes:
         resource_name (str):
             Immutable. The resource name of the campaign budget.
@@ -144,53 +140,88 @@ class CampaignBudget(proto.Message):
             Immutable. The type of the campaign budget.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    id = proto.Field(proto.MESSAGE, number=3,
-        message=wrappers.Int64Value,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
     )
-    name = proto.Field(proto.MESSAGE, number=4,
-        message=wrappers.StringValue,
+    id = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=wrappers_pb2.Int64Value,
     )
-    amount_micros = proto.Field(proto.MESSAGE, number=5,
-        message=wrappers.Int64Value,
+    name = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=wrappers_pb2.StringValue,
     )
-    total_amount_micros = proto.Field(proto.MESSAGE, number=10,
-        message=wrappers.Int64Value,
+    amount_micros = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        message=wrappers_pb2.Int64Value,
     )
-    status = proto.Field(proto.ENUM, number=6,
+    total_amount_micros = proto.Field(
+        proto.MESSAGE,
+        number=10,
+        message=wrappers_pb2.Int64Value,
+    )
+    status = proto.Field(
+        proto.ENUM,
+        number=6,
         enum=budget_status.BudgetStatusEnum.BudgetStatus,
     )
-    delivery_method = proto.Field(proto.ENUM, number=7,
+    delivery_method = proto.Field(
+        proto.ENUM,
+        number=7,
         enum=budget_delivery_method.BudgetDeliveryMethodEnum.BudgetDeliveryMethod,
     )
-    explicitly_shared = proto.Field(proto.MESSAGE, number=8,
-        message=wrappers.BoolValue,
+    explicitly_shared = proto.Field(
+        proto.MESSAGE,
+        number=8,
+        message=wrappers_pb2.BoolValue,
     )
-    reference_count = proto.Field(proto.MESSAGE, number=9,
-        message=wrappers.Int64Value,
+    reference_count = proto.Field(
+        proto.MESSAGE,
+        number=9,
+        message=wrappers_pb2.Int64Value,
     )
-    has_recommended_budget = proto.Field(proto.MESSAGE, number=11,
-        message=wrappers.BoolValue,
+    has_recommended_budget = proto.Field(
+        proto.MESSAGE,
+        number=11,
+        message=wrappers_pb2.BoolValue,
     )
-    recommended_budget_amount_micros = proto.Field(proto.MESSAGE, number=12,
-        message=wrappers.Int64Value,
+    recommended_budget_amount_micros = proto.Field(
+        proto.MESSAGE,
+        number=12,
+        message=wrappers_pb2.Int64Value,
     )
-    period = proto.Field(proto.ENUM, number=13,
+    period = proto.Field(
+        proto.ENUM,
+        number=13,
         enum=budget_period.BudgetPeriodEnum.BudgetPeriod,
     )
-    recommended_budget_estimated_change_weekly_clicks = proto.Field(proto.MESSAGE, number=14,
-        message=wrappers.Int64Value,
+    recommended_budget_estimated_change_weekly_clicks = proto.Field(
+        proto.MESSAGE,
+        number=14,
+        message=wrappers_pb2.Int64Value,
     )
-    recommended_budget_estimated_change_weekly_cost_micros = proto.Field(proto.MESSAGE, number=15,
-        message=wrappers.Int64Value,
+    recommended_budget_estimated_change_weekly_cost_micros = proto.Field(
+        proto.MESSAGE,
+        number=15,
+        message=wrappers_pb2.Int64Value,
     )
-    recommended_budget_estimated_change_weekly_interactions = proto.Field(proto.MESSAGE, number=16,
-        message=wrappers.Int64Value,
+    recommended_budget_estimated_change_weekly_interactions = proto.Field(
+        proto.MESSAGE,
+        number=16,
+        message=wrappers_pb2.Int64Value,
     )
-    recommended_budget_estimated_change_weekly_views = proto.Field(proto.MESSAGE, number=17,
-        message=wrappers.Int64Value,
+    recommended_budget_estimated_change_weekly_views = proto.Field(
+        proto.MESSAGE,
+        number=17,
+        message=wrappers_pb2.Int64Value,
     )
-    type_ = proto.Field(proto.ENUM, number=18,
+    type_ = proto.Field(
+        proto.ENUM,
+        number=18,
         enum=budget_type.BudgetTypeEnum.BudgetType,
     )
 

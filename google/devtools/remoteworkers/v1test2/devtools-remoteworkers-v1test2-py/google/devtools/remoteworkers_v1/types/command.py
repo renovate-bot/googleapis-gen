@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,13 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
-from google.protobuf import any_pb2 as gp_any  # type: ignore
-from google.protobuf import duration_pb2 as gp_duration  # type: ignore
-from google.rpc import status_pb2 as gr_status  # type: ignore
+from google.protobuf import any_pb2  # type: ignore
+from google.protobuf import duration_pb2  # type: ignore
+from google.rpc import status_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -51,9 +48,9 @@ class CommandTask(proto.Message):
         timeouts (google.devtools.remoteworkers_v1.types.CommandTask.Timeouts):
             The timeouts of this task.
     """
+
     class Inputs(proto.Message):
         r"""Describes the inputs to a shell-style task.
-
         Attributes:
             arguments (Sequence[str]):
                 The command itself to run (e.g., argv).
@@ -101,9 +98,9 @@ class CommandTask(proto.Message):
                 non-empty, then it must exist under "./".
                 Otherwise, "./" will be used.
         """
+
         class EnvironmentVariable(proto.Message):
             r"""An environment variable required by this task.
-
             Attributes:
                 name (str):
                     The envvar name.
@@ -111,29 +108,41 @@ class CommandTask(proto.Message):
                     The envvar value.
             """
 
-            name = proto.Field(proto.STRING, number=1)
+            name = proto.Field(
+                proto.STRING,
+                number=1,
+            )
+            value = proto.Field(
+                proto.STRING,
+                number=2,
+            )
 
-            value = proto.Field(proto.STRING, number=2)
-
-        arguments = proto.RepeatedField(proto.STRING, number=1)
-
-        files = proto.RepeatedField(proto.MESSAGE, number=2,
+        arguments = proto.RepeatedField(
+            proto.STRING,
+            number=1,
+        )
+        files = proto.RepeatedField(
+            proto.MESSAGE,
+            number=2,
             message='Digest',
         )
-
-        inline_blobs = proto.RepeatedField(proto.MESSAGE, number=4,
+        inline_blobs = proto.RepeatedField(
+            proto.MESSAGE,
+            number=4,
             message='Blob',
         )
-
-        environment_variables = proto.RepeatedField(proto.MESSAGE, number=3,
+        environment_variables = proto.RepeatedField(
+            proto.MESSAGE,
+            number=3,
             message='CommandTask.Inputs.EnvironmentVariable',
         )
-
-        working_directory = proto.Field(proto.STRING, number=5)
+        working_directory = proto.Field(
+            proto.STRING,
+            number=5,
+        )
 
     class Outputs(proto.Message):
         r"""Describes the expected outputs of the command.
-
         Attributes:
             files (Sequence[str]):
                 A list of expected files, relative to the
@@ -159,17 +168,25 @@ class CommandTask(proto.Message):
                 written via the ByteStream API.
         """
 
-        files = proto.RepeatedField(proto.STRING, number=1)
-
-        directories = proto.RepeatedField(proto.STRING, number=2)
-
-        stdout_destination = proto.Field(proto.STRING, number=3)
-
-        stderr_destination = proto.Field(proto.STRING, number=4)
+        files = proto.RepeatedField(
+            proto.STRING,
+            number=1,
+        )
+        directories = proto.RepeatedField(
+            proto.STRING,
+            number=2,
+        )
+        stdout_destination = proto.Field(
+            proto.STRING,
+            number=3,
+        )
+        stderr_destination = proto.Field(
+            proto.STRING,
+            number=4,
+        )
 
     class Timeouts(proto.Message):
         r"""Describes the timeouts associated with this task.
-
         Attributes:
             execution (google.protobuf.duration_pb2.Duration):
                 This specifies the maximum time that the task
@@ -194,27 +211,35 @@ class CommandTask(proto.Message):
                 on \*nix, CTRL_BREAK_EVENT on Windows).
         """
 
-        execution = proto.Field(proto.MESSAGE, number=1,
+        execution = proto.Field(
+            proto.MESSAGE,
+            number=1,
+            message=gp_duration.Duration,
+        )
+        idle = proto.Field(
+            proto.MESSAGE,
+            number=2,
+            message=gp_duration.Duration,
+        )
+        shutdown = proto.Field(
+            proto.MESSAGE,
+            number=3,
             message=gp_duration.Duration,
         )
 
-        idle = proto.Field(proto.MESSAGE, number=2,
-            message=gp_duration.Duration,
-        )
-
-        shutdown = proto.Field(proto.MESSAGE, number=3,
-            message=gp_duration.Duration,
-        )
-
-    inputs = proto.Field(proto.MESSAGE, number=1,
+    inputs = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=Inputs,
     )
-
-    expected_outputs = proto.Field(proto.MESSAGE, number=4,
+    expected_outputs = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=Outputs,
     )
-
-    timeouts = proto.Field(proto.MESSAGE, number=5,
+    timeouts = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=Timeouts,
     )
 
@@ -237,9 +262,13 @@ class CommandOutputs(proto.Message):
             A LUCI-style .isolated file
     """
 
-    exit_code = proto.Field(proto.INT32, number=1)
-
-    outputs = proto.Field(proto.MESSAGE, number=2,
+    exit_code = proto.Field(
+        proto.INT32,
+        number=1,
+    )
+    outputs = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='Digest',
     )
 
@@ -260,11 +289,14 @@ class CommandOverhead(proto.Message):
             uploading/downloading files).
     """
 
-    duration = proto.Field(proto.MESSAGE, number=1,
+    duration = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=gp_duration.Duration,
     )
-
-    overhead = proto.Field(proto.MESSAGE, number=2,
+    overhead = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=gp_duration.Duration,
     )
 
@@ -306,25 +338,33 @@ class CommandResult(proto.Message):
             field that it doesn't know about.
     """
 
-    status = proto.Field(proto.MESSAGE, number=1,
+    status = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=gr_status.Status,
     )
-
-    exit_code = proto.Field(proto.INT32, number=2)
-
-    outputs = proto.Field(proto.MESSAGE, number=3,
+    exit_code = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    outputs = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='Digest',
     )
-
-    duration = proto.Field(proto.MESSAGE, number=4,
+    duration = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=gp_duration.Duration,
     )
-
-    overhead = proto.Field(proto.MESSAGE, number=5,
+    overhead = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=gp_duration.Duration,
     )
-
-    metadata = proto.RepeatedField(proto.MESSAGE, number=6,
+    metadata = proto.RepeatedField(
+        proto.MESSAGE,
+        number=6,
         message=gp_any.Any,
     )
 
@@ -354,15 +394,23 @@ class FileMetadata(proto.Message):
             Properties of the file
     """
 
-    path = proto.Field(proto.STRING, number=1)
-
-    digest = proto.Field(proto.MESSAGE, number=2,
+    path = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    digest = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='Digest',
     )
-
-    contents = proto.Field(proto.BYTES, number=3)
-
-    is_executable = proto.Field(proto.BOOL, number=4)
+    contents = proto.Field(
+        proto.BYTES,
+        number=3,
+    )
+    is_executable = proto.Field(
+        proto.BOOL,
+        number=4,
+    )
 
 
 class DirectoryMetadata(proto.Message):
@@ -378,9 +426,13 @@ class DirectoryMetadata(proto.Message):
             in the form of a marshalled Directory message.
     """
 
-    path = proto.Field(proto.STRING, number=1)
-
-    digest = proto.Field(proto.MESSAGE, number=2,
+    path = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    digest = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='Digest',
     )
 
@@ -411,14 +463,18 @@ class Digest(proto.Message):
             content and is included here for this reason.
     """
 
-    hash_ = proto.Field(proto.STRING, number=1)
-
-    size_bytes = proto.Field(proto.INT64, number=2)
+    hash_ = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    size_bytes = proto.Field(
+        proto.INT64,
+        number=2,
+    )
 
 
 class Blob(proto.Message):
     r"""Describes a blob of binary content with its digest.
-
     Attributes:
         digest (google.devtools.remoteworkers_v1.types.Digest):
             The digest of the blob. This should be
@@ -427,11 +483,15 @@ class Blob(proto.Message):
             The contents of the blob.
     """
 
-    digest = proto.Field(proto.MESSAGE, number=1,
+    digest = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='Digest',
     )
-
-    contents = proto.Field(proto.BYTES, number=2)
+    contents = proto.Field(
+        proto.BYTES,
+        number=2,
+    )
 
 
 class Directory(proto.Message):
@@ -445,11 +505,14 @@ class Directory(proto.Message):
             Any subdirectories
     """
 
-    files = proto.RepeatedField(proto.MESSAGE, number=1,
+    files = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='FileMetadata',
     )
-
-    directories = proto.RepeatedField(proto.MESSAGE, number=2,
+    directories = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='DirectoryMetadata',
     )
 

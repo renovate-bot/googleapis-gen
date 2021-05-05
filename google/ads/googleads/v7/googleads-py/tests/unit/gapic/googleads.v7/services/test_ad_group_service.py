@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 from unittest import mock
 
@@ -23,7 +21,6 @@ import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
-from google import auth
 from google.ads.googleads.v7.common.types import custom_parameter
 from google.ads.googleads.v7.common.types import explorer_auto_optimizer_setting
 from google.ads.googleads.v7.common.types import targeting_setting
@@ -41,11 +38,12 @@ from google.ads.googleads.v7.services.types import ad_group_service
 from google.api_core import client_options
 from google.api_core import gapic_v1
 from google.api_core import grpc_helpers
-from google.auth import credentials
+from google.auth import credentials as ga_credentials
 from google.auth.exceptions import MutualTLSChannelError
 from google.oauth2 import service_account
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.rpc import status_pb2 as status  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.rpc import status_pb2  # type: ignore
+import google.auth
 
 
 def client_cert_source_callback():
@@ -75,7 +73,7 @@ def test__get_default_mtls_endpoint():
 
 
 def test_ad_group_service_client_from_service_account_info():
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
@@ -86,7 +84,7 @@ def test_ad_group_service_client_from_service_account_info():
 
 
 def test_ad_group_service_client_from_service_account_file():
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_file') as factory:
         factory.return_value = creds
         client = AdGroupServiceClient.from_service_account_file("dummy/file/path.json")
@@ -111,7 +109,7 @@ def test_ad_group_service_client_client_options():
     # Check that if channel is provided we won't create a new one.
     with mock.patch('google.ads.googleads.v7.services.services.ad_group_service.AdGroupServiceClient.get_transport_class') as gtc:
         transport = transports.AdGroupServiceGrpcTransport(
-            credentials=credentials.AnonymousCredentials()
+            credentials=ga_credentials.AnonymousCredentials()
         )
         client = AdGroupServiceClient(transport=transport)
         gtc.assert_not_called()
@@ -261,7 +259,7 @@ def test_ad_group_service_client_client_options_from_dict():
 
 def test_get_ad_group(transport: str = 'grpc', request_type=ad_group_service.GetAdGroupRequest):
     client = AdGroupServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -276,113 +274,62 @@ def test_get_ad_group(transport: str = 'grpc', request_type=ad_group_service.Get
         # Designate an appropriate return value for the call.
         call.return_value = ad_group.AdGroup(
             resource_name='resource_name_value',
-
             id=205,
-
             name='name_value',
-
             status=ad_group_status.AdGroupStatusEnum.AdGroupStatus.UNKNOWN,
-
             type_=ad_group_type.AdGroupTypeEnum.AdGroupType.UNKNOWN,
-
             ad_rotation_mode=ad_group_ad_rotation_mode.AdGroupAdRotationModeEnum.AdGroupAdRotationMode.UNKNOWN,
-
             base_ad_group='base_ad_group_value',
-
             tracking_url_template='tracking_url_template_value',
-
             campaign='campaign_value',
-
             cpc_bid_micros=1456,
-
             cpm_bid_micros=1466,
-
             target_cpa_micros=1798,
-
             cpv_bid_micros=1475,
-
             target_cpm_micros=1810,
-
             target_roas=0.1179,
-
             percent_cpc_bid_micros=2304,
-
             display_custom_bid_dimension=targeting_dimension.TargetingDimensionEnum.TargetingDimension.UNKNOWN,
-
             final_url_suffix='final_url_suffix_value',
-
             effective_target_cpa_micros=2838,
-
             effective_target_cpa_source=bidding_source.BiddingSourceEnum.BiddingSource.UNKNOWN,
-
             effective_target_roas=0.2219,
-
             effective_target_roas_source=bidding_source.BiddingSourceEnum.BiddingSource.UNKNOWN,
-
             labels=['labels_value'],
-
             excluded_parent_asset_field_types=[asset_field_type.AssetFieldTypeEnum.AssetFieldType.UNKNOWN],
-
         )
-
         response = client.get_ad_group(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == ad_group_service.GetAdGroupRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, ad_group.AdGroup)
-
     assert response.resource_name == 'resource_name_value'
-
     assert response.id == 205
-
     assert response.name == 'name_value'
-
     assert response.status == ad_group_status.AdGroupStatusEnum.AdGroupStatus.UNKNOWN
-
     assert response.type_ == ad_group_type.AdGroupTypeEnum.AdGroupType.UNKNOWN
-
     assert response.ad_rotation_mode == ad_group_ad_rotation_mode.AdGroupAdRotationModeEnum.AdGroupAdRotationMode.UNKNOWN
-
     assert response.base_ad_group == 'base_ad_group_value'
-
     assert response.tracking_url_template == 'tracking_url_template_value'
-
     assert response.campaign == 'campaign_value'
-
     assert response.cpc_bid_micros == 1456
-
     assert response.cpm_bid_micros == 1466
-
     assert response.target_cpa_micros == 1798
-
     assert response.cpv_bid_micros == 1475
-
     assert response.target_cpm_micros == 1810
-
     assert math.isclose(response.target_roas, 0.1179, rel_tol=1e-6)
-
     assert response.percent_cpc_bid_micros == 2304
-
     assert response.display_custom_bid_dimension == targeting_dimension.TargetingDimensionEnum.TargetingDimension.UNKNOWN
-
     assert response.final_url_suffix == 'final_url_suffix_value'
-
     assert response.effective_target_cpa_micros == 2838
-
     assert response.effective_target_cpa_source == bidding_source.BiddingSourceEnum.BiddingSource.UNKNOWN
-
     assert math.isclose(response.effective_target_roas, 0.2219, rel_tol=1e-6)
-
     assert response.effective_target_roas_source == bidding_source.BiddingSourceEnum.BiddingSource.UNKNOWN
-
     assert response.labels == ['labels_value']
-
     assert response.excluded_parent_asset_field_types == [asset_field_type.AssetFieldTypeEnum.AssetFieldType.UNKNOWN]
 
 
@@ -392,12 +339,13 @@ def test_get_ad_group_from_dict():
 
 def test_get_ad_group_field_headers():
     client = AdGroupServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = ad_group_service.GetAdGroupRequest()
+
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -405,7 +353,6 @@ def test_get_ad_group_field_headers():
             type(client.transport.get_ad_group),
             '__call__') as call:
         call.return_value = ad_group.AdGroup()
-
         client.get_ad_group(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -423,7 +370,7 @@ def test_get_ad_group_field_headers():
 
 def test_get_ad_group_flattened():
     client = AdGroupServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -432,7 +379,6 @@ def test_get_ad_group_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = ad_group.AdGroup()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_ad_group(
@@ -443,13 +389,12 @@ def test_get_ad_group_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource_name == 'resource_name_value'
 
 
 def test_get_ad_group_flattened_error():
     client = AdGroupServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -463,7 +408,7 @@ def test_get_ad_group_flattened_error():
 
 def test_mutate_ad_groups(transport: str = 'grpc', request_type=ad_group_service.MutateAdGroupsRequest):
     client = AdGroupServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -478,17 +423,14 @@ def test_mutate_ad_groups(transport: str = 'grpc', request_type=ad_group_service
         # Designate an appropriate return value for the call.
         call.return_value = ad_group_service.MutateAdGroupsResponse(
         )
-
         response = client.mutate_ad_groups(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == ad_group_service.MutateAdGroupsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, ad_group_service.MutateAdGroupsResponse)
 
 
@@ -498,12 +440,13 @@ def test_mutate_ad_groups_from_dict():
 
 def test_mutate_ad_groups_field_headers():
     client = AdGroupServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = ad_group_service.MutateAdGroupsRequest()
+
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -511,7 +454,6 @@ def test_mutate_ad_groups_field_headers():
             type(client.transport.mutate_ad_groups),
             '__call__') as call:
         call.return_value = ad_group_service.MutateAdGroupsResponse()
-
         client.mutate_ad_groups(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -529,7 +471,7 @@ def test_mutate_ad_groups_field_headers():
 
 def test_mutate_ad_groups_flattened():
     client = AdGroupServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -538,27 +480,24 @@ def test_mutate_ad_groups_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = ad_group_service.MutateAdGroupsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_ad_groups(
             customer_id='customer_id_value',
-            operations=[ad_group_service.AdGroupOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))],
+            operations=[ad_group_service.AdGroupOperation(update_mask=field_mask_pb2.FieldMask(paths=['paths_value']))],
         )
 
         # Establish that the underlying call was made with the expected
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].customer_id == 'customer_id_value'
-
-        assert args[0].operations == [ad_group_service.AdGroupOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))]
+        assert args[0].operations == [ad_group_service.AdGroupOperation(update_mask=field_mask_pb2.FieldMask(paths=['paths_value']))]
 
 
 def test_mutate_ad_groups_flattened_error():
     client = AdGroupServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -567,18 +506,18 @@ def test_mutate_ad_groups_flattened_error():
         client.mutate_ad_groups(
             ad_group_service.MutateAdGroupsRequest(),
             customer_id='customer_id_value',
-            operations=[ad_group_service.AdGroupOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))],
+            operations=[ad_group_service.AdGroupOperation(update_mask=field_mask_pb2.FieldMask(paths=['paths_value']))],
         )
 
 
 def test_credentials_transport_error():
     # It is an error to provide credentials and a transport instance.
     transport = transports.AdGroupServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = AdGroupServiceClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             transport=transport,
         )
 
@@ -586,7 +525,7 @@ def test_credentials_transport_error():
 def test_transport_instance():
     # A client may be instantiated with a custom transport instance.
     transport = transports.AdGroupServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     client = AdGroupServiceClient(transport=transport)
     assert client.transport is transport
@@ -595,7 +534,7 @@ def test_transport_instance():
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.AdGroupServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     channel = transport.grpc_channel
     assert channel
@@ -604,7 +543,7 @@ def test_transport_get_channel():
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = AdGroupServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     assert isinstance(
         client.transport,
@@ -616,8 +555,8 @@ def test_transport_grpc_default():
 ])
 def test_transport_adc(transport_class):
     # Test default credentials are used if not provided.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport_class()
         adc.assert_called_once()
 
@@ -627,7 +566,7 @@ def test_ad_group_service_base_transport():
     with mock.patch('google.ads.googleads.v7.services.services.ad_group_service.transports.AdGroupServiceTransport.__init__') as Transport:
         Transport.return_value = None
         transport = transports.AdGroupServiceTransport(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
         )
 
     # Every method on the transport should just blindly
@@ -635,7 +574,7 @@ def test_ad_group_service_base_transport():
     methods = (
         'get_ad_group',
         'mutate_ad_groups',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -643,17 +582,17 @@ def test_ad_group_service_base_transport():
 
 def test_ad_group_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.ads.googleads.v7.services.services.ad_group_service.transports.AdGroupServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'default') as adc, mock.patch('google.ads.googleads.v7.services.services.ad_group_service.transports.AdGroupServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.AdGroupServiceTransport()
         adc.assert_called_once()
 
 
 def test_ad_group_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         AdGroupServiceClient()
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/adwords',
@@ -663,8 +602,8 @@ def test_ad_group_service_auth_adc():
 def test_ad_group_service_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transports.AdGroupServiceGrpcTransport(host="squid.clam.whelk")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/adwords',
@@ -673,7 +612,7 @@ def test_ad_group_service_transport_auth_adc():
 
 def test_ad_group_service_host_no_port():
     client = AdGroupServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='googleads.googleapis.com'),
     )
     assert client.transport._host == 'googleads.googleapis.com:443'
@@ -681,7 +620,7 @@ def test_ad_group_service_host_no_port():
 
 def test_ad_group_service_host_with_port():
     client = AdGroupServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='googleads.googleapis.com:8000'),
     )
     assert client.transport._host == 'googleads.googleapis.com:8000'
@@ -712,9 +651,9 @@ def test_ad_group_service_transport_channel_mtls_with_client_cert_source(
             mock_grpc_channel = mock.Mock()
             grpc_create_channel.return_value = mock_grpc_channel
 
-            cred = credentials.AnonymousCredentials()
+            cred = ga_credentials.AnonymousCredentials()
             with pytest.warns(DeprecationWarning):
-                with mock.patch.object(auth, 'default') as adc:
+                with mock.patch.object(google.auth, 'default') as adc:
                     adc.return_value = (cred, None)
                     transport = transport_class(
                         host="squid.clam.whelk",
@@ -787,7 +726,6 @@ def test_ad_group_service_transport_channel_mtls_with_adc(
 def test_ad_group_path():
     customer_id = "squid"
     ad_group_id = "clam"
-
     expected = "customers/{customer_id}/adGroups/{ad_group_id}".format(customer_id=customer_id, ad_group_id=ad_group_id, )
     actual = AdGroupServiceClient.ad_group_path(customer_id, ad_group_id)
     assert expected == actual
@@ -795,9 +733,8 @@ def test_ad_group_path():
 
 def test_parse_ad_group_path():
     expected = {
-    "customer_id": "whelk",
-    "ad_group_id": "octopus",
-
+        "customer_id": "whelk",
+        "ad_group_id": "octopus",
     }
     path = AdGroupServiceClient.ad_group_path(**expected)
 
@@ -809,7 +746,6 @@ def test_ad_group_label_path():
     customer_id = "oyster"
     ad_group_id = "nudibranch"
     label_id = "cuttlefish"
-
     expected = "customers/{customer_id}/adGroupLabels/{ad_group_id}~{label_id}".format(customer_id=customer_id, ad_group_id=ad_group_id, label_id=label_id, )
     actual = AdGroupServiceClient.ad_group_label_path(customer_id, ad_group_id, label_id)
     assert expected == actual
@@ -817,10 +753,9 @@ def test_ad_group_label_path():
 
 def test_parse_ad_group_label_path():
     expected = {
-    "customer_id": "mussel",
-    "ad_group_id": "winkle",
-    "label_id": "nautilus",
-
+        "customer_id": "mussel",
+        "ad_group_id": "winkle",
+        "label_id": "nautilus",
     }
     path = AdGroupServiceClient.ad_group_label_path(**expected)
 
@@ -831,7 +766,6 @@ def test_parse_ad_group_label_path():
 def test_campaign_path():
     customer_id = "scallop"
     campaign_id = "abalone"
-
     expected = "customers/{customer_id}/campaigns/{campaign_id}".format(customer_id=customer_id, campaign_id=campaign_id, )
     actual = AdGroupServiceClient.campaign_path(customer_id, campaign_id)
     assert expected == actual
@@ -839,9 +773,8 @@ def test_campaign_path():
 
 def test_parse_campaign_path():
     expected = {
-    "customer_id": "squid",
-    "campaign_id": "clam",
-
+        "customer_id": "squid",
+        "campaign_id": "clam",
     }
     path = AdGroupServiceClient.campaign_path(**expected)
 
@@ -851,7 +784,6 @@ def test_parse_campaign_path():
 
 def test_common_billing_account_path():
     billing_account = "whelk"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = AdGroupServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -859,8 +791,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "octopus",
-
+        "billing_account": "octopus",
     }
     path = AdGroupServiceClient.common_billing_account_path(**expected)
 
@@ -870,7 +801,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "oyster"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = AdGroupServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -878,8 +808,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "nudibranch",
-
+        "folder": "nudibranch",
     }
     path = AdGroupServiceClient.common_folder_path(**expected)
 
@@ -889,7 +818,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "cuttlefish"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = AdGroupServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -897,8 +825,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "mussel",
-
+        "organization": "mussel",
     }
     path = AdGroupServiceClient.common_organization_path(**expected)
 
@@ -908,7 +835,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "winkle"
-
     expected = "projects/{project}".format(project=project, )
     actual = AdGroupServiceClient.common_project_path(project)
     assert expected == actual
@@ -916,8 +842,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "nautilus",
-
+        "project": "nautilus",
     }
     path = AdGroupServiceClient.common_project_path(**expected)
 
@@ -928,7 +853,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "scallop"
     location = "abalone"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = AdGroupServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -936,9 +860,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "squid",
-    "location": "clam",
-
+        "project": "squid",
+        "location": "clam",
     }
     path = AdGroupServiceClient.common_location_path(**expected)
 
@@ -952,7 +875,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
 
     with mock.patch.object(transports.AdGroupServiceTransport, '_prep_wrapped_messages') as prep:
         client = AdGroupServiceClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)
@@ -960,7 +883,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
     with mock.patch.object(transports.AdGroupServiceTransport, '_prep_wrapped_messages') as prep:
         transport_class = AdGroupServiceClient.get_transport_class()
         transport = transport_class(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)

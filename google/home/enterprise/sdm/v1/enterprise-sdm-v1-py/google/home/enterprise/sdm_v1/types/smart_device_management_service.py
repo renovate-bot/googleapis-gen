@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,13 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.home.enterprise.sdm_v1.types import device
 from google.home.enterprise.sdm_v1.types import site
-from google.protobuf import struct_pb2 as struct  # type: ignore
+from google.protobuf import struct_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -43,19 +40,20 @@ __protobuf__ = proto.module(
 
 class GetDeviceRequest(proto.Message):
     r"""Request message for SmartDeviceManagementService.GetDevice
-
     Attributes:
         name (str):
             The name of the device requested. For
             example: "enterprises/XYZ/devices/123".
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class ListDevicesRequest(proto.Message):
     r"""Request message for SmartDeviceManagementService.ListDevices
-
     Attributes:
         parent (str):
             The parent enterprise to list devices under.
@@ -76,18 +74,26 @@ class ListDevicesRequest(proto.Message):
             match): 'customName=wing'
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
-
-    filter = proto.Field(proto.STRING, number=4)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    filter = proto.Field(
+        proto.STRING,
+        number=4,
+    )
 
 
 class ListDevicesResponse(proto.Message):
     r"""Response message for SmartDeviceManagementService.ListDevices
-
     Attributes:
         devices (Sequence[google.home.enterprise.sdm_v1.types.Device]):
             The list of devices.
@@ -100,11 +106,15 @@ class ListDevicesResponse(proto.Message):
     def raw_page(self):
         return self
 
-    devices = proto.RepeatedField(proto.MESSAGE, number=1,
+    devices = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=device.Device,
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class ExecuteDeviceCommandRequest(proto.Message):
@@ -123,12 +133,18 @@ class ExecuteDeviceCommandRequest(proto.Message):
             as a Struct.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    command = proto.Field(proto.STRING, number=2)
-
-    params = proto.Field(proto.MESSAGE, number=3,
-        message=struct.Struct,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    command = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    params = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=struct_pb2.Struct,
     )
 
 
@@ -141,21 +157,25 @@ class ExecuteDeviceCommandResponse(proto.Message):
             The results of executing the command.
     """
 
-    results = proto.Field(proto.MESSAGE, number=1,
-        message=struct.Struct,
+    results = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=struct_pb2.Struct,
     )
 
 
 class GetStructureRequest(proto.Message):
     r"""Request message for SmartDeviceManagementService.GetStructure
-
     Attributes:
         name (str):
             The name of the structure requested. For
             example: "enterprises/XYZ/structures/ABC".
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class ListStructuresRequest(proto.Message):
@@ -176,13 +196,22 @@ class ListStructuresRequest(proto.Message):
             Optional filter to list structures.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
-
-    filter = proto.Field(proto.STRING, number=4)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    filter = proto.Field(
+        proto.STRING,
+        number=4,
+    )
 
 
 class ListStructuresResponse(proto.Message):
@@ -202,28 +231,33 @@ class ListStructuresResponse(proto.Message):
     def raw_page(self):
         return self
 
-    structures = proto.RepeatedField(proto.MESSAGE, number=1,
+    structures = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=site.Structure,
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class GetRoomRequest(proto.Message):
     r"""Request message for SmartDeviceManagementService.GetRoom
-
     Attributes:
         name (str):
             The name of the room requested. For example:
             "enterprises/XYZ/structures/ABC/rooms/123".
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class ListRoomsRequest(proto.Message):
     r"""Request message for SmartDeviceManagementService.ListRooms
-
     Attributes:
         parent (str):
             The parent resource name of the rooms
@@ -237,16 +271,22 @@ class ListRoomsRequest(proto.Message):
             The token of the page to retrieve.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class ListRoomsResponse(proto.Message):
     r"""Response message for SmartDeviceManagementService.ListRooms
-
     Attributes:
         rooms (Sequence[google.home.enterprise.sdm_v1.types.Room]):
             The list of rooms.
@@ -260,11 +300,15 @@ class ListRoomsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    rooms = proto.RepeatedField(proto.MESSAGE, number=1,
+    rooms = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=site.Room,
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

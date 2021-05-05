@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -22,19 +20,17 @@ from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
 import google.api_core.client_options as ClientOptions # type: ignore
-from google.api_core import exceptions                 # type: ignore
+from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
-from google.api import distribution_pb2 as distribution  # type: ignore
-from google.api import metric_pb2 as ga_metric  # type: ignore
-from google.api import metric_pb2 as metric  # type: ignore
+from google.api import distribution_pb2  # type: ignore
+from google.api import metric_pb2  # type: ignore
 from google.cloud.logging_v2.services.metrics_service_v2 import pagers
 from google.cloud.logging_v2.types import logging_metrics
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
+from google.protobuf import timestamp_pb2  # type: ignore
 from .transports.base import MetricsServiceV2Transport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import MetricsServiceV2GrpcAsyncIOTransport
 from .client import MetricsServiceV2Client
@@ -50,19 +46,14 @@ class MetricsServiceV2AsyncClient:
 
     log_metric_path = staticmethod(MetricsServiceV2Client.log_metric_path)
     parse_log_metric_path = staticmethod(MetricsServiceV2Client.parse_log_metric_path)
-
     common_billing_account_path = staticmethod(MetricsServiceV2Client.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(MetricsServiceV2Client.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(MetricsServiceV2Client.common_folder_path)
     parse_common_folder_path = staticmethod(MetricsServiceV2Client.parse_common_folder_path)
-
     common_organization_path = staticmethod(MetricsServiceV2Client.common_organization_path)
     parse_common_organization_path = staticmethod(MetricsServiceV2Client.parse_common_organization_path)
-
     common_project_path = staticmethod(MetricsServiceV2Client.common_project_path)
     parse_common_project_path = staticmethod(MetricsServiceV2Client.parse_common_project_path)
-
     common_location_path = staticmethod(MetricsServiceV2Client.common_location_path)
     parse_common_location_path = staticmethod(MetricsServiceV2Client.parse_common_location_path)
 
@@ -110,7 +101,7 @@ class MetricsServiceV2AsyncClient:
     get_transport_class = functools.partial(type(MetricsServiceV2Client).get_transport_class, type(MetricsServiceV2Client))
 
     def __init__(self, *,
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             transport: Union[str, MetricsServiceV2Transport] = 'grpc_asyncio',
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -147,7 +138,6 @@ class MetricsServiceV2AsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = MetricsServiceV2Client(
             credentials=credentials,
             transport=transport,
@@ -180,7 +170,6 @@ class MetricsServiceV2AsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -207,7 +196,6 @@ class MetricsServiceV2AsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -216,10 +204,7 @@ class MetricsServiceV2AsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_log_metrics,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
@@ -281,7 +266,6 @@ class MetricsServiceV2AsyncClient:
                 This corresponds to the ``metric_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -315,7 +299,6 @@ class MetricsServiceV2AsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if metric_name is not None:
             request.metric_name = metric_name
 
@@ -324,10 +307,7 @@ class MetricsServiceV2AsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_log_metric,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
@@ -392,7 +372,6 @@ class MetricsServiceV2AsyncClient:
                 This corresponds to the ``metric`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -426,7 +405,6 @@ class MetricsServiceV2AsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if metric is not None:
@@ -493,7 +471,6 @@ class MetricsServiceV2AsyncClient:
                 This corresponds to the ``metric`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -527,7 +504,6 @@ class MetricsServiceV2AsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if metric_name is not None:
             request.metric_name = metric_name
         if metric is not None:
@@ -538,10 +514,7 @@ class MetricsServiceV2AsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.update_log_metric,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
@@ -594,7 +567,6 @@ class MetricsServiceV2AsyncClient:
                 This corresponds to the ``metric_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -613,7 +585,6 @@ class MetricsServiceV2AsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if metric_name is not None:
             request.metric_name = metric_name
 
@@ -622,10 +593,7 @@ class MetricsServiceV2AsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_log_metric,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
@@ -651,8 +619,6 @@ class MetricsServiceV2AsyncClient:
             timeout=timeout,
             metadata=metadata,
         )
-
-
 
 
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -23,10 +21,10 @@ from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
-from google.api_core import exceptions                            # type: ignore
+from google.api_core import exceptions as core_exceptions         # type: ignore
 from google.api_core import gapic_v1                              # type: ignore
 from google.api_core import retry as retries                      # type: ignore
-from google.auth import credentials                               # type: ignore
+from google.auth import credentials as ga_credentials             # type: ignore
 from google.auth.transport import mtls                            # type: ignore
 from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
@@ -36,8 +34,7 @@ from google.cloud.dialogflowcx_v3.services.transition_route_groups import pagers
 from google.cloud.dialogflowcx_v3.types import page
 from google.cloud.dialogflowcx_v3.types import transition_route_group
 from google.cloud.dialogflowcx_v3.types import transition_route_group as gcdc_transition_route_group
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-
+from google.protobuf import field_mask_pb2  # type: ignore
 from .transports.base import TransitionRouteGroupsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import TransitionRouteGroupsGrpcTransport
 from .transports.grpc_asyncio import TransitionRouteGroupsGrpcAsyncIOTransport
@@ -271,7 +268,7 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
         return m.groupdict() if m else {}
 
     def __init__(self, *,
-            credentials: Optional[credentials.Credentials] = None,
+            credentials: Optional[ga_credentials.Credentials] = None,
             transport: Union[str, TransitionRouteGroupsTransport, None] = None,
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -396,7 +393,6 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -426,10 +422,8 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, transition_route_group.ListTransitionRouteGroupsRequest):
             request = transition_route_group.ListTransitionRouteGroupsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -489,7 +483,6 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -518,10 +511,8 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, transition_route_group.GetTransitionRouteGroupRequest):
             request = transition_route_group.GetTransitionRouteGroupRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -581,7 +572,6 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
                 This corresponds to the ``transition_route_group`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -610,10 +600,8 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcdc_transition_route_group.CreateTransitionRouteGroupRequest):
             request = gcdc_transition_route_group.CreateTransitionRouteGroupRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if transition_route_group is not None:
@@ -646,7 +634,7 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
             request: gcdc_transition_route_group.UpdateTransitionRouteGroupRequest = None,
             *,
             transition_route_group: gcdc_transition_route_group.TransitionRouteGroup = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -672,7 +660,6 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -701,10 +688,8 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcdc_transition_route_group.UpdateTransitionRouteGroupRequest):
             request = gcdc_transition_route_group.UpdateTransitionRouteGroupRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if transition_route_group is not None:
                 request.transition_route_group = transition_route_group
             if update_mask is not None:
@@ -757,7 +742,6 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -778,10 +762,8 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, transition_route_group.DeleteTransitionRouteGroupRequest):
             request = transition_route_group.DeleteTransitionRouteGroupRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -804,8 +786,6 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
             timeout=timeout,
             metadata=metadata,
         )
-
-
 
 
 

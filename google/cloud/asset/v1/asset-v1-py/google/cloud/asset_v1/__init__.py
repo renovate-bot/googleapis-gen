@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,8 @@
 #
 
 from .services.asset_service import AssetServiceClient
+from .services.asset_service import AssetServiceAsyncClient
+
 from .types.asset_service import AnalyzeIamPolicyLongrunningRequest
 from .types.asset_service import AnalyzeIamPolicyLongrunningResponse
 from .types.asset_service import AnalyzeIamPolicyRequest
@@ -23,7 +24,6 @@ from .types.asset_service import AnalyzeIamPolicyResponse
 from .types.asset_service import BatchGetAssetsHistoryRequest
 from .types.asset_service import BatchGetAssetsHistoryResponse
 from .types.asset_service import BigQueryDestination
-from .types.asset_service import ContentType
 from .types.asset_service import CreateFeedRequest
 from .types.asset_service import DeleteFeedRequest
 from .types.asset_service import ExportAssetsRequest
@@ -46,6 +46,7 @@ from .types.asset_service import SearchAllIamPoliciesResponse
 from .types.asset_service import SearchAllResourcesRequest
 from .types.asset_service import SearchAllResourcesResponse
 from .types.asset_service import UpdateFeedRequest
+from .types.asset_service import ContentType
 from .types.assets import Asset
 from .types.assets import IamPolicyAnalysisResult
 from .types.assets import IamPolicyAnalysisState
@@ -55,45 +56,44 @@ from .types.assets import ResourceSearchResult
 from .types.assets import TemporalAsset
 from .types.assets import TimeWindow
 
-
 __all__ = (
-    'AnalyzeIamPolicyLongrunningRequest',
-    'AnalyzeIamPolicyLongrunningResponse',
-    'AnalyzeIamPolicyRequest',
-    'AnalyzeIamPolicyResponse',
-    'Asset',
-    'BatchGetAssetsHistoryRequest',
-    'BatchGetAssetsHistoryResponse',
-    'BigQueryDestination',
-    'ContentType',
-    'CreateFeedRequest',
-    'DeleteFeedRequest',
-    'ExportAssetsRequest',
-    'ExportAssetsResponse',
-    'Feed',
-    'FeedOutputConfig',
-    'GcsDestination',
-    'GcsOutputResult',
-    'GetFeedRequest',
-    'IamPolicyAnalysisOutputConfig',
-    'IamPolicyAnalysisQuery',
-    'IamPolicyAnalysisResult',
-    'IamPolicyAnalysisState',
-    'IamPolicySearchResult',
-    'ListFeedsRequest',
-    'ListFeedsResponse',
-    'OutputConfig',
-    'OutputResult',
-    'PartitionSpec',
-    'PubsubDestination',
-    'Resource',
-    'ResourceSearchResult',
-    'SearchAllIamPoliciesRequest',
-    'SearchAllIamPoliciesResponse',
-    'SearchAllResourcesRequest',
-    'SearchAllResourcesResponse',
-    'TemporalAsset',
-    'TimeWindow',
-    'UpdateFeedRequest',
+'AnalyzeIamPolicyLongrunningRequest',
+'AnalyzeIamPolicyLongrunningResponse',
+'AnalyzeIamPolicyRequest',
+'AnalyzeIamPolicyResponse',
+'Asset',
 'AssetServiceClient',
+'BatchGetAssetsHistoryRequest',
+'BatchGetAssetsHistoryResponse',
+'BigQueryDestination',
+'ContentType',
+'CreateFeedRequest',
+'DeleteFeedRequest',
+'ExportAssetsRequest',
+'ExportAssetsResponse',
+'Feed',
+'FeedOutputConfig',
+'GcsDestination',
+'GcsOutputResult',
+'GetFeedRequest',
+'IamPolicyAnalysisOutputConfig',
+'IamPolicyAnalysisQuery',
+'IamPolicyAnalysisResult',
+'IamPolicyAnalysisState',
+'IamPolicySearchResult',
+'ListFeedsRequest',
+'ListFeedsResponse',
+'OutputConfig',
+'OutputResult',
+'PartitionSpec',
+'PubsubDestination',
+'Resource',
+'ResourceSearchResult',
+'SearchAllIamPoliciesRequest',
+'SearchAllIamPoliciesResponse',
+'SearchAllResourcesRequest',
+'SearchAllResourcesResponse',
+'TemporalAsset',
+'TimeWindow',
+'UpdateFeedRequest',
 )

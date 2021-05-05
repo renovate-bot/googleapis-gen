@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,18 +15,32 @@
 #
 
 from .services.agents import AgentsClient
+from .services.agents import AgentsAsyncClient
 from .services.answer_records import AnswerRecordsClient
+from .services.answer_records import AnswerRecordsAsyncClient
 from .services.contexts import ContextsClient
+from .services.contexts import ContextsAsyncClient
 from .services.conversation_profiles import ConversationProfilesClient
+from .services.conversation_profiles import ConversationProfilesAsyncClient
 from .services.conversations import ConversationsClient
+from .services.conversations import ConversationsAsyncClient
 from .services.documents import DocumentsClient
+from .services.documents import DocumentsAsyncClient
 from .services.entity_types import EntityTypesClient
+from .services.entity_types import EntityTypesAsyncClient
 from .services.environments import EnvironmentsClient
+from .services.environments import EnvironmentsAsyncClient
 from .services.intents import IntentsClient
+from .services.intents import IntentsAsyncClient
 from .services.knowledge_bases import KnowledgeBasesClient
+from .services.knowledge_bases import KnowledgeBasesAsyncClient
 from .services.participants import ParticipantsClient
+from .services.participants import ParticipantsAsyncClient
 from .services.session_entity_types import SessionEntityTypesClient
+from .services.session_entity_types import SessionEntityTypesAsyncClient
 from .services.sessions import SessionsClient
+from .services.sessions import SessionsAsyncClient
+
 from .types.agent import Agent
 from .types.agent import DeleteAgentRequest
 from .types.agent import ExportAgentRequest
@@ -49,19 +62,19 @@ from .types.answer_record import GetAnswerRecordRequest
 from .types.answer_record import ListAnswerRecordsRequest
 from .types.answer_record import ListAnswerRecordsResponse
 from .types.answer_record import UpdateAnswerRecordRequest
-from .types.audio_config import AudioEncoding
 from .types.audio_config import InputAudioConfig
 from .types.audio_config import OutputAudioConfig
-from .types.audio_config import OutputAudioEncoding
 from .types.audio_config import SpeechContext
-from .types.audio_config import SpeechModelVariant
 from .types.audio_config import SpeechToTextConfig
 from .types.audio_config import SpeechWordInfo
-from .types.audio_config import SsmlVoiceGender
 from .types.audio_config import SynthesizeSpeechConfig
-from .types.audio_config import TelephonyDtmf
 from .types.audio_config import TelephonyDtmfEvents
 from .types.audio_config import VoiceSelectionParams
+from .types.audio_config import AudioEncoding
+from .types.audio_config import OutputAudioEncoding
+from .types.audio_config import SpeechModelVariant
+from .types.audio_config import SsmlVoiceGender
+from .types.audio_config import TelephonyDtmf
 from .types.context import Context
 from .types.context import CreateContextRequest
 from .types.context import DeleteAllContextsRequest
@@ -99,9 +112,9 @@ from .types.document import CreateDocumentRequest
 from .types.document import DeleteDocumentRequest
 from .types.document import Document
 from .types.document import GetDocumentRequest
-from .types.document import ImportDocumentTemplate
 from .types.document import ImportDocumentsRequest
 from .types.document import ImportDocumentsResponse
+from .types.document import ImportDocumentTemplate
 from .types.document import KnowledgeOperationMetadata
 from .types.document import ListDocumentsRequest
 from .types.document import ListDocumentsResponse
@@ -135,10 +148,10 @@ from .types.intent import DeleteIntentRequest
 from .types.intent import GetIntentRequest
 from .types.intent import Intent
 from .types.intent import IntentBatch
-from .types.intent import IntentView
 from .types.intent import ListIntentsRequest
 from .types.intent import ListIntentsResponse
 from .types.intent import UpdateIntentRequest
+from .types.intent import IntentView
 from .types.knowledge_base import CreateKnowledgeBaseRequest
 from .types.knowledge_base import DeleteKnowledgeBaseRequest
 from .types.knowledge_base import GetKnowledgeBaseRequest
@@ -171,11 +184,11 @@ from .types.participant import SuggestArticlesRequest
 from .types.participant import SuggestArticlesResponse
 from .types.participant import SuggestFaqAnswersRequest
 from .types.participant import SuggestFaqAnswersResponse
-from .types.participant import SuggestSmartRepliesRequest
-from .types.participant import SuggestSmartRepliesResponse
 from .types.participant import Suggestion
 from .types.participant import SuggestionFeature
 from .types.participant import SuggestionResult
+from .types.participant import SuggestSmartRepliesRequest
+from .types.participant import SuggestSmartRepliesResponse
 from .types.participant import UpdateParticipantRequest
 from .types.session import DetectIntentRequest
 from .types.session import DetectIntentResponse
@@ -204,194 +217,193 @@ from .types.webhook import OriginalDetectIntentRequest
 from .types.webhook import WebhookRequest
 from .types.webhook import WebhookResponse
 
-
 __all__ = (
-    'Agent',
-    'AgentAssistantFeedback',
-    'AgentAssistantRecord',
-    'AgentsClient',
-    'AnalyzeContentRequest',
-    'AnalyzeContentResponse',
-    'AnnotatedMessagePart',
-    'AnswerFeedback',
-    'AnswerRecord',
-    'AnswerRecordsClient',
-    'ArticleAnswer',
-    'AudioEncoding',
-    'AutomatedAgentConfig',
-    'AutomatedAgentReply',
-    'BatchCreateEntitiesRequest',
-    'BatchCreateMessagesRequest',
-    'BatchCreateMessagesResponse',
-    'BatchDeleteEntitiesRequest',
-    'BatchDeleteEntityTypesRequest',
-    'BatchDeleteIntentsRequest',
-    'BatchUpdateEntitiesRequest',
-    'BatchUpdateEntityTypesRequest',
-    'BatchUpdateEntityTypesResponse',
-    'BatchUpdateIntentsRequest',
-    'BatchUpdateIntentsResponse',
-    'CompileSuggestionRequest',
-    'CompileSuggestionResponse',
-    'CompleteConversationRequest',
-    'Context',
-    'ContextsClient',
-    'Conversation',
-    'ConversationEvent',
-    'ConversationPhoneNumber',
-    'ConversationProfile',
-    'ConversationProfilesClient',
-    'ConversationsClient',
-    'CreateContextRequest',
-    'CreateConversationProfileRequest',
-    'CreateConversationRequest',
-    'CreateDocumentRequest',
-    'CreateEntityTypeRequest',
-    'CreateIntentRequest',
-    'CreateKnowledgeBaseRequest',
-    'CreateMessageRequest',
-    'CreateParticipantRequest',
-    'CreateSessionEntityTypeRequest',
-    'DeleteAgentRequest',
-    'DeleteAllContextsRequest',
-    'DeleteContextRequest',
-    'DeleteConversationProfileRequest',
-    'DeleteDocumentRequest',
-    'DeleteEntityTypeRequest',
-    'DeleteIntentRequest',
-    'DeleteKnowledgeBaseRequest',
-    'DeleteSessionEntityTypeRequest',
-    'DetectIntentRequest',
-    'DetectIntentResponse',
-    'Document',
-    'DocumentsClient',
-    'DtmfParameters',
-    'EntityType',
-    'EntityTypeBatch',
-    'EntityTypesClient',
-    'Environment',
-    'EnvironmentsClient',
-    'EventInput',
-    'ExportAgentRequest',
-    'ExportAgentResponse',
-    'FaqAnswer',
-    'GcsSource',
-    'GcsSources',
-    'GetAgentRequest',
-    'GetAnswerRecordRequest',
-    'GetContextRequest',
-    'GetConversationProfileRequest',
-    'GetConversationRequest',
-    'GetDocumentRequest',
-    'GetEntityTypeRequest',
-    'GetIntentRequest',
-    'GetKnowledgeBaseRequest',
-    'GetParticipantRequest',
-    'GetSessionEntityTypeRequest',
-    'GetValidationResultRequest',
-    'HumanAgentAssistantConfig',
-    'HumanAgentAssistantEvent',
-    'HumanAgentHandoffConfig',
-    'ImportAgentRequest',
-    'ImportDocumentTemplate',
-    'ImportDocumentsRequest',
-    'ImportDocumentsResponse',
-    'InputAudioConfig',
-    'Intent',
-    'IntentBatch',
-    'IntentView',
-    'IntentsClient',
-    'KnowledgeAnswers',
-    'KnowledgeBase',
-    'KnowledgeOperationMetadata',
-    'ListAnswerRecordsRequest',
-    'ListAnswerRecordsResponse',
-    'ListContextsRequest',
-    'ListContextsResponse',
-    'ListConversationProfilesRequest',
-    'ListConversationProfilesResponse',
-    'ListConversationsRequest',
-    'ListConversationsResponse',
-    'ListDocumentsRequest',
-    'ListDocumentsResponse',
-    'ListEntityTypesRequest',
-    'ListEntityTypesResponse',
-    'ListEnvironmentsRequest',
-    'ListEnvironmentsResponse',
-    'ListIntentsRequest',
-    'ListIntentsResponse',
-    'ListKnowledgeBasesRequest',
-    'ListKnowledgeBasesResponse',
-    'ListMessagesRequest',
-    'ListMessagesResponse',
-    'ListParticipantsRequest',
-    'ListParticipantsResponse',
-    'ListSessionEntityTypesRequest',
-    'ListSessionEntityTypesResponse',
-    'ListSuggestionsRequest',
-    'ListSuggestionsResponse',
-    'LoggingConfig',
-    'Message',
-    'MessageAnnotation',
-    'NotificationConfig',
-    'OriginalDetectIntentRequest',
-    'OutputAudio',
-    'OutputAudioConfig',
-    'OutputAudioEncoding',
-    'Participant',
-    'ParticipantsClient',
-    'QueryInput',
-    'QueryParameters',
-    'QueryResult',
-    'ReloadDocumentRequest',
-    'ResponseMessage',
-    'RestoreAgentRequest',
-    'SearchAgentsRequest',
-    'SearchAgentsResponse',
-    'Sentiment',
-    'SentimentAnalysisRequestConfig',
-    'SentimentAnalysisResult',
-    'SessionEntityType',
-    'SessionEntityTypesClient',
-    'SessionsClient',
-    'SetAgentRequest',
-    'SmartReplyAnswer',
-    'SpeechContext',
-    'SpeechModelVariant',
-    'SpeechToTextConfig',
-    'SpeechWordInfo',
-    'SsmlVoiceGender',
-    'StreamingDetectIntentRequest',
-    'StreamingDetectIntentResponse',
-    'StreamingRecognitionResult',
-    'SubAgent',
-    'SuggestArticlesRequest',
-    'SuggestArticlesResponse',
-    'SuggestFaqAnswersRequest',
-    'SuggestFaqAnswersResponse',
-    'SuggestSmartRepliesRequest',
-    'SuggestSmartRepliesResponse',
-    'Suggestion',
-    'SuggestionFeature',
-    'SuggestionResult',
-    'SynthesizeSpeechConfig',
-    'TelephonyDtmf',
-    'TelephonyDtmfEvents',
-    'TextInput',
-    'TrainAgentRequest',
-    'UpdateAnswerRecordRequest',
-    'UpdateContextRequest',
-    'UpdateConversationProfileRequest',
-    'UpdateDocumentRequest',
-    'UpdateEntityTypeRequest',
-    'UpdateIntentRequest',
-    'UpdateKnowledgeBaseRequest',
-    'UpdateParticipantRequest',
-    'UpdateSessionEntityTypeRequest',
-    'ValidationError',
-    'ValidationResult',
-    'VoiceSelectionParams',
-    'WebhookRequest',
-    'WebhookResponse',
+'Agent',
+'AgentAssistantFeedback',
+'AgentAssistantRecord',
+'AgentsClient',
+'AnalyzeContentRequest',
+'AnalyzeContentResponse',
+'AnnotatedMessagePart',
+'AnswerFeedback',
+'AnswerRecord',
+'AnswerRecordsClient',
+'ArticleAnswer',
+'AudioEncoding',
+'AutomatedAgentConfig',
+'AutomatedAgentReply',
+'BatchCreateEntitiesRequest',
+'BatchCreateMessagesRequest',
+'BatchCreateMessagesResponse',
+'BatchDeleteEntitiesRequest',
+'BatchDeleteEntityTypesRequest',
+'BatchDeleteIntentsRequest',
+'BatchUpdateEntitiesRequest',
+'BatchUpdateEntityTypesRequest',
+'BatchUpdateEntityTypesResponse',
+'BatchUpdateIntentsRequest',
+'BatchUpdateIntentsResponse',
+'CompileSuggestionRequest',
+'CompileSuggestionResponse',
+'CompleteConversationRequest',
+'Context',
+'ContextsClient',
+'Conversation',
+'ConversationEvent',
+'ConversationPhoneNumber',
+'ConversationProfile',
+'ConversationProfilesClient',
+'ConversationsClient',
+'CreateContextRequest',
+'CreateConversationProfileRequest',
+'CreateConversationRequest',
+'CreateDocumentRequest',
+'CreateEntityTypeRequest',
+'CreateIntentRequest',
+'CreateKnowledgeBaseRequest',
+'CreateMessageRequest',
+'CreateParticipantRequest',
+'CreateSessionEntityTypeRequest',
+'DeleteAgentRequest',
+'DeleteAllContextsRequest',
+'DeleteContextRequest',
+'DeleteConversationProfileRequest',
+'DeleteDocumentRequest',
+'DeleteEntityTypeRequest',
+'DeleteIntentRequest',
+'DeleteKnowledgeBaseRequest',
+'DeleteSessionEntityTypeRequest',
+'DetectIntentRequest',
+'DetectIntentResponse',
+'Document',
+'DocumentsClient',
+'DtmfParameters',
+'EntityType',
+'EntityTypeBatch',
+'EntityTypesClient',
+'Environment',
+'EnvironmentsClient',
+'EventInput',
+'ExportAgentRequest',
+'ExportAgentResponse',
+'FaqAnswer',
+'GcsSource',
+'GcsSources',
+'GetAgentRequest',
+'GetAnswerRecordRequest',
+'GetContextRequest',
+'GetConversationProfileRequest',
+'GetConversationRequest',
+'GetDocumentRequest',
+'GetEntityTypeRequest',
+'GetIntentRequest',
+'GetKnowledgeBaseRequest',
+'GetParticipantRequest',
+'GetSessionEntityTypeRequest',
+'GetValidationResultRequest',
+'HumanAgentAssistantConfig',
+'HumanAgentAssistantEvent',
+'HumanAgentHandoffConfig',
+'ImportAgentRequest',
+'ImportDocumentTemplate',
+'ImportDocumentsRequest',
+'ImportDocumentsResponse',
+'InputAudioConfig',
+'Intent',
+'IntentBatch',
+'IntentView',
+'IntentsClient',
+'KnowledgeAnswers',
+'KnowledgeBase',
 'KnowledgeBasesClient',
+'KnowledgeOperationMetadata',
+'ListAnswerRecordsRequest',
+'ListAnswerRecordsResponse',
+'ListContextsRequest',
+'ListContextsResponse',
+'ListConversationProfilesRequest',
+'ListConversationProfilesResponse',
+'ListConversationsRequest',
+'ListConversationsResponse',
+'ListDocumentsRequest',
+'ListDocumentsResponse',
+'ListEntityTypesRequest',
+'ListEntityTypesResponse',
+'ListEnvironmentsRequest',
+'ListEnvironmentsResponse',
+'ListIntentsRequest',
+'ListIntentsResponse',
+'ListKnowledgeBasesRequest',
+'ListKnowledgeBasesResponse',
+'ListMessagesRequest',
+'ListMessagesResponse',
+'ListParticipantsRequest',
+'ListParticipantsResponse',
+'ListSessionEntityTypesRequest',
+'ListSessionEntityTypesResponse',
+'ListSuggestionsRequest',
+'ListSuggestionsResponse',
+'LoggingConfig',
+'Message',
+'MessageAnnotation',
+'NotificationConfig',
+'OriginalDetectIntentRequest',
+'OutputAudio',
+'OutputAudioConfig',
+'OutputAudioEncoding',
+'Participant',
+'ParticipantsClient',
+'QueryInput',
+'QueryParameters',
+'QueryResult',
+'ReloadDocumentRequest',
+'ResponseMessage',
+'RestoreAgentRequest',
+'SearchAgentsRequest',
+'SearchAgentsResponse',
+'Sentiment',
+'SentimentAnalysisRequestConfig',
+'SentimentAnalysisResult',
+'SessionEntityType',
+'SessionEntityTypesClient',
+'SessionsClient',
+'SetAgentRequest',
+'SmartReplyAnswer',
+'SpeechContext',
+'SpeechModelVariant',
+'SpeechToTextConfig',
+'SpeechWordInfo',
+'SsmlVoiceGender',
+'StreamingDetectIntentRequest',
+'StreamingDetectIntentResponse',
+'StreamingRecognitionResult',
+'SubAgent',
+'SuggestArticlesRequest',
+'SuggestArticlesResponse',
+'SuggestFaqAnswersRequest',
+'SuggestFaqAnswersResponse',
+'SuggestSmartRepliesRequest',
+'SuggestSmartRepliesResponse',
+'Suggestion',
+'SuggestionFeature',
+'SuggestionResult',
+'SynthesizeSpeechConfig',
+'TelephonyDtmf',
+'TelephonyDtmfEvents',
+'TextInput',
+'TrainAgentRequest',
+'UpdateAnswerRecordRequest',
+'UpdateContextRequest',
+'UpdateConversationProfileRequest',
+'UpdateDocumentRequest',
+'UpdateEntityTypeRequest',
+'UpdateIntentRequest',
+'UpdateKnowledgeBaseRequest',
+'UpdateParticipantRequest',
+'UpdateSessionEntityTypeRequest',
+'ValidationError',
+'ValidationResult',
+'VoiceSelectionParams',
+'WebhookRequest',
+'WebhookResponse',
 )

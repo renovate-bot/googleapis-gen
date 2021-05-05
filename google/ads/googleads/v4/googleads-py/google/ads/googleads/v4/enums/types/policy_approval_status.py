@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -30,7 +28,7 @@ __protobuf__ = proto.module(
 class PolicyApprovalStatusEnum(proto.Message):
     r"""Container for enum describing possible policy approval
     statuses.
-    """
+        """
     class PolicyApprovalStatus(proto.Enum):
         r"""The possible policy approval statuses. When there are several
         approval statuses available the most severe one will be used. The

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,13 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v7.common.types import offline_user_data
 from google.ads.googleads.v7.resources.types import offline_user_data_job
-from google.rpc import status_pb2 as status  # type: ignore
+from google.rpc import status_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -54,11 +51,19 @@ class CreateOfflineUserDataJobRequest(proto.Message):
             executed. Only errors are returned, not results.
     """
 
-    customer_id = proto.Field(proto.STRING, number=1)
-    job = proto.Field(proto.MESSAGE, number=2,
+    customer_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    job = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=offline_user_data_job.OfflineUserDataJob,
     )
-    validate_only = proto.Field(proto.BOOL, number=3)
+    validate_only = proto.Field(
+        proto.BOOL,
+        number=3,
+    )
 
 
 class CreateOfflineUserDataJobResponse(proto.Message):
@@ -70,7 +75,10 @@ class CreateOfflineUserDataJobResponse(proto.Message):
             The resource name of the OfflineUserDataJob.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class GetOfflineUserDataJobRequest(proto.Message):
@@ -83,7 +91,10 @@ class GetOfflineUserDataJobRequest(proto.Message):
             OfflineUserDataJob to get.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class RunOfflineUserDataJobRequest(proto.Message):
@@ -99,8 +110,14 @@ class RunOfflineUserDataJobRequest(proto.Message):
             executed. Only errors are returned, not results.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    validate_only = proto.Field(proto.BOOL, number=2)
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    validate_only = proto.Field(
+        proto.BOOL,
+        number=2,
+    )
 
 
 class AddOfflineUserDataJobOperationsRequest(proto.Message):
@@ -121,12 +138,24 @@ class AddOfflineUserDataJobOperationsRequest(proto.Message):
             executed. Only errors are returned, not results.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    enable_partial_failure = proto.Field(proto.BOOL, number=4, optional=True)
-    operations = proto.RepeatedField(proto.MESSAGE, number=3,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    enable_partial_failure = proto.Field(
+        proto.BOOL,
+        number=4,
+        optional=True,
+    )
+    operations = proto.RepeatedField(
+        proto.MESSAGE,
+        number=3,
         message='OfflineUserDataJobOperation',
     )
-    validate_only = proto.Field(proto.BOOL, number=5)
+    validate_only = proto.Field(
+        proto.BOOL,
+        number=5,
+    )
 
 
 class OfflineUserDataJobOperation(proto.Message):
@@ -146,13 +175,23 @@ class OfflineUserDataJobOperation(proto.Message):
             only supported for Customer Match.
     """
 
-    create = proto.Field(proto.MESSAGE, number=1, oneof='operation',
+    create = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='operation',
         message=offline_user_data.UserData,
     )
-    remove = proto.Field(proto.MESSAGE, number=2, oneof='operation',
+    remove = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='operation',
         message=offline_user_data.UserData,
     )
-    remove_all = proto.Field(proto.BOOL, number=3, oneof='operation')
+    remove_all = proto.Field(
+        proto.BOOL,
+        number=3,
+        oneof='operation',
+    )
 
 
 class AddOfflineUserDataJobOperationsResponse(proto.Message):
@@ -168,8 +207,10 @@ class AddOfflineUserDataJobOperationsResponse(proto.Message):
             level error.
     """
 
-    partial_failure_error = proto.Field(proto.MESSAGE, number=1,
-        message=status.Status,
+    partial_failure_error = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=status_pb2.Status,
     )
 
 

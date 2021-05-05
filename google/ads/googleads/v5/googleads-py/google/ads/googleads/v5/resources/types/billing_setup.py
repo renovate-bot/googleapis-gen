@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,13 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v5.enums.types import billing_setup_status
 from google.ads.googleads.v5.enums.types import time_type
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -76,9 +73,9 @@ class BillingSetup(proto.Message):
             Output only. The end time as a type.  The
             only possible value is FOREVER.
     """
+
     class PaymentsAccountInfo(proto.Message):
         r"""Container of payments account information for this billing.
-
         Attributes:
             payments_account_id (google.protobuf.wrappers_pb2.StringValue):
                 Output only. A 16 digit id used to identify
@@ -111,45 +108,78 @@ class BillingSetup(proto.Message):
                 arranged.
         """
 
-        payments_account_id = proto.Field(proto.MESSAGE, number=1,
-            message=wrappers.StringValue,
+        payments_account_id = proto.Field(
+            proto.MESSAGE,
+            number=1,
+            message=wrappers_pb2.StringValue,
         )
-        payments_account_name = proto.Field(proto.MESSAGE, number=2,
-            message=wrappers.StringValue,
+        payments_account_name = proto.Field(
+            proto.MESSAGE,
+            number=2,
+            message=wrappers_pb2.StringValue,
         )
-        payments_profile_id = proto.Field(proto.MESSAGE, number=3,
-            message=wrappers.StringValue,
+        payments_profile_id = proto.Field(
+            proto.MESSAGE,
+            number=3,
+            message=wrappers_pb2.StringValue,
         )
-        payments_profile_name = proto.Field(proto.MESSAGE, number=4,
-            message=wrappers.StringValue,
+        payments_profile_name = proto.Field(
+            proto.MESSAGE,
+            number=4,
+            message=wrappers_pb2.StringValue,
         )
-        secondary_payments_profile_id = proto.Field(proto.MESSAGE, number=5,
-            message=wrappers.StringValue,
+        secondary_payments_profile_id = proto.Field(
+            proto.MESSAGE,
+            number=5,
+            message=wrappers_pb2.StringValue,
         )
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    id = proto.Field(proto.MESSAGE, number=2,
-        message=wrappers.Int64Value,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
     )
-    status = proto.Field(proto.ENUM, number=3,
+    id = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=wrappers_pb2.Int64Value,
+    )
+    status = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=billing_setup_status.BillingSetupStatusEnum.BillingSetupStatus,
     )
-    payments_account = proto.Field(proto.MESSAGE, number=11,
-        message=wrappers.StringValue,
+    payments_account = proto.Field(
+        proto.MESSAGE,
+        number=11,
+        message=wrappers_pb2.StringValue,
     )
-    payments_account_info = proto.Field(proto.MESSAGE, number=12,
+    payments_account_info = proto.Field(
+        proto.MESSAGE,
+        number=12,
         message=PaymentsAccountInfo,
     )
-    start_date_time = proto.Field(proto.MESSAGE, number=9, oneof='start_time',
-        message=wrappers.StringValue,
+    start_date_time = proto.Field(
+        proto.MESSAGE,
+        number=9,
+        oneof='start_time',
+        message=wrappers_pb2.StringValue,
     )
-    start_time_type = proto.Field(proto.ENUM, number=10, oneof='start_time',
+    start_time_type = proto.Field(
+        proto.ENUM,
+        number=10,
+        oneof='start_time',
         enum=time_type.TimeTypeEnum.TimeType,
     )
-    end_date_time = proto.Field(proto.MESSAGE, number=13, oneof='end_time',
-        message=wrappers.StringValue,
+    end_date_time = proto.Field(
+        proto.MESSAGE,
+        number=13,
+        oneof='end_time',
+        message=wrappers_pb2.StringValue,
     )
-    end_time_type = proto.Field(proto.ENUM, number=14, oneof='end_time',
+    end_time_type = proto.Field(
+        proto.ENUM,
+        number=14,
+        oneof='end_time',
         enum=time_type.TimeTypeEnum.TimeType,
     )
 

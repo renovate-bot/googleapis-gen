@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.cloud.bigquery.storage_v1beta1.types import arrow
 from google.cloud.bigquery.storage_v1beta1.types import avro
 from google.cloud.bigquery.storage_v1beta1.types import read_options as gcbs_read_options
 from google.cloud.bigquery.storage_v1beta1.types import table_reference as gcbs_table_reference
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -66,14 +63,16 @@ class ShardingStrategy(proto.Enum):
 
 class Stream(proto.Message):
     r"""Information about a single data stream within a read session.
-
     Attributes:
         name (str):
             Name of the stream, in the form
             ``projects/{project_id}/locations/{location}/streams/{stream_id}``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class StreamPosition(proto.Message):
@@ -87,16 +86,19 @@ class StreamPosition(proto.Message):
             Position in the stream.
     """
 
-    stream = proto.Field(proto.MESSAGE, number=1,
+    stream = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='Stream',
     )
-
-    offset = proto.Field(proto.INT64, number=2)
+    offset = proto.Field(
+        proto.INT64,
+        number=2,
+    )
 
 
 class ReadSession(proto.Message):
     r"""Information returned from a ``CreateReadSession`` request.
-
     Attributes:
         name (str):
             Unique identifier for the session, in the form
@@ -121,33 +123,45 @@ class ReadSession(proto.Message):
             among the streams.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    expire_time = proto.Field(proto.MESSAGE, number=2,
-        message=timestamp.Timestamp,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
     )
-
-    avro_schema = proto.Field(proto.MESSAGE, number=5, oneof='schema',
+    expire_time = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=timestamp_pb2.Timestamp,
+    )
+    avro_schema = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        oneof='schema',
         message=avro.AvroSchema,
     )
-
-    arrow_schema = proto.Field(proto.MESSAGE, number=6, oneof='schema',
+    arrow_schema = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        oneof='schema',
         message=arrow.ArrowSchema,
     )
-
-    streams = proto.RepeatedField(proto.MESSAGE, number=4,
+    streams = proto.RepeatedField(
+        proto.MESSAGE,
+        number=4,
         message='Stream',
     )
-
-    table_reference = proto.Field(proto.MESSAGE, number=7,
+    table_reference = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message=gcbs_table_reference.TableReference,
     )
-
-    table_modifiers = proto.Field(proto.MESSAGE, number=8,
+    table_modifiers = proto.Field(
+        proto.MESSAGE,
+        number=8,
         message=gcbs_table_reference.TableModifiers,
     )
-
-    sharding_strategy = proto.Field(proto.ENUM, number=9,
+    sharding_strategy = proto.Field(
+        proto.ENUM,
+        number=9,
         enum='ShardingStrategy',
     )
 
@@ -189,27 +203,37 @@ class CreateReadSessionRequest(proto.Message):
             liquid sharding.
     """
 
-    table_reference = proto.Field(proto.MESSAGE, number=1,
+    table_reference = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=gcbs_table_reference.TableReference,
     )
-
-    parent = proto.Field(proto.STRING, number=6)
-
-    table_modifiers = proto.Field(proto.MESSAGE, number=2,
+    parent = proto.Field(
+        proto.STRING,
+        number=6,
+    )
+    table_modifiers = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=gcbs_table_reference.TableModifiers,
     )
-
-    requested_streams = proto.Field(proto.INT32, number=3)
-
-    read_options = proto.Field(proto.MESSAGE, number=4,
+    requested_streams = proto.Field(
+        proto.INT32,
+        number=3,
+    )
+    read_options = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=gcbs_read_options.TableReadOptions,
     )
-
-    format_ = proto.Field(proto.ENUM, number=5,
+    format_ = proto.Field(
+        proto.ENUM,
+        number=5,
         enum='DataFormat',
     )
-
-    sharding_strategy = proto.Field(proto.ENUM, number=7,
+    sharding_strategy = proto.Field(
+        proto.ENUM,
+        number=7,
         enum='ShardingStrategy',
     )
 
@@ -227,14 +251,15 @@ class ReadRowsRequest(proto.Message):
             undefined.
     """
 
-    read_position = proto.Field(proto.MESSAGE, number=1,
+    read_position = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='StreamPosition',
     )
 
 
 class StreamStatus(proto.Message):
     r"""Progress information for a given Stream.
-
     Attributes:
         estimated_row_count (int):
             Number of estimated rows in the current
@@ -264,20 +289,27 @@ class StreamStatus(proto.Message):
             of splits, this value may never be true.
     """
 
-    estimated_row_count = proto.Field(proto.INT64, number=1)
-
-    fraction_consumed = proto.Field(proto.FLOAT, number=2)
-
-    progress = proto.Field(proto.MESSAGE, number=4,
+    estimated_row_count = proto.Field(
+        proto.INT64,
+        number=1,
+    )
+    fraction_consumed = proto.Field(
+        proto.FLOAT,
+        number=2,
+    )
+    progress = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='Progress',
     )
-
-    is_splittable = proto.Field(proto.BOOL, number=3)
+    is_splittable = proto.Field(
+        proto.BOOL,
+        number=3,
+    )
 
 
 class Progress(proto.Message):
     r"""
-
     Attributes:
         at_response_start (float):
             The fraction of rows assigned to the stream that have been
@@ -297,21 +329,28 @@ class Progress(proto.Message):
             includes the rows in the current response.
     """
 
-    at_response_start = proto.Field(proto.FLOAT, number=1)
-
-    at_response_end = proto.Field(proto.FLOAT, number=2)
+    at_response_start = proto.Field(
+        proto.FLOAT,
+        number=1,
+    )
+    at_response_end = proto.Field(
+        proto.FLOAT,
+        number=2,
+    )
 
 
 class ThrottleStatus(proto.Message):
     r"""Information on if the current connection is being throttled.
-
     Attributes:
         throttle_percent (int):
             How much this connection is being throttled.
             0 is no throttling, 100 is completely throttled.
     """
 
-    throttle_percent = proto.Field(proto.INT32, number=1)
+    throttle_percent = proto.Field(
+        proto.INT32,
+        number=1,
+    )
 
 
 class ReadRowsResponse(proto.Message):
@@ -338,21 +377,30 @@ class ReadRowsResponse(proto.Message):
             status.
     """
 
-    avro_rows = proto.Field(proto.MESSAGE, number=3, oneof='rows',
+    avro_rows = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        oneof='rows',
         message=avro.AvroRows,
     )
-
-    arrow_record_batch = proto.Field(proto.MESSAGE, number=4, oneof='rows',
+    arrow_record_batch = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        oneof='rows',
         message=arrow.ArrowRecordBatch,
     )
-
-    row_count = proto.Field(proto.INT64, number=6)
-
-    status = proto.Field(proto.MESSAGE, number=2,
+    row_count = proto.Field(
+        proto.INT64,
+        number=6,
+    )
+    status = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='StreamStatus',
     )
-
-    throttle_status = proto.Field(proto.MESSAGE, number=5,
+    throttle_status = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message='ThrottleStatus',
     )
 
@@ -373,11 +421,15 @@ class BatchCreateReadSessionStreamsRequest(proto.Message):
             more information.
     """
 
-    session = proto.Field(proto.MESSAGE, number=1,
+    session = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='ReadSession',
     )
-
-    requested_streams = proto.Field(proto.INT32, number=2)
+    requested_streams = proto.Field(
+        proto.INT32,
+        number=2,
+    )
 
 
 class BatchCreateReadSessionStreamsResponse(proto.Message):
@@ -389,27 +441,29 @@ class BatchCreateReadSessionStreamsResponse(proto.Message):
             Newly added streams.
     """
 
-    streams = proto.RepeatedField(proto.MESSAGE, number=1,
+    streams = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Stream',
     )
 
 
 class FinalizeStreamRequest(proto.Message):
     r"""Request information for invoking ``FinalizeStream``.
-
     Attributes:
         stream (google.cloud.bigquery.storage_v1beta1.types.Stream):
             Required. Stream to finalize.
     """
 
-    stream = proto.Field(proto.MESSAGE, number=2,
+    stream = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='Stream',
     )
 
 
 class SplitReadStreamRequest(proto.Message):
     r"""Request information for ``SplitReadStream``.
-
     Attributes:
         original_stream (google.cloud.bigquery.storage_v1beta1.types.Stream):
             Required. Stream to split.
@@ -428,16 +482,19 @@ class SplitReadStreamRequest(proto.Message):
             side.
     """
 
-    original_stream = proto.Field(proto.MESSAGE, number=1,
+    original_stream = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='Stream',
     )
-
-    fraction = proto.Field(proto.FLOAT, number=2)
+    fraction = proto.Field(
+        proto.FLOAT,
+        number=2,
+    )
 
 
 class SplitReadStreamResponse(proto.Message):
     r"""Response from ``SplitReadStream``.
-
     Attributes:
         primary_stream (google.cloud.bigquery.storage_v1beta1.types.Stream):
             Primary stream, which contains the beginning portion of
@@ -449,11 +506,14 @@ class SplitReadStreamResponse(proto.Message):
             original stream can no longer be split.
     """
 
-    primary_stream = proto.Field(proto.MESSAGE, number=1,
+    primary_stream = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='Stream',
     )
-
-    remainder_stream = proto.Field(proto.MESSAGE, number=2,
+    remainder_stream = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='Stream',
     )
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,22 +13,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import operations_v1  # type: ignore
 from google.api_core import gapic_v1       # type: ignore
-from google import auth                    # type: ignore
-from google.auth import credentials        # type: ignore
+import google.auth                         # type: ignore
+from google.auth import credentials as ga_credentials  # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
 
 import grpc  # type: ignore
 
 from google.cloud.shell_v1.types import cloudshell
-from google.longrunning import operations_pb2 as operations  # type: ignore
-
+from google.longrunning import operations_pb2  # type: ignore
 from .base import CloudShellServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -56,7 +53,7 @@ class CloudShellServiceGrpcTransport(CloudShellServiceTransport):
 
     def __init__(self, *,
             host: str = 'cloudshell.googleapis.com',
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             credentials_file: str = None,
             scopes: Sequence[str] = None,
             channel: grpc.Channel = None,
@@ -70,7 +67,8 @@ class CloudShellServiceGrpcTransport(CloudShellServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -180,7 +178,7 @@ class CloudShellServiceGrpcTransport(CloudShellServiceTransport):
     @classmethod
     def create_channel(cls,
                        host: str = 'cloudshell.googleapis.com',
-                       credentials: credentials.Credentials = None,
+                       credentials: ga_credentials.Credentials = None,
                        credentials_file: str = None,
                        scopes: Optional[Sequence[str]] = None,
                        quota_project_id: Optional[str] = None,
@@ -210,13 +208,15 @@ class CloudShellServiceGrpcTransport(CloudShellServiceTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -272,7 +272,7 @@ class CloudShellServiceGrpcTransport(CloudShellServiceTransport):
     @property
     def start_environment(self) -> Callable[
             [cloudshell.StartEnvironmentRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         r"""Return a callable for the start environment method over gRPC.
 
         Starts an existing environment, allowing clients to
@@ -298,14 +298,14 @@ class CloudShellServiceGrpcTransport(CloudShellServiceTransport):
             self._stubs['start_environment'] = self.grpc_channel.unary_unary(
                 '/google.cloud.shell.v1.CloudShellService/StartEnvironment',
                 request_serializer=cloudshell.StartEnvironmentRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['start_environment']
 
     @property
     def authorize_environment(self) -> Callable[
             [cloudshell.AuthorizeEnvironmentRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         r"""Return a callable for the authorize environment method over gRPC.
 
         Sends OAuth credentials to a running environment on
@@ -328,14 +328,14 @@ class CloudShellServiceGrpcTransport(CloudShellServiceTransport):
             self._stubs['authorize_environment'] = self.grpc_channel.unary_unary(
                 '/google.cloud.shell.v1.CloudShellService/AuthorizeEnvironment',
                 request_serializer=cloudshell.AuthorizeEnvironmentRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['authorize_environment']
 
     @property
     def add_public_key(self) -> Callable[
             [cloudshell.AddPublicKeyRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         r"""Return a callable for the add public key method over gRPC.
 
         Adds a public SSH key to an environment, allowing clients with
@@ -357,14 +357,14 @@ class CloudShellServiceGrpcTransport(CloudShellServiceTransport):
             self._stubs['add_public_key'] = self.grpc_channel.unary_unary(
                 '/google.cloud.shell.v1.CloudShellService/AddPublicKey',
                 request_serializer=cloudshell.AddPublicKeyRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['add_public_key']
 
     @property
     def remove_public_key(self) -> Callable[
             [cloudshell.RemovePublicKeyRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         r"""Return a callable for the remove public key method over gRPC.
 
         Removes a public SSH key from an environment. Clients will no
@@ -386,7 +386,7 @@ class CloudShellServiceGrpcTransport(CloudShellServiceTransport):
             self._stubs['remove_public_key'] = self.grpc_channel.unary_unary(
                 '/google.cloud.shell.v1.CloudShellService/RemovePublicKey',
                 request_serializer=cloudshell.RemovePublicKeyRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['remove_public_key']
 

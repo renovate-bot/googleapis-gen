@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
-from google.protobuf import duration_pb2 as duration  # type: ignore
-from google.rpc import status_pb2 as gr_status  # type: ignore
+from google.protobuf import duration_pb2  # type: ignore
+from google.rpc import status_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -62,7 +59,6 @@ class Scheme(proto.Enum):
 
 class EgressRequest(proto.Message):
     r"""gRPC request payload for tether.
-
     Attributes:
         id (str):
             Unique identifier for the request.
@@ -79,28 +75,37 @@ class EgressRequest(proto.Message):
             Timeout for the HTTP request.
     """
 
-    id = proto.Field(proto.STRING, number=1)
-
-    payload = proto.Field(proto.MESSAGE, number=2,
+    id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    payload = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='Payload',
     )
-
-    endpoint = proto.Field(proto.ENUM, number=3,
+    endpoint = proto.Field(
+        proto.ENUM,
+        number=3,
         enum='TetherEndpoint',
     )
-
-    project = proto.Field(proto.STRING, number=4)
-
-    trace_id = proto.Field(proto.STRING, number=5)
-
-    timeout = proto.Field(proto.MESSAGE, number=6,
-        message=duration.Duration,
+    project = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    trace_id = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    timeout = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        message=duration_pb2.Duration,
     )
 
 
 class Payload(proto.Message):
     r"""Payload for EgressRequest.
-
     Attributes:
         http_request (google.cloud.apigeeconnect_v1.types.HttpRequest):
             The HttpRequest proto.
@@ -110,33 +115,41 @@ class Payload(proto.Message):
             The action taken by agent.
     """
 
-    http_request = proto.Field(proto.MESSAGE, number=1, oneof='kind',
+    http_request = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='kind',
         message='HttpRequest',
     )
-
-    stream_info = proto.Field(proto.MESSAGE, number=2, oneof='kind',
+    stream_info = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='kind',
         message='StreamInfo',
     )
-
-    action = proto.Field(proto.ENUM, number=3, oneof='kind',
+    action = proto.Field(
+        proto.ENUM,
+        number=3,
+        oneof='kind',
         enum='Action',
     )
 
 
 class StreamInfo(proto.Message):
     r"""The Information of bi-directional stream.
-
     Attributes:
         id (str):
             Unique identifier for the stream.
     """
 
-    id = proto.Field(proto.STRING, number=1)
+    id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class EgressResponse(proto.Message):
     r"""gRPC response payload for tether.
-
     Attributes:
         id (str):
             Unique identifier for the response. Matches
@@ -159,30 +172,41 @@ class EgressResponse(proto.Message):
             ``projects/{project_number or project_id}/endpoints/{endpoint}``
     """
 
-    id = proto.Field(proto.STRING, number=1)
-
-    http_response = proto.Field(proto.MESSAGE, number=2,
+    id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    http_response = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='HttpResponse',
     )
-
-    status = proto.Field(proto.MESSAGE, number=3,
+    status = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=gr_status.Status,
     )
-
-    project = proto.Field(proto.STRING, number=4)
-
-    trace_id = proto.Field(proto.STRING, number=5)
-
-    endpoint = proto.Field(proto.ENUM, number=6,
+    project = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    trace_id = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    endpoint = proto.Field(
+        proto.ENUM,
+        number=6,
         enum='TetherEndpoint',
     )
-
-    name = proto.Field(proto.STRING, number=7)
+    name = proto.Field(
+        proto.STRING,
+        number=7,
+    )
 
 
 class HttpRequest(proto.Message):
     r"""The proto definition of http request.
-
     Attributes:
         id (str):
             A unique identifier for the request.
@@ -198,19 +222,28 @@ class HttpRequest(proto.Message):
             HTTP request body.
     """
 
-    id = proto.Field(proto.STRING, number=1)
-
-    method = proto.Field(proto.STRING, number=2)
-
-    url = proto.Field(proto.MESSAGE, number=3,
+    id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    method = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    url = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='Url',
     )
-
-    headers = proto.RepeatedField(proto.MESSAGE, number=4,
+    headers = proto.RepeatedField(
+        proto.MESSAGE,
+        number=4,
         message='Header',
     )
-
-    body = proto.Field(proto.BYTES, number=5)
+    body = proto.Field(
+        proto.BYTES,
+        number=5,
+    )
 
 
 class Url(proto.Message):
@@ -228,18 +261,23 @@ class Url(proto.Message):
             Path starts with ``/``.
     """
 
-    scheme = proto.Field(proto.ENUM, number=1,
+    scheme = proto.Field(
+        proto.ENUM,
+        number=1,
         enum='Scheme',
     )
-
-    host = proto.Field(proto.STRING, number=2)
-
-    path = proto.Field(proto.STRING, number=3)
+    host = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    path = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class Header(proto.Message):
     r"""The http headers.
-
     Attributes:
         key (str):
 
@@ -247,14 +285,18 @@ class Header(proto.Message):
 
     """
 
-    key = proto.Field(proto.STRING, number=1)
-
-    values = proto.RepeatedField(proto.STRING, number=2)
+    key = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    values = proto.RepeatedField(
+        proto.STRING,
+        number=2,
+    )
 
 
 class HttpResponse(proto.Message):
     r"""The proto definition of http response.
-
     Attributes:
         id (str):
             A unique identifier that matches the request
@@ -275,19 +317,31 @@ class HttpResponse(proto.Message):
             number of bytes may be read from Body.
     """
 
-    id = proto.Field(proto.STRING, number=1)
-
-    status = proto.Field(proto.STRING, number=2)
-
-    status_code = proto.Field(proto.INT32, number=3)
-
-    body = proto.Field(proto.BYTES, number=4)
-
-    headers = proto.RepeatedField(proto.MESSAGE, number=5,
+    id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    status = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    status_code = proto.Field(
+        proto.INT32,
+        number=3,
+    )
+    body = proto.Field(
+        proto.BYTES,
+        number=4,
+    )
+    headers = proto.RepeatedField(
+        proto.MESSAGE,
+        number=5,
         message='Header',
     )
-
-    content_length = proto.Field(proto.INT64, number=6)
+    content_length = proto.Field(
+        proto.INT64,
+        number=6,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

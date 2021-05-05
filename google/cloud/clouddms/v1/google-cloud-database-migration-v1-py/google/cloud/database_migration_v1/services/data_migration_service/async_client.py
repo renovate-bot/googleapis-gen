@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -22,10 +20,10 @@ from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
 import google.api_core.client_options as ClientOptions # type: ignore
-from google.api_core import exceptions                 # type: ignore
+from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
 from google.api_core import operation  # type: ignore
@@ -33,12 +31,11 @@ from google.api_core import operation_async  # type: ignore
 from google.cloud.database_migration_v1.services.data_migration_service import pagers
 from google.cloud.database_migration_v1.types import clouddms
 from google.cloud.database_migration_v1.types import clouddms_resources
-from google.protobuf import duration_pb2 as duration  # type: ignore
-from google.protobuf import empty_pb2 as empty  # type: ignore
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-from google.rpc import status_pb2 as status  # type: ignore
-
+from google.protobuf import duration_pb2  # type: ignore
+from google.protobuf import empty_pb2  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
+from google.rpc import status_pb2  # type: ignore
 from .transports.base import DataMigrationServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import DataMigrationServiceGrpcAsyncIOTransport
 from .client import DataMigrationServiceClient
@@ -56,19 +53,14 @@ class DataMigrationServiceAsyncClient:
     parse_connection_profile_path = staticmethod(DataMigrationServiceClient.parse_connection_profile_path)
     migration_job_path = staticmethod(DataMigrationServiceClient.migration_job_path)
     parse_migration_job_path = staticmethod(DataMigrationServiceClient.parse_migration_job_path)
-
     common_billing_account_path = staticmethod(DataMigrationServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(DataMigrationServiceClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(DataMigrationServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(DataMigrationServiceClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(DataMigrationServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(DataMigrationServiceClient.parse_common_organization_path)
-
     common_project_path = staticmethod(DataMigrationServiceClient.common_project_path)
     parse_common_project_path = staticmethod(DataMigrationServiceClient.parse_common_project_path)
-
     common_location_path = staticmethod(DataMigrationServiceClient.common_location_path)
     parse_common_location_path = staticmethod(DataMigrationServiceClient.parse_common_location_path)
 
@@ -116,7 +108,7 @@ class DataMigrationServiceAsyncClient:
     get_transport_class = functools.partial(type(DataMigrationServiceClient).get_transport_class, type(DataMigrationServiceClient))
 
     def __init__(self, *,
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             transport: Union[str, DataMigrationServiceTransport] = 'grpc_asyncio',
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -153,7 +145,6 @@ class DataMigrationServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = DataMigrationServiceClient(
             credentials=credentials,
             transport=transport,
@@ -183,7 +174,6 @@ class DataMigrationServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -211,7 +201,6 @@ class DataMigrationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -272,7 +261,6 @@ class DataMigrationServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -297,7 +285,6 @@ class DataMigrationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -368,7 +355,6 @@ class DataMigrationServiceAsyncClient:
                 This corresponds to the ``migration_job_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -397,7 +383,6 @@ class DataMigrationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if migration_job is not None:
@@ -444,7 +429,7 @@ class DataMigrationServiceAsyncClient:
             request: clouddms.UpdateMigrationJobRequest = None,
             *,
             migration_job: clouddms_resources.MigrationJob = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -471,7 +456,6 @@ class DataMigrationServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -500,7 +484,6 @@ class DataMigrationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if migration_job is not None:
             request.migration_job = migration_job
         if update_mask is not None:
@@ -562,7 +545,6 @@ class DataMigrationServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -600,7 +582,6 @@ class DataMigrationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -632,7 +613,7 @@ class DataMigrationServiceAsyncClient:
         response = operation_async.from_gapic(
             response,
             self._client._transport.operations_client,
-            empty.Empty,
+            empty_pb2.Empty,
             metadata_type=clouddms.OperationMetadata,
         )
 
@@ -652,7 +633,6 @@ class DataMigrationServiceAsyncClient:
             request (:class:`google.cloud.database_migration_v1.types.StartMigrationJobRequest`):
                 The request object. Request message for
                 'StartMigrationJob' request.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -670,7 +650,6 @@ class DataMigrationServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = clouddms.StartMigrationJobRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -721,7 +700,6 @@ class DataMigrationServiceAsyncClient:
             request (:class:`google.cloud.database_migration_v1.types.StopMigrationJobRequest`):
                 The request object. Request message for
                 'StopMigrationJob' request.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -739,7 +717,6 @@ class DataMigrationServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = clouddms.StopMigrationJobRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -791,7 +768,6 @@ class DataMigrationServiceAsyncClient:
             request (:class:`google.cloud.database_migration_v1.types.ResumeMigrationJobRequest`):
                 The request object. Request message for
                 'ResumeMigrationJob' request.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -809,7 +785,6 @@ class DataMigrationServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = clouddms.ResumeMigrationJobRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -862,7 +837,6 @@ class DataMigrationServiceAsyncClient:
             request (:class:`google.cloud.database_migration_v1.types.PromoteMigrationJobRequest`):
                 The request object. Request message for
                 'PromoteMigrationJob' request.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -880,7 +854,6 @@ class DataMigrationServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = clouddms.PromoteMigrationJobRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -933,7 +906,6 @@ class DataMigrationServiceAsyncClient:
             request (:class:`google.cloud.database_migration_v1.types.VerifyMigrationJobRequest`):
                 The request object. Request message for
                 'VerifyMigrationJob' request.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -951,7 +923,6 @@ class DataMigrationServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = clouddms.VerifyMigrationJobRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1004,7 +975,6 @@ class DataMigrationServiceAsyncClient:
             request (:class:`google.cloud.database_migration_v1.types.RestartMigrationJobRequest`):
                 The request object. Request message for
                 'RestartMigrationJob' request.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1022,7 +992,6 @@ class DataMigrationServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = clouddms.RestartMigrationJobRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1074,7 +1043,6 @@ class DataMigrationServiceAsyncClient:
             request (:class:`google.cloud.database_migration_v1.types.GenerateSshScriptRequest`):
                 The request object. Request message for
                 'GenerateSshScript' request.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1088,7 +1056,6 @@ class DataMigrationServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = clouddms.GenerateSshScriptRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1140,7 +1107,6 @@ class DataMigrationServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1168,7 +1134,6 @@ class DataMigrationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -1229,7 +1194,6 @@ class DataMigrationServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1252,7 +1216,6 @@ class DataMigrationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1321,7 +1284,6 @@ class DataMigrationServiceAsyncClient:
                 This corresponds to the ``connection_profile_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1349,7 +1311,6 @@ class DataMigrationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if connection_profile is not None:
@@ -1396,7 +1357,7 @@ class DataMigrationServiceAsyncClient:
             request: clouddms.UpdateConnectionProfileRequest = None,
             *,
             connection_profile: clouddms_resources.ConnectionProfile = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -1424,7 +1385,6 @@ class DataMigrationServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1452,7 +1412,6 @@ class DataMigrationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if connection_profile is not None:
             request.connection_profile = connection_profile
         if update_mask is not None:
@@ -1517,7 +1476,6 @@ class DataMigrationServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1555,7 +1513,6 @@ class DataMigrationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1587,14 +1544,12 @@ class DataMigrationServiceAsyncClient:
         response = operation_async.from_gapic(
             response,
             self._client._transport.operations_client,
-            empty.Empty,
+            empty_pb2.Empty,
             metadata_type=clouddms.OperationMetadata,
         )
 
         # Done; return the response.
         return response
-
-
 
 
 

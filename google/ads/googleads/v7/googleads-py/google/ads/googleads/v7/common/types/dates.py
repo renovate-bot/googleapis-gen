@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v7.enums.types import month_of_year
 
@@ -34,7 +31,6 @@ __protobuf__ = proto.module(
 
 class DateRange(proto.Message):
     r"""A date range.
-
     Attributes:
         start_date (str):
             The start date, in yyyy-mm-dd format. This
@@ -44,8 +40,16 @@ class DateRange(proto.Message):
             is inclusive.
     """
 
-    start_date = proto.Field(proto.STRING, number=3, optional=True)
-    end_date = proto.Field(proto.STRING, number=4, optional=True)
+    start_date = proto.Field(
+        proto.STRING,
+        number=3,
+        optional=True,
+    )
+    end_date = proto.Field(
+        proto.STRING,
+        number=4,
+        optional=True,
+    )
 
 
 class YearMonthRange(proto.Message):
@@ -60,17 +64,20 @@ class YearMonthRange(proto.Message):
             The inclusive end year month.
     """
 
-    start = proto.Field(proto.MESSAGE, number=1,
+    start = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='YearMonth',
     )
-    end = proto.Field(proto.MESSAGE, number=2,
+    end = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='YearMonth',
     )
 
 
 class YearMonth(proto.Message):
     r"""Year month.
-
     Attributes:
         year (int):
             The year (e.g. 2020).
@@ -78,8 +85,13 @@ class YearMonth(proto.Message):
             The month of the year. (e.g. FEBRUARY).
     """
 
-    year = proto.Field(proto.INT64, number=1)
-    month = proto.Field(proto.ENUM, number=2,
+    year = proto.Field(
+        proto.INT64,
+        number=1,
+    )
+    month = proto.Field(
+        proto.ENUM,
+        number=2,
         enum=month_of_year.MonthOfYearEnum.MonthOfYear,
     )
 

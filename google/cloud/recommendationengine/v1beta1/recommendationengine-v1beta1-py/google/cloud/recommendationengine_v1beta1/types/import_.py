@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,14 +13,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.cloud.recommendationengine_v1beta1.types import catalog
 from google.cloud.recommendationengine_v1beta1.types import user_event
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-from google.rpc import status_pb2 as status  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
+from google.rpc import status_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -59,7 +56,10 @@ class GcsSource(proto.Message):
             the expected file format and setup instructions.
     """
 
-    input_uris = proto.RepeatedField(proto.STRING, number=1)
+    input_uris = proto.RepeatedField(
+        proto.STRING,
+        number=1,
+    )
 
 
 class CatalogInlineSource(proto.Message):
@@ -72,7 +72,9 @@ class CatalogInlineSource(proto.Message):
             update/create. Recommended max of 10k items.
     """
 
-    catalog_items = proto.RepeatedField(proto.MESSAGE, number=1,
+    catalog_items = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=catalog.CatalogItem,
     )
 
@@ -87,14 +89,15 @@ class UserEventInlineSource(proto.Message):
             Recommended max of 10k items.
     """
 
-    user_events = proto.RepeatedField(proto.MESSAGE, number=1,
+    user_events = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=user_event.UserEvent,
     )
 
 
 class ImportErrorsConfig(proto.Message):
     r"""Configuration of destination for Import related errors.
-
     Attributes:
         gcs_prefix (str):
             Google Cloud Storage path for import errors. This must be an
@@ -103,12 +106,15 @@ class ImportErrorsConfig(proto.Message):
             JSON-encoded ``google.rpc.Status`` message.
     """
 
-    gcs_prefix = proto.Field(proto.STRING, number=1, oneof='destination')
+    gcs_prefix = proto.Field(
+        proto.STRING,
+        number=1,
+        oneof='destination',
+    )
 
 
 class ImportCatalogItemsRequest(proto.Message):
     r"""Request message for Import methods.
-
     Attributes:
         parent (str):
             Required.
@@ -129,22 +135,28 @@ class ImportCatalogItemsRequest(proto.Message):
             incurred during the Import.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    request_id = proto.Field(proto.STRING, number=2)
-
-    input_config = proto.Field(proto.MESSAGE, number=3,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    request_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    input_config = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='InputConfig',
     )
-
-    errors_config = proto.Field(proto.MESSAGE, number=4,
+    errors_config = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='ImportErrorsConfig',
     )
 
 
 class ImportUserEventsRequest(proto.Message):
     r"""Request message for the ImportUserEvents request.
-
     Attributes:
         parent (str):
             Required.
@@ -165,22 +177,28 @@ class ImportUserEventsRequest(proto.Message):
             incurred during the Import.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    request_id = proto.Field(proto.STRING, number=2)
-
-    input_config = proto.Field(proto.MESSAGE, number=3,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    request_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    input_config = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='InputConfig',
     )
-
-    errors_config = proto.Field(proto.MESSAGE, number=4,
+    errors_config = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='ImportErrorsConfig',
     )
 
 
 class InputConfig(proto.Message):
     r"""The input config source.
-
     Attributes:
         catalog_inline_source (google.cloud.recommendationengine_v1beta1.types.CatalogInlineSource):
             The Inline source for the input content for
@@ -193,15 +211,22 @@ class InputConfig(proto.Message):
             UserEvents.
     """
 
-    catalog_inline_source = proto.Field(proto.MESSAGE, number=1, oneof='source',
+    catalog_inline_source = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='source',
         message='CatalogInlineSource',
     )
-
-    gcs_source = proto.Field(proto.MESSAGE, number=2, oneof='source',
+    gcs_source = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='source',
         message='GcsSource',
     )
-
-    user_event_inline_source = proto.Field(proto.MESSAGE, number=3, oneof='source',
+    user_event_inline_source = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        oneof='source',
         message='UserEventInlineSource',
     )
 
@@ -231,20 +256,31 @@ class ImportMetadata(proto.Message):
             is done, this is also the finish time.
     """
 
-    operation_name = proto.Field(proto.STRING, number=5)
-
-    request_id = proto.Field(proto.STRING, number=3)
-
-    create_time = proto.Field(proto.MESSAGE, number=4,
-        message=timestamp.Timestamp,
+    operation_name = proto.Field(
+        proto.STRING,
+        number=5,
     )
-
-    success_count = proto.Field(proto.INT64, number=1)
-
-    failure_count = proto.Field(proto.INT64, number=2)
-
-    update_time = proto.Field(proto.MESSAGE, number=6,
-        message=timestamp.Timestamp,
+    request_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    create_time = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=timestamp_pb2.Timestamp,
+    )
+    success_count = proto.Field(
+        proto.INT64,
+        number=1,
+    )
+    failure_count = proto.Field(
+        proto.INT64,
+        number=2,
+    )
+    update_time = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        message=timestamp_pb2.Timestamp,
     )
 
 
@@ -263,11 +299,14 @@ class ImportCatalogItemsResponse(proto.Message):
             errors in the request if set.
     """
 
-    error_samples = proto.RepeatedField(proto.MESSAGE, number=1,
-        message=status.Status,
+    error_samples = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
+        message=status_pb2.Status,
     )
-
-    errors_config = proto.Field(proto.MESSAGE, number=2,
+    errors_config = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='ImportErrorsConfig',
     )
 
@@ -290,15 +329,19 @@ class ImportUserEventsResponse(proto.Message):
             status.
     """
 
-    error_samples = proto.RepeatedField(proto.MESSAGE, number=1,
-        message=status.Status,
+    error_samples = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
+        message=status_pb2.Status,
     )
-
-    errors_config = proto.Field(proto.MESSAGE, number=2,
+    errors_config = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='ImportErrorsConfig',
     )
-
-    import_summary = proto.Field(proto.MESSAGE, number=3,
+    import_summary = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='UserEventImportSummary',
     )
 
@@ -317,9 +360,14 @@ class UserEventImportSummary(proto.Message):
             catalog.
     """
 
-    joined_events_count = proto.Field(proto.INT64, number=1)
-
-    unjoined_events_count = proto.Field(proto.INT64, number=2)
+    joined_events_count = proto.Field(
+        proto.INT64,
+        number=1,
+    )
+    unjoined_events_count = proto.Field(
+        proto.INT64,
+        number=2,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

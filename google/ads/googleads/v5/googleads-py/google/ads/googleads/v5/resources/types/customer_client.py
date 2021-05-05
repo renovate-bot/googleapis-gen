@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,11 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -74,33 +71,54 @@ class CustomerClient(proto.Message):
             Read only.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    client_customer = proto.Field(proto.MESSAGE, number=3,
-        message=wrappers.StringValue,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
     )
-    hidden = proto.Field(proto.MESSAGE, number=4,
-        message=wrappers.BoolValue,
+    client_customer = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=wrappers_pb2.StringValue,
     )
-    level = proto.Field(proto.MESSAGE, number=5,
-        message=wrappers.Int64Value,
+    hidden = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=wrappers_pb2.BoolValue,
     )
-    time_zone = proto.Field(proto.MESSAGE, number=6,
-        message=wrappers.StringValue,
+    level = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        message=wrappers_pb2.Int64Value,
     )
-    test_account = proto.Field(proto.MESSAGE, number=7,
-        message=wrappers.BoolValue,
+    time_zone = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        message=wrappers_pb2.StringValue,
     )
-    manager = proto.Field(proto.MESSAGE, number=8,
-        message=wrappers.BoolValue,
+    test_account = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        message=wrappers_pb2.BoolValue,
     )
-    descriptive_name = proto.Field(proto.MESSAGE, number=9,
-        message=wrappers.StringValue,
+    manager = proto.Field(
+        proto.MESSAGE,
+        number=8,
+        message=wrappers_pb2.BoolValue,
     )
-    currency_code = proto.Field(proto.MESSAGE, number=10,
-        message=wrappers.StringValue,
+    descriptive_name = proto.Field(
+        proto.MESSAGE,
+        number=9,
+        message=wrappers_pb2.StringValue,
     )
-    id = proto.Field(proto.MESSAGE, number=11,
-        message=wrappers.Int64Value,
+    currency_code = proto.Field(
+        proto.MESSAGE,
+        number=10,
+        message=wrappers_pb2.StringValue,
+    )
+    id = proto.Field(
+        proto.MESSAGE,
+        number=11,
+        message=wrappers_pb2.Int64Value,
     )
 
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 from unittest import mock
 
@@ -23,7 +21,6 @@ import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
-from google import auth
 from google.ads.googleads.v5.enums.types import account_budget_status
 from google.ads.googleads.v5.enums.types import spending_limit_type
 from google.ads.googleads.v5.enums.types import time_type
@@ -34,9 +31,10 @@ from google.ads.googleads.v5.services.types import account_budget_service
 from google.api_core import client_options
 from google.api_core import gapic_v1
 from google.api_core import grpc_helpers
-from google.auth import credentials
+from google.auth import credentials as ga_credentials
 from google.auth.exceptions import MutualTLSChannelError
 from google.oauth2 import service_account
+import google.auth
 
 
 def client_cert_source_callback():
@@ -66,7 +64,7 @@ def test__get_default_mtls_endpoint():
 
 
 def test_account_budget_service_client_from_service_account_info():
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
@@ -77,7 +75,7 @@ def test_account_budget_service_client_from_service_account_info():
 
 
 def test_account_budget_service_client_from_service_account_file():
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_file') as factory:
         factory.return_value = creds
         client = AccountBudgetServiceClient.from_service_account_file("dummy/file/path.json")
@@ -102,7 +100,7 @@ def test_account_budget_service_client_client_options():
     # Check that if channel is provided we won't create a new one.
     with mock.patch('google.ads.googleads.v5.services.services.account_budget_service.AccountBudgetServiceClient.get_transport_class') as gtc:
         transport = transports.AccountBudgetServiceGrpcTransport(
-            credentials=credentials.AnonymousCredentials()
+            credentials=ga_credentials.AnonymousCredentials()
         )
         client = AccountBudgetServiceClient(transport=transport)
         gtc.assert_not_called()
@@ -252,7 +250,7 @@ def test_account_budget_service_client_client_options_from_dict():
 
 def test_get_account_budget(transport: str = 'grpc', request_type=account_budget_service.GetAccountBudgetRequest):
     client = AccountBudgetServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -267,70 +265,41 @@ def test_get_account_budget(transport: str = 'grpc', request_type=account_budget
         # Designate an appropriate return value for the call.
         call.return_value = account_budget.AccountBudget(
             resource_name='resource_name_value',
-
             id=205,
-
             billing_setup='billing_setup_value',
-
             status=account_budget_status.AccountBudgetStatusEnum.AccountBudgetStatus.UNKNOWN,
-
             name='name_value',
-
             proposed_start_date_time='proposed_start_date_time_value',
-
             approved_start_date_time='approved_start_date_time_value',
-
             total_adjustments_micros=2593,
-
             amount_served_micros=2152,
-
             purchase_order_number='purchase_order_number_value',
-
             notes='notes_value',
-
             proposed_end_date_time='proposed_end_date_time_value',
-
             approved_end_date_time='approved_end_date_time_value',
-
             proposed_spending_limit_micros=3213,
-
             approved_spending_limit_micros=3202,
-
             adjusted_spending_limit_micros=3189,
         )
-
         response = client.get_account_budget(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == account_budget_service.GetAccountBudgetRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, account_budget.AccountBudget)
-
     assert response.resource_name == 'resource_name_value'
-
     assert response.id == 205
-
     assert response.billing_setup == 'billing_setup_value'
-
     assert response.status == account_budget_status.AccountBudgetStatusEnum.AccountBudgetStatus.UNKNOWN
-
     assert response.name == 'name_value'
-
     assert response.proposed_start_date_time == 'proposed_start_date_time_value'
-
     assert response.approved_start_date_time == 'approved_start_date_time_value'
-
     assert response.total_adjustments_micros == 2593
-
     assert response.amount_served_micros == 2152
-
     assert response.purchase_order_number == 'purchase_order_number_value'
-
     assert response.notes == 'notes_value'
 
 
@@ -340,12 +309,13 @@ def test_get_account_budget_from_dict():
 
 def test_get_account_budget_field_headers():
     client = AccountBudgetServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = account_budget_service.GetAccountBudgetRequest()
+
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -353,7 +323,6 @@ def test_get_account_budget_field_headers():
             type(client.transport.get_account_budget),
             '__call__') as call:
         call.return_value = account_budget.AccountBudget()
-
         client.get_account_budget(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -371,7 +340,7 @@ def test_get_account_budget_field_headers():
 
 def test_get_account_budget_flattened():
     client = AccountBudgetServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -380,7 +349,6 @@ def test_get_account_budget_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = account_budget.AccountBudget()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_account_budget(
@@ -391,13 +359,12 @@ def test_get_account_budget_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource_name == 'resource_name_value'
 
 
 def test_get_account_budget_flattened_error():
     client = AccountBudgetServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -412,11 +379,11 @@ def test_get_account_budget_flattened_error():
 def test_credentials_transport_error():
     # It is an error to provide credentials and a transport instance.
     transport = transports.AccountBudgetServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = AccountBudgetServiceClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             transport=transport,
         )
 
@@ -424,7 +391,7 @@ def test_credentials_transport_error():
 def test_transport_instance():
     # A client may be instantiated with a custom transport instance.
     transport = transports.AccountBudgetServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     client = AccountBudgetServiceClient(transport=transport)
     assert client.transport is transport
@@ -433,7 +400,7 @@ def test_transport_instance():
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.AccountBudgetServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     channel = transport.grpc_channel
     assert channel
@@ -442,7 +409,7 @@ def test_transport_get_channel():
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = AccountBudgetServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     assert isinstance(
         client.transport,
@@ -454,8 +421,8 @@ def test_transport_grpc_default():
 ])
 def test_transport_adc(transport_class):
     # Test default credentials are used if not provided.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport_class()
         adc.assert_called_once()
 
@@ -465,14 +432,14 @@ def test_account_budget_service_base_transport():
     with mock.patch('google.ads.googleads.v5.services.services.account_budget_service.transports.AccountBudgetServiceTransport.__init__') as Transport:
         Transport.return_value = None
         transport = transports.AccountBudgetServiceTransport(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
         )
 
     # Every method on the transport should just blindly
     # raise NotImplementedError.
     methods = (
         'get_account_budget',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -480,17 +447,17 @@ def test_account_budget_service_base_transport():
 
 def test_account_budget_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.ads.googleads.v5.services.services.account_budget_service.transports.AccountBudgetServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'default') as adc, mock.patch('google.ads.googleads.v5.services.services.account_budget_service.transports.AccountBudgetServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.AccountBudgetServiceTransport()
         adc.assert_called_once()
 
 
 def test_account_budget_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         AccountBudgetServiceClient()
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/adwords',
@@ -500,8 +467,8 @@ def test_account_budget_service_auth_adc():
 def test_account_budget_service_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transports.AccountBudgetServiceGrpcTransport(host="squid.clam.whelk")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/adwords',
@@ -510,7 +477,7 @@ def test_account_budget_service_transport_auth_adc():
 
 def test_account_budget_service_host_no_port():
     client = AccountBudgetServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='googleads.googleapis.com'),
     )
     assert client.transport._host == 'googleads.googleapis.com:443'
@@ -518,7 +485,7 @@ def test_account_budget_service_host_no_port():
 
 def test_account_budget_service_host_with_port():
     client = AccountBudgetServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='googleads.googleapis.com:8000'),
     )
     assert client.transport._host == 'googleads.googleapis.com:8000'
@@ -549,9 +516,9 @@ def test_account_budget_service_transport_channel_mtls_with_client_cert_source(
             mock_grpc_channel = mock.Mock()
             grpc_create_channel.return_value = mock_grpc_channel
 
-            cred = credentials.AnonymousCredentials()
+            cred = ga_credentials.AnonymousCredentials()
             with pytest.warns(DeprecationWarning):
-                with mock.patch.object(auth, 'default') as adc:
+                with mock.patch.object(google.auth, 'default') as adc:
                     adc.return_value = (cred, None)
                     transport = transport_class(
                         host="squid.clam.whelk",
@@ -624,7 +591,6 @@ def test_account_budget_service_transport_channel_mtls_with_adc(
 def test_account_budget_path():
     customer = "squid"
     account_budget = "clam"
-
     expected = "customers/{customer}/accountBudgets/{account_budget}".format(customer=customer, account_budget=account_budget, )
     actual = AccountBudgetServiceClient.account_budget_path(customer, account_budget)
     assert expected == actual
@@ -632,9 +598,8 @@ def test_account_budget_path():
 
 def test_parse_account_budget_path():
     expected = {
-    "customer": "whelk",
-    "account_budget": "octopus",
-
+        "customer": "whelk",
+        "account_budget": "octopus",
     }
     path = AccountBudgetServiceClient.account_budget_path(**expected)
 
@@ -645,7 +610,6 @@ def test_parse_account_budget_path():
 def test_account_budget_proposal_path():
     customer = "oyster"
     account_budget_proposal = "nudibranch"
-
     expected = "customers/{customer}/accountBudgetProposals/{account_budget_proposal}".format(customer=customer, account_budget_proposal=account_budget_proposal, )
     actual = AccountBudgetServiceClient.account_budget_proposal_path(customer, account_budget_proposal)
     assert expected == actual
@@ -653,9 +617,8 @@ def test_account_budget_proposal_path():
 
 def test_parse_account_budget_proposal_path():
     expected = {
-    "customer": "cuttlefish",
-    "account_budget_proposal": "mussel",
-
+        "customer": "cuttlefish",
+        "account_budget_proposal": "mussel",
     }
     path = AccountBudgetServiceClient.account_budget_proposal_path(**expected)
 
@@ -666,7 +629,6 @@ def test_parse_account_budget_proposal_path():
 def test_billing_setup_path():
     customer = "winkle"
     billing_setup = "nautilus"
-
     expected = "customers/{customer}/billingSetups/{billing_setup}".format(customer=customer, billing_setup=billing_setup, )
     actual = AccountBudgetServiceClient.billing_setup_path(customer, billing_setup)
     assert expected == actual
@@ -674,9 +636,8 @@ def test_billing_setup_path():
 
 def test_parse_billing_setup_path():
     expected = {
-    "customer": "scallop",
-    "billing_setup": "abalone",
-
+        "customer": "scallop",
+        "billing_setup": "abalone",
     }
     path = AccountBudgetServiceClient.billing_setup_path(**expected)
 
@@ -686,7 +647,6 @@ def test_parse_billing_setup_path():
 
 def test_common_billing_account_path():
     billing_account = "squid"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = AccountBudgetServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -694,8 +654,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "clam",
-
+        "billing_account": "clam",
     }
     path = AccountBudgetServiceClient.common_billing_account_path(**expected)
 
@@ -705,7 +664,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "whelk"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = AccountBudgetServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -713,8 +671,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "octopus",
-
+        "folder": "octopus",
     }
     path = AccountBudgetServiceClient.common_folder_path(**expected)
 
@@ -724,7 +681,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "oyster"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = AccountBudgetServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -732,8 +688,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "nudibranch",
-
+        "organization": "nudibranch",
     }
     path = AccountBudgetServiceClient.common_organization_path(**expected)
 
@@ -743,7 +698,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "cuttlefish"
-
     expected = "projects/{project}".format(project=project, )
     actual = AccountBudgetServiceClient.common_project_path(project)
     assert expected == actual
@@ -751,8 +705,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "mussel",
-
+        "project": "mussel",
     }
     path = AccountBudgetServiceClient.common_project_path(**expected)
 
@@ -763,7 +716,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "winkle"
     location = "nautilus"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = AccountBudgetServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -771,9 +723,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "scallop",
-    "location": "abalone",
-
+        "project": "scallop",
+        "location": "abalone",
     }
     path = AccountBudgetServiceClient.common_location_path(**expected)
 
@@ -787,7 +738,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
 
     with mock.patch.object(transports.AccountBudgetServiceTransport, '_prep_wrapped_messages') as prep:
         client = AccountBudgetServiceClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)
@@ -795,7 +746,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
     with mock.patch.object(transports.AccountBudgetServiceTransport, '_prep_wrapped_messages') as prep:
         transport_class = AccountBudgetServiceClient.get_transport_class()
         transport = transport_class(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v7.enums.types import user_identifier_source as gage_user_identifier_source
 
@@ -40,7 +37,6 @@ __protobuf__ = proto.module(
 
 class OfflineUserAddressInfo(proto.Message):
     r"""Address identifier of offline data.
-
     Attributes:
         hashed_first_name (str):
             First name of the user, which is hashed as
@@ -64,17 +60,40 @@ class OfflineUserAddressInfo(proto.Message):
             Postal code of the user's address.
     """
 
-    hashed_first_name = proto.Field(proto.STRING, number=7, optional=True)
-    hashed_last_name = proto.Field(proto.STRING, number=8, optional=True)
-    city = proto.Field(proto.STRING, number=9, optional=True)
-    state = proto.Field(proto.STRING, number=10, optional=True)
-    country_code = proto.Field(proto.STRING, number=11, optional=True)
-    postal_code = proto.Field(proto.STRING, number=12, optional=True)
+    hashed_first_name = proto.Field(
+        proto.STRING,
+        number=7,
+        optional=True,
+    )
+    hashed_last_name = proto.Field(
+        proto.STRING,
+        number=8,
+        optional=True,
+    )
+    city = proto.Field(
+        proto.STRING,
+        number=9,
+        optional=True,
+    )
+    state = proto.Field(
+        proto.STRING,
+        number=10,
+        optional=True,
+    )
+    country_code = proto.Field(
+        proto.STRING,
+        number=11,
+        optional=True,
+    )
+    postal_code = proto.Field(
+        proto.STRING,
+        number=12,
+        optional=True,
+    )
 
 
 class UserIdentifier(proto.Message):
     r"""Hashed user identifying information.
-
     Attributes:
         user_identifier_source (google.ads.googleads.v7.enums.types.UserIdentifierSourceEnum.UserIdentifierSource):
             Source of the user identifier when the upload
@@ -95,21 +114,41 @@ class UserIdentifier(proto.Message):
             Address information.
     """
 
-    user_identifier_source = proto.Field(proto.ENUM, number=6,
+    user_identifier_source = proto.Field(
+        proto.ENUM,
+        number=6,
         enum=gage_user_identifier_source.UserIdentifierSourceEnum.UserIdentifierSource,
     )
-    hashed_email = proto.Field(proto.STRING, number=7, oneof='identifier')
-    hashed_phone_number = proto.Field(proto.STRING, number=8, oneof='identifier')
-    mobile_id = proto.Field(proto.STRING, number=9, oneof='identifier')
-    third_party_user_id = proto.Field(proto.STRING, number=10, oneof='identifier')
-    address_info = proto.Field(proto.MESSAGE, number=5, oneof='identifier',
+    hashed_email = proto.Field(
+        proto.STRING,
+        number=7,
+        oneof='identifier',
+    )
+    hashed_phone_number = proto.Field(
+        proto.STRING,
+        number=8,
+        oneof='identifier',
+    )
+    mobile_id = proto.Field(
+        proto.STRING,
+        number=9,
+        oneof='identifier',
+    )
+    third_party_user_id = proto.Field(
+        proto.STRING,
+        number=10,
+        oneof='identifier',
+    )
+    address_info = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        oneof='identifier',
         message='OfflineUserAddressInfo',
     )
 
 
 class TransactionAttribute(proto.Message):
     r"""Attribute of the store sales transaction.
-
     Attributes:
         transaction_date_time (str):
             Timestamp when transaction occurred. Required. The format is
@@ -138,32 +177,60 @@ class TransactionAttribute(proto.Message):
             allow-list.
     """
 
-    transaction_date_time = proto.Field(proto.STRING, number=8, optional=True)
-    transaction_amount_micros = proto.Field(proto.DOUBLE, number=9, optional=True)
-    currency_code = proto.Field(proto.STRING, number=10, optional=True)
-    conversion_action = proto.Field(proto.STRING, number=11, optional=True)
-    order_id = proto.Field(proto.STRING, number=12, optional=True)
-    store_attribute = proto.Field(proto.MESSAGE, number=6,
+    transaction_date_time = proto.Field(
+        proto.STRING,
+        number=8,
+        optional=True,
+    )
+    transaction_amount_micros = proto.Field(
+        proto.DOUBLE,
+        number=9,
+        optional=True,
+    )
+    currency_code = proto.Field(
+        proto.STRING,
+        number=10,
+        optional=True,
+    )
+    conversion_action = proto.Field(
+        proto.STRING,
+        number=11,
+        optional=True,
+    )
+    order_id = proto.Field(
+        proto.STRING,
+        number=12,
+        optional=True,
+    )
+    store_attribute = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message='StoreAttribute',
     )
-    custom_value = proto.Field(proto.STRING, number=13, optional=True)
+    custom_value = proto.Field(
+        proto.STRING,
+        number=13,
+        optional=True,
+    )
 
 
 class StoreAttribute(proto.Message):
     r"""Store attributes of the transaction.
-
     Attributes:
         store_code (str):
             Store code from
             https://support.google.com/business/answer/3370250#storecode
     """
 
-    store_code = proto.Field(proto.STRING, number=2, optional=True)
+    store_code = proto.Field(
+        proto.STRING,
+        number=2,
+        optional=True,
+    )
 
 
 class UserData(proto.Message):
     r"""User data holding user identifiers and attributes.
-
     Attributes:
         user_identifiers (Sequence[google.ads.googleads.v7.common.types.UserIdentifier]):
             User identification info. Required.
@@ -178,13 +245,19 @@ class UserData(proto.Message):
             days.
     """
 
-    user_identifiers = proto.RepeatedField(proto.MESSAGE, number=1,
+    user_identifiers = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='UserIdentifier',
     )
-    transaction_attribute = proto.Field(proto.MESSAGE, number=2,
+    transaction_attribute = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='TransactionAttribute',
     )
-    user_attribute = proto.Field(proto.MESSAGE, number=3,
+    user_attribute = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='UserAttribute',
     )
 
@@ -204,25 +277,35 @@ class UserAttribute(proto.Message):
             remove operation where 0 will also be accepted.
     """
 
-    lifetime_value_micros = proto.Field(proto.INT64, number=1, optional=True)
-    lifetime_value_bucket = proto.Field(proto.INT32, number=2, optional=True)
+    lifetime_value_micros = proto.Field(
+        proto.INT64,
+        number=1,
+        optional=True,
+    )
+    lifetime_value_bucket = proto.Field(
+        proto.INT32,
+        number=2,
+        optional=True,
+    )
 
 
 class CustomerMatchUserListMetadata(proto.Message):
     r"""Metadata for customer match user list.
-
     Attributes:
         user_list (str):
             The resource name of remarketing list to update data.
             Required for job of CUSTOMER_MATCH_USER_LIST type.
     """
 
-    user_list = proto.Field(proto.STRING, number=2, optional=True)
+    user_list = proto.Field(
+        proto.STRING,
+        number=2,
+        optional=True,
+    )
 
 
 class StoreSalesMetadata(proto.Message):
     r"""Metadata for Store Sales Direct.
-
     Attributes:
         loyalty_fraction (float):
             This is the fraction of all transactions that
@@ -249,10 +332,24 @@ class StoreSalesMetadata(proto.Message):
             upload.
     """
 
-    loyalty_fraction = proto.Field(proto.DOUBLE, number=5, optional=True)
-    transaction_upload_fraction = proto.Field(proto.DOUBLE, number=6, optional=True)
-    custom_key = proto.Field(proto.STRING, number=7, optional=True)
-    third_party_metadata = proto.Field(proto.MESSAGE, number=3,
+    loyalty_fraction = proto.Field(
+        proto.DOUBLE,
+        number=5,
+        optional=True,
+    )
+    transaction_upload_fraction = proto.Field(
+        proto.DOUBLE,
+        number=6,
+        optional=True,
+    )
+    custom_key = proto.Field(
+        proto.STRING,
+        number=7,
+        optional=True,
+    )
+    third_party_metadata = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='StoreSalesThirdPartyMetadata',
     )
 
@@ -295,12 +392,36 @@ class StoreSalesThirdPartyMetadata(proto.Message):
             transaction feed.
     """
 
-    advertiser_upload_date_time = proto.Field(proto.STRING, number=7, optional=True)
-    valid_transaction_fraction = proto.Field(proto.DOUBLE, number=8, optional=True)
-    partner_match_fraction = proto.Field(proto.DOUBLE, number=9, optional=True)
-    partner_upload_fraction = proto.Field(proto.DOUBLE, number=10, optional=True)
-    bridge_map_version_id = proto.Field(proto.STRING, number=11, optional=True)
-    partner_id = proto.Field(proto.INT64, number=12, optional=True)
+    advertiser_upload_date_time = proto.Field(
+        proto.STRING,
+        number=7,
+        optional=True,
+    )
+    valid_transaction_fraction = proto.Field(
+        proto.DOUBLE,
+        number=8,
+        optional=True,
+    )
+    partner_match_fraction = proto.Field(
+        proto.DOUBLE,
+        number=9,
+        optional=True,
+    )
+    partner_upload_fraction = proto.Field(
+        proto.DOUBLE,
+        number=10,
+        optional=True,
+    )
+    bridge_map_version_id = proto.Field(
+        proto.STRING,
+        number=11,
+        optional=True,
+    )
+    partner_id = proto.Field(
+        proto.INT64,
+        number=12,
+        optional=True,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

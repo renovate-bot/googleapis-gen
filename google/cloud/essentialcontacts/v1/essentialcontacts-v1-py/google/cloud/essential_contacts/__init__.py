@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.cloud.essential_contacts_v1.services.essential_contacts_service.async_client import EssentialContactsServiceAsyncClient
 from google.cloud.essential_contacts_v1.services.essential_contacts_service.client import EssentialContactsServiceClient
+from google.cloud.essential_contacts_v1.services.essential_contacts_service.async_client import EssentialContactsServiceAsyncClient
+
 from google.cloud.essential_contacts_v1.types.enums import NotificationCategory
 from google.cloud.essential_contacts_v1.types.enums import ValidationState
 from google.cloud.essential_contacts_v1.types.service import ComputeContactsRequest
@@ -30,19 +30,18 @@ from google.cloud.essential_contacts_v1.types.service import ListContactsRespons
 from google.cloud.essential_contacts_v1.types.service import SendTestMessageRequest
 from google.cloud.essential_contacts_v1.types.service import UpdateContactRequest
 
-__all__ = (
+__all__ = ('EssentialContactsServiceClient',
+    'EssentialContactsServiceAsyncClient',
+    'NotificationCategory',
+    'ValidationState',
     'ComputeContactsRequest',
     'ComputeContactsResponse',
     'Contact',
     'CreateContactRequest',
     'DeleteContactRequest',
-    'EssentialContactsServiceAsyncClient',
-    'EssentialContactsServiceClient',
     'GetContactRequest',
     'ListContactsRequest',
     'ListContactsResponse',
-    'NotificationCategory',
     'SendTestMessageRequest',
     'UpdateContactRequest',
-    'ValidationState',
 )

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-from google.type import money_pb2 as money  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
+from google.type import money_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -41,7 +38,6 @@ __protobuf__ = proto.module(
 
 class Service(proto.Message):
     r"""Encapsulates a single service in Google Cloud Platform.
-
     Attributes:
         name (str):
             The resource name for the service.
@@ -58,18 +54,26 @@ class Service(proto.Message):
             "businessEntities/Maps".
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    service_id = proto.Field(proto.STRING, number=2)
-
-    display_name = proto.Field(proto.STRING, number=3)
-
-    business_entity_name = proto.Field(proto.STRING, number=4)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    service_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    display_name = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    business_entity_name = proto.Field(
+        proto.STRING,
+        number=4,
+    )
 
 
 class Sku(proto.Message):
     r"""Encapsulates a single SKU in Google Cloud Platform
-
     Attributes:
         name (str):
             The resource name for the SKU.
@@ -98,28 +102,40 @@ class Sku(proto.Message):
             Google Cloud Platform.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    sku_id = proto.Field(proto.STRING, number=2)
-
-    description = proto.Field(proto.STRING, number=3)
-
-    category = proto.Field(proto.MESSAGE, number=4,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    sku_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    description = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    category = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='Category',
     )
-
-    service_regions = proto.RepeatedField(proto.STRING, number=5)
-
-    pricing_info = proto.RepeatedField(proto.MESSAGE, number=6,
+    service_regions = proto.RepeatedField(
+        proto.STRING,
+        number=5,
+    )
+    pricing_info = proto.RepeatedField(
+        proto.MESSAGE,
+        number=6,
         message='PricingInfo',
     )
-
-    service_provider_name = proto.Field(proto.STRING, number=7)
+    service_provider_name = proto.Field(
+        proto.STRING,
+        number=7,
+    )
 
 
 class Category(proto.Message):
     r"""Represents the category hierarchy of a SKU.
-
     Attributes:
         service_display_name (str):
             The display name of the service this SKU
@@ -138,13 +154,22 @@ class Category(proto.Message):
             "Commit1Yr" etc.
     """
 
-    service_display_name = proto.Field(proto.STRING, number=1)
-
-    resource_family = proto.Field(proto.STRING, number=2)
-
-    resource_group = proto.Field(proto.STRING, number=3)
-
-    usage_type = proto.Field(proto.STRING, number=4)
+    service_display_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    resource_family = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    resource_group = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    usage_type = proto.Field(
+        proto.STRING,
+        number=4,
+    )
 
 
 class PricingInfo(proto.Message):
@@ -179,21 +204,29 @@ class PricingInfo(proto.Message):
             1.0. Example: USD \* currency_conversion_rate = JPY
     """
 
-    effective_time = proto.Field(proto.MESSAGE, number=1,
-        message=timestamp.Timestamp,
+    effective_time = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=timestamp_pb2.Timestamp,
     )
-
-    summary = proto.Field(proto.STRING, number=2)
-
-    pricing_expression = proto.Field(proto.MESSAGE, number=3,
+    summary = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    pricing_expression = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='PricingExpression',
     )
-
-    aggregation_info = proto.Field(proto.MESSAGE, number=4,
+    aggregation_info = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='AggregationInfo',
     )
-
-    currency_conversion_rate = proto.Field(proto.DOUBLE, number=5)
+    currency_conversion_rate = proto.Field(
+        proto.DOUBLE,
+        number=5,
+    )
 
 
 class PricingExpression(proto.Message):
@@ -243,6 +276,7 @@ class PricingExpression(proto.Message):
             repeated list is sorted by ascending order of
             start_usage_amount.
     """
+
     class TierRate(proto.Message):
         r"""The price rate indicating starting usage and its
         corresponding price.
@@ -258,25 +292,43 @@ class PricingExpression(proto.Message):
                 $10 indicates that each unit will cost $10.
         """
 
-        start_usage_amount = proto.Field(proto.DOUBLE, number=1)
-
-        unit_price = proto.Field(proto.MESSAGE, number=2,
-            message=money.Money,
+        start_usage_amount = proto.Field(
+            proto.DOUBLE,
+            number=1,
+        )
+        unit_price = proto.Field(
+            proto.MESSAGE,
+            number=2,
+            message=money_pb2.Money,
         )
 
-    usage_unit = proto.Field(proto.STRING, number=1)
-
-    usage_unit_description = proto.Field(proto.STRING, number=4)
-
-    base_unit = proto.Field(proto.STRING, number=5)
-
-    base_unit_description = proto.Field(proto.STRING, number=6)
-
-    base_unit_conversion_factor = proto.Field(proto.DOUBLE, number=7)
-
-    display_quantity = proto.Field(proto.DOUBLE, number=2)
-
-    tiered_rates = proto.RepeatedField(proto.MESSAGE, number=3,
+    usage_unit = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    usage_unit_description = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    base_unit = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    base_unit_description = proto.Field(
+        proto.STRING,
+        number=6,
+    )
+    base_unit_conversion_factor = proto.Field(
+        proto.DOUBLE,
+        number=7,
+    )
+    display_quantity = proto.Field(
+        proto.DOUBLE,
+        number=2,
+    )
+    tiered_rates = proto.RepeatedField(
+        proto.MESSAGE,
+        number=3,
         message=TierRate,
     )
 
@@ -314,20 +366,24 @@ class AggregationInfo(proto.Message):
         DAILY = 1
         MONTHLY = 2
 
-    aggregation_level = proto.Field(proto.ENUM, number=1,
+    aggregation_level = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=AggregationLevel,
     )
-
-    aggregation_interval = proto.Field(proto.ENUM, number=2,
+    aggregation_interval = proto.Field(
+        proto.ENUM,
+        number=2,
         enum=AggregationInterval,
     )
-
-    aggregation_count = proto.Field(proto.INT32, number=3)
+    aggregation_count = proto.Field(
+        proto.INT32,
+        number=3,
+    )
 
 
 class ListServicesRequest(proto.Message):
     r"""Request message for ``ListServices``.
-
     Attributes:
         page_size (int):
             Requested page size. Defaults to 5000.
@@ -338,14 +394,18 @@ class ListServicesRequest(proto.Message):
             results is returned.
     """
 
-    page_size = proto.Field(proto.INT32, number=1)
-
-    page_token = proto.Field(proto.STRING, number=2)
+    page_size = proto.Field(
+        proto.INT32,
+        number=1,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class ListServicesResponse(proto.Message):
     r"""Response message for ``ListServices``.
-
     Attributes:
         services (Sequence[google.cloud.billing_v1.types.Service]):
             A list of services.
@@ -360,16 +420,19 @@ class ListServicesResponse(proto.Message):
     def raw_page(self):
         return self
 
-    services = proto.RepeatedField(proto.MESSAGE, number=1,
+    services = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Service',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class ListSkusRequest(proto.Message):
     r"""Request message for ``ListSkus``.
-
     Attributes:
         parent (str):
             Required. The name of the service.
@@ -401,26 +464,36 @@ class ListSkusRequest(proto.Message):
             is returned.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    start_time = proto.Field(proto.MESSAGE, number=2,
-        message=timestamp.Timestamp,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
     )
-
-    end_time = proto.Field(proto.MESSAGE, number=3,
-        message=timestamp.Timestamp,
+    start_time = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=timestamp_pb2.Timestamp,
     )
-
-    currency_code = proto.Field(proto.STRING, number=4)
-
-    page_size = proto.Field(proto.INT32, number=5)
-
-    page_token = proto.Field(proto.STRING, number=6)
+    end_time = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=timestamp_pb2.Timestamp,
+    )
+    currency_code = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=5,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=6,
+    )
 
 
 class ListSkusResponse(proto.Message):
     r"""Response message for ``ListSkus``.
-
     Attributes:
         skus (Sequence[google.cloud.billing_v1.types.Sku]):
             The list of public SKUs of the given service.
@@ -435,11 +508,15 @@ class ListSkusResponse(proto.Message):
     def raw_page(self):
         return self
 
-    skus = proto.RepeatedField(proto.MESSAGE, number=1,
+    skus = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Sku',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

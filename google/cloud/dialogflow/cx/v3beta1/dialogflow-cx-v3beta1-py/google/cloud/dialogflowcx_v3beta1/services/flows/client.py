@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -23,10 +21,10 @@ from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
-from google.api_core import exceptions                            # type: ignore
+from google.api_core import exceptions as core_exceptions         # type: ignore
 from google.api_core import gapic_v1                              # type: ignore
 from google.api_core import retry as retries                      # type: ignore
-from google.auth import credentials                               # type: ignore
+from google.auth import credentials as ga_credentials             # type: ignore
 from google.auth.transport import mtls                            # type: ignore
 from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
@@ -39,11 +37,10 @@ from google.cloud.dialogflowcx_v3beta1.types import flow
 from google.cloud.dialogflowcx_v3beta1.types import flow as gcdc_flow
 from google.cloud.dialogflowcx_v3beta1.types import page
 from google.cloud.dialogflowcx_v3beta1.types import validation_message
-from google.protobuf import empty_pb2 as empty  # type: ignore
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import struct_pb2 as struct  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
+from google.protobuf import empty_pb2  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import struct_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 from .transports.base import FlowsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import FlowsGrpcTransport
 from .transports.grpc_asyncio import FlowsGrpcAsyncIOTransport
@@ -288,7 +285,7 @@ class FlowsClient(metaclass=FlowsClientMeta):
         return m.groupdict() if m else {}
 
     def __init__(self, *,
-            credentials: Optional[credentials.Credentials] = None,
+            credentials: Optional[ga_credentials.Credentials] = None,
             transport: Union[str, FlowsTransport, None] = None,
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -417,7 +414,6 @@ class FlowsClient(metaclass=FlowsClientMeta):
                 This corresponds to the ``flow`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -465,10 +461,8 @@ class FlowsClient(metaclass=FlowsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcdc_flow.CreateFlowRequest):
             request = gcdc_flow.CreateFlowRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if flow is not None:
@@ -518,7 +512,6 @@ class FlowsClient(metaclass=FlowsClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -539,10 +532,8 @@ class FlowsClient(metaclass=FlowsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, flow.DeleteFlowRequest):
             request = flow.DeleteFlowRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -587,7 +578,6 @@ class FlowsClient(metaclass=FlowsClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -617,10 +607,8 @@ class FlowsClient(metaclass=FlowsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, flow.ListFlowsRequest):
             request = flow.ListFlowsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -677,7 +665,6 @@ class FlowsClient(metaclass=FlowsClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -725,10 +712,8 @@ class FlowsClient(metaclass=FlowsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, flow.GetFlowRequest):
             request = flow.GetFlowRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -759,7 +744,7 @@ class FlowsClient(metaclass=FlowsClientMeta):
             request: gcdc_flow.UpdateFlowRequest = None,
             *,
             flow: gcdc_flow.Flow = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -783,7 +768,6 @@ class FlowsClient(metaclass=FlowsClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -831,10 +815,8 @@ class FlowsClient(metaclass=FlowsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcdc_flow.UpdateFlowRequest):
             request = gcdc_flow.UpdateFlowRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if flow is not None:
                 request.flow = flow
             if update_mask is not None:
@@ -885,7 +867,6 @@ class FlowsClient(metaclass=FlowsClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -925,10 +906,8 @@ class FlowsClient(metaclass=FlowsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, flow.TrainFlowRequest):
             request = flow.TrainFlowRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -956,8 +935,8 @@ class FlowsClient(metaclass=FlowsClientMeta):
         response = operation.from_gapic(
             response,
             self._transport.operations_client,
-            empty.Empty,
-            metadata_type=struct.Struct,
+            empty_pb2.Empty,
+            metadata_type=struct_pb2.Struct,
         )
 
         # Done; return the response.
@@ -979,7 +958,6 @@ class FlowsClient(metaclass=FlowsClientMeta):
             request (google.cloud.dialogflowcx_v3beta1.types.ValidateFlowRequest):
                 The request object. The request message for
                 [Flows.ValidateFlow][google.cloud.dialogflow.cx.v3beta1.Flows.ValidateFlow].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -993,7 +971,6 @@ class FlowsClient(metaclass=FlowsClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a flow.ValidateFlowRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1046,7 +1023,6 @@ class FlowsClient(metaclass=FlowsClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1073,10 +1049,8 @@ class FlowsClient(metaclass=FlowsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, flow.GetFlowValidationResultRequest):
             request = flow.GetFlowValidationResultRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1117,7 +1091,6 @@ class FlowsClient(metaclass=FlowsClientMeta):
             request (google.cloud.dialogflowcx_v3beta1.types.ImportFlowRequest):
                 The request object. The request message for
                 [Flows.ImportFlow][google.cloud.dialogflow.cx.v3beta1.Flows.ImportFlow].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1135,7 +1108,6 @@ class FlowsClient(metaclass=FlowsClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a flow.ImportFlowRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1168,7 +1140,7 @@ class FlowsClient(metaclass=FlowsClientMeta):
             response,
             self._transport.operations_client,
             flow.ImportFlowResponse,
-            metadata_type=struct.Struct,
+            metadata_type=struct_pb2.Struct,
         )
 
         # Done; return the response.
@@ -1189,7 +1161,6 @@ class FlowsClient(metaclass=FlowsClientMeta):
             request (google.cloud.dialogflowcx_v3beta1.types.ExportFlowRequest):
                 The request object. The request message for
                 [Flows.ExportFlow][google.cloud.dialogflow.cx.v3beta1.Flows.ExportFlow].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1207,7 +1178,6 @@ class FlowsClient(metaclass=FlowsClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a flow.ExportFlowRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1240,13 +1210,11 @@ class FlowsClient(metaclass=FlowsClientMeta):
             response,
             self._transport.operations_client,
             flow.ExportFlowResponse,
-            metadata_type=struct.Struct,
+            metadata_type=struct_pb2.Struct,
         )
 
         # Done; return the response.
         return response
-
-
 
 
 

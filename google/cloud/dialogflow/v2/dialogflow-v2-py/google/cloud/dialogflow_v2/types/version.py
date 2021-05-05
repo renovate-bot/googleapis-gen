@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -87,17 +84,26 @@ class Version(proto.Message):
         READY = 2
         FAILED = 3
 
-    name = proto.Field(proto.STRING, number=1)
-
-    description = proto.Field(proto.STRING, number=2)
-
-    version_number = proto.Field(proto.INT32, number=3)
-
-    create_time = proto.Field(proto.MESSAGE, number=4,
-        message=timestamp.Timestamp,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
     )
-
-    status = proto.Field(proto.ENUM, number=6,
+    description = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    version_number = proto.Field(
+        proto.INT32,
+        number=3,
+    )
+    create_time = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=timestamp_pb2.Timestamp,
+    )
+    status = proto.Field(
+        proto.ENUM,
+        number=6,
         enum=VersionStatus,
     )
 
@@ -122,11 +128,18 @@ class ListVersionsRequest(proto.Message):
             list request.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class ListVersionsResponse(proto.Message):
@@ -148,11 +161,15 @@ class ListVersionsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    versions = proto.RepeatedField(proto.MESSAGE, number=1,
+    versions = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Version',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class GetVersionRequest(proto.Message):
@@ -167,7 +184,10 @@ class GetVersionRequest(proto.Message):
             -  ``projects/<Project ID>/locations/<Location ID>/agent/versions/<Version ID>``
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class CreateVersionRequest(proto.Message):
@@ -185,9 +205,13 @@ class CreateVersionRequest(proto.Message):
             Required. The version to create.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    version = proto.Field(proto.MESSAGE, number=2,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    version = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='Version',
     )
 
@@ -207,12 +231,15 @@ class UpdateVersionRequest(proto.Message):
             get updated.
     """
 
-    version = proto.Field(proto.MESSAGE, number=1,
+    version = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='Version',
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=2,
-        message=field_mask.FieldMask,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=field_mask_pb2.FieldMask,
     )
 
 
@@ -229,7 +256,10 @@ class DeleteVersionRequest(proto.Message):
             -  ``projects/<Project ID>/locations/<Location ID>/agent/versions/<Version ID>``
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -23,10 +21,10 @@ from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
-from google.api_core import exceptions                            # type: ignore
+from google.api_core import exceptions as core_exceptions         # type: ignore
 from google.api_core import gapic_v1                              # type: ignore
 from google.api_core import retry as retries                      # type: ignore
-from google.auth import credentials                               # type: ignore
+from google.auth import credentials as ga_credentials             # type: ignore
 from google.auth.transport import mtls                            # type: ignore
 from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
@@ -34,9 +32,8 @@ from google.oauth2 import service_account                         # type: ignore
 
 from google.cloud.dlp_v2.services.dlp_service import pagers
 from google.cloud.dlp_v2.types import dlp
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 from .transports.base import DlpServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import DlpServiceGrpcTransport
 from .transports.grpc_asyncio import DlpServiceGrpcAsyncIOTransport
@@ -299,7 +296,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         return m.groupdict() if m else {}
 
     def __init__(self, *,
-            credentials: Optional[credentials.Credentials] = None,
+            credentials: Optional[ga_credentials.Credentials] = None,
             transport: Union[str, DlpServiceTransport, None] = None,
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -423,7 +420,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             request (google.cloud.dlp_v2.types.InspectContentRequest):
                 The request object. Request to search for potentially
                 sensitive info in a ContentItem.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -435,7 +431,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
                 Results of inspecting an item.
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a dlp.InspectContentRequest.
         # There's no risk of modifying the input as we've already verified
@@ -489,7 +484,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
                 The request object. Request to search for potentially
                 sensitive info in an image and redact it by covering it
                 with a colored rectangle.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -501,7 +495,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
                 Results of redacting an image.
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a dlp.RedactImageRequest.
         # There's no risk of modifying the input as we've already verified
@@ -554,7 +547,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             request (google.cloud.dlp_v2.types.DeidentifyContentRequest):
                 The request object. Request to de-identify a list of
                 items.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -568,7 +560,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a dlp.DeidentifyContentRequest.
         # There's no risk of modifying the input as we've already verified
@@ -613,7 +604,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         Args:
             request (google.cloud.dlp_v2.types.ReidentifyContentRequest):
                 The request object. Request to re-identify an item.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -625,7 +615,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
                 Results of re-identifying a item.
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a dlp.ReidentifyContentRequest.
         # There's no risk of modifying the input as we've already verified
@@ -684,7 +673,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -711,10 +699,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.ListInfoTypesRequest):
             request = dlp.ListInfoTypesRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -787,7 +773,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
                 This corresponds to the ``inspect_template`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -819,10 +804,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.CreateInspectTemplateRequest):
             request = dlp.CreateInspectTemplateRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if inspect_template is not None:
@@ -856,7 +839,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             *,
             name: str = None,
             inspect_template: dlp.InspectTemplate = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -890,7 +873,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -922,10 +904,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.UpdateInspectTemplateRequest):
             request = dlp.UpdateInspectTemplateRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
             if inspect_template is not None:
@@ -981,7 +961,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1013,10 +992,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.GetInspectTemplateRequest):
             request = dlp.GetInspectTemplateRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1088,7 +1065,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1118,10 +1094,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.ListInspectTemplatesRequest):
             request = dlp.ListInspectTemplatesRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -1182,7 +1156,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1203,10 +1176,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.DeleteInspectTemplateRequest):
             request = dlp.DeleteInspectTemplateRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1285,7 +1256,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
                 This corresponds to the ``deidentify_template`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1315,10 +1285,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.CreateDeidentifyTemplateRequest):
             request = dlp.CreateDeidentifyTemplateRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if deidentify_template is not None:
@@ -1352,7 +1320,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             *,
             name: str = None,
             deidentify_template: dlp.DeidentifyTemplate = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -1386,7 +1354,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1416,10 +1383,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.UpdateDeidentifyTemplateRequest):
             request = dlp.UpdateDeidentifyTemplateRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
             if deidentify_template is not None:
@@ -1475,7 +1440,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1505,10 +1469,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.GetDeidentifyTemplateRequest):
             request = dlp.GetDeidentifyTemplateRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1580,7 +1542,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1610,10 +1571,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.ListDeidentifyTemplatesRequest):
             request = dlp.ListDeidentifyTemplatesRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -1674,7 +1633,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1695,10 +1653,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.DeleteDeidentifyTemplateRequest):
             request = dlp.DeleteDeidentifyTemplateRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1770,7 +1726,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
                 This corresponds to the ``job_trigger`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1799,10 +1754,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.CreateJobTriggerRequest):
             request = dlp.CreateJobTriggerRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if job_trigger is not None:
@@ -1836,7 +1789,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             *,
             name: str = None,
             job_trigger: dlp.JobTrigger = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -1869,7 +1822,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1898,10 +1850,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.UpdateJobTriggerRequest):
             request = dlp.UpdateJobTriggerRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
             if job_trigger is not None:
@@ -1961,7 +1911,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1988,10 +1937,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.HybridInspectJobTriggerRequest):
             request = dlp.HybridInspectJobTriggerRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -2041,7 +1988,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2070,10 +2016,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.GetJobTriggerRequest):
             request = dlp.GetJobTriggerRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -2139,7 +2083,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2168,10 +2111,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.ListJobTriggersRequest):
             request = dlp.ListJobTriggersRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -2231,7 +2172,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2252,10 +2192,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.DeleteJobTriggerRequest):
             request = dlp.DeleteJobTriggerRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -2294,7 +2232,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             request (google.cloud.dlp_v2.types.ActivateJobTriggerRequest):
                 The request object. Request message for
                 ActivateJobTrigger.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2308,7 +2245,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a dlp.ActivateJobTriggerRequest.
         # There's no risk of modifying the input as we've already verified
@@ -2403,7 +2339,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
                 This corresponds to the ``risk_job`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2430,10 +2365,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.CreateDlpJobRequest):
             request = dlp.CreateDlpJobRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if inspect_job is not None:
@@ -2506,7 +2439,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2536,10 +2468,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.ListDlpJobsRequest):
             request = dlp.ListDlpJobsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -2599,7 +2529,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2626,10 +2555,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.GetDlpJobRequest):
             request = dlp.GetDlpJobRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -2682,7 +2609,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2703,10 +2629,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.DeleteDlpJobRequest):
             request = dlp.DeleteDlpJobRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -2748,7 +2672,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             request (google.cloud.dlp_v2.types.CancelDlpJobRequest):
                 The request object. The request message for canceling a
                 DLP job.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2756,7 +2679,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
                 sent along with the request as metadata.
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a dlp.CancelDlpJobRequest.
         # There's no risk of modifying the input as we've already verified
@@ -2838,7 +2760,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
                 This corresponds to the ``config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2866,10 +2787,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.CreateStoredInfoTypeRequest):
             request = dlp.CreateStoredInfoTypeRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if config is not None:
@@ -2903,7 +2822,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             *,
             name: str = None,
             config: dlp.StoredInfoTypeConfig = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -2943,7 +2862,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2971,10 +2889,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.UpdateStoredInfoTypeRequest):
             request = dlp.UpdateStoredInfoTypeRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
             if config is not None:
@@ -3030,7 +2946,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3058,10 +2973,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.GetStoredInfoTypeRequest):
             request = dlp.GetStoredInfoTypeRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -3133,7 +3046,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3163,10 +3075,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.ListStoredInfoTypesRequest):
             request = dlp.ListStoredInfoTypesRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -3227,7 +3137,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3248,10 +3157,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.DeleteStoredInfoTypeRequest):
             request = dlp.DeleteStoredInfoTypeRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -3303,7 +3210,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3330,10 +3236,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, dlp.HybridInspectDlpJobRequest):
             request = dlp.HybridInspectDlpJobRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -3378,7 +3282,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             request (google.cloud.dlp_v2.types.FinishDlpJobRequest):
                 The request object. The request message for finishing a
                 DLP hybrid job.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3386,7 +3289,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
                 sent along with the request as metadata.
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a dlp.FinishDlpJobRequest.
         # There's no risk of modifying the input as we've already verified
@@ -3413,8 +3315,6 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             timeout=timeout,
             metadata=metadata,
         )
-
-
 
 
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
 from google.cloud.aiplatform_v1beta1.types import encryption_spec as gca_encryption_spec
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -55,34 +52,46 @@ class MetadataStore(proto.Message):
             Output only. State information of the
             MetadataStore.
     """
+
     class MetadataStoreState(proto.Message):
         r"""Represent state information for a MetadataStore.
-
         Attributes:
             disk_utilization_bytes (int):
                 The disk utilization of the MetadataStore in
                 bytes.
         """
 
-        disk_utilization_bytes = proto.Field(proto.INT64, number=1)
+        disk_utilization_bytes = proto.Field(
+            proto.INT64,
+            number=1,
+        )
 
-    name = proto.Field(proto.STRING, number=1)
-
-    create_time = proto.Field(proto.MESSAGE, number=3,
-        message=timestamp.Timestamp,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
     )
-
-    update_time = proto.Field(proto.MESSAGE, number=4,
-        message=timestamp.Timestamp,
+    create_time = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=timestamp_pb2.Timestamp,
     )
-
-    encryption_spec = proto.Field(proto.MESSAGE, number=5,
+    update_time = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=timestamp_pb2.Timestamp,
+    )
+    encryption_spec = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=gca_encryption_spec.EncryptionSpec,
     )
-
-    description = proto.Field(proto.STRING, number=6)
-
-    state = proto.Field(proto.MESSAGE, number=7,
+    description = proto.Field(
+        proto.STRING,
+        number=6,
+    )
+    state = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message=MetadataStoreState,
     )
 

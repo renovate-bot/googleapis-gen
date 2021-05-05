@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -23,10 +21,10 @@ from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
-from google.api_core import exceptions                            # type: ignore
+from google.api_core import exceptions as core_exceptions         # type: ignore
 from google.api_core import gapic_v1                              # type: ignore
 from google.api_core import retry as retries                      # type: ignore
-from google.auth import credentials                               # type: ignore
+from google.auth import credentials as ga_credentials             # type: ignore
 from google.auth.transport import mtls                            # type: ignore
 from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
@@ -37,9 +35,8 @@ from google.api_core import operation_async  # type: ignore
 from google.cloud.dialogflow_v2.services.entity_types import pagers
 from google.cloud.dialogflow_v2.types import entity_type
 from google.cloud.dialogflow_v2.types import entity_type as gcd_entity_type
-from google.protobuf import empty_pb2 as empty  # type: ignore
-from google.protobuf import struct_pb2 as struct  # type: ignore
-
+from google.protobuf import empty_pb2  # type: ignore
+from google.protobuf import struct_pb2  # type: ignore
 from .transports.base import EntityTypesTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import EntityTypesGrpcTransport
 from .transports.grpc_asyncio import EntityTypesGrpcAsyncIOTransport
@@ -229,7 +226,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         return m.groupdict() if m else {}
 
     def __init__(self, *,
-            credentials: Optional[credentials.Credentials] = None,
+            credentials: Optional[ga_credentials.Credentials] = None,
             transport: Union[str, EntityTypesTransport, None] = None,
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -364,7 +361,6 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
                 This corresponds to the ``language_code`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -394,10 +390,8 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, entity_type.ListEntityTypesRequest):
             request = entity_type.ListEntityTypesRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if language_code is not None:
@@ -467,7 +461,6 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
                 This corresponds to the ``language_code`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -507,10 +500,8 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, entity_type.GetEntityTypeRequest):
             request = entity_type.GetEntityTypeRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
             if language_code is not None:
@@ -577,7 +568,6 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
                 This corresponds to the ``language_code`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -617,10 +607,8 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_entity_type.CreateEntityTypeRequest):
             request = gcd_entity_type.CreateEntityTypeRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if entity_type is not None:
@@ -681,7 +669,6 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
                 This corresponds to the ``language_code`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -721,10 +708,8 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_entity_type.UpdateEntityTypeRequest):
             request = gcd_entity_type.UpdateEntityTypeRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if entity_type is not None:
                 request.entity_type = entity_type
             if language_code is not None:
@@ -774,7 +759,6 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -795,10 +779,8 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, entity_type.DeleteEntityTypeRequest):
             request = entity_type.DeleteEntityTypeRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -838,7 +820,6 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
             request (google.cloud.dialogflow_v2.types.BatchUpdateEntityTypesRequest):
                 The request object. The request message for
                 [EntityTypes.BatchUpdateEntityTypes][google.cloud.dialogflow.v2.EntityTypes.BatchUpdateEntityTypes].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -856,7 +837,6 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a entity_type.BatchUpdateEntityTypesRequest.
         # There's no risk of modifying the input as we've already verified
@@ -889,7 +869,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
             response,
             self._transport.operations_client,
             entity_type.BatchUpdateEntityTypesResponse,
-            metadata_type=struct.Struct,
+            metadata_type=struct_pb2.Struct,
         )
 
         # Done; return the response.
@@ -927,7 +907,6 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
                 This corresponds to the ``entity_type_names`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -967,10 +946,8 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, entity_type.BatchDeleteEntityTypesRequest):
             request = entity_type.BatchDeleteEntityTypesRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if entity_type_names is not None:
@@ -1000,8 +977,8 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         response = operation.from_gapic(
             response,
             self._transport.operations_client,
-            empty.Empty,
-            metadata_type=struct.Struct,
+            empty_pb2.Empty,
+            metadata_type=struct_pb2.Struct,
         )
 
         # Done; return the response.
@@ -1049,7 +1026,6 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
                 This corresponds to the ``language_code`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1089,10 +1065,8 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, entity_type.BatchCreateEntitiesRequest):
             request = entity_type.BatchCreateEntitiesRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if entities is not None:
@@ -1124,8 +1098,8 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         response = operation.from_gapic(
             response,
             self._transport.operations_client,
-            empty.Empty,
-            metadata_type=struct.Struct,
+            empty_pb2.Empty,
+            metadata_type=struct_pb2.Struct,
         )
 
         # Done; return the response.
@@ -1177,7 +1151,6 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
                 This corresponds to the ``language_code`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1217,10 +1190,8 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, entity_type.BatchUpdateEntitiesRequest):
             request = entity_type.BatchUpdateEntitiesRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if entities is not None:
@@ -1252,8 +1223,8 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         response = operation.from_gapic(
             response,
             self._transport.operations_client,
-            empty.Empty,
-            metadata_type=struct.Struct,
+            empty_pb2.Empty,
+            metadata_type=struct_pb2.Struct,
         )
 
         # Done; return the response.
@@ -1304,7 +1275,6 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
                 This corresponds to the ``language_code`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1344,10 +1314,8 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, entity_type.BatchDeleteEntitiesRequest):
             request = entity_type.BatchDeleteEntitiesRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if entity_values is not None:
@@ -1379,14 +1347,12 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         response = operation.from_gapic(
             response,
             self._transport.operations_client,
-            empty.Empty,
-            metadata_type=struct.Struct,
+            empty_pb2.Empty,
+            metadata_type=struct_pb2.Struct,
         )
 
         # Done; return the response.
         return response
-
-
 
 
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,13 +14,13 @@
 # limitations under the License.
 #
 
-from google.cloud.osconfig_v1beta.services.os_config_service.async_client import OsConfigServiceAsyncClient
 from google.cloud.osconfig_v1beta.services.os_config_service.client import OsConfigServiceClient
+from google.cloud.osconfig_v1beta.services.os_config_service.async_client import OsConfigServiceAsyncClient
+
 from google.cloud.osconfig_v1beta.types.guest_policies import AptRepository
 from google.cloud.osconfig_v1beta.types.guest_policies import Assignment
 from google.cloud.osconfig_v1beta.types.guest_policies import CreateGuestPolicyRequest
 from google.cloud.osconfig_v1beta.types.guest_policies import DeleteGuestPolicyRequest
-from google.cloud.osconfig_v1beta.types.guest_policies import DesiredState
 from google.cloud.osconfig_v1beta.types.guest_policies import EffectiveGuestPolicy
 from google.cloud.osconfig_v1beta.types.guest_policies import GetGuestPolicyRequest
 from google.cloud.osconfig_v1beta.types.guest_policies import GooRepository
@@ -35,6 +34,7 @@ from google.cloud.osconfig_v1beta.types.guest_policies import SoftwareRecipe
 from google.cloud.osconfig_v1beta.types.guest_policies import UpdateGuestPolicyRequest
 from google.cloud.osconfig_v1beta.types.guest_policies import YumRepository
 from google.cloud.osconfig_v1beta.types.guest_policies import ZypperRepository
+from google.cloud.osconfig_v1beta.types.guest_policies import DesiredState
 from google.cloud.osconfig_v1beta.types.patch_deployments import CreatePatchDeploymentRequest
 from google.cloud.osconfig_v1beta.types.patch_deployments import DeletePatchDeploymentRequest
 from google.cloud.osconfig_v1beta.types.patch_deployments import GetPatchDeploymentRequest
@@ -67,56 +67,55 @@ from google.cloud.osconfig_v1beta.types.patch_jobs import WindowsUpdateSettings
 from google.cloud.osconfig_v1beta.types.patch_jobs import YumSettings
 from google.cloud.osconfig_v1beta.types.patch_jobs import ZypperSettings
 
-__all__ = (
+__all__ = ('OsConfigServiceClient',
+    'OsConfigServiceAsyncClient',
     'AptRepository',
-    'AptSettings',
     'Assignment',
-    'CancelPatchJobRequest',
     'CreateGuestPolicyRequest',
-    'CreatePatchDeploymentRequest',
     'DeleteGuestPolicyRequest',
-    'DeletePatchDeploymentRequest',
-    'DesiredState',
     'EffectiveGuestPolicy',
+    'GetGuestPolicyRequest',
+    'GooRepository',
+    'GuestPolicy',
+    'ListGuestPoliciesRequest',
+    'ListGuestPoliciesResponse',
+    'LookupEffectiveGuestPolicyRequest',
+    'Package',
+    'PackageRepository',
+    'SoftwareRecipe',
+    'UpdateGuestPolicyRequest',
+    'YumRepository',
+    'ZypperRepository',
+    'DesiredState',
+    'CreatePatchDeploymentRequest',
+    'DeletePatchDeploymentRequest',
+    'GetPatchDeploymentRequest',
+    'ListPatchDeploymentsRequest',
+    'ListPatchDeploymentsResponse',
+    'MonthlySchedule',
+    'OneTimeSchedule',
+    'PatchDeployment',
+    'RecurringSchedule',
+    'WeekDayOfMonth',
+    'WeeklySchedule',
+    'AptSettings',
+    'CancelPatchJobRequest',
     'ExecStep',
     'ExecStepConfig',
     'ExecutePatchJobRequest',
     'GcsObject',
-    'GetGuestPolicyRequest',
-    'GetPatchDeploymentRequest',
     'GetPatchJobRequest',
-    'GooRepository',
     'GooSettings',
-    'GuestPolicy',
     'Instance',
-    'ListGuestPoliciesRequest',
-    'ListGuestPoliciesResponse',
-    'ListPatchDeploymentsRequest',
-    'ListPatchDeploymentsResponse',
     'ListPatchJobInstanceDetailsRequest',
     'ListPatchJobInstanceDetailsResponse',
     'ListPatchJobsRequest',
     'ListPatchJobsResponse',
-    'LookupEffectiveGuestPolicyRequest',
-    'MonthlySchedule',
-    'OneTimeSchedule',
-    'OsConfigServiceAsyncClient',
-    'OsConfigServiceClient',
-    'Package',
-    'PackageRepository',
     'PatchConfig',
-    'PatchDeployment',
     'PatchInstanceFilter',
     'PatchJob',
     'PatchJobInstanceDetails',
-    'RecurringSchedule',
-    'SoftwareRecipe',
-    'UpdateGuestPolicyRequest',
-    'WeekDayOfMonth',
-    'WeeklySchedule',
     'WindowsUpdateSettings',
-    'YumRepository',
     'YumSettings',
-    'ZypperRepository',
     'ZypperSettings',
 )

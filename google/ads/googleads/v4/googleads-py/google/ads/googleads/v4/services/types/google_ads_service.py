@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v4.common.types import metrics as gagc_metrics
 from google.ads.googleads.v4.common.types import segments as gagc_segments
@@ -167,8 +164,8 @@ from google.ads.googleads.v4.services.types import remarketing_action_service
 from google.ads.googleads.v4.services.types import shared_criterion_service
 from google.ads.googleads.v4.services.types import shared_set_service
 from google.ads.googleads.v4.services.types import user_list_service
-from google.protobuf import field_mask_pb2 as gp_field_mask  # type: ignore
-from google.rpc import status_pb2 as status  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.rpc import status_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -223,13 +220,33 @@ class SearchGoogleAdsRequest(proto.Message):
             query results are returned.
     """
 
-    customer_id = proto.Field(proto.STRING, number=1)
-    query = proto.Field(proto.STRING, number=2)
-    page_token = proto.Field(proto.STRING, number=3)
-    page_size = proto.Field(proto.INT32, number=4)
-    validate_only = proto.Field(proto.BOOL, number=5)
-    return_total_results_count = proto.Field(proto.BOOL, number=7)
-    summary_row_setting = proto.Field(proto.ENUM, number=8,
+    customer_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    query = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=4,
+    )
+    validate_only = proto.Field(
+        proto.BOOL,
+        number=5,
+    )
+    return_total_results_count = proto.Field(
+        proto.BOOL,
+        number=7,
+    )
+    summary_row_setting = proto.Field(
+        proto.ENUM,
+        number=8,
         enum=gage_summary_row_setting.SummaryRowSettingEnum.SummaryRowSetting,
     )
 
@@ -263,15 +280,27 @@ class SearchGoogleAdsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    results = proto.RepeatedField(proto.MESSAGE, number=1,
+    results = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='GoogleAdsRow',
     )
-    next_page_token = proto.Field(proto.STRING, number=2)
-    total_results_count = proto.Field(proto.INT64, number=3)
-    field_mask = proto.Field(proto.MESSAGE, number=5,
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    total_results_count = proto.Field(
+        proto.INT64,
+        number=3,
+    )
+    field_mask = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=gp_field_mask.FieldMask,
     )
-    summary_row = proto.Field(proto.MESSAGE, number=6,
+    summary_row = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message='GoogleAdsRow',
     )
 
@@ -294,9 +323,17 @@ class SearchGoogleAdsStreamRequest(proto.Message):
             query results are returned.
     """
 
-    customer_id = proto.Field(proto.STRING, number=1)
-    query = proto.Field(proto.STRING, number=2)
-    summary_row_setting = proto.Field(proto.ENUM, number=3,
+    customer_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    query = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    summary_row_setting = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=gage_summary_row_setting.SummaryRowSettingEnum.SummaryRowSetting,
     )
 
@@ -318,20 +355,25 @@ class SearchGoogleAdsStreamResponse(proto.Message):
             could be sum, average, rate, etc.
     """
 
-    results = proto.RepeatedField(proto.MESSAGE, number=1,
+    results = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='GoogleAdsRow',
     )
-    field_mask = proto.Field(proto.MESSAGE, number=2,
+    field_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=gp_field_mask.FieldMask,
     )
-    summary_row = proto.Field(proto.MESSAGE, number=3,
+    summary_row = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='GoogleAdsRow',
     )
 
 
 class GoogleAdsRow(proto.Message):
     r"""A returned row from the query.
-
     Attributes:
         account_budget (google.ads.googleads.v4.resources.types.AccountBudget):
             The account budget in the query.
@@ -588,313 +630,519 @@ class GoogleAdsRow(proto.Message):
             The segments.
     """
 
-    account_budget = proto.Field(proto.MESSAGE, number=42,
+    account_budget = proto.Field(
+        proto.MESSAGE,
+        number=42,
         message=gagr_account_budget.AccountBudget,
     )
-    account_budget_proposal = proto.Field(proto.MESSAGE, number=43,
+    account_budget_proposal = proto.Field(
+        proto.MESSAGE,
+        number=43,
         message=gagr_account_budget_proposal.AccountBudgetProposal,
     )
-    account_link = proto.Field(proto.MESSAGE, number=143,
+    account_link = proto.Field(
+        proto.MESSAGE,
+        number=143,
         message=gagr_account_link.AccountLink,
     )
-    ad_group = proto.Field(proto.MESSAGE, number=3,
+    ad_group = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=gagr_ad_group.AdGroup,
     )
-    ad_group_ad = proto.Field(proto.MESSAGE, number=16,
+    ad_group_ad = proto.Field(
+        proto.MESSAGE,
+        number=16,
         message=gagr_ad_group_ad.AdGroupAd,
     )
-    ad_group_ad_asset_view = proto.Field(proto.MESSAGE, number=131,
+    ad_group_ad_asset_view = proto.Field(
+        proto.MESSAGE,
+        number=131,
         message=gagr_ad_group_ad_asset_view.AdGroupAdAssetView,
     )
-    ad_group_ad_label = proto.Field(proto.MESSAGE, number=120,
+    ad_group_ad_label = proto.Field(
+        proto.MESSAGE,
+        number=120,
         message=gagr_ad_group_ad_label.AdGroupAdLabel,
     )
-    ad_group_audience_view = proto.Field(proto.MESSAGE, number=57,
+    ad_group_audience_view = proto.Field(
+        proto.MESSAGE,
+        number=57,
         message=gagr_ad_group_audience_view.AdGroupAudienceView,
     )
-    ad_group_bid_modifier = proto.Field(proto.MESSAGE, number=24,
+    ad_group_bid_modifier = proto.Field(
+        proto.MESSAGE,
+        number=24,
         message=gagr_ad_group_bid_modifier.AdGroupBidModifier,
     )
-    ad_group_criterion = proto.Field(proto.MESSAGE, number=17,
+    ad_group_criterion = proto.Field(
+        proto.MESSAGE,
+        number=17,
         message=gagr_ad_group_criterion.AdGroupCriterion,
     )
-    ad_group_criterion_label = proto.Field(proto.MESSAGE, number=121,
+    ad_group_criterion_label = proto.Field(
+        proto.MESSAGE,
+        number=121,
         message=gagr_ad_group_criterion_label.AdGroupCriterionLabel,
     )
-    ad_group_criterion_simulation = proto.Field(proto.MESSAGE, number=110,
+    ad_group_criterion_simulation = proto.Field(
+        proto.MESSAGE,
+        number=110,
         message=gagr_ad_group_criterion_simulation.AdGroupCriterionSimulation,
     )
-    ad_group_extension_setting = proto.Field(proto.MESSAGE, number=112,
+    ad_group_extension_setting = proto.Field(
+        proto.MESSAGE,
+        number=112,
         message=gagr_ad_group_extension_setting.AdGroupExtensionSetting,
     )
-    ad_group_feed = proto.Field(proto.MESSAGE, number=67,
+    ad_group_feed = proto.Field(
+        proto.MESSAGE,
+        number=67,
         message=gagr_ad_group_feed.AdGroupFeed,
     )
-    ad_group_label = proto.Field(proto.MESSAGE, number=115,
+    ad_group_label = proto.Field(
+        proto.MESSAGE,
+        number=115,
         message=gagr_ad_group_label.AdGroupLabel,
     )
-    ad_group_simulation = proto.Field(proto.MESSAGE, number=107,
+    ad_group_simulation = proto.Field(
+        proto.MESSAGE,
+        number=107,
         message=gagr_ad_group_simulation.AdGroupSimulation,
     )
-    ad_parameter = proto.Field(proto.MESSAGE, number=130,
+    ad_parameter = proto.Field(
+        proto.MESSAGE,
+        number=130,
         message=gagr_ad_parameter.AdParameter,
     )
-    age_range_view = proto.Field(proto.MESSAGE, number=48,
+    age_range_view = proto.Field(
+        proto.MESSAGE,
+        number=48,
         message=gagr_age_range_view.AgeRangeView,
     )
-    ad_schedule_view = proto.Field(proto.MESSAGE, number=89,
+    ad_schedule_view = proto.Field(
+        proto.MESSAGE,
+        number=89,
         message=gagr_ad_schedule_view.AdScheduleView,
     )
-    domain_category = proto.Field(proto.MESSAGE, number=91,
+    domain_category = proto.Field(
+        proto.MESSAGE,
+        number=91,
         message=gagr_domain_category.DomainCategory,
     )
-    asset = proto.Field(proto.MESSAGE, number=105,
+    asset = proto.Field(
+        proto.MESSAGE,
+        number=105,
         message=gagr_asset.Asset,
     )
-    batch_job = proto.Field(proto.MESSAGE, number=139,
+    batch_job = proto.Field(
+        proto.MESSAGE,
+        number=139,
         message=gagr_batch_job.BatchJob,
     )
-    bidding_strategy = proto.Field(proto.MESSAGE, number=18,
+    bidding_strategy = proto.Field(
+        proto.MESSAGE,
+        number=18,
         message=gagr_bidding_strategy.BiddingStrategy,
     )
-    billing_setup = proto.Field(proto.MESSAGE, number=41,
+    billing_setup = proto.Field(
+        proto.MESSAGE,
+        number=41,
         message=gagr_billing_setup.BillingSetup,
     )
-    campaign_budget = proto.Field(proto.MESSAGE, number=19,
+    campaign_budget = proto.Field(
+        proto.MESSAGE,
+        number=19,
         message=gagr_campaign_budget.CampaignBudget,
     )
-    campaign = proto.Field(proto.MESSAGE, number=2,
+    campaign = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=gagr_campaign.Campaign,
     )
-    campaign_audience_view = proto.Field(proto.MESSAGE, number=69,
+    campaign_audience_view = proto.Field(
+        proto.MESSAGE,
+        number=69,
         message=gagr_campaign_audience_view.CampaignAudienceView,
     )
-    campaign_bid_modifier = proto.Field(proto.MESSAGE, number=26,
+    campaign_bid_modifier = proto.Field(
+        proto.MESSAGE,
+        number=26,
         message=gagr_campaign_bid_modifier.CampaignBidModifier,
     )
-    campaign_criterion = proto.Field(proto.MESSAGE, number=20,
+    campaign_criterion = proto.Field(
+        proto.MESSAGE,
+        number=20,
         message=gagr_campaign_criterion.CampaignCriterion,
     )
-    campaign_criterion_simulation = proto.Field(proto.MESSAGE, number=111,
+    campaign_criterion_simulation = proto.Field(
+        proto.MESSAGE,
+        number=111,
         message=gagr_campaign_criterion_simulation.CampaignCriterionSimulation,
     )
-    campaign_draft = proto.Field(proto.MESSAGE, number=49,
+    campaign_draft = proto.Field(
+        proto.MESSAGE,
+        number=49,
         message=gagr_campaign_draft.CampaignDraft,
     )
-    campaign_experiment = proto.Field(proto.MESSAGE, number=84,
+    campaign_experiment = proto.Field(
+        proto.MESSAGE,
+        number=84,
         message=gagr_campaign_experiment.CampaignExperiment,
     )
-    campaign_extension_setting = proto.Field(proto.MESSAGE, number=113,
+    campaign_extension_setting = proto.Field(
+        proto.MESSAGE,
+        number=113,
         message=gagr_campaign_extension_setting.CampaignExtensionSetting,
     )
-    campaign_feed = proto.Field(proto.MESSAGE, number=63,
+    campaign_feed = proto.Field(
+        proto.MESSAGE,
+        number=63,
         message=gagr_campaign_feed.CampaignFeed,
     )
-    campaign_label = proto.Field(proto.MESSAGE, number=108,
+    campaign_label = proto.Field(
+        proto.MESSAGE,
+        number=108,
         message=gagr_campaign_label.CampaignLabel,
     )
-    campaign_shared_set = proto.Field(proto.MESSAGE, number=30,
+    campaign_shared_set = proto.Field(
+        proto.MESSAGE,
+        number=30,
         message=gagr_campaign_shared_set.CampaignSharedSet,
     )
-    carrier_constant = proto.Field(proto.MESSAGE, number=66,
+    carrier_constant = proto.Field(
+        proto.MESSAGE,
+        number=66,
         message=gagr_carrier_constant.CarrierConstant,
     )
-    change_status = proto.Field(proto.MESSAGE, number=37,
+    change_status = proto.Field(
+        proto.MESSAGE,
+        number=37,
         message=gagr_change_status.ChangeStatus,
     )
-    conversion_action = proto.Field(proto.MESSAGE, number=103,
+    conversion_action = proto.Field(
+        proto.MESSAGE,
+        number=103,
         message=gagr_conversion_action.ConversionAction,
     )
-    click_view = proto.Field(proto.MESSAGE, number=122,
+    click_view = proto.Field(
+        proto.MESSAGE,
+        number=122,
         message=gagr_click_view.ClickView,
     )
-    currency_constant = proto.Field(proto.MESSAGE, number=134,
+    currency_constant = proto.Field(
+        proto.MESSAGE,
+        number=134,
         message=gagr_currency_constant.CurrencyConstant,
     )
-    custom_interest = proto.Field(proto.MESSAGE, number=104,
+    custom_interest = proto.Field(
+        proto.MESSAGE,
+        number=104,
         message=gagr_custom_interest.CustomInterest,
     )
-    customer = proto.Field(proto.MESSAGE, number=1,
+    customer = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=gagr_customer.Customer,
     )
-    customer_manager_link = proto.Field(proto.MESSAGE, number=61,
+    customer_manager_link = proto.Field(
+        proto.MESSAGE,
+        number=61,
         message=gagr_customer_manager_link.CustomerManagerLink,
     )
-    customer_client_link = proto.Field(proto.MESSAGE, number=62,
+    customer_client_link = proto.Field(
+        proto.MESSAGE,
+        number=62,
         message=gagr_customer_client_link.CustomerClientLink,
     )
-    customer_client = proto.Field(proto.MESSAGE, number=70,
+    customer_client = proto.Field(
+        proto.MESSAGE,
+        number=70,
         message=gagr_customer_client.CustomerClient,
     )
-    customer_extension_setting = proto.Field(proto.MESSAGE, number=114,
+    customer_extension_setting = proto.Field(
+        proto.MESSAGE,
+        number=114,
         message=gagr_customer_extension_setting.CustomerExtensionSetting,
     )
-    customer_feed = proto.Field(proto.MESSAGE, number=64,
+    customer_feed = proto.Field(
+        proto.MESSAGE,
+        number=64,
         message=gagr_customer_feed.CustomerFeed,
     )
-    customer_label = proto.Field(proto.MESSAGE, number=124,
+    customer_label = proto.Field(
+        proto.MESSAGE,
+        number=124,
         message=gagr_customer_label.CustomerLabel,
     )
-    customer_negative_criterion = proto.Field(proto.MESSAGE, number=88,
+    customer_negative_criterion = proto.Field(
+        proto.MESSAGE,
+        number=88,
         message=gagr_customer_negative_criterion.CustomerNegativeCriterion,
     )
-    detail_placement_view = proto.Field(proto.MESSAGE, number=118,
+    detail_placement_view = proto.Field(
+        proto.MESSAGE,
+        number=118,
         message=gagr_detail_placement_view.DetailPlacementView,
     )
-    display_keyword_view = proto.Field(proto.MESSAGE, number=47,
+    display_keyword_view = proto.Field(
+        proto.MESSAGE,
+        number=47,
         message=gagr_display_keyword_view.DisplayKeywordView,
     )
-    distance_view = proto.Field(proto.MESSAGE, number=132,
+    distance_view = proto.Field(
+        proto.MESSAGE,
+        number=132,
         message=gagr_distance_view.DistanceView,
     )
-    dynamic_search_ads_search_term_view = proto.Field(proto.MESSAGE, number=106,
+    dynamic_search_ads_search_term_view = proto.Field(
+        proto.MESSAGE,
+        number=106,
         message=gagr_dynamic_search_ads_search_term_view.DynamicSearchAdsSearchTermView,
     )
-    expanded_landing_page_view = proto.Field(proto.MESSAGE, number=128,
+    expanded_landing_page_view = proto.Field(
+        proto.MESSAGE,
+        number=128,
         message=gagr_expanded_landing_page_view.ExpandedLandingPageView,
     )
-    extension_feed_item = proto.Field(proto.MESSAGE, number=85,
+    extension_feed_item = proto.Field(
+        proto.MESSAGE,
+        number=85,
         message=gagr_extension_feed_item.ExtensionFeedItem,
     )
-    feed = proto.Field(proto.MESSAGE, number=46,
+    feed = proto.Field(
+        proto.MESSAGE,
+        number=46,
         message=gagr_feed.Feed,
     )
-    feed_item = proto.Field(proto.MESSAGE, number=50,
+    feed_item = proto.Field(
+        proto.MESSAGE,
+        number=50,
         message=gagr_feed_item.FeedItem,
     )
-    feed_item_target = proto.Field(proto.MESSAGE, number=116,
+    feed_item_target = proto.Field(
+        proto.MESSAGE,
+        number=116,
         message=gagr_feed_item_target.FeedItemTarget,
     )
-    feed_mapping = proto.Field(proto.MESSAGE, number=58,
+    feed_mapping = proto.Field(
+        proto.MESSAGE,
+        number=58,
         message=gagr_feed_mapping.FeedMapping,
     )
-    feed_placeholder_view = proto.Field(proto.MESSAGE, number=97,
+    feed_placeholder_view = proto.Field(
+        proto.MESSAGE,
+        number=97,
         message=gagr_feed_placeholder_view.FeedPlaceholderView,
     )
-    gender_view = proto.Field(proto.MESSAGE, number=40,
+    gender_view = proto.Field(
+        proto.MESSAGE,
+        number=40,
         message=gagr_gender_view.GenderView,
     )
-    geo_target_constant = proto.Field(proto.MESSAGE, number=23,
+    geo_target_constant = proto.Field(
+        proto.MESSAGE,
+        number=23,
         message=gagr_geo_target_constant.GeoTargetConstant,
     )
-    geographic_view = proto.Field(proto.MESSAGE, number=125,
+    geographic_view = proto.Field(
+        proto.MESSAGE,
+        number=125,
         message=gagr_geographic_view.GeographicView,
     )
-    group_placement_view = proto.Field(proto.MESSAGE, number=119,
+    group_placement_view = proto.Field(
+        proto.MESSAGE,
+        number=119,
         message=gagr_group_placement_view.GroupPlacementView,
     )
-    hotel_group_view = proto.Field(proto.MESSAGE, number=51,
+    hotel_group_view = proto.Field(
+        proto.MESSAGE,
+        number=51,
         message=gagr_hotel_group_view.HotelGroupView,
     )
-    hotel_performance_view = proto.Field(proto.MESSAGE, number=71,
+    hotel_performance_view = proto.Field(
+        proto.MESSAGE,
+        number=71,
         message=gagr_hotel_performance_view.HotelPerformanceView,
     )
-    income_range_view = proto.Field(proto.MESSAGE, number=138,
+    income_range_view = proto.Field(
+        proto.MESSAGE,
+        number=138,
         message=gagr_income_range_view.IncomeRangeView,
     )
-    keyword_view = proto.Field(proto.MESSAGE, number=21,
+    keyword_view = proto.Field(
+        proto.MESSAGE,
+        number=21,
         message=gagr_keyword_view.KeywordView,
     )
-    keyword_plan = proto.Field(proto.MESSAGE, number=32,
+    keyword_plan = proto.Field(
+        proto.MESSAGE,
+        number=32,
         message=gagr_keyword_plan.KeywordPlan,
     )
-    keyword_plan_campaign = proto.Field(proto.MESSAGE, number=33,
+    keyword_plan_campaign = proto.Field(
+        proto.MESSAGE,
+        number=33,
         message=gagr_keyword_plan_campaign.KeywordPlanCampaign,
     )
-    keyword_plan_campaign_keyword = proto.Field(proto.MESSAGE, number=140,
+    keyword_plan_campaign_keyword = proto.Field(
+        proto.MESSAGE,
+        number=140,
         message=gagr_keyword_plan_campaign_keyword.KeywordPlanCampaignKeyword,
     )
-    keyword_plan_ad_group = proto.Field(proto.MESSAGE, number=35,
+    keyword_plan_ad_group = proto.Field(
+        proto.MESSAGE,
+        number=35,
         message=gagr_keyword_plan_ad_group.KeywordPlanAdGroup,
     )
-    keyword_plan_ad_group_keyword = proto.Field(proto.MESSAGE, number=141,
+    keyword_plan_ad_group_keyword = proto.Field(
+        proto.MESSAGE,
+        number=141,
         message=gagr_keyword_plan_ad_group_keyword.KeywordPlanAdGroupKeyword,
     )
-    label = proto.Field(proto.MESSAGE, number=52,
+    label = proto.Field(
+        proto.MESSAGE,
+        number=52,
         message=gagr_label.Label,
     )
-    landing_page_view = proto.Field(proto.MESSAGE, number=126,
+    landing_page_view = proto.Field(
+        proto.MESSAGE,
+        number=126,
         message=gagr_landing_page_view.LandingPageView,
     )
-    language_constant = proto.Field(proto.MESSAGE, number=55,
+    language_constant = proto.Field(
+        proto.MESSAGE,
+        number=55,
         message=gagr_language_constant.LanguageConstant,
     )
-    location_view = proto.Field(proto.MESSAGE, number=123,
+    location_view = proto.Field(
+        proto.MESSAGE,
+        number=123,
         message=gagr_location_view.LocationView,
     )
-    managed_placement_view = proto.Field(proto.MESSAGE, number=53,
+    managed_placement_view = proto.Field(
+        proto.MESSAGE,
+        number=53,
         message=gagr_managed_placement_view.ManagedPlacementView,
     )
-    media_file = proto.Field(proto.MESSAGE, number=90,
+    media_file = proto.Field(
+        proto.MESSAGE,
+        number=90,
         message=gagr_media_file.MediaFile,
     )
-    mobile_app_category_constant = proto.Field(proto.MESSAGE, number=87,
+    mobile_app_category_constant = proto.Field(
+        proto.MESSAGE,
+        number=87,
         message=gagr_mobile_app_category_constant.MobileAppCategoryConstant,
     )
-    mobile_device_constant = proto.Field(proto.MESSAGE, number=98,
+    mobile_device_constant = proto.Field(
+        proto.MESSAGE,
+        number=98,
         message=gagr_mobile_device_constant.MobileDeviceConstant,
     )
-    offline_user_data_job = proto.Field(proto.MESSAGE, number=137,
+    offline_user_data_job = proto.Field(
+        proto.MESSAGE,
+        number=137,
         message=gagr_offline_user_data_job.OfflineUserDataJob,
     )
-    operating_system_version_constant = proto.Field(proto.MESSAGE, number=86,
+    operating_system_version_constant = proto.Field(
+        proto.MESSAGE,
+        number=86,
         message=gagr_operating_system_version_constant.OperatingSystemVersionConstant,
     )
-    paid_organic_search_term_view = proto.Field(proto.MESSAGE, number=129,
+    paid_organic_search_term_view = proto.Field(
+        proto.MESSAGE,
+        number=129,
         message=gagr_paid_organic_search_term_view.PaidOrganicSearchTermView,
     )
-    parental_status_view = proto.Field(proto.MESSAGE, number=45,
+    parental_status_view = proto.Field(
+        proto.MESSAGE,
+        number=45,
         message=gagr_parental_status_view.ParentalStatusView,
     )
-    product_bidding_category_constant = proto.Field(proto.MESSAGE, number=109,
+    product_bidding_category_constant = proto.Field(
+        proto.MESSAGE,
+        number=109,
         message=gagr_product_bidding_category_constant.ProductBiddingCategoryConstant,
     )
-    product_group_view = proto.Field(proto.MESSAGE, number=54,
+    product_group_view = proto.Field(
+        proto.MESSAGE,
+        number=54,
         message=gagr_product_group_view.ProductGroupView,
     )
-    recommendation = proto.Field(proto.MESSAGE, number=22,
+    recommendation = proto.Field(
+        proto.MESSAGE,
+        number=22,
         message=gagr_recommendation.Recommendation,
     )
-    search_term_view = proto.Field(proto.MESSAGE, number=68,
+    search_term_view = proto.Field(
+        proto.MESSAGE,
+        number=68,
         message=gagr_search_term_view.SearchTermView,
     )
-    shared_criterion = proto.Field(proto.MESSAGE, number=29,
+    shared_criterion = proto.Field(
+        proto.MESSAGE,
+        number=29,
         message=gagr_shared_criterion.SharedCriterion,
     )
-    shared_set = proto.Field(proto.MESSAGE, number=27,
+    shared_set = proto.Field(
+        proto.MESSAGE,
+        number=27,
         message=gagr_shared_set.SharedSet,
     )
-    shopping_performance_view = proto.Field(proto.MESSAGE, number=117,
+    shopping_performance_view = proto.Field(
+        proto.MESSAGE,
+        number=117,
         message=gagr_shopping_performance_view.ShoppingPerformanceView,
     )
-    third_party_app_analytics_link = proto.Field(proto.MESSAGE, number=144,
+    third_party_app_analytics_link = proto.Field(
+        proto.MESSAGE,
+        number=144,
         message=gagr_third_party_app_analytics_link.ThirdPartyAppAnalyticsLink,
     )
-    topic_view = proto.Field(proto.MESSAGE, number=44,
+    topic_view = proto.Field(
+        proto.MESSAGE,
+        number=44,
         message=gagr_topic_view.TopicView,
     )
-    user_interest = proto.Field(proto.MESSAGE, number=59,
+    user_interest = proto.Field(
+        proto.MESSAGE,
+        number=59,
         message=gagr_user_interest.UserInterest,
     )
-    user_list = proto.Field(proto.MESSAGE, number=38,
+    user_list = proto.Field(
+        proto.MESSAGE,
+        number=38,
         message=gagr_user_list.UserList,
     )
-    user_location_view = proto.Field(proto.MESSAGE, number=135,
+    user_location_view = proto.Field(
+        proto.MESSAGE,
+        number=135,
         message=gagr_user_location_view.UserLocationView,
     )
-    remarketing_action = proto.Field(proto.MESSAGE, number=60,
+    remarketing_action = proto.Field(
+        proto.MESSAGE,
+        number=60,
         message=gagr_remarketing_action.RemarketingAction,
     )
-    topic_constant = proto.Field(proto.MESSAGE, number=31,
+    topic_constant = proto.Field(
+        proto.MESSAGE,
+        number=31,
         message=gagr_topic_constant.TopicConstant,
     )
-    video = proto.Field(proto.MESSAGE, number=39,
+    video = proto.Field(
+        proto.MESSAGE,
+        number=39,
         message=gagr_video.Video,
     )
-    metrics = proto.Field(proto.MESSAGE, number=4,
+    metrics = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=gagc_metrics.Metrics,
     )
-    segments = proto.Field(proto.MESSAGE, number=102,
+    segments = proto.Field(
+        proto.MESSAGE,
+        number=102,
         message=gagc_segments.Segments,
     )
 
@@ -921,12 +1169,23 @@ class MutateGoogleAdsRequest(proto.Message):
             executed. Only errors are returned, not results.
     """
 
-    customer_id = proto.Field(proto.STRING, number=1)
-    mutate_operations = proto.RepeatedField(proto.MESSAGE, number=2,
+    customer_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    mutate_operations = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='MutateOperation',
     )
-    partial_failure = proto.Field(proto.BOOL, number=3)
-    validate_only = proto.Field(proto.BOOL, number=4)
+    partial_failure = proto.Field(
+        proto.BOOL,
+        number=3,
+    )
+    validate_only = proto.Field(
+        proto.BOOL,
+        number=4,
+    )
 
 
 class MutateGoogleAdsResponse(proto.Message):
@@ -944,17 +1203,20 @@ class MutateGoogleAdsResponse(proto.Message):
             All responses for the mutate.
     """
 
-    partial_failure_error = proto.Field(proto.MESSAGE, number=3,
-        message=status.Status,
+    partial_failure_error = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=status_pb2.Status,
     )
-    mutate_operation_responses = proto.RepeatedField(proto.MESSAGE, number=1,
+    mutate_operation_responses = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='MutateOperationResponse',
     )
 
 
 class MutateOperation(proto.Message):
     r"""A single operation (create, update, remove) on a resource.
-
     Attributes:
         ad_group_ad_label_operation (google.ads.googleads.v4.services.types.AdGroupAdLabelOperation):
             An ad group ad label mutate operation.
@@ -1052,146 +1314,280 @@ class MutateOperation(proto.Message):
             A user list mutate operation.
     """
 
-    ad_group_ad_label_operation = proto.Field(proto.MESSAGE, number=17, oneof='operation',
+    ad_group_ad_label_operation = proto.Field(
+        proto.MESSAGE,
+        number=17,
+        oneof='operation',
         message=ad_group_ad_label_service.AdGroupAdLabelOperation,
     )
-    ad_group_ad_operation = proto.Field(proto.MESSAGE, number=1, oneof='operation',
+    ad_group_ad_operation = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='operation',
         message=ad_group_ad_service.AdGroupAdOperation,
     )
-    ad_group_bid_modifier_operation = proto.Field(proto.MESSAGE, number=2, oneof='operation',
+    ad_group_bid_modifier_operation = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='operation',
         message=ad_group_bid_modifier_service.AdGroupBidModifierOperation,
     )
-    ad_group_criterion_label_operation = proto.Field(proto.MESSAGE, number=18, oneof='operation',
+    ad_group_criterion_label_operation = proto.Field(
+        proto.MESSAGE,
+        number=18,
+        oneof='operation',
         message=ad_group_criterion_label_service.AdGroupCriterionLabelOperation,
     )
-    ad_group_criterion_operation = proto.Field(proto.MESSAGE, number=3, oneof='operation',
+    ad_group_criterion_operation = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        oneof='operation',
         message=ad_group_criterion_service.AdGroupCriterionOperation,
     )
-    ad_group_extension_setting_operation = proto.Field(proto.MESSAGE, number=19, oneof='operation',
+    ad_group_extension_setting_operation = proto.Field(
+        proto.MESSAGE,
+        number=19,
+        oneof='operation',
         message=ad_group_extension_setting_service.AdGroupExtensionSettingOperation,
     )
-    ad_group_feed_operation = proto.Field(proto.MESSAGE, number=20, oneof='operation',
+    ad_group_feed_operation = proto.Field(
+        proto.MESSAGE,
+        number=20,
+        oneof='operation',
         message=ad_group_feed_service.AdGroupFeedOperation,
     )
-    ad_group_label_operation = proto.Field(proto.MESSAGE, number=21, oneof='operation',
+    ad_group_label_operation = proto.Field(
+        proto.MESSAGE,
+        number=21,
+        oneof='operation',
         message=ad_group_label_service.AdGroupLabelOperation,
     )
-    ad_group_operation = proto.Field(proto.MESSAGE, number=5, oneof='operation',
+    ad_group_operation = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        oneof='operation',
         message=ad_group_service.AdGroupOperation,
     )
-    ad_operation = proto.Field(proto.MESSAGE, number=49, oneof='operation',
+    ad_operation = proto.Field(
+        proto.MESSAGE,
+        number=49,
+        oneof='operation',
         message=ad_service.AdOperation,
     )
-    ad_parameter_operation = proto.Field(proto.MESSAGE, number=22, oneof='operation',
+    ad_parameter_operation = proto.Field(
+        proto.MESSAGE,
+        number=22,
+        oneof='operation',
         message=ad_parameter_service.AdParameterOperation,
     )
-    asset_operation = proto.Field(proto.MESSAGE, number=23, oneof='operation',
+    asset_operation = proto.Field(
+        proto.MESSAGE,
+        number=23,
+        oneof='operation',
         message=asset_service.AssetOperation,
     )
-    bidding_strategy_operation = proto.Field(proto.MESSAGE, number=6, oneof='operation',
+    bidding_strategy_operation = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        oneof='operation',
         message=bidding_strategy_service.BiddingStrategyOperation,
     )
-    campaign_bid_modifier_operation = proto.Field(proto.MESSAGE, number=7, oneof='operation',
+    campaign_bid_modifier_operation = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        oneof='operation',
         message=campaign_bid_modifier_service.CampaignBidModifierOperation,
     )
-    campaign_budget_operation = proto.Field(proto.MESSAGE, number=8, oneof='operation',
+    campaign_budget_operation = proto.Field(
+        proto.MESSAGE,
+        number=8,
+        oneof='operation',
         message=campaign_budget_service.CampaignBudgetOperation,
     )
-    campaign_criterion_operation = proto.Field(proto.MESSAGE, number=13, oneof='operation',
+    campaign_criterion_operation = proto.Field(
+        proto.MESSAGE,
+        number=13,
+        oneof='operation',
         message=campaign_criterion_service.CampaignCriterionOperation,
     )
-    campaign_draft_operation = proto.Field(proto.MESSAGE, number=24, oneof='operation',
+    campaign_draft_operation = proto.Field(
+        proto.MESSAGE,
+        number=24,
+        oneof='operation',
         message=campaign_draft_service.CampaignDraftOperation,
     )
-    campaign_experiment_operation = proto.Field(proto.MESSAGE, number=25, oneof='operation',
+    campaign_experiment_operation = proto.Field(
+        proto.MESSAGE,
+        number=25,
+        oneof='operation',
         message=campaign_experiment_service.CampaignExperimentOperation,
     )
-    campaign_extension_setting_operation = proto.Field(proto.MESSAGE, number=26, oneof='operation',
+    campaign_extension_setting_operation = proto.Field(
+        proto.MESSAGE,
+        number=26,
+        oneof='operation',
         message=campaign_extension_setting_service.CampaignExtensionSettingOperation,
     )
-    campaign_feed_operation = proto.Field(proto.MESSAGE, number=27, oneof='operation',
+    campaign_feed_operation = proto.Field(
+        proto.MESSAGE,
+        number=27,
+        oneof='operation',
         message=campaign_feed_service.CampaignFeedOperation,
     )
-    campaign_label_operation = proto.Field(proto.MESSAGE, number=28, oneof='operation',
+    campaign_label_operation = proto.Field(
+        proto.MESSAGE,
+        number=28,
+        oneof='operation',
         message=campaign_label_service.CampaignLabelOperation,
     )
-    campaign_operation = proto.Field(proto.MESSAGE, number=10, oneof='operation',
+    campaign_operation = proto.Field(
+        proto.MESSAGE,
+        number=10,
+        oneof='operation',
         message=campaign_service.CampaignOperation,
     )
-    campaign_shared_set_operation = proto.Field(proto.MESSAGE, number=11, oneof='operation',
+    campaign_shared_set_operation = proto.Field(
+        proto.MESSAGE,
+        number=11,
+        oneof='operation',
         message=campaign_shared_set_service.CampaignSharedSetOperation,
     )
-    conversion_action_operation = proto.Field(proto.MESSAGE, number=12, oneof='operation',
+    conversion_action_operation = proto.Field(
+        proto.MESSAGE,
+        number=12,
+        oneof='operation',
         message=conversion_action_service.ConversionActionOperation,
     )
-    customer_extension_setting_operation = proto.Field(proto.MESSAGE, number=30, oneof='operation',
+    customer_extension_setting_operation = proto.Field(
+        proto.MESSAGE,
+        number=30,
+        oneof='operation',
         message=customer_extension_setting_service.CustomerExtensionSettingOperation,
     )
-    customer_feed_operation = proto.Field(proto.MESSAGE, number=31, oneof='operation',
+    customer_feed_operation = proto.Field(
+        proto.MESSAGE,
+        number=31,
+        oneof='operation',
         message=customer_feed_service.CustomerFeedOperation,
     )
-    customer_label_operation = proto.Field(proto.MESSAGE, number=32, oneof='operation',
+    customer_label_operation = proto.Field(
+        proto.MESSAGE,
+        number=32,
+        oneof='operation',
         message=customer_label_service.CustomerLabelOperation,
     )
-    customer_negative_criterion_operation = proto.Field(proto.MESSAGE, number=34, oneof='operation',
+    customer_negative_criterion_operation = proto.Field(
+        proto.MESSAGE,
+        number=34,
+        oneof='operation',
         message=customer_negative_criterion_service.CustomerNegativeCriterionOperation,
     )
-    customer_operation = proto.Field(proto.MESSAGE, number=35, oneof='operation',
+    customer_operation = proto.Field(
+        proto.MESSAGE,
+        number=35,
+        oneof='operation',
         message=customer_service.CustomerOperation,
     )
-    extension_feed_item_operation = proto.Field(proto.MESSAGE, number=36, oneof='operation',
+    extension_feed_item_operation = proto.Field(
+        proto.MESSAGE,
+        number=36,
+        oneof='operation',
         message=extension_feed_item_service.ExtensionFeedItemOperation,
     )
-    feed_item_operation = proto.Field(proto.MESSAGE, number=37, oneof='operation',
+    feed_item_operation = proto.Field(
+        proto.MESSAGE,
+        number=37,
+        oneof='operation',
         message=feed_item_service.FeedItemOperation,
     )
-    feed_item_target_operation = proto.Field(proto.MESSAGE, number=38, oneof='operation',
+    feed_item_target_operation = proto.Field(
+        proto.MESSAGE,
+        number=38,
+        oneof='operation',
         message=feed_item_target_service.FeedItemTargetOperation,
     )
-    feed_mapping_operation = proto.Field(proto.MESSAGE, number=39, oneof='operation',
+    feed_mapping_operation = proto.Field(
+        proto.MESSAGE,
+        number=39,
+        oneof='operation',
         message=feed_mapping_service.FeedMappingOperation,
     )
-    feed_operation = proto.Field(proto.MESSAGE, number=40, oneof='operation',
+    feed_operation = proto.Field(
+        proto.MESSAGE,
+        number=40,
+        oneof='operation',
         message=feed_service.FeedOperation,
     )
-    keyword_plan_ad_group_operation = proto.Field(proto.MESSAGE, number=44, oneof='operation',
+    keyword_plan_ad_group_operation = proto.Field(
+        proto.MESSAGE,
+        number=44,
+        oneof='operation',
         message=keyword_plan_ad_group_service.KeywordPlanAdGroupOperation,
     )
-    keyword_plan_ad_group_keyword_operation = proto.Field(proto.MESSAGE, number=50, oneof='operation',
+    keyword_plan_ad_group_keyword_operation = proto.Field(
+        proto.MESSAGE,
+        number=50,
+        oneof='operation',
         message=keyword_plan_ad_group_keyword_service.KeywordPlanAdGroupKeywordOperation,
     )
-    keyword_plan_campaign_keyword_operation = proto.Field(proto.MESSAGE, number=51, oneof='operation',
+    keyword_plan_campaign_keyword_operation = proto.Field(
+        proto.MESSAGE,
+        number=51,
+        oneof='operation',
         message=keyword_plan_campaign_keyword_service.KeywordPlanCampaignKeywordOperation,
     )
-    keyword_plan_campaign_operation = proto.Field(proto.MESSAGE, number=45, oneof='operation',
+    keyword_plan_campaign_operation = proto.Field(
+        proto.MESSAGE,
+        number=45,
+        oneof='operation',
         message=keyword_plan_campaign_service.KeywordPlanCampaignOperation,
     )
-    keyword_plan_operation = proto.Field(proto.MESSAGE, number=48, oneof='operation',
+    keyword_plan_operation = proto.Field(
+        proto.MESSAGE,
+        number=48,
+        oneof='operation',
         message=keyword_plan_service.KeywordPlanOperation,
     )
-    label_operation = proto.Field(proto.MESSAGE, number=41, oneof='operation',
+    label_operation = proto.Field(
+        proto.MESSAGE,
+        number=41,
+        oneof='operation',
         message=label_service.LabelOperation,
     )
-    media_file_operation = proto.Field(proto.MESSAGE, number=42, oneof='operation',
+    media_file_operation = proto.Field(
+        proto.MESSAGE,
+        number=42,
+        oneof='operation',
         message=media_file_service.MediaFileOperation,
     )
-    remarketing_action_operation = proto.Field(proto.MESSAGE, number=43, oneof='operation',
+    remarketing_action_operation = proto.Field(
+        proto.MESSAGE,
+        number=43,
+        oneof='operation',
         message=remarketing_action_service.RemarketingActionOperation,
     )
-    shared_criterion_operation = proto.Field(proto.MESSAGE, number=14, oneof='operation',
+    shared_criterion_operation = proto.Field(
+        proto.MESSAGE,
+        number=14,
+        oneof='operation',
         message=shared_criterion_service.SharedCriterionOperation,
     )
-    shared_set_operation = proto.Field(proto.MESSAGE, number=15, oneof='operation',
+    shared_set_operation = proto.Field(
+        proto.MESSAGE,
+        number=15,
+        oneof='operation',
         message=shared_set_service.SharedSetOperation,
     )
-    user_list_operation = proto.Field(proto.MESSAGE, number=16, oneof='operation',
+    user_list_operation = proto.Field(
+        proto.MESSAGE,
+        number=16,
+        oneof='operation',
         message=user_list_service.UserListOperation,
     )
 
 
 class MutateOperationResponse(proto.Message):
     r"""Response message for the resource mutate.
-
     Attributes:
         ad_group_ad_label_result (google.ads.googleads.v4.services.types.MutateAdGroupAdLabelResult):
             The result for the ad group ad label mutate.
@@ -1299,139 +1695,274 @@ class MutateOperationResponse(proto.Message):
             The result for the user list mutate.
     """
 
-    ad_group_ad_label_result = proto.Field(proto.MESSAGE, number=17, oneof='response',
+    ad_group_ad_label_result = proto.Field(
+        proto.MESSAGE,
+        number=17,
+        oneof='response',
         message=ad_group_ad_label_service.MutateAdGroupAdLabelResult,
     )
-    ad_group_ad_result = proto.Field(proto.MESSAGE, number=1, oneof='response',
+    ad_group_ad_result = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='response',
         message=ad_group_ad_service.MutateAdGroupAdResult,
     )
-    ad_group_bid_modifier_result = proto.Field(proto.MESSAGE, number=2, oneof='response',
+    ad_group_bid_modifier_result = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='response',
         message=ad_group_bid_modifier_service.MutateAdGroupBidModifierResult,
     )
-    ad_group_criterion_label_result = proto.Field(proto.MESSAGE, number=18, oneof='response',
+    ad_group_criterion_label_result = proto.Field(
+        proto.MESSAGE,
+        number=18,
+        oneof='response',
         message=ad_group_criterion_label_service.MutateAdGroupCriterionLabelResult,
     )
-    ad_group_criterion_result = proto.Field(proto.MESSAGE, number=3, oneof='response',
+    ad_group_criterion_result = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        oneof='response',
         message=ad_group_criterion_service.MutateAdGroupCriterionResult,
     )
-    ad_group_extension_setting_result = proto.Field(proto.MESSAGE, number=19, oneof='response',
+    ad_group_extension_setting_result = proto.Field(
+        proto.MESSAGE,
+        number=19,
+        oneof='response',
         message=ad_group_extension_setting_service.MutateAdGroupExtensionSettingResult,
     )
-    ad_group_feed_result = proto.Field(proto.MESSAGE, number=20, oneof='response',
+    ad_group_feed_result = proto.Field(
+        proto.MESSAGE,
+        number=20,
+        oneof='response',
         message=ad_group_feed_service.MutateAdGroupFeedResult,
     )
-    ad_group_label_result = proto.Field(proto.MESSAGE, number=21, oneof='response',
+    ad_group_label_result = proto.Field(
+        proto.MESSAGE,
+        number=21,
+        oneof='response',
         message=ad_group_label_service.MutateAdGroupLabelResult,
     )
-    ad_group_result = proto.Field(proto.MESSAGE, number=5, oneof='response',
+    ad_group_result = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        oneof='response',
         message=ad_group_service.MutateAdGroupResult,
     )
-    ad_parameter_result = proto.Field(proto.MESSAGE, number=22, oneof='response',
+    ad_parameter_result = proto.Field(
+        proto.MESSAGE,
+        number=22,
+        oneof='response',
         message=ad_parameter_service.MutateAdParameterResult,
     )
-    ad_result = proto.Field(proto.MESSAGE, number=49, oneof='response',
+    ad_result = proto.Field(
+        proto.MESSAGE,
+        number=49,
+        oneof='response',
         message=ad_service.MutateAdResult,
     )
-    asset_result = proto.Field(proto.MESSAGE, number=23, oneof='response',
+    asset_result = proto.Field(
+        proto.MESSAGE,
+        number=23,
+        oneof='response',
         message=asset_service.MutateAssetResult,
     )
-    bidding_strategy_result = proto.Field(proto.MESSAGE, number=6, oneof='response',
+    bidding_strategy_result = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        oneof='response',
         message=bidding_strategy_service.MutateBiddingStrategyResult,
     )
-    campaign_bid_modifier_result = proto.Field(proto.MESSAGE, number=7, oneof='response',
+    campaign_bid_modifier_result = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        oneof='response',
         message=campaign_bid_modifier_service.MutateCampaignBidModifierResult,
     )
-    campaign_budget_result = proto.Field(proto.MESSAGE, number=8, oneof='response',
+    campaign_budget_result = proto.Field(
+        proto.MESSAGE,
+        number=8,
+        oneof='response',
         message=campaign_budget_service.MutateCampaignBudgetResult,
     )
-    campaign_criterion_result = proto.Field(proto.MESSAGE, number=13, oneof='response',
+    campaign_criterion_result = proto.Field(
+        proto.MESSAGE,
+        number=13,
+        oneof='response',
         message=campaign_criterion_service.MutateCampaignCriterionResult,
     )
-    campaign_draft_result = proto.Field(proto.MESSAGE, number=24, oneof='response',
+    campaign_draft_result = proto.Field(
+        proto.MESSAGE,
+        number=24,
+        oneof='response',
         message=campaign_draft_service.MutateCampaignDraftResult,
     )
-    campaign_experiment_result = proto.Field(proto.MESSAGE, number=25, oneof='response',
+    campaign_experiment_result = proto.Field(
+        proto.MESSAGE,
+        number=25,
+        oneof='response',
         message=campaign_experiment_service.MutateCampaignExperimentResult,
     )
-    campaign_extension_setting_result = proto.Field(proto.MESSAGE, number=26, oneof='response',
+    campaign_extension_setting_result = proto.Field(
+        proto.MESSAGE,
+        number=26,
+        oneof='response',
         message=campaign_extension_setting_service.MutateCampaignExtensionSettingResult,
     )
-    campaign_feed_result = proto.Field(proto.MESSAGE, number=27, oneof='response',
+    campaign_feed_result = proto.Field(
+        proto.MESSAGE,
+        number=27,
+        oneof='response',
         message=campaign_feed_service.MutateCampaignFeedResult,
     )
-    campaign_label_result = proto.Field(proto.MESSAGE, number=28, oneof='response',
+    campaign_label_result = proto.Field(
+        proto.MESSAGE,
+        number=28,
+        oneof='response',
         message=campaign_label_service.MutateCampaignLabelResult,
     )
-    campaign_result = proto.Field(proto.MESSAGE, number=10, oneof='response',
+    campaign_result = proto.Field(
+        proto.MESSAGE,
+        number=10,
+        oneof='response',
         message=campaign_service.MutateCampaignResult,
     )
-    campaign_shared_set_result = proto.Field(proto.MESSAGE, number=11, oneof='response',
+    campaign_shared_set_result = proto.Field(
+        proto.MESSAGE,
+        number=11,
+        oneof='response',
         message=campaign_shared_set_service.MutateCampaignSharedSetResult,
     )
-    conversion_action_result = proto.Field(proto.MESSAGE, number=12, oneof='response',
+    conversion_action_result = proto.Field(
+        proto.MESSAGE,
+        number=12,
+        oneof='response',
         message=conversion_action_service.MutateConversionActionResult,
     )
-    customer_extension_setting_result = proto.Field(proto.MESSAGE, number=30, oneof='response',
+    customer_extension_setting_result = proto.Field(
+        proto.MESSAGE,
+        number=30,
+        oneof='response',
         message=customer_extension_setting_service.MutateCustomerExtensionSettingResult,
     )
-    customer_feed_result = proto.Field(proto.MESSAGE, number=31, oneof='response',
+    customer_feed_result = proto.Field(
+        proto.MESSAGE,
+        number=31,
+        oneof='response',
         message=customer_feed_service.MutateCustomerFeedResult,
     )
-    customer_label_result = proto.Field(proto.MESSAGE, number=32, oneof='response',
+    customer_label_result = proto.Field(
+        proto.MESSAGE,
+        number=32,
+        oneof='response',
         message=customer_label_service.MutateCustomerLabelResult,
     )
-    customer_negative_criterion_result = proto.Field(proto.MESSAGE, number=34, oneof='response',
+    customer_negative_criterion_result = proto.Field(
+        proto.MESSAGE,
+        number=34,
+        oneof='response',
         message=customer_negative_criterion_service.MutateCustomerNegativeCriteriaResult,
     )
-    customer_result = proto.Field(proto.MESSAGE, number=35, oneof='response',
+    customer_result = proto.Field(
+        proto.MESSAGE,
+        number=35,
+        oneof='response',
         message=customer_service.MutateCustomerResult,
     )
-    extension_feed_item_result = proto.Field(proto.MESSAGE, number=36, oneof='response',
+    extension_feed_item_result = proto.Field(
+        proto.MESSAGE,
+        number=36,
+        oneof='response',
         message=extension_feed_item_service.MutateExtensionFeedItemResult,
     )
-    feed_item_result = proto.Field(proto.MESSAGE, number=37, oneof='response',
+    feed_item_result = proto.Field(
+        proto.MESSAGE,
+        number=37,
+        oneof='response',
         message=feed_item_service.MutateFeedItemResult,
     )
-    feed_item_target_result = proto.Field(proto.MESSAGE, number=38, oneof='response',
+    feed_item_target_result = proto.Field(
+        proto.MESSAGE,
+        number=38,
+        oneof='response',
         message=feed_item_target_service.MutateFeedItemTargetResult,
     )
-    feed_mapping_result = proto.Field(proto.MESSAGE, number=39, oneof='response',
+    feed_mapping_result = proto.Field(
+        proto.MESSAGE,
+        number=39,
+        oneof='response',
         message=feed_mapping_service.MutateFeedMappingResult,
     )
-    feed_result = proto.Field(proto.MESSAGE, number=40, oneof='response',
+    feed_result = proto.Field(
+        proto.MESSAGE,
+        number=40,
+        oneof='response',
         message=feed_service.MutateFeedResult,
     )
-    keyword_plan_ad_group_result = proto.Field(proto.MESSAGE, number=44, oneof='response',
+    keyword_plan_ad_group_result = proto.Field(
+        proto.MESSAGE,
+        number=44,
+        oneof='response',
         message=keyword_plan_ad_group_service.MutateKeywordPlanAdGroupResult,
     )
-    keyword_plan_campaign_result = proto.Field(proto.MESSAGE, number=45, oneof='response',
+    keyword_plan_campaign_result = proto.Field(
+        proto.MESSAGE,
+        number=45,
+        oneof='response',
         message=keyword_plan_campaign_service.MutateKeywordPlanCampaignResult,
     )
-    keyword_plan_ad_group_keyword_result = proto.Field(proto.MESSAGE, number=50, oneof='response',
+    keyword_plan_ad_group_keyword_result = proto.Field(
+        proto.MESSAGE,
+        number=50,
+        oneof='response',
         message=keyword_plan_ad_group_keyword_service.MutateKeywordPlanAdGroupKeywordResult,
     )
-    keyword_plan_campaign_keyword_result = proto.Field(proto.MESSAGE, number=51, oneof='response',
+    keyword_plan_campaign_keyword_result = proto.Field(
+        proto.MESSAGE,
+        number=51,
+        oneof='response',
         message=keyword_plan_campaign_keyword_service.MutateKeywordPlanCampaignKeywordResult,
     )
-    keyword_plan_result = proto.Field(proto.MESSAGE, number=48, oneof='response',
+    keyword_plan_result = proto.Field(
+        proto.MESSAGE,
+        number=48,
+        oneof='response',
         message=keyword_plan_service.MutateKeywordPlansResult,
     )
-    label_result = proto.Field(proto.MESSAGE, number=41, oneof='response',
+    label_result = proto.Field(
+        proto.MESSAGE,
+        number=41,
+        oneof='response',
         message=label_service.MutateLabelResult,
     )
-    media_file_result = proto.Field(proto.MESSAGE, number=42, oneof='response',
+    media_file_result = proto.Field(
+        proto.MESSAGE,
+        number=42,
+        oneof='response',
         message=media_file_service.MutateMediaFileResult,
     )
-    remarketing_action_result = proto.Field(proto.MESSAGE, number=43, oneof='response',
+    remarketing_action_result = proto.Field(
+        proto.MESSAGE,
+        number=43,
+        oneof='response',
         message=remarketing_action_service.MutateRemarketingActionResult,
     )
-    shared_criterion_result = proto.Field(proto.MESSAGE, number=14, oneof='response',
+    shared_criterion_result = proto.Field(
+        proto.MESSAGE,
+        number=14,
+        oneof='response',
         message=shared_criterion_service.MutateSharedCriterionResult,
     )
-    shared_set_result = proto.Field(proto.MESSAGE, number=15, oneof='response',
+    shared_set_result = proto.Field(
+        proto.MESSAGE,
+        number=15,
+        oneof='response',
         message=shared_set_service.MutateSharedSetResult,
     )
-    user_list_result = proto.Field(proto.MESSAGE, number=16, oneof='response',
+    user_list_result = proto.Field(
+        proto.MESSAGE,
+        number=16,
+        oneof='response',
         message=user_list_service.MutateUserListResult,
     )
 

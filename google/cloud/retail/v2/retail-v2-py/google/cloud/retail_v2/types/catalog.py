@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -86,14 +84,18 @@ class ProductLevelConfig(proto.Message):
             for more details.
     """
 
-    ingestion_product_type = proto.Field(proto.STRING, number=1)
-
-    merchant_center_product_id_field = proto.Field(proto.STRING, number=2)
+    ingestion_product_type = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    merchant_center_product_id_field = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class Catalog(proto.Message):
     r"""The catalog configuration.
-
     Attributes:
         name (str):
             Required. Immutable. The fully qualified
@@ -108,11 +110,17 @@ class Catalog(proto.Message):
             Required. The product level configuration.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    display_name = proto.Field(proto.STRING, number=2)
-
-    product_level_config = proto.Field(proto.MESSAGE, number=4,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    display_name = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    product_level_config = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='ProductLevelConfig',
     )
 

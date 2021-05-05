@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 import mock
+import packaging.version
 
 import grpc
 from grpc.experimental import aio
@@ -24,29 +23,54 @@ import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
-from google import auth
+
 from google.api_core import client_options
-from google.api_core import exceptions
+from google.api_core import exceptions as core_exceptions
 from google.api_core import gapic_v1
 from google.api_core import grpc_helpers
 from google.api_core import grpc_helpers_async
-from google.auth import credentials
+from google.auth import credentials as ga_credentials
 from google.auth.exceptions import MutualTLSChannelError
 from google.cloud.osconfig_v1beta.services.os_config_service import OsConfigServiceAsyncClient
 from google.cloud.osconfig_v1beta.services.os_config_service import OsConfigServiceClient
 from google.cloud.osconfig_v1beta.services.os_config_service import pagers
 from google.cloud.osconfig_v1beta.services.os_config_service import transports
+from google.cloud.osconfig_v1beta.services.os_config_service.transports.base import _API_CORE_VERSION
+from google.cloud.osconfig_v1beta.services.os_config_service.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.osconfig_v1beta.types import guest_policies
 from google.cloud.osconfig_v1beta.types import patch_deployments
 from google.cloud.osconfig_v1beta.types import patch_jobs
 from google.oauth2 import service_account
-from google.protobuf import duration_pb2 as duration  # type: ignore
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-from google.type import datetime_pb2 as datetime  # type: ignore
-from google.type import dayofweek_pb2 as dayofweek  # type: ignore
-from google.type import timeofday_pb2 as timeofday  # type: ignore
+from google.protobuf import duration_pb2  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
+from google.type import datetime_pb2  # type: ignore
+from google.type import dayofweek_pb2  # type: ignore
+from google.type import timeofday_pb2  # type: ignore
+import google.auth
 
+
+# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
+# - Delete all the api-core and auth "less than" test cases
+# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
+requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth < 1.25.0",
+)
+requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth >= 1.25.0",
+)
+
+requires_api_core_lt_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core < 1.26.0",
+)
+
+requires_api_core_gte_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core >= 1.26.0",
+)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -79,7 +103,7 @@ def test__get_default_mtls_endpoint():
     OsConfigServiceAsyncClient,
 ])
 def test_os_config_service_client_from_service_account_info(client_class):
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
@@ -95,7 +119,7 @@ def test_os_config_service_client_from_service_account_info(client_class):
     OsConfigServiceAsyncClient,
 ])
 def test_os_config_service_client_from_service_account_file(client_class):
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_file') as factory:
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
@@ -130,7 +154,7 @@ def test_os_config_service_client_client_options(client_class, transport_class, 
     # Check that if channel is provided we won't create a new one.
     with mock.patch.object(OsConfigServiceClient, 'get_transport_class') as gtc:
         transport = transport_class(
-            credentials=credentials.AnonymousCredentials()
+            credentials=ga_credentials.AnonymousCredentials()
         )
         client = client_class(transport=transport)
         gtc.assert_not_called()
@@ -214,12 +238,10 @@ def test_os_config_service_client_client_options(client_class, transport_class, 
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
-
     (OsConfigServiceClient, transports.OsConfigServiceGrpcTransport, "grpc", "true"),
     (OsConfigServiceAsyncClient, transports.OsConfigServiceGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (OsConfigServiceClient, transports.OsConfigServiceGrpcTransport, "grpc", "false"),
     (OsConfigServiceAsyncClient, transports.OsConfigServiceGrpcAsyncIOTransport, "grpc_asyncio", "false"),
-
 ])
 @mock.patch.object(OsConfigServiceClient, "DEFAULT_ENDPOINT", modify_default_endpoint(OsConfigServiceClient))
 @mock.patch.object(OsConfigServiceAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(OsConfigServiceAsyncClient))
@@ -359,7 +381,7 @@ def test_os_config_service_client_client_options_from_dict():
 
 def test_execute_patch_job(transport: str = 'grpc', request_type=patch_jobs.ExecutePatchJobRequest):
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -374,49 +396,30 @@ def test_execute_patch_job(transport: str = 'grpc', request_type=patch_jobs.Exec
         # Designate an appropriate return value for the call.
         call.return_value = patch_jobs.PatchJob(
             name='name_value',
-
             display_name='display_name_value',
-
             description='description_value',
-
             state=patch_jobs.PatchJob.State.STARTED,
-
             dry_run=True,
-
             error_message='error_message_value',
-
             percent_complete=0.1705,
-
             patch_deployment='patch_deployment_value',
-
         )
-
         response = client.execute_patch_job(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == patch_jobs.ExecutePatchJobRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, patch_jobs.PatchJob)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.description == 'description_value'
-
     assert response.state == patch_jobs.PatchJob.State.STARTED
-
     assert response.dry_run is True
-
     assert response.error_message == 'error_message_value'
-
     assert math.isclose(response.percent_complete, 0.1705, rel_tol=1e-6)
-
     assert response.patch_deployment == 'patch_deployment_value'
 
 
@@ -428,7 +431,7 @@ def test_execute_patch_job_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -439,13 +442,13 @@ def test_execute_patch_job_empty_call():
         client.execute_patch_job()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == patch_jobs.ExecutePatchJobRequest()
+
 
 @pytest.mark.asyncio
 async def test_execute_patch_job_async(transport: str = 'grpc_asyncio', request_type=patch_jobs.ExecutePatchJobRequest):
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -458,7 +461,7 @@ async def test_execute_patch_job_async(transport: str = 'grpc_asyncio', request_
             type(client.transport.execute_patch_job),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(patch_jobs.PatchJob(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(patch_jobs.PatchJob(
             name='name_value',
             display_name='display_name_value',
             description='description_value',
@@ -468,32 +471,22 @@ async def test_execute_patch_job_async(transport: str = 'grpc_asyncio', request_
             percent_complete=0.1705,
             patch_deployment='patch_deployment_value',
         ))
-
         response = await client.execute_patch_job(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == patch_jobs.ExecutePatchJobRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, patch_jobs.PatchJob)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.description == 'description_value'
-
     assert response.state == patch_jobs.PatchJob.State.STARTED
-
     assert response.dry_run is True
-
     assert response.error_message == 'error_message_value'
-
     assert math.isclose(response.percent_complete, 0.1705, rel_tol=1e-6)
-
     assert response.patch_deployment == 'patch_deployment_value'
 
 
@@ -504,12 +497,13 @@ async def test_execute_patch_job_async_from_dict():
 
 def test_execute_patch_job_field_headers():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = patch_jobs.ExecutePatchJobRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -517,7 +511,6 @@ def test_execute_patch_job_field_headers():
             type(client.transport.execute_patch_job),
             '__call__') as call:
         call.return_value = patch_jobs.PatchJob()
-
         client.execute_patch_job(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -536,12 +529,13 @@ def test_execute_patch_job_field_headers():
 @pytest.mark.asyncio
 async def test_execute_patch_job_field_headers_async():
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = patch_jobs.ExecutePatchJobRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -549,7 +543,6 @@ async def test_execute_patch_job_field_headers_async():
             type(client.transport.execute_patch_job),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(patch_jobs.PatchJob())
-
         await client.execute_patch_job(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -567,7 +560,7 @@ async def test_execute_patch_job_field_headers_async():
 
 def test_get_patch_job(transport: str = 'grpc', request_type=patch_jobs.GetPatchJobRequest):
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -582,49 +575,30 @@ def test_get_patch_job(transport: str = 'grpc', request_type=patch_jobs.GetPatch
         # Designate an appropriate return value for the call.
         call.return_value = patch_jobs.PatchJob(
             name='name_value',
-
             display_name='display_name_value',
-
             description='description_value',
-
             state=patch_jobs.PatchJob.State.STARTED,
-
             dry_run=True,
-
             error_message='error_message_value',
-
             percent_complete=0.1705,
-
             patch_deployment='patch_deployment_value',
-
         )
-
         response = client.get_patch_job(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == patch_jobs.GetPatchJobRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, patch_jobs.PatchJob)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.description == 'description_value'
-
     assert response.state == patch_jobs.PatchJob.State.STARTED
-
     assert response.dry_run is True
-
     assert response.error_message == 'error_message_value'
-
     assert math.isclose(response.percent_complete, 0.1705, rel_tol=1e-6)
-
     assert response.patch_deployment == 'patch_deployment_value'
 
 
@@ -636,7 +610,7 @@ def test_get_patch_job_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -647,13 +621,13 @@ def test_get_patch_job_empty_call():
         client.get_patch_job()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == patch_jobs.GetPatchJobRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_patch_job_async(transport: str = 'grpc_asyncio', request_type=patch_jobs.GetPatchJobRequest):
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -666,7 +640,7 @@ async def test_get_patch_job_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.get_patch_job),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(patch_jobs.PatchJob(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(patch_jobs.PatchJob(
             name='name_value',
             display_name='display_name_value',
             description='description_value',
@@ -676,32 +650,22 @@ async def test_get_patch_job_async(transport: str = 'grpc_asyncio', request_type
             percent_complete=0.1705,
             patch_deployment='patch_deployment_value',
         ))
-
         response = await client.get_patch_job(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == patch_jobs.GetPatchJobRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, patch_jobs.PatchJob)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.description == 'description_value'
-
     assert response.state == patch_jobs.PatchJob.State.STARTED
-
     assert response.dry_run is True
-
     assert response.error_message == 'error_message_value'
-
     assert math.isclose(response.percent_complete, 0.1705, rel_tol=1e-6)
-
     assert response.patch_deployment == 'patch_deployment_value'
 
 
@@ -712,12 +676,13 @@ async def test_get_patch_job_async_from_dict():
 
 def test_get_patch_job_field_headers():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = patch_jobs.GetPatchJobRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -725,7 +690,6 @@ def test_get_patch_job_field_headers():
             type(client.transport.get_patch_job),
             '__call__') as call:
         call.return_value = patch_jobs.PatchJob()
-
         client.get_patch_job(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -744,12 +708,13 @@ def test_get_patch_job_field_headers():
 @pytest.mark.asyncio
 async def test_get_patch_job_field_headers_async():
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = patch_jobs.GetPatchJobRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -757,7 +722,6 @@ async def test_get_patch_job_field_headers_async():
             type(client.transport.get_patch_job),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(patch_jobs.PatchJob())
-
         await client.get_patch_job(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -775,7 +739,7 @@ async def test_get_patch_job_field_headers_async():
 
 def test_cancel_patch_job(transport: str = 'grpc', request_type=patch_jobs.CancelPatchJobRequest):
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -790,49 +754,30 @@ def test_cancel_patch_job(transport: str = 'grpc', request_type=patch_jobs.Cance
         # Designate an appropriate return value for the call.
         call.return_value = patch_jobs.PatchJob(
             name='name_value',
-
             display_name='display_name_value',
-
             description='description_value',
-
             state=patch_jobs.PatchJob.State.STARTED,
-
             dry_run=True,
-
             error_message='error_message_value',
-
             percent_complete=0.1705,
-
             patch_deployment='patch_deployment_value',
-
         )
-
         response = client.cancel_patch_job(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == patch_jobs.CancelPatchJobRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, patch_jobs.PatchJob)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.description == 'description_value'
-
     assert response.state == patch_jobs.PatchJob.State.STARTED
-
     assert response.dry_run is True
-
     assert response.error_message == 'error_message_value'
-
     assert math.isclose(response.percent_complete, 0.1705, rel_tol=1e-6)
-
     assert response.patch_deployment == 'patch_deployment_value'
 
 
@@ -844,7 +789,7 @@ def test_cancel_patch_job_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -855,13 +800,13 @@ def test_cancel_patch_job_empty_call():
         client.cancel_patch_job()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == patch_jobs.CancelPatchJobRequest()
+
 
 @pytest.mark.asyncio
 async def test_cancel_patch_job_async(transport: str = 'grpc_asyncio', request_type=patch_jobs.CancelPatchJobRequest):
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -874,7 +819,7 @@ async def test_cancel_patch_job_async(transport: str = 'grpc_asyncio', request_t
             type(client.transport.cancel_patch_job),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(patch_jobs.PatchJob(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(patch_jobs.PatchJob(
             name='name_value',
             display_name='display_name_value',
             description='description_value',
@@ -884,32 +829,22 @@ async def test_cancel_patch_job_async(transport: str = 'grpc_asyncio', request_t
             percent_complete=0.1705,
             patch_deployment='patch_deployment_value',
         ))
-
         response = await client.cancel_patch_job(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == patch_jobs.CancelPatchJobRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, patch_jobs.PatchJob)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.description == 'description_value'
-
     assert response.state == patch_jobs.PatchJob.State.STARTED
-
     assert response.dry_run is True
-
     assert response.error_message == 'error_message_value'
-
     assert math.isclose(response.percent_complete, 0.1705, rel_tol=1e-6)
-
     assert response.patch_deployment == 'patch_deployment_value'
 
 
@@ -920,12 +855,13 @@ async def test_cancel_patch_job_async_from_dict():
 
 def test_cancel_patch_job_field_headers():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = patch_jobs.CancelPatchJobRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -933,7 +869,6 @@ def test_cancel_patch_job_field_headers():
             type(client.transport.cancel_patch_job),
             '__call__') as call:
         call.return_value = patch_jobs.PatchJob()
-
         client.cancel_patch_job(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -952,12 +887,13 @@ def test_cancel_patch_job_field_headers():
 @pytest.mark.asyncio
 async def test_cancel_patch_job_field_headers_async():
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = patch_jobs.CancelPatchJobRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -965,7 +901,6 @@ async def test_cancel_patch_job_field_headers_async():
             type(client.transport.cancel_patch_job),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(patch_jobs.PatchJob())
-
         await client.cancel_patch_job(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -983,7 +918,7 @@ async def test_cancel_patch_job_field_headers_async():
 
 def test_list_patch_jobs(transport: str = 'grpc', request_type=patch_jobs.ListPatchJobsRequest):
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -998,21 +933,16 @@ def test_list_patch_jobs(transport: str = 'grpc', request_type=patch_jobs.ListPa
         # Designate an appropriate return value for the call.
         call.return_value = patch_jobs.ListPatchJobsResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_patch_jobs(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == patch_jobs.ListPatchJobsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListPatchJobsPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1024,7 +954,7 @@ def test_list_patch_jobs_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -1035,13 +965,13 @@ def test_list_patch_jobs_empty_call():
         client.list_patch_jobs()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == patch_jobs.ListPatchJobsRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_patch_jobs_async(transport: str = 'grpc_asyncio', request_type=patch_jobs.ListPatchJobsRequest):
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1054,21 +984,18 @@ async def test_list_patch_jobs_async(transport: str = 'grpc_asyncio', request_ty
             type(client.transport.list_patch_jobs),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(patch_jobs.ListPatchJobsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(patch_jobs.ListPatchJobsResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_patch_jobs(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == patch_jobs.ListPatchJobsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListPatchJobsAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1079,12 +1006,13 @@ async def test_list_patch_jobs_async_from_dict():
 
 def test_list_patch_jobs_field_headers():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = patch_jobs.ListPatchJobsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1092,7 +1020,6 @@ def test_list_patch_jobs_field_headers():
             type(client.transport.list_patch_jobs),
             '__call__') as call:
         call.return_value = patch_jobs.ListPatchJobsResponse()
-
         client.list_patch_jobs(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1111,12 +1038,13 @@ def test_list_patch_jobs_field_headers():
 @pytest.mark.asyncio
 async def test_list_patch_jobs_field_headers_async():
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = patch_jobs.ListPatchJobsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1124,7 +1052,6 @@ async def test_list_patch_jobs_field_headers_async():
             type(client.transport.list_patch_jobs),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(patch_jobs.ListPatchJobsResponse())
-
         await client.list_patch_jobs(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1142,7 +1069,7 @@ async def test_list_patch_jobs_field_headers_async():
 
 def test_list_patch_jobs_pager():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1195,7 +1122,7 @@ def test_list_patch_jobs_pager():
 
 def test_list_patch_jobs_pages():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1237,7 +1164,7 @@ def test_list_patch_jobs_pages():
 @pytest.mark.asyncio
 async def test_list_patch_jobs_async_pager():
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1285,7 +1212,7 @@ async def test_list_patch_jobs_async_pager():
 @pytest.mark.asyncio
 async def test_list_patch_jobs_async_pages():
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1326,10 +1253,9 @@ async def test_list_patch_jobs_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_list_patch_job_instance_details(transport: str = 'grpc', request_type=patch_jobs.ListPatchJobInstanceDetailsRequest):
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1344,21 +1270,16 @@ def test_list_patch_job_instance_details(transport: str = 'grpc', request_type=p
         # Designate an appropriate return value for the call.
         call.return_value = patch_jobs.ListPatchJobInstanceDetailsResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_patch_job_instance_details(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == patch_jobs.ListPatchJobInstanceDetailsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListPatchJobInstanceDetailsPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1370,7 +1291,7 @@ def test_list_patch_job_instance_details_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -1381,13 +1302,13 @@ def test_list_patch_job_instance_details_empty_call():
         client.list_patch_job_instance_details()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == patch_jobs.ListPatchJobInstanceDetailsRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_patch_job_instance_details_async(transport: str = 'grpc_asyncio', request_type=patch_jobs.ListPatchJobInstanceDetailsRequest):
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1400,21 +1321,18 @@ async def test_list_patch_job_instance_details_async(transport: str = 'grpc_asyn
             type(client.transport.list_patch_job_instance_details),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(patch_jobs.ListPatchJobInstanceDetailsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(patch_jobs.ListPatchJobInstanceDetailsResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_patch_job_instance_details(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == patch_jobs.ListPatchJobInstanceDetailsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListPatchJobInstanceDetailsAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1425,12 +1343,13 @@ async def test_list_patch_job_instance_details_async_from_dict():
 
 def test_list_patch_job_instance_details_field_headers():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = patch_jobs.ListPatchJobInstanceDetailsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1438,7 +1357,6 @@ def test_list_patch_job_instance_details_field_headers():
             type(client.transport.list_patch_job_instance_details),
             '__call__') as call:
         call.return_value = patch_jobs.ListPatchJobInstanceDetailsResponse()
-
         client.list_patch_job_instance_details(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1457,12 +1375,13 @@ def test_list_patch_job_instance_details_field_headers():
 @pytest.mark.asyncio
 async def test_list_patch_job_instance_details_field_headers_async():
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = patch_jobs.ListPatchJobInstanceDetailsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1470,7 +1389,6 @@ async def test_list_patch_job_instance_details_field_headers_async():
             type(client.transport.list_patch_job_instance_details),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(patch_jobs.ListPatchJobInstanceDetailsResponse())
-
         await client.list_patch_job_instance_details(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1488,7 +1406,7 @@ async def test_list_patch_job_instance_details_field_headers_async():
 
 def test_list_patch_job_instance_details_flattened():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1497,7 +1415,6 @@ def test_list_patch_job_instance_details_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = patch_jobs.ListPatchJobInstanceDetailsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_patch_job_instance_details(
@@ -1508,13 +1425,12 @@ def test_list_patch_job_instance_details_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
 def test_list_patch_job_instance_details_flattened_error():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1529,7 +1445,7 @@ def test_list_patch_job_instance_details_flattened_error():
 @pytest.mark.asyncio
 async def test_list_patch_job_instance_details_flattened_async():
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1550,14 +1466,13 @@ async def test_list_patch_job_instance_details_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
 @pytest.mark.asyncio
 async def test_list_patch_job_instance_details_flattened_error_async():
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1571,7 +1486,7 @@ async def test_list_patch_job_instance_details_flattened_error_async():
 
 def test_list_patch_job_instance_details_pager():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1624,7 +1539,7 @@ def test_list_patch_job_instance_details_pager():
 
 def test_list_patch_job_instance_details_pages():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1666,7 +1581,7 @@ def test_list_patch_job_instance_details_pages():
 @pytest.mark.asyncio
 async def test_list_patch_job_instance_details_async_pager():
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1714,7 +1629,7 @@ async def test_list_patch_job_instance_details_async_pager():
 @pytest.mark.asyncio
 async def test_list_patch_job_instance_details_async_pages():
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1755,10 +1670,9 @@ async def test_list_patch_job_instance_details_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_create_patch_deployment(transport: str = 'grpc', request_type=patch_deployments.CreatePatchDeploymentRequest):
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1773,26 +1687,19 @@ def test_create_patch_deployment(transport: str = 'grpc', request_type=patch_dep
         # Designate an appropriate return value for the call.
         call.return_value = patch_deployments.PatchDeployment(
             name='name_value',
-
             description='description_value',
-
-            one_time_schedule=patch_deployments.OneTimeSchedule(execute_time=timestamp.Timestamp(seconds=751)),
+            one_time_schedule=patch_deployments.OneTimeSchedule(execute_time=timestamp_pb2.Timestamp(seconds=751)),
         )
-
         response = client.create_patch_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == patch_deployments.CreatePatchDeploymentRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, patch_deployments.PatchDeployment)
-
     assert response.name == 'name_value'
-
     assert response.description == 'description_value'
 
 
@@ -1804,7 +1711,7 @@ def test_create_patch_deployment_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -1815,13 +1722,13 @@ def test_create_patch_deployment_empty_call():
         client.create_patch_deployment()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == patch_deployments.CreatePatchDeploymentRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_patch_deployment_async(transport: str = 'grpc_asyncio', request_type=patch_deployments.CreatePatchDeploymentRequest):
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1834,24 +1741,20 @@ async def test_create_patch_deployment_async(transport: str = 'grpc_asyncio', re
             type(client.transport.create_patch_deployment),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(patch_deployments.PatchDeployment(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(patch_deployments.PatchDeployment(
             name='name_value',
             description='description_value',
         ))
-
         response = await client.create_patch_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == patch_deployments.CreatePatchDeploymentRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, patch_deployments.PatchDeployment)
-
     assert response.name == 'name_value'
-
     assert response.description == 'description_value'
 
 
@@ -1862,12 +1765,13 @@ async def test_create_patch_deployment_async_from_dict():
 
 def test_create_patch_deployment_field_headers():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = patch_deployments.CreatePatchDeploymentRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1875,7 +1779,6 @@ def test_create_patch_deployment_field_headers():
             type(client.transport.create_patch_deployment),
             '__call__') as call:
         call.return_value = patch_deployments.PatchDeployment()
-
         client.create_patch_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1894,12 +1797,13 @@ def test_create_patch_deployment_field_headers():
 @pytest.mark.asyncio
 async def test_create_patch_deployment_field_headers_async():
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = patch_deployments.CreatePatchDeploymentRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1907,7 +1811,6 @@ async def test_create_patch_deployment_field_headers_async():
             type(client.transport.create_patch_deployment),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(patch_deployments.PatchDeployment())
-
         await client.create_patch_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1925,7 +1828,7 @@ async def test_create_patch_deployment_field_headers_async():
 
 def test_get_patch_deployment(transport: str = 'grpc', request_type=patch_deployments.GetPatchDeploymentRequest):
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1940,26 +1843,19 @@ def test_get_patch_deployment(transport: str = 'grpc', request_type=patch_deploy
         # Designate an appropriate return value for the call.
         call.return_value = patch_deployments.PatchDeployment(
             name='name_value',
-
             description='description_value',
-
-            one_time_schedule=patch_deployments.OneTimeSchedule(execute_time=timestamp.Timestamp(seconds=751)),
+            one_time_schedule=patch_deployments.OneTimeSchedule(execute_time=timestamp_pb2.Timestamp(seconds=751)),
         )
-
         response = client.get_patch_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == patch_deployments.GetPatchDeploymentRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, patch_deployments.PatchDeployment)
-
     assert response.name == 'name_value'
-
     assert response.description == 'description_value'
 
 
@@ -1971,7 +1867,7 @@ def test_get_patch_deployment_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -1982,13 +1878,13 @@ def test_get_patch_deployment_empty_call():
         client.get_patch_deployment()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == patch_deployments.GetPatchDeploymentRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_patch_deployment_async(transport: str = 'grpc_asyncio', request_type=patch_deployments.GetPatchDeploymentRequest):
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2001,24 +1897,20 @@ async def test_get_patch_deployment_async(transport: str = 'grpc_asyncio', reque
             type(client.transport.get_patch_deployment),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(patch_deployments.PatchDeployment(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(patch_deployments.PatchDeployment(
             name='name_value',
             description='description_value',
         ))
-
         response = await client.get_patch_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == patch_deployments.GetPatchDeploymentRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, patch_deployments.PatchDeployment)
-
     assert response.name == 'name_value'
-
     assert response.description == 'description_value'
 
 
@@ -2029,12 +1921,13 @@ async def test_get_patch_deployment_async_from_dict():
 
 def test_get_patch_deployment_field_headers():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = patch_deployments.GetPatchDeploymentRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2042,7 +1935,6 @@ def test_get_patch_deployment_field_headers():
             type(client.transport.get_patch_deployment),
             '__call__') as call:
         call.return_value = patch_deployments.PatchDeployment()
-
         client.get_patch_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2061,12 +1953,13 @@ def test_get_patch_deployment_field_headers():
 @pytest.mark.asyncio
 async def test_get_patch_deployment_field_headers_async():
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = patch_deployments.GetPatchDeploymentRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2074,7 +1967,6 @@ async def test_get_patch_deployment_field_headers_async():
             type(client.transport.get_patch_deployment),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(patch_deployments.PatchDeployment())
-
         await client.get_patch_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2092,7 +1984,7 @@ async def test_get_patch_deployment_field_headers_async():
 
 def test_list_patch_deployments(transport: str = 'grpc', request_type=patch_deployments.ListPatchDeploymentsRequest):
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2107,21 +1999,16 @@ def test_list_patch_deployments(transport: str = 'grpc', request_type=patch_depl
         # Designate an appropriate return value for the call.
         call.return_value = patch_deployments.ListPatchDeploymentsResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_patch_deployments(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == patch_deployments.ListPatchDeploymentsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListPatchDeploymentsPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -2133,7 +2020,7 @@ def test_list_patch_deployments_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -2144,13 +2031,13 @@ def test_list_patch_deployments_empty_call():
         client.list_patch_deployments()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == patch_deployments.ListPatchDeploymentsRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_patch_deployments_async(transport: str = 'grpc_asyncio', request_type=patch_deployments.ListPatchDeploymentsRequest):
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2163,21 +2050,18 @@ async def test_list_patch_deployments_async(transport: str = 'grpc_asyncio', req
             type(client.transport.list_patch_deployments),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(patch_deployments.ListPatchDeploymentsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(patch_deployments.ListPatchDeploymentsResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_patch_deployments(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == patch_deployments.ListPatchDeploymentsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListPatchDeploymentsAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -2188,12 +2072,13 @@ async def test_list_patch_deployments_async_from_dict():
 
 def test_list_patch_deployments_field_headers():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = patch_deployments.ListPatchDeploymentsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2201,7 +2086,6 @@ def test_list_patch_deployments_field_headers():
             type(client.transport.list_patch_deployments),
             '__call__') as call:
         call.return_value = patch_deployments.ListPatchDeploymentsResponse()
-
         client.list_patch_deployments(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2220,12 +2104,13 @@ def test_list_patch_deployments_field_headers():
 @pytest.mark.asyncio
 async def test_list_patch_deployments_field_headers_async():
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = patch_deployments.ListPatchDeploymentsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2233,7 +2118,6 @@ async def test_list_patch_deployments_field_headers_async():
             type(client.transport.list_patch_deployments),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(patch_deployments.ListPatchDeploymentsResponse())
-
         await client.list_patch_deployments(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2251,7 +2135,7 @@ async def test_list_patch_deployments_field_headers_async():
 
 def test_list_patch_deployments_pager():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2304,7 +2188,7 @@ def test_list_patch_deployments_pager():
 
 def test_list_patch_deployments_pages():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2346,7 +2230,7 @@ def test_list_patch_deployments_pages():
 @pytest.mark.asyncio
 async def test_list_patch_deployments_async_pager():
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2394,7 +2278,7 @@ async def test_list_patch_deployments_async_pager():
 @pytest.mark.asyncio
 async def test_list_patch_deployments_async_pages():
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2435,10 +2319,9 @@ async def test_list_patch_deployments_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_delete_patch_deployment(transport: str = 'grpc', request_type=patch_deployments.DeletePatchDeploymentRequest):
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2452,13 +2335,11 @@ def test_delete_patch_deployment(transport: str = 'grpc', request_type=patch_dep
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         response = client.delete_patch_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == patch_deployments.DeletePatchDeploymentRequest()
 
     # Establish that the response is the type that we expect.
@@ -2473,7 +2354,7 @@ def test_delete_patch_deployment_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -2484,13 +2365,13 @@ def test_delete_patch_deployment_empty_call():
         client.delete_patch_deployment()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == patch_deployments.DeletePatchDeploymentRequest()
+
 
 @pytest.mark.asyncio
 async def test_delete_patch_deployment_async(transport: str = 'grpc_asyncio', request_type=patch_deployments.DeletePatchDeploymentRequest):
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2504,13 +2385,11 @@ async def test_delete_patch_deployment_async(transport: str = 'grpc_asyncio', re
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         response = await client.delete_patch_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == patch_deployments.DeletePatchDeploymentRequest()
 
     # Establish that the response is the type that we expect.
@@ -2524,12 +2403,13 @@ async def test_delete_patch_deployment_async_from_dict():
 
 def test_delete_patch_deployment_field_headers():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = patch_deployments.DeletePatchDeploymentRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2537,7 +2417,6 @@ def test_delete_patch_deployment_field_headers():
             type(client.transport.delete_patch_deployment),
             '__call__') as call:
         call.return_value = None
-
         client.delete_patch_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2556,12 +2435,13 @@ def test_delete_patch_deployment_field_headers():
 @pytest.mark.asyncio
 async def test_delete_patch_deployment_field_headers_async():
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = patch_deployments.DeletePatchDeploymentRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2569,7 +2449,6 @@ async def test_delete_patch_deployment_field_headers_async():
             type(client.transport.delete_patch_deployment),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         await client.delete_patch_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2587,7 +2466,7 @@ async def test_delete_patch_deployment_field_headers_async():
 
 def test_create_guest_policy(transport: str = 'grpc', request_type=guest_policies.CreateGuestPolicyRequest):
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2602,29 +2481,20 @@ def test_create_guest_policy(transport: str = 'grpc', request_type=guest_policie
         # Designate an appropriate return value for the call.
         call.return_value = guest_policies.GuestPolicy(
             name='name_value',
-
             description='description_value',
-
             etag='etag_value',
-
         )
-
         response = client.create_guest_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == guest_policies.CreateGuestPolicyRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, guest_policies.GuestPolicy)
-
     assert response.name == 'name_value'
-
     assert response.description == 'description_value'
-
     assert response.etag == 'etag_value'
 
 
@@ -2636,7 +2506,7 @@ def test_create_guest_policy_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -2647,13 +2517,13 @@ def test_create_guest_policy_empty_call():
         client.create_guest_policy()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == guest_policies.CreateGuestPolicyRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_guest_policy_async(transport: str = 'grpc_asyncio', request_type=guest_policies.CreateGuestPolicyRequest):
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2666,27 +2536,22 @@ async def test_create_guest_policy_async(transport: str = 'grpc_asyncio', reques
             type(client.transport.create_guest_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(guest_policies.GuestPolicy(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(guest_policies.GuestPolicy(
             name='name_value',
             description='description_value',
             etag='etag_value',
         ))
-
         response = await client.create_guest_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == guest_policies.CreateGuestPolicyRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, guest_policies.GuestPolicy)
-
     assert response.name == 'name_value'
-
     assert response.description == 'description_value'
-
     assert response.etag == 'etag_value'
 
 
@@ -2697,12 +2562,13 @@ async def test_create_guest_policy_async_from_dict():
 
 def test_create_guest_policy_field_headers():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = guest_policies.CreateGuestPolicyRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2710,7 +2576,6 @@ def test_create_guest_policy_field_headers():
             type(client.transport.create_guest_policy),
             '__call__') as call:
         call.return_value = guest_policies.GuestPolicy()
-
         client.create_guest_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2729,12 +2594,13 @@ def test_create_guest_policy_field_headers():
 @pytest.mark.asyncio
 async def test_create_guest_policy_field_headers_async():
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = guest_policies.CreateGuestPolicyRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2742,7 +2608,6 @@ async def test_create_guest_policy_field_headers_async():
             type(client.transport.create_guest_policy),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(guest_policies.GuestPolicy())
-
         await client.create_guest_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2760,7 +2625,7 @@ async def test_create_guest_policy_field_headers_async():
 
 def test_create_guest_policy_flattened():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2769,7 +2634,6 @@ def test_create_guest_policy_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = guest_policies.GuestPolicy()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_guest_policy(
@@ -2781,15 +2645,13 @@ def test_create_guest_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].guest_policy == guest_policies.GuestPolicy(name='name_value')
 
 
 def test_create_guest_policy_flattened_error():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -2805,7 +2667,7 @@ def test_create_guest_policy_flattened_error():
 @pytest.mark.asyncio
 async def test_create_guest_policy_flattened_async():
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2827,16 +2689,14 @@ async def test_create_guest_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].guest_policy == guest_policies.GuestPolicy(name='name_value')
 
 
 @pytest.mark.asyncio
 async def test_create_guest_policy_flattened_error_async():
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -2851,7 +2711,7 @@ async def test_create_guest_policy_flattened_error_async():
 
 def test_get_guest_policy(transport: str = 'grpc', request_type=guest_policies.GetGuestPolicyRequest):
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2866,29 +2726,20 @@ def test_get_guest_policy(transport: str = 'grpc', request_type=guest_policies.G
         # Designate an appropriate return value for the call.
         call.return_value = guest_policies.GuestPolicy(
             name='name_value',
-
             description='description_value',
-
             etag='etag_value',
-
         )
-
         response = client.get_guest_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == guest_policies.GetGuestPolicyRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, guest_policies.GuestPolicy)
-
     assert response.name == 'name_value'
-
     assert response.description == 'description_value'
-
     assert response.etag == 'etag_value'
 
 
@@ -2900,7 +2751,7 @@ def test_get_guest_policy_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -2911,13 +2762,13 @@ def test_get_guest_policy_empty_call():
         client.get_guest_policy()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == guest_policies.GetGuestPolicyRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_guest_policy_async(transport: str = 'grpc_asyncio', request_type=guest_policies.GetGuestPolicyRequest):
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2930,27 +2781,22 @@ async def test_get_guest_policy_async(transport: str = 'grpc_asyncio', request_t
             type(client.transport.get_guest_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(guest_policies.GuestPolicy(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(guest_policies.GuestPolicy(
             name='name_value',
             description='description_value',
             etag='etag_value',
         ))
-
         response = await client.get_guest_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == guest_policies.GetGuestPolicyRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, guest_policies.GuestPolicy)
-
     assert response.name == 'name_value'
-
     assert response.description == 'description_value'
-
     assert response.etag == 'etag_value'
 
 
@@ -2961,12 +2807,13 @@ async def test_get_guest_policy_async_from_dict():
 
 def test_get_guest_policy_field_headers():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = guest_policies.GetGuestPolicyRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2974,7 +2821,6 @@ def test_get_guest_policy_field_headers():
             type(client.transport.get_guest_policy),
             '__call__') as call:
         call.return_value = guest_policies.GuestPolicy()
-
         client.get_guest_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2993,12 +2839,13 @@ def test_get_guest_policy_field_headers():
 @pytest.mark.asyncio
 async def test_get_guest_policy_field_headers_async():
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = guest_policies.GetGuestPolicyRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3006,7 +2853,6 @@ async def test_get_guest_policy_field_headers_async():
             type(client.transport.get_guest_policy),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(guest_policies.GuestPolicy())
-
         await client.get_guest_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3024,7 +2870,7 @@ async def test_get_guest_policy_field_headers_async():
 
 def test_get_guest_policy_flattened():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3033,7 +2879,6 @@ def test_get_guest_policy_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = guest_policies.GuestPolicy()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_guest_policy(
@@ -3044,13 +2889,12 @@ def test_get_guest_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 def test_get_guest_policy_flattened_error():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -3065,7 +2909,7 @@ def test_get_guest_policy_flattened_error():
 @pytest.mark.asyncio
 async def test_get_guest_policy_flattened_async():
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3086,14 +2930,13 @@ async def test_get_guest_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 @pytest.mark.asyncio
 async def test_get_guest_policy_flattened_error_async():
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -3107,7 +2950,7 @@ async def test_get_guest_policy_flattened_error_async():
 
 def test_list_guest_policies(transport: str = 'grpc', request_type=guest_policies.ListGuestPoliciesRequest):
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3122,21 +2965,16 @@ def test_list_guest_policies(transport: str = 'grpc', request_type=guest_policie
         # Designate an appropriate return value for the call.
         call.return_value = guest_policies.ListGuestPoliciesResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_guest_policies(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == guest_policies.ListGuestPoliciesRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListGuestPoliciesPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -3148,7 +2986,7 @@ def test_list_guest_policies_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -3159,13 +2997,13 @@ def test_list_guest_policies_empty_call():
         client.list_guest_policies()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == guest_policies.ListGuestPoliciesRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_guest_policies_async(transport: str = 'grpc_asyncio', request_type=guest_policies.ListGuestPoliciesRequest):
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3178,21 +3016,18 @@ async def test_list_guest_policies_async(transport: str = 'grpc_asyncio', reques
             type(client.transport.list_guest_policies),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(guest_policies.ListGuestPoliciesResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(guest_policies.ListGuestPoliciesResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_guest_policies(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == guest_policies.ListGuestPoliciesRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListGuestPoliciesAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -3203,12 +3038,13 @@ async def test_list_guest_policies_async_from_dict():
 
 def test_list_guest_policies_field_headers():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = guest_policies.ListGuestPoliciesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3216,7 +3052,6 @@ def test_list_guest_policies_field_headers():
             type(client.transport.list_guest_policies),
             '__call__') as call:
         call.return_value = guest_policies.ListGuestPoliciesResponse()
-
         client.list_guest_policies(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3235,12 +3070,13 @@ def test_list_guest_policies_field_headers():
 @pytest.mark.asyncio
 async def test_list_guest_policies_field_headers_async():
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = guest_policies.ListGuestPoliciesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3248,7 +3084,6 @@ async def test_list_guest_policies_field_headers_async():
             type(client.transport.list_guest_policies),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(guest_policies.ListGuestPoliciesResponse())
-
         await client.list_guest_policies(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3266,7 +3101,7 @@ async def test_list_guest_policies_field_headers_async():
 
 def test_list_guest_policies_flattened():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3275,7 +3110,6 @@ def test_list_guest_policies_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = guest_policies.ListGuestPoliciesResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_guest_policies(
@@ -3286,13 +3120,12 @@ def test_list_guest_policies_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
 def test_list_guest_policies_flattened_error():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -3307,7 +3140,7 @@ def test_list_guest_policies_flattened_error():
 @pytest.mark.asyncio
 async def test_list_guest_policies_flattened_async():
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3328,14 +3161,13 @@ async def test_list_guest_policies_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
 @pytest.mark.asyncio
 async def test_list_guest_policies_flattened_error_async():
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -3349,7 +3181,7 @@ async def test_list_guest_policies_flattened_error_async():
 
 def test_list_guest_policies_pager():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3402,7 +3234,7 @@ def test_list_guest_policies_pager():
 
 def test_list_guest_policies_pages():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3444,7 +3276,7 @@ def test_list_guest_policies_pages():
 @pytest.mark.asyncio
 async def test_list_guest_policies_async_pager():
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3492,7 +3324,7 @@ async def test_list_guest_policies_async_pager():
 @pytest.mark.asyncio
 async def test_list_guest_policies_async_pages():
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3533,10 +3365,9 @@ async def test_list_guest_policies_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_update_guest_policy(transport: str = 'grpc', request_type=guest_policies.UpdateGuestPolicyRequest):
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3551,29 +3382,20 @@ def test_update_guest_policy(transport: str = 'grpc', request_type=guest_policie
         # Designate an appropriate return value for the call.
         call.return_value = guest_policies.GuestPolicy(
             name='name_value',
-
             description='description_value',
-
             etag='etag_value',
-
         )
-
         response = client.update_guest_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == guest_policies.UpdateGuestPolicyRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, guest_policies.GuestPolicy)
-
     assert response.name == 'name_value'
-
     assert response.description == 'description_value'
-
     assert response.etag == 'etag_value'
 
 
@@ -3585,7 +3407,7 @@ def test_update_guest_policy_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -3596,13 +3418,13 @@ def test_update_guest_policy_empty_call():
         client.update_guest_policy()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == guest_policies.UpdateGuestPolicyRequest()
+
 
 @pytest.mark.asyncio
 async def test_update_guest_policy_async(transport: str = 'grpc_asyncio', request_type=guest_policies.UpdateGuestPolicyRequest):
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3615,27 +3437,22 @@ async def test_update_guest_policy_async(transport: str = 'grpc_asyncio', reques
             type(client.transport.update_guest_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(guest_policies.GuestPolicy(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(guest_policies.GuestPolicy(
             name='name_value',
             description='description_value',
             etag='etag_value',
         ))
-
         response = await client.update_guest_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == guest_policies.UpdateGuestPolicyRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, guest_policies.GuestPolicy)
-
     assert response.name == 'name_value'
-
     assert response.description == 'description_value'
-
     assert response.etag == 'etag_value'
 
 
@@ -3646,12 +3463,13 @@ async def test_update_guest_policy_async_from_dict():
 
 def test_update_guest_policy_field_headers():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = guest_policies.UpdateGuestPolicyRequest()
+
     request.guest_policy.name = 'guest_policy.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3659,7 +3477,6 @@ def test_update_guest_policy_field_headers():
             type(client.transport.update_guest_policy),
             '__call__') as call:
         call.return_value = guest_policies.GuestPolicy()
-
         client.update_guest_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3678,12 +3495,13 @@ def test_update_guest_policy_field_headers():
 @pytest.mark.asyncio
 async def test_update_guest_policy_field_headers_async():
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = guest_policies.UpdateGuestPolicyRequest()
+
     request.guest_policy.name = 'guest_policy.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3691,7 +3509,6 @@ async def test_update_guest_policy_field_headers_async():
             type(client.transport.update_guest_policy),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(guest_policies.GuestPolicy())
-
         await client.update_guest_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3709,7 +3526,7 @@ async def test_update_guest_policy_field_headers_async():
 
 def test_update_guest_policy_flattened():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3718,27 +3535,24 @@ def test_update_guest_policy_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = guest_policies.GuestPolicy()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_guest_policy(
             guest_policy=guest_policies.GuestPolicy(name='name_value'),
-            update_mask=field_mask.FieldMask(paths=['paths_value']),
+            update_mask=field_mask_pb2.FieldMask(paths=['paths_value']),
         )
 
         # Establish that the underlying call was made with the expected
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].guest_policy == guest_policies.GuestPolicy(name='name_value')
-
-        assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
+        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
 
 
 def test_update_guest_policy_flattened_error():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -3747,14 +3561,14 @@ def test_update_guest_policy_flattened_error():
         client.update_guest_policy(
             guest_policies.UpdateGuestPolicyRequest(),
             guest_policy=guest_policies.GuestPolicy(name='name_value'),
-            update_mask=field_mask.FieldMask(paths=['paths_value']),
+            update_mask=field_mask_pb2.FieldMask(paths=['paths_value']),
         )
 
 
 @pytest.mark.asyncio
 async def test_update_guest_policy_flattened_async():
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3769,23 +3583,21 @@ async def test_update_guest_policy_flattened_async():
         # using the keyword arguments to the method.
         response = await client.update_guest_policy(
             guest_policy=guest_policies.GuestPolicy(name='name_value'),
-            update_mask=field_mask.FieldMask(paths=['paths_value']),
+            update_mask=field_mask_pb2.FieldMask(paths=['paths_value']),
         )
 
         # Establish that the underlying call was made with the expected
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].guest_policy == guest_policies.GuestPolicy(name='name_value')
-
-        assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
+        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
 
 
 @pytest.mark.asyncio
 async def test_update_guest_policy_flattened_error_async():
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -3794,13 +3606,13 @@ async def test_update_guest_policy_flattened_error_async():
         await client.update_guest_policy(
             guest_policies.UpdateGuestPolicyRequest(),
             guest_policy=guest_policies.GuestPolicy(name='name_value'),
-            update_mask=field_mask.FieldMask(paths=['paths_value']),
+            update_mask=field_mask_pb2.FieldMask(paths=['paths_value']),
         )
 
 
 def test_delete_guest_policy(transport: str = 'grpc', request_type=guest_policies.DeleteGuestPolicyRequest):
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3814,13 +3626,11 @@ def test_delete_guest_policy(transport: str = 'grpc', request_type=guest_policie
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         response = client.delete_guest_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == guest_policies.DeleteGuestPolicyRequest()
 
     # Establish that the response is the type that we expect.
@@ -3835,7 +3645,7 @@ def test_delete_guest_policy_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -3846,13 +3656,13 @@ def test_delete_guest_policy_empty_call():
         client.delete_guest_policy()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == guest_policies.DeleteGuestPolicyRequest()
+
 
 @pytest.mark.asyncio
 async def test_delete_guest_policy_async(transport: str = 'grpc_asyncio', request_type=guest_policies.DeleteGuestPolicyRequest):
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3866,13 +3676,11 @@ async def test_delete_guest_policy_async(transport: str = 'grpc_asyncio', reques
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         response = await client.delete_guest_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == guest_policies.DeleteGuestPolicyRequest()
 
     # Establish that the response is the type that we expect.
@@ -3886,12 +3694,13 @@ async def test_delete_guest_policy_async_from_dict():
 
 def test_delete_guest_policy_field_headers():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = guest_policies.DeleteGuestPolicyRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3899,7 +3708,6 @@ def test_delete_guest_policy_field_headers():
             type(client.transport.delete_guest_policy),
             '__call__') as call:
         call.return_value = None
-
         client.delete_guest_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3918,12 +3726,13 @@ def test_delete_guest_policy_field_headers():
 @pytest.mark.asyncio
 async def test_delete_guest_policy_field_headers_async():
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = guest_policies.DeleteGuestPolicyRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3931,7 +3740,6 @@ async def test_delete_guest_policy_field_headers_async():
             type(client.transport.delete_guest_policy),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         await client.delete_guest_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3949,7 +3757,7 @@ async def test_delete_guest_policy_field_headers_async():
 
 def test_delete_guest_policy_flattened():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3958,7 +3766,6 @@ def test_delete_guest_policy_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_guest_policy(
@@ -3969,13 +3776,12 @@ def test_delete_guest_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 def test_delete_guest_policy_flattened_error():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -3990,7 +3796,7 @@ def test_delete_guest_policy_flattened_error():
 @pytest.mark.asyncio
 async def test_delete_guest_policy_flattened_async():
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4011,14 +3817,13 @@ async def test_delete_guest_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 @pytest.mark.asyncio
 async def test_delete_guest_policy_flattened_error_async():
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -4032,7 +3837,7 @@ async def test_delete_guest_policy_flattened_error_async():
 
 def test_lookup_effective_guest_policy(transport: str = 'grpc', request_type=guest_policies.LookupEffectiveGuestPolicyRequest):
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -4047,17 +3852,14 @@ def test_lookup_effective_guest_policy(transport: str = 'grpc', request_type=gue
         # Designate an appropriate return value for the call.
         call.return_value = guest_policies.EffectiveGuestPolicy(
         )
-
         response = client.lookup_effective_guest_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == guest_policies.LookupEffectiveGuestPolicyRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, guest_policies.EffectiveGuestPolicy)
 
 
@@ -4069,7 +3871,7 @@ def test_lookup_effective_guest_policy_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -4080,13 +3882,13 @@ def test_lookup_effective_guest_policy_empty_call():
         client.lookup_effective_guest_policy()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == guest_policies.LookupEffectiveGuestPolicyRequest()
+
 
 @pytest.mark.asyncio
 async def test_lookup_effective_guest_policy_async(transport: str = 'grpc_asyncio', request_type=guest_policies.LookupEffectiveGuestPolicyRequest):
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -4099,15 +3901,13 @@ async def test_lookup_effective_guest_policy_async(transport: str = 'grpc_asynci
             type(client.transport.lookup_effective_guest_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(guest_policies.EffectiveGuestPolicy(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(guest_policies.EffectiveGuestPolicy(
         ))
-
         response = await client.lookup_effective_guest_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == guest_policies.LookupEffectiveGuestPolicyRequest()
 
     # Establish that the response is the type that we expect.
@@ -4121,12 +3921,13 @@ async def test_lookup_effective_guest_policy_async_from_dict():
 
 def test_lookup_effective_guest_policy_field_headers():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = guest_policies.LookupEffectiveGuestPolicyRequest()
+
     request.instance = 'instance/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4134,7 +3935,6 @@ def test_lookup_effective_guest_policy_field_headers():
             type(client.transport.lookup_effective_guest_policy),
             '__call__') as call:
         call.return_value = guest_policies.EffectiveGuestPolicy()
-
         client.lookup_effective_guest_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4153,12 +3953,13 @@ def test_lookup_effective_guest_policy_field_headers():
 @pytest.mark.asyncio
 async def test_lookup_effective_guest_policy_field_headers_async():
     client = OsConfigServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = guest_policies.LookupEffectiveGuestPolicyRequest()
+
     request.instance = 'instance/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4166,7 +3967,6 @@ async def test_lookup_effective_guest_policy_field_headers_async():
             type(client.transport.lookup_effective_guest_policy),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(guest_policies.EffectiveGuestPolicy())
-
         await client.lookup_effective_guest_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4185,17 +3985,17 @@ async def test_lookup_effective_guest_policy_field_headers_async():
 def test_credentials_transport_error():
     # It is an error to provide credentials and a transport instance.
     transport = transports.OsConfigServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = OsConfigServiceClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             transport=transport,
         )
 
     # It is an error to provide a credentials file and a transport instance.
     transport = transports.OsConfigServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = OsConfigServiceClient(
@@ -4205,7 +4005,7 @@ def test_credentials_transport_error():
 
     # It is an error to provide scopes and a transport instance.
     transport = transports.OsConfigServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = OsConfigServiceClient(
@@ -4217,26 +4017,24 @@ def test_credentials_transport_error():
 def test_transport_instance():
     # A client may be instantiated with a custom transport instance.
     transport = transports.OsConfigServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     client = OsConfigServiceClient(transport=transport)
     assert client.transport is transport
 
-
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.OsConfigServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     channel = transport.grpc_channel
     assert channel
 
     transport = transports.OsConfigServiceGrpcAsyncIOTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     channel = transport.grpc_channel
     assert channel
-
 
 @pytest.mark.parametrize("transport_class", [
     transports.OsConfigServiceGrpcTransport,
@@ -4244,28 +4042,26 @@ def test_transport_get_channel():
 ])
 def test_transport_adc(transport_class):
     # Test default credentials are used if not provided.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport_class()
         adc.assert_called_once()
-
 
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     assert isinstance(
         client.transport,
         transports.OsConfigServiceGrpcTransport,
     )
 
-
 def test_os_config_service_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
-    with pytest.raises(exceptions.DuplicateCredentialArgs):
+    with pytest.raises(core_exceptions.DuplicateCredentialArgs):
         transport = transports.OsConfigServiceTransport(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             credentials_file="credentials.json"
         )
 
@@ -4275,7 +4071,7 @@ def test_os_config_service_base_transport():
     with mock.patch('google.cloud.osconfig_v1beta.services.os_config_service.transports.OsConfigServiceTransport.__init__') as Transport:
         Transport.return_value = None
         transport = transports.OsConfigServiceTransport(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
         )
 
     # Every method on the transport should just blindly
@@ -4296,17 +4092,37 @@ def test_os_config_service_base_transport():
         'update_guest_policy',
         'delete_guest_policy',
         'lookup_effective_guest_policy',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
+@requires_google_auth_gte_1_25_0
 def test_os_config_service_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.osconfig_v1beta.services.os_config_service.transports.OsConfigServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.osconfig_v1beta.services.os_config_service.transports.OsConfigServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
+        load_creds.return_value = (ga_credentials.AnonymousCredentials(), None)
+        transport = transports.OsConfigServiceTransport(
+            credentials_file="credentials.json",
+            quota_project_id="octopus",
+        )
+        load_creds.assert_called_once_with("credentials.json",
+            scopes=None,
+            default_scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
+            quota_project_id="octopus",
+        )
+
+
+@requires_google_auth_lt_1_25_0
+def test_os_config_service_base_transport_with_credentials_file_old_google_auth():
+    # Instantiate the base transport with a credentials file
+    with mock.patch.object(google.auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.osconfig_v1beta.services.os_config_service.transports.OsConfigServiceTransport._prep_wrapped_messages') as Transport:
+        Transport.return_value = None
+        load_creds.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.OsConfigServiceTransport(
             credentials_file="credentials.json",
             quota_project_id="octopus",
@@ -4320,33 +4136,185 @@ def test_os_config_service_base_transport_with_credentials_file():
 
 def test_os_config_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.osconfig_v1beta.services.os_config_service.transports.OsConfigServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc, mock.patch('google.cloud.osconfig_v1beta.services.os_config_service.transports.OsConfigServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.OsConfigServiceTransport()
         adc.assert_called_once()
 
 
+@requires_google_auth_gte_1_25_0
 def test_os_config_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         OsConfigServiceClient()
-        adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',),
+        adc.assert_called_once_with(
+            scopes=None,
+            default_scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
             quota_project_id=None,
         )
 
 
-def test_os_config_service_transport_auth_adc():
+@requires_google_auth_lt_1_25_0
+def test_os_config_service_auth_adc_old_google_auth():
+    # If no credentials are provided, we should use ADC credentials.
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
+        OsConfigServiceClient()
+        adc.assert_called_once_with(
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id=None,
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.OsConfigServiceGrpcTransport,
+        transports.OsConfigServiceGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_gte_1_25_0
+def test_os_config_service_transport_auth_adc(transport_class):
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transports.OsConfigServiceGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
-        adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',),
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+        adc.assert_called_once_with(
+            scopes=["1", "2"],
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
             quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.OsConfigServiceGrpcTransport,
+        transports.OsConfigServiceGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_lt_1_25_0
+def test_os_config_service_transport_auth_adc_old_google_auth(transport_class):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
+            quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.OsConfigServiceGrpcTransport, grpc_helpers),
+        (transports.OsConfigServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_gte_1_26_0
+def test_os_config_service_transport_create_channel(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = ga_credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(
+            quota_project_id="octopus",
+            scopes=["1", "2"]
+        )
+
+        create_channel.assert_called_with(
+            "osconfig.googleapis.com:443",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            default_scopes=(
+                'https://www.googleapis.com/auth/cloud-platform',
+),
+            scopes=["1", "2"],
+            default_host="osconfig.googleapis.com",
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.OsConfigServiceGrpcTransport, grpc_helpers),
+        (transports.OsConfigServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_os_config_service_transport_create_channel_old_api_core(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = ga_credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(quota_project_id="octopus")
+
+        create_channel.assert_called_with(
+            "osconfig.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=(
+                'https://www.googleapis.com/auth/cloud-platform',
+),
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.OsConfigServiceGrpcTransport, grpc_helpers),
+        (transports.OsConfigServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_os_config_service_transport_create_channel_user_scopes(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = ga_credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+
+        create_channel.assert_called_with(
+            "osconfig.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=["1", "2"],
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
         )
 
 
@@ -4354,7 +4322,7 @@ def test_os_config_service_transport_auth_adc():
 def test_os_config_service_grpc_transport_client_cert_source_for_mtls(
     transport_class
 ):
-    cred = credentials.AnonymousCredentials()
+    cred = ga_credentials.AnonymousCredentials()
 
     # Check ssl_channel_credentials is used if provided.
     with mock.patch.object(transport_class, "create_channel") as mock_create_channel:
@@ -4396,7 +4364,7 @@ def test_os_config_service_grpc_transport_client_cert_source_for_mtls(
 
 def test_os_config_service_host_no_port():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='osconfig.googleapis.com'),
     )
     assert client.transport._host == 'osconfig.googleapis.com:443'
@@ -4404,11 +4372,10 @@ def test_os_config_service_host_no_port():
 
 def test_os_config_service_host_with_port():
     client = OsConfigServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='osconfig.googleapis.com:8000'),
     )
     assert client.transport._host == 'osconfig.googleapis.com:8000'
-
 
 def test_os_config_service_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -4450,9 +4417,9 @@ def test_os_config_service_transport_channel_mtls_with_client_cert_source(
             mock_grpc_channel = mock.Mock()
             grpc_create_channel.return_value = mock_grpc_channel
 
-            cred = credentials.AnonymousCredentials()
+            cred = ga_credentials.AnonymousCredentials()
             with pytest.warns(DeprecationWarning):
-                with mock.patch.object(auth, 'default') as adc:
+                with mock.patch.object(google.auth, 'default') as adc:
                     adc.return_value = (cred, None)
                     transport = transport_class(
                         host="squid.clam.whelk",
@@ -4527,7 +4494,6 @@ def test_os_config_service_transport_channel_mtls_with_adc(
 def test_guest_policy_path():
     project = "squid"
     guest_policy = "clam"
-
     expected = "projects/{project}/guestPolicies/{guest_policy}".format(project=project, guest_policy=guest_policy, )
     actual = OsConfigServiceClient.guest_policy_path(project, guest_policy)
     assert expected == actual
@@ -4535,9 +4501,8 @@ def test_guest_policy_path():
 
 def test_parse_guest_policy_path():
     expected = {
-    "project": "whelk",
-    "guest_policy": "octopus",
-
+        "project": "whelk",
+        "guest_policy": "octopus",
     }
     path = OsConfigServiceClient.guest_policy_path(**expected)
 
@@ -4547,7 +4512,6 @@ def test_parse_guest_policy_path():
 
 def test_common_billing_account_path():
     billing_account = "oyster"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = OsConfigServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -4555,8 +4519,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "nudibranch",
-
+        "billing_account": "nudibranch",
     }
     path = OsConfigServiceClient.common_billing_account_path(**expected)
 
@@ -4566,7 +4529,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "cuttlefish"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = OsConfigServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -4574,8 +4536,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "mussel",
-
+        "folder": "mussel",
     }
     path = OsConfigServiceClient.common_folder_path(**expected)
 
@@ -4585,7 +4546,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "winkle"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = OsConfigServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -4593,8 +4553,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "nautilus",
-
+        "organization": "nautilus",
     }
     path = OsConfigServiceClient.common_organization_path(**expected)
 
@@ -4604,7 +4563,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "scallop"
-
     expected = "projects/{project}".format(project=project, )
     actual = OsConfigServiceClient.common_project_path(project)
     assert expected == actual
@@ -4612,8 +4570,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "abalone",
-
+        "project": "abalone",
     }
     path = OsConfigServiceClient.common_project_path(**expected)
 
@@ -4624,7 +4581,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "squid"
     location = "clam"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = OsConfigServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -4632,9 +4588,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "whelk",
-    "location": "octopus",
-
+        "project": "whelk",
+        "location": "octopus",
     }
     path = OsConfigServiceClient.common_location_path(**expected)
 
@@ -4648,7 +4603,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
 
     with mock.patch.object(transports.OsConfigServiceTransport, '_prep_wrapped_messages') as prep:
         client = OsConfigServiceClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)
@@ -4656,7 +4611,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
     with mock.patch.object(transports.OsConfigServiceTransport, '_prep_wrapped_messages') as prep:
         transport_class = OsConfigServiceClient.get_transport_class()
         transport = transport_class(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -31,7 +29,6 @@ __protobuf__ = proto.module(
 
 class ListConnectionsRequest(proto.Message):
     r"""The request for [ListConnections][Management.ListConnections].
-
     Attributes:
         parent (str):
             Required. Parent name of the form:
@@ -51,16 +48,22 @@ class ListConnectionsRequest(proto.Message):
             page token.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class ListConnectionsResponse(proto.Message):
     r"""The response for [ListConnections][Management.ListConnections].
-
     Attributes:
         connections (Sequence[google.cloud.apigeeconnect_v1.types.Connection]):
             A list of clients.
@@ -74,16 +77,19 @@ class ListConnectionsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    connections = proto.RepeatedField(proto.MESSAGE, number=1,
+    connections = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Connection',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class Connection(proto.Message):
     r"""
-
     Attributes:
         endpoint (str):
             The endpoint that the connection is made against. Format:
@@ -94,18 +100,23 @@ class Connection(proto.Message):
             The count of streams.
     """
 
-    endpoint = proto.Field(proto.STRING, number=1)
-
-    cluster = proto.Field(proto.MESSAGE, number=2,
+    endpoint = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    cluster = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='Cluster',
     )
-
-    stream_count = proto.Field(proto.INT32, number=3)
+    stream_count = proto.Field(
+        proto.INT32,
+        number=3,
+    )
 
 
 class Cluster(proto.Message):
     r"""
-
     Attributes:
         name (str):
             The name of the cluster.
@@ -113,9 +124,14 @@ class Cluster(proto.Message):
             The region of the cluster.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    region = proto.Field(proto.STRING, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    region = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

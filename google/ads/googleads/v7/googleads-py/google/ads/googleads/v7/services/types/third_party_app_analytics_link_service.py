@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -39,7 +37,10 @@ class GetThirdPartyAppAnalyticsLinkRequest(proto.Message):
             analytics link.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class RegenerateShareableLinkIdRequest(proto.Message):
@@ -52,13 +53,16 @@ class RegenerateShareableLinkIdRequest(proto.Message):
             analytics link.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class RegenerateShareableLinkIdResponse(proto.Message):
     r"""Response message for
     [ThirdPartyAppAnalyticsLinkService.RegenerateShareableLinkId][google.ads.googleads.v7.services.ThirdPartyAppAnalyticsLinkService.RegenerateShareableLinkId].
-    """
+        """
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

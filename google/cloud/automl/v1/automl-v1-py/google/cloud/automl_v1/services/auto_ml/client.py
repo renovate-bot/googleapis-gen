@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -23,10 +21,10 @@ from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
-from google.api_core import exceptions                            # type: ignore
+from google.api_core import exceptions as core_exceptions         # type: ignore
 from google.api_core import gapic_v1                              # type: ignore
 from google.api_core import retry as retries                      # type: ignore
-from google.auth import credentials                               # type: ignore
+from google.auth import credentials as ga_credentials             # type: ignore
 from google.auth.transport import mtls                            # type: ignore
 from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
@@ -51,10 +49,9 @@ from google.cloud.automl_v1.types import text
 from google.cloud.automl_v1.types import text_extraction
 from google.cloud.automl_v1.types import text_sentiment
 from google.cloud.automl_v1.types import translation
-from google.protobuf import empty_pb2 as empty  # type: ignore
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
+from google.protobuf import empty_pb2  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 from .transports.base import AutoMlTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import AutoMlGrpcTransport
 from .transports.grpc_asyncio import AutoMlGrpcAsyncIOTransport
@@ -290,7 +287,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         return m.groupdict() if m else {}
 
     def __init__(self, *,
-            credentials: Optional[credentials.Credentials] = None,
+            credentials: Optional[ga_credentials.Credentials] = None,
             transport: Union[str, AutoMlTransport, None] = None,
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -419,7 +416,6 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
                 This corresponds to the ``dataset`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -448,10 +444,8 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.CreateDatasetRequest):
             request = service.CreateDatasetRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if dataset is not None:
@@ -509,7 +503,6 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -538,10 +531,8 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.GetDatasetRequest):
             request = service.GetDatasetRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -589,7 +580,6 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -619,10 +609,8 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.ListDatasetsRequest):
             request = service.ListDatasetsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -662,7 +650,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
             request: service.UpdateDatasetRequest = None,
             *,
             dataset: gca_dataset.Dataset = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -687,7 +675,6 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -716,10 +703,8 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.UpdateDatasetRequest):
             request = service.UpdateDatasetRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if dataset is not None:
                 request.dataset = dataset
             if update_mask is not None:
@@ -773,7 +758,6 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -813,10 +797,8 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.DeleteDatasetRequest):
             request = service.DeleteDatasetRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -844,7 +826,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         response = operation.from_gapic(
             response,
             self._transport.operations_client,
-            empty.Empty,
+            empty_pb2.Empty,
             metadata_type=operations.OperationMetadata,
         )
 
@@ -891,7 +873,6 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
                 This corresponds to the ``input_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -931,10 +912,8 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.ImportDataRequest):
             request = service.ImportDataRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
             if input_config is not None:
@@ -964,7 +943,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         response = operation.from_gapic(
             response,
             self._transport.operations_client,
-            empty.Empty,
+            empty_pb2.Empty,
             metadata_type=operations.OperationMetadata,
         )
 
@@ -1003,7 +982,6 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
                 This corresponds to the ``output_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1043,10 +1021,8 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.ExportDataRequest):
             request = service.ExportDataRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
             if output_config is not None:
@@ -1076,7 +1052,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         response = operation.from_gapic(
             response,
             self._transport.operations_client,
-            empty.Empty,
+            empty_pb2.Empty,
             metadata_type=operations.OperationMetadata,
         )
 
@@ -1104,7 +1080,6 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1129,10 +1104,8 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.GetAnnotationSpecRequest):
             request = service.GetAnnotationSpecRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1191,7 +1164,6 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
                 This corresponds to the ``model`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1221,10 +1193,8 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.CreateModelRequest):
             request = service.CreateModelRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if model is not None:
@@ -1280,7 +1250,6 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1307,10 +1276,8 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.GetModelRequest):
             request = service.GetModelRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1358,7 +1325,6 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1388,10 +1354,8 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.ListModelsRequest):
             request = service.ListModelsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -1451,7 +1415,6 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1491,10 +1454,8 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.DeleteModelRequest):
             request = service.DeleteModelRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1522,7 +1483,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         response = operation.from_gapic(
             response,
             self._transport.operations_client,
-            empty.Empty,
+            empty_pb2.Empty,
             metadata_type=operations.OperationMetadata,
         )
 
@@ -1533,7 +1494,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
             request: service.UpdateModelRequest = None,
             *,
             model: gca_model.Model = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -1558,7 +1519,6 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1585,10 +1545,8 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.UpdateModelRequest):
             request = service.UpdateModelRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if model is not None:
                 request.model = model
             if update_mask is not None:
@@ -1652,7 +1610,6 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1692,10 +1649,8 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.DeployModelRequest):
             request = service.DeployModelRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1723,7 +1678,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         response = operation.from_gapic(
             response,
             self._transport.operations_client,
-            empty.Empty,
+            empty_pb2.Empty,
             metadata_type=operations.OperationMetadata,
         )
 
@@ -1759,7 +1714,6 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1799,10 +1753,8 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.UndeployModelRequest):
             request = service.UndeployModelRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1830,7 +1782,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         response = operation.from_gapic(
             response,
             self._transport.operations_client,
-            empty.Empty,
+            empty_pb2.Empty,
             metadata_type=operations.OperationMetadata,
         )
 
@@ -1875,7 +1827,6 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
                 This corresponds to the ``output_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1915,10 +1866,8 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.ExportModelRequest):
             request = service.ExportModelRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
             if output_config is not None:
@@ -1948,7 +1897,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         response = operation.from_gapic(
             response,
             self._transport.operations_client,
-            empty.Empty,
+            empty_pb2.Empty,
             metadata_type=operations.OperationMetadata,
         )
 
@@ -1976,7 +1925,6 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2001,10 +1949,8 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.GetModelEvaluationRequest):
             request = service.GetModelEvaluationRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -2074,7 +2020,6 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2104,10 +2049,8 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.ListModelEvaluationsRequest):
             request = service.ListModelEvaluationsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if filter is not None:
@@ -2144,8 +2087,6 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

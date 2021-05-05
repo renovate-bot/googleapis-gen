@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v6.common.types import keyword_plan_common
 from google.ads.googleads.v6.enums.types import keyword_plan_network as gage_keyword_plan_network
@@ -84,32 +81,64 @@ class GenerateKeywordIdeasRequest(proto.Message):
             www.example.com.
     """
 
-    customer_id = proto.Field(proto.STRING, number=1)
-    language = proto.Field(proto.STRING, number=14, optional=True)
-    geo_target_constants = proto.RepeatedField(proto.STRING, number=15)
-    include_adult_keywords = proto.Field(proto.BOOL, number=10)
-    page_token = proto.Field(proto.STRING, number=12)
-    page_size = proto.Field(proto.INT32, number=13)
-    keyword_plan_network = proto.Field(proto.ENUM, number=9,
+    customer_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    language = proto.Field(
+        proto.STRING,
+        number=14,
+        optional=True,
+    )
+    geo_target_constants = proto.RepeatedField(
+        proto.STRING,
+        number=15,
+    )
+    include_adult_keywords = proto.Field(
+        proto.BOOL,
+        number=10,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=12,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=13,
+    )
+    keyword_plan_network = proto.Field(
+        proto.ENUM,
+        number=9,
         enum=gage_keyword_plan_network.KeywordPlanNetworkEnum.KeywordPlanNetwork,
     )
-    keyword_and_url_seed = proto.Field(proto.MESSAGE, number=2, oneof='seed',
+    keyword_and_url_seed = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='seed',
         message='KeywordAndUrlSeed',
     )
-    keyword_seed = proto.Field(proto.MESSAGE, number=3, oneof='seed',
+    keyword_seed = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        oneof='seed',
         message='KeywordSeed',
     )
-    url_seed = proto.Field(proto.MESSAGE, number=5, oneof='seed',
+    url_seed = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        oneof='seed',
         message='UrlSeed',
     )
-    site_seed = proto.Field(proto.MESSAGE, number=11, oneof='seed',
+    site_seed = proto.Field(
+        proto.MESSAGE,
+        number=11,
+        oneof='seed',
         message='SiteSeed',
     )
 
 
 class KeywordAndUrlSeed(proto.Message):
     r"""Keyword And Url Seed
-
     Attributes:
         url (str):
             The URL to crawl in order to generate keyword
@@ -118,24 +147,32 @@ class KeywordAndUrlSeed(proto.Message):
             Requires at least one keyword.
     """
 
-    url = proto.Field(proto.STRING, number=3, optional=True)
-    keywords = proto.RepeatedField(proto.STRING, number=4)
+    url = proto.Field(
+        proto.STRING,
+        number=3,
+        optional=True,
+    )
+    keywords = proto.RepeatedField(
+        proto.STRING,
+        number=4,
+    )
 
 
 class KeywordSeed(proto.Message):
     r"""Keyword Seed
-
     Attributes:
         keywords (Sequence[str]):
             Requires at least one keyword.
     """
 
-    keywords = proto.RepeatedField(proto.STRING, number=2)
+    keywords = proto.RepeatedField(
+        proto.STRING,
+        number=2,
+    )
 
 
 class SiteSeed(proto.Message):
     r"""Site Seed
-
     Attributes:
         site (str):
             The domain name of the site. If the customer
@@ -143,19 +180,26 @@ class SiteSeed(proto.Message):
             provided only public information is returned.
     """
 
-    site = proto.Field(proto.STRING, number=2, optional=True)
+    site = proto.Field(
+        proto.STRING,
+        number=2,
+        optional=True,
+    )
 
 
 class UrlSeed(proto.Message):
     r"""Url Seed
-
     Attributes:
         url (str):
             The URL to crawl in order to generate keyword
             ideas.
     """
 
-    url = proto.Field(proto.STRING, number=2, optional=True)
+    url = proto.Field(
+        proto.STRING,
+        number=2,
+        optional=True,
+    )
 
 
 class GenerateKeywordIdeaResponse(proto.Message):
@@ -178,16 +222,23 @@ class GenerateKeywordIdeaResponse(proto.Message):
     def raw_page(self):
         return self
 
-    results = proto.RepeatedField(proto.MESSAGE, number=1,
+    results = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='GenerateKeywordIdeaResult',
     )
-    next_page_token = proto.Field(proto.STRING, number=2)
-    total_size = proto.Field(proto.INT64, number=3)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    total_size = proto.Field(
+        proto.INT64,
+        number=3,
+    )
 
 
 class GenerateKeywordIdeaResult(proto.Message):
     r"""The result of generating keyword ideas.
-
     Attributes:
         text (str):
             Text of the keyword idea.
@@ -200,8 +251,14 @@ class GenerateKeywordIdeaResult(proto.Message):
             The historical metrics for the keyword
     """
 
-    text = proto.Field(proto.STRING, number=5, optional=True)
-    keyword_idea_metrics = proto.Field(proto.MESSAGE, number=3,
+    text = proto.Field(
+        proto.STRING,
+        number=5,
+        optional=True,
+    )
+    keyword_idea_metrics = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=keyword_plan_common.KeywordPlanHistoricalMetrics,
     )
 

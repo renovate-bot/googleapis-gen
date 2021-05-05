@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -22,10 +20,10 @@ from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
 import google.api_core.client_options as ClientOptions # type: ignore
-from google.api_core import exceptions                 # type: ignore
+from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
 from google.cloud.websecurityscanner_v1.services.web_security_scanner import pagers
@@ -38,8 +36,7 @@ from google.cloud.websecurityscanner_v1.types import scan_run
 from google.cloud.websecurityscanner_v1.types import scan_run_error_trace
 from google.cloud.websecurityscanner_v1.types import scan_run_warning_trace
 from google.cloud.websecurityscanner_v1.types import web_security_scanner
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
+from google.protobuf import timestamp_pb2  # type: ignore
 from .transports.base import WebSecurityScannerTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import WebSecurityScannerGrpcAsyncIOTransport
 from .client import WebSecurityScannerClient
@@ -59,19 +56,14 @@ class WebSecurityScannerAsyncClient:
 
     finding_path = staticmethod(WebSecurityScannerClient.finding_path)
     parse_finding_path = staticmethod(WebSecurityScannerClient.parse_finding_path)
-
     common_billing_account_path = staticmethod(WebSecurityScannerClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(WebSecurityScannerClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(WebSecurityScannerClient.common_folder_path)
     parse_common_folder_path = staticmethod(WebSecurityScannerClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(WebSecurityScannerClient.common_organization_path)
     parse_common_organization_path = staticmethod(WebSecurityScannerClient.parse_common_organization_path)
-
     common_project_path = staticmethod(WebSecurityScannerClient.common_project_path)
     parse_common_project_path = staticmethod(WebSecurityScannerClient.parse_common_project_path)
-
     common_location_path = staticmethod(WebSecurityScannerClient.common_location_path)
     parse_common_location_path = staticmethod(WebSecurityScannerClient.parse_common_location_path)
 
@@ -119,7 +111,7 @@ class WebSecurityScannerAsyncClient:
     get_transport_class = functools.partial(type(WebSecurityScannerClient).get_transport_class, type(WebSecurityScannerClient))
 
     def __init__(self, *,
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             transport: Union[str, WebSecurityScannerTransport] = 'grpc_asyncio',
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -156,7 +148,6 @@ class WebSecurityScannerAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = WebSecurityScannerClient(
             credentials=credentials,
             transport=transport,
@@ -178,7 +169,6 @@ class WebSecurityScannerAsyncClient:
             request (:class:`google.cloud.websecurityscanner_v1.types.CreateScanConfigRequest`):
                 The request object. Request for the `CreateScanConfig`
                 method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -192,7 +182,6 @@ class WebSecurityScannerAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = web_security_scanner.CreateScanConfigRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -236,7 +225,6 @@ class WebSecurityScannerAsyncClient:
             request (:class:`google.cloud.websecurityscanner_v1.types.DeleteScanConfigRequest`):
                 The request object. Request for the `DeleteScanConfig`
                 method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -244,7 +232,6 @@ class WebSecurityScannerAsyncClient:
                 sent along with the request as metadata.
         """
         # Create or coerce a protobuf request object.
-
         request = web_security_scanner.DeleteScanConfigRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -252,10 +239,7 @@ class WebSecurityScannerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_scan_config,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -294,7 +278,6 @@ class WebSecurityScannerAsyncClient:
             request (:class:`google.cloud.websecurityscanner_v1.types.GetScanConfigRequest`):
                 The request object. Request for the `GetScanConfig`
                 method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -308,7 +291,6 @@ class WebSecurityScannerAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = web_security_scanner.GetScanConfigRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -316,10 +298,7 @@ class WebSecurityScannerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_scan_config,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -361,7 +340,6 @@ class WebSecurityScannerAsyncClient:
             request (:class:`google.cloud.websecurityscanner_v1.types.ListScanConfigsRequest`):
                 The request object. Request for the `ListScanConfigs`
                 method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -377,7 +355,6 @@ class WebSecurityScannerAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = web_security_scanner.ListScanConfigsRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -385,10 +362,7 @@ class WebSecurityScannerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_scan_configs,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -440,7 +414,6 @@ class WebSecurityScannerAsyncClient:
             request (:class:`google.cloud.websecurityscanner_v1.types.UpdateScanConfigRequest`):
                 The request object. Request for the
                 `UpdateScanConfigRequest` method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -454,7 +427,6 @@ class WebSecurityScannerAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = web_security_scanner.UpdateScanConfigRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -497,7 +469,6 @@ class WebSecurityScannerAsyncClient:
             request (:class:`google.cloud.websecurityscanner_v1.types.StartScanRunRequest`):
                 The request object. Request for the `StartScanRun`
                 method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -512,7 +483,6 @@ class WebSecurityScannerAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = web_security_scanner.StartScanRunRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -554,7 +524,6 @@ class WebSecurityScannerAsyncClient:
         Args:
             request (:class:`google.cloud.websecurityscanner_v1.types.GetScanRunRequest`):
                 The request object. Request for the `GetScanRun` method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -569,7 +538,6 @@ class WebSecurityScannerAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = web_security_scanner.GetScanRunRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -577,10 +545,7 @@ class WebSecurityScannerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_scan_run,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -623,7 +588,6 @@ class WebSecurityScannerAsyncClient:
             request (:class:`google.cloud.websecurityscanner_v1.types.ListScanRunsRequest`):
                 The request object. Request for the `ListScanRuns`
                 method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -639,7 +603,6 @@ class WebSecurityScannerAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = web_security_scanner.ListScanRunsRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -647,10 +610,7 @@ class WebSecurityScannerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_scan_runs,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -701,7 +661,6 @@ class WebSecurityScannerAsyncClient:
             request (:class:`google.cloud.websecurityscanner_v1.types.StopScanRunRequest`):
                 The request object. Request for the `StopScanRun`
                 method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -716,7 +675,6 @@ class WebSecurityScannerAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = web_security_scanner.StopScanRunRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -759,7 +717,6 @@ class WebSecurityScannerAsyncClient:
             request (:class:`google.cloud.websecurityscanner_v1.types.ListCrawledUrlsRequest`):
                 The request object. Request for the `ListCrawledUrls`
                 method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -775,7 +732,6 @@ class WebSecurityScannerAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = web_security_scanner.ListCrawledUrlsRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -783,10 +739,7 @@ class WebSecurityScannerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_crawled_urls,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -836,7 +789,6 @@ class WebSecurityScannerAsyncClient:
         Args:
             request (:class:`google.cloud.websecurityscanner_v1.types.GetFindingRequest`):
                 The request object. Request for the `GetFinding` method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -851,7 +803,6 @@ class WebSecurityScannerAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = web_security_scanner.GetFindingRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -859,10 +810,7 @@ class WebSecurityScannerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_finding,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -904,7 +852,6 @@ class WebSecurityScannerAsyncClient:
             request (:class:`google.cloud.websecurityscanner_v1.types.ListFindingsRequest`):
                 The request object. Request for the `ListFindings`
                 method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -920,7 +867,6 @@ class WebSecurityScannerAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = web_security_scanner.ListFindingsRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -928,10 +874,7 @@ class WebSecurityScannerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_findings,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -982,7 +925,6 @@ class WebSecurityScannerAsyncClient:
             request (:class:`google.cloud.websecurityscanner_v1.types.ListFindingTypeStatsRequest`):
                 The request object. Request for the
                 `ListFindingTypeStats` method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -994,7 +936,6 @@ class WebSecurityScannerAsyncClient:
                 Response for the ListFindingTypeStats method.
         """
         # Create or coerce a protobuf request object.
-
         request = web_security_scanner.ListFindingTypeStatsRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1002,10 +943,7 @@ class WebSecurityScannerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_finding_type_stats,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1033,8 +971,6 @@ class WebSecurityScannerAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

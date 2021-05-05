@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v5.common.types import criteria
 from google.ads.googleads.v5.enums.types import criterion_type
@@ -33,7 +30,6 @@ __protobuf__ = proto.module(
 
 class SharedCriterion(proto.Message):
     r"""A criterion belonging to a shared set.
-
     Attributes:
         resource_name (str):
             Immutable. The resource name of the shared criterion. Shared
@@ -62,28 +58,59 @@ class SharedCriterion(proto.Message):
             Immutable. Mobile application.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    shared_set = proto.Field(proto.STRING, number=10, optional=True)
-    criterion_id = proto.Field(proto.INT64, number=11, optional=True)
-    type_ = proto.Field(proto.ENUM, number=4,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    shared_set = proto.Field(
+        proto.STRING,
+        number=10,
+        optional=True,
+    )
+    criterion_id = proto.Field(
+        proto.INT64,
+        number=11,
+        optional=True,
+    )
+    type_ = proto.Field(
+        proto.ENUM,
+        number=4,
         enum=criterion_type.CriterionTypeEnum.CriterionType,
     )
-    keyword = proto.Field(proto.MESSAGE, number=3, oneof='criterion',
+    keyword = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        oneof='criterion',
         message=criteria.KeywordInfo,
     )
-    youtube_video = proto.Field(proto.MESSAGE, number=5, oneof='criterion',
+    youtube_video = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        oneof='criterion',
         message=criteria.YouTubeVideoInfo,
     )
-    youtube_channel = proto.Field(proto.MESSAGE, number=6, oneof='criterion',
+    youtube_channel = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        oneof='criterion',
         message=criteria.YouTubeChannelInfo,
     )
-    placement = proto.Field(proto.MESSAGE, number=7, oneof='criterion',
+    placement = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        oneof='criterion',
         message=criteria.PlacementInfo,
     )
-    mobile_app_category = proto.Field(proto.MESSAGE, number=8, oneof='criterion',
+    mobile_app_category = proto.Field(
+        proto.MESSAGE,
+        number=8,
+        oneof='criterion',
         message=criteria.MobileAppCategoryInfo,
     )
-    mobile_application = proto.Field(proto.MESSAGE, number=9, oneof='criterion',
+    mobile_application = proto.Field(
+        proto.MESSAGE,
+        number=9,
+        oneof='criterion',
         message=criteria.MobileApplicationInfo,
     )
 

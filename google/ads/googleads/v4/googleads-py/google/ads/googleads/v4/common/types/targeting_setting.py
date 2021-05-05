@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
 from google.ads.googleads.v4.enums.types import targeting_dimension as gage_targeting_dimension
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -52,17 +49,20 @@ class TargetingSetting(proto.Message):
             the new value.
     """
 
-    target_restrictions = proto.RepeatedField(proto.MESSAGE, number=1,
+    target_restrictions = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='TargetRestriction',
     )
-    target_restriction_operations = proto.RepeatedField(proto.MESSAGE, number=2,
+    target_restriction_operations = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='TargetRestrictionOperation',
     )
 
 
 class TargetRestriction(proto.Message):
     r"""The list of per-targeting-dimension targeting settings.
-
     Attributes:
         targeting_dimension (google.ads.googleads.v4.enums.types.TargetingDimensionEnum.TargetingDimension):
             The targeting dimension that these settings
@@ -78,11 +78,15 @@ class TargetRestriction(proto.Message):
             as well as applying bid modifiers.
     """
 
-    targeting_dimension = proto.Field(proto.ENUM, number=1,
+    targeting_dimension = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=gage_targeting_dimension.TargetingDimensionEnum.TargetingDimension,
     )
-    bid_only = proto.Field(proto.MESSAGE, number=2,
-        message=wrappers.BoolValue,
+    bid_only = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=wrappers_pb2.BoolValue,
     )
 
 
@@ -104,10 +108,14 @@ class TargetRestrictionOperation(proto.Message):
         ADD = 2
         REMOVE = 3
 
-    operator = proto.Field(proto.ENUM, number=1,
+    operator = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=Operator,
     )
-    value = proto.Field(proto.MESSAGE, number=2,
+    value = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='TargetRestriction',
     )
 

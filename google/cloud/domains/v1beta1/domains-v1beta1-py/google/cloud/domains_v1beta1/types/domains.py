@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,14 +13,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-from google.type import money_pb2 as money  # type: ignore
-from google.type import postal_address_pb2 as gt_postal_address  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
+from google.type import money_pb2  # type: ignore
+from google.type import postal_address_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -171,45 +168,62 @@ class Registration(proto.Message):
         CONTACT_SUPPORT = 1
         UNVERIFIED_EMAIL = 2
 
-    name = proto.Field(proto.STRING, number=1)
-
-    domain_name = proto.Field(proto.STRING, number=2)
-
-    create_time = proto.Field(proto.MESSAGE, number=3,
-        message=timestamp.Timestamp,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
     )
-
-    expire_time = proto.Field(proto.MESSAGE, number=6,
-        message=timestamp.Timestamp,
+    domain_name = proto.Field(
+        proto.STRING,
+        number=2,
     )
-
-    state = proto.Field(proto.ENUM, number=7,
+    create_time = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=timestamp_pb2.Timestamp,
+    )
+    expire_time = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        message=timestamp_pb2.Timestamp,
+    )
+    state = proto.Field(
+        proto.ENUM,
+        number=7,
         enum=State,
     )
-
-    issues = proto.RepeatedField(proto.ENUM, number=8,
+    issues = proto.RepeatedField(
+        proto.ENUM,
+        number=8,
         enum=Issue,
     )
-
-    labels = proto.MapField(proto.STRING, proto.STRING, number=9)
-
-    management_settings = proto.Field(proto.MESSAGE, number=10,
+    labels = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=9,
+    )
+    management_settings = proto.Field(
+        proto.MESSAGE,
+        number=10,
         message='ManagementSettings',
     )
-
-    dns_settings = proto.Field(proto.MESSAGE, number=11,
+    dns_settings = proto.Field(
+        proto.MESSAGE,
+        number=11,
         message='DnsSettings',
     )
-
-    contact_settings = proto.Field(proto.MESSAGE, number=12,
+    contact_settings = proto.Field(
+        proto.MESSAGE,
+        number=12,
         message='ContactSettings',
     )
-
-    pending_contact_settings = proto.Field(proto.MESSAGE, number=13,
+    pending_contact_settings = proto.Field(
+        proto.MESSAGE,
+        number=13,
         message='ContactSettings',
     )
-
-    supported_privacy = proto.RepeatedField(proto.ENUM, number=14,
+    supported_privacy = proto.RepeatedField(
+        proto.ENUM,
+        number=14,
         enum='ContactPrivacy',
     )
 
@@ -231,11 +245,14 @@ class ManagementSettings(proto.Message):
         AUTOMATIC_RENEWAL = 1
         MANUAL_RENEWAL = 2
 
-    renewal_method = proto.Field(proto.ENUM, number=3,
+    renewal_method = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=RenewalMethod,
     )
-
-    transfer_lock_state = proto.Field(proto.ENUM, number=4,
+    transfer_lock_state = proto.Field(
+        proto.ENUM,
+        number=4,
         enum='TransferLockState',
     )
 
@@ -263,7 +280,6 @@ class DnsSettings(proto.Message):
 
     class CustomDns(proto.Message):
         r"""Configuration for an arbitrary DNS provider.
-
         Attributes:
             name_servers (Sequence[str]):
                 Required. A list of name servers that store
@@ -277,9 +293,13 @@ class DnsSettings(proto.Message):
                 this field is empty, DNSSEC is disabled.
         """
 
-        name_servers = proto.RepeatedField(proto.STRING, number=1)
-
-        ds_records = proto.RepeatedField(proto.MESSAGE, number=2,
+        name_servers = proto.RepeatedField(
+            proto.STRING,
+            number=1,
+        )
+        ds_records = proto.RepeatedField(
+            proto.MESSAGE,
+            number=2,
             message='DnsSettings.DsRecord',
         )
 
@@ -308,13 +328,18 @@ class DnsSettings(proto.Message):
                 remains empty.
         """
 
-        name_servers = proto.RepeatedField(proto.STRING, number=1)
-
-        ds_state = proto.Field(proto.ENUM, number=2,
+        name_servers = proto.RepeatedField(
+            proto.STRING,
+            number=1,
+        )
+        ds_state = proto.Field(
+            proto.ENUM,
+            number=2,
             enum='DnsSettings.DsState',
         )
-
-        ds_records = proto.RepeatedField(proto.MESSAGE, number=3,
+        ds_records = proto.RepeatedField(
+            proto.MESSAGE,
+            number=3,
             message='DnsSettings.DsRecord',
         )
 
@@ -365,17 +390,24 @@ class DnsSettings(proto.Message):
             GOST3411 = 3
             SHA384 = 4
 
-        key_tag = proto.Field(proto.INT32, number=1)
-
-        algorithm = proto.Field(proto.ENUM, number=2,
+        key_tag = proto.Field(
+            proto.INT32,
+            number=1,
+        )
+        algorithm = proto.Field(
+            proto.ENUM,
+            number=2,
             enum='DnsSettings.DsRecord.Algorithm',
         )
-
-        digest_type = proto.Field(proto.ENUM, number=3,
+        digest_type = proto.Field(
+            proto.ENUM,
+            number=3,
             enum='DnsSettings.DsRecord.DigestType',
         )
-
-        digest = proto.Field(proto.STRING, number=4)
+        digest = proto.Field(
+            proto.STRING,
+            number=4,
+        )
 
     class GlueRecord(proto.Message):
         r"""Defines a host on your domain that is a DNS name server for your
@@ -399,21 +431,34 @@ class DnsSettings(proto.Message):
                 one of ``ipv4_address`` and ``ipv6_address`` must be set.
         """
 
-        host_name = proto.Field(proto.STRING, number=1)
+        host_name = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        ipv4_addresses = proto.RepeatedField(
+            proto.STRING,
+            number=2,
+        )
+        ipv6_addresses = proto.RepeatedField(
+            proto.STRING,
+            number=3,
+        )
 
-        ipv4_addresses = proto.RepeatedField(proto.STRING, number=2)
-
-        ipv6_addresses = proto.RepeatedField(proto.STRING, number=3)
-
-    custom_dns = proto.Field(proto.MESSAGE, number=1, oneof='dns_provider',
+    custom_dns = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='dns_provider',
         message=CustomDns,
     )
-
-    google_domains_dns = proto.Field(proto.MESSAGE, number=2, oneof='dns_provider',
+    google_domains_dns = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='dns_provider',
         message=GoogleDomainsDns,
     )
-
-    glue_records = proto.RepeatedField(proto.MESSAGE, number=4,
+    glue_records = proto.RepeatedField(
+        proto.MESSAGE,
+        number=4,
         message=GlueRecord,
     )
 
@@ -446,9 +491,9 @@ class ContactSettings(proto.Message):
         technical_contact (google.cloud.domains_v1beta1.types.ContactSettings.Contact):
             Required. The technical contact for the ``Registration``.
     """
+
     class Contact(proto.Message):
         r"""Details required for a contact associated with a ``Registration``.
-
         Attributes:
             postal_address (google.type.postal_address_pb2.PostalAddress):
                 Required. Postal address of the contact.
@@ -462,36 +507,48 @@ class ContactSettings(proto.Message):
                 example, ``"+1-800-555-0123"``.
         """
 
-        postal_address = proto.Field(proto.MESSAGE, number=1,
+        postal_address = proto.Field(
+            proto.MESSAGE,
+            number=1,
             message=gt_postal_address.PostalAddress,
         )
+        email = proto.Field(
+            proto.STRING,
+            number=2,
+        )
+        phone_number = proto.Field(
+            proto.STRING,
+            number=3,
+        )
+        fax_number = proto.Field(
+            proto.STRING,
+            number=4,
+        )
 
-        email = proto.Field(proto.STRING, number=2)
-
-        phone_number = proto.Field(proto.STRING, number=3)
-
-        fax_number = proto.Field(proto.STRING, number=4)
-
-    privacy = proto.Field(proto.ENUM, number=1,
+    privacy = proto.Field(
+        proto.ENUM,
+        number=1,
         enum='ContactPrivacy',
     )
-
-    registrant_contact = proto.Field(proto.MESSAGE, number=2,
+    registrant_contact = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=Contact,
     )
-
-    admin_contact = proto.Field(proto.MESSAGE, number=3,
+    admin_contact = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=Contact,
     )
-
-    technical_contact = proto.Field(proto.MESSAGE, number=4,
+    technical_contact = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=Contact,
     )
 
 
 class SearchDomainsRequest(proto.Message):
     r"""Request for the ``SearchDomains`` method.
-
     Attributes:
         query (str):
             Required. String used to search for available
@@ -501,27 +558,32 @@ class SearchDomainsRequest(proto.Message):
             ``projects/*/locations/*``.
     """
 
-    query = proto.Field(proto.STRING, number=1)
-
-    location = proto.Field(proto.STRING, number=2)
+    query = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    location = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class SearchDomainsResponse(proto.Message):
     r"""Response for the ``SearchDomains`` method.
-
     Attributes:
         register_parameters (Sequence[google.cloud.domains_v1beta1.types.RegisterParameters]):
             Results of the domain name search.
     """
 
-    register_parameters = proto.RepeatedField(proto.MESSAGE, number=1,
+    register_parameters = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='RegisterParameters',
     )
 
 
 class RetrieveRegisterParametersRequest(proto.Message):
     r"""Request for the ``RetrieveRegisterParameters`` method.
-
     Attributes:
         domain_name (str):
             Required. The domain name. Unicode domain
@@ -531,28 +593,33 @@ class RetrieveRegisterParametersRequest(proto.Message):
             ``projects/*/locations/*``.
     """
 
-    domain_name = proto.Field(proto.STRING, number=1)
-
-    location = proto.Field(proto.STRING, number=2)
+    domain_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    location = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class RetrieveRegisterParametersResponse(proto.Message):
     r"""Response for the ``RetrieveRegisterParameters`` method.
-
     Attributes:
         register_parameters (google.cloud.domains_v1beta1.types.RegisterParameters):
             Parameters to use when calling the ``RegisterDomain``
             method.
     """
 
-    register_parameters = proto.Field(proto.MESSAGE, number=1,
+    register_parameters = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='RegisterParameters',
     )
 
 
 class RegisterDomainRequest(proto.Message):
     r"""Request for the ``RegisterDomain`` method.
-
     Attributes:
         parent (str):
             Required. The parent resource of the ``Registration``. Must
@@ -579,30 +646,38 @@ class RegisterDomainRequest(proto.Message):
             https://cloud.google.com/apis/design/design_patterns#request_validation
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    registration = proto.Field(proto.MESSAGE, number=2,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    registration = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='Registration',
     )
-
-    domain_notices = proto.RepeatedField(proto.ENUM, number=3,
+    domain_notices = proto.RepeatedField(
+        proto.ENUM,
+        number=3,
         enum='DomainNotice',
     )
-
-    contact_notices = proto.RepeatedField(proto.ENUM, number=4,
+    contact_notices = proto.RepeatedField(
+        proto.ENUM,
+        number=4,
         enum='ContactNotice',
     )
-
-    yearly_price = proto.Field(proto.MESSAGE, number=5,
-        message=money.Money,
+    yearly_price = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        message=money_pb2.Money,
     )
-
-    validate_only = proto.Field(proto.BOOL, number=6)
+    validate_only = proto.Field(
+        proto.BOOL,
+        number=6,
+    )
 
 
 class ListRegistrationsRequest(proto.Message):
     r"""Request for the ``ListRegistrations`` method.
-
     Attributes:
         parent (str):
             Required. The project and location from which to list
@@ -636,18 +711,26 @@ class ListRegistrationsRequest(proto.Message):
             ``(state=SUSPENDED) OR (issue:*)``.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
-
-    filter = proto.Field(proto.STRING, number=4)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    filter = proto.Field(
+        proto.STRING,
+        number=4,
+    )
 
 
 class ListRegistrationsResponse(proto.Message):
     r"""Response for the ``ListRegistrations`` method.
-
     Attributes:
         registrations (Sequence[google.cloud.domains_v1beta1.types.Registration]):
             A list of ``Registration``\ s.
@@ -661,28 +744,33 @@ class ListRegistrationsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    registrations = proto.RepeatedField(proto.MESSAGE, number=1,
+    registrations = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Registration',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class GetRegistrationRequest(proto.Message):
     r"""Request for the ``GetRegistration`` method.
-
     Attributes:
         name (str):
             Required. The name of the ``Registration`` to get, in the
             format ``projects/*/locations/*/registrations/*``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class UpdateRegistrationRequest(proto.Message):
     r"""Request for the ``UpdateRegistration`` method.
-
     Attributes:
         registration (google.cloud.domains_v1beta1.types.Registration):
             Fields of the ``Registration`` to update.
@@ -693,18 +781,20 @@ class UpdateRegistrationRequest(proto.Message):
             ``"labels"``.
     """
 
-    registration = proto.Field(proto.MESSAGE, number=1,
+    registration = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='Registration',
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=2,
-        message=field_mask.FieldMask,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=field_mask_pb2.FieldMask,
     )
 
 
 class ConfigureManagementSettingsRequest(proto.Message):
     r"""Request for the ``ConfigureManagementSettings`` method.
-
     Attributes:
         registration (str):
             Required. The name of the ``Registration`` whose management
@@ -719,20 +809,24 @@ class ConfigureManagementSettingsRequest(proto.Message):
             ``"transfer_lock_state"``.
     """
 
-    registration = proto.Field(proto.STRING, number=1)
-
-    management_settings = proto.Field(proto.MESSAGE, number=2,
+    registration = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    management_settings = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='ManagementSettings',
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=3,
-        message=field_mask.FieldMask,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=field_mask_pb2.FieldMask,
     )
 
 
 class ConfigureDnsSettingsRequest(proto.Message):
     r"""Request for the ``ConfigureDnsSettings`` method.
-
     Attributes:
         registration (str):
             Required. The name of the ``Registration`` whose DNS
@@ -757,22 +851,28 @@ class ConfigureDnsSettingsRequest(proto.Message):
             updating the DNS settings.
     """
 
-    registration = proto.Field(proto.STRING, number=1)
-
-    dns_settings = proto.Field(proto.MESSAGE, number=2,
+    registration = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    dns_settings = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='DnsSettings',
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=3,
-        message=field_mask.FieldMask,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=field_mask_pb2.FieldMask,
     )
-
-    validate_only = proto.Field(proto.BOOL, number=4)
+    validate_only = proto.Field(
+        proto.BOOL,
+        number=4,
+    )
 
 
 class ConfigureContactSettingsRequest(proto.Message):
     r"""Request for the ``ConfigureContactSettings`` method.
-
     Attributes:
         registration (str):
             Required. The name of the ``Registration`` whose contact
@@ -794,50 +894,61 @@ class ConfigureContactSettingsRequest(proto.Message):
             updating the contact settings.
     """
 
-    registration = proto.Field(proto.STRING, number=1)
-
-    contact_settings = proto.Field(proto.MESSAGE, number=2,
+    registration = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    contact_settings = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='ContactSettings',
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=3,
-        message=field_mask.FieldMask,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=field_mask_pb2.FieldMask,
     )
-
-    contact_notices = proto.RepeatedField(proto.ENUM, number=4,
+    contact_notices = proto.RepeatedField(
+        proto.ENUM,
+        number=4,
         enum='ContactNotice',
     )
-
-    validate_only = proto.Field(proto.BOOL, number=5)
+    validate_only = proto.Field(
+        proto.BOOL,
+        number=5,
+    )
 
 
 class ExportRegistrationRequest(proto.Message):
     r"""Request for the ``ExportRegistration`` method.
-
     Attributes:
         name (str):
             Required. The name of the ``Registration`` to export, in the
             format ``projects/*/locations/*/registrations/*``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class DeleteRegistrationRequest(proto.Message):
     r"""Request for the ``DeleteRegistration`` method.
-
     Attributes:
         name (str):
             Required. The name of the ``Registration`` to delete, in the
             format ``projects/*/locations/*/registrations/*``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class RetrieveAuthorizationCodeRequest(proto.Message):
     r"""Request for the ``RetrieveAuthorizationCode`` method.
-
     Attributes:
         registration (str):
             Required. The name of the ``Registration`` whose
@@ -845,12 +956,14 @@ class RetrieveAuthorizationCodeRequest(proto.Message):
             ``projects/*/locations/*/registrations/*``.
     """
 
-    registration = proto.Field(proto.STRING, number=1)
+    registration = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class ResetAuthorizationCodeRequest(proto.Message):
     r"""Request for the ``ResetAuthorizationCode`` method.
-
     Attributes:
         registration (str):
             Required. The name of the ``Registration`` whose
@@ -858,12 +971,14 @@ class ResetAuthorizationCodeRequest(proto.Message):
             ``projects/*/locations/*/registrations/*``.
     """
 
-    registration = proto.Field(proto.STRING, number=1)
+    registration = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class RegisterParameters(proto.Message):
     r"""Parameters required to register a new domain.
-
     Attributes:
         domain_name (str):
             The domain name. Unicode domain names are
@@ -891,28 +1006,34 @@ class RegisterParameters(proto.Message):
         UNSUPPORTED = 3
         UNKNOWN = 4
 
-    domain_name = proto.Field(proto.STRING, number=1)
-
-    availability = proto.Field(proto.ENUM, number=2,
+    domain_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    availability = proto.Field(
+        proto.ENUM,
+        number=2,
         enum=Availability,
     )
-
-    supported_privacy = proto.RepeatedField(proto.ENUM, number=3,
+    supported_privacy = proto.RepeatedField(
+        proto.ENUM,
+        number=3,
         enum='ContactPrivacy',
     )
-
-    domain_notices = proto.RepeatedField(proto.ENUM, number=4,
+    domain_notices = proto.RepeatedField(
+        proto.ENUM,
+        number=4,
         enum='DomainNotice',
     )
-
-    yearly_price = proto.Field(proto.MESSAGE, number=5,
-        message=money.Money,
+    yearly_price = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        message=money_pb2.Money,
     )
 
 
 class AuthorizationCode(proto.Message):
     r"""Defines an authorization code.
-
     Attributes:
         code (str):
             The Authorization Code in ASCII. It can be
@@ -920,7 +1041,10 @@ class AuthorizationCode(proto.Message):
             registrar.
     """
 
-    code = proto.Field(proto.STRING, number=1)
+    code = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class OperationMetadata(proto.Message):
@@ -944,21 +1068,32 @@ class OperationMetadata(proto.Message):
             API version used to start the operation.
     """
 
-    create_time = proto.Field(proto.MESSAGE, number=1,
-        message=timestamp.Timestamp,
+    create_time = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=timestamp_pb2.Timestamp,
     )
-
-    end_time = proto.Field(proto.MESSAGE, number=2,
-        message=timestamp.Timestamp,
+    end_time = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=timestamp_pb2.Timestamp,
     )
-
-    target = proto.Field(proto.STRING, number=3)
-
-    verb = proto.Field(proto.STRING, number=4)
-
-    status_detail = proto.Field(proto.STRING, number=5)
-
-    api_version = proto.Field(proto.STRING, number=6)
+    target = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    verb = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    status_detail = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    api_version = proto.Field(
+        proto.STRING,
+        number=6,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

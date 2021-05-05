@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,11 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -57,18 +54,29 @@ class KeywordPlanAdGroup(proto.Message):
             inherit from parent campaign.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    keyword_plan_campaign = proto.Field(proto.MESSAGE, number=2,
-        message=wrappers.StringValue,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
     )
-    id = proto.Field(proto.MESSAGE, number=3,
-        message=wrappers.Int64Value,
+    keyword_plan_campaign = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=wrappers_pb2.StringValue,
     )
-    name = proto.Field(proto.MESSAGE, number=4,
-        message=wrappers.StringValue,
+    id = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=wrappers_pb2.Int64Value,
     )
-    cpc_bid_micros = proto.Field(proto.MESSAGE, number=5,
-        message=wrappers.Int64Value,
+    name = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=wrappers_pb2.StringValue,
+    )
+    cpc_bid_micros = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        message=wrappers_pb2.Int64Value,
     )
 
 

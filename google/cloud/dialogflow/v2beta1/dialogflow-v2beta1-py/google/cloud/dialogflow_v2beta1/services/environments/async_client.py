@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -22,15 +20,14 @@ from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
 import google.api_core.client_options as ClientOptions # type: ignore
-from google.api_core import exceptions                 # type: ignore
+from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
 from google.cloud.dialogflow_v2beta1.services.environments import pagers
 from google.cloud.dialogflow_v2beta1.types import environment
-
 from .transports.base import EnvironmentsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import EnvironmentsGrpcAsyncIOTransport
 from .client import EnvironmentsClient
@@ -48,19 +45,14 @@ class EnvironmentsAsyncClient:
 
     environment_path = staticmethod(EnvironmentsClient.environment_path)
     parse_environment_path = staticmethod(EnvironmentsClient.parse_environment_path)
-
     common_billing_account_path = staticmethod(EnvironmentsClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(EnvironmentsClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(EnvironmentsClient.common_folder_path)
     parse_common_folder_path = staticmethod(EnvironmentsClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(EnvironmentsClient.common_organization_path)
     parse_common_organization_path = staticmethod(EnvironmentsClient.parse_common_organization_path)
-
     common_project_path = staticmethod(EnvironmentsClient.common_project_path)
     parse_common_project_path = staticmethod(EnvironmentsClient.parse_common_project_path)
-
     common_location_path = staticmethod(EnvironmentsClient.common_location_path)
     parse_common_location_path = staticmethod(EnvironmentsClient.parse_common_location_path)
 
@@ -108,7 +100,7 @@ class EnvironmentsAsyncClient:
     get_transport_class = functools.partial(type(EnvironmentsClient).get_transport_class, type(EnvironmentsClient))
 
     def __init__(self, *,
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             transport: Union[str, EnvironmentsTransport] = 'grpc_asyncio',
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -145,7 +137,6 @@ class EnvironmentsAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = EnvironmentsClient(
             credentials=credentials,
             transport=transport,
@@ -179,7 +170,6 @@ class EnvironmentsAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -207,7 +197,6 @@ class EnvironmentsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -246,8 +235,6 @@ class EnvironmentsAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

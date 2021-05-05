@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -31,7 +29,7 @@ class AttributionModelEnum(proto.Message):
     r"""Container for enum representing the attribution model that
     describes how to distribute credit for a particular conversion
     across potentially many prior interactions.
-    """
+        """
     class AttributionModel(proto.Enum):
         r"""The attribution model that describes how to distribute credit
         for a particular conversion across potentially many prior

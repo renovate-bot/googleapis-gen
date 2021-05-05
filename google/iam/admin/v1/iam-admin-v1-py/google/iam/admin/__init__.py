@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.iam.admin_v1.services.iam.async_client import IAMAsyncClient
 from google.iam.admin_v1.services.iam.client import IAMClient
+from google.iam.admin_v1.services.iam.async_client import IAMAsyncClient
+
 from google.iam.admin_v1.types.audit_data import AuditData
 from google.iam.admin_v1.types.iam import CreateRoleRequest
 from google.iam.admin_v1.types.iam import CreateServiceAccountKeyRequest
@@ -47,13 +47,8 @@ from google.iam.admin_v1.types.iam import QueryGrantableRolesResponse
 from google.iam.admin_v1.types.iam import QueryTestablePermissionsRequest
 from google.iam.admin_v1.types.iam import QueryTestablePermissionsResponse
 from google.iam.admin_v1.types.iam import Role
-from google.iam.admin_v1.types.iam import RoleView
 from google.iam.admin_v1.types.iam import ServiceAccount
 from google.iam.admin_v1.types.iam import ServiceAccountKey
-from google.iam.admin_v1.types.iam import ServiceAccountKeyAlgorithm
-from google.iam.admin_v1.types.iam import ServiceAccountKeyOrigin
-from google.iam.admin_v1.types.iam import ServiceAccountPrivateKeyType
-from google.iam.admin_v1.types.iam import ServiceAccountPublicKeyType
 from google.iam.admin_v1.types.iam import SignBlobRequest
 from google.iam.admin_v1.types.iam import SignBlobResponse
 from google.iam.admin_v1.types.iam import SignJwtRequest
@@ -63,8 +58,14 @@ from google.iam.admin_v1.types.iam import UndeleteServiceAccountRequest
 from google.iam.admin_v1.types.iam import UndeleteServiceAccountResponse
 from google.iam.admin_v1.types.iam import UpdateRoleRequest
 from google.iam.admin_v1.types.iam import UploadServiceAccountKeyRequest
+from google.iam.admin_v1.types.iam import RoleView
+from google.iam.admin_v1.types.iam import ServiceAccountKeyAlgorithm
+from google.iam.admin_v1.types.iam import ServiceAccountKeyOrigin
+from google.iam.admin_v1.types.iam import ServiceAccountPrivateKeyType
+from google.iam.admin_v1.types.iam import ServiceAccountPublicKeyType
 
-__all__ = (
+__all__ = ('IAMClient',
+    'IAMAsyncClient',
     'AuditData',
     'CreateRoleRequest',
     'CreateServiceAccountKeyRequest',
@@ -77,8 +78,6 @@ __all__ = (
     'GetRoleRequest',
     'GetServiceAccountKeyRequest',
     'GetServiceAccountRequest',
-    'IAMAsyncClient',
-    'IAMClient',
     'LintPolicyRequest',
     'LintPolicyResponse',
     'LintResult',
@@ -97,13 +96,8 @@ __all__ = (
     'QueryTestablePermissionsRequest',
     'QueryTestablePermissionsResponse',
     'Role',
-    'RoleView',
     'ServiceAccount',
     'ServiceAccountKey',
-    'ServiceAccountKeyAlgorithm',
-    'ServiceAccountKeyOrigin',
-    'ServiceAccountPrivateKeyType',
-    'ServiceAccountPublicKeyType',
     'SignBlobRequest',
     'SignBlobResponse',
     'SignJwtRequest',
@@ -113,4 +107,9 @@ __all__ = (
     'UndeleteServiceAccountResponse',
     'UpdateRoleRequest',
     'UploadServiceAccountKeyRequest',
+    'RoleView',
+    'ServiceAccountKeyAlgorithm',
+    'ServiceAccountKeyOrigin',
+    'ServiceAccountPrivateKeyType',
+    'ServiceAccountPublicKeyType',
 )

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v7.common.types import asset_policy
 from google.ads.googleads.v7.enums.types import asset_performance_label as gage_asset_performance_label
@@ -37,7 +34,6 @@ __protobuf__ = proto.module(
 
 class AdTextAsset(proto.Message):
     r"""A text asset used inside an ad.
-
     Attributes:
         text (str):
             Asset text.
@@ -54,49 +50,68 @@ class AdTextAsset(proto.Message):
             The policy summary of this text asset.
     """
 
-    text = proto.Field(proto.STRING, number=4, optional=True)
-    pinned_field = proto.Field(proto.ENUM, number=2,
+    text = proto.Field(
+        proto.STRING,
+        number=4,
+        optional=True,
+    )
+    pinned_field = proto.Field(
+        proto.ENUM,
+        number=2,
         enum=served_asset_field_type.ServedAssetFieldTypeEnum.ServedAssetFieldType,
     )
-    asset_performance_label = proto.Field(proto.ENUM, number=5,
+    asset_performance_label = proto.Field(
+        proto.ENUM,
+        number=5,
         enum=gage_asset_performance_label.AssetPerformanceLabelEnum.AssetPerformanceLabel,
     )
-    policy_summary_info = proto.Field(proto.MESSAGE, number=6,
+    policy_summary_info = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message=asset_policy.AdAssetPolicySummary,
     )
 
 
 class AdImageAsset(proto.Message):
     r"""An image asset used inside an ad.
-
     Attributes:
         asset (str):
             The Asset resource name of this image.
     """
 
-    asset = proto.Field(proto.STRING, number=2, optional=True)
+    asset = proto.Field(
+        proto.STRING,
+        number=2,
+        optional=True,
+    )
 
 
 class AdVideoAsset(proto.Message):
     r"""A video asset used inside an ad.
-
     Attributes:
         asset (str):
             The Asset resource name of this video.
     """
 
-    asset = proto.Field(proto.STRING, number=2, optional=True)
+    asset = proto.Field(
+        proto.STRING,
+        number=2,
+        optional=True,
+    )
 
 
 class AdMediaBundleAsset(proto.Message):
     r"""A media bundle asset used inside an ad.
-
     Attributes:
         asset (str):
             The Asset resource name of this media bundle.
     """
 
-    asset = proto.Field(proto.STRING, number=2, optional=True)
+    asset = proto.Field(
+        proto.STRING,
+        number=2,
+        optional=True,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

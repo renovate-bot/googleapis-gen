@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -46,7 +43,6 @@ __protobuf__ = proto.module(
 
 class Cluster(proto.Message):
     r"""Cluster resource.
-
     Attributes:
         name (str):
             The name of the cluster. The format of
@@ -69,26 +65,37 @@ class Cluster(proto.Message):
             cluster.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    create_time = proto.Field(proto.MESSAGE, number=2,
-        message=timestamp.Timestamp,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
     )
-
-    update_time = proto.Field(proto.MESSAGE, number=3,
-        message=timestamp.Timestamp,
+    create_time = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=timestamp_pb2.Timestamp,
     )
-
-    labels = proto.MapField(proto.STRING, proto.STRING, number=4)
-
-    certificate = proto.Field(proto.STRING, number=5)
-
-    service_endpoint = proto.Field(proto.STRING, number=6)
+    update_time = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=timestamp_pb2.Timestamp,
+    )
+    labels = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=4,
+    )
+    certificate = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    service_endpoint = proto.Field(
+        proto.STRING,
+        number=6,
+    )
 
 
 class ListClustersRequest(proto.Message):
     r"""Request message for 'ListClusters'.
-
     Attributes:
         parent (str):
             Required. The parent that owns the collection
@@ -107,20 +114,30 @@ class ListClustersRequest(proto.Message):
             Order by fields for the result.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
-
-    filter = proto.Field(proto.STRING, number=4)
-
-    order_by = proto.Field(proto.STRING, number=5)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    filter = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    order_by = proto.Field(
+        proto.STRING,
+        number=5,
+    )
 
 
 class ListClustersResponse(proto.Message):
     r"""Response message from 'ListClusters'.
-
     Attributes:
         clusters (Sequence[google.partner.aistreams_v1alpha1.types.Cluster]):
             List of clusters.
@@ -136,30 +153,37 @@ class ListClustersResponse(proto.Message):
     def raw_page(self):
         return self
 
-    clusters = proto.RepeatedField(proto.MESSAGE, number=1,
+    clusters = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Cluster',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
-
-    unreachable = proto.RepeatedField(proto.STRING, number=3)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    unreachable = proto.RepeatedField(
+        proto.STRING,
+        number=3,
+    )
 
 
 class GetClusterRequest(proto.Message):
     r"""Request message for 'GetCluster'.
-
     Attributes:
         name (str):
             Required. The name of the Cluster resource to
             get.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class CreateClusterRequest(proto.Message):
     r"""Request message for 'CreateCluster'.
-
     Attributes:
         parent (str):
             Required. The parent that owns the collection
@@ -188,20 +212,27 @@ class CreateClusterRequest(proto.Message):
             (00000000-0000-0000-0000-000000000000).
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    cluster_id = proto.Field(proto.STRING, number=2)
-
-    cluster = proto.Field(proto.MESSAGE, number=3,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    cluster_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    cluster = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='Cluster',
     )
-
-    request_id = proto.Field(proto.STRING, number=4)
+    request_id = proto.Field(
+        proto.STRING,
+        number=4,
+    )
 
 
 class UpdateClusterRequest(proto.Message):
     r"""Request message for 'UpdateCluster'.
-
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             Required. Field mask is used to specify the fields to be
@@ -232,20 +263,24 @@ class UpdateClusterRequest(proto.Message):
             (00000000-0000-0000-0000-000000000000).
     """
 
-    update_mask = proto.Field(proto.MESSAGE, number=1,
-        message=field_mask.FieldMask,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=field_mask_pb2.FieldMask,
     )
-
-    cluster = proto.Field(proto.MESSAGE, number=2,
+    cluster = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='Cluster',
     )
-
-    request_id = proto.Field(proto.STRING, number=3)
+    request_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class DeleteClusterRequest(proto.Message):
     r"""Request message for 'DeleteCluster'.
-
     Attributes:
         name (str):
             Required. The name of cluster to delete.
@@ -269,14 +304,18 @@ class DeleteClusterRequest(proto.Message):
             (00000000-0000-0000-0000-000000000000).
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    request_id = proto.Field(proto.STRING, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    request_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class Stream(proto.Message):
     r"""Stream resource.
-
     Attributes:
         name (str):
             The name of the stream. The format for the
@@ -292,22 +331,29 @@ class Stream(proto.Message):
             The labels of the stream.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    create_time = proto.Field(proto.MESSAGE, number=2,
-        message=timestamp.Timestamp,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
     )
-
-    update_time = proto.Field(proto.MESSAGE, number=3,
-        message=timestamp.Timestamp,
+    create_time = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=timestamp_pb2.Timestamp,
     )
-
-    labels = proto.MapField(proto.STRING, proto.STRING, number=4)
+    update_time = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=timestamp_pb2.Timestamp,
+    )
+    labels = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=4,
+    )
 
 
 class ListStreamsRequest(proto.Message):
     r"""Request message for 'ListStreams'.
-
     Attributes:
         parent (str):
             Required. The parent that owns the collection
@@ -326,20 +372,30 @@ class ListStreamsRequest(proto.Message):
             Order by fields for the result.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
-
-    filter = proto.Field(proto.STRING, number=4)
-
-    order_by = proto.Field(proto.STRING, number=5)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    filter = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    order_by = proto.Field(
+        proto.STRING,
+        number=5,
+    )
 
 
 class ListStreamsResponse(proto.Message):
     r"""Response message from 'ListStreams'.
-
     Attributes:
         streams (Sequence[google.partner.aistreams_v1alpha1.types.Stream]):
             List of the streams.
@@ -355,29 +411,36 @@ class ListStreamsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    streams = proto.RepeatedField(proto.MESSAGE, number=1,
+    streams = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Stream',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
-
-    unreachable = proto.RepeatedField(proto.STRING, number=3)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    unreachable = proto.RepeatedField(
+        proto.STRING,
+        number=3,
+    )
 
 
 class GetStreamRequest(proto.Message):
     r"""Request message for 'GetStream'.
-
     Attributes:
         name (str):
             Required. The name of the stream.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class CreateStreamRequest(proto.Message):
     r"""Request message for 'CreateStream'.
-
     Attributes:
         parent (str):
             Required. The parent that owns the collection
@@ -406,20 +469,27 @@ class CreateStreamRequest(proto.Message):
             (00000000-0000-0000-0000-000000000000).
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    stream_id = proto.Field(proto.STRING, number=2)
-
-    stream = proto.Field(proto.MESSAGE, number=3,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    stream_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    stream = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='Stream',
     )
-
-    request_id = proto.Field(proto.STRING, number=4)
+    request_id = proto.Field(
+        proto.STRING,
+        number=4,
+    )
 
 
 class UpdateStreamRequest(proto.Message):
     r"""Request message for 'UpdateStream'.
-
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             Required. Field mask is used to specify the fields to be
@@ -450,20 +520,24 @@ class UpdateStreamRequest(proto.Message):
             (00000000-0000-0000-0000-000000000000).
     """
 
-    update_mask = proto.Field(proto.MESSAGE, number=1,
-        message=field_mask.FieldMask,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=field_mask_pb2.FieldMask,
     )
-
-    stream = proto.Field(proto.MESSAGE, number=2,
+    stream = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='Stream',
     )
-
-    request_id = proto.Field(proto.STRING, number=3)
+    request_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class DeleteStreamRequest(proto.Message):
     r"""Request message for 'DeleteStream'.
-
     Attributes:
         name (str):
             Required. The name of the stream.
@@ -487,14 +561,18 @@ class DeleteStreamRequest(proto.Message):
             (00000000-0000-0000-0000-000000000000).
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    request_id = proto.Field(proto.STRING, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    request_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class OperationMetadata(proto.Message):
     r"""Represents the metadata of the long-running operation.
-
     Attributes:
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. The time the operation was
@@ -522,23 +600,36 @@ class OperationMetadata(proto.Message):
             operation.
     """
 
-    create_time = proto.Field(proto.MESSAGE, number=1,
-        message=timestamp.Timestamp,
+    create_time = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=timestamp_pb2.Timestamp,
     )
-
-    end_time = proto.Field(proto.MESSAGE, number=2,
-        message=timestamp.Timestamp,
+    end_time = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=timestamp_pb2.Timestamp,
     )
-
-    target = proto.Field(proto.STRING, number=3)
-
-    verb = proto.Field(proto.STRING, number=4)
-
-    status_message = proto.Field(proto.STRING, number=5)
-
-    requested_cancellation = proto.Field(proto.BOOL, number=6)
-
-    api_version = proto.Field(proto.STRING, number=7)
+    target = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    verb = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    status_message = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    requested_cancellation = proto.Field(
+        proto.BOOL,
+        number=6,
+    )
+    api_version = proto.Field(
+        proto.STRING,
+        number=7,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

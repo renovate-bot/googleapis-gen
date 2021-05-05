@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -50,9 +48,20 @@ class CustomerLabel(proto.Message):
             new CustomerLabel.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    customer = proto.Field(proto.STRING, number=4, optional=True)
-    label = proto.Field(proto.STRING, number=5, optional=True)
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    customer = proto.Field(
+        proto.STRING,
+        number=4,
+        optional=True,
+    )
+    label = proto.Field(
+        proto.STRING,
+        number=5,
+        optional=True,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

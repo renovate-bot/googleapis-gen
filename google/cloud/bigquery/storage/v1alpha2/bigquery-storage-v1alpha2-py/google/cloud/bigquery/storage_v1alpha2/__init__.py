@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,8 @@
 #
 
 from .services.big_query_write import BigQueryWriteClient
+from .services.big_query_write import BigQueryWriteAsyncClient
+
 from .types.protobuf import ProtoRows
 from .types.protobuf import ProtoSchema
 from .types.storage import AppendRowsRequest
@@ -32,22 +33,21 @@ from .types.stream import WriteStream
 from .types.table import TableFieldSchema
 from .types.table import TableSchema
 
-
 __all__ = (
-    'AppendRowsRequest',
-    'AppendRowsResponse',
-    'BatchCommitWriteStreamsRequest',
-    'BatchCommitWriteStreamsResponse',
-    'CreateWriteStreamRequest',
-    'FinalizeWriteStreamRequest',
-    'FinalizeWriteStreamResponse',
-    'FlushRowsRequest',
-    'FlushRowsResponse',
-    'GetWriteStreamRequest',
-    'ProtoRows',
-    'ProtoSchema',
-    'TableFieldSchema',
-    'TableSchema',
-    'WriteStream',
+'AppendRowsRequest',
+'AppendRowsResponse',
+'BatchCommitWriteStreamsRequest',
+'BatchCommitWriteStreamsResponse',
 'BigQueryWriteClient',
+'CreateWriteStreamRequest',
+'FinalizeWriteStreamRequest',
+'FinalizeWriteStreamResponse',
+'FlushRowsRequest',
+'FlushRowsResponse',
+'GetWriteStreamRequest',
+'ProtoRows',
+'ProtoSchema',
+'TableFieldSchema',
+'TableSchema',
+'WriteStream',
 )

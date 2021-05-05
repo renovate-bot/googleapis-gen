@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -23,10 +21,10 @@ from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
-from google.api_core import exceptions                            # type: ignore
+from google.api_core import exceptions as core_exceptions         # type: ignore
 from google.api_core import gapic_v1                              # type: ignore
 from google.api_core import retry as retries                      # type: ignore
-from google.auth import credentials                               # type: ignore
+from google.auth import credentials as ga_credentials             # type: ignore
 from google.auth.transport import mtls                            # type: ignore
 from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
@@ -34,8 +32,7 @@ from google.oauth2 import service_account                         # type: ignore
 
 from google.example.library_v1.services.library_service import pagers
 from google.example.library_v1.types import library
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-
+from google.protobuf import field_mask_pb2  # type: ignore
 from .transports.base import LibraryServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import LibraryServiceGrpcTransport
 from .transports.grpc_asyncio import LibraryServiceGrpcAsyncIOTransport
@@ -245,7 +242,7 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
         return m.groupdict() if m else {}
 
     def __init__(self, *,
-            credentials: Optional[credentials.Credentials] = None,
+            credentials: Optional[ga_credentials.Credentials] = None,
             transport: Union[str, LibraryServiceTransport, None] = None,
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -366,7 +363,6 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
                 This corresponds to the ``shelf`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -393,10 +389,8 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, library.CreateShelfRequest):
             request = library.CreateShelfRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if shelf is not None:
                 request.shelf = shelf
 
@@ -434,7 +428,6 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -461,10 +454,8 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, library.GetShelfRequest):
             request = library.GetShelfRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -506,7 +497,6 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
             request (google.example.library_v1.types.ListShelvesRequest):
                 The request object. Request message for
                 LibraryService.ListShelves.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -523,7 +513,6 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a library.ListShelvesRequest.
         # There's no risk of modifying the input as we've already verified
@@ -574,7 +563,6 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -595,10 +583,8 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, library.DeleteShelfRequest):
             request = library.DeleteShelfRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -657,7 +643,6 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
                 This corresponds to the ``other_shelf`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -684,10 +669,8 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, library.MergeShelvesRequest):
             request = library.MergeShelvesRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
             if other_shelf is not None:
@@ -743,7 +726,6 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
                 This corresponds to the ``book`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -768,10 +750,8 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, library.CreateBookRequest):
             request = library.CreateBookRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if book is not None:
@@ -819,7 +799,6 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -844,10 +823,8 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, library.GetBookRequest):
             request = library.GetBookRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -898,7 +875,6 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -928,10 +904,8 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, library.ListBooksRequest):
             request = library.ListBooksRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -986,7 +960,6 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1007,10 +980,8 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, library.DeleteBookRequest):
             request = library.DeleteBookRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1038,7 +1009,7 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
             request: library.UpdateBookRequest = None,
             *,
             book: library.Book = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -1060,7 +1031,6 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1085,10 +1055,8 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, library.UpdateBookRequest):
             request = library.UpdateBookRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if book is not None:
                 request.book = book
             if update_mask is not None:
@@ -1144,7 +1112,6 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
                 This corresponds to the ``other_shelf_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1169,10 +1136,8 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, library.MoveBookRequest):
             request = library.MoveBookRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
             if other_shelf_name is not None:
@@ -1200,8 +1165,6 @@ class LibraryServiceClient(metaclass=LibraryServiceClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

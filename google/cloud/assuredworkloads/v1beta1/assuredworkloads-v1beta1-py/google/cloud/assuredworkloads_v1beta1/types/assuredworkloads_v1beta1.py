@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,13 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
-from google.protobuf import duration_pb2 as duration  # type: ignore
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+from google.protobuf import duration_pb2  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -40,7 +37,6 @@ __protobuf__ = proto.module(
 
 class CreateWorkloadRequest(proto.Message):
     r"""Request for creating a workload.
-
     Attributes:
         parent (str):
             Required. The resource name of the new Workload's parent.
@@ -57,18 +53,23 @@ class CreateWorkloadRequest(proto.Message):
             projects with the identifier as the value.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    workload = proto.Field(proto.MESSAGE, number=2,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    workload = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='Workload',
     )
-
-    external_id = proto.Field(proto.STRING, number=3)
+    external_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class UpdateWorkloadRequest(proto.Message):
     r"""Request for Updating a workload.
-
     Attributes:
         workload (google.cloud.assuredworkloads_v1beta1.types.Workload):
             Required. The workload to update. The workload’s ``name``
@@ -79,18 +80,20 @@ class UpdateWorkloadRequest(proto.Message):
             Required. The list of fields to be updated.
     """
 
-    workload = proto.Field(proto.MESSAGE, number=1,
+    workload = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='Workload',
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=2,
-        message=field_mask.FieldMask,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=field_mask_pb2.FieldMask,
     )
 
 
 class DeleteWorkloadRequest(proto.Message):
     r"""Request for deleting a Workload.
-
     Attributes:
         name (str):
             Required. The ``name`` field is used to identify the
@@ -102,14 +105,18 @@ class DeleteWorkloadRequest(proto.Message):
             etag.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    etag = proto.Field(proto.STRING, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    etag = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class GetWorkloadRequest(proto.Message):
     r"""Request for fetching a workload.
-
     Attributes:
         name (str):
             Required. The resource name of the Workload to fetch. This
@@ -119,12 +126,14 @@ class GetWorkloadRequest(proto.Message):
             "organizations/123/locations/us-east1/workloads/assured-workload-1".
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class ListWorkloadsRequest(proto.Message):
     r"""Request for fetching workloads in an organization.
-
     Attributes:
         parent (str):
             Required. Parent Resource to list workloads from. Must be of
@@ -142,18 +151,26 @@ class ListWorkloadsRequest(proto.Message):
             labels is supported.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
-
-    filter = proto.Field(proto.STRING, number=4)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    filter = proto.Field(
+        proto.STRING,
+        number=4,
+    )
 
 
 class ListWorkloadsResponse(proto.Message):
     r"""Response of ListWorkloads endpoint.
-
     Attributes:
         workloads (Sequence[google.cloud.assuredworkloads_v1beta1.types.Workload]):
             List of Workloads under a given parent.
@@ -166,11 +183,15 @@ class ListWorkloadsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    workloads = proto.RepeatedField(proto.MESSAGE, number=1,
+    workloads = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Workload',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class Workload(proto.Message):
@@ -264,7 +285,6 @@ class Workload(proto.Message):
 
     class ResourceInfo(proto.Message):
         r"""Represent the resources that are children of this Workload.
-
         Attributes:
             resource_id (int):
                 Resource identifier. For a project this represents
@@ -278,15 +298,18 @@ class Workload(proto.Message):
             CONSUMER_PROJECT = 1
             ENCRYPTION_KEYS_PROJECT = 2
 
-        resource_id = proto.Field(proto.INT64, number=1)
-
-        resource_type = proto.Field(proto.ENUM, number=2,
+        resource_id = proto.Field(
+            proto.INT64,
+            number=1,
+        )
+        resource_type = proto.Field(
+            proto.ENUM,
+            number=2,
             enum='Workload.ResourceInfo.ResourceType',
         )
 
     class KMSSettings(proto.Message):
         r"""Settings specific to the Key Management Service.
-
         Attributes:
             next_rotation_time (google.protobuf.timestamp_pb2.Timestamp):
                 Required. Input only. Immutable. The time at
@@ -300,63 +323,70 @@ class Workload(proto.Message):
                 at most 876,000 hours.
         """
 
-        next_rotation_time = proto.Field(proto.MESSAGE, number=1,
-            message=timestamp.Timestamp,
+        next_rotation_time = proto.Field(
+            proto.MESSAGE,
+            number=1,
+            message=timestamp_pb2.Timestamp,
         )
-
-        rotation_period = proto.Field(proto.MESSAGE, number=2,
-            message=duration.Duration,
+        rotation_period = proto.Field(
+            proto.MESSAGE,
+            number=2,
+            message=duration_pb2.Duration,
         )
 
     class IL4Settings(proto.Message):
         r"""Settings specific to resources needed for IL4.
-
         Attributes:
             kms_settings (google.cloud.assuredworkloads_v1beta1.types.Workload.KMSSettings):
                 Required. Input only. Immutable. Settings
                 used to create a CMEK crypto key.
         """
 
-        kms_settings = proto.Field(proto.MESSAGE, number=1,
+        kms_settings = proto.Field(
+            proto.MESSAGE,
+            number=1,
             message='Workload.KMSSettings',
         )
 
     class CJISSettings(proto.Message):
         r"""Settings specific to resources needed for CJIS.
-
         Attributes:
             kms_settings (google.cloud.assuredworkloads_v1beta1.types.Workload.KMSSettings):
                 Required. Input only. Immutable. Settings
                 used to create a CMEK crypto key.
         """
 
-        kms_settings = proto.Field(proto.MESSAGE, number=1,
+        kms_settings = proto.Field(
+            proto.MESSAGE,
+            number=1,
             message='Workload.KMSSettings',
         )
 
     class FedrampHighSettings(proto.Message):
         r"""Settings specific to resources needed for FedRAMP High.
-
         Attributes:
             kms_settings (google.cloud.assuredworkloads_v1beta1.types.Workload.KMSSettings):
                 Required. Input only. Immutable. Settings
                 used to create a CMEK crypto key.
         """
 
-        kms_settings = proto.Field(proto.MESSAGE, number=1,
+        kms_settings = proto.Field(
+            proto.MESSAGE,
+            number=1,
             message='Workload.KMSSettings',
         )
 
     class FedrampModerateSettings(proto.Message):
         r"""Settings specific to resources needed for FedRAMP Moderate.
-
         Attributes:
             kms_settings (google.cloud.assuredworkloads_v1beta1.types.Workload.KMSSettings):
                 Required. Input only. Immutable. Settings
                 used to create a CMEK crypto key.
         """
 
-        kms_settings = proto.Field(proto.MESSAGE, number=1,
+        kms_settings = proto.Field(
+            proto.MESSAGE,
+            number=1,
             message='Workload.KMSSettings',
         )
 
@@ -375,64 +405,94 @@ class Workload(proto.Message):
                 (CONSUMER_PROJECT or ENCRYPTION_KEYS_PROJECT)
         """
 
-        resource_id = proto.Field(proto.STRING, number=1)
-
-        resource_type = proto.Field(proto.ENUM, number=2,
+        resource_id = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        resource_type = proto.Field(
+            proto.ENUM,
+            number=2,
             enum='Workload.ResourceInfo.ResourceType',
         )
 
-    name = proto.Field(proto.STRING, number=1)
-
-    display_name = proto.Field(proto.STRING, number=2)
-
-    resources = proto.RepeatedField(proto.MESSAGE, number=3,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    display_name = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    resources = proto.RepeatedField(
+        proto.MESSAGE,
+        number=3,
         message=ResourceInfo,
     )
-
-    compliance_regime = proto.Field(proto.ENUM, number=4,
+    compliance_regime = proto.Field(
+        proto.ENUM,
+        number=4,
         enum=ComplianceRegime,
     )
-
-    create_time = proto.Field(proto.MESSAGE, number=5,
-        message=timestamp.Timestamp,
+    create_time = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        message=timestamp_pb2.Timestamp,
     )
-
-    billing_account = proto.Field(proto.STRING, number=6)
-
-    il4_settings = proto.Field(proto.MESSAGE, number=7, oneof='compliance_regime_settings',
+    billing_account = proto.Field(
+        proto.STRING,
+        number=6,
+    )
+    il4_settings = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        oneof='compliance_regime_settings',
         message=IL4Settings,
     )
-
-    cjis_settings = proto.Field(proto.MESSAGE, number=8, oneof='compliance_regime_settings',
+    cjis_settings = proto.Field(
+        proto.MESSAGE,
+        number=8,
+        oneof='compliance_regime_settings',
         message=CJISSettings,
     )
-
-    fedramp_high_settings = proto.Field(proto.MESSAGE, number=11, oneof='compliance_regime_settings',
+    fedramp_high_settings = proto.Field(
+        proto.MESSAGE,
+        number=11,
+        oneof='compliance_regime_settings',
         message=FedrampHighSettings,
     )
-
-    fedramp_moderate_settings = proto.Field(proto.MESSAGE, number=12, oneof='compliance_regime_settings',
+    fedramp_moderate_settings = proto.Field(
+        proto.MESSAGE,
+        number=12,
+        oneof='compliance_regime_settings',
         message=FedrampModerateSettings,
     )
-
-    etag = proto.Field(proto.STRING, number=9)
-
-    labels = proto.MapField(proto.STRING, proto.STRING, number=10)
-
-    provisioned_resources_parent = proto.Field(proto.STRING, number=13)
-
-    kms_settings = proto.Field(proto.MESSAGE, number=14,
+    etag = proto.Field(
+        proto.STRING,
+        number=9,
+    )
+    labels = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=10,
+    )
+    provisioned_resources_parent = proto.Field(
+        proto.STRING,
+        number=13,
+    )
+    kms_settings = proto.Field(
+        proto.MESSAGE,
+        number=14,
         message=KMSSettings,
     )
-
-    resource_settings = proto.RepeatedField(proto.MESSAGE, number=15,
+    resource_settings = proto.RepeatedField(
+        proto.MESSAGE,
+        number=15,
         message=ResourceSettings,
     )
 
 
 class CreateWorkloadOperationMetadata(proto.Message):
     r"""Operation metadata to give request details of CreateWorkload.
-
     Attributes:
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             Optional. Time when the operation was
@@ -447,15 +507,22 @@ class CreateWorkloadOperationMetadata(proto.Message):
             workload.
     """
 
-    create_time = proto.Field(proto.MESSAGE, number=1,
-        message=timestamp.Timestamp,
+    create_time = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=timestamp_pb2.Timestamp,
     )
-
-    display_name = proto.Field(proto.STRING, number=2)
-
-    parent = proto.Field(proto.STRING, number=3)
-
-    compliance_regime = proto.Field(proto.ENUM, number=4,
+    display_name = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    parent = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    compliance_regime = proto.Field(
+        proto.ENUM,
+        number=4,
         enum='Workload.ComplianceRegime',
     )
 

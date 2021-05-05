@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,22 +13,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import abc
 import typing
 import pkg_resources
 
-from google import auth
+import google.auth  # type: ignore
 from google.api_core import gapic_v1    # type: ignore
 from google.api_core import retry as retries  # type: ignore
 from google.api_core import operations_v1  # type: ignore
-from google.auth import credentials  # type: ignore
+from google.auth import credentials as ga_credentials  # type: ignore
 
 from google.ads.googleads.v7.resources.types import campaign_experiment
 from google.ads.googleads.v7.services.types import campaign_experiment_service
-from google.longrunning import operations_pb2 as operations  # type: ignore
-from google.protobuf import empty_pb2 as empty  # type: ignore
-
+from google.longrunning import operations_pb2  # type: ignore
+from google.protobuf import empty_pb2  # type: ignore
 
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
@@ -51,13 +48,14 @@ class CampaignExperimentServiceTransport(metaclass=abc.ABCMeta):
     def __init__(
             self, *,
             host: str = 'googleads.googleapis.com',
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -77,7 +75,7 @@ class CampaignExperimentServiceTransport(metaclass=abc.ABCMeta):
         # If no credentials are provided, then determine the appropriate
         # defaults.
         if credentials is None:
-            credentials, _ = auth.default(scopes=self.AUTH_SCOPES)
+            credentials, _ = google.auth.default(scopes=self.AUTH_SCOPES)
 
         # Save the credentials.
         self._credentials = credentials
@@ -123,8 +121,7 @@ class CampaignExperimentServiceTransport(metaclass=abc.ABCMeta):
                 default_timeout=None,
                 client_info=client_info,
             ),
-
-        }
+         }
 
     @property
     def operations_client(self) -> operations_v1.OperationsClient:
@@ -140,7 +137,7 @@ class CampaignExperimentServiceTransport(metaclass=abc.ABCMeta):
     @property
     def create_campaign_experiment(self) -> typing.Callable[
             [campaign_experiment_service.CreateCampaignExperimentRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         raise NotImplementedError
 
     @property
@@ -158,13 +155,13 @@ class CampaignExperimentServiceTransport(metaclass=abc.ABCMeta):
     @property
     def promote_campaign_experiment(self) -> typing.Callable[
             [campaign_experiment_service.PromoteCampaignExperimentRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         raise NotImplementedError
 
     @property
     def end_campaign_experiment(self) -> typing.Callable[
             [campaign_experiment_service.EndCampaignExperimentRequest],
-            empty.Empty]:
+            empty_pb2.Empty]:
         raise NotImplementedError
 
     @property

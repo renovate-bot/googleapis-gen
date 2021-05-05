@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 import mock
+import packaging.version
 
 import grpc
 from grpc.experimental import aio
@@ -24,21 +23,23 @@ import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
-from google import auth
+
 from google.api_core import client_options
-from google.api_core import exceptions
+from google.api_core import exceptions as core_exceptions
 from google.api_core import future
 from google.api_core import gapic_v1
 from google.api_core import grpc_helpers
 from google.api_core import grpc_helpers_async
 from google.api_core import operation_async  # type: ignore
 from google.api_core import operations_v1
-from google.auth import credentials
+from google.auth import credentials as ga_credentials
 from google.auth.exceptions import MutualTLSChannelError
 from google.cloud.automl_v1beta1.services.auto_ml import AutoMlAsyncClient
 from google.cloud.automl_v1beta1.services.auto_ml import AutoMlClient
 from google.cloud.automl_v1beta1.services.auto_ml import pagers
 from google.cloud.automl_v1beta1.services.auto_ml import transports
+from google.cloud.automl_v1beta1.services.auto_ml.transports.base import _API_CORE_VERSION
+from google.cloud.automl_v1beta1.services.auto_ml.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.automl_v1beta1.types import annotation_spec
 from google.cloud.automl_v1beta1.types import classification
 from google.cloud.automl_v1beta1.types import column_spec
@@ -66,9 +67,32 @@ from google.cloud.automl_v1beta1.types import translation
 from google.cloud.automl_v1beta1.types import video
 from google.longrunning import operations_pb2
 from google.oauth2 import service_account
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
+import google.auth
 
+
+# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
+# - Delete all the api-core and auth "less than" test cases
+# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
+requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth < 1.25.0",
+)
+requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth >= 1.25.0",
+)
+
+requires_api_core_lt_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core < 1.26.0",
+)
+
+requires_api_core_gte_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core >= 1.26.0",
+)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -101,7 +125,7 @@ def test__get_default_mtls_endpoint():
     AutoMlAsyncClient,
 ])
 def test_auto_ml_client_from_service_account_info(client_class):
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
@@ -117,7 +141,7 @@ def test_auto_ml_client_from_service_account_info(client_class):
     AutoMlAsyncClient,
 ])
 def test_auto_ml_client_from_service_account_file(client_class):
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_file') as factory:
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
@@ -152,7 +176,7 @@ def test_auto_ml_client_client_options(client_class, transport_class, transport_
     # Check that if channel is provided we won't create a new one.
     with mock.patch.object(AutoMlClient, 'get_transport_class') as gtc:
         transport = transport_class(
-            credentials=credentials.AnonymousCredentials()
+            credentials=ga_credentials.AnonymousCredentials()
         )
         client = client_class(transport=transport)
         gtc.assert_not_called()
@@ -236,12 +260,10 @@ def test_auto_ml_client_client_options(client_class, transport_class, transport_
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
-
     (AutoMlClient, transports.AutoMlGrpcTransport, "grpc", "true"),
     (AutoMlAsyncClient, transports.AutoMlGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (AutoMlClient, transports.AutoMlGrpcTransport, "grpc", "false"),
     (AutoMlAsyncClient, transports.AutoMlGrpcAsyncIOTransport, "grpc_asyncio", "false"),
-
 ])
 @mock.patch.object(AutoMlClient, "DEFAULT_ENDPOINT", modify_default_endpoint(AutoMlClient))
 @mock.patch.object(AutoMlAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(AutoMlAsyncClient))
@@ -381,7 +403,7 @@ def test_auto_ml_client_client_options_from_dict():
 
 def test_create_dataset(transport: str = 'grpc', request_type=service.CreateDatasetRequest):
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -396,38 +418,25 @@ def test_create_dataset(transport: str = 'grpc', request_type=service.CreateData
         # Designate an appropriate return value for the call.
         call.return_value = gca_dataset.Dataset(
             name='name_value',
-
             display_name='display_name_value',
-
             description='description_value',
-
             example_count=1396,
-
             etag='etag_value',
-
             translation_dataset_metadata=translation.TranslationDatasetMetadata(source_language_code='source_language_code_value'),
         )
-
         response = client.create_dataset(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.CreateDatasetRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, gca_dataset.Dataset)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.description == 'description_value'
-
     assert response.example_count == 1396
-
     assert response.etag == 'etag_value'
 
 
@@ -439,7 +448,7 @@ def test_create_dataset_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -450,13 +459,13 @@ def test_create_dataset_empty_call():
         client.create_dataset()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.CreateDatasetRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_dataset_async(transport: str = 'grpc_asyncio', request_type=service.CreateDatasetRequest):
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -469,33 +478,26 @@ async def test_create_dataset_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.create_dataset),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gca_dataset.Dataset(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gca_dataset.Dataset(
             name='name_value',
             display_name='display_name_value',
             description='description_value',
             example_count=1396,
             etag='etag_value',
         ))
-
         response = await client.create_dataset(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.CreateDatasetRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gca_dataset.Dataset)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.description == 'description_value'
-
     assert response.example_count == 1396
-
     assert response.etag == 'etag_value'
 
 
@@ -506,12 +508,13 @@ async def test_create_dataset_async_from_dict():
 
 def test_create_dataset_field_headers():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.CreateDatasetRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -519,7 +522,6 @@ def test_create_dataset_field_headers():
             type(client.transport.create_dataset),
             '__call__') as call:
         call.return_value = gca_dataset.Dataset()
-
         client.create_dataset(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -538,12 +540,13 @@ def test_create_dataset_field_headers():
 @pytest.mark.asyncio
 async def test_create_dataset_field_headers_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.CreateDatasetRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -551,7 +554,6 @@ async def test_create_dataset_field_headers_async():
             type(client.transport.create_dataset),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gca_dataset.Dataset())
-
         await client.create_dataset(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -569,7 +571,7 @@ async def test_create_dataset_field_headers_async():
 
 def test_create_dataset_flattened():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -578,7 +580,6 @@ def test_create_dataset_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gca_dataset.Dataset()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_dataset(
@@ -590,15 +591,13 @@ def test_create_dataset_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].dataset == gca_dataset.Dataset(translation_dataset_metadata=translation.TranslationDatasetMetadata(source_language_code='source_language_code_value'))
 
 
 def test_create_dataset_flattened_error():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -614,7 +613,7 @@ def test_create_dataset_flattened_error():
 @pytest.mark.asyncio
 async def test_create_dataset_flattened_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -636,16 +635,14 @@ async def test_create_dataset_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].dataset == gca_dataset.Dataset(translation_dataset_metadata=translation.TranslationDatasetMetadata(source_language_code='source_language_code_value'))
 
 
 @pytest.mark.asyncio
 async def test_create_dataset_flattened_error_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -660,7 +657,7 @@ async def test_create_dataset_flattened_error_async():
 
 def test_get_dataset(transport: str = 'grpc', request_type=service.GetDatasetRequest):
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -675,38 +672,25 @@ def test_get_dataset(transport: str = 'grpc', request_type=service.GetDatasetReq
         # Designate an appropriate return value for the call.
         call.return_value = dataset.Dataset(
             name='name_value',
-
             display_name='display_name_value',
-
             description='description_value',
-
             example_count=1396,
-
             etag='etag_value',
-
             translation_dataset_metadata=translation.TranslationDatasetMetadata(source_language_code='source_language_code_value'),
         )
-
         response = client.get_dataset(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetDatasetRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, dataset.Dataset)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.description == 'description_value'
-
     assert response.example_count == 1396
-
     assert response.etag == 'etag_value'
 
 
@@ -718,7 +702,7 @@ def test_get_dataset_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -729,13 +713,13 @@ def test_get_dataset_empty_call():
         client.get_dataset()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetDatasetRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_dataset_async(transport: str = 'grpc_asyncio', request_type=service.GetDatasetRequest):
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -748,33 +732,26 @@ async def test_get_dataset_async(transport: str = 'grpc_asyncio', request_type=s
             type(client.transport.get_dataset),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(dataset.Dataset(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(dataset.Dataset(
             name='name_value',
             display_name='display_name_value',
             description='description_value',
             example_count=1396,
             etag='etag_value',
         ))
-
         response = await client.get_dataset(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetDatasetRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, dataset.Dataset)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.description == 'description_value'
-
     assert response.example_count == 1396
-
     assert response.etag == 'etag_value'
 
 
@@ -785,12 +762,13 @@ async def test_get_dataset_async_from_dict():
 
 def test_get_dataset_field_headers():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.GetDatasetRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -798,7 +776,6 @@ def test_get_dataset_field_headers():
             type(client.transport.get_dataset),
             '__call__') as call:
         call.return_value = dataset.Dataset()
-
         client.get_dataset(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -817,12 +794,13 @@ def test_get_dataset_field_headers():
 @pytest.mark.asyncio
 async def test_get_dataset_field_headers_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.GetDatasetRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -830,7 +808,6 @@ async def test_get_dataset_field_headers_async():
             type(client.transport.get_dataset),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(dataset.Dataset())
-
         await client.get_dataset(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -848,7 +825,7 @@ async def test_get_dataset_field_headers_async():
 
 def test_get_dataset_flattened():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -857,7 +834,6 @@ def test_get_dataset_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = dataset.Dataset()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_dataset(
@@ -868,13 +844,12 @@ def test_get_dataset_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 def test_get_dataset_flattened_error():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -889,7 +864,7 @@ def test_get_dataset_flattened_error():
 @pytest.mark.asyncio
 async def test_get_dataset_flattened_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -910,14 +885,13 @@ async def test_get_dataset_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 @pytest.mark.asyncio
 async def test_get_dataset_flattened_error_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -931,7 +905,7 @@ async def test_get_dataset_flattened_error_async():
 
 def test_list_datasets(transport: str = 'grpc', request_type=service.ListDatasetsRequest):
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -946,21 +920,16 @@ def test_list_datasets(transport: str = 'grpc', request_type=service.ListDataset
         # Designate an appropriate return value for the call.
         call.return_value = service.ListDatasetsResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_datasets(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListDatasetsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListDatasetsPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -972,7 +941,7 @@ def test_list_datasets_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -983,13 +952,13 @@ def test_list_datasets_empty_call():
         client.list_datasets()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListDatasetsRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_datasets_async(transport: str = 'grpc_asyncio', request_type=service.ListDatasetsRequest):
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1002,21 +971,18 @@ async def test_list_datasets_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.list_datasets),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListDatasetsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.ListDatasetsResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_datasets(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListDatasetsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListDatasetsAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1027,12 +993,13 @@ async def test_list_datasets_async_from_dict():
 
 def test_list_datasets_field_headers():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListDatasetsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1040,7 +1007,6 @@ def test_list_datasets_field_headers():
             type(client.transport.list_datasets),
             '__call__') as call:
         call.return_value = service.ListDatasetsResponse()
-
         client.list_datasets(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1059,12 +1025,13 @@ def test_list_datasets_field_headers():
 @pytest.mark.asyncio
 async def test_list_datasets_field_headers_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListDatasetsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1072,7 +1039,6 @@ async def test_list_datasets_field_headers_async():
             type(client.transport.list_datasets),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListDatasetsResponse())
-
         await client.list_datasets(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1090,7 +1056,7 @@ async def test_list_datasets_field_headers_async():
 
 def test_list_datasets_flattened():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1099,7 +1065,6 @@ def test_list_datasets_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = service.ListDatasetsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_datasets(
@@ -1110,13 +1075,12 @@ def test_list_datasets_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
 def test_list_datasets_flattened_error():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1131,7 +1095,7 @@ def test_list_datasets_flattened_error():
 @pytest.mark.asyncio
 async def test_list_datasets_flattened_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1152,14 +1116,13 @@ async def test_list_datasets_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
 @pytest.mark.asyncio
 async def test_list_datasets_flattened_error_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1173,7 +1136,7 @@ async def test_list_datasets_flattened_error_async():
 
 def test_list_datasets_pager():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1226,7 +1189,7 @@ def test_list_datasets_pager():
 
 def test_list_datasets_pages():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1268,7 +1231,7 @@ def test_list_datasets_pages():
 @pytest.mark.asyncio
 async def test_list_datasets_async_pager():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1316,7 +1279,7 @@ async def test_list_datasets_async_pager():
 @pytest.mark.asyncio
 async def test_list_datasets_async_pages():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1357,10 +1320,9 @@ async def test_list_datasets_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_update_dataset(transport: str = 'grpc', request_type=service.UpdateDatasetRequest):
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1375,38 +1337,25 @@ def test_update_dataset(transport: str = 'grpc', request_type=service.UpdateData
         # Designate an appropriate return value for the call.
         call.return_value = gca_dataset.Dataset(
             name='name_value',
-
             display_name='display_name_value',
-
             description='description_value',
-
             example_count=1396,
-
             etag='etag_value',
-
             translation_dataset_metadata=translation.TranslationDatasetMetadata(source_language_code='source_language_code_value'),
         )
-
         response = client.update_dataset(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.UpdateDatasetRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, gca_dataset.Dataset)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.description == 'description_value'
-
     assert response.example_count == 1396
-
     assert response.etag == 'etag_value'
 
 
@@ -1418,7 +1367,7 @@ def test_update_dataset_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -1429,13 +1378,13 @@ def test_update_dataset_empty_call():
         client.update_dataset()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.UpdateDatasetRequest()
+
 
 @pytest.mark.asyncio
 async def test_update_dataset_async(transport: str = 'grpc_asyncio', request_type=service.UpdateDatasetRequest):
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1448,33 +1397,26 @@ async def test_update_dataset_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.update_dataset),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gca_dataset.Dataset(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gca_dataset.Dataset(
             name='name_value',
             display_name='display_name_value',
             description='description_value',
             example_count=1396,
             etag='etag_value',
         ))
-
         response = await client.update_dataset(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.UpdateDatasetRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gca_dataset.Dataset)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.description == 'description_value'
-
     assert response.example_count == 1396
-
     assert response.etag == 'etag_value'
 
 
@@ -1485,12 +1427,13 @@ async def test_update_dataset_async_from_dict():
 
 def test_update_dataset_field_headers():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.UpdateDatasetRequest()
+
     request.dataset.name = 'dataset.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1498,7 +1441,6 @@ def test_update_dataset_field_headers():
             type(client.transport.update_dataset),
             '__call__') as call:
         call.return_value = gca_dataset.Dataset()
-
         client.update_dataset(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1517,12 +1459,13 @@ def test_update_dataset_field_headers():
 @pytest.mark.asyncio
 async def test_update_dataset_field_headers_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.UpdateDatasetRequest()
+
     request.dataset.name = 'dataset.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1530,7 +1473,6 @@ async def test_update_dataset_field_headers_async():
             type(client.transport.update_dataset),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gca_dataset.Dataset())
-
         await client.update_dataset(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1548,7 +1490,7 @@ async def test_update_dataset_field_headers_async():
 
 def test_update_dataset_flattened():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1557,7 +1499,6 @@ def test_update_dataset_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gca_dataset.Dataset()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_dataset(
@@ -1568,13 +1509,12 @@ def test_update_dataset_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].dataset == gca_dataset.Dataset(translation_dataset_metadata=translation.TranslationDatasetMetadata(source_language_code='source_language_code_value'))
 
 
 def test_update_dataset_flattened_error():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1589,7 +1529,7 @@ def test_update_dataset_flattened_error():
 @pytest.mark.asyncio
 async def test_update_dataset_flattened_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1610,14 +1550,13 @@ async def test_update_dataset_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].dataset == gca_dataset.Dataset(translation_dataset_metadata=translation.TranslationDatasetMetadata(source_language_code='source_language_code_value'))
 
 
 @pytest.mark.asyncio
 async def test_update_dataset_flattened_error_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1631,7 +1570,7 @@ async def test_update_dataset_flattened_error_async():
 
 def test_delete_dataset(transport: str = 'grpc', request_type=service.DeleteDatasetRequest):
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1645,13 +1584,11 @@ def test_delete_dataset(transport: str = 'grpc', request_type=service.DeleteData
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.delete_dataset(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.DeleteDatasetRequest()
 
     # Establish that the response is the type that we expect.
@@ -1666,7 +1603,7 @@ def test_delete_dataset_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -1677,13 +1614,13 @@ def test_delete_dataset_empty_call():
         client.delete_dataset()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.DeleteDatasetRequest()
+
 
 @pytest.mark.asyncio
 async def test_delete_dataset_async(transport: str = 'grpc_asyncio', request_type=service.DeleteDatasetRequest):
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1699,13 +1636,11 @@ async def test_delete_dataset_async(transport: str = 'grpc_asyncio', request_typ
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.delete_dataset(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.DeleteDatasetRequest()
 
     # Establish that the response is the type that we expect.
@@ -1719,12 +1654,13 @@ async def test_delete_dataset_async_from_dict():
 
 def test_delete_dataset_field_headers():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.DeleteDatasetRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1732,7 +1668,6 @@ def test_delete_dataset_field_headers():
             type(client.transport.delete_dataset),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.delete_dataset(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1751,12 +1686,13 @@ def test_delete_dataset_field_headers():
 @pytest.mark.asyncio
 async def test_delete_dataset_field_headers_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.DeleteDatasetRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1764,7 +1700,6 @@ async def test_delete_dataset_field_headers_async():
             type(client.transport.delete_dataset),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.delete_dataset(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1782,7 +1717,7 @@ async def test_delete_dataset_field_headers_async():
 
 def test_delete_dataset_flattened():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1791,7 +1726,6 @@ def test_delete_dataset_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_dataset(
@@ -1802,13 +1736,12 @@ def test_delete_dataset_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 def test_delete_dataset_flattened_error():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1823,7 +1756,7 @@ def test_delete_dataset_flattened_error():
 @pytest.mark.asyncio
 async def test_delete_dataset_flattened_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1846,14 +1779,13 @@ async def test_delete_dataset_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 @pytest.mark.asyncio
 async def test_delete_dataset_flattened_error_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1867,7 +1799,7 @@ async def test_delete_dataset_flattened_error_async():
 
 def test_import_data(transport: str = 'grpc', request_type=service.ImportDataRequest):
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1881,13 +1813,11 @@ def test_import_data(transport: str = 'grpc', request_type=service.ImportDataReq
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.import_data(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ImportDataRequest()
 
     # Establish that the response is the type that we expect.
@@ -1902,7 +1832,7 @@ def test_import_data_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -1913,13 +1843,13 @@ def test_import_data_empty_call():
         client.import_data()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ImportDataRequest()
+
 
 @pytest.mark.asyncio
 async def test_import_data_async(transport: str = 'grpc_asyncio', request_type=service.ImportDataRequest):
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1935,13 +1865,11 @@ async def test_import_data_async(transport: str = 'grpc_asyncio', request_type=s
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.import_data(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ImportDataRequest()
 
     # Establish that the response is the type that we expect.
@@ -1955,12 +1883,13 @@ async def test_import_data_async_from_dict():
 
 def test_import_data_field_headers():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ImportDataRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1968,7 +1897,6 @@ def test_import_data_field_headers():
             type(client.transport.import_data),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.import_data(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1987,12 +1915,13 @@ def test_import_data_field_headers():
 @pytest.mark.asyncio
 async def test_import_data_field_headers_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ImportDataRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2000,7 +1929,6 @@ async def test_import_data_field_headers_async():
             type(client.transport.import_data),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.import_data(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2018,7 +1946,7 @@ async def test_import_data_field_headers_async():
 
 def test_import_data_flattened():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2027,7 +1955,6 @@ def test_import_data_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.import_data(
@@ -2039,15 +1966,13 @@ def test_import_data_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].input_config == io.InputConfig(gcs_source=io.GcsSource(input_uris=['input_uris_value']))
 
 
 def test_import_data_flattened_error():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -2063,7 +1988,7 @@ def test_import_data_flattened_error():
 @pytest.mark.asyncio
 async def test_import_data_flattened_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2087,16 +2012,14 @@ async def test_import_data_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].input_config == io.InputConfig(gcs_source=io.GcsSource(input_uris=['input_uris_value']))
 
 
 @pytest.mark.asyncio
 async def test_import_data_flattened_error_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -2111,7 +2034,7 @@ async def test_import_data_flattened_error_async():
 
 def test_export_data(transport: str = 'grpc', request_type=service.ExportDataRequest):
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2125,13 +2048,11 @@ def test_export_data(transport: str = 'grpc', request_type=service.ExportDataReq
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.export_data(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ExportDataRequest()
 
     # Establish that the response is the type that we expect.
@@ -2146,7 +2067,7 @@ def test_export_data_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -2157,13 +2078,13 @@ def test_export_data_empty_call():
         client.export_data()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ExportDataRequest()
+
 
 @pytest.mark.asyncio
 async def test_export_data_async(transport: str = 'grpc_asyncio', request_type=service.ExportDataRequest):
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2179,13 +2100,11 @@ async def test_export_data_async(transport: str = 'grpc_asyncio', request_type=s
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.export_data(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ExportDataRequest()
 
     # Establish that the response is the type that we expect.
@@ -2199,12 +2118,13 @@ async def test_export_data_async_from_dict():
 
 def test_export_data_field_headers():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ExportDataRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2212,7 +2132,6 @@ def test_export_data_field_headers():
             type(client.transport.export_data),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.export_data(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2231,12 +2150,13 @@ def test_export_data_field_headers():
 @pytest.mark.asyncio
 async def test_export_data_field_headers_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ExportDataRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2244,7 +2164,6 @@ async def test_export_data_field_headers_async():
             type(client.transport.export_data),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.export_data(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2262,7 +2181,7 @@ async def test_export_data_field_headers_async():
 
 def test_export_data_flattened():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2271,7 +2190,6 @@ def test_export_data_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.export_data(
@@ -2283,15 +2201,13 @@ def test_export_data_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].output_config == io.OutputConfig(gcs_destination=io.GcsDestination(output_uri_prefix='output_uri_prefix_value'))
 
 
 def test_export_data_flattened_error():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -2307,7 +2223,7 @@ def test_export_data_flattened_error():
 @pytest.mark.asyncio
 async def test_export_data_flattened_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2331,16 +2247,14 @@ async def test_export_data_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].output_config == io.OutputConfig(gcs_destination=io.GcsDestination(output_uri_prefix='output_uri_prefix_value'))
 
 
 @pytest.mark.asyncio
 async def test_export_data_flattened_error_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -2355,7 +2269,7 @@ async def test_export_data_flattened_error_async():
 
 def test_get_annotation_spec(transport: str = 'grpc', request_type=service.GetAnnotationSpecRequest):
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2370,29 +2284,20 @@ def test_get_annotation_spec(transport: str = 'grpc', request_type=service.GetAn
         # Designate an appropriate return value for the call.
         call.return_value = annotation_spec.AnnotationSpec(
             name='name_value',
-
             display_name='display_name_value',
-
             example_count=1396,
-
         )
-
         response = client.get_annotation_spec(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetAnnotationSpecRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, annotation_spec.AnnotationSpec)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.example_count == 1396
 
 
@@ -2404,7 +2309,7 @@ def test_get_annotation_spec_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -2415,13 +2320,13 @@ def test_get_annotation_spec_empty_call():
         client.get_annotation_spec()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetAnnotationSpecRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_annotation_spec_async(transport: str = 'grpc_asyncio', request_type=service.GetAnnotationSpecRequest):
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2434,27 +2339,22 @@ async def test_get_annotation_spec_async(transport: str = 'grpc_asyncio', reques
             type(client.transport.get_annotation_spec),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(annotation_spec.AnnotationSpec(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(annotation_spec.AnnotationSpec(
             name='name_value',
             display_name='display_name_value',
             example_count=1396,
         ))
-
         response = await client.get_annotation_spec(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetAnnotationSpecRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, annotation_spec.AnnotationSpec)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.example_count == 1396
 
 
@@ -2465,12 +2365,13 @@ async def test_get_annotation_spec_async_from_dict():
 
 def test_get_annotation_spec_field_headers():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.GetAnnotationSpecRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2478,7 +2379,6 @@ def test_get_annotation_spec_field_headers():
             type(client.transport.get_annotation_spec),
             '__call__') as call:
         call.return_value = annotation_spec.AnnotationSpec()
-
         client.get_annotation_spec(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2497,12 +2397,13 @@ def test_get_annotation_spec_field_headers():
 @pytest.mark.asyncio
 async def test_get_annotation_spec_field_headers_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.GetAnnotationSpecRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2510,7 +2411,6 @@ async def test_get_annotation_spec_field_headers_async():
             type(client.transport.get_annotation_spec),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(annotation_spec.AnnotationSpec())
-
         await client.get_annotation_spec(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2528,7 +2428,7 @@ async def test_get_annotation_spec_field_headers_async():
 
 def test_get_annotation_spec_flattened():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2537,7 +2437,6 @@ def test_get_annotation_spec_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = annotation_spec.AnnotationSpec()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_annotation_spec(
@@ -2548,13 +2447,12 @@ def test_get_annotation_spec_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 def test_get_annotation_spec_flattened_error():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -2569,7 +2467,7 @@ def test_get_annotation_spec_flattened_error():
 @pytest.mark.asyncio
 async def test_get_annotation_spec_flattened_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2590,14 +2488,13 @@ async def test_get_annotation_spec_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 @pytest.mark.asyncio
 async def test_get_annotation_spec_flattened_error_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -2611,7 +2508,7 @@ async def test_get_annotation_spec_flattened_error_async():
 
 def test_get_table_spec(transport: str = 'grpc', request_type=service.GetTableSpecRequest):
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2626,41 +2523,26 @@ def test_get_table_spec(transport: str = 'grpc', request_type=service.GetTableSp
         # Designate an appropriate return value for the call.
         call.return_value = table_spec.TableSpec(
             name='name_value',
-
             time_column_spec_id='time_column_spec_id_value',
-
             row_count=992,
-
             valid_row_count=1615,
-
             column_count=1302,
-
             etag='etag_value',
-
         )
-
         response = client.get_table_spec(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetTableSpecRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, table_spec.TableSpec)
-
     assert response.name == 'name_value'
-
     assert response.time_column_spec_id == 'time_column_spec_id_value'
-
     assert response.row_count == 992
-
     assert response.valid_row_count == 1615
-
     assert response.column_count == 1302
-
     assert response.etag == 'etag_value'
 
 
@@ -2672,7 +2554,7 @@ def test_get_table_spec_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -2683,13 +2565,13 @@ def test_get_table_spec_empty_call():
         client.get_table_spec()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetTableSpecRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_table_spec_async(transport: str = 'grpc_asyncio', request_type=service.GetTableSpecRequest):
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2702,7 +2584,7 @@ async def test_get_table_spec_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.get_table_spec),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(table_spec.TableSpec(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(table_spec.TableSpec(
             name='name_value',
             time_column_spec_id='time_column_spec_id_value',
             row_count=992,
@@ -2710,28 +2592,20 @@ async def test_get_table_spec_async(transport: str = 'grpc_asyncio', request_typ
             column_count=1302,
             etag='etag_value',
         ))
-
         response = await client.get_table_spec(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetTableSpecRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, table_spec.TableSpec)
-
     assert response.name == 'name_value'
-
     assert response.time_column_spec_id == 'time_column_spec_id_value'
-
     assert response.row_count == 992
-
     assert response.valid_row_count == 1615
-
     assert response.column_count == 1302
-
     assert response.etag == 'etag_value'
 
 
@@ -2742,12 +2616,13 @@ async def test_get_table_spec_async_from_dict():
 
 def test_get_table_spec_field_headers():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.GetTableSpecRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2755,7 +2630,6 @@ def test_get_table_spec_field_headers():
             type(client.transport.get_table_spec),
             '__call__') as call:
         call.return_value = table_spec.TableSpec()
-
         client.get_table_spec(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2774,12 +2648,13 @@ def test_get_table_spec_field_headers():
 @pytest.mark.asyncio
 async def test_get_table_spec_field_headers_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.GetTableSpecRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2787,7 +2662,6 @@ async def test_get_table_spec_field_headers_async():
             type(client.transport.get_table_spec),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(table_spec.TableSpec())
-
         await client.get_table_spec(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2805,7 +2679,7 @@ async def test_get_table_spec_field_headers_async():
 
 def test_get_table_spec_flattened():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2814,7 +2688,6 @@ def test_get_table_spec_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = table_spec.TableSpec()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_table_spec(
@@ -2825,13 +2698,12 @@ def test_get_table_spec_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 def test_get_table_spec_flattened_error():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -2846,7 +2718,7 @@ def test_get_table_spec_flattened_error():
 @pytest.mark.asyncio
 async def test_get_table_spec_flattened_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2867,14 +2739,13 @@ async def test_get_table_spec_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 @pytest.mark.asyncio
 async def test_get_table_spec_flattened_error_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -2888,7 +2759,7 @@ async def test_get_table_spec_flattened_error_async():
 
 def test_list_table_specs(transport: str = 'grpc', request_type=service.ListTableSpecsRequest):
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2903,21 +2774,16 @@ def test_list_table_specs(transport: str = 'grpc', request_type=service.ListTabl
         # Designate an appropriate return value for the call.
         call.return_value = service.ListTableSpecsResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_table_specs(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListTableSpecsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListTableSpecsPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -2929,7 +2795,7 @@ def test_list_table_specs_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -2940,13 +2806,13 @@ def test_list_table_specs_empty_call():
         client.list_table_specs()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListTableSpecsRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_table_specs_async(transport: str = 'grpc_asyncio', request_type=service.ListTableSpecsRequest):
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2959,21 +2825,18 @@ async def test_list_table_specs_async(transport: str = 'grpc_asyncio', request_t
             type(client.transport.list_table_specs),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListTableSpecsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.ListTableSpecsResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_table_specs(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListTableSpecsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListTableSpecsAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -2984,12 +2847,13 @@ async def test_list_table_specs_async_from_dict():
 
 def test_list_table_specs_field_headers():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListTableSpecsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2997,7 +2861,6 @@ def test_list_table_specs_field_headers():
             type(client.transport.list_table_specs),
             '__call__') as call:
         call.return_value = service.ListTableSpecsResponse()
-
         client.list_table_specs(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3016,12 +2879,13 @@ def test_list_table_specs_field_headers():
 @pytest.mark.asyncio
 async def test_list_table_specs_field_headers_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListTableSpecsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3029,7 +2893,6 @@ async def test_list_table_specs_field_headers_async():
             type(client.transport.list_table_specs),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListTableSpecsResponse())
-
         await client.list_table_specs(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3047,7 +2910,7 @@ async def test_list_table_specs_field_headers_async():
 
 def test_list_table_specs_flattened():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3056,7 +2919,6 @@ def test_list_table_specs_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = service.ListTableSpecsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_table_specs(
@@ -3067,13 +2929,12 @@ def test_list_table_specs_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
 def test_list_table_specs_flattened_error():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -3088,7 +2949,7 @@ def test_list_table_specs_flattened_error():
 @pytest.mark.asyncio
 async def test_list_table_specs_flattened_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3109,14 +2970,13 @@ async def test_list_table_specs_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
 @pytest.mark.asyncio
 async def test_list_table_specs_flattened_error_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -3130,7 +2990,7 @@ async def test_list_table_specs_flattened_error_async():
 
 def test_list_table_specs_pager():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3183,7 +3043,7 @@ def test_list_table_specs_pager():
 
 def test_list_table_specs_pages():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3225,7 +3085,7 @@ def test_list_table_specs_pages():
 @pytest.mark.asyncio
 async def test_list_table_specs_async_pager():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3273,7 +3133,7 @@ async def test_list_table_specs_async_pager():
 @pytest.mark.asyncio
 async def test_list_table_specs_async_pages():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3314,10 +3174,9 @@ async def test_list_table_specs_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_update_table_spec(transport: str = 'grpc', request_type=service.UpdateTableSpecRequest):
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3332,41 +3191,26 @@ def test_update_table_spec(transport: str = 'grpc', request_type=service.UpdateT
         # Designate an appropriate return value for the call.
         call.return_value = gca_table_spec.TableSpec(
             name='name_value',
-
             time_column_spec_id='time_column_spec_id_value',
-
             row_count=992,
-
             valid_row_count=1615,
-
             column_count=1302,
-
             etag='etag_value',
-
         )
-
         response = client.update_table_spec(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.UpdateTableSpecRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, gca_table_spec.TableSpec)
-
     assert response.name == 'name_value'
-
     assert response.time_column_spec_id == 'time_column_spec_id_value'
-
     assert response.row_count == 992
-
     assert response.valid_row_count == 1615
-
     assert response.column_count == 1302
-
     assert response.etag == 'etag_value'
 
 
@@ -3378,7 +3222,7 @@ def test_update_table_spec_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -3389,13 +3233,13 @@ def test_update_table_spec_empty_call():
         client.update_table_spec()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.UpdateTableSpecRequest()
+
 
 @pytest.mark.asyncio
 async def test_update_table_spec_async(transport: str = 'grpc_asyncio', request_type=service.UpdateTableSpecRequest):
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3408,7 +3252,7 @@ async def test_update_table_spec_async(transport: str = 'grpc_asyncio', request_
             type(client.transport.update_table_spec),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gca_table_spec.TableSpec(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gca_table_spec.TableSpec(
             name='name_value',
             time_column_spec_id='time_column_spec_id_value',
             row_count=992,
@@ -3416,28 +3260,20 @@ async def test_update_table_spec_async(transport: str = 'grpc_asyncio', request_
             column_count=1302,
             etag='etag_value',
         ))
-
         response = await client.update_table_spec(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.UpdateTableSpecRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gca_table_spec.TableSpec)
-
     assert response.name == 'name_value'
-
     assert response.time_column_spec_id == 'time_column_spec_id_value'
-
     assert response.row_count == 992
-
     assert response.valid_row_count == 1615
-
     assert response.column_count == 1302
-
     assert response.etag == 'etag_value'
 
 
@@ -3448,12 +3284,13 @@ async def test_update_table_spec_async_from_dict():
 
 def test_update_table_spec_field_headers():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.UpdateTableSpecRequest()
+
     request.table_spec.name = 'table_spec.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3461,7 +3298,6 @@ def test_update_table_spec_field_headers():
             type(client.transport.update_table_spec),
             '__call__') as call:
         call.return_value = gca_table_spec.TableSpec()
-
         client.update_table_spec(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3480,12 +3316,13 @@ def test_update_table_spec_field_headers():
 @pytest.mark.asyncio
 async def test_update_table_spec_field_headers_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.UpdateTableSpecRequest()
+
     request.table_spec.name = 'table_spec.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3493,7 +3330,6 @@ async def test_update_table_spec_field_headers_async():
             type(client.transport.update_table_spec),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gca_table_spec.TableSpec())
-
         await client.update_table_spec(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3511,7 +3347,7 @@ async def test_update_table_spec_field_headers_async():
 
 def test_update_table_spec_flattened():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3520,7 +3356,6 @@ def test_update_table_spec_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gca_table_spec.TableSpec()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_table_spec(
@@ -3531,13 +3366,12 @@ def test_update_table_spec_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].table_spec == gca_table_spec.TableSpec(name='name_value')
 
 
 def test_update_table_spec_flattened_error():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -3552,7 +3386,7 @@ def test_update_table_spec_flattened_error():
 @pytest.mark.asyncio
 async def test_update_table_spec_flattened_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3573,14 +3407,13 @@ async def test_update_table_spec_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].table_spec == gca_table_spec.TableSpec(name='name_value')
 
 
 @pytest.mark.asyncio
 async def test_update_table_spec_flattened_error_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -3594,7 +3427,7 @@ async def test_update_table_spec_flattened_error_async():
 
 def test_get_column_spec(transport: str = 'grpc', request_type=service.GetColumnSpecRequest):
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3609,29 +3442,20 @@ def test_get_column_spec(transport: str = 'grpc', request_type=service.GetColumn
         # Designate an appropriate return value for the call.
         call.return_value = column_spec.ColumnSpec(
             name='name_value',
-
             display_name='display_name_value',
-
             etag='etag_value',
-
         )
-
         response = client.get_column_spec(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetColumnSpecRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, column_spec.ColumnSpec)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.etag == 'etag_value'
 
 
@@ -3643,7 +3467,7 @@ def test_get_column_spec_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -3654,13 +3478,13 @@ def test_get_column_spec_empty_call():
         client.get_column_spec()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetColumnSpecRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_column_spec_async(transport: str = 'grpc_asyncio', request_type=service.GetColumnSpecRequest):
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3673,27 +3497,22 @@ async def test_get_column_spec_async(transport: str = 'grpc_asyncio', request_ty
             type(client.transport.get_column_spec),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(column_spec.ColumnSpec(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(column_spec.ColumnSpec(
             name='name_value',
             display_name='display_name_value',
             etag='etag_value',
         ))
-
         response = await client.get_column_spec(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetColumnSpecRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, column_spec.ColumnSpec)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.etag == 'etag_value'
 
 
@@ -3704,12 +3523,13 @@ async def test_get_column_spec_async_from_dict():
 
 def test_get_column_spec_field_headers():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.GetColumnSpecRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3717,7 +3537,6 @@ def test_get_column_spec_field_headers():
             type(client.transport.get_column_spec),
             '__call__') as call:
         call.return_value = column_spec.ColumnSpec()
-
         client.get_column_spec(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3736,12 +3555,13 @@ def test_get_column_spec_field_headers():
 @pytest.mark.asyncio
 async def test_get_column_spec_field_headers_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.GetColumnSpecRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3749,7 +3569,6 @@ async def test_get_column_spec_field_headers_async():
             type(client.transport.get_column_spec),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(column_spec.ColumnSpec())
-
         await client.get_column_spec(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3767,7 +3586,7 @@ async def test_get_column_spec_field_headers_async():
 
 def test_get_column_spec_flattened():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3776,7 +3595,6 @@ def test_get_column_spec_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = column_spec.ColumnSpec()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_column_spec(
@@ -3787,13 +3605,12 @@ def test_get_column_spec_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 def test_get_column_spec_flattened_error():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -3808,7 +3625,7 @@ def test_get_column_spec_flattened_error():
 @pytest.mark.asyncio
 async def test_get_column_spec_flattened_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3829,14 +3646,13 @@ async def test_get_column_spec_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 @pytest.mark.asyncio
 async def test_get_column_spec_flattened_error_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -3850,7 +3666,7 @@ async def test_get_column_spec_flattened_error_async():
 
 def test_list_column_specs(transport: str = 'grpc', request_type=service.ListColumnSpecsRequest):
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3865,21 +3681,16 @@ def test_list_column_specs(transport: str = 'grpc', request_type=service.ListCol
         # Designate an appropriate return value for the call.
         call.return_value = service.ListColumnSpecsResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_column_specs(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListColumnSpecsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListColumnSpecsPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -3891,7 +3702,7 @@ def test_list_column_specs_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -3902,13 +3713,13 @@ def test_list_column_specs_empty_call():
         client.list_column_specs()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListColumnSpecsRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_column_specs_async(transport: str = 'grpc_asyncio', request_type=service.ListColumnSpecsRequest):
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3921,21 +3732,18 @@ async def test_list_column_specs_async(transport: str = 'grpc_asyncio', request_
             type(client.transport.list_column_specs),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListColumnSpecsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.ListColumnSpecsResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_column_specs(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListColumnSpecsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListColumnSpecsAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -3946,12 +3754,13 @@ async def test_list_column_specs_async_from_dict():
 
 def test_list_column_specs_field_headers():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListColumnSpecsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3959,7 +3768,6 @@ def test_list_column_specs_field_headers():
             type(client.transport.list_column_specs),
             '__call__') as call:
         call.return_value = service.ListColumnSpecsResponse()
-
         client.list_column_specs(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3978,12 +3786,13 @@ def test_list_column_specs_field_headers():
 @pytest.mark.asyncio
 async def test_list_column_specs_field_headers_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListColumnSpecsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3991,7 +3800,6 @@ async def test_list_column_specs_field_headers_async():
             type(client.transport.list_column_specs),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListColumnSpecsResponse())
-
         await client.list_column_specs(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4009,7 +3817,7 @@ async def test_list_column_specs_field_headers_async():
 
 def test_list_column_specs_flattened():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4018,7 +3826,6 @@ def test_list_column_specs_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = service.ListColumnSpecsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_column_specs(
@@ -4029,13 +3836,12 @@ def test_list_column_specs_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
 def test_list_column_specs_flattened_error():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -4050,7 +3856,7 @@ def test_list_column_specs_flattened_error():
 @pytest.mark.asyncio
 async def test_list_column_specs_flattened_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4071,14 +3877,13 @@ async def test_list_column_specs_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
 @pytest.mark.asyncio
 async def test_list_column_specs_flattened_error_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -4092,7 +3897,7 @@ async def test_list_column_specs_flattened_error_async():
 
 def test_list_column_specs_pager():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4145,7 +3950,7 @@ def test_list_column_specs_pager():
 
 def test_list_column_specs_pages():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4187,7 +3992,7 @@ def test_list_column_specs_pages():
 @pytest.mark.asyncio
 async def test_list_column_specs_async_pager():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4235,7 +4040,7 @@ async def test_list_column_specs_async_pager():
 @pytest.mark.asyncio
 async def test_list_column_specs_async_pages():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4276,10 +4081,9 @@ async def test_list_column_specs_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_update_column_spec(transport: str = 'grpc', request_type=service.UpdateColumnSpecRequest):
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -4294,29 +4098,20 @@ def test_update_column_spec(transport: str = 'grpc', request_type=service.Update
         # Designate an appropriate return value for the call.
         call.return_value = gca_column_spec.ColumnSpec(
             name='name_value',
-
             display_name='display_name_value',
-
             etag='etag_value',
-
         )
-
         response = client.update_column_spec(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.UpdateColumnSpecRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, gca_column_spec.ColumnSpec)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.etag == 'etag_value'
 
 
@@ -4328,7 +4123,7 @@ def test_update_column_spec_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -4339,13 +4134,13 @@ def test_update_column_spec_empty_call():
         client.update_column_spec()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.UpdateColumnSpecRequest()
+
 
 @pytest.mark.asyncio
 async def test_update_column_spec_async(transport: str = 'grpc_asyncio', request_type=service.UpdateColumnSpecRequest):
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -4358,27 +4153,22 @@ async def test_update_column_spec_async(transport: str = 'grpc_asyncio', request
             type(client.transport.update_column_spec),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gca_column_spec.ColumnSpec(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gca_column_spec.ColumnSpec(
             name='name_value',
             display_name='display_name_value',
             etag='etag_value',
         ))
-
         response = await client.update_column_spec(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.UpdateColumnSpecRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gca_column_spec.ColumnSpec)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.etag == 'etag_value'
 
 
@@ -4389,12 +4179,13 @@ async def test_update_column_spec_async_from_dict():
 
 def test_update_column_spec_field_headers():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.UpdateColumnSpecRequest()
+
     request.column_spec.name = 'column_spec.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4402,7 +4193,6 @@ def test_update_column_spec_field_headers():
             type(client.transport.update_column_spec),
             '__call__') as call:
         call.return_value = gca_column_spec.ColumnSpec()
-
         client.update_column_spec(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4421,12 +4211,13 @@ def test_update_column_spec_field_headers():
 @pytest.mark.asyncio
 async def test_update_column_spec_field_headers_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.UpdateColumnSpecRequest()
+
     request.column_spec.name = 'column_spec.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4434,7 +4225,6 @@ async def test_update_column_spec_field_headers_async():
             type(client.transport.update_column_spec),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gca_column_spec.ColumnSpec())
-
         await client.update_column_spec(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4452,7 +4242,7 @@ async def test_update_column_spec_field_headers_async():
 
 def test_update_column_spec_flattened():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4461,7 +4251,6 @@ def test_update_column_spec_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gca_column_spec.ColumnSpec()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_column_spec(
@@ -4472,13 +4261,12 @@ def test_update_column_spec_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].column_spec == gca_column_spec.ColumnSpec(name='name_value')
 
 
 def test_update_column_spec_flattened_error():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -4493,7 +4281,7 @@ def test_update_column_spec_flattened_error():
 @pytest.mark.asyncio
 async def test_update_column_spec_flattened_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4514,14 +4302,13 @@ async def test_update_column_spec_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].column_spec == gca_column_spec.ColumnSpec(name='name_value')
 
 
 @pytest.mark.asyncio
 async def test_update_column_spec_flattened_error_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -4535,7 +4322,7 @@ async def test_update_column_spec_flattened_error_async():
 
 def test_create_model(transport: str = 'grpc', request_type=service.CreateModelRequest):
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -4549,13 +4336,11 @@ def test_create_model(transport: str = 'grpc', request_type=service.CreateModelR
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.create_model(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.CreateModelRequest()
 
     # Establish that the response is the type that we expect.
@@ -4570,7 +4355,7 @@ def test_create_model_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -4581,13 +4366,13 @@ def test_create_model_empty_call():
         client.create_model()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.CreateModelRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_model_async(transport: str = 'grpc_asyncio', request_type=service.CreateModelRequest):
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -4603,13 +4388,11 @@ async def test_create_model_async(transport: str = 'grpc_asyncio', request_type=
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.create_model(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.CreateModelRequest()
 
     # Establish that the response is the type that we expect.
@@ -4623,12 +4406,13 @@ async def test_create_model_async_from_dict():
 
 def test_create_model_field_headers():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.CreateModelRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4636,7 +4420,6 @@ def test_create_model_field_headers():
             type(client.transport.create_model),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.create_model(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4655,12 +4438,13 @@ def test_create_model_field_headers():
 @pytest.mark.asyncio
 async def test_create_model_field_headers_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.CreateModelRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4668,7 +4452,6 @@ async def test_create_model_field_headers_async():
             type(client.transport.create_model),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.create_model(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4686,7 +4469,7 @@ async def test_create_model_field_headers_async():
 
 def test_create_model_flattened():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4695,7 +4478,6 @@ def test_create_model_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_model(
@@ -4707,15 +4489,13 @@ def test_create_model_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].model == gca_model.Model(translation_model_metadata=translation.TranslationModelMetadata(base_model='base_model_value'))
 
 
 def test_create_model_flattened_error():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -4731,7 +4511,7 @@ def test_create_model_flattened_error():
 @pytest.mark.asyncio
 async def test_create_model_flattened_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4755,16 +4535,14 @@ async def test_create_model_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].model == gca_model.Model(translation_model_metadata=translation.TranslationModelMetadata(base_model='base_model_value'))
 
 
 @pytest.mark.asyncio
 async def test_create_model_flattened_error_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -4779,7 +4557,7 @@ async def test_create_model_flattened_error_async():
 
 def test_get_model(transport: str = 'grpc', request_type=service.GetModelRequest):
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -4794,34 +4572,23 @@ def test_get_model(transport: str = 'grpc', request_type=service.GetModelRequest
         # Designate an appropriate return value for the call.
         call.return_value = model.Model(
             name='name_value',
-
             display_name='display_name_value',
-
             dataset_id='dataset_id_value',
-
             deployment_state=model.Model.DeploymentState.DEPLOYED,
-
             translation_model_metadata=translation.TranslationModelMetadata(base_model='base_model_value'),
         )
-
         response = client.get_model(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetModelRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, model.Model)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.dataset_id == 'dataset_id_value'
-
     assert response.deployment_state == model.Model.DeploymentState.DEPLOYED
 
 
@@ -4833,7 +4600,7 @@ def test_get_model_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -4844,13 +4611,13 @@ def test_get_model_empty_call():
         client.get_model()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetModelRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_model_async(transport: str = 'grpc_asyncio', request_type=service.GetModelRequest):
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -4863,30 +4630,24 @@ async def test_get_model_async(transport: str = 'grpc_asyncio', request_type=ser
             type(client.transport.get_model),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(model.Model(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(model.Model(
             name='name_value',
             display_name='display_name_value',
             dataset_id='dataset_id_value',
             deployment_state=model.Model.DeploymentState.DEPLOYED,
         ))
-
         response = await client.get_model(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetModelRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, model.Model)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.dataset_id == 'dataset_id_value'
-
     assert response.deployment_state == model.Model.DeploymentState.DEPLOYED
 
 
@@ -4897,12 +4658,13 @@ async def test_get_model_async_from_dict():
 
 def test_get_model_field_headers():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.GetModelRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4910,7 +4672,6 @@ def test_get_model_field_headers():
             type(client.transport.get_model),
             '__call__') as call:
         call.return_value = model.Model()
-
         client.get_model(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4929,12 +4690,13 @@ def test_get_model_field_headers():
 @pytest.mark.asyncio
 async def test_get_model_field_headers_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.GetModelRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4942,7 +4704,6 @@ async def test_get_model_field_headers_async():
             type(client.transport.get_model),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(model.Model())
-
         await client.get_model(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4960,7 +4721,7 @@ async def test_get_model_field_headers_async():
 
 def test_get_model_flattened():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4969,7 +4730,6 @@ def test_get_model_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = model.Model()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_model(
@@ -4980,13 +4740,12 @@ def test_get_model_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 def test_get_model_flattened_error():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -5001,7 +4760,7 @@ def test_get_model_flattened_error():
 @pytest.mark.asyncio
 async def test_get_model_flattened_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5022,14 +4781,13 @@ async def test_get_model_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 @pytest.mark.asyncio
 async def test_get_model_flattened_error_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -5043,7 +4801,7 @@ async def test_get_model_flattened_error_async():
 
 def test_list_models(transport: str = 'grpc', request_type=service.ListModelsRequest):
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -5058,21 +4816,16 @@ def test_list_models(transport: str = 'grpc', request_type=service.ListModelsReq
         # Designate an appropriate return value for the call.
         call.return_value = service.ListModelsResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_models(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListModelsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListModelsPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -5084,7 +4837,7 @@ def test_list_models_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -5095,13 +4848,13 @@ def test_list_models_empty_call():
         client.list_models()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListModelsRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_models_async(transport: str = 'grpc_asyncio', request_type=service.ListModelsRequest):
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -5114,21 +4867,18 @@ async def test_list_models_async(transport: str = 'grpc_asyncio', request_type=s
             type(client.transport.list_models),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListModelsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.ListModelsResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_models(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListModelsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListModelsAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -5139,12 +4889,13 @@ async def test_list_models_async_from_dict():
 
 def test_list_models_field_headers():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListModelsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5152,7 +4903,6 @@ def test_list_models_field_headers():
             type(client.transport.list_models),
             '__call__') as call:
         call.return_value = service.ListModelsResponse()
-
         client.list_models(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5171,12 +4921,13 @@ def test_list_models_field_headers():
 @pytest.mark.asyncio
 async def test_list_models_field_headers_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListModelsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5184,7 +4935,6 @@ async def test_list_models_field_headers_async():
             type(client.transport.list_models),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListModelsResponse())
-
         await client.list_models(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5202,7 +4952,7 @@ async def test_list_models_field_headers_async():
 
 def test_list_models_flattened():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5211,7 +4961,6 @@ def test_list_models_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = service.ListModelsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_models(
@@ -5222,13 +4971,12 @@ def test_list_models_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
 def test_list_models_flattened_error():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -5243,7 +4991,7 @@ def test_list_models_flattened_error():
 @pytest.mark.asyncio
 async def test_list_models_flattened_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5264,14 +5012,13 @@ async def test_list_models_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
 @pytest.mark.asyncio
 async def test_list_models_flattened_error_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -5285,7 +5032,7 @@ async def test_list_models_flattened_error_async():
 
 def test_list_models_pager():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5338,7 +5085,7 @@ def test_list_models_pager():
 
 def test_list_models_pages():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5380,7 +5127,7 @@ def test_list_models_pages():
 @pytest.mark.asyncio
 async def test_list_models_async_pager():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5428,7 +5175,7 @@ async def test_list_models_async_pager():
 @pytest.mark.asyncio
 async def test_list_models_async_pages():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5469,10 +5216,9 @@ async def test_list_models_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_delete_model(transport: str = 'grpc', request_type=service.DeleteModelRequest):
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -5486,13 +5232,11 @@ def test_delete_model(transport: str = 'grpc', request_type=service.DeleteModelR
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.delete_model(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.DeleteModelRequest()
 
     # Establish that the response is the type that we expect.
@@ -5507,7 +5251,7 @@ def test_delete_model_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -5518,13 +5262,13 @@ def test_delete_model_empty_call():
         client.delete_model()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.DeleteModelRequest()
+
 
 @pytest.mark.asyncio
 async def test_delete_model_async(transport: str = 'grpc_asyncio', request_type=service.DeleteModelRequest):
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -5540,13 +5284,11 @@ async def test_delete_model_async(transport: str = 'grpc_asyncio', request_type=
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.delete_model(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.DeleteModelRequest()
 
     # Establish that the response is the type that we expect.
@@ -5560,12 +5302,13 @@ async def test_delete_model_async_from_dict():
 
 def test_delete_model_field_headers():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.DeleteModelRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5573,7 +5316,6 @@ def test_delete_model_field_headers():
             type(client.transport.delete_model),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.delete_model(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5592,12 +5334,13 @@ def test_delete_model_field_headers():
 @pytest.mark.asyncio
 async def test_delete_model_field_headers_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.DeleteModelRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5605,7 +5348,6 @@ async def test_delete_model_field_headers_async():
             type(client.transport.delete_model),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.delete_model(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5623,7 +5365,7 @@ async def test_delete_model_field_headers_async():
 
 def test_delete_model_flattened():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5632,7 +5374,6 @@ def test_delete_model_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_model(
@@ -5643,13 +5384,12 @@ def test_delete_model_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 def test_delete_model_flattened_error():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -5664,7 +5404,7 @@ def test_delete_model_flattened_error():
 @pytest.mark.asyncio
 async def test_delete_model_flattened_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5687,14 +5427,13 @@ async def test_delete_model_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 @pytest.mark.asyncio
 async def test_delete_model_flattened_error_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -5708,7 +5447,7 @@ async def test_delete_model_flattened_error_async():
 
 def test_deploy_model(transport: str = 'grpc', request_type=service.DeployModelRequest):
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -5722,13 +5461,11 @@ def test_deploy_model(transport: str = 'grpc', request_type=service.DeployModelR
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.deploy_model(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.DeployModelRequest()
 
     # Establish that the response is the type that we expect.
@@ -5743,7 +5480,7 @@ def test_deploy_model_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -5754,13 +5491,13 @@ def test_deploy_model_empty_call():
         client.deploy_model()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.DeployModelRequest()
+
 
 @pytest.mark.asyncio
 async def test_deploy_model_async(transport: str = 'grpc_asyncio', request_type=service.DeployModelRequest):
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -5776,13 +5513,11 @@ async def test_deploy_model_async(transport: str = 'grpc_asyncio', request_type=
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.deploy_model(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.DeployModelRequest()
 
     # Establish that the response is the type that we expect.
@@ -5796,12 +5531,13 @@ async def test_deploy_model_async_from_dict():
 
 def test_deploy_model_field_headers():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.DeployModelRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5809,7 +5545,6 @@ def test_deploy_model_field_headers():
             type(client.transport.deploy_model),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.deploy_model(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5828,12 +5563,13 @@ def test_deploy_model_field_headers():
 @pytest.mark.asyncio
 async def test_deploy_model_field_headers_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.DeployModelRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5841,7 +5577,6 @@ async def test_deploy_model_field_headers_async():
             type(client.transport.deploy_model),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.deploy_model(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5859,7 +5594,7 @@ async def test_deploy_model_field_headers_async():
 
 def test_deploy_model_flattened():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5868,7 +5603,6 @@ def test_deploy_model_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.deploy_model(
@@ -5879,13 +5613,12 @@ def test_deploy_model_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 def test_deploy_model_flattened_error():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -5900,7 +5633,7 @@ def test_deploy_model_flattened_error():
 @pytest.mark.asyncio
 async def test_deploy_model_flattened_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5923,14 +5656,13 @@ async def test_deploy_model_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 @pytest.mark.asyncio
 async def test_deploy_model_flattened_error_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -5944,7 +5676,7 @@ async def test_deploy_model_flattened_error_async():
 
 def test_undeploy_model(transport: str = 'grpc', request_type=service.UndeployModelRequest):
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -5958,13 +5690,11 @@ def test_undeploy_model(transport: str = 'grpc', request_type=service.UndeployMo
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.undeploy_model(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.UndeployModelRequest()
 
     # Establish that the response is the type that we expect.
@@ -5979,7 +5709,7 @@ def test_undeploy_model_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -5990,13 +5720,13 @@ def test_undeploy_model_empty_call():
         client.undeploy_model()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.UndeployModelRequest()
+
 
 @pytest.mark.asyncio
 async def test_undeploy_model_async(transport: str = 'grpc_asyncio', request_type=service.UndeployModelRequest):
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -6012,13 +5742,11 @@ async def test_undeploy_model_async(transport: str = 'grpc_asyncio', request_typ
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.undeploy_model(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.UndeployModelRequest()
 
     # Establish that the response is the type that we expect.
@@ -6032,12 +5760,13 @@ async def test_undeploy_model_async_from_dict():
 
 def test_undeploy_model_field_headers():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.UndeployModelRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6045,7 +5774,6 @@ def test_undeploy_model_field_headers():
             type(client.transport.undeploy_model),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.undeploy_model(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6064,12 +5792,13 @@ def test_undeploy_model_field_headers():
 @pytest.mark.asyncio
 async def test_undeploy_model_field_headers_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.UndeployModelRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6077,7 +5806,6 @@ async def test_undeploy_model_field_headers_async():
             type(client.transport.undeploy_model),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.undeploy_model(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6095,7 +5823,7 @@ async def test_undeploy_model_field_headers_async():
 
 def test_undeploy_model_flattened():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6104,7 +5832,6 @@ def test_undeploy_model_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.undeploy_model(
@@ -6115,13 +5842,12 @@ def test_undeploy_model_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 def test_undeploy_model_flattened_error():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -6136,7 +5862,7 @@ def test_undeploy_model_flattened_error():
 @pytest.mark.asyncio
 async def test_undeploy_model_flattened_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6159,14 +5885,13 @@ async def test_undeploy_model_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 @pytest.mark.asyncio
 async def test_undeploy_model_flattened_error_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -6180,7 +5905,7 @@ async def test_undeploy_model_flattened_error_async():
 
 def test_export_model(transport: str = 'grpc', request_type=service.ExportModelRequest):
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -6194,13 +5919,11 @@ def test_export_model(transport: str = 'grpc', request_type=service.ExportModelR
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.export_model(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ExportModelRequest()
 
     # Establish that the response is the type that we expect.
@@ -6215,7 +5938,7 @@ def test_export_model_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -6226,13 +5949,13 @@ def test_export_model_empty_call():
         client.export_model()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ExportModelRequest()
+
 
 @pytest.mark.asyncio
 async def test_export_model_async(transport: str = 'grpc_asyncio', request_type=service.ExportModelRequest):
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -6248,13 +5971,11 @@ async def test_export_model_async(transport: str = 'grpc_asyncio', request_type=
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.export_model(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ExportModelRequest()
 
     # Establish that the response is the type that we expect.
@@ -6268,12 +5989,13 @@ async def test_export_model_async_from_dict():
 
 def test_export_model_field_headers():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ExportModelRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6281,7 +6003,6 @@ def test_export_model_field_headers():
             type(client.transport.export_model),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.export_model(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6300,12 +6021,13 @@ def test_export_model_field_headers():
 @pytest.mark.asyncio
 async def test_export_model_field_headers_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ExportModelRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6313,7 +6035,6 @@ async def test_export_model_field_headers_async():
             type(client.transport.export_model),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.export_model(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6331,7 +6052,7 @@ async def test_export_model_field_headers_async():
 
 def test_export_model_flattened():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6340,7 +6061,6 @@ def test_export_model_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.export_model(
@@ -6352,15 +6072,13 @@ def test_export_model_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].output_config == io.ModelExportOutputConfig(gcs_destination=io.GcsDestination(output_uri_prefix='output_uri_prefix_value'))
 
 
 def test_export_model_flattened_error():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -6376,7 +6094,7 @@ def test_export_model_flattened_error():
 @pytest.mark.asyncio
 async def test_export_model_flattened_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6400,16 +6118,14 @@ async def test_export_model_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].output_config == io.ModelExportOutputConfig(gcs_destination=io.GcsDestination(output_uri_prefix='output_uri_prefix_value'))
 
 
 @pytest.mark.asyncio
 async def test_export_model_flattened_error_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -6424,7 +6140,7 @@ async def test_export_model_flattened_error_async():
 
 def test_export_evaluated_examples(transport: str = 'grpc', request_type=service.ExportEvaluatedExamplesRequest):
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -6438,13 +6154,11 @@ def test_export_evaluated_examples(transport: str = 'grpc', request_type=service
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.export_evaluated_examples(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ExportEvaluatedExamplesRequest()
 
     # Establish that the response is the type that we expect.
@@ -6459,7 +6173,7 @@ def test_export_evaluated_examples_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -6470,13 +6184,13 @@ def test_export_evaluated_examples_empty_call():
         client.export_evaluated_examples()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ExportEvaluatedExamplesRequest()
+
 
 @pytest.mark.asyncio
 async def test_export_evaluated_examples_async(transport: str = 'grpc_asyncio', request_type=service.ExportEvaluatedExamplesRequest):
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -6492,13 +6206,11 @@ async def test_export_evaluated_examples_async(transport: str = 'grpc_asyncio', 
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.export_evaluated_examples(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ExportEvaluatedExamplesRequest()
 
     # Establish that the response is the type that we expect.
@@ -6512,12 +6224,13 @@ async def test_export_evaluated_examples_async_from_dict():
 
 def test_export_evaluated_examples_field_headers():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ExportEvaluatedExamplesRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6525,7 +6238,6 @@ def test_export_evaluated_examples_field_headers():
             type(client.transport.export_evaluated_examples),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.export_evaluated_examples(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6544,12 +6256,13 @@ def test_export_evaluated_examples_field_headers():
 @pytest.mark.asyncio
 async def test_export_evaluated_examples_field_headers_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ExportEvaluatedExamplesRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6557,7 +6270,6 @@ async def test_export_evaluated_examples_field_headers_async():
             type(client.transport.export_evaluated_examples),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.export_evaluated_examples(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6575,7 +6287,7 @@ async def test_export_evaluated_examples_field_headers_async():
 
 def test_export_evaluated_examples_flattened():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6584,7 +6296,6 @@ def test_export_evaluated_examples_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.export_evaluated_examples(
@@ -6596,15 +6307,13 @@ def test_export_evaluated_examples_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].output_config == io.ExportEvaluatedExamplesOutputConfig(bigquery_destination=io.BigQueryDestination(output_uri='output_uri_value'))
 
 
 def test_export_evaluated_examples_flattened_error():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -6620,7 +6329,7 @@ def test_export_evaluated_examples_flattened_error():
 @pytest.mark.asyncio
 async def test_export_evaluated_examples_flattened_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6644,16 +6353,14 @@ async def test_export_evaluated_examples_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].output_config == io.ExportEvaluatedExamplesOutputConfig(bigquery_destination=io.BigQueryDestination(output_uri='output_uri_value'))
 
 
 @pytest.mark.asyncio
 async def test_export_evaluated_examples_flattened_error_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -6668,7 +6375,7 @@ async def test_export_evaluated_examples_flattened_error_async():
 
 def test_get_model_evaluation(transport: str = 'grpc', request_type=service.GetModelEvaluationRequest):
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -6683,34 +6390,23 @@ def test_get_model_evaluation(transport: str = 'grpc', request_type=service.GetM
         # Designate an appropriate return value for the call.
         call.return_value = model_evaluation.ModelEvaluation(
             name='name_value',
-
             annotation_spec_id='annotation_spec_id_value',
-
             display_name='display_name_value',
-
             evaluated_example_count=2446,
-
             classification_evaluation_metrics=classification.ClassificationEvaluationMetrics(au_prc=0.634),
         )
-
         response = client.get_model_evaluation(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetModelEvaluationRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, model_evaluation.ModelEvaluation)
-
     assert response.name == 'name_value'
-
     assert response.annotation_spec_id == 'annotation_spec_id_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.evaluated_example_count == 2446
 
 
@@ -6722,7 +6418,7 @@ def test_get_model_evaluation_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -6733,13 +6429,13 @@ def test_get_model_evaluation_empty_call():
         client.get_model_evaluation()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetModelEvaluationRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_model_evaluation_async(transport: str = 'grpc_asyncio', request_type=service.GetModelEvaluationRequest):
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -6752,30 +6448,24 @@ async def test_get_model_evaluation_async(transport: str = 'grpc_asyncio', reque
             type(client.transport.get_model_evaluation),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(model_evaluation.ModelEvaluation(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(model_evaluation.ModelEvaluation(
             name='name_value',
             annotation_spec_id='annotation_spec_id_value',
             display_name='display_name_value',
             evaluated_example_count=2446,
         ))
-
         response = await client.get_model_evaluation(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetModelEvaluationRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, model_evaluation.ModelEvaluation)
-
     assert response.name == 'name_value'
-
     assert response.annotation_spec_id == 'annotation_spec_id_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.evaluated_example_count == 2446
 
 
@@ -6786,12 +6476,13 @@ async def test_get_model_evaluation_async_from_dict():
 
 def test_get_model_evaluation_field_headers():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.GetModelEvaluationRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6799,7 +6490,6 @@ def test_get_model_evaluation_field_headers():
             type(client.transport.get_model_evaluation),
             '__call__') as call:
         call.return_value = model_evaluation.ModelEvaluation()
-
         client.get_model_evaluation(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6818,12 +6508,13 @@ def test_get_model_evaluation_field_headers():
 @pytest.mark.asyncio
 async def test_get_model_evaluation_field_headers_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.GetModelEvaluationRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6831,7 +6522,6 @@ async def test_get_model_evaluation_field_headers_async():
             type(client.transport.get_model_evaluation),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(model_evaluation.ModelEvaluation())
-
         await client.get_model_evaluation(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6849,7 +6539,7 @@ async def test_get_model_evaluation_field_headers_async():
 
 def test_get_model_evaluation_flattened():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6858,7 +6548,6 @@ def test_get_model_evaluation_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = model_evaluation.ModelEvaluation()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_model_evaluation(
@@ -6869,13 +6558,12 @@ def test_get_model_evaluation_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 def test_get_model_evaluation_flattened_error():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -6890,7 +6578,7 @@ def test_get_model_evaluation_flattened_error():
 @pytest.mark.asyncio
 async def test_get_model_evaluation_flattened_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6911,14 +6599,13 @@ async def test_get_model_evaluation_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 @pytest.mark.asyncio
 async def test_get_model_evaluation_flattened_error_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -6932,7 +6619,7 @@ async def test_get_model_evaluation_flattened_error_async():
 
 def test_list_model_evaluations(transport: str = 'grpc', request_type=service.ListModelEvaluationsRequest):
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -6947,21 +6634,16 @@ def test_list_model_evaluations(transport: str = 'grpc', request_type=service.Li
         # Designate an appropriate return value for the call.
         call.return_value = service.ListModelEvaluationsResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_model_evaluations(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListModelEvaluationsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListModelEvaluationsPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -6973,7 +6655,7 @@ def test_list_model_evaluations_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -6984,13 +6666,13 @@ def test_list_model_evaluations_empty_call():
         client.list_model_evaluations()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListModelEvaluationsRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_model_evaluations_async(transport: str = 'grpc_asyncio', request_type=service.ListModelEvaluationsRequest):
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -7003,21 +6685,18 @@ async def test_list_model_evaluations_async(transport: str = 'grpc_asyncio', req
             type(client.transport.list_model_evaluations),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListModelEvaluationsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.ListModelEvaluationsResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_model_evaluations(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListModelEvaluationsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListModelEvaluationsAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -7028,12 +6707,13 @@ async def test_list_model_evaluations_async_from_dict():
 
 def test_list_model_evaluations_field_headers():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListModelEvaluationsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7041,7 +6721,6 @@ def test_list_model_evaluations_field_headers():
             type(client.transport.list_model_evaluations),
             '__call__') as call:
         call.return_value = service.ListModelEvaluationsResponse()
-
         client.list_model_evaluations(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -7060,12 +6739,13 @@ def test_list_model_evaluations_field_headers():
 @pytest.mark.asyncio
 async def test_list_model_evaluations_field_headers_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListModelEvaluationsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7073,7 +6753,6 @@ async def test_list_model_evaluations_field_headers_async():
             type(client.transport.list_model_evaluations),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListModelEvaluationsResponse())
-
         await client.list_model_evaluations(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -7091,7 +6770,7 @@ async def test_list_model_evaluations_field_headers_async():
 
 def test_list_model_evaluations_flattened():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7100,7 +6779,6 @@ def test_list_model_evaluations_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = service.ListModelEvaluationsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_model_evaluations(
@@ -7111,13 +6789,12 @@ def test_list_model_evaluations_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
 def test_list_model_evaluations_flattened_error():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -7132,7 +6809,7 @@ def test_list_model_evaluations_flattened_error():
 @pytest.mark.asyncio
 async def test_list_model_evaluations_flattened_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7153,14 +6830,13 @@ async def test_list_model_evaluations_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
 @pytest.mark.asyncio
 async def test_list_model_evaluations_flattened_error_async():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -7174,7 +6850,7 @@ async def test_list_model_evaluations_flattened_error_async():
 
 def test_list_model_evaluations_pager():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7227,7 +6903,7 @@ def test_list_model_evaluations_pager():
 
 def test_list_model_evaluations_pages():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7269,7 +6945,7 @@ def test_list_model_evaluations_pages():
 @pytest.mark.asyncio
 async def test_list_model_evaluations_async_pager():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7317,7 +6993,7 @@ async def test_list_model_evaluations_async_pager():
 @pytest.mark.asyncio
 async def test_list_model_evaluations_async_pages():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7362,17 +7038,17 @@ async def test_list_model_evaluations_async_pages():
 def test_credentials_transport_error():
     # It is an error to provide credentials and a transport instance.
     transport = transports.AutoMlGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = AutoMlClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             transport=transport,
         )
 
     # It is an error to provide a credentials file and a transport instance.
     transport = transports.AutoMlGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = AutoMlClient(
@@ -7382,7 +7058,7 @@ def test_credentials_transport_error():
 
     # It is an error to provide scopes and a transport instance.
     transport = transports.AutoMlGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = AutoMlClient(
@@ -7394,26 +7070,24 @@ def test_credentials_transport_error():
 def test_transport_instance():
     # A client may be instantiated with a custom transport instance.
     transport = transports.AutoMlGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     client = AutoMlClient(transport=transport)
     assert client.transport is transport
 
-
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.AutoMlGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     channel = transport.grpc_channel
     assert channel
 
     transport = transports.AutoMlGrpcAsyncIOTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     channel = transport.grpc_channel
     assert channel
-
 
 @pytest.mark.parametrize("transport_class", [
     transports.AutoMlGrpcTransport,
@@ -7421,28 +7095,26 @@ def test_transport_get_channel():
 ])
 def test_transport_adc(transport_class):
     # Test default credentials are used if not provided.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport_class()
         adc.assert_called_once()
-
 
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     assert isinstance(
         client.transport,
         transports.AutoMlGrpcTransport,
     )
 
-
 def test_auto_ml_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
-    with pytest.raises(exceptions.DuplicateCredentialArgs):
+    with pytest.raises(core_exceptions.DuplicateCredentialArgs):
         transport = transports.AutoMlTransport(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             credentials_file="credentials.json"
         )
 
@@ -7452,7 +7124,7 @@ def test_auto_ml_base_transport():
     with mock.patch('google.cloud.automl_v1beta1.services.auto_ml.transports.AutoMlTransport.__init__') as Transport:
         Transport.return_value = None
         transport = transports.AutoMlTransport(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
         )
 
     # Every method on the transport should just blindly
@@ -7482,7 +7154,7 @@ def test_auto_ml_base_transport():
         'export_evaluated_examples',
         'get_model_evaluation',
         'list_model_evaluations',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -7493,11 +7165,31 @@ def test_auto_ml_base_transport():
         transport.operations_client
 
 
+@requires_google_auth_gte_1_25_0
 def test_auto_ml_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.automl_v1beta1.services.auto_ml.transports.AutoMlTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.automl_v1beta1.services.auto_ml.transports.AutoMlTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
+        load_creds.return_value = (ga_credentials.AnonymousCredentials(), None)
+        transport = transports.AutoMlTransport(
+            credentials_file="credentials.json",
+            quota_project_id="octopus",
+        )
+        load_creds.assert_called_once_with("credentials.json",
+            scopes=None,
+            default_scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
+            quota_project_id="octopus",
+        )
+
+
+@requires_google_auth_lt_1_25_0
+def test_auto_ml_base_transport_with_credentials_file_old_google_auth():
+    # Instantiate the base transport with a credentials file
+    with mock.patch.object(google.auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.automl_v1beta1.services.auto_ml.transports.AutoMlTransport._prep_wrapped_messages') as Transport:
+        Transport.return_value = None
+        load_creds.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.AutoMlTransport(
             credentials_file="credentials.json",
             quota_project_id="octopus",
@@ -7511,33 +7203,185 @@ def test_auto_ml_base_transport_with_credentials_file():
 
 def test_auto_ml_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.automl_v1beta1.services.auto_ml.transports.AutoMlTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc, mock.patch('google.cloud.automl_v1beta1.services.auto_ml.transports.AutoMlTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.AutoMlTransport()
         adc.assert_called_once()
 
 
+@requires_google_auth_gte_1_25_0
 def test_auto_ml_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         AutoMlClient()
-        adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',),
+        adc.assert_called_once_with(
+            scopes=None,
+            default_scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
             quota_project_id=None,
         )
 
 
-def test_auto_ml_transport_auth_adc():
+@requires_google_auth_lt_1_25_0
+def test_auto_ml_auth_adc_old_google_auth():
+    # If no credentials are provided, we should use ADC credentials.
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
+        AutoMlClient()
+        adc.assert_called_once_with(
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id=None,
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.AutoMlGrpcTransport,
+        transports.AutoMlGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_gte_1_25_0
+def test_auto_ml_transport_auth_adc(transport_class):
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transports.AutoMlGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
-        adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',),
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+        adc.assert_called_once_with(
+            scopes=["1", "2"],
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
             quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.AutoMlGrpcTransport,
+        transports.AutoMlGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_lt_1_25_0
+def test_auto_ml_transport_auth_adc_old_google_auth(transport_class):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
+            quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.AutoMlGrpcTransport, grpc_helpers),
+        (transports.AutoMlGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_gte_1_26_0
+def test_auto_ml_transport_create_channel(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = ga_credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(
+            quota_project_id="octopus",
+            scopes=["1", "2"]
+        )
+
+        create_channel.assert_called_with(
+            "automl.googleapis.com:443",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            default_scopes=(
+                'https://www.googleapis.com/auth/cloud-platform',
+),
+            scopes=["1", "2"],
+            default_host="automl.googleapis.com",
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.AutoMlGrpcTransport, grpc_helpers),
+        (transports.AutoMlGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_auto_ml_transport_create_channel_old_api_core(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = ga_credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(quota_project_id="octopus")
+
+        create_channel.assert_called_with(
+            "automl.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=(
+                'https://www.googleapis.com/auth/cloud-platform',
+),
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.AutoMlGrpcTransport, grpc_helpers),
+        (transports.AutoMlGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_auto_ml_transport_create_channel_user_scopes(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = ga_credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+
+        create_channel.assert_called_with(
+            "automl.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=["1", "2"],
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
         )
 
 
@@ -7545,7 +7389,7 @@ def test_auto_ml_transport_auth_adc():
 def test_auto_ml_grpc_transport_client_cert_source_for_mtls(
     transport_class
 ):
-    cred = credentials.AnonymousCredentials()
+    cred = ga_credentials.AnonymousCredentials()
 
     # Check ssl_channel_credentials is used if provided.
     with mock.patch.object(transport_class, "create_channel") as mock_create_channel:
@@ -7587,7 +7431,7 @@ def test_auto_ml_grpc_transport_client_cert_source_for_mtls(
 
 def test_auto_ml_host_no_port():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='automl.googleapis.com'),
     )
     assert client.transport._host == 'automl.googleapis.com:443'
@@ -7595,11 +7439,10 @@ def test_auto_ml_host_no_port():
 
 def test_auto_ml_host_with_port():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='automl.googleapis.com:8000'),
     )
     assert client.transport._host == 'automl.googleapis.com:8000'
-
 
 def test_auto_ml_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -7641,9 +7484,9 @@ def test_auto_ml_transport_channel_mtls_with_client_cert_source(
             mock_grpc_channel = mock.Mock()
             grpc_create_channel.return_value = mock_grpc_channel
 
-            cred = credentials.AnonymousCredentials()
+            cred = ga_credentials.AnonymousCredentials()
             with pytest.warns(DeprecationWarning):
-                with mock.patch.object(auth, 'default') as adc:
+                with mock.patch.object(google.auth, 'default') as adc:
                     adc.return_value = (cred, None)
                     transport = transport_class(
                         host="squid.clam.whelk",
@@ -7717,7 +7560,7 @@ def test_auto_ml_transport_channel_mtls_with_adc(
 
 def test_auto_ml_grpc_lro_client():
     client = AutoMlClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
     transport = client.transport
@@ -7734,7 +7577,7 @@ def test_auto_ml_grpc_lro_client():
 
 def test_auto_ml_grpc_lro_async_client():
     client = AutoMlAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc_asyncio',
     )
     transport = client.transport
@@ -7754,7 +7597,6 @@ def test_annotation_spec_path():
     location = "clam"
     dataset = "whelk"
     annotation_spec = "octopus"
-
     expected = "projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}".format(project=project, location=location, dataset=dataset, annotation_spec=annotation_spec, )
     actual = AutoMlClient.annotation_spec_path(project, location, dataset, annotation_spec)
     assert expected == actual
@@ -7762,11 +7604,10 @@ def test_annotation_spec_path():
 
 def test_parse_annotation_spec_path():
     expected = {
-    "project": "oyster",
-    "location": "nudibranch",
-    "dataset": "cuttlefish",
-    "annotation_spec": "mussel",
-
+        "project": "oyster",
+        "location": "nudibranch",
+        "dataset": "cuttlefish",
+        "annotation_spec": "mussel",
     }
     path = AutoMlClient.annotation_spec_path(**expected)
 
@@ -7780,7 +7621,6 @@ def test_column_spec_path():
     dataset = "scallop"
     table_spec = "abalone"
     column_spec = "squid"
-
     expected = "projects/{project}/locations/{location}/datasets/{dataset}/tableSpecs/{table_spec}/columnSpecs/{column_spec}".format(project=project, location=location, dataset=dataset, table_spec=table_spec, column_spec=column_spec, )
     actual = AutoMlClient.column_spec_path(project, location, dataset, table_spec, column_spec)
     assert expected == actual
@@ -7788,12 +7628,11 @@ def test_column_spec_path():
 
 def test_parse_column_spec_path():
     expected = {
-    "project": "clam",
-    "location": "whelk",
-    "dataset": "octopus",
-    "table_spec": "oyster",
-    "column_spec": "nudibranch",
-
+        "project": "clam",
+        "location": "whelk",
+        "dataset": "octopus",
+        "table_spec": "oyster",
+        "column_spec": "nudibranch",
     }
     path = AutoMlClient.column_spec_path(**expected)
 
@@ -7805,7 +7644,6 @@ def test_dataset_path():
     project = "cuttlefish"
     location = "mussel"
     dataset = "winkle"
-
     expected = "projects/{project}/locations/{location}/datasets/{dataset}".format(project=project, location=location, dataset=dataset, )
     actual = AutoMlClient.dataset_path(project, location, dataset)
     assert expected == actual
@@ -7813,10 +7651,9 @@ def test_dataset_path():
 
 def test_parse_dataset_path():
     expected = {
-    "project": "nautilus",
-    "location": "scallop",
-    "dataset": "abalone",
-
+        "project": "nautilus",
+        "location": "scallop",
+        "dataset": "abalone",
     }
     path = AutoMlClient.dataset_path(**expected)
 
@@ -7828,7 +7665,6 @@ def test_model_path():
     project = "squid"
     location = "clam"
     model = "whelk"
-
     expected = "projects/{project}/locations/{location}/models/{model}".format(project=project, location=location, model=model, )
     actual = AutoMlClient.model_path(project, location, model)
     assert expected == actual
@@ -7836,10 +7672,9 @@ def test_model_path():
 
 def test_parse_model_path():
     expected = {
-    "project": "octopus",
-    "location": "oyster",
-    "model": "nudibranch",
-
+        "project": "octopus",
+        "location": "oyster",
+        "model": "nudibranch",
     }
     path = AutoMlClient.model_path(**expected)
 
@@ -7852,7 +7687,6 @@ def test_model_evaluation_path():
     location = "mussel"
     model = "winkle"
     model_evaluation = "nautilus"
-
     expected = "projects/{project}/locations/{location}/models/{model}/modelEvaluations/{model_evaluation}".format(project=project, location=location, model=model, model_evaluation=model_evaluation, )
     actual = AutoMlClient.model_evaluation_path(project, location, model, model_evaluation)
     assert expected == actual
@@ -7860,11 +7694,10 @@ def test_model_evaluation_path():
 
 def test_parse_model_evaluation_path():
     expected = {
-    "project": "scallop",
-    "location": "abalone",
-    "model": "squid",
-    "model_evaluation": "clam",
-
+        "project": "scallop",
+        "location": "abalone",
+        "model": "squid",
+        "model_evaluation": "clam",
     }
     path = AutoMlClient.model_evaluation_path(**expected)
 
@@ -7877,7 +7710,6 @@ def test_table_spec_path():
     location = "octopus"
     dataset = "oyster"
     table_spec = "nudibranch"
-
     expected = "projects/{project}/locations/{location}/datasets/{dataset}/tableSpecs/{table_spec}".format(project=project, location=location, dataset=dataset, table_spec=table_spec, )
     actual = AutoMlClient.table_spec_path(project, location, dataset, table_spec)
     assert expected == actual
@@ -7885,11 +7717,10 @@ def test_table_spec_path():
 
 def test_parse_table_spec_path():
     expected = {
-    "project": "cuttlefish",
-    "location": "mussel",
-    "dataset": "winkle",
-    "table_spec": "nautilus",
-
+        "project": "cuttlefish",
+        "location": "mussel",
+        "dataset": "winkle",
+        "table_spec": "nautilus",
     }
     path = AutoMlClient.table_spec_path(**expected)
 
@@ -7899,7 +7730,6 @@ def test_parse_table_spec_path():
 
 def test_common_billing_account_path():
     billing_account = "scallop"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = AutoMlClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -7907,8 +7737,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "abalone",
-
+        "billing_account": "abalone",
     }
     path = AutoMlClient.common_billing_account_path(**expected)
 
@@ -7918,7 +7747,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "squid"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = AutoMlClient.common_folder_path(folder)
     assert expected == actual
@@ -7926,8 +7754,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "clam",
-
+        "folder": "clam",
     }
     path = AutoMlClient.common_folder_path(**expected)
 
@@ -7937,7 +7764,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "whelk"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = AutoMlClient.common_organization_path(organization)
     assert expected == actual
@@ -7945,8 +7771,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "octopus",
-
+        "organization": "octopus",
     }
     path = AutoMlClient.common_organization_path(**expected)
 
@@ -7956,7 +7781,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "oyster"
-
     expected = "projects/{project}".format(project=project, )
     actual = AutoMlClient.common_project_path(project)
     assert expected == actual
@@ -7964,8 +7788,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "nudibranch",
-
+        "project": "nudibranch",
     }
     path = AutoMlClient.common_project_path(**expected)
 
@@ -7976,7 +7799,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "cuttlefish"
     location = "mussel"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = AutoMlClient.common_location_path(project, location)
     assert expected == actual
@@ -7984,9 +7806,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "winkle",
-    "location": "nautilus",
-
+        "project": "winkle",
+        "location": "nautilus",
     }
     path = AutoMlClient.common_location_path(**expected)
 
@@ -8000,7 +7821,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
 
     with mock.patch.object(transports.AutoMlTransport, '_prep_wrapped_messages') as prep:
         client = AutoMlClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)
@@ -8008,7 +7829,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
     with mock.patch.object(transports.AutoMlTransport, '_prep_wrapped_messages') as prep:
         transport_class = AutoMlClient.get_transport_class()
         transport = transport_class(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)

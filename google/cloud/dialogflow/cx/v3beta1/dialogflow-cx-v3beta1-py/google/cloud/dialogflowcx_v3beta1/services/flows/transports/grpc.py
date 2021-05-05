@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,24 +13,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import operations_v1  # type: ignore
 from google.api_core import gapic_v1       # type: ignore
-from google import auth                    # type: ignore
-from google.auth import credentials        # type: ignore
+import google.auth                         # type: ignore
+from google.auth import credentials as ga_credentials  # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
 
 import grpc  # type: ignore
 
 from google.cloud.dialogflowcx_v3beta1.types import flow
 from google.cloud.dialogflowcx_v3beta1.types import flow as gcdc_flow
-from google.longrunning import operations_pb2 as operations  # type: ignore
-from google.protobuf import empty_pb2 as empty  # type: ignore
-
+from google.longrunning import operations_pb2  # type: ignore
+from google.protobuf import empty_pb2  # type: ignore
 from .base import FlowsTransport, DEFAULT_CLIENT_INFO
 
 
@@ -52,7 +49,7 @@ class FlowsGrpcTransport(FlowsTransport):
 
     def __init__(self, *,
             host: str = 'dialogflow.googleapis.com',
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             credentials_file: str = None,
             scopes: Sequence[str] = None,
             channel: grpc.Channel = None,
@@ -66,7 +63,8 @@ class FlowsGrpcTransport(FlowsTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -176,7 +174,7 @@ class FlowsGrpcTransport(FlowsTransport):
     @classmethod
     def create_channel(cls,
                        host: str = 'dialogflow.googleapis.com',
-                       credentials: credentials.Credentials = None,
+                       credentials: ga_credentials.Credentials = None,
                        credentials_file: str = None,
                        scopes: Optional[Sequence[str]] = None,
                        quota_project_id: Optional[str] = None,
@@ -206,13 +204,15 @@ class FlowsGrpcTransport(FlowsTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -267,7 +267,7 @@ class FlowsGrpcTransport(FlowsTransport):
     @property
     def delete_flow(self) -> Callable[
             [flow.DeleteFlowRequest],
-            empty.Empty]:
+            empty_pb2.Empty]:
         r"""Return a callable for the delete flow method over gRPC.
 
         Deletes a specified flow.
@@ -286,7 +286,7 @@ class FlowsGrpcTransport(FlowsTransport):
             self._stubs['delete_flow'] = self.grpc_channel.unary_unary(
                 '/google.cloud.dialogflow.cx.v3beta1.Flows/DeleteFlow',
                 request_serializer=flow.DeleteFlowRequest.serialize,
-                response_deserializer=empty.Empty.FromString,
+                response_deserializer=empty_pb2.Empty.FromString,
             )
         return self._stubs['delete_flow']
 
@@ -371,7 +371,7 @@ class FlowsGrpcTransport(FlowsTransport):
     @property
     def train_flow(self) -> Callable[
             [flow.TrainFlowRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         r"""Return a callable for the train flow method over gRPC.
 
         Trains the specified flow. Note that only the flow in
@@ -391,7 +391,7 @@ class FlowsGrpcTransport(FlowsTransport):
             self._stubs['train_flow'] = self.grpc_channel.unary_unary(
                 '/google.cloud.dialogflow.cx.v3beta1.Flows/TrainFlow',
                 request_serializer=flow.TrainFlowRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['train_flow']
 
@@ -454,7 +454,7 @@ class FlowsGrpcTransport(FlowsTransport):
     @property
     def import_flow(self) -> Callable[
             [flow.ImportFlowRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         r"""Return a callable for the import flow method over gRPC.
 
         Imports the specified flow to the specified agent
@@ -474,14 +474,14 @@ class FlowsGrpcTransport(FlowsTransport):
             self._stubs['import_flow'] = self.grpc_channel.unary_unary(
                 '/google.cloud.dialogflow.cx.v3beta1.Flows/ImportFlow',
                 request_serializer=flow.ImportFlowRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['import_flow']
 
     @property
     def export_flow(self) -> Callable[
             [flow.ExportFlowRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         r"""Return a callable for the export flow method over gRPC.
 
         Exports the specified flow to a binary file.
@@ -502,7 +502,7 @@ class FlowsGrpcTransport(FlowsTransport):
             self._stubs['export_flow'] = self.grpc_channel.unary_unary(
                 '/google.cloud.dialogflow.cx.v3beta1.Flows/ExportFlow',
                 request_serializer=flow.ExportFlowRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['export_flow']
 

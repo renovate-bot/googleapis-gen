@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -30,7 +28,7 @@ __protobuf__ = proto.module(
 class FeedMappingCriterionTypeEnum(proto.Message):
     r"""Container for enum describing possible criterion types for a
     feed mapping.
-    """
+        """
     class FeedMappingCriterionType(proto.Enum):
         r"""Possible placeholder types for a feed mapping."""
         UNSPECIFIED = 0

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 from unittest import mock
 
@@ -23,7 +21,6 @@ import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
-from google import auth
 from google.ads.googleads.v5.enums.types import campaign_experiment_status
 from google.ads.googleads.v5.enums.types import campaign_experiment_traffic_split_type
 from google.ads.googleads.v5.enums.types import response_content_type
@@ -39,13 +36,14 @@ from google.api_core import gapic_v1
 from google.api_core import grpc_helpers
 from google.api_core import operation_async  # type: ignore
 from google.api_core import operations_v1
-from google.auth import credentials
+from google.auth import credentials as ga_credentials
 from google.auth.exceptions import MutualTLSChannelError
 from google.longrunning import operations_pb2
 from google.oauth2 import service_account
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
-from google.rpc import status_pb2 as status  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
+from google.rpc import status_pb2  # type: ignore
+import google.auth
 
 
 def client_cert_source_callback():
@@ -75,7 +73,7 @@ def test__get_default_mtls_endpoint():
 
 
 def test_campaign_experiment_service_client_from_service_account_info():
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
@@ -86,7 +84,7 @@ def test_campaign_experiment_service_client_from_service_account_info():
 
 
 def test_campaign_experiment_service_client_from_service_account_file():
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_file') as factory:
         factory.return_value = creds
         client = CampaignExperimentServiceClient.from_service_account_file("dummy/file/path.json")
@@ -111,7 +109,7 @@ def test_campaign_experiment_service_client_client_options():
     # Check that if channel is provided we won't create a new one.
     with mock.patch('google.ads.googleads.v5.services.services.campaign_experiment_service.CampaignExperimentServiceClient.get_transport_class') as gtc:
         transport = transports.CampaignExperimentServiceGrpcTransport(
-            credentials=credentials.AnonymousCredentials()
+            credentials=ga_credentials.AnonymousCredentials()
         )
         client = CampaignExperimentServiceClient(transport=transport)
         gtc.assert_not_called()
@@ -261,7 +259,7 @@ def test_campaign_experiment_service_client_client_options_from_dict():
 
 def test_get_campaign_experiment(transport: str = 'grpc', request_type=campaign_experiment_service.GetCampaignExperimentRequest):
     client = CampaignExperimentServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -276,29 +274,20 @@ def test_get_campaign_experiment(transport: str = 'grpc', request_type=campaign_
         # Designate an appropriate return value for the call.
         call.return_value = campaign_experiment.CampaignExperiment(
             resource_name='resource_name_value',
-
             traffic_split_type=campaign_experiment_traffic_split_type.CampaignExperimentTrafficSplitTypeEnum.CampaignExperimentTrafficSplitType.UNKNOWN,
-
             status=campaign_experiment_status.CampaignExperimentStatusEnum.CampaignExperimentStatus.UNKNOWN,
-
         )
-
         response = client.get_campaign_experiment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == campaign_experiment_service.GetCampaignExperimentRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, campaign_experiment.CampaignExperiment)
-
     assert response.resource_name == 'resource_name_value'
-
     assert response.traffic_split_type == campaign_experiment_traffic_split_type.CampaignExperimentTrafficSplitTypeEnum.CampaignExperimentTrafficSplitType.UNKNOWN
-
     assert response.status == campaign_experiment_status.CampaignExperimentStatusEnum.CampaignExperimentStatus.UNKNOWN
 
 
@@ -308,12 +297,13 @@ def test_get_campaign_experiment_from_dict():
 
 def test_get_campaign_experiment_field_headers():
     client = CampaignExperimentServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = campaign_experiment_service.GetCampaignExperimentRequest()
+
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -321,7 +311,6 @@ def test_get_campaign_experiment_field_headers():
             type(client.transport.get_campaign_experiment),
             '__call__') as call:
         call.return_value = campaign_experiment.CampaignExperiment()
-
         client.get_campaign_experiment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -339,7 +328,7 @@ def test_get_campaign_experiment_field_headers():
 
 def test_get_campaign_experiment_flattened():
     client = CampaignExperimentServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -348,7 +337,6 @@ def test_get_campaign_experiment_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = campaign_experiment.CampaignExperiment()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_campaign_experiment(
@@ -359,13 +347,12 @@ def test_get_campaign_experiment_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource_name == 'resource_name_value'
 
 
 def test_get_campaign_experiment_flattened_error():
     client = CampaignExperimentServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -379,7 +366,7 @@ def test_get_campaign_experiment_flattened_error():
 
 def test_create_campaign_experiment(transport: str = 'grpc', request_type=campaign_experiment_service.CreateCampaignExperimentRequest):
     client = CampaignExperimentServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -393,13 +380,11 @@ def test_create_campaign_experiment(transport: str = 'grpc', request_type=campai
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.create_campaign_experiment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == campaign_experiment_service.CreateCampaignExperimentRequest()
 
     # Establish that the response is the type that we expect.
@@ -412,12 +397,13 @@ def test_create_campaign_experiment_from_dict():
 
 def test_create_campaign_experiment_field_headers():
     client = CampaignExperimentServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = campaign_experiment_service.CreateCampaignExperimentRequest()
+
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -425,7 +411,6 @@ def test_create_campaign_experiment_field_headers():
             type(client.transport.create_campaign_experiment),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.create_campaign_experiment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -443,7 +428,7 @@ def test_create_campaign_experiment_field_headers():
 
 def test_create_campaign_experiment_flattened():
     client = CampaignExperimentServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -452,7 +437,6 @@ def test_create_campaign_experiment_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_campaign_experiment(
@@ -464,15 +448,13 @@ def test_create_campaign_experiment_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].customer_id == 'customer_id_value'
-
         assert args[0].campaign_experiment == gagr_campaign_experiment.CampaignExperiment(resource_name='resource_name_value')
 
 
 def test_create_campaign_experiment_flattened_error():
     client = CampaignExperimentServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -487,7 +469,7 @@ def test_create_campaign_experiment_flattened_error():
 
 def test_mutate_campaign_experiments(transport: str = 'grpc', request_type=campaign_experiment_service.MutateCampaignExperimentsRequest):
     client = CampaignExperimentServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -502,17 +484,14 @@ def test_mutate_campaign_experiments(transport: str = 'grpc', request_type=campa
         # Designate an appropriate return value for the call.
         call.return_value = campaign_experiment_service.MutateCampaignExperimentsResponse(
         )
-
         response = client.mutate_campaign_experiments(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == campaign_experiment_service.MutateCampaignExperimentsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, campaign_experiment_service.MutateCampaignExperimentsResponse)
 
 
@@ -522,12 +501,13 @@ def test_mutate_campaign_experiments_from_dict():
 
 def test_mutate_campaign_experiments_field_headers():
     client = CampaignExperimentServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = campaign_experiment_service.MutateCampaignExperimentsRequest()
+
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -535,7 +515,6 @@ def test_mutate_campaign_experiments_field_headers():
             type(client.transport.mutate_campaign_experiments),
             '__call__') as call:
         call.return_value = campaign_experiment_service.MutateCampaignExperimentsResponse()
-
         client.mutate_campaign_experiments(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -553,7 +532,7 @@ def test_mutate_campaign_experiments_field_headers():
 
 def test_mutate_campaign_experiments_flattened():
     client = CampaignExperimentServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -562,27 +541,24 @@ def test_mutate_campaign_experiments_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = campaign_experiment_service.MutateCampaignExperimentsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_campaign_experiments(
             customer_id='customer_id_value',
-            operations=[campaign_experiment_service.CampaignExperimentOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))],
+            operations=[campaign_experiment_service.CampaignExperimentOperation(update_mask=field_mask_pb2.FieldMask(paths=['paths_value']))],
         )
 
         # Establish that the underlying call was made with the expected
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].customer_id == 'customer_id_value'
-
-        assert args[0].operations == [campaign_experiment_service.CampaignExperimentOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))]
+        assert args[0].operations == [campaign_experiment_service.CampaignExperimentOperation(update_mask=field_mask_pb2.FieldMask(paths=['paths_value']))]
 
 
 def test_mutate_campaign_experiments_flattened_error():
     client = CampaignExperimentServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -591,13 +567,13 @@ def test_mutate_campaign_experiments_flattened_error():
         client.mutate_campaign_experiments(
             campaign_experiment_service.MutateCampaignExperimentsRequest(),
             customer_id='customer_id_value',
-            operations=[campaign_experiment_service.CampaignExperimentOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))],
+            operations=[campaign_experiment_service.CampaignExperimentOperation(update_mask=field_mask_pb2.FieldMask(paths=['paths_value']))],
         )
 
 
 def test_graduate_campaign_experiment(transport: str = 'grpc', request_type=campaign_experiment_service.GraduateCampaignExperimentRequest):
     client = CampaignExperimentServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -612,21 +588,16 @@ def test_graduate_campaign_experiment(transport: str = 'grpc', request_type=camp
         # Designate an appropriate return value for the call.
         call.return_value = campaign_experiment_service.GraduateCampaignExperimentResponse(
             graduated_campaign='graduated_campaign_value',
-
         )
-
         response = client.graduate_campaign_experiment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == campaign_experiment_service.GraduateCampaignExperimentRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, campaign_experiment_service.GraduateCampaignExperimentResponse)
-
     assert response.graduated_campaign == 'graduated_campaign_value'
 
 
@@ -636,12 +607,13 @@ def test_graduate_campaign_experiment_from_dict():
 
 def test_graduate_campaign_experiment_field_headers():
     client = CampaignExperimentServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = campaign_experiment_service.GraduateCampaignExperimentRequest()
+
     request.campaign_experiment = 'campaign_experiment/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -649,7 +621,6 @@ def test_graduate_campaign_experiment_field_headers():
             type(client.transport.graduate_campaign_experiment),
             '__call__') as call:
         call.return_value = campaign_experiment_service.GraduateCampaignExperimentResponse()
-
         client.graduate_campaign_experiment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -667,7 +638,7 @@ def test_graduate_campaign_experiment_field_headers():
 
 def test_graduate_campaign_experiment_flattened():
     client = CampaignExperimentServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -676,7 +647,6 @@ def test_graduate_campaign_experiment_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = campaign_experiment_service.GraduateCampaignExperimentResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.graduate_campaign_experiment(
@@ -688,15 +658,13 @@ def test_graduate_campaign_experiment_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].campaign_experiment == 'campaign_experiment_value'
-
         assert args[0].campaign_budget == 'campaign_budget_value'
 
 
 def test_graduate_campaign_experiment_flattened_error():
     client = CampaignExperimentServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -711,7 +679,7 @@ def test_graduate_campaign_experiment_flattened_error():
 
 def test_promote_campaign_experiment(transport: str = 'grpc', request_type=campaign_experiment_service.PromoteCampaignExperimentRequest):
     client = CampaignExperimentServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -725,13 +693,11 @@ def test_promote_campaign_experiment(transport: str = 'grpc', request_type=campa
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.promote_campaign_experiment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == campaign_experiment_service.PromoteCampaignExperimentRequest()
 
     # Establish that the response is the type that we expect.
@@ -744,12 +710,13 @@ def test_promote_campaign_experiment_from_dict():
 
 def test_promote_campaign_experiment_field_headers():
     client = CampaignExperimentServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = campaign_experiment_service.PromoteCampaignExperimentRequest()
+
     request.campaign_experiment = 'campaign_experiment/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -757,7 +724,6 @@ def test_promote_campaign_experiment_field_headers():
             type(client.transport.promote_campaign_experiment),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.promote_campaign_experiment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -775,7 +741,7 @@ def test_promote_campaign_experiment_field_headers():
 
 def test_promote_campaign_experiment_flattened():
     client = CampaignExperimentServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -784,7 +750,6 @@ def test_promote_campaign_experiment_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.promote_campaign_experiment(
@@ -795,13 +760,12 @@ def test_promote_campaign_experiment_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].campaign_experiment == 'campaign_experiment_value'
 
 
 def test_promote_campaign_experiment_flattened_error():
     client = CampaignExperimentServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -815,7 +779,7 @@ def test_promote_campaign_experiment_flattened_error():
 
 def test_end_campaign_experiment(transport: str = 'grpc', request_type=campaign_experiment_service.EndCampaignExperimentRequest):
     client = CampaignExperimentServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -829,13 +793,11 @@ def test_end_campaign_experiment(transport: str = 'grpc', request_type=campaign_
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         response = client.end_campaign_experiment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == campaign_experiment_service.EndCampaignExperimentRequest()
 
     # Establish that the response is the type that we expect.
@@ -848,12 +810,13 @@ def test_end_campaign_experiment_from_dict():
 
 def test_end_campaign_experiment_field_headers():
     client = CampaignExperimentServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = campaign_experiment_service.EndCampaignExperimentRequest()
+
     request.campaign_experiment = 'campaign_experiment/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -861,7 +824,6 @@ def test_end_campaign_experiment_field_headers():
             type(client.transport.end_campaign_experiment),
             '__call__') as call:
         call.return_value = None
-
         client.end_campaign_experiment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -879,7 +841,7 @@ def test_end_campaign_experiment_field_headers():
 
 def test_end_campaign_experiment_flattened():
     client = CampaignExperimentServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -888,7 +850,6 @@ def test_end_campaign_experiment_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.end_campaign_experiment(
@@ -899,13 +860,12 @@ def test_end_campaign_experiment_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].campaign_experiment == 'campaign_experiment_value'
 
 
 def test_end_campaign_experiment_flattened_error():
     client = CampaignExperimentServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -919,7 +879,7 @@ def test_end_campaign_experiment_flattened_error():
 
 def test_list_campaign_experiment_async_errors(transport: str = 'grpc', request_type=campaign_experiment_service.ListCampaignExperimentAsyncErrorsRequest):
     client = CampaignExperimentServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -934,21 +894,16 @@ def test_list_campaign_experiment_async_errors(transport: str = 'grpc', request_
         # Designate an appropriate return value for the call.
         call.return_value = campaign_experiment_service.ListCampaignExperimentAsyncErrorsResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_campaign_experiment_async_errors(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == campaign_experiment_service.ListCampaignExperimentAsyncErrorsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListCampaignExperimentAsyncErrorsPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -958,12 +913,13 @@ def test_list_campaign_experiment_async_errors_from_dict():
 
 def test_list_campaign_experiment_async_errors_field_headers():
     client = CampaignExperimentServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = campaign_experiment_service.ListCampaignExperimentAsyncErrorsRequest()
+
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -971,7 +927,6 @@ def test_list_campaign_experiment_async_errors_field_headers():
             type(client.transport.list_campaign_experiment_async_errors),
             '__call__') as call:
         call.return_value = campaign_experiment_service.ListCampaignExperimentAsyncErrorsResponse()
-
         client.list_campaign_experiment_async_errors(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -989,7 +944,7 @@ def test_list_campaign_experiment_async_errors_field_headers():
 
 def test_list_campaign_experiment_async_errors_flattened():
     client = CampaignExperimentServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -998,7 +953,6 @@ def test_list_campaign_experiment_async_errors_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = campaign_experiment_service.ListCampaignExperimentAsyncErrorsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_campaign_experiment_async_errors(
@@ -1009,13 +963,12 @@ def test_list_campaign_experiment_async_errors_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource_name == 'resource_name_value'
 
 
 def test_list_campaign_experiment_async_errors_flattened_error():
     client = CampaignExperimentServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1029,7 +982,7 @@ def test_list_campaign_experiment_async_errors_flattened_error():
 
 def test_list_campaign_experiment_async_errors_pager():
     client = CampaignExperimentServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1040,9 +993,9 @@ def test_list_campaign_experiment_async_errors_pager():
         call.side_effect = (
             campaign_experiment_service.ListCampaignExperimentAsyncErrorsResponse(
                 errors=[
-                    status.Status(),
-                    status.Status(),
-                    status.Status(),
+                    status_pb2.Status(),
+                    status_pb2.Status(),
+                    status_pb2.Status(),
                 ],
                 next_page_token='abc',
             ),
@@ -1052,14 +1005,14 @@ def test_list_campaign_experiment_async_errors_pager():
             ),
             campaign_experiment_service.ListCampaignExperimentAsyncErrorsResponse(
                 errors=[
-                    status.Status(),
+                    status_pb2.Status(),
                 ],
                 next_page_token='ghi',
             ),
             campaign_experiment_service.ListCampaignExperimentAsyncErrorsResponse(
                 errors=[
-                    status.Status(),
-                    status.Status(),
+                    status_pb2.Status(),
+                    status_pb2.Status(),
                 ],
             ),
             RuntimeError,
@@ -1077,12 +1030,12 @@ def test_list_campaign_experiment_async_errors_pager():
 
         results = [i for i in pager]
         assert len(results) == 6
-        assert all(isinstance(i, status.Status)
+        assert all(isinstance(i, status_pb2.Status)
                    for i in results)
 
 def test_list_campaign_experiment_async_errors_pages():
     client = CampaignExperimentServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1093,9 +1046,9 @@ def test_list_campaign_experiment_async_errors_pages():
         call.side_effect = (
             campaign_experiment_service.ListCampaignExperimentAsyncErrorsResponse(
                 errors=[
-                    status.Status(),
-                    status.Status(),
-                    status.Status(),
+                    status_pb2.Status(),
+                    status_pb2.Status(),
+                    status_pb2.Status(),
                 ],
                 next_page_token='abc',
             ),
@@ -1105,14 +1058,14 @@ def test_list_campaign_experiment_async_errors_pages():
             ),
             campaign_experiment_service.ListCampaignExperimentAsyncErrorsResponse(
                 errors=[
-                    status.Status(),
+                    status_pb2.Status(),
                 ],
                 next_page_token='ghi',
             ),
             campaign_experiment_service.ListCampaignExperimentAsyncErrorsResponse(
                 errors=[
-                    status.Status(),
-                    status.Status(),
+                    status_pb2.Status(),
+                    status_pb2.Status(),
                 ],
             ),
             RuntimeError,
@@ -1125,11 +1078,11 @@ def test_list_campaign_experiment_async_errors_pages():
 def test_credentials_transport_error():
     # It is an error to provide credentials and a transport instance.
     transport = transports.CampaignExperimentServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = CampaignExperimentServiceClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             transport=transport,
         )
 
@@ -1137,7 +1090,7 @@ def test_credentials_transport_error():
 def test_transport_instance():
     # A client may be instantiated with a custom transport instance.
     transport = transports.CampaignExperimentServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     client = CampaignExperimentServiceClient(transport=transport)
     assert client.transport is transport
@@ -1146,7 +1099,7 @@ def test_transport_instance():
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.CampaignExperimentServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     channel = transport.grpc_channel
     assert channel
@@ -1155,7 +1108,7 @@ def test_transport_get_channel():
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = CampaignExperimentServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     assert isinstance(
         client.transport,
@@ -1167,8 +1120,8 @@ def test_transport_grpc_default():
 ])
 def test_transport_adc(transport_class):
     # Test default credentials are used if not provided.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport_class()
         adc.assert_called_once()
 
@@ -1178,7 +1131,7 @@ def test_campaign_experiment_service_base_transport():
     with mock.patch('google.ads.googleads.v5.services.services.campaign_experiment_service.transports.CampaignExperimentServiceTransport.__init__') as Transport:
         Transport.return_value = None
         transport = transports.CampaignExperimentServiceTransport(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
         )
 
     # Every method on the transport should just blindly
@@ -1191,7 +1144,7 @@ def test_campaign_experiment_service_base_transport():
         'promote_campaign_experiment',
         'end_campaign_experiment',
         'list_campaign_experiment_async_errors',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -1204,17 +1157,17 @@ def test_campaign_experiment_service_base_transport():
 
 def test_campaign_experiment_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.ads.googleads.v5.services.services.campaign_experiment_service.transports.CampaignExperimentServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'default') as adc, mock.patch('google.ads.googleads.v5.services.services.campaign_experiment_service.transports.CampaignExperimentServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.CampaignExperimentServiceTransport()
         adc.assert_called_once()
 
 
 def test_campaign_experiment_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         CampaignExperimentServiceClient()
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/adwords',
@@ -1224,8 +1177,8 @@ def test_campaign_experiment_service_auth_adc():
 def test_campaign_experiment_service_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transports.CampaignExperimentServiceGrpcTransport(host="squid.clam.whelk")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/adwords',
@@ -1234,7 +1187,7 @@ def test_campaign_experiment_service_transport_auth_adc():
 
 def test_campaign_experiment_service_host_no_port():
     client = CampaignExperimentServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='googleads.googleapis.com'),
     )
     assert client.transport._host == 'googleads.googleapis.com:443'
@@ -1242,7 +1195,7 @@ def test_campaign_experiment_service_host_no_port():
 
 def test_campaign_experiment_service_host_with_port():
     client = CampaignExperimentServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='googleads.googleapis.com:8000'),
     )
     assert client.transport._host == 'googleads.googleapis.com:8000'
@@ -1273,9 +1226,9 @@ def test_campaign_experiment_service_transport_channel_mtls_with_client_cert_sou
             mock_grpc_channel = mock.Mock()
             grpc_create_channel.return_value = mock_grpc_channel
 
-            cred = credentials.AnonymousCredentials()
+            cred = ga_credentials.AnonymousCredentials()
             with pytest.warns(DeprecationWarning):
-                with mock.patch.object(auth, 'default') as adc:
+                with mock.patch.object(google.auth, 'default') as adc:
                     adc.return_value = (cred, None)
                     transport = transport_class(
                         host="squid.clam.whelk",
@@ -1347,7 +1300,7 @@ def test_campaign_experiment_service_transport_channel_mtls_with_adc(
 
 def test_campaign_experiment_service_grpc_lro_client():
     client = CampaignExperimentServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
     transport = client.transport
@@ -1361,10 +1314,10 @@ def test_campaign_experiment_service_grpc_lro_client():
     # Ensure that subsequent calls to the property send the exact same object.
     assert transport.operations_client is transport.operations_client
 
+
 def test_campaign_path():
     customer = "squid"
     campaign = "clam"
-
     expected = "customers/{customer}/campaigns/{campaign}".format(customer=customer, campaign=campaign, )
     actual = CampaignExperimentServiceClient.campaign_path(customer, campaign)
     assert expected == actual
@@ -1372,9 +1325,8 @@ def test_campaign_path():
 
 def test_parse_campaign_path():
     expected = {
-    "customer": "whelk",
-    "campaign": "octopus",
-
+        "customer": "whelk",
+        "campaign": "octopus",
     }
     path = CampaignExperimentServiceClient.campaign_path(**expected)
 
@@ -1385,7 +1337,6 @@ def test_parse_campaign_path():
 def test_campaign_draft_path():
     customer = "oyster"
     campaign_draft = "nudibranch"
-
     expected = "customers/{customer}/campaignDrafts/{campaign_draft}".format(customer=customer, campaign_draft=campaign_draft, )
     actual = CampaignExperimentServiceClient.campaign_draft_path(customer, campaign_draft)
     assert expected == actual
@@ -1393,9 +1344,8 @@ def test_campaign_draft_path():
 
 def test_parse_campaign_draft_path():
     expected = {
-    "customer": "cuttlefish",
-    "campaign_draft": "mussel",
-
+        "customer": "cuttlefish",
+        "campaign_draft": "mussel",
     }
     path = CampaignExperimentServiceClient.campaign_draft_path(**expected)
 
@@ -1406,7 +1356,6 @@ def test_parse_campaign_draft_path():
 def test_campaign_experiment_path():
     customer = "winkle"
     campaign_experiment = "nautilus"
-
     expected = "customers/{customer}/campaignExperiments/{campaign_experiment}".format(customer=customer, campaign_experiment=campaign_experiment, )
     actual = CampaignExperimentServiceClient.campaign_experiment_path(customer, campaign_experiment)
     assert expected == actual
@@ -1414,9 +1363,8 @@ def test_campaign_experiment_path():
 
 def test_parse_campaign_experiment_path():
     expected = {
-    "customer": "scallop",
-    "campaign_experiment": "abalone",
-
+        "customer": "scallop",
+        "campaign_experiment": "abalone",
     }
     path = CampaignExperimentServiceClient.campaign_experiment_path(**expected)
 
@@ -1426,7 +1374,6 @@ def test_parse_campaign_experiment_path():
 
 def test_common_billing_account_path():
     billing_account = "squid"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = CampaignExperimentServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -1434,8 +1381,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "clam",
-
+        "billing_account": "clam",
     }
     path = CampaignExperimentServiceClient.common_billing_account_path(**expected)
 
@@ -1445,7 +1391,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "whelk"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = CampaignExperimentServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -1453,8 +1398,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "octopus",
-
+        "folder": "octopus",
     }
     path = CampaignExperimentServiceClient.common_folder_path(**expected)
 
@@ -1464,7 +1408,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "oyster"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = CampaignExperimentServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -1472,8 +1415,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "nudibranch",
-
+        "organization": "nudibranch",
     }
     path = CampaignExperimentServiceClient.common_organization_path(**expected)
 
@@ -1483,7 +1425,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "cuttlefish"
-
     expected = "projects/{project}".format(project=project, )
     actual = CampaignExperimentServiceClient.common_project_path(project)
     assert expected == actual
@@ -1491,8 +1432,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "mussel",
-
+        "project": "mussel",
     }
     path = CampaignExperimentServiceClient.common_project_path(**expected)
 
@@ -1503,7 +1443,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "winkle"
     location = "nautilus"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = CampaignExperimentServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -1511,9 +1450,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "scallop",
-    "location": "abalone",
-
+        "project": "scallop",
+        "location": "abalone",
     }
     path = CampaignExperimentServiceClient.common_location_path(**expected)
 
@@ -1527,7 +1465,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
 
     with mock.patch.object(transports.CampaignExperimentServiceTransport, '_prep_wrapped_messages') as prep:
         client = CampaignExperimentServiceClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)
@@ -1535,7 +1473,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
     with mock.patch.object(transports.CampaignExperimentServiceTransport, '_prep_wrapped_messages') as prep:
         transport_class = CampaignExperimentServiceClient.get_transport_class()
         transport = transport_class(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)

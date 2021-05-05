@@ -1,0 +1,83 @@
+ {
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "python",
+  "libraryPackage": "google.cloud.osconfig.agentendpoint_v1",
+  "protoPackage": "google.cloud.osconfig.agentendpoint.v1",
+  "schema": "1.0",
+  "services": {
+    "AgentEndpointService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AgentEndpointServiceClient",
+          "rpcs": {
+            "ReceiveTaskNotification": {
+              "methods": [
+                "receive_task_notification"
+              ]
+            },
+            "RegisterAgent": {
+              "methods": [
+                "register_agent"
+              ]
+            },
+            "ReportInventory": {
+              "methods": [
+                "report_inventory"
+              ]
+            },
+            "ReportTaskComplete": {
+              "methods": [
+                "report_task_complete"
+              ]
+            },
+            "ReportTaskProgress": {
+              "methods": [
+                "report_task_progress"
+              ]
+            },
+            "StartNextTask": {
+              "methods": [
+                "start_next_task"
+              ]
+            }
+          }
+        },
+        "grpc-async": {
+          "libraryClient": "AgentEndpointServiceAsyncClient",
+          "rpcs": {
+            "ReceiveTaskNotification": {
+              "methods": [
+                "receive_task_notification"
+              ]
+            },
+            "RegisterAgent": {
+              "methods": [
+                "register_agent"
+              ]
+            },
+            "ReportInventory": {
+              "methods": [
+                "report_inventory"
+              ]
+            },
+            "ReportTaskComplete": {
+              "methods": [
+                "report_task_complete"
+              ]
+            },
+            "ReportTaskProgress": {
+              "methods": [
+                "report_task_progress"
+              ]
+            },
+            "StartNextTask": {
+              "methods": [
+                "start_next_task"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

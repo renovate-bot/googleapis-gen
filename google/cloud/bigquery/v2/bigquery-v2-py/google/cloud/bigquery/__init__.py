@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.cloud.bigquery_v2.services.model_service.async_client import ModelServiceAsyncClient
 from google.cloud.bigquery_v2.services.model_service.client import ModelServiceClient
+from google.cloud.bigquery_v2.services.model_service.async_client import ModelServiceAsyncClient
+
 from google.cloud.bigquery_v2.types.encryption_config import EncryptionConfiguration
 from google.cloud.bigquery_v2.types.model import DeleteModelRequest
 from google.cloud.bigquery_v2.types.model import GetModelRequest
@@ -30,17 +30,16 @@ from google.cloud.bigquery_v2.types.standard_sql import StandardSqlField
 from google.cloud.bigquery_v2.types.standard_sql import StandardSqlStructType
 from google.cloud.bigquery_v2.types.table_reference import TableReference
 
-__all__ = (
-    'DeleteModelRequest',
+__all__ = ('ModelServiceClient',
+    'ModelServiceAsyncClient',
     'EncryptionConfiguration',
+    'DeleteModelRequest',
     'GetModelRequest',
     'ListModelsRequest',
     'ListModelsResponse',
     'Model',
-    'ModelReference',
-    'ModelServiceAsyncClient',
-    'ModelServiceClient',
     'PatchModelRequest',
+    'ModelReference',
     'StandardSqlDataType',
     'StandardSqlField',
     'StandardSqlStructType',

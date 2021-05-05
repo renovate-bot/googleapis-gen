@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -31,7 +29,7 @@ class LocalPlaceholderFieldEnum(proto.Message):
     r"""Values for Local placeholder fields.
     For more information about dynamic remarketing feeds, see
     https://support.google.com/google-ads/answer/6053288.
-    """
+        """
     class LocalPlaceholderField(proto.Enum):
         r"""Possible values for Local placeholder fields."""
         UNSPECIFIED = 0

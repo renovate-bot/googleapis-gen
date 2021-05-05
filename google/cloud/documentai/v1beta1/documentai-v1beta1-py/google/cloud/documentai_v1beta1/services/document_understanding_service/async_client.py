@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -22,16 +20,15 @@ from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
 import google.api_core.client_options as ClientOptions # type: ignore
-from google.api_core import exceptions                 # type: ignore
+from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.documentai_v1beta1.types import document_understanding
-
 from .transports.base import DocumentUnderstandingServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import DocumentUnderstandingServiceGrpcAsyncIOTransport
 from .client import DocumentUnderstandingServiceClient
@@ -50,16 +47,12 @@ class DocumentUnderstandingServiceAsyncClient:
 
     common_billing_account_path = staticmethod(DocumentUnderstandingServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(DocumentUnderstandingServiceClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(DocumentUnderstandingServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(DocumentUnderstandingServiceClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(DocumentUnderstandingServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(DocumentUnderstandingServiceClient.parse_common_organization_path)
-
     common_project_path = staticmethod(DocumentUnderstandingServiceClient.common_project_path)
     parse_common_project_path = staticmethod(DocumentUnderstandingServiceClient.parse_common_project_path)
-
     common_location_path = staticmethod(DocumentUnderstandingServiceClient.common_location_path)
     parse_common_location_path = staticmethod(DocumentUnderstandingServiceClient.parse_common_location_path)
 
@@ -107,7 +100,7 @@ class DocumentUnderstandingServiceAsyncClient:
     get_transport_class = functools.partial(type(DocumentUnderstandingServiceClient).get_transport_class, type(DocumentUnderstandingServiceClient))
 
     def __init__(self, *,
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             transport: Union[str, DocumentUnderstandingServiceTransport] = 'grpc_asyncio',
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -144,7 +137,6 @@ class DocumentUnderstandingServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = DocumentUnderstandingServiceClient(
             credentials=credentials,
             transport=transport,
@@ -174,7 +166,6 @@ class DocumentUnderstandingServiceAsyncClient:
                 This corresponds to the ``requests`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -201,7 +192,6 @@ class DocumentUnderstandingServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if requests:
             request.requests.extend(requests)
 
@@ -210,10 +200,7 @@ class DocumentUnderstandingServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.batch_process_documents,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -249,8 +236,6 @@ class DocumentUnderstandingServiceAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

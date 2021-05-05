@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 from unittest import mock
 
@@ -23,7 +21,6 @@ import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
-from google import auth
 from google.ads.googleads.v5.enums.types import billing_setup_status
 from google.ads.googleads.v5.enums.types import time_type
 from google.ads.googleads.v5.resources.types import billing_setup
@@ -33,10 +30,11 @@ from google.ads.googleads.v5.services.types import billing_setup_service
 from google.api_core import client_options
 from google.api_core import gapic_v1
 from google.api_core import grpc_helpers
-from google.auth import credentials
+from google.auth import credentials as ga_credentials
 from google.auth.exceptions import MutualTLSChannelError
 from google.oauth2 import service_account
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
+import google.auth
 
 
 def client_cert_source_callback():
@@ -66,7 +64,7 @@ def test__get_default_mtls_endpoint():
 
 
 def test_billing_setup_service_client_from_service_account_info():
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
@@ -77,7 +75,7 @@ def test_billing_setup_service_client_from_service_account_info():
 
 
 def test_billing_setup_service_client_from_service_account_file():
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_file') as factory:
         factory.return_value = creds
         client = BillingSetupServiceClient.from_service_account_file("dummy/file/path.json")
@@ -102,7 +100,7 @@ def test_billing_setup_service_client_client_options():
     # Check that if channel is provided we won't create a new one.
     with mock.patch('google.ads.googleads.v5.services.services.billing_setup_service.BillingSetupServiceClient.get_transport_class') as gtc:
         transport = transports.BillingSetupServiceGrpcTransport(
-            credentials=credentials.AnonymousCredentials()
+            credentials=ga_credentials.AnonymousCredentials()
         )
         client = BillingSetupServiceClient(transport=transport)
         gtc.assert_not_called()
@@ -252,7 +250,7 @@ def test_billing_setup_service_client_client_options_from_dict():
 
 def test_get_billing_setup(transport: str = 'grpc', request_type=billing_setup_service.GetBillingSetupRequest):
     client = BillingSetupServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -267,28 +265,20 @@ def test_get_billing_setup(transport: str = 'grpc', request_type=billing_setup_s
         # Designate an appropriate return value for the call.
         call.return_value = billing_setup.BillingSetup(
             resource_name='resource_name_value',
-
             status=billing_setup_status.BillingSetupStatusEnum.BillingSetupStatus.UNKNOWN,
-
-            start_date_time=wrappers.StringValue(value='value_value'),
-
-            end_date_time=wrappers.StringValue(value='value_value'),
+            start_date_time=wrappers_pb2.StringValue(value='value_value'),
+            end_date_time=wrappers_pb2.StringValue(value='value_value'),
         )
-
         response = client.get_billing_setup(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == billing_setup_service.GetBillingSetupRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, billing_setup.BillingSetup)
-
     assert response.resource_name == 'resource_name_value'
-
     assert response.status == billing_setup_status.BillingSetupStatusEnum.BillingSetupStatus.UNKNOWN
 
 
@@ -298,12 +288,13 @@ def test_get_billing_setup_from_dict():
 
 def test_get_billing_setup_field_headers():
     client = BillingSetupServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = billing_setup_service.GetBillingSetupRequest()
+
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -311,7 +302,6 @@ def test_get_billing_setup_field_headers():
             type(client.transport.get_billing_setup),
             '__call__') as call:
         call.return_value = billing_setup.BillingSetup()
-
         client.get_billing_setup(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -329,7 +319,7 @@ def test_get_billing_setup_field_headers():
 
 def test_get_billing_setup_flattened():
     client = BillingSetupServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -338,7 +328,6 @@ def test_get_billing_setup_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = billing_setup.BillingSetup()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_billing_setup(
@@ -349,13 +338,12 @@ def test_get_billing_setup_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource_name == 'resource_name_value'
 
 
 def test_get_billing_setup_flattened_error():
     client = BillingSetupServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -369,7 +357,7 @@ def test_get_billing_setup_flattened_error():
 
 def test_mutate_billing_setup(transport: str = 'grpc', request_type=billing_setup_service.MutateBillingSetupRequest):
     client = BillingSetupServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -384,17 +372,14 @@ def test_mutate_billing_setup(transport: str = 'grpc', request_type=billing_setu
         # Designate an appropriate return value for the call.
         call.return_value = billing_setup_service.MutateBillingSetupResponse(
         )
-
         response = client.mutate_billing_setup(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == billing_setup_service.MutateBillingSetupRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, billing_setup_service.MutateBillingSetupResponse)
 
 
@@ -404,12 +389,13 @@ def test_mutate_billing_setup_from_dict():
 
 def test_mutate_billing_setup_field_headers():
     client = BillingSetupServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = billing_setup_service.MutateBillingSetupRequest()
+
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -417,7 +403,6 @@ def test_mutate_billing_setup_field_headers():
             type(client.transport.mutate_billing_setup),
             '__call__') as call:
         call.return_value = billing_setup_service.MutateBillingSetupResponse()
-
         client.mutate_billing_setup(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -435,7 +420,7 @@ def test_mutate_billing_setup_field_headers():
 
 def test_mutate_billing_setup_flattened():
     client = BillingSetupServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -444,7 +429,6 @@ def test_mutate_billing_setup_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = billing_setup_service.MutateBillingSetupResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_billing_setup(
@@ -456,15 +440,13 @@ def test_mutate_billing_setup_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].customer_id == 'customer_id_value'
-
         assert args[0].operation == billing_setup_service.BillingSetupOperation(create=billing_setup.BillingSetup(resource_name='resource_name_value'))
 
 
 def test_mutate_billing_setup_flattened_error():
     client = BillingSetupServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -480,11 +462,11 @@ def test_mutate_billing_setup_flattened_error():
 def test_credentials_transport_error():
     # It is an error to provide credentials and a transport instance.
     transport = transports.BillingSetupServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = BillingSetupServiceClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             transport=transport,
         )
 
@@ -492,7 +474,7 @@ def test_credentials_transport_error():
 def test_transport_instance():
     # A client may be instantiated with a custom transport instance.
     transport = transports.BillingSetupServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     client = BillingSetupServiceClient(transport=transport)
     assert client.transport is transport
@@ -501,7 +483,7 @@ def test_transport_instance():
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.BillingSetupServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     channel = transport.grpc_channel
     assert channel
@@ -510,7 +492,7 @@ def test_transport_get_channel():
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = BillingSetupServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     assert isinstance(
         client.transport,
@@ -522,8 +504,8 @@ def test_transport_grpc_default():
 ])
 def test_transport_adc(transport_class):
     # Test default credentials are used if not provided.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport_class()
         adc.assert_called_once()
 
@@ -533,7 +515,7 @@ def test_billing_setup_service_base_transport():
     with mock.patch('google.ads.googleads.v5.services.services.billing_setup_service.transports.BillingSetupServiceTransport.__init__') as Transport:
         Transport.return_value = None
         transport = transports.BillingSetupServiceTransport(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
         )
 
     # Every method on the transport should just blindly
@@ -541,7 +523,7 @@ def test_billing_setup_service_base_transport():
     methods = (
         'get_billing_setup',
         'mutate_billing_setup',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -549,17 +531,17 @@ def test_billing_setup_service_base_transport():
 
 def test_billing_setup_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.ads.googleads.v5.services.services.billing_setup_service.transports.BillingSetupServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'default') as adc, mock.patch('google.ads.googleads.v5.services.services.billing_setup_service.transports.BillingSetupServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.BillingSetupServiceTransport()
         adc.assert_called_once()
 
 
 def test_billing_setup_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         BillingSetupServiceClient()
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/adwords',
@@ -569,8 +551,8 @@ def test_billing_setup_service_auth_adc():
 def test_billing_setup_service_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transports.BillingSetupServiceGrpcTransport(host="squid.clam.whelk")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/adwords',
@@ -579,7 +561,7 @@ def test_billing_setup_service_transport_auth_adc():
 
 def test_billing_setup_service_host_no_port():
     client = BillingSetupServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='googleads.googleapis.com'),
     )
     assert client.transport._host == 'googleads.googleapis.com:443'
@@ -587,7 +569,7 @@ def test_billing_setup_service_host_no_port():
 
 def test_billing_setup_service_host_with_port():
     client = BillingSetupServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='googleads.googleapis.com:8000'),
     )
     assert client.transport._host == 'googleads.googleapis.com:8000'
@@ -618,9 +600,9 @@ def test_billing_setup_service_transport_channel_mtls_with_client_cert_source(
             mock_grpc_channel = mock.Mock()
             grpc_create_channel.return_value = mock_grpc_channel
 
-            cred = credentials.AnonymousCredentials()
+            cred = ga_credentials.AnonymousCredentials()
             with pytest.warns(DeprecationWarning):
-                with mock.patch.object(auth, 'default') as adc:
+                with mock.patch.object(google.auth, 'default') as adc:
                     adc.return_value = (cred, None)
                     transport = transport_class(
                         host="squid.clam.whelk",
@@ -693,7 +675,6 @@ def test_billing_setup_service_transport_channel_mtls_with_adc(
 def test_billing_setup_path():
     customer = "squid"
     billing_setup = "clam"
-
     expected = "customers/{customer}/billingSetups/{billing_setup}".format(customer=customer, billing_setup=billing_setup, )
     actual = BillingSetupServiceClient.billing_setup_path(customer, billing_setup)
     assert expected == actual
@@ -701,9 +682,8 @@ def test_billing_setup_path():
 
 def test_parse_billing_setup_path():
     expected = {
-    "customer": "whelk",
-    "billing_setup": "octopus",
-
+        "customer": "whelk",
+        "billing_setup": "octopus",
     }
     path = BillingSetupServiceClient.billing_setup_path(**expected)
 
@@ -714,7 +694,6 @@ def test_parse_billing_setup_path():
 def test_payments_account_path():
     customer = "oyster"
     payments_account = "nudibranch"
-
     expected = "customers/{customer}/paymentsAccounts/{payments_account}".format(customer=customer, payments_account=payments_account, )
     actual = BillingSetupServiceClient.payments_account_path(customer, payments_account)
     assert expected == actual
@@ -722,9 +701,8 @@ def test_payments_account_path():
 
 def test_parse_payments_account_path():
     expected = {
-    "customer": "cuttlefish",
-    "payments_account": "mussel",
-
+        "customer": "cuttlefish",
+        "payments_account": "mussel",
     }
     path = BillingSetupServiceClient.payments_account_path(**expected)
 
@@ -734,7 +712,6 @@ def test_parse_payments_account_path():
 
 def test_common_billing_account_path():
     billing_account = "winkle"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = BillingSetupServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -742,8 +719,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "nautilus",
-
+        "billing_account": "nautilus",
     }
     path = BillingSetupServiceClient.common_billing_account_path(**expected)
 
@@ -753,7 +729,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "scallop"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = BillingSetupServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -761,8 +736,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "abalone",
-
+        "folder": "abalone",
     }
     path = BillingSetupServiceClient.common_folder_path(**expected)
 
@@ -772,7 +746,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "squid"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = BillingSetupServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -780,8 +753,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "clam",
-
+        "organization": "clam",
     }
     path = BillingSetupServiceClient.common_organization_path(**expected)
 
@@ -791,7 +763,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "whelk"
-
     expected = "projects/{project}".format(project=project, )
     actual = BillingSetupServiceClient.common_project_path(project)
     assert expected == actual
@@ -799,8 +770,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "octopus",
-
+        "project": "octopus",
     }
     path = BillingSetupServiceClient.common_project_path(**expected)
 
@@ -811,7 +781,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "oyster"
     location = "nudibranch"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = BillingSetupServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -819,9 +788,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "cuttlefish",
-    "location": "mussel",
-
+        "project": "cuttlefish",
+        "location": "mussel",
     }
     path = BillingSetupServiceClient.common_location_path(**expected)
 
@@ -835,7 +803,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
 
     with mock.patch.object(transports.BillingSetupServiceTransport, '_prep_wrapped_messages') as prep:
         client = BillingSetupServiceClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)
@@ -843,7 +811,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
     with mock.patch.object(transports.BillingSetupServiceTransport, '_prep_wrapped_messages') as prep:
         transport_class = BillingSetupServiceClient.get_transport_class()
         transport = transport_class(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)

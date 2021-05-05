@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,7 +15,10 @@
 #
 
 from .services.image_annotator import ImageAnnotatorClient
+from .services.image_annotator import ImageAnnotatorAsyncClient
 from .services.product_search import ProductSearchClient
+from .services.product_search import ProductSearchAsyncClient
+
 from .types.geometry import BoundingPoly
 from .types.geometry import NormalizedBoundingPoly
 from .types.geometry import NormalizedVertex
@@ -48,7 +50,6 @@ from .types.image_annotator import ImageProperties
 from .types.image_annotator import ImageSource
 from .types.image_annotator import InputConfig
 from .types.image_annotator import LatLongRect
-from .types.image_annotator import Likelihood
 from .types.image_annotator import LocalizedObjectAnnotation
 from .types.image_annotator import LocationInfo
 from .types.image_annotator import OperationMetadata
@@ -57,9 +58,10 @@ from .types.image_annotator import Property
 from .types.image_annotator import SafeSearchAnnotation
 from .types.image_annotator import TextDetectionParams
 from .types.image_annotator import WebDetectionParams
-from .types.product_search import ProductSearchCategory
+from .types.image_annotator import Likelihood
 from .types.product_search import ProductSearchParams
 from .types.product_search import ProductSearchResults
+from .types.product_search import ProductSearchCategory
 from .types.product_search import ProductSearchResultsView
 from .types.product_search_service import AddProductToProductSetRequest
 from .types.product_search_service import BatchOperationMetadata
@@ -98,88 +100,87 @@ from .types.text_annotation import TextAnnotation
 from .types.text_annotation import Word
 from .types.web_detection import WebDetection
 
-
 __all__ = (
-    'AddProductToProductSetRequest',
-    'AnnotateFileResponse',
-    'AnnotateImageRequest',
-    'AnnotateImageResponse',
-    'AsyncAnnotateFileRequest',
-    'AsyncAnnotateFileResponse',
-    'AsyncBatchAnnotateFilesRequest',
-    'AsyncBatchAnnotateFilesResponse',
-    'BatchAnnotateImagesRequest',
-    'BatchAnnotateImagesResponse',
-    'BatchOperationMetadata',
-    'Block',
-    'BoundingPoly',
-    'ColorInfo',
-    'CreateProductRequest',
-    'CreateProductSetRequest',
-    'CreateReferenceImageRequest',
-    'CropHint',
-    'CropHintsAnnotation',
-    'CropHintsParams',
-    'DeleteProductRequest',
-    'DeleteProductSetRequest',
-    'DeleteReferenceImageRequest',
-    'DominantColorsAnnotation',
-    'EntityAnnotation',
-    'FaceAnnotation',
-    'Feature',
-    'GcsDestination',
-    'GcsSource',
-    'GetProductRequest',
-    'GetProductSetRequest',
-    'GetReferenceImageRequest',
-    'Image',
-    'ImageAnnotationContext',
-    'ImageContext',
-    'ImageProperties',
-    'ImageSource',
-    'ImportProductSetsGcsSource',
-    'ImportProductSetsInputConfig',
-    'ImportProductSetsRequest',
-    'ImportProductSetsResponse',
-    'InputConfig',
-    'LatLongRect',
-    'Likelihood',
-    'ListProductSetsRequest',
-    'ListProductSetsResponse',
-    'ListProductsInProductSetRequest',
-    'ListProductsInProductSetResponse',
-    'ListProductsRequest',
-    'ListProductsResponse',
-    'ListReferenceImagesRequest',
-    'ListReferenceImagesResponse',
-    'LocalizedObjectAnnotation',
-    'LocationInfo',
-    'NormalizedBoundingPoly',
-    'NormalizedVertex',
-    'OperationMetadata',
-    'OutputConfig',
-    'Page',
-    'Paragraph',
-    'Position',
-    'Product',
-    'ProductSearchCategory',
-    'ProductSearchClient',
-    'ProductSearchParams',
-    'ProductSearchResults',
-    'ProductSearchResultsView',
-    'ProductSet',
-    'Property',
-    'ReferenceImage',
-    'RemoveProductFromProductSetRequest',
-    'SafeSearchAnnotation',
-    'Symbol',
-    'TextAnnotation',
-    'TextDetectionParams',
-    'UpdateProductRequest',
-    'UpdateProductSetRequest',
-    'Vertex',
-    'WebDetection',
-    'WebDetectionParams',
-    'Word',
+'AddProductToProductSetRequest',
+'AnnotateFileResponse',
+'AnnotateImageRequest',
+'AnnotateImageResponse',
+'AsyncAnnotateFileRequest',
+'AsyncAnnotateFileResponse',
+'AsyncBatchAnnotateFilesRequest',
+'AsyncBatchAnnotateFilesResponse',
+'BatchAnnotateImagesRequest',
+'BatchAnnotateImagesResponse',
+'BatchOperationMetadata',
+'Block',
+'BoundingPoly',
+'ColorInfo',
+'CreateProductRequest',
+'CreateProductSetRequest',
+'CreateReferenceImageRequest',
+'CropHint',
+'CropHintsAnnotation',
+'CropHintsParams',
+'DeleteProductRequest',
+'DeleteProductSetRequest',
+'DeleteReferenceImageRequest',
+'DominantColorsAnnotation',
+'EntityAnnotation',
+'FaceAnnotation',
+'Feature',
+'GcsDestination',
+'GcsSource',
+'GetProductRequest',
+'GetProductSetRequest',
+'GetReferenceImageRequest',
+'Image',
+'ImageAnnotationContext',
 'ImageAnnotatorClient',
+'ImageContext',
+'ImageProperties',
+'ImageSource',
+'ImportProductSetsGcsSource',
+'ImportProductSetsInputConfig',
+'ImportProductSetsRequest',
+'ImportProductSetsResponse',
+'InputConfig',
+'LatLongRect',
+'Likelihood',
+'ListProductSetsRequest',
+'ListProductSetsResponse',
+'ListProductsInProductSetRequest',
+'ListProductsInProductSetResponse',
+'ListProductsRequest',
+'ListProductsResponse',
+'ListReferenceImagesRequest',
+'ListReferenceImagesResponse',
+'LocalizedObjectAnnotation',
+'LocationInfo',
+'NormalizedBoundingPoly',
+'NormalizedVertex',
+'OperationMetadata',
+'OutputConfig',
+'Page',
+'Paragraph',
+'Position',
+'Product',
+'ProductSearchCategory',
+'ProductSearchClient',
+'ProductSearchParams',
+'ProductSearchResults',
+'ProductSearchResultsView',
+'ProductSet',
+'Property',
+'ReferenceImage',
+'RemoveProductFromProductSetRequest',
+'SafeSearchAnnotation',
+'Symbol',
+'TextAnnotation',
+'TextDetectionParams',
+'UpdateProductRequest',
+'UpdateProductSetRequest',
+'Vertex',
+'WebDetection',
+'WebDetectionParams',
+'Word',
 )

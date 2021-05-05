@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -34,7 +32,7 @@ class KeywordPlanCompetitionLevelEnum(proto.Message):
     on that keyword relative to all keywords across Google. The
     competition level can depend on the location and Search Network
     targeting options you've selected.
-    """
+        """
     class KeywordPlanCompetitionLevel(proto.Enum):
         r"""Competition level of a keyword."""
         UNSPECIFIED = 0

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -23,10 +21,10 @@ from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
-from google.api_core import exceptions                            # type: ignore
+from google.api_core import exceptions as core_exceptions         # type: ignore
 from google.api_core import gapic_v1                              # type: ignore
 from google.api_core import retry as retries                      # type: ignore
-from google.auth import credentials                               # type: ignore
+from google.auth import credentials as ga_credentials             # type: ignore
 from google.auth.transport import mtls                            # type: ignore
 from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
@@ -38,8 +36,7 @@ from google.cloud.aiplatform_v1beta1.services.vizier_service import pagers
 from google.cloud.aiplatform_v1beta1.types import study
 from google.cloud.aiplatform_v1beta1.types import study as gca_study
 from google.cloud.aiplatform_v1beta1.types import vizier_service
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
+from google.protobuf import timestamp_pb2  # type: ignore
 from .transports.base import VizierServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import VizierServiceGrpcTransport
 from .transports.grpc_asyncio import VizierServiceGrpcAsyncIOTransport
@@ -253,7 +250,7 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
         return m.groupdict() if m else {}
 
     def __init__(self, *,
-            credentials: Optional[credentials.Credentials] = None,
+            credentials: Optional[ga_credentials.Credentials] = None,
             transport: Union[str, VizierServiceTransport, None] = None,
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -386,7 +383,6 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
                 This corresponds to the ``study`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -411,10 +407,8 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, vizier_service.CreateStudyRequest):
             request = vizier_service.CreateStudyRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if study is not None:
@@ -464,7 +458,6 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -489,10 +482,8 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, vizier_service.GetStudyRequest):
             request = vizier_service.GetStudyRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -542,7 +533,6 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -572,10 +562,8 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, vizier_service.ListStudiesRequest):
             request = vizier_service.ListStudiesRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -633,7 +621,6 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -654,10 +641,8 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, vizier_service.DeleteStudyRequest):
             request = vizier_service.DeleteStudyRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -704,7 +689,6 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -729,10 +713,8 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, vizier_service.LookupStudyRequest):
             request = vizier_service.LookupStudyRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -776,7 +758,6 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
             request (google.cloud.aiplatform_v1beta1.types.SuggestTrialsRequest):
                 The request object. Request message for
                 [VizierService.SuggestTrials][google.cloud.aiplatform.v1beta1.VizierService.SuggestTrials].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -794,7 +775,6 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a vizier_service.SuggestTrialsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -861,7 +841,6 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
                 This corresponds to the ``trial`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -891,10 +870,8 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, vizier_service.CreateTrialRequest):
             request = vizier_service.CreateTrialRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if trial is not None:
@@ -944,7 +921,6 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -974,10 +950,8 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, vizier_service.GetTrialRequest):
             request = vizier_service.GetTrialRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1026,7 +1000,6 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1056,10 +1029,8 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, vizier_service.ListTrialsRequest):
             request = vizier_service.ListTrialsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -1110,7 +1081,6 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
             request (google.cloud.aiplatform_v1beta1.types.AddTrialMeasurementRequest):
                 The request object. Request message for
                 [VizierService.AddTrialMeasurement][google.cloud.aiplatform.v1beta1.VizierService.AddTrialMeasurement].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1127,7 +1097,6 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a vizier_service.AddTrialMeasurementRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1171,7 +1140,6 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
             request (google.cloud.aiplatform_v1beta1.types.CompleteTrialRequest):
                 The request object. Request message for
                 [VizierService.CompleteTrial][google.cloud.aiplatform.v1beta1.VizierService.CompleteTrial].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1188,7 +1156,6 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a vizier_service.CompleteTrialRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1240,7 +1207,6 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1261,10 +1227,8 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, vizier_service.DeleteTrialRequest):
             request = vizier_service.DeleteTrialRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1304,7 +1268,6 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
             request (google.cloud.aiplatform_v1beta1.types.CheckTrialEarlyStoppingStateRequest):
                 The request object. Request message for
                 [VizierService.CheckTrialEarlyStoppingState][google.cloud.aiplatform.v1beta1.VizierService.CheckTrialEarlyStoppingState].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1322,7 +1285,6 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a vizier_service.CheckTrialEarlyStoppingStateRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1374,7 +1336,6 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
             request (google.cloud.aiplatform_v1beta1.types.StopTrialRequest):
                 The request object. Request message for
                 [VizierService.StopTrial][google.cloud.aiplatform.v1beta1.VizierService.StopTrial].
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1391,7 +1352,6 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         # Minor optimization to avoid making a copy if the user passes
         # in a vizier_service.StopTrialRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1446,7 +1406,6 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1473,10 +1432,8 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, vizier_service.ListOptimalTrialsRequest):
             request = vizier_service.ListOptimalTrialsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -1502,8 +1459,6 @@ class VizierServiceClient(metaclass=VizierServiceClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

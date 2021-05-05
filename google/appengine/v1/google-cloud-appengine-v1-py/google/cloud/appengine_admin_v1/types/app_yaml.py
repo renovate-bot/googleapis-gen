@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,11 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
-from google.protobuf import duration_pb2 as duration  # type: ignore
+from google.protobuf import duration_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -58,7 +55,7 @@ class LoginRequirement(proto.Enum):
 
 class SecurityLevel(proto.Enum):
     r"""Methods to enforce security (HTTPS) on a URL."""
-    _pb_options = {'allow_alias': True}
+     _pb_options = {'allow_alias': True}
     SECURE_UNSPECIFIED = 0
     SECURE_DEFAULT = 0
     SECURE_NEVER = 1
@@ -87,26 +84,33 @@ class ApiConfigHandler(proto.Message):
             URL to serve the endpoint at.
     """
 
-    auth_fail_action = proto.Field(proto.ENUM, number=1,
+    auth_fail_action = proto.Field(
+        proto.ENUM,
+        number=1,
         enum='AuthFailAction',
     )
-
-    login = proto.Field(proto.ENUM, number=2,
+    login = proto.Field(
+        proto.ENUM,
+        number=2,
         enum='LoginRequirement',
     )
-
-    script = proto.Field(proto.STRING, number=3)
-
-    security_level = proto.Field(proto.ENUM, number=4,
+    script = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    security_level = proto.Field(
+        proto.ENUM,
+        number=4,
         enum='SecurityLevel',
     )
-
-    url = proto.Field(proto.STRING, number=5)
+    url = proto.Field(
+        proto.STRING,
+        number=5,
+    )
 
 
 class ErrorHandler(proto.Message):
     r"""Custom static error page to be served when an error occurs.
-
     Attributes:
         error_code (google.cloud.appengine_admin_v1.types.ErrorHandler.ErrorCode):
             Error condition this handler applies to.
@@ -118,20 +122,26 @@ class ErrorHandler(proto.Message):
     """
     class ErrorCode(proto.Enum):
         r"""Error codes."""
-        _pb_options = {'allow_alias': True}
+         _pb_options = {'allow_alias': True}
         ERROR_CODE_UNSPECIFIED = 0
         ERROR_CODE_DEFAULT = 0
         ERROR_CODE_OVER_QUOTA = 1
         ERROR_CODE_DOS_API_DENIAL = 2
         ERROR_CODE_TIMEOUT = 3
 
-    error_code = proto.Field(proto.ENUM, number=1,
+    error_code = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=ErrorCode,
     )
-
-    static_file = proto.Field(proto.STRING, number=2)
-
-    mime_type = proto.Field(proto.STRING, number=3)
+    static_file = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    mime_type = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class UrlMap(proto.Message):
@@ -179,33 +189,46 @@ class UrlMap(proto.Message):
         REDIRECT_HTTP_RESPONSE_CODE_303 = 3
         REDIRECT_HTTP_RESPONSE_CODE_307 = 4
 
-    url_regex = proto.Field(proto.STRING, number=1)
-
-    static_files = proto.Field(proto.MESSAGE, number=2, oneof='handler_type',
+    url_regex = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    static_files = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='handler_type',
         message='StaticFilesHandler',
     )
-
-    script = proto.Field(proto.MESSAGE, number=3, oneof='handler_type',
+    script = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        oneof='handler_type',
         message='ScriptHandler',
     )
-
-    api_endpoint = proto.Field(proto.MESSAGE, number=4, oneof='handler_type',
+    api_endpoint = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        oneof='handler_type',
         message='ApiEndpointHandler',
     )
-
-    security_level = proto.Field(proto.ENUM, number=5,
+    security_level = proto.Field(
+        proto.ENUM,
+        number=5,
         enum='SecurityLevel',
     )
-
-    login = proto.Field(proto.ENUM, number=6,
+    login = proto.Field(
+        proto.ENUM,
+        number=6,
         enum='LoginRequirement',
     )
-
-    auth_fail_action = proto.Field(proto.ENUM, number=7,
+    auth_fail_action = proto.Field(
+        proto.ENUM,
+        number=7,
         enum='AuthFailAction',
     )
-
-    redirect_http_response_code = proto.Field(proto.ENUM, number=8,
+    redirect_http_response_code = proto.Field(
+        proto.ENUM,
+        number=8,
         enum=RedirectHttpResponseCode,
     )
 
@@ -251,21 +274,36 @@ class StaticFilesHandler(proto.Message):
             resource quotas.
     """
 
-    path = proto.Field(proto.STRING, number=1)
-
-    upload_path_regex = proto.Field(proto.STRING, number=2)
-
-    http_headers = proto.MapField(proto.STRING, proto.STRING, number=3)
-
-    mime_type = proto.Field(proto.STRING, number=4)
-
-    expiration = proto.Field(proto.MESSAGE, number=5,
-        message=duration.Duration,
+    path = proto.Field(
+        proto.STRING,
+        number=1,
     )
-
-    require_matching_file = proto.Field(proto.BOOL, number=6)
-
-    application_readable = proto.Field(proto.BOOL, number=7)
+    upload_path_regex = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    http_headers = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=3,
+    )
+    mime_type = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    expiration = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        message=duration_pb2.Duration,
+    )
+    require_matching_file = proto.Field(
+        proto.BOOL,
+        number=6,
+    )
+    application_readable = proto.Field(
+        proto.BOOL,
+        number=7,
+    )
 
 
 class ScriptHandler(proto.Message):
@@ -278,19 +316,24 @@ class ScriptHandler(proto.Message):
             directory.
     """
 
-    script_path = proto.Field(proto.STRING, number=1)
+    script_path = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class ApiEndpointHandler(proto.Message):
     r"""Uses Google Cloud Endpoints to handle requests.
-
     Attributes:
         script_path (str):
             Path to the script from the application root
             directory.
     """
 
-    script_path = proto.Field(proto.STRING, number=1)
+    script_path = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class HealthCheck(proto.Message):
@@ -321,22 +364,35 @@ class HealthCheck(proto.Message):
             failed.
     """
 
-    disable_health_check = proto.Field(proto.BOOL, number=1)
-
-    host = proto.Field(proto.STRING, number=2)
-
-    healthy_threshold = proto.Field(proto.UINT32, number=3)
-
-    unhealthy_threshold = proto.Field(proto.UINT32, number=4)
-
-    restart_threshold = proto.Field(proto.UINT32, number=5)
-
-    check_interval = proto.Field(proto.MESSAGE, number=6,
-        message=duration.Duration,
+    disable_health_check = proto.Field(
+        proto.BOOL,
+        number=1,
     )
-
-    timeout = proto.Field(proto.MESSAGE, number=7,
-        message=duration.Duration,
+    host = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    healthy_threshold = proto.Field(
+        proto.UINT32,
+        number=3,
+    )
+    unhealthy_threshold = proto.Field(
+        proto.UINT32,
+        number=4,
+    )
+    restart_threshold = proto.Field(
+        proto.UINT32,
+        number=5,
+    )
+    check_interval = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        message=duration_pb2.Duration,
+    )
+    timeout = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        message=duration_pb2.Duration,
     )
 
 
@@ -367,24 +423,36 @@ class ReadinessCheck(proto.Message):
             healthcheck until it is ready to serve traffic.
     """
 
-    path = proto.Field(proto.STRING, number=1)
-
-    host = proto.Field(proto.STRING, number=2)
-
-    failure_threshold = proto.Field(proto.UINT32, number=3)
-
-    success_threshold = proto.Field(proto.UINT32, number=4)
-
-    check_interval = proto.Field(proto.MESSAGE, number=5,
-        message=duration.Duration,
+    path = proto.Field(
+        proto.STRING,
+        number=1,
     )
-
-    timeout = proto.Field(proto.MESSAGE, number=6,
-        message=duration.Duration,
+    host = proto.Field(
+        proto.STRING,
+        number=2,
     )
-
-    app_start_timeout = proto.Field(proto.MESSAGE, number=7,
-        message=duration.Duration,
+    failure_threshold = proto.Field(
+        proto.UINT32,
+        number=3,
+    )
+    success_threshold = proto.Field(
+        proto.UINT32,
+        number=4,
+    )
+    check_interval = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        message=duration_pb2.Duration,
+    )
+    timeout = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        message=duration_pb2.Duration,
+    )
+    app_start_timeout = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        message=duration_pb2.Duration,
     )
 
 
@@ -413,24 +481,36 @@ class LivenessCheck(proto.Message):
             the checks.
     """
 
-    path = proto.Field(proto.STRING, number=1)
-
-    host = proto.Field(proto.STRING, number=2)
-
-    failure_threshold = proto.Field(proto.UINT32, number=3)
-
-    success_threshold = proto.Field(proto.UINT32, number=4)
-
-    check_interval = proto.Field(proto.MESSAGE, number=5,
-        message=duration.Duration,
+    path = proto.Field(
+        proto.STRING,
+        number=1,
     )
-
-    timeout = proto.Field(proto.MESSAGE, number=6,
-        message=duration.Duration,
+    host = proto.Field(
+        proto.STRING,
+        number=2,
     )
-
-    initial_delay = proto.Field(proto.MESSAGE, number=7,
-        message=duration.Duration,
+    failure_threshold = proto.Field(
+        proto.UINT32,
+        number=3,
+    )
+    success_threshold = proto.Field(
+        proto.UINT32,
+        number=4,
+    )
+    check_interval = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        message=duration_pb2.Duration,
+    )
+    timeout = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        message=duration_pb2.Duration,
+    )
+    initial_delay = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        message=duration_pb2.Duration,
     )
 
 
@@ -446,9 +526,14 @@ class Library(proto.Message):
             "latest".
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    version = proto.Field(proto.STRING, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    version = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

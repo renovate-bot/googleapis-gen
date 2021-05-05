@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -23,10 +21,10 @@ from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
-from google.api_core import exceptions                            # type: ignore
+from google.api_core import exceptions as core_exceptions         # type: ignore
 from google.api_core import gapic_v1                              # type: ignore
 from google.api_core import retry as retries                      # type: ignore
-from google.auth import credentials                               # type: ignore
+from google.auth import credentials as ga_credentials             # type: ignore
 from google.auth.transport import mtls                            # type: ignore
 from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
@@ -36,8 +34,7 @@ from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.vpcaccess_v1.services.vpc_access_service import pagers
 from google.cloud.vpcaccess_v1.types import vpc_access
-from google.protobuf import empty_pb2 as empty  # type: ignore
-
+from google.protobuf import empty_pb2  # type: ignore
 from .transports.base import VpcAccessServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import VpcAccessServiceGrpcTransport
 from .transports.grpc_asyncio import VpcAccessServiceGrpcAsyncIOTransport
@@ -228,7 +225,7 @@ class VpcAccessServiceClient(metaclass=VpcAccessServiceClientMeta):
         return m.groupdict() if m else {}
 
     def __init__(self, *,
-            credentials: Optional[credentials.Credentials] = None,
+            credentials: Optional[ga_credentials.Credentials] = None,
             transport: Union[str, VpcAccessServiceTransport, None] = None,
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -367,7 +364,6 @@ class VpcAccessServiceClient(metaclass=VpcAccessServiceClientMeta):
                 This corresponds to the ``connector`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -397,10 +393,8 @@ class VpcAccessServiceClient(metaclass=VpcAccessServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, vpc_access.CreateConnectorRequest):
             request = vpc_access.CreateConnectorRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if connector_id is not None:
@@ -461,7 +455,6 @@ class VpcAccessServiceClient(metaclass=VpcAccessServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -488,10 +481,8 @@ class VpcAccessServiceClient(metaclass=VpcAccessServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, vpc_access.GetConnectorRequest):
             request = vpc_access.GetConnectorRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -539,7 +530,6 @@ class VpcAccessServiceClient(metaclass=VpcAccessServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -569,10 +559,8 @@ class VpcAccessServiceClient(metaclass=VpcAccessServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, vpc_access.ListConnectorsRequest):
             request = vpc_access.ListConnectorsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -630,7 +618,6 @@ class VpcAccessServiceClient(metaclass=VpcAccessServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -670,10 +657,8 @@ class VpcAccessServiceClient(metaclass=VpcAccessServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, vpc_access.DeleteConnectorRequest):
             request = vpc_access.DeleteConnectorRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -701,14 +686,12 @@ class VpcAccessServiceClient(metaclass=VpcAccessServiceClientMeta):
         response = operation.from_gapic(
             response,
             self._transport.operations_client,
-            empty.Empty,
+            empty_pb2.Empty,
             metadata_type=vpc_access.OperationMetadata,
         )
 
         # Done; return the response.
         return response
-
-
 
 
 

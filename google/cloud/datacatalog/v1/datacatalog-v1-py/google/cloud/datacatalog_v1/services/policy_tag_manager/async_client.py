@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -22,18 +20,17 @@ from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
 import google.api_core.client_options as ClientOptions # type: ignore
-from google.api_core import exceptions                 # type: ignore
+from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
 from google.cloud.datacatalog_v1.services.policy_tag_manager import pagers
 from google.cloud.datacatalog_v1.types import policytagmanager
 from google.cloud.datacatalog_v1.types import timestamps
-from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
-from google.iam.v1 import policy_pb2 as gi_policy  # type: ignore
-
+from google.iam.v1 import iam_policy_pb2  # type: ignore
+from google.iam.v1 import policy_pb2  # type: ignore
 from .transports.base import PolicyTagManagerTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import PolicyTagManagerGrpcAsyncIOTransport
 from .client import PolicyTagManagerClient
@@ -57,19 +54,14 @@ class PolicyTagManagerAsyncClient:
     parse_policy_tag_path = staticmethod(PolicyTagManagerClient.parse_policy_tag_path)
     taxonomy_path = staticmethod(PolicyTagManagerClient.taxonomy_path)
     parse_taxonomy_path = staticmethod(PolicyTagManagerClient.parse_taxonomy_path)
-
     common_billing_account_path = staticmethod(PolicyTagManagerClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(PolicyTagManagerClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(PolicyTagManagerClient.common_folder_path)
     parse_common_folder_path = staticmethod(PolicyTagManagerClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(PolicyTagManagerClient.common_organization_path)
     parse_common_organization_path = staticmethod(PolicyTagManagerClient.parse_common_organization_path)
-
     common_project_path = staticmethod(PolicyTagManagerClient.common_project_path)
     parse_common_project_path = staticmethod(PolicyTagManagerClient.parse_common_project_path)
-
     common_location_path = staticmethod(PolicyTagManagerClient.common_location_path)
     parse_common_location_path = staticmethod(PolicyTagManagerClient.parse_common_location_path)
 
@@ -117,7 +109,7 @@ class PolicyTagManagerAsyncClient:
     get_transport_class = functools.partial(type(PolicyTagManagerClient).get_transport_class, type(PolicyTagManagerClient))
 
     def __init__(self, *,
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             transport: Union[str, PolicyTagManagerTransport] = 'grpc_asyncio',
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -154,7 +146,6 @@ class PolicyTagManagerAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = PolicyTagManagerClient(
             credentials=credentials,
             transport=transport,
@@ -193,7 +184,6 @@ class PolicyTagManagerAsyncClient:
                 This corresponds to the ``taxonomy`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -227,7 +217,6 @@ class PolicyTagManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if taxonomy is not None:
@@ -284,7 +273,6 @@ class PolicyTagManagerAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -303,7 +291,6 @@ class PolicyTagManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -354,7 +341,6 @@ class PolicyTagManagerAsyncClient:
                 This corresponds to the ``taxonomy`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -388,7 +374,6 @@ class PolicyTagManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if taxonomy is not None:
             request.taxonomy = taxonomy
 
@@ -441,7 +426,6 @@ class PolicyTagManagerAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -469,7 +453,6 @@ class PolicyTagManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -530,7 +513,6 @@ class PolicyTagManagerAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -564,7 +546,6 @@ class PolicyTagManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -623,7 +604,6 @@ class PolicyTagManagerAsyncClient:
                 This corresponds to the ``policy_tag`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -654,7 +634,6 @@ class PolicyTagManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if policy_tag is not None:
@@ -715,7 +694,6 @@ class PolicyTagManagerAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -734,7 +712,6 @@ class PolicyTagManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -786,7 +763,6 @@ class PolicyTagManagerAsyncClient:
                 This corresponds to the ``policy_tag`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -817,7 +793,6 @@ class PolicyTagManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if policy_tag is not None:
             request.policy_tag = policy_tag
 
@@ -869,7 +844,6 @@ class PolicyTagManagerAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -897,7 +871,6 @@ class PolicyTagManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -958,7 +931,6 @@ class PolicyTagManagerAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -989,7 +961,6 @@ class PolicyTagManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1021,19 +992,18 @@ class PolicyTagManagerAsyncClient:
         return response
 
     async def get_iam_policy(self,
-            request: iam_policy.GetIamPolicyRequest = None,
+            request: iam_policy_pb2.GetIamPolicyRequest = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> gi_policy.Policy:
+            ) -> policy_pb2.Policy:
         r"""Gets the IAM policy for a policy tag or a taxonomy.
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.GetIamPolicyRequest`):
                 The request object. Request message for `GetIamPolicy`
                 method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1100,11 +1070,10 @@ class PolicyTagManagerAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
-        # The request isn't a proto-plus wrapped type,
+         # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
-            request = iam_policy.GetIamPolicyRequest(**request)
+            request = iam_policy_pb2.GetIamPolicyRequest(**request)
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -1134,19 +1103,18 @@ class PolicyTagManagerAsyncClient:
         return response
 
     async def set_iam_policy(self,
-            request: iam_policy.SetIamPolicyRequest = None,
+            request: iam_policy_pb2.SetIamPolicyRequest = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> gi_policy.Policy:
+            ) -> policy_pb2.Policy:
         r"""Sets the IAM policy for a policy tag or a taxonomy.
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.SetIamPolicyRequest`):
                 The request object. Request message for `SetIamPolicy`
                 method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1213,11 +1181,10 @@ class PolicyTagManagerAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
-        # The request isn't a proto-plus wrapped type,
+         # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
-            request = iam_policy.SetIamPolicyRequest(**request)
+            request = iam_policy_pb2.SetIamPolicyRequest(**request)
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -1247,12 +1214,12 @@ class PolicyTagManagerAsyncClient:
         return response
 
     async def test_iam_permissions(self,
-            request: iam_policy.TestIamPermissionsRequest = None,
+            request: iam_policy_pb2.TestIamPermissionsRequest = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> iam_policy.TestIamPermissionsResponse:
+            ) -> iam_policy_pb2.TestIamPermissionsResponse:
         r"""Returns the permissions that a caller has on a
         specified policy tag or taxonomy.
 
@@ -1260,7 +1227,6 @@ class PolicyTagManagerAsyncClient:
             request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):
                 The request object. Request message for
                 `TestIamPermissions` method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1272,11 +1238,10 @@ class PolicyTagManagerAsyncClient:
                 Response message for TestIamPermissions method.
         """
         # Create or coerce a protobuf request object.
-
-        # The request isn't a proto-plus wrapped type,
+         # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
-            request = iam_policy.TestIamPermissionsRequest(**request)
+            request = iam_policy_pb2.TestIamPermissionsRequest(**request)
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -1304,8 +1269,6 @@ class PolicyTagManagerAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

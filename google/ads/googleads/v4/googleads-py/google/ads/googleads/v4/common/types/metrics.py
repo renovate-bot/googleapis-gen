@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,13 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v4.enums.types import interaction_event_type
 from google.ads.googleads.v4.enums.types import quality_score_bucket
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -34,7 +31,6 @@ __protobuf__ = proto.module(
 
 class Metrics(proto.Message):
     r"""Metrics data.
-
     Attributes:
         absolute_top_impression_percentage (google.protobuf.wrappers_pb2.DoubleValue):
             The percent of your ad impressions that are
@@ -564,341 +560,565 @@ class Metrics(proto.Message):
             clicking on) another ad.
     """
 
-    absolute_top_impression_percentage = proto.Field(proto.MESSAGE, number=95,
-        message=wrappers.DoubleValue,
+    absolute_top_impression_percentage = proto.Field(
+        proto.MESSAGE,
+        number=95,
+        message=wrappers_pb2.DoubleValue,
     )
-    active_view_cpm = proto.Field(proto.MESSAGE, number=1,
-        message=wrappers.DoubleValue,
+    active_view_cpm = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=wrappers_pb2.DoubleValue,
     )
-    active_view_ctr = proto.Field(proto.MESSAGE, number=79,
-        message=wrappers.DoubleValue,
+    active_view_ctr = proto.Field(
+        proto.MESSAGE,
+        number=79,
+        message=wrappers_pb2.DoubleValue,
     )
-    active_view_impressions = proto.Field(proto.MESSAGE, number=2,
-        message=wrappers.Int64Value,
+    active_view_impressions = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=wrappers_pb2.Int64Value,
     )
-    active_view_measurability = proto.Field(proto.MESSAGE, number=96,
-        message=wrappers.DoubleValue,
+    active_view_measurability = proto.Field(
+        proto.MESSAGE,
+        number=96,
+        message=wrappers_pb2.DoubleValue,
     )
-    active_view_measurable_cost_micros = proto.Field(proto.MESSAGE, number=3,
-        message=wrappers.Int64Value,
+    active_view_measurable_cost_micros = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=wrappers_pb2.Int64Value,
     )
-    active_view_measurable_impressions = proto.Field(proto.MESSAGE, number=4,
-        message=wrappers.Int64Value,
+    active_view_measurable_impressions = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=wrappers_pb2.Int64Value,
     )
-    active_view_viewability = proto.Field(proto.MESSAGE, number=97,
-        message=wrappers.DoubleValue,
+    active_view_viewability = proto.Field(
+        proto.MESSAGE,
+        number=97,
+        message=wrappers_pb2.DoubleValue,
     )
-    all_conversions_from_interactions_rate = proto.Field(proto.MESSAGE, number=65,
-        message=wrappers.DoubleValue,
+    all_conversions_from_interactions_rate = proto.Field(
+        proto.MESSAGE,
+        number=65,
+        message=wrappers_pb2.DoubleValue,
     )
-    all_conversions_value = proto.Field(proto.MESSAGE, number=66,
-        message=wrappers.DoubleValue,
+    all_conversions_value = proto.Field(
+        proto.MESSAGE,
+        number=66,
+        message=wrappers_pb2.DoubleValue,
     )
-    all_conversions = proto.Field(proto.MESSAGE, number=7,
-        message=wrappers.DoubleValue,
+    all_conversions = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        message=wrappers_pb2.DoubleValue,
     )
-    all_conversions_value_per_cost = proto.Field(proto.MESSAGE, number=62,
-        message=wrappers.DoubleValue,
+    all_conversions_value_per_cost = proto.Field(
+        proto.MESSAGE,
+        number=62,
+        message=wrappers_pb2.DoubleValue,
     )
-    all_conversions_from_click_to_call = proto.Field(proto.MESSAGE, number=118,
-        message=wrappers.DoubleValue,
+    all_conversions_from_click_to_call = proto.Field(
+        proto.MESSAGE,
+        number=118,
+        message=wrappers_pb2.DoubleValue,
     )
-    all_conversions_from_directions = proto.Field(proto.MESSAGE, number=119,
-        message=wrappers.DoubleValue,
+    all_conversions_from_directions = proto.Field(
+        proto.MESSAGE,
+        number=119,
+        message=wrappers_pb2.DoubleValue,
     )
-    all_conversions_from_interactions_value_per_interaction = proto.Field(proto.MESSAGE, number=67,
-        message=wrappers.DoubleValue,
+    all_conversions_from_interactions_value_per_interaction = proto.Field(
+        proto.MESSAGE,
+        number=67,
+        message=wrappers_pb2.DoubleValue,
     )
-    all_conversions_from_menu = proto.Field(proto.MESSAGE, number=120,
-        message=wrappers.DoubleValue,
+    all_conversions_from_menu = proto.Field(
+        proto.MESSAGE,
+        number=120,
+        message=wrappers_pb2.DoubleValue,
     )
-    all_conversions_from_order = proto.Field(proto.MESSAGE, number=121,
-        message=wrappers.DoubleValue,
+    all_conversions_from_order = proto.Field(
+        proto.MESSAGE,
+        number=121,
+        message=wrappers_pb2.DoubleValue,
     )
-    all_conversions_from_other_engagement = proto.Field(proto.MESSAGE, number=122,
-        message=wrappers.DoubleValue,
+    all_conversions_from_other_engagement = proto.Field(
+        proto.MESSAGE,
+        number=122,
+        message=wrappers_pb2.DoubleValue,
     )
-    all_conversions_from_store_visit = proto.Field(proto.MESSAGE, number=123,
-        message=wrappers.DoubleValue,
+    all_conversions_from_store_visit = proto.Field(
+        proto.MESSAGE,
+        number=123,
+        message=wrappers_pb2.DoubleValue,
     )
-    all_conversions_from_store_website = proto.Field(proto.MESSAGE, number=124,
-        message=wrappers.DoubleValue,
+    all_conversions_from_store_website = proto.Field(
+        proto.MESSAGE,
+        number=124,
+        message=wrappers_pb2.DoubleValue,
     )
-    average_cost = proto.Field(proto.MESSAGE, number=8,
-        message=wrappers.DoubleValue,
+    average_cost = proto.Field(
+        proto.MESSAGE,
+        number=8,
+        message=wrappers_pb2.DoubleValue,
     )
-    average_cpc = proto.Field(proto.MESSAGE, number=9,
-        message=wrappers.DoubleValue,
+    average_cpc = proto.Field(
+        proto.MESSAGE,
+        number=9,
+        message=wrappers_pb2.DoubleValue,
     )
-    average_cpe = proto.Field(proto.MESSAGE, number=98,
-        message=wrappers.DoubleValue,
+    average_cpe = proto.Field(
+        proto.MESSAGE,
+        number=98,
+        message=wrappers_pb2.DoubleValue,
     )
-    average_cpm = proto.Field(proto.MESSAGE, number=10,
-        message=wrappers.DoubleValue,
+    average_cpm = proto.Field(
+        proto.MESSAGE,
+        number=10,
+        message=wrappers_pb2.DoubleValue,
     )
-    average_cpv = proto.Field(proto.MESSAGE, number=11,
-        message=wrappers.DoubleValue,
+    average_cpv = proto.Field(
+        proto.MESSAGE,
+        number=11,
+        message=wrappers_pb2.DoubleValue,
     )
-    average_page_views = proto.Field(proto.MESSAGE, number=99,
-        message=wrappers.DoubleValue,
+    average_page_views = proto.Field(
+        proto.MESSAGE,
+        number=99,
+        message=wrappers_pb2.DoubleValue,
     )
-    average_time_on_site = proto.Field(proto.MESSAGE, number=84,
-        message=wrappers.DoubleValue,
+    average_time_on_site = proto.Field(
+        proto.MESSAGE,
+        number=84,
+        message=wrappers_pb2.DoubleValue,
     )
-    benchmark_average_max_cpc = proto.Field(proto.MESSAGE, number=14,
-        message=wrappers.DoubleValue,
+    benchmark_average_max_cpc = proto.Field(
+        proto.MESSAGE,
+        number=14,
+        message=wrappers_pb2.DoubleValue,
     )
-    benchmark_ctr = proto.Field(proto.MESSAGE, number=77,
-        message=wrappers.DoubleValue,
+    benchmark_ctr = proto.Field(
+        proto.MESSAGE,
+        number=77,
+        message=wrappers_pb2.DoubleValue,
     )
-    bounce_rate = proto.Field(proto.MESSAGE, number=15,
-        message=wrappers.DoubleValue,
+    bounce_rate = proto.Field(
+        proto.MESSAGE,
+        number=15,
+        message=wrappers_pb2.DoubleValue,
     )
-    clicks = proto.Field(proto.MESSAGE, number=19,
-        message=wrappers.Int64Value,
+    clicks = proto.Field(
+        proto.MESSAGE,
+        number=19,
+        message=wrappers_pb2.Int64Value,
     )
-    combined_clicks = proto.Field(proto.MESSAGE, number=115,
-        message=wrappers.Int64Value,
+    combined_clicks = proto.Field(
+        proto.MESSAGE,
+        number=115,
+        message=wrappers_pb2.Int64Value,
     )
-    combined_clicks_per_query = proto.Field(proto.MESSAGE, number=116,
-        message=wrappers.DoubleValue,
+    combined_clicks_per_query = proto.Field(
+        proto.MESSAGE,
+        number=116,
+        message=wrappers_pb2.DoubleValue,
     )
-    combined_queries = proto.Field(proto.MESSAGE, number=117,
-        message=wrappers.Int64Value,
+    combined_queries = proto.Field(
+        proto.MESSAGE,
+        number=117,
+        message=wrappers_pb2.Int64Value,
     )
-    content_budget_lost_impression_share = proto.Field(proto.MESSAGE, number=20,
-        message=wrappers.DoubleValue,
+    content_budget_lost_impression_share = proto.Field(
+        proto.MESSAGE,
+        number=20,
+        message=wrappers_pb2.DoubleValue,
     )
-    content_impression_share = proto.Field(proto.MESSAGE, number=21,
-        message=wrappers.DoubleValue,
+    content_impression_share = proto.Field(
+        proto.MESSAGE,
+        number=21,
+        message=wrappers_pb2.DoubleValue,
     )
-    conversion_last_received_request_date_time = proto.Field(proto.MESSAGE, number=73,
-        message=wrappers.StringValue,
+    conversion_last_received_request_date_time = proto.Field(
+        proto.MESSAGE,
+        number=73,
+        message=wrappers_pb2.StringValue,
     )
-    conversion_last_conversion_date = proto.Field(proto.MESSAGE, number=74,
-        message=wrappers.StringValue,
+    conversion_last_conversion_date = proto.Field(
+        proto.MESSAGE,
+        number=74,
+        message=wrappers_pb2.StringValue,
     )
-    content_rank_lost_impression_share = proto.Field(proto.MESSAGE, number=22,
-        message=wrappers.DoubleValue,
+    content_rank_lost_impression_share = proto.Field(
+        proto.MESSAGE,
+        number=22,
+        message=wrappers_pb2.DoubleValue,
     )
-    conversions_from_interactions_rate = proto.Field(proto.MESSAGE, number=69,
-        message=wrappers.DoubleValue,
+    conversions_from_interactions_rate = proto.Field(
+        proto.MESSAGE,
+        number=69,
+        message=wrappers_pb2.DoubleValue,
     )
-    conversions_value = proto.Field(proto.MESSAGE, number=70,
-        message=wrappers.DoubleValue,
+    conversions_value = proto.Field(
+        proto.MESSAGE,
+        number=70,
+        message=wrappers_pb2.DoubleValue,
     )
-    conversions_value_per_cost = proto.Field(proto.MESSAGE, number=71,
-        message=wrappers.DoubleValue,
+    conversions_value_per_cost = proto.Field(
+        proto.MESSAGE,
+        number=71,
+        message=wrappers_pb2.DoubleValue,
     )
-    conversions_from_interactions_value_per_interaction = proto.Field(proto.MESSAGE, number=72,
-        message=wrappers.DoubleValue,
+    conversions_from_interactions_value_per_interaction = proto.Field(
+        proto.MESSAGE,
+        number=72,
+        message=wrappers_pb2.DoubleValue,
     )
-    conversions = proto.Field(proto.MESSAGE, number=25,
-        message=wrappers.DoubleValue,
+    conversions = proto.Field(
+        proto.MESSAGE,
+        number=25,
+        message=wrappers_pb2.DoubleValue,
     )
-    cost_micros = proto.Field(proto.MESSAGE, number=26,
-        message=wrappers.Int64Value,
+    cost_micros = proto.Field(
+        proto.MESSAGE,
+        number=26,
+        message=wrappers_pb2.Int64Value,
     )
-    cost_per_all_conversions = proto.Field(proto.MESSAGE, number=68,
-        message=wrappers.DoubleValue,
+    cost_per_all_conversions = proto.Field(
+        proto.MESSAGE,
+        number=68,
+        message=wrappers_pb2.DoubleValue,
     )
-    cost_per_conversion = proto.Field(proto.MESSAGE, number=28,
-        message=wrappers.DoubleValue,
+    cost_per_conversion = proto.Field(
+        proto.MESSAGE,
+        number=28,
+        message=wrappers_pb2.DoubleValue,
     )
-    cost_per_current_model_attributed_conversion = proto.Field(proto.MESSAGE, number=106,
-        message=wrappers.DoubleValue,
+    cost_per_current_model_attributed_conversion = proto.Field(
+        proto.MESSAGE,
+        number=106,
+        message=wrappers_pb2.DoubleValue,
     )
-    cross_device_conversions = proto.Field(proto.MESSAGE, number=29,
-        message=wrappers.DoubleValue,
+    cross_device_conversions = proto.Field(
+        proto.MESSAGE,
+        number=29,
+        message=wrappers_pb2.DoubleValue,
     )
-    ctr = proto.Field(proto.MESSAGE, number=30,
-        message=wrappers.DoubleValue,
+    ctr = proto.Field(
+        proto.MESSAGE,
+        number=30,
+        message=wrappers_pb2.DoubleValue,
     )
-    current_model_attributed_conversions = proto.Field(proto.MESSAGE, number=101,
-        message=wrappers.DoubleValue,
+    current_model_attributed_conversions = proto.Field(
+        proto.MESSAGE,
+        number=101,
+        message=wrappers_pb2.DoubleValue,
     )
-    current_model_attributed_conversions_from_interactions_rate = proto.Field(proto.MESSAGE, number=102,
-        message=wrappers.DoubleValue,
+    current_model_attributed_conversions_from_interactions_rate = proto.Field(
+        proto.MESSAGE,
+        number=102,
+        message=wrappers_pb2.DoubleValue,
     )
-    current_model_attributed_conversions_from_interactions_value_per_interaction = proto.Field(proto.MESSAGE, number=103,
-        message=wrappers.DoubleValue,
+    current_model_attributed_conversions_from_interactions_value_per_interaction = proto.Field(
+        proto.MESSAGE,
+        number=103,
+        message=wrappers_pb2.DoubleValue,
     )
-    current_model_attributed_conversions_value = proto.Field(proto.MESSAGE, number=104,
-        message=wrappers.DoubleValue,
+    current_model_attributed_conversions_value = proto.Field(
+        proto.MESSAGE,
+        number=104,
+        message=wrappers_pb2.DoubleValue,
     )
-    current_model_attributed_conversions_value_per_cost = proto.Field(proto.MESSAGE, number=105,
-        message=wrappers.DoubleValue,
+    current_model_attributed_conversions_value_per_cost = proto.Field(
+        proto.MESSAGE,
+        number=105,
+        message=wrappers_pb2.DoubleValue,
     )
-    engagement_rate = proto.Field(proto.MESSAGE, number=31,
-        message=wrappers.DoubleValue,
+    engagement_rate = proto.Field(
+        proto.MESSAGE,
+        number=31,
+        message=wrappers_pb2.DoubleValue,
     )
-    engagements = proto.Field(proto.MESSAGE, number=32,
-        message=wrappers.Int64Value,
+    engagements = proto.Field(
+        proto.MESSAGE,
+        number=32,
+        message=wrappers_pb2.Int64Value,
     )
-    hotel_average_lead_value_micros = proto.Field(proto.MESSAGE, number=75,
-        message=wrappers.DoubleValue,
+    hotel_average_lead_value_micros = proto.Field(
+        proto.MESSAGE,
+        number=75,
+        message=wrappers_pb2.DoubleValue,
     )
-    hotel_price_difference_percentage = proto.Field(proto.MESSAGE, number=129,
-        message=wrappers.DoubleValue,
+    hotel_price_difference_percentage = proto.Field(
+        proto.MESSAGE,
+        number=129,
+        message=wrappers_pb2.DoubleValue,
     )
-    hotel_eligible_impressions = proto.Field(proto.MESSAGE, number=130,
-        message=wrappers.Int64Value,
+    hotel_eligible_impressions = proto.Field(
+        proto.MESSAGE,
+        number=130,
+        message=wrappers_pb2.Int64Value,
     )
-    historical_creative_quality_score = proto.Field(proto.ENUM, number=80,
+    historical_creative_quality_score = proto.Field(
+        proto.ENUM,
+        number=80,
         enum=quality_score_bucket.QualityScoreBucketEnum.QualityScoreBucket,
     )
-    historical_landing_page_quality_score = proto.Field(proto.ENUM, number=81,
+    historical_landing_page_quality_score = proto.Field(
+        proto.ENUM,
+        number=81,
         enum=quality_score_bucket.QualityScoreBucketEnum.QualityScoreBucket,
     )
-    historical_quality_score = proto.Field(proto.MESSAGE, number=82,
-        message=wrappers.Int64Value,
+    historical_quality_score = proto.Field(
+        proto.MESSAGE,
+        number=82,
+        message=wrappers_pb2.Int64Value,
     )
-    historical_search_predicted_ctr = proto.Field(proto.ENUM, number=83,
+    historical_search_predicted_ctr = proto.Field(
+        proto.ENUM,
+        number=83,
         enum=quality_score_bucket.QualityScoreBucketEnum.QualityScoreBucket,
     )
-    gmail_forwards = proto.Field(proto.MESSAGE, number=85,
-        message=wrappers.Int64Value,
+    gmail_forwards = proto.Field(
+        proto.MESSAGE,
+        number=85,
+        message=wrappers_pb2.Int64Value,
     )
-    gmail_saves = proto.Field(proto.MESSAGE, number=86,
-        message=wrappers.Int64Value,
+    gmail_saves = proto.Field(
+        proto.MESSAGE,
+        number=86,
+        message=wrappers_pb2.Int64Value,
     )
-    gmail_secondary_clicks = proto.Field(proto.MESSAGE, number=87,
-        message=wrappers.Int64Value,
+    gmail_secondary_clicks = proto.Field(
+        proto.MESSAGE,
+        number=87,
+        message=wrappers_pb2.Int64Value,
     )
-    impressions_from_store_reach = proto.Field(proto.MESSAGE, number=125,
-        message=wrappers.Int64Value,
+    impressions_from_store_reach = proto.Field(
+        proto.MESSAGE,
+        number=125,
+        message=wrappers_pb2.Int64Value,
     )
-    impressions = proto.Field(proto.MESSAGE, number=37,
-        message=wrappers.Int64Value,
+    impressions = proto.Field(
+        proto.MESSAGE,
+        number=37,
+        message=wrappers_pb2.Int64Value,
     )
-    interaction_rate = proto.Field(proto.MESSAGE, number=38,
-        message=wrappers.DoubleValue,
+    interaction_rate = proto.Field(
+        proto.MESSAGE,
+        number=38,
+        message=wrappers_pb2.DoubleValue,
     )
-    interactions = proto.Field(proto.MESSAGE, number=39,
-        message=wrappers.Int64Value,
+    interactions = proto.Field(
+        proto.MESSAGE,
+        number=39,
+        message=wrappers_pb2.Int64Value,
     )
-    interaction_event_types = proto.RepeatedField(proto.ENUM, number=100,
+    interaction_event_types = proto.RepeatedField(
+        proto.ENUM,
+        number=100,
         enum=interaction_event_type.InteractionEventTypeEnum.InteractionEventType,
     )
-    invalid_click_rate = proto.Field(proto.MESSAGE, number=40,
-        message=wrappers.DoubleValue,
+    invalid_click_rate = proto.Field(
+        proto.MESSAGE,
+        number=40,
+        message=wrappers_pb2.DoubleValue,
     )
-    invalid_clicks = proto.Field(proto.MESSAGE, number=41,
-        message=wrappers.Int64Value,
+    invalid_clicks = proto.Field(
+        proto.MESSAGE,
+        number=41,
+        message=wrappers_pb2.Int64Value,
     )
-    message_chats = proto.Field(proto.MESSAGE, number=126,
-        message=wrappers.Int64Value,
+    message_chats = proto.Field(
+        proto.MESSAGE,
+        number=126,
+        message=wrappers_pb2.Int64Value,
     )
-    message_impressions = proto.Field(proto.MESSAGE, number=127,
-        message=wrappers.Int64Value,
+    message_impressions = proto.Field(
+        proto.MESSAGE,
+        number=127,
+        message=wrappers_pb2.Int64Value,
     )
-    message_chat_rate = proto.Field(proto.MESSAGE, number=128,
-        message=wrappers.DoubleValue,
+    message_chat_rate = proto.Field(
+        proto.MESSAGE,
+        number=128,
+        message=wrappers_pb2.DoubleValue,
     )
-    mobile_friendly_clicks_percentage = proto.Field(proto.MESSAGE, number=109,
-        message=wrappers.DoubleValue,
+    mobile_friendly_clicks_percentage = proto.Field(
+        proto.MESSAGE,
+        number=109,
+        message=wrappers_pb2.DoubleValue,
     )
-    organic_clicks = proto.Field(proto.MESSAGE, number=110,
-        message=wrappers.Int64Value,
+    organic_clicks = proto.Field(
+        proto.MESSAGE,
+        number=110,
+        message=wrappers_pb2.Int64Value,
     )
-    organic_clicks_per_query = proto.Field(proto.MESSAGE, number=111,
-        message=wrappers.DoubleValue,
+    organic_clicks_per_query = proto.Field(
+        proto.MESSAGE,
+        number=111,
+        message=wrappers_pb2.DoubleValue,
     )
-    organic_impressions = proto.Field(proto.MESSAGE, number=112,
-        message=wrappers.Int64Value,
+    organic_impressions = proto.Field(
+        proto.MESSAGE,
+        number=112,
+        message=wrappers_pb2.Int64Value,
     )
-    organic_impressions_per_query = proto.Field(proto.MESSAGE, number=113,
-        message=wrappers.DoubleValue,
+    organic_impressions_per_query = proto.Field(
+        proto.MESSAGE,
+        number=113,
+        message=wrappers_pb2.DoubleValue,
     )
-    organic_queries = proto.Field(proto.MESSAGE, number=114,
-        message=wrappers.Int64Value,
+    organic_queries = proto.Field(
+        proto.MESSAGE,
+        number=114,
+        message=wrappers_pb2.Int64Value,
     )
-    percent_new_visitors = proto.Field(proto.MESSAGE, number=42,
-        message=wrappers.DoubleValue,
+    percent_new_visitors = proto.Field(
+        proto.MESSAGE,
+        number=42,
+        message=wrappers_pb2.DoubleValue,
     )
-    phone_calls = proto.Field(proto.MESSAGE, number=43,
-        message=wrappers.Int64Value,
+    phone_calls = proto.Field(
+        proto.MESSAGE,
+        number=43,
+        message=wrappers_pb2.Int64Value,
     )
-    phone_impressions = proto.Field(proto.MESSAGE, number=44,
-        message=wrappers.Int64Value,
+    phone_impressions = proto.Field(
+        proto.MESSAGE,
+        number=44,
+        message=wrappers_pb2.Int64Value,
     )
-    phone_through_rate = proto.Field(proto.MESSAGE, number=45,
-        message=wrappers.DoubleValue,
+    phone_through_rate = proto.Field(
+        proto.MESSAGE,
+        number=45,
+        message=wrappers_pb2.DoubleValue,
     )
-    relative_ctr = proto.Field(proto.MESSAGE, number=46,
-        message=wrappers.DoubleValue,
+    relative_ctr = proto.Field(
+        proto.MESSAGE,
+        number=46,
+        message=wrappers_pb2.DoubleValue,
     )
-    search_absolute_top_impression_share = proto.Field(proto.MESSAGE, number=78,
-        message=wrappers.DoubleValue,
+    search_absolute_top_impression_share = proto.Field(
+        proto.MESSAGE,
+        number=78,
+        message=wrappers_pb2.DoubleValue,
     )
-    search_budget_lost_absolute_top_impression_share = proto.Field(proto.MESSAGE, number=88,
-        message=wrappers.DoubleValue,
+    search_budget_lost_absolute_top_impression_share = proto.Field(
+        proto.MESSAGE,
+        number=88,
+        message=wrappers_pb2.DoubleValue,
     )
-    search_budget_lost_impression_share = proto.Field(proto.MESSAGE, number=47,
-        message=wrappers.DoubleValue,
+    search_budget_lost_impression_share = proto.Field(
+        proto.MESSAGE,
+        number=47,
+        message=wrappers_pb2.DoubleValue,
     )
-    search_budget_lost_top_impression_share = proto.Field(proto.MESSAGE, number=89,
-        message=wrappers.DoubleValue,
+    search_budget_lost_top_impression_share = proto.Field(
+        proto.MESSAGE,
+        number=89,
+        message=wrappers_pb2.DoubleValue,
     )
-    search_click_share = proto.Field(proto.MESSAGE, number=48,
-        message=wrappers.DoubleValue,
+    search_click_share = proto.Field(
+        proto.MESSAGE,
+        number=48,
+        message=wrappers_pb2.DoubleValue,
     )
-    search_exact_match_impression_share = proto.Field(proto.MESSAGE, number=49,
-        message=wrappers.DoubleValue,
+    search_exact_match_impression_share = proto.Field(
+        proto.MESSAGE,
+        number=49,
+        message=wrappers_pb2.DoubleValue,
     )
-    search_impression_share = proto.Field(proto.MESSAGE, number=50,
-        message=wrappers.DoubleValue,
+    search_impression_share = proto.Field(
+        proto.MESSAGE,
+        number=50,
+        message=wrappers_pb2.DoubleValue,
     )
-    search_rank_lost_absolute_top_impression_share = proto.Field(proto.MESSAGE, number=90,
-        message=wrappers.DoubleValue,
+    search_rank_lost_absolute_top_impression_share = proto.Field(
+        proto.MESSAGE,
+        number=90,
+        message=wrappers_pb2.DoubleValue,
     )
-    search_rank_lost_impression_share = proto.Field(proto.MESSAGE, number=51,
-        message=wrappers.DoubleValue,
+    search_rank_lost_impression_share = proto.Field(
+        proto.MESSAGE,
+        number=51,
+        message=wrappers_pb2.DoubleValue,
     )
-    search_rank_lost_top_impression_share = proto.Field(proto.MESSAGE, number=91,
-        message=wrappers.DoubleValue,
+    search_rank_lost_top_impression_share = proto.Field(
+        proto.MESSAGE,
+        number=91,
+        message=wrappers_pb2.DoubleValue,
     )
-    search_top_impression_share = proto.Field(proto.MESSAGE, number=92,
-        message=wrappers.DoubleValue,
+    search_top_impression_share = proto.Field(
+        proto.MESSAGE,
+        number=92,
+        message=wrappers_pb2.DoubleValue,
     )
-    speed_score = proto.Field(proto.MESSAGE, number=107,
-        message=wrappers.Int64Value,
+    speed_score = proto.Field(
+        proto.MESSAGE,
+        number=107,
+        message=wrappers_pb2.Int64Value,
     )
-    top_impression_percentage = proto.Field(proto.MESSAGE, number=93,
-        message=wrappers.DoubleValue,
+    top_impression_percentage = proto.Field(
+        proto.MESSAGE,
+        number=93,
+        message=wrappers_pb2.DoubleValue,
     )
-    valid_accelerated_mobile_pages_clicks_percentage = proto.Field(proto.MESSAGE, number=108,
-        message=wrappers.DoubleValue,
+    valid_accelerated_mobile_pages_clicks_percentage = proto.Field(
+        proto.MESSAGE,
+        number=108,
+        message=wrappers_pb2.DoubleValue,
     )
-    value_per_all_conversions = proto.Field(proto.MESSAGE, number=52,
-        message=wrappers.DoubleValue,
+    value_per_all_conversions = proto.Field(
+        proto.MESSAGE,
+        number=52,
+        message=wrappers_pb2.DoubleValue,
     )
-    value_per_conversion = proto.Field(proto.MESSAGE, number=53,
-        message=wrappers.DoubleValue,
+    value_per_conversion = proto.Field(
+        proto.MESSAGE,
+        number=53,
+        message=wrappers_pb2.DoubleValue,
     )
-    value_per_current_model_attributed_conversion = proto.Field(proto.MESSAGE, number=94,
-        message=wrappers.DoubleValue,
+    value_per_current_model_attributed_conversion = proto.Field(
+        proto.MESSAGE,
+        number=94,
+        message=wrappers_pb2.DoubleValue,
     )
-    video_quartile_100_rate = proto.Field(proto.MESSAGE, number=54,
-        message=wrappers.DoubleValue,
+    video_quartile_100_rate = proto.Field(
+        proto.MESSAGE,
+        number=54,
+        message=wrappers_pb2.DoubleValue,
     )
-    video_quartile_25_rate = proto.Field(proto.MESSAGE, number=55,
-        message=wrappers.DoubleValue,
+    video_quartile_25_rate = proto.Field(
+        proto.MESSAGE,
+        number=55,
+        message=wrappers_pb2.DoubleValue,
     )
-    video_quartile_50_rate = proto.Field(proto.MESSAGE, number=56,
-        message=wrappers.DoubleValue,
+    video_quartile_50_rate = proto.Field(
+        proto.MESSAGE,
+        number=56,
+        message=wrappers_pb2.DoubleValue,
     )
-    video_quartile_75_rate = proto.Field(proto.MESSAGE, number=57,
-        message=wrappers.DoubleValue,
+    video_quartile_75_rate = proto.Field(
+        proto.MESSAGE,
+        number=57,
+        message=wrappers_pb2.DoubleValue,
     )
-    video_view_rate = proto.Field(proto.MESSAGE, number=58,
-        message=wrappers.DoubleValue,
+    video_view_rate = proto.Field(
+        proto.MESSAGE,
+        number=58,
+        message=wrappers_pb2.DoubleValue,
     )
-    video_views = proto.Field(proto.MESSAGE, number=59,
-        message=wrappers.Int64Value,
+    video_views = proto.Field(
+        proto.MESSAGE,
+        number=59,
+        message=wrappers_pb2.Int64Value,
     )
-    view_through_conversions = proto.Field(proto.MESSAGE, number=60,
-        message=wrappers.Int64Value,
+    view_through_conversions = proto.Field(
+        proto.MESSAGE,
+        number=60,
+        message=wrappers_pb2.Int64Value,
     )
 
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.cloud.redis_v1beta1.services.cloud_redis.async_client import CloudRedisAsyncClient
 from google.cloud.redis_v1beta1.services.cloud_redis.client import CloudRedisClient
+from google.cloud.redis_v1beta1.services.cloud_redis.async_client import CloudRedisAsyncClient
+
 from google.cloud.redis_v1beta1.types.cloud_redis import CreateInstanceRequest
 from google.cloud.redis_v1beta1.types.cloud_redis import DeleteInstanceRequest
 from google.cloud.redis_v1beta1.types.cloud_redis import ExportInstanceRequest
@@ -35,9 +35,8 @@ from google.cloud.redis_v1beta1.types.cloud_redis import UpdateInstanceRequest
 from google.cloud.redis_v1beta1.types.cloud_redis import UpgradeInstanceRequest
 from google.cloud.redis_v1beta1.types.cloud_redis import ZoneMetadata
 
-__all__ = (
+__all__ = ('CloudRedisClient',
     'CloudRedisAsyncClient',
-    'CloudRedisClient',
     'CreateInstanceRequest',
     'DeleteInstanceRequest',
     'ExportInstanceRequest',

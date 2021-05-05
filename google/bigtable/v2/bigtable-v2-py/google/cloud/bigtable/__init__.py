@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.cloud.bigtable_v2.services.bigtable.async_client import BigtableAsyncClient
 from google.cloud.bigtable_v2.services.bigtable.client import BigtableClient
+from google.cloud.bigtable_v2.services.bigtable.async_client import BigtableAsyncClient
+
 from google.cloud.bigtable_v2.types.bigtable import CheckAndMutateRowRequest
 from google.cloud.bigtable_v2.types.bigtable import CheckAndMutateRowResponse
 from google.cloud.bigtable_v2.types.bigtable import MutateRowRequest
@@ -42,31 +42,30 @@ from google.cloud.bigtable_v2.types.data import RowSet
 from google.cloud.bigtable_v2.types.data import TimestampRange
 from google.cloud.bigtable_v2.types.data import ValueRange
 
-__all__ = (
+__all__ = ('BigtableClient',
     'BigtableAsyncClient',
-    'BigtableClient',
-    'Cell',
     'CheckAndMutateRowRequest',
     'CheckAndMutateRowResponse',
-    'Column',
-    'ColumnRange',
-    'Family',
     'MutateRowRequest',
     'MutateRowResponse',
     'MutateRowsRequest',
     'MutateRowsResponse',
-    'Mutation',
     'ReadModifyWriteRowRequest',
     'ReadModifyWriteRowResponse',
-    'ReadModifyWriteRule',
     'ReadRowsRequest',
     'ReadRowsResponse',
+    'SampleRowKeysRequest',
+    'SampleRowKeysResponse',
+    'Cell',
+    'Column',
+    'ColumnRange',
+    'Family',
+    'Mutation',
+    'ReadModifyWriteRule',
     'Row',
     'RowFilter',
     'RowRange',
     'RowSet',
-    'SampleRowKeysRequest',
-    'SampleRowKeysResponse',
     'TimestampRange',
     'ValueRange',
 )

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,8 @@
 #
 
 from .services.g_suite_add_ons import GSuiteAddOnsClient
+from .services.g_suite_add_ons import GSuiteAddOnsAsyncClient
+
 from .types.gsuiteaddons import AddOns
 from .types.gsuiteaddons import Authorization
 from .types.gsuiteaddons import CreateDeploymentRequest
@@ -31,21 +32,20 @@ from .types.gsuiteaddons import ListDeploymentsResponse
 from .types.gsuiteaddons import ReplaceDeploymentRequest
 from .types.gsuiteaddons import UninstallDeploymentRequest
 
-
 __all__ = (
-    'AddOns',
-    'Authorization',
-    'CreateDeploymentRequest',
-    'DeleteDeploymentRequest',
-    'Deployment',
-    'GetAuthorizationRequest',
-    'GetDeploymentRequest',
-    'GetInstallStatusRequest',
-    'InstallDeploymentRequest',
-    'InstallStatus',
-    'ListDeploymentsRequest',
-    'ListDeploymentsResponse',
-    'ReplaceDeploymentRequest',
-    'UninstallDeploymentRequest',
+'AddOns',
+'Authorization',
+'CreateDeploymentRequest',
+'DeleteDeploymentRequest',
+'Deployment',
 'GSuiteAddOnsClient',
+'GetAuthorizationRequest',
+'GetDeploymentRequest',
+'GetInstallStatusRequest',
+'InstallDeploymentRequest',
+'InstallStatus',
+'ListDeploymentsRequest',
+'ListDeploymentsResponse',
+'ReplaceDeploymentRequest',
+'UninstallDeploymentRequest',
 )

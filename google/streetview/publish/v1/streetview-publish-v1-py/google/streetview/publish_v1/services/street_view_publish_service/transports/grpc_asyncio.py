@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,23 +13,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
-from google import auth                                # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
+import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
 
-from google.protobuf import empty_pb2 as empty  # type: ignore
+from google.protobuf import empty_pb2  # type: ignore
 from google.streetview.publish_v1.types import resources
 from google.streetview.publish_v1.types import rpcmessages
-
 from .base import StreetViewPublishServiceTransport, DEFAULT_CLIENT_INFO
 from .grpc import StreetViewPublishServiceGrpcTransport
 
@@ -55,7 +52,7 @@ class StreetViewPublishServiceGrpcAsyncIOTransport(StreetViewPublishServiceTrans
     @classmethod
     def create_channel(cls,
                        host: str = 'streetviewpublish.googleapis.com',
-                       credentials: credentials.Credentials = None,
+                       credentials: ga_credentials.Credentials = None,
                        credentials_file: Optional[str] = None,
                        scopes: Optional[Sequence[str]] = None,
                        quota_project_id: Optional[str] = None,
@@ -81,19 +78,21 @@ class StreetViewPublishServiceGrpcAsyncIOTransport(StreetViewPublishServiceTrans
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
     def __init__(self, *,
             host: str = 'streetviewpublish.googleapis.com',
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             credentials_file: Optional[str] = None,
             scopes: Optional[Sequence[str]] = None,
             channel: aio.Channel = None,
@@ -107,7 +106,8 @@ class StreetViewPublishServiceGrpcAsyncIOTransport(StreetViewPublishServiceTrans
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -165,7 +165,6 @@ class StreetViewPublishServiceGrpcAsyncIOTransport(StreetViewPublishServiceTrans
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
-
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -226,7 +225,7 @@ class StreetViewPublishServiceGrpcAsyncIOTransport(StreetViewPublishServiceTrans
 
     @property
     def start_upload(self) -> Callable[
-            [empty.Empty],
+            [empty_pb2.Empty],
             Awaitable[resources.UploadRef]]:
         r"""Return a callable for the start upload method over gRPC.
 
@@ -267,7 +266,7 @@ class StreetViewPublishServiceGrpcAsyncIOTransport(StreetViewPublishServiceTrans
         if 'start_upload' not in self._stubs:
             self._stubs['start_upload'] = self.grpc_channel.unary_unary(
                 '/google.streetview.publish.v1.StreetViewPublishService/StartUpload',
-                request_serializer=empty.Empty.SerializeToString,
+                request_serializer=empty_pb2.Empty.SerializeToString,
                 response_deserializer=resources.UploadRef.deserialize,
             )
         return self._stubs['start_upload']
@@ -542,7 +541,7 @@ class StreetViewPublishServiceGrpcAsyncIOTransport(StreetViewPublishServiceTrans
     @property
     def delete_photo(self) -> Callable[
             [rpcmessages.DeletePhotoRequest],
-            Awaitable[empty.Empty]]:
+            Awaitable[empty_pb2.Empty]]:
         r"""Return a callable for the delete photo method over gRPC.
 
         Deletes a [Photo][google.streetview.publish.v1.Photo] and its
@@ -569,7 +568,7 @@ class StreetViewPublishServiceGrpcAsyncIOTransport(StreetViewPublishServiceTrans
             self._stubs['delete_photo'] = self.grpc_channel.unary_unary(
                 '/google.streetview.publish.v1.StreetViewPublishService/DeletePhoto',
                 request_serializer=rpcmessages.DeletePhotoRequest.serialize,
-                response_deserializer=empty.Empty.FromString,
+                response_deserializer=empty_pb2.Empty.FromString,
             )
         return self._stubs['delete_photo']
 

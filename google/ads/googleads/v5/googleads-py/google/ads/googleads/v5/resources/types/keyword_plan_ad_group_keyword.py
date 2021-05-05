@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
 from google.ads.googleads.v5.enums.types import keyword_match_type
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -63,24 +60,39 @@ class KeywordPlanAdGroupKeyword(proto.Message):
             Immutable. If true, the keyword is negative.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    keyword_plan_ad_group = proto.Field(proto.MESSAGE, number=2,
-        message=wrappers.StringValue,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
     )
-    id = proto.Field(proto.MESSAGE, number=3,
-        message=wrappers.Int64Value,
+    keyword_plan_ad_group = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=wrappers_pb2.StringValue,
     )
-    text = proto.Field(proto.MESSAGE, number=4,
-        message=wrappers.StringValue,
+    id = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=wrappers_pb2.Int64Value,
     )
-    match_type = proto.Field(proto.ENUM, number=5,
+    text = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=wrappers_pb2.StringValue,
+    )
+    match_type = proto.Field(
+        proto.ENUM,
+        number=5,
         enum=keyword_match_type.KeywordMatchTypeEnum.KeywordMatchType,
     )
-    cpc_bid_micros = proto.Field(proto.MESSAGE, number=6,
-        message=wrappers.Int64Value,
+    cpc_bid_micros = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        message=wrappers_pb2.Int64Value,
     )
-    negative = proto.Field(proto.MESSAGE, number=7,
-        message=wrappers.BoolValue,
+    negative = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        message=wrappers_pb2.BoolValue,
     )
 
 

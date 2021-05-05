@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,22 +13,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
-from google import auth                                # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
+import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
 
 from google.cloud.workspace_add_ons_v1.types import gsuiteaddons
-from google.protobuf import empty_pb2 as empty  # type: ignore
-
+from google.protobuf import empty_pb2  # type: ignore
 from .base import GSuiteAddOnsTransport, DEFAULT_CLIENT_INFO
 from .grpc import GSuiteAddOnsGrpcTransport
 
@@ -81,7 +78,7 @@ class GSuiteAddOnsGrpcAsyncIOTransport(GSuiteAddOnsTransport):
     @classmethod
     def create_channel(cls,
                        host: str = 'gsuiteaddons.googleapis.com',
-                       credentials: credentials.Credentials = None,
+                       credentials: ga_credentials.Credentials = None,
                        credentials_file: Optional[str] = None,
                        scopes: Optional[Sequence[str]] = None,
                        quota_project_id: Optional[str] = None,
@@ -107,19 +104,21 @@ class GSuiteAddOnsGrpcAsyncIOTransport(GSuiteAddOnsTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
     def __init__(self, *,
             host: str = 'gsuiteaddons.googleapis.com',
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             credentials_file: Optional[str] = None,
             scopes: Optional[Sequence[str]] = None,
             channel: aio.Channel = None,
@@ -133,7 +132,8 @@ class GSuiteAddOnsGrpcAsyncIOTransport(GSuiteAddOnsTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -191,7 +191,6 @@ class GSuiteAddOnsGrpcAsyncIOTransport(GSuiteAddOnsTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
-
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -386,7 +385,7 @@ class GSuiteAddOnsGrpcAsyncIOTransport(GSuiteAddOnsTransport):
     @property
     def delete_deployment(self) -> Callable[
             [gsuiteaddons.DeleteDeploymentRequest],
-            Awaitable[empty.Empty]]:
+            Awaitable[empty_pb2.Empty]]:
         r"""Return a callable for the delete deployment method over gRPC.
 
         Deletes the deployment with the given name.
@@ -405,14 +404,14 @@ class GSuiteAddOnsGrpcAsyncIOTransport(GSuiteAddOnsTransport):
             self._stubs['delete_deployment'] = self.grpc_channel.unary_unary(
                 '/google.cloud.gsuiteaddons.v1.GSuiteAddOns/DeleteDeployment',
                 request_serializer=gsuiteaddons.DeleteDeploymentRequest.serialize,
-                response_deserializer=empty.Empty.FromString,
+                response_deserializer=empty_pb2.Empty.FromString,
             )
         return self._stubs['delete_deployment']
 
     @property
     def install_deployment(self) -> Callable[
             [gsuiteaddons.InstallDeploymentRequest],
-            Awaitable[empty.Empty]]:
+            Awaitable[empty_pb2.Empty]]:
         r"""Return a callable for the install deployment method over gRPC.
 
         Installs a deployment in developer mode.
@@ -434,14 +433,14 @@ class GSuiteAddOnsGrpcAsyncIOTransport(GSuiteAddOnsTransport):
             self._stubs['install_deployment'] = self.grpc_channel.unary_unary(
                 '/google.cloud.gsuiteaddons.v1.GSuiteAddOns/InstallDeployment',
                 request_serializer=gsuiteaddons.InstallDeploymentRequest.serialize,
-                response_deserializer=empty.Empty.FromString,
+                response_deserializer=empty_pb2.Empty.FromString,
             )
         return self._stubs['install_deployment']
 
     @property
     def uninstall_deployment(self) -> Callable[
             [gsuiteaddons.UninstallDeploymentRequest],
-            Awaitable[empty.Empty]]:
+            Awaitable[empty_pb2.Empty]]:
         r"""Return a callable for the uninstall deployment method over gRPC.
 
         Uninstalls a developer mode deployment.
@@ -463,7 +462,7 @@ class GSuiteAddOnsGrpcAsyncIOTransport(GSuiteAddOnsTransport):
             self._stubs['uninstall_deployment'] = self.grpc_channel.unary_unary(
                 '/google.cloud.gsuiteaddons.v1.GSuiteAddOns/UninstallDeployment',
                 request_serializer=gsuiteaddons.UninstallDeploymentRequest.serialize,
-                response_deserializer=empty.Empty.FromString,
+                response_deserializer=empty_pb2.Empty.FromString,
             )
         return self._stubs['uninstall_deployment']
 

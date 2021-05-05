@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,13 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v5.common.types import text_label as gagc_text_label
 from google.ads.googleads.v5.enums.types import label_status
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -34,7 +31,6 @@ __protobuf__ = proto.module(
 
 class Label(proto.Message):
     r"""A label.
-
     Attributes:
         resource_name (str):
             Immutable. Name of the resource. Label resource names have
@@ -54,17 +50,28 @@ class Label(proto.Message):
             background.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    id = proto.Field(proto.MESSAGE, number=2,
-        message=wrappers.Int64Value,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
     )
-    name = proto.Field(proto.MESSAGE, number=3,
-        message=wrappers.StringValue,
+    id = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=wrappers_pb2.Int64Value,
     )
-    status = proto.Field(proto.ENUM, number=4,
+    name = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=wrappers_pb2.StringValue,
+    )
+    status = proto.Field(
+        proto.ENUM,
+        number=4,
         enum=label_status.LabelStatusEnum.LabelStatus,
     )
-    text_label = proto.Field(proto.MESSAGE, number=5,
+    text_label = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=gagc_text_label.TextLabel,
     )
 

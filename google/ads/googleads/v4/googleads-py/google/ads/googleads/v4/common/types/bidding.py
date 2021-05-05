@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
 from google.ads.googleads.v4.enums.types import target_impression_share_location
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -56,8 +53,10 @@ class Commission(proto.Message):
             (10.6%).
     """
 
-    commission_rate_micros = proto.Field(proto.MESSAGE, number=1,
-        message=wrappers.Int64Value,
+    commission_rate_micros = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=wrappers_pb2.Int64Value,
     )
 
 
@@ -65,37 +64,38 @@ class EnhancedCpc(proto.Message):
     r"""An automated bidding strategy that raises bids for clicks
     that seem more likely to lead to a conversion and lowers them
     for clicks where they seem less likely.
-    """
+        """
 
 
 class ManualCpc(proto.Message):
     r"""Manual click-based bidding where user pays per click.
-
     Attributes:
         enhanced_cpc_enabled (google.protobuf.wrappers_pb2.BoolValue):
             Whether bids are to be enhanced based on
             conversion optimizer data.
     """
 
-    enhanced_cpc_enabled = proto.Field(proto.MESSAGE, number=1,
-        message=wrappers.BoolValue,
+    enhanced_cpc_enabled = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=wrappers_pb2.BoolValue,
     )
 
 
 class ManualCpm(proto.Message):
     r"""Manual impression-based bidding where user pays per thousand
     impressions.
-    """
+        """
 
 
 class ManualCpv(proto.Message):
-    r"""View based bidding where user pays per video view."""
+    r"""View based bidding where user pays per video view.    """
 
 
 class MaximizeConversions(proto.Message):
     r"""An automated bidding strategy to help get the most
     conversions for your campaigns while spending your budget.
-    """
+        """
 
 
 class MaximizeConversionValue(proto.Message):
@@ -114,8 +114,10 @@ class MaximizeConversionValue(proto.Message):
             budget.
     """
 
-    target_roas = proto.Field(proto.MESSAGE, number=1,
-        message=wrappers.DoubleValue,
+    target_roas = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=wrappers_pb2.DoubleValue,
     )
 
 
@@ -140,14 +142,20 @@ class TargetCpa(proto.Message):
             managed by the strategy.
     """
 
-    target_cpa_micros = proto.Field(proto.MESSAGE, number=1,
-        message=wrappers.Int64Value,
+    target_cpa_micros = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=wrappers_pb2.Int64Value,
     )
-    cpc_bid_ceiling_micros = proto.Field(proto.MESSAGE, number=2,
-        message=wrappers.Int64Value,
+    cpc_bid_ceiling_micros = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=wrappers_pb2.Int64Value,
     )
-    cpc_bid_floor_micros = proto.Field(proto.MESSAGE, number=3,
-        message=wrappers.Int64Value,
+    cpc_bid_floor_micros = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=wrappers_pb2.Int64Value,
     )
 
 
@@ -155,7 +163,7 @@ class TargetCpm(proto.Message):
     r"""Target CPM (cost per thousand impressions) is an automated
     bidding strategy that sets bids to optimize performance given
     the target CPM you set.
-    """
+        """
 
 
 class TargetImpressionShare(proto.Message):
@@ -178,14 +186,20 @@ class TargetImpressionShare(proto.Message):
             sets the ceiling and specified in local micros.
     """
 
-    location = proto.Field(proto.ENUM, number=1,
+    location = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=target_impression_share_location.TargetImpressionShareLocationEnum.TargetImpressionShareLocation,
     )
-    location_fraction_micros = proto.Field(proto.MESSAGE, number=2,
-        message=wrappers.Int64Value,
+    location_fraction_micros = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=wrappers_pb2.Int64Value,
     )
-    cpc_bid_ceiling_micros = proto.Field(proto.MESSAGE, number=3,
-        message=wrappers.Int64Value,
+    cpc_bid_ceiling_micros = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=wrappers_pb2.Int64Value,
     )
 
 
@@ -208,14 +222,20 @@ class TargetRoas(proto.Message):
             managed by the strategy.
     """
 
-    target_roas = proto.Field(proto.MESSAGE, number=1,
-        message=wrappers.DoubleValue,
+    target_roas = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=wrappers_pb2.DoubleValue,
     )
-    cpc_bid_ceiling_micros = proto.Field(proto.MESSAGE, number=2,
-        message=wrappers.Int64Value,
+    cpc_bid_ceiling_micros = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=wrappers_pb2.Int64Value,
     )
-    cpc_bid_floor_micros = proto.Field(proto.MESSAGE, number=3,
-        message=wrappers.Int64Value,
+    cpc_bid_floor_micros = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=wrappers_pb2.Int64Value,
     )
 
 
@@ -240,11 +260,15 @@ class TargetSpend(proto.Message):
             managed by the strategy.
     """
 
-    target_spend_micros = proto.Field(proto.MESSAGE, number=1,
-        message=wrappers.Int64Value,
+    target_spend_micros = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=wrappers_pb2.Int64Value,
     )
-    cpc_bid_ceiling_micros = proto.Field(proto.MESSAGE, number=2,
-        message=wrappers.Int64Value,
+    cpc_bid_ceiling_micros = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=wrappers_pb2.Int64Value,
     )
 
 
@@ -265,11 +289,15 @@ class PercentCpc(proto.Message):
             amount for a campaign should not.
     """
 
-    cpc_bid_ceiling_micros = proto.Field(proto.MESSAGE, number=1,
-        message=wrappers.Int64Value,
+    cpc_bid_ceiling_micros = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=wrappers_pb2.Int64Value,
     )
-    enhanced_cpc_enabled = proto.Field(proto.MESSAGE, number=2,
-        message=wrappers.BoolValue,
+    enhanced_cpc_enabled = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=wrappers_pb2.BoolValue,
     )
 
 

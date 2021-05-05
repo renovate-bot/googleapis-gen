@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -22,15 +20,14 @@ from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
 import google.api_core.client_options as ClientOptions # type: ignore
-from google.api_core import exceptions                 # type: ignore
+from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
 from google.cloud.recommendationengine_v1beta1.services.prediction_api_key_registry import pagers
 from google.cloud.recommendationengine_v1beta1.types import prediction_apikey_registry_service
-
 from .transports.base import PredictionApiKeyRegistryTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import PredictionApiKeyRegistryGrpcAsyncIOTransport
 from .client import PredictionApiKeyRegistryClient
@@ -54,19 +51,14 @@ class PredictionApiKeyRegistryAsyncClient:
     parse_event_store_path = staticmethod(PredictionApiKeyRegistryClient.parse_event_store_path)
     prediction_api_key_registration_path = staticmethod(PredictionApiKeyRegistryClient.prediction_api_key_registration_path)
     parse_prediction_api_key_registration_path = staticmethod(PredictionApiKeyRegistryClient.parse_prediction_api_key_registration_path)
-
     common_billing_account_path = staticmethod(PredictionApiKeyRegistryClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(PredictionApiKeyRegistryClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(PredictionApiKeyRegistryClient.common_folder_path)
     parse_common_folder_path = staticmethod(PredictionApiKeyRegistryClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(PredictionApiKeyRegistryClient.common_organization_path)
     parse_common_organization_path = staticmethod(PredictionApiKeyRegistryClient.parse_common_organization_path)
-
     common_project_path = staticmethod(PredictionApiKeyRegistryClient.common_project_path)
     parse_common_project_path = staticmethod(PredictionApiKeyRegistryClient.parse_common_project_path)
-
     common_location_path = staticmethod(PredictionApiKeyRegistryClient.common_location_path)
     parse_common_location_path = staticmethod(PredictionApiKeyRegistryClient.parse_common_location_path)
 
@@ -114,7 +106,7 @@ class PredictionApiKeyRegistryAsyncClient:
     get_transport_class = functools.partial(type(PredictionApiKeyRegistryClient).get_transport_class, type(PredictionApiKeyRegistryClient))
 
     def __init__(self, *,
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             transport: Union[str, PredictionApiKeyRegistryTransport] = 'grpc_asyncio',
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -151,7 +143,6 @@ class PredictionApiKeyRegistryAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = PredictionApiKeyRegistryClient(
             credentials=credentials,
             transport=transport,
@@ -189,7 +180,6 @@ class PredictionApiKeyRegistryAsyncClient:
                 This corresponds to the ``prediction_api_key_registration`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -212,7 +202,6 @@ class PredictionApiKeyRegistryAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if prediction_api_key_registration is not None:
@@ -223,10 +212,7 @@ class PredictionApiKeyRegistryAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.create_prediction_api_key_registration,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -277,7 +263,6 @@ class PredictionApiKeyRegistryAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -305,7 +290,6 @@ class PredictionApiKeyRegistryAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -314,10 +298,7 @@ class PredictionApiKeyRegistryAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_prediction_api_key_registrations,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -377,7 +358,6 @@ class PredictionApiKeyRegistryAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -396,7 +376,6 @@ class PredictionApiKeyRegistryAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -405,10 +384,7 @@ class PredictionApiKeyRegistryAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_prediction_api_key_registration,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -433,8 +409,6 @@ class PredictionApiKeyRegistryAsyncClient:
             timeout=timeout,
             metadata=metadata,
         )
-
-
 
 
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,9 +15,14 @@
 #
 
 from .services.catalog_service import CatalogServiceClient
+from .services.catalog_service import CatalogServiceAsyncClient
 from .services.prediction_service import PredictionServiceClient
+from .services.prediction_service import PredictionServiceAsyncClient
 from .services.product_service import ProductServiceClient
+from .services.product_service import ProductServiceAsyncClient
 from .services.user_event_service import UserEventServiceClient
+from .services.user_event_service import UserEventServiceAsyncClient
+
 from .types.catalog import Catalog
 from .types.catalog import ProductLevelConfig
 from .types.catalog_service import ListCatalogsRequest
@@ -60,50 +64,49 @@ from .types.user_event_service import RejoinUserEventsRequest
 from .types.user_event_service import RejoinUserEventsResponse
 from .types.user_event_service import WriteUserEventRequest
 
-
 __all__ = (
-    'BigQuerySource',
-    'Catalog',
-    'CatalogServiceClient',
-    'CollectUserEventRequest',
-    'CreateProductRequest',
-    'CustomAttribute',
-    'DeleteProductRequest',
-    'GcsSource',
-    'GetProductRequest',
-    'Image',
-    'ImportErrorsConfig',
-    'ImportMetadata',
-    'ImportProductsRequest',
-    'ImportProductsResponse',
-    'ImportUserEventsRequest',
-    'ImportUserEventsResponse',
-    'ListCatalogsRequest',
-    'ListCatalogsResponse',
-    'PredictRequest',
-    'PredictResponse',
-    'PredictionServiceClient',
-    'PriceInfo',
-    'Product',
-    'ProductDetail',
-    'ProductInlineSource',
-    'ProductInputConfig',
-    'ProductLevelConfig',
-    'ProductServiceClient',
-    'PurchaseTransaction',
-    'PurgeMetadata',
-    'PurgeUserEventsRequest',
-    'PurgeUserEventsResponse',
-    'RejoinUserEventsMetadata',
-    'RejoinUserEventsRequest',
-    'RejoinUserEventsResponse',
-    'UpdateCatalogRequest',
-    'UpdateProductRequest',
-    'UserEvent',
-    'UserEventImportSummary',
-    'UserEventInlineSource',
-    'UserEventInputConfig',
-    'UserInfo',
-    'WriteUserEventRequest',
+'BigQuerySource',
+'Catalog',
+'CatalogServiceClient',
+'CollectUserEventRequest',
+'CreateProductRequest',
+'CustomAttribute',
+'DeleteProductRequest',
+'GcsSource',
+'GetProductRequest',
+'Image',
+'ImportErrorsConfig',
+'ImportMetadata',
+'ImportProductsRequest',
+'ImportProductsResponse',
+'ImportUserEventsRequest',
+'ImportUserEventsResponse',
+'ListCatalogsRequest',
+'ListCatalogsResponse',
+'PredictRequest',
+'PredictResponse',
+'PredictionServiceClient',
+'PriceInfo',
+'Product',
+'ProductDetail',
+'ProductInlineSource',
+'ProductInputConfig',
+'ProductLevelConfig',
+'ProductServiceClient',
+'PurchaseTransaction',
+'PurgeMetadata',
+'PurgeUserEventsRequest',
+'PurgeUserEventsResponse',
+'RejoinUserEventsMetadata',
+'RejoinUserEventsRequest',
+'RejoinUserEventsResponse',
+'UpdateCatalogRequest',
+'UpdateProductRequest',
+'UserEvent',
+'UserEventImportSummary',
+'UserEventInlineSource',
+'UserEventInputConfig',
 'UserEventServiceClient',
+'UserInfo',
+'WriteUserEventRequest',
 )

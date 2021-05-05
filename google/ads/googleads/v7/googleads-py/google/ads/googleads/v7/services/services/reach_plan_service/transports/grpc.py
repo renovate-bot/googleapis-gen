@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,20 +13,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
-from google import auth                    # type: ignore
-from google.auth import credentials        # type: ignore
+import google.auth                         # type: ignore
+from google.auth import credentials as ga_credentials  # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
 
 import grpc  # type: ignore
 
 from google.ads.googleads.v7.services.types import reach_plan_service
-
 from .base import ReachPlanServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -50,7 +47,7 @@ class ReachPlanServiceGrpcTransport(ReachPlanServiceTransport):
     """
     def __init__(self, *,
             host: str = 'googleads.googleapis.com',
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             credentials_file: str = None,
             scopes: Sequence[str] = None,
             channel: grpc.Channel = None,
@@ -63,7 +60,8 @@ class ReachPlanServiceGrpcTransport(ReachPlanServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -115,7 +113,7 @@ class ReachPlanServiceGrpcTransport(ReachPlanServiceTransport):
             host = api_mtls_endpoint if ":" in api_mtls_endpoint else api_mtls_endpoint + ":443"
 
             if credentials is None:
-                credentials, _ = auth.default(scopes=self.AUTH_SCOPES, quota_project_id=quota_project_id)
+                credentials, _ = google.auth.default(scopes=self.AUTH_SCOPES, quota_project_id=quota_project_id)
 
             # Create SSL credentials with client_cert_source or application
             # default SSL credentials.
@@ -145,7 +143,7 @@ class ReachPlanServiceGrpcTransport(ReachPlanServiceTransport):
             host = host if ":" in host else host + ":443"
 
             if credentials is None:
-                credentials, _ = auth.default(scopes=self.AUTH_SCOPES)
+                credentials, _ = google.auth.default(scopes=self.AUTH_SCOPES)
 
             # create a new channel. The provided one is ignored.
             self._grpc_channel = type(self).create_channel(
@@ -171,7 +169,7 @@ class ReachPlanServiceGrpcTransport(ReachPlanServiceTransport):
     @classmethod
     def create_channel(cls,
                        host: str = 'googleads.googleapis.com',
-                       credentials: credentials.Credentials = None,
+                       credentials: ga_credentials.Credentials = None,
                        scopes: Optional[Sequence[str]] = None,
                        **kwargs) -> grpc.Channel:
         """Create and return a gRPC channel object.

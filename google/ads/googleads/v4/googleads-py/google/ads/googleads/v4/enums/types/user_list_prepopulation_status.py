@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -28,7 +26,7 @@ __protobuf__ = proto.module(
 
 
 class UserListPrepopulationStatusEnum(proto.Message):
-    r"""Indicates status of prepopulation based on the rule."""
+    r"""Indicates status of prepopulation based on the rule.    """
     class UserListPrepopulationStatus(proto.Enum):
         r"""Enum describing possible user list prepopulation status."""
         UNSPECIFIED = 0

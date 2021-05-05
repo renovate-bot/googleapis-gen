@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,11 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -70,13 +67,22 @@ class BillingAccount(proto.Message):
             be empty.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    open_ = proto.Field(proto.BOOL, number=2)
-
-    display_name = proto.Field(proto.STRING, number=3)
-
-    master_billing_account = proto.Field(proto.STRING, number=4)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    open_ = proto.Field(
+        proto.BOOL,
+        number=2,
+    )
+    display_name = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    master_billing_account = proto.Field(
+        proto.STRING,
+        number=4,
+    )
 
 
 class ProjectBillingInfo(proto.Message):
@@ -112,18 +118,26 @@ class ProjectBillingInfo(proto.Message):
             paid services. This field is read-only.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    project_id = proto.Field(proto.STRING, number=2)
-
-    billing_account_name = proto.Field(proto.STRING, number=3)
-
-    billing_enabled = proto.Field(proto.BOOL, number=4)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    project_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    billing_account_name = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    billing_enabled = proto.Field(
+        proto.BOOL,
+        number=4,
+    )
 
 
 class GetBillingAccountRequest(proto.Message):
     r"""Request message for ``GetBillingAccount``.
-
     Attributes:
         name (str):
             Required. The resource name of the billing account to
@@ -131,12 +145,14 @@ class GetBillingAccountRequest(proto.Message):
             ``billingAccounts/012345-567890-ABCDEF``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class ListBillingAccountsRequest(proto.Message):
     r"""Request message for ``ListBillingAccounts``.
-
     Attributes:
         page_size (int):
             Requested page size. The maximum page size is
@@ -156,16 +172,22 @@ class ListBillingAccountsRequest(proto.Message):
             supported.
     """
 
-    page_size = proto.Field(proto.INT32, number=1)
-
-    page_token = proto.Field(proto.STRING, number=2)
-
-    filter = proto.Field(proto.STRING, number=3)
+    page_size = proto.Field(
+        proto.INT32,
+        number=1,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    filter = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class ListBillingAccountsResponse(proto.Message):
     r"""Response message for ``ListBillingAccounts``.
-
     Attributes:
         billing_accounts (Sequence[google.cloud.billing_v1.types.BillingAccount]):
             A list of billing accounts.
@@ -180,16 +202,19 @@ class ListBillingAccountsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    billing_accounts = proto.RepeatedField(proto.MESSAGE, number=1,
+    billing_accounts = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='BillingAccount',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class CreateBillingAccountRequest(proto.Message):
     r"""Request message for ``CreateBillingAccount``.
-
     Attributes:
         billing_account (google.cloud.billing_v1.types.BillingAccount):
             Required. The billing account resource to
@@ -199,14 +224,15 @@ class CreateBillingAccountRequest(proto.Message):
             billing account.
     """
 
-    billing_account = proto.Field(proto.MESSAGE, number=1,
+    billing_account = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='BillingAccount',
     )
 
 
 class UpdateBillingAccountRequest(proto.Message):
     r"""Request message for ``UpdateBillingAccount``.
-
     Attributes:
         name (str):
             Required. The name of the billing account
@@ -219,20 +245,24 @@ class UpdateBillingAccountRequest(proto.Message):
             is currently supported.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    account = proto.Field(proto.MESSAGE, number=2,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    account = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='BillingAccount',
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=3,
-        message=field_mask.FieldMask,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=field_mask_pb2.FieldMask,
     )
 
 
 class ListProjectBillingInfoRequest(proto.Message):
     r"""Request message for ``ListProjectBillingInfo``.
-
     Attributes:
         name (str):
             Required. The resource name of the billing account
@@ -248,16 +278,22 @@ class ListProjectBillingInfoRequest(proto.Message):
             the first page of results is returned.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class ListProjectBillingInfoResponse(proto.Message):
     r"""Request message for ``ListProjectBillingInfoResponse``.
-
     Attributes:
         project_billing_info (Sequence[google.cloud.billing_v1.types.ProjectBillingInfo]):
             A list of ``ProjectBillingInfo`` resources representing the
@@ -273,16 +309,19 @@ class ListProjectBillingInfoResponse(proto.Message):
     def raw_page(self):
         return self
 
-    project_billing_info = proto.RepeatedField(proto.MESSAGE, number=1,
+    project_billing_info = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='ProjectBillingInfo',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class GetProjectBillingInfoRequest(proto.Message):
     r"""Request message for ``GetProjectBillingInfo``.
-
     Attributes:
         name (str):
             Required. The resource name of the project for which billing
@@ -290,12 +329,14 @@ class GetProjectBillingInfoRequest(proto.Message):
             ``projects/tokyo-rain-123``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class UpdateProjectBillingInfoRequest(proto.Message):
     r"""Request message for ``UpdateProjectBillingInfo``.
-
     Attributes:
         name (str):
             Required. The resource name of the project associated with
@@ -307,9 +348,13 @@ class UpdateProjectBillingInfoRequest(proto.Message):
             except ``billing_account_name``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    project_billing_info = proto.Field(proto.MESSAGE, number=2,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    project_billing_info = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='ProjectBillingInfo',
     )
 

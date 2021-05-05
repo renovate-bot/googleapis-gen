@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
 from google.cloud.retail_v2.types import product as gcr_product
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -35,7 +32,6 @@ __protobuf__ = proto.module(
 
 class CreateProductRequest(proto.Message):
     r"""Request message for [CreateProduct][] method.
-
     Attributes:
         parent (str):
             Required. The parent catalog resource name, such as
@@ -64,18 +60,23 @@ class CreateProductRequest(proto.Message):
             error is returned.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    product = proto.Field(proto.MESSAGE, number=2,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    product = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=gcr_product.Product,
     )
-
-    product_id = proto.Field(proto.STRING, number=3)
+    product_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class GetProductRequest(proto.Message):
     r"""Request message for [GetProduct][] method.
-
     Attributes:
         name (str):
             Required. Full resource name of
@@ -91,12 +92,14 @@ class GetProductRequest(proto.Message):
             does not exist, a NOT_FOUND error is returned.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class UpdateProductRequest(proto.Message):
     r"""Request message for [UpdateProduct][] method.
-
     Attributes:
         product (google.cloud.retail_v2.types.Product):
             Required. The product to update/create.
@@ -119,18 +122,20 @@ class UpdateProductRequest(proto.Message):
             INVALID_ARGUMENT error is returned.
     """
 
-    product = proto.Field(proto.MESSAGE, number=1,
+    product = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=gcr_product.Product,
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=2,
-        message=field_mask.FieldMask,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=field_mask_pb2.FieldMask,
     )
 
 
 class DeleteProductRequest(proto.Message):
     r"""Request message for [DeleteProduct][] method.
-
     Attributes:
         name (str):
             Required. Full resource name of
@@ -146,7 +151,10 @@ class DeleteProductRequest(proto.Message):
             does not exist, a NOT_FOUND error is returned.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

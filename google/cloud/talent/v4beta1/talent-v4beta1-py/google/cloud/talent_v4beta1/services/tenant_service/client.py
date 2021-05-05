@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -23,10 +21,10 @@ from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
-from google.api_core import exceptions                            # type: ignore
+from google.api_core import exceptions as core_exceptions         # type: ignore
 from google.api_core import gapic_v1                              # type: ignore
 from google.api_core import retry as retries                      # type: ignore
-from google.auth import credentials                               # type: ignore
+from google.auth import credentials as ga_credentials             # type: ignore
 from google.auth.transport import mtls                            # type: ignore
 from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
@@ -36,7 +34,6 @@ from google.cloud.talent_v4beta1.services.tenant_service import pagers
 from google.cloud.talent_v4beta1.types import tenant
 from google.cloud.talent_v4beta1.types import tenant as gct_tenant
 from google.cloud.talent_v4beta1.types import tenant_service
-
 from .transports.base import TenantServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import TenantServiceGrpcTransport
 from .transports.grpc_asyncio import TenantServiceGrpcAsyncIOTransport
@@ -226,7 +223,7 @@ class TenantServiceClient(metaclass=TenantServiceClientMeta):
         return m.groupdict() if m else {}
 
     def __init__(self, *,
-            credentials: Optional[credentials.Credentials] = None,
+            credentials: Optional[ga_credentials.Credentials] = None,
             transport: Union[str, TenantServiceTransport, None] = None,
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -358,7 +355,6 @@ class TenantServiceClient(metaclass=TenantServiceClientMeta):
                 This corresponds to the ``tenant`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -390,10 +386,8 @@ class TenantServiceClient(metaclass=TenantServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tenant_service.CreateTenantRequest):
             request = tenant_service.CreateTenantRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if tenant is not None:
@@ -447,7 +441,6 @@ class TenantServiceClient(metaclass=TenantServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -479,10 +472,8 @@ class TenantServiceClient(metaclass=TenantServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tenant_service.GetTenantRequest):
             request = tenant_service.GetTenantRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -531,7 +522,6 @@ class TenantServiceClient(metaclass=TenantServiceClientMeta):
                 This corresponds to the ``tenant`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -563,10 +553,8 @@ class TenantServiceClient(metaclass=TenantServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tenant_service.UpdateTenantRequest):
             request = tenant_service.UpdateTenantRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if tenant is not None:
                 request.tenant = tenant
 
@@ -616,7 +604,6 @@ class TenantServiceClient(metaclass=TenantServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -637,10 +624,8 @@ class TenantServiceClient(metaclass=TenantServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tenant_service.DeleteTenantRequest):
             request = tenant_service.DeleteTenantRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -688,7 +673,6 @@ class TenantServiceClient(metaclass=TenantServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -717,10 +701,8 @@ class TenantServiceClient(metaclass=TenantServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tenant_service.ListTenantsRequest):
             request = tenant_service.ListTenantsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -755,8 +737,6 @@ class TenantServiceClient(metaclass=TenantServiceClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

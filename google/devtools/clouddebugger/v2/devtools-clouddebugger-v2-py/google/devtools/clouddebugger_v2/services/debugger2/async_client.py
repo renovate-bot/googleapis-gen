@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -22,15 +20,14 @@ from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
 import google.api_core.client_options as ClientOptions # type: ignore
-from google.api_core import exceptions                 # type: ignore
+from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
 from google.devtools.clouddebugger_v2.types import data
 from google.devtools.clouddebugger_v2.types import debugger
-
 from .transports.base import Debugger2Transport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import Debugger2GrpcAsyncIOTransport
 from .client import Debugger2Client
@@ -59,16 +56,12 @@ class Debugger2AsyncClient:
 
     common_billing_account_path = staticmethod(Debugger2Client.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(Debugger2Client.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(Debugger2Client.common_folder_path)
     parse_common_folder_path = staticmethod(Debugger2Client.parse_common_folder_path)
-
     common_organization_path = staticmethod(Debugger2Client.common_organization_path)
     parse_common_organization_path = staticmethod(Debugger2Client.parse_common_organization_path)
-
     common_project_path = staticmethod(Debugger2Client.common_project_path)
     parse_common_project_path = staticmethod(Debugger2Client.parse_common_project_path)
-
     common_location_path = staticmethod(Debugger2Client.common_location_path)
     parse_common_location_path = staticmethod(Debugger2Client.parse_common_location_path)
 
@@ -116,7 +109,7 @@ class Debugger2AsyncClient:
     get_transport_class = functools.partial(type(Debugger2Client).get_transport_class, type(Debugger2Client))
 
     def __init__(self, *,
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             transport: Union[str, Debugger2Transport] = 'grpc_asyncio',
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -153,7 +146,6 @@ class Debugger2AsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = Debugger2Client(
             credentials=credentials,
             transport=transport,
@@ -199,7 +191,6 @@ class Debugger2AsyncClient:
                 This corresponds to the ``client_version`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -222,7 +213,6 @@ class Debugger2AsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if debuggee_id is not None:
             request.debuggee_id = debuggee_id
         if breakpoint_ is not None:
@@ -287,7 +277,6 @@ class Debugger2AsyncClient:
                 This corresponds to the ``client_version`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -312,7 +301,6 @@ class Debugger2AsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if debuggee_id is not None:
             request.debuggee_id = debuggee_id
         if breakpoint_id is not None:
@@ -325,10 +313,7 @@ class Debugger2AsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_breakpoint,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -386,7 +371,6 @@ class Debugger2AsyncClient:
                 This corresponds to the ``client_version`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -405,7 +389,6 @@ class Debugger2AsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if debuggee_id is not None:
             request.debuggee_id = debuggee_id
         if breakpoint_id is not None:
@@ -418,10 +401,7 @@ class Debugger2AsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_breakpoint,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -468,7 +448,6 @@ class Debugger2AsyncClient:
                 This corresponds to the ``client_version`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -491,7 +470,6 @@ class Debugger2AsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if debuggee_id is not None:
             request.debuggee_id = debuggee_id
         if client_version is not None:
@@ -502,10 +480,7 @@ class Debugger2AsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_breakpoints,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -555,7 +530,6 @@ class Debugger2AsyncClient:
                 This corresponds to the ``client_version`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -578,7 +552,6 @@ class Debugger2AsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if project is not None:
             request.project = project
         if client_version is not None:
@@ -589,10 +562,7 @@ class Debugger2AsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_debuggees,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -612,8 +582,6 @@ class Debugger2AsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

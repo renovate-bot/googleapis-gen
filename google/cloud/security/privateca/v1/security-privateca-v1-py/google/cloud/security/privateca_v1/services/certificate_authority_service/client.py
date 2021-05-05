@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -23,10 +21,10 @@ from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
-from google.api_core import exceptions                            # type: ignore
+from google.api_core import exceptions as core_exceptions         # type: ignore
 from google.api_core import gapic_v1                              # type: ignore
 from google.api_core import retry as retries                      # type: ignore
-from google.auth import credentials                               # type: ignore
+from google.auth import credentials as ga_credentials             # type: ignore
 from google.auth.transport import mtls                            # type: ignore
 from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
@@ -37,11 +35,10 @@ from google.api_core import operation_async  # type: ignore
 from google.cloud.security.privateca_v1.services.certificate_authority_service import pagers
 from google.cloud.security.privateca_v1.types import resources
 from google.cloud.security.privateca_v1.types import service
-from google.protobuf import duration_pb2 as duration  # type: ignore
-from google.protobuf import empty_pb2 as empty  # type: ignore
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
+from google.protobuf import duration_pb2  # type: ignore
+from google.protobuf import empty_pb2  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 from .transports.base import CertificateAuthorityServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import CertificateAuthorityServiceGrpcTransport
 from .transports.grpc_asyncio import CertificateAuthorityServiceGrpcAsyncIOTransport
@@ -276,7 +273,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         return m.groupdict() if m else {}
 
     def __init__(self, *,
-            credentials: Optional[credentials.Credentials] = None,
+            credentials: Optional[ga_credentials.Credentials] = None,
             transport: Union[str, CertificateAuthorityServiceTransport, None] = None,
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -426,7 +423,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``certificate_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -453,10 +449,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.CreateCertificateRequest):
             request = service.CreateCertificateRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if certificate is not None:
@@ -512,7 +506,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -539,10 +532,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.GetCertificateRequest):
             request = service.GetCertificateRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -593,7 +584,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -623,10 +613,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.ListCertificatesRequest):
             request = service.ListCertificatesRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -686,7 +674,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -713,10 +700,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.RevokeCertificateRequest):
             request = service.RevokeCertificateRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -747,7 +732,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
             request: service.UpdateCertificateRequest = None,
             *,
             certificate: resources.Certificate = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -777,7 +762,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -804,10 +788,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.UpdateCertificateRequest):
             request = service.UpdateCertificateRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if certificate is not None:
                 request.certificate = certificate
             if update_mask is not None:
@@ -868,7 +850,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -900,10 +881,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.ActivateCertificateAuthorityRequest):
             request = service.ActivateCertificateAuthorityRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -981,7 +960,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``certificate_authority_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1013,10 +991,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.CreateCertificateAuthorityRequest):
             request = service.CreateCertificateAuthorityRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if certificate_authority is not None:
@@ -1079,7 +1055,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1111,10 +1086,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.DisableCertificateAuthorityRequest):
             request = service.DisableCertificateAuthorityRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1173,7 +1146,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1205,10 +1177,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.EnableCertificateAuthorityRequest):
             request = service.EnableCertificateAuthorityRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1276,7 +1246,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1303,10 +1272,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.FetchCertificateAuthorityCsrRequest):
             request = service.FetchCertificateAuthorityCsrRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1358,7 +1325,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1388,10 +1354,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.GetCertificateAuthorityRequest):
             request = service.GetCertificateAuthorityRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1443,7 +1407,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1473,10 +1436,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.ListCertificateAuthoritiesRequest):
             request = service.ListCertificateAuthoritiesRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -1537,7 +1498,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1569,10 +1529,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.UndeleteCertificateAuthorityRequest):
             request = service.UndeleteCertificateAuthorityRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1631,7 +1589,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1663,10 +1620,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.DeleteCertificateAuthorityRequest):
             request = service.DeleteCertificateAuthorityRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1705,7 +1660,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
             request: service.UpdateCertificateAuthorityRequest = None,
             *,
             certificate_authority: resources.CertificateAuthority = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -1732,7 +1687,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1764,10 +1718,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.UpdateCertificateAuthorityRequest):
             request = service.UpdateCertificateAuthorityRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if certificate_authority is not None:
                 request.certificate_authority = certificate_authority
             if update_mask is not None:
@@ -1844,7 +1796,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``ca_pool_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1880,10 +1831,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.CreateCaPoolRequest):
             request = service.CreateCaPoolRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if ca_pool is not None:
@@ -1926,7 +1875,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
             request: service.UpdateCaPoolRequest = None,
             *,
             ca_pool: resources.CaPool = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -1952,7 +1901,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1988,10 +1936,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.UpdateCaPoolRequest):
             request = service.UpdateCaPoolRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if ca_pool is not None:
                 request.ca_pool = ca_pool
             if update_mask is not None:
@@ -2052,7 +1998,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2086,10 +2031,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.GetCaPoolRequest):
             request = service.GetCaPoolRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -2139,7 +2082,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2169,10 +2111,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.ListCaPoolsRequest):
             request = service.ListCaPoolsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -2230,7 +2170,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2266,10 +2205,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.DeleteCaPoolRequest):
             request = service.DeleteCaPoolRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -2331,7 +2268,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``ca_pool`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2358,10 +2294,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.FetchCaCertsRequest):
             request = service.FetchCaCertsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if ca_pool is not None:
                 request.ca_pool = ca_pool
 
@@ -2413,7 +2347,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2442,10 +2375,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.GetCertificateRevocationListRequest):
             request = service.GetCertificateRevocationListRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -2497,7 +2428,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2527,10 +2457,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.ListCertificateRevocationListsRequest):
             request = service.ListCertificateRevocationListsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -2570,7 +2498,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
             request: service.UpdateCertificateRevocationListRequest = None,
             *,
             certificate_revocation_list: resources.CertificateRevocationList = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -2597,7 +2525,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2628,10 +2555,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.UpdateCertificateRevocationListRequest):
             request = service.UpdateCertificateRevocationListRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if certificate_revocation_list is not None:
                 request.certificate_revocation_list = certificate_revocation_list
             if update_mask is not None:
@@ -2710,7 +2635,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``certificate_template_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2739,10 +2663,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.CreateCertificateTemplateRequest):
             request = service.CreateCertificateTemplateRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if certificate_template is not None:
@@ -2805,7 +2727,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2845,10 +2766,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.DeleteCertificateTemplateRequest):
             request = service.DeleteCertificateTemplateRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -2876,7 +2795,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         response = operation.from_gapic(
             response,
             self._transport.operations_client,
-            empty.Empty,
+            empty_pb2.Empty,
             metadata_type=service.OperationMetadata,
         )
 
@@ -2908,7 +2827,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2935,10 +2853,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.GetCertificateTemplateRequest):
             request = service.GetCertificateTemplateRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -2989,7 +2905,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3019,10 +2934,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.ListCertificateTemplatesRequest):
             request = service.ListCertificateTemplatesRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -3062,7 +2975,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
             request: service.UpdateCertificateTemplateRequest = None,
             *,
             certificate_template: resources.CertificateTemplate = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -3089,7 +3002,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3118,10 +3030,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # there are no flattened fields.
         if not isinstance(request, service.UpdateCertificateTemplateRequest):
             request = service.UpdateCertificateTemplateRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if certificate_template is not None:
                 request.certificate_template = certificate_template
             if update_mask is not None:
@@ -3157,8 +3067,6 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         # Done; return the response.
         return response
-
-
 
 
 

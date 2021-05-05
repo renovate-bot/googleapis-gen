@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -735,11 +733,17 @@ class InputConfig(proto.Message):
             table. Allowed values: "1".
     """
 
-    gcs_source = proto.Field(proto.MESSAGE, number=1, oneof='source',
+    gcs_source = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='source',
         message='GcsSource',
     )
-
-    params = proto.MapField(proto.STRING, proto.STRING, number=2)
+    params = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=2,
+    )
 
 
 class BatchPredictInputConfig(proto.Message):
@@ -1080,7 +1084,10 @@ class BatchPredictInputConfig(proto.Message):
             for the input content.
     """
 
-    gcs_source = proto.Field(proto.MESSAGE, number=1, oneof='source',
+    gcs_source = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='source',
         message='GcsSource',
     )
 
@@ -1099,7 +1106,9 @@ class DocumentInputConfig(proto.Message):
             Supported extensions: .PDF.
     """
 
-    gcs_source = proto.Field(proto.MESSAGE, number=1,
+    gcs_source = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='GcsSource',
     )
 
@@ -1143,7 +1152,10 @@ class OutputConfig(proto.Message):
             directory.
     """
 
-    gcs_destination = proto.Field(proto.MESSAGE, number=1, oneof='destination',
+    gcs_destination = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='destination',
         message='GcsDestination',
     )
 
@@ -1444,14 +1456,16 @@ class BatchPredictOutputConfig(proto.Message):
             written to.
     """
 
-    gcs_destination = proto.Field(proto.MESSAGE, number=1, oneof='destination',
+    gcs_destination = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='destination',
         message='GcsDestination',
     )
 
 
 class ModelExportOutputConfig(proto.Message):
     r"""Output configuration for ModelExport Action.
-
     Attributes:
         gcs_destination (google.cloud.automl_v1.types.GcsDestination):
             Required. The Google Cloud Storage location where the model
@@ -1515,18 +1529,25 @@ class ModelExportOutputConfig(proto.Message):
                "none" (default), "nvidia".
     """
 
-    gcs_destination = proto.Field(proto.MESSAGE, number=1, oneof='destination',
+    gcs_destination = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='destination',
         message='GcsDestination',
     )
-
-    model_format = proto.Field(proto.STRING, number=4)
-
-    params = proto.MapField(proto.STRING, proto.STRING, number=2)
+    model_format = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    params = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=2,
+    )
 
 
 class GcsSource(proto.Message):
     r"""The Google Cloud Storage location for the input content.
-
     Attributes:
         input_uris (Sequence[str]):
             Required. Google Cloud Storage URIs to input files, up to
@@ -1535,7 +1556,10 @@ class GcsSource(proto.Message):
             -  Full object path, e.g. gs://bucket/directory/object.csv
     """
 
-    input_uris = proto.RepeatedField(proto.STRING, number=1)
+    input_uris = proto.RepeatedField(
+        proto.STRING,
+        number=1,
+    )
 
 
 class GcsDestination(proto.Message):
@@ -1552,7 +1576,10 @@ class GcsDestination(proto.Message):
                is created if it doesn't exist.
     """
 
-    output_uri_prefix = proto.Field(proto.STRING, number=1)
+    output_uri_prefix = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

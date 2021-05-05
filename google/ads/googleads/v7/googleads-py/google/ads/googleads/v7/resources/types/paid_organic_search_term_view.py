@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -42,8 +40,15 @@ class PaidOrganicSearchTermView(proto.Message):
             Output only. The search term.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    search_term = proto.Field(proto.STRING, number=3, optional=True)
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    search_term = proto.Field(
+        proto.STRING,
+        number=3,
+        optional=True,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

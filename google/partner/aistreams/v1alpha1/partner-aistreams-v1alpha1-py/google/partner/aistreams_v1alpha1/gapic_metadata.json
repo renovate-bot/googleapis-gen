@@ -1,0 +1,123 @@
+ {
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "python",
+  "libraryPackage": "google.partner.aistreams_v1alpha1",
+  "protoPackage": "google.partner.aistreams.v1alpha1",
+  "schema": "1.0",
+  "services": {
+    "AIStreams": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AIStreamsClient",
+          "rpcs": {
+            "CreateCluster": {
+              "methods": [
+                "create_cluster"
+              ]
+            },
+            "CreateStream": {
+              "methods": [
+                "create_stream"
+              ]
+            },
+            "DeleteCluster": {
+              "methods": [
+                "delete_cluster"
+              ]
+            },
+            "DeleteStream": {
+              "methods": [
+                "delete_stream"
+              ]
+            },
+            "GetCluster": {
+              "methods": [
+                "get_cluster"
+              ]
+            },
+            "GetStream": {
+              "methods": [
+                "get_stream"
+              ]
+            },
+            "ListClusters": {
+              "methods": [
+                "list_clusters"
+              ]
+            },
+            "ListStreams": {
+              "methods": [
+                "list_streams"
+              ]
+            },
+            "UpdateCluster": {
+              "methods": [
+                "update_cluster"
+              ]
+            },
+            "UpdateStream": {
+              "methods": [
+                "update_stream"
+              ]
+            }
+          }
+        },
+        "grpc-async": {
+          "libraryClient": "AIStreamsAsyncClient",
+          "rpcs": {
+            "CreateCluster": {
+              "methods": [
+                "create_cluster"
+              ]
+            },
+            "CreateStream": {
+              "methods": [
+                "create_stream"
+              ]
+            },
+            "DeleteCluster": {
+              "methods": [
+                "delete_cluster"
+              ]
+            },
+            "DeleteStream": {
+              "methods": [
+                "delete_stream"
+              ]
+            },
+            "GetCluster": {
+              "methods": [
+                "get_cluster"
+              ]
+            },
+            "GetStream": {
+              "methods": [
+                "get_stream"
+              ]
+            },
+            "ListClusters": {
+              "methods": [
+                "list_clusters"
+              ]
+            },
+            "ListStreams": {
+              "methods": [
+                "list_streams"
+              ]
+            },
+            "UpdateCluster": {
+              "methods": [
+                "update_cluster"
+              ]
+            },
+            "UpdateStream": {
+              "methods": [
+                "update_stream"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

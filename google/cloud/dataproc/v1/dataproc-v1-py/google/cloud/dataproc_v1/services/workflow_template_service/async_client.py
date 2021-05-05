@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -22,20 +20,19 @@ from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
 import google.api_core.client_options as ClientOptions # type: ignore
-from google.api_core import exceptions                 # type: ignore
+from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.dataproc_v1.services.workflow_template_service import pagers
 from google.cloud.dataproc_v1.types import workflow_templates
-from google.protobuf import duration_pb2 as duration  # type: ignore
-from google.protobuf import empty_pb2 as empty  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
+from google.protobuf import duration_pb2  # type: ignore
+from google.protobuf import empty_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 from .transports.base import WorkflowTemplateServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import WorkflowTemplateServiceGrpcAsyncIOTransport
 from .client import WorkflowTemplateServiceClient
@@ -57,19 +54,14 @@ class WorkflowTemplateServiceAsyncClient:
     parse_service_path = staticmethod(WorkflowTemplateServiceClient.parse_service_path)
     workflow_template_path = staticmethod(WorkflowTemplateServiceClient.workflow_template_path)
     parse_workflow_template_path = staticmethod(WorkflowTemplateServiceClient.parse_workflow_template_path)
-
     common_billing_account_path = staticmethod(WorkflowTemplateServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(WorkflowTemplateServiceClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(WorkflowTemplateServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(WorkflowTemplateServiceClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(WorkflowTemplateServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(WorkflowTemplateServiceClient.parse_common_organization_path)
-
     common_project_path = staticmethod(WorkflowTemplateServiceClient.common_project_path)
     parse_common_project_path = staticmethod(WorkflowTemplateServiceClient.parse_common_project_path)
-
     common_location_path = staticmethod(WorkflowTemplateServiceClient.common_location_path)
     parse_common_location_path = staticmethod(WorkflowTemplateServiceClient.parse_common_location_path)
 
@@ -117,7 +109,7 @@ class WorkflowTemplateServiceAsyncClient:
     get_transport_class = functools.partial(type(WorkflowTemplateServiceClient).get_transport_class, type(WorkflowTemplateServiceClient))
 
     def __init__(self, *,
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             transport: Union[str, WorkflowTemplateServiceTransport] = 'grpc_asyncio',
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -154,7 +146,6 @@ class WorkflowTemplateServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = WorkflowTemplateServiceClient(
             credentials=credentials,
             transport=transport,
@@ -202,7 +193,6 @@ class WorkflowTemplateServiceAsyncClient:
                 This corresponds to the ``template`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -227,7 +217,6 @@ class WorkflowTemplateServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if template is not None:
@@ -238,10 +227,7 @@ class WorkflowTemplateServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.create_workflow_template,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=600.0,
@@ -303,7 +289,6 @@ class WorkflowTemplateServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -328,7 +313,6 @@ class WorkflowTemplateServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -337,10 +321,7 @@ class WorkflowTemplateServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_workflow_template,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
@@ -434,7 +415,6 @@ class WorkflowTemplateServiceAsyncClient:
                 This corresponds to the ``parameters`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -472,7 +452,6 @@ class WorkflowTemplateServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -484,10 +463,7 @@ class WorkflowTemplateServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.instantiate_workflow_template,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=600.0,
@@ -516,7 +492,7 @@ class WorkflowTemplateServiceAsyncClient:
         response = operation_async.from_gapic(
             response,
             self._client._transport.operations_client,
-            empty.Empty,
+            empty_pb2.Empty,
             metadata_type=workflow_templates.WorkflowMetadata,
         )
 
@@ -589,7 +565,6 @@ class WorkflowTemplateServiceAsyncClient:
                 This corresponds to the ``template`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -627,7 +602,6 @@ class WorkflowTemplateServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if template is not None:
@@ -638,10 +612,7 @@ class WorkflowTemplateServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.instantiate_inline_workflow_template,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=600.0,
@@ -670,7 +641,7 @@ class WorkflowTemplateServiceAsyncClient:
         response = operation_async.from_gapic(
             response,
             self._client._transport.operations_client,
-            empty.Empty,
+            empty_pb2.Empty,
             metadata_type=workflow_templates.WorkflowMetadata,
         )
 
@@ -702,7 +673,6 @@ class WorkflowTemplateServiceAsyncClient:
                 This corresponds to the ``template`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -727,7 +697,6 @@ class WorkflowTemplateServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if template is not None:
             request.template = template
 
@@ -736,10 +705,7 @@ class WorkflowTemplateServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.update_workflow_template,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=600.0,
@@ -799,7 +765,6 @@ class WorkflowTemplateServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -827,7 +792,6 @@ class WorkflowTemplateServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -836,10 +800,7 @@ class WorkflowTemplateServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_workflow_templates,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
@@ -913,7 +874,6 @@ class WorkflowTemplateServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -932,7 +892,6 @@ class WorkflowTemplateServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -941,10 +900,7 @@ class WorkflowTemplateServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_workflow_template,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=600.0,
@@ -968,8 +924,6 @@ class WorkflowTemplateServiceAsyncClient:
             timeout=timeout,
             metadata=metadata,
         )
-
-
 
 
 

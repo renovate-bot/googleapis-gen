@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -29,7 +27,6 @@ __protobuf__ = proto.module(
 
 class DateRange(proto.Message):
     r"""A date range.
-
     Attributes:
         start_date (str):
             The start date, in yyyy-mm-dd format. This
@@ -39,8 +36,16 @@ class DateRange(proto.Message):
             is inclusive.
     """
 
-    start_date = proto.Field(proto.STRING, number=3, optional=True)
-    end_date = proto.Field(proto.STRING, number=4, optional=True)
+    start_date = proto.Field(
+        proto.STRING,
+        number=3,
+        optional=True,
+    )
+    end_date = proto.Field(
+        proto.STRING,
+        number=4,
+        optional=True,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

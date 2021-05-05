@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,11 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
-from google.type import date_pb2 as date  # type: ignore
+from google.type import date_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -69,13 +66,22 @@ class PublisherAccount(proto.Message):
             conversion.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    publisher_id = proto.Field(proto.STRING, number=2)
-
-    reporting_time_zone = proto.Field(proto.STRING, number=3)
-
-    currency_code = proto.Field(proto.STRING, number=4)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    publisher_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    reporting_time_zone = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    currency_code = proto.Field(
+        proto.STRING,
+        number=4,
+    )
 
 
 class NetworkReportSpec(proto.Message):
@@ -209,17 +215,20 @@ class NetworkReportSpec(proto.Message):
                 dimension.
         """
 
-        matches_any = proto.Field(proto.MESSAGE, number=2, oneof='operator',
+        matches_any = proto.Field(
+            proto.MESSAGE,
+            number=2,
+            oneof='operator',
             message='StringList',
         )
-
-        dimension = proto.Field(proto.ENUM, number=1,
+        dimension = proto.Field(
+            proto.ENUM,
+            number=1,
             enum='NetworkReportSpec.Dimension',
         )
 
     class SortCondition(proto.Message):
         r"""Sorting direction to be applied on a dimension or a metric.
-
         Attributes:
             dimension (google.ads.admob_v1.types.NetworkReportSpec.Dimension):
                 Sort by the specified dimension.
@@ -229,45 +238,62 @@ class NetworkReportSpec(proto.Message):
                 Sorting order of the dimension or metric.
         """
 
-        dimension = proto.Field(proto.ENUM, number=1, oneof='sort_on',
+        dimension = proto.Field(
+            proto.ENUM,
+            number=1,
+            oneof='sort_on',
             enum='NetworkReportSpec.Dimension',
         )
-
-        metric = proto.Field(proto.ENUM, number=2, oneof='sort_on',
+        metric = proto.Field(
+            proto.ENUM,
+            number=2,
+            oneof='sort_on',
             enum='NetworkReportSpec.Metric',
         )
-
-        order = proto.Field(proto.ENUM, number=3,
+        order = proto.Field(
+            proto.ENUM,
+            number=3,
             enum='SortOrder',
         )
 
-    date_range = proto.Field(proto.MESSAGE, number=1,
+    date_range = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='DateRange',
     )
-
-    dimensions = proto.RepeatedField(proto.ENUM, number=2,
+    dimensions = proto.RepeatedField(
+        proto.ENUM,
+        number=2,
         enum=Dimension,
     )
-
-    metrics = proto.RepeatedField(proto.ENUM, number=3,
+    metrics = proto.RepeatedField(
+        proto.ENUM,
+        number=3,
         enum=Metric,
     )
-
-    dimension_filters = proto.RepeatedField(proto.MESSAGE, number=4,
+    dimension_filters = proto.RepeatedField(
+        proto.MESSAGE,
+        number=4,
         message=DimensionFilter,
     )
-
-    sort_conditions = proto.RepeatedField(proto.MESSAGE, number=5,
+    sort_conditions = proto.RepeatedField(
+        proto.MESSAGE,
+        number=5,
         message=SortCondition,
     )
-
-    localization_settings = proto.Field(proto.MESSAGE, number=6,
+    localization_settings = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message='LocalizationSettings',
     )
-
-    max_report_rows = proto.Field(proto.INT32, number=7)
-
-    time_zone = proto.Field(proto.STRING, number=8)
+    max_report_rows = proto.Field(
+        proto.INT32,
+        number=7,
+    )
+    time_zone = proto.Field(
+        proto.STRING,
+        number=8,
+    )
 
 
 class MediationReportSpec(proto.Message):
@@ -401,17 +427,20 @@ class MediationReportSpec(proto.Message):
                 dimension.
         """
 
-        matches_any = proto.Field(proto.MESSAGE, number=2, oneof='operator',
+        matches_any = proto.Field(
+            proto.MESSAGE,
+            number=2,
+            oneof='operator',
             message='StringList',
         )
-
-        dimension = proto.Field(proto.ENUM, number=1,
+        dimension = proto.Field(
+            proto.ENUM,
+            number=1,
             enum='MediationReportSpec.Dimension',
         )
 
     class SortCondition(proto.Message):
         r"""Sorting direction to be applied on a dimension or a metric.
-
         Attributes:
             dimension (google.ads.admob_v1.types.MediationReportSpec.Dimension):
                 Sort by the specified dimension.
@@ -421,50 +450,66 @@ class MediationReportSpec(proto.Message):
                 Sorting order of the dimension or metric.
         """
 
-        dimension = proto.Field(proto.ENUM, number=1, oneof='sort_on',
+        dimension = proto.Field(
+            proto.ENUM,
+            number=1,
+            oneof='sort_on',
             enum='MediationReportSpec.Dimension',
         )
-
-        metric = proto.Field(proto.ENUM, number=2, oneof='sort_on',
+        metric = proto.Field(
+            proto.ENUM,
+            number=2,
+            oneof='sort_on',
             enum='MediationReportSpec.Metric',
         )
-
-        order = proto.Field(proto.ENUM, number=3,
+        order = proto.Field(
+            proto.ENUM,
+            number=3,
             enum='SortOrder',
         )
 
-    date_range = proto.Field(proto.MESSAGE, number=1,
+    date_range = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='DateRange',
     )
-
-    dimensions = proto.RepeatedField(proto.ENUM, number=2,
+    dimensions = proto.RepeatedField(
+        proto.ENUM,
+        number=2,
         enum=Dimension,
     )
-
-    metrics = proto.RepeatedField(proto.ENUM, number=3,
+    metrics = proto.RepeatedField(
+        proto.ENUM,
+        number=3,
         enum=Metric,
     )
-
-    dimension_filters = proto.RepeatedField(proto.MESSAGE, number=4,
+    dimension_filters = proto.RepeatedField(
+        proto.MESSAGE,
+        number=4,
         message=DimensionFilter,
     )
-
-    sort_conditions = proto.RepeatedField(proto.MESSAGE, number=5,
+    sort_conditions = proto.RepeatedField(
+        proto.MESSAGE,
+        number=5,
         message=SortCondition,
     )
-
-    localization_settings = proto.Field(proto.MESSAGE, number=6,
+    localization_settings = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message='LocalizationSettings',
     )
-
-    max_report_rows = proto.Field(proto.INT32, number=7)
-
-    time_zone = proto.Field(proto.STRING, number=8)
+    max_report_rows = proto.Field(
+        proto.INT32,
+        number=7,
+    )
+    time_zone = proto.Field(
+        proto.STRING,
+        number=8,
+    )
 
 
 class ReportRow(proto.Message):
     r"""A row of the returning report.
-
     Attributes:
         dimension_values (Sequence[google.ads.admob_v1.types.ReportRow.DimensionValuesEntry]):
             Map of dimension values in a row, with keys
@@ -475,9 +520,9 @@ class ReportRow(proto.Message):
             requested has no value returned, the map will
             not include it.
     """
+
     class DimensionValue(proto.Message):
         r"""Representation of a dimension value.
-
         Attributes:
             value (str):
                 Dimension value in the format specified in
@@ -488,13 +533,17 @@ class ReportRow(proto.Message):
                 be derived from the value.
         """
 
-        value = proto.Field(proto.STRING, number=1)
-
-        display_label = proto.Field(proto.STRING, number=2)
+        value = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        display_label = proto.Field(
+            proto.STRING,
+            number=2,
+        )
 
     class MetricValue(proto.Message):
         r"""Representation of a metric value.
-
         Attributes:
             integer_value (int):
                 Metric integer value.
@@ -509,24 +558,38 @@ class ReportRow(proto.Message):
                 micros.
         """
 
-        integer_value = proto.Field(proto.INT64, number=1, oneof='value')
+        integer_value = proto.Field(
+            proto.INT64,
+            number=1,
+            oneof='value',
+        )
+        double_value = proto.Field(
+            proto.DOUBLE,
+            number=2,
+            oneof='value',
+        )
+        micros_value = proto.Field(
+            proto.INT64,
+            number=3,
+            oneof='value',
+        )
 
-        double_value = proto.Field(proto.DOUBLE, number=2, oneof='value')
-
-        micros_value = proto.Field(proto.INT64, number=3, oneof='value')
-
-    dimension_values = proto.MapField(proto.STRING, proto.MESSAGE, number=1,
+    dimension_values = proto.MapField(
+        proto.STRING,
+        proto.MESSAGE,
+        number=1,
         message=DimensionValue,
     )
-
-    metric_values = proto.MapField(proto.STRING, proto.MESSAGE, number=2,
+    metric_values = proto.MapField(
+        proto.STRING,
+        proto.MESSAGE,
+        number=2,
         message=MetricValue,
     )
 
 
 class ReportWarning(proto.Message):
     r"""Warnings associated with generation of the report.
-
     Attributes:
         type_ (google.ads.admob_v1.types.ReportWarning.Type):
             Type of the warning.
@@ -542,11 +605,15 @@ class ReportWarning(proto.Message):
         OTHER = 3
         REPORT_CURRENCY_NOT_ACCOUNT_CURRENCY = 4
 
-    type_ = proto.Field(proto.ENUM, number=1,
+    type_ = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=Type,
     )
-
-    description = proto.Field(proto.STRING, number=2)
+    description = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class ReportHeader(proto.Message):
@@ -567,15 +634,20 @@ class ReportHeader(proto.Message):
             "America/Los_Angeles".
     """
 
-    date_range = proto.Field(proto.MESSAGE, number=1,
+    date_range = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='DateRange',
     )
-
-    localization_settings = proto.Field(proto.MESSAGE, number=2,
+    localization_settings = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='LocalizationSettings',
     )
-
-    reporting_time_zone = proto.Field(proto.STRING, number=3)
+    reporting_time_zone = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class ReportFooter(proto.Message):
@@ -595,11 +667,15 @@ class ReportFooter(proto.Message):
             assumption when processing the response.
     """
 
-    warnings = proto.RepeatedField(proto.MESSAGE, number=1,
+    warnings = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='ReportWarning',
     )
-
-    matching_row_count = proto.Field(proto.INT64, number=2)
+    matching_row_count = proto.Field(
+        proto.INT64,
+        number=2,
+    )
 
 
 class DateRange(proto.Message):
@@ -615,12 +691,15 @@ class DateRange(proto.Message):
             be greater than or equal to the start date.
     """
 
-    start_date = proto.Field(proto.MESSAGE, number=1,
-        message=date.Date,
+    start_date = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=date_pb2.Date,
     )
-
-    end_date = proto.Field(proto.MESSAGE, number=2,
-        message=date.Date,
+    end_date = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=date_pb2.Date,
     )
 
 
@@ -642,20 +721,27 @@ class LocalizationSettings(proto.Message):
             to 'en-US' if unspecified.
     """
 
-    currency_code = proto.Field(proto.STRING, number=1)
-
-    language_code = proto.Field(proto.STRING, number=2)
+    currency_code = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    language_code = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class StringList(proto.Message):
     r"""List of string values.
-
     Attributes:
         values (Sequence[str]):
             The string values.
     """
 
-    values = proto.RepeatedField(proto.STRING, number=1)
+    values = proto.RepeatedField(
+        proto.STRING,
+        number=1,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

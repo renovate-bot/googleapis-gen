@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -23,10 +21,10 @@ from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
-from google.api_core import exceptions                            # type: ignore
+from google.api_core import exceptions as core_exceptions         # type: ignore
 from google.api_core import gapic_v1                              # type: ignore
 from google.api_core import retry as retries                      # type: ignore
-from google.auth import credentials                               # type: ignore
+from google.auth import credentials as ga_credentials             # type: ignore
 from google.auth.transport import mtls                            # type: ignore
 from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
@@ -38,10 +36,9 @@ from google.cloud.dialogflow_v2.services.intents import pagers
 from google.cloud.dialogflow_v2.types import context
 from google.cloud.dialogflow_v2.types import intent
 from google.cloud.dialogflow_v2.types import intent as gcd_intent
-from google.protobuf import empty_pb2 as empty  # type: ignore
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import struct_pb2 as struct  # type: ignore
-
+from google.protobuf import empty_pb2  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import struct_pb2  # type: ignore
 from .transports.base import IntentsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import IntentsGrpcTransport
 from .transports.grpc_asyncio import IntentsGrpcAsyncIOTransport
@@ -240,7 +237,7 @@ class IntentsClient(metaclass=IntentsClientMeta):
         return m.groupdict() if m else {}
 
     def __init__(self, *,
-            credentials: Optional[credentials.Credentials] = None,
+            credentials: Optional[ga_credentials.Credentials] = None,
             transport: Union[str, IntentsTransport, None] = None,
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -375,7 +372,6 @@ class IntentsClient(metaclass=IntentsClientMeta):
                 This corresponds to the ``language_code`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -405,10 +401,8 @@ class IntentsClient(metaclass=IntentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, intent.ListIntentsRequest):
             request = intent.ListIntentsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if language_code is not None:
@@ -478,7 +472,6 @@ class IntentsClient(metaclass=IntentsClientMeta):
                 This corresponds to the ``language_code`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -514,10 +507,8 @@ class IntentsClient(metaclass=IntentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, intent.GetIntentRequest):
             request = intent.GetIntentRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
             if language_code is not None:
@@ -584,7 +575,6 @@ class IntentsClient(metaclass=IntentsClientMeta):
                 This corresponds to the ``language_code`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -620,10 +610,8 @@ class IntentsClient(metaclass=IntentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_intent.CreateIntentRequest):
             request = gcd_intent.CreateIntentRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if intent is not None:
@@ -659,7 +647,7 @@ class IntentsClient(metaclass=IntentsClientMeta):
             *,
             intent: gcd_intent.Intent = None,
             language_code: str = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -692,7 +680,6 @@ class IntentsClient(metaclass=IntentsClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -728,10 +715,8 @@ class IntentsClient(metaclass=IntentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_intent.UpdateIntentRequest):
             request = gcd_intent.UpdateIntentRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if intent is not None:
                 request.intent = intent
             if language_code is not None:
@@ -786,7 +771,6 @@ class IntentsClient(metaclass=IntentsClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -807,10 +791,8 @@ class IntentsClient(metaclass=IntentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, intent.DeleteIntentRequest):
             request = intent.DeleteIntentRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -877,7 +859,6 @@ class IntentsClient(metaclass=IntentsClientMeta):
                 This corresponds to the ``intent_batch_inline`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -908,10 +889,8 @@ class IntentsClient(metaclass=IntentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, intent.BatchUpdateIntentsRequest):
             request = intent.BatchUpdateIntentsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if intent_batch_uri is not None:
@@ -944,7 +923,7 @@ class IntentsClient(metaclass=IntentsClientMeta):
             response,
             self._transport.operations_client,
             intent.BatchUpdateIntentsResponse,
-            metadata_type=struct.Struct,
+            metadata_type=struct_pb2.Struct,
         )
 
         # Done; return the response.
@@ -982,7 +961,6 @@ class IntentsClient(metaclass=IntentsClientMeta):
                 This corresponds to the ``intents`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1022,10 +1000,8 @@ class IntentsClient(metaclass=IntentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, intent.BatchDeleteIntentsRequest):
             request = intent.BatchDeleteIntentsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if intents is not None:
@@ -1055,14 +1031,12 @@ class IntentsClient(metaclass=IntentsClientMeta):
         response = operation.from_gapic(
             response,
             self._transport.operations_client,
-            empty.Empty,
-            metadata_type=struct.Struct,
+            empty_pb2.Empty,
+            metadata_type=struct_pb2.Struct,
         )
 
         # Done; return the response.
         return response
-
-
 
 
 

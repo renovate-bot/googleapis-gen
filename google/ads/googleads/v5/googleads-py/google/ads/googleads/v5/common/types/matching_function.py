@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,13 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v5.enums.types import matching_function_context_type
 from google.ads.googleads.v5.enums.types import matching_function_operator
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -70,23 +67,30 @@ class MatchingFunction(proto.Message):
             equation.
     """
 
-    function_string = proto.Field(proto.MESSAGE, number=1,
-        message=wrappers.StringValue,
+    function_string = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=wrappers_pb2.StringValue,
     )
-    operator = proto.Field(proto.ENUM, number=4,
+    operator = proto.Field(
+        proto.ENUM,
+        number=4,
         enum=matching_function_operator.MatchingFunctionOperatorEnum.MatchingFunctionOperator,
     )
-    left_operands = proto.RepeatedField(proto.MESSAGE, number=2,
+    left_operands = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='Operand',
     )
-    right_operands = proto.RepeatedField(proto.MESSAGE, number=3,
+    right_operands = proto.RepeatedField(
+        proto.MESSAGE,
+        number=3,
         message='Operand',
     )
 
 
 class Operand(proto.Message):
     r"""An operand in a matching function.
-
     Attributes:
         constant_operand (google.ads.googleads.v5.common.types.Operand.ConstantOperand):
             A constant operand in a matching function.
@@ -100,9 +104,9 @@ class Operand(proto.Message):
             An operand in a function referring to a value
             in the request context.
     """
+
     class ConstantOperand(proto.Message):
         r"""A constant operand in a matching function.
-
         Attributes:
             string_value (google.protobuf.wrappers_pb2.StringValue):
                 String value of the operand if it is a string
@@ -118,17 +122,29 @@ class Operand(proto.Message):
                 type.
         """
 
-        string_value = proto.Field(proto.MESSAGE, number=1, oneof='constant_operand_value',
-            message=wrappers.StringValue,
+        string_value = proto.Field(
+            proto.MESSAGE,
+            number=1,
+            oneof='constant_operand_value',
+            message=wrappers_pb2.StringValue,
         )
-        long_value = proto.Field(proto.MESSAGE, number=2, oneof='constant_operand_value',
-            message=wrappers.Int64Value,
+        long_value = proto.Field(
+            proto.MESSAGE,
+            number=2,
+            oneof='constant_operand_value',
+            message=wrappers_pb2.Int64Value,
         )
-        boolean_value = proto.Field(proto.MESSAGE, number=3, oneof='constant_operand_value',
-            message=wrappers.BoolValue,
+        boolean_value = proto.Field(
+            proto.MESSAGE,
+            number=3,
+            oneof='constant_operand_value',
+            message=wrappers_pb2.BoolValue,
         )
-        double_value = proto.Field(proto.MESSAGE, number=4, oneof='constant_operand_value',
-            message=wrappers.DoubleValue,
+        double_value = proto.Field(
+            proto.MESSAGE,
+            number=4,
+            oneof='constant_operand_value',
+            message=wrappers_pb2.DoubleValue,
         )
 
     class FeedAttributeOperand(proto.Message):
@@ -143,11 +159,15 @@ class Operand(proto.Message):
                 Required.
         """
 
-        feed_id = proto.Field(proto.MESSAGE, number=1,
-            message=wrappers.Int64Value,
+        feed_id = proto.Field(
+            proto.MESSAGE,
+            number=1,
+            message=wrappers_pb2.Int64Value,
         )
-        feed_attribute_id = proto.Field(proto.MESSAGE, number=2,
-            message=wrappers.Int64Value,
+        feed_attribute_id = proto.Field(
+            proto.MESSAGE,
+            number=2,
+            message=wrappers_pb2.Int64Value,
         )
 
     class FunctionOperand(proto.Message):
@@ -159,7 +179,9 @@ class Operand(proto.Message):
                 The matching function held in this operand.
         """
 
-        matching_function = proto.Field(proto.MESSAGE, number=1,
+        matching_function = proto.Field(
+            proto.MESSAGE,
+            number=1,
             message='MatchingFunction',
         )
 
@@ -173,20 +195,34 @@ class Operand(proto.Message):
                 context.
         """
 
-        context_type = proto.Field(proto.ENUM, number=1,
+        context_type = proto.Field(
+            proto.ENUM,
+            number=1,
             enum=matching_function_context_type.MatchingFunctionContextTypeEnum.MatchingFunctionContextType,
         )
 
-    constant_operand = proto.Field(proto.MESSAGE, number=1, oneof='function_argument_operand',
+    constant_operand = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='function_argument_operand',
         message=ConstantOperand,
     )
-    feed_attribute_operand = proto.Field(proto.MESSAGE, number=2, oneof='function_argument_operand',
+    feed_attribute_operand = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='function_argument_operand',
         message=FeedAttributeOperand,
     )
-    function_operand = proto.Field(proto.MESSAGE, number=3, oneof='function_argument_operand',
+    function_operand = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        oneof='function_argument_operand',
         message=FunctionOperand,
     )
-    request_context_operand = proto.Field(proto.MESSAGE, number=4, oneof='function_argument_operand',
+    request_context_operand = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        oneof='function_argument_operand',
         message=RequestContextOperand,
     )
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -102,6 +100,7 @@ class Worker(proto.Message):
             setting. Keys may be repeated during reporting but not in a
             lease.
     """
+
     class Property(proto.Message):
         r"""A global property; see the ``properties`` field for more
         information.
@@ -125,9 +124,14 @@ class Worker(proto.Message):
                 The property's value.
         """
 
-        key = proto.Field(proto.STRING, number=1)
-
-        value = proto.Field(proto.STRING, number=2)
+        key = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        value = proto.Field(
+            proto.STRING,
+            number=2,
+        )
 
     class Config(proto.Message):
         r"""A configuration request or report; see the ``configs`` field for
@@ -151,19 +155,28 @@ class Worker(proto.Message):
                 The configuration's value.
         """
 
-        key = proto.Field(proto.STRING, number=1)
+        key = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        value = proto.Field(
+            proto.STRING,
+            number=2,
+        )
 
-        value = proto.Field(proto.STRING, number=2)
-
-    devices = proto.RepeatedField(proto.MESSAGE, number=1,
+    devices = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Device',
     )
-
-    properties = proto.RepeatedField(proto.MESSAGE, number=2,
+    properties = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message=Property,
     )
-
-    configs = proto.RepeatedField(proto.MESSAGE, number=3,
+    configs = proto.RepeatedField(
+        proto.MESSAGE,
+        number=3,
         message=Config,
     )
 
@@ -200,9 +213,9 @@ class Device(proto.Message):
 
                * Request context: the device *must* support *all* of the listed values.
     """
+
     class Property(proto.Message):
         r"""A device property; see ``properties`` for more information.
-
         Attributes:
             key (str):
                 For general information on keys, see the documentation to
@@ -223,13 +236,22 @@ class Device(proto.Message):
                 The property's value.
         """
 
-        key = proto.Field(proto.STRING, number=1)
+        key = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        value = proto.Field(
+            proto.STRING,
+            number=2,
+        )
 
-        value = proto.Field(proto.STRING, number=2)
-
-    handle = proto.Field(proto.STRING, number=1)
-
-    properties = proto.RepeatedField(proto.MESSAGE, number=2,
+    handle = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    properties = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message=Property,
     )
 

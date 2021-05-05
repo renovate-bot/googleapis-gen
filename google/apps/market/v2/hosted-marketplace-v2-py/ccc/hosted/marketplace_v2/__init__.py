@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,8 +15,12 @@
 #
 
 from .services.customer_license_service import CustomerLicenseServiceClient
+from .services.customer_license_service import CustomerLicenseServiceAsyncClient
 from .services.license_notification_service import LicenseNotificationServiceClient
+from .services.license_notification_service import LicenseNotificationServiceAsyncClient
 from .services.user_license_service import UserLicenseServiceClient
+from .services.user_license_service import UserLicenseServiceAsyncClient
+
 from .types.resources import CustomerLicense
 from .types.resources import LicenseNotification
 from .types.resources import LicenseNotificationList
@@ -26,16 +29,15 @@ from .types.services import CustomerLicenseGetRequest
 from .types.services import LicenseNotificationListRequest
 from .types.services import UserLicenseGetRequest
 
-
 __all__ = (
-    'CustomerLicense',
-    'CustomerLicenseGetRequest',
-    'LicenseNotification',
-    'LicenseNotificationList',
-    'LicenseNotificationListRequest',
-    'LicenseNotificationServiceClient',
-    'UserLicense',
-    'UserLicenseGetRequest',
-    'UserLicenseServiceClient',
+'CustomerLicense',
+'CustomerLicenseGetRequest',
 'CustomerLicenseServiceClient',
+'LicenseNotification',
+'LicenseNotificationList',
+'LicenseNotificationListRequest',
+'LicenseNotificationServiceClient',
+'UserLicense',
+'UserLicenseGetRequest',
+'UserLicenseServiceClient',
 )

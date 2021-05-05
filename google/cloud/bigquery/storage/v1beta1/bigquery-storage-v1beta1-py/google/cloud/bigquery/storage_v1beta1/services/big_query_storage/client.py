@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -23,10 +21,10 @@ from typing import Callable, Dict, Optional, Iterable, Sequence, Tuple, Type, Un
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
-from google.api_core import exceptions                            # type: ignore
+from google.api_core import exceptions as core_exceptions         # type: ignore
 from google.api_core import gapic_v1                              # type: ignore
 from google.api_core import retry as retries                      # type: ignore
-from google.auth import credentials                               # type: ignore
+from google.auth import credentials as ga_credentials             # type: ignore
 from google.auth.transport import mtls                            # type: ignore
 from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
@@ -36,8 +34,7 @@ from google.cloud.bigquery.storage_v1beta1.types import arrow
 from google.cloud.bigquery.storage_v1beta1.types import avro
 from google.cloud.bigquery.storage_v1beta1.types import storage
 from google.cloud.bigquery.storage_v1beta1.types import table_reference as gcbs_table_reference
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
+from google.protobuf import timestamp_pb2  # type: ignore
 from .transports.base import BigQueryStorageTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import BigQueryStorageGrpcTransport
 from .transports.grpc_asyncio import BigQueryStorageGrpcAsyncIOTransport
@@ -239,7 +236,7 @@ class BigQueryStorageClient(metaclass=BigQueryStorageClientMeta):
         return m.groupdict() if m else {}
 
     def __init__(self, *,
-            credentials: Optional[credentials.Credentials] = None,
+            credentials: Optional[ga_credentials.Credentials] = None,
             transport: Union[str, BigQueryStorageTransport, None] = None,
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -402,7 +399,6 @@ class BigQueryStorageClient(metaclass=BigQueryStorageClientMeta):
                 This corresponds to the ``requested_streams`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -427,10 +423,8 @@ class BigQueryStorageClient(metaclass=BigQueryStorageClientMeta):
         # there are no flattened fields.
         if not isinstance(request, storage.CreateReadSessionRequest):
             request = storage.CreateReadSessionRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if table_reference is not None:
                 request.table_reference = table_reference
             if parent is not None:
@@ -496,7 +490,6 @@ class BigQueryStorageClient(metaclass=BigQueryStorageClientMeta):
                 This corresponds to the ``read_position`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -523,10 +516,8 @@ class BigQueryStorageClient(metaclass=BigQueryStorageClientMeta):
         # there are no flattened fields.
         if not isinstance(request, storage.ReadRowsRequest):
             request = storage.ReadRowsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if read_position is not None:
                 request.read_position = read_position
 
@@ -590,7 +581,6 @@ class BigQueryStorageClient(metaclass=BigQueryStorageClientMeta):
                 This corresponds to the ``requested_streams`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -617,10 +607,8 @@ class BigQueryStorageClient(metaclass=BigQueryStorageClientMeta):
         # there are no flattened fields.
         if not isinstance(request, storage.BatchCreateReadSessionStreamsRequest):
             request = storage.BatchCreateReadSessionStreamsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if session is not None:
                 request.session = session
             if requested_streams is not None:
@@ -684,7 +672,6 @@ class BigQueryStorageClient(metaclass=BigQueryStorageClientMeta):
                 This corresponds to the ``stream`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -705,10 +692,8 @@ class BigQueryStorageClient(metaclass=BigQueryStorageClientMeta):
         # there are no flattened fields.
         if not isinstance(request, storage.FinalizeStreamRequest):
             request = storage.FinalizeStreamRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if stream is not None:
                 request.stream = stream
 
@@ -764,7 +749,6 @@ class BigQueryStorageClient(metaclass=BigQueryStorageClientMeta):
                 This corresponds to the ``original_stream`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -789,10 +773,8 @@ class BigQueryStorageClient(metaclass=BigQueryStorageClientMeta):
         # there are no flattened fields.
         if not isinstance(request, storage.SplitReadStreamRequest):
             request = storage.SplitReadStreamRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if original_stream is not None:
                 request.original_stream = original_stream
 
@@ -818,8 +800,6 @@ class BigQueryStorageClient(metaclass=BigQueryStorageClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

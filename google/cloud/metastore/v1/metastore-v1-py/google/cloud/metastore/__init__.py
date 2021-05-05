@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.cloud.metastore_v1.services.dataproc_metastore.async_client import DataprocMetastoreAsyncClient
 from google.cloud.metastore_v1.services.dataproc_metastore.client import DataprocMetastoreClient
+from google.cloud.metastore_v1.services.dataproc_metastore.async_client import DataprocMetastoreAsyncClient
+
 from google.cloud.metastore_v1.types.metastore import CreateMetadataImportRequest
 from google.cloud.metastore_v1.types.metastore import CreateServiceRequest
 from google.cloud.metastore_v1.types.metastore import DatabaseDumpSpec
@@ -41,12 +41,11 @@ from google.cloud.metastore_v1.types.metastore import Service
 from google.cloud.metastore_v1.types.metastore import UpdateMetadataImportRequest
 from google.cloud.metastore_v1.types.metastore import UpdateServiceRequest
 
-__all__ = (
+__all__ = ('DataprocMetastoreClient',
+    'DataprocMetastoreAsyncClient',
     'CreateMetadataImportRequest',
     'CreateServiceRequest',
     'DatabaseDumpSpec',
-    'DataprocMetastoreAsyncClient',
-    'DataprocMetastoreClient',
     'DeleteServiceRequest',
     'ExportMetadataRequest',
     'GetMetadataImportRequest',

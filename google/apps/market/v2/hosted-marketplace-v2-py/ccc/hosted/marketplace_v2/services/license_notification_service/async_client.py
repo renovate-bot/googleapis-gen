@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -22,15 +20,14 @@ from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
 import google.api_core.client_options as ClientOptions # type: ignore
-from google.api_core import exceptions                 # type: ignore
+from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
 from ccc.hosted.marketplace_v2.types import resources
 from ccc.hosted.marketplace_v2.types import services
-
 from .transports.base import LicenseNotificationServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import LicenseNotificationServiceGrpcAsyncIOTransport
 from .client import LicenseNotificationServiceClient
@@ -46,16 +43,12 @@ class LicenseNotificationServiceAsyncClient:
 
     common_billing_account_path = staticmethod(LicenseNotificationServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(LicenseNotificationServiceClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(LicenseNotificationServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(LicenseNotificationServiceClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(LicenseNotificationServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(LicenseNotificationServiceClient.parse_common_organization_path)
-
     common_project_path = staticmethod(LicenseNotificationServiceClient.common_project_path)
     parse_common_project_path = staticmethod(LicenseNotificationServiceClient.parse_common_project_path)
-
     common_location_path = staticmethod(LicenseNotificationServiceClient.common_location_path)
     parse_common_location_path = staticmethod(LicenseNotificationServiceClient.parse_common_location_path)
 
@@ -103,7 +96,7 @@ class LicenseNotificationServiceAsyncClient:
     get_transport_class = functools.partial(type(LicenseNotificationServiceClient).get_transport_class, type(LicenseNotificationServiceClient))
 
     def __init__(self, *,
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             transport: Union[str, LicenseNotificationServiceTransport] = 'grpc_asyncio',
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -140,7 +133,6 @@ class LicenseNotificationServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = LicenseNotificationServiceClient(
             credentials=credentials,
             transport=transport,
@@ -162,7 +154,6 @@ class LicenseNotificationServiceAsyncClient:
         Args:
             request (:class:`ccc.hosted.marketplace_v2.types.LicenseNotificationListRequest`):
                 The request object.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -174,7 +165,6 @@ class LicenseNotificationServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = services.LicenseNotificationListRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -182,10 +172,7 @@ class LicenseNotificationServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                     exceptions.Unknown,
                 ),
@@ -205,8 +192,6 @@ class LicenseNotificationServiceAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

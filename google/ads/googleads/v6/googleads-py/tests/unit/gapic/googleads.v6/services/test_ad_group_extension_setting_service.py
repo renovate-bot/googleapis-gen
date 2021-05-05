@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 from unittest import mock
 
@@ -23,7 +21,6 @@ import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
-from google import auth
 from google.ads.googleads.v6.enums.types import extension_setting_device
 from google.ads.googleads.v6.enums.types import extension_type
 from google.ads.googleads.v6.enums.types import response_content_type
@@ -34,11 +31,12 @@ from google.ads.googleads.v6.services.types import ad_group_extension_setting_se
 from google.api_core import client_options
 from google.api_core import gapic_v1
 from google.api_core import grpc_helpers
-from google.auth import credentials
+from google.auth import credentials as ga_credentials
 from google.auth.exceptions import MutualTLSChannelError
 from google.oauth2 import service_account
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.rpc import status_pb2 as status  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.rpc import status_pb2  # type: ignore
+import google.auth
 
 
 def client_cert_source_callback():
@@ -68,7 +66,7 @@ def test__get_default_mtls_endpoint():
 
 
 def test_ad_group_extension_setting_service_client_from_service_account_info():
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
@@ -79,7 +77,7 @@ def test_ad_group_extension_setting_service_client_from_service_account_info():
 
 
 def test_ad_group_extension_setting_service_client_from_service_account_file():
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_file') as factory:
         factory.return_value = creds
         client = AdGroupExtensionSettingServiceClient.from_service_account_file("dummy/file/path.json")
@@ -104,7 +102,7 @@ def test_ad_group_extension_setting_service_client_client_options():
     # Check that if channel is provided we won't create a new one.
     with mock.patch('google.ads.googleads.v6.services.services.ad_group_extension_setting_service.AdGroupExtensionSettingServiceClient.get_transport_class') as gtc:
         transport = transports.AdGroupExtensionSettingServiceGrpcTransport(
-            credentials=credentials.AnonymousCredentials()
+            credentials=ga_credentials.AnonymousCredentials()
         )
         client = AdGroupExtensionSettingServiceClient(transport=transport)
         gtc.assert_not_called()
@@ -254,7 +252,7 @@ def test_ad_group_extension_setting_service_client_client_options_from_dict():
 
 def test_get_ad_group_extension_setting(transport: str = 'grpc', request_type=ad_group_extension_setting_service.GetAdGroupExtensionSettingRequest):
     client = AdGroupExtensionSettingServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -269,37 +267,24 @@ def test_get_ad_group_extension_setting(transport: str = 'grpc', request_type=ad
         # Designate an appropriate return value for the call.
         call.return_value = ad_group_extension_setting.AdGroupExtensionSetting(
             resource_name='resource_name_value',
-
             extension_type=extension_type.ExtensionTypeEnum.ExtensionType.UNKNOWN,
-
             ad_group='ad_group_value',
-
             extension_feed_items=['extension_feed_items_value'],
-
             device=extension_setting_device.ExtensionSettingDeviceEnum.ExtensionSettingDevice.UNKNOWN,
-
         )
-
         response = client.get_ad_group_extension_setting(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == ad_group_extension_setting_service.GetAdGroupExtensionSettingRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, ad_group_extension_setting.AdGroupExtensionSetting)
-
     assert response.resource_name == 'resource_name_value'
-
     assert response.extension_type == extension_type.ExtensionTypeEnum.ExtensionType.UNKNOWN
-
     assert response.ad_group == 'ad_group_value'
-
     assert response.extension_feed_items == ['extension_feed_items_value']
-
     assert response.device == extension_setting_device.ExtensionSettingDeviceEnum.ExtensionSettingDevice.UNKNOWN
 
 
@@ -309,12 +294,13 @@ def test_get_ad_group_extension_setting_from_dict():
 
 def test_get_ad_group_extension_setting_field_headers():
     client = AdGroupExtensionSettingServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = ad_group_extension_setting_service.GetAdGroupExtensionSettingRequest()
+
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -322,7 +308,6 @@ def test_get_ad_group_extension_setting_field_headers():
             type(client.transport.get_ad_group_extension_setting),
             '__call__') as call:
         call.return_value = ad_group_extension_setting.AdGroupExtensionSetting()
-
         client.get_ad_group_extension_setting(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -340,7 +325,7 @@ def test_get_ad_group_extension_setting_field_headers():
 
 def test_get_ad_group_extension_setting_flattened():
     client = AdGroupExtensionSettingServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -349,7 +334,6 @@ def test_get_ad_group_extension_setting_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = ad_group_extension_setting.AdGroupExtensionSetting()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_ad_group_extension_setting(
@@ -360,13 +344,12 @@ def test_get_ad_group_extension_setting_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource_name == 'resource_name_value'
 
 
 def test_get_ad_group_extension_setting_flattened_error():
     client = AdGroupExtensionSettingServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -380,7 +363,7 @@ def test_get_ad_group_extension_setting_flattened_error():
 
 def test_mutate_ad_group_extension_settings(transport: str = 'grpc', request_type=ad_group_extension_setting_service.MutateAdGroupExtensionSettingsRequest):
     client = AdGroupExtensionSettingServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -395,17 +378,14 @@ def test_mutate_ad_group_extension_settings(transport: str = 'grpc', request_typ
         # Designate an appropriate return value for the call.
         call.return_value = ad_group_extension_setting_service.MutateAdGroupExtensionSettingsResponse(
         )
-
         response = client.mutate_ad_group_extension_settings(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == ad_group_extension_setting_service.MutateAdGroupExtensionSettingsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, ad_group_extension_setting_service.MutateAdGroupExtensionSettingsResponse)
 
 
@@ -415,12 +395,13 @@ def test_mutate_ad_group_extension_settings_from_dict():
 
 def test_mutate_ad_group_extension_settings_field_headers():
     client = AdGroupExtensionSettingServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = ad_group_extension_setting_service.MutateAdGroupExtensionSettingsRequest()
+
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -428,7 +409,6 @@ def test_mutate_ad_group_extension_settings_field_headers():
             type(client.transport.mutate_ad_group_extension_settings),
             '__call__') as call:
         call.return_value = ad_group_extension_setting_service.MutateAdGroupExtensionSettingsResponse()
-
         client.mutate_ad_group_extension_settings(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -446,7 +426,7 @@ def test_mutate_ad_group_extension_settings_field_headers():
 
 def test_mutate_ad_group_extension_settings_flattened():
     client = AdGroupExtensionSettingServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -455,27 +435,24 @@ def test_mutate_ad_group_extension_settings_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = ad_group_extension_setting_service.MutateAdGroupExtensionSettingsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_ad_group_extension_settings(
             customer_id='customer_id_value',
-            operations=[ad_group_extension_setting_service.AdGroupExtensionSettingOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))],
+            operations=[ad_group_extension_setting_service.AdGroupExtensionSettingOperation(update_mask=field_mask_pb2.FieldMask(paths=['paths_value']))],
         )
 
         # Establish that the underlying call was made with the expected
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].customer_id == 'customer_id_value'
-
-        assert args[0].operations == [ad_group_extension_setting_service.AdGroupExtensionSettingOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))]
+        assert args[0].operations == [ad_group_extension_setting_service.AdGroupExtensionSettingOperation(update_mask=field_mask_pb2.FieldMask(paths=['paths_value']))]
 
 
 def test_mutate_ad_group_extension_settings_flattened_error():
     client = AdGroupExtensionSettingServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -484,18 +461,18 @@ def test_mutate_ad_group_extension_settings_flattened_error():
         client.mutate_ad_group_extension_settings(
             ad_group_extension_setting_service.MutateAdGroupExtensionSettingsRequest(),
             customer_id='customer_id_value',
-            operations=[ad_group_extension_setting_service.AdGroupExtensionSettingOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))],
+            operations=[ad_group_extension_setting_service.AdGroupExtensionSettingOperation(update_mask=field_mask_pb2.FieldMask(paths=['paths_value']))],
         )
 
 
 def test_credentials_transport_error():
     # It is an error to provide credentials and a transport instance.
     transport = transports.AdGroupExtensionSettingServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = AdGroupExtensionSettingServiceClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             transport=transport,
         )
 
@@ -503,7 +480,7 @@ def test_credentials_transport_error():
 def test_transport_instance():
     # A client may be instantiated with a custom transport instance.
     transport = transports.AdGroupExtensionSettingServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     client = AdGroupExtensionSettingServiceClient(transport=transport)
     assert client.transport is transport
@@ -512,7 +489,7 @@ def test_transport_instance():
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.AdGroupExtensionSettingServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     channel = transport.grpc_channel
     assert channel
@@ -521,7 +498,7 @@ def test_transport_get_channel():
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = AdGroupExtensionSettingServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     assert isinstance(
         client.transport,
@@ -533,8 +510,8 @@ def test_transport_grpc_default():
 ])
 def test_transport_adc(transport_class):
     # Test default credentials are used if not provided.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport_class()
         adc.assert_called_once()
 
@@ -544,7 +521,7 @@ def test_ad_group_extension_setting_service_base_transport():
     with mock.patch('google.ads.googleads.v6.services.services.ad_group_extension_setting_service.transports.AdGroupExtensionSettingServiceTransport.__init__') as Transport:
         Transport.return_value = None
         transport = transports.AdGroupExtensionSettingServiceTransport(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
         )
 
     # Every method on the transport should just blindly
@@ -552,7 +529,7 @@ def test_ad_group_extension_setting_service_base_transport():
     methods = (
         'get_ad_group_extension_setting',
         'mutate_ad_group_extension_settings',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -560,17 +537,17 @@ def test_ad_group_extension_setting_service_base_transport():
 
 def test_ad_group_extension_setting_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.ads.googleads.v6.services.services.ad_group_extension_setting_service.transports.AdGroupExtensionSettingServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'default') as adc, mock.patch('google.ads.googleads.v6.services.services.ad_group_extension_setting_service.transports.AdGroupExtensionSettingServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.AdGroupExtensionSettingServiceTransport()
         adc.assert_called_once()
 
 
 def test_ad_group_extension_setting_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         AdGroupExtensionSettingServiceClient()
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/adwords',
@@ -580,8 +557,8 @@ def test_ad_group_extension_setting_service_auth_adc():
 def test_ad_group_extension_setting_service_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transports.AdGroupExtensionSettingServiceGrpcTransport(host="squid.clam.whelk")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/adwords',
@@ -590,7 +567,7 @@ def test_ad_group_extension_setting_service_transport_auth_adc():
 
 def test_ad_group_extension_setting_service_host_no_port():
     client = AdGroupExtensionSettingServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='googleads.googleapis.com'),
     )
     assert client.transport._host == 'googleads.googleapis.com:443'
@@ -598,7 +575,7 @@ def test_ad_group_extension_setting_service_host_no_port():
 
 def test_ad_group_extension_setting_service_host_with_port():
     client = AdGroupExtensionSettingServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='googleads.googleapis.com:8000'),
     )
     assert client.transport._host == 'googleads.googleapis.com:8000'
@@ -629,9 +606,9 @@ def test_ad_group_extension_setting_service_transport_channel_mtls_with_client_c
             mock_grpc_channel = mock.Mock()
             grpc_create_channel.return_value = mock_grpc_channel
 
-            cred = credentials.AnonymousCredentials()
+            cred = ga_credentials.AnonymousCredentials()
             with pytest.warns(DeprecationWarning):
-                with mock.patch.object(auth, 'default') as adc:
+                with mock.patch.object(google.auth, 'default') as adc:
                     adc.return_value = (cred, None)
                     transport = transport_class(
                         host="squid.clam.whelk",
@@ -704,7 +681,6 @@ def test_ad_group_extension_setting_service_transport_channel_mtls_with_adc(
 def test_ad_group_path():
     customer_id = "squid"
     ad_group_id = "clam"
-
     expected = "customers/{customer_id}/adGroups/{ad_group_id}".format(customer_id=customer_id, ad_group_id=ad_group_id, )
     actual = AdGroupExtensionSettingServiceClient.ad_group_path(customer_id, ad_group_id)
     assert expected == actual
@@ -712,9 +688,8 @@ def test_ad_group_path():
 
 def test_parse_ad_group_path():
     expected = {
-    "customer_id": "whelk",
-    "ad_group_id": "octopus",
-
+        "customer_id": "whelk",
+        "ad_group_id": "octopus",
     }
     path = AdGroupExtensionSettingServiceClient.ad_group_path(**expected)
 
@@ -726,7 +701,6 @@ def test_ad_group_extension_setting_path():
     customer_id = "oyster"
     ad_group_id = "nudibranch"
     extension_type = "cuttlefish"
-
     expected = "customers/{customer_id}/adGroupExtensionSettings/{ad_group_id}~{extension_type}".format(customer_id=customer_id, ad_group_id=ad_group_id, extension_type=extension_type, )
     actual = AdGroupExtensionSettingServiceClient.ad_group_extension_setting_path(customer_id, ad_group_id, extension_type)
     assert expected == actual
@@ -734,10 +708,9 @@ def test_ad_group_extension_setting_path():
 
 def test_parse_ad_group_extension_setting_path():
     expected = {
-    "customer_id": "mussel",
-    "ad_group_id": "winkle",
-    "extension_type": "nautilus",
-
+        "customer_id": "mussel",
+        "ad_group_id": "winkle",
+        "extension_type": "nautilus",
     }
     path = AdGroupExtensionSettingServiceClient.ad_group_extension_setting_path(**expected)
 
@@ -748,7 +721,6 @@ def test_parse_ad_group_extension_setting_path():
 def test_extension_feed_item_path():
     customer_id = "scallop"
     feed_item_id = "abalone"
-
     expected = "customers/{customer_id}/extensionFeedItems/{feed_item_id}".format(customer_id=customer_id, feed_item_id=feed_item_id, )
     actual = AdGroupExtensionSettingServiceClient.extension_feed_item_path(customer_id, feed_item_id)
     assert expected == actual
@@ -756,9 +728,8 @@ def test_extension_feed_item_path():
 
 def test_parse_extension_feed_item_path():
     expected = {
-    "customer_id": "squid",
-    "feed_item_id": "clam",
-
+        "customer_id": "squid",
+        "feed_item_id": "clam",
     }
     path = AdGroupExtensionSettingServiceClient.extension_feed_item_path(**expected)
 
@@ -768,7 +739,6 @@ def test_parse_extension_feed_item_path():
 
 def test_common_billing_account_path():
     billing_account = "whelk"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = AdGroupExtensionSettingServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -776,8 +746,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "octopus",
-
+        "billing_account": "octopus",
     }
     path = AdGroupExtensionSettingServiceClient.common_billing_account_path(**expected)
 
@@ -787,7 +756,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "oyster"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = AdGroupExtensionSettingServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -795,8 +763,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "nudibranch",
-
+        "folder": "nudibranch",
     }
     path = AdGroupExtensionSettingServiceClient.common_folder_path(**expected)
 
@@ -806,7 +773,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "cuttlefish"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = AdGroupExtensionSettingServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -814,8 +780,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "mussel",
-
+        "organization": "mussel",
     }
     path = AdGroupExtensionSettingServiceClient.common_organization_path(**expected)
 
@@ -825,7 +790,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "winkle"
-
     expected = "projects/{project}".format(project=project, )
     actual = AdGroupExtensionSettingServiceClient.common_project_path(project)
     assert expected == actual
@@ -833,8 +797,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "nautilus",
-
+        "project": "nautilus",
     }
     path = AdGroupExtensionSettingServiceClient.common_project_path(**expected)
 
@@ -845,7 +808,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "scallop"
     location = "abalone"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = AdGroupExtensionSettingServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -853,9 +815,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "squid",
-    "location": "clam",
-
+        "project": "squid",
+        "location": "clam",
     }
     path = AdGroupExtensionSettingServiceClient.common_location_path(**expected)
 
@@ -869,7 +830,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
 
     with mock.patch.object(transports.AdGroupExtensionSettingServiceTransport, '_prep_wrapped_messages') as prep:
         client = AdGroupExtensionSettingServiceClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)
@@ -877,7 +838,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
     with mock.patch.object(transports.AdGroupExtensionSettingServiceTransport, '_prep_wrapped_messages') as prep:
         transport_class = AdGroupExtensionSettingServiceClient.get_transport_class()
         transport = transport_class(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)

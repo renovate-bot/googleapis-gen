@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -22,10 +20,10 @@ from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
 import google.api_core.client_options as ClientOptions # type: ignore
-from google.api_core import exceptions                 # type: ignore
+from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
 from google.api_core import operation as gac_operation  # type: ignore
@@ -35,8 +33,7 @@ from google.cloud.appengine_admin_v1.types import appengine
 from google.cloud.appengine_admin_v1.types import network_settings
 from google.cloud.appengine_admin_v1.types import operation as ga_operation
 from google.cloud.appengine_admin_v1.types import service
-from google.protobuf import empty_pb2 as empty  # type: ignore
-
+from google.protobuf import empty_pb2  # type: ignore
 from .transports.base import ServicesTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import ServicesGrpcAsyncIOTransport
 from .client import ServicesClient
@@ -52,16 +49,12 @@ class ServicesAsyncClient:
 
     common_billing_account_path = staticmethod(ServicesClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(ServicesClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(ServicesClient.common_folder_path)
     parse_common_folder_path = staticmethod(ServicesClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(ServicesClient.common_organization_path)
     parse_common_organization_path = staticmethod(ServicesClient.parse_common_organization_path)
-
     common_project_path = staticmethod(ServicesClient.common_project_path)
     parse_common_project_path = staticmethod(ServicesClient.parse_common_project_path)
-
     common_location_path = staticmethod(ServicesClient.common_location_path)
     parse_common_location_path = staticmethod(ServicesClient.parse_common_location_path)
 
@@ -109,7 +102,7 @@ class ServicesAsyncClient:
     get_transport_class = functools.partial(type(ServicesClient).get_transport_class, type(ServicesClient))
 
     def __init__(self, *,
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             transport: Union[str, ServicesTransport] = 'grpc_asyncio',
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -146,7 +139,6 @@ class ServicesAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = ServicesClient(
             credentials=credentials,
             transport=transport,
@@ -168,7 +160,6 @@ class ServicesAsyncClient:
             request (:class:`google.cloud.appengine_admin_v1.types.ListServicesRequest`):
                 The request object. Request message for
                 `Services.ListServices`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -184,7 +175,6 @@ class ServicesAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = appengine.ListServicesRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -237,7 +227,6 @@ class ServicesAsyncClient:
             request (:class:`google.cloud.appengine_admin_v1.types.GetServiceRequest`):
                 The request object. Request message for
                 `Services.GetService`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -261,7 +250,6 @@ class ServicesAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = appengine.GetServiceRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -304,7 +292,6 @@ class ServicesAsyncClient:
             request (:class:`google.cloud.appengine_admin_v1.types.UpdateServiceRequest`):
                 The request object. Request message for
                 `Services.UpdateService`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -327,7 +314,6 @@ class ServicesAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = appengine.UpdateServiceRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -379,7 +365,6 @@ class ServicesAsyncClient:
             request (:class:`google.cloud.appengine_admin_v1.types.DeleteServiceRequest`):
                 The request object. Request message for
                 `Services.DeleteService`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -406,7 +391,6 @@ class ServicesAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = appengine.DeleteServiceRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -437,14 +421,12 @@ class ServicesAsyncClient:
         response = operation_async.from_gapic(
             response,
             self._client._transport.operations_client,
-            empty.Empty,
+            empty_pb2.Empty,
             metadata_type=ga_operation.OperationMetadataV1,
         )
 
         # Done; return the response.
         return response
-
-
 
 
 

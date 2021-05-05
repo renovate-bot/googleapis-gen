@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -29,7 +27,7 @@ __protobuf__ = proto.module(
 class OSPolicy(proto.Message):
     r"""An OS policy defines the desired state configuration for an
     instance.
-    """
+        """
     class Mode(proto.Enum):
         r"""Policy mode"""
         MODE_UNSPECIFIED = 0
@@ -65,9 +63,9 @@ class OSPolicy(proto.Message):
             file (google.cloud.osconfig.agentendpoint_v1.types.OSPolicy.Resource.FileResource):
                 File resource
         """
+
         class File(proto.Message):
             r"""A remote or local file.
-
             Attributes:
                 remote (google.cloud.osconfig.agentendpoint_v1.types.OSPolicy.Resource.File.Remote):
                     A generic remote file.
@@ -82,9 +80,9 @@ class OSPolicy(proto.Message):
                     Cloud Storage: An object generation number must
                     be specified.
             """
+
             class Remote(proto.Message):
                 r"""Specifies a file available via some URI.
-
                 Attributes:
                     uri (str):
                         Required. URI from which to fetch the object. It should
@@ -94,13 +92,17 @@ class OSPolicy(proto.Message):
                         SHA256 checksum of the remote file.
                 """
 
-                uri = proto.Field(proto.STRING, number=1)
-
-                sha256_checksum = proto.Field(proto.STRING, number=2)
+                uri = proto.Field(
+                    proto.STRING,
+                    number=1,
+                )
+                sha256_checksum = proto.Field(
+                    proto.STRING,
+                    number=2,
+                )
 
             class Gcs(proto.Message):
                 r"""Specifies a file available as a Cloud Storage Object.
-
                 Attributes:
                     bucket (str):
                         Required. Bucket of the Cloud Storage object.
@@ -111,27 +113,43 @@ class OSPolicy(proto.Message):
                         object.
                 """
 
-                bucket = proto.Field(proto.STRING, number=1)
+                bucket = proto.Field(
+                    proto.STRING,
+                    number=1,
+                )
+                object_ = proto.Field(
+                    proto.STRING,
+                    number=2,
+                )
+                generation = proto.Field(
+                    proto.INT64,
+                    number=3,
+                )
 
-                object_ = proto.Field(proto.STRING, number=2)
-
-                generation = proto.Field(proto.INT64, number=3)
-
-            remote = proto.Field(proto.MESSAGE, number=1, oneof='type',
+            remote = proto.Field(
+                proto.MESSAGE,
+                number=1,
+                oneof='type',
                 message='OSPolicy.Resource.File.Remote',
             )
-
-            gcs = proto.Field(proto.MESSAGE, number=2, oneof='type',
+            gcs = proto.Field(
+                proto.MESSAGE,
+                number=2,
+                oneof='type',
                 message='OSPolicy.Resource.File.Gcs',
             )
-
-            local_path = proto.Field(proto.STRING, number=3, oneof='type')
-
-            allow_insecure = proto.Field(proto.BOOL, number=4)
+            local_path = proto.Field(
+                proto.STRING,
+                number=3,
+                oneof='type',
+            )
+            allow_insecure = proto.Field(
+                proto.BOOL,
+                number=4,
+            )
 
         class PackageResource(proto.Message):
             r"""A resource that manages a system package.
-
             Attributes:
                 desired_state (google.cloud.osconfig.agentendpoint_v1.types.OSPolicy.Resource.PackageResource.DesiredState):
                     Required. The desired state the agent should
@@ -173,11 +191,15 @@ class OSPolicy(proto.Message):
                         ``apt-get update && apt-get -y install package.deb``
                 """
 
-                source = proto.Field(proto.MESSAGE, number=1,
+                source = proto.Field(
+                    proto.MESSAGE,
+                    number=1,
                     message='OSPolicy.Resource.File',
                 )
-
-                pull_deps = proto.Field(proto.BOOL, number=2)
+                pull_deps = proto.Field(
+                    proto.BOOL,
+                    number=2,
+                )
 
             class APT(proto.Message):
                 r"""A package managed by APT. install:
@@ -189,7 +211,10 @@ class OSPolicy(proto.Message):
                         Required. Package name.
                 """
 
-                name = proto.Field(proto.STRING, number=1)
+                name = proto.Field(
+                    proto.STRING,
+                    number=1,
+                )
 
             class RPM(proto.Message):
                 r"""An RPM package file. RPM packages only support INSTALLED
@@ -205,11 +230,15 @@ class OSPolicy(proto.Message):
                         ``zypper -y install package.rpm``
                 """
 
-                source = proto.Field(proto.MESSAGE, number=1,
+                source = proto.Field(
+                    proto.MESSAGE,
+                    number=1,
                     message='OSPolicy.Resource.File',
                 )
-
-                pull_deps = proto.Field(proto.BOOL, number=2)
+                pull_deps = proto.Field(
+                    proto.BOOL,
+                    number=2,
+                )
 
             class YUM(proto.Message):
                 r"""A package managed by YUM. install: ``yum -y install package``
@@ -220,7 +249,10 @@ class OSPolicy(proto.Message):
                         Required. Package name.
                 """
 
-                name = proto.Field(proto.STRING, number=1)
+                name = proto.Field(
+                    proto.STRING,
+                    number=1,
+                )
 
             class Zypper(proto.Message):
                 r"""A package managed by Zypper. install: ``zypper -y install package``
@@ -231,7 +263,10 @@ class OSPolicy(proto.Message):
                         Required. Package name.
                 """
 
-                name = proto.Field(proto.STRING, number=1)
+                name = proto.Field(
+                    proto.STRING,
+                    number=1,
+                )
 
             class GooGet(proto.Message):
                 r"""A package managed by GooGet. install:
@@ -243,11 +278,13 @@ class OSPolicy(proto.Message):
                         Required. Package name.
                 """
 
-                name = proto.Field(proto.STRING, number=1)
+                name = proto.Field(
+                    proto.STRING,
+                    number=1,
+                )
 
             class MSI(proto.Message):
                 r"""An MSI package. MSI packages only support INSTALLED state.
-
                 Attributes:
                     source (google.cloud.osconfig.agentendpoint_v1.types.OSPolicy.Resource.File):
                         Required. The MSI package.
@@ -259,47 +296,66 @@ class OSPolicy(proto.Message):
                         REBOOT=ReallySuppress".
                 """
 
-                source = proto.Field(proto.MESSAGE, number=1,
+                source = proto.Field(
+                    proto.MESSAGE,
+                    number=1,
                     message='OSPolicy.Resource.File',
                 )
+                properties = proto.RepeatedField(
+                    proto.STRING,
+                    number=2,
+                )
 
-                properties = proto.RepeatedField(proto.STRING, number=2)
-
-            desired_state = proto.Field(proto.ENUM, number=1,
+            desired_state = proto.Field(
+                proto.ENUM,
+                number=1,
                 enum='OSPolicy.Resource.PackageResource.DesiredState',
             )
-
-            apt = proto.Field(proto.MESSAGE, number=2, oneof='system_package',
+            apt = proto.Field(
+                proto.MESSAGE,
+                number=2,
+                oneof='system_package',
                 message='OSPolicy.Resource.PackageResource.APT',
             )
-
-            deb = proto.Field(proto.MESSAGE, number=3, oneof='system_package',
+            deb = proto.Field(
+                proto.MESSAGE,
+                number=3,
+                oneof='system_package',
                 message='OSPolicy.Resource.PackageResource.Deb',
             )
-
-            yum = proto.Field(proto.MESSAGE, number=4, oneof='system_package',
+            yum = proto.Field(
+                proto.MESSAGE,
+                number=4,
+                oneof='system_package',
                 message='OSPolicy.Resource.PackageResource.YUM',
             )
-
-            zypper = proto.Field(proto.MESSAGE, number=5, oneof='system_package',
+            zypper = proto.Field(
+                proto.MESSAGE,
+                number=5,
+                oneof='system_package',
                 message='OSPolicy.Resource.PackageResource.Zypper',
             )
-
-            rpm = proto.Field(proto.MESSAGE, number=6, oneof='system_package',
+            rpm = proto.Field(
+                proto.MESSAGE,
+                number=6,
+                oneof='system_package',
                 message='OSPolicy.Resource.PackageResource.RPM',
             )
-
-            googet = proto.Field(proto.MESSAGE, number=7, oneof='system_package',
+            googet = proto.Field(
+                proto.MESSAGE,
+                number=7,
+                oneof='system_package',
                 message='OSPolicy.Resource.PackageResource.GooGet',
             )
-
-            msi = proto.Field(proto.MESSAGE, number=8, oneof='system_package',
+            msi = proto.Field(
+                proto.MESSAGE,
+                number=8,
+                oneof='system_package',
                 message='OSPolicy.Resource.PackageResource.MSI',
             )
 
         class RepositoryResource(proto.Message):
             r"""A resource that manages a package repository.
-
             Attributes:
                 apt (google.cloud.osconfig.agentendpoint_v1.types.OSPolicy.Resource.RepositoryResource.AptRepository):
                     An Apt Repository.
@@ -310,6 +366,7 @@ class OSPolicy(proto.Message):
                 goo (google.cloud.osconfig.agentendpoint_v1.types.OSPolicy.Resource.RepositoryResource.GooRepository):
                     A Goo Repository.
             """
+
             class AptRepository(proto.Message):
                 r"""Represents a single apt package repository. These will be added to a
                 repo file that will be managed at
@@ -337,17 +394,27 @@ class OSPolicy(proto.Message):
                     DEB = 1
                     DEB_SRC = 2
 
-                archive_type = proto.Field(proto.ENUM, number=1,
+                archive_type = proto.Field(
+                    proto.ENUM,
+                    number=1,
                     enum='OSPolicy.Resource.RepositoryResource.AptRepository.ArchiveType',
                 )
-
-                uri = proto.Field(proto.STRING, number=2)
-
-                distribution = proto.Field(proto.STRING, number=3)
-
-                components = proto.RepeatedField(proto.STRING, number=4)
-
-                gpg_key = proto.Field(proto.STRING, number=5)
+                uri = proto.Field(
+                    proto.STRING,
+                    number=2,
+                )
+                distribution = proto.Field(
+                    proto.STRING,
+                    number=3,
+                )
+                components = proto.RepeatedField(
+                    proto.STRING,
+                    number=4,
+                )
+                gpg_key = proto.Field(
+                    proto.STRING,
+                    number=5,
+                )
 
             class YumRepository(proto.Message):
                 r"""Represents a single yum package repository. These are added to a
@@ -370,13 +437,22 @@ class OSPolicy(proto.Message):
                         URIs of GPG keys.
                 """
 
-                id = proto.Field(proto.STRING, number=1)
-
-                display_name = proto.Field(proto.STRING, number=2)
-
-                base_url = proto.Field(proto.STRING, number=3)
-
-                gpg_keys = proto.RepeatedField(proto.STRING, number=4)
+                id = proto.Field(
+                    proto.STRING,
+                    number=1,
+                )
+                display_name = proto.Field(
+                    proto.STRING,
+                    number=2,
+                )
+                base_url = proto.Field(
+                    proto.STRING,
+                    number=3,
+                )
+                gpg_keys = proto.RepeatedField(
+                    proto.STRING,
+                    number=4,
+                )
 
             class ZypperRepository(proto.Message):
                 r"""Represents a single zypper package repository. These are added to a
@@ -399,13 +475,22 @@ class OSPolicy(proto.Message):
                         URIs of GPG keys.
                 """
 
-                id = proto.Field(proto.STRING, number=1)
-
-                display_name = proto.Field(proto.STRING, number=2)
-
-                base_url = proto.Field(proto.STRING, number=3)
-
-                gpg_keys = proto.RepeatedField(proto.STRING, number=4)
+                id = proto.Field(
+                    proto.STRING,
+                    number=1,
+                )
+                display_name = proto.Field(
+                    proto.STRING,
+                    number=2,
+                )
+                base_url = proto.Field(
+                    proto.STRING,
+                    number=3,
+                )
+                gpg_keys = proto.RepeatedField(
+                    proto.STRING,
+                    number=4,
+                )
 
             class GooRepository(proto.Message):
                 r"""Represents a Goo package repository. These are added to a repo file
@@ -419,23 +504,37 @@ class OSPolicy(proto.Message):
                         Required. The url of the repository.
                 """
 
-                name = proto.Field(proto.STRING, number=1)
+                name = proto.Field(
+                    proto.STRING,
+                    number=1,
+                )
+                url = proto.Field(
+                    proto.STRING,
+                    number=2,
+                )
 
-                url = proto.Field(proto.STRING, number=2)
-
-            apt = proto.Field(proto.MESSAGE, number=1, oneof='repository',
+            apt = proto.Field(
+                proto.MESSAGE,
+                number=1,
+                oneof='repository',
                 message='OSPolicy.Resource.RepositoryResource.AptRepository',
             )
-
-            yum = proto.Field(proto.MESSAGE, number=2, oneof='repository',
+            yum = proto.Field(
+                proto.MESSAGE,
+                number=2,
+                oneof='repository',
                 message='OSPolicy.Resource.RepositoryResource.YumRepository',
             )
-
-            zypper = proto.Field(proto.MESSAGE, number=3, oneof='repository',
+            zypper = proto.Field(
+                proto.MESSAGE,
+                number=3,
+                oneof='repository',
                 message='OSPolicy.Resource.RepositoryResource.ZypperRepository',
             )
-
-            goo = proto.Field(proto.MESSAGE, number=4, oneof='repository',
+            goo = proto.Field(
+                proto.MESSAGE,
+                number=4,
+                oneof='repository',
                 message='OSPolicy.Resource.RepositoryResource.GooRepository',
             )
 
@@ -457,9 +556,9 @@ class OSPolicy(proto.Message):
                     "success", any other exit code idicates a
                     failure running enforce.
             """
+
             class Exec(proto.Message):
                 r"""A file or script to execute.
-
                 Attributes:
                     file (google.cloud.osconfig.agentendpoint_v1.types.OSPolicy.Resource.File):
                         A remote or local file.
@@ -478,29 +577,40 @@ class OSPolicy(proto.Message):
                     SHELL = 2
                     POWERSHELL = 3
 
-                file = proto.Field(proto.MESSAGE, number=1, oneof='source',
+                file = proto.Field(
+                    proto.MESSAGE,
+                    number=1,
+                    oneof='source',
                     message='OSPolicy.Resource.File',
                 )
-
-                script = proto.Field(proto.STRING, number=2, oneof='source')
-
-                args = proto.RepeatedField(proto.STRING, number=3)
-
-                interpreter = proto.Field(proto.ENUM, number=4,
+                script = proto.Field(
+                    proto.STRING,
+                    number=2,
+                    oneof='source',
+                )
+                args = proto.RepeatedField(
+                    proto.STRING,
+                    number=3,
+                )
+                interpreter = proto.Field(
+                    proto.ENUM,
+                    number=4,
                     enum='OSPolicy.Resource.ExecResource.Exec.Interpreter',
                 )
 
-            validate = proto.Field(proto.MESSAGE, number=1,
+            validate = proto.Field(
+                proto.MESSAGE,
+                number=1,
                 message='OSPolicy.Resource.ExecResource.Exec',
             )
-
-            enforce = proto.Field(proto.MESSAGE, number=2,
+            enforce = proto.Field(
+                proto.MESSAGE,
+                number=2,
                 message='OSPolicy.Resource.ExecResource.Exec',
             )
 
         class FileResource(proto.Message):
             r"""A resource that manages the state of a file.
-
             Attributes:
                 file (google.cloud.osconfig.agentendpoint_v1.types.OSPolicy.Resource.File):
                     A remote or local source.
@@ -534,35 +644,57 @@ class OSPolicy(proto.Message):
                 ABSENT = 2
                 CONTENTS_MATCH = 3
 
-            file = proto.Field(proto.MESSAGE, number=1, oneof='source',
+            file = proto.Field(
+                proto.MESSAGE,
+                number=1,
+                oneof='source',
                 message='OSPolicy.Resource.File',
             )
-
-            content = proto.Field(proto.STRING, number=2, oneof='source')
-
-            path = proto.Field(proto.STRING, number=3)
-
-            state = proto.Field(proto.ENUM, number=4,
+            content = proto.Field(
+                proto.STRING,
+                number=2,
+                oneof='source',
+            )
+            path = proto.Field(
+                proto.STRING,
+                number=3,
+            )
+            state = proto.Field(
+                proto.ENUM,
+                number=4,
                 enum='OSPolicy.Resource.FileResource.DesiredState',
             )
+            permissions = proto.Field(
+                proto.STRING,
+                number=5,
+            )
 
-            permissions = proto.Field(proto.STRING, number=5)
-
-        id = proto.Field(proto.STRING, number=1)
-
-        pkg = proto.Field(proto.MESSAGE, number=2, oneof='resource_type',
+        id = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        pkg = proto.Field(
+            proto.MESSAGE,
+            number=2,
+            oneof='resource_type',
             message='OSPolicy.Resource.PackageResource',
         )
-
-        repository = proto.Field(proto.MESSAGE, number=3, oneof='resource_type',
+        repository = proto.Field(
+            proto.MESSAGE,
+            number=3,
+            oneof='resource_type',
             message='OSPolicy.Resource.RepositoryResource',
         )
-
-        exec_ = proto.Field(proto.MESSAGE, number=4, oneof='resource_type',
+        exec_ = proto.Field(
+            proto.MESSAGE,
+            number=4,
+            oneof='resource_type',
             message='OSPolicy.Resource.ExecResource',
         )
-
-        file = proto.Field(proto.MESSAGE, number=5, oneof='resource_type',
+        file = proto.Field(
+            proto.MESSAGE,
+            number=5,
+            oneof='resource_type',
             message='OSPolicy.Resource.FileResource',
         )
 

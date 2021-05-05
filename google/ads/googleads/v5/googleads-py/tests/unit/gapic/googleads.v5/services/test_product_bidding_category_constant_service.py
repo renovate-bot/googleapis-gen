@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 from unittest import mock
 
@@ -23,7 +21,6 @@ import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
-from google import auth
 from google.ads.googleads.v5.enums.types import product_bidding_category_level
 from google.ads.googleads.v5.enums.types import product_bidding_category_status
 from google.ads.googleads.v5.resources.types import product_bidding_category_constant
@@ -33,10 +30,11 @@ from google.ads.googleads.v5.services.types import product_bidding_category_cons
 from google.api_core import client_options
 from google.api_core import gapic_v1
 from google.api_core import grpc_helpers
-from google.auth import credentials
+from google.auth import credentials as ga_credentials
 from google.auth.exceptions import MutualTLSChannelError
 from google.oauth2 import service_account
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
+import google.auth
 
 
 def client_cert_source_callback():
@@ -66,7 +64,7 @@ def test__get_default_mtls_endpoint():
 
 
 def test_product_bidding_category_constant_service_client_from_service_account_info():
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
@@ -77,7 +75,7 @@ def test_product_bidding_category_constant_service_client_from_service_account_i
 
 
 def test_product_bidding_category_constant_service_client_from_service_account_file():
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_file') as factory:
         factory.return_value = creds
         client = ProductBiddingCategoryConstantServiceClient.from_service_account_file("dummy/file/path.json")
@@ -102,7 +100,7 @@ def test_product_bidding_category_constant_service_client_client_options():
     # Check that if channel is provided we won't create a new one.
     with mock.patch('google.ads.googleads.v5.services.services.product_bidding_category_constant_service.ProductBiddingCategoryConstantServiceClient.get_transport_class') as gtc:
         transport = transports.ProductBiddingCategoryConstantServiceGrpcTransport(
-            credentials=credentials.AnonymousCredentials()
+            credentials=ga_credentials.AnonymousCredentials()
         )
         client = ProductBiddingCategoryConstantServiceClient(transport=transport)
         gtc.assert_not_called()
@@ -252,7 +250,7 @@ def test_product_bidding_category_constant_service_client_client_options_from_di
 
 def test_get_product_bidding_category_constant(transport: str = 'grpc', request_type=product_bidding_category_constant_service.GetProductBiddingCategoryConstantRequest):
     client = ProductBiddingCategoryConstantServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -267,29 +265,20 @@ def test_get_product_bidding_category_constant(transport: str = 'grpc', request_
         # Designate an appropriate return value for the call.
         call.return_value = product_bidding_category_constant.ProductBiddingCategoryConstant(
             resource_name='resource_name_value',
-
             level=product_bidding_category_level.ProductBiddingCategoryLevelEnum.ProductBiddingCategoryLevel.UNKNOWN,
-
             status=product_bidding_category_status.ProductBiddingCategoryStatusEnum.ProductBiddingCategoryStatus.UNKNOWN,
-
         )
-
         response = client.get_product_bidding_category_constant(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == product_bidding_category_constant_service.GetProductBiddingCategoryConstantRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, product_bidding_category_constant.ProductBiddingCategoryConstant)
-
     assert response.resource_name == 'resource_name_value'
-
     assert response.level == product_bidding_category_level.ProductBiddingCategoryLevelEnum.ProductBiddingCategoryLevel.UNKNOWN
-
     assert response.status == product_bidding_category_status.ProductBiddingCategoryStatusEnum.ProductBiddingCategoryStatus.UNKNOWN
 
 
@@ -299,12 +288,13 @@ def test_get_product_bidding_category_constant_from_dict():
 
 def test_get_product_bidding_category_constant_field_headers():
     client = ProductBiddingCategoryConstantServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = product_bidding_category_constant_service.GetProductBiddingCategoryConstantRequest()
+
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -312,7 +302,6 @@ def test_get_product_bidding_category_constant_field_headers():
             type(client.transport.get_product_bidding_category_constant),
             '__call__') as call:
         call.return_value = product_bidding_category_constant.ProductBiddingCategoryConstant()
-
         client.get_product_bidding_category_constant(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -330,7 +319,7 @@ def test_get_product_bidding_category_constant_field_headers():
 
 def test_get_product_bidding_category_constant_flattened():
     client = ProductBiddingCategoryConstantServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -339,7 +328,6 @@ def test_get_product_bidding_category_constant_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = product_bidding_category_constant.ProductBiddingCategoryConstant()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_product_bidding_category_constant(
@@ -350,13 +338,12 @@ def test_get_product_bidding_category_constant_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource_name == 'resource_name_value'
 
 
 def test_get_product_bidding_category_constant_flattened_error():
     client = ProductBiddingCategoryConstantServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -371,11 +358,11 @@ def test_get_product_bidding_category_constant_flattened_error():
 def test_credentials_transport_error():
     # It is an error to provide credentials and a transport instance.
     transport = transports.ProductBiddingCategoryConstantServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = ProductBiddingCategoryConstantServiceClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             transport=transport,
         )
 
@@ -383,7 +370,7 @@ def test_credentials_transport_error():
 def test_transport_instance():
     # A client may be instantiated with a custom transport instance.
     transport = transports.ProductBiddingCategoryConstantServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     client = ProductBiddingCategoryConstantServiceClient(transport=transport)
     assert client.transport is transport
@@ -392,7 +379,7 @@ def test_transport_instance():
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.ProductBiddingCategoryConstantServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     channel = transport.grpc_channel
     assert channel
@@ -401,7 +388,7 @@ def test_transport_get_channel():
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = ProductBiddingCategoryConstantServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     assert isinstance(
         client.transport,
@@ -413,8 +400,8 @@ def test_transport_grpc_default():
 ])
 def test_transport_adc(transport_class):
     # Test default credentials are used if not provided.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport_class()
         adc.assert_called_once()
 
@@ -424,14 +411,14 @@ def test_product_bidding_category_constant_service_base_transport():
     with mock.patch('google.ads.googleads.v5.services.services.product_bidding_category_constant_service.transports.ProductBiddingCategoryConstantServiceTransport.__init__') as Transport:
         Transport.return_value = None
         transport = transports.ProductBiddingCategoryConstantServiceTransport(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
         )
 
     # Every method on the transport should just blindly
     # raise NotImplementedError.
     methods = (
         'get_product_bidding_category_constant',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -439,17 +426,17 @@ def test_product_bidding_category_constant_service_base_transport():
 
 def test_product_bidding_category_constant_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.ads.googleads.v5.services.services.product_bidding_category_constant_service.transports.ProductBiddingCategoryConstantServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'default') as adc, mock.patch('google.ads.googleads.v5.services.services.product_bidding_category_constant_service.transports.ProductBiddingCategoryConstantServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.ProductBiddingCategoryConstantServiceTransport()
         adc.assert_called_once()
 
 
 def test_product_bidding_category_constant_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         ProductBiddingCategoryConstantServiceClient()
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/adwords',
@@ -459,8 +446,8 @@ def test_product_bidding_category_constant_service_auth_adc():
 def test_product_bidding_category_constant_service_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transports.ProductBiddingCategoryConstantServiceGrpcTransport(host="squid.clam.whelk")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/adwords',
@@ -469,7 +456,7 @@ def test_product_bidding_category_constant_service_transport_auth_adc():
 
 def test_product_bidding_category_constant_service_host_no_port():
     client = ProductBiddingCategoryConstantServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='googleads.googleapis.com'),
     )
     assert client.transport._host == 'googleads.googleapis.com:443'
@@ -477,7 +464,7 @@ def test_product_bidding_category_constant_service_host_no_port():
 
 def test_product_bidding_category_constant_service_host_with_port():
     client = ProductBiddingCategoryConstantServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='googleads.googleapis.com:8000'),
     )
     assert client.transport._host == 'googleads.googleapis.com:8000'
@@ -508,9 +495,9 @@ def test_product_bidding_category_constant_service_transport_channel_mtls_with_c
             mock_grpc_channel = mock.Mock()
             grpc_create_channel.return_value = mock_grpc_channel
 
-            cred = credentials.AnonymousCredentials()
+            cred = ga_credentials.AnonymousCredentials()
             with pytest.warns(DeprecationWarning):
-                with mock.patch.object(auth, 'default') as adc:
+                with mock.patch.object(google.auth, 'default') as adc:
                     adc.return_value = (cred, None)
                     transport = transport_class(
                         host="squid.clam.whelk",
@@ -582,7 +569,6 @@ def test_product_bidding_category_constant_service_transport_channel_mtls_with_a
 
 def test_product_bidding_category_constant_path():
     product_bidding_category_constant = "squid"
-
     expected = "productBiddingCategoryConstants/{product_bidding_category_constant}".format(product_bidding_category_constant=product_bidding_category_constant, )
     actual = ProductBiddingCategoryConstantServiceClient.product_bidding_category_constant_path(product_bidding_category_constant)
     assert expected == actual
@@ -590,8 +576,7 @@ def test_product_bidding_category_constant_path():
 
 def test_parse_product_bidding_category_constant_path():
     expected = {
-    "product_bidding_category_constant": "clam",
-
+        "product_bidding_category_constant": "clam",
     }
     path = ProductBiddingCategoryConstantServiceClient.product_bidding_category_constant_path(**expected)
 
@@ -601,7 +586,6 @@ def test_parse_product_bidding_category_constant_path():
 
 def test_common_billing_account_path():
     billing_account = "whelk"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = ProductBiddingCategoryConstantServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -609,8 +593,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "octopus",
-
+        "billing_account": "octopus",
     }
     path = ProductBiddingCategoryConstantServiceClient.common_billing_account_path(**expected)
 
@@ -620,7 +603,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "oyster"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = ProductBiddingCategoryConstantServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -628,8 +610,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "nudibranch",
-
+        "folder": "nudibranch",
     }
     path = ProductBiddingCategoryConstantServiceClient.common_folder_path(**expected)
 
@@ -639,7 +620,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "cuttlefish"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = ProductBiddingCategoryConstantServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -647,8 +627,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "mussel",
-
+        "organization": "mussel",
     }
     path = ProductBiddingCategoryConstantServiceClient.common_organization_path(**expected)
 
@@ -658,7 +637,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "winkle"
-
     expected = "projects/{project}".format(project=project, )
     actual = ProductBiddingCategoryConstantServiceClient.common_project_path(project)
     assert expected == actual
@@ -666,8 +644,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "nautilus",
-
+        "project": "nautilus",
     }
     path = ProductBiddingCategoryConstantServiceClient.common_project_path(**expected)
 
@@ -678,7 +655,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "scallop"
     location = "abalone"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = ProductBiddingCategoryConstantServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -686,9 +662,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "squid",
-    "location": "clam",
-
+        "project": "squid",
+        "location": "clam",
     }
     path = ProductBiddingCategoryConstantServiceClient.common_location_path(**expected)
 
@@ -702,7 +677,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
 
     with mock.patch.object(transports.ProductBiddingCategoryConstantServiceTransport, '_prep_wrapped_messages') as prep:
         client = ProductBiddingCategoryConstantServiceClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)
@@ -710,7 +685,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
     with mock.patch.object(transports.ProductBiddingCategoryConstantServiceTransport, '_prep_wrapped_messages') as prep:
         transport_class = ProductBiddingCategoryConstantServiceClient.get_transport_class()
         transport = transport_class(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)

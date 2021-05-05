@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.cloud.bigquery.migration_v2alpha.services.migration_service.async_client import MigrationServiceAsyncClient
 from google.cloud.bigquery.migration_v2alpha.services.migration_service.client import MigrationServiceClient
+from google.cloud.bigquery.migration_v2alpha.services.migration_service.async_client import MigrationServiceAsyncClient
+
 from google.cloud.bigquery.migration_v2alpha.types.migration_entities import MigrationSubtask
 from google.cloud.bigquery.migration_v2alpha.types.migration_entities import MigrationTask
 from google.cloud.bigquery.migration_v2alpha.types.migration_entities import MigrationWorkflow
@@ -37,26 +37,25 @@ from google.cloud.bigquery.migration_v2alpha.types.migration_service import List
 from google.cloud.bigquery.migration_v2alpha.types.migration_service import ListMigrationWorkflowsResponse
 from google.cloud.bigquery.migration_v2alpha.types.migration_service import StartMigrationWorkflowRequest
 
-__all__ = (
-    'CreateMigrationWorkflowRequest',
-    'DeleteMigrationWorkflowRequest',
+__all__ = ('MigrationServiceClient',
+    'MigrationServiceAsyncClient',
+    'MigrationSubtask',
+    'MigrationTask',
+    'MigrationWorkflow',
     'ErrorDetail',
     'ErrorLocation',
+    'ResourceErrorDetail',
+    'Point',
+    'TimeInterval',
+    'TimeSeries',
+    'TypedValue',
+    'CreateMigrationWorkflowRequest',
+    'DeleteMigrationWorkflowRequest',
     'GetMigrationSubtaskRequest',
     'GetMigrationWorkflowRequest',
     'ListMigrationSubtasksRequest',
     'ListMigrationSubtasksResponse',
     'ListMigrationWorkflowsRequest',
     'ListMigrationWorkflowsResponse',
-    'MigrationServiceAsyncClient',
-    'MigrationServiceClient',
-    'MigrationSubtask',
-    'MigrationTask',
-    'MigrationWorkflow',
-    'Point',
-    'ResourceErrorDetail',
     'StartMigrationWorkflowRequest',
-    'TimeInterval',
-    'TimeSeries',
-    'TypedValue',
 )

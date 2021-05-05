@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 import mock
+import packaging.version
 
 import grpc
 from grpc.experimental import aio
@@ -24,31 +23,56 @@ import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
-from google import auth
+
 from google.api_core import client_options
-from google.api_core import exceptions
+from google.api_core import exceptions as core_exceptions
 from google.api_core import future
 from google.api_core import gapic_v1
 from google.api_core import grpc_helpers
 from google.api_core import grpc_helpers_async
 from google.api_core import operation_async  # type: ignore
 from google.api_core import operations_v1
-from google.auth import credentials
+from google.auth import credentials as ga_credentials
 from google.auth.exceptions import MutualTLSChannelError
 from google.cloud.resourcemanager_v3.services.folders import FoldersAsyncClient
 from google.cloud.resourcemanager_v3.services.folders import FoldersClient
 from google.cloud.resourcemanager_v3.services.folders import pagers
 from google.cloud.resourcemanager_v3.services.folders import transports
+from google.cloud.resourcemanager_v3.services.folders.transports.base import _API_CORE_VERSION
+from google.cloud.resourcemanager_v3.services.folders.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.resourcemanager_v3.types import folders
-from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
-from google.iam.v1 import options_pb2 as giv_options  # type: ignore
-from google.iam.v1 import policy_pb2 as giv_policy  # type: ignore
+from google.iam.v1 import iam_policy_pb2  # type: ignore
+from google.iam.v1 import options_pb2  # type: ignore
+from google.iam.v1 import policy_pb2  # type: ignore
 from google.longrunning import operations_pb2
 from google.oauth2 import service_account
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-from google.type import expr_pb2 as expr  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
+from google.type import expr_pb2  # type: ignore
+import google.auth
 
+
+# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
+# - Delete all the api-core and auth "less than" test cases
+# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
+requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth < 1.25.0",
+)
+requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth >= 1.25.0",
+)
+
+requires_api_core_lt_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core < 1.26.0",
+)
+
+requires_api_core_gte_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core >= 1.26.0",
+)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -81,7 +105,7 @@ def test__get_default_mtls_endpoint():
     FoldersAsyncClient,
 ])
 def test_folders_client_from_service_account_info(client_class):
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
@@ -97,7 +121,7 @@ def test_folders_client_from_service_account_info(client_class):
     FoldersAsyncClient,
 ])
 def test_folders_client_from_service_account_file(client_class):
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_file') as factory:
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
@@ -132,7 +156,7 @@ def test_folders_client_client_options(client_class, transport_class, transport_
     # Check that if channel is provided we won't create a new one.
     with mock.patch.object(FoldersClient, 'get_transport_class') as gtc:
         transport = transport_class(
-            credentials=credentials.AnonymousCredentials()
+            credentials=ga_credentials.AnonymousCredentials()
         )
         client = client_class(transport=transport)
         gtc.assert_not_called()
@@ -216,12 +240,10 @@ def test_folders_client_client_options(client_class, transport_class, transport_
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
-
     (FoldersClient, transports.FoldersGrpcTransport, "grpc", "true"),
     (FoldersAsyncClient, transports.FoldersGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (FoldersClient, transports.FoldersGrpcTransport, "grpc", "false"),
     (FoldersAsyncClient, transports.FoldersGrpcAsyncIOTransport, "grpc_asyncio", "false"),
-
 ])
 @mock.patch.object(FoldersClient, "DEFAULT_ENDPOINT", modify_default_endpoint(FoldersClient))
 @mock.patch.object(FoldersAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(FoldersAsyncClient))
@@ -361,7 +383,7 @@ def test_folders_client_client_options_from_dict():
 
 def test_get_folder(transport: str = 'grpc', request_type=folders.GetFolderRequest):
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -376,37 +398,24 @@ def test_get_folder(transport: str = 'grpc', request_type=folders.GetFolderReque
         # Designate an appropriate return value for the call.
         call.return_value = folders.Folder(
             name='name_value',
-
             parent='parent_value',
-
             display_name='display_name_value',
-
             state=folders.Folder.State.ACTIVE,
-
             etag='etag_value',
-
         )
-
         response = client.get_folder(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == folders.GetFolderRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, folders.Folder)
-
     assert response.name == 'name_value'
-
     assert response.parent == 'parent_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.state == folders.Folder.State.ACTIVE
-
     assert response.etag == 'etag_value'
 
 
@@ -418,7 +427,7 @@ def test_get_folder_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -429,13 +438,13 @@ def test_get_folder_empty_call():
         client.get_folder()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == folders.GetFolderRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_folder_async(transport: str = 'grpc_asyncio', request_type=folders.GetFolderRequest):
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -448,33 +457,26 @@ async def test_get_folder_async(transport: str = 'grpc_asyncio', request_type=fo
             type(client.transport.get_folder),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(folders.Folder(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(folders.Folder(
             name='name_value',
             parent='parent_value',
             display_name='display_name_value',
             state=folders.Folder.State.ACTIVE,
             etag='etag_value',
         ))
-
         response = await client.get_folder(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == folders.GetFolderRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, folders.Folder)
-
     assert response.name == 'name_value'
-
     assert response.parent == 'parent_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.state == folders.Folder.State.ACTIVE
-
     assert response.etag == 'etag_value'
 
 
@@ -485,12 +487,13 @@ async def test_get_folder_async_from_dict():
 
 def test_get_folder_field_headers():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = folders.GetFolderRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -498,7 +501,6 @@ def test_get_folder_field_headers():
             type(client.transport.get_folder),
             '__call__') as call:
         call.return_value = folders.Folder()
-
         client.get_folder(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -517,12 +519,13 @@ def test_get_folder_field_headers():
 @pytest.mark.asyncio
 async def test_get_folder_field_headers_async():
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = folders.GetFolderRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -530,7 +533,6 @@ async def test_get_folder_field_headers_async():
             type(client.transport.get_folder),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(folders.Folder())
-
         await client.get_folder(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -548,7 +550,7 @@ async def test_get_folder_field_headers_async():
 
 def test_get_folder_flattened():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -557,7 +559,6 @@ def test_get_folder_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = folders.Folder()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_folder(
@@ -568,13 +569,12 @@ def test_get_folder_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 def test_get_folder_flattened_error():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -589,7 +589,7 @@ def test_get_folder_flattened_error():
 @pytest.mark.asyncio
 async def test_get_folder_flattened_async():
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -610,14 +610,13 @@ async def test_get_folder_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 @pytest.mark.asyncio
 async def test_get_folder_flattened_error_async():
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -631,7 +630,7 @@ async def test_get_folder_flattened_error_async():
 
 def test_list_folders(transport: str = 'grpc', request_type=folders.ListFoldersRequest):
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -646,21 +645,16 @@ def test_list_folders(transport: str = 'grpc', request_type=folders.ListFoldersR
         # Designate an appropriate return value for the call.
         call.return_value = folders.ListFoldersResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_folders(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == folders.ListFoldersRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListFoldersPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -672,7 +666,7 @@ def test_list_folders_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -683,13 +677,13 @@ def test_list_folders_empty_call():
         client.list_folders()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == folders.ListFoldersRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_folders_async(transport: str = 'grpc_asyncio', request_type=folders.ListFoldersRequest):
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -702,21 +696,18 @@ async def test_list_folders_async(transport: str = 'grpc_asyncio', request_type=
             type(client.transport.list_folders),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(folders.ListFoldersResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(folders.ListFoldersResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_folders(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == folders.ListFoldersRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListFoldersAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -727,7 +718,7 @@ async def test_list_folders_async_from_dict():
 
 def test_list_folders_flattened():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -736,7 +727,6 @@ def test_list_folders_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = folders.ListFoldersResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_folders(
@@ -747,13 +737,12 @@ def test_list_folders_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
 def test_list_folders_flattened_error():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -768,7 +757,7 @@ def test_list_folders_flattened_error():
 @pytest.mark.asyncio
 async def test_list_folders_flattened_async():
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -789,14 +778,13 @@ async def test_list_folders_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
 @pytest.mark.asyncio
 async def test_list_folders_flattened_error_async():
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -810,7 +798,7 @@ async def test_list_folders_flattened_error_async():
 
 def test_list_folders_pager():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -858,7 +846,7 @@ def test_list_folders_pager():
 
 def test_list_folders_pages():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -900,7 +888,7 @@ def test_list_folders_pages():
 @pytest.mark.asyncio
 async def test_list_folders_async_pager():
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -948,7 +936,7 @@ async def test_list_folders_async_pager():
 @pytest.mark.asyncio
 async def test_list_folders_async_pages():
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -989,10 +977,9 @@ async def test_list_folders_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_search_folders(transport: str = 'grpc', request_type=folders.SearchFoldersRequest):
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1007,21 +994,16 @@ def test_search_folders(transport: str = 'grpc', request_type=folders.SearchFold
         # Designate an appropriate return value for the call.
         call.return_value = folders.SearchFoldersResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.search_folders(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == folders.SearchFoldersRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.SearchFoldersPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1033,7 +1015,7 @@ def test_search_folders_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -1044,13 +1026,13 @@ def test_search_folders_empty_call():
         client.search_folders()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == folders.SearchFoldersRequest()
+
 
 @pytest.mark.asyncio
 async def test_search_folders_async(transport: str = 'grpc_asyncio', request_type=folders.SearchFoldersRequest):
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1063,21 +1045,18 @@ async def test_search_folders_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.search_folders),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(folders.SearchFoldersResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(folders.SearchFoldersResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.search_folders(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == folders.SearchFoldersRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.SearchFoldersAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1088,7 +1067,7 @@ async def test_search_folders_async_from_dict():
 
 def test_search_folders_flattened():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1097,7 +1076,6 @@ def test_search_folders_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = folders.SearchFoldersResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.search_folders(
@@ -1108,13 +1086,12 @@ def test_search_folders_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].query == 'query_value'
 
 
 def test_search_folders_flattened_error():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1129,7 +1106,7 @@ def test_search_folders_flattened_error():
 @pytest.mark.asyncio
 async def test_search_folders_flattened_async():
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1150,14 +1127,13 @@ async def test_search_folders_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].query == 'query_value'
 
 
 @pytest.mark.asyncio
 async def test_search_folders_flattened_error_async():
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1171,7 +1147,7 @@ async def test_search_folders_flattened_error_async():
 
 def test_search_folders_pager():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1219,7 +1195,7 @@ def test_search_folders_pager():
 
 def test_search_folders_pages():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1261,7 +1237,7 @@ def test_search_folders_pages():
 @pytest.mark.asyncio
 async def test_search_folders_async_pager():
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1309,7 +1285,7 @@ async def test_search_folders_async_pager():
 @pytest.mark.asyncio
 async def test_search_folders_async_pages():
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1350,10 +1326,9 @@ async def test_search_folders_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_create_folder(transport: str = 'grpc', request_type=folders.CreateFolderRequest):
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1367,13 +1342,11 @@ def test_create_folder(transport: str = 'grpc', request_type=folders.CreateFolde
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.create_folder(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == folders.CreateFolderRequest()
 
     # Establish that the response is the type that we expect.
@@ -1388,7 +1361,7 @@ def test_create_folder_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -1399,13 +1372,13 @@ def test_create_folder_empty_call():
         client.create_folder()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == folders.CreateFolderRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_folder_async(transport: str = 'grpc_asyncio', request_type=folders.CreateFolderRequest):
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1421,13 +1394,11 @@ async def test_create_folder_async(transport: str = 'grpc_asyncio', request_type
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.create_folder(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == folders.CreateFolderRequest()
 
     # Establish that the response is the type that we expect.
@@ -1441,7 +1412,7 @@ async def test_create_folder_async_from_dict():
 
 def test_create_folder_flattened():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1450,7 +1421,6 @@ def test_create_folder_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_folder(
@@ -1461,13 +1431,12 @@ def test_create_folder_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].folder == folders.Folder(name='name_value')
 
 
 def test_create_folder_flattened_error():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1482,7 +1451,7 @@ def test_create_folder_flattened_error():
 @pytest.mark.asyncio
 async def test_create_folder_flattened_async():
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1505,14 +1474,13 @@ async def test_create_folder_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].folder == folders.Folder(name='name_value')
 
 
 @pytest.mark.asyncio
 async def test_create_folder_flattened_error_async():
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1526,7 +1494,7 @@ async def test_create_folder_flattened_error_async():
 
 def test_update_folder(transport: str = 'grpc', request_type=folders.UpdateFolderRequest):
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1540,13 +1508,11 @@ def test_update_folder(transport: str = 'grpc', request_type=folders.UpdateFolde
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.update_folder(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == folders.UpdateFolderRequest()
 
     # Establish that the response is the type that we expect.
@@ -1561,7 +1527,7 @@ def test_update_folder_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -1572,13 +1538,13 @@ def test_update_folder_empty_call():
         client.update_folder()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == folders.UpdateFolderRequest()
+
 
 @pytest.mark.asyncio
 async def test_update_folder_async(transport: str = 'grpc_asyncio', request_type=folders.UpdateFolderRequest):
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1594,13 +1560,11 @@ async def test_update_folder_async(transport: str = 'grpc_asyncio', request_type
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.update_folder(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == folders.UpdateFolderRequest()
 
     # Establish that the response is the type that we expect.
@@ -1614,12 +1578,13 @@ async def test_update_folder_async_from_dict():
 
 def test_update_folder_field_headers():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = folders.UpdateFolderRequest()
+
     request.folder.name = 'folder.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1627,7 +1592,6 @@ def test_update_folder_field_headers():
             type(client.transport.update_folder),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.update_folder(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1646,12 +1610,13 @@ def test_update_folder_field_headers():
 @pytest.mark.asyncio
 async def test_update_folder_field_headers_async():
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = folders.UpdateFolderRequest()
+
     request.folder.name = 'folder.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1659,7 +1624,6 @@ async def test_update_folder_field_headers_async():
             type(client.transport.update_folder),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.update_folder(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1677,7 +1641,7 @@ async def test_update_folder_field_headers_async():
 
 def test_update_folder_flattened():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1686,27 +1650,24 @@ def test_update_folder_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_folder(
             folder=folders.Folder(name='name_value'),
-            update_mask=field_mask.FieldMask(paths=['paths_value']),
+            update_mask=field_mask_pb2.FieldMask(paths=['paths_value']),
         )
 
         # Establish that the underlying call was made with the expected
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].folder == folders.Folder(name='name_value')
-
-        assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
+        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
 
 
 def test_update_folder_flattened_error():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1715,14 +1676,14 @@ def test_update_folder_flattened_error():
         client.update_folder(
             folders.UpdateFolderRequest(),
             folder=folders.Folder(name='name_value'),
-            update_mask=field_mask.FieldMask(paths=['paths_value']),
+            update_mask=field_mask_pb2.FieldMask(paths=['paths_value']),
         )
 
 
 @pytest.mark.asyncio
 async def test_update_folder_flattened_async():
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1739,23 +1700,21 @@ async def test_update_folder_flattened_async():
         # using the keyword arguments to the method.
         response = await client.update_folder(
             folder=folders.Folder(name='name_value'),
-            update_mask=field_mask.FieldMask(paths=['paths_value']),
+            update_mask=field_mask_pb2.FieldMask(paths=['paths_value']),
         )
 
         # Establish that the underlying call was made with the expected
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].folder == folders.Folder(name='name_value')
-
-        assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
+        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
 
 
 @pytest.mark.asyncio
 async def test_update_folder_flattened_error_async():
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1764,13 +1723,13 @@ async def test_update_folder_flattened_error_async():
         await client.update_folder(
             folders.UpdateFolderRequest(),
             folder=folders.Folder(name='name_value'),
-            update_mask=field_mask.FieldMask(paths=['paths_value']),
+            update_mask=field_mask_pb2.FieldMask(paths=['paths_value']),
         )
 
 
 def test_move_folder(transport: str = 'grpc', request_type=folders.MoveFolderRequest):
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1784,13 +1743,11 @@ def test_move_folder(transport: str = 'grpc', request_type=folders.MoveFolderReq
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.move_folder(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == folders.MoveFolderRequest()
 
     # Establish that the response is the type that we expect.
@@ -1805,7 +1762,7 @@ def test_move_folder_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -1816,13 +1773,13 @@ def test_move_folder_empty_call():
         client.move_folder()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == folders.MoveFolderRequest()
+
 
 @pytest.mark.asyncio
 async def test_move_folder_async(transport: str = 'grpc_asyncio', request_type=folders.MoveFolderRequest):
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1838,13 +1795,11 @@ async def test_move_folder_async(transport: str = 'grpc_asyncio', request_type=f
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.move_folder(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == folders.MoveFolderRequest()
 
     # Establish that the response is the type that we expect.
@@ -1858,12 +1813,13 @@ async def test_move_folder_async_from_dict():
 
 def test_move_folder_field_headers():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = folders.MoveFolderRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1871,7 +1827,6 @@ def test_move_folder_field_headers():
             type(client.transport.move_folder),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.move_folder(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1890,12 +1845,13 @@ def test_move_folder_field_headers():
 @pytest.mark.asyncio
 async def test_move_folder_field_headers_async():
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = folders.MoveFolderRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1903,7 +1859,6 @@ async def test_move_folder_field_headers_async():
             type(client.transport.move_folder),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.move_folder(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1921,7 +1876,7 @@ async def test_move_folder_field_headers_async():
 
 def test_move_folder_flattened():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1930,7 +1885,6 @@ def test_move_folder_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.move_folder(
@@ -1942,15 +1896,13 @@ def test_move_folder_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].destination_parent == 'destination_parent_value'
 
 
 def test_move_folder_flattened_error():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1966,7 +1918,7 @@ def test_move_folder_flattened_error():
 @pytest.mark.asyncio
 async def test_move_folder_flattened_async():
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1990,16 +1942,14 @@ async def test_move_folder_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
-
         assert args[0].destination_parent == 'destination_parent_value'
 
 
 @pytest.mark.asyncio
 async def test_move_folder_flattened_error_async():
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -2014,7 +1964,7 @@ async def test_move_folder_flattened_error_async():
 
 def test_delete_folder(transport: str = 'grpc', request_type=folders.DeleteFolderRequest):
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2028,13 +1978,11 @@ def test_delete_folder(transport: str = 'grpc', request_type=folders.DeleteFolde
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.delete_folder(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == folders.DeleteFolderRequest()
 
     # Establish that the response is the type that we expect.
@@ -2049,7 +1997,7 @@ def test_delete_folder_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -2060,13 +2008,13 @@ def test_delete_folder_empty_call():
         client.delete_folder()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == folders.DeleteFolderRequest()
+
 
 @pytest.mark.asyncio
 async def test_delete_folder_async(transport: str = 'grpc_asyncio', request_type=folders.DeleteFolderRequest):
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2082,13 +2030,11 @@ async def test_delete_folder_async(transport: str = 'grpc_asyncio', request_type
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.delete_folder(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == folders.DeleteFolderRequest()
 
     # Establish that the response is the type that we expect.
@@ -2102,12 +2048,13 @@ async def test_delete_folder_async_from_dict():
 
 def test_delete_folder_field_headers():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = folders.DeleteFolderRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2115,7 +2062,6 @@ def test_delete_folder_field_headers():
             type(client.transport.delete_folder),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.delete_folder(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2134,12 +2080,13 @@ def test_delete_folder_field_headers():
 @pytest.mark.asyncio
 async def test_delete_folder_field_headers_async():
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = folders.DeleteFolderRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2147,7 +2094,6 @@ async def test_delete_folder_field_headers_async():
             type(client.transport.delete_folder),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.delete_folder(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2165,7 +2111,7 @@ async def test_delete_folder_field_headers_async():
 
 def test_delete_folder_flattened():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2174,7 +2120,6 @@ def test_delete_folder_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_folder(
@@ -2185,13 +2130,12 @@ def test_delete_folder_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 def test_delete_folder_flattened_error():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -2206,7 +2150,7 @@ def test_delete_folder_flattened_error():
 @pytest.mark.asyncio
 async def test_delete_folder_flattened_async():
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2229,14 +2173,13 @@ async def test_delete_folder_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 @pytest.mark.asyncio
 async def test_delete_folder_flattened_error_async():
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -2250,7 +2193,7 @@ async def test_delete_folder_flattened_error_async():
 
 def test_undelete_folder(transport: str = 'grpc', request_type=folders.UndeleteFolderRequest):
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2264,13 +2207,11 @@ def test_undelete_folder(transport: str = 'grpc', request_type=folders.UndeleteF
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.undelete_folder(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == folders.UndeleteFolderRequest()
 
     # Establish that the response is the type that we expect.
@@ -2285,7 +2226,7 @@ def test_undelete_folder_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -2296,13 +2237,13 @@ def test_undelete_folder_empty_call():
         client.undelete_folder()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == folders.UndeleteFolderRequest()
+
 
 @pytest.mark.asyncio
 async def test_undelete_folder_async(transport: str = 'grpc_asyncio', request_type=folders.UndeleteFolderRequest):
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2318,13 +2259,11 @@ async def test_undelete_folder_async(transport: str = 'grpc_asyncio', request_ty
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.undelete_folder(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == folders.UndeleteFolderRequest()
 
     # Establish that the response is the type that we expect.
@@ -2338,12 +2277,13 @@ async def test_undelete_folder_async_from_dict():
 
 def test_undelete_folder_field_headers():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = folders.UndeleteFolderRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2351,7 +2291,6 @@ def test_undelete_folder_field_headers():
             type(client.transport.undelete_folder),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.undelete_folder(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2370,12 +2309,13 @@ def test_undelete_folder_field_headers():
 @pytest.mark.asyncio
 async def test_undelete_folder_field_headers_async():
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = folders.UndeleteFolderRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2383,7 +2323,6 @@ async def test_undelete_folder_field_headers_async():
             type(client.transport.undelete_folder),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.undelete_folder(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2401,7 +2340,7 @@ async def test_undelete_folder_field_headers_async():
 
 def test_undelete_folder_flattened():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2410,7 +2349,6 @@ def test_undelete_folder_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.undelete_folder(
@@ -2421,13 +2359,12 @@ def test_undelete_folder_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 def test_undelete_folder_flattened_error():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -2442,7 +2379,7 @@ def test_undelete_folder_flattened_error():
 @pytest.mark.asyncio
 async def test_undelete_folder_flattened_async():
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2465,14 +2402,13 @@ async def test_undelete_folder_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 @pytest.mark.asyncio
 async def test_undelete_folder_flattened_error_async():
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -2484,9 +2420,9 @@ async def test_undelete_folder_flattened_error_async():
         )
 
 
-def test_get_iam_policy(transport: str = 'grpc', request_type=iam_policy.GetIamPolicyRequest):
+def test_get_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.GetIamPolicyRequest):
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2499,27 +2435,20 @@ def test_get_iam_policy(transport: str = 'grpc', request_type=iam_policy.GetIamP
             type(client.transport.get_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = giv_policy.Policy(
+        call.return_value = policy_pb2.Policy(
             version=774,
-
             etag=b'etag_blob',
-
         )
-
         response = client.get_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
-        assert args[0] == iam_policy.GetIamPolicyRequest()
+        assert args[0] == iam_policy_pb2.GetIamPolicyRequest()
 
     # Establish that the response is the type that we expect.
-
-    assert isinstance(response, giv_policy.Policy)
-
+    assert isinstance(response, policy_pb2.Policy)
     assert response.version == 774
-
     assert response.etag == b'etag_blob'
 
 
@@ -2531,7 +2460,7 @@ def test_get_iam_policy_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -2542,13 +2471,13 @@ def test_get_iam_policy_empty_call():
         client.get_iam_policy()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
+        assert args[0] == iam_policy_pb2.GetIamPolicyRequest()
 
-        assert args[0] == iam_policy.GetIamPolicyRequest()
 
 @pytest.mark.asyncio
-async def test_get_iam_policy_async(transport: str = 'grpc_asyncio', request_type=iam_policy.GetIamPolicyRequest):
+async def test_get_iam_policy_async(transport: str = 'grpc_asyncio', request_type=iam_policy_pb2.GetIamPolicyRequest):
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2561,24 +2490,20 @@ async def test_get_iam_policy_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.get_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(giv_policy.Policy(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(policy_pb2.Policy(
             version=774,
             etag=b'etag_blob',
         ))
-
         response = await client.get_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
-        assert args[0] == iam_policy.GetIamPolicyRequest()
+        assert args[0] == iam_policy_pb2.GetIamPolicyRequest()
 
     # Establish that the response is the type that we expect.
-    assert isinstance(response, giv_policy.Policy)
-
+    assert isinstance(response, policy_pb2.Policy)
     assert response.version == 774
-
     assert response.etag == b'etag_blob'
 
 
@@ -2589,20 +2514,20 @@ async def test_get_iam_policy_async_from_dict():
 
 def test_get_iam_policy_field_headers():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
-    request = iam_policy.GetIamPolicyRequest()
+    request = iam_policy_pb2.GetIamPolicyRequest()
+
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
     with mock.patch.object(
             type(client.transport.get_iam_policy),
             '__call__') as call:
-        call.return_value = giv_policy.Policy()
-
+        call.return_value = policy_pb2.Policy()
         client.get_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2621,20 +2546,20 @@ def test_get_iam_policy_field_headers():
 @pytest.mark.asyncio
 async def test_get_iam_policy_field_headers_async():
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
-    request = iam_policy.GetIamPolicyRequest()
+    request = iam_policy_pb2.GetIamPolicyRequest()
+
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
     with mock.patch.object(
             type(client.transport.get_iam_policy),
             '__call__') as call:
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(giv_policy.Policy())
-
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(policy_pb2.Policy())
         await client.get_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2649,21 +2574,19 @@ async def test_get_iam_policy_field_headers_async():
         'resource=resource/value',
     ) in kw['metadata']
 
-
 def test_get_iam_policy_from_dict_foreign():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     # Mock the actual call within the gRPC stub, and fake the request.
     with mock.patch.object(
             type(client.transport.get_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = giv_policy.Policy()
-
+        call.return_value = policy_pb2.Policy()
         response = client.get_iam_policy(request={
             'resource': 'resource_value',
-            'options_': giv_options.GetPolicyOptions(requested_policy_version=2598),
+            'options': options_pb2.GetPolicyOptions(requested_policy_version=2598),
             }
         )
         call.assert_called()
@@ -2671,7 +2594,7 @@ def test_get_iam_policy_from_dict_foreign():
 
 def test_get_iam_policy_flattened():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2679,8 +2602,7 @@ def test_get_iam_policy_flattened():
             type(client.transport.get_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = giv_policy.Policy()
-
+        call.return_value = policy_pb2.Policy()
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_iam_policy(
@@ -2691,20 +2613,19 @@ def test_get_iam_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource == 'resource_value'
 
 
 def test_get_iam_policy_flattened_error():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
         client.get_iam_policy(
-            iam_policy.GetIamPolicyRequest(),
+            iam_policy_pb2.GetIamPolicyRequest(),
             resource='resource_value',
         )
 
@@ -2712,7 +2633,7 @@ def test_get_iam_policy_flattened_error():
 @pytest.mark.asyncio
 async def test_get_iam_policy_flattened_async():
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2720,9 +2641,9 @@ async def test_get_iam_policy_flattened_async():
             type(client.transport.get_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = giv_policy.Policy()
+        call.return_value = policy_pb2.Policy()
 
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(giv_policy.Policy())
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(policy_pb2.Policy())
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         response = await client.get_iam_policy(
@@ -2733,28 +2654,27 @@ async def test_get_iam_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource == 'resource_value'
 
 
 @pytest.mark.asyncio
 async def test_get_iam_policy_flattened_error_async():
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
         await client.get_iam_policy(
-            iam_policy.GetIamPolicyRequest(),
+            iam_policy_pb2.GetIamPolicyRequest(),
             resource='resource_value',
         )
 
 
-def test_set_iam_policy(transport: str = 'grpc', request_type=iam_policy.SetIamPolicyRequest):
+def test_set_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.SetIamPolicyRequest):
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2767,27 +2687,20 @@ def test_set_iam_policy(transport: str = 'grpc', request_type=iam_policy.SetIamP
             type(client.transport.set_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = giv_policy.Policy(
+        call.return_value = policy_pb2.Policy(
             version=774,
-
             etag=b'etag_blob',
-
         )
-
         response = client.set_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
-        assert args[0] == iam_policy.SetIamPolicyRequest()
+        assert args[0] == iam_policy_pb2.SetIamPolicyRequest()
 
     # Establish that the response is the type that we expect.
-
-    assert isinstance(response, giv_policy.Policy)
-
+    assert isinstance(response, policy_pb2.Policy)
     assert response.version == 774
-
     assert response.etag == b'etag_blob'
 
 
@@ -2799,7 +2712,7 @@ def test_set_iam_policy_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -2810,13 +2723,13 @@ def test_set_iam_policy_empty_call():
         client.set_iam_policy()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
+        assert args[0] == iam_policy_pb2.SetIamPolicyRequest()
 
-        assert args[0] == iam_policy.SetIamPolicyRequest()
 
 @pytest.mark.asyncio
-async def test_set_iam_policy_async(transport: str = 'grpc_asyncio', request_type=iam_policy.SetIamPolicyRequest):
+async def test_set_iam_policy_async(transport: str = 'grpc_asyncio', request_type=iam_policy_pb2.SetIamPolicyRequest):
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2829,24 +2742,20 @@ async def test_set_iam_policy_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.set_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(giv_policy.Policy(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(policy_pb2.Policy(
             version=774,
             etag=b'etag_blob',
         ))
-
         response = await client.set_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
-        assert args[0] == iam_policy.SetIamPolicyRequest()
+        assert args[0] == iam_policy_pb2.SetIamPolicyRequest()
 
     # Establish that the response is the type that we expect.
-    assert isinstance(response, giv_policy.Policy)
-
+    assert isinstance(response, policy_pb2.Policy)
     assert response.version == 774
-
     assert response.etag == b'etag_blob'
 
 
@@ -2857,20 +2766,20 @@ async def test_set_iam_policy_async_from_dict():
 
 def test_set_iam_policy_field_headers():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
-    request = iam_policy.SetIamPolicyRequest()
+    request = iam_policy_pb2.SetIamPolicyRequest()
+
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
     with mock.patch.object(
             type(client.transport.set_iam_policy),
             '__call__') as call:
-        call.return_value = giv_policy.Policy()
-
+        call.return_value = policy_pb2.Policy()
         client.set_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2889,20 +2798,20 @@ def test_set_iam_policy_field_headers():
 @pytest.mark.asyncio
 async def test_set_iam_policy_field_headers_async():
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
-    request = iam_policy.SetIamPolicyRequest()
+    request = iam_policy_pb2.SetIamPolicyRequest()
+
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
     with mock.patch.object(
             type(client.transport.set_iam_policy),
             '__call__') as call:
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(giv_policy.Policy())
-
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(policy_pb2.Policy())
         await client.set_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2917,21 +2826,19 @@ async def test_set_iam_policy_field_headers_async():
         'resource=resource/value',
     ) in kw['metadata']
 
-
 def test_set_iam_policy_from_dict_foreign():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     # Mock the actual call within the gRPC stub, and fake the request.
     with mock.patch.object(
             type(client.transport.set_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = giv_policy.Policy()
-
+        call.return_value = policy_pb2.Policy()
         response = client.set_iam_policy(request={
             'resource': 'resource_value',
-            'policy_': giv_policy.Policy(version=774),
+            'policy': policy_pb2.Policy(version=774),
             }
         )
         call.assert_called()
@@ -2939,7 +2846,7 @@ def test_set_iam_policy_from_dict_foreign():
 
 def test_set_iam_policy_flattened():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2947,8 +2854,7 @@ def test_set_iam_policy_flattened():
             type(client.transport.set_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = giv_policy.Policy()
-
+        call.return_value = policy_pb2.Policy()
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.set_iam_policy(
@@ -2959,20 +2865,19 @@ def test_set_iam_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource == 'resource_value'
 
 
 def test_set_iam_policy_flattened_error():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
         client.set_iam_policy(
-            iam_policy.SetIamPolicyRequest(),
+            iam_policy_pb2.SetIamPolicyRequest(),
             resource='resource_value',
         )
 
@@ -2980,7 +2885,7 @@ def test_set_iam_policy_flattened_error():
 @pytest.mark.asyncio
 async def test_set_iam_policy_flattened_async():
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2988,9 +2893,9 @@ async def test_set_iam_policy_flattened_async():
             type(client.transport.set_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = giv_policy.Policy()
+        call.return_value = policy_pb2.Policy()
 
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(giv_policy.Policy())
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(policy_pb2.Policy())
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         response = await client.set_iam_policy(
@@ -3001,28 +2906,27 @@ async def test_set_iam_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource == 'resource_value'
 
 
 @pytest.mark.asyncio
 async def test_set_iam_policy_flattened_error_async():
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
         await client.set_iam_policy(
-            iam_policy.SetIamPolicyRequest(),
+            iam_policy_pb2.SetIamPolicyRequest(),
             resource='resource_value',
         )
 
 
-def test_test_iam_permissions(transport: str = 'grpc', request_type=iam_policy.TestIamPermissionsRequest):
+def test_test_iam_permissions(transport: str = 'grpc', request_type=iam_policy_pb2.TestIamPermissionsRequest):
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3035,23 +2939,18 @@ def test_test_iam_permissions(transport: str = 'grpc', request_type=iam_policy.T
             type(client.transport.test_iam_permissions),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = iam_policy.TestIamPermissionsResponse(
+        call.return_value = iam_policy_pb2.TestIamPermissionsResponse(
             permissions=['permissions_value'],
-
         )
-
         response = client.test_iam_permissions(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
-        assert args[0] == iam_policy.TestIamPermissionsRequest()
+        assert args[0] == iam_policy_pb2.TestIamPermissionsRequest()
 
     # Establish that the response is the type that we expect.
-
-    assert isinstance(response, iam_policy.TestIamPermissionsResponse)
-
+    assert isinstance(response, iam_policy_pb2.TestIamPermissionsResponse)
     assert response.permissions == ['permissions_value']
 
 
@@ -3063,7 +2962,7 @@ def test_test_iam_permissions_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -3074,13 +2973,13 @@ def test_test_iam_permissions_empty_call():
         client.test_iam_permissions()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
+        assert args[0] == iam_policy_pb2.TestIamPermissionsRequest()
 
-        assert args[0] == iam_policy.TestIamPermissionsRequest()
 
 @pytest.mark.asyncio
-async def test_test_iam_permissions_async(transport: str = 'grpc_asyncio', request_type=iam_policy.TestIamPermissionsRequest):
+async def test_test_iam_permissions_async(transport: str = 'grpc_asyncio', request_type=iam_policy_pb2.TestIamPermissionsRequest):
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3093,21 +2992,18 @@ async def test_test_iam_permissions_async(transport: str = 'grpc_asyncio', reque
             type(client.transport.test_iam_permissions),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(iam_policy.TestIamPermissionsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(iam_policy_pb2.TestIamPermissionsResponse(
             permissions=['permissions_value'],
         ))
-
         response = await client.test_iam_permissions(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
-        assert args[0] == iam_policy.TestIamPermissionsRequest()
+        assert args[0] == iam_policy_pb2.TestIamPermissionsRequest()
 
     # Establish that the response is the type that we expect.
-    assert isinstance(response, iam_policy.TestIamPermissionsResponse)
-
+    assert isinstance(response, iam_policy_pb2.TestIamPermissionsResponse)
     assert response.permissions == ['permissions_value']
 
 
@@ -3118,20 +3014,20 @@ async def test_test_iam_permissions_async_from_dict():
 
 def test_test_iam_permissions_field_headers():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
-    request = iam_policy.TestIamPermissionsRequest()
+    request = iam_policy_pb2.TestIamPermissionsRequest()
+
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
     with mock.patch.object(
             type(client.transport.test_iam_permissions),
             '__call__') as call:
-        call.return_value = iam_policy.TestIamPermissionsResponse()
-
+        call.return_value = iam_policy_pb2.TestIamPermissionsResponse()
         client.test_iam_permissions(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3150,20 +3046,20 @@ def test_test_iam_permissions_field_headers():
 @pytest.mark.asyncio
 async def test_test_iam_permissions_field_headers_async():
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
-    request = iam_policy.TestIamPermissionsRequest()
+    request = iam_policy_pb2.TestIamPermissionsRequest()
+
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
     with mock.patch.object(
             type(client.transport.test_iam_permissions),
             '__call__') as call:
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(iam_policy.TestIamPermissionsResponse())
-
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(iam_policy_pb2.TestIamPermissionsResponse())
         await client.test_iam_permissions(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3178,18 +3074,16 @@ async def test_test_iam_permissions_field_headers_async():
         'resource=resource/value',
     ) in kw['metadata']
 
-
 def test_test_iam_permissions_from_dict_foreign():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     # Mock the actual call within the gRPC stub, and fake the request.
     with mock.patch.object(
             type(client.transport.test_iam_permissions),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = iam_policy.TestIamPermissionsResponse()
-
+        call.return_value = iam_policy_pb2.TestIamPermissionsResponse()
         response = client.test_iam_permissions(request={
             'resource': 'resource_value',
             'permissions': ['permissions_value'],
@@ -3200,7 +3094,7 @@ def test_test_iam_permissions_from_dict_foreign():
 
 def test_test_iam_permissions_flattened():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3208,8 +3102,7 @@ def test_test_iam_permissions_flattened():
             type(client.transport.test_iam_permissions),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = iam_policy.TestIamPermissionsResponse()
-
+        call.return_value = iam_policy_pb2.TestIamPermissionsResponse()
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.test_iam_permissions(
@@ -3221,22 +3114,20 @@ def test_test_iam_permissions_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource == 'resource_value'
-
         assert args[0].permissions == ['permissions_value']
 
 
 def test_test_iam_permissions_flattened_error():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
         client.test_iam_permissions(
-            iam_policy.TestIamPermissionsRequest(),
+            iam_policy_pb2.TestIamPermissionsRequest(),
             resource='resource_value',
             permissions=['permissions_value'],
         )
@@ -3245,7 +3136,7 @@ def test_test_iam_permissions_flattened_error():
 @pytest.mark.asyncio
 async def test_test_iam_permissions_flattened_async():
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3253,9 +3144,9 @@ async def test_test_iam_permissions_flattened_async():
             type(client.transport.test_iam_permissions),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = iam_policy.TestIamPermissionsResponse()
+        call.return_value = iam_policy_pb2.TestIamPermissionsResponse()
 
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(iam_policy.TestIamPermissionsResponse())
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(iam_policy_pb2.TestIamPermissionsResponse())
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         response = await client.test_iam_permissions(
@@ -3267,23 +3158,21 @@ async def test_test_iam_permissions_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource == 'resource_value'
-
         assert args[0].permissions == ['permissions_value']
 
 
 @pytest.mark.asyncio
 async def test_test_iam_permissions_flattened_error_async():
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
         await client.test_iam_permissions(
-            iam_policy.TestIamPermissionsRequest(),
+            iam_policy_pb2.TestIamPermissionsRequest(),
             resource='resource_value',
             permissions=['permissions_value'],
         )
@@ -3292,17 +3181,17 @@ async def test_test_iam_permissions_flattened_error_async():
 def test_credentials_transport_error():
     # It is an error to provide credentials and a transport instance.
     transport = transports.FoldersGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = FoldersClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             transport=transport,
         )
 
     # It is an error to provide a credentials file and a transport instance.
     transport = transports.FoldersGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = FoldersClient(
@@ -3312,7 +3201,7 @@ def test_credentials_transport_error():
 
     # It is an error to provide scopes and a transport instance.
     transport = transports.FoldersGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = FoldersClient(
@@ -3324,26 +3213,24 @@ def test_credentials_transport_error():
 def test_transport_instance():
     # A client may be instantiated with a custom transport instance.
     transport = transports.FoldersGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     client = FoldersClient(transport=transport)
     assert client.transport is transport
 
-
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.FoldersGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     channel = transport.grpc_channel
     assert channel
 
     transport = transports.FoldersGrpcAsyncIOTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     channel = transport.grpc_channel
     assert channel
-
 
 @pytest.mark.parametrize("transport_class", [
     transports.FoldersGrpcTransport,
@@ -3351,28 +3238,26 @@ def test_transport_get_channel():
 ])
 def test_transport_adc(transport_class):
     # Test default credentials are used if not provided.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport_class()
         adc.assert_called_once()
-
 
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     assert isinstance(
         client.transport,
         transports.FoldersGrpcTransport,
     )
 
-
 def test_folders_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
-    with pytest.raises(exceptions.DuplicateCredentialArgs):
+    with pytest.raises(core_exceptions.DuplicateCredentialArgs):
         transport = transports.FoldersTransport(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             credentials_file="credentials.json"
         )
 
@@ -3382,7 +3267,7 @@ def test_folders_base_transport():
     with mock.patch('google.cloud.resourcemanager_v3.services.folders.transports.FoldersTransport.__init__') as Transport:
         Transport.return_value = None
         transport = transports.FoldersTransport(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
         )
 
     # Every method on the transport should just blindly
@@ -3399,7 +3284,7 @@ def test_folders_base_transport():
         'get_iam_policy',
         'set_iam_policy',
         'test_iam_permissions',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -3410,11 +3295,32 @@ def test_folders_base_transport():
         transport.operations_client
 
 
+@requires_google_auth_gte_1_25_0
 def test_folders_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.resourcemanager_v3.services.folders.transports.FoldersTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.resourcemanager_v3.services.folders.transports.FoldersTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
+        load_creds.return_value = (ga_credentials.AnonymousCredentials(), None)
+        transport = transports.FoldersTransport(
+            credentials_file="credentials.json",
+            quota_project_id="octopus",
+        )
+        load_creds.assert_called_once_with("credentials.json",
+            scopes=None,
+            default_scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+            'https://www.googleapis.com/auth/cloud-platform.read-only',
+),
+            quota_project_id="octopus",
+        )
+
+
+@requires_google_auth_lt_1_25_0
+def test_folders_base_transport_with_credentials_file_old_google_auth():
+    # Instantiate the base transport with a credentials file
+    with mock.patch.object(google.auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.resourcemanager_v3.services.folders.transports.FoldersTransport._prep_wrapped_messages') as Transport:
+        Transport.return_value = None
+        load_creds.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.FoldersTransport(
             credentials_file="credentials.json",
             quota_project_id="octopus",
@@ -3429,35 +3335,189 @@ def test_folders_base_transport_with_credentials_file():
 
 def test_folders_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.resourcemanager_v3.services.folders.transports.FoldersTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc, mock.patch('google.cloud.resourcemanager_v3.services.folders.transports.FoldersTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.FoldersTransport()
         adc.assert_called_once()
 
 
+@requires_google_auth_gte_1_25_0
 def test_folders_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         FoldersClient()
-        adc.assert_called_once_with(scopes=(
+        adc.assert_called_once_with(
+            scopes=None,
+            default_scopes=(
             'https://www.googleapis.com/auth/cloud-platform',
-            'https://www.googleapis.com/auth/cloud-platform.read-only',),
+            'https://www.googleapis.com/auth/cloud-platform.read-only',
+),
             quota_project_id=None,
         )
 
 
-def test_folders_transport_auth_adc():
+@requires_google_auth_lt_1_25_0
+def test_folders_auth_adc_old_google_auth():
+    # If no credentials are provided, we should use ADC credentials.
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
+        FoldersClient()
+        adc.assert_called_once_with(
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/cloud-platform.read-only',),
+            quota_project_id=None,
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.FoldersGrpcTransport,
+        transports.FoldersGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_gte_1_25_0
+def test_folders_transport_auth_adc(transport_class):
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transports.FoldersGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+        adc.assert_called_once_with(
+            scopes=["1", "2"],
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/cloud-platform.read-only',),
+            quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.FoldersGrpcTransport,
+        transports.FoldersGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_lt_1_25_0
+def test_folders_transport_auth_adc_old_google_auth(transport_class):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/cloud-platform',
-            'https://www.googleapis.com/auth/cloud-platform.read-only',),
+            'https://www.googleapis.com/auth/cloud-platform.read-only',
+),
             quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.FoldersGrpcTransport, grpc_helpers),
+        (transports.FoldersGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_gte_1_26_0
+def test_folders_transport_create_channel(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = ga_credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(
+            quota_project_id="octopus",
+            scopes=["1", "2"]
+        )
+
+        create_channel.assert_called_with(
+            "cloudresourcemanager.googleapis.com:443",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            default_scopes=(
+                'https://www.googleapis.com/auth/cloud-platform',
+                'https://www.googleapis.com/auth/cloud-platform.read-only',
+),
+            scopes=["1", "2"],
+            default_host="cloudresourcemanager.googleapis.com",
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.FoldersGrpcTransport, grpc_helpers),
+        (transports.FoldersGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_folders_transport_create_channel_old_api_core(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = ga_credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(quota_project_id="octopus")
+
+        create_channel.assert_called_with(
+            "cloudresourcemanager.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=(
+                'https://www.googleapis.com/auth/cloud-platform',
+                'https://www.googleapis.com/auth/cloud-platform.read-only',
+),
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.FoldersGrpcTransport, grpc_helpers),
+        (transports.FoldersGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_folders_transport_create_channel_user_scopes(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = ga_credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+
+        create_channel.assert_called_with(
+            "cloudresourcemanager.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=["1", "2"],
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
         )
 
 
@@ -3465,7 +3525,7 @@ def test_folders_transport_auth_adc():
 def test_folders_grpc_transport_client_cert_source_for_mtls(
     transport_class
 ):
-    cred = credentials.AnonymousCredentials()
+    cred = ga_credentials.AnonymousCredentials()
 
     # Check ssl_channel_credentials is used if provided.
     with mock.patch.object(transport_class, "create_channel") as mock_create_channel:
@@ -3508,7 +3568,7 @@ def test_folders_grpc_transport_client_cert_source_for_mtls(
 
 def test_folders_host_no_port():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='cloudresourcemanager.googleapis.com'),
     )
     assert client.transport._host == 'cloudresourcemanager.googleapis.com:443'
@@ -3516,11 +3576,10 @@ def test_folders_host_no_port():
 
 def test_folders_host_with_port():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='cloudresourcemanager.googleapis.com:8000'),
     )
     assert client.transport._host == 'cloudresourcemanager.googleapis.com:8000'
-
 
 def test_folders_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -3562,9 +3621,9 @@ def test_folders_transport_channel_mtls_with_client_cert_source(
             mock_grpc_channel = mock.Mock()
             grpc_create_channel.return_value = mock_grpc_channel
 
-            cred = credentials.AnonymousCredentials()
+            cred = ga_credentials.AnonymousCredentials()
             with pytest.warns(DeprecationWarning):
-                with mock.patch.object(auth, 'default') as adc:
+                with mock.patch.object(google.auth, 'default') as adc:
                     adc.return_value = (cred, None)
                     transport = transport_class(
                         host="squid.clam.whelk",
@@ -3640,7 +3699,7 @@ def test_folders_transport_channel_mtls_with_adc(
 
 def test_folders_grpc_lro_client():
     client = FoldersClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
     transport = client.transport
@@ -3657,7 +3716,7 @@ def test_folders_grpc_lro_client():
 
 def test_folders_grpc_lro_async_client():
     client = FoldersAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc_asyncio',
     )
     transport = client.transport
@@ -3674,7 +3733,6 @@ def test_folders_grpc_lro_async_client():
 
 def test_folder_path():
     folder = "squid"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = FoldersClient.folder_path(folder)
     assert expected == actual
@@ -3682,8 +3740,7 @@ def test_folder_path():
 
 def test_parse_folder_path():
     expected = {
-    "folder": "clam",
-
+        "folder": "clam",
     }
     path = FoldersClient.folder_path(**expected)
 
@@ -3693,7 +3750,6 @@ def test_parse_folder_path():
 
 def test_common_billing_account_path():
     billing_account = "whelk"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = FoldersClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -3701,8 +3757,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "octopus",
-
+        "billing_account": "octopus",
     }
     path = FoldersClient.common_billing_account_path(**expected)
 
@@ -3712,7 +3767,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "oyster"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = FoldersClient.common_folder_path(folder)
     assert expected == actual
@@ -3720,8 +3774,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "nudibranch",
-
+        "folder": "nudibranch",
     }
     path = FoldersClient.common_folder_path(**expected)
 
@@ -3731,7 +3784,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "cuttlefish"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = FoldersClient.common_organization_path(organization)
     assert expected == actual
@@ -3739,8 +3791,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "mussel",
-
+        "organization": "mussel",
     }
     path = FoldersClient.common_organization_path(**expected)
 
@@ -3750,7 +3801,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "winkle"
-
     expected = "projects/{project}".format(project=project, )
     actual = FoldersClient.common_project_path(project)
     assert expected == actual
@@ -3758,8 +3808,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "nautilus",
-
+        "project": "nautilus",
     }
     path = FoldersClient.common_project_path(**expected)
 
@@ -3770,7 +3819,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "scallop"
     location = "abalone"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = FoldersClient.common_location_path(project, location)
     assert expected == actual
@@ -3778,9 +3826,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "squid",
-    "location": "clam",
-
+        "project": "squid",
+        "location": "clam",
     }
     path = FoldersClient.common_location_path(**expected)
 
@@ -3794,7 +3841,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
 
     with mock.patch.object(transports.FoldersTransport, '_prep_wrapped_messages') as prep:
         client = FoldersClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)
@@ -3802,7 +3849,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
     with mock.patch.object(transports.FoldersTransport, '_prep_wrapped_messages') as prep:
         transport_class = FoldersClient.get_transport_class()
         transport = transport_class(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)

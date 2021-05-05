@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.cloud.bigquery.connection_v1beta1.services.connection_service.async_client import ConnectionServiceAsyncClient
 from google.cloud.bigquery.connection_v1beta1.services.connection_service.client import ConnectionServiceClient
+from google.cloud.bigquery.connection_v1beta1.services.connection_service.async_client import ConnectionServiceAsyncClient
+
 from google.cloud.bigquery.connection_v1beta1.types.connection import CloudSqlCredential
 from google.cloud.bigquery.connection_v1beta1.types.connection import CloudSqlProperties
 from google.cloud.bigquery.connection_v1beta1.types.connection import Connection
@@ -29,13 +29,12 @@ from google.cloud.bigquery.connection_v1beta1.types.connection import ListConnec
 from google.cloud.bigquery.connection_v1beta1.types.connection import UpdateConnectionCredentialRequest
 from google.cloud.bigquery.connection_v1beta1.types.connection import UpdateConnectionRequest
 
-__all__ = (
+__all__ = ('ConnectionServiceClient',
+    'ConnectionServiceAsyncClient',
     'CloudSqlCredential',
     'CloudSqlProperties',
     'Connection',
     'ConnectionCredential',
-    'ConnectionServiceAsyncClient',
-    'ConnectionServiceClient',
     'CreateConnectionRequest',
     'DeleteConnectionRequest',
     'GetConnectionRequest',

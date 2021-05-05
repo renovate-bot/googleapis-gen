@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -22,18 +20,17 @@ from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
 import google.api_core.client_options as ClientOptions # type: ignore
-from google.api_core import exceptions                 # type: ignore
+from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
 from google.cloud.dialogflowcx_v3.services.transition_route_groups import pagers
 from google.cloud.dialogflowcx_v3.types import page
 from google.cloud.dialogflowcx_v3.types import transition_route_group
 from google.cloud.dialogflowcx_v3.types import transition_route_group as gcdc_transition_route_group
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-
+from google.protobuf import field_mask_pb2  # type: ignore
 from .transports.base import TransitionRouteGroupsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import TransitionRouteGroupsGrpcAsyncIOTransport
 from .client import TransitionRouteGroupsClient
@@ -59,19 +56,14 @@ class TransitionRouteGroupsAsyncClient:
     parse_transition_route_group_path = staticmethod(TransitionRouteGroupsClient.parse_transition_route_group_path)
     webhook_path = staticmethod(TransitionRouteGroupsClient.webhook_path)
     parse_webhook_path = staticmethod(TransitionRouteGroupsClient.parse_webhook_path)
-
     common_billing_account_path = staticmethod(TransitionRouteGroupsClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(TransitionRouteGroupsClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(TransitionRouteGroupsClient.common_folder_path)
     parse_common_folder_path = staticmethod(TransitionRouteGroupsClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(TransitionRouteGroupsClient.common_organization_path)
     parse_common_organization_path = staticmethod(TransitionRouteGroupsClient.parse_common_organization_path)
-
     common_project_path = staticmethod(TransitionRouteGroupsClient.common_project_path)
     parse_common_project_path = staticmethod(TransitionRouteGroupsClient.parse_common_project_path)
-
     common_location_path = staticmethod(TransitionRouteGroupsClient.common_location_path)
     parse_common_location_path = staticmethod(TransitionRouteGroupsClient.parse_common_location_path)
 
@@ -119,7 +111,7 @@ class TransitionRouteGroupsAsyncClient:
     get_transport_class = functools.partial(type(TransitionRouteGroupsClient).get_transport_class, type(TransitionRouteGroupsClient))
 
     def __init__(self, *,
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             transport: Union[str, TransitionRouteGroupsTransport] = 'grpc_asyncio',
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -156,7 +148,6 @@ class TransitionRouteGroupsAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = TransitionRouteGroupsClient(
             credentials=credentials,
             transport=transport,
@@ -188,7 +179,6 @@ class TransitionRouteGroupsAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -216,7 +206,6 @@ class TransitionRouteGroupsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -280,7 +269,6 @@ class TransitionRouteGroupsAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -307,7 +295,6 @@ class TransitionRouteGroupsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -371,7 +358,6 @@ class TransitionRouteGroupsAsyncClient:
                 This corresponds to the ``transition_route_group`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -398,7 +384,6 @@ class TransitionRouteGroupsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if transition_route_group is not None:
@@ -435,7 +420,7 @@ class TransitionRouteGroupsAsyncClient:
             request: gcdc_transition_route_group.UpdateTransitionRouteGroupRequest = None,
             *,
             transition_route_group: gcdc_transition_route_group.TransitionRouteGroup = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -461,7 +446,6 @@ class TransitionRouteGroupsAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -488,7 +472,6 @@ class TransitionRouteGroupsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if transition_route_group is not None:
             request.transition_route_group = transition_route_group
         if update_mask is not None:
@@ -545,7 +528,6 @@ class TransitionRouteGroupsAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -564,7 +546,6 @@ class TransitionRouteGroupsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -591,8 +572,6 @@ class TransitionRouteGroupsAsyncClient:
             timeout=timeout,
             metadata=metadata,
         )
-
-
 
 
 

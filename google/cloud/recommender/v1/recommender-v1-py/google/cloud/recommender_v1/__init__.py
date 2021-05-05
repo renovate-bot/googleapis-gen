@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,8 @@
 #
 
 from .services.recommender import RecommenderClient
+from .services.recommender import RecommenderAsyncClient
+
 from .types.insight import Insight
 from .types.insight import InsightStateInfo
 from .types.recommendation import CostProjection
@@ -37,27 +38,26 @@ from .types.recommender_service import MarkRecommendationClaimedRequest
 from .types.recommender_service import MarkRecommendationFailedRequest
 from .types.recommender_service import MarkRecommendationSucceededRequest
 
-
 __all__ = (
-    'CostProjection',
-    'GetInsightRequest',
-    'GetRecommendationRequest',
-    'Impact',
-    'Insight',
-    'InsightStateInfo',
-    'ListInsightsRequest',
-    'ListInsightsResponse',
-    'ListRecommendationsRequest',
-    'ListRecommendationsResponse',
-    'MarkInsightAcceptedRequest',
-    'MarkRecommendationClaimedRequest',
-    'MarkRecommendationFailedRequest',
-    'MarkRecommendationSucceededRequest',
-    'Operation',
-    'OperationGroup',
-    'Recommendation',
-    'RecommendationContent',
-    'RecommendationStateInfo',
-    'ValueMatcher',
+'CostProjection',
+'GetInsightRequest',
+'GetRecommendationRequest',
+'Impact',
+'Insight',
+'InsightStateInfo',
+'ListInsightsRequest',
+'ListInsightsResponse',
+'ListRecommendationsRequest',
+'ListRecommendationsResponse',
+'MarkInsightAcceptedRequest',
+'MarkRecommendationClaimedRequest',
+'MarkRecommendationFailedRequest',
+'MarkRecommendationSucceededRequest',
+'Operation',
+'OperationGroup',
+'Recommendation',
+'RecommendationContent',
+'RecommendationStateInfo',
 'RecommenderClient',
+'ValueMatcher',
 )

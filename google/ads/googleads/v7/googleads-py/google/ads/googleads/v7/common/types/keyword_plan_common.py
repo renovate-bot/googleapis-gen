@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v7.common.types import dates
 from google.ads.googleads.v7.enums.types import device as gage_device
@@ -73,21 +70,40 @@ class KeywordPlanHistoricalMetrics(proto.Message):
             in micros for the keyword.
     """
 
-    avg_monthly_searches = proto.Field(proto.INT64, number=7, optional=True)
-    monthly_search_volumes = proto.RepeatedField(proto.MESSAGE, number=6,
+    avg_monthly_searches = proto.Field(
+        proto.INT64,
+        number=7,
+        optional=True,
+    )
+    monthly_search_volumes = proto.RepeatedField(
+        proto.MESSAGE,
+        number=6,
         message='MonthlySearchVolume',
     )
-    competition = proto.Field(proto.ENUM, number=2,
+    competition = proto.Field(
+        proto.ENUM,
+        number=2,
         enum=keyword_plan_competition_level.KeywordPlanCompetitionLevelEnum.KeywordPlanCompetitionLevel,
     )
-    competition_index = proto.Field(proto.INT64, number=8, optional=True)
-    low_top_of_page_bid_micros = proto.Field(proto.INT64, number=9, optional=True)
-    high_top_of_page_bid_micros = proto.Field(proto.INT64, number=10, optional=True)
+    competition_index = proto.Field(
+        proto.INT64,
+        number=8,
+        optional=True,
+    )
+    low_top_of_page_bid_micros = proto.Field(
+        proto.INT64,
+        number=9,
+        optional=True,
+    )
+    high_top_of_page_bid_micros = proto.Field(
+        proto.INT64,
+        number=10,
+        optional=True,
+    )
 
 
 class HistoricalMetricsOptions(proto.Message):
     r"""Historical metrics options.
-
     Attributes:
         year_month_range (google.ads.googleads.v7.common.types.YearMonthRange):
             The year month range for historical metrics. If not
@@ -98,14 +114,16 @@ class HistoricalMetricsOptions(proto.Message):
             range for which search volume is available will be returned.
     """
 
-    year_month_range = proto.Field(proto.MESSAGE, number=1, optional=True,
+    year_month_range = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        optional=True,
         message=dates.YearMonthRange,
     )
 
 
 class MonthlySearchVolume(proto.Message):
     r"""Monthly search volume.
-
     Attributes:
         year (int):
             The year of the search volume (e.g. 2020).
@@ -117,29 +135,39 @@ class MonthlySearchVolume(proto.Message):
             unavailable for that month.
     """
 
-    year = proto.Field(proto.INT64, number=4, optional=True)
-    month = proto.Field(proto.ENUM, number=2,
+    year = proto.Field(
+        proto.INT64,
+        number=4,
+        optional=True,
+    )
+    month = proto.Field(
+        proto.ENUM,
+        number=2,
         enum=month_of_year.MonthOfYearEnum.MonthOfYear,
     )
-    monthly_searches = proto.Field(proto.INT64, number=5, optional=True)
+    monthly_searches = proto.Field(
+        proto.INT64,
+        number=5,
+        optional=True,
+    )
 
 
 class KeywordPlanAggregateMetrics(proto.Message):
     r"""The aggregate metrics specification of the request.
-
     Attributes:
         aggregate_metric_types (Sequence[google.ads.googleads.v7.enums.types.KeywordPlanAggregateMetricTypeEnum.KeywordPlanAggregateMetricType]):
             The list of aggregate metrics to fetch data.
     """
 
-    aggregate_metric_types = proto.RepeatedField(proto.ENUM, number=1,
+    aggregate_metric_types = proto.RepeatedField(
+        proto.ENUM,
+        number=1,
         enum=keyword_plan_aggregate_metric_type.KeywordPlanAggregateMetricTypeEnum.KeywordPlanAggregateMetricType,
     )
 
 
 class KeywordPlanAggregateMetricResults(proto.Message):
     r"""The aggregated historical metrics for keyword plan keywords.
-
     Attributes:
         device_searches (Sequence[google.ads.googleads.v7.common.types.KeywordPlanDeviceSearches]):
             The aggregate searches for all the keywords
@@ -152,7 +180,9 @@ class KeywordPlanAggregateMetricResults(proto.Message):
             request.
     """
 
-    device_searches = proto.RepeatedField(proto.MESSAGE, number=1,
+    device_searches = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='KeywordPlanDeviceSearches',
     )
 
@@ -168,28 +198,34 @@ class KeywordPlanDeviceSearches(proto.Message):
             The total searches for the device.
     """
 
-    device = proto.Field(proto.ENUM, number=1,
+    device = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=gage_device.DeviceEnum.Device,
     )
-    search_count = proto.Field(proto.INT64, number=2, optional=True)
+    search_count = proto.Field(
+        proto.INT64,
+        number=2,
+        optional=True,
+    )
 
 
 class KeywordAnnotations(proto.Message):
     r"""The Annotations for the Keyword plan keywords.
-
     Attributes:
         concepts (Sequence[google.ads.googleads.v7.common.types.KeywordConcept]):
             The list of concepts for the keyword.
     """
 
-    concepts = proto.RepeatedField(proto.MESSAGE, number=1,
+    concepts = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='KeywordConcept',
     )
 
 
 class KeywordConcept(proto.Message):
     r"""The concept for the keyword.
-
     Attributes:
         name (str):
             The concept name for the keyword in the concept_group.
@@ -197,15 +233,19 @@ class KeywordConcept(proto.Message):
             The concept group of the concept details.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-    concept_group = proto.Field(proto.MESSAGE, number=2,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    concept_group = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='ConceptGroup',
     )
 
 
 class ConceptGroup(proto.Message):
     r"""The concept group for the keyword concept.
-
     Attributes:
         name (str):
             The concept group name.
@@ -213,8 +253,13 @@ class ConceptGroup(proto.Message):
             The concept group type.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-    type_ = proto.Field(proto.ENUM, number=2,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    type_ = proto.Field(
+        proto.ENUM,
+        number=2,
         enum=keyword_plan_concept_group_type.KeywordPlanConceptGroupTypeEnum.KeywordPlanConceptGroupType,
     )
 

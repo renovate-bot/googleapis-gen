@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -22,10 +20,10 @@ from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
 import google.api_core.client_options as ClientOptions # type: ignore
-from google.api_core import exceptions                 # type: ignore
+from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
 from google.api_core import operation  # type: ignore
@@ -47,10 +45,9 @@ from google.cloud.automl_v1.types import text
 from google.cloud.automl_v1.types import text_extraction
 from google.cloud.automl_v1.types import text_sentiment
 from google.cloud.automl_v1.types import translation
-from google.protobuf import empty_pb2 as empty  # type: ignore
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
+from google.protobuf import empty_pb2  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 from .transports.base import AutoMlTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import AutoMlGrpcAsyncIOTransport
 from .client import AutoMlClient
@@ -87,19 +84,14 @@ class AutoMlAsyncClient:
     parse_model_path = staticmethod(AutoMlClient.parse_model_path)
     model_evaluation_path = staticmethod(AutoMlClient.model_evaluation_path)
     parse_model_evaluation_path = staticmethod(AutoMlClient.parse_model_evaluation_path)
-
     common_billing_account_path = staticmethod(AutoMlClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(AutoMlClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(AutoMlClient.common_folder_path)
     parse_common_folder_path = staticmethod(AutoMlClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(AutoMlClient.common_organization_path)
     parse_common_organization_path = staticmethod(AutoMlClient.parse_common_organization_path)
-
     common_project_path = staticmethod(AutoMlClient.common_project_path)
     parse_common_project_path = staticmethod(AutoMlClient.parse_common_project_path)
-
     common_location_path = staticmethod(AutoMlClient.common_location_path)
     parse_common_location_path = staticmethod(AutoMlClient.parse_common_location_path)
 
@@ -147,7 +139,7 @@ class AutoMlAsyncClient:
     get_transport_class = functools.partial(type(AutoMlClient).get_transport_class, type(AutoMlClient))
 
     def __init__(self, *,
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             transport: Union[str, AutoMlTransport] = 'grpc_asyncio',
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -184,7 +176,6 @@ class AutoMlAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = AutoMlClient(
             credentials=credentials,
             transport=transport,
@@ -220,7 +211,6 @@ class AutoMlAsyncClient:
                 This corresponds to the ``dataset`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -247,7 +237,6 @@ class AutoMlAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if dataset is not None:
@@ -309,7 +298,6 @@ class AutoMlAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -336,7 +324,6 @@ class AutoMlAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -345,10 +332,7 @@ class AutoMlAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_dataset,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -398,7 +382,6 @@ class AutoMlAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -426,7 +409,6 @@ class AutoMlAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -435,10 +417,7 @@ class AutoMlAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_datasets,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -480,7 +459,7 @@ class AutoMlAsyncClient:
             request: service.UpdateDatasetRequest = None,
             *,
             dataset: gca_dataset.Dataset = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -505,7 +484,6 @@ class AutoMlAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -532,7 +510,6 @@ class AutoMlAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if dataset is not None:
             request.dataset = dataset
         if update_mask is not None:
@@ -590,7 +567,6 @@ class AutoMlAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -628,7 +604,6 @@ class AutoMlAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -637,10 +612,7 @@ class AutoMlAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_dataset,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -670,7 +642,7 @@ class AutoMlAsyncClient:
         response = operation_async.from_gapic(
             response,
             self._client._transport.operations_client,
-            empty.Empty,
+            empty_pb2.Empty,
             metadata_type=operations.OperationMetadata,
         )
 
@@ -717,7 +689,6 @@ class AutoMlAsyncClient:
                 This corresponds to the ``input_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -755,7 +726,6 @@ class AutoMlAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
         if input_config is not None:
@@ -789,7 +759,7 @@ class AutoMlAsyncClient:
         response = operation_async.from_gapic(
             response,
             self._client._transport.operations_client,
-            empty.Empty,
+            empty_pb2.Empty,
             metadata_type=operations.OperationMetadata,
         )
 
@@ -828,7 +798,6 @@ class AutoMlAsyncClient:
                 This corresponds to the ``output_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -866,7 +835,6 @@ class AutoMlAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
         if output_config is not None:
@@ -900,7 +868,7 @@ class AutoMlAsyncClient:
         response = operation_async.from_gapic(
             response,
             self._client._transport.operations_client,
-            empty.Empty,
+            empty_pb2.Empty,
             metadata_type=operations.OperationMetadata,
         )
 
@@ -928,7 +896,6 @@ class AutoMlAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -951,7 +918,6 @@ class AutoMlAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -960,10 +926,7 @@ class AutoMlAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_annotation_spec,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1024,7 +987,6 @@ class AutoMlAsyncClient:
                 This corresponds to the ``model`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1052,7 +1014,6 @@ class AutoMlAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if model is not None:
@@ -1112,7 +1073,6 @@ class AutoMlAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1137,7 +1097,6 @@ class AutoMlAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1146,10 +1105,7 @@ class AutoMlAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_model,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1199,7 +1155,6 @@ class AutoMlAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1227,7 +1182,6 @@ class AutoMlAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -1236,10 +1190,7 @@ class AutoMlAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_models,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1301,7 +1252,6 @@ class AutoMlAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1339,7 +1289,6 @@ class AutoMlAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1348,10 +1297,7 @@ class AutoMlAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_model,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1381,7 +1327,7 @@ class AutoMlAsyncClient:
         response = operation_async.from_gapic(
             response,
             self._client._transport.operations_client,
-            empty.Empty,
+            empty_pb2.Empty,
             metadata_type=operations.OperationMetadata,
         )
 
@@ -1392,7 +1338,7 @@ class AutoMlAsyncClient:
             request: service.UpdateModelRequest = None,
             *,
             model: gca_model.Model = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -1417,7 +1363,6 @@ class AutoMlAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1442,7 +1387,6 @@ class AutoMlAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if model is not None:
             request.model = model
         if update_mask is not None:
@@ -1510,7 +1454,6 @@ class AutoMlAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1548,7 +1491,6 @@ class AutoMlAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1580,7 +1522,7 @@ class AutoMlAsyncClient:
         response = operation_async.from_gapic(
             response,
             self._client._transport.operations_client,
-            empty.Empty,
+            empty_pb2.Empty,
             metadata_type=operations.OperationMetadata,
         )
 
@@ -1616,7 +1558,6 @@ class AutoMlAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1654,7 +1595,6 @@ class AutoMlAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1686,7 +1626,7 @@ class AutoMlAsyncClient:
         response = operation_async.from_gapic(
             response,
             self._client._transport.operations_client,
-            empty.Empty,
+            empty_pb2.Empty,
             metadata_type=operations.OperationMetadata,
         )
 
@@ -1731,7 +1671,6 @@ class AutoMlAsyncClient:
                 This corresponds to the ``output_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1769,7 +1708,6 @@ class AutoMlAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
         if output_config is not None:
@@ -1803,7 +1741,7 @@ class AutoMlAsyncClient:
         response = operation_async.from_gapic(
             response,
             self._client._transport.operations_client,
-            empty.Empty,
+            empty_pb2.Empty,
             metadata_type=operations.OperationMetadata,
         )
 
@@ -1831,7 +1769,6 @@ class AutoMlAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1854,7 +1791,6 @@ class AutoMlAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1863,10 +1799,7 @@ class AutoMlAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_model_evaluation,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1938,7 +1871,6 @@ class AutoMlAsyncClient:
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1966,7 +1898,6 @@ class AutoMlAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if filter is not None:
@@ -1977,10 +1908,7 @@ class AutoMlAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_model_evaluations,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -2017,8 +1945,6 @@ class AutoMlAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

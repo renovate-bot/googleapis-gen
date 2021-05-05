@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -22,18 +20,17 @@ from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
 import google.api_core.client_options as ClientOptions # type: ignore
-from google.api_core import exceptions                 # type: ignore
+from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
 from google.cloud.dialogflow_v2.services.participants import pagers
 from google.cloud.dialogflow_v2.types import participant
 from google.cloud.dialogflow_v2.types import participant as gcd_participant
 from google.cloud.dialogflow_v2.types import session
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-
+from google.protobuf import field_mask_pb2  # type: ignore
 from .transports.base import ParticipantsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import ParticipantsGrpcAsyncIOTransport
 from .client import ParticipantsClient
@@ -59,19 +56,14 @@ class ParticipantsAsyncClient:
     parse_participant_path = staticmethod(ParticipantsClient.parse_participant_path)
     session_entity_type_path = staticmethod(ParticipantsClient.session_entity_type_path)
     parse_session_entity_type_path = staticmethod(ParticipantsClient.parse_session_entity_type_path)
-
     common_billing_account_path = staticmethod(ParticipantsClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(ParticipantsClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(ParticipantsClient.common_folder_path)
     parse_common_folder_path = staticmethod(ParticipantsClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(ParticipantsClient.common_organization_path)
     parse_common_organization_path = staticmethod(ParticipantsClient.parse_common_organization_path)
-
     common_project_path = staticmethod(ParticipantsClient.common_project_path)
     parse_common_project_path = staticmethod(ParticipantsClient.parse_common_project_path)
-
     common_location_path = staticmethod(ParticipantsClient.common_location_path)
     parse_common_location_path = staticmethod(ParticipantsClient.parse_common_location_path)
 
@@ -119,7 +111,7 @@ class ParticipantsAsyncClient:
     get_transport_class = functools.partial(type(ParticipantsClient).get_transport_class, type(ParticipantsClient))
 
     def __init__(self, *,
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             transport: Union[str, ParticipantsTransport] = 'grpc_asyncio',
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -156,7 +148,6 @@ class ParticipantsAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = ParticipantsClient(
             credentials=credentials,
             transport=transport,
@@ -193,7 +184,6 @@ class ParticipantsAsyncClient:
                 This corresponds to the ``participant`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -218,7 +208,6 @@ class ParticipantsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if participant is not None:
@@ -272,7 +261,6 @@ class ParticipantsAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -297,7 +285,6 @@ class ParticipantsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -351,7 +338,6 @@ class ParticipantsAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -379,7 +365,6 @@ class ParticipantsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -423,7 +408,7 @@ class ParticipantsAsyncClient:
             request: gcd_participant.UpdateParticipantRequest = None,
             *,
             participant: gcd_participant.Participant = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -446,7 +431,6 @@ class ParticipantsAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -471,7 +455,6 @@ class ParticipantsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if participant is not None:
             request.participant = participant
         if update_mask is not None:
@@ -545,7 +528,6 @@ class ParticipantsAsyncClient:
                 This corresponds to the ``event_input`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -570,7 +552,6 @@ class ParticipantsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if participant is not None:
             request.participant = participant
         if text_input is not None:
@@ -583,10 +564,7 @@ class ParticipantsAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.analyze_content,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=220.0,
@@ -637,7 +615,6 @@ class ParticipantsAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -662,7 +639,6 @@ class ParticipantsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -716,7 +692,6 @@ class ParticipantsAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -741,7 +716,6 @@ class ParticipantsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -771,8 +745,6 @@ class ParticipantsAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

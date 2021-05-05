@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,23 +13,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import operations_v1  # type: ignore
 from google.api_core import gapic_v1       # type: ignore
-from google import auth                    # type: ignore
-from google.auth import credentials        # type: ignore
+import google.auth                         # type: ignore
+from google.auth import credentials as ga_credentials  # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
 
 import grpc  # type: ignore
 
 from google.cloud.database_migration_v1.types import clouddms
 from google.cloud.database_migration_v1.types import clouddms_resources
-from google.longrunning import operations_pb2 as operations  # type: ignore
-
+from google.longrunning import operations_pb2  # type: ignore
 from .base import DataMigrationServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -50,7 +47,7 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
 
     def __init__(self, *,
             host: str = 'datamigration.googleapis.com',
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             credentials_file: str = None,
             scopes: Sequence[str] = None,
             channel: grpc.Channel = None,
@@ -64,7 +61,8 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -174,7 +172,7 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
     @classmethod
     def create_channel(cls,
                        host: str = 'datamigration.googleapis.com',
-                       credentials: credentials.Credentials = None,
+                       credentials: ga_credentials.Credentials = None,
                        credentials_file: str = None,
                        scopes: Optional[Sequence[str]] = None,
                        quota_project_id: Optional[str] = None,
@@ -204,13 +202,15 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -291,7 +291,7 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
     @property
     def create_migration_job(self) -> Callable[
             [clouddms.CreateMigrationJobRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         r"""Return a callable for the create migration job method over gRPC.
 
         Creates a new migration job in a given project and
@@ -311,14 +311,14 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
             self._stubs['create_migration_job'] = self.grpc_channel.unary_unary(
                 '/google.cloud.clouddms.v1.DataMigrationService/CreateMigrationJob',
                 request_serializer=clouddms.CreateMigrationJobRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['create_migration_job']
 
     @property
     def update_migration_job(self) -> Callable[
             [clouddms.UpdateMigrationJobRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         r"""Return a callable for the update migration job method over gRPC.
 
         Updates the parameters of a single migration job.
@@ -337,14 +337,14 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
             self._stubs['update_migration_job'] = self.grpc_channel.unary_unary(
                 '/google.cloud.clouddms.v1.DataMigrationService/UpdateMigrationJob',
                 request_serializer=clouddms.UpdateMigrationJobRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['update_migration_job']
 
     @property
     def delete_migration_job(self) -> Callable[
             [clouddms.DeleteMigrationJobRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         r"""Return a callable for the delete migration job method over gRPC.
 
         Deletes a single migration job.
@@ -363,14 +363,14 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
             self._stubs['delete_migration_job'] = self.grpc_channel.unary_unary(
                 '/google.cloud.clouddms.v1.DataMigrationService/DeleteMigrationJob',
                 request_serializer=clouddms.DeleteMigrationJobRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['delete_migration_job']
 
     @property
     def start_migration_job(self) -> Callable[
             [clouddms.StartMigrationJobRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         r"""Return a callable for the start migration job method over gRPC.
 
         Start an already created migration job.
@@ -389,14 +389,14 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
             self._stubs['start_migration_job'] = self.grpc_channel.unary_unary(
                 '/google.cloud.clouddms.v1.DataMigrationService/StartMigrationJob',
                 request_serializer=clouddms.StartMigrationJobRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['start_migration_job']
 
     @property
     def stop_migration_job(self) -> Callable[
             [clouddms.StopMigrationJobRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         r"""Return a callable for the stop migration job method over gRPC.
 
         Stops a running migration job.
@@ -415,14 +415,14 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
             self._stubs['stop_migration_job'] = self.grpc_channel.unary_unary(
                 '/google.cloud.clouddms.v1.DataMigrationService/StopMigrationJob',
                 request_serializer=clouddms.StopMigrationJobRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['stop_migration_job']
 
     @property
     def resume_migration_job(self) -> Callable[
             [clouddms.ResumeMigrationJobRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         r"""Return a callable for the resume migration job method over gRPC.
 
         Resume a migration job that is currently stopped and
@@ -442,14 +442,14 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
             self._stubs['resume_migration_job'] = self.grpc_channel.unary_unary(
                 '/google.cloud.clouddms.v1.DataMigrationService/ResumeMigrationJob',
                 request_serializer=clouddms.ResumeMigrationJobRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['resume_migration_job']
 
     @property
     def promote_migration_job(self) -> Callable[
             [clouddms.PromoteMigrationJobRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         r"""Return a callable for the promote migration job method over gRPC.
 
         Promote a migration job, stopping replication to the
@@ -470,14 +470,14 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
             self._stubs['promote_migration_job'] = self.grpc_channel.unary_unary(
                 '/google.cloud.clouddms.v1.DataMigrationService/PromoteMigrationJob',
                 request_serializer=clouddms.PromoteMigrationJobRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['promote_migration_job']
 
     @property
     def verify_migration_job(self) -> Callable[
             [clouddms.VerifyMigrationJobRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         r"""Return a callable for the verify migration job method over gRPC.
 
         Verify a migration job, making sure the destination
@@ -498,14 +498,14 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
             self._stubs['verify_migration_job'] = self.grpc_channel.unary_unary(
                 '/google.cloud.clouddms.v1.DataMigrationService/VerifyMigrationJob',
                 request_serializer=clouddms.VerifyMigrationJobRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['verify_migration_job']
 
     @property
     def restart_migration_job(self) -> Callable[
             [clouddms.RestartMigrationJobRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         r"""Return a callable for the restart migration job method over gRPC.
 
         Restart a stopped or failed migration job, resetting
@@ -526,7 +526,7 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
             self._stubs['restart_migration_job'] = self.grpc_channel.unary_unary(
                 '/google.cloud.clouddms.v1.DataMigrationService/RestartMigrationJob',
                 request_serializer=clouddms.RestartMigrationJobRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['restart_migration_job']
 
@@ -613,7 +613,7 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
     @property
     def create_connection_profile(self) -> Callable[
             [clouddms.CreateConnectionProfileRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         r"""Return a callable for the create connection profile method over gRPC.
 
         Creates a new connection profile in a given project
@@ -633,14 +633,14 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
             self._stubs['create_connection_profile'] = self.grpc_channel.unary_unary(
                 '/google.cloud.clouddms.v1.DataMigrationService/CreateConnectionProfile',
                 request_serializer=clouddms.CreateConnectionProfileRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['create_connection_profile']
 
     @property
     def update_connection_profile(self) -> Callable[
             [clouddms.UpdateConnectionProfileRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         r"""Return a callable for the update connection profile method over gRPC.
 
         Update the configuration of a single connection
@@ -660,14 +660,14 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
             self._stubs['update_connection_profile'] = self.grpc_channel.unary_unary(
                 '/google.cloud.clouddms.v1.DataMigrationService/UpdateConnectionProfile',
                 request_serializer=clouddms.UpdateConnectionProfileRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['update_connection_profile']
 
     @property
     def delete_connection_profile(self) -> Callable[
             [clouddms.DeleteConnectionProfileRequest],
-            operations.Operation]:
+            operations_pb2.Operation]:
         r"""Return a callable for the delete connection profile method over gRPC.
 
         Deletes a single Database Migration Service
@@ -689,7 +689,7 @@ class DataMigrationServiceGrpcTransport(DataMigrationServiceTransport):
             self._stubs['delete_connection_profile'] = self.grpc_channel.unary_unary(
                 '/google.cloud.clouddms.v1.DataMigrationService/DeleteConnectionProfile',
                 request_serializer=clouddms.DeleteConnectionProfileRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['delete_connection_profile']
 

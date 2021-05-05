@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -30,7 +28,7 @@ __protobuf__ = proto.module(
 class AdGroupAdRotationModeEnum(proto.Message):
     r"""Container for enum describing possible ad rotation modes of
     ads within an ad group.
-    """
+        """
     class AdGroupAdRotationMode(proto.Enum):
         r"""The possible ad rotation modes of an ad group."""
         UNSPECIFIED = 0

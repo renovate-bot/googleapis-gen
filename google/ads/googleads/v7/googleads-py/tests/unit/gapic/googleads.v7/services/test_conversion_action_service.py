@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 from unittest import mock
 
@@ -23,7 +21,6 @@ import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
-from google import auth
 from google.ads.googleads.v7.common.types import tag_snippet
 from google.ads.googleads.v7.enums.types import attribution_model
 from google.ads.googleads.v7.enums.types import conversion_action_category
@@ -42,11 +39,12 @@ from google.ads.googleads.v7.services.types import conversion_action_service
 from google.api_core import client_options
 from google.api_core import gapic_v1
 from google.api_core import grpc_helpers
-from google.auth import credentials
+from google.auth import credentials as ga_credentials
 from google.auth.exceptions import MutualTLSChannelError
 from google.oauth2 import service_account
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.rpc import status_pb2 as status  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.rpc import status_pb2  # type: ignore
+import google.auth
 
 
 def client_cert_source_callback():
@@ -76,7 +74,7 @@ def test__get_default_mtls_endpoint():
 
 
 def test_conversion_action_service_client_from_service_account_info():
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
@@ -87,7 +85,7 @@ def test_conversion_action_service_client_from_service_account_info():
 
 
 def test_conversion_action_service_client_from_service_account_file():
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_file') as factory:
         factory.return_value = creds
         client = ConversionActionServiceClient.from_service_account_file("dummy/file/path.json")
@@ -112,7 +110,7 @@ def test_conversion_action_service_client_client_options():
     # Check that if channel is provided we won't create a new one.
     with mock.patch('google.ads.googleads.v7.services.services.conversion_action_service.ConversionActionServiceClient.get_transport_class') as gtc:
         transport = transports.ConversionActionServiceGrpcTransport(
-            credentials=credentials.AnonymousCredentials()
+            credentials=ga_credentials.AnonymousCredentials()
         )
         client = ConversionActionServiceClient(transport=transport)
         gtc.assert_not_called()
@@ -262,7 +260,7 @@ def test_conversion_action_service_client_client_options_from_dict():
 
 def test_get_conversion_action(transport: str = 'grpc', request_type=conversion_action_service.GetConversionActionRequest):
     client = ConversionActionServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -277,73 +275,42 @@ def test_get_conversion_action(transport: str = 'grpc', request_type=conversion_
         # Designate an appropriate return value for the call.
         call.return_value = conversion_action.ConversionAction(
             resource_name='resource_name_value',
-
             id=205,
-
             name='name_value',
-
             status=conversion_action_status.ConversionActionStatusEnum.ConversionActionStatus.UNKNOWN,
-
             type_=conversion_action_type.ConversionActionTypeEnum.ConversionActionType.UNKNOWN,
-
             category=conversion_action_category.ConversionActionCategoryEnum.ConversionActionCategory.UNKNOWN,
-
             owner_customer='owner_customer_value',
-
             include_in_conversions_metric=True,
-
             click_through_lookback_window_days=3602,
-
             view_through_lookback_window_days=3527,
-
             counting_type=conversion_action_counting_type.ConversionActionCountingTypeEnum.ConversionActionCountingType.UNKNOWN,
-
             phone_call_duration_seconds=2856,
-
             app_id='app_id_value',
-
             mobile_app_vendor=mobile_app_vendor.MobileAppVendorEnum.MobileAppVendor.UNKNOWN,
-
         )
-
         response = client.get_conversion_action(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == conversion_action_service.GetConversionActionRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, conversion_action.ConversionAction)
-
     assert response.resource_name == 'resource_name_value'
-
     assert response.id == 205
-
     assert response.name == 'name_value'
-
     assert response.status == conversion_action_status.ConversionActionStatusEnum.ConversionActionStatus.UNKNOWN
-
     assert response.type_ == conversion_action_type.ConversionActionTypeEnum.ConversionActionType.UNKNOWN
-
     assert response.category == conversion_action_category.ConversionActionCategoryEnum.ConversionActionCategory.UNKNOWN
-
     assert response.owner_customer == 'owner_customer_value'
-
     assert response.include_in_conversions_metric is True
-
     assert response.click_through_lookback_window_days == 3602
-
     assert response.view_through_lookback_window_days == 3527
-
     assert response.counting_type == conversion_action_counting_type.ConversionActionCountingTypeEnum.ConversionActionCountingType.UNKNOWN
-
     assert response.phone_call_duration_seconds == 2856
-
     assert response.app_id == 'app_id_value'
-
     assert response.mobile_app_vendor == mobile_app_vendor.MobileAppVendorEnum.MobileAppVendor.UNKNOWN
 
 
@@ -353,12 +320,13 @@ def test_get_conversion_action_from_dict():
 
 def test_get_conversion_action_field_headers():
     client = ConversionActionServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = conversion_action_service.GetConversionActionRequest()
+
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -366,7 +334,6 @@ def test_get_conversion_action_field_headers():
             type(client.transport.get_conversion_action),
             '__call__') as call:
         call.return_value = conversion_action.ConversionAction()
-
         client.get_conversion_action(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -384,7 +351,7 @@ def test_get_conversion_action_field_headers():
 
 def test_get_conversion_action_flattened():
     client = ConversionActionServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -393,7 +360,6 @@ def test_get_conversion_action_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = conversion_action.ConversionAction()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_conversion_action(
@@ -404,13 +370,12 @@ def test_get_conversion_action_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource_name == 'resource_name_value'
 
 
 def test_get_conversion_action_flattened_error():
     client = ConversionActionServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -424,7 +389,7 @@ def test_get_conversion_action_flattened_error():
 
 def test_mutate_conversion_actions(transport: str = 'grpc', request_type=conversion_action_service.MutateConversionActionsRequest):
     client = ConversionActionServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -439,17 +404,14 @@ def test_mutate_conversion_actions(transport: str = 'grpc', request_type=convers
         # Designate an appropriate return value for the call.
         call.return_value = conversion_action_service.MutateConversionActionsResponse(
         )
-
         response = client.mutate_conversion_actions(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == conversion_action_service.MutateConversionActionsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, conversion_action_service.MutateConversionActionsResponse)
 
 
@@ -459,12 +421,13 @@ def test_mutate_conversion_actions_from_dict():
 
 def test_mutate_conversion_actions_field_headers():
     client = ConversionActionServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = conversion_action_service.MutateConversionActionsRequest()
+
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -472,7 +435,6 @@ def test_mutate_conversion_actions_field_headers():
             type(client.transport.mutate_conversion_actions),
             '__call__') as call:
         call.return_value = conversion_action_service.MutateConversionActionsResponse()
-
         client.mutate_conversion_actions(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -490,7 +452,7 @@ def test_mutate_conversion_actions_field_headers():
 
 def test_mutate_conversion_actions_flattened():
     client = ConversionActionServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -499,27 +461,24 @@ def test_mutate_conversion_actions_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = conversion_action_service.MutateConversionActionsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_conversion_actions(
             customer_id='customer_id_value',
-            operations=[conversion_action_service.ConversionActionOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))],
+            operations=[conversion_action_service.ConversionActionOperation(update_mask=field_mask_pb2.FieldMask(paths=['paths_value']))],
         )
 
         # Establish that the underlying call was made with the expected
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].customer_id == 'customer_id_value'
-
-        assert args[0].operations == [conversion_action_service.ConversionActionOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))]
+        assert args[0].operations == [conversion_action_service.ConversionActionOperation(update_mask=field_mask_pb2.FieldMask(paths=['paths_value']))]
 
 
 def test_mutate_conversion_actions_flattened_error():
     client = ConversionActionServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -528,18 +487,18 @@ def test_mutate_conversion_actions_flattened_error():
         client.mutate_conversion_actions(
             conversion_action_service.MutateConversionActionsRequest(),
             customer_id='customer_id_value',
-            operations=[conversion_action_service.ConversionActionOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))],
+            operations=[conversion_action_service.ConversionActionOperation(update_mask=field_mask_pb2.FieldMask(paths=['paths_value']))],
         )
 
 
 def test_credentials_transport_error():
     # It is an error to provide credentials and a transport instance.
     transport = transports.ConversionActionServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = ConversionActionServiceClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             transport=transport,
         )
 
@@ -547,7 +506,7 @@ def test_credentials_transport_error():
 def test_transport_instance():
     # A client may be instantiated with a custom transport instance.
     transport = transports.ConversionActionServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     client = ConversionActionServiceClient(transport=transport)
     assert client.transport is transport
@@ -556,7 +515,7 @@ def test_transport_instance():
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.ConversionActionServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     channel = transport.grpc_channel
     assert channel
@@ -565,7 +524,7 @@ def test_transport_get_channel():
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = ConversionActionServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     assert isinstance(
         client.transport,
@@ -577,8 +536,8 @@ def test_transport_grpc_default():
 ])
 def test_transport_adc(transport_class):
     # Test default credentials are used if not provided.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport_class()
         adc.assert_called_once()
 
@@ -588,7 +547,7 @@ def test_conversion_action_service_base_transport():
     with mock.patch('google.ads.googleads.v7.services.services.conversion_action_service.transports.ConversionActionServiceTransport.__init__') as Transport:
         Transport.return_value = None
         transport = transports.ConversionActionServiceTransport(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
         )
 
     # Every method on the transport should just blindly
@@ -596,7 +555,7 @@ def test_conversion_action_service_base_transport():
     methods = (
         'get_conversion_action',
         'mutate_conversion_actions',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -604,17 +563,17 @@ def test_conversion_action_service_base_transport():
 
 def test_conversion_action_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.ads.googleads.v7.services.services.conversion_action_service.transports.ConversionActionServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'default') as adc, mock.patch('google.ads.googleads.v7.services.services.conversion_action_service.transports.ConversionActionServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.ConversionActionServiceTransport()
         adc.assert_called_once()
 
 
 def test_conversion_action_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         ConversionActionServiceClient()
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/adwords',
@@ -624,8 +583,8 @@ def test_conversion_action_service_auth_adc():
 def test_conversion_action_service_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transports.ConversionActionServiceGrpcTransport(host="squid.clam.whelk")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/adwords',
@@ -634,7 +593,7 @@ def test_conversion_action_service_transport_auth_adc():
 
 def test_conversion_action_service_host_no_port():
     client = ConversionActionServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='googleads.googleapis.com'),
     )
     assert client.transport._host == 'googleads.googleapis.com:443'
@@ -642,7 +601,7 @@ def test_conversion_action_service_host_no_port():
 
 def test_conversion_action_service_host_with_port():
     client = ConversionActionServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='googleads.googleapis.com:8000'),
     )
     assert client.transport._host == 'googleads.googleapis.com:8000'
@@ -673,9 +632,9 @@ def test_conversion_action_service_transport_channel_mtls_with_client_cert_sourc
             mock_grpc_channel = mock.Mock()
             grpc_create_channel.return_value = mock_grpc_channel
 
-            cred = credentials.AnonymousCredentials()
+            cred = ga_credentials.AnonymousCredentials()
             with pytest.warns(DeprecationWarning):
-                with mock.patch.object(auth, 'default') as adc:
+                with mock.patch.object(google.auth, 'default') as adc:
                     adc.return_value = (cred, None)
                     transport = transport_class(
                         host="squid.clam.whelk",
@@ -748,7 +707,6 @@ def test_conversion_action_service_transport_channel_mtls_with_adc(
 def test_conversion_action_path():
     customer_id = "squid"
     conversion_action_id = "clam"
-
     expected = "customers/{customer_id}/conversionActions/{conversion_action_id}".format(customer_id=customer_id, conversion_action_id=conversion_action_id, )
     actual = ConversionActionServiceClient.conversion_action_path(customer_id, conversion_action_id)
     assert expected == actual
@@ -756,9 +714,8 @@ def test_conversion_action_path():
 
 def test_parse_conversion_action_path():
     expected = {
-    "customer_id": "whelk",
-    "conversion_action_id": "octopus",
-
+        "customer_id": "whelk",
+        "conversion_action_id": "octopus",
     }
     path = ConversionActionServiceClient.conversion_action_path(**expected)
 
@@ -768,7 +725,6 @@ def test_parse_conversion_action_path():
 
 def test_customer_path():
     customer_id = "oyster"
-
     expected = "customers/{customer_id}".format(customer_id=customer_id, )
     actual = ConversionActionServiceClient.customer_path(customer_id)
     assert expected == actual
@@ -776,8 +732,7 @@ def test_customer_path():
 
 def test_parse_customer_path():
     expected = {
-    "customer_id": "nudibranch",
-
+        "customer_id": "nudibranch",
     }
     path = ConversionActionServiceClient.customer_path(**expected)
 
@@ -787,7 +742,6 @@ def test_parse_customer_path():
 
 def test_common_billing_account_path():
     billing_account = "cuttlefish"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = ConversionActionServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -795,8 +749,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "mussel",
-
+        "billing_account": "mussel",
     }
     path = ConversionActionServiceClient.common_billing_account_path(**expected)
 
@@ -806,7 +759,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "winkle"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = ConversionActionServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -814,8 +766,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "nautilus",
-
+        "folder": "nautilus",
     }
     path = ConversionActionServiceClient.common_folder_path(**expected)
 
@@ -825,7 +776,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "scallop"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = ConversionActionServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -833,8 +783,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "abalone",
-
+        "organization": "abalone",
     }
     path = ConversionActionServiceClient.common_organization_path(**expected)
 
@@ -844,7 +793,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "squid"
-
     expected = "projects/{project}".format(project=project, )
     actual = ConversionActionServiceClient.common_project_path(project)
     assert expected == actual
@@ -852,8 +800,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "clam",
-
+        "project": "clam",
     }
     path = ConversionActionServiceClient.common_project_path(**expected)
 
@@ -864,7 +811,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "whelk"
     location = "octopus"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = ConversionActionServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -872,9 +818,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "oyster",
-    "location": "nudibranch",
-
+        "project": "oyster",
+        "location": "nudibranch",
     }
     path = ConversionActionServiceClient.common_location_path(**expected)
 
@@ -888,7 +833,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
 
     with mock.patch.object(transports.ConversionActionServiceTransport, '_prep_wrapped_messages') as prep:
         client = ConversionActionServiceClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)
@@ -896,7 +841,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
     with mock.patch.object(transports.ConversionActionServiceTransport, '_prep_wrapped_messages') as prep:
         transport_class = ConversionActionServiceClient.get_transport_class()
         transport = transport_class(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -23,10 +21,10 @@ from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
-from google.api_core import exceptions                            # type: ignore
+from google.api_core import exceptions as core_exceptions         # type: ignore
 from google.api_core import gapic_v1                              # type: ignore
 from google.api_core import retry as retries                      # type: ignore
-from google.auth import credentials                               # type: ignore
+from google.auth import credentials as ga_credentials             # type: ignore
 from google.auth.transport import mtls                            # type: ignore
 from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
@@ -43,12 +41,11 @@ from google.cloud.artifactregistry_v1beta2.types import service
 from google.cloud.artifactregistry_v1beta2.types import tag
 from google.cloud.artifactregistry_v1beta2.types import tag as gda_tag
 from google.cloud.artifactregistry_v1beta2.types import version
-from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
-from google.iam.v1 import policy_pb2 as giv_policy  # type: ignore
-from google.protobuf import empty_pb2 as empty  # type: ignore
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
+from google.iam.v1 import iam_policy_pb2  # type: ignore
+from google.iam.v1 import policy_pb2  # type: ignore
+from google.protobuf import empty_pb2  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 from .transports.base import ArtifactRegistryTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import ArtifactRegistryGrpcTransport
 from .transports.grpc_asyncio import ArtifactRegistryGrpcAsyncIOTransport
@@ -260,7 +257,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         return m.groupdict() if m else {}
 
     def __init__(self, *,
-            credentials: Optional[credentials.Credentials] = None,
+            credentials: Optional[ga_credentials.Credentials] = None,
             transport: Union[str, ArtifactRegistryTransport, None] = None,
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -382,7 +379,6 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -412,10 +408,8 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # there are no flattened fields.
         if not isinstance(request, repository.ListRepositoriesRequest):
             request = repository.ListRepositoriesRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -472,7 +466,6 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -499,10 +492,8 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # there are no flattened fields.
         if not isinstance(request, repository.GetRepositoryRequest):
             request = repository.GetRepositoryRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -566,7 +557,6 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
                 This corresponds to the ``repository_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -597,10 +587,8 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gda_repository.CreateRepositoryRequest):
             request = gda_repository.CreateRepositoryRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if repository is not None:
@@ -643,7 +631,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
             request: gda_repository.UpdateRepositoryRequest = None,
             *,
             repository: gda_repository.Repository = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -668,7 +656,6 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -695,10 +682,8 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gda_repository.UpdateRepositoryRequest):
             request = gda_repository.UpdateRepositoryRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if repository is not None:
                 request.repository = repository
             if update_mask is not None:
@@ -748,7 +733,6 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -788,10 +772,8 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # there are no flattened fields.
         if not isinstance(request, repository.DeleteRepositoryRequest):
             request = repository.DeleteRepositoryRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -819,7 +801,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         response = operation.from_gapic(
             response,
             self._transport.operations_client,
-            empty.Empty,
+            empty_pb2.Empty,
             metadata_type=service.OperationMetadata,
         )
 
@@ -846,7 +828,6 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -875,10 +856,8 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # there are no flattened fields.
         if not isinstance(request, package.ListPackagesRequest):
             request = package.ListPackagesRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -932,7 +911,6 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -959,10 +937,8 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # there are no flattened fields.
         if not isinstance(request, package.GetPackageRequest):
             request = package.GetPackageRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1009,7 +985,6 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1049,10 +1024,8 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # there are no flattened fields.
         if not isinstance(request, package.DeletePackageRequest):
             request = package.DeletePackageRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1080,7 +1053,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         response = operation.from_gapic(
             response,
             self._transport.operations_client,
-            empty.Empty,
+            empty_pb2.Empty,
             metadata_type=service.OperationMetadata,
         )
 
@@ -1107,7 +1080,6 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1136,10 +1108,8 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # there are no flattened fields.
         if not isinstance(request, version.ListVersionsRequest):
             request = version.ListVersionsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -1193,7 +1163,6 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1223,10 +1192,8 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # there are no flattened fields.
         if not isinstance(request, version.GetVersionRequest):
             request = version.GetVersionRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1273,7 +1240,6 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1313,10 +1279,8 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # there are no flattened fields.
         if not isinstance(request, version.DeleteVersionRequest):
             request = version.DeleteVersionRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1344,7 +1308,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         response = operation.from_gapic(
             response,
             self._transport.operations_client,
-            empty.Empty,
+            empty_pb2.Empty,
             metadata_type=service.OperationMetadata,
         )
 
@@ -1371,7 +1335,6 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1400,10 +1363,8 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # there are no flattened fields.
         if not isinstance(request, file.ListFilesRequest):
             request = file.ListFilesRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -1457,7 +1418,6 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1485,10 +1445,8 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # there are no flattened fields.
         if not isinstance(request, file.GetFileRequest):
             request = file.GetFileRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1535,7 +1493,6 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1564,10 +1521,8 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tag.ListTagsRequest):
             request = tag.ListTagsRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -1621,7 +1576,6 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1649,10 +1603,8 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tag.GetTagRequest):
             request = tag.GetTagRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1713,7 +1665,6 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
                 This corresponds to the ``tag_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1741,10 +1692,8 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gda_tag.CreateTagRequest):
             request = gda_tag.CreateTagRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if tag is not None:
@@ -1779,7 +1728,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
             request: gda_tag.UpdateTagRequest = None,
             *,
             tag: gda_tag.Tag = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -1805,7 +1754,6 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1833,10 +1781,8 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gda_tag.UpdateTagRequest):
             request = gda_tag.UpdateTagRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if tag is not None:
                 request.tag = tag
             if update_mask is not None:
@@ -1883,7 +1829,6 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1904,10 +1849,8 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tag.DeleteTagRequest):
             request = tag.DeleteTagRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1932,19 +1875,18 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         )
 
     def set_iam_policy(self,
-            request: iam_policy.SetIamPolicyRequest = None,
+            request: iam_policy_pb2.SetIamPolicyRequest = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> giv_policy.Policy:
+            ) -> policy_pb2.Policy:
         r"""Updates the IAM policy for a given resource.
 
         Args:
             request (google.iam.v1.iam_policy_pb2.SetIamPolicyRequest):
                 The request object. Request message for `SetIamPolicy`
                 method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2011,14 +1953,13 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
-            request = iam_policy.SetIamPolicyRequest(**request)
+            request = iam_policy_pb2.SetIamPolicyRequest(**request)
         elif not request:
             # Null request, just make one.
-            request = iam_policy.SetIamPolicyRequest()
+            request = iam_policy_pb2.SetIamPolicyRequest()
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -2044,19 +1985,18 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         return response
 
     def get_iam_policy(self,
-            request: iam_policy.GetIamPolicyRequest = None,
+            request: iam_policy_pb2.GetIamPolicyRequest = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> giv_policy.Policy:
+            ) -> policy_pb2.Policy:
         r"""Gets the IAM policy for a given resource.
 
         Args:
             request (google.iam.v1.iam_policy_pb2.GetIamPolicyRequest):
                 The request object. Request message for `GetIamPolicy`
                 method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2123,14 +2063,13 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-
         if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
-            request = iam_policy.GetIamPolicyRequest(**request)
+            request = iam_policy_pb2.GetIamPolicyRequest(**request)
         elif not request:
             # Null request, just make one.
-            request = iam_policy.GetIamPolicyRequest()
+            request = iam_policy_pb2.GetIamPolicyRequest()
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -2156,12 +2095,12 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         return response
 
     def test_iam_permissions(self,
-            request: iam_policy.TestIamPermissionsRequest = None,
+            request: iam_policy_pb2.TestIamPermissionsRequest = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> iam_policy.TestIamPermissionsResponse:
+            ) -> iam_policy_pb2.TestIamPermissionsResponse:
         r"""Tests if the caller has a list of permissions on a
         resource.
 
@@ -2169,7 +2108,6 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
             request (google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest):
                 The request object. Request message for
                 `TestIamPermissions` method.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2181,14 +2119,13 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
                 Response message for TestIamPermissions method.
         """
         # Create or coerce a protobuf request object.
-
         if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
-            request = iam_policy.TestIamPermissionsRequest(**request)
+            request = iam_policy_pb2.TestIamPermissionsRequest(**request)
         elif not request:
             # Null request, just make one.
-            request = iam_policy.TestIamPermissionsRequest()
+            request = iam_policy_pb2.TestIamPermissionsRequest()
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -2212,8 +2149,6 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

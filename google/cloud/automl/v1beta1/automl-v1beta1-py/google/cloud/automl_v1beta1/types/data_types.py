@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -82,21 +80,32 @@ class DataType(proto.Message):
             ``NULL`` value is expressed as an empty string.
     """
 
-    list_element_type = proto.Field(proto.MESSAGE, number=2, oneof='details',
+    list_element_type = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='details',
         message='DataType',
     )
-
-    struct_type = proto.Field(proto.MESSAGE, number=3, oneof='details',
+    struct_type = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        oneof='details',
         message='StructType',
     )
-
-    time_format = proto.Field(proto.STRING, number=5, oneof='details')
-
-    type_code = proto.Field(proto.ENUM, number=1,
+    time_format = proto.Field(
+        proto.STRING,
+        number=5,
+        oneof='details',
+    )
+    type_code = proto.Field(
+        proto.ENUM,
+        number=1,
         enum='TypeCode',
     )
-
-    nullable = proto.Field(proto.BOOL, number=4)
+    nullable = proto.Field(
+        proto.BOOL,
+        number=4,
+    )
 
 
 class StructType(proto.Message):
@@ -111,7 +120,10 @@ class StructType(proto.Message):
             mutable.
     """
 
-    fields = proto.MapField(proto.STRING, proto.MESSAGE, number=1,
+    fields = proto.MapField(
+        proto.STRING,
+        proto.MESSAGE,
+        number=1,
         message='DataType',
     )
 

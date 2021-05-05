@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
 
 from google.cloud.spanner_admin_database_v1.types import backup
 from google.cloud.spanner_admin_database_v1.types import spanner_database_admin
-from google.longrunning import operations_pb2 as operations  # type: ignore
+from google.longrunning import operations_pb2  # type: ignore
 
 
 class ListDatabasesPager:
@@ -317,7 +315,7 @@ class ListDatabaseOperationsPager:
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[operations.Operation]:
+    def __iter__(self) -> Iterable[operations_pb2.Operation]:
         for page in self.pages:
             yield from page.operations
 
@@ -376,7 +374,7 @@ class ListDatabaseOperationsAsyncPager:
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[operations.Operation]:
+    def __aiter__(self) -> AsyncIterable[operations_pb2.Operation]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.operations:
@@ -439,7 +437,7 @@ class ListBackupOperationsPager:
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[operations.Operation]:
+    def __iter__(self) -> Iterable[operations_pb2.Operation]:
         for page in self.pages:
             yield from page.operations
 
@@ -498,7 +496,7 @@ class ListBackupOperationsAsyncPager:
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __aiter__(self) -> AsyncIterable[operations.Operation]:
+    def __aiter__(self) -> AsyncIterable[operations_pb2.Operation]:
         async def async_generator():
             async for page in self.pages:
                 for response in page.operations:

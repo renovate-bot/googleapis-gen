@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -22,18 +20,17 @@ from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
 import google.api_core.client_options as ClientOptions # type: ignore
-from google.api_core import exceptions                 # type: ignore
+from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
-from google.api import monitored_resource_pb2 as monitored_resource  # type: ignore
+from google.api import monitored_resource_pb2  # type: ignore
 from google.cloud.monitoring_v3.services.group_service import pagers
 from google.cloud.monitoring_v3.types import group
 from google.cloud.monitoring_v3.types import group as gm_group
 from google.cloud.monitoring_v3.types import group_service
-
 from .transports.base import GroupServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import GroupServiceGrpcAsyncIOTransport
 from .client import GroupServiceClient
@@ -61,19 +58,14 @@ class GroupServiceAsyncClient:
 
     group_path = staticmethod(GroupServiceClient.group_path)
     parse_group_path = staticmethod(GroupServiceClient.parse_group_path)
-
     common_billing_account_path = staticmethod(GroupServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(GroupServiceClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(GroupServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(GroupServiceClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(GroupServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(GroupServiceClient.parse_common_organization_path)
-
     common_project_path = staticmethod(GroupServiceClient.common_project_path)
     parse_common_project_path = staticmethod(GroupServiceClient.parse_common_project_path)
-
     common_location_path = staticmethod(GroupServiceClient.common_location_path)
     parse_common_location_path = staticmethod(GroupServiceClient.parse_common_location_path)
 
@@ -121,7 +113,7 @@ class GroupServiceAsyncClient:
     get_transport_class = functools.partial(type(GroupServiceClient).get_transport_class, type(GroupServiceClient))
 
     def __init__(self, *,
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             transport: Union[str, GroupServiceTransport] = 'grpc_asyncio',
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -158,7 +150,6 @@ class GroupServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = GroupServiceClient(
             credentials=credentials,
             transport=transport,
@@ -191,7 +182,6 @@ class GroupServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -218,7 +208,6 @@ class GroupServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -227,10 +216,7 @@ class GroupServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_groups,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=30.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -291,7 +277,6 @@ class GroupServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -347,7 +332,6 @@ class GroupServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -356,10 +340,7 @@ class GroupServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_group,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=30.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -420,7 +401,6 @@ class GroupServiceAsyncClient:
                 This corresponds to the ``group`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -476,7 +456,6 @@ class GroupServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
         if group is not None:
@@ -531,7 +510,6 @@ class GroupServiceAsyncClient:
                 This corresponds to the ``group`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -587,7 +565,6 @@ class GroupServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if group is not None:
             request.group = group
 
@@ -596,10 +573,7 @@ class GroupServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.update_group,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=30.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -653,7 +627,6 @@ class GroupServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -672,7 +645,6 @@ class GroupServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -681,10 +653,7 @@ class GroupServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_group,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=30.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -735,7 +704,6 @@ class GroupServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -762,7 +730,6 @@ class GroupServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -771,10 +738,7 @@ class GroupServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_group_members,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=30.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -811,8 +775,6 @@ class GroupServiceAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

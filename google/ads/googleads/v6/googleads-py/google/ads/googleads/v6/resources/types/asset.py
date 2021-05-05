@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
 from google.ads.googleads.v6.common.types import asset_types
-from google.ads.googleads.v6.common.types import policy as gagc_policy
+from google.ads.googleads.v6.common.types import policy
 from google.ads.googleads.v6.enums.types import asset_type
 from google.ads.googleads.v6.enums.types import policy_approval_status
 from google.ads.googleads.v6.enums.types import policy_review_status
@@ -72,39 +69,74 @@ class Asset(proto.Message):
             A book on google asset.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    id = proto.Field(proto.INT64, number=11, optional=True)
-    name = proto.Field(proto.STRING, number=12, optional=True)
-    type_ = proto.Field(proto.ENUM, number=4,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    id = proto.Field(
+        proto.INT64,
+        number=11,
+        optional=True,
+    )
+    name = proto.Field(
+        proto.STRING,
+        number=12,
+        optional=True,
+    )
+    type_ = proto.Field(
+        proto.ENUM,
+        number=4,
         enum=asset_type.AssetTypeEnum.AssetType,
     )
-    final_urls = proto.RepeatedField(proto.STRING, number=14)
-    policy_summary = proto.Field(proto.MESSAGE, number=13,
+    final_urls = proto.RepeatedField(
+        proto.STRING,
+        number=14,
+    )
+    policy_summary = proto.Field(
+        proto.MESSAGE,
+        number=13,
         message='AssetPolicySummary',
     )
-    youtube_video_asset = proto.Field(proto.MESSAGE, number=5, oneof='asset_data',
+    youtube_video_asset = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        oneof='asset_data',
         message=asset_types.YoutubeVideoAsset,
     )
-    media_bundle_asset = proto.Field(proto.MESSAGE, number=6, oneof='asset_data',
+    media_bundle_asset = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        oneof='asset_data',
         message=asset_types.MediaBundleAsset,
     )
-    image_asset = proto.Field(proto.MESSAGE, number=7, oneof='asset_data',
+    image_asset = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        oneof='asset_data',
         message=asset_types.ImageAsset,
     )
-    text_asset = proto.Field(proto.MESSAGE, number=8, oneof='asset_data',
+    text_asset = proto.Field(
+        proto.MESSAGE,
+        number=8,
+        oneof='asset_data',
         message=asset_types.TextAsset,
     )
-    lead_form_asset = proto.Field(proto.MESSAGE, number=9, oneof='asset_data',
+    lead_form_asset = proto.Field(
+        proto.MESSAGE,
+        number=9,
+        oneof='asset_data',
         message=asset_types.LeadFormAsset,
     )
-    book_on_google_asset = proto.Field(proto.MESSAGE, number=10, oneof='asset_data',
+    book_on_google_asset = proto.Field(
+        proto.MESSAGE,
+        number=10,
+        oneof='asset_data',
         message=asset_types.BookOnGoogleAsset,
     )
 
 
 class AssetPolicySummary(proto.Message):
     r"""Contains policy information for an asset.
-
     Attributes:
         policy_topic_entries (Sequence[google.ads.googleads.v6.common.types.PolicyTopicEntry]):
             Output only. The list of policy findings for
@@ -118,13 +150,19 @@ class AssetPolicySummary(proto.Message):
             its individual policy topic entries.
     """
 
-    policy_topic_entries = proto.RepeatedField(proto.MESSAGE, number=1,
-        message=gagc_policy.PolicyTopicEntry,
+    policy_topic_entries = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
+        message=policy.PolicyTopicEntry,
     )
-    review_status = proto.Field(proto.ENUM, number=2,
+    review_status = proto.Field(
+        proto.ENUM,
+        number=2,
         enum=policy_review_status.PolicyReviewStatusEnum.PolicyReviewStatus,
     )
-    approval_status = proto.Field(proto.ENUM, number=3,
+    approval_status = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=policy_approval_status.PolicyApprovalStatusEnum.PolicyApprovalStatus,
     )
 

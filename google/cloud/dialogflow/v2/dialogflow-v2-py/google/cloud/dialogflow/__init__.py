@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,36 +14,37 @@
 # limitations under the License.
 #
 
-from google.cloud.dialogflow_v2.services.agents.async_client import AgentsAsyncClient
 from google.cloud.dialogflow_v2.services.agents.client import AgentsClient
-from google.cloud.dialogflow_v2.services.answer_records.async_client import AnswerRecordsAsyncClient
+from google.cloud.dialogflow_v2.services.agents.async_client import AgentsAsyncClient
 from google.cloud.dialogflow_v2.services.answer_records.client import AnswerRecordsClient
-from google.cloud.dialogflow_v2.services.contexts.async_client import ContextsAsyncClient
+from google.cloud.dialogflow_v2.services.answer_records.async_client import AnswerRecordsAsyncClient
 from google.cloud.dialogflow_v2.services.contexts.client import ContextsClient
-from google.cloud.dialogflow_v2.services.conversation_profiles.async_client import ConversationProfilesAsyncClient
+from google.cloud.dialogflow_v2.services.contexts.async_client import ContextsAsyncClient
 from google.cloud.dialogflow_v2.services.conversation_profiles.client import ConversationProfilesClient
-from google.cloud.dialogflow_v2.services.conversations.async_client import ConversationsAsyncClient
+from google.cloud.dialogflow_v2.services.conversation_profiles.async_client import ConversationProfilesAsyncClient
 from google.cloud.dialogflow_v2.services.conversations.client import ConversationsClient
-from google.cloud.dialogflow_v2.services.documents.async_client import DocumentsAsyncClient
+from google.cloud.dialogflow_v2.services.conversations.async_client import ConversationsAsyncClient
 from google.cloud.dialogflow_v2.services.documents.client import DocumentsClient
-from google.cloud.dialogflow_v2.services.entity_types.async_client import EntityTypesAsyncClient
+from google.cloud.dialogflow_v2.services.documents.async_client import DocumentsAsyncClient
 from google.cloud.dialogflow_v2.services.entity_types.client import EntityTypesClient
-from google.cloud.dialogflow_v2.services.environments.async_client import EnvironmentsAsyncClient
+from google.cloud.dialogflow_v2.services.entity_types.async_client import EntityTypesAsyncClient
 from google.cloud.dialogflow_v2.services.environments.client import EnvironmentsClient
-from google.cloud.dialogflow_v2.services.fulfillments.async_client import FulfillmentsAsyncClient
+from google.cloud.dialogflow_v2.services.environments.async_client import EnvironmentsAsyncClient
 from google.cloud.dialogflow_v2.services.fulfillments.client import FulfillmentsClient
-from google.cloud.dialogflow_v2.services.intents.async_client import IntentsAsyncClient
+from google.cloud.dialogflow_v2.services.fulfillments.async_client import FulfillmentsAsyncClient
 from google.cloud.dialogflow_v2.services.intents.client import IntentsClient
-from google.cloud.dialogflow_v2.services.knowledge_bases.async_client import KnowledgeBasesAsyncClient
+from google.cloud.dialogflow_v2.services.intents.async_client import IntentsAsyncClient
 from google.cloud.dialogflow_v2.services.knowledge_bases.client import KnowledgeBasesClient
-from google.cloud.dialogflow_v2.services.participants.async_client import ParticipantsAsyncClient
+from google.cloud.dialogflow_v2.services.knowledge_bases.async_client import KnowledgeBasesAsyncClient
 from google.cloud.dialogflow_v2.services.participants.client import ParticipantsClient
-from google.cloud.dialogflow_v2.services.session_entity_types.async_client import SessionEntityTypesAsyncClient
+from google.cloud.dialogflow_v2.services.participants.async_client import ParticipantsAsyncClient
 from google.cloud.dialogflow_v2.services.session_entity_types.client import SessionEntityTypesClient
-from google.cloud.dialogflow_v2.services.sessions.async_client import SessionsAsyncClient
+from google.cloud.dialogflow_v2.services.session_entity_types.async_client import SessionEntityTypesAsyncClient
 from google.cloud.dialogflow_v2.services.sessions.client import SessionsClient
-from google.cloud.dialogflow_v2.services.versions.async_client import VersionsAsyncClient
+from google.cloud.dialogflow_v2.services.sessions.async_client import SessionsAsyncClient
 from google.cloud.dialogflow_v2.services.versions.client import VersionsClient
+from google.cloud.dialogflow_v2.services.versions.async_client import VersionsAsyncClient
+
 from google.cloud.dialogflow_v2.types.agent import Agent
 from google.cloud.dialogflow_v2.types.agent import DeleteAgentRequest
 from google.cloud.dialogflow_v2.types.agent import ExportAgentRequest
@@ -64,17 +64,17 @@ from google.cloud.dialogflow_v2.types.answer_record import AnswerRecord
 from google.cloud.dialogflow_v2.types.answer_record import ListAnswerRecordsRequest
 from google.cloud.dialogflow_v2.types.answer_record import ListAnswerRecordsResponse
 from google.cloud.dialogflow_v2.types.answer_record import UpdateAnswerRecordRequest
-from google.cloud.dialogflow_v2.types.audio_config import AudioEncoding
 from google.cloud.dialogflow_v2.types.audio_config import InputAudioConfig
 from google.cloud.dialogflow_v2.types.audio_config import OutputAudioConfig
-from google.cloud.dialogflow_v2.types.audio_config import OutputAudioEncoding
 from google.cloud.dialogflow_v2.types.audio_config import SpeechContext
-from google.cloud.dialogflow_v2.types.audio_config import SpeechModelVariant
 from google.cloud.dialogflow_v2.types.audio_config import SpeechToTextConfig
 from google.cloud.dialogflow_v2.types.audio_config import SpeechWordInfo
-from google.cloud.dialogflow_v2.types.audio_config import SsmlVoiceGender
 from google.cloud.dialogflow_v2.types.audio_config import SynthesizeSpeechConfig
 from google.cloud.dialogflow_v2.types.audio_config import VoiceSelectionParams
+from google.cloud.dialogflow_v2.types.audio_config import AudioEncoding
+from google.cloud.dialogflow_v2.types.audio_config import OutputAudioEncoding
+from google.cloud.dialogflow_v2.types.audio_config import SpeechModelVariant
+from google.cloud.dialogflow_v2.types.audio_config import SsmlVoiceGender
 from google.cloud.dialogflow_v2.types.context import Context
 from google.cloud.dialogflow_v2.types.context import CreateContextRequest
 from google.cloud.dialogflow_v2.types.context import DeleteAllContextsRequest
@@ -151,10 +151,10 @@ from google.cloud.dialogflow_v2.types.intent import DeleteIntentRequest
 from google.cloud.dialogflow_v2.types.intent import GetIntentRequest
 from google.cloud.dialogflow_v2.types.intent import Intent
 from google.cloud.dialogflow_v2.types.intent import IntentBatch
-from google.cloud.dialogflow_v2.types.intent import IntentView
 from google.cloud.dialogflow_v2.types.intent import ListIntentsRequest
 from google.cloud.dialogflow_v2.types.intent import ListIntentsResponse
 from google.cloud.dialogflow_v2.types.intent import UpdateIntentRequest
+from google.cloud.dialogflow_v2.types.intent import IntentView
 from google.cloud.dialogflow_v2.types.knowledge_base import CreateKnowledgeBaseRequest
 from google.cloud.dialogflow_v2.types.knowledge_base import DeleteKnowledgeBaseRequest
 from google.cloud.dialogflow_v2.types.knowledge_base import GetKnowledgeBaseRequest
@@ -216,205 +216,204 @@ from google.cloud.dialogflow_v2.types.webhook import OriginalDetectIntentRequest
 from google.cloud.dialogflow_v2.types.webhook import WebhookRequest
 from google.cloud.dialogflow_v2.types.webhook import WebhookResponse
 
-__all__ = (
-    'Agent',
-    'AgentAssistantFeedback',
-    'AgentAssistantRecord',
+__all__ = ('AgentsClient',
     'AgentsAsyncClient',
-    'AgentsClient',
-    'AnalyzeContentRequest',
-    'AnalyzeContentResponse',
-    'AnnotatedMessagePart',
-    'AnswerFeedback',
-    'AnswerRecord',
-    'AnswerRecordsAsyncClient',
     'AnswerRecordsClient',
-    'ArticleAnswer',
-    'AudioEncoding',
-    'AutomatedAgentConfig',
-    'AutomatedAgentReply',
-    'BatchCreateEntitiesRequest',
-    'BatchDeleteEntitiesRequest',
-    'BatchDeleteEntityTypesRequest',
-    'BatchDeleteIntentsRequest',
-    'BatchUpdateEntitiesRequest',
-    'BatchUpdateEntityTypesRequest',
-    'BatchUpdateEntityTypesResponse',
-    'BatchUpdateIntentsRequest',
-    'BatchUpdateIntentsResponse',
-    'CompleteConversationRequest',
-    'Context',
-    'ContextsAsyncClient',
+    'AnswerRecordsAsyncClient',
     'ContextsClient',
-    'Conversation',
-    'ConversationEvent',
-    'ConversationPhoneNumber',
-    'ConversationProfile',
-    'ConversationProfilesAsyncClient',
+    'ContextsAsyncClient',
     'ConversationProfilesClient',
-    'ConversationsAsyncClient',
+    'ConversationProfilesAsyncClient',
     'ConversationsClient',
-    'CreateContextRequest',
-    'CreateConversationProfileRequest',
-    'CreateConversationRequest',
-    'CreateDocumentRequest',
-    'CreateEntityTypeRequest',
-    'CreateEnvironmentRequest',
-    'CreateIntentRequest',
-    'CreateKnowledgeBaseRequest',
-    'CreateParticipantRequest',
-    'CreateSessionEntityTypeRequest',
-    'CreateVersionRequest',
-    'DeleteAgentRequest',
-    'DeleteAllContextsRequest',
-    'DeleteContextRequest',
-    'DeleteConversationProfileRequest',
-    'DeleteDocumentRequest',
-    'DeleteEntityTypeRequest',
-    'DeleteEnvironmentRequest',
-    'DeleteIntentRequest',
-    'DeleteKnowledgeBaseRequest',
-    'DeleteSessionEntityTypeRequest',
-    'DeleteVersionRequest',
-    'DetectIntentRequest',
-    'DetectIntentResponse',
-    'Document',
-    'DocumentsAsyncClient',
+    'ConversationsAsyncClient',
     'DocumentsClient',
-    'DtmfParameters',
-    'EntityType',
-    'EntityTypeBatch',
-    'EntityTypesAsyncClient',
+    'DocumentsAsyncClient',
     'EntityTypesClient',
-    'Environment',
-    'EnvironmentHistory',
-    'EnvironmentsAsyncClient',
+    'EntityTypesAsyncClient',
     'EnvironmentsClient',
-    'EventInput',
+    'EnvironmentsAsyncClient',
+    'FulfillmentsClient',
+    'FulfillmentsAsyncClient',
+    'IntentsClient',
+    'IntentsAsyncClient',
+    'KnowledgeBasesClient',
+    'KnowledgeBasesAsyncClient',
+    'ParticipantsClient',
+    'ParticipantsAsyncClient',
+    'SessionEntityTypesClient',
+    'SessionEntityTypesAsyncClient',
+    'SessionsClient',
+    'SessionsAsyncClient',
+    'VersionsClient',
+    'VersionsAsyncClient',
+    'Agent',
+    'DeleteAgentRequest',
     'ExportAgentRequest',
     'ExportAgentResponse',
-    'FaqAnswer',
-    'Fulfillment',
-    'FulfillmentsAsyncClient',
-    'FulfillmentsClient',
     'GetAgentRequest',
-    'GetContextRequest',
-    'GetConversationProfileRequest',
-    'GetConversationRequest',
-    'GetDocumentRequest',
-    'GetEntityTypeRequest',
-    'GetEnvironmentHistoryRequest',
-    'GetEnvironmentRequest',
-    'GetFulfillmentRequest',
-    'GetIntentRequest',
-    'GetKnowledgeBaseRequest',
-    'GetParticipantRequest',
-    'GetSessionEntityTypeRequest',
     'GetValidationResultRequest',
-    'GetVersionRequest',
-    'HumanAgentAssistantConfig',
-    'HumanAgentAssistantEvent',
-    'HumanAgentHandoffConfig',
     'ImportAgentRequest',
-    'InputAudioConfig',
-    'Intent',
-    'IntentBatch',
-    'IntentView',
-    'IntentsAsyncClient',
-    'IntentsClient',
-    'KnowledgeBase',
-    'KnowledgeBasesAsyncClient',
-    'KnowledgeBasesClient',
-    'KnowledgeOperationMetadata',
-    'ListAnswerRecordsRequest',
-    'ListAnswerRecordsResponse',
-    'ListContextsRequest',
-    'ListContextsResponse',
-    'ListConversationProfilesRequest',
-    'ListConversationProfilesResponse',
-    'ListConversationsRequest',
-    'ListConversationsResponse',
-    'ListDocumentsRequest',
-    'ListDocumentsResponse',
-    'ListEntityTypesRequest',
-    'ListEntityTypesResponse',
-    'ListEnvironmentsRequest',
-    'ListEnvironmentsResponse',
-    'ListIntentsRequest',
-    'ListIntentsResponse',
-    'ListKnowledgeBasesRequest',
-    'ListKnowledgeBasesResponse',
-    'ListMessagesRequest',
-    'ListMessagesResponse',
-    'ListParticipantsRequest',
-    'ListParticipantsResponse',
-    'ListSessionEntityTypesRequest',
-    'ListSessionEntityTypesResponse',
-    'ListVersionsRequest',
-    'ListVersionsResponse',
-    'LoggingConfig',
-    'Message',
-    'MessageAnnotation',
-    'NotificationConfig',
-    'OriginalDetectIntentRequest',
-    'OutputAudio',
-    'OutputAudioConfig',
-    'OutputAudioEncoding',
-    'Participant',
-    'ParticipantsAsyncClient',
-    'ParticipantsClient',
-    'QueryInput',
-    'QueryParameters',
-    'QueryResult',
-    'ReloadDocumentRequest',
     'RestoreAgentRequest',
     'SearchAgentsRequest',
     'SearchAgentsResponse',
-    'Sentiment',
-    'SentimentAnalysisRequestConfig',
-    'SentimentAnalysisResult',
-    'SessionEntityType',
-    'SessionEntityTypesAsyncClient',
-    'SessionEntityTypesClient',
-    'SessionsAsyncClient',
-    'SessionsClient',
     'SetAgentRequest',
+    'TrainAgentRequest',
+    'AgentAssistantFeedback',
+    'AgentAssistantRecord',
+    'AnswerFeedback',
+    'AnswerRecord',
+    'ListAnswerRecordsRequest',
+    'ListAnswerRecordsResponse',
+    'UpdateAnswerRecordRequest',
+    'InputAudioConfig',
+    'OutputAudioConfig',
     'SpeechContext',
-    'SpeechModelVariant',
     'SpeechToTextConfig',
     'SpeechWordInfo',
+    'SynthesizeSpeechConfig',
+    'VoiceSelectionParams',
+    'AudioEncoding',
+    'OutputAudioEncoding',
+    'SpeechModelVariant',
     'SsmlVoiceGender',
-    'StreamingDetectIntentRequest',
-    'StreamingDetectIntentResponse',
-    'StreamingRecognitionResult',
+    'Context',
+    'CreateContextRequest',
+    'DeleteAllContextsRequest',
+    'DeleteContextRequest',
+    'GetContextRequest',
+    'ListContextsRequest',
+    'ListContextsResponse',
+    'UpdateContextRequest',
+    'CompleteConversationRequest',
+    'Conversation',
+    'ConversationPhoneNumber',
+    'CreateConversationRequest',
+    'GetConversationRequest',
+    'ListConversationsRequest',
+    'ListConversationsResponse',
+    'ListMessagesRequest',
+    'ListMessagesResponse',
+    'ConversationEvent',
+    'AutomatedAgentConfig',
+    'ConversationProfile',
+    'CreateConversationProfileRequest',
+    'DeleteConversationProfileRequest',
+    'GetConversationProfileRequest',
+    'HumanAgentAssistantConfig',
+    'HumanAgentHandoffConfig',
+    'ListConversationProfilesRequest',
+    'ListConversationProfilesResponse',
+    'LoggingConfig',
+    'NotificationConfig',
+    'SuggestionFeature',
+    'UpdateConversationProfileRequest',
+    'CreateDocumentRequest',
+    'DeleteDocumentRequest',
+    'Document',
+    'GetDocumentRequest',
+    'KnowledgeOperationMetadata',
+    'ListDocumentsRequest',
+    'ListDocumentsResponse',
+    'ReloadDocumentRequest',
+    'UpdateDocumentRequest',
+    'BatchCreateEntitiesRequest',
+    'BatchDeleteEntitiesRequest',
+    'BatchDeleteEntityTypesRequest',
+    'BatchUpdateEntitiesRequest',
+    'BatchUpdateEntityTypesRequest',
+    'BatchUpdateEntityTypesResponse',
+    'CreateEntityTypeRequest',
+    'DeleteEntityTypeRequest',
+    'EntityType',
+    'EntityTypeBatch',
+    'GetEntityTypeRequest',
+    'ListEntityTypesRequest',
+    'ListEntityTypesResponse',
+    'UpdateEntityTypeRequest',
+    'CreateEnvironmentRequest',
+    'DeleteEnvironmentRequest',
+    'Environment',
+    'EnvironmentHistory',
+    'GetEnvironmentHistoryRequest',
+    'GetEnvironmentRequest',
+    'ListEnvironmentsRequest',
+    'ListEnvironmentsResponse',
+    'TextToSpeechSettings',
+    'UpdateEnvironmentRequest',
+    'Fulfillment',
+    'GetFulfillmentRequest',
+    'UpdateFulfillmentRequest',
+    'HumanAgentAssistantEvent',
+    'BatchDeleteIntentsRequest',
+    'BatchUpdateIntentsRequest',
+    'BatchUpdateIntentsResponse',
+    'CreateIntentRequest',
+    'DeleteIntentRequest',
+    'GetIntentRequest',
+    'Intent',
+    'IntentBatch',
+    'ListIntentsRequest',
+    'ListIntentsResponse',
+    'UpdateIntentRequest',
+    'IntentView',
+    'CreateKnowledgeBaseRequest',
+    'DeleteKnowledgeBaseRequest',
+    'GetKnowledgeBaseRequest',
+    'KnowledgeBase',
+    'ListKnowledgeBasesRequest',
+    'ListKnowledgeBasesResponse',
+    'UpdateKnowledgeBaseRequest',
+    'AnalyzeContentRequest',
+    'AnalyzeContentResponse',
+    'AnnotatedMessagePart',
+    'ArticleAnswer',
+    'AutomatedAgentReply',
+    'CreateParticipantRequest',
+    'DtmfParameters',
+    'FaqAnswer',
+    'GetParticipantRequest',
+    'ListParticipantsRequest',
+    'ListParticipantsResponse',
+    'Message',
+    'MessageAnnotation',
+    'OutputAudio',
+    'Participant',
     'SuggestArticlesRequest',
     'SuggestArticlesResponse',
     'SuggestFaqAnswersRequest',
     'SuggestFaqAnswersResponse',
-    'SuggestionFeature',
     'SuggestionResult',
-    'SynthesizeSpeechConfig',
-    'TextInput',
-    'TextToSpeechSettings',
-    'TrainAgentRequest',
-    'UpdateAnswerRecordRequest',
-    'UpdateContextRequest',
-    'UpdateConversationProfileRequest',
-    'UpdateDocumentRequest',
-    'UpdateEntityTypeRequest',
-    'UpdateEnvironmentRequest',
-    'UpdateFulfillmentRequest',
-    'UpdateIntentRequest',
-    'UpdateKnowledgeBaseRequest',
     'UpdateParticipantRequest',
+    'DetectIntentRequest',
+    'DetectIntentResponse',
+    'EventInput',
+    'QueryInput',
+    'QueryParameters',
+    'QueryResult',
+    'Sentiment',
+    'SentimentAnalysisRequestConfig',
+    'SentimentAnalysisResult',
+    'StreamingDetectIntentRequest',
+    'StreamingDetectIntentResponse',
+    'StreamingRecognitionResult',
+    'TextInput',
+    'CreateSessionEntityTypeRequest',
+    'DeleteSessionEntityTypeRequest',
+    'GetSessionEntityTypeRequest',
+    'ListSessionEntityTypesRequest',
+    'ListSessionEntityTypesResponse',
+    'SessionEntityType',
     'UpdateSessionEntityTypeRequest',
-    'UpdateVersionRequest',
     'ValidationError',
     'ValidationResult',
+    'CreateVersionRequest',
+    'DeleteVersionRequest',
+    'GetVersionRequest',
+    'ListVersionsRequest',
+    'ListVersionsResponse',
+    'UpdateVersionRequest',
     'Version',
-    'VersionsAsyncClient',
-    'VersionsClient',
-    'VoiceSelectionParams',
+    'OriginalDetectIntentRequest',
     'WebhookRequest',
     'WebhookResponse',
 )

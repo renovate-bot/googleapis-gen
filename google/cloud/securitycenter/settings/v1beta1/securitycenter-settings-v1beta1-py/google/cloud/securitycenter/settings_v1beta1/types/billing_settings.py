@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,11 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -48,7 +45,6 @@ class BillingType(proto.Enum):
 
 class BillingSettings(proto.Message):
     r"""Billing settings
-
     Attributes:
         billing_tier (google.cloud.securitycenter.settings_v1beta1.types.BillingTier):
             Output only. Billing tier selected by
@@ -68,20 +64,25 @@ class BillingSettings(proto.Message):
             access ended.
     """
 
-    billing_tier = proto.Field(proto.ENUM, number=1,
+    billing_tier = proto.Field(
+        proto.ENUM,
+        number=1,
         enum='BillingTier',
     )
-
-    billing_type = proto.Field(proto.ENUM, number=2,
+    billing_type = proto.Field(
+        proto.ENUM,
+        number=2,
         enum='BillingType',
     )
-
-    start_time = proto.Field(proto.MESSAGE, number=3,
-        message=timestamp.Timestamp,
+    start_time = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=timestamp_pb2.Timestamp,
     )
-
-    expire_time = proto.Field(proto.MESSAGE, number=4,
-        message=timestamp.Timestamp,
+    expire_time = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=timestamp_pb2.Timestamp,
     )
 
 

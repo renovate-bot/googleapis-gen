@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -22,15 +20,14 @@ from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
 import google.api_core.client_options as ClientOptions # type: ignore
-from google.api_core import exceptions                 # type: ignore
+from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
 from google.devtools.cloudprofiler_v2.types import profiler
-from google.protobuf import duration_pb2 as duration  # type: ignore
-
+from google.protobuf import duration_pb2  # type: ignore
 from .transports.base import ProfilerServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import ProfilerServiceGrpcAsyncIOTransport
 from .client import ProfilerServiceClient
@@ -56,16 +53,12 @@ class ProfilerServiceAsyncClient:
 
     common_billing_account_path = staticmethod(ProfilerServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(ProfilerServiceClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(ProfilerServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(ProfilerServiceClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(ProfilerServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(ProfilerServiceClient.parse_common_organization_path)
-
     common_project_path = staticmethod(ProfilerServiceClient.common_project_path)
     parse_common_project_path = staticmethod(ProfilerServiceClient.parse_common_project_path)
-
     common_location_path = staticmethod(ProfilerServiceClient.common_location_path)
     parse_common_location_path = staticmethod(ProfilerServiceClient.parse_common_location_path)
 
@@ -113,7 +106,7 @@ class ProfilerServiceAsyncClient:
     get_transport_class = functools.partial(type(ProfilerServiceClient).get_transport_class, type(ProfilerServiceClient))
 
     def __init__(self, *,
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             transport: Union[str, ProfilerServiceTransport] = 'grpc_asyncio',
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -150,7 +143,6 @@ class ProfilerServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = ProfilerServiceClient(
             credentials=credentials,
             transport=transport,
@@ -190,7 +182,6 @@ class ProfilerServiceAsyncClient:
                 list of profile types supported by the agent. The
                 creation call will hang until a profile of one of these
                 types needs to be collected.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -202,7 +193,6 @@ class ProfilerServiceAsyncClient:
                 Profile resource.
         """
         # Create or coerce a protobuf request object.
-
         request = profiler.CreateProfileRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -249,7 +239,6 @@ class ProfilerServiceAsyncClient:
                 The request object. CreateOfflineProfileRequest
                 describes a profile resource offline creation request.
                 Profile field must be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -261,7 +250,6 @@ class ProfilerServiceAsyncClient:
                 Profile resource.
         """
         # Create or coerce a protobuf request object.
-
         request = profiler.CreateOfflineProfileRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -308,7 +296,6 @@ class ProfilerServiceAsyncClient:
             request (:class:`google.devtools.cloudprofiler_v2.types.UpdateProfileRequest`):
                 The request object. UpdateProfileRequest contains the
                 profile to update.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -320,7 +307,6 @@ class ProfilerServiceAsyncClient:
                 Profile resource.
         """
         # Create or coerce a protobuf request object.
-
         request = profiler.UpdateProfileRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -349,8 +335,6 @@ class ProfilerServiceAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

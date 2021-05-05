@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
 from google.cloud.dialogflowcx_v3beta1.types import flow
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -45,14 +42,16 @@ __protobuf__ = proto.module(
 
 class SpeechToTextSettings(proto.Message):
     r"""Settings related to speech recognition.
-
     Attributes:
         enable_speech_adaptation (bool):
             Whether to use speech adaptation for speech
             recognition.
     """
 
-    enable_speech_adaptation = proto.Field(proto.BOOL, number=1)
+    enable_speech_adaptation = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
 
 
 class Agent(proto.Message):
@@ -125,31 +124,55 @@ class Agent(proto.Message):
             enabled in detect intent requests.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    display_name = proto.Field(proto.STRING, number=2)
-
-    default_language_code = proto.Field(proto.STRING, number=3)
-
-    supported_language_codes = proto.RepeatedField(proto.STRING, number=4)
-
-    time_zone = proto.Field(proto.STRING, number=5)
-
-    description = proto.Field(proto.STRING, number=6)
-
-    avatar_uri = proto.Field(proto.STRING, number=7)
-
-    speech_to_text_settings = proto.Field(proto.MESSAGE, number=13,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    display_name = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    default_language_code = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    supported_language_codes = proto.RepeatedField(
+        proto.STRING,
+        number=4,
+    )
+    time_zone = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    description = proto.Field(
+        proto.STRING,
+        number=6,
+    )
+    avatar_uri = proto.Field(
+        proto.STRING,
+        number=7,
+    )
+    speech_to_text_settings = proto.Field(
+        proto.MESSAGE,
+        number=13,
         message='SpeechToTextSettings',
     )
-
-    start_flow = proto.Field(proto.STRING, number=16)
-
-    security_settings = proto.Field(proto.STRING, number=17)
-
-    enable_stackdriver_logging = proto.Field(proto.BOOL, number=18)
-
-    enable_spell_correction = proto.Field(proto.BOOL, number=20)
+    start_flow = proto.Field(
+        proto.STRING,
+        number=16,
+    )
+    security_settings = proto.Field(
+        proto.STRING,
+        number=17,
+    )
+    enable_stackdriver_logging = proto.Field(
+        proto.BOOL,
+        number=18,
+    )
+    enable_spell_correction = proto.Field(
+        proto.BOOL,
+        number=20,
+    )
 
 
 class ListAgentsRequest(proto.Message):
@@ -168,11 +191,18 @@ class ListAgentsRequest(proto.Message):
             request.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class ListAgentsResponse(proto.Message):
@@ -193,11 +223,15 @@ class ListAgentsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    agents = proto.RepeatedField(proto.MESSAGE, number=1,
+    agents = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Agent',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class GetAgentRequest(proto.Message):
@@ -210,7 +244,10 @@ class GetAgentRequest(proto.Message):
             ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class CreateAgentRequest(proto.Message):
@@ -225,9 +262,13 @@ class CreateAgentRequest(proto.Message):
             Required. The agent to create.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    agent = proto.Field(proto.MESSAGE, number=2,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    agent = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='Agent',
     )
 
@@ -245,12 +286,15 @@ class UpdateAgentRequest(proto.Message):
             updated.
     """
 
-    agent = proto.Field(proto.MESSAGE, number=1,
+    agent = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='Agent',
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=2,
-        message=field_mask.FieldMask,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=field_mask_pb2.FieldMask,
     )
 
 
@@ -264,7 +308,10 @@ class DeleteAgentRequest(proto.Message):
             ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class ExportAgentRequest(proto.Message):
@@ -287,11 +334,18 @@ class ExportAgentRequest(proto.Message):
             ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/environments/<Environment ID>``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    agent_uri = proto.Field(proto.STRING, number=2)
-
-    environment = proto.Field(proto.STRING, number=5)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    agent_uri = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    environment = proto.Field(
+        proto.STRING,
+        number=5,
+    )
 
 
 class ExportAgentResponse(proto.Message):
@@ -307,9 +361,16 @@ class ExportAgentResponse(proto.Message):
             Uncompressed raw byte content for agent.
     """
 
-    agent_uri = proto.Field(proto.STRING, number=1, oneof='agent')
-
-    agent_content = proto.Field(proto.BYTES, number=2, oneof='agent')
+    agent_uri = proto.Field(
+        proto.STRING,
+        number=1,
+        oneof='agent',
+    )
+    agent_content = proto.Field(
+        proto.BYTES,
+        number=2,
+        oneof='agent',
+    )
 
 
 class RestoreAgentRequest(proto.Message):
@@ -336,13 +397,23 @@ class RestoreAgentRequest(proto.Message):
         KEEP = 1
         FALLBACK = 2
 
-    name = proto.Field(proto.STRING, number=1)
-
-    agent_uri = proto.Field(proto.STRING, number=2, oneof='agent')
-
-    agent_content = proto.Field(proto.BYTES, number=3, oneof='agent')
-
-    restore_option = proto.Field(proto.ENUM, number=5,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    agent_uri = proto.Field(
+        proto.STRING,
+        number=2,
+        oneof='agent',
+    )
+    agent_content = proto.Field(
+        proto.BYTES,
+        number=3,
+        oneof='agent',
+    )
+    restore_option = proto.Field(
+        proto.ENUM,
+        number=5,
         enum=RestoreOption,
     )
 
@@ -360,9 +431,14 @@ class ValidateAgentRequest(proto.Message):
             language is used.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    language_code = proto.Field(proto.STRING, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    language_code = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class GetAgentValidationResultRequest(proto.Message):
@@ -378,9 +454,14 @@ class GetAgentValidationResultRequest(proto.Message):
             language is used.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    language_code = proto.Field(proto.STRING, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    language_code = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class AgentValidationResult(proto.Message):
@@ -396,9 +477,13 @@ class AgentValidationResult(proto.Message):
             Contains all flow validation results.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    flow_validation_results = proto.RepeatedField(proto.MESSAGE, number=2,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    flow_validation_results = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message=flow.FlowValidationResult,
     )
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 
 from google.cloud.aiplatform.v1.schema.trainingjob.definition_v1.types.automl_image_classification import AutoMlImageClassification
 from google.cloud.aiplatform.v1.schema.trainingjob.definition_v1.types.automl_image_classification import AutoMlImageClassificationInputs
@@ -41,8 +41,7 @@ from google.cloud.aiplatform.v1.schema.trainingjob.definition_v1.types.automl_vi
 from google.cloud.aiplatform.v1.schema.trainingjob.definition_v1.types.automl_video_object_tracking import AutoMlVideoObjectTrackingInputs
 from google.cloud.aiplatform.v1.schema.trainingjob.definition_v1.types.export_evaluated_data_items_config import ExportEvaluatedDataItemsConfig
 
-__all__ = (
-    'AutoMlImageClassification',
+__all__ = ('AutoMlImageClassification',
     'AutoMlImageClassificationInputs',
     'AutoMlImageClassificationMetadata',
     'AutoMlImageObjectDetection',

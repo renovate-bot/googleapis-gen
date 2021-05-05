@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,8 @@
 #
 
 from .services.cloud_tasks import CloudTasksClient
+from .services.cloud_tasks import CloudTasksAsyncClient
+
 from .types.cloudtasks import AcknowledgeTaskRequest
 from .types.cloudtasks import CancelLeaseRequest
 from .types.cloudtasks import CreateQueueRequest
@@ -43,47 +44,46 @@ from .types.queue import RetryConfig
 from .types.target import AppEngineHttpRequest
 from .types.target import AppEngineHttpTarget
 from .types.target import AppEngineRouting
-from .types.target import HttpMethod
 from .types.target import PullMessage
 from .types.target import PullTarget
+from .types.target import HttpMethod
 from .types.task import AttemptStatus
 from .types.task import Task
 from .types.task import TaskStatus
 
-
 __all__ = (
-    'AcknowledgeTaskRequest',
-    'AppEngineHttpRequest',
-    'AppEngineHttpTarget',
-    'AppEngineRouting',
-    'AttemptStatus',
-    'CancelLeaseRequest',
-    'CreateQueueRequest',
-    'CreateTaskRequest',
-    'DeleteQueueRequest',
-    'DeleteTaskRequest',
-    'GetQueueRequest',
-    'GetTaskRequest',
-    'HttpMethod',
-    'LeaseTasksRequest',
-    'LeaseTasksResponse',
-    'ListQueuesRequest',
-    'ListQueuesResponse',
-    'ListTasksRequest',
-    'ListTasksResponse',
-    'PauseQueueRequest',
-    'PullMessage',
-    'PullTarget',
-    'PurgeQueueRequest',
-    'Queue',
-    'QueueStats',
-    'RateLimits',
-    'RenewLeaseRequest',
-    'ResumeQueueRequest',
-    'RetryConfig',
-    'RunTaskRequest',
-    'Task',
-    'TaskStatus',
-    'UpdateQueueRequest',
+'AcknowledgeTaskRequest',
+'AppEngineHttpRequest',
+'AppEngineHttpTarget',
+'AppEngineRouting',
+'AttemptStatus',
+'CancelLeaseRequest',
 'CloudTasksClient',
+'CreateQueueRequest',
+'CreateTaskRequest',
+'DeleteQueueRequest',
+'DeleteTaskRequest',
+'GetQueueRequest',
+'GetTaskRequest',
+'HttpMethod',
+'LeaseTasksRequest',
+'LeaseTasksResponse',
+'ListQueuesRequest',
+'ListQueuesResponse',
+'ListTasksRequest',
+'ListTasksResponse',
+'PauseQueueRequest',
+'PullMessage',
+'PullTarget',
+'PurgeQueueRequest',
+'Queue',
+'QueueStats',
+'RateLimits',
+'RenewLeaseRequest',
+'ResumeQueueRequest',
+'RetryConfig',
+'RunTaskRequest',
+'Task',
+'TaskStatus',
+'UpdateQueueRequest',
 )

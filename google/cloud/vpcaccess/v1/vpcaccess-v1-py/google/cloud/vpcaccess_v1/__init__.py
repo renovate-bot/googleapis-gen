@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,8 @@
 #
 
 from .services.vpc_access_service import VpcAccessServiceClient
+from .services.vpc_access_service import VpcAccessServiceAsyncClient
+
 from .types.vpc_access import Connector
 from .types.vpc_access import CreateConnectorRequest
 from .types.vpc_access import DeleteConnectorRequest
@@ -24,14 +25,13 @@ from .types.vpc_access import ListConnectorsRequest
 from .types.vpc_access import ListConnectorsResponse
 from .types.vpc_access import OperationMetadata
 
-
 __all__ = (
-    'Connector',
-    'CreateConnectorRequest',
-    'DeleteConnectorRequest',
-    'GetConnectorRequest',
-    'ListConnectorsRequest',
-    'ListConnectorsResponse',
-    'OperationMetadata',
+'Connector',
+'CreateConnectorRequest',
+'DeleteConnectorRequest',
+'GetConnectorRequest',
+'ListConnectorsRequest',
+'ListConnectorsResponse',
+'OperationMetadata',
 'VpcAccessServiceClient',
 )

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,26 +14,26 @@
 # limitations under the License.
 #
 
-from google.devtools.build_v1.services.publish_build_event.async_client import PublishBuildEventAsyncClient
 from google.devtools.build_v1.services.publish_build_event.client import PublishBuildEventClient
+from google.devtools.build_v1.services.publish_build_event.async_client import PublishBuildEventAsyncClient
+
 from google.devtools.build_v1.types.build_events import BuildEvent
-from google.devtools.build_v1.types.build_events import ConsoleOutputStream
 from google.devtools.build_v1.types.build_events import StreamId
+from google.devtools.build_v1.types.build_events import ConsoleOutputStream
 from google.devtools.build_v1.types.build_status import BuildStatus
 from google.devtools.build_v1.types.publish_build_event import OrderedBuildEvent
 from google.devtools.build_v1.types.publish_build_event import PublishBuildToolEventStreamRequest
 from google.devtools.build_v1.types.publish_build_event import PublishBuildToolEventStreamResponse
 from google.devtools.build_v1.types.publish_build_event import PublishLifecycleEventRequest
 
-__all__ = (
-    'BuildEvent',
-    'BuildStatus',
-    'ConsoleOutputStream',
-    'OrderedBuildEvent',
+__all__ = ('PublishBuildEventClient',
     'PublishBuildEventAsyncClient',
-    'PublishBuildEventClient',
+    'BuildEvent',
+    'StreamId',
+    'ConsoleOutputStream',
+    'BuildStatus',
+    'OrderedBuildEvent',
     'PublishBuildToolEventStreamRequest',
     'PublishBuildToolEventStreamResponse',
     'PublishLifecycleEventRequest',
-    'StreamId',
 )

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
 from google.ads.googleads.v7.resources.types import custom_audience
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -45,7 +42,10 @@ class GetCustomAudienceRequest(proto.Message):
             audience to fetch.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class MutateCustomAudiencesRequest(proto.Message):
@@ -64,16 +64,23 @@ class MutateCustomAudiencesRequest(proto.Message):
             executed. Only errors are returned, not results.
     """
 
-    customer_id = proto.Field(proto.STRING, number=1)
-    operations = proto.RepeatedField(proto.MESSAGE, number=2,
+    customer_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    operations = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='CustomAudienceOperation',
     )
-    validate_only = proto.Field(proto.BOOL, number=3)
+    validate_only = proto.Field(
+        proto.BOOL,
+        number=3,
+    )
 
 
 class CustomAudienceOperation(proto.Message):
     r"""A single operation (create, update) on a custom audience.
-
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             FieldMask that determines which resource
@@ -91,40 +98,55 @@ class CustomAudienceOperation(proto.Message):
             ``customers/{customer_id}/customAudiences/{custom_audience_id}``
     """
 
-    update_mask = proto.Field(proto.MESSAGE, number=4,
-        message=field_mask.FieldMask,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=field_mask_pb2.FieldMask,
     )
-    create = proto.Field(proto.MESSAGE, number=1, oneof='operation',
+    create = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='operation',
         message=custom_audience.CustomAudience,
     )
-    update = proto.Field(proto.MESSAGE, number=2, oneof='operation',
+    update = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='operation',
         message=custom_audience.CustomAudience,
     )
-    remove = proto.Field(proto.STRING, number=3, oneof='operation')
+    remove = proto.Field(
+        proto.STRING,
+        number=3,
+        oneof='operation',
+    )
 
 
 class MutateCustomAudiencesResponse(proto.Message):
     r"""Response message for custom audience mutate.
-
     Attributes:
         results (Sequence[google.ads.googleads.v7.services.types.MutateCustomAudienceResult]):
             All results for the mutate.
     """
 
-    results = proto.RepeatedField(proto.MESSAGE, number=1,
+    results = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='MutateCustomAudienceResult',
     )
 
 
 class MutateCustomAudienceResult(proto.Message):
     r"""The result for the custom audience mutate.
-
     Attributes:
         resource_name (str):
             Returned for successful operations.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -22,17 +20,16 @@ from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
 import google.api_core.client_options as ClientOptions # type: ignore
-from google.api_core import exceptions                 # type: ignore
+from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
 from google.devtools.remoteworkers_v1.types import bots
 from google.devtools.remoteworkers_v1.types import worker
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 from .transports.base import BotsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import BotsGrpcAsyncIOTransport
 from .client import BotsClient
@@ -78,19 +75,14 @@ class BotsAsyncClient:
 
     bot_session_path = staticmethod(BotsClient.bot_session_path)
     parse_bot_session_path = staticmethod(BotsClient.parse_bot_session_path)
-
     common_billing_account_path = staticmethod(BotsClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(BotsClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(BotsClient.common_folder_path)
     parse_common_folder_path = staticmethod(BotsClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(BotsClient.common_organization_path)
     parse_common_organization_path = staticmethod(BotsClient.parse_common_organization_path)
-
     common_project_path = staticmethod(BotsClient.common_project_path)
     parse_common_project_path = staticmethod(BotsClient.parse_common_project_path)
-
     common_location_path = staticmethod(BotsClient.common_location_path)
     parse_common_location_path = staticmethod(BotsClient.parse_common_location_path)
 
@@ -138,7 +130,7 @@ class BotsAsyncClient:
     get_transport_class = functools.partial(type(BotsClient).get_transport_class, type(BotsClient))
 
     def __init__(self, *,
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             transport: Union[str, BotsTransport] = 'grpc_asyncio',
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -175,7 +167,6 @@ class BotsAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = BotsClient(
             credentials=credentials,
             transport=transport,
@@ -215,7 +206,6 @@ class BotsAsyncClient:
                 This corresponds to the ``bot_session`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -247,7 +237,6 @@ class BotsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if bot_session is not None:
@@ -285,7 +274,7 @@ class BotsAsyncClient:
             *,
             name: str = None,
             bot_session: bots.BotSession = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -322,7 +311,6 @@ class BotsAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -354,7 +342,6 @@ class BotsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
         if bot_session is not None:
@@ -388,8 +375,6 @@ class BotsAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

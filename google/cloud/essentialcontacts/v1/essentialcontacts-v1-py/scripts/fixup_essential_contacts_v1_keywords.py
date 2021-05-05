@@ -1,6 +1,5 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +14,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import argparse
 import os
 import libcst as cst
@@ -41,14 +39,13 @@ def partition(
 class essential_contactsCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-    'compute_contacts': ('parent', 'notification_categories', 'page_size', 'page_token', ),
-    'create_contact': ('parent', 'contact', ),
-    'delete_contact': ('name', ),
-    'get_contact': ('name', ),
-    'list_contacts': ('parent', 'page_size', 'page_token', ),
-    'send_test_message': ('contacts', 'resource', 'notification_category', ),
-    'update_contact': ('contact', 'update_mask', ),
-
+          'compute_contacts': ('parent', 'notification_categories', 'page_size', 'page_token', ),
+          'create_contact': ('parent', 'contact', ),
+          'delete_contact': ('name', ),
+          'get_contact': ('name', ),
+          'list_contacts': ('parent', 'page_size', 'page_token', ),
+          'send_test_message': ('contacts', 'resource', 'notification_category', ),
+          'update_contact': ('contact', 'update_mask', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -79,7 +76,7 @@ class essential_contactsCallTransformer(cst.CSTTransformer):
             value=cst.Dict([
                 cst.DictElement(
                     cst.SimpleString("'{}'".format(name)),
-                    cst.Element(value=arg.value)
+cst.Element(value=arg.value)
                 )
                 # Note: the args + kwargs looks silly, but keep in mind that
                 # the control parameters had to be stripped out, and that

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,8 @@
 #
 
 from .services.essential_contacts_service import EssentialContactsServiceClient
+from .services.essential_contacts_service import EssentialContactsServiceAsyncClient
+
 from .types.enums import NotificationCategory
 from .types.enums import ValidationState
 from .types.service import ComputeContactsRequest
@@ -29,19 +30,18 @@ from .types.service import ListContactsResponse
 from .types.service import SendTestMessageRequest
 from .types.service import UpdateContactRequest
 
-
 __all__ = (
-    'ComputeContactsRequest',
-    'ComputeContactsResponse',
-    'Contact',
-    'CreateContactRequest',
-    'DeleteContactRequest',
-    'GetContactRequest',
-    'ListContactsRequest',
-    'ListContactsResponse',
-    'NotificationCategory',
-    'SendTestMessageRequest',
-    'UpdateContactRequest',
-    'ValidationState',
+'ComputeContactsRequest',
+'ComputeContactsResponse',
+'Contact',
+'CreateContactRequest',
+'DeleteContactRequest',
 'EssentialContactsServiceClient',
+'GetContactRequest',
+'ListContactsRequest',
+'ListContactsResponse',
+'NotificationCategory',
+'SendTestMessageRequest',
+'UpdateContactRequest',
+'ValidationState',
 )

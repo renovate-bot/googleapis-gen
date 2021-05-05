@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,11 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -32,7 +29,6 @@ __protobuf__ = proto.module(
 
 class MobileAppCategoryConstant(proto.Message):
     r"""A mobile application category constant.
-
     Attributes:
         resource_name (str):
             Output only. The resource name of the mobile app category
@@ -47,12 +43,19 @@ class MobileAppCategoryConstant(proto.Message):
             Output only. Mobile app category name.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    id = proto.Field(proto.MESSAGE, number=2,
-        message=wrappers.Int32Value,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
     )
-    name = proto.Field(proto.MESSAGE, number=3,
-        message=wrappers.StringValue,
+    id = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=wrappers_pb2.Int32Value,
+    )
+    name = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=wrappers_pb2.StringValue,
     )
 
 

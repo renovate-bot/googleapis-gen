@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,16 +13,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google.api_core import operations_v1              # type: ignore
-from google import auth                                # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
+import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
@@ -32,9 +30,8 @@ from google.cloud.channel_v1.types import channel_partner_links
 from google.cloud.channel_v1.types import customers
 from google.cloud.channel_v1.types import entitlements
 from google.cloud.channel_v1.types import service
-from google.longrunning import operations_pb2 as operations  # type: ignore
-from google.protobuf import empty_pb2 as empty  # type: ignore
-
+from google.longrunning import operations_pb2  # type: ignore
+from google.protobuf import empty_pb2  # type: ignore
 from .base import CloudChannelServiceTransport, DEFAULT_CLIENT_INFO
 from .grpc import CloudChannelServiceGrpcTransport
 
@@ -80,7 +77,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
     @classmethod
     def create_channel(cls,
                        host: str = 'cloudchannel.googleapis.com',
-                       credentials: credentials.Credentials = None,
+                       credentials: ga_credentials.Credentials = None,
                        credentials_file: Optional[str] = None,
                        scopes: Optional[Sequence[str]] = None,
                        quota_project_id: Optional[str] = None,
@@ -106,19 +103,21 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
     def __init__(self, *,
             host: str = 'cloudchannel.googleapis.com',
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             credentials_file: Optional[str] = None,
             scopes: Optional[Sequence[str]] = None,
             channel: aio.Channel = None,
@@ -132,7 +131,8 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -191,7 +191,6 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
-
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -469,7 +468,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
     @property
     def delete_customer(self) -> Callable[
             [service.DeleteCustomerRequest],
-            Awaitable[empty.Empty]]:
+            Awaitable[empty_pb2.Empty]]:
         r"""Return a callable for the delete customer method over gRPC.
 
         Deletes the given [Customer][google.cloud.channel.v1.Customer]
@@ -499,14 +498,14 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
             self._stubs['delete_customer'] = self.grpc_channel.unary_unary(
                 '/google.cloud.channel.v1.CloudChannelService/DeleteCustomer',
                 request_serializer=service.DeleteCustomerRequest.serialize,
-                response_deserializer=empty.Empty.FromString,
+                response_deserializer=empty_pb2.Empty.FromString,
             )
         return self._stubs['delete_customer']
 
     @property
     def provision_cloud_identity(self) -> Callable[
             [service.ProvisionCloudIdentityRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the provision cloud identity method over gRPC.
 
         Creates a Cloud Identity for the given customer using the
@@ -547,7 +546,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
             self._stubs['provision_cloud_identity'] = self.grpc_channel.unary_unary(
                 '/google.cloud.channel.v1.CloudChannelService/ProvisionCloudIdentity',
                 request_serializer=service.ProvisionCloudIdentityRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['provision_cloud_identity']
 
@@ -727,7 +726,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
     @property
     def create_entitlement(self) -> Callable[
             [service.CreateEntitlementRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the create entitlement method over gRPC.
 
         Creates an entitlement for a customer.
@@ -790,14 +789,14 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
             self._stubs['create_entitlement'] = self.grpc_channel.unary_unary(
                 '/google.cloud.channel.v1.CloudChannelService/CreateEntitlement',
                 request_serializer=service.CreateEntitlementRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['create_entitlement']
 
     @property
     def change_parameters(self) -> Callable[
             [service.ChangeParametersRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the change parameters method over gRPC.
 
         Change parameters of the entitlement.
@@ -840,14 +839,14 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
             self._stubs['change_parameters'] = self.grpc_channel.unary_unary(
                 '/google.cloud.channel.v1.CloudChannelService/ChangeParameters',
                 request_serializer=service.ChangeParametersRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['change_parameters']
 
     @property
     def change_renewal_settings(self) -> Callable[
             [service.ChangeRenewalSettingsRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the change renewal settings method over gRPC.
 
         Updates the renewal settings for an existing customer
@@ -892,14 +891,14 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
             self._stubs['change_renewal_settings'] = self.grpc_channel.unary_unary(
                 '/google.cloud.channel.v1.CloudChannelService/ChangeRenewalSettings',
                 request_serializer=service.ChangeRenewalSettingsRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['change_renewal_settings']
 
     @property
     def change_offer(self) -> Callable[
             [service.ChangeOfferRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the change offer method over gRPC.
 
         Updates the Offer for an existing customer entitlement.
@@ -940,14 +939,14 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
             self._stubs['change_offer'] = self.grpc_channel.unary_unary(
                 '/google.cloud.channel.v1.CloudChannelService/ChangeOffer',
                 request_serializer=service.ChangeOfferRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['change_offer']
 
     @property
     def start_paid_service(self) -> Callable[
             [service.StartPaidServiceRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the start paid service method over gRPC.
 
         Starts paid service for a trial entitlement.
@@ -991,14 +990,14 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
             self._stubs['start_paid_service'] = self.grpc_channel.unary_unary(
                 '/google.cloud.channel.v1.CloudChannelService/StartPaidService',
                 request_serializer=service.StartPaidServiceRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['start_paid_service']
 
     @property
     def suspend_entitlement(self) -> Callable[
             [service.SuspendEntitlementRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the suspend entitlement method over gRPC.
 
         Suspends a previously fulfilled entitlement.
@@ -1039,14 +1038,14 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
             self._stubs['suspend_entitlement'] = self.grpc_channel.unary_unary(
                 '/google.cloud.channel.v1.CloudChannelService/SuspendEntitlement',
                 request_serializer=service.SuspendEntitlementRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['suspend_entitlement']
 
     @property
     def cancel_entitlement(self) -> Callable[
             [service.CancelEntitlementRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the cancel entitlement method over gRPC.
 
         Cancels a previously fulfilled entitlement.
@@ -1092,14 +1091,14 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
             self._stubs['cancel_entitlement'] = self.grpc_channel.unary_unary(
                 '/google.cloud.channel.v1.CloudChannelService/CancelEntitlement',
                 request_serializer=service.CancelEntitlementRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['cancel_entitlement']
 
     @property
     def activate_entitlement(self) -> Callable[
             [service.ActivateEntitlementRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the activate entitlement method over gRPC.
 
         Activates a previously suspended entitlement. Entitlements
@@ -1147,14 +1146,14 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
             self._stubs['activate_entitlement'] = self.grpc_channel.unary_unary(
                 '/google.cloud.channel.v1.CloudChannelService/ActivateEntitlement',
                 request_serializer=service.ActivateEntitlementRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['activate_entitlement']
 
     @property
     def transfer_entitlements(self) -> Callable[
             [service.TransferEntitlementsRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the transfer entitlements method over gRPC.
 
         Transfers customer entitlements to new reseller.
@@ -1208,14 +1207,14 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
             self._stubs['transfer_entitlements'] = self.grpc_channel.unary_unary(
                 '/google.cloud.channel.v1.CloudChannelService/TransferEntitlements',
                 request_serializer=service.TransferEntitlementsRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['transfer_entitlements']
 
     @property
     def transfer_entitlements_to_google(self) -> Callable[
             [service.TransferEntitlementsToGoogleRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the transfer entitlements to
         google method over gRPC.
 
@@ -1270,7 +1269,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
             self._stubs['transfer_entitlements_to_google'] = self.grpc_channel.unary_unary(
                 '/google.cloud.channel.v1.CloudChannelService/TransferEntitlementsToGoogle',
                 request_serializer=service.TransferEntitlementsToGoogleRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['transfer_entitlements_to_google']
 

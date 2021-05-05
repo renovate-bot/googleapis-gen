@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,25 +13,23 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google.api_core import operations_v1              # type: ignore
-from google import auth                                # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
+import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
 
 from google.cloud.resourcemanager_v3.types import folders
-from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
-from google.iam.v1 import policy_pb2 as giv_policy  # type: ignore
-from google.longrunning import operations_pb2 as operations  # type: ignore
-
+from google.iam.v1 import iam_policy_pb2  # type: ignore
+from google.iam.v1 import policy_pb2  # type: ignore
+from google.longrunning import operations_pb2  # type: ignore
 from .base import FoldersTransport, DEFAULT_CLIENT_INFO
 from .grpc import FoldersGrpcTransport
 
@@ -59,7 +56,7 @@ class FoldersGrpcAsyncIOTransport(FoldersTransport):
     @classmethod
     def create_channel(cls,
                        host: str = 'cloudresourcemanager.googleapis.com',
-                       credentials: credentials.Credentials = None,
+                       credentials: ga_credentials.Credentials = None,
                        credentials_file: Optional[str] = None,
                        scopes: Optional[Sequence[str]] = None,
                        quota_project_id: Optional[str] = None,
@@ -85,19 +82,21 @@ class FoldersGrpcAsyncIOTransport(FoldersTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
     def __init__(self, *,
             host: str = 'cloudresourcemanager.googleapis.com',
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             credentials_file: Optional[str] = None,
             scopes: Optional[Sequence[str]] = None,
             channel: aio.Channel = None,
@@ -111,7 +110,8 @@ class FoldersGrpcAsyncIOTransport(FoldersTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -170,7 +170,6 @@ class FoldersGrpcAsyncIOTransport(FoldersTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
-
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -342,7 +341,7 @@ class FoldersGrpcAsyncIOTransport(FoldersTransport):
     @property
     def create_folder(self) -> Callable[
             [folders.CreateFolderRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the create folder method over gRPC.
 
         Creates a folder in the resource hierarchy. Returns an
@@ -389,14 +388,14 @@ class FoldersGrpcAsyncIOTransport(FoldersTransport):
             self._stubs['create_folder'] = self.grpc_channel.unary_unary(
                 '/google.cloud.resourcemanager.v3.Folders/CreateFolder',
                 request_serializer=folders.CreateFolderRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['create_folder']
 
     @property
     def update_folder(self) -> Callable[
             [folders.UpdateFolderRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the update folder method over gRPC.
 
         Updates a folder, changing its ``display_name``. Changes to the
@@ -432,14 +431,14 @@ class FoldersGrpcAsyncIOTransport(FoldersTransport):
             self._stubs['update_folder'] = self.grpc_channel.unary_unary(
                 '/google.cloud.resourcemanager.v3.Folders/UpdateFolder',
                 request_serializer=folders.UpdateFolderRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['update_folder']
 
     @property
     def move_folder(self) -> Callable[
             [folders.MoveFolderRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the move folder method over gRPC.
 
         Moves a folder under a new resource parent. Returns an
@@ -475,14 +474,14 @@ class FoldersGrpcAsyncIOTransport(FoldersTransport):
             self._stubs['move_folder'] = self.grpc_channel.unary_unary(
                 '/google.cloud.resourcemanager.v3.Folders/MoveFolder',
                 request_serializer=folders.MoveFolderRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['move_folder']
 
     @property
     def delete_folder(self) -> Callable[
             [folders.DeleteFolderRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the delete folder method over gRPC.
 
         Requests deletion of a folder. The folder is moved into the
@@ -512,14 +511,14 @@ class FoldersGrpcAsyncIOTransport(FoldersTransport):
             self._stubs['delete_folder'] = self.grpc_channel.unary_unary(
                 '/google.cloud.resourcemanager.v3.Folders/DeleteFolder',
                 request_serializer=folders.DeleteFolderRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['delete_folder']
 
     @property
     def undelete_folder(self) -> Callable[
             [folders.UndeleteFolderRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the undelete folder method over gRPC.
 
         Cancels the deletion request for a folder. This method may be
@@ -550,14 +549,14 @@ class FoldersGrpcAsyncIOTransport(FoldersTransport):
             self._stubs['undelete_folder'] = self.grpc_channel.unary_unary(
                 '/google.cloud.resourcemanager.v3.Folders/UndeleteFolder',
                 request_serializer=folders.UndeleteFolderRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['undelete_folder']
 
     @property
     def get_iam_policy(self) -> Callable[
-            [iam_policy.GetIamPolicyRequest],
-            Awaitable[giv_policy.Policy]]:
+            [iam_policy_pb2.GetIamPolicyRequest],
+            Awaitable[policy_pb2.Policy]]:
         r"""Return a callable for the get iam policy method over gRPC.
 
         Gets the access control policy for a folder. The returned policy
@@ -580,15 +579,15 @@ class FoldersGrpcAsyncIOTransport(FoldersTransport):
         if 'get_iam_policy' not in self._stubs:
             self._stubs['get_iam_policy'] = self.grpc_channel.unary_unary(
                 '/google.cloud.resourcemanager.v3.Folders/GetIamPolicy',
-                request_serializer=iam_policy.GetIamPolicyRequest.SerializeToString,
-                response_deserializer=giv_policy.Policy.FromString,
+                request_serializer=iam_policy_pb2.GetIamPolicyRequest.SerializeToString,
+                response_deserializer=policy_pb2.Policy.FromString,
             )
         return self._stubs['get_iam_policy']
 
     @property
     def set_iam_policy(self) -> Callable[
-            [iam_policy.SetIamPolicyRequest],
-            Awaitable[giv_policy.Policy]]:
+            [iam_policy_pb2.SetIamPolicyRequest],
+            Awaitable[policy_pb2.Policy]]:
         r"""Return a callable for the set iam policy method over gRPC.
 
         Sets the access control policy on a folder, replacing any
@@ -610,15 +609,15 @@ class FoldersGrpcAsyncIOTransport(FoldersTransport):
         if 'set_iam_policy' not in self._stubs:
             self._stubs['set_iam_policy'] = self.grpc_channel.unary_unary(
                 '/google.cloud.resourcemanager.v3.Folders/SetIamPolicy',
-                request_serializer=iam_policy.SetIamPolicyRequest.SerializeToString,
-                response_deserializer=giv_policy.Policy.FromString,
+                request_serializer=iam_policy_pb2.SetIamPolicyRequest.SerializeToString,
+                response_deserializer=policy_pb2.Policy.FromString,
             )
         return self._stubs['set_iam_policy']
 
     @property
     def test_iam_permissions(self) -> Callable[
-            [iam_policy.TestIamPermissionsRequest],
-            Awaitable[iam_policy.TestIamPermissionsResponse]]:
+            [iam_policy_pb2.TestIamPermissionsRequest],
+            Awaitable[iam_policy_pb2.TestIamPermissionsResponse]]:
         r"""Return a callable for the test iam permissions method over gRPC.
 
         Returns permissions that a caller has on the specified folder.
@@ -640,8 +639,8 @@ class FoldersGrpcAsyncIOTransport(FoldersTransport):
         if 'test_iam_permissions' not in self._stubs:
             self._stubs['test_iam_permissions'] = self.grpc_channel.unary_unary(
                 '/google.cloud.resourcemanager.v3.Folders/TestIamPermissions',
-                request_serializer=iam_policy.TestIamPermissionsRequest.SerializeToString,
-                response_deserializer=iam_policy.TestIamPermissionsResponse.FromString,
+                request_serializer=iam_policy_pb2.TestIamPermissionsRequest.SerializeToString,
+                response_deserializer=iam_policy_pb2.TestIamPermissionsResponse.FromString,
             )
         return self._stubs['test_iam_permissions']
 

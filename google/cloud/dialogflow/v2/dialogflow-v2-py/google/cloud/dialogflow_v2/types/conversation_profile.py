@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,13 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
 from google.cloud.dialogflow_v2.types import audio_config
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -90,47 +87,63 @@ class ConversationProfile(proto.Message):
             they want to support.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    display_name = proto.Field(proto.STRING, number=2)
-
-    create_time = proto.Field(proto.MESSAGE, number=11,
-        message=timestamp.Timestamp,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
     )
-
-    update_time = proto.Field(proto.MESSAGE, number=12,
-        message=timestamp.Timestamp,
+    display_name = proto.Field(
+        proto.STRING,
+        number=2,
     )
-
-    automated_agent_config = proto.Field(proto.MESSAGE, number=3,
+    create_time = proto.Field(
+        proto.MESSAGE,
+        number=11,
+        message=timestamp_pb2.Timestamp,
+    )
+    update_time = proto.Field(
+        proto.MESSAGE,
+        number=12,
+        message=timestamp_pb2.Timestamp,
+    )
+    automated_agent_config = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='AutomatedAgentConfig',
     )
-
-    human_agent_assistant_config = proto.Field(proto.MESSAGE, number=4,
+    human_agent_assistant_config = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='HumanAgentAssistantConfig',
     )
-
-    human_agent_handoff_config = proto.Field(proto.MESSAGE, number=5,
+    human_agent_handoff_config = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message='HumanAgentHandoffConfig',
     )
-
-    notification_config = proto.Field(proto.MESSAGE, number=6,
+    notification_config = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message='NotificationConfig',
     )
-
-    logging_config = proto.Field(proto.MESSAGE, number=7,
+    logging_config = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message='LoggingConfig',
     )
-
-    new_message_event_notification_config = proto.Field(proto.MESSAGE, number=8,
+    new_message_event_notification_config = proto.Field(
+        proto.MESSAGE,
+        number=8,
         message='NotificationConfig',
     )
-
-    stt_config = proto.Field(proto.MESSAGE, number=9,
+    stt_config = proto.Field(
+        proto.MESSAGE,
+        number=9,
         message=audio_config.SpeechToTextConfig,
     )
-
-    language_code = proto.Field(proto.STRING, number=10)
+    language_code = proto.Field(
+        proto.STRING,
+        number=10,
+    )
 
 
 class ListConversationProfilesRequest(proto.Message):
@@ -150,11 +163,18 @@ class ListConversationProfilesRequest(proto.Message):
             request.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class ListConversationProfilesResponse(proto.Message):
@@ -176,11 +196,15 @@ class ListConversationProfilesResponse(proto.Message):
     def raw_page(self):
         return self
 
-    conversation_profiles = proto.RepeatedField(proto.MESSAGE, number=1,
+    conversation_profiles = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='ConversationProfile',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class GetConversationProfileRequest(proto.Message):
@@ -194,7 +218,10 @@ class GetConversationProfileRequest(proto.Message):
             ``projects/<Project ID>/locations/<Location ID>/conversationProfiles/<Conversation Profile ID>``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class CreateConversationProfileRequest(proto.Message):
@@ -209,9 +236,13 @@ class CreateConversationProfileRequest(proto.Message):
             Required. The conversation profile to create.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    conversation_profile = proto.Field(proto.MESSAGE, number=2,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    conversation_profile = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='ConversationProfile',
     )
 
@@ -228,12 +259,15 @@ class UpdateConversationProfileRequest(proto.Message):
             update.
     """
 
-    conversation_profile = proto.Field(proto.MESSAGE, number=1,
+    conversation_profile = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='ConversationProfile',
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=2,
-        message=field_mask.FieldMask,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=field_mask_pb2.FieldMask,
     )
 
 
@@ -251,12 +285,14 @@ class DeleteConversationProfileRequest(proto.Message):
             ``projects/<Project ID>/locations/<Location ID>/conversationProfiles/<Conversation Profile ID>``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class AutomatedAgentConfig(proto.Message):
     r"""Defines the Automated Agent to connect to a conversation.
-
     Attributes:
         agent (str):
             Required. ID of the Dialogflow agent environment to use.
@@ -274,12 +310,14 @@ class AutomatedAgentConfig(proto.Message):
             for more details.
     """
 
-    agent = proto.Field(proto.STRING, number=1)
+    agent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class HumanAgentAssistantConfig(proto.Message):
     r"""Defines the Human Agent Assist to connect to a conversation.
-
     Attributes:
         notification_config (google.cloud.dialogflow_v2.types.NotificationConfig):
             Pub/Sub topic on which to publish new agent
@@ -295,9 +333,9 @@ class HumanAgentAssistantConfig(proto.Message):
         message_analysis_config (google.cloud.dialogflow_v2.types.HumanAgentAssistantConfig.MessageAnalysisConfig):
             Configuration for message analysis.
     """
+
     class SuggestionTriggerSettings(proto.Message):
         r"""Settings of suggestion trigger.
-
         Attributes:
             no_smalltalk (bool):
                 Do not trigger if last utterance is small
@@ -307,13 +345,17 @@ class HumanAgentAssistantConfig(proto.Message):
                 utterance is END_USER.
         """
 
-        no_smalltalk = proto.Field(proto.BOOL, number=1)
-
-        only_end_user = proto.Field(proto.BOOL, number=2)
+        no_smalltalk = proto.Field(
+            proto.BOOL,
+            number=1,
+        )
+        only_end_user = proto.Field(
+            proto.BOOL,
+            number=2,
+        )
 
     class SuggestionFeatureConfig(proto.Message):
         r"""Config for suggestion features.
-
         Attributes:
             suggestion_feature (google.cloud.dialogflow_v2.types.SuggestionFeature):
                 The suggestion feature.
@@ -334,27 +376,33 @@ class HumanAgentAssistantConfig(proto.Message):
                 Configs of custom conversation model.
         """
 
-        suggestion_feature = proto.Field(proto.MESSAGE, number=5,
+        suggestion_feature = proto.Field(
+            proto.MESSAGE,
+            number=5,
             message='SuggestionFeature',
         )
-
-        enable_event_based_suggestion = proto.Field(proto.BOOL, number=3)
-
-        suggestion_trigger_settings = proto.Field(proto.MESSAGE, number=10,
+        enable_event_based_suggestion = proto.Field(
+            proto.BOOL,
+            number=3,
+        )
+        suggestion_trigger_settings = proto.Field(
+            proto.MESSAGE,
+            number=10,
             message='HumanAgentAssistantConfig.SuggestionTriggerSettings',
         )
-
-        query_config = proto.Field(proto.MESSAGE, number=6,
+        query_config = proto.Field(
+            proto.MESSAGE,
+            number=6,
             message='HumanAgentAssistantConfig.SuggestionQueryConfig',
         )
-
-        conversation_model_config = proto.Field(proto.MESSAGE, number=7,
+        conversation_model_config = proto.Field(
+            proto.MESSAGE,
+            number=7,
             message='HumanAgentAssistantConfig.ConversationModelConfig',
         )
 
     class SuggestionConfig(proto.Message):
         r"""Detail human agent assistant config.
-
         Attributes:
             feature_configs (Sequence[google.cloud.dialogflow_v2.types.HumanAgentAssistantConfig.SuggestionFeatureConfig]):
                 Configuration of different suggestion
@@ -374,15 +422,18 @@ class HumanAgentAssistantConfig(proto.Message):
                 StreamingAnalyzeContentResponse.
         """
 
-        feature_configs = proto.RepeatedField(proto.MESSAGE, number=2,
+        feature_configs = proto.RepeatedField(
+            proto.MESSAGE,
+            number=2,
             message='HumanAgentAssistantConfig.SuggestionFeatureConfig',
         )
-
-        group_suggestion_responses = proto.Field(proto.BOOL, number=3)
+        group_suggestion_responses = proto.Field(
+            proto.BOOL,
+            number=3,
+        )
 
     class SuggestionQueryConfig(proto.Message):
         r"""Config for suggestion query.
-
         Attributes:
             knowledge_base_query_source (google.cloud.dialogflow_v2.types.HumanAgentAssistantConfig.SuggestionQueryConfig.KnowledgeBaseQuerySource):
                 Query from knowledgebase. It is used by: ARTICLE_SUGGESTION,
@@ -423,6 +474,7 @@ class HumanAgentAssistantConfig(proto.Message):
                 filtered when generating suggestions. If
                 unspecified, no messages will be dropped.
         """
+
         class KnowledgeBaseQuerySource(proto.Message):
             r"""Knowledge base source settings.
 
@@ -435,7 +487,10 @@ class HumanAgentAssistantConfig(proto.Message):
                     Currently, at most 5 knowledge bases are supported.
             """
 
-            knowledge_bases = proto.RepeatedField(proto.STRING, number=1)
+            knowledge_bases = proto.RepeatedField(
+                proto.STRING,
+                number=1,
+            )
 
         class DocumentQuerySource(proto.Message):
             r"""Document source settings.
@@ -449,7 +504,10 @@ class HumanAgentAssistantConfig(proto.Message):
                     Currently, at most 5 documents are supported.
             """
 
-            documents = proto.RepeatedField(proto.STRING, number=1)
+            documents = proto.RepeatedField(
+                proto.STRING,
+                number=1,
+            )
 
         class DialogflowQuerySource(proto.Message):
             r"""Dialogflow source setting.
@@ -465,7 +523,10 @@ class HumanAgentAssistantConfig(proto.Message):
                     project.
             """
 
-            agent = proto.Field(proto.STRING, number=1)
+            agent = proto.Field(
+                proto.STRING,
+                number=1,
+            )
 
         class ContextFilterSettings(proto.Message):
             r"""Settings that determine how to filter recent conversation
@@ -484,29 +545,48 @@ class HumanAgentAssistantConfig(proto.Message):
                     are dropped.
             """
 
-            drop_handoff_messages = proto.Field(proto.BOOL, number=1)
+            drop_handoff_messages = proto.Field(
+                proto.BOOL,
+                number=1,
+            )
+            drop_virtual_agent_messages = proto.Field(
+                proto.BOOL,
+                number=2,
+            )
+            drop_ivr_messages = proto.Field(
+                proto.BOOL,
+                number=3,
+            )
 
-            drop_virtual_agent_messages = proto.Field(proto.BOOL, number=2)
-
-            drop_ivr_messages = proto.Field(proto.BOOL, number=3)
-
-        knowledge_base_query_source = proto.Field(proto.MESSAGE, number=1, oneof='query_source',
+        knowledge_base_query_source = proto.Field(
+            proto.MESSAGE,
+            number=1,
+            oneof='query_source',
             message='HumanAgentAssistantConfig.SuggestionQueryConfig.KnowledgeBaseQuerySource',
         )
-
-        document_query_source = proto.Field(proto.MESSAGE, number=2, oneof='query_source',
+        document_query_source = proto.Field(
+            proto.MESSAGE,
+            number=2,
+            oneof='query_source',
             message='HumanAgentAssistantConfig.SuggestionQueryConfig.DocumentQuerySource',
         )
-
-        dialogflow_query_source = proto.Field(proto.MESSAGE, number=3, oneof='query_source',
+        dialogflow_query_source = proto.Field(
+            proto.MESSAGE,
+            number=3,
+            oneof='query_source',
             message='HumanAgentAssistantConfig.SuggestionQueryConfig.DialogflowQuerySource',
         )
-
-        max_results = proto.Field(proto.INT32, number=4)
-
-        confidence_threshold = proto.Field(proto.FLOAT, number=5)
-
-        context_filter_settings = proto.Field(proto.MESSAGE, number=7,
+        max_results = proto.Field(
+            proto.INT32,
+            number=4,
+        )
+        confidence_threshold = proto.Field(
+            proto.FLOAT,
+            number=5,
+        )
+        context_filter_settings = proto.Field(
+            proto.MESSAGE,
+            number=7,
             message='HumanAgentAssistantConfig.SuggestionQueryConfig.ContextFilterSettings',
         )
 
@@ -521,7 +601,10 @@ class HumanAgentAssistantConfig(proto.Message):
                 ``projects/<Project ID>/conversationModels/<Model ID>``.
         """
 
-        model = proto.Field(proto.STRING, number=1)
+        model = proto.Field(
+            proto.STRING,
+            number=1,
+        )
 
     class MessageAnalysisConfig(proto.Message):
         r"""Configuration for analyses to run on each conversation
@@ -561,23 +644,33 @@ class HumanAgentAssistantConfig(proto.Message):
                 [ConversationEvent.new_message_payload.SentimentAnalysisResult][google.cloud.dialogflow.v2.ConversationEvent.new_message_payload].
         """
 
-        enable_entity_extraction = proto.Field(proto.BOOL, number=2)
+        enable_entity_extraction = proto.Field(
+            proto.BOOL,
+            number=2,
+        )
+        enable_sentiment_analysis = proto.Field(
+            proto.BOOL,
+            number=3,
+        )
 
-        enable_sentiment_analysis = proto.Field(proto.BOOL, number=3)
-
-    notification_config = proto.Field(proto.MESSAGE, number=2,
+    notification_config = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='NotificationConfig',
     )
-
-    human_agent_suggestion_config = proto.Field(proto.MESSAGE, number=3,
+    human_agent_suggestion_config = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=SuggestionConfig,
     )
-
-    end_user_suggestion_config = proto.Field(proto.MESSAGE, number=4,
+    end_user_suggestion_config = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=SuggestionConfig,
     )
-
-    message_analysis_config = proto.Field(proto.MESSAGE, number=5,
+    message_analysis_config = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=MessageAnalysisConfig,
     )
 
@@ -594,6 +687,7 @@ class HumanAgentHandoffConfig(proto.Message):
         salesforce_live_agent_config (google.cloud.dialogflow_v2.types.HumanAgentHandoffConfig.SalesforceLiveAgentConfig):
             Uses Salesforce Live Agent.
     """
+
     class LivePersonConfig(proto.Message):
         r"""Configuration specific to LivePerson
         (https://www.liveperson.com).
@@ -605,11 +699,13 @@ class HumanAgentHandoffConfig(proto.Message):
                 you input at the login page.
         """
 
-        account_number = proto.Field(proto.STRING, number=1)
+        account_number = proto.Field(
+            proto.STRING,
+            number=1,
+        )
 
     class SalesforceLiveAgentConfig(proto.Message):
         r"""Configuration specific to Salesforce Live Agent.
-
         Attributes:
             organization_id (str):
                 Required. The organization ID of the
@@ -626,26 +722,39 @@ class HumanAgentHandoffConfig(proto.Message):
                 fill in d.la4-c2-phx.salesforceliveagent.com.
         """
 
-        organization_id = proto.Field(proto.STRING, number=1)
+        organization_id = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        deployment_id = proto.Field(
+            proto.STRING,
+            number=2,
+        )
+        button_id = proto.Field(
+            proto.STRING,
+            number=3,
+        )
+        endpoint_domain = proto.Field(
+            proto.STRING,
+            number=4,
+        )
 
-        deployment_id = proto.Field(proto.STRING, number=2)
-
-        button_id = proto.Field(proto.STRING, number=3)
-
-        endpoint_domain = proto.Field(proto.STRING, number=4)
-
-    live_person_config = proto.Field(proto.MESSAGE, number=1, oneof='agent_service',
+    live_person_config = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='agent_service',
         message=LivePersonConfig,
     )
-
-    salesforce_live_agent_config = proto.Field(proto.MESSAGE, number=2, oneof='agent_service',
+    salesforce_live_agent_config = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='agent_service',
         message=SalesforceLiveAgentConfig,
     )
 
 
 class NotificationConfig(proto.Message):
     r"""Defines notification behavior.
-
     Attributes:
         topic (str):
             Name of the Pub/Sub topic to publish conversation events
@@ -671,16 +780,19 @@ class NotificationConfig(proto.Message):
         PROTO = 1
         JSON = 2
 
-    topic = proto.Field(proto.STRING, number=1)
-
-    message_format = proto.Field(proto.ENUM, number=2,
+    topic = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    message_format = proto.Field(
+        proto.ENUM,
+        number=2,
         enum=MessageFormat,
     )
 
 
 class LoggingConfig(proto.Message):
     r"""Defines logging behavior for conversation lifecycle events.
-
     Attributes:
         enable_stackdriver_logging (bool):
             Whether to log conversation events like
@@ -690,7 +802,10 @@ class LoggingConfig(proto.Message):
             protos.
     """
 
-    enable_stackdriver_logging = proto.Field(proto.BOOL, number=3)
+    enable_stackdriver_logging = proto.Field(
+        proto.BOOL,
+        number=3,
+    )
 
 
 class SuggestionFeature(proto.Message):
@@ -709,7 +824,9 @@ class SuggestionFeature(proto.Message):
         ARTICLE_SUGGESTION = 1
         FAQ = 2
 
-    type_ = proto.Field(proto.ENUM, number=1,
+    type_ = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=Type,
     )
 

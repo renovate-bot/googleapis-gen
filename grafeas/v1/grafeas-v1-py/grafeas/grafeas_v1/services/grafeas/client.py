@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -23,17 +21,17 @@ from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
-from google.api_core import exceptions                            # type: ignore
+from google.api_core import exceptions as core_exceptions         # type: ignore
 from google.api_core import gapic_v1                              # type: ignore
 from google.api_core import retry as retries                      # type: ignore
-from google.auth import credentials                               # type: ignore
+from google.auth import credentials as ga_credentials             # type: ignore
 from google.auth.transport import mtls                            # type: ignore
 from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 from grafeas.grafeas_v1.services.grafeas import pagers
 from grafeas.grafeas_v1.types import attestation
 from grafeas.grafeas_v1.types import build
@@ -45,7 +43,6 @@ from grafeas.grafeas_v1.types import image
 from grafeas.grafeas_v1.types import package
 from grafeas.grafeas_v1.types import upgrade
 from grafeas.grafeas_v1.types import vulnerability
-
 from .transports.base import GrafeasTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import GrafeasGrpcTransport
 from .transports.grpc_asyncio import GrafeasGrpcAsyncIOTransport
@@ -271,7 +268,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         return m.groupdict() if m else {}
 
     def __init__(self, *,
-            credentials: Optional[credentials.Credentials] = None,
+            credentials: Optional[ga_credentials.Credentials] = None,
             transport: Union[str, GrafeasTransport, None] = None,
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -393,7 +390,6 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -420,10 +416,8 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         # there are no flattened fields.
         if not isinstance(request, grafeas.GetOccurrenceRequest):
             request = grafeas.GetOccurrenceRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -476,7 +470,6 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -505,10 +498,8 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         # there are no flattened fields.
         if not isinstance(request, grafeas.ListOccurrencesRequest):
             request = grafeas.ListOccurrencesRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if filter is not None:
@@ -568,7 +559,6 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -589,10 +579,8 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         # there are no flattened fields.
         if not isinstance(request, grafeas.DeleteOccurrenceRequest):
             request = grafeas.DeleteOccurrenceRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -643,7 +631,6 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
                 This corresponds to the ``occurrence`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -670,10 +657,8 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         # there are no flattened fields.
         if not isinstance(request, grafeas.CreateOccurrenceRequest):
             request = grafeas.CreateOccurrenceRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if occurrence is not None:
@@ -732,7 +717,6 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
                 This corresponds to the ``occurrences`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -759,10 +743,8 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         # there are no flattened fields.
         if not isinstance(request, grafeas.BatchCreateOccurrencesRequest):
             request = grafeas.BatchCreateOccurrencesRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if occurrences is not None:
@@ -796,7 +778,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
             *,
             name: str = None,
             occurrence: grafeas.Occurrence = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -823,7 +805,6 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -850,10 +831,8 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         # there are no flattened fields.
         if not isinstance(request, grafeas.UpdateOccurrenceRequest):
             request = grafeas.UpdateOccurrenceRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
             if occurrence is not None:
@@ -907,7 +886,6 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -934,10 +912,8 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         # there are no flattened fields.
         if not isinstance(request, grafeas.GetOccurrenceNoteRequest):
             request = grafeas.GetOccurrenceNoteRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -984,7 +960,6 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1011,10 +986,8 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         # there are no flattened fields.
         if not isinstance(request, grafeas.GetNoteRequest):
             request = grafeas.GetNoteRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1067,7 +1040,6 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1096,10 +1068,8 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         # there are no flattened fields.
         if not isinstance(request, grafeas.ListNotesRequest):
             request = grafeas.ListNotesRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if filter is not None:
@@ -1157,7 +1127,6 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1178,10 +1147,8 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         # there are no flattened fields.
         if not isinstance(request, grafeas.DeleteNoteRequest):
             request = grafeas.DeleteNoteRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -1238,7 +1205,6 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
                 This corresponds to the ``note`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1265,10 +1231,8 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         # there are no flattened fields.
         if not isinstance(request, grafeas.CreateNoteRequest):
             request = grafeas.CreateNoteRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if note_id is not None:
@@ -1328,7 +1292,6 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
                 This corresponds to the ``notes`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1353,10 +1316,8 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         # there are no flattened fields.
         if not isinstance(request, grafeas.BatchCreateNotesRequest):
             request = grafeas.BatchCreateNotesRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if notes is not None:
@@ -1390,7 +1351,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
             *,
             name: str = None,
             note: grafeas.Note = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -1417,7 +1378,6 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1444,10 +1404,8 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         # there are no flattened fields.
         if not isinstance(request, grafeas.UpdateNoteRequest):
             request = grafeas.UpdateNoteRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
             if note is not None:
@@ -1508,7 +1466,6 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1538,10 +1495,8 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         # there are no flattened fields.
         if not isinstance(request, grafeas.ListNoteOccurrencesRequest):
             request = grafeas.ListNoteOccurrencesRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
             if filter is not None:
@@ -1578,8 +1533,6 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

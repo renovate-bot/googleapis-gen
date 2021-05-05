@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 import mock
+import packaging.version
 
 import grpc
 from grpc.experimental import aio
@@ -24,21 +23,46 @@ import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
-from google import auth
+
 from google.api_core import client_options
-from google.api_core import exceptions
+from google.api_core import exceptions as core_exceptions
 from google.api_core import gapic_v1
 from google.api_core import grpc_helpers
 from google.api_core import grpc_helpers_async
-from google.auth import credentials
+from google.auth import credentials as ga_credentials
 from google.auth.exceptions import MutualTLSChannelError
 from google.cloud.aiplatform_v1beta1.services.featurestore_online_serving_service import FeaturestoreOnlineServingServiceAsyncClient
 from google.cloud.aiplatform_v1beta1.services.featurestore_online_serving_service import FeaturestoreOnlineServingServiceClient
 from google.cloud.aiplatform_v1beta1.services.featurestore_online_serving_service import transports
+from google.cloud.aiplatform_v1beta1.services.featurestore_online_serving_service.transports.base import _API_CORE_VERSION
+from google.cloud.aiplatform_v1beta1.services.featurestore_online_serving_service.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.aiplatform_v1beta1.types import feature_selector
 from google.cloud.aiplatform_v1beta1.types import featurestore_online_service
 from google.oauth2 import service_account
+import google.auth
 
+
+# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
+# - Delete all the api-core and auth "less than" test cases
+# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
+requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth < 1.25.0",
+)
+requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth >= 1.25.0",
+)
+
+requires_api_core_lt_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core < 1.26.0",
+)
+
+requires_api_core_gte_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core >= 1.26.0",
+)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -71,7 +95,7 @@ def test__get_default_mtls_endpoint():
     FeaturestoreOnlineServingServiceAsyncClient,
 ])
 def test_featurestore_online_serving_service_client_from_service_account_info(client_class):
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
@@ -87,7 +111,7 @@ def test_featurestore_online_serving_service_client_from_service_account_info(cl
     FeaturestoreOnlineServingServiceAsyncClient,
 ])
 def test_featurestore_online_serving_service_client_from_service_account_file(client_class):
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_file') as factory:
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
@@ -122,7 +146,7 @@ def test_featurestore_online_serving_service_client_client_options(client_class,
     # Check that if channel is provided we won't create a new one.
     with mock.patch.object(FeaturestoreOnlineServingServiceClient, 'get_transport_class') as gtc:
         transport = transport_class(
-            credentials=credentials.AnonymousCredentials()
+            credentials=ga_credentials.AnonymousCredentials()
         )
         client = client_class(transport=transport)
         gtc.assert_not_called()
@@ -206,12 +230,10 @@ def test_featurestore_online_serving_service_client_client_options(client_class,
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
-
     (FeaturestoreOnlineServingServiceClient, transports.FeaturestoreOnlineServingServiceGrpcTransport, "grpc", "true"),
     (FeaturestoreOnlineServingServiceAsyncClient, transports.FeaturestoreOnlineServingServiceGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (FeaturestoreOnlineServingServiceClient, transports.FeaturestoreOnlineServingServiceGrpcTransport, "grpc", "false"),
     (FeaturestoreOnlineServingServiceAsyncClient, transports.FeaturestoreOnlineServingServiceGrpcAsyncIOTransport, "grpc_asyncio", "false"),
-
 ])
 @mock.patch.object(FeaturestoreOnlineServingServiceClient, "DEFAULT_ENDPOINT", modify_default_endpoint(FeaturestoreOnlineServingServiceClient))
 @mock.patch.object(FeaturestoreOnlineServingServiceAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(FeaturestoreOnlineServingServiceAsyncClient))
@@ -351,7 +373,7 @@ def test_featurestore_online_serving_service_client_client_options_from_dict():
 
 def test_read_feature_values(transport: str = 'grpc', request_type=featurestore_online_service.ReadFeatureValuesRequest):
     client = FeaturestoreOnlineServingServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -366,17 +388,14 @@ def test_read_feature_values(transport: str = 'grpc', request_type=featurestore_
         # Designate an appropriate return value for the call.
         call.return_value = featurestore_online_service.ReadFeatureValuesResponse(
         )
-
         response = client.read_feature_values(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_online_service.ReadFeatureValuesRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, featurestore_online_service.ReadFeatureValuesResponse)
 
 
@@ -388,7 +407,7 @@ def test_read_feature_values_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = FeaturestoreOnlineServingServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -399,13 +418,13 @@ def test_read_feature_values_empty_call():
         client.read_feature_values()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_online_service.ReadFeatureValuesRequest()
+
 
 @pytest.mark.asyncio
 async def test_read_feature_values_async(transport: str = 'grpc_asyncio', request_type=featurestore_online_service.ReadFeatureValuesRequest):
     client = FeaturestoreOnlineServingServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -418,15 +437,13 @@ async def test_read_feature_values_async(transport: str = 'grpc_asyncio', reques
             type(client.transport.read_feature_values),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(featurestore_online_service.ReadFeatureValuesResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(featurestore_online_service.ReadFeatureValuesResponse(
         ))
-
         response = await client.read_feature_values(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_online_service.ReadFeatureValuesRequest()
 
     # Establish that the response is the type that we expect.
@@ -440,12 +457,13 @@ async def test_read_feature_values_async_from_dict():
 
 def test_read_feature_values_field_headers():
     client = FeaturestoreOnlineServingServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_online_service.ReadFeatureValuesRequest()
+
     request.entity_type = 'entity_type/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -453,7 +471,6 @@ def test_read_feature_values_field_headers():
             type(client.transport.read_feature_values),
             '__call__') as call:
         call.return_value = featurestore_online_service.ReadFeatureValuesResponse()
-
         client.read_feature_values(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -472,12 +489,13 @@ def test_read_feature_values_field_headers():
 @pytest.mark.asyncio
 async def test_read_feature_values_field_headers_async():
     client = FeaturestoreOnlineServingServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_online_service.ReadFeatureValuesRequest()
+
     request.entity_type = 'entity_type/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -485,7 +503,6 @@ async def test_read_feature_values_field_headers_async():
             type(client.transport.read_feature_values),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(featurestore_online_service.ReadFeatureValuesResponse())
-
         await client.read_feature_values(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -503,7 +520,7 @@ async def test_read_feature_values_field_headers_async():
 
 def test_read_feature_values_flattened():
     client = FeaturestoreOnlineServingServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -512,7 +529,6 @@ def test_read_feature_values_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = featurestore_online_service.ReadFeatureValuesResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.read_feature_values(
@@ -523,13 +539,12 @@ def test_read_feature_values_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].entity_type == 'entity_type_value'
 
 
 def test_read_feature_values_flattened_error():
     client = FeaturestoreOnlineServingServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -544,7 +559,7 @@ def test_read_feature_values_flattened_error():
 @pytest.mark.asyncio
 async def test_read_feature_values_flattened_async():
     client = FeaturestoreOnlineServingServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -565,14 +580,13 @@ async def test_read_feature_values_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].entity_type == 'entity_type_value'
 
 
 @pytest.mark.asyncio
 async def test_read_feature_values_flattened_error_async():
     client = FeaturestoreOnlineServingServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -586,7 +600,7 @@ async def test_read_feature_values_flattened_error_async():
 
 def test_streaming_read_feature_values(transport: str = 'grpc', request_type=featurestore_online_service.StreamingReadFeatureValuesRequest):
     client = FeaturestoreOnlineServingServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -600,13 +614,11 @@ def test_streaming_read_feature_values(transport: str = 'grpc', request_type=fea
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = iter([featurestore_online_service.ReadFeatureValuesResponse()])
-
         response = client.streaming_read_feature_values(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_online_service.StreamingReadFeatureValuesRequest()
 
     # Establish that the response is the type that we expect.
@@ -622,7 +634,7 @@ def test_streaming_read_feature_values_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = FeaturestoreOnlineServingServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -633,13 +645,13 @@ def test_streaming_read_feature_values_empty_call():
         client.streaming_read_feature_values()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_online_service.StreamingReadFeatureValuesRequest()
+
 
 @pytest.mark.asyncio
 async def test_streaming_read_feature_values_async(transport: str = 'grpc_asyncio', request_type=featurestore_online_service.StreamingReadFeatureValuesRequest):
     client = FeaturestoreOnlineServingServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -654,13 +666,11 @@ async def test_streaming_read_feature_values_async(transport: str = 'grpc_asynci
         # Designate an appropriate return value for the call.
         call.return_value = mock.Mock(aio.UnaryStreamCall, autospec=True)
         call.return_value.read = mock.AsyncMock(side_effect=[featurestore_online_service.ReadFeatureValuesResponse()])
-
         response = await client.streaming_read_feature_values(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_online_service.StreamingReadFeatureValuesRequest()
 
     # Establish that the response is the type that we expect.
@@ -675,12 +685,13 @@ async def test_streaming_read_feature_values_async_from_dict():
 
 def test_streaming_read_feature_values_field_headers():
     client = FeaturestoreOnlineServingServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_online_service.StreamingReadFeatureValuesRequest()
+
     request.entity_type = 'entity_type/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -688,7 +699,6 @@ def test_streaming_read_feature_values_field_headers():
             type(client.transport.streaming_read_feature_values),
             '__call__') as call:
         call.return_value = iter([featurestore_online_service.ReadFeatureValuesResponse()])
-
         client.streaming_read_feature_values(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -707,12 +717,13 @@ def test_streaming_read_feature_values_field_headers():
 @pytest.mark.asyncio
 async def test_streaming_read_feature_values_field_headers_async():
     client = FeaturestoreOnlineServingServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_online_service.StreamingReadFeatureValuesRequest()
+
     request.entity_type = 'entity_type/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -721,7 +732,6 @@ async def test_streaming_read_feature_values_field_headers_async():
             '__call__') as call:
         call.return_value = mock.Mock(aio.UnaryStreamCall, autospec=True)
         call.return_value.read = mock.AsyncMock(side_effect=[featurestore_online_service.ReadFeatureValuesResponse()])
-
         await client.streaming_read_feature_values(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -739,7 +749,7 @@ async def test_streaming_read_feature_values_field_headers_async():
 
 def test_streaming_read_feature_values_flattened():
     client = FeaturestoreOnlineServingServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -748,7 +758,6 @@ def test_streaming_read_feature_values_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = iter([featurestore_online_service.ReadFeatureValuesResponse()])
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.streaming_read_feature_values(
@@ -759,13 +768,12 @@ def test_streaming_read_feature_values_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].entity_type == 'entity_type_value'
 
 
 def test_streaming_read_feature_values_flattened_error():
     client = FeaturestoreOnlineServingServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -780,7 +788,7 @@ def test_streaming_read_feature_values_flattened_error():
 @pytest.mark.asyncio
 async def test_streaming_read_feature_values_flattened_async():
     client = FeaturestoreOnlineServingServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -801,14 +809,13 @@ async def test_streaming_read_feature_values_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].entity_type == 'entity_type_value'
 
 
 @pytest.mark.asyncio
 async def test_streaming_read_feature_values_flattened_error_async():
     client = FeaturestoreOnlineServingServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -823,17 +830,17 @@ async def test_streaming_read_feature_values_flattened_error_async():
 def test_credentials_transport_error():
     # It is an error to provide credentials and a transport instance.
     transport = transports.FeaturestoreOnlineServingServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = FeaturestoreOnlineServingServiceClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             transport=transport,
         )
 
     # It is an error to provide a credentials file and a transport instance.
     transport = transports.FeaturestoreOnlineServingServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = FeaturestoreOnlineServingServiceClient(
@@ -843,7 +850,7 @@ def test_credentials_transport_error():
 
     # It is an error to provide scopes and a transport instance.
     transport = transports.FeaturestoreOnlineServingServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = FeaturestoreOnlineServingServiceClient(
@@ -855,26 +862,24 @@ def test_credentials_transport_error():
 def test_transport_instance():
     # A client may be instantiated with a custom transport instance.
     transport = transports.FeaturestoreOnlineServingServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     client = FeaturestoreOnlineServingServiceClient(transport=transport)
     assert client.transport is transport
 
-
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.FeaturestoreOnlineServingServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     channel = transport.grpc_channel
     assert channel
 
     transport = transports.FeaturestoreOnlineServingServiceGrpcAsyncIOTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     channel = transport.grpc_channel
     assert channel
-
 
 @pytest.mark.parametrize("transport_class", [
     transports.FeaturestoreOnlineServingServiceGrpcTransport,
@@ -882,28 +887,26 @@ def test_transport_get_channel():
 ])
 def test_transport_adc(transport_class):
     # Test default credentials are used if not provided.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport_class()
         adc.assert_called_once()
-
 
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = FeaturestoreOnlineServingServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     assert isinstance(
         client.transport,
         transports.FeaturestoreOnlineServingServiceGrpcTransport,
     )
 
-
 def test_featurestore_online_serving_service_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
-    with pytest.raises(exceptions.DuplicateCredentialArgs):
+    with pytest.raises(core_exceptions.DuplicateCredentialArgs):
         transport = transports.FeaturestoreOnlineServingServiceTransport(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             credentials_file="credentials.json"
         )
 
@@ -913,7 +916,7 @@ def test_featurestore_online_serving_service_base_transport():
     with mock.patch('google.cloud.aiplatform_v1beta1.services.featurestore_online_serving_service.transports.FeaturestoreOnlineServingServiceTransport.__init__') as Transport:
         Transport.return_value = None
         transport = transports.FeaturestoreOnlineServingServiceTransport(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
         )
 
     # Every method on the transport should just blindly
@@ -921,17 +924,37 @@ def test_featurestore_online_serving_service_base_transport():
     methods = (
         'read_feature_values',
         'streaming_read_feature_values',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
+@requires_google_auth_gte_1_25_0
 def test_featurestore_online_serving_service_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.aiplatform_v1beta1.services.featurestore_online_serving_service.transports.FeaturestoreOnlineServingServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.aiplatform_v1beta1.services.featurestore_online_serving_service.transports.FeaturestoreOnlineServingServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
+        load_creds.return_value = (ga_credentials.AnonymousCredentials(), None)
+        transport = transports.FeaturestoreOnlineServingServiceTransport(
+            credentials_file="credentials.json",
+            quota_project_id="octopus",
+        )
+        load_creds.assert_called_once_with("credentials.json",
+            scopes=None,
+            default_scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
+            quota_project_id="octopus",
+        )
+
+
+@requires_google_auth_lt_1_25_0
+def test_featurestore_online_serving_service_base_transport_with_credentials_file_old_google_auth():
+    # Instantiate the base transport with a credentials file
+    with mock.patch.object(google.auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.aiplatform_v1beta1.services.featurestore_online_serving_service.transports.FeaturestoreOnlineServingServiceTransport._prep_wrapped_messages') as Transport:
+        Transport.return_value = None
+        load_creds.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.FeaturestoreOnlineServingServiceTransport(
             credentials_file="credentials.json",
             quota_project_id="octopus",
@@ -945,33 +968,185 @@ def test_featurestore_online_serving_service_base_transport_with_credentials_fil
 
 def test_featurestore_online_serving_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.aiplatform_v1beta1.services.featurestore_online_serving_service.transports.FeaturestoreOnlineServingServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc, mock.patch('google.cloud.aiplatform_v1beta1.services.featurestore_online_serving_service.transports.FeaturestoreOnlineServingServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.FeaturestoreOnlineServingServiceTransport()
         adc.assert_called_once()
 
 
+@requires_google_auth_gte_1_25_0
 def test_featurestore_online_serving_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         FeaturestoreOnlineServingServiceClient()
-        adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',),
+        adc.assert_called_once_with(
+            scopes=None,
+            default_scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
             quota_project_id=None,
         )
 
 
-def test_featurestore_online_serving_service_transport_auth_adc():
+@requires_google_auth_lt_1_25_0
+def test_featurestore_online_serving_service_auth_adc_old_google_auth():
+    # If no credentials are provided, we should use ADC credentials.
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
+        FeaturestoreOnlineServingServiceClient()
+        adc.assert_called_once_with(
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id=None,
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.FeaturestoreOnlineServingServiceGrpcTransport,
+        transports.FeaturestoreOnlineServingServiceGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_gte_1_25_0
+def test_featurestore_online_serving_service_transport_auth_adc(transport_class):
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transports.FeaturestoreOnlineServingServiceGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
-        adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',),
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+        adc.assert_called_once_with(
+            scopes=["1", "2"],
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
             quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.FeaturestoreOnlineServingServiceGrpcTransport,
+        transports.FeaturestoreOnlineServingServiceGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_lt_1_25_0
+def test_featurestore_online_serving_service_transport_auth_adc_old_google_auth(transport_class):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
+            quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.FeaturestoreOnlineServingServiceGrpcTransport, grpc_helpers),
+        (transports.FeaturestoreOnlineServingServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_gte_1_26_0
+def test_featurestore_online_serving_service_transport_create_channel(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = ga_credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(
+            quota_project_id="octopus",
+            scopes=["1", "2"]
+        )
+
+        create_channel.assert_called_with(
+            "aiplatform.googleapis.com:443",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            default_scopes=(
+                'https://www.googleapis.com/auth/cloud-platform',
+),
+            scopes=["1", "2"],
+            default_host="aiplatform.googleapis.com",
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.FeaturestoreOnlineServingServiceGrpcTransport, grpc_helpers),
+        (transports.FeaturestoreOnlineServingServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_featurestore_online_serving_service_transport_create_channel_old_api_core(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = ga_credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(quota_project_id="octopus")
+
+        create_channel.assert_called_with(
+            "aiplatform.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=(
+                'https://www.googleapis.com/auth/cloud-platform',
+),
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.FeaturestoreOnlineServingServiceGrpcTransport, grpc_helpers),
+        (transports.FeaturestoreOnlineServingServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_featurestore_online_serving_service_transport_create_channel_user_scopes(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = ga_credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+
+        create_channel.assert_called_with(
+            "aiplatform.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=["1", "2"],
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
         )
 
 
@@ -979,7 +1154,7 @@ def test_featurestore_online_serving_service_transport_auth_adc():
 def test_featurestore_online_serving_service_grpc_transport_client_cert_source_for_mtls(
     transport_class
 ):
-    cred = credentials.AnonymousCredentials()
+    cred = ga_credentials.AnonymousCredentials()
 
     # Check ssl_channel_credentials is used if provided.
     with mock.patch.object(transport_class, "create_channel") as mock_create_channel:
@@ -1021,7 +1196,7 @@ def test_featurestore_online_serving_service_grpc_transport_client_cert_source_f
 
 def test_featurestore_online_serving_service_host_no_port():
     client = FeaturestoreOnlineServingServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='aiplatform.googleapis.com'),
     )
     assert client.transport._host == 'aiplatform.googleapis.com:443'
@@ -1029,11 +1204,10 @@ def test_featurestore_online_serving_service_host_no_port():
 
 def test_featurestore_online_serving_service_host_with_port():
     client = FeaturestoreOnlineServingServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='aiplatform.googleapis.com:8000'),
     )
     assert client.transport._host == 'aiplatform.googleapis.com:8000'
-
 
 def test_featurestore_online_serving_service_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -1075,9 +1249,9 @@ def test_featurestore_online_serving_service_transport_channel_mtls_with_client_
             mock_grpc_channel = mock.Mock()
             grpc_create_channel.return_value = mock_grpc_channel
 
-            cred = credentials.AnonymousCredentials()
+            cred = ga_credentials.AnonymousCredentials()
             with pytest.warns(DeprecationWarning):
-                with mock.patch.object(auth, 'default') as adc:
+                with mock.patch.object(google.auth, 'default') as adc:
                     adc.return_value = (cred, None)
                     transport = transport_class(
                         host="squid.clam.whelk",
@@ -1154,7 +1328,6 @@ def test_entity_type_path():
     location = "clam"
     featurestore = "whelk"
     entity_type = "octopus"
-
     expected = "projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}".format(project=project, location=location, featurestore=featurestore, entity_type=entity_type, )
     actual = FeaturestoreOnlineServingServiceClient.entity_type_path(project, location, featurestore, entity_type)
     assert expected == actual
@@ -1162,11 +1335,10 @@ def test_entity_type_path():
 
 def test_parse_entity_type_path():
     expected = {
-    "project": "oyster",
-    "location": "nudibranch",
-    "featurestore": "cuttlefish",
-    "entity_type": "mussel",
-
+        "project": "oyster",
+        "location": "nudibranch",
+        "featurestore": "cuttlefish",
+        "entity_type": "mussel",
     }
     path = FeaturestoreOnlineServingServiceClient.entity_type_path(**expected)
 
@@ -1176,7 +1348,6 @@ def test_parse_entity_type_path():
 
 def test_common_billing_account_path():
     billing_account = "winkle"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = FeaturestoreOnlineServingServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -1184,8 +1355,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "nautilus",
-
+        "billing_account": "nautilus",
     }
     path = FeaturestoreOnlineServingServiceClient.common_billing_account_path(**expected)
 
@@ -1195,7 +1365,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "scallop"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = FeaturestoreOnlineServingServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -1203,8 +1372,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "abalone",
-
+        "folder": "abalone",
     }
     path = FeaturestoreOnlineServingServiceClient.common_folder_path(**expected)
 
@@ -1214,7 +1382,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "squid"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = FeaturestoreOnlineServingServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -1222,8 +1389,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "clam",
-
+        "organization": "clam",
     }
     path = FeaturestoreOnlineServingServiceClient.common_organization_path(**expected)
 
@@ -1233,7 +1399,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "whelk"
-
     expected = "projects/{project}".format(project=project, )
     actual = FeaturestoreOnlineServingServiceClient.common_project_path(project)
     assert expected == actual
@@ -1241,8 +1406,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "octopus",
-
+        "project": "octopus",
     }
     path = FeaturestoreOnlineServingServiceClient.common_project_path(**expected)
 
@@ -1253,7 +1417,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "oyster"
     location = "nudibranch"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = FeaturestoreOnlineServingServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -1261,9 +1424,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "cuttlefish",
-    "location": "mussel",
-
+        "project": "cuttlefish",
+        "location": "mussel",
     }
     path = FeaturestoreOnlineServingServiceClient.common_location_path(**expected)
 
@@ -1277,7 +1439,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
 
     with mock.patch.object(transports.FeaturestoreOnlineServingServiceTransport, '_prep_wrapped_messages') as prep:
         client = FeaturestoreOnlineServingServiceClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)
@@ -1285,7 +1447,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
     with mock.patch.object(transports.FeaturestoreOnlineServingServiceTransport, '_prep_wrapped_messages') as prep:
         transport_class = FeaturestoreOnlineServingServiceClient.get_transport_class()
         transport = transport_class(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)

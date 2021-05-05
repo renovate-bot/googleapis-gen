@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,8 @@
 #
 
 from .services.gke_hub_membership_service import GkeHubMembershipServiceClient
+from .services.gke_hub_membership_service import GkeHubMembershipServiceAsyncClient
+
 from .types.membership import Authority
 from .types.membership import ConnectAgent
 from .types.membership import ConnectAgentResource
@@ -42,32 +43,31 @@ from .types.membership import UpdateMembershipRequest
 from .types.membership import ValidateExclusivityRequest
 from .types.membership import ValidateExclusivityResponse
 
-
 __all__ = (
-    'Authority',
-    'ConnectAgent',
-    'ConnectAgentResource',
-    'CreateMembershipRequest',
-    'DeleteMembershipRequest',
-    'GenerateConnectManifestRequest',
-    'GenerateConnectManifestResponse',
-    'GenerateExclusivityManifestRequest',
-    'GenerateExclusivityManifestResponse',
-    'GetMembershipRequest',
-    'GkeCluster',
-    'KubernetesMetadata',
-    'KubernetesResource',
-    'ListMembershipsRequest',
-    'ListMembershipsResponse',
-    'Membership',
-    'MembershipEndpoint',
-    'MembershipState',
-    'OperationMetadata',
-    'ResourceManifest',
-    'ResourceOptions',
-    'TypeMeta',
-    'UpdateMembershipRequest',
-    'ValidateExclusivityRequest',
-    'ValidateExclusivityResponse',
+'Authority',
+'ConnectAgent',
+'ConnectAgentResource',
+'CreateMembershipRequest',
+'DeleteMembershipRequest',
+'GenerateConnectManifestRequest',
+'GenerateConnectManifestResponse',
+'GenerateExclusivityManifestRequest',
+'GenerateExclusivityManifestResponse',
+'GetMembershipRequest',
+'GkeCluster',
 'GkeHubMembershipServiceClient',
+'KubernetesMetadata',
+'KubernetesResource',
+'ListMembershipsRequest',
+'ListMembershipsResponse',
+'Membership',
+'MembershipEndpoint',
+'MembershipState',
+'OperationMetadata',
+'ResourceManifest',
+'ResourceOptions',
+'TypeMeta',
+'UpdateMembershipRequest',
+'ValidateExclusivityRequest',
+'ValidateExclusivityResponse',
 )

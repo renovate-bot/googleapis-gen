@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,14 +13,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
-from google.rpc import code_pb2 as gr_code  # type: ignore
-from google.rpc import status_pb2 as gr_status  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
+from google.rpc import code_pb2  # type: ignore
+from google.rpc import status_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -165,7 +162,6 @@ class UpgradeResourceType(proto.Enum):
 
 class LinuxNodeConfig(proto.Message):
     r"""Parameters that can be configured on Linux nodes.
-
     Attributes:
         sysctls (Sequence[google.container_v1beta1.types.LinuxNodeConfig.SysctlsEntry]):
             The Linux kernel parameters to be applied to the nodes and
@@ -179,12 +175,15 @@ class LinuxNodeConfig(proto.Message):
             net.ipv4.tcp_tw_reuse
     """
 
-    sysctls = proto.MapField(proto.STRING, proto.STRING, number=1)
+    sysctls = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=1,
+    )
 
 
 class NodeKubeletConfig(proto.Message):
     r"""Node kubelet configs.
-
     Attributes:
         cpu_manager_policy (str):
             Control the CPU management policy on the
@@ -223,18 +222,23 @@ class NodeKubeletConfig(proto.Message):
             The value must be a positive duration.
     """
 
-    cpu_manager_policy = proto.Field(proto.STRING, number=1)
-
-    cpu_cfs_quota = proto.Field(proto.MESSAGE, number=2,
-        message=wrappers.BoolValue,
+    cpu_manager_policy = proto.Field(
+        proto.STRING,
+        number=1,
     )
-
-    cpu_cfs_quota_period = proto.Field(proto.STRING, number=3)
+    cpu_cfs_quota = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=wrappers_pb2.BoolValue,
+    )
+    cpu_cfs_quota_period = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class NodeConfig(proto.Message):
     r"""Parameters that describe the nodes in a cluster.
-
     Attributes:
         machine_type (str):
             The name of a Google Compute Engine `machine
@@ -410,74 +414,113 @@ class NodeConfig(proto.Message):
             backed by the boot disk.
     """
 
-    machine_type = proto.Field(proto.STRING, number=1)
-
-    disk_size_gb = proto.Field(proto.INT32, number=2)
-
-    oauth_scopes = proto.RepeatedField(proto.STRING, number=3)
-
-    service_account = proto.Field(proto.STRING, number=9)
-
-    metadata = proto.MapField(proto.STRING, proto.STRING, number=4)
-
-    image_type = proto.Field(proto.STRING, number=5)
-
-    labels = proto.MapField(proto.STRING, proto.STRING, number=6)
-
-    local_ssd_count = proto.Field(proto.INT32, number=7)
-
-    tags = proto.RepeatedField(proto.STRING, number=8)
-
-    preemptible = proto.Field(proto.BOOL, number=10)
-
-    accelerators = proto.RepeatedField(proto.MESSAGE, number=11,
+    machine_type = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    disk_size_gb = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    oauth_scopes = proto.RepeatedField(
+        proto.STRING,
+        number=3,
+    )
+    service_account = proto.Field(
+        proto.STRING,
+        number=9,
+    )
+    metadata = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=4,
+    )
+    image_type = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    labels = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=6,
+    )
+    local_ssd_count = proto.Field(
+        proto.INT32,
+        number=7,
+    )
+    tags = proto.RepeatedField(
+        proto.STRING,
+        number=8,
+    )
+    preemptible = proto.Field(
+        proto.BOOL,
+        number=10,
+    )
+    accelerators = proto.RepeatedField(
+        proto.MESSAGE,
+        number=11,
         message='AcceleratorConfig',
     )
-
-    sandbox_config = proto.Field(proto.MESSAGE, number=17,
+    sandbox_config = proto.Field(
+        proto.MESSAGE,
+        number=17,
         message='SandboxConfig',
     )
-
-    node_group = proto.Field(proto.STRING, number=18)
-
-    reservation_affinity = proto.Field(proto.MESSAGE, number=19,
+    node_group = proto.Field(
+        proto.STRING,
+        number=18,
+    )
+    reservation_affinity = proto.Field(
+        proto.MESSAGE,
+        number=19,
         message='ReservationAffinity',
     )
-
-    disk_type = proto.Field(proto.STRING, number=12)
-
-    min_cpu_platform = proto.Field(proto.STRING, number=13)
-
-    workload_metadata_config = proto.Field(proto.MESSAGE, number=14,
+    disk_type = proto.Field(
+        proto.STRING,
+        number=12,
+    )
+    min_cpu_platform = proto.Field(
+        proto.STRING,
+        number=13,
+    )
+    workload_metadata_config = proto.Field(
+        proto.MESSAGE,
+        number=14,
         message='WorkloadMetadataConfig',
     )
-
-    taints = proto.RepeatedField(proto.MESSAGE, number=15,
+    taints = proto.RepeatedField(
+        proto.MESSAGE,
+        number=15,
         message='NodeTaint',
     )
-
-    boot_disk_kms_key = proto.Field(proto.STRING, number=23)
-
-    shielded_instance_config = proto.Field(proto.MESSAGE, number=20,
+    boot_disk_kms_key = proto.Field(
+        proto.STRING,
+        number=23,
+    )
+    shielded_instance_config = proto.Field(
+        proto.MESSAGE,
+        number=20,
         message='ShieldedInstanceConfig',
     )
-
-    linux_node_config = proto.Field(proto.MESSAGE, number=21,
+    linux_node_config = proto.Field(
+        proto.MESSAGE,
+        number=21,
         message='LinuxNodeConfig',
     )
-
-    kubelet_config = proto.Field(proto.MESSAGE, number=22,
+    kubelet_config = proto.Field(
+        proto.MESSAGE,
+        number=22,
         message='NodeKubeletConfig',
     )
-
-    ephemeral_storage_config = proto.Field(proto.MESSAGE, number=24,
+    ephemeral_storage_config = proto.Field(
+        proto.MESSAGE,
+        number=24,
         message='EphemeralStorageConfig',
     )
 
 
 class ShieldedInstanceConfig(proto.Message):
     r"""A set of Shielded Instance options.
-
     Attributes:
         enable_secure_boot (bool):
             Defines whether the instance has Secure Boot
@@ -498,9 +541,14 @@ class ShieldedInstanceConfig(proto.Message):
             is created.
     """
 
-    enable_secure_boot = proto.Field(proto.BOOL, number=1)
-
-    enable_integrity_monitoring = proto.Field(proto.BOOL, number=2)
+    enable_secure_boot = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
+    enable_integrity_monitoring = proto.Field(
+        proto.BOOL,
+        number=2,
+    )
 
 
 class SandboxConfig(proto.Message):
@@ -519,9 +567,13 @@ class SandboxConfig(proto.Message):
         UNSPECIFIED = 0
         GVISOR = 1
 
-    sandbox_type = proto.Field(proto.STRING, number=1)
-
-    type_ = proto.Field(proto.ENUM, number=2,
+    sandbox_type = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    type_ = proto.Field(
+        proto.ENUM,
+        number=2,
         enum=Type,
     )
 
@@ -538,7 +590,10 @@ class EphemeralStorageConfig(proto.Message):
             using local SSDs as ephemeral storage.
     """
 
-    local_ssd_count = proto.Field(proto.INT32, number=1)
+    local_ssd_count = proto.Field(
+        proto.INT32,
+        number=1,
+    )
 
 
 class ReservationAffinity(proto.Message):
@@ -568,13 +623,19 @@ class ReservationAffinity(proto.Message):
         ANY_RESERVATION = 2
         SPECIFIC_RESERVATION = 3
 
-    consume_reservation_type = proto.Field(proto.ENUM, number=1,
+    consume_reservation_type = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=Type,
     )
-
-    key = proto.Field(proto.STRING, number=2)
-
-    values = proto.RepeatedField(proto.STRING, number=3)
+    key = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    values = proto.RepeatedField(
+        proto.STRING,
+        number=3,
+    )
 
 
 class NodeTaint(proto.Message):
@@ -601,11 +662,17 @@ class NodeTaint(proto.Message):
         PREFER_NO_SCHEDULE = 2
         NO_EXECUTE = 3
 
-    key = proto.Field(proto.STRING, number=1)
-
-    value = proto.Field(proto.STRING, number=2)
-
-    effect = proto.Field(proto.ENUM, number=3,
+    key = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    value = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    effect = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=Effect,
     )
 
@@ -657,30 +724,44 @@ class MasterAuth(proto.Message):
             authenticate to the cluster endpoint.
     """
 
-    username = proto.Field(proto.STRING, number=1)
-
-    password = proto.Field(proto.STRING, number=2)
-
-    client_certificate_config = proto.Field(proto.MESSAGE, number=3,
+    username = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    password = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    client_certificate_config = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='ClientCertificateConfig',
     )
-
-    cluster_ca_certificate = proto.Field(proto.STRING, number=100)
-
-    client_certificate = proto.Field(proto.STRING, number=101)
-
-    client_key = proto.Field(proto.STRING, number=102)
+    cluster_ca_certificate = proto.Field(
+        proto.STRING,
+        number=100,
+    )
+    client_certificate = proto.Field(
+        proto.STRING,
+        number=101,
+    )
+    client_key = proto.Field(
+        proto.STRING,
+        number=102,
+    )
 
 
 class ClientCertificateConfig(proto.Message):
     r"""Configuration for client certificates on the cluster.
-
     Attributes:
         issue_client_certificate (bool):
             Issue a client certificate.
     """
 
-    issue_client_certificate = proto.Field(proto.BOOL, number=1)
+    issue_client_certificate = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
 
 
 class AddonsConfig(proto.Message):
@@ -735,43 +816,54 @@ class AddonsConfig(proto.Message):
             manages the lifecycle of k8s applications.
     """
 
-    http_load_balancing = proto.Field(proto.MESSAGE, number=1,
+    http_load_balancing = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='HttpLoadBalancing',
     )
-
-    horizontal_pod_autoscaling = proto.Field(proto.MESSAGE, number=2,
+    horizontal_pod_autoscaling = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='HorizontalPodAutoscaling',
     )
-
-    kubernetes_dashboard = proto.Field(proto.MESSAGE, number=3,
+    kubernetes_dashboard = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='KubernetesDashboard',
     )
-
-    network_policy_config = proto.Field(proto.MESSAGE, number=4,
+    network_policy_config = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='NetworkPolicyConfig',
     )
-
-    istio_config = proto.Field(proto.MESSAGE, number=5,
+    istio_config = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message='IstioConfig',
     )
-
-    cloud_run_config = proto.Field(proto.MESSAGE, number=7,
+    cloud_run_config = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message='CloudRunConfig',
     )
-
-    dns_cache_config = proto.Field(proto.MESSAGE, number=8,
+    dns_cache_config = proto.Field(
+        proto.MESSAGE,
+        number=8,
         message='DnsCacheConfig',
     )
-
-    config_connector_config = proto.Field(proto.MESSAGE, number=10,
+    config_connector_config = proto.Field(
+        proto.MESSAGE,
+        number=10,
         message='ConfigConnectorConfig',
     )
-
-    gce_persistent_disk_csi_driver_config = proto.Field(proto.MESSAGE, number=11,
+    gce_persistent_disk_csi_driver_config = proto.Field(
+        proto.MESSAGE,
+        number=11,
         message='GcePersistentDiskCsiDriverConfig',
     )
-
-    kalm_config = proto.Field(proto.MESSAGE, number=12,
+    kalm_config = proto.Field(
+        proto.MESSAGE,
+        number=12,
         message='KalmConfig',
     )
 
@@ -789,7 +881,10 @@ class HttpLoadBalancing(proto.Message):
             balancers.
     """
 
-    disabled = proto.Field(proto.BOOL, number=1)
+    disabled = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
 
 
 class HorizontalPodAutoscaling(proto.Message):
@@ -806,19 +901,24 @@ class HorizontalPodAutoscaling(proto.Message):
             Stackdriver Monitoring.
     """
 
-    disabled = proto.Field(proto.BOOL, number=1)
+    disabled = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
 
 
 class KubernetesDashboard(proto.Message):
     r"""Configuration for the Kubernetes Dashboard.
-
     Attributes:
         disabled (bool):
             Whether the Kubernetes Dashboard is enabled
             for this cluster.
     """
 
-    disabled = proto.Field(proto.BOOL, number=1)
+    disabled = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
 
 
 class NetworkPolicyConfig(proto.Message):
@@ -832,42 +932,51 @@ class NetworkPolicyConfig(proto.Message):
             cluster.
     """
 
-    disabled = proto.Field(proto.BOOL, number=1)
+    disabled = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
 
 
 class DnsCacheConfig(proto.Message):
     r"""Configuration for NodeLocal DNSCache
-
     Attributes:
         enabled (bool):
             Whether NodeLocal DNSCache is enabled for
             this cluster.
     """
 
-    enabled = proto.Field(proto.BOOL, number=1)
+    enabled = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
 
 
 class KalmConfig(proto.Message):
     r"""Configuration options for the KALM addon.
-
     Attributes:
         enabled (bool):
             Whether KALM is enabled for this cluster.
     """
 
-    enabled = proto.Field(proto.BOOL, number=1)
+    enabled = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
 
 
 class ConfigConnectorConfig(proto.Message):
     r"""Configuration options for the Config Connector add-on.
-
     Attributes:
         enabled (bool):
             Whether Cloud Connector is enabled for this
             cluster.
     """
 
-    enabled = proto.Field(proto.BOOL, number=1)
+    enabled = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
 
 
 class GcePersistentDiskCsiDriverConfig(proto.Message):
@@ -880,24 +989,28 @@ class GcePersistentDiskCsiDriverConfig(proto.Message):
             enabled for this cluster.
     """
 
-    enabled = proto.Field(proto.BOOL, number=1)
+    enabled = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
 
 
 class PrivateClusterMasterGlobalAccessConfig(proto.Message):
     r"""Configuration for controlling master global access settings.
-
     Attributes:
         enabled (bool):
             Whenever master is accessible globally or
             not.
     """
 
-    enabled = proto.Field(proto.BOOL, number=1)
+    enabled = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
 
 
 class PrivateClusterConfig(proto.Message):
     r"""Configuration options for private clusters.
-
     Attributes:
         enable_private_nodes (bool):
             Whether nodes have internal IP addresses
@@ -927,30 +1040,43 @@ class PrivateClusterConfig(proto.Message):
             Controls master global access settings.
     """
 
-    enable_private_nodes = proto.Field(proto.BOOL, number=1)
-
-    enable_private_endpoint = proto.Field(proto.BOOL, number=2)
-
-    master_ipv4_cidr_block = proto.Field(proto.STRING, number=3)
-
-    private_endpoint = proto.Field(proto.STRING, number=4)
-
-    public_endpoint = proto.Field(proto.STRING, number=5)
-
-    peering_name = proto.Field(proto.STRING, number=7)
-
-    master_global_access_config = proto.Field(proto.MESSAGE, number=8,
+    enable_private_nodes = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
+    enable_private_endpoint = proto.Field(
+        proto.BOOL,
+        number=2,
+    )
+    master_ipv4_cidr_block = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    private_endpoint = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    public_endpoint = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    peering_name = proto.Field(
+        proto.STRING,
+        number=7,
+    )
+    master_global_access_config = proto.Field(
+        proto.MESSAGE,
+        number=8,
         message='PrivateClusterMasterGlobalAccessConfig',
     )
 
 
 class IstioConfig(proto.Message):
     r"""Configuration options for Istio addon.
-
     Attributes:
         disabled (bool):
             Whether Istio is enabled for this cluster.
-        auth_ (google.container_v1beta1.types.IstioConfig.IstioAuthMode):
+        auth (google.container_v1beta1.types.IstioConfig.IstioAuthMode):
             The specified Istio auth mode, either none,
             or mutual TLS.
     """
@@ -961,16 +1087,19 @@ class IstioConfig(proto.Message):
         AUTH_NONE = 0
         AUTH_MUTUAL_TLS = 1
 
-    disabled = proto.Field(proto.BOOL, number=1)
-
-    auth_ = proto.Field(proto.ENUM, number=2,
+    disabled = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
+    auth = proto.Field(
+        proto.ENUM,
+        number=2,
         enum=IstioAuthMode,
     )
 
 
 class CloudRunConfig(proto.Message):
     r"""Configuration options for the Cloud Run feature.
-
     Attributes:
         disabled (bool):
             Whether Cloud Run addon is enabled for this
@@ -985,9 +1114,13 @@ class CloudRunConfig(proto.Message):
         LOAD_BALANCER_TYPE_EXTERNAL = 1
         LOAD_BALANCER_TYPE_INTERNAL = 2
 
-    disabled = proto.Field(proto.BOOL, number=1)
-
-    load_balancer_type = proto.Field(proto.ENUM, number=3,
+    disabled = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
+    load_balancer_type = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=LoadBalancerType,
     )
 
@@ -1007,9 +1140,9 @@ class MasterAuthorizedNetworksConfig(proto.Message):
             cidr_blocks define up to 10 external networks that could
             access Kubernetes master through HTTPS.
     """
+
     class CidrBlock(proto.Message):
         r"""CidrBlock contains an optional name and one CIDR block.
-
         Attributes:
             display_name (str):
                 display_name is an optional field for users to identify CIDR
@@ -1018,13 +1151,22 @@ class MasterAuthorizedNetworksConfig(proto.Message):
                 cidr_block must be specified in CIDR notation.
         """
 
-        display_name = proto.Field(proto.STRING, number=1)
+        display_name = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        cidr_block = proto.Field(
+            proto.STRING,
+            number=2,
+        )
 
-        cidr_block = proto.Field(proto.STRING, number=2)
-
-    enabled = proto.Field(proto.BOOL, number=1)
-
-    cidr_blocks = proto.RepeatedField(proto.MESSAGE, number=2,
+    enabled = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
+    cidr_blocks = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message=CidrBlock,
     )
 
@@ -1043,7 +1185,10 @@ class LegacyAbac(proto.Message):
             configuration or IAM.
     """
 
-    enabled = proto.Field(proto.BOOL, number=1)
+    enabled = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
 
 
 class NetworkPolicy(proto.Message):
@@ -1063,11 +1208,15 @@ class NetworkPolicy(proto.Message):
         PROVIDER_UNSPECIFIED = 0
         CALICO = 1
 
-    provider = proto.Field(proto.ENUM, number=1,
+    provider = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=Provider,
     )
-
-    enabled = proto.Field(proto.BOOL, number=2)
+    enabled = proto.Field(
+        proto.BOOL,
+        number=2,
+    )
 
 
 class IPAllocationPolicy(proto.Message):
@@ -1209,38 +1358,66 @@ class IPAllocationPolicy(proto.Message):
             allocation mode
     """
 
-    use_ip_aliases = proto.Field(proto.BOOL, number=1)
-
-    create_subnetwork = proto.Field(proto.BOOL, number=2)
-
-    subnetwork_name = proto.Field(proto.STRING, number=3)
-
-    cluster_ipv4_cidr = proto.Field(proto.STRING, number=4)
-
-    node_ipv4_cidr = proto.Field(proto.STRING, number=5)
-
-    services_ipv4_cidr = proto.Field(proto.STRING, number=6)
-
-    cluster_secondary_range_name = proto.Field(proto.STRING, number=7)
-
-    services_secondary_range_name = proto.Field(proto.STRING, number=8)
-
-    cluster_ipv4_cidr_block = proto.Field(proto.STRING, number=9)
-
-    node_ipv4_cidr_block = proto.Field(proto.STRING, number=10)
-
-    services_ipv4_cidr_block = proto.Field(proto.STRING, number=11)
-
-    allow_route_overlap = proto.Field(proto.BOOL, number=12)
-
-    tpu_ipv4_cidr_block = proto.Field(proto.STRING, number=13)
-
-    use_routes = proto.Field(proto.BOOL, number=15)
+    use_ip_aliases = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
+    create_subnetwork = proto.Field(
+        proto.BOOL,
+        number=2,
+    )
+    subnetwork_name = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    cluster_ipv4_cidr = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    node_ipv4_cidr = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    services_ipv4_cidr = proto.Field(
+        proto.STRING,
+        number=6,
+    )
+    cluster_secondary_range_name = proto.Field(
+        proto.STRING,
+        number=7,
+    )
+    services_secondary_range_name = proto.Field(
+        proto.STRING,
+        number=8,
+    )
+    cluster_ipv4_cidr_block = proto.Field(
+        proto.STRING,
+        number=9,
+    )
+    node_ipv4_cidr_block = proto.Field(
+        proto.STRING,
+        number=10,
+    )
+    services_ipv4_cidr_block = proto.Field(
+        proto.STRING,
+        number=11,
+    )
+    allow_route_overlap = proto.Field(
+        proto.BOOL,
+        number=12,
+    )
+    tpu_ipv4_cidr_block = proto.Field(
+        proto.STRING,
+        number=13,
+    )
+    use_routes = proto.Field(
+        proto.BOOL,
+        number=15,
+    )
 
 
 class BinaryAuthorization(proto.Message):
     r"""Configuration for Binary Authorization.
-
     Attributes:
         enabled (bool):
             Enable Binary Authorization for this cluster.
@@ -1248,12 +1425,14 @@ class BinaryAuthorization(proto.Message):
             validated by Google Binauthz.
     """
 
-    enabled = proto.Field(proto.BOOL, number=1)
+    enabled = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
 
 
 class PodSecurityPolicyConfig(proto.Message):
     r"""Configuration for the PodSecurityPolicy feature.
-
     Attributes:
         enabled (bool):
             Enable the PodSecurityPolicy controller for
@@ -1261,7 +1440,10 @@ class PodSecurityPolicyConfig(proto.Message):
             under a PodSecurityPolicy to be created.
     """
 
-    enabled = proto.Field(proto.BOOL, number=1)
+    enabled = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
 
 
 class AuthenticatorGroupsConfig(proto.Message):
@@ -1278,14 +1460,18 @@ class AuthenticatorGroupsConfig(proto.Message):
             be used. Only relevant if enabled = true.
     """
 
-    enabled = proto.Field(proto.BOOL, number=1)
-
-    security_group = proto.Field(proto.STRING, number=2)
+    enabled = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
+    security_group = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class ClusterTelemetry(proto.Message):
     r"""Telemetry integration for the cluster.
-
     Attributes:
         type_ (google.container_v1beta1.types.ClusterTelemetry.Type):
             Type of the integration.
@@ -1297,14 +1483,15 @@ class ClusterTelemetry(proto.Message):
         ENABLED = 2
         SYSTEM_ONLY = 3
 
-    type_ = proto.Field(proto.ENUM, number=1,
+    type_ = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=Type,
     )
 
 
 class Cluster(proto.Message):
     r"""A Google Kubernetes Engine cluster.
-
     Attributes:
         name (str):
             The name of this cluster. The name must be unique within
@@ -1604,179 +1791,270 @@ class Cluster(proto.Message):
         ERROR = 5
         DEGRADED = 6
 
-    name = proto.Field(proto.STRING, number=1)
-
-    description = proto.Field(proto.STRING, number=2)
-
-    initial_node_count = proto.Field(proto.INT32, number=3)
-
-    node_config = proto.Field(proto.MESSAGE, number=4,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    description = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    initial_node_count = proto.Field(
+        proto.INT32,
+        number=3,
+    )
+    node_config = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='NodeConfig',
     )
-
-    master_auth = proto.Field(proto.MESSAGE, number=5,
+    master_auth = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message='MasterAuth',
     )
-
-    logging_service = proto.Field(proto.STRING, number=6)
-
-    monitoring_service = proto.Field(proto.STRING, number=7)
-
-    network = proto.Field(proto.STRING, number=8)
-
-    cluster_ipv4_cidr = proto.Field(proto.STRING, number=9)
-
-    addons_config = proto.Field(proto.MESSAGE, number=10,
+    logging_service = proto.Field(
+        proto.STRING,
+        number=6,
+    )
+    monitoring_service = proto.Field(
+        proto.STRING,
+        number=7,
+    )
+    network = proto.Field(
+        proto.STRING,
+        number=8,
+    )
+    cluster_ipv4_cidr = proto.Field(
+        proto.STRING,
+        number=9,
+    )
+    addons_config = proto.Field(
+        proto.MESSAGE,
+        number=10,
         message='AddonsConfig',
     )
-
-    subnetwork = proto.Field(proto.STRING, number=11)
-
-    node_pools = proto.RepeatedField(proto.MESSAGE, number=12,
+    subnetwork = proto.Field(
+        proto.STRING,
+        number=11,
+    )
+    node_pools = proto.RepeatedField(
+        proto.MESSAGE,
+        number=12,
         message='NodePool',
     )
-
-    locations = proto.RepeatedField(proto.STRING, number=13)
-
-    enable_kubernetes_alpha = proto.Field(proto.BOOL, number=14)
-
-    resource_labels = proto.MapField(proto.STRING, proto.STRING, number=15)
-
-    label_fingerprint = proto.Field(proto.STRING, number=16)
-
-    legacy_abac = proto.Field(proto.MESSAGE, number=18,
+    locations = proto.RepeatedField(
+        proto.STRING,
+        number=13,
+    )
+    enable_kubernetes_alpha = proto.Field(
+        proto.BOOL,
+        number=14,
+    )
+    resource_labels = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=15,
+    )
+    label_fingerprint = proto.Field(
+        proto.STRING,
+        number=16,
+    )
+    legacy_abac = proto.Field(
+        proto.MESSAGE,
+        number=18,
         message='LegacyAbac',
     )
-
-    network_policy = proto.Field(proto.MESSAGE, number=19,
+    network_policy = proto.Field(
+        proto.MESSAGE,
+        number=19,
         message='NetworkPolicy',
     )
-
-    ip_allocation_policy = proto.Field(proto.MESSAGE, number=20,
+    ip_allocation_policy = proto.Field(
+        proto.MESSAGE,
+        number=20,
         message='IPAllocationPolicy',
     )
-
-    master_authorized_networks_config = proto.Field(proto.MESSAGE, number=22,
+    master_authorized_networks_config = proto.Field(
+        proto.MESSAGE,
+        number=22,
         message='MasterAuthorizedNetworksConfig',
     )
-
-    maintenance_policy = proto.Field(proto.MESSAGE, number=23,
+    maintenance_policy = proto.Field(
+        proto.MESSAGE,
+        number=23,
         message='MaintenancePolicy',
     )
-
-    binary_authorization = proto.Field(proto.MESSAGE, number=24,
+    binary_authorization = proto.Field(
+        proto.MESSAGE,
+        number=24,
         message='BinaryAuthorization',
     )
-
-    pod_security_policy_config = proto.Field(proto.MESSAGE, number=25,
+    pod_security_policy_config = proto.Field(
+        proto.MESSAGE,
+        number=25,
         message='PodSecurityPolicyConfig',
     )
-
-    autoscaling = proto.Field(proto.MESSAGE, number=26,
+    autoscaling = proto.Field(
+        proto.MESSAGE,
+        number=26,
         message='ClusterAutoscaling',
     )
-
-    network_config = proto.Field(proto.MESSAGE, number=27,
+    network_config = proto.Field(
+        proto.MESSAGE,
+        number=27,
         message='NetworkConfig',
     )
-
-    private_cluster = proto.Field(proto.BOOL, number=28)
-
-    master_ipv4_cidr_block = proto.Field(proto.STRING, number=29)
-
-    default_max_pods_constraint = proto.Field(proto.MESSAGE, number=30,
+    private_cluster = proto.Field(
+        proto.BOOL,
+        number=28,
+    )
+    master_ipv4_cidr_block = proto.Field(
+        proto.STRING,
+        number=29,
+    )
+    default_max_pods_constraint = proto.Field(
+        proto.MESSAGE,
+        number=30,
         message='MaxPodsConstraint',
     )
-
-    resource_usage_export_config = proto.Field(proto.MESSAGE, number=33,
+    resource_usage_export_config = proto.Field(
+        proto.MESSAGE,
+        number=33,
         message='ResourceUsageExportConfig',
     )
-
-    authenticator_groups_config = proto.Field(proto.MESSAGE, number=34,
+    authenticator_groups_config = proto.Field(
+        proto.MESSAGE,
+        number=34,
         message='AuthenticatorGroupsConfig',
     )
-
-    private_cluster_config = proto.Field(proto.MESSAGE, number=37,
+    private_cluster_config = proto.Field(
+        proto.MESSAGE,
+        number=37,
         message='PrivateClusterConfig',
     )
-
-    vertical_pod_autoscaling = proto.Field(proto.MESSAGE, number=39,
+    vertical_pod_autoscaling = proto.Field(
+        proto.MESSAGE,
+        number=39,
         message='VerticalPodAutoscaling',
     )
-
-    shielded_nodes = proto.Field(proto.MESSAGE, number=40,
+    shielded_nodes = proto.Field(
+        proto.MESSAGE,
+        number=40,
         message='ShieldedNodes',
     )
-
-    release_channel = proto.Field(proto.MESSAGE, number=41,
+    release_channel = proto.Field(
+        proto.MESSAGE,
+        number=41,
         message='ReleaseChannel',
     )
-
-    workload_identity_config = proto.Field(proto.MESSAGE, number=43,
+    workload_identity_config = proto.Field(
+        proto.MESSAGE,
+        number=43,
         message='WorkloadIdentityConfig',
     )
-
-    cluster_telemetry = proto.Field(proto.MESSAGE, number=46,
+    cluster_telemetry = proto.Field(
+        proto.MESSAGE,
+        number=46,
         message='ClusterTelemetry',
     )
-
-    tpu_config = proto.Field(proto.MESSAGE, number=47,
+    tpu_config = proto.Field(
+        proto.MESSAGE,
+        number=47,
         message='TpuConfig',
     )
-
-    notification_config = proto.Field(proto.MESSAGE, number=49,
+    notification_config = proto.Field(
+        proto.MESSAGE,
+        number=49,
         message='NotificationConfig',
     )
-
-    confidential_nodes = proto.Field(proto.MESSAGE, number=50,
+    confidential_nodes = proto.Field(
+        proto.MESSAGE,
+        number=50,
         message='ConfidentialNodes',
     )
-
-    self_link = proto.Field(proto.STRING, number=100)
-
-    zone = proto.Field(proto.STRING, number=101)
-
-    endpoint = proto.Field(proto.STRING, number=102)
-
-    initial_cluster_version = proto.Field(proto.STRING, number=103)
-
-    current_master_version = proto.Field(proto.STRING, number=104)
-
-    current_node_version = proto.Field(proto.STRING, number=105)
-
-    create_time = proto.Field(proto.STRING, number=106)
-
-    status = proto.Field(proto.ENUM, number=107,
+    self_link = proto.Field(
+        proto.STRING,
+        number=100,
+    )
+    zone = proto.Field(
+        proto.STRING,
+        number=101,
+    )
+    endpoint = proto.Field(
+        proto.STRING,
+        number=102,
+    )
+    initial_cluster_version = proto.Field(
+        proto.STRING,
+        number=103,
+    )
+    current_master_version = proto.Field(
+        proto.STRING,
+        number=104,
+    )
+    current_node_version = proto.Field(
+        proto.STRING,
+        number=105,
+    )
+    create_time = proto.Field(
+        proto.STRING,
+        number=106,
+    )
+    status = proto.Field(
+        proto.ENUM,
+        number=107,
         enum=Status,
     )
-
-    status_message = proto.Field(proto.STRING, number=108)
-
-    node_ipv4_cidr_size = proto.Field(proto.INT32, number=109)
-
-    services_ipv4_cidr = proto.Field(proto.STRING, number=110)
-
-    instance_group_urls = proto.RepeatedField(proto.STRING, number=111)
-
-    current_node_count = proto.Field(proto.INT32, number=112)
-
-    expire_time = proto.Field(proto.STRING, number=113)
-
-    location = proto.Field(proto.STRING, number=114)
-
-    enable_tpu = proto.Field(proto.BOOL, number=115)
-
-    tpu_ipv4_cidr_block = proto.Field(proto.STRING, number=116)
-
-    database_encryption = proto.Field(proto.MESSAGE, number=38,
+    status_message = proto.Field(
+        proto.STRING,
+        number=108,
+    )
+    node_ipv4_cidr_size = proto.Field(
+        proto.INT32,
+        number=109,
+    )
+    services_ipv4_cidr = proto.Field(
+        proto.STRING,
+        number=110,
+    )
+    instance_group_urls = proto.RepeatedField(
+        proto.STRING,
+        number=111,
+    )
+    current_node_count = proto.Field(
+        proto.INT32,
+        number=112,
+    )
+    expire_time = proto.Field(
+        proto.STRING,
+        number=113,
+    )
+    location = proto.Field(
+        proto.STRING,
+        number=114,
+    )
+    enable_tpu = proto.Field(
+        proto.BOOL,
+        number=115,
+    )
+    tpu_ipv4_cidr_block = proto.Field(
+        proto.STRING,
+        number=116,
+    )
+    database_encryption = proto.Field(
+        proto.MESSAGE,
+        number=38,
         message='DatabaseEncryption',
     )
-
-    conditions = proto.RepeatedField(proto.MESSAGE, number=118,
+    conditions = proto.RepeatedField(
+        proto.MESSAGE,
+        number=118,
         message='StatusCondition',
     )
-
-    master = proto.Field(proto.MESSAGE, number=124,
+    master = proto.Field(
+        proto.MESSAGE,
+        number=124,
         message='Master',
     )
 
@@ -1917,97 +2195,132 @@ class ClusterUpdate(proto.Message):
             Configuration for master components.
     """
 
-    desired_node_version = proto.Field(proto.STRING, number=4)
-
-    desired_monitoring_service = proto.Field(proto.STRING, number=5)
-
-    desired_addons_config = proto.Field(proto.MESSAGE, number=6,
+    desired_node_version = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    desired_monitoring_service = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    desired_addons_config = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message='AddonsConfig',
     )
-
-    desired_node_pool_id = proto.Field(proto.STRING, number=7)
-
-    desired_image_type = proto.Field(proto.STRING, number=8)
-
-    desired_node_pool_autoscaling = proto.Field(proto.MESSAGE, number=9,
+    desired_node_pool_id = proto.Field(
+        proto.STRING,
+        number=7,
+    )
+    desired_image_type = proto.Field(
+        proto.STRING,
+        number=8,
+    )
+    desired_node_pool_autoscaling = proto.Field(
+        proto.MESSAGE,
+        number=9,
         message='NodePoolAutoscaling',
     )
-
-    desired_locations = proto.RepeatedField(proto.STRING, number=10)
-
-    desired_master_authorized_networks_config = proto.Field(proto.MESSAGE, number=12,
+    desired_locations = proto.RepeatedField(
+        proto.STRING,
+        number=10,
+    )
+    desired_master_authorized_networks_config = proto.Field(
+        proto.MESSAGE,
+        number=12,
         message='MasterAuthorizedNetworksConfig',
     )
-
-    desired_pod_security_policy_config = proto.Field(proto.MESSAGE, number=14,
+    desired_pod_security_policy_config = proto.Field(
+        proto.MESSAGE,
+        number=14,
         message='PodSecurityPolicyConfig',
     )
-
-    desired_cluster_autoscaling = proto.Field(proto.MESSAGE, number=15,
+    desired_cluster_autoscaling = proto.Field(
+        proto.MESSAGE,
+        number=15,
         message='ClusterAutoscaling',
     )
-
-    desired_binary_authorization = proto.Field(proto.MESSAGE, number=16,
+    desired_binary_authorization = proto.Field(
+        proto.MESSAGE,
+        number=16,
         message='BinaryAuthorization',
     )
-
-    desired_logging_service = proto.Field(proto.STRING, number=19)
-
-    desired_resource_usage_export_config = proto.Field(proto.MESSAGE, number=21,
+    desired_logging_service = proto.Field(
+        proto.STRING,
+        number=19,
+    )
+    desired_resource_usage_export_config = proto.Field(
+        proto.MESSAGE,
+        number=21,
         message='ResourceUsageExportConfig',
     )
-
-    desired_vertical_pod_autoscaling = proto.Field(proto.MESSAGE, number=22,
+    desired_vertical_pod_autoscaling = proto.Field(
+        proto.MESSAGE,
+        number=22,
         message='VerticalPodAutoscaling',
     )
-
-    desired_private_cluster_config = proto.Field(proto.MESSAGE, number=25,
+    desired_private_cluster_config = proto.Field(
+        proto.MESSAGE,
+        number=25,
         message='PrivateClusterConfig',
     )
-
-    desired_intra_node_visibility_config = proto.Field(proto.MESSAGE, number=26,
+    desired_intra_node_visibility_config = proto.Field(
+        proto.MESSAGE,
+        number=26,
         message='IntraNodeVisibilityConfig',
     )
-
-    desired_default_snat_status = proto.Field(proto.MESSAGE, number=28,
+    desired_default_snat_status = proto.Field(
+        proto.MESSAGE,
+        number=28,
         message='DefaultSnatStatus',
     )
-
-    desired_cluster_telemetry = proto.Field(proto.MESSAGE, number=30,
+    desired_cluster_telemetry = proto.Field(
+        proto.MESSAGE,
+        number=30,
         message='ClusterTelemetry',
     )
-
-    desired_release_channel = proto.Field(proto.MESSAGE, number=31,
+    desired_release_channel = proto.Field(
+        proto.MESSAGE,
+        number=31,
         message='ReleaseChannel',
     )
-
-    desired_tpu_config = proto.Field(proto.MESSAGE, number=38,
+    desired_tpu_config = proto.Field(
+        proto.MESSAGE,
+        number=38,
         message='TpuConfig',
     )
-
-    desired_datapath_provider = proto.Field(proto.ENUM, number=50,
+    desired_datapath_provider = proto.Field(
+        proto.ENUM,
+        number=50,
         enum='DatapathProvider',
     )
-
-    desired_notification_config = proto.Field(proto.MESSAGE, number=55,
+    desired_notification_config = proto.Field(
+        proto.MESSAGE,
+        number=55,
         message='NotificationConfig',
     )
-
-    desired_master_version = proto.Field(proto.STRING, number=100)
-
-    desired_database_encryption = proto.Field(proto.MESSAGE, number=46,
+    desired_master_version = proto.Field(
+        proto.STRING,
+        number=100,
+    )
+    desired_database_encryption = proto.Field(
+        proto.MESSAGE,
+        number=46,
         message='DatabaseEncryption',
     )
-
-    desired_workload_identity_config = proto.Field(proto.MESSAGE, number=47,
+    desired_workload_identity_config = proto.Field(
+        proto.MESSAGE,
+        number=47,
         message='WorkloadIdentityConfig',
     )
-
-    desired_shielded_nodes = proto.Field(proto.MESSAGE, number=48,
+    desired_shielded_nodes = proto.Field(
+        proto.MESSAGE,
+        number=48,
         message='ShieldedNodes',
     )
-
-    desired_master = proto.Field(proto.MESSAGE, number=52,
+    desired_master = proto.Field(
+        proto.MESSAGE,
+        number=52,
         message='Master',
     )
 
@@ -2095,52 +2408,76 @@ class Operation(proto.Message):
         SET_NETWORK_POLICY = 15
         SET_MAINTENANCE_POLICY = 16
 
-    name = proto.Field(proto.STRING, number=1)
-
-    zone = proto.Field(proto.STRING, number=2)
-
-    operation_type = proto.Field(proto.ENUM, number=3,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    zone = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    operation_type = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=Type,
     )
-
-    status = proto.Field(proto.ENUM, number=4,
+    status = proto.Field(
+        proto.ENUM,
+        number=4,
         enum=Status,
     )
-
-    detail = proto.Field(proto.STRING, number=8)
-
-    status_message = proto.Field(proto.STRING, number=5)
-
-    self_link = proto.Field(proto.STRING, number=6)
-
-    target_link = proto.Field(proto.STRING, number=7)
-
-    location = proto.Field(proto.STRING, number=9)
-
-    start_time = proto.Field(proto.STRING, number=10)
-
-    end_time = proto.Field(proto.STRING, number=11)
-
-    progress = proto.Field(proto.MESSAGE, number=12,
+    detail = proto.Field(
+        proto.STRING,
+        number=8,
+    )
+    status_message = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    self_link = proto.Field(
+        proto.STRING,
+        number=6,
+    )
+    target_link = proto.Field(
+        proto.STRING,
+        number=7,
+    )
+    location = proto.Field(
+        proto.STRING,
+        number=9,
+    )
+    start_time = proto.Field(
+        proto.STRING,
+        number=10,
+    )
+    end_time = proto.Field(
+        proto.STRING,
+        number=11,
+    )
+    progress = proto.Field(
+        proto.MESSAGE,
+        number=12,
         message='OperationProgress',
     )
-
-    cluster_conditions = proto.RepeatedField(proto.MESSAGE, number=13,
+    cluster_conditions = proto.RepeatedField(
+        proto.MESSAGE,
+        number=13,
         message='StatusCondition',
     )
-
-    nodepool_conditions = proto.RepeatedField(proto.MESSAGE, number=14,
+    nodepool_conditions = proto.RepeatedField(
+        proto.MESSAGE,
+        number=14,
         message='StatusCondition',
     )
-
-    error = proto.Field(proto.MESSAGE, number=15,
+    error = proto.Field(
+        proto.MESSAGE,
+        number=15,
         message=gr_status.Status,
     )
 
 
 class OperationProgress(proto.Message):
     r"""Information about operation (or operation stage) progress.
-
     Attributes:
         name (str):
             A non-parameterized string describing an
@@ -2157,9 +2494,9 @@ class OperationProgress(proto.Message):
         stages (Sequence[google.container_v1beta1.types.OperationProgress]):
             Substages of an operation or a stage.
     """
+
     class Metric(proto.Message):
         r"""Progress metric is (string, int|float|string) pair.
-
         Attributes:
             name (str):
                 Required. Metric name, e.g., "nodes total",
@@ -2173,32 +2510,49 @@ class OperationProgress(proto.Message):
                 visual progress, etc.).
         """
 
-        name = proto.Field(proto.STRING, number=1)
+        name = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        int_value = proto.Field(
+            proto.INT64,
+            number=2,
+            oneof='value',
+        )
+        double_value = proto.Field(
+            proto.DOUBLE,
+            number=3,
+            oneof='value',
+        )
+        string_value = proto.Field(
+            proto.STRING,
+            number=4,
+            oneof='value',
+        )
 
-        int_value = proto.Field(proto.INT64, number=2, oneof='value')
-
-        double_value = proto.Field(proto.DOUBLE, number=3, oneof='value')
-
-        string_value = proto.Field(proto.STRING, number=4, oneof='value')
-
-    name = proto.Field(proto.STRING, number=1)
-
-    status = proto.Field(proto.ENUM, number=2,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    status = proto.Field(
+        proto.ENUM,
+        number=2,
         enum='Operation.Status',
     )
-
-    metrics = proto.RepeatedField(proto.MESSAGE, number=3,
+    metrics = proto.RepeatedField(
+        proto.MESSAGE,
+        number=3,
         message=Metric,
     )
-
-    stages = proto.RepeatedField(proto.MESSAGE, number=4,
+    stages = proto.RepeatedField(
+        proto.MESSAGE,
+        number=4,
         message='OperationProgress',
     )
 
 
 class CreateClusterRequest(proto.Message):
     r"""CreateClusterRequest creates a cluster.
-
     Attributes:
         project_id (str):
             Required. Deprecated. The Google Developers Console `project
@@ -2219,20 +2573,27 @@ class CreateClusterRequest(proto.Message):
             created. Specified in the format ``projects/*/locations/*``.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    zone = proto.Field(proto.STRING, number=2)
-
-    cluster = proto.Field(proto.MESSAGE, number=3,
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    zone = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    cluster = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='Cluster',
     )
-
-    parent = proto.Field(proto.STRING, number=5)
+    parent = proto.Field(
+        proto.STRING,
+        number=5,
+    )
 
 
 class GetClusterRequest(proto.Message):
     r"""GetClusterRequest gets the settings of a cluster.
-
     Attributes:
         project_id (str):
             Required. Deprecated. The Google Developers Console `project
@@ -2255,18 +2616,26 @@ class GetClusterRequest(proto.Message):
             ``projects/*/locations/*/clusters/*``.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    zone = proto.Field(proto.STRING, number=2)
-
-    cluster_id = proto.Field(proto.STRING, number=3)
-
-    name = proto.Field(proto.STRING, number=5)
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    zone = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    cluster_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    name = proto.Field(
+        proto.STRING,
+        number=5,
+    )
 
 
 class UpdateClusterRequest(proto.Message):
     r"""UpdateClusterRequest updates the settings of a cluster.
-
     Attributes:
         project_id (str):
             Required. Deprecated. The Google Developers Console `project
@@ -2291,22 +2660,31 @@ class UpdateClusterRequest(proto.Message):
             ``projects/*/locations/*/clusters/*``.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    zone = proto.Field(proto.STRING, number=2)
-
-    cluster_id = proto.Field(proto.STRING, number=3)
-
-    update = proto.Field(proto.MESSAGE, number=4,
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    zone = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    cluster_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    update = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='ClusterUpdate',
     )
-
-    name = proto.Field(proto.STRING, number=5)
+    name = proto.Field(
+        proto.STRING,
+        number=5,
+    )
 
 
 class UpdateNodePoolRequest(proto.Message):
     r"""SetNodePoolVersionRequest updates the version of a node pool.
-
     Attributes:
         project_id (str):
             Required. Deprecated. The Google Developers Console `project
@@ -2368,35 +2746,56 @@ class UpdateNodePoolRequest(proto.Message):
             Node kubelet configs.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    zone = proto.Field(proto.STRING, number=2)
-
-    cluster_id = proto.Field(proto.STRING, number=3)
-
-    node_pool_id = proto.Field(proto.STRING, number=4)
-
-    node_version = proto.Field(proto.STRING, number=5)
-
-    image_type = proto.Field(proto.STRING, number=6)
-
-    locations = proto.RepeatedField(proto.STRING, number=13)
-
-    workload_metadata_config = proto.Field(proto.MESSAGE, number=14,
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    zone = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    cluster_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    node_pool_id = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    node_version = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    image_type = proto.Field(
+        proto.STRING,
+        number=6,
+    )
+    locations = proto.RepeatedField(
+        proto.STRING,
+        number=13,
+    )
+    workload_metadata_config = proto.Field(
+        proto.MESSAGE,
+        number=14,
         message='WorkloadMetadataConfig',
     )
-
-    name = proto.Field(proto.STRING, number=8)
-
-    upgrade_settings = proto.Field(proto.MESSAGE, number=15,
+    name = proto.Field(
+        proto.STRING,
+        number=8,
+    )
+    upgrade_settings = proto.Field(
+        proto.MESSAGE,
+        number=15,
         message='NodePool.UpgradeSettings',
     )
-
-    linux_node_config = proto.Field(proto.MESSAGE, number=19,
+    linux_node_config = proto.Field(
+        proto.MESSAGE,
+        number=19,
         message='LinuxNodeConfig',
     )
-
-    kubelet_config = proto.Field(proto.MESSAGE, number=20,
+    kubelet_config = proto.Field(
+        proto.MESSAGE,
+        number=20,
         message='NodeKubeletConfig',
     )
 
@@ -2434,19 +2833,31 @@ class SetNodePoolAutoscalingRequest(proto.Message):
             ``projects/*/locations/*/clusters/*/nodePools/*``.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    zone = proto.Field(proto.STRING, number=2)
-
-    cluster_id = proto.Field(proto.STRING, number=3)
-
-    node_pool_id = proto.Field(proto.STRING, number=4)
-
-    autoscaling = proto.Field(proto.MESSAGE, number=5,
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    zone = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    cluster_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    node_pool_id = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    autoscaling = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message='NodePoolAutoscaling',
     )
-
-    name = proto.Field(proto.STRING, number=6)
+    name = proto.Field(
+        proto.STRING,
+        number=6,
+    )
 
 
 class SetLoggingServiceRequest(proto.Message):
@@ -2489,15 +2900,26 @@ class SetLoggingServiceRequest(proto.Message):
             ``projects/*/locations/*/clusters/*``.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    zone = proto.Field(proto.STRING, number=2)
-
-    cluster_id = proto.Field(proto.STRING, number=3)
-
-    logging_service = proto.Field(proto.STRING, number=4)
-
-    name = proto.Field(proto.STRING, number=5)
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    zone = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    cluster_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    logging_service = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    name = proto.Field(
+        proto.STRING,
+        number=5,
+    )
 
 
 class SetMonitoringServiceRequest(proto.Message):
@@ -2541,20 +2963,30 @@ class SetMonitoringServiceRequest(proto.Message):
             ``projects/*/locations/*/clusters/*``.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    zone = proto.Field(proto.STRING, number=2)
-
-    cluster_id = proto.Field(proto.STRING, number=3)
-
-    monitoring_service = proto.Field(proto.STRING, number=4)
-
-    name = proto.Field(proto.STRING, number=6)
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    zone = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    cluster_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    monitoring_service = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    name = proto.Field(
+        proto.STRING,
+        number=6,
+    )
 
 
 class SetAddonsConfigRequest(proto.Message):
     r"""SetAddonsRequest sets the addons associated with the cluster.
-
     Attributes:
         project_id (str):
             Required. Deprecated. The Google Developers Console `project
@@ -2580,22 +3012,31 @@ class SetAddonsConfigRequest(proto.Message):
             ``projects/*/locations/*/clusters/*``.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    zone = proto.Field(proto.STRING, number=2)
-
-    cluster_id = proto.Field(proto.STRING, number=3)
-
-    addons_config = proto.Field(proto.MESSAGE, number=4,
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    zone = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    cluster_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    addons_config = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='AddonsConfig',
     )
-
-    name = proto.Field(proto.STRING, number=6)
+    name = proto.Field(
+        proto.STRING,
+        number=6,
+    )
 
 
 class SetLocationsRequest(proto.Message):
     r"""SetLocationsRequest sets the locations of the cluster.
-
     Attributes:
         project_id (str):
             Required. Deprecated. The Google Developers Console `project
@@ -2627,20 +3068,30 @@ class SetLocationsRequest(proto.Message):
             ``projects/*/locations/*/clusters/*``.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    zone = proto.Field(proto.STRING, number=2)
-
-    cluster_id = proto.Field(proto.STRING, number=3)
-
-    locations = proto.RepeatedField(proto.STRING, number=4)
-
-    name = proto.Field(proto.STRING, number=6)
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    zone = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    cluster_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    locations = proto.RepeatedField(
+        proto.STRING,
+        number=4,
+    )
+    name = proto.Field(
+        proto.STRING,
+        number=6,
+    )
 
 
 class UpdateMasterRequest(proto.Message):
     r"""UpdateMasterRequest updates the master of the cluster.
-
     Attributes:
         project_id (str):
             Required. Deprecated. The Google Developers Console `project
@@ -2676,20 +3127,30 @@ class UpdateMasterRequest(proto.Message):
             ``projects/*/locations/*/clusters/*``.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    zone = proto.Field(proto.STRING, number=2)
-
-    cluster_id = proto.Field(proto.STRING, number=3)
-
-    master_version = proto.Field(proto.STRING, number=4)
-
-    name = proto.Field(proto.STRING, number=7)
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    zone = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    cluster_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    master_version = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    name = proto.Field(
+        proto.STRING,
+        number=7,
+    )
 
 
 class SetMasterAuthRequest(proto.Message):
     r"""SetMasterAuthRequest updates the admin password of a cluster.
-
     Attributes:
         project_id (str):
             Required. Deprecated. The Google Developers Console `project
@@ -2723,26 +3184,36 @@ class SetMasterAuthRequest(proto.Message):
         GENERATE_PASSWORD = 2
         SET_USERNAME = 3
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    zone = proto.Field(proto.STRING, number=2)
-
-    cluster_id = proto.Field(proto.STRING, number=3)
-
-    action = proto.Field(proto.ENUM, number=4,
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    zone = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    cluster_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    action = proto.Field(
+        proto.ENUM,
+        number=4,
         enum=Action,
     )
-
-    update = proto.Field(proto.MESSAGE, number=5,
+    update = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message='MasterAuth',
     )
-
-    name = proto.Field(proto.STRING, number=7)
+    name = proto.Field(
+        proto.STRING,
+        number=7,
+    )
 
 
 class DeleteClusterRequest(proto.Message):
     r"""DeleteClusterRequest deletes a cluster.
-
     Attributes:
         project_id (str):
             Required. Deprecated. The Google Developers Console `project
@@ -2765,18 +3236,26 @@ class DeleteClusterRequest(proto.Message):
             ``projects/*/locations/*/clusters/*``.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    zone = proto.Field(proto.STRING, number=2)
-
-    cluster_id = proto.Field(proto.STRING, number=3)
-
-    name = proto.Field(proto.STRING, number=4)
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    zone = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    cluster_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    name = proto.Field(
+        proto.STRING,
+        number=4,
+    )
 
 
 class ListClustersRequest(proto.Message):
     r"""ListClustersRequest lists clusters.
-
     Attributes:
         project_id (str):
             Required. Deprecated. The Google Developers Console `project
@@ -2795,16 +3274,22 @@ class ListClustersRequest(proto.Message):
             Location "-" matches all zones and all regions.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    zone = proto.Field(proto.STRING, number=2)
-
-    parent = proto.Field(proto.STRING, number=4)
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    zone = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    parent = proto.Field(
+        proto.STRING,
+        number=4,
+    )
 
 
 class ListClustersResponse(proto.Message):
     r"""ListClustersResponse is the result of ListClustersRequest.
-
     Attributes:
         clusters (Sequence[google.container_v1beta1.types.Cluster]):
             A list of clusters in the project in the
@@ -2814,16 +3299,19 @@ class ListClustersResponse(proto.Message):
             clusters returned may be missing those zones.
     """
 
-    clusters = proto.RepeatedField(proto.MESSAGE, number=1,
+    clusters = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Cluster',
     )
-
-    missing_zones = proto.RepeatedField(proto.STRING, number=2)
+    missing_zones = proto.RepeatedField(
+        proto.STRING,
+        number=2,
+    )
 
 
 class GetOperationRequest(proto.Message):
     r"""GetOperationRequest gets a single operation.
-
     Attributes:
         project_id (str):
             Required. Deprecated. The Google Developers Console `project
@@ -2846,18 +3334,26 @@ class GetOperationRequest(proto.Message):
             ``projects/*/locations/*/operations/*``.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    zone = proto.Field(proto.STRING, number=2)
-
-    operation_id = proto.Field(proto.STRING, number=3)
-
-    name = proto.Field(proto.STRING, number=5)
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    zone = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    operation_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    name = proto.Field(
+        proto.STRING,
+        number=5,
+    )
 
 
 class ListOperationsRequest(proto.Message):
     r"""ListOperationsRequest lists operations.
-
     Attributes:
         project_id (str):
             Required. Deprecated. The Google Developers Console `project
@@ -2877,16 +3373,22 @@ class ListOperationsRequest(proto.Message):
             and all regions.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    zone = proto.Field(proto.STRING, number=2)
-
-    parent = proto.Field(proto.STRING, number=4)
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    zone = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    parent = proto.Field(
+        proto.STRING,
+        number=4,
+    )
 
 
 class CancelOperationRequest(proto.Message):
     r"""CancelOperationRequest cancels a single operation.
-
     Attributes:
         project_id (str):
             Required. Deprecated. The Google Developers Console `project
@@ -2909,13 +3411,22 @@ class CancelOperationRequest(proto.Message):
             ``projects/*/locations/*/operations/*``.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    zone = proto.Field(proto.STRING, number=2)
-
-    operation_id = proto.Field(proto.STRING, number=3)
-
-    name = proto.Field(proto.STRING, number=4)
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    zone = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    operation_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    name = proto.Field(
+        proto.STRING,
+        number=4,
+    )
 
 
 class ListOperationsResponse(proto.Message):
@@ -2932,16 +3443,19 @@ class ListOperationsResponse(proto.Message):
             operations from those zones.
     """
 
-    operations = proto.RepeatedField(proto.MESSAGE, number=1,
+    operations = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Operation',
     )
-
-    missing_zones = proto.RepeatedField(proto.STRING, number=2)
+    missing_zones = proto.RepeatedField(
+        proto.STRING,
+        number=2,
+    )
 
 
 class GetServerConfigRequest(proto.Message):
     r"""Gets the current Kubernetes Engine service configuration.
-
     Attributes:
         project_id (str):
             Required. Deprecated. The Google Developers Console `project
@@ -2959,16 +3473,22 @@ class GetServerConfigRequest(proto.Message):
             specified in the format ``projects/*/locations/*``.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    zone = proto.Field(proto.STRING, number=2)
-
-    name = proto.Field(proto.STRING, number=4)
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    zone = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    name = proto.Field(
+        proto.STRING,
+        number=4,
+    )
 
 
 class ServerConfig(proto.Message):
     r"""Kubernetes Engine service configuration.
-
     Attributes:
         default_cluster_version (str):
             Version of Kubernetes the service deploys by
@@ -2986,6 +3506,7 @@ class ServerConfig(proto.Message):
         channels (Sequence[google.container_v1beta1.types.ServerConfig.ReleaseChannelConfig]):
             List of release channel configurations.
     """
+
     class ReleaseChannelConfig(proto.Message):
         r"""ReleaseChannelConfig exposes configuration for a release
         channel.
@@ -3003,9 +3524,9 @@ class ServerConfig(proto.Message):
             valid_versions (Sequence[str]):
                 List of valid versions for the channel.
         """
+
         class AvailableVersion(proto.Message):
             r"""Deprecated.
-
             Attributes:
                 version (str):
                     Kubernetes version.
@@ -3013,40 +3534,63 @@ class ServerConfig(proto.Message):
                     Reason for availability.
             """
 
-            version = proto.Field(proto.STRING, number=1)
+            version = proto.Field(
+                proto.STRING,
+                number=1,
+            )
+            reason = proto.Field(
+                proto.STRING,
+                number=2,
+            )
 
-            reason = proto.Field(proto.STRING, number=2)
-
-        channel = proto.Field(proto.ENUM, number=1,
+        channel = proto.Field(
+            proto.ENUM,
+            number=1,
             enum='ReleaseChannel.Channel',
         )
-
-        default_version = proto.Field(proto.STRING, number=2)
-
-        available_versions = proto.RepeatedField(proto.MESSAGE, number=3,
+        default_version = proto.Field(
+            proto.STRING,
+            number=2,
+        )
+        available_versions = proto.RepeatedField(
+            proto.MESSAGE,
+            number=3,
             message='ServerConfig.ReleaseChannelConfig.AvailableVersion',
         )
+        valid_versions = proto.RepeatedField(
+            proto.STRING,
+            number=4,
+        )
 
-        valid_versions = proto.RepeatedField(proto.STRING, number=4)
-
-    default_cluster_version = proto.Field(proto.STRING, number=1)
-
-    valid_node_versions = proto.RepeatedField(proto.STRING, number=3)
-
-    default_image_type = proto.Field(proto.STRING, number=4)
-
-    valid_image_types = proto.RepeatedField(proto.STRING, number=5)
-
-    valid_master_versions = proto.RepeatedField(proto.STRING, number=6)
-
-    channels = proto.RepeatedField(proto.MESSAGE, number=9,
+    default_cluster_version = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    valid_node_versions = proto.RepeatedField(
+        proto.STRING,
+        number=3,
+    )
+    default_image_type = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    valid_image_types = proto.RepeatedField(
+        proto.STRING,
+        number=5,
+    )
+    valid_master_versions = proto.RepeatedField(
+        proto.STRING,
+        number=6,
+    )
+    channels = proto.RepeatedField(
+        proto.MESSAGE,
+        number=9,
         message=ReleaseChannelConfig,
     )
 
 
 class CreateNodePoolRequest(proto.Message):
     r"""CreateNodePoolRequest creates a node pool for a cluster.
-
     Attributes:
         project_id (str):
             Required. Deprecated. The Google Developers Console `project
@@ -3071,22 +3615,31 @@ class CreateNodePoolRequest(proto.Message):
             ``projects/*/locations/*/clusters/*``.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    zone = proto.Field(proto.STRING, number=2)
-
-    cluster_id = proto.Field(proto.STRING, number=3)
-
-    node_pool = proto.Field(proto.MESSAGE, number=4,
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    zone = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    cluster_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    node_pool = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='NodePool',
     )
-
-    parent = proto.Field(proto.STRING, number=6)
+    parent = proto.Field(
+        proto.STRING,
+        number=6,
+    )
 
 
 class DeleteNodePoolRequest(proto.Message):
     r"""DeleteNodePoolRequest deletes a node pool for a cluster.
-
     Attributes:
         project_id (str):
             Required. Deprecated. The Google Developers Console `project
@@ -3113,20 +3666,30 @@ class DeleteNodePoolRequest(proto.Message):
             ``projects/*/locations/*/clusters/*/nodePools/*``.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    zone = proto.Field(proto.STRING, number=2)
-
-    cluster_id = proto.Field(proto.STRING, number=3)
-
-    node_pool_id = proto.Field(proto.STRING, number=4)
-
-    name = proto.Field(proto.STRING, number=6)
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    zone = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    cluster_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    node_pool_id = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    name = proto.Field(
+        proto.STRING,
+        number=6,
+    )
 
 
 class ListNodePoolsRequest(proto.Message):
     r"""ListNodePoolsRequest lists the node pool(s) for a cluster.
-
     Attributes:
         project_id (str):
             Required. Deprecated. The Google Developers Console `project
@@ -3149,18 +3712,26 @@ class ListNodePoolsRequest(proto.Message):
             ``projects/*/locations/*/clusters/*``.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    zone = proto.Field(proto.STRING, number=2)
-
-    cluster_id = proto.Field(proto.STRING, number=3)
-
-    parent = proto.Field(proto.STRING, number=5)
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    zone = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    cluster_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    parent = proto.Field(
+        proto.STRING,
+        number=5,
+    )
 
 
 class GetNodePoolRequest(proto.Message):
     r"""GetNodePoolRequest retrieves a node pool for a cluster.
-
     Attributes:
         project_id (str):
             Required. Deprecated. The Google Developers Console `project
@@ -3187,15 +3758,26 @@ class GetNodePoolRequest(proto.Message):
             ``projects/*/locations/*/clusters/*/nodePools/*``.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    zone = proto.Field(proto.STRING, number=2)
-
-    cluster_id = proto.Field(proto.STRING, number=3)
-
-    node_pool_id = proto.Field(proto.STRING, number=4)
-
-    name = proto.Field(proto.STRING, number=6)
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    zone = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    cluster_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    node_pool_id = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    name = proto.Field(
+        proto.STRING,
+        number=6,
+    )
 
 
 class NodePool(proto.Message):
@@ -3312,51 +3894,80 @@ class NodePool(proto.Message):
                 status is Ready.
         """
 
-        max_surge = proto.Field(proto.INT32, number=1)
+        max_surge = proto.Field(
+            proto.INT32,
+            number=1,
+        )
+        max_unavailable = proto.Field(
+            proto.INT32,
+            number=2,
+        )
 
-        max_unavailable = proto.Field(proto.INT32, number=2)
-
-    name = proto.Field(proto.STRING, number=1)
-
-    config = proto.Field(proto.MESSAGE, number=2,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    config = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='NodeConfig',
     )
-
-    initial_node_count = proto.Field(proto.INT32, number=3)
-
-    locations = proto.RepeatedField(proto.STRING, number=13)
-
-    self_link = proto.Field(proto.STRING, number=100)
-
-    version = proto.Field(proto.STRING, number=101)
-
-    instance_group_urls = proto.RepeatedField(proto.STRING, number=102)
-
-    status = proto.Field(proto.ENUM, number=103,
+    initial_node_count = proto.Field(
+        proto.INT32,
+        number=3,
+    )
+    locations = proto.RepeatedField(
+        proto.STRING,
+        number=13,
+    )
+    self_link = proto.Field(
+        proto.STRING,
+        number=100,
+    )
+    version = proto.Field(
+        proto.STRING,
+        number=101,
+    )
+    instance_group_urls = proto.RepeatedField(
+        proto.STRING,
+        number=102,
+    )
+    status = proto.Field(
+        proto.ENUM,
+        number=103,
         enum=Status,
     )
-
-    status_message = proto.Field(proto.STRING, number=104)
-
-    autoscaling = proto.Field(proto.MESSAGE, number=4,
+    status_message = proto.Field(
+        proto.STRING,
+        number=104,
+    )
+    autoscaling = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='NodePoolAutoscaling',
     )
-
-    management = proto.Field(proto.MESSAGE, number=5,
+    management = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message='NodeManagement',
     )
-
-    max_pods_constraint = proto.Field(proto.MESSAGE, number=6,
+    max_pods_constraint = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message='MaxPodsConstraint',
     )
-
-    conditions = proto.RepeatedField(proto.MESSAGE, number=105,
+    conditions = proto.RepeatedField(
+        proto.MESSAGE,
+        number=105,
         message='StatusCondition',
     )
-
-    pod_ipv4_cidr_size = proto.Field(proto.INT32, number=7)
-
-    upgrade_settings = proto.Field(proto.MESSAGE, number=107,
+    pod_ipv4_cidr_size = proto.Field(
+        proto.INT32,
+        number=7,
+    )
+    upgrade_settings = proto.Field(
+        proto.MESSAGE,
+        number=107,
         message=UpgradeSettings,
     )
 
@@ -3377,11 +3988,17 @@ class NodeManagement(proto.Message):
             pool.
     """
 
-    auto_upgrade = proto.Field(proto.BOOL, number=1)
-
-    auto_repair = proto.Field(proto.BOOL, number=2)
-
-    upgrade_options = proto.Field(proto.MESSAGE, number=10,
+    auto_upgrade = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
+    auto_repair = proto.Field(
+        proto.BOOL,
+        number=2,
+    )
+    upgrade_options = proto.Field(
+        proto.MESSAGE,
+        number=10,
         message='AutoUpgradeOptions',
     )
 
@@ -3401,9 +4018,14 @@ class AutoUpgradeOptions(proto.Message):
             commence with the description of the upgrade.
     """
 
-    auto_upgrade_start_time = proto.Field(proto.STRING, number=1)
-
-    description = proto.Field(proto.STRING, number=2)
+    auto_upgrade_start_time = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    description = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class MaintenancePolicy(proto.Message):
@@ -3424,11 +4046,15 @@ class MaintenancePolicy(proto.Message):
             policy.
     """
 
-    window = proto.Field(proto.MESSAGE, number=1,
+    window = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='MaintenanceWindow',
     )
-
-    resource_version = proto.Field(proto.STRING, number=3)
+    resource_version = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class MaintenanceWindow(proto.Message):
@@ -3451,22 +4077,28 @@ class MaintenanceWindow(proto.Message):
             windows.
     """
 
-    daily_maintenance_window = proto.Field(proto.MESSAGE, number=2, oneof='policy',
+    daily_maintenance_window = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='policy',
         message='DailyMaintenanceWindow',
     )
-
-    recurring_window = proto.Field(proto.MESSAGE, number=3, oneof='policy',
+    recurring_window = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        oneof='policy',
         message='RecurringTimeWindow',
     )
-
-    maintenance_exclusions = proto.MapField(proto.STRING, proto.MESSAGE, number=4,
+    maintenance_exclusions = proto.MapField(
+        proto.STRING,
+        proto.MESSAGE,
+        number=4,
         message='TimeWindow',
     )
 
 
 class TimeWindow(proto.Message):
     r"""Represents an arbitrary window of time.
-
     Attributes:
         start_time (google.protobuf.timestamp_pb2.Timestamp):
             The time that the window first starts.
@@ -3475,18 +4107,20 @@ class TimeWindow(proto.Message):
             should take place after the start time.
     """
 
-    start_time = proto.Field(proto.MESSAGE, number=1,
-        message=timestamp.Timestamp,
+    start_time = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=timestamp_pb2.Timestamp,
     )
-
-    end_time = proto.Field(proto.MESSAGE, number=2,
-        message=timestamp.Timestamp,
+    end_time = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=timestamp_pb2.Timestamp,
     )
 
 
 class RecurringTimeWindow(proto.Message):
     r"""Represents an arbitrary window of time that recurs.
-
     Attributes:
         window (google.container_v1beta1.types.TimeWindow):
             The window of the first recurrence.
@@ -3531,16 +4165,19 @@ class RecurringTimeWindow(proto.Message):
             SECONDLY are not supported.
     """
 
-    window = proto.Field(proto.MESSAGE, number=1,
+    window = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='TimeWindow',
     )
-
-    recurrence = proto.Field(proto.STRING, number=2)
+    recurrence = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class DailyMaintenanceWindow(proto.Message):
     r"""Time window specified for daily maintenance operations.
-
     Attributes:
         start_time (str):
             Time within the maintenance window to start the maintenance
@@ -3551,9 +4188,14 @@ class DailyMaintenanceWindow(proto.Message):
             chosen to be smallest possible in the given scenario.
     """
 
-    start_time = proto.Field(proto.STRING, number=2)
-
-    duration = proto.Field(proto.STRING, number=3)
+    start_time = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    duration = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class SetNodePoolManagementRequest(proto.Message):
@@ -3589,19 +4231,31 @@ class SetNodePoolManagementRequest(proto.Message):
             format ``projects/*/locations/*/clusters/*/nodePools/*``.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    zone = proto.Field(proto.STRING, number=2)
-
-    cluster_id = proto.Field(proto.STRING, number=3)
-
-    node_pool_id = proto.Field(proto.STRING, number=4)
-
-    management = proto.Field(proto.MESSAGE, number=5,
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    zone = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    cluster_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    node_pool_id = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    management = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message='NodeManagement',
     )
-
-    name = proto.Field(proto.STRING, number=7)
+    name = proto.Field(
+        proto.STRING,
+        number=7,
+    )
 
 
 class SetNodePoolSizeRequest(proto.Message):
@@ -3637,17 +4291,30 @@ class SetNodePoolSizeRequest(proto.Message):
             ``projects/*/locations/*/clusters/*/nodePools/*``.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    zone = proto.Field(proto.STRING, number=2)
-
-    cluster_id = proto.Field(proto.STRING, number=3)
-
-    node_pool_id = proto.Field(proto.STRING, number=4)
-
-    node_count = proto.Field(proto.INT32, number=5)
-
-    name = proto.Field(proto.STRING, number=7)
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    zone = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    cluster_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    node_pool_id = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    node_count = proto.Field(
+        proto.INT32,
+        number=5,
+    )
+    name = proto.Field(
+        proto.STRING,
+        number=7,
+    )
 
 
 class RollbackNodePoolUpgradeRequest(proto.Message):
@@ -3681,26 +4348,38 @@ class RollbackNodePoolUpgradeRequest(proto.Message):
             ``projects/*/locations/*/clusters/*/nodePools/*``.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    zone = proto.Field(proto.STRING, number=2)
-
-    cluster_id = proto.Field(proto.STRING, number=3)
-
-    node_pool_id = proto.Field(proto.STRING, number=4)
-
-    name = proto.Field(proto.STRING, number=6)
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    zone = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    cluster_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    node_pool_id = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    name = proto.Field(
+        proto.STRING,
+        number=6,
+    )
 
 
 class ListNodePoolsResponse(proto.Message):
     r"""ListNodePoolsResponse is the result of ListNodePoolsRequest.
-
     Attributes:
         node_pools (Sequence[google.container_v1beta1.types.NodePool]):
             A list of node pools for a cluster.
     """
 
-    node_pools = proto.RepeatedField(proto.MESSAGE, number=1,
+    node_pools = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='NodePool',
     )
 
@@ -3734,21 +4413,29 @@ class ClusterAutoscaling(proto.Message):
         OPTIMIZE_UTILIZATION = 1
         BALANCED = 2
 
-    enable_node_autoprovisioning = proto.Field(proto.BOOL, number=1)
-
-    resource_limits = proto.RepeatedField(proto.MESSAGE, number=2,
+    enable_node_autoprovisioning = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
+    resource_limits = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='ResourceLimit',
     )
-
-    autoscaling_profile = proto.Field(proto.ENUM, number=3,
+    autoscaling_profile = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=AutoscalingProfile,
     )
-
-    autoprovisioning_node_pool_defaults = proto.Field(proto.MESSAGE, number=4,
+    autoprovisioning_node_pool_defaults = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='AutoprovisioningNodePoolDefaults',
     )
-
-    autoprovisioning_locations = proto.RepeatedField(proto.STRING, number=5)
+    autoprovisioning_locations = proto.RepeatedField(
+        proto.STRING,
+        number=5,
+    )
 
 
 class AutoprovisioningNodePoolDefaults(proto.Message):
@@ -3818,29 +4505,45 @@ class AutoprovisioningNodePoolDefaults(proto.Message):
             https://cloud.google.com/compute/docs/disks/customer-managed-encryption
     """
 
-    oauth_scopes = proto.RepeatedField(proto.STRING, number=1)
-
-    service_account = proto.Field(proto.STRING, number=2)
-
-    upgrade_settings = proto.Field(proto.MESSAGE, number=3,
+    oauth_scopes = proto.RepeatedField(
+        proto.STRING,
+        number=1,
+    )
+    service_account = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    upgrade_settings = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='NodePool.UpgradeSettings',
     )
-
-    management = proto.Field(proto.MESSAGE, number=4,
+    management = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='NodeManagement',
     )
-
-    min_cpu_platform = proto.Field(proto.STRING, number=5)
-
-    disk_size_gb = proto.Field(proto.INT32, number=6)
-
-    disk_type = proto.Field(proto.STRING, number=7)
-
-    shielded_instance_config = proto.Field(proto.MESSAGE, number=8,
+    min_cpu_platform = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    disk_size_gb = proto.Field(
+        proto.INT32,
+        number=6,
+    )
+    disk_type = proto.Field(
+        proto.STRING,
+        number=7,
+    )
+    shielded_instance_config = proto.Field(
+        proto.MESSAGE,
+        number=8,
         message='ShieldedInstanceConfig',
     )
-
-    boot_disk_kms_key = proto.Field(proto.STRING, number=9)
+    boot_disk_kms_key = proto.Field(
+        proto.STRING,
+        number=9,
+    )
 
 
 class ResourceLimit(proto.Message):
@@ -3859,11 +4562,18 @@ class ResourceLimit(proto.Message):
             cluster.
     """
 
-    resource_type = proto.Field(proto.STRING, number=1)
-
-    minimum = proto.Field(proto.INT64, number=2)
-
-    maximum = proto.Field(proto.INT64, number=3)
+    resource_type = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    minimum = proto.Field(
+        proto.INT64,
+        number=2,
+    )
+    maximum = proto.Field(
+        proto.INT64,
+        number=3,
+    )
 
 
 class NodePoolAutoscaling(proto.Message):
@@ -3885,13 +4595,22 @@ class NodePoolAutoscaling(proto.Message):
             Can this node pool be deleted automatically.
     """
 
-    enabled = proto.Field(proto.BOOL, number=1)
-
-    min_node_count = proto.Field(proto.INT32, number=2)
-
-    max_node_count = proto.Field(proto.INT32, number=3)
-
-    autoprovisioned = proto.Field(proto.BOOL, number=4)
+    enabled = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
+    min_node_count = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    max_node_count = proto.Field(
+        proto.INT32,
+        number=3,
+    )
+    autoprovisioned = proto.Field(
+        proto.BOOL,
+        number=4,
+    )
 
 
 class SetLabelsRequest(proto.Message):
@@ -3931,17 +4650,31 @@ class SetLabelsRequest(proto.Message):
             ``projects/*/locations/*/clusters/*``.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    zone = proto.Field(proto.STRING, number=2)
-
-    cluster_id = proto.Field(proto.STRING, number=3)
-
-    resource_labels = proto.MapField(proto.STRING, proto.STRING, number=4)
-
-    label_fingerprint = proto.Field(proto.STRING, number=5)
-
-    name = proto.Field(proto.STRING, number=7)
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    zone = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    cluster_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    resource_labels = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=4,
+    )
+    label_fingerprint = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    name = proto.Field(
+        proto.STRING,
+        number=7,
+    )
 
 
 class SetLegacyAbacRequest(proto.Message):
@@ -3973,15 +4706,26 @@ class SetLegacyAbacRequest(proto.Message):
             ``projects/*/locations/*/clusters/*``.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    zone = proto.Field(proto.STRING, number=2)
-
-    cluster_id = proto.Field(proto.STRING, number=3)
-
-    enabled = proto.Field(proto.BOOL, number=4)
-
-    name = proto.Field(proto.STRING, number=6)
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    zone = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    cluster_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    enabled = proto.Field(
+        proto.BOOL,
+        number=4,
+    )
+    name = proto.Field(
+        proto.STRING,
+        number=6,
+    )
 
 
 class StartIPRotationRequest(proto.Message):
@@ -4014,15 +4758,26 @@ class StartIPRotationRequest(proto.Message):
             rotation.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    zone = proto.Field(proto.STRING, number=2)
-
-    cluster_id = proto.Field(proto.STRING, number=3)
-
-    name = proto.Field(proto.STRING, number=6)
-
-    rotate_credentials = proto.Field(proto.BOOL, number=7)
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    zone = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    cluster_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    name = proto.Field(
+        proto.STRING,
+        number=6,
+    )
+    rotate_credentials = proto.Field(
+        proto.BOOL,
+        number=7,
+    )
 
 
 class CompleteIPRotationRequest(proto.Message):
@@ -4051,18 +4806,26 @@ class CompleteIPRotationRequest(proto.Message):
             ``projects/*/locations/*/clusters/*``.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    zone = proto.Field(proto.STRING, number=2)
-
-    cluster_id = proto.Field(proto.STRING, number=3)
-
-    name = proto.Field(proto.STRING, number=7)
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    zone = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    cluster_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    name = proto.Field(
+        proto.STRING,
+        number=7,
+    )
 
 
 class AcceleratorConfig(proto.Message):
     r"""AcceleratorConfig represents a Hardware Accelerator request.
-
     Attributes:
         accelerator_count (int):
             The number of the accelerator cards exposed
@@ -4073,9 +4836,14 @@ class AcceleratorConfig(proto.Message):
             `here <https://cloud.google.com/compute/docs/gpus>`__
     """
 
-    accelerator_count = proto.Field(proto.INT64, number=1)
-
-    accelerator_type = proto.Field(proto.STRING, number=2)
+    accelerator_count = proto.Field(
+        proto.INT64,
+        number=1,
+    )
+    accelerator_type = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class WorkloadMetadataConfig(proto.Message):
@@ -4108,11 +4876,14 @@ class WorkloadMetadataConfig(proto.Message):
         GCE_METADATA = 1
         GKE_METADATA = 2
 
-    node_metadata = proto.Field(proto.ENUM, number=1,
+    node_metadata = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=NodeMetadata,
     )
-
-    mode = proto.Field(proto.ENUM, number=2,
+    mode = proto.Field(
+        proto.ENUM,
+        number=2,
         enum=Mode,
     )
 
@@ -4146,17 +4917,27 @@ class SetNetworkPolicyRequest(proto.Message):
             ``projects/*/locations/*/clusters/*``.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    zone = proto.Field(proto.STRING, number=2)
-
-    cluster_id = proto.Field(proto.STRING, number=3)
-
-    network_policy = proto.Field(proto.MESSAGE, number=4,
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    zone = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    cluster_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    network_policy = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='NetworkPolicy',
     )
-
-    name = proto.Field(proto.STRING, number=6)
+    name = proto.Field(
+        proto.STRING,
+        number=6,
+    )
 
 
 class SetMaintenancePolicyRequest(proto.Message):
@@ -4184,17 +4965,27 @@ class SetMaintenancePolicyRequest(proto.Message):
             ``projects/*/locations/*/clusters/*``.
     """
 
-    project_id = proto.Field(proto.STRING, number=1)
-
-    zone = proto.Field(proto.STRING, number=2)
-
-    cluster_id = proto.Field(proto.STRING, number=3)
-
-    maintenance_policy = proto.Field(proto.MESSAGE, number=4,
+    project_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    zone = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    cluster_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    maintenance_policy = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='MaintenancePolicy',
     )
-
-    name = proto.Field(proto.STRING, number=5)
+    name = proto.Field(
+        proto.STRING,
+        number=5,
+    )
 
 
 class ListLocationsRequest(proto.Message):
@@ -4207,7 +4998,10 @@ class ListLocationsRequest(proto.Message):
             Specified in the format ``projects/*``.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class ListLocationsResponse(proto.Message):
@@ -4229,11 +5023,15 @@ class ListLocationsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    locations = proto.RepeatedField(proto.MESSAGE, number=1,
+    locations = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Location',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class Location(proto.Message):
@@ -4257,13 +5055,19 @@ class Location(proto.Message):
         ZONE = 1
         REGION = 2
 
-    type_ = proto.Field(proto.ENUM, number=1,
+    type_ = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=LocationType,
     )
-
-    name = proto.Field(proto.STRING, number=2)
-
-    recommended = proto.Field(proto.BOOL, number=3)
+    name = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    recommended = proto.Field(
+        proto.BOOL,
+        number=3,
+    )
 
 
 class StatusCondition(proto.Message):
@@ -4289,13 +5093,18 @@ class StatusCondition(proto.Message):
         SET_BY_OPERATOR = 4
         CLOUD_KMS_KEY_ERROR = 7
 
-    code = proto.Field(proto.ENUM, number=1,
+    code = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=Code,
     )
-
-    message = proto.Field(proto.STRING, number=2)
-
-    canonical_code = proto.Field(proto.ENUM, number=3,
+    message = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    canonical_code = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=gr_code.Code,
     )
 
@@ -4331,17 +5140,26 @@ class NetworkConfig(proto.Message):
             kube-proxy implementation.
     """
 
-    network = proto.Field(proto.STRING, number=1)
-
-    subnetwork = proto.Field(proto.STRING, number=2)
-
-    enable_intra_node_visibility = proto.Field(proto.BOOL, number=5)
-
-    default_snat_status = proto.Field(proto.MESSAGE, number=7,
+    network = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    subnetwork = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    enable_intra_node_visibility = proto.Field(
+        proto.BOOL,
+        number=5,
+    )
+    default_snat_status = proto.Field(
+        proto.MESSAGE,
+        number=7,
         message='DefaultSnatStatus',
     )
-
-    datapath_provider = proto.Field(proto.ENUM, number=11,
+    datapath_provider = proto.Field(
+        proto.ENUM,
+        number=11,
         enum='DatapathProvider',
     )
 
@@ -4373,13 +5191,22 @@ class ListUsableSubnetworksRequest(proto.Message):
             requests to get the next page of results.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    filter = proto.Field(proto.STRING, number=2)
-
-    page_size = proto.Field(proto.INT32, number=3)
-
-    page_token = proto.Field(proto.STRING, number=4)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    filter = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=3,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=4,
+    )
 
 
 class ListUsableSubnetworksResponse(proto.Message):
@@ -4402,16 +5229,19 @@ class ListUsableSubnetworksResponse(proto.Message):
     def raw_page(self):
         return self
 
-    subnetworks = proto.RepeatedField(proto.MESSAGE, number=1,
+    subnetworks = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='UsableSubnetwork',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class UsableSubnetworkSecondaryRange(proto.Message):
     r"""Secondary IP range of a usable subnetwork.
-
     Attributes:
         range_name (str):
             The name associated with this subnetwork
@@ -4432,11 +5262,17 @@ class UsableSubnetworkSecondaryRange(proto.Message):
         IN_USE_SHAREABLE_POD = 3
         IN_USE_MANAGED_POD = 4
 
-    range_name = proto.Field(proto.STRING, number=1)
-
-    ip_cidr_range = proto.Field(proto.STRING, number=2)
-
-    status = proto.Field(proto.ENUM, number=3,
+    range_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    ip_cidr_range = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    status = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=Status,
     )
 
@@ -4467,17 +5303,27 @@ class UsableSubnetwork(proto.Message):
             message will be given by status_message.
     """
 
-    subnetwork = proto.Field(proto.STRING, number=1)
-
-    network = proto.Field(proto.STRING, number=2)
-
-    ip_cidr_range = proto.Field(proto.STRING, number=3)
-
-    secondary_ip_ranges = proto.RepeatedField(proto.MESSAGE, number=4,
+    subnetwork = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    network = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    ip_cidr_range = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    secondary_ip_ranges = proto.RepeatedField(
+        proto.MESSAGE,
+        number=4,
         message='UsableSubnetworkSecondaryRange',
     )
-
-    status_message = proto.Field(proto.STRING, number=5)
+    status_message = proto.Field(
+        proto.STRING,
+        number=5,
+    )
 
 
 class VerticalPodAutoscaling(proto.Message):
@@ -4490,7 +5336,10 @@ class VerticalPodAutoscaling(proto.Message):
             Enables vertical pod autoscaling.
     """
 
-    enabled = proto.Field(proto.BOOL, number=1)
+    enabled = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
 
 
 class DefaultSnatStatus(proto.Message):
@@ -4502,7 +5351,10 @@ class DefaultSnatStatus(proto.Message):
             Disables cluster default sNAT rules.
     """
 
-    disabled = proto.Field(proto.BOOL, number=1)
+    disabled = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
 
 
 class IntraNodeVisibilityConfig(proto.Message):
@@ -4515,19 +5367,24 @@ class IntraNodeVisibilityConfig(proto.Message):
             cluster.
     """
 
-    enabled = proto.Field(proto.BOOL, number=1)
+    enabled = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
 
 
 class MaxPodsConstraint(proto.Message):
     r"""Constraints applied to pods.
-
     Attributes:
         max_pods_per_node (int):
             Constraint enforced on the max num of pods
             per node.
     """
 
-    max_pods_per_node = proto.Field(proto.INT64, number=1)
+    max_pods_per_node = proto.Field(
+        proto.INT64,
+        number=1,
+    )
 
 
 class WorkloadIdentityConfig(proto.Message):
@@ -4546,16 +5403,22 @@ class WorkloadIdentityConfig(proto.Message):
             provider.
     """
 
-    identity_namespace = proto.Field(proto.STRING, number=1)
-
-    workload_pool = proto.Field(proto.STRING, number=2)
-
-    identity_provider = proto.Field(proto.STRING, number=3)
+    identity_namespace = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    workload_pool = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    identity_provider = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class DatabaseEncryption(proto.Message):
     r"""Configuration of etcd encryption.
-
     Attributes:
         state (google.container_v1beta1.types.DatabaseEncryption.State):
             Denotes the state of etcd encryption.
@@ -4571,16 +5434,19 @@ class DatabaseEncryption(proto.Message):
         ENCRYPTED = 1
         DECRYPTED = 2
 
-    state = proto.Field(proto.ENUM, number=2,
+    state = proto.Field(
+        proto.ENUM,
+        number=2,
         enum=State,
     )
-
-    key_name = proto.Field(proto.STRING, number=1)
+    key_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class ResourceUsageExportConfig(proto.Message):
     r"""Configuration for exporting cluster resource usages.
-
     Attributes:
         bigquery_destination (google.container_v1beta1.types.ResourceUsageExportConfig.BigQueryDestination):
             Configuration to use BigQuery as usage export
@@ -4594,6 +5460,7 @@ class ResourceUsageExportConfig(proto.Message):
             Configuration to enable resource consumption
             metering.
     """
+
     class BigQueryDestination(proto.Message):
         r"""Parameters for using BigQuery as the destination of resource
         usage export.
@@ -4603,11 +5470,13 @@ class ResourceUsageExportConfig(proto.Message):
                 The ID of a BigQuery Dataset.
         """
 
-        dataset_id = proto.Field(proto.STRING, number=1)
+        dataset_id = proto.Field(
+            proto.STRING,
+            number=1,
+        )
 
     class ConsumptionMeteringConfig(proto.Message):
         r"""Parameters for controlling consumption metering.
-
         Attributes:
             enabled (bool):
                 Whether to enable consumption metering for
@@ -4616,29 +5485,39 @@ class ResourceUsageExportConfig(proto.Message):
                 consumption records.
         """
 
-        enabled = proto.Field(proto.BOOL, number=1)
+        enabled = proto.Field(
+            proto.BOOL,
+            number=1,
+        )
 
-    bigquery_destination = proto.Field(proto.MESSAGE, number=1,
+    bigquery_destination = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=BigQueryDestination,
     )
-
-    enable_network_egress_metering = proto.Field(proto.BOOL, number=2)
-
-    consumption_metering_config = proto.Field(proto.MESSAGE, number=3,
+    enable_network_egress_metering = proto.Field(
+        proto.BOOL,
+        number=2,
+    )
+    consumption_metering_config = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=ConsumptionMeteringConfig,
     )
 
 
 class ShieldedNodes(proto.Message):
     r"""Configuration of Shielded Nodes feature.
-
     Attributes:
         enabled (bool):
             Whether Shielded Nodes features are enabled
             on all nodes in this cluster.
     """
 
-    enabled = proto.Field(proto.BOOL, number=1)
+    enabled = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
 
 
 class GetOpenIDConfigRequest(proto.Message):
@@ -4653,7 +5532,10 @@ class GetOpenIDConfigRequest(proto.Message):
             ``projects/*/locations/*/clusters/*``.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class GetOpenIDConfigResponse(proto.Message):
@@ -4678,19 +5560,34 @@ class GetOpenIDConfigResponse(proto.Message):
             Supported grant types.
     """
 
-    issuer = proto.Field(proto.STRING, number=1)
-
-    jwks_uri = proto.Field(proto.STRING, number=2)
-
-    response_types_supported = proto.RepeatedField(proto.STRING, number=3)
-
-    subject_types_supported = proto.RepeatedField(proto.STRING, number=4)
-
-    id_token_signing_alg_values_supported = proto.RepeatedField(proto.STRING, number=5)
-
-    claims_supported = proto.RepeatedField(proto.STRING, number=6)
-
-    grant_types = proto.RepeatedField(proto.STRING, number=7)
+    issuer = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    jwks_uri = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    response_types_supported = proto.RepeatedField(
+        proto.STRING,
+        number=3,
+    )
+    subject_types_supported = proto.RepeatedField(
+        proto.STRING,
+        number=4,
+    )
+    id_token_signing_alg_values_supported = proto.RepeatedField(
+        proto.STRING,
+        number=5,
+    )
+    claims_supported = proto.RepeatedField(
+        proto.STRING,
+        number=6,
+    )
+    grant_types = proto.RepeatedField(
+        proto.STRING,
+        number=7,
+    )
 
 
 class GetJSONWebKeysRequest(proto.Message):
@@ -4706,12 +5603,14 @@ class GetJSONWebKeysRequest(proto.Message):
             ``projects/*/locations/*/clusters/*``.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class Jwk(proto.Message):
     r"""Jwk is a JSON Web Key as specified in RFC 7517
-
     Attributes:
         kty (str):
             Key Type.
@@ -4733,23 +5632,42 @@ class Jwk(proto.Message):
             Used for ECDSA keys.
     """
 
-    kty = proto.Field(proto.STRING, number=1)
-
-    alg = proto.Field(proto.STRING, number=2)
-
-    use = proto.Field(proto.STRING, number=3)
-
-    kid = proto.Field(proto.STRING, number=4)
-
-    n = proto.Field(proto.STRING, number=5)
-
-    e = proto.Field(proto.STRING, number=6)
-
-    x = proto.Field(proto.STRING, number=7)
-
-    y = proto.Field(proto.STRING, number=8)
-
-    crv = proto.Field(proto.STRING, number=9)
+    kty = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    alg = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    use = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    kid = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    n = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    e = proto.Field(
+        proto.STRING,
+        number=6,
+    )
+    x = proto.Field(
+        proto.STRING,
+        number=7,
+    )
+    y = proto.Field(
+        proto.STRING,
+        number=8,
+    )
+    crv = proto.Field(
+        proto.STRING,
+        number=9,
+    )
 
 
 class GetJSONWebKeysResponse(proto.Message):
@@ -4762,7 +5680,9 @@ class GetJSONWebKeysResponse(proto.Message):
             cluster to sign token requests.
     """
 
-    keys = proto.RepeatedField(proto.MESSAGE, number=1,
+    keys = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Jwk',
     )
 
@@ -4786,14 +5706,15 @@ class ReleaseChannel(proto.Message):
         REGULAR = 2
         STABLE = 3
 
-    channel = proto.Field(proto.ENUM, number=1,
+    channel = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=Channel,
     )
 
 
 class TpuConfig(proto.Message):
     r"""Configuration for Cloud TPU.
-
     Attributes:
         enabled (bool):
             Whether Cloud TPU integration is enabled or
@@ -4806,27 +5727,33 @@ class TpuConfig(proto.Message):
             VPC.
     """
 
-    enabled = proto.Field(proto.BOOL, number=1)
-
-    use_service_networking = proto.Field(proto.BOOL, number=2)
-
-    ipv4_cidr_block = proto.Field(proto.STRING, number=3)
+    enabled = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
+    use_service_networking = proto.Field(
+        proto.BOOL,
+        number=2,
+    )
+    ipv4_cidr_block = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class Master(proto.Message):
-    r"""Master is the configuration for components on master."""
+    r"""Master is the configuration for components on master.    """
 
 
 class NotificationConfig(proto.Message):
     r"""NotificationConfig is the configuration of notifications.
-
     Attributes:
         pubsub (google.container_v1beta1.types.NotificationConfig.PubSub):
             Notification config for Pub/Sub.
     """
+
     class PubSub(proto.Message):
         r"""Pub/Sub specific notification config.
-
         Attributes:
             enabled (bool):
                 Enable notifications for Pub/Sub.
@@ -4836,11 +5763,18 @@ class NotificationConfig(proto.Message):
                 ``projects/{project}/topics/{topic}``.
         """
 
-        enabled = proto.Field(proto.BOOL, number=1)
+        enabled = proto.Field(
+            proto.BOOL,
+            number=1,
+        )
+        topic = proto.Field(
+            proto.STRING,
+            number=2,
+        )
 
-        topic = proto.Field(proto.STRING, number=2)
-
-    pubsub = proto.Field(proto.MESSAGE, number=1,
+    pubsub = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=PubSub,
     )
 
@@ -4855,7 +5789,10 @@ class ConfidentialNodes(proto.Message):
             for all nodes in this cluster.
     """
 
-    enabled = proto.Field(proto.BOOL, number=1)
+    enabled = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
 
 
 class UpgradeEvent(proto.Message):
@@ -4883,21 +5820,32 @@ class UpgradeEvent(proto.Message):
             relative path of the node pool.
     """
 
-    resource_type = proto.Field(proto.ENUM, number=1,
+    resource_type = proto.Field(
+        proto.ENUM,
+        number=1,
         enum='UpgradeResourceType',
     )
-
-    operation = proto.Field(proto.STRING, number=2)
-
-    operation_start_time = proto.Field(proto.MESSAGE, number=3,
-        message=timestamp.Timestamp,
+    operation = proto.Field(
+        proto.STRING,
+        number=2,
     )
-
-    current_version = proto.Field(proto.STRING, number=4)
-
-    target_version = proto.Field(proto.STRING, number=5)
-
-    resource = proto.Field(proto.STRING, number=6)
+    operation_start_time = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=timestamp_pb2.Timestamp,
+    )
+    current_version = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    target_version = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    resource = proto.Field(
+        proto.STRING,
+        number=6,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

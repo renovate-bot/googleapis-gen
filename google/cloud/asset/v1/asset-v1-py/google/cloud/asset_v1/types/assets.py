@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,19 +13,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
-from google.cloud.orgpolicy.v1 import orgpolicy_pb2 as orgpolicy  # type: ignore
-from google.cloud.osconfig.v1 import inventory_pb2 as inventory  # type: ignore
-from google.iam.v1 import policy_pb2 as gi_policy  # type: ignore
-from google.identity.accesscontextmanager.v1 import access_level_pb2 as gia_access_level  # type: ignore
-from google.identity.accesscontextmanager.v1 import access_policy_pb2 as gia_access_policy  # type: ignore
-from google.identity.accesscontextmanager.v1 import service_perimeter_pb2 as gia_service_perimeter  # type: ignore
-from google.protobuf import struct_pb2 as struct  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-from google.rpc import code_pb2 as gr_code  # type: ignore
+from google.cloud.orgpolicy.v1 import orgpolicy_pb2  # type: ignore
+from google.cloud.osconfig.v1 import inventory_pb2  # type: ignore
+from google.iam.v1 import policy_pb2  # type: ignore
+from google.identity.accesscontextmanager.v1 import access_level_pb2  # type: ignore
+from google.identity.accesscontextmanager.v1 import access_policy_pb2  # type: ignore
+from google.identity.accesscontextmanager.v1 import service_perimeter_pb2  # type: ignore
+from google.protobuf import struct_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
+from google.rpc import code_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -72,28 +69,34 @@ class TemporalAsset(proto.Message):
         DOES_NOT_EXIST = 3
         DELETED = 4
 
-    window = proto.Field(proto.MESSAGE, number=1,
+    window = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='TimeWindow',
     )
-
-    deleted = proto.Field(proto.BOOL, number=2)
-
-    asset = proto.Field(proto.MESSAGE, number=3,
+    deleted = proto.Field(
+        proto.BOOL,
+        number=2,
+    )
+    asset = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='Asset',
     )
-
-    prior_asset_state = proto.Field(proto.ENUM, number=4,
+    prior_asset_state = proto.Field(
+        proto.ENUM,
+        number=4,
         enum=PriorAssetState,
     )
-
-    prior_asset = proto.Field(proto.MESSAGE, number=5,
+    prior_asset = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message='Asset',
     )
 
 
 class TimeWindow(proto.Message):
     r"""A time window specified by its ``start_time`` and ``end_time``.
-
     Attributes:
         start_time (google.protobuf.timestamp_pb2.Timestamp):
             Start time of the time window (exclusive).
@@ -103,12 +106,15 @@ class TimeWindow(proto.Message):
             instead.
     """
 
-    start_time = proto.Field(proto.MESSAGE, number=1,
-        message=timestamp.Timestamp,
+    start_time = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=timestamp_pb2.Timestamp,
     )
-
-    end_time = proto.Field(proto.MESSAGE, number=2,
-        message=timestamp.Timestamp,
+    end_time = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=timestamp_pb2.Timestamp,
     )
 
 
@@ -186,48 +192,65 @@ class Asset(proto.Message):
             ``["projects/123456789", "folders/5432", "organizations/1234"]``
     """
 
-    update_time = proto.Field(proto.MESSAGE, number=11,
-        message=timestamp.Timestamp,
+    update_time = proto.Field(
+        proto.MESSAGE,
+        number=11,
+        message=timestamp_pb2.Timestamp,
     )
-
-    name = proto.Field(proto.STRING, number=1)
-
-    asset_type = proto.Field(proto.STRING, number=2)
-
-    resource = proto.Field(proto.MESSAGE, number=3,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    asset_type = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    resource = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='Resource',
     )
-
-    iam_policy = proto.Field(proto.MESSAGE, number=4,
+    iam_policy = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=gi_policy.Policy,
     )
-
-    org_policy = proto.RepeatedField(proto.MESSAGE, number=6,
-        message=orgpolicy.Policy,
+    org_policy = proto.RepeatedField(
+        proto.MESSAGE,
+        number=6,
+        message=orgpolicy_pb2.Policy,
     )
-
-    access_policy = proto.Field(proto.MESSAGE, number=7, oneof='access_context_policy',
+    access_policy = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        oneof='access_context_policy',
         message=gia_access_policy.AccessPolicy,
     )
-
-    access_level = proto.Field(proto.MESSAGE, number=8, oneof='access_context_policy',
+    access_level = proto.Field(
+        proto.MESSAGE,
+        number=8,
+        oneof='access_context_policy',
         message=gia_access_level.AccessLevel,
     )
-
-    service_perimeter = proto.Field(proto.MESSAGE, number=9, oneof='access_context_policy',
+    service_perimeter = proto.Field(
+        proto.MESSAGE,
+        number=9,
+        oneof='access_context_policy',
         message=gia_service_perimeter.ServicePerimeter,
     )
-
-    os_inventory = proto.Field(proto.MESSAGE, number=12,
-        message=inventory.Inventory,
+    os_inventory = proto.Field(
+        proto.MESSAGE,
+        number=12,
+        message=inventory_pb2.Inventory,
     )
-
-    ancestors = proto.RepeatedField(proto.STRING, number=10)
+    ancestors = proto.RepeatedField(
+        proto.STRING,
+        number=10,
+    )
 
 
 class Resource(proto.Message):
     r"""A representation of a Google Cloud resource.
-
     Attributes:
         version (str):
             The API version. Example: ``v1``
@@ -274,21 +297,35 @@ class Resource(proto.Message):
             https://cloud.google.com/about/locations/.
     """
 
-    version = proto.Field(proto.STRING, number=1)
-
-    discovery_document_uri = proto.Field(proto.STRING, number=2)
-
-    discovery_name = proto.Field(proto.STRING, number=3)
-
-    resource_url = proto.Field(proto.STRING, number=4)
-
-    parent = proto.Field(proto.STRING, number=5)
-
-    data = proto.Field(proto.MESSAGE, number=6,
-        message=struct.Struct,
+    version = proto.Field(
+        proto.STRING,
+        number=1,
     )
-
-    location = proto.Field(proto.STRING, number=8)
+    discovery_document_uri = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    discovery_name = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    resource_url = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    parent = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    data = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        message=struct_pb2.Struct,
+    )
+    location = proto.Field(
+        proto.STRING,
+        number=8,
+    )
 
 
 class ResourceSearchResult(proto.Message):
@@ -399,24 +436,43 @@ class ResourceSearchResult(proto.Message):
                can issue a query ``foobar``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    asset_type = proto.Field(proto.STRING, number=2)
-
-    project = proto.Field(proto.STRING, number=3)
-
-    display_name = proto.Field(proto.STRING, number=4)
-
-    description = proto.Field(proto.STRING, number=5)
-
-    location = proto.Field(proto.STRING, number=6)
-
-    labels = proto.MapField(proto.STRING, proto.STRING, number=7)
-
-    network_tags = proto.RepeatedField(proto.STRING, number=8)
-
-    additional_attributes = proto.Field(proto.MESSAGE, number=9,
-        message=struct.Struct,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    asset_type = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    project = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    display_name = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    description = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    location = proto.Field(
+        proto.STRING,
+        number=6,
+    )
+    labels = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=7,
+    )
+    network_tags = proto.RepeatedField(
+        proto.STRING,
+        number=8,
+    )
+    additional_attributes = proto.Field(
+        proto.MESSAGE,
+        number=9,
+        message=struct_pb2.Struct,
     )
 
 
@@ -449,7 +505,7 @@ class IamPolicySearchResult(proto.Message):
 
             -  specify the ``scope`` field as this project in your
                search request.
-        policy_ (google.iam.v1.policy_pb2.Policy):
+        policy (google.iam.v1.policy_pb2.Policy):
             The IAM policy directly set on the given resource. Note that
             the original IAM policy can contain multiple bindings. This
             only contains the bindings that match the given query. For
@@ -472,9 +528,9 @@ class IamPolicySearchResult(proto.Message):
             result. It contains additional information to
             explain why the search result matches the query.
     """
+
     class Explanation(proto.Message):
         r"""Explanation about the IAM policy search result.
-
         Attributes:
             matched_permissions (Sequence[google.cloud.asset_v1.types.IamPolicySearchResult.Explanation.MatchedPermissionsEntry]):
                 The map from roles to their included permissions that match
@@ -488,30 +544,43 @@ class IamPolicySearchResult(proto.Message):
                 the map is populated only for requests with permission
                 queries.
         """
+
         class Permissions(proto.Message):
             r"""IAM permissions
-
             Attributes:
                 permissions (Sequence[str]):
                     A list of permissions. A sample permission string:
                     ``compute.disk.get``.
             """
 
-            permissions = proto.RepeatedField(proto.STRING, number=1)
+            permissions = proto.RepeatedField(
+                proto.STRING,
+                number=1,
+            )
 
-        matched_permissions = proto.MapField(proto.STRING, proto.MESSAGE, number=1,
+        matched_permissions = proto.MapField(
+            proto.STRING,
+            proto.MESSAGE,
+            number=1,
             message='IamPolicySearchResult.Explanation.Permissions',
         )
 
-    resource = proto.Field(proto.STRING, number=1)
-
-    project = proto.Field(proto.STRING, number=2)
-
-    policy_ = proto.Field(proto.MESSAGE, number=3,
+    resource = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    project = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    policy = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message=gi_policy.Policy,
     )
-
-    explanation = proto.Field(proto.MESSAGE, number=4,
+    explanation = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=Explanation,
     )
 
@@ -536,11 +605,15 @@ class IamPolicyAnalysisState(proto.Message):
             of failure.
     """
 
-    code = proto.Field(proto.ENUM, number=1,
+    code = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=gr_code.Code,
     )
-
-    cause = proto.Field(proto.STRING, number=2)
+    cause = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class IamPolicyAnalysisResult(proto.Message):
@@ -571,9 +644,9 @@ class IamPolicyAnalysisResult(proto.Message):
             [iam_binding][google.cloud.asset.v1.IamPolicyAnalysisResult.iam_binding]
             have successfully finished.
     """
+
     class Resource(proto.Message):
         r"""A Google Cloud resource under analysis.
-
         Attributes:
             full_resource_name (str):
                 The `full resource
@@ -582,15 +655,18 @@ class IamPolicyAnalysisResult(proto.Message):
                 The analysis state of this resource.
         """
 
-        full_resource_name = proto.Field(proto.STRING, number=1)
-
-        analysis_state = proto.Field(proto.MESSAGE, number=2,
+        full_resource_name = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        analysis_state = proto.Field(
+            proto.MESSAGE,
+            number=2,
             message='IamPolicyAnalysisState',
         )
 
     class Access(proto.Message):
         r"""An IAM role or permission under analysis.
-
         Attributes:
             role (str):
                 The role.
@@ -600,17 +676,24 @@ class IamPolicyAnalysisResult(proto.Message):
                 The analysis state of this access.
         """
 
-        role = proto.Field(proto.STRING, number=1, oneof='oneof_access')
-
-        permission = proto.Field(proto.STRING, number=2, oneof='oneof_access')
-
-        analysis_state = proto.Field(proto.MESSAGE, number=3,
+        role = proto.Field(
+            proto.STRING,
+            number=1,
+            oneof='oneof_access',
+        )
+        permission = proto.Field(
+            proto.STRING,
+            number=2,
+            oneof='oneof_access',
+        )
+        analysis_state = proto.Field(
+            proto.MESSAGE,
+            number=3,
             message='IamPolicyAnalysisState',
         )
 
     class Identity(proto.Message):
         r"""An identity under analysis.
-
         Attributes:
             name (str):
                 The identity name in any form of members appear in `IAM
@@ -629,15 +712,18 @@ class IamPolicyAnalysisResult(proto.Message):
                 The analysis state of this identity.
         """
 
-        name = proto.Field(proto.STRING, number=1)
-
-        analysis_state = proto.Field(proto.MESSAGE, number=2,
+        name = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        analysis_state = proto.Field(
+            proto.MESSAGE,
+            number=2,
             message='IamPolicyAnalysisState',
         )
 
     class Edge(proto.Message):
         r"""A directional edge.
-
         Attributes:
             source_node (str):
                 The source node of the edge. For example, it
@@ -649,9 +735,14 @@ class IamPolicyAnalysisResult(proto.Message):
                 node or an email of an identity.
         """
 
-        source_node = proto.Field(proto.STRING, number=1)
-
-        target_node = proto.Field(proto.STRING, number=2)
+        source_node = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        target_node = proto.Field(
+            proto.STRING,
+            number=2,
+        )
 
     class AccessControlList(proto.Message):
         r"""An access control list, derived from the above IAM policy binding,
@@ -697,21 +788,24 @@ class IamPolicyAnalysisResult(proto.Message):
                 enabled in request.
         """
 
-        resources = proto.RepeatedField(proto.MESSAGE, number=1,
+        resources = proto.RepeatedField(
+            proto.MESSAGE,
+            number=1,
             message='IamPolicyAnalysisResult.Resource',
         )
-
-        accesses = proto.RepeatedField(proto.MESSAGE, number=2,
+        accesses = proto.RepeatedField(
+            proto.MESSAGE,
+            number=2,
             message='IamPolicyAnalysisResult.Access',
         )
-
-        resource_edges = proto.RepeatedField(proto.MESSAGE, number=3,
+        resource_edges = proto.RepeatedField(
+            proto.MESSAGE,
+            number=3,
             message='IamPolicyAnalysisResult.Edge',
         )
 
     class IdentityList(proto.Message):
         r"""The identities and group edges.
-
         Attributes:
             identities (Sequence[google.cloud.asset_v1.types.IamPolicyAnalysisResult.Identity]):
                 Only the identities that match one of the following
@@ -734,29 +828,40 @@ class IamPolicyAnalysisResult(proto.Message):
                 enabled in request.
         """
 
-        identities = proto.RepeatedField(proto.MESSAGE, number=1,
+        identities = proto.RepeatedField(
+            proto.MESSAGE,
+            number=1,
             message='IamPolicyAnalysisResult.Identity',
         )
-
-        group_edges = proto.RepeatedField(proto.MESSAGE, number=2,
+        group_edges = proto.RepeatedField(
+            proto.MESSAGE,
+            number=2,
             message='IamPolicyAnalysisResult.Edge',
         )
 
-    attached_resource_full_name = proto.Field(proto.STRING, number=1)
-
-    iam_binding = proto.Field(proto.MESSAGE, number=2,
+    attached_resource_full_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    iam_binding = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=gi_policy.Binding,
     )
-
-    access_control_lists = proto.RepeatedField(proto.MESSAGE, number=3,
+    access_control_lists = proto.RepeatedField(
+        proto.MESSAGE,
+        number=3,
         message=AccessControlList,
     )
-
-    identity_list = proto.Field(proto.MESSAGE, number=4,
+    identity_list = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=IdentityList,
     )
-
-    fully_explored = proto.Field(proto.BOOL, number=5)
+    fully_explored = proto.Field(
+        proto.BOOL,
+        number=5,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

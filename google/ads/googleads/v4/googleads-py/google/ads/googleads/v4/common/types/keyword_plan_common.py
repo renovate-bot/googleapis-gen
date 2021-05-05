@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,13 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v4.enums.types import keyword_plan_competition_level
 from google.ads.googleads.v4.enums.types import month_of_year
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -63,29 +60,40 @@ class KeywordPlanHistoricalMetrics(proto.Message):
             in micros for the keyword.
     """
 
-    avg_monthly_searches = proto.Field(proto.MESSAGE, number=1,
-        message=wrappers.Int64Value,
+    avg_monthly_searches = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=wrappers_pb2.Int64Value,
     )
-    monthly_search_volumes = proto.RepeatedField(proto.MESSAGE, number=6,
+    monthly_search_volumes = proto.RepeatedField(
+        proto.MESSAGE,
+        number=6,
         message='MonthlySearchVolume',
     )
-    competition = proto.Field(proto.ENUM, number=2,
+    competition = proto.Field(
+        proto.ENUM,
+        number=2,
         enum=keyword_plan_competition_level.KeywordPlanCompetitionLevelEnum.KeywordPlanCompetitionLevel,
     )
-    competition_index = proto.Field(proto.MESSAGE, number=3,
-        message=wrappers.Int64Value,
+    competition_index = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=wrappers_pb2.Int64Value,
     )
-    low_top_of_page_bid_micros = proto.Field(proto.MESSAGE, number=4,
-        message=wrappers.Int64Value,
+    low_top_of_page_bid_micros = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=wrappers_pb2.Int64Value,
     )
-    high_top_of_page_bid_micros = proto.Field(proto.MESSAGE, number=5,
-        message=wrappers.Int64Value,
+    high_top_of_page_bid_micros = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        message=wrappers_pb2.Int64Value,
     )
 
 
 class MonthlySearchVolume(proto.Message):
     r"""Monthly search volume.
-
     Attributes:
         year (google.protobuf.wrappers_pb2.Int64Value):
             The year of the search volume (e.g. 2020).
@@ -97,14 +105,20 @@ class MonthlySearchVolume(proto.Message):
             unavailable for that month.
     """
 
-    year = proto.Field(proto.MESSAGE, number=1,
-        message=wrappers.Int64Value,
+    year = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=wrappers_pb2.Int64Value,
     )
-    month = proto.Field(proto.ENUM, number=2,
+    month = proto.Field(
+        proto.ENUM,
+        number=2,
         enum=month_of_year.MonthOfYearEnum.MonthOfYear,
     )
-    monthly_searches = proto.Field(proto.MESSAGE, number=3,
-        message=wrappers.Int64Value,
+    monthly_searches = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=wrappers_pb2.Int64Value,
     )
 
 

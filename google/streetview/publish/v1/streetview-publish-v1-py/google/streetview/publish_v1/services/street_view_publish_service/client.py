@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -23,23 +21,22 @@ from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
-from google.api_core import exceptions                            # type: ignore
+from google.api_core import exceptions as core_exceptions         # type: ignore
 from google.api_core import gapic_v1                              # type: ignore
 from google.api_core import retry as retries                      # type: ignore
-from google.auth import credentials                               # type: ignore
+from google.auth import credentials as ga_credentials             # type: ignore
 from google.auth.transport import mtls                            # type: ignore
 from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
-from google.protobuf import empty_pb2 as empty  # type: ignore
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-from google.rpc import status_pb2 as status  # type: ignore
+from google.protobuf import empty_pb2  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
+from google.rpc import status_pb2  # type: ignore
 from google.streetview.publish_v1.services.street_view_publish_service import pagers
 from google.streetview.publish_v1.types import resources
 from google.streetview.publish_v1.types import rpcmessages
-
 from .transports.base import StreetViewPublishServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import StreetViewPublishServiceGrpcTransport
 from .transports.grpc_asyncio import StreetViewPublishServiceGrpcAsyncIOTransport
@@ -218,7 +215,7 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
         return m.groupdict() if m else {}
 
     def __init__(self, *,
-            credentials: Optional[credentials.Credentials] = None,
+            credentials: Optional[ga_credentials.Credentials] = None,
             transport: Union[str, StreetViewPublishServiceTransport, None] = None,
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -321,7 +318,7 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
             )
 
     def start_upload(self,
-            request: empty.Empty = None,
+            request: empty_pb2.Empty = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -364,7 +361,6 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
 
                 The JSON representation for `Empty` is empty JSON object
                 `{}`.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -376,14 +372,13 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
                 Upload reference for media files.
         """
         # Create or coerce a protobuf request object.
-
         if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
-            request = empty.Empty(**request)
+            request = empty_pb2.Empty(**request)
         elif not request:
             # Null request, just make one.
-            request = empty.Empty()
+            request = empty_pb2.Empty()
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -441,7 +436,6 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
                 This corresponds to the ``photo`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -468,10 +462,8 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, rpcmessages.CreatePhotoRequest):
             request = rpcmessages.CreatePhotoRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if photo is not None:
                 request.photo = photo
 
@@ -540,7 +532,6 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
                 This corresponds to the ``view`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -567,10 +558,8 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, rpcmessages.GetPhotoRequest):
             request = rpcmessages.GetPhotoRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if photo_id is not None:
                 request.photo_id = photo_id
             if view is not None:
@@ -643,7 +632,6 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
                 This corresponds to the ``view`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -670,10 +658,8 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, rpcmessages.BatchGetPhotosRequest):
             request = rpcmessages.BatchGetPhotosRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if photo_ids is not None:
                 request.photo_ids = photo_ids
             if view is not None:
@@ -745,7 +731,6 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -775,10 +760,8 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, rpcmessages.ListPhotosRequest):
             request = rpcmessages.ListPhotosRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if view is not None:
                 request.view = view
             if filter is not None:
@@ -812,7 +795,7 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
             request: rpcmessages.UpdatePhotoRequest = None,
             *,
             photo: resources.Photo = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -885,7 +868,6 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -912,10 +894,8 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, rpcmessages.UpdatePhotoRequest):
             request = rpcmessages.UpdatePhotoRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if photo is not None:
                 request.photo = photo
             if update_mask is not None:
@@ -992,7 +972,6 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
                 This corresponds to the ``update_photo_requests`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1019,10 +998,8 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, rpcmessages.BatchUpdatePhotosRequest):
             request = rpcmessages.BatchUpdatePhotosRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if update_photo_requests is not None:
                 request.update_photo_requests = update_photo_requests
 
@@ -1070,7 +1047,6 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
                 This corresponds to the ``photo_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1091,10 +1067,8 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, rpcmessages.DeletePhotoRequest):
             request = rpcmessages.DeletePhotoRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if photo_id is not None:
                 request.photo_id = photo_id
 
@@ -1148,7 +1122,6 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
                 This corresponds to the ``photo_ids`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1175,10 +1148,8 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, rpcmessages.BatchDeletePhotosRequest):
             request = rpcmessages.BatchDeletePhotosRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if photo_ids is not None:
                 request.photo_ids = photo_ids
 
@@ -1196,8 +1167,6 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
 
         # Done; return the response.
         return response
-
-
 
 
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
 from google.ads.googleads.v4.common.types import criteria
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -56,17 +53,29 @@ class CampaignBidModifier(proto.Message):
             Only supported for search campaigns.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    campaign = proto.Field(proto.MESSAGE, number=2,
-        message=wrappers.StringValue,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
     )
-    criterion_id = proto.Field(proto.MESSAGE, number=3,
-        message=wrappers.Int64Value,
+    campaign = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=wrappers_pb2.StringValue,
     )
-    bid_modifier = proto.Field(proto.MESSAGE, number=4,
-        message=wrappers.DoubleValue,
+    criterion_id = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=wrappers_pb2.Int64Value,
     )
-    interaction_type = proto.Field(proto.MESSAGE, number=5, oneof='criterion',
+    bid_modifier = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=wrappers_pb2.DoubleValue,
+    )
+    interaction_type = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        oneof='criterion',
         message=criteria.InteractionTypeInfo,
     )
 

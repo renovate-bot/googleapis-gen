@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -22,18 +20,17 @@ from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
 import google.api_core.client_options as ClientOptions # type: ignore
-from google.api_core import exceptions                 # type: ignore
+from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
 from google.iam.admin_v1.services.iam import pagers
 from google.iam.admin_v1.types import iam
-from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
-from google.iam.v1 import policy_pb2 as gi_policy  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
+from google.iam.v1 import iam_policy_pb2  # type: ignore
+from google.iam.v1 import policy_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 from .transports.base import IAMTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import IAMGrpcAsyncIOTransport
 from .client import IAMClient
@@ -71,19 +68,14 @@ class IAMAsyncClient:
     parse_key_path = staticmethod(IAMClient.parse_key_path)
     service_account_path = staticmethod(IAMClient.service_account_path)
     parse_service_account_path = staticmethod(IAMClient.parse_service_account_path)
-
     common_billing_account_path = staticmethod(IAMClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(IAMClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(IAMClient.common_folder_path)
     parse_common_folder_path = staticmethod(IAMClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(IAMClient.common_organization_path)
     parse_common_organization_path = staticmethod(IAMClient.parse_common_organization_path)
-
     common_project_path = staticmethod(IAMClient.common_project_path)
     parse_common_project_path = staticmethod(IAMClient.parse_common_project_path)
-
     common_location_path = staticmethod(IAMClient.common_location_path)
     parse_common_location_path = staticmethod(IAMClient.parse_common_location_path)
 
@@ -131,7 +123,7 @@ class IAMAsyncClient:
     get_transport_class = functools.partial(type(IAMClient).get_transport_class, type(IAMClient))
 
     def __init__(self, *,
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             transport: Union[str, IAMTransport] = 'grpc_asyncio',
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -168,7 +160,6 @@ class IAMAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = IAMClient(
             credentials=credentials,
             transport=transport,
@@ -199,7 +190,6 @@ class IAMAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -226,7 +216,6 @@ class IAMAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -235,10 +224,7 @@ class IAMAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_service_accounts,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -301,7 +287,6 @@ class IAMAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -337,7 +322,6 @@ class IAMAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -346,10 +330,7 @@ class IAMAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_service_account,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -420,7 +401,6 @@ class IAMAsyncClient:
                 This corresponds to the ``service_account`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -456,7 +436,6 @@ class IAMAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
         if account_id is not None:
@@ -521,7 +500,6 @@ class IAMAsyncClient:
                 name that must be unique within the project. IAM uses
                 these values to create an email address that identifies
                 the service account.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -546,7 +524,6 @@ class IAMAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = iam.ServiceAccount(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -554,10 +531,7 @@ class IAMAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.update_service_account,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -605,7 +579,6 @@ class IAMAsyncClient:
                 Only the fields specified in the request are guaranteed
                 to be returned in the response. Other fields may be
                 empty in the response.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -630,7 +603,6 @@ class IAMAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = iam.PatchServiceAccountRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -703,7 +675,6 @@ class IAMAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -722,7 +693,6 @@ class IAMAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -731,10 +701,7 @@ class IAMAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_service_account,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -781,7 +748,6 @@ class IAMAsyncClient:
             request (:class:`google.iam.admin_v1.types.UndeleteServiceAccountRequest`):
                 The request object. The service account undelete
                 request.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -793,7 +759,6 @@ class IAMAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = iam.UndeleteServiceAccountRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -845,7 +810,6 @@ class IAMAsyncClient:
         Args:
             request (:class:`google.iam.admin_v1.types.EnableServiceAccountRequest`):
                 The request object. The service account enable request.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -853,7 +817,6 @@ class IAMAsyncClient:
                 sent along with the request as metadata.
         """
         # Create or coerce a protobuf request object.
-
         request = iam.EnableServiceAccountRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -910,7 +873,6 @@ class IAMAsyncClient:
         Args:
             request (:class:`google.iam.admin_v1.types.DisableServiceAccountRequest`):
                 The request object. The service account disable request.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -918,7 +880,6 @@ class IAMAsyncClient:
                 sent along with the request as metadata.
         """
         # Create or coerce a protobuf request object.
-
         request = iam.DisableServiceAccountRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -985,7 +946,6 @@ class IAMAsyncClient:
                 This corresponds to the ``key_types`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1010,10 +970,8 @@ class IAMAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
-
         if key_types:
             request.key_types.extend(key_types)
 
@@ -1022,10 +980,7 @@ class IAMAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_service_account_keys,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1090,7 +1045,6 @@ class IAMAsyncClient:
                 This corresponds to the ``public_key_type`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1147,7 +1101,6 @@ class IAMAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
         if public_key_type is not None:
@@ -1158,10 +1111,7 @@ class IAMAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_service_account_key,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1236,7 +1186,6 @@ class IAMAsyncClient:
                 This corresponds to the ``key_algorithm`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1293,7 +1242,6 @@ class IAMAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
         if private_key_type is not None:
@@ -1343,7 +1291,6 @@ class IAMAsyncClient:
             request (:class:`google.iam.admin_v1.types.UploadServiceAccountKeyRequest`):
                 The request object. The service account key upload
                 request.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1389,7 +1336,6 @@ class IAMAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = iam.UploadServiceAccountKeyRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1449,7 +1395,6 @@ class IAMAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1468,7 +1413,6 @@ class IAMAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1477,10 +1421,7 @@ class IAMAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_service_account_key,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1558,7 +1499,6 @@ class IAMAsyncClient:
                 This corresponds to the ``bytes_to_sign`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1585,7 +1525,6 @@ class IAMAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
         if bytes_to_sign is not None:
@@ -1680,7 +1619,6 @@ class IAMAsyncClient:
                 This corresponds to the ``payload`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1707,7 +1645,6 @@ class IAMAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
         if payload is not None:
@@ -1741,13 +1678,13 @@ class IAMAsyncClient:
         return response
 
     async def get_iam_policy(self,
-            request: iam_policy.GetIamPolicyRequest = None,
+            request: iam_policy_pb2.GetIamPolicyRequest = None,
             *,
             resource: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> gi_policy.Policy:
+            ) -> policy_pb2.Policy:
         r"""Gets the IAM policy that is attached to a
         [ServiceAccount][google.iam.admin.v1.ServiceAccount]. This IAM
         policy specifies which members have access to the service
@@ -1774,7 +1711,6 @@ class IAMAsyncClient:
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1848,13 +1784,12 @@ class IAMAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # The request isn't a proto-plus wrapped type,
+         # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
-            request = iam_policy.GetIamPolicyRequest(**request)
-
+            request = iam_policy_pb2.GetIamPolicyRequest(**request)
         elif not request:
-            request = iam_policy.GetIamPolicyRequest(resource=resource, )
+            request = iam_policy_pb2.GetIamPolicyRequest(resource=resource, )
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -1884,13 +1819,13 @@ class IAMAsyncClient:
         return response
 
     async def set_iam_policy(self,
-            request: iam_policy.SetIamPolicyRequest = None,
+            request: iam_policy_pb2.SetIamPolicyRequest = None,
             *,
             resource: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> gi_policy.Policy:
+            ) -> policy_pb2.Policy:
         r"""Sets the IAM policy that is attached to a
         [ServiceAccount][google.iam.admin.v1.ServiceAccount].
 
@@ -1926,7 +1861,6 @@ class IAMAsyncClient:
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2000,13 +1934,12 @@ class IAMAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # The request isn't a proto-plus wrapped type,
+         # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
-            request = iam_policy.SetIamPolicyRequest(**request)
-
+            request = iam_policy_pb2.SetIamPolicyRequest(**request)
         elif not request:
-            request = iam_policy.SetIamPolicyRequest(resource=resource, )
+            request = iam_policy_pb2.SetIamPolicyRequest(resource=resource, )
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -2036,14 +1969,14 @@ class IAMAsyncClient:
         return response
 
     async def test_iam_permissions(self,
-            request: iam_policy.TestIamPermissionsRequest = None,
+            request: iam_policy_pb2.TestIamPermissionsRequest = None,
             *,
             resource: str = None,
             permissions: Sequence[str] = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> iam_policy.TestIamPermissionsResponse:
+            ) -> iam_policy_pb2.TestIamPermissionsResponse:
         r"""Tests whether the caller has the specified permissions on a
         [ServiceAccount][google.iam.admin.v1.ServiceAccount].
 
@@ -2069,7 +2002,6 @@ class IAMAsyncClient:
                 This corresponds to the ``permissions`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2088,13 +2020,12 @@ class IAMAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # The request isn't a proto-plus wrapped type,
+         # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
-            request = iam_policy.TestIamPermissionsRequest(**request)
-
+            request = iam_policy_pb2.TestIamPermissionsRequest(**request)
         elif not request:
-            request = iam_policy.TestIamPermissionsRequest(resource=resource, permissions=permissions, )
+            request = iam_policy_pb2.TestIamPermissionsRequest(resource=resource, permissions=permissions, )
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -2150,7 +2081,6 @@ class IAMAsyncClient:
                 This corresponds to the ``full_resource_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2177,7 +2107,6 @@ class IAMAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if full_resource_name is not None:
             request.full_resource_name = full_resource_name
 
@@ -2224,7 +2153,6 @@ class IAMAsyncClient:
             request (:class:`google.iam.admin_v1.types.ListRolesRequest`):
                 The request object. The request to get all roles defined
                 under a resource.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2241,7 +2169,6 @@ class IAMAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = iam.ListRolesRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -2285,7 +2212,6 @@ class IAMAsyncClient:
             request (:class:`google.iam.admin_v1.types.GetRoleRequest`):
                 The request object. The request to get the definition of
                 an existing role.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2299,7 +2225,6 @@ class IAMAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = iam.GetRoleRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -2341,7 +2266,6 @@ class IAMAsyncClient:
         Args:
             request (:class:`google.iam.admin_v1.types.CreateRoleRequest`):
                 The request object. The request to create a new role.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2355,7 +2279,6 @@ class IAMAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = iam.CreateRoleRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -2398,7 +2321,6 @@ class IAMAsyncClient:
         Args:
             request (:class:`google.iam.admin_v1.types.UpdateRoleRequest`):
                 The request object. The request to update a role.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2412,7 +2334,6 @@ class IAMAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = iam.UpdateRoleRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -2474,7 +2395,6 @@ class IAMAsyncClient:
             request (:class:`google.iam.admin_v1.types.DeleteRoleRequest`):
                 The request object. The request to delete an existing
                 role.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2488,7 +2408,6 @@ class IAMAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = iam.DeleteRoleRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -2531,7 +2450,6 @@ class IAMAsyncClient:
             request (:class:`google.iam.admin_v1.types.UndeleteRoleRequest`):
                 The request object. The request to undelete an existing
                 role.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2545,7 +2463,6 @@ class IAMAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = iam.UndeleteRoleRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -2590,7 +2507,6 @@ class IAMAsyncClient:
             request (:class:`google.iam.admin_v1.types.QueryTestablePermissionsRequest`):
                 The request object. A request to get permissions which
                 can be tested on a resource.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2607,7 +2523,6 @@ class IAMAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = iam.QueryTestablePermissionsRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -2655,7 +2570,6 @@ class IAMAsyncClient:
             request (:class:`google.iam.admin_v1.types.QueryAuditableServicesRequest`):
                 The request object. A request to get the list of
                 auditable services for a resource.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2669,7 +2583,6 @@ class IAMAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = iam.QueryAuditableServicesRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -2710,7 +2623,6 @@ class IAMAsyncClient:
             request (:class:`google.iam.admin_v1.types.LintPolicyRequest`):
                 The request object. The request to lint a Cloud IAM
                 policy object.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2726,7 +2638,6 @@ class IAMAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = iam.LintPolicyRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -2747,8 +2658,6 @@ class IAMAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

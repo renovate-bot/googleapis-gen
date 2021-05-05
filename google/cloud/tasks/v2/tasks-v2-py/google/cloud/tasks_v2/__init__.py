@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,8 @@
 #
 
 from .services.cloud_tasks import CloudTasksClient
+from .services.cloud_tasks import CloudTasksAsyncClient
+
 from .types.cloudtasks import CreateQueueRequest
 from .types.cloudtasks import CreateTaskRequest
 from .types.cloudtasks import DeleteQueueRequest
@@ -37,41 +38,40 @@ from .types.queue import RetryConfig
 from .types.queue import StackdriverLoggingConfig
 from .types.target import AppEngineHttpRequest
 from .types.target import AppEngineRouting
-from .types.target import HttpMethod
 from .types.target import HttpRequest
 from .types.target import OAuthToken
 from .types.target import OidcToken
+from .types.target import HttpMethod
 from .types.task import Attempt
 from .types.task import Task
 
-
 __all__ = (
-    'AppEngineHttpRequest',
-    'AppEngineRouting',
-    'Attempt',
-    'CreateQueueRequest',
-    'CreateTaskRequest',
-    'DeleteQueueRequest',
-    'DeleteTaskRequest',
-    'GetQueueRequest',
-    'GetTaskRequest',
-    'HttpMethod',
-    'HttpRequest',
-    'ListQueuesRequest',
-    'ListQueuesResponse',
-    'ListTasksRequest',
-    'ListTasksResponse',
-    'OAuthToken',
-    'OidcToken',
-    'PauseQueueRequest',
-    'PurgeQueueRequest',
-    'Queue',
-    'RateLimits',
-    'ResumeQueueRequest',
-    'RetryConfig',
-    'RunTaskRequest',
-    'StackdriverLoggingConfig',
-    'Task',
-    'UpdateQueueRequest',
+'AppEngineHttpRequest',
+'AppEngineRouting',
+'Attempt',
 'CloudTasksClient',
+'CreateQueueRequest',
+'CreateTaskRequest',
+'DeleteQueueRequest',
+'DeleteTaskRequest',
+'GetQueueRequest',
+'GetTaskRequest',
+'HttpMethod',
+'HttpRequest',
+'ListQueuesRequest',
+'ListQueuesResponse',
+'ListTasksRequest',
+'ListTasksResponse',
+'OAuthToken',
+'OidcToken',
+'PauseQueueRequest',
+'PurgeQueueRequest',
+'Queue',
+'RateLimits',
+'ResumeQueueRequest',
+'RetryConfig',
+'RunTaskRequest',
+'StackdriverLoggingConfig',
+'Task',
+'UpdateQueueRequest',
 )

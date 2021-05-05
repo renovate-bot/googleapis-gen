@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,8 @@
 #
 
 from .services.drive_activity_service import DriveActivityServiceClient
+from .services.drive_activity_service import DriveActivityServiceAsyncClient
+
 from .types.action import Action
 from .types.action import ActionDetail
 from .types.action import ApplicationReference
@@ -54,44 +55,43 @@ from .types.target import TargetReference
 from .types.target import TeamDrive
 from .types.target import TeamDriveReference
 
-
 __all__ = (
-    'Action',
-    'ActionDetail',
-    'Actor',
-    'Administrator',
-    'AnonymousUser',
-    'ApplicationReference',
-    'Comment',
-    'ConsolidationStrategy',
-    'Create',
-    'DataLeakPreventionChange',
-    'Delete',
-    'Domain',
-    'Drive',
-    'DriveActivity',
-    'DriveItem',
-    'DriveItemReference',
-    'DriveReference',
-    'Edit',
-    'FileComment',
-    'Group',
-    'Impersonation',
-    'Move',
-    'Owner',
-    'Permission',
-    'PermissionChange',
-    'QueryDriveActivityRequest',
-    'QueryDriveActivityResponse',
-    'Rename',
-    'Restore',
-    'SettingsChange',
-    'SystemEvent',
-    'Target',
-    'TargetReference',
-    'TeamDrive',
-    'TeamDriveReference',
-    'TimeRange',
-    'User',
+'Action',
+'ActionDetail',
+'Actor',
+'Administrator',
+'AnonymousUser',
+'ApplicationReference',
+'Comment',
+'ConsolidationStrategy',
+'Create',
+'DataLeakPreventionChange',
+'Delete',
+'Domain',
+'Drive',
+'DriveActivity',
 'DriveActivityServiceClient',
+'DriveItem',
+'DriveItemReference',
+'DriveReference',
+'Edit',
+'FileComment',
+'Group',
+'Impersonation',
+'Move',
+'Owner',
+'Permission',
+'PermissionChange',
+'QueryDriveActivityRequest',
+'QueryDriveActivityResponse',
+'Rename',
+'Restore',
+'SettingsChange',
+'SystemEvent',
+'Target',
+'TargetReference',
+'TeamDrive',
+'TeamDriveReference',
+'TimeRange',
+'User',
 )

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.cloud.bigquery_storage_v1.services.big_query_read.async_client import BigQueryReadAsyncClient
 from google.cloud.bigquery_storage_v1.services.big_query_read.client import BigQueryReadClient
+from google.cloud.bigquery_storage_v1.services.big_query_read.async_client import BigQueryReadAsyncClient
+
 from google.cloud.bigquery_storage_v1.types.arrow import ArrowRecordBatch
 from google.cloud.bigquery_storage_v1.types.arrow import ArrowSchema
 from google.cloud.bigquery_storage_v1.types.arrow import ArrowSerializationOptions
@@ -29,26 +29,25 @@ from google.cloud.bigquery_storage_v1.types.storage import SplitReadStreamReques
 from google.cloud.bigquery_storage_v1.types.storage import SplitReadStreamResponse
 from google.cloud.bigquery_storage_v1.types.storage import StreamStats
 from google.cloud.bigquery_storage_v1.types.storage import ThrottleState
-from google.cloud.bigquery_storage_v1.types.stream import DataFormat
 from google.cloud.bigquery_storage_v1.types.stream import ReadSession
 from google.cloud.bigquery_storage_v1.types.stream import ReadStream
+from google.cloud.bigquery_storage_v1.types.stream import DataFormat
 
-__all__ = (
+__all__ = ('BigQueryReadClient',
+    'BigQueryReadAsyncClient',
     'ArrowRecordBatch',
     'ArrowSchema',
     'ArrowSerializationOptions',
     'AvroRows',
     'AvroSchema',
-    'BigQueryReadAsyncClient',
-    'BigQueryReadClient',
     'CreateReadSessionRequest',
-    'DataFormat',
     'ReadRowsRequest',
     'ReadRowsResponse',
-    'ReadSession',
-    'ReadStream',
     'SplitReadStreamRequest',
     'SplitReadStreamResponse',
     'StreamStats',
     'ThrottleState',
+    'ReadSession',
+    'ReadStream',
+    'DataFormat',
 )

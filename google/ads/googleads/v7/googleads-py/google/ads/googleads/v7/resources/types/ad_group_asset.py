@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v7.enums.types import asset_field_type
 from google.ads.googleads.v7.enums.types import asset_link_status
@@ -33,7 +30,6 @@ __protobuf__ = proto.module(
 
 class AdGroupAsset(proto.Message):
     r"""A link between an ad group and an asset.
-
     Attributes:
         resource_name (str):
             Immutable. The resource name of the ad group asset.
@@ -53,13 +49,26 @@ class AdGroupAsset(proto.Message):
             Status of the ad group asset.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    ad_group = proto.Field(proto.STRING, number=2)
-    asset = proto.Field(proto.STRING, number=3)
-    field_type = proto.Field(proto.ENUM, number=4,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    ad_group = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    asset = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    field_type = proto.Field(
+        proto.ENUM,
+        number=4,
         enum=asset_field_type.AssetFieldTypeEnum.AssetFieldType,
     )
-    status = proto.Field(proto.ENUM, number=5,
+    status = proto.Field(
+        proto.ENUM,
+        number=5,
         enum=asset_link_status.AssetLinkStatusEnum.AssetLinkStatus,
     )
 

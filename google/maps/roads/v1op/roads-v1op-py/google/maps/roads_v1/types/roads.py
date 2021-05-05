@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
-from google.type import latlng_pb2 as latlng  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
+from google.type import latlng_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -63,20 +60,27 @@ class SnapToRoadsRequest(proto.Message):
             constrain the paths we snap to.
     """
 
-    path = proto.Field(proto.STRING, number=1)
-
-    interpolate = proto.Field(proto.BOOL, number=2)
-
-    asset_id = proto.Field(proto.STRING, number=3)
-
-    travel_mode = proto.Field(proto.ENUM, number=4,
+    path = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    interpolate = proto.Field(
+        proto.BOOL,
+        number=2,
+    )
+    asset_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    travel_mode = proto.Field(
+        proto.ENUM,
+        number=4,
         enum='TravelMode',
     )
 
 
 class SnappedPoint(proto.Message):
     r"""A snapped point object, representing the result of snapping.
-
     Attributes:
         location (google.type.latlng_pb2.LatLng):
             The lat,lng of the snapped location.
@@ -91,15 +95,20 @@ class SnappedPoint(proto.Message):
             used by the Places API.
     """
 
-    location = proto.Field(proto.MESSAGE, number=1,
-        message=latlng.LatLng,
+    location = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=latlng_pb2.LatLng,
     )
-
-    original_index = proto.Field(proto.MESSAGE, number=2,
-        message=wrappers.UInt32Value,
+    original_index = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=wrappers_pb2.UInt32Value,
     )
-
-    place_id = proto.Field(proto.STRING, number=3)
+    place_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class SnapToRoadsResponse(proto.Message):
@@ -114,11 +123,15 @@ class SnapToRoadsResponse(proto.Message):
             can be shown alongside a valid result.
     """
 
-    snapped_points = proto.RepeatedField(proto.MESSAGE, number=1,
+    snapped_points = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='SnappedPoint',
     )
-
-    warning_message = proto.Field(proto.STRING, number=2)
+    warning_message = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class ListNearestRoadsRequest(proto.Message):
@@ -135,9 +148,13 @@ class ListNearestRoadsRequest(proto.Message):
             constrain the roads we snap to.
     """
 
-    points = proto.Field(proto.STRING, number=1)
-
-    travel_mode = proto.Field(proto.ENUM, number=2,
+    points = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    travel_mode = proto.Field(
+        proto.ENUM,
+        number=2,
         enum='TravelMode',
     )
 
@@ -151,7 +168,9 @@ class ListNearestRoadsResponse(proto.Message):
             A list of snapped points.
     """
 
-    snapped_points = proto.RepeatedField(proto.MESSAGE, number=1,
+    snapped_points = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='SnappedPoint',
     )
 

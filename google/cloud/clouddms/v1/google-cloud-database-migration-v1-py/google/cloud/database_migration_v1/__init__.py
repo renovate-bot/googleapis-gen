@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,8 @@
 #
 
 from .services.data_migration_service import DataMigrationServiceClient
+from .services.data_migration_service import DataMigrationServiceAsyncClient
+
 from .types.clouddms import CreateConnectionProfileRequest
 from .types.clouddms import CreateMigrationJobRequest
 from .types.clouddms import DeleteConnectionProfileRequest
@@ -42,8 +43,6 @@ from .types.clouddms import VmSelectionConfig
 from .types.clouddms_resources import CloudSqlConnectionProfile
 from .types.clouddms_resources import CloudSqlSettings
 from .types.clouddms_resources import ConnectionProfile
-from .types.clouddms_resources import DatabaseEngine
-from .types.clouddms_resources import DatabaseProvider
 from .types.clouddms_resources import DatabaseType
 from .types.clouddms_resources import MigrationJob
 from .types.clouddms_resources import MigrationJobVerificationError
@@ -55,47 +54,48 @@ from .types.clouddms_resources import SqlIpConfig
 from .types.clouddms_resources import SslConfig
 from .types.clouddms_resources import StaticIpConnectivity
 from .types.clouddms_resources import VpcPeeringConnectivity
-
+from .types.clouddms_resources import DatabaseEngine
+from .types.clouddms_resources import DatabaseProvider
 
 __all__ = (
-    'CloudSqlConnectionProfile',
-    'CloudSqlSettings',
-    'ConnectionProfile',
-    'CreateConnectionProfileRequest',
-    'CreateMigrationJobRequest',
-    'DatabaseEngine',
-    'DatabaseProvider',
-    'DatabaseType',
-    'DeleteConnectionProfileRequest',
-    'DeleteMigrationJobRequest',
-    'GenerateSshScriptRequest',
-    'GetConnectionProfileRequest',
-    'GetMigrationJobRequest',
-    'ListConnectionProfilesRequest',
-    'ListConnectionProfilesResponse',
-    'ListMigrationJobsRequest',
-    'ListMigrationJobsResponse',
-    'MigrationJob',
-    'MigrationJobVerificationError',
-    'MySqlConnectionProfile',
-    'OperationMetadata',
-    'PostgreSqlConnectionProfile',
-    'PromoteMigrationJobRequest',
-    'RestartMigrationJobRequest',
-    'ResumeMigrationJobRequest',
-    'ReverseSshConnectivity',
-    'SqlAclEntry',
-    'SqlIpConfig',
-    'SshScript',
-    'SslConfig',
-    'StartMigrationJobRequest',
-    'StaticIpConnectivity',
-    'StopMigrationJobRequest',
-    'UpdateConnectionProfileRequest',
-    'UpdateMigrationJobRequest',
-    'VerifyMigrationJobRequest',
-    'VmCreationConfig',
-    'VmSelectionConfig',
-    'VpcPeeringConnectivity',
+'CloudSqlConnectionProfile',
+'CloudSqlSettings',
+'ConnectionProfile',
+'CreateConnectionProfileRequest',
+'CreateMigrationJobRequest',
 'DataMigrationServiceClient',
+'DatabaseEngine',
+'DatabaseProvider',
+'DatabaseType',
+'DeleteConnectionProfileRequest',
+'DeleteMigrationJobRequest',
+'GenerateSshScriptRequest',
+'GetConnectionProfileRequest',
+'GetMigrationJobRequest',
+'ListConnectionProfilesRequest',
+'ListConnectionProfilesResponse',
+'ListMigrationJobsRequest',
+'ListMigrationJobsResponse',
+'MigrationJob',
+'MigrationJobVerificationError',
+'MySqlConnectionProfile',
+'OperationMetadata',
+'PostgreSqlConnectionProfile',
+'PromoteMigrationJobRequest',
+'RestartMigrationJobRequest',
+'ResumeMigrationJobRequest',
+'ReverseSshConnectivity',
+'SqlAclEntry',
+'SqlIpConfig',
+'SshScript',
+'SslConfig',
+'StartMigrationJobRequest',
+'StaticIpConnectivity',
+'StopMigrationJobRequest',
+'UpdateConnectionProfileRequest',
+'UpdateMigrationJobRequest',
+'VerifyMigrationJobRequest',
+'VmCreationConfig',
+'VmSelectionConfig',
+'VpcPeeringConnectivity',
 )

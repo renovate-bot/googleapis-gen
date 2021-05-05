@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,18 +13,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.cloud.aiplatform_v1.types import encryption_spec as gca_encryption_spec
 from google.cloud.aiplatform_v1.types import env_var
 from google.cloud.aiplatform_v1.types import io
 from google.cloud.aiplatform_v1.types import job_state
 from google.cloud.aiplatform_v1.types import machine_resources
-from google.protobuf import duration_pb2 as duration  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-from google.rpc import status_pb2 as status  # type: ignore
+from google.protobuf import duration_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
+from google.rpc import status_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -92,48 +89,63 @@ class CustomJob(proto.Message):
             the provided encryption key.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    display_name = proto.Field(proto.STRING, number=2)
-
-    job_spec = proto.Field(proto.MESSAGE, number=4,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    display_name = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    job_spec = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='CustomJobSpec',
     )
-
-    state = proto.Field(proto.ENUM, number=5,
+    state = proto.Field(
+        proto.ENUM,
+        number=5,
         enum=job_state.JobState,
     )
-
-    create_time = proto.Field(proto.MESSAGE, number=6,
-        message=timestamp.Timestamp,
+    create_time = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        message=timestamp_pb2.Timestamp,
     )
-
-    start_time = proto.Field(proto.MESSAGE, number=7,
-        message=timestamp.Timestamp,
+    start_time = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        message=timestamp_pb2.Timestamp,
     )
-
-    end_time = proto.Field(proto.MESSAGE, number=8,
-        message=timestamp.Timestamp,
+    end_time = proto.Field(
+        proto.MESSAGE,
+        number=8,
+        message=timestamp_pb2.Timestamp,
     )
-
-    update_time = proto.Field(proto.MESSAGE, number=9,
-        message=timestamp.Timestamp,
+    update_time = proto.Field(
+        proto.MESSAGE,
+        number=9,
+        message=timestamp_pb2.Timestamp,
     )
-
-    error = proto.Field(proto.MESSAGE, number=10,
-        message=status.Status,
+    error = proto.Field(
+        proto.MESSAGE,
+        number=10,
+        message=status_pb2.Status,
     )
-
-    labels = proto.MapField(proto.STRING, proto.STRING, number=11)
-
-    encryption_spec = proto.Field(proto.MESSAGE, number=12,
+    labels = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=11,
+    )
+    encryption_spec = proto.Field(
+        proto.MESSAGE,
+        number=12,
         message=gca_encryption_spec.EncryptionSpec,
     )
 
 
 class CustomJobSpec(proto.Message):
     r"""Represents the spec of a CustomJob.
-
     Attributes:
         worker_pool_specs (Sequence[google.cloud.aiplatform_v1.types.WorkerPoolSpec]):
             Required. The spec of the worker pools
@@ -190,26 +202,33 @@ class CustomJobSpec(proto.Message):
                ``<base_output_directory>/<trial_id>/logs/``
     """
 
-    worker_pool_specs = proto.RepeatedField(proto.MESSAGE, number=1,
+    worker_pool_specs = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='WorkerPoolSpec',
     )
-
-    scheduling = proto.Field(proto.MESSAGE, number=3,
+    scheduling = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='Scheduling',
     )
-
-    service_account = proto.Field(proto.STRING, number=4)
-
-    network = proto.Field(proto.STRING, number=5)
-
-    base_output_directory = proto.Field(proto.MESSAGE, number=6,
+    service_account = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    network = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    base_output_directory = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message=io.GcsDestination,
     )
 
 
 class WorkerPoolSpec(proto.Message):
     r"""Represents the spec of a worker pool in a job.
-
     Attributes:
         container_spec (google.cloud.aiplatform_v1.types.ContainerSpec):
             The custom container task.
@@ -225,28 +244,36 @@ class WorkerPoolSpec(proto.Message):
             Disk spec.
     """
 
-    container_spec = proto.Field(proto.MESSAGE, number=6, oneof='task',
+    container_spec = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        oneof='task',
         message='ContainerSpec',
     )
-
-    python_package_spec = proto.Field(proto.MESSAGE, number=7, oneof='task',
+    python_package_spec = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        oneof='task',
         message='PythonPackageSpec',
     )
-
-    machine_spec = proto.Field(proto.MESSAGE, number=1,
+    machine_spec = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=machine_resources.MachineSpec,
     )
-
-    replica_count = proto.Field(proto.INT64, number=2)
-
-    disk_spec = proto.Field(proto.MESSAGE, number=5,
+    replica_count = proto.Field(
+        proto.INT64,
+        number=2,
+    )
+    disk_spec = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=machine_resources.DiskSpec,
     )
 
 
 class ContainerSpec(proto.Message):
     r"""The spec of a Container.
-
     Attributes:
         image_uri (str):
             Required. The URI of a container image in the
@@ -264,20 +291,27 @@ class ContainerSpec(proto.Message):
             container.
     """
 
-    image_uri = proto.Field(proto.STRING, number=1)
-
-    command = proto.RepeatedField(proto.STRING, number=2)
-
-    args = proto.RepeatedField(proto.STRING, number=3)
-
-    env = proto.RepeatedField(proto.MESSAGE, number=4,
+    image_uri = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    command = proto.RepeatedField(
+        proto.STRING,
+        number=2,
+    )
+    args = proto.RepeatedField(
+        proto.STRING,
+        number=3,
+    )
+    env = proto.RepeatedField(
+        proto.MESSAGE,
+        number=4,
         message=env_var.EnvVar,
     )
 
 
 class PythonPackageSpec(proto.Message):
     r"""The spec of a Python packaged code.
-
     Attributes:
         executor_image_uri (str):
             Required. The URI of a container image in the
@@ -302,15 +336,25 @@ class PythonPackageSpec(proto.Message):
             python module.
     """
 
-    executor_image_uri = proto.Field(proto.STRING, number=1)
-
-    package_uris = proto.RepeatedField(proto.STRING, number=2)
-
-    python_module = proto.Field(proto.STRING, number=3)
-
-    args = proto.RepeatedField(proto.STRING, number=4)
-
-    env = proto.RepeatedField(proto.MESSAGE, number=5,
+    executor_image_uri = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    package_uris = proto.RepeatedField(
+        proto.STRING,
+        number=2,
+    )
+    python_module = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    args = proto.RepeatedField(
+        proto.STRING,
+        number=4,
+    )
+    env = proto.RepeatedField(
+        proto.MESSAGE,
+        number=5,
         message=env_var.EnvVar,
     )
 
@@ -330,11 +374,15 @@ class Scheduling(proto.Message):
             to workers leaving and joining a job.
     """
 
-    timeout = proto.Field(proto.MESSAGE, number=1,
-        message=duration.Duration,
+    timeout = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=duration_pb2.Duration,
     )
-
-    restart_job_on_worker_restart = proto.Field(proto.BOOL, number=3)
+    restart_job_on_worker_restart = proto.Field(
+        proto.BOOL,
+        number=3,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

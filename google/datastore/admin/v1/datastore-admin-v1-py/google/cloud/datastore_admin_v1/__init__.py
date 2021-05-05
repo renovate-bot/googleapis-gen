@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,8 @@
 #
 
 from .services.datastore_admin import DatastoreAdminClient
+from .services.datastore_admin import DatastoreAdminAsyncClient
+
 from .types.datastore_admin import CommonMetadata
 from .types.datastore_admin import CreateIndexRequest
 from .types.datastore_admin import DeleteIndexRequest
@@ -29,27 +30,26 @@ from .types.datastore_admin import ImportEntitiesRequest
 from .types.datastore_admin import IndexOperationMetadata
 from .types.datastore_admin import ListIndexesRequest
 from .types.datastore_admin import ListIndexesResponse
-from .types.datastore_admin import OperationType
 from .types.datastore_admin import Progress
+from .types.datastore_admin import OperationType
 from .types.index import Index
 
-
 __all__ = (
-    'CommonMetadata',
-    'CreateIndexRequest',
-    'DeleteIndexRequest',
-    'EntityFilter',
-    'ExportEntitiesMetadata',
-    'ExportEntitiesRequest',
-    'ExportEntitiesResponse',
-    'GetIndexRequest',
-    'ImportEntitiesMetadata',
-    'ImportEntitiesRequest',
-    'Index',
-    'IndexOperationMetadata',
-    'ListIndexesRequest',
-    'ListIndexesResponse',
-    'OperationType',
-    'Progress',
+'CommonMetadata',
+'CreateIndexRequest',
 'DatastoreAdminClient',
+'DeleteIndexRequest',
+'EntityFilter',
+'ExportEntitiesMetadata',
+'ExportEntitiesRequest',
+'ExportEntitiesResponse',
+'GetIndexRequest',
+'ImportEntitiesMetadata',
+'ImportEntitiesRequest',
+'Index',
+'IndexOperationMetadata',
+'ListIndexesRequest',
+'ListIndexesResponse',
+'OperationType',
+'Progress',
 )

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,13 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.cloud.recommendationengine_v1beta1.types import catalog
 from google.cloud.recommendationengine_v1beta1.types import common
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -109,32 +106,39 @@ class UserEvent(proto.Message):
         ECOMMERCE = 2
         BATCH_UPLOAD = 3
 
-    event_type = proto.Field(proto.STRING, number=1)
-
-    user_info = proto.Field(proto.MESSAGE, number=2,
+    event_type = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    user_info = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='UserInfo',
     )
-
-    event_detail = proto.Field(proto.MESSAGE, number=3,
+    event_detail = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='EventDetail',
     )
-
-    product_event_detail = proto.Field(proto.MESSAGE, number=4,
+    product_event_detail = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='ProductEventDetail',
     )
-
-    event_time = proto.Field(proto.MESSAGE, number=5,
-        message=timestamp.Timestamp,
+    event_time = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        message=timestamp_pb2.Timestamp,
     )
-
-    event_source = proto.Field(proto.ENUM, number=6,
+    event_source = proto.Field(
+        proto.ENUM,
+        number=6,
         enum=EventSource,
     )
 
 
 class UserInfo(proto.Message):
     r"""Information of end users.
-
     Attributes:
         visitor_id (str):
             Required. A unique identifier for tracking
@@ -173,20 +177,30 @@ class UserInfo(proto.Message):
             processing and pushing the user events).
     """
 
-    visitor_id = proto.Field(proto.STRING, number=1)
-
-    user_id = proto.Field(proto.STRING, number=2)
-
-    ip_address = proto.Field(proto.STRING, number=3)
-
-    user_agent = proto.Field(proto.STRING, number=4)
-
-    direct_user_request = proto.Field(proto.BOOL, number=5)
+    visitor_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    user_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    ip_address = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    user_agent = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    direct_user_request = proto.Field(
+        proto.BOOL,
+        number=5,
+    )
 
 
 class EventDetail(proto.Message):
     r"""User event details shared by all recommendation types.
-
     Attributes:
         uri (str):
             Optional. Complete url (window.location.href)
@@ -241,17 +255,29 @@ class EventDetail(proto.Message):
             directly, or coming through Google search, and etc.
     """
 
-    uri = proto.Field(proto.STRING, number=1)
-
-    referrer_uri = proto.Field(proto.STRING, number=6)
-
-    page_view_id = proto.Field(proto.STRING, number=2)
-
-    experiment_ids = proto.RepeatedField(proto.STRING, number=3)
-
-    recommendation_token = proto.Field(proto.STRING, number=4)
-
-    event_attributes = proto.Field(proto.MESSAGE, number=5,
+    uri = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    referrer_uri = proto.Field(
+        proto.STRING,
+        number=6,
+    )
+    page_view_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    experiment_ids = proto.RepeatedField(
+        proto.STRING,
+        number=3,
+    )
+    recommendation_token = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    event_attributes = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=common.FeatureMap,
     )
 
@@ -318,28 +344,37 @@ class ProductEventDetail(proto.Message):
             should not set this field.
     """
 
-    search_query = proto.Field(proto.STRING, number=1)
-
-    page_categories = proto.RepeatedField(proto.MESSAGE, number=2,
+    search_query = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_categories = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message=catalog.CatalogItem.CategoryHierarchy,
     )
-
-    product_details = proto.RepeatedField(proto.MESSAGE, number=3,
+    product_details = proto.RepeatedField(
+        proto.MESSAGE,
+        number=3,
         message='ProductDetail',
     )
-
-    list_id = proto.Field(proto.STRING, number=4)
-
-    cart_id = proto.Field(proto.STRING, number=5)
-
-    purchase_transaction = proto.Field(proto.MESSAGE, number=6,
+    list_id = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    cart_id = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    purchase_transaction = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message='PurchaseTransaction',
     )
 
 
 class PurchaseTransaction(proto.Message):
     r"""A transaction represents the entire purchase transaction.
-
     Attributes:
         id (str):
             Optional. The transaction ID with a length
@@ -370,20 +405,32 @@ class PurchaseTransaction(proto.Message):
             This field is not required if the event type is ``refund``.
     """
 
-    id = proto.Field(proto.STRING, number=1)
-
-    revenue = proto.Field(proto.FLOAT, number=2)
-
-    taxes = proto.MapField(proto.STRING, proto.FLOAT, number=3)
-
-    costs = proto.MapField(proto.STRING, proto.FLOAT, number=4)
-
-    currency_code = proto.Field(proto.STRING, number=6)
+    id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    revenue = proto.Field(
+        proto.FLOAT,
+        number=2,
+    )
+    taxes = proto.MapField(
+        proto.STRING,
+        proto.FLOAT,
+        number=3,
+    )
+    costs = proto.MapField(
+        proto.STRING,
+        proto.FLOAT,
+        number=4,
+    )
+    currency_code = proto.Field(
+        proto.STRING,
+        number=6,
+    )
 
 
 class ProductDetail(proto.Message):
     r"""Detailed product information associated with a user event.
-
     Attributes:
         id (str):
             Required. Catalog item ID. UTF-8 encoded
@@ -427,23 +474,38 @@ class ProductDetail(proto.Message):
             product in the user event.
     """
 
-    id = proto.Field(proto.STRING, number=1)
-
-    currency_code = proto.Field(proto.STRING, number=2)
-
-    original_price = proto.Field(proto.FLOAT, number=3)
-
-    display_price = proto.Field(proto.FLOAT, number=4)
-
-    stock_state = proto.Field(proto.ENUM, number=5,
+    id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    currency_code = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    original_price = proto.Field(
+        proto.FLOAT,
+        number=3,
+    )
+    display_price = proto.Field(
+        proto.FLOAT,
+        number=4,
+    )
+    stock_state = proto.Field(
+        proto.ENUM,
+        number=5,
         enum=catalog.ProductCatalogItem.StockState,
     )
-
-    quantity = proto.Field(proto.INT32, number=6)
-
-    available_quantity = proto.Field(proto.INT32, number=7)
-
-    item_attributes = proto.Field(proto.MESSAGE, number=8,
+    quantity = proto.Field(
+        proto.INT32,
+        number=6,
+    )
+    available_quantity = proto.Field(
+        proto.INT32,
+        number=7,
+    )
+    item_attributes = proto.Field(
+        proto.MESSAGE,
+        number=8,
         message=common.FeatureMap,
     )
 

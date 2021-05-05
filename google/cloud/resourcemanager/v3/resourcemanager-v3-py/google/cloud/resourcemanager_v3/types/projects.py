@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -116,33 +113,51 @@ class Project(proto.Message):
         ACTIVE = 1
         DELETE_REQUESTED = 2
 
-    name = proto.Field(proto.STRING, number=1)
-
-    parent = proto.Field(proto.STRING, number=2)
-
-    project_id = proto.Field(proto.STRING, number=3)
-
-    state = proto.Field(proto.ENUM, number=4,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    parent = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    project_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    state = proto.Field(
+        proto.ENUM,
+        number=4,
         enum=State,
     )
-
-    display_name = proto.Field(proto.STRING, number=5)
-
-    create_time = proto.Field(proto.MESSAGE, number=6,
-        message=timestamp.Timestamp,
+    display_name = proto.Field(
+        proto.STRING,
+        number=5,
     )
-
-    update_time = proto.Field(proto.MESSAGE, number=7,
-        message=timestamp.Timestamp,
+    create_time = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        message=timestamp_pb2.Timestamp,
     )
-
-    delete_time = proto.Field(proto.MESSAGE, number=8,
-        message=timestamp.Timestamp,
+    update_time = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        message=timestamp_pb2.Timestamp,
     )
-
-    etag = proto.Field(proto.STRING, number=9)
-
-    labels = proto.MapField(proto.STRING, proto.STRING, number=10)
+    delete_time = proto.Field(
+        proto.MESSAGE,
+        number=8,
+        message=timestamp_pb2.Timestamp,
+    )
+    etag = proto.Field(
+        proto.STRING,
+        number=9,
+    )
+    labels = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=10,
+    )
 
 
 class GetProjectRequest(proto.Message):
@@ -156,7 +171,10 @@ class GetProjectRequest(proto.Message):
             ``projects/415104041262``).
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class ListProjectsRequest(proto.Message):
@@ -187,13 +205,22 @@ class ListProjectsRequest(proto.Message):
             projects are returned.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_token = proto.Field(proto.STRING, number=2)
-
-    page_size = proto.Field(proto.INT32, number=3)
-
-    show_deleted = proto.Field(proto.BOOL, number=4)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=3,
+    )
+    show_deleted = proto.Field(
+        proto.BOOL,
+        number=4,
+    )
 
 
 class ListProjectsResponse(proto.Message):
@@ -232,11 +259,15 @@ class ListProjectsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    projects = proto.RepeatedField(proto.MESSAGE, number=1,
+    projects = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Project',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class SearchProjectsRequest(proto.Message):
@@ -296,11 +327,18 @@ class SearchProjectsRequest(proto.Message):
             server picks an appropriate default.
     """
 
-    query = proto.Field(proto.STRING, number=1)
-
-    page_token = proto.Field(proto.STRING, number=2)
-
-    page_size = proto.Field(proto.INT32, number=3)
+    query = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=3,
+    )
 
 
 class SearchProjectsResponse(proto.Message):
@@ -336,11 +374,15 @@ class SearchProjectsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    projects = proto.RepeatedField(proto.MESSAGE, number=1,
+    projects = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Project',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class CreateProjectRequest(proto.Message):
@@ -362,7 +404,9 @@ class CreateProjectRequest(proto.Message):
             parent will be set to that Organization.
     """
 
-    project = proto.Field(proto.MESSAGE, number=1,
+    project = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='Project',
     )
 
@@ -385,13 +429,19 @@ class CreateProjectMetadata(proto.Message):
             complete.
     """
 
-    create_time = proto.Field(proto.MESSAGE, number=1,
-        message=timestamp.Timestamp,
+    create_time = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=timestamp_pb2.Timestamp,
     )
-
-    gettable = proto.Field(proto.BOOL, number=2)
-
-    ready = proto.Field(proto.BOOL, number=3)
+    gettable = proto.Field(
+        proto.BOOL,
+        number=2,
+    )
+    ready = proto.Field(
+        proto.BOOL,
+        number=3,
+    )
 
 
 class UpdateProjectRequest(proto.Message):
@@ -412,19 +462,22 @@ class UpdateProjectRequest(proto.Message):
             update fields.
     """
 
-    project = proto.Field(proto.MESSAGE, number=1,
+    project = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='Project',
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=2,
-        message=field_mask.FieldMask,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=field_mask_pb2.FieldMask,
     )
 
 
 class UpdateProjectMetadata(proto.Message):
     r"""A status object which is used as the ``metadata`` field for the
     Operation returned by UpdateProject.
-    """
+        """
 
 
 class MoveProjectRequest(proto.Message):
@@ -440,15 +493,20 @@ class MoveProjectRequest(proto.Message):
             under.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    destination_parent = proto.Field(proto.STRING, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    destination_parent = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class MoveProjectMetadata(proto.Message):
     r"""A status object which is used as the ``metadata`` field for the
     Operation returned by MoveProject.
-    """
+        """
 
 
 class DeleteProjectRequest(proto.Message):
@@ -461,13 +519,16 @@ class DeleteProjectRequest(proto.Message):
             ``projects/415104041262``).
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class DeleteProjectMetadata(proto.Message):
     r"""A status object which is used as the ``metadata`` field for the
     Operation returned by ``DeleteProject``.
-    """
+        """
 
 
 class UndeleteProjectRequest(proto.Message):
@@ -482,13 +543,16 @@ class UndeleteProjectRequest(proto.Message):
             Required.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class UndeleteProjectMetadata(proto.Message):
     r"""A status object which is used as the ``metadata`` field for the
     Operation returned by ``UndeleteProject``.
-    """
+        """
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

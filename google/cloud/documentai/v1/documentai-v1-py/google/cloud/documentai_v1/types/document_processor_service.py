@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,14 +13,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.cloud.documentai_v1.types import document as gcd_document
 from google.cloud.documentai_v1.types import document_io
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-from google.rpc import status_pb2 as gr_status  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
+from google.rpc import status_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -43,7 +40,6 @@ __protobuf__ = proto.module(
 
 class ProcessRequest(proto.Message):
     r"""Request message for the process document method.
-
     Attributes:
         inline_document (google.cloud.documentai_v1.types.Document):
             An inline document proto.
@@ -56,22 +52,30 @@ class ProcessRequest(proto.Message):
             skipped for this request. Default to false.
     """
 
-    inline_document = proto.Field(proto.MESSAGE, number=4, oneof='source',
+    inline_document = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        oneof='source',
         message=gcd_document.Document,
     )
-
-    raw_document = proto.Field(proto.MESSAGE, number=5, oneof='source',
+    raw_document = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        oneof='source',
         message=document_io.RawDocument,
     )
-
-    name = proto.Field(proto.STRING, number=1)
-
-    skip_human_review = proto.Field(proto.BOOL, number=3)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    skip_human_review = proto.Field(
+        proto.BOOL,
+        number=3,
+    )
 
 
 class HumanReviewStatus(proto.Message):
     r"""The status of human review on a processed document.
-
     Attributes:
         state (google.cloud.documentai_v1.types.HumanReviewStatus.State):
             The state of human review on the processing
@@ -94,18 +98,23 @@ class HumanReviewStatus(proto.Message):
         IN_PROGRESS = 3
         ERROR = 4
 
-    state = proto.Field(proto.ENUM, number=1,
+    state = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=State,
     )
-
-    state_message = proto.Field(proto.STRING, number=2)
-
-    human_review_operation = proto.Field(proto.STRING, number=3)
+    state_message = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    human_review_operation = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class ProcessResponse(proto.Message):
     r"""Response message for the process document method.
-
     Attributes:
         document (google.cloud.documentai_v1.types.Document):
             The document payload, will populate fields
@@ -115,18 +124,20 @@ class ProcessResponse(proto.Message):
             document.
     """
 
-    document = proto.Field(proto.MESSAGE, number=1,
+    document = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=gcd_document.Document,
     )
-
-    human_review_status = proto.Field(proto.MESSAGE, number=3,
+    human_review_status = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='HumanReviewStatus',
     )
 
 
 class BatchProcessRequest(proto.Message):
     r"""Request message for batch process document method.
-
     Attributes:
         name (str):
             Required. The processor resource name.
@@ -139,26 +150,32 @@ class BatchProcessRequest(proto.Message):
             skipped for this request. Default to false.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    input_documents = proto.Field(proto.MESSAGE, number=5,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    input_documents = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=document_io.BatchDocumentsInputConfig,
     )
-
-    document_output_config = proto.Field(proto.MESSAGE, number=6,
+    document_output_config = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message=document_io.DocumentOutputConfig,
     )
-
-    skip_human_review = proto.Field(proto.BOOL, number=4)
+    skip_human_review = proto.Field(
+        proto.BOOL,
+        number=4,
+    )
 
 
 class BatchProcessResponse(proto.Message):
-    r"""Response message for batch process document method."""
+    r"""Response message for batch process document method.    """
 
 
 class BatchProcessMetadata(proto.Message):
     r"""The long running operation metadata for batch process method.
-
     Attributes:
         state (google.cloud.documentai_v1.types.BatchProcessMetadata.State):
             The state of the current batch processing.
@@ -206,40 +223,53 @@ class BatchProcessMetadata(proto.Message):
                 document.
         """
 
-        input_gcs_source = proto.Field(proto.STRING, number=1)
-
-        status = proto.Field(proto.MESSAGE, number=2,
+        input_gcs_source = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        status = proto.Field(
+            proto.MESSAGE,
+            number=2,
             message=gr_status.Status,
         )
-
-        output_gcs_destination = proto.Field(proto.STRING, number=3)
-
-        human_review_status = proto.Field(proto.MESSAGE, number=5,
+        output_gcs_destination = proto.Field(
+            proto.STRING,
+            number=3,
+        )
+        human_review_status = proto.Field(
+            proto.MESSAGE,
+            number=5,
             message='HumanReviewStatus',
         )
 
-    state = proto.Field(proto.ENUM, number=1,
+    state = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=State,
     )
-
-    state_message = proto.Field(proto.STRING, number=2)
-
-    create_time = proto.Field(proto.MESSAGE, number=3,
-        message=timestamp.Timestamp,
+    state_message = proto.Field(
+        proto.STRING,
+        number=2,
     )
-
-    update_time = proto.Field(proto.MESSAGE, number=4,
-        message=timestamp.Timestamp,
+    create_time = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=timestamp_pb2.Timestamp,
     )
-
-    individual_process_statuses = proto.RepeatedField(proto.MESSAGE, number=5,
+    update_time = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=timestamp_pb2.Timestamp,
+    )
+    individual_process_statuses = proto.RepeatedField(
+        proto.MESSAGE,
+        number=5,
         message=IndividualProcessStatus,
     )
 
 
 class ReviewDocumentRequest(proto.Message):
     r"""Request message for review document method.
-
     Attributes:
         inline_document (google.cloud.documentai_v1.types.Document):
             An inline document proto.
@@ -249,23 +279,30 @@ class ReviewDocumentRequest(proto.Message):
             reviewed with.
     """
 
-    inline_document = proto.Field(proto.MESSAGE, number=4, oneof='source',
+    inline_document = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        oneof='source',
         message=gcd_document.Document,
     )
-
-    human_review_config = proto.Field(proto.STRING, number=1)
+    human_review_config = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class ReviewDocumentResponse(proto.Message):
     r"""Response message for review document method.
-
     Attributes:
         gcs_destination (str):
             The Cloud Storage uri for the human reviewed
             document.
     """
 
-    gcs_destination = proto.Field(proto.STRING, number=1)
+    gcs_destination = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class ReviewDocumentOperationMetadata(proto.Message):
@@ -278,14 +315,15 @@ class ReviewDocumentOperationMetadata(proto.Message):
             operation.
     """
 
-    common_metadata = proto.Field(proto.MESSAGE, number=5,
+    common_metadata = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message='CommonOperationMetadata',
     )
 
 
 class CommonOperationMetadata(proto.Message):
     r"""The common metadata for long running operations.
-
     Attributes:
         state (google.cloud.documentai_v1.types.CommonOperationMetadata.State):
             The state of the operation.
@@ -306,18 +344,24 @@ class CommonOperationMetadata(proto.Message):
         FAILED = 4
         CANCELLED = 5
 
-    state = proto.Field(proto.ENUM, number=1,
+    state = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=State,
     )
-
-    state_message = proto.Field(proto.STRING, number=2)
-
-    create_time = proto.Field(proto.MESSAGE, number=3,
-        message=timestamp.Timestamp,
+    state_message = proto.Field(
+        proto.STRING,
+        number=2,
     )
-
-    update_time = proto.Field(proto.MESSAGE, number=4,
-        message=timestamp.Timestamp,
+    create_time = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=timestamp_pb2.Timestamp,
+    )
+    update_time = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=timestamp_pb2.Timestamp,
     )
 
 

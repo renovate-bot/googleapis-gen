@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,14 +13,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.cloud.dialogflowcx_v3beta1.types import page
 from google.cloud.dialogflowcx_v3beta1.types import validation_message
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -49,7 +46,6 @@ __protobuf__ = proto.module(
 
 class NluSettings(proto.Message):
     r"""Settings related to NLU.
-
     Attributes:
         model_type (google.cloud.dialogflowcx_v3beta1.types.NluSettings.ModelType):
             Indicates the type of NLU model.
@@ -78,13 +74,18 @@ class NluSettings(proto.Message):
         MODEL_TRAINING_MODE_AUTOMATIC = 1
         MODEL_TRAINING_MODE_MANUAL = 2
 
-    model_type = proto.Field(proto.ENUM, number=1,
+    model_type = proto.Field(
+        proto.ENUM,
+        number=1,
         enum=ModelType,
     )
-
-    classification_threshold = proto.Field(proto.FLOAT, number=3)
-
-    model_training_mode = proto.Field(proto.ENUM, number=4,
+    classification_threshold = proto.Field(
+        proto.FLOAT,
+        number=3,
+    )
+    model_training_mode = proto.Field(
+        proto.ENUM,
+        number=4,
         enum=ModelTrainingMode,
     )
 
@@ -168,23 +169,35 @@ class Flow(proto.Message):
             NLU related settings of the flow.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    display_name = proto.Field(proto.STRING, number=2)
-
-    description = proto.Field(proto.STRING, number=3)
-
-    transition_routes = proto.RepeatedField(proto.MESSAGE, number=4,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    display_name = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    description = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    transition_routes = proto.RepeatedField(
+        proto.MESSAGE,
+        number=4,
         message=page.TransitionRoute,
     )
-
-    event_handlers = proto.RepeatedField(proto.MESSAGE, number=10,
+    event_handlers = proto.RepeatedField(
+        proto.MESSAGE,
+        number=10,
         message=page.EventHandler,
     )
-
-    transition_route_groups = proto.RepeatedField(proto.STRING, number=15)
-
-    nlu_settings = proto.Field(proto.MESSAGE, number=11,
+    transition_route_groups = proto.RepeatedField(
+        proto.STRING,
+        number=15,
+    )
+    nlu_settings = proto.Field(
+        proto.MESSAGE,
+        number=11,
         message='NluSettings',
     )
 
@@ -214,13 +227,19 @@ class CreateFlowRequest(proto.Message):
             before they can be used.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    flow = proto.Field(proto.MESSAGE, number=2,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    flow = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='Flow',
     )
-
-    language_code = proto.Field(proto.STRING, number=3)
+    language_code = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class DeleteFlowRequest(proto.Message):
@@ -245,9 +264,14 @@ class DeleteFlowRequest(proto.Message):
                cleared).
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    force = proto.Field(proto.BOOL, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    force = proto.Field(
+        proto.BOOL,
+        number=2,
+    )
 
 
 class ListFlowsRequest(proto.Message):
@@ -280,13 +304,22 @@ class ListFlowsRequest(proto.Message):
             before they can be used.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
-
-    language_code = proto.Field(proto.STRING, number=4)
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    language_code = proto.Field(
+        proto.STRING,
+        number=4,
+    )
 
 
 class ListFlowsResponse(proto.Message):
@@ -307,11 +340,15 @@ class ListFlowsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    flows = proto.RepeatedField(proto.MESSAGE, number=1,
+    flows = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='Flow',
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class GetFlowRequest(proto.Message):
@@ -338,9 +375,14 @@ class GetFlowRequest(proto.Message):
             before they can be used.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    language_code = proto.Field(proto.STRING, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    language_code = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class UpdateFlowRequest(proto.Message):
@@ -368,15 +410,20 @@ class UpdateFlowRequest(proto.Message):
             before they can be used.
     """
 
-    flow = proto.Field(proto.MESSAGE, number=1,
+    flow = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message='Flow',
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=2,
-        message=field_mask.FieldMask,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=field_mask_pb2.FieldMask,
     )
-
-    language_code = proto.Field(proto.STRING, number=3)
+    language_code = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class TrainFlowRequest(proto.Message):
@@ -389,7 +436,10 @@ class TrainFlowRequest(proto.Message):
             ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>``.
     """
 
-    name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class ValidateFlowRequest(proto.Message):
@@ -405,9 +455,14 @@ class ValidateFlowRequest(proto.Message):
             language is used.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    language_code = proto.Field(proto.STRING, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    language_code = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class GetFlowValidationResultRequest(proto.Message):
@@ -423,9 +478,14 @@ class GetFlowValidationResultRequest(proto.Message):
             language is used.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    language_code = proto.Field(proto.STRING, number=2)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    language_code = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class FlowValidationResult(proto.Message):
@@ -442,14 +502,19 @@ class FlowValidationResult(proto.Message):
             Last time the flow was validated.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    validation_messages = proto.RepeatedField(proto.MESSAGE, number=2,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    validation_messages = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message=validation_message.ValidationMessage,
     )
-
-    update_time = proto.Field(proto.MESSAGE, number=3,
-        message=timestamp.Timestamp,
+    update_time = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=timestamp_pb2.Timestamp,
     )
 
 
@@ -477,13 +542,23 @@ class ImportFlowRequest(proto.Message):
         KEEP = 1
         FALLBACK = 2
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    flow_uri = proto.Field(proto.STRING, number=2, oneof='flow')
-
-    flow_content = proto.Field(proto.BYTES, number=3, oneof='flow')
-
-    import_option = proto.Field(proto.ENUM, number=4,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    flow_uri = proto.Field(
+        proto.STRING,
+        number=2,
+        oneof='flow',
+    )
+    flow_content = proto.Field(
+        proto.BYTES,
+        number=3,
+        oneof='flow',
+    )
+    import_option = proto.Field(
+        proto.ENUM,
+        number=4,
         enum=ImportOption,
     )
 
@@ -498,7 +573,10 @@ class ImportFlowResponse(proto.Message):
             ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>``.
     """
 
-    flow = proto.Field(proto.STRING, number=1)
+    flow = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class ExportFlowRequest(proto.Message):
@@ -520,11 +598,18 @@ class ExportFlowRequest(proto.Message):
             by the specified flow.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    flow_uri = proto.Field(proto.STRING, number=2)
-
-    include_referenced_flows = proto.Field(proto.BOOL, number=4)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    flow_uri = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    include_referenced_flows = proto.Field(
+        proto.BOOL,
+        number=4,
+    )
 
 
 class ExportFlowResponse(proto.Message):
@@ -540,9 +625,16 @@ class ExportFlowResponse(proto.Message):
             Uncompressed raw byte content for flow.
     """
 
-    flow_uri = proto.Field(proto.STRING, number=1, oneof='flow')
-
-    flow_content = proto.Field(proto.BYTES, number=2, oneof='flow')
+    flow_uri = proto.Field(
+        proto.STRING,
+        number=1,
+        oneof='flow',
+    )
+    flow_content = proto.Field(
+        proto.BYTES,
+        number=2,
+        oneof='flow',
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

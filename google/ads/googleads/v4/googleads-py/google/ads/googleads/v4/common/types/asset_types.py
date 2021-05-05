@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
 from google.ads.googleads.v4.enums.types import mime_type as gage_mime_type
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -38,21 +35,21 @@ __protobuf__ = proto.module(
 
 class YoutubeVideoAsset(proto.Message):
     r"""A YouTube asset.
-
     Attributes:
         youtube_video_id (google.protobuf.wrappers_pb2.StringValue):
             YouTube video id. This is the 11 character
             string value used in the YouTube video URL.
     """
 
-    youtube_video_id = proto.Field(proto.MESSAGE, number=1,
-        message=wrappers.StringValue,
+    youtube_video_id = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=wrappers_pb2.StringValue,
     )
 
 
 class MediaBundleAsset(proto.Message):
     r"""A MediaBundle asset.
-
     Attributes:
         data (google.protobuf.wrappers_pb2.BytesValue):
             Media bundle (ZIP file) asset data. The
@@ -63,14 +60,15 @@ class MediaBundleAsset(proto.Message):
             MediaBundleAsset. This field is mutate only.
     """
 
-    data = proto.Field(proto.MESSAGE, number=1,
-        message=wrappers.BytesValue,
+    data = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=wrappers_pb2.BytesValue,
     )
 
 
 class ImageAsset(proto.Message):
     r"""An Image asset.
-
     Attributes:
         data (google.protobuf.wrappers_pb2.BytesValue):
             The raw bytes data of an image. This field is
@@ -83,16 +81,24 @@ class ImageAsset(proto.Message):
             Metadata for this image at its original size.
     """
 
-    data = proto.Field(proto.MESSAGE, number=1,
-        message=wrappers.BytesValue,
+    data = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=wrappers_pb2.BytesValue,
     )
-    file_size = proto.Field(proto.MESSAGE, number=2,
-        message=wrappers.Int64Value,
+    file_size = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=wrappers_pb2.Int64Value,
     )
-    mime_type = proto.Field(proto.ENUM, number=3,
+    mime_type = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=gage_mime_type.MimeTypeEnum.MimeType,
     )
-    full_size = proto.Field(proto.MESSAGE, number=4,
+    full_size = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message='ImageDimension',
     )
 
@@ -111,27 +117,34 @@ class ImageDimension(proto.Message):
             and width.
     """
 
-    height_pixels = proto.Field(proto.MESSAGE, number=1,
-        message=wrappers.Int64Value,
+    height_pixels = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=wrappers_pb2.Int64Value,
     )
-    width_pixels = proto.Field(proto.MESSAGE, number=2,
-        message=wrappers.Int64Value,
+    width_pixels = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=wrappers_pb2.Int64Value,
     )
-    url = proto.Field(proto.MESSAGE, number=3,
-        message=wrappers.StringValue,
+    url = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=wrappers_pb2.StringValue,
     )
 
 
 class TextAsset(proto.Message):
     r"""A Text asset.
-
     Attributes:
         text (google.protobuf.wrappers_pb2.StringValue):
             Text content of the text asset.
     """
 
-    text = proto.Field(proto.MESSAGE, number=1,
-        message=wrappers.StringValue,
+    text = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=wrappers_pb2.StringValue,
     )
 
 
@@ -139,7 +152,7 @@ class BookOnGoogleAsset(proto.Message):
     r"""A Book on Google asset. Used to redirect user to book through
     Google. Book on Google will change the redirect url to book
     directly through Google.
-    """
+        """
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

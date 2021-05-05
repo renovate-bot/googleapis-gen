@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,24 +13,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google.api_core import operations_v1              # type: ignore
-from google import auth                                # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
+import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
 
 from google.iam_v1beta.types import workload_identity_pool
 from google.iam_v1beta.types import workload_identity_pool as gi_workload_identity_pool
-from google.longrunning import operations_pb2 as operations  # type: ignore
-
+from google.longrunning import operations_pb2  # type: ignore
 from .base import WorkloadIdentityPoolsTransport, DEFAULT_CLIENT_INFO
 from .grpc import WorkloadIdentityPoolsGrpcTransport
 
@@ -55,7 +52,7 @@ class WorkloadIdentityPoolsGrpcAsyncIOTransport(WorkloadIdentityPoolsTransport):
     @classmethod
     def create_channel(cls,
                        host: str = 'iam.googleapis.com',
-                       credentials: credentials.Credentials = None,
+                       credentials: ga_credentials.Credentials = None,
                        credentials_file: Optional[str] = None,
                        scopes: Optional[Sequence[str]] = None,
                        quota_project_id: Optional[str] = None,
@@ -81,19 +78,21 @@ class WorkloadIdentityPoolsGrpcAsyncIOTransport(WorkloadIdentityPoolsTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
     def __init__(self, *,
             host: str = 'iam.googleapis.com',
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             credentials_file: Optional[str] = None,
             scopes: Optional[Sequence[str]] = None,
             channel: aio.Channel = None,
@@ -107,7 +106,8 @@ class WorkloadIdentityPoolsGrpcAsyncIOTransport(WorkloadIdentityPoolsTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -166,7 +166,6 @@ class WorkloadIdentityPoolsGrpcAsyncIOTransport(WorkloadIdentityPoolsTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
-
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -300,7 +299,7 @@ class WorkloadIdentityPoolsGrpcAsyncIOTransport(WorkloadIdentityPoolsTransport):
     @property
     def create_workload_identity_pool(self) -> Callable[
             [gi_workload_identity_pool.CreateWorkloadIdentityPoolRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the create workload identity pool method over gRPC.
 
         Creates a new
@@ -323,14 +322,14 @@ class WorkloadIdentityPoolsGrpcAsyncIOTransport(WorkloadIdentityPoolsTransport):
             self._stubs['create_workload_identity_pool'] = self.grpc_channel.unary_unary(
                 '/google.iam.v1beta.WorkloadIdentityPools/CreateWorkloadIdentityPool',
                 request_serializer=gi_workload_identity_pool.CreateWorkloadIdentityPoolRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['create_workload_identity_pool']
 
     @property
     def update_workload_identity_pool(self) -> Callable[
             [gi_workload_identity_pool.UpdateWorkloadIdentityPoolRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the update workload identity pool method over gRPC.
 
         Updates an existing
@@ -350,14 +349,14 @@ class WorkloadIdentityPoolsGrpcAsyncIOTransport(WorkloadIdentityPoolsTransport):
             self._stubs['update_workload_identity_pool'] = self.grpc_channel.unary_unary(
                 '/google.iam.v1beta.WorkloadIdentityPools/UpdateWorkloadIdentityPool',
                 request_serializer=gi_workload_identity_pool.UpdateWorkloadIdentityPoolRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['update_workload_identity_pool']
 
     @property
     def delete_workload_identity_pool(self) -> Callable[
             [workload_identity_pool.DeleteWorkloadIdentityPoolRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the delete workload identity pool method over gRPC.
 
         Deletes a
@@ -386,14 +385,14 @@ class WorkloadIdentityPoolsGrpcAsyncIOTransport(WorkloadIdentityPoolsTransport):
             self._stubs['delete_workload_identity_pool'] = self.grpc_channel.unary_unary(
                 '/google.iam.v1beta.WorkloadIdentityPools/DeleteWorkloadIdentityPool',
                 request_serializer=workload_identity_pool.DeleteWorkloadIdentityPoolRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['delete_workload_identity_pool']
 
     @property
     def undelete_workload_identity_pool(self) -> Callable[
             [workload_identity_pool.UndeleteWorkloadIdentityPoolRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the undelete workload identity
         pool method over gRPC.
 
@@ -415,7 +414,7 @@ class WorkloadIdentityPoolsGrpcAsyncIOTransport(WorkloadIdentityPoolsTransport):
             self._stubs['undelete_workload_identity_pool'] = self.grpc_channel.unary_unary(
                 '/google.iam.v1beta.WorkloadIdentityPools/UndeleteWorkloadIdentityPool',
                 request_serializer=workload_identity_pool.UndeleteWorkloadIdentityPoolRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['undelete_workload_identity_pool']
 
@@ -482,7 +481,7 @@ class WorkloadIdentityPoolsGrpcAsyncIOTransport(WorkloadIdentityPoolsTransport):
     @property
     def create_workload_identity_pool_provider(self) -> Callable[
             [workload_identity_pool.CreateWorkloadIdentityPoolProviderRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the create workload identity pool
         provider method over gRPC.
 
@@ -508,14 +507,14 @@ class WorkloadIdentityPoolsGrpcAsyncIOTransport(WorkloadIdentityPoolsTransport):
             self._stubs['create_workload_identity_pool_provider'] = self.grpc_channel.unary_unary(
                 '/google.iam.v1beta.WorkloadIdentityPools/CreateWorkloadIdentityPoolProvider',
                 request_serializer=workload_identity_pool.CreateWorkloadIdentityPoolProviderRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['create_workload_identity_pool_provider']
 
     @property
     def update_workload_identity_pool_provider(self) -> Callable[
             [workload_identity_pool.UpdateWorkloadIdentityPoolProviderRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the update workload identity pool
         provider method over gRPC.
 
@@ -536,14 +535,14 @@ class WorkloadIdentityPoolsGrpcAsyncIOTransport(WorkloadIdentityPoolsTransport):
             self._stubs['update_workload_identity_pool_provider'] = self.grpc_channel.unary_unary(
                 '/google.iam.v1beta.WorkloadIdentityPools/UpdateWorkloadIdentityPoolProvider',
                 request_serializer=workload_identity_pool.UpdateWorkloadIdentityPoolProviderRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['update_workload_identity_pool_provider']
 
     @property
     def delete_workload_identity_pool_provider(self) -> Callable[
             [workload_identity_pool.DeleteWorkloadIdentityPoolProviderRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the delete workload identity pool
         provider method over gRPC.
 
@@ -569,14 +568,14 @@ class WorkloadIdentityPoolsGrpcAsyncIOTransport(WorkloadIdentityPoolsTransport):
             self._stubs['delete_workload_identity_pool_provider'] = self.grpc_channel.unary_unary(
                 '/google.iam.v1beta.WorkloadIdentityPools/DeleteWorkloadIdentityPoolProvider',
                 request_serializer=workload_identity_pool.DeleteWorkloadIdentityPoolProviderRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['delete_workload_identity_pool_provider']
 
     @property
     def undelete_workload_identity_pool_provider(self) -> Callable[
             [workload_identity_pool.UndeleteWorkloadIdentityPoolProviderRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the undelete workload identity
         pool provider method over gRPC.
 
@@ -598,7 +597,7 @@ class WorkloadIdentityPoolsGrpcAsyncIOTransport(WorkloadIdentityPoolsTransport):
             self._stubs['undelete_workload_identity_pool_provider'] = self.grpc_channel.unary_unary(
                 '/google.iam.v1beta.WorkloadIdentityPools/UndeleteWorkloadIdentityPoolProvider',
                 request_serializer=workload_identity_pool.UndeleteWorkloadIdentityPoolProviderRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['undelete_workload_identity_pool_provider']
 

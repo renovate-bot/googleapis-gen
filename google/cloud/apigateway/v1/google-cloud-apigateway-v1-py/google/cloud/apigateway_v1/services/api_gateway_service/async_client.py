@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -22,20 +20,19 @@ from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
 import google.api_core.client_options as ClientOptions # type: ignore
-from google.api_core import exceptions                 # type: ignore
+from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.apigateway_v1.services.api_gateway_service import pagers
 from google.cloud.apigateway_v1.types import apigateway
-from google.protobuf import empty_pb2 as empty  # type: ignore
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
+from google.protobuf import empty_pb2  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 from .transports.base import ApiGatewayServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import ApiGatewayServiceGrpcAsyncIOTransport
 from .client import ApiGatewayServiceClient
@@ -63,19 +60,14 @@ class ApiGatewayServiceAsyncClient:
     parse_service_path = staticmethod(ApiGatewayServiceClient.parse_service_path)
     service_account_path = staticmethod(ApiGatewayServiceClient.service_account_path)
     parse_service_account_path = staticmethod(ApiGatewayServiceClient.parse_service_account_path)
-
     common_billing_account_path = staticmethod(ApiGatewayServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(ApiGatewayServiceClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(ApiGatewayServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(ApiGatewayServiceClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(ApiGatewayServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(ApiGatewayServiceClient.parse_common_organization_path)
-
     common_project_path = staticmethod(ApiGatewayServiceClient.common_project_path)
     parse_common_project_path = staticmethod(ApiGatewayServiceClient.parse_common_project_path)
-
     common_location_path = staticmethod(ApiGatewayServiceClient.common_location_path)
     parse_common_location_path = staticmethod(ApiGatewayServiceClient.parse_common_location_path)
 
@@ -123,7 +115,7 @@ class ApiGatewayServiceAsyncClient:
     get_transport_class = functools.partial(type(ApiGatewayServiceClient).get_transport_class, type(ApiGatewayServiceClient))
 
     def __init__(self, *,
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             transport: Union[str, ApiGatewayServiceTransport] = 'grpc_asyncio',
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -160,7 +152,6 @@ class ApiGatewayServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = ApiGatewayServiceClient(
             credentials=credentials,
             transport=transport,
@@ -190,7 +181,6 @@ class ApiGatewayServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -218,7 +208,6 @@ class ApiGatewayServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -279,7 +268,6 @@ class ApiGatewayServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -308,7 +296,6 @@ class ApiGatewayServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -376,7 +363,6 @@ class ApiGatewayServiceAsyncClient:
                 This corresponds to the ``gateway_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -405,7 +391,6 @@ class ApiGatewayServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if gateway is not None:
@@ -418,10 +403,7 @@ class ApiGatewayServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.create_gateway,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=60.0,
-                multiplier=2,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                     exceptions.Unknown,
                 ),
@@ -462,7 +444,7 @@ class ApiGatewayServiceAsyncClient:
             request: apigateway.UpdateGatewayRequest = None,
             *,
             gateway: apigateway.Gateway = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -489,7 +471,6 @@ class ApiGatewayServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -518,7 +499,6 @@ class ApiGatewayServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if gateway is not None:
             request.gateway = gateway
         if update_mask is not None:
@@ -529,10 +509,7 @@ class ApiGatewayServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.update_gateway,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=60.0,
-                multiplier=2,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                     exceptions.Unknown,
                 ),
@@ -590,7 +567,6 @@ class ApiGatewayServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -628,7 +604,6 @@ class ApiGatewayServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -637,10 +612,7 @@ class ApiGatewayServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_gateway,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=60.0,
-                multiplier=2,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                     exceptions.Unknown,
                 ),
@@ -670,7 +642,7 @@ class ApiGatewayServiceAsyncClient:
         response = operation_async.from_gapic(
             response,
             self._client._transport.operations_client,
-            empty.Empty,
+            empty_pb2.Empty,
             metadata_type=apigateway.OperationMetadata,
         )
 
@@ -698,7 +670,6 @@ class ApiGatewayServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -726,7 +697,6 @@ class ApiGatewayServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -787,7 +757,6 @@ class ApiGatewayServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -812,7 +781,6 @@ class ApiGatewayServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -879,7 +847,6 @@ class ApiGatewayServiceAsyncClient:
                 This corresponds to the ``api_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -907,7 +874,6 @@ class ApiGatewayServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if api is not None:
@@ -920,10 +886,7 @@ class ApiGatewayServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.create_api,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=60.0,
-                multiplier=2,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                     exceptions.Unknown,
                 ),
@@ -964,7 +927,7 @@ class ApiGatewayServiceAsyncClient:
             request: apigateway.UpdateApiRequest = None,
             *,
             api: apigateway.Api = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -991,7 +954,6 @@ class ApiGatewayServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1019,7 +981,6 @@ class ApiGatewayServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if api is not None:
             request.api = api
         if update_mask is not None:
@@ -1030,10 +991,7 @@ class ApiGatewayServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.update_api,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=60.0,
-                multiplier=2,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                     exceptions.Unknown,
                 ),
@@ -1091,7 +1049,6 @@ class ApiGatewayServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1129,7 +1086,6 @@ class ApiGatewayServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1138,10 +1094,7 @@ class ApiGatewayServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_api,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=60.0,
-                multiplier=2,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                     exceptions.Unknown,
                 ),
@@ -1171,7 +1124,7 @@ class ApiGatewayServiceAsyncClient:
         response = operation_async.from_gapic(
             response,
             self._client._transport.operations_client,
-            empty.Empty,
+            empty_pb2.Empty,
             metadata_type=apigateway.OperationMetadata,
         )
 
@@ -1199,7 +1152,6 @@ class ApiGatewayServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1227,7 +1179,6 @@ class ApiGatewayServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -1288,7 +1239,6 @@ class ApiGatewayServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1314,7 +1264,6 @@ class ApiGatewayServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1382,7 +1331,6 @@ class ApiGatewayServiceAsyncClient:
                 This corresponds to the ``api_config_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1409,7 +1357,6 @@ class ApiGatewayServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if api_config is not None:
@@ -1422,10 +1369,7 @@ class ApiGatewayServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.create_api_config,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=60.0,
-                multiplier=2,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                     exceptions.Unknown,
                 ),
@@ -1466,7 +1410,7 @@ class ApiGatewayServiceAsyncClient:
             request: apigateway.UpdateApiConfigRequest = None,
             *,
             api_config: apigateway.ApiConfig = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -1493,7 +1437,6 @@ class ApiGatewayServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1520,7 +1463,6 @@ class ApiGatewayServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if api_config is not None:
             request.api_config = api_config
         if update_mask is not None:
@@ -1531,10 +1473,7 @@ class ApiGatewayServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.update_api_config,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=60.0,
-                multiplier=2,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                     exceptions.Unknown,
                 ),
@@ -1592,7 +1531,6 @@ class ApiGatewayServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1630,7 +1568,6 @@ class ApiGatewayServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -1639,10 +1576,7 @@ class ApiGatewayServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_api_config,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=60.0,
-                multiplier=2,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                     exceptions.Unknown,
                 ),
@@ -1672,14 +1606,12 @@ class ApiGatewayServiceAsyncClient:
         response = operation_async.from_gapic(
             response,
             self._client._transport.operations_client,
-            empty.Empty,
+            empty_pb2.Empty,
             metadata_type=apigateway.OperationMetadata,
         )
 
         # Done; return the response.
         return response
-
-
 
 
 

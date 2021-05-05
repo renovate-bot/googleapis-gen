@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,12 +15,14 @@
 #
 
 from .services.dataproc_metastore import DataprocMetastoreClient
+from .services.dataproc_metastore import DataprocMetastoreAsyncClient
+
 from .types.metastore import Backup
 from .types.metastore import CreateBackupRequest
 from .types.metastore import CreateMetadataImportRequest
 from .types.metastore import CreateServiceRequest
-from .types.metastore import DataCatalogConfig
 from .types.metastore import DatabaseDumpSpec
+from .types.metastore import DataCatalogConfig
 from .types.metastore import DeleteBackupRequest
 from .types.metastore import DeleteServiceRequest
 from .types.metastore import ExportMetadataRequest
@@ -50,40 +51,39 @@ from .types.metastore import Service
 from .types.metastore import UpdateMetadataImportRequest
 from .types.metastore import UpdateServiceRequest
 
-
 __all__ = (
-    'Backup',
-    'CreateBackupRequest',
-    'CreateMetadataImportRequest',
-    'CreateServiceRequest',
-    'DataCatalogConfig',
-    'DatabaseDumpSpec',
-    'DeleteBackupRequest',
-    'DeleteServiceRequest',
-    'ExportMetadataRequest',
-    'GetBackupRequest',
-    'GetMetadataImportRequest',
-    'GetServiceRequest',
-    'HiveMetastoreConfig',
-    'KerberosConfig',
-    'ListBackupsRequest',
-    'ListBackupsResponse',
-    'ListMetadataImportsRequest',
-    'ListMetadataImportsResponse',
-    'ListServicesRequest',
-    'ListServicesResponse',
-    'LocationMetadata',
-    'MaintenanceWindow',
-    'MetadataExport',
-    'MetadataImport',
-    'MetadataIntegration',
-    'MetadataManagementActivity',
-    'OperationMetadata',
-    'Restore',
-    'RestoreServiceRequest',
-    'Secret',
-    'Service',
-    'UpdateMetadataImportRequest',
-    'UpdateServiceRequest',
+'Backup',
+'CreateBackupRequest',
+'CreateMetadataImportRequest',
+'CreateServiceRequest',
+'DataCatalogConfig',
+'DatabaseDumpSpec',
 'DataprocMetastoreClient',
+'DeleteBackupRequest',
+'DeleteServiceRequest',
+'ExportMetadataRequest',
+'GetBackupRequest',
+'GetMetadataImportRequest',
+'GetServiceRequest',
+'HiveMetastoreConfig',
+'KerberosConfig',
+'ListBackupsRequest',
+'ListBackupsResponse',
+'ListMetadataImportsRequest',
+'ListMetadataImportsResponse',
+'ListServicesRequest',
+'ListServicesResponse',
+'LocationMetadata',
+'MaintenanceWindow',
+'MetadataExport',
+'MetadataImport',
+'MetadataIntegration',
+'MetadataManagementActivity',
+'OperationMetadata',
+'Restore',
+'RestoreServiceRequest',
+'Secret',
+'Service',
+'UpdateMetadataImportRequest',
+'UpdateServiceRequest',
 )

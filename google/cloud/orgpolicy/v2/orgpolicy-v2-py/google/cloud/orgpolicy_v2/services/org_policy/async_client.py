@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -22,16 +20,15 @@ from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
 import google.api_core.client_options as ClientOptions # type: ignore
-from google.api_core import exceptions                 # type: ignore
+from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
 from google.cloud.orgpolicy_v2.services.org_policy import pagers
 from google.cloud.orgpolicy_v2.types import constraint
 from google.cloud.orgpolicy_v2.types import orgpolicy
-
 from .transports.base import OrgPolicyTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import OrgPolicyGrpcAsyncIOTransport
 from .client import OrgPolicyClient
@@ -71,19 +68,14 @@ class OrgPolicyAsyncClient:
     parse_constraint_path = staticmethod(OrgPolicyClient.parse_constraint_path)
     policy_path = staticmethod(OrgPolicyClient.policy_path)
     parse_policy_path = staticmethod(OrgPolicyClient.parse_policy_path)
-
     common_billing_account_path = staticmethod(OrgPolicyClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(OrgPolicyClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(OrgPolicyClient.common_folder_path)
     parse_common_folder_path = staticmethod(OrgPolicyClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(OrgPolicyClient.common_organization_path)
     parse_common_organization_path = staticmethod(OrgPolicyClient.parse_common_organization_path)
-
     common_project_path = staticmethod(OrgPolicyClient.common_project_path)
     parse_common_project_path = staticmethod(OrgPolicyClient.parse_common_project_path)
-
     common_location_path = staticmethod(OrgPolicyClient.common_location_path)
     parse_common_location_path = staticmethod(OrgPolicyClient.parse_common_location_path)
 
@@ -131,7 +123,7 @@ class OrgPolicyAsyncClient:
     get_transport_class = functools.partial(type(OrgPolicyClient).get_transport_class, type(OrgPolicyClient))
 
     def __init__(self, *,
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             transport: Union[str, OrgPolicyTransport] = 'grpc_asyncio',
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -168,7 +160,6 @@ class OrgPolicyAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = OrgPolicyClient(
             credentials=credentials,
             transport=transport,
@@ -206,7 +197,6 @@ class OrgPolicyAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -235,7 +225,6 @@ class OrgPolicyAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -244,10 +233,7 @@ class OrgPolicyAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_constraints,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=10.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -315,7 +301,6 @@ class OrgPolicyAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -345,7 +330,6 @@ class OrgPolicyAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -354,10 +338,7 @@ class OrgPolicyAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_policies,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=10.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -420,7 +401,6 @@ class OrgPolicyAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -445,7 +425,6 @@ class OrgPolicyAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -454,10 +433,7 @@ class OrgPolicyAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_policy,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=10.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -514,7 +490,6 @@ class OrgPolicyAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -539,7 +514,6 @@ class OrgPolicyAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -548,10 +522,7 @@ class OrgPolicyAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_effective_policy,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=10.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -584,7 +555,7 @@ class OrgPolicyAsyncClient:
             request: orgpolicy.CreatePolicyRequest = None,
             *,
             parent: str = None,
-            policy_: orgpolicy.Policy = None,
+            policy: orgpolicy.Policy = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -615,12 +586,11 @@ class OrgPolicyAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            policy_ (:class:`google.cloud.orgpolicy_v2.types.Policy`):
+            policy (:class:`google.cloud.orgpolicy_v2.types.Policy`):
                 Required. ``Policy`` to create.
-                This corresponds to the ``policy_`` field
+                This corresponds to the ``policy`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -636,7 +606,7 @@ class OrgPolicyAsyncClient:
         # Create or coerce a protobuf request object.
         # Sanity check: If we got a request object, we should *not* have
         # gotten any keyword arguments that map to the request.
-        has_flattened_params = any([parent, policy_])
+        has_flattened_params = any([parent, policy])
         if request is not None and has_flattened_params:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
@@ -645,21 +615,17 @@ class OrgPolicyAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
-        if policy_ is not None:
-            request.policy_ = policy_
+        if policy is not None:
+            request.policy = policy
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.create_policy,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=10.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -691,7 +657,7 @@ class OrgPolicyAsyncClient:
     async def update_policy(self,
             request: orgpolicy.UpdatePolicyRequest = None,
             *,
-            policy_: orgpolicy.Policy = None,
+            policy: orgpolicy.Policy = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -713,12 +679,11 @@ class OrgPolicyAsyncClient:
                 [UpdatePolicyRequest]
                 [google.cloud.orgpolicy.v2.OrgPolicy.UpdatePolicy]
                 method.
-            policy_ (:class:`google.cloud.orgpolicy_v2.types.Policy`):
+            policy (:class:`google.cloud.orgpolicy_v2.types.Policy`):
                 Required. ``Policy`` to update.
-                This corresponds to the ``policy_`` field
+                This corresponds to the ``policy`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -734,7 +699,7 @@ class OrgPolicyAsyncClient:
         # Create or coerce a protobuf request object.
         # Sanity check: If we got a request object, we should *not* have
         # gotten any keyword arguments that map to the request.
-        has_flattened_params = any([policy_])
+        has_flattened_params = any([policy])
         if request is not None and has_flattened_params:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
@@ -743,19 +708,15 @@ class OrgPolicyAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
-        if policy_ is not None:
-            request.policy_ = policy_
+        if policy is not None:
+            request.policy = policy
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.update_policy,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=10.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -811,7 +772,6 @@ class OrgPolicyAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -830,7 +790,6 @@ class OrgPolicyAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -839,10 +798,7 @@ class OrgPolicyAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_policy,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=10.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -867,8 +823,6 @@ class OrgPolicyAsyncClient:
             timeout=timeout,
             metadata=metadata,
         )
-
-
 
 
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v7.enums.types import policy_topic_entry_type
 from google.ads.googleads.v7.enums.types import policy_topic_evidence_destination_mismatch_url_type
@@ -53,13 +50,20 @@ class PolicyViolationKey(proto.Message):
             implied. Must be specified for ad exemptions.
     """
 
-    policy_name = proto.Field(proto.STRING, number=3, optional=True)
-    violating_text = proto.Field(proto.STRING, number=4, optional=True)
+    policy_name = proto.Field(
+        proto.STRING,
+        number=3,
+        optional=True,
+    )
+    violating_text = proto.Field(
+        proto.STRING,
+        number=4,
+        optional=True,
+    )
 
 
 class PolicyValidationParameter(proto.Message):
     r"""Parameter for controlling how policy exemption is done.
-
     Attributes:
         ignorable_policy_topics (Sequence[str]):
             The list of policy topics that should not
@@ -84,8 +88,13 @@ class PolicyValidationParameter(proto.Message):
             or a change in advertiser certificates.
     """
 
-    ignorable_policy_topics = proto.RepeatedField(proto.STRING, number=3)
-    exempt_policy_violation_keys = proto.RepeatedField(proto.MESSAGE, number=2,
+    ignorable_policy_topics = proto.RepeatedField(
+        proto.STRING,
+        number=3,
+    )
+    exempt_policy_violation_keys = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='PolicyViolationKey',
     )
 
@@ -119,21 +128,30 @@ class PolicyTopicEntry(proto.Message):
             affected (e.g. not serving in a country).
     """
 
-    topic = proto.Field(proto.STRING, number=5, optional=True)
-    type_ = proto.Field(proto.ENUM, number=2,
+    topic = proto.Field(
+        proto.STRING,
+        number=5,
+        optional=True,
+    )
+    type_ = proto.Field(
+        proto.ENUM,
+        number=2,
         enum=policy_topic_entry_type.PolicyTopicEntryTypeEnum.PolicyTopicEntryType,
     )
-    evidences = proto.RepeatedField(proto.MESSAGE, number=3,
+    evidences = proto.RepeatedField(
+        proto.MESSAGE,
+        number=3,
         message='PolicyTopicEvidence',
     )
-    constraints = proto.RepeatedField(proto.MESSAGE, number=4,
+    constraints = proto.RepeatedField(
+        proto.MESSAGE,
+        number=4,
         message='PolicyTopicConstraint',
     )
 
 
 class PolicyTopicEvidence(proto.Message):
     r"""Additional information that explains a policy finding.
-
     Attributes:
         website_list (google.ads.googleads.v7.common.types.PolicyTopicEvidence.WebsiteList):
             List of websites linked with this resource.
@@ -155,16 +173,19 @@ class PolicyTopicEvidence(proto.Message):
             HTTP error code or isn't functional in all
             locations for commonly used devices.
     """
+
     class TextList(proto.Message):
         r"""A list of fragments of text that violated a policy.
-
         Attributes:
             texts (Sequence[str]):
                 The fragments of text from the resource that
                 caused the policy finding.
         """
 
-        texts = proto.RepeatedField(proto.STRING, number=2)
+        texts = proto.RepeatedField(
+            proto.STRING,
+            number=2,
+        )
 
     class WebsiteList(proto.Message):
         r"""A list of websites that caused a policy finding. Used for
@@ -177,7 +198,10 @@ class PolicyTopicEvidence(proto.Message):
                 Websites that caused the policy finding.
         """
 
-        websites = proto.RepeatedField(proto.STRING, number=2)
+        websites = proto.RepeatedField(
+            proto.STRING,
+            number=2,
+        )
 
     class DestinationTextList(proto.Message):
         r"""A list of strings found in a destination page that caused a
@@ -189,18 +213,22 @@ class PolicyTopicEvidence(proto.Message):
                 destination page.
         """
 
-        destination_texts = proto.RepeatedField(proto.STRING, number=2)
+        destination_texts = proto.RepeatedField(
+            proto.STRING,
+            number=2,
+        )
 
     class DestinationMismatch(proto.Message):
         r"""Evidence of mismatches between the URLs of a resource.
-
         Attributes:
             url_types (Sequence[google.ads.googleads.v7.enums.types.PolicyTopicEvidenceDestinationMismatchUrlTypeEnum.PolicyTopicEvidenceDestinationMismatchUrlType]):
                 The set of URLs that did not match each
                 other.
         """
 
-        url_types = proto.RepeatedField(proto.ENUM, number=1,
+        url_types = proto.RepeatedField(
+            proto.ENUM,
+            number=1,
             enum=policy_topic_evidence_destination_mismatch_url_type.PolicyTopicEvidenceDestinationMismatchUrlTypeEnum.PolicyTopicEvidenceDestinationMismatchUrlType,
         )
 
@@ -226,30 +254,66 @@ class PolicyTopicEvidence(proto.Message):
                 The HTTP error code.
         """
 
-        expanded_url = proto.Field(proto.STRING, number=7, optional=True)
-        device = proto.Field(proto.ENUM, number=4,
+        expanded_url = proto.Field(
+            proto.STRING,
+            number=7,
+            optional=True,
+        )
+        device = proto.Field(
+            proto.ENUM,
+            number=4,
             enum=policy_topic_evidence_destination_not_working_device.PolicyTopicEvidenceDestinationNotWorkingDeviceEnum.PolicyTopicEvidenceDestinationNotWorkingDevice,
         )
-        last_checked_date_time = proto.Field(proto.STRING, number=8, optional=True)
-        dns_error_type = proto.Field(proto.ENUM, number=1, oneof='reason',
+        last_checked_date_time = proto.Field(
+            proto.STRING,
+            number=8,
+            optional=True,
+        )
+        dns_error_type = proto.Field(
+            proto.ENUM,
+            number=1,
+            oneof='reason',
             enum=policy_topic_evidence_destination_not_working_dns_error_type.PolicyTopicEvidenceDestinationNotWorkingDnsErrorTypeEnum.PolicyTopicEvidenceDestinationNotWorkingDnsErrorType,
         )
-        http_error_code = proto.Field(proto.INT64, number=6, oneof='reason')
+        http_error_code = proto.Field(
+            proto.INT64,
+            number=6,
+            oneof='reason',
+        )
 
-    website_list = proto.Field(proto.MESSAGE, number=3, oneof='value',
+    website_list = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        oneof='value',
         message=WebsiteList,
     )
-    text_list = proto.Field(proto.MESSAGE, number=4, oneof='value',
+    text_list = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        oneof='value',
         message=TextList,
     )
-    language_code = proto.Field(proto.STRING, number=9, oneof='value')
-    destination_text_list = proto.Field(proto.MESSAGE, number=6, oneof='value',
+    language_code = proto.Field(
+        proto.STRING,
+        number=9,
+        oneof='value',
+    )
+    destination_text_list = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        oneof='value',
         message=DestinationTextList,
     )
-    destination_mismatch = proto.Field(proto.MESSAGE, number=7, oneof='value',
+    destination_mismatch = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        oneof='value',
         message=DestinationMismatch,
     )
-    destination_not_working = proto.Field(proto.MESSAGE, number=8, oneof='value',
+    destination_not_working = proto.Field(
+        proto.MESSAGE,
+        number=8,
+        oneof='value',
         message=DestinationNotWorking,
     )
 
@@ -270,6 +334,7 @@ class PolicyTopicConstraint(proto.Message):
             Countries where the resource's domain is not
             covered by the certificates associated with it.
     """
+
     class CountryConstraintList(proto.Message):
         r"""A list of countries where a resource's serving is
         constrained.
@@ -282,15 +347,21 @@ class PolicyTopicConstraint(proto.Message):
                 Countries in which serving is restricted.
         """
 
-        total_targeted_countries = proto.Field(proto.INT32, number=3, optional=True)
-        countries = proto.RepeatedField(proto.MESSAGE, number=2,
+        total_targeted_countries = proto.Field(
+            proto.INT32,
+            number=3,
+            optional=True,
+        )
+        countries = proto.RepeatedField(
+            proto.MESSAGE,
+            number=2,
             message='PolicyTopicConstraint.CountryConstraint',
         )
 
     class ResellerConstraint(proto.Message):
         r"""Indicates that a policy topic was constrained due to
         disapproval of the website for reseller purposes.
-        """
+            """
 
     class CountryConstraint(proto.Message):
         r"""Indicates that a resource's ability to serve in a particular
@@ -302,18 +373,34 @@ class PolicyTopicConstraint(proto.Message):
                 country in which serving is constrained.
         """
 
-        country_criterion = proto.Field(proto.STRING, number=2, optional=True)
+        country_criterion = proto.Field(
+            proto.STRING,
+            number=2,
+            optional=True,
+        )
 
-    country_constraint_list = proto.Field(proto.MESSAGE, number=1, oneof='value',
+    country_constraint_list = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='value',
         message=CountryConstraintList,
     )
-    reseller_constraint = proto.Field(proto.MESSAGE, number=2, oneof='value',
+    reseller_constraint = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='value',
         message=ResellerConstraint,
     )
-    certificate_missing_in_country_list = proto.Field(proto.MESSAGE, number=3, oneof='value',
+    certificate_missing_in_country_list = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        oneof='value',
         message=CountryConstraintList,
     )
-    certificate_domain_mismatch_in_country_list = proto.Field(proto.MESSAGE, number=4, oneof='value',
+    certificate_domain_mismatch_in_country_list = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        oneof='value',
         message=CountryConstraintList,
     )
 

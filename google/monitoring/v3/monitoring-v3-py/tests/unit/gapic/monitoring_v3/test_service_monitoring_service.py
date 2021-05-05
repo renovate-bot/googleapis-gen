@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 import mock
+import packaging.version
 
 import grpc
 from grpc.experimental import aio
@@ -24,26 +23,51 @@ import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
-from google import auth
+
 from google.api_core import client_options
-from google.api_core import exceptions
+from google.api_core import exceptions as core_exceptions
 from google.api_core import gapic_v1
 from google.api_core import grpc_helpers
 from google.api_core import grpc_helpers_async
-from google.auth import credentials
+from google.auth import credentials as ga_credentials
 from google.auth.exceptions import MutualTLSChannelError
 from google.cloud.monitoring_v3.services.service_monitoring_service import ServiceMonitoringServiceAsyncClient
 from google.cloud.monitoring_v3.services.service_monitoring_service import ServiceMonitoringServiceClient
 from google.cloud.monitoring_v3.services.service_monitoring_service import pagers
 from google.cloud.monitoring_v3.services.service_monitoring_service import transports
+from google.cloud.monitoring_v3.services.service_monitoring_service.transports.base import _API_CORE_VERSION
+from google.cloud.monitoring_v3.services.service_monitoring_service.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.monitoring_v3.types import service
 from google.cloud.monitoring_v3.types import service as gm_service
 from google.cloud.monitoring_v3.types import service_service
 from google.oauth2 import service_account
-from google.protobuf import duration_pb2 as duration  # type: ignore
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.type import calendar_period_pb2 as calendar_period  # type: ignore
+from google.protobuf import duration_pb2  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.type import calendar_period_pb2  # type: ignore
+import google.auth
 
+
+# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
+# - Delete all the api-core and auth "less than" test cases
+# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
+requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth < 1.25.0",
+)
+requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth >= 1.25.0",
+)
+
+requires_api_core_lt_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core < 1.26.0",
+)
+
+requires_api_core_gte_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core >= 1.26.0",
+)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -76,7 +100,7 @@ def test__get_default_mtls_endpoint():
     ServiceMonitoringServiceAsyncClient,
 ])
 def test_service_monitoring_service_client_from_service_account_info(client_class):
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
@@ -92,7 +116,7 @@ def test_service_monitoring_service_client_from_service_account_info(client_clas
     ServiceMonitoringServiceAsyncClient,
 ])
 def test_service_monitoring_service_client_from_service_account_file(client_class):
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_file') as factory:
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
@@ -127,7 +151,7 @@ def test_service_monitoring_service_client_client_options(client_class, transpor
     # Check that if channel is provided we won't create a new one.
     with mock.patch.object(ServiceMonitoringServiceClient, 'get_transport_class') as gtc:
         transport = transport_class(
-            credentials=credentials.AnonymousCredentials()
+            credentials=ga_credentials.AnonymousCredentials()
         )
         client = client_class(transport=transport)
         gtc.assert_not_called()
@@ -211,12 +235,10 @@ def test_service_monitoring_service_client_client_options(client_class, transpor
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
-
     (ServiceMonitoringServiceClient, transports.ServiceMonitoringServiceGrpcTransport, "grpc", "true"),
     (ServiceMonitoringServiceAsyncClient, transports.ServiceMonitoringServiceGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (ServiceMonitoringServiceClient, transports.ServiceMonitoringServiceGrpcTransport, "grpc", "false"),
     (ServiceMonitoringServiceAsyncClient, transports.ServiceMonitoringServiceGrpcAsyncIOTransport, "grpc_asyncio", "false"),
-
 ])
 @mock.patch.object(ServiceMonitoringServiceClient, "DEFAULT_ENDPOINT", modify_default_endpoint(ServiceMonitoringServiceClient))
 @mock.patch.object(ServiceMonitoringServiceAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(ServiceMonitoringServiceAsyncClient))
@@ -356,7 +378,7 @@ def test_service_monitoring_service_client_client_options_from_dict():
 
 def test_create_service(transport: str = 'grpc', request_type=service_service.CreateServiceRequest):
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -371,26 +393,19 @@ def test_create_service(transport: str = 'grpc', request_type=service_service.Cr
         # Designate an appropriate return value for the call.
         call.return_value = gm_service.Service(
             name='name_value',
-
             display_name='display_name_value',
-
             custom=None,
         )
-
         response = client.create_service(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service_service.CreateServiceRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, gm_service.Service)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
 
 
@@ -402,7 +417,7 @@ def test_create_service_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -413,13 +428,13 @@ def test_create_service_empty_call():
         client.create_service()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service_service.CreateServiceRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_service_async(transport: str = 'grpc_asyncio', request_type=service_service.CreateServiceRequest):
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -432,24 +447,20 @@ async def test_create_service_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.create_service),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gm_service.Service(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gm_service.Service(
             name='name_value',
             display_name='display_name_value',
         ))
-
         response = await client.create_service(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service_service.CreateServiceRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gm_service.Service)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
 
 
@@ -460,12 +471,13 @@ async def test_create_service_async_from_dict():
 
 def test_create_service_field_headers():
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service_service.CreateServiceRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -473,7 +485,6 @@ def test_create_service_field_headers():
             type(client.transport.create_service),
             '__call__') as call:
         call.return_value = gm_service.Service()
-
         client.create_service(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -492,12 +503,13 @@ def test_create_service_field_headers():
 @pytest.mark.asyncio
 async def test_create_service_field_headers_async():
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service_service.CreateServiceRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -505,7 +517,6 @@ async def test_create_service_field_headers_async():
             type(client.transport.create_service),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gm_service.Service())
-
         await client.create_service(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -523,7 +534,7 @@ async def test_create_service_field_headers_async():
 
 def test_create_service_flattened():
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -532,7 +543,6 @@ def test_create_service_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gm_service.Service()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_service(
@@ -544,15 +554,13 @@ def test_create_service_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].service == gm_service.Service(name='name_value')
 
 
 def test_create_service_flattened_error():
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -568,7 +576,7 @@ def test_create_service_flattened_error():
 @pytest.mark.asyncio
 async def test_create_service_flattened_async():
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -590,16 +598,14 @@ async def test_create_service_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].service == gm_service.Service(name='name_value')
 
 
 @pytest.mark.asyncio
 async def test_create_service_flattened_error_async():
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -614,7 +620,7 @@ async def test_create_service_flattened_error_async():
 
 def test_get_service(transport: str = 'grpc', request_type=service_service.GetServiceRequest):
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -629,26 +635,19 @@ def test_get_service(transport: str = 'grpc', request_type=service_service.GetSe
         # Designate an appropriate return value for the call.
         call.return_value = service.Service(
             name='name_value',
-
             display_name='display_name_value',
-
             custom=None,
         )
-
         response = client.get_service(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service_service.GetServiceRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, service.Service)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
 
 
@@ -660,7 +659,7 @@ def test_get_service_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -671,13 +670,13 @@ def test_get_service_empty_call():
         client.get_service()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service_service.GetServiceRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_service_async(transport: str = 'grpc_asyncio', request_type=service_service.GetServiceRequest):
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -690,24 +689,20 @@ async def test_get_service_async(transport: str = 'grpc_asyncio', request_type=s
             type(client.transport.get_service),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.Service(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.Service(
             name='name_value',
             display_name='display_name_value',
         ))
-
         response = await client.get_service(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service_service.GetServiceRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, service.Service)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
 
 
@@ -718,12 +713,13 @@ async def test_get_service_async_from_dict():
 
 def test_get_service_field_headers():
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service_service.GetServiceRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -731,7 +727,6 @@ def test_get_service_field_headers():
             type(client.transport.get_service),
             '__call__') as call:
         call.return_value = service.Service()
-
         client.get_service(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -750,12 +745,13 @@ def test_get_service_field_headers():
 @pytest.mark.asyncio
 async def test_get_service_field_headers_async():
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service_service.GetServiceRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -763,7 +759,6 @@ async def test_get_service_field_headers_async():
             type(client.transport.get_service),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.Service())
-
         await client.get_service(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -781,7 +776,7 @@ async def test_get_service_field_headers_async():
 
 def test_get_service_flattened():
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -790,7 +785,6 @@ def test_get_service_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = service.Service()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_service(
@@ -801,13 +795,12 @@ def test_get_service_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 def test_get_service_flattened_error():
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -822,7 +815,7 @@ def test_get_service_flattened_error():
 @pytest.mark.asyncio
 async def test_get_service_flattened_async():
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -843,14 +836,13 @@ async def test_get_service_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 @pytest.mark.asyncio
 async def test_get_service_flattened_error_async():
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -864,7 +856,7 @@ async def test_get_service_flattened_error_async():
 
 def test_list_services(transport: str = 'grpc', request_type=service_service.ListServicesRequest):
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -879,21 +871,16 @@ def test_list_services(transport: str = 'grpc', request_type=service_service.Lis
         # Designate an appropriate return value for the call.
         call.return_value = service_service.ListServicesResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_services(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service_service.ListServicesRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListServicesPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -905,7 +892,7 @@ def test_list_services_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -916,13 +903,13 @@ def test_list_services_empty_call():
         client.list_services()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service_service.ListServicesRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_services_async(transport: str = 'grpc_asyncio', request_type=service_service.ListServicesRequest):
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -935,21 +922,18 @@ async def test_list_services_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.list_services),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service_service.ListServicesResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service_service.ListServicesResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_services(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service_service.ListServicesRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListServicesAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -960,12 +944,13 @@ async def test_list_services_async_from_dict():
 
 def test_list_services_field_headers():
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service_service.ListServicesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -973,7 +958,6 @@ def test_list_services_field_headers():
             type(client.transport.list_services),
             '__call__') as call:
         call.return_value = service_service.ListServicesResponse()
-
         client.list_services(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -992,12 +976,13 @@ def test_list_services_field_headers():
 @pytest.mark.asyncio
 async def test_list_services_field_headers_async():
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service_service.ListServicesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1005,7 +990,6 @@ async def test_list_services_field_headers_async():
             type(client.transport.list_services),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service_service.ListServicesResponse())
-
         await client.list_services(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1023,7 +1007,7 @@ async def test_list_services_field_headers_async():
 
 def test_list_services_flattened():
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1032,7 +1016,6 @@ def test_list_services_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = service_service.ListServicesResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_services(
@@ -1043,13 +1026,12 @@ def test_list_services_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
 def test_list_services_flattened_error():
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1064,7 +1046,7 @@ def test_list_services_flattened_error():
 @pytest.mark.asyncio
 async def test_list_services_flattened_async():
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1085,14 +1067,13 @@ async def test_list_services_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
 @pytest.mark.asyncio
 async def test_list_services_flattened_error_async():
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1106,7 +1087,7 @@ async def test_list_services_flattened_error_async():
 
 def test_list_services_pager():
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1159,7 +1140,7 @@ def test_list_services_pager():
 
 def test_list_services_pages():
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1201,7 +1182,7 @@ def test_list_services_pages():
 @pytest.mark.asyncio
 async def test_list_services_async_pager():
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1249,7 +1230,7 @@ async def test_list_services_async_pager():
 @pytest.mark.asyncio
 async def test_list_services_async_pages():
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1290,10 +1271,9 @@ async def test_list_services_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_update_service(transport: str = 'grpc', request_type=service_service.UpdateServiceRequest):
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1308,26 +1288,19 @@ def test_update_service(transport: str = 'grpc', request_type=service_service.Up
         # Designate an appropriate return value for the call.
         call.return_value = gm_service.Service(
             name='name_value',
-
             display_name='display_name_value',
-
             custom=None,
         )
-
         response = client.update_service(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service_service.UpdateServiceRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, gm_service.Service)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
 
 
@@ -1339,7 +1312,7 @@ def test_update_service_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -1350,13 +1323,13 @@ def test_update_service_empty_call():
         client.update_service()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service_service.UpdateServiceRequest()
+
 
 @pytest.mark.asyncio
 async def test_update_service_async(transport: str = 'grpc_asyncio', request_type=service_service.UpdateServiceRequest):
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1369,24 +1342,20 @@ async def test_update_service_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.update_service),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gm_service.Service(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gm_service.Service(
             name='name_value',
             display_name='display_name_value',
         ))
-
         response = await client.update_service(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service_service.UpdateServiceRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gm_service.Service)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
 
 
@@ -1397,12 +1366,13 @@ async def test_update_service_async_from_dict():
 
 def test_update_service_field_headers():
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service_service.UpdateServiceRequest()
+
     request.service.name = 'service.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1410,7 +1380,6 @@ def test_update_service_field_headers():
             type(client.transport.update_service),
             '__call__') as call:
         call.return_value = gm_service.Service()
-
         client.update_service(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1429,12 +1398,13 @@ def test_update_service_field_headers():
 @pytest.mark.asyncio
 async def test_update_service_field_headers_async():
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service_service.UpdateServiceRequest()
+
     request.service.name = 'service.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1442,7 +1412,6 @@ async def test_update_service_field_headers_async():
             type(client.transport.update_service),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gm_service.Service())
-
         await client.update_service(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1460,7 +1429,7 @@ async def test_update_service_field_headers_async():
 
 def test_update_service_flattened():
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1469,7 +1438,6 @@ def test_update_service_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gm_service.Service()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_service(
@@ -1480,13 +1448,12 @@ def test_update_service_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].service == gm_service.Service(name='name_value')
 
 
 def test_update_service_flattened_error():
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1501,7 +1468,7 @@ def test_update_service_flattened_error():
 @pytest.mark.asyncio
 async def test_update_service_flattened_async():
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1522,14 +1489,13 @@ async def test_update_service_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].service == gm_service.Service(name='name_value')
 
 
 @pytest.mark.asyncio
 async def test_update_service_flattened_error_async():
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1543,7 +1509,7 @@ async def test_update_service_flattened_error_async():
 
 def test_delete_service(transport: str = 'grpc', request_type=service_service.DeleteServiceRequest):
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1557,13 +1523,11 @@ def test_delete_service(transport: str = 'grpc', request_type=service_service.De
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         response = client.delete_service(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service_service.DeleteServiceRequest()
 
     # Establish that the response is the type that we expect.
@@ -1578,7 +1542,7 @@ def test_delete_service_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -1589,13 +1553,13 @@ def test_delete_service_empty_call():
         client.delete_service()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service_service.DeleteServiceRequest()
+
 
 @pytest.mark.asyncio
 async def test_delete_service_async(transport: str = 'grpc_asyncio', request_type=service_service.DeleteServiceRequest):
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1609,13 +1573,11 @@ async def test_delete_service_async(transport: str = 'grpc_asyncio', request_typ
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         response = await client.delete_service(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service_service.DeleteServiceRequest()
 
     # Establish that the response is the type that we expect.
@@ -1629,12 +1591,13 @@ async def test_delete_service_async_from_dict():
 
 def test_delete_service_field_headers():
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service_service.DeleteServiceRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1642,7 +1605,6 @@ def test_delete_service_field_headers():
             type(client.transport.delete_service),
             '__call__') as call:
         call.return_value = None
-
         client.delete_service(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1661,12 +1623,13 @@ def test_delete_service_field_headers():
 @pytest.mark.asyncio
 async def test_delete_service_field_headers_async():
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service_service.DeleteServiceRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1674,7 +1637,6 @@ async def test_delete_service_field_headers_async():
             type(client.transport.delete_service),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         await client.delete_service(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1692,7 +1654,7 @@ async def test_delete_service_field_headers_async():
 
 def test_delete_service_flattened():
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1701,7 +1663,6 @@ def test_delete_service_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_service(
@@ -1712,13 +1673,12 @@ def test_delete_service_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 def test_delete_service_flattened_error():
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1733,7 +1693,7 @@ def test_delete_service_flattened_error():
 @pytest.mark.asyncio
 async def test_delete_service_flattened_async():
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1754,14 +1714,13 @@ async def test_delete_service_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 @pytest.mark.asyncio
 async def test_delete_service_flattened_error_async():
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1775,7 +1734,7 @@ async def test_delete_service_flattened_error_async():
 
 def test_create_service_level_objective(transport: str = 'grpc', request_type=service_service.CreateServiceLevelObjectiveRequest):
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1790,30 +1749,21 @@ def test_create_service_level_objective(transport: str = 'grpc', request_type=se
         # Designate an appropriate return value for the call.
         call.return_value = service.ServiceLevelObjective(
             name='name_value',
-
             display_name='display_name_value',
-
             goal=0.419,
-
-            rolling_period=duration.Duration(seconds=751),
+            rolling_period=duration_pb2.Duration(seconds=751),
         )
-
         response = client.create_service_level_objective(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service_service.CreateServiceLevelObjectiveRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, service.ServiceLevelObjective)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert math.isclose(response.goal, 0.419, rel_tol=1e-6)
 
 
@@ -1825,7 +1775,7 @@ def test_create_service_level_objective_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -1836,13 +1786,13 @@ def test_create_service_level_objective_empty_call():
         client.create_service_level_objective()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service_service.CreateServiceLevelObjectiveRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_service_level_objective_async(transport: str = 'grpc_asyncio', request_type=service_service.CreateServiceLevelObjectiveRequest):
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1855,27 +1805,22 @@ async def test_create_service_level_objective_async(transport: str = 'grpc_async
             type(client.transport.create_service_level_objective),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ServiceLevelObjective(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.ServiceLevelObjective(
             name='name_value',
             display_name='display_name_value',
             goal=0.419,
         ))
-
         response = await client.create_service_level_objective(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service_service.CreateServiceLevelObjectiveRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, service.ServiceLevelObjective)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert math.isclose(response.goal, 0.419, rel_tol=1e-6)
 
 
@@ -1886,12 +1831,13 @@ async def test_create_service_level_objective_async_from_dict():
 
 def test_create_service_level_objective_field_headers():
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service_service.CreateServiceLevelObjectiveRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1899,7 +1845,6 @@ def test_create_service_level_objective_field_headers():
             type(client.transport.create_service_level_objective),
             '__call__') as call:
         call.return_value = service.ServiceLevelObjective()
-
         client.create_service_level_objective(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1918,12 +1863,13 @@ def test_create_service_level_objective_field_headers():
 @pytest.mark.asyncio
 async def test_create_service_level_objective_field_headers_async():
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service_service.CreateServiceLevelObjectiveRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1931,7 +1877,6 @@ async def test_create_service_level_objective_field_headers_async():
             type(client.transport.create_service_level_objective),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ServiceLevelObjective())
-
         await client.create_service_level_objective(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1949,7 +1894,7 @@ async def test_create_service_level_objective_field_headers_async():
 
 def test_create_service_level_objective_flattened():
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1958,7 +1903,6 @@ def test_create_service_level_objective_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = service.ServiceLevelObjective()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_service_level_objective(
@@ -1970,15 +1914,13 @@ def test_create_service_level_objective_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].service_level_objective == service.ServiceLevelObjective(name='name_value')
 
 
 def test_create_service_level_objective_flattened_error():
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1994,7 +1936,7 @@ def test_create_service_level_objective_flattened_error():
 @pytest.mark.asyncio
 async def test_create_service_level_objective_flattened_async():
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2016,16 +1958,14 @@ async def test_create_service_level_objective_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].service_level_objective == service.ServiceLevelObjective(name='name_value')
 
 
 @pytest.mark.asyncio
 async def test_create_service_level_objective_flattened_error_async():
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -2040,7 +1980,7 @@ async def test_create_service_level_objective_flattened_error_async():
 
 def test_get_service_level_objective(transport: str = 'grpc', request_type=service_service.GetServiceLevelObjectiveRequest):
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2055,30 +1995,21 @@ def test_get_service_level_objective(transport: str = 'grpc', request_type=servi
         # Designate an appropriate return value for the call.
         call.return_value = service.ServiceLevelObjective(
             name='name_value',
-
             display_name='display_name_value',
-
             goal=0.419,
-
-            rolling_period=duration.Duration(seconds=751),
+            rolling_period=duration_pb2.Duration(seconds=751),
         )
-
         response = client.get_service_level_objective(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service_service.GetServiceLevelObjectiveRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, service.ServiceLevelObjective)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert math.isclose(response.goal, 0.419, rel_tol=1e-6)
 
 
@@ -2090,7 +2021,7 @@ def test_get_service_level_objective_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -2101,13 +2032,13 @@ def test_get_service_level_objective_empty_call():
         client.get_service_level_objective()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service_service.GetServiceLevelObjectiveRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_service_level_objective_async(transport: str = 'grpc_asyncio', request_type=service_service.GetServiceLevelObjectiveRequest):
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2120,27 +2051,22 @@ async def test_get_service_level_objective_async(transport: str = 'grpc_asyncio'
             type(client.transport.get_service_level_objective),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ServiceLevelObjective(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.ServiceLevelObjective(
             name='name_value',
             display_name='display_name_value',
             goal=0.419,
         ))
-
         response = await client.get_service_level_objective(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service_service.GetServiceLevelObjectiveRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, service.ServiceLevelObjective)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert math.isclose(response.goal, 0.419, rel_tol=1e-6)
 
 
@@ -2151,12 +2077,13 @@ async def test_get_service_level_objective_async_from_dict():
 
 def test_get_service_level_objective_field_headers():
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service_service.GetServiceLevelObjectiveRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2164,7 +2091,6 @@ def test_get_service_level_objective_field_headers():
             type(client.transport.get_service_level_objective),
             '__call__') as call:
         call.return_value = service.ServiceLevelObjective()
-
         client.get_service_level_objective(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2183,12 +2109,13 @@ def test_get_service_level_objective_field_headers():
 @pytest.mark.asyncio
 async def test_get_service_level_objective_field_headers_async():
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service_service.GetServiceLevelObjectiveRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2196,7 +2123,6 @@ async def test_get_service_level_objective_field_headers_async():
             type(client.transport.get_service_level_objective),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ServiceLevelObjective())
-
         await client.get_service_level_objective(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2214,7 +2140,7 @@ async def test_get_service_level_objective_field_headers_async():
 
 def test_get_service_level_objective_flattened():
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2223,7 +2149,6 @@ def test_get_service_level_objective_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = service.ServiceLevelObjective()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_service_level_objective(
@@ -2234,13 +2159,12 @@ def test_get_service_level_objective_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 def test_get_service_level_objective_flattened_error():
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -2255,7 +2179,7 @@ def test_get_service_level_objective_flattened_error():
 @pytest.mark.asyncio
 async def test_get_service_level_objective_flattened_async():
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2276,14 +2200,13 @@ async def test_get_service_level_objective_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 @pytest.mark.asyncio
 async def test_get_service_level_objective_flattened_error_async():
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -2297,7 +2220,7 @@ async def test_get_service_level_objective_flattened_error_async():
 
 def test_list_service_level_objectives(transport: str = 'grpc', request_type=service_service.ListServiceLevelObjectivesRequest):
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2312,21 +2235,16 @@ def test_list_service_level_objectives(transport: str = 'grpc', request_type=ser
         # Designate an appropriate return value for the call.
         call.return_value = service_service.ListServiceLevelObjectivesResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_service_level_objectives(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service_service.ListServiceLevelObjectivesRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListServiceLevelObjectivesPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -2338,7 +2256,7 @@ def test_list_service_level_objectives_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -2349,13 +2267,13 @@ def test_list_service_level_objectives_empty_call():
         client.list_service_level_objectives()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service_service.ListServiceLevelObjectivesRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_service_level_objectives_async(transport: str = 'grpc_asyncio', request_type=service_service.ListServiceLevelObjectivesRequest):
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2368,21 +2286,18 @@ async def test_list_service_level_objectives_async(transport: str = 'grpc_asynci
             type(client.transport.list_service_level_objectives),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service_service.ListServiceLevelObjectivesResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service_service.ListServiceLevelObjectivesResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_service_level_objectives(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service_service.ListServiceLevelObjectivesRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListServiceLevelObjectivesAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -2393,12 +2308,13 @@ async def test_list_service_level_objectives_async_from_dict():
 
 def test_list_service_level_objectives_field_headers():
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service_service.ListServiceLevelObjectivesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2406,7 +2322,6 @@ def test_list_service_level_objectives_field_headers():
             type(client.transport.list_service_level_objectives),
             '__call__') as call:
         call.return_value = service_service.ListServiceLevelObjectivesResponse()
-
         client.list_service_level_objectives(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2425,12 +2340,13 @@ def test_list_service_level_objectives_field_headers():
 @pytest.mark.asyncio
 async def test_list_service_level_objectives_field_headers_async():
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service_service.ListServiceLevelObjectivesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2438,7 +2354,6 @@ async def test_list_service_level_objectives_field_headers_async():
             type(client.transport.list_service_level_objectives),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service_service.ListServiceLevelObjectivesResponse())
-
         await client.list_service_level_objectives(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2456,7 +2371,7 @@ async def test_list_service_level_objectives_field_headers_async():
 
 def test_list_service_level_objectives_flattened():
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2465,7 +2380,6 @@ def test_list_service_level_objectives_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = service_service.ListServiceLevelObjectivesResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_service_level_objectives(
@@ -2476,13 +2390,12 @@ def test_list_service_level_objectives_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
 def test_list_service_level_objectives_flattened_error():
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -2497,7 +2410,7 @@ def test_list_service_level_objectives_flattened_error():
 @pytest.mark.asyncio
 async def test_list_service_level_objectives_flattened_async():
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2518,14 +2431,13 @@ async def test_list_service_level_objectives_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
 @pytest.mark.asyncio
 async def test_list_service_level_objectives_flattened_error_async():
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -2539,7 +2451,7 @@ async def test_list_service_level_objectives_flattened_error_async():
 
 def test_list_service_level_objectives_pager():
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2592,7 +2504,7 @@ def test_list_service_level_objectives_pager():
 
 def test_list_service_level_objectives_pages():
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2634,7 +2546,7 @@ def test_list_service_level_objectives_pages():
 @pytest.mark.asyncio
 async def test_list_service_level_objectives_async_pager():
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2682,7 +2594,7 @@ async def test_list_service_level_objectives_async_pager():
 @pytest.mark.asyncio
 async def test_list_service_level_objectives_async_pages():
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2723,10 +2635,9 @@ async def test_list_service_level_objectives_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_update_service_level_objective(transport: str = 'grpc', request_type=service_service.UpdateServiceLevelObjectiveRequest):
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2741,30 +2652,21 @@ def test_update_service_level_objective(transport: str = 'grpc', request_type=se
         # Designate an appropriate return value for the call.
         call.return_value = service.ServiceLevelObjective(
             name='name_value',
-
             display_name='display_name_value',
-
             goal=0.419,
-
-            rolling_period=duration.Duration(seconds=751),
+            rolling_period=duration_pb2.Duration(seconds=751),
         )
-
         response = client.update_service_level_objective(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service_service.UpdateServiceLevelObjectiveRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, service.ServiceLevelObjective)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert math.isclose(response.goal, 0.419, rel_tol=1e-6)
 
 
@@ -2776,7 +2678,7 @@ def test_update_service_level_objective_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -2787,13 +2689,13 @@ def test_update_service_level_objective_empty_call():
         client.update_service_level_objective()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service_service.UpdateServiceLevelObjectiveRequest()
+
 
 @pytest.mark.asyncio
 async def test_update_service_level_objective_async(transport: str = 'grpc_asyncio', request_type=service_service.UpdateServiceLevelObjectiveRequest):
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2806,27 +2708,22 @@ async def test_update_service_level_objective_async(transport: str = 'grpc_async
             type(client.transport.update_service_level_objective),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ServiceLevelObjective(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.ServiceLevelObjective(
             name='name_value',
             display_name='display_name_value',
             goal=0.419,
         ))
-
         response = await client.update_service_level_objective(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service_service.UpdateServiceLevelObjectiveRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, service.ServiceLevelObjective)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert math.isclose(response.goal, 0.419, rel_tol=1e-6)
 
 
@@ -2837,12 +2734,13 @@ async def test_update_service_level_objective_async_from_dict():
 
 def test_update_service_level_objective_field_headers():
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service_service.UpdateServiceLevelObjectiveRequest()
+
     request.service_level_objective.name = 'service_level_objective.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2850,7 +2748,6 @@ def test_update_service_level_objective_field_headers():
             type(client.transport.update_service_level_objective),
             '__call__') as call:
         call.return_value = service.ServiceLevelObjective()
-
         client.update_service_level_objective(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2869,12 +2766,13 @@ def test_update_service_level_objective_field_headers():
 @pytest.mark.asyncio
 async def test_update_service_level_objective_field_headers_async():
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service_service.UpdateServiceLevelObjectiveRequest()
+
     request.service_level_objective.name = 'service_level_objective.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2882,7 +2780,6 @@ async def test_update_service_level_objective_field_headers_async():
             type(client.transport.update_service_level_objective),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ServiceLevelObjective())
-
         await client.update_service_level_objective(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2900,7 +2797,7 @@ async def test_update_service_level_objective_field_headers_async():
 
 def test_update_service_level_objective_flattened():
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2909,7 +2806,6 @@ def test_update_service_level_objective_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = service.ServiceLevelObjective()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_service_level_objective(
@@ -2920,13 +2816,12 @@ def test_update_service_level_objective_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].service_level_objective == service.ServiceLevelObjective(name='name_value')
 
 
 def test_update_service_level_objective_flattened_error():
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -2941,7 +2836,7 @@ def test_update_service_level_objective_flattened_error():
 @pytest.mark.asyncio
 async def test_update_service_level_objective_flattened_async():
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2962,14 +2857,13 @@ async def test_update_service_level_objective_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].service_level_objective == service.ServiceLevelObjective(name='name_value')
 
 
 @pytest.mark.asyncio
 async def test_update_service_level_objective_flattened_error_async():
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -2983,7 +2877,7 @@ async def test_update_service_level_objective_flattened_error_async():
 
 def test_delete_service_level_objective(transport: str = 'grpc', request_type=service_service.DeleteServiceLevelObjectiveRequest):
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2997,13 +2891,11 @@ def test_delete_service_level_objective(transport: str = 'grpc', request_type=se
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         response = client.delete_service_level_objective(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service_service.DeleteServiceLevelObjectiveRequest()
 
     # Establish that the response is the type that we expect.
@@ -3018,7 +2910,7 @@ def test_delete_service_level_objective_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -3029,13 +2921,13 @@ def test_delete_service_level_objective_empty_call():
         client.delete_service_level_objective()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service_service.DeleteServiceLevelObjectiveRequest()
+
 
 @pytest.mark.asyncio
 async def test_delete_service_level_objective_async(transport: str = 'grpc_asyncio', request_type=service_service.DeleteServiceLevelObjectiveRequest):
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3049,13 +2941,11 @@ async def test_delete_service_level_objective_async(transport: str = 'grpc_async
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         response = await client.delete_service_level_objective(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service_service.DeleteServiceLevelObjectiveRequest()
 
     # Establish that the response is the type that we expect.
@@ -3069,12 +2959,13 @@ async def test_delete_service_level_objective_async_from_dict():
 
 def test_delete_service_level_objective_field_headers():
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service_service.DeleteServiceLevelObjectiveRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3082,7 +2973,6 @@ def test_delete_service_level_objective_field_headers():
             type(client.transport.delete_service_level_objective),
             '__call__') as call:
         call.return_value = None
-
         client.delete_service_level_objective(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3101,12 +2991,13 @@ def test_delete_service_level_objective_field_headers():
 @pytest.mark.asyncio
 async def test_delete_service_level_objective_field_headers_async():
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service_service.DeleteServiceLevelObjectiveRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3114,7 +3005,6 @@ async def test_delete_service_level_objective_field_headers_async():
             type(client.transport.delete_service_level_objective),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         await client.delete_service_level_objective(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3132,7 +3022,7 @@ async def test_delete_service_level_objective_field_headers_async():
 
 def test_delete_service_level_objective_flattened():
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3141,7 +3031,6 @@ def test_delete_service_level_objective_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_service_level_objective(
@@ -3152,13 +3041,12 @@ def test_delete_service_level_objective_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 def test_delete_service_level_objective_flattened_error():
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -3173,7 +3061,7 @@ def test_delete_service_level_objective_flattened_error():
 @pytest.mark.asyncio
 async def test_delete_service_level_objective_flattened_async():
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3194,14 +3082,13 @@ async def test_delete_service_level_objective_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 @pytest.mark.asyncio
 async def test_delete_service_level_objective_flattened_error_async():
     client = ServiceMonitoringServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -3216,17 +3103,17 @@ async def test_delete_service_level_objective_flattened_error_async():
 def test_credentials_transport_error():
     # It is an error to provide credentials and a transport instance.
     transport = transports.ServiceMonitoringServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = ServiceMonitoringServiceClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             transport=transport,
         )
 
     # It is an error to provide a credentials file and a transport instance.
     transport = transports.ServiceMonitoringServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = ServiceMonitoringServiceClient(
@@ -3236,7 +3123,7 @@ def test_credentials_transport_error():
 
     # It is an error to provide scopes and a transport instance.
     transport = transports.ServiceMonitoringServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = ServiceMonitoringServiceClient(
@@ -3248,26 +3135,24 @@ def test_credentials_transport_error():
 def test_transport_instance():
     # A client may be instantiated with a custom transport instance.
     transport = transports.ServiceMonitoringServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     client = ServiceMonitoringServiceClient(transport=transport)
     assert client.transport is transport
 
-
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.ServiceMonitoringServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     channel = transport.grpc_channel
     assert channel
 
     transport = transports.ServiceMonitoringServiceGrpcAsyncIOTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     channel = transport.grpc_channel
     assert channel
-
 
 @pytest.mark.parametrize("transport_class", [
     transports.ServiceMonitoringServiceGrpcTransport,
@@ -3275,28 +3160,26 @@ def test_transport_get_channel():
 ])
 def test_transport_adc(transport_class):
     # Test default credentials are used if not provided.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport_class()
         adc.assert_called_once()
-
 
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     assert isinstance(
         client.transport,
         transports.ServiceMonitoringServiceGrpcTransport,
     )
 
-
 def test_service_monitoring_service_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
-    with pytest.raises(exceptions.DuplicateCredentialArgs):
+    with pytest.raises(core_exceptions.DuplicateCredentialArgs):
         transport = transports.ServiceMonitoringServiceTransport(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             credentials_file="credentials.json"
         )
 
@@ -3306,7 +3189,7 @@ def test_service_monitoring_service_base_transport():
     with mock.patch('google.cloud.monitoring_v3.services.service_monitoring_service.transports.ServiceMonitoringServiceTransport.__init__') as Transport:
         Transport.return_value = None
         transport = transports.ServiceMonitoringServiceTransport(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
         )
 
     # Every method on the transport should just blindly
@@ -3322,17 +3205,39 @@ def test_service_monitoring_service_base_transport():
         'list_service_level_objectives',
         'update_service_level_objective',
         'delete_service_level_objective',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
+@requires_google_auth_gte_1_25_0
 def test_service_monitoring_service_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.monitoring_v3.services.service_monitoring_service.transports.ServiceMonitoringServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.monitoring_v3.services.service_monitoring_service.transports.ServiceMonitoringServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
+        load_creds.return_value = (ga_credentials.AnonymousCredentials(), None)
+        transport = transports.ServiceMonitoringServiceTransport(
+            credentials_file="credentials.json",
+            quota_project_id="octopus",
+        )
+        load_creds.assert_called_once_with("credentials.json",
+            scopes=None,
+            default_scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+            'https://www.googleapis.com/auth/monitoring',
+            'https://www.googleapis.com/auth/monitoring.read',
+),
+            quota_project_id="octopus",
+        )
+
+
+@requires_google_auth_lt_1_25_0
+def test_service_monitoring_service_base_transport_with_credentials_file_old_google_auth():
+    # Instantiate the base transport with a credentials file
+    with mock.patch.object(google.auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.monitoring_v3.services.service_monitoring_service.transports.ServiceMonitoringServiceTransport._prep_wrapped_messages') as Transport:
+        Transport.return_value = None
+        load_creds.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.ServiceMonitoringServiceTransport(
             credentials_file="credentials.json",
             quota_project_id="octopus",
@@ -3348,37 +3253,193 @@ def test_service_monitoring_service_base_transport_with_credentials_file():
 
 def test_service_monitoring_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.monitoring_v3.services.service_monitoring_service.transports.ServiceMonitoringServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc, mock.patch('google.cloud.monitoring_v3.services.service_monitoring_service.transports.ServiceMonitoringServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.ServiceMonitoringServiceTransport()
         adc.assert_called_once()
 
 
+@requires_google_auth_gte_1_25_0
 def test_service_monitoring_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         ServiceMonitoringServiceClient()
-        adc.assert_called_once_with(scopes=(
+        adc.assert_called_once_with(
+            scopes=None,
+            default_scopes=(
             'https://www.googleapis.com/auth/cloud-platform',
             'https://www.googleapis.com/auth/monitoring',
-            'https://www.googleapis.com/auth/monitoring.read',),
+            'https://www.googleapis.com/auth/monitoring.read',
+),
             quota_project_id=None,
         )
 
 
-def test_service_monitoring_service_transport_auth_adc():
+@requires_google_auth_lt_1_25_0
+def test_service_monitoring_service_auth_adc_old_google_auth():
+    # If no credentials are provided, we should use ADC credentials.
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
+        ServiceMonitoringServiceClient()
+        adc.assert_called_once_with(
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/monitoring',                'https://www.googleapis.com/auth/monitoring.read',),
+            quota_project_id=None,
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.ServiceMonitoringServiceGrpcTransport,
+        transports.ServiceMonitoringServiceGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_gte_1_25_0
+def test_service_monitoring_service_transport_auth_adc(transport_class):
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transports.ServiceMonitoringServiceGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+        adc.assert_called_once_with(
+            scopes=["1", "2"],
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/monitoring',                'https://www.googleapis.com/auth/monitoring.read',),
+            quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.ServiceMonitoringServiceGrpcTransport,
+        transports.ServiceMonitoringServiceGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_lt_1_25_0
+def test_service_monitoring_service_transport_auth_adc_old_google_auth(transport_class):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/cloud-platform',
             'https://www.googleapis.com/auth/monitoring',
-            'https://www.googleapis.com/auth/monitoring.read',),
+            'https://www.googleapis.com/auth/monitoring.read',
+),
             quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.ServiceMonitoringServiceGrpcTransport, grpc_helpers),
+        (transports.ServiceMonitoringServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_gte_1_26_0
+def test_service_monitoring_service_transport_create_channel(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = ga_credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(
+            quota_project_id="octopus",
+            scopes=["1", "2"]
+        )
+
+        create_channel.assert_called_with(
+            "monitoring.googleapis.com:443",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            default_scopes=(
+                'https://www.googleapis.com/auth/cloud-platform',
+                'https://www.googleapis.com/auth/monitoring',
+                'https://www.googleapis.com/auth/monitoring.read',
+),
+            scopes=["1", "2"],
+            default_host="monitoring.googleapis.com",
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.ServiceMonitoringServiceGrpcTransport, grpc_helpers),
+        (transports.ServiceMonitoringServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_service_monitoring_service_transport_create_channel_old_api_core(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = ga_credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(quota_project_id="octopus")
+
+        create_channel.assert_called_with(
+            "monitoring.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=(
+                'https://www.googleapis.com/auth/cloud-platform',
+                'https://www.googleapis.com/auth/monitoring',
+                'https://www.googleapis.com/auth/monitoring.read',
+),
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.ServiceMonitoringServiceGrpcTransport, grpc_helpers),
+        (transports.ServiceMonitoringServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_service_monitoring_service_transport_create_channel_user_scopes(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = ga_credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+
+        create_channel.assert_called_with(
+            "monitoring.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=["1", "2"],
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
         )
 
 
@@ -3386,7 +3447,7 @@ def test_service_monitoring_service_transport_auth_adc():
 def test_service_monitoring_service_grpc_transport_client_cert_source_for_mtls(
     transport_class
 ):
-    cred = credentials.AnonymousCredentials()
+    cred = ga_credentials.AnonymousCredentials()
 
     # Check ssl_channel_credentials is used if provided.
     with mock.patch.object(transport_class, "create_channel") as mock_create_channel:
@@ -3430,7 +3491,7 @@ def test_service_monitoring_service_grpc_transport_client_cert_source_for_mtls(
 
 def test_service_monitoring_service_host_no_port():
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='monitoring.googleapis.com'),
     )
     assert client.transport._host == 'monitoring.googleapis.com:443'
@@ -3438,11 +3499,10 @@ def test_service_monitoring_service_host_no_port():
 
 def test_service_monitoring_service_host_with_port():
     client = ServiceMonitoringServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='monitoring.googleapis.com:8000'),
     )
     assert client.transport._host == 'monitoring.googleapis.com:8000'
-
 
 def test_service_monitoring_service_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -3484,9 +3544,9 @@ def test_service_monitoring_service_transport_channel_mtls_with_client_cert_sour
             mock_grpc_channel = mock.Mock()
             grpc_create_channel.return_value = mock_grpc_channel
 
-            cred = credentials.AnonymousCredentials()
+            cred = ga_credentials.AnonymousCredentials()
             with pytest.warns(DeprecationWarning):
-                with mock.patch.object(auth, 'default') as adc:
+                with mock.patch.object(google.auth, 'default') as adc:
                     adc.return_value = (cred, None)
                     transport = transport_class(
                         host="squid.clam.whelk",
@@ -3565,7 +3625,6 @@ def test_service_monitoring_service_transport_channel_mtls_with_adc(
 def test_service_path():
     project = "squid"
     service = "clam"
-
     expected = "projects/{project}/services/{service}".format(project=project, service=service, )
     actual = ServiceMonitoringServiceClient.service_path(project, service)
     assert expected == actual
@@ -3573,9 +3632,8 @@ def test_service_path():
 
 def test_parse_service_path():
     expected = {
-    "project": "whelk",
-    "service": "octopus",
-
+        "project": "whelk",
+        "service": "octopus",
     }
     path = ServiceMonitoringServiceClient.service_path(**expected)
 
@@ -3587,7 +3645,6 @@ def test_service_level_objective_path():
     project = "oyster"
     service = "nudibranch"
     service_level_objective = "cuttlefish"
-
     expected = "projects/{project}/services/{service}/serviceLevelObjectives/{service_level_objective}".format(project=project, service=service, service_level_objective=service_level_objective, )
     actual = ServiceMonitoringServiceClient.service_level_objective_path(project, service, service_level_objective)
     assert expected == actual
@@ -3595,10 +3652,9 @@ def test_service_level_objective_path():
 
 def test_parse_service_level_objective_path():
     expected = {
-    "project": "mussel",
-    "service": "winkle",
-    "service_level_objective": "nautilus",
-
+        "project": "mussel",
+        "service": "winkle",
+        "service_level_objective": "nautilus",
     }
     path = ServiceMonitoringServiceClient.service_level_objective_path(**expected)
 
@@ -3608,7 +3664,6 @@ def test_parse_service_level_objective_path():
 
 def test_common_billing_account_path():
     billing_account = "scallop"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = ServiceMonitoringServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -3616,8 +3671,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "abalone",
-
+        "billing_account": "abalone",
     }
     path = ServiceMonitoringServiceClient.common_billing_account_path(**expected)
 
@@ -3627,7 +3681,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "squid"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = ServiceMonitoringServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -3635,8 +3688,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "clam",
-
+        "folder": "clam",
     }
     path = ServiceMonitoringServiceClient.common_folder_path(**expected)
 
@@ -3646,7 +3698,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "whelk"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = ServiceMonitoringServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -3654,8 +3705,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "octopus",
-
+        "organization": "octopus",
     }
     path = ServiceMonitoringServiceClient.common_organization_path(**expected)
 
@@ -3665,7 +3715,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "oyster"
-
     expected = "projects/{project}".format(project=project, )
     actual = ServiceMonitoringServiceClient.common_project_path(project)
     assert expected == actual
@@ -3673,8 +3722,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "nudibranch",
-
+        "project": "nudibranch",
     }
     path = ServiceMonitoringServiceClient.common_project_path(**expected)
 
@@ -3685,7 +3733,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "cuttlefish"
     location = "mussel"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = ServiceMonitoringServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -3693,9 +3740,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "winkle",
-    "location": "nautilus",
-
+        "project": "winkle",
+        "location": "nautilus",
     }
     path = ServiceMonitoringServiceClient.common_location_path(**expected)
 
@@ -3709,7 +3755,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
 
     with mock.patch.object(transports.ServiceMonitoringServiceTransport, '_prep_wrapped_messages') as prep:
         client = ServiceMonitoringServiceClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)
@@ -3717,7 +3763,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
     with mock.patch.object(transports.ServiceMonitoringServiceTransport, '_prep_wrapped_messages') as prep:
         transport_class = ServiceMonitoringServiceClient.get_transport_class()
         transport = transport_class(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)

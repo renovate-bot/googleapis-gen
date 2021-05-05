@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,23 +13,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google.api_core import operations_v1              # type: ignore
-from google import auth                                # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
+import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
 
 from google.cloud.redis_v1beta1.types import cloud_redis
-from google.longrunning import operations_pb2 as operations  # type: ignore
-
+from google.longrunning import operations_pb2  # type: ignore
 from .base import CloudRedisTransport, DEFAULT_CLIENT_INFO
 from .grpc import CloudRedisGrpcTransport
 
@@ -74,7 +71,7 @@ class CloudRedisGrpcAsyncIOTransport(CloudRedisTransport):
     @classmethod
     def create_channel(cls,
                        host: str = 'redis.googleapis.com',
-                       credentials: credentials.Credentials = None,
+                       credentials: ga_credentials.Credentials = None,
                        credentials_file: Optional[str] = None,
                        scopes: Optional[Sequence[str]] = None,
                        quota_project_id: Optional[str] = None,
@@ -100,19 +97,21 @@ class CloudRedisGrpcAsyncIOTransport(CloudRedisTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
     def __init__(self, *,
             host: str = 'redis.googleapis.com',
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             credentials_file: Optional[str] = None,
             scopes: Optional[Sequence[str]] = None,
             channel: aio.Channel = None,
@@ -126,7 +125,8 @@ class CloudRedisGrpcAsyncIOTransport(CloudRedisTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -185,7 +185,6 @@ class CloudRedisGrpcAsyncIOTransport(CloudRedisTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
-
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -324,7 +323,7 @@ class CloudRedisGrpcAsyncIOTransport(CloudRedisTransport):
     @property
     def create_instance(self) -> Callable[
             [cloud_redis.CreateInstanceRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the create instance method over gRPC.
 
         Creates a Redis instance based on the specified tier and memory
@@ -356,14 +355,14 @@ class CloudRedisGrpcAsyncIOTransport(CloudRedisTransport):
             self._stubs['create_instance'] = self.grpc_channel.unary_unary(
                 '/google.cloud.redis.v1beta1.CloudRedis/CreateInstance',
                 request_serializer=cloud_redis.CreateInstanceRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['create_instance']
 
     @property
     def update_instance(self) -> Callable[
             [cloud_redis.UpdateInstanceRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the update instance method over gRPC.
 
         Updates the metadata and configuration of a specific
@@ -387,14 +386,14 @@ class CloudRedisGrpcAsyncIOTransport(CloudRedisTransport):
             self._stubs['update_instance'] = self.grpc_channel.unary_unary(
                 '/google.cloud.redis.v1beta1.CloudRedis/UpdateInstance',
                 request_serializer=cloud_redis.UpdateInstanceRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['update_instance']
 
     @property
     def upgrade_instance(self) -> Callable[
             [cloud_redis.UpgradeInstanceRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the upgrade instance method over gRPC.
 
         Upgrades Redis instance to the newer Redis version
@@ -414,14 +413,14 @@ class CloudRedisGrpcAsyncIOTransport(CloudRedisTransport):
             self._stubs['upgrade_instance'] = self.grpc_channel.unary_unary(
                 '/google.cloud.redis.v1beta1.CloudRedis/UpgradeInstance',
                 request_serializer=cloud_redis.UpgradeInstanceRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['upgrade_instance']
 
     @property
     def import_instance(self) -> Callable[
             [cloud_redis.ImportInstanceRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the import instance method over gRPC.
 
         Import a Redis RDB snapshot file from Cloud Storage
@@ -448,14 +447,14 @@ class CloudRedisGrpcAsyncIOTransport(CloudRedisTransport):
             self._stubs['import_instance'] = self.grpc_channel.unary_unary(
                 '/google.cloud.redis.v1beta1.CloudRedis/ImportInstance',
                 request_serializer=cloud_redis.ImportInstanceRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['import_instance']
 
     @property
     def export_instance(self) -> Callable[
             [cloud_redis.ExportInstanceRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the export instance method over gRPC.
 
         Export Redis instance data into a Redis RDB format
@@ -478,14 +477,14 @@ class CloudRedisGrpcAsyncIOTransport(CloudRedisTransport):
             self._stubs['export_instance'] = self.grpc_channel.unary_unary(
                 '/google.cloud.redis.v1beta1.CloudRedis/ExportInstance',
                 request_serializer=cloud_redis.ExportInstanceRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['export_instance']
 
     @property
     def failover_instance(self) -> Callable[
             [cloud_redis.FailoverInstanceRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the failover instance method over gRPC.
 
         Initiates a failover of the master node to current
@@ -506,14 +505,14 @@ class CloudRedisGrpcAsyncIOTransport(CloudRedisTransport):
             self._stubs['failover_instance'] = self.grpc_channel.unary_unary(
                 '/google.cloud.redis.v1beta1.CloudRedis/FailoverInstance',
                 request_serializer=cloud_redis.FailoverInstanceRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['failover_instance']
 
     @property
     def delete_instance(self) -> Callable[
             [cloud_redis.DeleteInstanceRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the delete instance method over gRPC.
 
         Deletes a specific Redis instance.  Instance stops
@@ -533,7 +532,7 @@ class CloudRedisGrpcAsyncIOTransport(CloudRedisTransport):
             self._stubs['delete_instance'] = self.grpc_channel.unary_unary(
                 '/google.cloud.redis.v1beta1.CloudRedis/DeleteInstance',
                 request_serializer=cloud_redis.DeleteInstanceRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['delete_instance']
 

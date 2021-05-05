@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,11 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
-from google.iam.v1 import policy_pb2 as giv_policy  # type: ignore
+from google.iam.v1 import policy_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -33,7 +30,6 @@ __protobuf__ = proto.module(
 
 class StandardResourceMetadata(proto.Message):
     r"""The standard metadata of a cloud resource.
-
     Attributes:
         name (str):
             The full resource name. For example:
@@ -74,28 +70,47 @@ class StandardResourceMetadata(proto.Message):
             for more information.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    asset_type = proto.Field(proto.STRING, number=2)
-
-    project = proto.Field(proto.STRING, number=3)
-
-    display_name = proto.Field(proto.STRING, number=4)
-
-    description = proto.Field(proto.STRING, number=5)
-
-    additional_attributes = proto.RepeatedField(proto.STRING, number=10)
-
-    location = proto.Field(proto.STRING, number=11)
-
-    labels = proto.MapField(proto.STRING, proto.STRING, number=12)
-
-    network_tags = proto.RepeatedField(proto.STRING, number=13)
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    asset_type = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    project = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    display_name = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    description = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    additional_attributes = proto.RepeatedField(
+        proto.STRING,
+        number=10,
+    )
+    location = proto.Field(
+        proto.STRING,
+        number=11,
+    )
+    labels = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=12,
+    )
+    network_tags = proto.RepeatedField(
+        proto.STRING,
+        number=13,
+    )
 
 
 class IamPolicySearchResult(proto.Message):
     r"""The result for a IAM Policy search.
-
     Attributes:
         resource (str):
             The `full resource
@@ -108,7 +123,7 @@ class IamPolicySearchResult(proto.Message):
             bucket), the project field will indicate the project that
             contains the resource. If an IAM policy is set on a folder
             or orgnization, the project field will be empty.
-        policy_ (google.iam.v1.policy_pb2.Policy):
+        policy (google.iam.v1.policy_pb2.Policy):
             The IAM policy directly set on the given
             resource. Note that the original IAM policy can
             contain multiple bindings. This only contains
@@ -121,9 +136,9 @@ class IamPolicySearchResult(proto.Message):
             result. It contains additional information to
             explain why the search result matches the query.
     """
+
     class Explanation(proto.Message):
         r"""Explanation about the IAM policy search result.
-
         Attributes:
             matched_permissions (Sequence[google.cloud.asset_v1p1beta1.types.IamPolicySearchResult.Explanation.MatchedPermissionsEntry]):
                 The map from roles to their included permission matching the
@@ -134,33 +149,45 @@ class IamPolicySearchResult(proto.Message):
                 populated only if requesting with a permission query.
         """
 
-        matched_permissions = proto.MapField(proto.STRING, proto.MESSAGE, number=1,
+        matched_permissions = proto.MapField(
+            proto.STRING,
+            proto.MESSAGE,
+            number=1,
             message='Permissions',
         )
 
-    resource = proto.Field(proto.STRING, number=1)
-
-    project = proto.Field(proto.STRING, number=3)
-
-    policy_ = proto.Field(proto.MESSAGE, number=4,
+    resource = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    project = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    policy = proto.Field(
+        proto.MESSAGE,
+        number=4,
         message=giv_policy.Policy,
     )
-
-    explanation = proto.Field(proto.MESSAGE, number=5,
+    explanation = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message=Explanation,
     )
 
 
 class Permissions(proto.Message):
     r"""IAM permissions
-
     Attributes:
         permissions (Sequence[str]):
             A list of permissions. A sample permission
             string: "compute.disk.get".
     """
 
-    permissions = proto.RepeatedField(proto.STRING, number=1)
+    permissions = proto.RepeatedField(
+        proto.STRING,
+        number=1,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

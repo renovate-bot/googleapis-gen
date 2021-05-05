@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,7 +15,10 @@
 #
 
 from .services.adaptation import AdaptationClient
+from .services.adaptation import AdaptationAsyncClient
 from .services.speech import SpeechClient
+from .services.speech import SpeechAsyncClient
+
 from .types.cloud_speech import LongRunningRecognizeMetadata
 from .types.cloud_speech import LongRunningRecognizeRequest
 from .types.cloud_speech import LongRunningRecognizeResponse
@@ -51,41 +53,40 @@ from .types.resource import CustomClass
 from .types.resource import PhraseSet
 from .types.resource import SpeechAdaptation
 
-
 __all__ = (
-    'CreateCustomClassRequest',
-    'CreatePhraseSetRequest',
-    'CustomClass',
-    'DeleteCustomClassRequest',
-    'DeletePhraseSetRequest',
-    'GetCustomClassRequest',
-    'GetPhraseSetRequest',
-    'ListCustomClassesRequest',
-    'ListCustomClassesResponse',
-    'ListPhraseSetRequest',
-    'ListPhraseSetResponse',
-    'LongRunningRecognizeMetadata',
-    'LongRunningRecognizeRequest',
-    'LongRunningRecognizeResponse',
-    'PhraseSet',
-    'RecognitionAudio',
-    'RecognitionConfig',
-    'RecognitionMetadata',
-    'RecognizeRequest',
-    'RecognizeResponse',
-    'SpeakerDiarizationConfig',
-    'SpeechAdaptation',
-    'SpeechClient',
-    'SpeechContext',
-    'SpeechRecognitionAlternative',
-    'SpeechRecognitionResult',
-    'StreamingRecognitionConfig',
-    'StreamingRecognitionResult',
-    'StreamingRecognizeRequest',
-    'StreamingRecognizeResponse',
-    'TranscriptOutputConfig',
-    'UpdateCustomClassRequest',
-    'UpdatePhraseSetRequest',
-    'WordInfo',
 'AdaptationClient',
+'CreateCustomClassRequest',
+'CreatePhraseSetRequest',
+'CustomClass',
+'DeleteCustomClassRequest',
+'DeletePhraseSetRequest',
+'GetCustomClassRequest',
+'GetPhraseSetRequest',
+'ListCustomClassesRequest',
+'ListCustomClassesResponse',
+'ListPhraseSetRequest',
+'ListPhraseSetResponse',
+'LongRunningRecognizeMetadata',
+'LongRunningRecognizeRequest',
+'LongRunningRecognizeResponse',
+'PhraseSet',
+'RecognitionAudio',
+'RecognitionConfig',
+'RecognitionMetadata',
+'RecognizeRequest',
+'RecognizeResponse',
+'SpeakerDiarizationConfig',
+'SpeechAdaptation',
+'SpeechClient',
+'SpeechContext',
+'SpeechRecognitionAlternative',
+'SpeechRecognitionResult',
+'StreamingRecognitionConfig',
+'StreamingRecognitionResult',
+'StreamingRecognizeRequest',
+'StreamingRecognizeResponse',
+'TranscriptOutputConfig',
+'UpdateCustomClassRequest',
+'UpdatePhraseSetRequest',
+'WordInfo',
 )

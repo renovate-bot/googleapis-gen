@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,16 +13,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google.api_core import operations_v1              # type: ignore
-from google import auth                                # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
+import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
@@ -34,8 +32,7 @@ from google.cloud.aiplatform_v1beta1.types import feature
 from google.cloud.aiplatform_v1beta1.types import feature as gca_feature
 from google.cloud.aiplatform_v1beta1.types import featurestore
 from google.cloud.aiplatform_v1beta1.types import featurestore_service
-from google.longrunning import operations_pb2 as operations  # type: ignore
-
+from google.longrunning import operations_pb2  # type: ignore
 from .base import FeaturestoreServiceTransport, DEFAULT_CLIENT_INFO
 from .grpc import FeaturestoreServiceGrpcTransport
 
@@ -60,7 +57,7 @@ class FeaturestoreServiceGrpcAsyncIOTransport(FeaturestoreServiceTransport):
     @classmethod
     def create_channel(cls,
                        host: str = 'aiplatform.googleapis.com',
-                       credentials: credentials.Credentials = None,
+                       credentials: ga_credentials.Credentials = None,
                        credentials_file: Optional[str] = None,
                        scopes: Optional[Sequence[str]] = None,
                        quota_project_id: Optional[str] = None,
@@ -86,19 +83,21 @@ class FeaturestoreServiceGrpcAsyncIOTransport(FeaturestoreServiceTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
     def __init__(self, *,
             host: str = 'aiplatform.googleapis.com',
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             credentials_file: Optional[str] = None,
             scopes: Optional[Sequence[str]] = None,
             channel: aio.Channel = None,
@@ -112,7 +111,8 @@ class FeaturestoreServiceGrpcAsyncIOTransport(FeaturestoreServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -171,7 +171,6 @@ class FeaturestoreServiceGrpcAsyncIOTransport(FeaturestoreServiceTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
-
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -249,7 +248,7 @@ class FeaturestoreServiceGrpcAsyncIOTransport(FeaturestoreServiceTransport):
     @property
     def create_featurestore(self) -> Callable[
             [featurestore_service.CreateFeaturestoreRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the create featurestore method over gRPC.
 
         Creates a new Featurestore in a given project and
@@ -269,7 +268,7 @@ class FeaturestoreServiceGrpcAsyncIOTransport(FeaturestoreServiceTransport):
             self._stubs['create_featurestore'] = self.grpc_channel.unary_unary(
                 '/google.cloud.aiplatform.v1beta1.FeaturestoreService/CreateFeaturestore',
                 request_serializer=featurestore_service.CreateFeaturestoreRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['create_featurestore']
 
@@ -328,7 +327,7 @@ class FeaturestoreServiceGrpcAsyncIOTransport(FeaturestoreServiceTransport):
     @property
     def update_featurestore(self) -> Callable[
             [featurestore_service.UpdateFeaturestoreRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the update featurestore method over gRPC.
 
         Updates the parameters of a single Featurestore.
@@ -347,14 +346,14 @@ class FeaturestoreServiceGrpcAsyncIOTransport(FeaturestoreServiceTransport):
             self._stubs['update_featurestore'] = self.grpc_channel.unary_unary(
                 '/google.cloud.aiplatform.v1beta1.FeaturestoreService/UpdateFeaturestore',
                 request_serializer=featurestore_service.UpdateFeaturestoreRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['update_featurestore']
 
     @property
     def delete_featurestore(self) -> Callable[
             [featurestore_service.DeleteFeaturestoreRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the delete featurestore method over gRPC.
 
         Deletes a single Featurestore. The Featurestore must not contain
@@ -375,14 +374,14 @@ class FeaturestoreServiceGrpcAsyncIOTransport(FeaturestoreServiceTransport):
             self._stubs['delete_featurestore'] = self.grpc_channel.unary_unary(
                 '/google.cloud.aiplatform.v1beta1.FeaturestoreService/DeleteFeaturestore',
                 request_serializer=featurestore_service.DeleteFeaturestoreRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['delete_featurestore']
 
     @property
     def create_entity_type(self) -> Callable[
             [featurestore_service.CreateEntityTypeRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the create entity type method over gRPC.
 
         Creates a new EntityType in a given Featurestore.
@@ -401,7 +400,7 @@ class FeaturestoreServiceGrpcAsyncIOTransport(FeaturestoreServiceTransport):
             self._stubs['create_entity_type'] = self.grpc_channel.unary_unary(
                 '/google.cloud.aiplatform.v1beta1.FeaturestoreService/CreateEntityType',
                 request_serializer=featurestore_service.CreateEntityTypeRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['create_entity_type']
 
@@ -486,7 +485,7 @@ class FeaturestoreServiceGrpcAsyncIOTransport(FeaturestoreServiceTransport):
     @property
     def delete_entity_type(self) -> Callable[
             [featurestore_service.DeleteEntityTypeRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the delete entity type method over gRPC.
 
         Deletes a single EntityType. The EntityType must not have any
@@ -507,14 +506,14 @@ class FeaturestoreServiceGrpcAsyncIOTransport(FeaturestoreServiceTransport):
             self._stubs['delete_entity_type'] = self.grpc_channel.unary_unary(
                 '/google.cloud.aiplatform.v1beta1.FeaturestoreService/DeleteEntityType',
                 request_serializer=featurestore_service.DeleteEntityTypeRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['delete_entity_type']
 
     @property
     def create_feature(self) -> Callable[
             [featurestore_service.CreateFeatureRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the create feature method over gRPC.
 
         Creates a new Feature in a given EntityType.
@@ -533,14 +532,14 @@ class FeaturestoreServiceGrpcAsyncIOTransport(FeaturestoreServiceTransport):
             self._stubs['create_feature'] = self.grpc_channel.unary_unary(
                 '/google.cloud.aiplatform.v1beta1.FeaturestoreService/CreateFeature',
                 request_serializer=featurestore_service.CreateFeatureRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['create_feature']
 
     @property
     def batch_create_features(self) -> Callable[
             [featurestore_service.BatchCreateFeaturesRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the batch create features method over gRPC.
 
         Creates a batch of Features in a given EntityType.
@@ -559,7 +558,7 @@ class FeaturestoreServiceGrpcAsyncIOTransport(FeaturestoreServiceTransport):
             self._stubs['batch_create_features'] = self.grpc_channel.unary_unary(
                 '/google.cloud.aiplatform.v1beta1.FeaturestoreService/BatchCreateFeatures',
                 request_serializer=featurestore_service.BatchCreateFeaturesRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['batch_create_features']
 
@@ -644,7 +643,7 @@ class FeaturestoreServiceGrpcAsyncIOTransport(FeaturestoreServiceTransport):
     @property
     def delete_feature(self) -> Callable[
             [featurestore_service.DeleteFeatureRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the delete feature method over gRPC.
 
         Deletes a single Feature.
@@ -663,14 +662,14 @@ class FeaturestoreServiceGrpcAsyncIOTransport(FeaturestoreServiceTransport):
             self._stubs['delete_feature'] = self.grpc_channel.unary_unary(
                 '/google.cloud.aiplatform.v1beta1.FeaturestoreService/DeleteFeature',
                 request_serializer=featurestore_service.DeleteFeatureRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['delete_feature']
 
     @property
     def import_feature_values(self) -> Callable[
             [featurestore_service.ImportFeatureValuesRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the import feature values method over gRPC.
 
         Imports Feature values into the Featurestore from a
@@ -709,14 +708,14 @@ class FeaturestoreServiceGrpcAsyncIOTransport(FeaturestoreServiceTransport):
             self._stubs['import_feature_values'] = self.grpc_channel.unary_unary(
                 '/google.cloud.aiplatform.v1beta1.FeaturestoreService/ImportFeatureValues',
                 request_serializer=featurestore_service.ImportFeatureValuesRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['import_feature_values']
 
     @property
     def batch_read_feature_values(self) -> Callable[
             [featurestore_service.BatchReadFeatureValuesRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the batch read feature values method over gRPC.
 
         Batch reads Feature values from a Featurestore.
@@ -740,14 +739,14 @@ class FeaturestoreServiceGrpcAsyncIOTransport(FeaturestoreServiceTransport):
             self._stubs['batch_read_feature_values'] = self.grpc_channel.unary_unary(
                 '/google.cloud.aiplatform.v1beta1.FeaturestoreService/BatchReadFeatureValues',
                 request_serializer=featurestore_service.BatchReadFeatureValuesRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['batch_read_feature_values']
 
     @property
     def export_feature_values(self) -> Callable[
             [featurestore_service.ExportFeatureValuesRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the export feature values method over gRPC.
 
         Exports Feature values from all the entities of a
@@ -767,7 +766,7 @@ class FeaturestoreServiceGrpcAsyncIOTransport(FeaturestoreServiceTransport):
             self._stubs['export_feature_values'] = self.grpc_channel.unary_unary(
                 '/google.cloud.aiplatform.v1beta1.FeaturestoreService/ExportFeatureValues',
                 request_serializer=featurestore_service.ExportFeatureValuesRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['export_feature_values']
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.cloud.video.transcoder_v1beta1.services.transcoder_service.async_client import TranscoderServiceAsyncClient
 from google.cloud.video.transcoder_v1beta1.services.transcoder_service.client import TranscoderServiceClient
+from google.cloud.video.transcoder_v1beta1.services.transcoder_service.async_client import TranscoderServiceAsyncClient
+
 from google.cloud.video.transcoder_v1beta1.types.resources import AdBreak
 from google.cloud.video.transcoder_v1beta1.types.resources import AudioStream
 from google.cloud.video.transcoder_v1beta1.types.resources import EditAtom
@@ -44,32 +44,23 @@ from google.cloud.video.transcoder_v1beta1.types.services import DeleteJobReques
 from google.cloud.video.transcoder_v1beta1.types.services import DeleteJobTemplateRequest
 from google.cloud.video.transcoder_v1beta1.types.services import GetJobRequest
 from google.cloud.video.transcoder_v1beta1.types.services import GetJobTemplateRequest
-from google.cloud.video.transcoder_v1beta1.types.services import ListJobTemplatesRequest
-from google.cloud.video.transcoder_v1beta1.types.services import ListJobTemplatesResponse
 from google.cloud.video.transcoder_v1beta1.types.services import ListJobsRequest
 from google.cloud.video.transcoder_v1beta1.types.services import ListJobsResponse
+from google.cloud.video.transcoder_v1beta1.types.services import ListJobTemplatesRequest
+from google.cloud.video.transcoder_v1beta1.types.services import ListJobTemplatesResponse
 
-__all__ = (
+__all__ = ('TranscoderServiceClient',
+    'TranscoderServiceAsyncClient',
     'AdBreak',
     'AudioStream',
-    'CreateJobRequest',
-    'CreateJobTemplateRequest',
-    'DeleteJobRequest',
-    'DeleteJobTemplateRequest',
     'EditAtom',
     'ElementaryStream',
     'Encryption',
     'FailureDetail',
-    'GetJobRequest',
-    'GetJobTemplateRequest',
     'Input',
     'Job',
     'JobConfig',
     'JobTemplate',
-    'ListJobTemplatesRequest',
-    'ListJobTemplatesResponse',
-    'ListJobsRequest',
-    'ListJobsResponse',
     'Manifest',
     'MuxStream',
     'Output',
@@ -80,7 +71,15 @@ __all__ = (
     'SegmentSettings',
     'SpriteSheet',
     'TextStream',
-    'TranscoderServiceAsyncClient',
-    'TranscoderServiceClient',
     'VideoStream',
+    'CreateJobRequest',
+    'CreateJobTemplateRequest',
+    'DeleteJobRequest',
+    'DeleteJobTemplateRequest',
+    'GetJobRequest',
+    'GetJobTemplateRequest',
+    'ListJobsRequest',
+    'ListJobsResponse',
+    'ListJobTemplatesRequest',
+    'ListJobTemplatesResponse',
 )

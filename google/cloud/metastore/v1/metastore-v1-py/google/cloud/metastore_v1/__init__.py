@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,8 @@
 #
 
 from .services.dataproc_metastore import DataprocMetastoreClient
+from .services.dataproc_metastore import DataprocMetastoreAsyncClient
+
 from .types.metastore import CreateMetadataImportRequest
 from .types.metastore import CreateServiceRequest
 from .types.metastore import DatabaseDumpSpec
@@ -40,30 +41,29 @@ from .types.metastore import Service
 from .types.metastore import UpdateMetadataImportRequest
 from .types.metastore import UpdateServiceRequest
 
-
 __all__ = (
-    'CreateMetadataImportRequest',
-    'CreateServiceRequest',
-    'DatabaseDumpSpec',
-    'DeleteServiceRequest',
-    'ExportMetadataRequest',
-    'GetMetadataImportRequest',
-    'GetServiceRequest',
-    'HiveMetastoreConfig',
-    'KerberosConfig',
-    'ListMetadataImportsRequest',
-    'ListMetadataImportsResponse',
-    'ListServicesRequest',
-    'ListServicesResponse',
-    'LocationMetadata',
-    'MaintenanceWindow',
-    'MetadataExport',
-    'MetadataImport',
-    'MetadataManagementActivity',
-    'OperationMetadata',
-    'Secret',
-    'Service',
-    'UpdateMetadataImportRequest',
-    'UpdateServiceRequest',
+'CreateMetadataImportRequest',
+'CreateServiceRequest',
+'DatabaseDumpSpec',
 'DataprocMetastoreClient',
+'DeleteServiceRequest',
+'ExportMetadataRequest',
+'GetMetadataImportRequest',
+'GetServiceRequest',
+'HiveMetastoreConfig',
+'KerberosConfig',
+'ListMetadataImportsRequest',
+'ListMetadataImportsResponse',
+'ListServicesRequest',
+'ListServicesResponse',
+'LocationMetadata',
+'MaintenanceWindow',
+'MetadataExport',
+'MetadataImport',
+'MetadataManagementActivity',
+'OperationMetadata',
+'Secret',
+'Service',
+'UpdateMetadataImportRequest',
+'UpdateServiceRequest',
 )

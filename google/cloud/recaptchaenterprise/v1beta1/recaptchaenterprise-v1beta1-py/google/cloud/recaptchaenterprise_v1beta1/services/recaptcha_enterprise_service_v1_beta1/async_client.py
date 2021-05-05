@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -22,15 +20,14 @@ from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
 import google.api_core.client_options as ClientOptions # type: ignore
-from google.api_core import exceptions                 # type: ignore
+from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
 from google.cloud.recaptchaenterprise_v1beta1.services.recaptcha_enterprise_service_v1_beta1 import pagers
 from google.cloud.recaptchaenterprise_v1beta1.types import recaptchaenterprise
-
 from .transports.base import RecaptchaEnterpriseServiceV1Beta1Transport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import RecaptchaEnterpriseServiceV1Beta1GrpcAsyncIOTransport
 from .client import RecaptchaEnterpriseServiceV1Beta1Client
@@ -48,19 +45,14 @@ class RecaptchaEnterpriseServiceV1Beta1AsyncClient:
     parse_assessment_path = staticmethod(RecaptchaEnterpriseServiceV1Beta1Client.parse_assessment_path)
     key_path = staticmethod(RecaptchaEnterpriseServiceV1Beta1Client.key_path)
     parse_key_path = staticmethod(RecaptchaEnterpriseServiceV1Beta1Client.parse_key_path)
-
     common_billing_account_path = staticmethod(RecaptchaEnterpriseServiceV1Beta1Client.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(RecaptchaEnterpriseServiceV1Beta1Client.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(RecaptchaEnterpriseServiceV1Beta1Client.common_folder_path)
     parse_common_folder_path = staticmethod(RecaptchaEnterpriseServiceV1Beta1Client.parse_common_folder_path)
-
     common_organization_path = staticmethod(RecaptchaEnterpriseServiceV1Beta1Client.common_organization_path)
     parse_common_organization_path = staticmethod(RecaptchaEnterpriseServiceV1Beta1Client.parse_common_organization_path)
-
     common_project_path = staticmethod(RecaptchaEnterpriseServiceV1Beta1Client.common_project_path)
     parse_common_project_path = staticmethod(RecaptchaEnterpriseServiceV1Beta1Client.parse_common_project_path)
-
     common_location_path = staticmethod(RecaptchaEnterpriseServiceV1Beta1Client.common_location_path)
     parse_common_location_path = staticmethod(RecaptchaEnterpriseServiceV1Beta1Client.parse_common_location_path)
 
@@ -108,7 +100,7 @@ class RecaptchaEnterpriseServiceV1Beta1AsyncClient:
     get_transport_class = functools.partial(type(RecaptchaEnterpriseServiceV1Beta1Client).get_transport_class, type(RecaptchaEnterpriseServiceV1Beta1Client))
 
     def __init__(self, *,
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             transport: Union[str, RecaptchaEnterpriseServiceV1Beta1Transport] = 'grpc_asyncio',
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -145,7 +137,6 @@ class RecaptchaEnterpriseServiceV1Beta1AsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = RecaptchaEnterpriseServiceV1Beta1Client(
             credentials=credentials,
             transport=transport,
@@ -183,7 +174,6 @@ class RecaptchaEnterpriseServiceV1Beta1AsyncClient:
                 This corresponds to the ``assessment`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -206,7 +196,6 @@ class RecaptchaEnterpriseServiceV1Beta1AsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if assessment is not None:
@@ -271,7 +260,6 @@ class RecaptchaEnterpriseServiceV1Beta1AsyncClient:
                 This corresponds to the ``annotation`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -296,7 +284,6 @@ class RecaptchaEnterpriseServiceV1Beta1AsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
         if annotation is not None:
@@ -341,7 +328,6 @@ class RecaptchaEnterpriseServiceV1Beta1AsyncClient:
         Args:
             request (:class:`google.cloud.recaptchaenterprise_v1beta1.types.CreateKeyRequest`):
                 The request object. The create key request message.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -356,7 +342,6 @@ class RecaptchaEnterpriseServiceV1Beta1AsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = recaptchaenterprise.CreateKeyRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -399,7 +384,6 @@ class RecaptchaEnterpriseServiceV1Beta1AsyncClient:
         Args:
             request (:class:`google.cloud.recaptchaenterprise_v1beta1.types.ListKeysRequest`):
                 The request object. The list keys request message.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -416,7 +400,6 @@ class RecaptchaEnterpriseServiceV1Beta1AsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = recaptchaenterprise.ListKeysRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -467,7 +450,6 @@ class RecaptchaEnterpriseServiceV1Beta1AsyncClient:
         Args:
             request (:class:`google.cloud.recaptchaenterprise_v1beta1.types.GetKeyRequest`):
                 The request object. The get key request message.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -482,7 +464,6 @@ class RecaptchaEnterpriseServiceV1Beta1AsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = recaptchaenterprise.GetKeyRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -524,7 +505,6 @@ class RecaptchaEnterpriseServiceV1Beta1AsyncClient:
         Args:
             request (:class:`google.cloud.recaptchaenterprise_v1beta1.types.UpdateKeyRequest`):
                 The request object. The update key request message.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -539,7 +519,6 @@ class RecaptchaEnterpriseServiceV1Beta1AsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = recaptchaenterprise.UpdateKeyRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -581,7 +560,6 @@ class RecaptchaEnterpriseServiceV1Beta1AsyncClient:
         Args:
             request (:class:`google.cloud.recaptchaenterprise_v1beta1.types.DeleteKeyRequest`):
                 The request object. The delete key request message.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -589,7 +567,6 @@ class RecaptchaEnterpriseServiceV1Beta1AsyncClient:
                 sent along with the request as metadata.
         """
         # Create or coerce a protobuf request object.
-
         request = recaptchaenterprise.DeleteKeyRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -615,8 +592,6 @@ class RecaptchaEnterpriseServiceV1Beta1AsyncClient:
             timeout=timeout,
             metadata=metadata,
         )
-
-
 
 
 

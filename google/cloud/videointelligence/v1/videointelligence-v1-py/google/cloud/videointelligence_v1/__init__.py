@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,8 @@
 #
 
 from .services.video_intelligence_service import VideoIntelligenceServiceClient
+from .services.video_intelligence_service import VideoIntelligenceServiceAsyncClient
+
 from .types.video_intelligence import AnnotateVideoProgress
 from .types.video_intelligence import AnnotateVideoRequest
 from .types.video_intelligence import AnnotateVideoResponse
@@ -30,13 +31,10 @@ from .types.video_intelligence import FaceDetectionAnnotation
 from .types.video_intelligence import FaceDetectionConfig
 from .types.video_intelligence import FaceFrame
 from .types.video_intelligence import FaceSegment
-from .types.video_intelligence import Feature
 from .types.video_intelligence import LabelAnnotation
 from .types.video_intelligence import LabelDetectionConfig
-from .types.video_intelligence import LabelDetectionMode
 from .types.video_intelligence import LabelFrame
 from .types.video_intelligence import LabelSegment
-from .types.video_intelligence import Likelihood
 from .types.video_intelligence import LogoRecognitionAnnotation
 from .types.video_intelligence import NormalizedBoundingBox
 from .types.video_intelligence import NormalizedBoundingPoly
@@ -62,54 +60,56 @@ from .types.video_intelligence import VideoAnnotationResults
 from .types.video_intelligence import VideoContext
 from .types.video_intelligence import VideoSegment
 from .types.video_intelligence import WordInfo
-
+from .types.video_intelligence import Feature
+from .types.video_intelligence import LabelDetectionMode
+from .types.video_intelligence import Likelihood
 
 __all__ = (
-    'AnnotateVideoProgress',
-    'AnnotateVideoRequest',
-    'AnnotateVideoResponse',
-    'DetectedAttribute',
-    'DetectedLandmark',
-    'Entity',
-    'ExplicitContentAnnotation',
-    'ExplicitContentDetectionConfig',
-    'ExplicitContentFrame',
-    'FaceAnnotation',
-    'FaceDetectionAnnotation',
-    'FaceDetectionConfig',
-    'FaceFrame',
-    'FaceSegment',
-    'Feature',
-    'LabelAnnotation',
-    'LabelDetectionConfig',
-    'LabelDetectionMode',
-    'LabelFrame',
-    'LabelSegment',
-    'Likelihood',
-    'LogoRecognitionAnnotation',
-    'NormalizedBoundingBox',
-    'NormalizedBoundingPoly',
-    'NormalizedVertex',
-    'ObjectTrackingAnnotation',
-    'ObjectTrackingConfig',
-    'ObjectTrackingFrame',
-    'PersonDetectionAnnotation',
-    'PersonDetectionConfig',
-    'ShotChangeDetectionConfig',
-    'SpeechContext',
-    'SpeechRecognitionAlternative',
-    'SpeechTranscription',
-    'SpeechTranscriptionConfig',
-    'TextAnnotation',
-    'TextDetectionConfig',
-    'TextFrame',
-    'TextSegment',
-    'TimestampedObject',
-    'Track',
-    'VideoAnnotationProgress',
-    'VideoAnnotationResults',
-    'VideoContext',
-    'VideoSegment',
-    'WordInfo',
+'AnnotateVideoProgress',
+'AnnotateVideoRequest',
+'AnnotateVideoResponse',
+'DetectedAttribute',
+'DetectedLandmark',
+'Entity',
+'ExplicitContentAnnotation',
+'ExplicitContentDetectionConfig',
+'ExplicitContentFrame',
+'FaceAnnotation',
+'FaceDetectionAnnotation',
+'FaceDetectionConfig',
+'FaceFrame',
+'FaceSegment',
+'Feature',
+'LabelAnnotation',
+'LabelDetectionConfig',
+'LabelDetectionMode',
+'LabelFrame',
+'LabelSegment',
+'Likelihood',
+'LogoRecognitionAnnotation',
+'NormalizedBoundingBox',
+'NormalizedBoundingPoly',
+'NormalizedVertex',
+'ObjectTrackingAnnotation',
+'ObjectTrackingConfig',
+'ObjectTrackingFrame',
+'PersonDetectionAnnotation',
+'PersonDetectionConfig',
+'ShotChangeDetectionConfig',
+'SpeechContext',
+'SpeechRecognitionAlternative',
+'SpeechTranscription',
+'SpeechTranscriptionConfig',
+'TextAnnotation',
+'TextDetectionConfig',
+'TextFrame',
+'TextSegment',
+'TimestampedObject',
+'Track',
+'VideoAnnotationProgress',
+'VideoAnnotationResults',
+'VideoContext',
 'VideoIntelligenceServiceClient',
+'VideoSegment',
+'WordInfo',
 )

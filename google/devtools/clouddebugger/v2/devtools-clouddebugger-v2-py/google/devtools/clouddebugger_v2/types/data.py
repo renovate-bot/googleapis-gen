@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,13 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
-from google.devtools.source.v1 import source_context_pb2 as source_context  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+from google.devtools.source.v1 import source_context_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -39,7 +36,6 @@ __protobuf__ = proto.module(
 
 class FormatMessage(proto.Message):
     r"""Represents a message with parameters.
-
     Attributes:
         format_ (str):
             Format template for the message. The ``format`` uses
@@ -55,9 +51,14 @@ class FormatMessage(proto.Message):
             message.
     """
 
-    format_ = proto.Field(proto.STRING, number=1)
-
-    parameters = proto.RepeatedField(proto.STRING, number=2)
+    format_ = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    parameters = proto.RepeatedField(
+        proto.STRING,
+        number=2,
+    )
 
 
 class StatusMessage(proto.Message):
@@ -86,20 +87,24 @@ class StatusMessage(proto.Message):
         VARIABLE_NAME = 5
         VARIABLE_VALUE = 6
 
-    is_error = proto.Field(proto.BOOL, number=1)
-
-    refers_to = proto.Field(proto.ENUM, number=2,
+    is_error = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
+    refers_to = proto.Field(
+        proto.ENUM,
+        number=2,
         enum=Reference,
     )
-
-    description = proto.Field(proto.MESSAGE, number=3,
+    description = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='FormatMessage',
     )
 
 
 class SourceLocation(proto.Message):
     r"""Represents a location in the source code.
-
     Attributes:
         path (str):
             Path to the source file within the source
@@ -113,11 +118,18 @@ class SourceLocation(proto.Message):
             on specific columns ignore this field.
     """
 
-    path = proto.Field(proto.STRING, number=1)
-
-    line = proto.Field(proto.INT32, number=2)
-
-    column = proto.Field(proto.INT32, number=3)
+    path = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    line = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    column = proto.Field(
+        proto.INT32,
+        number=3,
+    )
 
 
 class Variable(proto.Message):
@@ -251,28 +263,37 @@ class Variable(proto.Message):
             -  ``Null pointer dereference``
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    value = proto.Field(proto.STRING, number=2)
-
-    type_ = proto.Field(proto.STRING, number=6)
-
-    members = proto.RepeatedField(proto.MESSAGE, number=3,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    value = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    type_ = proto.Field(
+        proto.STRING,
+        number=6,
+    )
+    members = proto.RepeatedField(
+        proto.MESSAGE,
+        number=3,
         message='Variable',
     )
-
-    var_table_index = proto.Field(proto.MESSAGE, number=4,
-        message=wrappers.Int32Value,
+    var_table_index = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=wrappers_pb2.Int32Value,
     )
-
-    status = proto.Field(proto.MESSAGE, number=5,
+    status = proto.Field(
+        proto.MESSAGE,
+        number=5,
         message='StatusMessage',
     )
 
 
 class StackFrame(proto.Message):
     r"""Represents a stack frame context.
-
     Attributes:
         function (str):
             Demangled function name at the call site.
@@ -288,24 +309,29 @@ class StackFrame(proto.Message):
             for all stack frames.
     """
 
-    function = proto.Field(proto.STRING, number=1)
-
-    location = proto.Field(proto.MESSAGE, number=2,
+    function = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    location = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='SourceLocation',
     )
-
-    arguments = proto.RepeatedField(proto.MESSAGE, number=3,
+    arguments = proto.RepeatedField(
+        proto.MESSAGE,
+        number=3,
         message='Variable',
     )
-
-    locals_ = proto.RepeatedField(proto.MESSAGE, number=4,
+    locals_ = proto.RepeatedField(
+        proto.MESSAGE,
+        number=4,
         message='Variable',
     )
 
 
 class Breakpoint(proto.Message):
     r"""Represents the breakpoint specification, status and results.
-
     Attributes:
         id (str):
             Breakpoint identifier, unique in the scope of
@@ -415,55 +441,80 @@ class Breakpoint(proto.Message):
         WARNING = 1
         ERROR = 2
 
-    id = proto.Field(proto.STRING, number=1)
-
-    action = proto.Field(proto.ENUM, number=13,
+    id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    action = proto.Field(
+        proto.ENUM,
+        number=13,
         enum=Action,
     )
-
-    location = proto.Field(proto.MESSAGE, number=2,
+    location = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='SourceLocation',
     )
-
-    condition = proto.Field(proto.STRING, number=3)
-
-    expressions = proto.RepeatedField(proto.STRING, number=4)
-
-    log_message_format = proto.Field(proto.STRING, number=14)
-
-    log_level = proto.Field(proto.ENUM, number=15,
+    condition = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    expressions = proto.RepeatedField(
+        proto.STRING,
+        number=4,
+    )
+    log_message_format = proto.Field(
+        proto.STRING,
+        number=14,
+    )
+    log_level = proto.Field(
+        proto.ENUM,
+        number=15,
         enum=LogLevel,
     )
-
-    is_final_state = proto.Field(proto.BOOL, number=5)
-
-    create_time = proto.Field(proto.MESSAGE, number=11,
-        message=timestamp.Timestamp,
+    is_final_state = proto.Field(
+        proto.BOOL,
+        number=5,
     )
-
-    final_time = proto.Field(proto.MESSAGE, number=12,
-        message=timestamp.Timestamp,
+    create_time = proto.Field(
+        proto.MESSAGE,
+        number=11,
+        message=timestamp_pb2.Timestamp,
     )
-
-    user_email = proto.Field(proto.STRING, number=16)
-
-    status = proto.Field(proto.MESSAGE, number=10,
+    final_time = proto.Field(
+        proto.MESSAGE,
+        number=12,
+        message=timestamp_pb2.Timestamp,
+    )
+    user_email = proto.Field(
+        proto.STRING,
+        number=16,
+    )
+    status = proto.Field(
+        proto.MESSAGE,
+        number=10,
         message='StatusMessage',
     )
-
-    stack_frames = proto.RepeatedField(proto.MESSAGE, number=7,
+    stack_frames = proto.RepeatedField(
+        proto.MESSAGE,
+        number=7,
         message='StackFrame',
     )
-
-    evaluated_expressions = proto.RepeatedField(proto.MESSAGE, number=8,
+    evaluated_expressions = proto.RepeatedField(
+        proto.MESSAGE,
+        number=8,
         message='Variable',
     )
-
-    variable_table = proto.RepeatedField(proto.MESSAGE, number=9,
+    variable_table = proto.RepeatedField(
+        proto.MESSAGE,
+        number=9,
         message='Variable',
     )
-
-    labels = proto.MapField(proto.STRING, proto.STRING, number=17)
+    labels = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=17,
+    )
 
 
 class Debuggee(proto.Message):
@@ -528,33 +579,54 @@ class Debuggee(proto.Message):
             user.
     """
 
-    id = proto.Field(proto.STRING, number=1)
-
-    project = proto.Field(proto.STRING, number=2)
-
-    uniquifier = proto.Field(proto.STRING, number=3)
-
-    description = proto.Field(proto.STRING, number=4)
-
-    is_inactive = proto.Field(proto.BOOL, number=5)
-
-    agent_version = proto.Field(proto.STRING, number=6)
-
-    is_disabled = proto.Field(proto.BOOL, number=7)
-
-    status = proto.Field(proto.MESSAGE, number=8,
+    id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    project = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    uniquifier = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    description = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    is_inactive = proto.Field(
+        proto.BOOL,
+        number=5,
+    )
+    agent_version = proto.Field(
+        proto.STRING,
+        number=6,
+    )
+    is_disabled = proto.Field(
+        proto.BOOL,
+        number=7,
+    )
+    status = proto.Field(
+        proto.MESSAGE,
+        number=8,
         message='StatusMessage',
     )
-
-    source_contexts = proto.RepeatedField(proto.MESSAGE, number=9,
-        message=source_context.SourceContext,
+    source_contexts = proto.RepeatedField(
+        proto.MESSAGE,
+        number=9,
+        message=source_context_pb2.SourceContext,
     )
-
-    ext_source_contexts = proto.RepeatedField(proto.MESSAGE, number=13,
-        message=source_context.ExtendedSourceContext,
+    ext_source_contexts = proto.RepeatedField(
+        proto.MESSAGE,
+        number=13,
+        message=source_context_pb2.ExtendedSourceContext,
     )
-
-    labels = proto.MapField(proto.STRING, proto.STRING, number=11)
+    labels = proto.MapField(
+        proto.STRING,
+        proto.STRING,
+        number=11,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v7.enums.types import product_bidding_category_level
 from google.ads.googleads.v7.enums.types import product_bidding_category_status
@@ -33,7 +30,6 @@ __protobuf__ = proto.module(
 
 class ProductBiddingCategoryConstant(proto.Message):
     r"""A Product Bidding Category.
-
     Attributes:
         resource_name (str):
             Output only. The resource name of the product bidding
@@ -67,18 +63,45 @@ class ProductBiddingCategoryConstant(proto.Message):
             localized according to language_code.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    id = proto.Field(proto.INT64, number=10, optional=True)
-    country_code = proto.Field(proto.STRING, number=11, optional=True)
-    product_bidding_category_constant_parent = proto.Field(proto.STRING, number=12, optional=True)
-    level = proto.Field(proto.ENUM, number=5,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    id = proto.Field(
+        proto.INT64,
+        number=10,
+        optional=True,
+    )
+    country_code = proto.Field(
+        proto.STRING,
+        number=11,
+        optional=True,
+    )
+    product_bidding_category_constant_parent = proto.Field(
+        proto.STRING,
+        number=12,
+        optional=True,
+    )
+    level = proto.Field(
+        proto.ENUM,
+        number=5,
         enum=product_bidding_category_level.ProductBiddingCategoryLevelEnum.ProductBiddingCategoryLevel,
     )
-    status = proto.Field(proto.ENUM, number=6,
+    status = proto.Field(
+        proto.ENUM,
+        number=6,
         enum=product_bidding_category_status.ProductBiddingCategoryStatusEnum.ProductBiddingCategoryStatus,
     )
-    language_code = proto.Field(proto.STRING, number=13, optional=True)
-    localized_name = proto.Field(proto.STRING, number=14, optional=True)
+    language_code = proto.Field(
+        proto.STRING,
+        number=13,
+        optional=True,
+    )
+    localized_name = proto.Field(
+        proto.STRING,
+        number=14,
+        optional=True,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

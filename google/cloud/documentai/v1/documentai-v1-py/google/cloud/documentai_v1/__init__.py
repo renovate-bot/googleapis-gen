@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,8 @@
 #
 
 from .services.document_processor_service import DocumentProcessorServiceClient
+from .services.document_processor_service import DocumentProcessorServiceAsyncClient
+
 from .types.document import Document
 from .types.document_io import BatchDocumentsInputConfig
 from .types.document_io import DocumentOutputConfig
@@ -37,27 +38,26 @@ from .types.geometry import BoundingPoly
 from .types.geometry import NormalizedVertex
 from .types.geometry import Vertex
 
-
 __all__ = (
-    'BatchDocumentsInputConfig',
-    'BatchProcessMetadata',
-    'BatchProcessRequest',
-    'BatchProcessResponse',
-    'BoundingPoly',
-    'CommonOperationMetadata',
-    'Document',
-    'DocumentOutputConfig',
-    'GcsDocument',
-    'GcsDocuments',
-    'GcsPrefix',
-    'HumanReviewStatus',
-    'NormalizedVertex',
-    'ProcessRequest',
-    'ProcessResponse',
-    'RawDocument',
-    'ReviewDocumentOperationMetadata',
-    'ReviewDocumentRequest',
-    'ReviewDocumentResponse',
-    'Vertex',
+'BatchDocumentsInputConfig',
+'BatchProcessMetadata',
+'BatchProcessRequest',
+'BatchProcessResponse',
+'BoundingPoly',
+'CommonOperationMetadata',
+'Document',
+'DocumentOutputConfig',
 'DocumentProcessorServiceClient',
+'GcsDocument',
+'GcsDocuments',
+'GcsPrefix',
+'HumanReviewStatus',
+'NormalizedVertex',
+'ProcessRequest',
+'ProcessResponse',
+'RawDocument',
+'ReviewDocumentOperationMetadata',
+'ReviewDocumentRequest',
+'ReviewDocumentResponse',
+'Vertex',
 )

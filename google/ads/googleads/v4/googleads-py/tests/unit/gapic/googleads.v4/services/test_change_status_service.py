@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 from unittest import mock
 
@@ -23,7 +21,6 @@ import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
-from google import auth
 from google.ads.googleads.v4.enums.types import change_status_operation
 from google.ads.googleads.v4.enums.types import change_status_resource_type
 from google.ads.googleads.v4.resources.types import change_status
@@ -33,10 +30,11 @@ from google.ads.googleads.v4.services.types import change_status_service
 from google.api_core import client_options
 from google.api_core import gapic_v1
 from google.api_core import grpc_helpers
-from google.auth import credentials
+from google.auth import credentials as ga_credentials
 from google.auth.exceptions import MutualTLSChannelError
 from google.oauth2 import service_account
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
+import google.auth
 
 
 def client_cert_source_callback():
@@ -66,7 +64,7 @@ def test__get_default_mtls_endpoint():
 
 
 def test_change_status_service_client_from_service_account_info():
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
@@ -77,7 +75,7 @@ def test_change_status_service_client_from_service_account_info():
 
 
 def test_change_status_service_client_from_service_account_file():
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_file') as factory:
         factory.return_value = creds
         client = ChangeStatusServiceClient.from_service_account_file("dummy/file/path.json")
@@ -102,7 +100,7 @@ def test_change_status_service_client_client_options():
     # Check that if channel is provided we won't create a new one.
     with mock.patch('google.ads.googleads.v4.services.services.change_status_service.ChangeStatusServiceClient.get_transport_class') as gtc:
         transport = transports.ChangeStatusServiceGrpcTransport(
-            credentials=credentials.AnonymousCredentials()
+            credentials=ga_credentials.AnonymousCredentials()
         )
         client = ChangeStatusServiceClient(transport=transport)
         gtc.assert_not_called()
@@ -252,7 +250,7 @@ def test_change_status_service_client_client_options_from_dict():
 
 def test_get_change_status(transport: str = 'grpc', request_type=change_status_service.GetChangeStatusRequest):
     client = ChangeStatusServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -267,29 +265,20 @@ def test_get_change_status(transport: str = 'grpc', request_type=change_status_s
         # Designate an appropriate return value for the call.
         call.return_value = change_status.ChangeStatus(
             resource_name='resource_name_value',
-
             resource_type=change_status_resource_type.ChangeStatusResourceTypeEnum.ChangeStatusResourceType.UNKNOWN,
-
             resource_status=change_status_operation.ChangeStatusOperationEnum.ChangeStatusOperation.UNKNOWN,
-
         )
-
         response = client.get_change_status(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == change_status_service.GetChangeStatusRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, change_status.ChangeStatus)
-
     assert response.resource_name == 'resource_name_value'
-
     assert response.resource_type == change_status_resource_type.ChangeStatusResourceTypeEnum.ChangeStatusResourceType.UNKNOWN
-
     assert response.resource_status == change_status_operation.ChangeStatusOperationEnum.ChangeStatusOperation.UNKNOWN
 
 
@@ -299,12 +288,13 @@ def test_get_change_status_from_dict():
 
 def test_get_change_status_field_headers():
     client = ChangeStatusServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = change_status_service.GetChangeStatusRequest()
+
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -312,7 +302,6 @@ def test_get_change_status_field_headers():
             type(client.transport.get_change_status),
             '__call__') as call:
         call.return_value = change_status.ChangeStatus()
-
         client.get_change_status(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -330,7 +319,7 @@ def test_get_change_status_field_headers():
 
 def test_get_change_status_flattened():
     client = ChangeStatusServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -339,7 +328,6 @@ def test_get_change_status_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = change_status.ChangeStatus()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_change_status(
@@ -350,13 +338,12 @@ def test_get_change_status_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource_name == 'resource_name_value'
 
 
 def test_get_change_status_flattened_error():
     client = ChangeStatusServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -371,11 +358,11 @@ def test_get_change_status_flattened_error():
 def test_credentials_transport_error():
     # It is an error to provide credentials and a transport instance.
     transport = transports.ChangeStatusServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = ChangeStatusServiceClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             transport=transport,
         )
 
@@ -383,7 +370,7 @@ def test_credentials_transport_error():
 def test_transport_instance():
     # A client may be instantiated with a custom transport instance.
     transport = transports.ChangeStatusServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     client = ChangeStatusServiceClient(transport=transport)
     assert client.transport is transport
@@ -392,7 +379,7 @@ def test_transport_instance():
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.ChangeStatusServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     channel = transport.grpc_channel
     assert channel
@@ -401,7 +388,7 @@ def test_transport_get_channel():
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = ChangeStatusServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     assert isinstance(
         client.transport,
@@ -413,8 +400,8 @@ def test_transport_grpc_default():
 ])
 def test_transport_adc(transport_class):
     # Test default credentials are used if not provided.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport_class()
         adc.assert_called_once()
 
@@ -424,14 +411,14 @@ def test_change_status_service_base_transport():
     with mock.patch('google.ads.googleads.v4.services.services.change_status_service.transports.ChangeStatusServiceTransport.__init__') as Transport:
         Transport.return_value = None
         transport = transports.ChangeStatusServiceTransport(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
         )
 
     # Every method on the transport should just blindly
     # raise NotImplementedError.
     methods = (
         'get_change_status',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -439,17 +426,17 @@ def test_change_status_service_base_transport():
 
 def test_change_status_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.ads.googleads.v4.services.services.change_status_service.transports.ChangeStatusServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'default') as adc, mock.patch('google.ads.googleads.v4.services.services.change_status_service.transports.ChangeStatusServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.ChangeStatusServiceTransport()
         adc.assert_called_once()
 
 
 def test_change_status_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         ChangeStatusServiceClient()
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/adwords',
@@ -459,8 +446,8 @@ def test_change_status_service_auth_adc():
 def test_change_status_service_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transports.ChangeStatusServiceGrpcTransport(host="squid.clam.whelk")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/adwords',
@@ -469,7 +456,7 @@ def test_change_status_service_transport_auth_adc():
 
 def test_change_status_service_host_no_port():
     client = ChangeStatusServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='googleads.googleapis.com'),
     )
     assert client.transport._host == 'googleads.googleapis.com:443'
@@ -477,7 +464,7 @@ def test_change_status_service_host_no_port():
 
 def test_change_status_service_host_with_port():
     client = ChangeStatusServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='googleads.googleapis.com:8000'),
     )
     assert client.transport._host == 'googleads.googleapis.com:8000'
@@ -508,9 +495,9 @@ def test_change_status_service_transport_channel_mtls_with_client_cert_source(
             mock_grpc_channel = mock.Mock()
             grpc_create_channel.return_value = mock_grpc_channel
 
-            cred = credentials.AnonymousCredentials()
+            cred = ga_credentials.AnonymousCredentials()
             with pytest.warns(DeprecationWarning):
-                with mock.patch.object(auth, 'default') as adc:
+                with mock.patch.object(google.auth, 'default') as adc:
                     adc.return_value = (cred, None)
                     transport = transport_class(
                         host="squid.clam.whelk",
@@ -583,7 +570,6 @@ def test_change_status_service_transport_channel_mtls_with_adc(
 def test_ad_group_path():
     customer = "squid"
     ad_group = "clam"
-
     expected = "customers/{customer}/adGroups/{ad_group}".format(customer=customer, ad_group=ad_group, )
     actual = ChangeStatusServiceClient.ad_group_path(customer, ad_group)
     assert expected == actual
@@ -591,9 +577,8 @@ def test_ad_group_path():
 
 def test_parse_ad_group_path():
     expected = {
-    "customer": "whelk",
-    "ad_group": "octopus",
-
+        "customer": "whelk",
+        "ad_group": "octopus",
     }
     path = ChangeStatusServiceClient.ad_group_path(**expected)
 
@@ -604,7 +589,6 @@ def test_parse_ad_group_path():
 def test_ad_group_ad_path():
     customer = "oyster"
     ad_group_ad = "nudibranch"
-
     expected = "customers/{customer}/adGroupAds/{ad_group_ad}".format(customer=customer, ad_group_ad=ad_group_ad, )
     actual = ChangeStatusServiceClient.ad_group_ad_path(customer, ad_group_ad)
     assert expected == actual
@@ -612,9 +596,8 @@ def test_ad_group_ad_path():
 
 def test_parse_ad_group_ad_path():
     expected = {
-    "customer": "cuttlefish",
-    "ad_group_ad": "mussel",
-
+        "customer": "cuttlefish",
+        "ad_group_ad": "mussel",
     }
     path = ChangeStatusServiceClient.ad_group_ad_path(**expected)
 
@@ -625,7 +608,6 @@ def test_parse_ad_group_ad_path():
 def test_ad_group_bid_modifier_path():
     customer = "winkle"
     ad_group_bid_modifier = "nautilus"
-
     expected = "customers/{customer}/adGroupBidModifiers/{ad_group_bid_modifier}".format(customer=customer, ad_group_bid_modifier=ad_group_bid_modifier, )
     actual = ChangeStatusServiceClient.ad_group_bid_modifier_path(customer, ad_group_bid_modifier)
     assert expected == actual
@@ -633,9 +615,8 @@ def test_ad_group_bid_modifier_path():
 
 def test_parse_ad_group_bid_modifier_path():
     expected = {
-    "customer": "scallop",
-    "ad_group_bid_modifier": "abalone",
-
+        "customer": "scallop",
+        "ad_group_bid_modifier": "abalone",
     }
     path = ChangeStatusServiceClient.ad_group_bid_modifier_path(**expected)
 
@@ -646,7 +627,6 @@ def test_parse_ad_group_bid_modifier_path():
 def test_ad_group_criterion_path():
     customer = "squid"
     ad_group_criterion = "clam"
-
     expected = "customers/{customer}/adGroupCriteria/{ad_group_criterion}".format(customer=customer, ad_group_criterion=ad_group_criterion, )
     actual = ChangeStatusServiceClient.ad_group_criterion_path(customer, ad_group_criterion)
     assert expected == actual
@@ -654,9 +634,8 @@ def test_ad_group_criterion_path():
 
 def test_parse_ad_group_criterion_path():
     expected = {
-    "customer": "whelk",
-    "ad_group_criterion": "octopus",
-
+        "customer": "whelk",
+        "ad_group_criterion": "octopus",
     }
     path = ChangeStatusServiceClient.ad_group_criterion_path(**expected)
 
@@ -667,7 +646,6 @@ def test_parse_ad_group_criterion_path():
 def test_ad_group_feed_path():
     customer = "oyster"
     ad_group_feed = "nudibranch"
-
     expected = "customers/{customer}/adGroupFeeds/{ad_group_feed}".format(customer=customer, ad_group_feed=ad_group_feed, )
     actual = ChangeStatusServiceClient.ad_group_feed_path(customer, ad_group_feed)
     assert expected == actual
@@ -675,9 +653,8 @@ def test_ad_group_feed_path():
 
 def test_parse_ad_group_feed_path():
     expected = {
-    "customer": "cuttlefish",
-    "ad_group_feed": "mussel",
-
+        "customer": "cuttlefish",
+        "ad_group_feed": "mussel",
     }
     path = ChangeStatusServiceClient.ad_group_feed_path(**expected)
 
@@ -688,7 +665,6 @@ def test_parse_ad_group_feed_path():
 def test_campaign_path():
     customer = "winkle"
     campaign = "nautilus"
-
     expected = "customers/{customer}/campaigns/{campaign}".format(customer=customer, campaign=campaign, )
     actual = ChangeStatusServiceClient.campaign_path(customer, campaign)
     assert expected == actual
@@ -696,9 +672,8 @@ def test_campaign_path():
 
 def test_parse_campaign_path():
     expected = {
-    "customer": "scallop",
-    "campaign": "abalone",
-
+        "customer": "scallop",
+        "campaign": "abalone",
     }
     path = ChangeStatusServiceClient.campaign_path(**expected)
 
@@ -709,7 +684,6 @@ def test_parse_campaign_path():
 def test_campaign_criterion_path():
     customer = "squid"
     campaign_criterion = "clam"
-
     expected = "customers/{customer}/campaignCriteria/{campaign_criterion}".format(customer=customer, campaign_criterion=campaign_criterion, )
     actual = ChangeStatusServiceClient.campaign_criterion_path(customer, campaign_criterion)
     assert expected == actual
@@ -717,9 +691,8 @@ def test_campaign_criterion_path():
 
 def test_parse_campaign_criterion_path():
     expected = {
-    "customer": "whelk",
-    "campaign_criterion": "octopus",
-
+        "customer": "whelk",
+        "campaign_criterion": "octopus",
     }
     path = ChangeStatusServiceClient.campaign_criterion_path(**expected)
 
@@ -730,7 +703,6 @@ def test_parse_campaign_criterion_path():
 def test_campaign_feed_path():
     customer = "oyster"
     campaign_feed = "nudibranch"
-
     expected = "customers/{customer}/campaignFeeds/{campaign_feed}".format(customer=customer, campaign_feed=campaign_feed, )
     actual = ChangeStatusServiceClient.campaign_feed_path(customer, campaign_feed)
     assert expected == actual
@@ -738,9 +710,8 @@ def test_campaign_feed_path():
 
 def test_parse_campaign_feed_path():
     expected = {
-    "customer": "cuttlefish",
-    "campaign_feed": "mussel",
-
+        "customer": "cuttlefish",
+        "campaign_feed": "mussel",
     }
     path = ChangeStatusServiceClient.campaign_feed_path(**expected)
 
@@ -751,7 +722,6 @@ def test_parse_campaign_feed_path():
 def test_change_status_path():
     customer = "winkle"
     change_status = "nautilus"
-
     expected = "customers/{customer}/changeStatus/{change_status}".format(customer=customer, change_status=change_status, )
     actual = ChangeStatusServiceClient.change_status_path(customer, change_status)
     assert expected == actual
@@ -759,9 +729,8 @@ def test_change_status_path():
 
 def test_parse_change_status_path():
     expected = {
-    "customer": "scallop",
-    "change_status": "abalone",
-
+        "customer": "scallop",
+        "change_status": "abalone",
     }
     path = ChangeStatusServiceClient.change_status_path(**expected)
 
@@ -772,7 +741,6 @@ def test_parse_change_status_path():
 def test_feed_path():
     customer = "squid"
     feed = "clam"
-
     expected = "customers/{customer}/feeds/{feed}".format(customer=customer, feed=feed, )
     actual = ChangeStatusServiceClient.feed_path(customer, feed)
     assert expected == actual
@@ -780,9 +748,8 @@ def test_feed_path():
 
 def test_parse_feed_path():
     expected = {
-    "customer": "whelk",
-    "feed": "octopus",
-
+        "customer": "whelk",
+        "feed": "octopus",
     }
     path = ChangeStatusServiceClient.feed_path(**expected)
 
@@ -793,7 +760,6 @@ def test_parse_feed_path():
 def test_feed_item_path():
     customer = "oyster"
     feed_item = "nudibranch"
-
     expected = "customers/{customer}/feedItems/{feed_item}".format(customer=customer, feed_item=feed_item, )
     actual = ChangeStatusServiceClient.feed_item_path(customer, feed_item)
     assert expected == actual
@@ -801,9 +767,8 @@ def test_feed_item_path():
 
 def test_parse_feed_item_path():
     expected = {
-    "customer": "cuttlefish",
-    "feed_item": "mussel",
-
+        "customer": "cuttlefish",
+        "feed_item": "mussel",
     }
     path = ChangeStatusServiceClient.feed_item_path(**expected)
 
@@ -813,7 +778,6 @@ def test_parse_feed_item_path():
 
 def test_common_billing_account_path():
     billing_account = "winkle"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = ChangeStatusServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -821,8 +785,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "nautilus",
-
+        "billing_account": "nautilus",
     }
     path = ChangeStatusServiceClient.common_billing_account_path(**expected)
 
@@ -832,7 +795,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "scallop"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = ChangeStatusServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -840,8 +802,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "abalone",
-
+        "folder": "abalone",
     }
     path = ChangeStatusServiceClient.common_folder_path(**expected)
 
@@ -851,7 +812,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "squid"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = ChangeStatusServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -859,8 +819,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "clam",
-
+        "organization": "clam",
     }
     path = ChangeStatusServiceClient.common_organization_path(**expected)
 
@@ -870,7 +829,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "whelk"
-
     expected = "projects/{project}".format(project=project, )
     actual = ChangeStatusServiceClient.common_project_path(project)
     assert expected == actual
@@ -878,8 +836,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "octopus",
-
+        "project": "octopus",
     }
     path = ChangeStatusServiceClient.common_project_path(**expected)
 
@@ -890,7 +847,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "oyster"
     location = "nudibranch"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = ChangeStatusServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -898,9 +854,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "cuttlefish",
-    "location": "mussel",
-
+        "project": "cuttlefish",
+        "location": "mussel",
     }
     path = ChangeStatusServiceClient.common_location_path(**expected)
 
@@ -914,7 +869,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
 
     with mock.patch.object(transports.ChangeStatusServiceTransport, '_prep_wrapped_messages') as prep:
         client = ChangeStatusServiceClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)
@@ -922,7 +877,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
     with mock.patch.object(transports.ChangeStatusServiceTransport, '_prep_wrapped_messages') as prep:
         transport_class = ChangeStatusServiceClient.get_transport_class()
         transport = transport_class(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)

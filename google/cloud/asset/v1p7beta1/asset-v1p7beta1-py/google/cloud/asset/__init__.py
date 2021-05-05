@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,10 +14,10 @@
 # limitations under the License.
 #
 
-from google.cloud.asset_v1p7beta1.services.asset_service.async_client import AssetServiceAsyncClient
 from google.cloud.asset_v1p7beta1.services.asset_service.client import AssetServiceClient
+from google.cloud.asset_v1p7beta1.services.asset_service.async_client import AssetServiceAsyncClient
+
 from google.cloud.asset_v1p7beta1.types.asset_service import BigQueryDestination
-from google.cloud.asset_v1p7beta1.types.asset_service import ContentType
 from google.cloud.asset_v1p7beta1.types.asset_service import ExportAssetsRequest
 from google.cloud.asset_v1p7beta1.types.asset_service import ExportAssetsResponse
 from google.cloud.asset_v1p7beta1.types.asset_service import GcsDestination
@@ -26,18 +25,16 @@ from google.cloud.asset_v1p7beta1.types.asset_service import GcsOutputResult
 from google.cloud.asset_v1p7beta1.types.asset_service import OutputConfig
 from google.cloud.asset_v1p7beta1.types.asset_service import OutputResult
 from google.cloud.asset_v1p7beta1.types.asset_service import PartitionSpec
+from google.cloud.asset_v1p7beta1.types.asset_service import ContentType
 from google.cloud.asset_v1p7beta1.types.assets import Asset
 from google.cloud.asset_v1p7beta1.types.assets import RelatedAsset
 from google.cloud.asset_v1p7beta1.types.assets import RelatedAssets
 from google.cloud.asset_v1p7beta1.types.assets import RelationshipAttributes
 from google.cloud.asset_v1p7beta1.types.assets import Resource
 
-__all__ = (
-    'Asset',
+__all__ = ('AssetServiceClient',
     'AssetServiceAsyncClient',
-    'AssetServiceClient',
     'BigQueryDestination',
-    'ContentType',
     'ExportAssetsRequest',
     'ExportAssetsResponse',
     'GcsDestination',
@@ -45,6 +42,8 @@ __all__ = (
     'OutputConfig',
     'OutputResult',
     'PartitionSpec',
+    'ContentType',
+    'Asset',
     'RelatedAsset',
     'RelatedAssets',
     'RelationshipAttributes',

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -23,10 +21,10 @@ from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
-from google.api_core import exceptions                            # type: ignore
+from google.api_core import exceptions as core_exceptions         # type: ignore
 from google.api_core import gapic_v1                              # type: ignore
 from google.api_core import retry as retries                      # type: ignore
-from google.auth import credentials                               # type: ignore
+from google.auth import credentials as ga_credentials             # type: ignore
 from google.auth.transport import mtls                            # type: ignore
 from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
@@ -40,10 +38,9 @@ from google.ads.googleads.v4.resources.types import offline_user_data_job
 from google.ads.googleads.v4.services.types import offline_user_data_job_service
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
-from google.protobuf import empty_pb2 as empty  # type: ignore
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
-from google.rpc import status_pb2 as status  # type: ignore
-
+from google.protobuf import empty_pb2  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
+from google.rpc import status_pb2  # type: ignore
 from .transports.base import OfflineUserDataJobServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import OfflineUserDataJobServiceGrpcTransport
 
@@ -172,7 +169,6 @@ class OfflineUserDataJobServiceClient(metaclass=OfflineUserDataJobServiceClientM
         """Parse a offline_user_data_job path into its component segments."""
         m = re.match(r"^customers/(?P<customer>.+?)/offlineUserDataJobs/(?P<offline_user_data_job>.+?)$", path)
         return m.groupdict() if m else {}
-
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
         """Return a fully-qualified billing_account string."""
@@ -229,7 +225,7 @@ class OfflineUserDataJobServiceClient(metaclass=OfflineUserDataJobServiceClientM
         return m.groupdict() if m else {}
 
     def __init__(self, *,
-            credentials: Optional[credentials.Credentials] = None,
+            credentials: Optional[ga_credentials.Credentials] = None,
             transport: Union[str, OfflineUserDataJobServiceTransport, None] = None,
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -363,7 +359,6 @@ class OfflineUserDataJobServiceClient(metaclass=OfflineUserDataJobServiceClientM
                 This corresponds to the ``job`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -383,16 +378,14 @@ class OfflineUserDataJobServiceClient(metaclass=OfflineUserDataJobServiceClientM
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # Minor optimization to avoid making a copy if the user passes
+           # Minor optimization to avoid making a copy if the user passes
         # in a offline_user_data_job_service.CreateOfflineUserDataJobRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
         if not isinstance(request, offline_user_data_job_service.CreateOfflineUserDataJobRequest):
             request = offline_user_data_job_service.CreateOfflineUserDataJobRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if customer_id is not None:
                 request.customer_id = customer_id
             if job is not None:
@@ -413,7 +406,7 @@ class OfflineUserDataJobServiceClient(metaclass=OfflineUserDataJobServiceClientM
         # Send the request.
         response = rpc(
             request,
-            retry=retry,
+             retry=retry,
             timeout=timeout,
             metadata=metadata,
         )
@@ -442,7 +435,6 @@ class OfflineUserDataJobServiceClient(metaclass=OfflineUserDataJobServiceClientM
                 This corresponds to the ``resource_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -467,16 +459,14 @@ class OfflineUserDataJobServiceClient(metaclass=OfflineUserDataJobServiceClientM
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # Minor optimization to avoid making a copy if the user passes
+           # Minor optimization to avoid making a copy if the user passes
         # in a offline_user_data_job_service.GetOfflineUserDataJobRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
         if not isinstance(request, offline_user_data_job_service.GetOfflineUserDataJobRequest):
             request = offline_user_data_job_service.GetOfflineUserDataJobRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if resource_name is not None:
                 request.resource_name = resource_name
 
@@ -495,7 +485,7 @@ class OfflineUserDataJobServiceClient(metaclass=OfflineUserDataJobServiceClientM
         # Send the request.
         response = rpc(
             request,
-            retry=retry,
+             retry=retry,
             timeout=timeout,
             metadata=metadata,
         )
@@ -532,7 +522,6 @@ class OfflineUserDataJobServiceClient(metaclass=OfflineUserDataJobServiceClientM
                 This corresponds to the ``operations`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -552,16 +541,14 @@ class OfflineUserDataJobServiceClient(metaclass=OfflineUserDataJobServiceClientM
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # Minor optimization to avoid making a copy if the user passes
+           # Minor optimization to avoid making a copy if the user passes
         # in a offline_user_data_job_service.AddOfflineUserDataJobOperationsRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
         if not isinstance(request, offline_user_data_job_service.AddOfflineUserDataJobOperationsRequest):
             request = offline_user_data_job_service.AddOfflineUserDataJobOperationsRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if resource_name is not None:
                 request.resource_name = resource_name
             if operations is not None:
@@ -582,7 +569,7 @@ class OfflineUserDataJobServiceClient(metaclass=OfflineUserDataJobServiceClientM
         # Send the request.
         response = rpc(
             request,
-            retry=retry,
+             retry=retry,
             timeout=timeout,
             metadata=metadata,
         )
@@ -613,7 +600,6 @@ class OfflineUserDataJobServiceClient(metaclass=OfflineUserDataJobServiceClientM
                 This corresponds to the ``resource_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -646,16 +632,14 @@ class OfflineUserDataJobServiceClient(metaclass=OfflineUserDataJobServiceClientM
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # Minor optimization to avoid making a copy if the user passes
+           # Minor optimization to avoid making a copy if the user passes
         # in a offline_user_data_job_service.RunOfflineUserDataJobRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
         if not isinstance(request, offline_user_data_job_service.RunOfflineUserDataJobRequest):
             request = offline_user_data_job_service.RunOfflineUserDataJobRequest(request)
-
-            # If we have keyword arguments corresponding to fields on the
+             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if resource_name is not None:
                 request.resource_name = resource_name
 
@@ -674,7 +658,7 @@ class OfflineUserDataJobServiceClient(metaclass=OfflineUserDataJobServiceClientM
         # Send the request.
         response = rpc(
             request,
-            retry=retry,
+             retry=retry,
             timeout=timeout,
             metadata=metadata,
         )
@@ -683,8 +667,8 @@ class OfflineUserDataJobServiceClient(metaclass=OfflineUserDataJobServiceClientM
         response = operation.from_gapic(
             response,
             self._transport.operations_client,
-            empty.Empty,
-            metadata_type=empty.Empty,
+            empty_pb2.Empty,
+            metadata_type=empty_pb2.Empty,
         )
 
         # Done; return the response.

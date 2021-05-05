@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.rpc import status_pb2 as gr_status  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.rpc import status_pb2  # type: ignore
 from google.streetview.publish_v1.types import resources
 
 
@@ -55,13 +52,14 @@ class PhotoView(proto.Enum):
 
 class CreatePhotoRequest(proto.Message):
     r"""Request to create a [Photo][google.streetview.publish.v1.Photo].
-
     Attributes:
         photo (google.streetview.publish_v1.types.Photo):
             Required. Photo to create.
     """
 
-    photo = proto.Field(proto.MESSAGE, number=1,
+    photo = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=resources.Photo,
     )
 
@@ -94,13 +92,19 @@ class GetPhotoRequest(proto.Message):
             preference for Google services is used.
     """
 
-    photo_id = proto.Field(proto.STRING, number=1)
-
-    view = proto.Field(proto.ENUM, number=2,
+    photo_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    view = proto.Field(
+        proto.ENUM,
+        number=2,
         enum='PhotoView',
     )
-
-    language_code = proto.Field(proto.STRING, number=3)
+    language_code = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class BatchGetPhotosRequest(proto.Message):
@@ -131,13 +135,19 @@ class BatchGetPhotosRequest(proto.Message):
             preference for Google services is used.
     """
 
-    photo_ids = proto.RepeatedField(proto.STRING, number=1)
-
-    view = proto.Field(proto.ENUM, number=2,
+    photo_ids = proto.RepeatedField(
+        proto.STRING,
+        number=1,
+    )
+    view = proto.Field(
+        proto.ENUM,
+        number=2,
         enum='PhotoView',
     )
-
-    language_code = proto.Field(proto.STRING, number=3)
+    language_code = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 class BatchGetPhotosResponse(proto.Message):
@@ -152,7 +162,9 @@ class BatchGetPhotosResponse(proto.Message):
             [BatchGetPhotos][google.streetview.publish.v1.StreetViewPublishService.BatchGetPhotos].
     """
 
-    results = proto.RepeatedField(proto.MESSAGE, number=1,
+    results = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='PhotoResponse',
     )
 
@@ -174,11 +186,14 @@ class PhotoResponse(proto.Message):
             the request was successful.
     """
 
-    status = proto.Field(proto.MESSAGE, number=1,
+    status = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=gr_status.Status,
     )
-
-    photo = proto.Field(proto.MESSAGE, number=2,
+    photo = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message=resources.Photo,
     )
 
@@ -233,22 +248,31 @@ class ListPhotosRequest(proto.Message):
             preference for Google services is used.
     """
 
-    view = proto.Field(proto.ENUM, number=1,
+    view = proto.Field(
+        proto.ENUM,
+        number=1,
         enum='PhotoView',
     )
-
-    page_size = proto.Field(proto.INT32, number=2)
-
-    page_token = proto.Field(proto.STRING, number=3)
-
-    filter = proto.Field(proto.STRING, number=4)
-
-    language_code = proto.Field(proto.STRING, number=5)
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    filter = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    language_code = proto.Field(
+        proto.STRING,
+        number=5,
+    )
 
 
 class ListPhotosResponse(proto.Message):
     r"""Response to list all photos that belong to a user.
-
     Attributes:
         photos (Sequence[google.streetview.publish_v1.types.Photo]):
             List of photos. The
@@ -265,11 +289,15 @@ class ListPhotosResponse(proto.Message):
     def raw_page(self):
         return self
 
-    photos = proto.RepeatedField(proto.MESSAGE, number=1,
+    photos = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=resources.Photo,
     )
-
-    next_page_token = proto.Field(proto.STRING, number=2)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class UpdatePhotoRequest(proto.Message):
@@ -312,12 +340,15 @@ class UpdatePhotoRequest(proto.Message):
                 all connections are removed.</aside>
     """
 
-    photo = proto.Field(proto.MESSAGE, number=1,
+    photo = proto.Field(
+        proto.MESSAGE,
+        number=1,
         message=resources.Photo,
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=2,
-        message=field_mask.FieldMask,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=field_mask_pb2.FieldMask,
     )
 
 
@@ -331,7 +362,9 @@ class BatchUpdatePhotosRequest(proto.Message):
             [UpdatePhotoRequests][google.streetview.publish.v1.UpdatePhotoRequest].
     """
 
-    update_photo_requests = proto.RepeatedField(proto.MESSAGE, number=1,
+    update_photo_requests = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='UpdatePhotoRequest',
     )
 
@@ -347,21 +380,25 @@ class BatchUpdatePhotosResponse(proto.Message):
             same order as the request.
     """
 
-    results = proto.RepeatedField(proto.MESSAGE, number=1,
+    results = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message='PhotoResponse',
     )
 
 
 class DeletePhotoRequest(proto.Message):
     r"""Request to delete a [Photo][google.streetview.publish.v1.Photo].
-
     Attributes:
         photo_id (str):
             Required. ID of the
             [Photo][google.streetview.publish.v1.Photo].
     """
 
-    photo_id = proto.Field(proto.STRING, number=1)
+    photo_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
 
 
 class BatchDeletePhotosRequest(proto.Message):
@@ -376,7 +413,10 @@ class BatchDeletePhotosRequest(proto.Message):
             parameter: ``photoIds=<id1>&photoIds=<id2>&...``.
     """
 
-    photo_ids = proto.RepeatedField(proto.STRING, number=1)
+    photo_ids = proto.RepeatedField(
+        proto.STRING,
+        number=1,
+    )
 
 
 class BatchDeletePhotosResponse(proto.Message):
@@ -390,7 +430,9 @@ class BatchDeletePhotosResponse(proto.Message):
             request.
     """
 
-    status = proto.RepeatedField(proto.MESSAGE, number=1,
+    status = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=gr_status.Status,
     )
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,13 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v4.enums.types import shared_set_status
 from google.ads.googleads.v4.enums.types import shared_set_type
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -66,24 +63,39 @@ class SharedSet(proto.Message):
             associated with this shared set. Read only.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    id = proto.Field(proto.MESSAGE, number=2,
-        message=wrappers.Int64Value,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
     )
-    type_ = proto.Field(proto.ENUM, number=3,
+    id = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=wrappers_pb2.Int64Value,
+    )
+    type_ = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=shared_set_type.SharedSetTypeEnum.SharedSetType,
     )
-    name = proto.Field(proto.MESSAGE, number=4,
-        message=wrappers.StringValue,
+    name = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=wrappers_pb2.StringValue,
     )
-    status = proto.Field(proto.ENUM, number=5,
+    status = proto.Field(
+        proto.ENUM,
+        number=5,
         enum=shared_set_status.SharedSetStatusEnum.SharedSetStatus,
     )
-    member_count = proto.Field(proto.MESSAGE, number=6,
-        message=wrappers.Int64Value,
+    member_count = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        message=wrappers_pb2.Int64Value,
     )
-    reference_count = proto.Field(proto.MESSAGE, number=7,
-        message=wrappers.Int64Value,
+    reference_count = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        message=wrappers_pb2.Int64Value,
     )
 
 

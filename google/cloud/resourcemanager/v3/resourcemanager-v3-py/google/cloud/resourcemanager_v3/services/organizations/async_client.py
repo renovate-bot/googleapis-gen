@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -22,18 +20,17 @@ from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
 import google.api_core.client_options as ClientOptions # type: ignore
-from google.api_core import exceptions                 # type: ignore
+from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
 from google.cloud.resourcemanager_v3.services.organizations import pagers
 from google.cloud.resourcemanager_v3.types import organizations
-from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
-from google.iam.v1 import policy_pb2 as giv_policy  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
+from google.iam.v1 import iam_policy_pb2  # type: ignore
+from google.iam.v1 import policy_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 from .transports.base import OrganizationsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import OrganizationsGrpcAsyncIOTransport
 from .client import OrganizationsClient
@@ -49,19 +46,14 @@ class OrganizationsAsyncClient:
 
     organization_path = staticmethod(OrganizationsClient.organization_path)
     parse_organization_path = staticmethod(OrganizationsClient.parse_organization_path)
-
     common_billing_account_path = staticmethod(OrganizationsClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(OrganizationsClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(OrganizationsClient.common_folder_path)
     parse_common_folder_path = staticmethod(OrganizationsClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(OrganizationsClient.common_organization_path)
     parse_common_organization_path = staticmethod(OrganizationsClient.parse_common_organization_path)
-
     common_project_path = staticmethod(OrganizationsClient.common_project_path)
     parse_common_project_path = staticmethod(OrganizationsClient.parse_common_project_path)
-
     common_location_path = staticmethod(OrganizationsClient.common_location_path)
     parse_common_location_path = staticmethod(OrganizationsClient.parse_common_location_path)
 
@@ -109,7 +101,7 @@ class OrganizationsAsyncClient:
     get_transport_class = functools.partial(type(OrganizationsClient).get_transport_class, type(OrganizationsClient))
 
     def __init__(self, *,
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             transport: Union[str, OrganizationsTransport] = 'grpc_asyncio',
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -146,7 +138,6 @@ class OrganizationsAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = OrganizationsClient(
             credentials=credentials,
             transport=transport,
@@ -180,7 +171,6 @@ class OrganizationsAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -207,7 +197,6 @@ class OrganizationsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -216,10 +205,7 @@ class OrganizationsAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_organization,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -293,7 +279,6 @@ class OrganizationsAsyncClient:
                 This corresponds to the ``query`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -321,7 +306,6 @@ class OrganizationsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if query is not None:
             request.query = query
 
@@ -354,13 +338,13 @@ class OrganizationsAsyncClient:
         return response
 
     async def get_iam_policy(self,
-            request: iam_policy.GetIamPolicyRequest = None,
+            request: iam_policy_pb2.GetIamPolicyRequest = None,
             *,
             resource: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> giv_policy.Policy:
+            ) -> policy_pb2.Policy:
         r"""Gets the access control policy for an organization resource. The
         policy may be empty if no such policy or resource exists. The
         ``resource`` field should be the organization's resource name,
@@ -383,7 +367,6 @@ class OrganizationsAsyncClient:
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -457,23 +440,19 @@ class OrganizationsAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # The request isn't a proto-plus wrapped type,
+         # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
-            request = iam_policy.GetIamPolicyRequest(**request)
-
+            request = iam_policy_pb2.GetIamPolicyRequest(**request)
         elif not request:
-            request = iam_policy.GetIamPolicyRequest(resource=resource, )
+            request = iam_policy_pb2.GetIamPolicyRequest(resource=resource, )
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_iam_policy,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -502,13 +481,13 @@ class OrganizationsAsyncClient:
         return response
 
     async def set_iam_policy(self,
-            request: iam_policy.SetIamPolicyRequest = None,
+            request: iam_policy_pb2.SetIamPolicyRequest = None,
             *,
             resource: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> giv_policy.Policy:
+            ) -> policy_pb2.Policy:
         r"""Sets the access control policy on an organization resource.
         Replaces any existing policy. The ``resource`` field should be
         the organization's resource name, for example:
@@ -531,7 +510,6 @@ class OrganizationsAsyncClient:
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -605,13 +583,12 @@ class OrganizationsAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # The request isn't a proto-plus wrapped type,
+         # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
-            request = iam_policy.SetIamPolicyRequest(**request)
-
+            request = iam_policy_pb2.SetIamPolicyRequest(**request)
         elif not request:
-            request = iam_policy.SetIamPolicyRequest(resource=resource, )
+            request = iam_policy_pb2.SetIamPolicyRequest(resource=resource, )
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -641,14 +618,14 @@ class OrganizationsAsyncClient:
         return response
 
     async def test_iam_permissions(self,
-            request: iam_policy.TestIamPermissionsRequest = None,
+            request: iam_policy_pb2.TestIamPermissionsRequest = None,
             *,
             resource: str = None,
             permissions: Sequence[str] = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> iam_policy.TestIamPermissionsResponse:
+            ) -> iam_policy_pb2.TestIamPermissionsResponse:
         r"""Returns the permissions that a caller has on the specified
         organization. The ``resource`` field should be the
         organization's resource name, for example: "organizations/123".
@@ -677,7 +654,6 @@ class OrganizationsAsyncClient:
                 This corresponds to the ``permissions`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -696,13 +672,12 @@ class OrganizationsAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # The request isn't a proto-plus wrapped type,
+         # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
-            request = iam_policy.TestIamPermissionsRequest(**request)
-
+            request = iam_policy_pb2.TestIamPermissionsRequest(**request)
         elif not request:
-            request = iam_policy.TestIamPermissionsRequest(resource=resource, permissions=permissions, )
+            request = iam_policy_pb2.TestIamPermissionsRequest(resource=resource, permissions=permissions, )
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -730,8 +705,6 @@ class OrganizationsAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

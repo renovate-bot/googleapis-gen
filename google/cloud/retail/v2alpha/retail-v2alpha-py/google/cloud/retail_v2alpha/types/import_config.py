@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.cloud.retail_v2alpha.types import product
 from google.cloud.retail_v2alpha.types import user_event
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-from google.rpc import status_pb2 as status  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
+from google.rpc import status_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -82,14 +79,18 @@ class GcsSource(proto.Message):
                https://support.google.com/analytics/answer/3437719?hl=en.
     """
 
-    input_uris = proto.RepeatedField(proto.STRING, number=1)
-
-    data_schema = proto.Field(proto.STRING, number=2)
+    input_uris = proto.RepeatedField(
+        proto.STRING,
+        number=1,
+    )
+    data_schema = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class BigQuerySource(proto.Message):
     r"""BigQuery source import data from.
-
     Attributes:
         project_id (str):
             The project id (can be project # or id) that
@@ -131,15 +132,26 @@ class BigQuerySource(proto.Message):
                https://support.google.com/analytics/answer/3437719?hl=en.
     """
 
-    project_id = proto.Field(proto.STRING, number=5)
-
-    dataset_id = proto.Field(proto.STRING, number=1)
-
-    table_id = proto.Field(proto.STRING, number=2)
-
-    gcs_staging_dir = proto.Field(proto.STRING, number=3)
-
-    data_schema = proto.Field(proto.STRING, number=4)
+    project_id = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    dataset_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    table_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    gcs_staging_dir = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+    data_schema = proto.Field(
+        proto.STRING,
+        number=4,
+    )
 
 
 class ProductInlineSource(proto.Message):
@@ -154,7 +166,9 @@ class ProductInlineSource(proto.Message):
             Recommended max of 10k items.
     """
 
-    products = proto.RepeatedField(proto.MESSAGE, number=1,
+    products = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=product.Product,
     )
 
@@ -169,14 +183,15 @@ class UserEventInlineSource(proto.Message):
             Recommended max of 10k items.
     """
 
-    user_events = proto.RepeatedField(proto.MESSAGE, number=1,
+    user_events = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
         message=user_event.UserEvent,
     )
 
 
 class ImportErrorsConfig(proto.Message):
     r"""Configuration of destination for Import related errors.
-
     Attributes:
         gcs_prefix (str):
             Google Cloud Storage path for import errors. This must be an
@@ -185,12 +200,15 @@ class ImportErrorsConfig(proto.Message):
             JSON-encoded ``google.rpc.Status`` message.
     """
 
-    gcs_prefix = proto.Field(proto.STRING, number=1, oneof='destination')
+    gcs_prefix = proto.Field(
+        proto.STRING,
+        number=1,
+        oneof='destination',
+    )
 
 
 class ImportProductsRequest(proto.Message):
     r"""Request message for Import methods.
-
     Attributes:
         parent (str):
             Required.
@@ -211,24 +229,29 @@ class ImportProductsRequest(proto.Message):
             by default update all fields.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    input_config = proto.Field(proto.MESSAGE, number=2,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    input_config = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='ProductInputConfig',
     )
-
-    errors_config = proto.Field(proto.MESSAGE, number=3,
+    errors_config = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='ImportErrorsConfig',
     )
-
-    update_mask = proto.Field(proto.MESSAGE, number=4,
-        message=field_mask.FieldMask,
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=field_mask_pb2.FieldMask,
     )
 
 
 class ImportUserEventsRequest(proto.Message):
     r"""Request message for the ImportUserEvents request.
-
     Attributes:
         parent (str):
             Required.
@@ -242,20 +265,24 @@ class ImportUserEventsRequest(proto.Message):
             event imports.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    input_config = proto.Field(proto.MESSAGE, number=2,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    input_config = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='UserEventInputConfig',
     )
-
-    errors_config = proto.Field(proto.MESSAGE, number=3,
+    errors_config = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='ImportErrorsConfig',
     )
 
 
 class ProductInputConfig(proto.Message):
     r"""The input config source for products.
-
     Attributes:
         product_inline_source (google.cloud.retail_v2alpha.types.ProductInlineSource):
             The Inline source for the input content for
@@ -267,22 +294,28 @@ class ProductInputConfig(proto.Message):
             BigQuery input source.
     """
 
-    product_inline_source = proto.Field(proto.MESSAGE, number=1, oneof='source',
+    product_inline_source = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='source',
         message='ProductInlineSource',
     )
-
-    gcs_source = proto.Field(proto.MESSAGE, number=2, oneof='source',
+    gcs_source = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='source',
         message='GcsSource',
     )
-
-    big_query_source = proto.Field(proto.MESSAGE, number=3, oneof='source',
+    big_query_source = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        oneof='source',
         message='BigQuerySource',
     )
 
 
 class UserEventInputConfig(proto.Message):
     r"""The input config source for user events.
-
     Attributes:
         user_event_inline_source (google.cloud.retail_v2alpha.types.UserEventInlineSource):
             Required. The Inline source for the input
@@ -294,15 +327,22 @@ class UserEventInputConfig(proto.Message):
             Required. BigQuery input source.
     """
 
-    user_event_inline_source = proto.Field(proto.MESSAGE, number=1, oneof='source',
+    user_event_inline_source = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='source',
         message='UserEventInlineSource',
     )
-
-    gcs_source = proto.Field(proto.MESSAGE, number=2, oneof='source',
+    gcs_source = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='source',
         message='GcsSource',
     )
-
-    big_query_source = proto.Field(proto.MESSAGE, number=3, oneof='source',
+    big_query_source = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        oneof='source',
         message='BigQuerySource',
     )
 
@@ -326,17 +366,24 @@ class ImportMetadata(proto.Message):
             while processing.
     """
 
-    create_time = proto.Field(proto.MESSAGE, number=1,
-        message=timestamp.Timestamp,
+    create_time = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=timestamp_pb2.Timestamp,
     )
-
-    update_time = proto.Field(proto.MESSAGE, number=2,
-        message=timestamp.Timestamp,
+    update_time = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=timestamp_pb2.Timestamp,
     )
-
-    success_count = proto.Field(proto.INT64, number=3)
-
-    failure_count = proto.Field(proto.INT64, number=4)
+    success_count = proto.Field(
+        proto.INT64,
+        number=3,
+    )
+    failure_count = proto.Field(
+        proto.INT64,
+        number=4,
+    )
 
 
 class ImportProductsResponse(proto.Message):
@@ -355,11 +402,14 @@ class ImportProductsResponse(proto.Message):
             errors in the request if set.
     """
 
-    error_samples = proto.RepeatedField(proto.MESSAGE, number=1,
-        message=status.Status,
+    error_samples = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
+        message=status_pb2.Status,
     )
-
-    errors_config = proto.Field(proto.MESSAGE, number=2,
+    errors_config = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='ImportErrorsConfig',
     )
 
@@ -382,15 +432,19 @@ class ImportUserEventsResponse(proto.Message):
             status.
     """
 
-    error_samples = proto.RepeatedField(proto.MESSAGE, number=1,
-        message=status.Status,
+    error_samples = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
+        message=status_pb2.Status,
     )
-
-    errors_config = proto.Field(proto.MESSAGE, number=2,
+    errors_config = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='ImportErrorsConfig',
     )
-
-    import_summary = proto.Field(proto.MESSAGE, number=3,
+    import_summary = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='UserEventImportSummary',
     )
 
@@ -409,9 +463,14 @@ class UserEventImportSummary(proto.Message):
             catalog.
     """
 
-    joined_events_count = proto.Field(proto.INT64, number=1)
-
-    unjoined_events_count = proto.Field(proto.INT64, number=2)
+    joined_events_count = proto.Field(
+        proto.INT64,
+        number=1,
+    )
+    unjoined_events_count = proto.Field(
+        proto.INT64,
+        number=2,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

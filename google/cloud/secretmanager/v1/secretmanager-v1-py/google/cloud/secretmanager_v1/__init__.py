@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,8 @@
 #
 
 from .services.secret_manager_service import SecretManagerServiceClient
+from .services.secret_manager_service import SecretManagerServiceAsyncClient
+
 from .types.resources import CustomerManagedEncryption
 from .types.resources import CustomerManagedEncryptionStatus
 from .types.resources import Replication
@@ -35,37 +36,36 @@ from .types.service import DisableSecretVersionRequest
 from .types.service import EnableSecretVersionRequest
 from .types.service import GetSecretRequest
 from .types.service import GetSecretVersionRequest
-from .types.service import ListSecretVersionsRequest
-from .types.service import ListSecretVersionsResponse
 from .types.service import ListSecretsRequest
 from .types.service import ListSecretsResponse
+from .types.service import ListSecretVersionsRequest
+from .types.service import ListSecretVersionsResponse
 from .types.service import UpdateSecretRequest
 
-
 __all__ = (
-    'AccessSecretVersionRequest',
-    'AccessSecretVersionResponse',
-    'AddSecretVersionRequest',
-    'CreateSecretRequest',
-    'CustomerManagedEncryption',
-    'CustomerManagedEncryptionStatus',
-    'DeleteSecretRequest',
-    'DestroySecretVersionRequest',
-    'DisableSecretVersionRequest',
-    'EnableSecretVersionRequest',
-    'GetSecretRequest',
-    'GetSecretVersionRequest',
-    'ListSecretVersionsRequest',
-    'ListSecretVersionsResponse',
-    'ListSecretsRequest',
-    'ListSecretsResponse',
-    'Replication',
-    'ReplicationStatus',
-    'Rotation',
-    'Secret',
-    'SecretPayload',
-    'SecretVersion',
-    'Topic',
-    'UpdateSecretRequest',
+'AccessSecretVersionRequest',
+'AccessSecretVersionResponse',
+'AddSecretVersionRequest',
+'CreateSecretRequest',
+'CustomerManagedEncryption',
+'CustomerManagedEncryptionStatus',
+'DeleteSecretRequest',
+'DestroySecretVersionRequest',
+'DisableSecretVersionRequest',
+'EnableSecretVersionRequest',
+'GetSecretRequest',
+'GetSecretVersionRequest',
+'ListSecretVersionsRequest',
+'ListSecretVersionsResponse',
+'ListSecretsRequest',
+'ListSecretsResponse',
+'Replication',
+'ReplicationStatus',
+'Rotation',
+'Secret',
 'SecretManagerServiceClient',
+'SecretPayload',
+'SecretVersion',
+'Topic',
+'UpdateSecretRequest',
 )

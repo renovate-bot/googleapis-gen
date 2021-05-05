@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -28,7 +26,7 @@ __protobuf__ = proto.module(
 
 
 class VanityPharmaDisplayUrlModeEnum(proto.Message):
-    r"""The display mode for vanity pharma URLs."""
+    r"""The display mode for vanity pharma URLs.    """
     class VanityPharmaDisplayUrlMode(proto.Enum):
         r"""Enum describing possible display modes for vanity pharma
         URLs.

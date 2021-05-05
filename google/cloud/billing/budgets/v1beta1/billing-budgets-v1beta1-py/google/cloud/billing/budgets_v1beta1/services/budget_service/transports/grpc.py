@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,22 +13,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
-from google import auth                    # type: ignore
-from google.auth import credentials        # type: ignore
+import google.auth                         # type: ignore
+from google.auth import credentials as ga_credentials  # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
 
 import grpc  # type: ignore
 
 from google.cloud.billing.budgets_v1beta1.types import budget_model
 from google.cloud.billing.budgets_v1beta1.types import budget_service
-from google.protobuf import empty_pb2 as empty  # type: ignore
-
+from google.protobuf import empty_pb2  # type: ignore
 from .base import BudgetServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -51,7 +48,7 @@ class BudgetServiceGrpcTransport(BudgetServiceTransport):
 
     def __init__(self, *,
             host: str = 'billingbudgets.googleapis.com',
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             credentials_file: str = None,
             scopes: Sequence[str] = None,
             channel: grpc.Channel = None,
@@ -65,7 +62,8 @@ class BudgetServiceGrpcTransport(BudgetServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -174,7 +172,7 @@ class BudgetServiceGrpcTransport(BudgetServiceTransport):
     @classmethod
     def create_channel(cls,
                        host: str = 'billingbudgets.googleapis.com',
-                       credentials: credentials.Credentials = None,
+                       credentials: ga_credentials.Credentials = None,
                        credentials_file: str = None,
                        scopes: Optional[Sequence[str]] = None,
                        quota_project_id: Optional[str] = None,
@@ -204,13 +202,15 @@ class BudgetServiceGrpcTransport(BudgetServiceTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -344,7 +344,7 @@ class BudgetServiceGrpcTransport(BudgetServiceTransport):
     @property
     def delete_budget(self) -> Callable[
             [budget_service.DeleteBudgetRequest],
-            empty.Empty]:
+            empty_pb2.Empty]:
         r"""Return a callable for the delete budget method over gRPC.
 
         Deletes a budget. Returns successfully if already
@@ -364,7 +364,7 @@ class BudgetServiceGrpcTransport(BudgetServiceTransport):
             self._stubs['delete_budget'] = self.grpc_channel.unary_unary(
                 '/google.cloud.billing.budgets.v1beta1.BudgetService/DeleteBudget',
                 request_serializer=budget_service.DeleteBudgetRequest.serialize,
-                response_deserializer=empty.Empty.FromString,
+                response_deserializer=empty_pb2.Empty.FromString,
             )
         return self._stubs['delete_budget']
 

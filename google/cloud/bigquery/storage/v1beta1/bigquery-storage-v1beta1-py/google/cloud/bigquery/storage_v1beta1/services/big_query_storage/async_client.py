@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -22,18 +20,17 @@ from typing import Dict, AsyncIterable, Awaitable, Sequence, Tuple, Type, Union
 import pkg_resources
 
 import google.api_core.client_options as ClientOptions # type: ignore
-from google.api_core import exceptions                 # type: ignore
+from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
 from google.cloud.bigquery.storage_v1beta1.types import arrow
 from google.cloud.bigquery.storage_v1beta1.types import avro
 from google.cloud.bigquery.storage_v1beta1.types import storage
 from google.cloud.bigquery.storage_v1beta1.types import table_reference as gcbs_table_reference
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
+from google.protobuf import timestamp_pb2  # type: ignore
 from .transports.base import BigQueryStorageTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import BigQueryStorageGrpcAsyncIOTransport
 from .client import BigQueryStorageClient
@@ -54,19 +51,14 @@ class BigQueryStorageAsyncClient:
     parse_read_session_path = staticmethod(BigQueryStorageClient.parse_read_session_path)
     stream_path = staticmethod(BigQueryStorageClient.stream_path)
     parse_stream_path = staticmethod(BigQueryStorageClient.parse_stream_path)
-
     common_billing_account_path = staticmethod(BigQueryStorageClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(BigQueryStorageClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(BigQueryStorageClient.common_folder_path)
     parse_common_folder_path = staticmethod(BigQueryStorageClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(BigQueryStorageClient.common_organization_path)
     parse_common_organization_path = staticmethod(BigQueryStorageClient.parse_common_organization_path)
-
     common_project_path = staticmethod(BigQueryStorageClient.common_project_path)
     parse_common_project_path = staticmethod(BigQueryStorageClient.parse_common_project_path)
-
     common_location_path = staticmethod(BigQueryStorageClient.common_location_path)
     parse_common_location_path = staticmethod(BigQueryStorageClient.parse_common_location_path)
 
@@ -114,7 +106,7 @@ class BigQueryStorageAsyncClient:
     get_transport_class = functools.partial(type(BigQueryStorageClient).get_transport_class, type(BigQueryStorageClient))
 
     def __init__(self, *,
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             transport: Union[str, BigQueryStorageTransport] = 'grpc_asyncio',
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -151,7 +143,6 @@ class BigQueryStorageAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = BigQueryStorageClient(
             credentials=credentials,
             transport=transport,
@@ -221,7 +212,6 @@ class BigQueryStorageAsyncClient:
                 This corresponds to the ``requested_streams`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -244,7 +234,6 @@ class BigQueryStorageAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if table_reference is not None:
             request.table_reference = table_reference
         if parent is not None:
@@ -257,10 +246,7 @@ class BigQueryStorageAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.create_read_session,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -324,7 +310,6 @@ class BigQueryStorageAsyncClient:
                 This corresponds to the ``read_position`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -349,7 +334,6 @@ class BigQueryStorageAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if read_position is not None:
             request.read_position = read_position
 
@@ -358,10 +342,7 @@ class BigQueryStorageAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.read_rows,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=86400.0,
@@ -426,7 +407,6 @@ class BigQueryStorageAsyncClient:
                 This corresponds to the ``requested_streams`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -451,7 +431,6 @@ class BigQueryStorageAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if session is not None:
             request.session = session
         if requested_streams is not None:
@@ -462,10 +441,7 @@ class BigQueryStorageAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.batch_create_read_session_streams,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -529,7 +505,6 @@ class BigQueryStorageAsyncClient:
                 This corresponds to the ``stream`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -548,7 +523,6 @@ class BigQueryStorageAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if stream is not None:
             request.stream = stream
 
@@ -557,10 +531,7 @@ class BigQueryStorageAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.finalize_stream,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -618,7 +589,6 @@ class BigQueryStorageAsyncClient:
                 This corresponds to the ``original_stream`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -641,7 +611,6 @@ class BigQueryStorageAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if original_stream is not None:
             request.original_stream = original_stream
 
@@ -650,10 +619,7 @@ class BigQueryStorageAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.split_read_stream,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -681,8 +647,6 @@ class BigQueryStorageAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

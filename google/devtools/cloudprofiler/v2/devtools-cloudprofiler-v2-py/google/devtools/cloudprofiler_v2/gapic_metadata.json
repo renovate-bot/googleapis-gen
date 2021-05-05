@@ -1,0 +1,53 @@
+ {
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "python",
+  "libraryPackage": "google.devtools.cloudprofiler_v2",
+  "protoPackage": "google.devtools.cloudprofiler.v2",
+  "schema": "1.0",
+  "services": {
+    "ProfilerService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ProfilerServiceClient",
+          "rpcs": {
+            "CreateOfflineProfile": {
+              "methods": [
+                "create_offline_profile"
+              ]
+            },
+            "CreateProfile": {
+              "methods": [
+                "create_profile"
+              ]
+            },
+            "UpdateProfile": {
+              "methods": [
+                "update_profile"
+              ]
+            }
+          }
+        },
+        "grpc-async": {
+          "libraryClient": "ProfilerServiceAsyncClient",
+          "rpcs": {
+            "CreateOfflineProfile": {
+              "methods": [
+                "create_offline_profile"
+              ]
+            },
+            "CreateProfile": {
+              "methods": [
+                "create_profile"
+              ]
+            },
+            "UpdateProfile": {
+              "methods": [
+                "update_profile"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

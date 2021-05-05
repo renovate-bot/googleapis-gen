@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 import mock
+import packaging.version
 
 import grpc
 from grpc.experimental import aio
@@ -24,21 +23,23 @@ import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
-from google import auth
+
 from google.api_core import client_options
-from google.api_core import exceptions
+from google.api_core import exceptions as core_exceptions
 from google.api_core import future
 from google.api_core import gapic_v1
 from google.api_core import grpc_helpers
 from google.api_core import grpc_helpers_async
 from google.api_core import operation_async  # type: ignore
 from google.api_core import operations_v1
-from google.auth import credentials
+from google.auth import credentials as ga_credentials
 from google.auth.exceptions import MutualTLSChannelError
 from google.cloud.channel_v1.services.cloud_channel_service import CloudChannelServiceAsyncClient
 from google.cloud.channel_v1.services.cloud_channel_service import CloudChannelServiceClient
 from google.cloud.channel_v1.services.cloud_channel_service import pagers
 from google.cloud.channel_v1.services.cloud_channel_service import transports
+from google.cloud.channel_v1.services.cloud_channel_service.transports.base import _API_CORE_VERSION
+from google.cloud.channel_v1.services.cloud_channel_service.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.channel_v1.types import channel_partner_links
 from google.cloud.channel_v1.types import common
 from google.cloud.channel_v1.types import customers
@@ -49,11 +50,34 @@ from google.cloud.channel_v1.types import products
 from google.cloud.channel_v1.types import service
 from google.longrunning import operations_pb2
 from google.oauth2 import service_account
-from google.protobuf import any_pb2 as gp_any  # type: ignore
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-from google.type import postal_address_pb2 as postal_address  # type: ignore
+from google.protobuf import any_pb2  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
+from google.type import postal_address_pb2  # type: ignore
+import google.auth
 
+
+# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
+# - Delete all the api-core and auth "less than" test cases
+# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
+requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth < 1.25.0",
+)
+requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth >= 1.25.0",
+)
+
+requires_api_core_lt_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core < 1.26.0",
+)
+
+requires_api_core_gte_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core >= 1.26.0",
+)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -86,7 +110,7 @@ def test__get_default_mtls_endpoint():
     CloudChannelServiceAsyncClient,
 ])
 def test_cloud_channel_service_client_from_service_account_info(client_class):
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
@@ -102,7 +126,7 @@ def test_cloud_channel_service_client_from_service_account_info(client_class):
     CloudChannelServiceAsyncClient,
 ])
 def test_cloud_channel_service_client_from_service_account_file(client_class):
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_file') as factory:
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
@@ -137,7 +161,7 @@ def test_cloud_channel_service_client_client_options(client_class, transport_cla
     # Check that if channel is provided we won't create a new one.
     with mock.patch.object(CloudChannelServiceClient, 'get_transport_class') as gtc:
         transport = transport_class(
-            credentials=credentials.AnonymousCredentials()
+            credentials=ga_credentials.AnonymousCredentials()
         )
         client = client_class(transport=transport)
         gtc.assert_not_called()
@@ -221,12 +245,10 @@ def test_cloud_channel_service_client_client_options(client_class, transport_cla
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
-
     (CloudChannelServiceClient, transports.CloudChannelServiceGrpcTransport, "grpc", "true"),
     (CloudChannelServiceAsyncClient, transports.CloudChannelServiceGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (CloudChannelServiceClient, transports.CloudChannelServiceGrpcTransport, "grpc", "false"),
     (CloudChannelServiceAsyncClient, transports.CloudChannelServiceGrpcAsyncIOTransport, "grpc_asyncio", "false"),
-
 ])
 @mock.patch.object(CloudChannelServiceClient, "DEFAULT_ENDPOINT", modify_default_endpoint(CloudChannelServiceClient))
 @mock.patch.object(CloudChannelServiceAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(CloudChannelServiceAsyncClient))
@@ -366,7 +388,7 @@ def test_cloud_channel_service_client_client_options_from_dict():
 
 def test_list_customers(transport: str = 'grpc', request_type=service.ListCustomersRequest):
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -381,21 +403,16 @@ def test_list_customers(transport: str = 'grpc', request_type=service.ListCustom
         # Designate an appropriate return value for the call.
         call.return_value = service.ListCustomersResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_customers(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListCustomersRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListCustomersPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -407,7 +424,7 @@ def test_list_customers_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -418,13 +435,13 @@ def test_list_customers_empty_call():
         client.list_customers()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListCustomersRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_customers_async(transport: str = 'grpc_asyncio', request_type=service.ListCustomersRequest):
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -437,21 +454,18 @@ async def test_list_customers_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.list_customers),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListCustomersResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.ListCustomersResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_customers(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListCustomersRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListCustomersAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -462,12 +476,13 @@ async def test_list_customers_async_from_dict():
 
 def test_list_customers_field_headers():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListCustomersRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -475,7 +490,6 @@ def test_list_customers_field_headers():
             type(client.transport.list_customers),
             '__call__') as call:
         call.return_value = service.ListCustomersResponse()
-
         client.list_customers(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -494,12 +508,13 @@ def test_list_customers_field_headers():
 @pytest.mark.asyncio
 async def test_list_customers_field_headers_async():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListCustomersRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -507,7 +522,6 @@ async def test_list_customers_field_headers_async():
             type(client.transport.list_customers),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListCustomersResponse())
-
         await client.list_customers(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -525,7 +539,7 @@ async def test_list_customers_field_headers_async():
 
 def test_list_customers_pager():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -578,7 +592,7 @@ def test_list_customers_pager():
 
 def test_list_customers_pages():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -620,7 +634,7 @@ def test_list_customers_pages():
 @pytest.mark.asyncio
 async def test_list_customers_async_pager():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -668,7 +682,7 @@ async def test_list_customers_async_pager():
 @pytest.mark.asyncio
 async def test_list_customers_async_pages():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -709,10 +723,9 @@ async def test_list_customers_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_get_customer(transport: str = 'grpc', request_type=service.GetCustomerRequest):
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -727,45 +740,28 @@ def test_get_customer(transport: str = 'grpc', request_type=service.GetCustomerR
         # Designate an appropriate return value for the call.
         call.return_value = customers.Customer(
             name='name_value',
-
             org_display_name='org_display_name_value',
-
             alternate_email='alternate_email_value',
-
             domain='domain_value',
-
             cloud_identity_id='cloud_identity_id_value',
-
             language_code='language_code_value',
-
             channel_partner_id='channel_partner_id_value',
-
         )
-
         response = client.get_customer(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetCustomerRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, customers.Customer)
-
     assert response.name == 'name_value'
-
     assert response.org_display_name == 'org_display_name_value'
-
     assert response.alternate_email == 'alternate_email_value'
-
     assert response.domain == 'domain_value'
-
     assert response.cloud_identity_id == 'cloud_identity_id_value'
-
     assert response.language_code == 'language_code_value'
-
     assert response.channel_partner_id == 'channel_partner_id_value'
 
 
@@ -777,7 +773,7 @@ def test_get_customer_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -788,13 +784,13 @@ def test_get_customer_empty_call():
         client.get_customer()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetCustomerRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_customer_async(transport: str = 'grpc_asyncio', request_type=service.GetCustomerRequest):
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -807,7 +803,7 @@ async def test_get_customer_async(transport: str = 'grpc_asyncio', request_type=
             type(client.transport.get_customer),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(customers.Customer(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(customers.Customer(
             name='name_value',
             org_display_name='org_display_name_value',
             alternate_email='alternate_email_value',
@@ -816,30 +812,21 @@ async def test_get_customer_async(transport: str = 'grpc_asyncio', request_type=
             language_code='language_code_value',
             channel_partner_id='channel_partner_id_value',
         ))
-
         response = await client.get_customer(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetCustomerRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, customers.Customer)
-
     assert response.name == 'name_value'
-
     assert response.org_display_name == 'org_display_name_value'
-
     assert response.alternate_email == 'alternate_email_value'
-
     assert response.domain == 'domain_value'
-
     assert response.cloud_identity_id == 'cloud_identity_id_value'
-
     assert response.language_code == 'language_code_value'
-
     assert response.channel_partner_id == 'channel_partner_id_value'
 
 
@@ -850,12 +837,13 @@ async def test_get_customer_async_from_dict():
 
 def test_get_customer_field_headers():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.GetCustomerRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -863,7 +851,6 @@ def test_get_customer_field_headers():
             type(client.transport.get_customer),
             '__call__') as call:
         call.return_value = customers.Customer()
-
         client.get_customer(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -882,12 +869,13 @@ def test_get_customer_field_headers():
 @pytest.mark.asyncio
 async def test_get_customer_field_headers_async():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.GetCustomerRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -895,7 +883,6 @@ async def test_get_customer_field_headers_async():
             type(client.transport.get_customer),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(customers.Customer())
-
         await client.get_customer(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -913,7 +900,7 @@ async def test_get_customer_field_headers_async():
 
 def test_get_customer_flattened():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -922,7 +909,6 @@ def test_get_customer_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = customers.Customer()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_customer(
@@ -933,13 +919,12 @@ def test_get_customer_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 def test_get_customer_flattened_error():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -954,7 +939,7 @@ def test_get_customer_flattened_error():
 @pytest.mark.asyncio
 async def test_get_customer_flattened_async():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -975,14 +960,13 @@ async def test_get_customer_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 @pytest.mark.asyncio
 async def test_get_customer_flattened_error_async():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -996,7 +980,7 @@ async def test_get_customer_flattened_error_async():
 
 def test_check_cloud_identity_accounts_exist(transport: str = 'grpc', request_type=service.CheckCloudIdentityAccountsExistRequest):
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1011,17 +995,14 @@ def test_check_cloud_identity_accounts_exist(transport: str = 'grpc', request_ty
         # Designate an appropriate return value for the call.
         call.return_value = service.CheckCloudIdentityAccountsExistResponse(
         )
-
         response = client.check_cloud_identity_accounts_exist(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.CheckCloudIdentityAccountsExistRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, service.CheckCloudIdentityAccountsExistResponse)
 
 
@@ -1033,7 +1014,7 @@ def test_check_cloud_identity_accounts_exist_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -1044,13 +1025,13 @@ def test_check_cloud_identity_accounts_exist_empty_call():
         client.check_cloud_identity_accounts_exist()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.CheckCloudIdentityAccountsExistRequest()
+
 
 @pytest.mark.asyncio
 async def test_check_cloud_identity_accounts_exist_async(transport: str = 'grpc_asyncio', request_type=service.CheckCloudIdentityAccountsExistRequest):
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1063,15 +1044,13 @@ async def test_check_cloud_identity_accounts_exist_async(transport: str = 'grpc_
             type(client.transport.check_cloud_identity_accounts_exist),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.CheckCloudIdentityAccountsExistResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.CheckCloudIdentityAccountsExistResponse(
         ))
-
         response = await client.check_cloud_identity_accounts_exist(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.CheckCloudIdentityAccountsExistRequest()
 
     # Establish that the response is the type that we expect.
@@ -1085,12 +1064,13 @@ async def test_check_cloud_identity_accounts_exist_async_from_dict():
 
 def test_check_cloud_identity_accounts_exist_field_headers():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.CheckCloudIdentityAccountsExistRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1098,7 +1078,6 @@ def test_check_cloud_identity_accounts_exist_field_headers():
             type(client.transport.check_cloud_identity_accounts_exist),
             '__call__') as call:
         call.return_value = service.CheckCloudIdentityAccountsExistResponse()
-
         client.check_cloud_identity_accounts_exist(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1117,12 +1096,13 @@ def test_check_cloud_identity_accounts_exist_field_headers():
 @pytest.mark.asyncio
 async def test_check_cloud_identity_accounts_exist_field_headers_async():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.CheckCloudIdentityAccountsExistRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1130,7 +1110,6 @@ async def test_check_cloud_identity_accounts_exist_field_headers_async():
             type(client.transport.check_cloud_identity_accounts_exist),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.CheckCloudIdentityAccountsExistResponse())
-
         await client.check_cloud_identity_accounts_exist(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1148,7 +1127,7 @@ async def test_check_cloud_identity_accounts_exist_field_headers_async():
 
 def test_create_customer(transport: str = 'grpc', request_type=service.CreateCustomerRequest):
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1163,45 +1142,28 @@ def test_create_customer(transport: str = 'grpc', request_type=service.CreateCus
         # Designate an appropriate return value for the call.
         call.return_value = customers.Customer(
             name='name_value',
-
             org_display_name='org_display_name_value',
-
             alternate_email='alternate_email_value',
-
             domain='domain_value',
-
             cloud_identity_id='cloud_identity_id_value',
-
             language_code='language_code_value',
-
             channel_partner_id='channel_partner_id_value',
-
         )
-
         response = client.create_customer(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.CreateCustomerRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, customers.Customer)
-
     assert response.name == 'name_value'
-
     assert response.org_display_name == 'org_display_name_value'
-
     assert response.alternate_email == 'alternate_email_value'
-
     assert response.domain == 'domain_value'
-
     assert response.cloud_identity_id == 'cloud_identity_id_value'
-
     assert response.language_code == 'language_code_value'
-
     assert response.channel_partner_id == 'channel_partner_id_value'
 
 
@@ -1213,7 +1175,7 @@ def test_create_customer_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -1224,13 +1186,13 @@ def test_create_customer_empty_call():
         client.create_customer()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.CreateCustomerRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_customer_async(transport: str = 'grpc_asyncio', request_type=service.CreateCustomerRequest):
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1243,7 +1205,7 @@ async def test_create_customer_async(transport: str = 'grpc_asyncio', request_ty
             type(client.transport.create_customer),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(customers.Customer(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(customers.Customer(
             name='name_value',
             org_display_name='org_display_name_value',
             alternate_email='alternate_email_value',
@@ -1252,30 +1214,21 @@ async def test_create_customer_async(transport: str = 'grpc_asyncio', request_ty
             language_code='language_code_value',
             channel_partner_id='channel_partner_id_value',
         ))
-
         response = await client.create_customer(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.CreateCustomerRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, customers.Customer)
-
     assert response.name == 'name_value'
-
     assert response.org_display_name == 'org_display_name_value'
-
     assert response.alternate_email == 'alternate_email_value'
-
     assert response.domain == 'domain_value'
-
     assert response.cloud_identity_id == 'cloud_identity_id_value'
-
     assert response.language_code == 'language_code_value'
-
     assert response.channel_partner_id == 'channel_partner_id_value'
 
 
@@ -1286,12 +1239,13 @@ async def test_create_customer_async_from_dict():
 
 def test_create_customer_field_headers():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.CreateCustomerRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1299,7 +1253,6 @@ def test_create_customer_field_headers():
             type(client.transport.create_customer),
             '__call__') as call:
         call.return_value = customers.Customer()
-
         client.create_customer(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1318,12 +1271,13 @@ def test_create_customer_field_headers():
 @pytest.mark.asyncio
 async def test_create_customer_field_headers_async():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.CreateCustomerRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1331,7 +1285,6 @@ async def test_create_customer_field_headers_async():
             type(client.transport.create_customer),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(customers.Customer())
-
         await client.create_customer(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1349,7 +1302,7 @@ async def test_create_customer_field_headers_async():
 
 def test_update_customer(transport: str = 'grpc', request_type=service.UpdateCustomerRequest):
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1364,45 +1317,28 @@ def test_update_customer(transport: str = 'grpc', request_type=service.UpdateCus
         # Designate an appropriate return value for the call.
         call.return_value = customers.Customer(
             name='name_value',
-
             org_display_name='org_display_name_value',
-
             alternate_email='alternate_email_value',
-
             domain='domain_value',
-
             cloud_identity_id='cloud_identity_id_value',
-
             language_code='language_code_value',
-
             channel_partner_id='channel_partner_id_value',
-
         )
-
         response = client.update_customer(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.UpdateCustomerRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, customers.Customer)
-
     assert response.name == 'name_value'
-
     assert response.org_display_name == 'org_display_name_value'
-
     assert response.alternate_email == 'alternate_email_value'
-
     assert response.domain == 'domain_value'
-
     assert response.cloud_identity_id == 'cloud_identity_id_value'
-
     assert response.language_code == 'language_code_value'
-
     assert response.channel_partner_id == 'channel_partner_id_value'
 
 
@@ -1414,7 +1350,7 @@ def test_update_customer_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -1425,13 +1361,13 @@ def test_update_customer_empty_call():
         client.update_customer()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.UpdateCustomerRequest()
+
 
 @pytest.mark.asyncio
 async def test_update_customer_async(transport: str = 'grpc_asyncio', request_type=service.UpdateCustomerRequest):
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1444,7 +1380,7 @@ async def test_update_customer_async(transport: str = 'grpc_asyncio', request_ty
             type(client.transport.update_customer),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(customers.Customer(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(customers.Customer(
             name='name_value',
             org_display_name='org_display_name_value',
             alternate_email='alternate_email_value',
@@ -1453,30 +1389,21 @@ async def test_update_customer_async(transport: str = 'grpc_asyncio', request_ty
             language_code='language_code_value',
             channel_partner_id='channel_partner_id_value',
         ))
-
         response = await client.update_customer(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.UpdateCustomerRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, customers.Customer)
-
     assert response.name == 'name_value'
-
     assert response.org_display_name == 'org_display_name_value'
-
     assert response.alternate_email == 'alternate_email_value'
-
     assert response.domain == 'domain_value'
-
     assert response.cloud_identity_id == 'cloud_identity_id_value'
-
     assert response.language_code == 'language_code_value'
-
     assert response.channel_partner_id == 'channel_partner_id_value'
 
 
@@ -1487,12 +1414,13 @@ async def test_update_customer_async_from_dict():
 
 def test_update_customer_field_headers():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.UpdateCustomerRequest()
+
     request.customer.name = 'customer.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1500,7 +1428,6 @@ def test_update_customer_field_headers():
             type(client.transport.update_customer),
             '__call__') as call:
         call.return_value = customers.Customer()
-
         client.update_customer(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1519,12 +1446,13 @@ def test_update_customer_field_headers():
 @pytest.mark.asyncio
 async def test_update_customer_field_headers_async():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.UpdateCustomerRequest()
+
     request.customer.name = 'customer.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1532,7 +1460,6 @@ async def test_update_customer_field_headers_async():
             type(client.transport.update_customer),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(customers.Customer())
-
         await client.update_customer(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1550,7 +1477,7 @@ async def test_update_customer_field_headers_async():
 
 def test_delete_customer(transport: str = 'grpc', request_type=service.DeleteCustomerRequest):
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1564,13 +1491,11 @@ def test_delete_customer(transport: str = 'grpc', request_type=service.DeleteCus
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         response = client.delete_customer(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.DeleteCustomerRequest()
 
     # Establish that the response is the type that we expect.
@@ -1585,7 +1510,7 @@ def test_delete_customer_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -1596,13 +1521,13 @@ def test_delete_customer_empty_call():
         client.delete_customer()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.DeleteCustomerRequest()
+
 
 @pytest.mark.asyncio
 async def test_delete_customer_async(transport: str = 'grpc_asyncio', request_type=service.DeleteCustomerRequest):
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1616,13 +1541,11 @@ async def test_delete_customer_async(transport: str = 'grpc_asyncio', request_ty
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         response = await client.delete_customer(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.DeleteCustomerRequest()
 
     # Establish that the response is the type that we expect.
@@ -1636,12 +1559,13 @@ async def test_delete_customer_async_from_dict():
 
 def test_delete_customer_field_headers():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.DeleteCustomerRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1649,7 +1573,6 @@ def test_delete_customer_field_headers():
             type(client.transport.delete_customer),
             '__call__') as call:
         call.return_value = None
-
         client.delete_customer(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1668,12 +1591,13 @@ def test_delete_customer_field_headers():
 @pytest.mark.asyncio
 async def test_delete_customer_field_headers_async():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.DeleteCustomerRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1681,7 +1605,6 @@ async def test_delete_customer_field_headers_async():
             type(client.transport.delete_customer),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
-
         await client.delete_customer(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1699,7 +1622,7 @@ async def test_delete_customer_field_headers_async():
 
 def test_delete_customer_flattened():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1708,7 +1631,6 @@ def test_delete_customer_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_customer(
@@ -1719,13 +1641,12 @@ def test_delete_customer_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 def test_delete_customer_flattened_error():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1740,7 +1661,7 @@ def test_delete_customer_flattened_error():
 @pytest.mark.asyncio
 async def test_delete_customer_flattened_async():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1761,14 +1682,13 @@ async def test_delete_customer_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 @pytest.mark.asyncio
 async def test_delete_customer_flattened_error_async():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1782,7 +1702,7 @@ async def test_delete_customer_flattened_error_async():
 
 def test_provision_cloud_identity(transport: str = 'grpc', request_type=service.ProvisionCloudIdentityRequest):
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1796,13 +1716,11 @@ def test_provision_cloud_identity(transport: str = 'grpc', request_type=service.
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.provision_cloud_identity(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ProvisionCloudIdentityRequest()
 
     # Establish that the response is the type that we expect.
@@ -1817,7 +1735,7 @@ def test_provision_cloud_identity_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -1828,13 +1746,13 @@ def test_provision_cloud_identity_empty_call():
         client.provision_cloud_identity()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ProvisionCloudIdentityRequest()
+
 
 @pytest.mark.asyncio
 async def test_provision_cloud_identity_async(transport: str = 'grpc_asyncio', request_type=service.ProvisionCloudIdentityRequest):
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1850,13 +1768,11 @@ async def test_provision_cloud_identity_async(transport: str = 'grpc_asyncio', r
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.provision_cloud_identity(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ProvisionCloudIdentityRequest()
 
     # Establish that the response is the type that we expect.
@@ -1870,12 +1786,13 @@ async def test_provision_cloud_identity_async_from_dict():
 
 def test_provision_cloud_identity_field_headers():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ProvisionCloudIdentityRequest()
+
     request.customer = 'customer/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1883,7 +1800,6 @@ def test_provision_cloud_identity_field_headers():
             type(client.transport.provision_cloud_identity),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.provision_cloud_identity(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1902,12 +1818,13 @@ def test_provision_cloud_identity_field_headers():
 @pytest.mark.asyncio
 async def test_provision_cloud_identity_field_headers_async():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ProvisionCloudIdentityRequest()
+
     request.customer = 'customer/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1915,7 +1832,6 @@ async def test_provision_cloud_identity_field_headers_async():
             type(client.transport.provision_cloud_identity),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.provision_cloud_identity(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1933,7 +1849,7 @@ async def test_provision_cloud_identity_field_headers_async():
 
 def test_list_entitlements(transport: str = 'grpc', request_type=service.ListEntitlementsRequest):
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1948,21 +1864,16 @@ def test_list_entitlements(transport: str = 'grpc', request_type=service.ListEnt
         # Designate an appropriate return value for the call.
         call.return_value = service.ListEntitlementsResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_entitlements(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListEntitlementsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListEntitlementsPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1974,7 +1885,7 @@ def test_list_entitlements_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -1985,13 +1896,13 @@ def test_list_entitlements_empty_call():
         client.list_entitlements()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListEntitlementsRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_entitlements_async(transport: str = 'grpc_asyncio', request_type=service.ListEntitlementsRequest):
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2004,21 +1915,18 @@ async def test_list_entitlements_async(transport: str = 'grpc_asyncio', request_
             type(client.transport.list_entitlements),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListEntitlementsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.ListEntitlementsResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_entitlements(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListEntitlementsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListEntitlementsAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -2029,12 +1937,13 @@ async def test_list_entitlements_async_from_dict():
 
 def test_list_entitlements_field_headers():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListEntitlementsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2042,7 +1951,6 @@ def test_list_entitlements_field_headers():
             type(client.transport.list_entitlements),
             '__call__') as call:
         call.return_value = service.ListEntitlementsResponse()
-
         client.list_entitlements(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2061,12 +1969,13 @@ def test_list_entitlements_field_headers():
 @pytest.mark.asyncio
 async def test_list_entitlements_field_headers_async():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListEntitlementsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2074,7 +1983,6 @@ async def test_list_entitlements_field_headers_async():
             type(client.transport.list_entitlements),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListEntitlementsResponse())
-
         await client.list_entitlements(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2092,7 +2000,7 @@ async def test_list_entitlements_field_headers_async():
 
 def test_list_entitlements_pager():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2145,7 +2053,7 @@ def test_list_entitlements_pager():
 
 def test_list_entitlements_pages():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2187,7 +2095,7 @@ def test_list_entitlements_pages():
 @pytest.mark.asyncio
 async def test_list_entitlements_async_pager():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2235,7 +2143,7 @@ async def test_list_entitlements_async_pager():
 @pytest.mark.asyncio
 async def test_list_entitlements_async_pages():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2276,10 +2184,9 @@ async def test_list_entitlements_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_list_transferable_skus(transport: str = 'grpc', request_type=service.ListTransferableSkusRequest):
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2294,21 +2201,16 @@ def test_list_transferable_skus(transport: str = 'grpc', request_type=service.Li
         # Designate an appropriate return value for the call.
         call.return_value = service.ListTransferableSkusResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_transferable_skus(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListTransferableSkusRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListTransferableSkusPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -2320,7 +2222,7 @@ def test_list_transferable_skus_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -2331,13 +2233,13 @@ def test_list_transferable_skus_empty_call():
         client.list_transferable_skus()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListTransferableSkusRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_transferable_skus_async(transport: str = 'grpc_asyncio', request_type=service.ListTransferableSkusRequest):
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2350,21 +2252,18 @@ async def test_list_transferable_skus_async(transport: str = 'grpc_asyncio', req
             type(client.transport.list_transferable_skus),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListTransferableSkusResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.ListTransferableSkusResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_transferable_skus(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListTransferableSkusRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListTransferableSkusAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -2375,12 +2274,13 @@ async def test_list_transferable_skus_async_from_dict():
 
 def test_list_transferable_skus_field_headers():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListTransferableSkusRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2388,7 +2288,6 @@ def test_list_transferable_skus_field_headers():
             type(client.transport.list_transferable_skus),
             '__call__') as call:
         call.return_value = service.ListTransferableSkusResponse()
-
         client.list_transferable_skus(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2407,12 +2306,13 @@ def test_list_transferable_skus_field_headers():
 @pytest.mark.asyncio
 async def test_list_transferable_skus_field_headers_async():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListTransferableSkusRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2420,7 +2320,6 @@ async def test_list_transferable_skus_field_headers_async():
             type(client.transport.list_transferable_skus),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListTransferableSkusResponse())
-
         await client.list_transferable_skus(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2438,7 +2337,7 @@ async def test_list_transferable_skus_field_headers_async():
 
 def test_list_transferable_skus_pager():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2491,7 +2390,7 @@ def test_list_transferable_skus_pager():
 
 def test_list_transferable_skus_pages():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2533,7 +2432,7 @@ def test_list_transferable_skus_pages():
 @pytest.mark.asyncio
 async def test_list_transferable_skus_async_pager():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2581,7 +2480,7 @@ async def test_list_transferable_skus_async_pager():
 @pytest.mark.asyncio
 async def test_list_transferable_skus_async_pages():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2622,10 +2521,9 @@ async def test_list_transferable_skus_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_list_transferable_offers(transport: str = 'grpc', request_type=service.ListTransferableOffersRequest):
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2640,21 +2538,16 @@ def test_list_transferable_offers(transport: str = 'grpc', request_type=service.
         # Designate an appropriate return value for the call.
         call.return_value = service.ListTransferableOffersResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_transferable_offers(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListTransferableOffersRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListTransferableOffersPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -2666,7 +2559,7 @@ def test_list_transferable_offers_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -2677,13 +2570,13 @@ def test_list_transferable_offers_empty_call():
         client.list_transferable_offers()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListTransferableOffersRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_transferable_offers_async(transport: str = 'grpc_asyncio', request_type=service.ListTransferableOffersRequest):
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2696,21 +2589,18 @@ async def test_list_transferable_offers_async(transport: str = 'grpc_asyncio', r
             type(client.transport.list_transferable_offers),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListTransferableOffersResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.ListTransferableOffersResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_transferable_offers(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListTransferableOffersRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListTransferableOffersAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -2721,12 +2611,13 @@ async def test_list_transferable_offers_async_from_dict():
 
 def test_list_transferable_offers_field_headers():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListTransferableOffersRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2734,7 +2625,6 @@ def test_list_transferable_offers_field_headers():
             type(client.transport.list_transferable_offers),
             '__call__') as call:
         call.return_value = service.ListTransferableOffersResponse()
-
         client.list_transferable_offers(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2753,12 +2643,13 @@ def test_list_transferable_offers_field_headers():
 @pytest.mark.asyncio
 async def test_list_transferable_offers_field_headers_async():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListTransferableOffersRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2766,7 +2657,6 @@ async def test_list_transferable_offers_field_headers_async():
             type(client.transport.list_transferable_offers),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListTransferableOffersResponse())
-
         await client.list_transferable_offers(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2784,7 +2674,7 @@ async def test_list_transferable_offers_field_headers_async():
 
 def test_list_transferable_offers_pager():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2837,7 +2727,7 @@ def test_list_transferable_offers_pager():
 
 def test_list_transferable_offers_pages():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2879,7 +2769,7 @@ def test_list_transferable_offers_pages():
 @pytest.mark.asyncio
 async def test_list_transferable_offers_async_pager():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2927,7 +2817,7 @@ async def test_list_transferable_offers_async_pager():
 @pytest.mark.asyncio
 async def test_list_transferable_offers_async_pages():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2968,10 +2858,9 @@ async def test_list_transferable_offers_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_get_entitlement(transport: str = 'grpc', request_type=service.GetEntitlementRequest):
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2986,37 +2875,24 @@ def test_get_entitlement(transport: str = 'grpc', request_type=service.GetEntitl
         # Designate an appropriate return value for the call.
         call.return_value = entitlements.Entitlement(
             name='name_value',
-
             offer='offer_value',
-
             provisioning_state=entitlements.Entitlement.ProvisioningState.ACTIVE,
-
             suspension_reasons=[entitlements.Entitlement.SuspensionReason.RESELLER_INITIATED],
-
             purchase_order_id='purchase_order_id_value',
-
         )
-
         response = client.get_entitlement(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetEntitlementRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, entitlements.Entitlement)
-
     assert response.name == 'name_value'
-
     assert response.offer == 'offer_value'
-
     assert response.provisioning_state == entitlements.Entitlement.ProvisioningState.ACTIVE
-
     assert response.suspension_reasons == [entitlements.Entitlement.SuspensionReason.RESELLER_INITIATED]
-
     assert response.purchase_order_id == 'purchase_order_id_value'
 
 
@@ -3028,7 +2904,7 @@ def test_get_entitlement_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -3039,13 +2915,13 @@ def test_get_entitlement_empty_call():
         client.get_entitlement()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetEntitlementRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_entitlement_async(transport: str = 'grpc_asyncio', request_type=service.GetEntitlementRequest):
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3058,33 +2934,26 @@ async def test_get_entitlement_async(transport: str = 'grpc_asyncio', request_ty
             type(client.transport.get_entitlement),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(entitlements.Entitlement(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(entitlements.Entitlement(
             name='name_value',
             offer='offer_value',
             provisioning_state=entitlements.Entitlement.ProvisioningState.ACTIVE,
             suspension_reasons=[entitlements.Entitlement.SuspensionReason.RESELLER_INITIATED],
             purchase_order_id='purchase_order_id_value',
         ))
-
         response = await client.get_entitlement(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetEntitlementRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, entitlements.Entitlement)
-
     assert response.name == 'name_value'
-
     assert response.offer == 'offer_value'
-
     assert response.provisioning_state == entitlements.Entitlement.ProvisioningState.ACTIVE
-
     assert response.suspension_reasons == [entitlements.Entitlement.SuspensionReason.RESELLER_INITIATED]
-
     assert response.purchase_order_id == 'purchase_order_id_value'
 
 
@@ -3095,12 +2964,13 @@ async def test_get_entitlement_async_from_dict():
 
 def test_get_entitlement_field_headers():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.GetEntitlementRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3108,7 +2978,6 @@ def test_get_entitlement_field_headers():
             type(client.transport.get_entitlement),
             '__call__') as call:
         call.return_value = entitlements.Entitlement()
-
         client.get_entitlement(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3127,12 +2996,13 @@ def test_get_entitlement_field_headers():
 @pytest.mark.asyncio
 async def test_get_entitlement_field_headers_async():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.GetEntitlementRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3140,7 +3010,6 @@ async def test_get_entitlement_field_headers_async():
             type(client.transport.get_entitlement),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(entitlements.Entitlement())
-
         await client.get_entitlement(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3158,7 +3027,7 @@ async def test_get_entitlement_field_headers_async():
 
 def test_create_entitlement(transport: str = 'grpc', request_type=service.CreateEntitlementRequest):
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3172,13 +3041,11 @@ def test_create_entitlement(transport: str = 'grpc', request_type=service.Create
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.create_entitlement(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.CreateEntitlementRequest()
 
     # Establish that the response is the type that we expect.
@@ -3193,7 +3060,7 @@ def test_create_entitlement_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -3204,13 +3071,13 @@ def test_create_entitlement_empty_call():
         client.create_entitlement()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.CreateEntitlementRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_entitlement_async(transport: str = 'grpc_asyncio', request_type=service.CreateEntitlementRequest):
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3226,13 +3093,11 @@ async def test_create_entitlement_async(transport: str = 'grpc_asyncio', request
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.create_entitlement(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.CreateEntitlementRequest()
 
     # Establish that the response is the type that we expect.
@@ -3246,12 +3111,13 @@ async def test_create_entitlement_async_from_dict():
 
 def test_create_entitlement_field_headers():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.CreateEntitlementRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3259,7 +3125,6 @@ def test_create_entitlement_field_headers():
             type(client.transport.create_entitlement),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.create_entitlement(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3278,12 +3143,13 @@ def test_create_entitlement_field_headers():
 @pytest.mark.asyncio
 async def test_create_entitlement_field_headers_async():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.CreateEntitlementRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3291,7 +3157,6 @@ async def test_create_entitlement_field_headers_async():
             type(client.transport.create_entitlement),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.create_entitlement(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3309,7 +3174,7 @@ async def test_create_entitlement_field_headers_async():
 
 def test_change_parameters(transport: str = 'grpc', request_type=service.ChangeParametersRequest):
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3323,13 +3188,11 @@ def test_change_parameters(transport: str = 'grpc', request_type=service.ChangeP
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.change_parameters(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ChangeParametersRequest()
 
     # Establish that the response is the type that we expect.
@@ -3344,7 +3207,7 @@ def test_change_parameters_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -3355,13 +3218,13 @@ def test_change_parameters_empty_call():
         client.change_parameters()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ChangeParametersRequest()
+
 
 @pytest.mark.asyncio
 async def test_change_parameters_async(transport: str = 'grpc_asyncio', request_type=service.ChangeParametersRequest):
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3377,13 +3240,11 @@ async def test_change_parameters_async(transport: str = 'grpc_asyncio', request_
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.change_parameters(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ChangeParametersRequest()
 
     # Establish that the response is the type that we expect.
@@ -3397,12 +3258,13 @@ async def test_change_parameters_async_from_dict():
 
 def test_change_parameters_field_headers():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ChangeParametersRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3410,7 +3272,6 @@ def test_change_parameters_field_headers():
             type(client.transport.change_parameters),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.change_parameters(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3429,12 +3290,13 @@ def test_change_parameters_field_headers():
 @pytest.mark.asyncio
 async def test_change_parameters_field_headers_async():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ChangeParametersRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3442,7 +3304,6 @@ async def test_change_parameters_field_headers_async():
             type(client.transport.change_parameters),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.change_parameters(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3460,7 +3321,7 @@ async def test_change_parameters_field_headers_async():
 
 def test_change_renewal_settings(transport: str = 'grpc', request_type=service.ChangeRenewalSettingsRequest):
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3474,13 +3335,11 @@ def test_change_renewal_settings(transport: str = 'grpc', request_type=service.C
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.change_renewal_settings(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ChangeRenewalSettingsRequest()
 
     # Establish that the response is the type that we expect.
@@ -3495,7 +3354,7 @@ def test_change_renewal_settings_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -3506,13 +3365,13 @@ def test_change_renewal_settings_empty_call():
         client.change_renewal_settings()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ChangeRenewalSettingsRequest()
+
 
 @pytest.mark.asyncio
 async def test_change_renewal_settings_async(transport: str = 'grpc_asyncio', request_type=service.ChangeRenewalSettingsRequest):
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3528,13 +3387,11 @@ async def test_change_renewal_settings_async(transport: str = 'grpc_asyncio', re
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.change_renewal_settings(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ChangeRenewalSettingsRequest()
 
     # Establish that the response is the type that we expect.
@@ -3548,12 +3405,13 @@ async def test_change_renewal_settings_async_from_dict():
 
 def test_change_renewal_settings_field_headers():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ChangeRenewalSettingsRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3561,7 +3419,6 @@ def test_change_renewal_settings_field_headers():
             type(client.transport.change_renewal_settings),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.change_renewal_settings(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3580,12 +3437,13 @@ def test_change_renewal_settings_field_headers():
 @pytest.mark.asyncio
 async def test_change_renewal_settings_field_headers_async():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ChangeRenewalSettingsRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3593,7 +3451,6 @@ async def test_change_renewal_settings_field_headers_async():
             type(client.transport.change_renewal_settings),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.change_renewal_settings(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3611,7 +3468,7 @@ async def test_change_renewal_settings_field_headers_async():
 
 def test_change_offer(transport: str = 'grpc', request_type=service.ChangeOfferRequest):
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3625,13 +3482,11 @@ def test_change_offer(transport: str = 'grpc', request_type=service.ChangeOfferR
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.change_offer(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ChangeOfferRequest()
 
     # Establish that the response is the type that we expect.
@@ -3646,7 +3501,7 @@ def test_change_offer_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -3657,13 +3512,13 @@ def test_change_offer_empty_call():
         client.change_offer()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ChangeOfferRequest()
+
 
 @pytest.mark.asyncio
 async def test_change_offer_async(transport: str = 'grpc_asyncio', request_type=service.ChangeOfferRequest):
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3679,13 +3534,11 @@ async def test_change_offer_async(transport: str = 'grpc_asyncio', request_type=
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.change_offer(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ChangeOfferRequest()
 
     # Establish that the response is the type that we expect.
@@ -3699,12 +3552,13 @@ async def test_change_offer_async_from_dict():
 
 def test_change_offer_field_headers():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ChangeOfferRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3712,7 +3566,6 @@ def test_change_offer_field_headers():
             type(client.transport.change_offer),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.change_offer(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3731,12 +3584,13 @@ def test_change_offer_field_headers():
 @pytest.mark.asyncio
 async def test_change_offer_field_headers_async():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ChangeOfferRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3744,7 +3598,6 @@ async def test_change_offer_field_headers_async():
             type(client.transport.change_offer),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.change_offer(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3762,7 +3615,7 @@ async def test_change_offer_field_headers_async():
 
 def test_start_paid_service(transport: str = 'grpc', request_type=service.StartPaidServiceRequest):
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3776,13 +3629,11 @@ def test_start_paid_service(transport: str = 'grpc', request_type=service.StartP
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.start_paid_service(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.StartPaidServiceRequest()
 
     # Establish that the response is the type that we expect.
@@ -3797,7 +3648,7 @@ def test_start_paid_service_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -3808,13 +3659,13 @@ def test_start_paid_service_empty_call():
         client.start_paid_service()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.StartPaidServiceRequest()
+
 
 @pytest.mark.asyncio
 async def test_start_paid_service_async(transport: str = 'grpc_asyncio', request_type=service.StartPaidServiceRequest):
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3830,13 +3681,11 @@ async def test_start_paid_service_async(transport: str = 'grpc_asyncio', request
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.start_paid_service(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.StartPaidServiceRequest()
 
     # Establish that the response is the type that we expect.
@@ -3850,12 +3699,13 @@ async def test_start_paid_service_async_from_dict():
 
 def test_start_paid_service_field_headers():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.StartPaidServiceRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3863,7 +3713,6 @@ def test_start_paid_service_field_headers():
             type(client.transport.start_paid_service),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.start_paid_service(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3882,12 +3731,13 @@ def test_start_paid_service_field_headers():
 @pytest.mark.asyncio
 async def test_start_paid_service_field_headers_async():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.StartPaidServiceRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3895,7 +3745,6 @@ async def test_start_paid_service_field_headers_async():
             type(client.transport.start_paid_service),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.start_paid_service(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3913,7 +3762,7 @@ async def test_start_paid_service_field_headers_async():
 
 def test_suspend_entitlement(transport: str = 'grpc', request_type=service.SuspendEntitlementRequest):
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3927,13 +3776,11 @@ def test_suspend_entitlement(transport: str = 'grpc', request_type=service.Suspe
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.suspend_entitlement(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.SuspendEntitlementRequest()
 
     # Establish that the response is the type that we expect.
@@ -3948,7 +3795,7 @@ def test_suspend_entitlement_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -3959,13 +3806,13 @@ def test_suspend_entitlement_empty_call():
         client.suspend_entitlement()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.SuspendEntitlementRequest()
+
 
 @pytest.mark.asyncio
 async def test_suspend_entitlement_async(transport: str = 'grpc_asyncio', request_type=service.SuspendEntitlementRequest):
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3981,13 +3828,11 @@ async def test_suspend_entitlement_async(transport: str = 'grpc_asyncio', reques
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.suspend_entitlement(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.SuspendEntitlementRequest()
 
     # Establish that the response is the type that we expect.
@@ -4001,12 +3846,13 @@ async def test_suspend_entitlement_async_from_dict():
 
 def test_suspend_entitlement_field_headers():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.SuspendEntitlementRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4014,7 +3860,6 @@ def test_suspend_entitlement_field_headers():
             type(client.transport.suspend_entitlement),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.suspend_entitlement(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4033,12 +3878,13 @@ def test_suspend_entitlement_field_headers():
 @pytest.mark.asyncio
 async def test_suspend_entitlement_field_headers_async():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.SuspendEntitlementRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4046,7 +3892,6 @@ async def test_suspend_entitlement_field_headers_async():
             type(client.transport.suspend_entitlement),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.suspend_entitlement(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4064,7 +3909,7 @@ async def test_suspend_entitlement_field_headers_async():
 
 def test_cancel_entitlement(transport: str = 'grpc', request_type=service.CancelEntitlementRequest):
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -4078,13 +3923,11 @@ def test_cancel_entitlement(transport: str = 'grpc', request_type=service.Cancel
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.cancel_entitlement(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.CancelEntitlementRequest()
 
     # Establish that the response is the type that we expect.
@@ -4099,7 +3942,7 @@ def test_cancel_entitlement_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -4110,13 +3953,13 @@ def test_cancel_entitlement_empty_call():
         client.cancel_entitlement()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.CancelEntitlementRequest()
+
 
 @pytest.mark.asyncio
 async def test_cancel_entitlement_async(transport: str = 'grpc_asyncio', request_type=service.CancelEntitlementRequest):
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -4132,13 +3975,11 @@ async def test_cancel_entitlement_async(transport: str = 'grpc_asyncio', request
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.cancel_entitlement(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.CancelEntitlementRequest()
 
     # Establish that the response is the type that we expect.
@@ -4152,12 +3993,13 @@ async def test_cancel_entitlement_async_from_dict():
 
 def test_cancel_entitlement_field_headers():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.CancelEntitlementRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4165,7 +4007,6 @@ def test_cancel_entitlement_field_headers():
             type(client.transport.cancel_entitlement),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.cancel_entitlement(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4184,12 +4025,13 @@ def test_cancel_entitlement_field_headers():
 @pytest.mark.asyncio
 async def test_cancel_entitlement_field_headers_async():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.CancelEntitlementRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4197,7 +4039,6 @@ async def test_cancel_entitlement_field_headers_async():
             type(client.transport.cancel_entitlement),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.cancel_entitlement(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4215,7 +4056,7 @@ async def test_cancel_entitlement_field_headers_async():
 
 def test_activate_entitlement(transport: str = 'grpc', request_type=service.ActivateEntitlementRequest):
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -4229,13 +4070,11 @@ def test_activate_entitlement(transport: str = 'grpc', request_type=service.Acti
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.activate_entitlement(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ActivateEntitlementRequest()
 
     # Establish that the response is the type that we expect.
@@ -4250,7 +4089,7 @@ def test_activate_entitlement_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -4261,13 +4100,13 @@ def test_activate_entitlement_empty_call():
         client.activate_entitlement()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ActivateEntitlementRequest()
+
 
 @pytest.mark.asyncio
 async def test_activate_entitlement_async(transport: str = 'grpc_asyncio', request_type=service.ActivateEntitlementRequest):
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -4283,13 +4122,11 @@ async def test_activate_entitlement_async(transport: str = 'grpc_asyncio', reque
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.activate_entitlement(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ActivateEntitlementRequest()
 
     # Establish that the response is the type that we expect.
@@ -4303,12 +4140,13 @@ async def test_activate_entitlement_async_from_dict():
 
 def test_activate_entitlement_field_headers():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ActivateEntitlementRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4316,7 +4154,6 @@ def test_activate_entitlement_field_headers():
             type(client.transport.activate_entitlement),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.activate_entitlement(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4335,12 +4172,13 @@ def test_activate_entitlement_field_headers():
 @pytest.mark.asyncio
 async def test_activate_entitlement_field_headers_async():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ActivateEntitlementRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4348,7 +4186,6 @@ async def test_activate_entitlement_field_headers_async():
             type(client.transport.activate_entitlement),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.activate_entitlement(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4366,7 +4203,7 @@ async def test_activate_entitlement_field_headers_async():
 
 def test_transfer_entitlements(transport: str = 'grpc', request_type=service.TransferEntitlementsRequest):
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -4380,13 +4217,11 @@ def test_transfer_entitlements(transport: str = 'grpc', request_type=service.Tra
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.transfer_entitlements(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.TransferEntitlementsRequest()
 
     # Establish that the response is the type that we expect.
@@ -4401,7 +4236,7 @@ def test_transfer_entitlements_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -4412,13 +4247,13 @@ def test_transfer_entitlements_empty_call():
         client.transfer_entitlements()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.TransferEntitlementsRequest()
+
 
 @pytest.mark.asyncio
 async def test_transfer_entitlements_async(transport: str = 'grpc_asyncio', request_type=service.TransferEntitlementsRequest):
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -4434,13 +4269,11 @@ async def test_transfer_entitlements_async(transport: str = 'grpc_asyncio', requ
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.transfer_entitlements(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.TransferEntitlementsRequest()
 
     # Establish that the response is the type that we expect.
@@ -4454,12 +4287,13 @@ async def test_transfer_entitlements_async_from_dict():
 
 def test_transfer_entitlements_field_headers():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.TransferEntitlementsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4467,7 +4301,6 @@ def test_transfer_entitlements_field_headers():
             type(client.transport.transfer_entitlements),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.transfer_entitlements(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4486,12 +4319,13 @@ def test_transfer_entitlements_field_headers():
 @pytest.mark.asyncio
 async def test_transfer_entitlements_field_headers_async():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.TransferEntitlementsRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4499,7 +4333,6 @@ async def test_transfer_entitlements_field_headers_async():
             type(client.transport.transfer_entitlements),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.transfer_entitlements(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4517,7 +4350,7 @@ async def test_transfer_entitlements_field_headers_async():
 
 def test_transfer_entitlements_to_google(transport: str = 'grpc', request_type=service.TransferEntitlementsToGoogleRequest):
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -4531,13 +4364,11 @@ def test_transfer_entitlements_to_google(transport: str = 'grpc', request_type=s
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.transfer_entitlements_to_google(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.TransferEntitlementsToGoogleRequest()
 
     # Establish that the response is the type that we expect.
@@ -4552,7 +4383,7 @@ def test_transfer_entitlements_to_google_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -4563,13 +4394,13 @@ def test_transfer_entitlements_to_google_empty_call():
         client.transfer_entitlements_to_google()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.TransferEntitlementsToGoogleRequest()
+
 
 @pytest.mark.asyncio
 async def test_transfer_entitlements_to_google_async(transport: str = 'grpc_asyncio', request_type=service.TransferEntitlementsToGoogleRequest):
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -4585,13 +4416,11 @@ async def test_transfer_entitlements_to_google_async(transport: str = 'grpc_asyn
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.transfer_entitlements_to_google(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.TransferEntitlementsToGoogleRequest()
 
     # Establish that the response is the type that we expect.
@@ -4605,12 +4434,13 @@ async def test_transfer_entitlements_to_google_async_from_dict():
 
 def test_transfer_entitlements_to_google_field_headers():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.TransferEntitlementsToGoogleRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4618,7 +4448,6 @@ def test_transfer_entitlements_to_google_field_headers():
             type(client.transport.transfer_entitlements_to_google),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.transfer_entitlements_to_google(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4637,12 +4466,13 @@ def test_transfer_entitlements_to_google_field_headers():
 @pytest.mark.asyncio
 async def test_transfer_entitlements_to_google_field_headers_async():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.TransferEntitlementsToGoogleRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4650,7 +4480,6 @@ async def test_transfer_entitlements_to_google_field_headers_async():
             type(client.transport.transfer_entitlements_to_google),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.transfer_entitlements_to_google(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4668,7 +4497,7 @@ async def test_transfer_entitlements_to_google_field_headers_async():
 
 def test_list_channel_partner_links(transport: str = 'grpc', request_type=service.ListChannelPartnerLinksRequest):
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -4683,21 +4512,16 @@ def test_list_channel_partner_links(transport: str = 'grpc', request_type=servic
         # Designate an appropriate return value for the call.
         call.return_value = service.ListChannelPartnerLinksResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_channel_partner_links(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListChannelPartnerLinksRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListChannelPartnerLinksPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -4709,7 +4533,7 @@ def test_list_channel_partner_links_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -4720,13 +4544,13 @@ def test_list_channel_partner_links_empty_call():
         client.list_channel_partner_links()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListChannelPartnerLinksRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_channel_partner_links_async(transport: str = 'grpc_asyncio', request_type=service.ListChannelPartnerLinksRequest):
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -4739,21 +4563,18 @@ async def test_list_channel_partner_links_async(transport: str = 'grpc_asyncio',
             type(client.transport.list_channel_partner_links),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListChannelPartnerLinksResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.ListChannelPartnerLinksResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_channel_partner_links(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListChannelPartnerLinksRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListChannelPartnerLinksAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -4764,12 +4585,13 @@ async def test_list_channel_partner_links_async_from_dict():
 
 def test_list_channel_partner_links_field_headers():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListChannelPartnerLinksRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4777,7 +4599,6 @@ def test_list_channel_partner_links_field_headers():
             type(client.transport.list_channel_partner_links),
             '__call__') as call:
         call.return_value = service.ListChannelPartnerLinksResponse()
-
         client.list_channel_partner_links(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4796,12 +4617,13 @@ def test_list_channel_partner_links_field_headers():
 @pytest.mark.asyncio
 async def test_list_channel_partner_links_field_headers_async():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListChannelPartnerLinksRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4809,7 +4631,6 @@ async def test_list_channel_partner_links_field_headers_async():
             type(client.transport.list_channel_partner_links),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListChannelPartnerLinksResponse())
-
         await client.list_channel_partner_links(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4827,7 +4648,7 @@ async def test_list_channel_partner_links_field_headers_async():
 
 def test_list_channel_partner_links_pager():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4880,7 +4701,7 @@ def test_list_channel_partner_links_pager():
 
 def test_list_channel_partner_links_pages():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4922,7 +4743,7 @@ def test_list_channel_partner_links_pages():
 @pytest.mark.asyncio
 async def test_list_channel_partner_links_async_pager():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4970,7 +4791,7 @@ async def test_list_channel_partner_links_async_pager():
 @pytest.mark.asyncio
 async def test_list_channel_partner_links_async_pages():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5011,10 +4832,9 @@ async def test_list_channel_partner_links_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_get_channel_partner_link(transport: str = 'grpc', request_type=service.GetChannelPartnerLinkRequest):
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -5029,37 +4849,24 @@ def test_get_channel_partner_link(transport: str = 'grpc', request_type=service.
         # Designate an appropriate return value for the call.
         call.return_value = channel_partner_links.ChannelPartnerLink(
             name='name_value',
-
             reseller_cloud_identity_id='reseller_cloud_identity_id_value',
-
             link_state=channel_partner_links.ChannelPartnerLinkState.INVITED,
-
             invite_link_uri='invite_link_uri_value',
-
             public_id='public_id_value',
-
         )
-
         response = client.get_channel_partner_link(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetChannelPartnerLinkRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, channel_partner_links.ChannelPartnerLink)
-
     assert response.name == 'name_value'
-
     assert response.reseller_cloud_identity_id == 'reseller_cloud_identity_id_value'
-
     assert response.link_state == channel_partner_links.ChannelPartnerLinkState.INVITED
-
     assert response.invite_link_uri == 'invite_link_uri_value'
-
     assert response.public_id == 'public_id_value'
 
 
@@ -5071,7 +4878,7 @@ def test_get_channel_partner_link_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -5082,13 +4889,13 @@ def test_get_channel_partner_link_empty_call():
         client.get_channel_partner_link()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetChannelPartnerLinkRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_channel_partner_link_async(transport: str = 'grpc_asyncio', request_type=service.GetChannelPartnerLinkRequest):
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -5101,33 +4908,26 @@ async def test_get_channel_partner_link_async(transport: str = 'grpc_asyncio', r
             type(client.transport.get_channel_partner_link),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(channel_partner_links.ChannelPartnerLink(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(channel_partner_links.ChannelPartnerLink(
             name='name_value',
             reseller_cloud_identity_id='reseller_cloud_identity_id_value',
             link_state=channel_partner_links.ChannelPartnerLinkState.INVITED,
             invite_link_uri='invite_link_uri_value',
             public_id='public_id_value',
         ))
-
         response = await client.get_channel_partner_link(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.GetChannelPartnerLinkRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, channel_partner_links.ChannelPartnerLink)
-
     assert response.name == 'name_value'
-
     assert response.reseller_cloud_identity_id == 'reseller_cloud_identity_id_value'
-
     assert response.link_state == channel_partner_links.ChannelPartnerLinkState.INVITED
-
     assert response.invite_link_uri == 'invite_link_uri_value'
-
     assert response.public_id == 'public_id_value'
 
 
@@ -5138,12 +4938,13 @@ async def test_get_channel_partner_link_async_from_dict():
 
 def test_get_channel_partner_link_field_headers():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.GetChannelPartnerLinkRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5151,7 +4952,6 @@ def test_get_channel_partner_link_field_headers():
             type(client.transport.get_channel_partner_link),
             '__call__') as call:
         call.return_value = channel_partner_links.ChannelPartnerLink()
-
         client.get_channel_partner_link(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5170,12 +4970,13 @@ def test_get_channel_partner_link_field_headers():
 @pytest.mark.asyncio
 async def test_get_channel_partner_link_field_headers_async():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.GetChannelPartnerLinkRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5183,7 +4984,6 @@ async def test_get_channel_partner_link_field_headers_async():
             type(client.transport.get_channel_partner_link),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(channel_partner_links.ChannelPartnerLink())
-
         await client.get_channel_partner_link(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5201,7 +5001,7 @@ async def test_get_channel_partner_link_field_headers_async():
 
 def test_create_channel_partner_link(transport: str = 'grpc', request_type=service.CreateChannelPartnerLinkRequest):
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -5216,37 +5016,24 @@ def test_create_channel_partner_link(transport: str = 'grpc', request_type=servi
         # Designate an appropriate return value for the call.
         call.return_value = channel_partner_links.ChannelPartnerLink(
             name='name_value',
-
             reseller_cloud_identity_id='reseller_cloud_identity_id_value',
-
             link_state=channel_partner_links.ChannelPartnerLinkState.INVITED,
-
             invite_link_uri='invite_link_uri_value',
-
             public_id='public_id_value',
-
         )
-
         response = client.create_channel_partner_link(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.CreateChannelPartnerLinkRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, channel_partner_links.ChannelPartnerLink)
-
     assert response.name == 'name_value'
-
     assert response.reseller_cloud_identity_id == 'reseller_cloud_identity_id_value'
-
     assert response.link_state == channel_partner_links.ChannelPartnerLinkState.INVITED
-
     assert response.invite_link_uri == 'invite_link_uri_value'
-
     assert response.public_id == 'public_id_value'
 
 
@@ -5258,7 +5045,7 @@ def test_create_channel_partner_link_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -5269,13 +5056,13 @@ def test_create_channel_partner_link_empty_call():
         client.create_channel_partner_link()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.CreateChannelPartnerLinkRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_channel_partner_link_async(transport: str = 'grpc_asyncio', request_type=service.CreateChannelPartnerLinkRequest):
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -5288,33 +5075,26 @@ async def test_create_channel_partner_link_async(transport: str = 'grpc_asyncio'
             type(client.transport.create_channel_partner_link),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(channel_partner_links.ChannelPartnerLink(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(channel_partner_links.ChannelPartnerLink(
             name='name_value',
             reseller_cloud_identity_id='reseller_cloud_identity_id_value',
             link_state=channel_partner_links.ChannelPartnerLinkState.INVITED,
             invite_link_uri='invite_link_uri_value',
             public_id='public_id_value',
         ))
-
         response = await client.create_channel_partner_link(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.CreateChannelPartnerLinkRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, channel_partner_links.ChannelPartnerLink)
-
     assert response.name == 'name_value'
-
     assert response.reseller_cloud_identity_id == 'reseller_cloud_identity_id_value'
-
     assert response.link_state == channel_partner_links.ChannelPartnerLinkState.INVITED
-
     assert response.invite_link_uri == 'invite_link_uri_value'
-
     assert response.public_id == 'public_id_value'
 
 
@@ -5325,12 +5105,13 @@ async def test_create_channel_partner_link_async_from_dict():
 
 def test_create_channel_partner_link_field_headers():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.CreateChannelPartnerLinkRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5338,7 +5119,6 @@ def test_create_channel_partner_link_field_headers():
             type(client.transport.create_channel_partner_link),
             '__call__') as call:
         call.return_value = channel_partner_links.ChannelPartnerLink()
-
         client.create_channel_partner_link(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5357,12 +5137,13 @@ def test_create_channel_partner_link_field_headers():
 @pytest.mark.asyncio
 async def test_create_channel_partner_link_field_headers_async():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.CreateChannelPartnerLinkRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5370,7 +5151,6 @@ async def test_create_channel_partner_link_field_headers_async():
             type(client.transport.create_channel_partner_link),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(channel_partner_links.ChannelPartnerLink())
-
         await client.create_channel_partner_link(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5388,7 +5168,7 @@ async def test_create_channel_partner_link_field_headers_async():
 
 def test_update_channel_partner_link(transport: str = 'grpc', request_type=service.UpdateChannelPartnerLinkRequest):
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -5403,37 +5183,24 @@ def test_update_channel_partner_link(transport: str = 'grpc', request_type=servi
         # Designate an appropriate return value for the call.
         call.return_value = channel_partner_links.ChannelPartnerLink(
             name='name_value',
-
             reseller_cloud_identity_id='reseller_cloud_identity_id_value',
-
             link_state=channel_partner_links.ChannelPartnerLinkState.INVITED,
-
             invite_link_uri='invite_link_uri_value',
-
             public_id='public_id_value',
-
         )
-
         response = client.update_channel_partner_link(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.UpdateChannelPartnerLinkRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, channel_partner_links.ChannelPartnerLink)
-
     assert response.name == 'name_value'
-
     assert response.reseller_cloud_identity_id == 'reseller_cloud_identity_id_value'
-
     assert response.link_state == channel_partner_links.ChannelPartnerLinkState.INVITED
-
     assert response.invite_link_uri == 'invite_link_uri_value'
-
     assert response.public_id == 'public_id_value'
 
 
@@ -5445,7 +5212,7 @@ def test_update_channel_partner_link_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -5456,13 +5223,13 @@ def test_update_channel_partner_link_empty_call():
         client.update_channel_partner_link()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.UpdateChannelPartnerLinkRequest()
+
 
 @pytest.mark.asyncio
 async def test_update_channel_partner_link_async(transport: str = 'grpc_asyncio', request_type=service.UpdateChannelPartnerLinkRequest):
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -5475,33 +5242,26 @@ async def test_update_channel_partner_link_async(transport: str = 'grpc_asyncio'
             type(client.transport.update_channel_partner_link),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(channel_partner_links.ChannelPartnerLink(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(channel_partner_links.ChannelPartnerLink(
             name='name_value',
             reseller_cloud_identity_id='reseller_cloud_identity_id_value',
             link_state=channel_partner_links.ChannelPartnerLinkState.INVITED,
             invite_link_uri='invite_link_uri_value',
             public_id='public_id_value',
         ))
-
         response = await client.update_channel_partner_link(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.UpdateChannelPartnerLinkRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, channel_partner_links.ChannelPartnerLink)
-
     assert response.name == 'name_value'
-
     assert response.reseller_cloud_identity_id == 'reseller_cloud_identity_id_value'
-
     assert response.link_state == channel_partner_links.ChannelPartnerLinkState.INVITED
-
     assert response.invite_link_uri == 'invite_link_uri_value'
-
     assert response.public_id == 'public_id_value'
 
 
@@ -5512,12 +5272,13 @@ async def test_update_channel_partner_link_async_from_dict():
 
 def test_update_channel_partner_link_field_headers():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.UpdateChannelPartnerLinkRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5525,7 +5286,6 @@ def test_update_channel_partner_link_field_headers():
             type(client.transport.update_channel_partner_link),
             '__call__') as call:
         call.return_value = channel_partner_links.ChannelPartnerLink()
-
         client.update_channel_partner_link(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5544,12 +5304,13 @@ def test_update_channel_partner_link_field_headers():
 @pytest.mark.asyncio
 async def test_update_channel_partner_link_field_headers_async():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.UpdateChannelPartnerLinkRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5557,7 +5318,6 @@ async def test_update_channel_partner_link_field_headers_async():
             type(client.transport.update_channel_partner_link),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(channel_partner_links.ChannelPartnerLink())
-
         await client.update_channel_partner_link(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5575,7 +5335,7 @@ async def test_update_channel_partner_link_field_headers_async():
 
 def test_list_products(transport: str = 'grpc', request_type=service.ListProductsRequest):
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -5590,21 +5350,16 @@ def test_list_products(transport: str = 'grpc', request_type=service.ListProduct
         # Designate an appropriate return value for the call.
         call.return_value = service.ListProductsResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_products(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListProductsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListProductsPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -5616,7 +5371,7 @@ def test_list_products_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -5627,13 +5382,13 @@ def test_list_products_empty_call():
         client.list_products()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListProductsRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_products_async(transport: str = 'grpc_asyncio', request_type=service.ListProductsRequest):
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -5646,21 +5401,18 @@ async def test_list_products_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.list_products),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListProductsResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.ListProductsResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_products(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListProductsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListProductsAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -5671,7 +5423,7 @@ async def test_list_products_async_from_dict():
 
 def test_list_products_pager():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5719,7 +5471,7 @@ def test_list_products_pager():
 
 def test_list_products_pages():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5761,7 +5513,7 @@ def test_list_products_pages():
 @pytest.mark.asyncio
 async def test_list_products_async_pager():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5809,7 +5561,7 @@ async def test_list_products_async_pager():
 @pytest.mark.asyncio
 async def test_list_products_async_pages():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5850,10 +5602,9 @@ async def test_list_products_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_list_skus(transport: str = 'grpc', request_type=service.ListSkusRequest):
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -5868,21 +5619,16 @@ def test_list_skus(transport: str = 'grpc', request_type=service.ListSkusRequest
         # Designate an appropriate return value for the call.
         call.return_value = service.ListSkusResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_skus(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListSkusRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListSkusPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -5894,7 +5640,7 @@ def test_list_skus_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -5905,13 +5651,13 @@ def test_list_skus_empty_call():
         client.list_skus()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListSkusRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_skus_async(transport: str = 'grpc_asyncio', request_type=service.ListSkusRequest):
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -5924,21 +5670,18 @@ async def test_list_skus_async(transport: str = 'grpc_asyncio', request_type=ser
             type(client.transport.list_skus),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListSkusResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.ListSkusResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_skus(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListSkusRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListSkusAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -5949,12 +5692,13 @@ async def test_list_skus_async_from_dict():
 
 def test_list_skus_field_headers():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListSkusRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5962,7 +5706,6 @@ def test_list_skus_field_headers():
             type(client.transport.list_skus),
             '__call__') as call:
         call.return_value = service.ListSkusResponse()
-
         client.list_skus(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5981,12 +5724,13 @@ def test_list_skus_field_headers():
 @pytest.mark.asyncio
 async def test_list_skus_field_headers_async():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListSkusRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5994,7 +5738,6 @@ async def test_list_skus_field_headers_async():
             type(client.transport.list_skus),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListSkusResponse())
-
         await client.list_skus(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6012,7 +5755,7 @@ async def test_list_skus_field_headers_async():
 
 def test_list_skus_pager():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6065,7 +5808,7 @@ def test_list_skus_pager():
 
 def test_list_skus_pages():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6107,7 +5850,7 @@ def test_list_skus_pages():
 @pytest.mark.asyncio
 async def test_list_skus_async_pager():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6155,7 +5898,7 @@ async def test_list_skus_async_pager():
 @pytest.mark.asyncio
 async def test_list_skus_async_pages():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6196,10 +5939,9 @@ async def test_list_skus_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_list_offers(transport: str = 'grpc', request_type=service.ListOffersRequest):
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -6214,21 +5956,16 @@ def test_list_offers(transport: str = 'grpc', request_type=service.ListOffersReq
         # Designate an appropriate return value for the call.
         call.return_value = service.ListOffersResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_offers(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListOffersRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListOffersPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -6240,7 +5977,7 @@ def test_list_offers_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -6251,13 +5988,13 @@ def test_list_offers_empty_call():
         client.list_offers()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListOffersRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_offers_async(transport: str = 'grpc_asyncio', request_type=service.ListOffersRequest):
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -6270,21 +6007,18 @@ async def test_list_offers_async(transport: str = 'grpc_asyncio', request_type=s
             type(client.transport.list_offers),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListOffersResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.ListOffersResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_offers(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListOffersRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListOffersAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -6295,12 +6029,13 @@ async def test_list_offers_async_from_dict():
 
 def test_list_offers_field_headers():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListOffersRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6308,7 +6043,6 @@ def test_list_offers_field_headers():
             type(client.transport.list_offers),
             '__call__') as call:
         call.return_value = service.ListOffersResponse()
-
         client.list_offers(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6327,12 +6061,13 @@ def test_list_offers_field_headers():
 @pytest.mark.asyncio
 async def test_list_offers_field_headers_async():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListOffersRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6340,7 +6075,6 @@ async def test_list_offers_field_headers_async():
             type(client.transport.list_offers),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListOffersResponse())
-
         await client.list_offers(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6358,7 +6092,7 @@ async def test_list_offers_field_headers_async():
 
 def test_list_offers_pager():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6411,7 +6145,7 @@ def test_list_offers_pager():
 
 def test_list_offers_pages():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6453,7 +6187,7 @@ def test_list_offers_pages():
 @pytest.mark.asyncio
 async def test_list_offers_async_pager():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6501,7 +6235,7 @@ async def test_list_offers_async_pager():
 @pytest.mark.asyncio
 async def test_list_offers_async_pages():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6542,10 +6276,9 @@ async def test_list_offers_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_list_purchasable_skus(transport: str = 'grpc', request_type=service.ListPurchasableSkusRequest):
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -6560,21 +6293,16 @@ def test_list_purchasable_skus(transport: str = 'grpc', request_type=service.Lis
         # Designate an appropriate return value for the call.
         call.return_value = service.ListPurchasableSkusResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_purchasable_skus(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListPurchasableSkusRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListPurchasableSkusPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -6586,7 +6314,7 @@ def test_list_purchasable_skus_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -6597,13 +6325,13 @@ def test_list_purchasable_skus_empty_call():
         client.list_purchasable_skus()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListPurchasableSkusRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_purchasable_skus_async(transport: str = 'grpc_asyncio', request_type=service.ListPurchasableSkusRequest):
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -6616,21 +6344,18 @@ async def test_list_purchasable_skus_async(transport: str = 'grpc_asyncio', requ
             type(client.transport.list_purchasable_skus),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListPurchasableSkusResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.ListPurchasableSkusResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_purchasable_skus(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListPurchasableSkusRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListPurchasableSkusAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -6641,12 +6366,13 @@ async def test_list_purchasable_skus_async_from_dict():
 
 def test_list_purchasable_skus_field_headers():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListPurchasableSkusRequest()
+
     request.customer = 'customer/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6654,7 +6380,6 @@ def test_list_purchasable_skus_field_headers():
             type(client.transport.list_purchasable_skus),
             '__call__') as call:
         call.return_value = service.ListPurchasableSkusResponse()
-
         client.list_purchasable_skus(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6673,12 +6398,13 @@ def test_list_purchasable_skus_field_headers():
 @pytest.mark.asyncio
 async def test_list_purchasable_skus_field_headers_async():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListPurchasableSkusRequest()
+
     request.customer = 'customer/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6686,7 +6412,6 @@ async def test_list_purchasable_skus_field_headers_async():
             type(client.transport.list_purchasable_skus),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListPurchasableSkusResponse())
-
         await client.list_purchasable_skus(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6704,7 +6429,7 @@ async def test_list_purchasable_skus_field_headers_async():
 
 def test_list_purchasable_skus_pager():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6757,7 +6482,7 @@ def test_list_purchasable_skus_pager():
 
 def test_list_purchasable_skus_pages():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6799,7 +6524,7 @@ def test_list_purchasable_skus_pages():
 @pytest.mark.asyncio
 async def test_list_purchasable_skus_async_pager():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6847,7 +6572,7 @@ async def test_list_purchasable_skus_async_pager():
 @pytest.mark.asyncio
 async def test_list_purchasable_skus_async_pages():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6888,10 +6613,9 @@ async def test_list_purchasable_skus_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_list_purchasable_offers(transport: str = 'grpc', request_type=service.ListPurchasableOffersRequest):
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -6906,21 +6630,16 @@ def test_list_purchasable_offers(transport: str = 'grpc', request_type=service.L
         # Designate an appropriate return value for the call.
         call.return_value = service.ListPurchasableOffersResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_purchasable_offers(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListPurchasableOffersRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListPurchasableOffersPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -6932,7 +6651,7 @@ def test_list_purchasable_offers_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -6943,13 +6662,13 @@ def test_list_purchasable_offers_empty_call():
         client.list_purchasable_offers()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListPurchasableOffersRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_purchasable_offers_async(transport: str = 'grpc_asyncio', request_type=service.ListPurchasableOffersRequest):
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -6962,21 +6681,18 @@ async def test_list_purchasable_offers_async(transport: str = 'grpc_asyncio', re
             type(client.transport.list_purchasable_offers),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListPurchasableOffersResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.ListPurchasableOffersResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_purchasable_offers(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListPurchasableOffersRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListPurchasableOffersAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -6987,12 +6703,13 @@ async def test_list_purchasable_offers_async_from_dict():
 
 def test_list_purchasable_offers_field_headers():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListPurchasableOffersRequest()
+
     request.customer = 'customer/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7000,7 +6717,6 @@ def test_list_purchasable_offers_field_headers():
             type(client.transport.list_purchasable_offers),
             '__call__') as call:
         call.return_value = service.ListPurchasableOffersResponse()
-
         client.list_purchasable_offers(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -7019,12 +6735,13 @@ def test_list_purchasable_offers_field_headers():
 @pytest.mark.asyncio
 async def test_list_purchasable_offers_field_headers_async():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListPurchasableOffersRequest()
+
     request.customer = 'customer/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7032,7 +6749,6 @@ async def test_list_purchasable_offers_field_headers_async():
             type(client.transport.list_purchasable_offers),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListPurchasableOffersResponse())
-
         await client.list_purchasable_offers(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -7050,7 +6766,7 @@ async def test_list_purchasable_offers_field_headers_async():
 
 def test_list_purchasable_offers_pager():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7103,7 +6819,7 @@ def test_list_purchasable_offers_pager():
 
 def test_list_purchasable_offers_pages():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7145,7 +6861,7 @@ def test_list_purchasable_offers_pages():
 @pytest.mark.asyncio
 async def test_list_purchasable_offers_async_pager():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7193,7 +6909,7 @@ async def test_list_purchasable_offers_async_pager():
 @pytest.mark.asyncio
 async def test_list_purchasable_offers_async_pages():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7234,10 +6950,9 @@ async def test_list_purchasable_offers_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_register_subscriber(transport: str = 'grpc', request_type=service.RegisterSubscriberRequest):
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -7252,21 +6967,16 @@ def test_register_subscriber(transport: str = 'grpc', request_type=service.Regis
         # Designate an appropriate return value for the call.
         call.return_value = service.RegisterSubscriberResponse(
             topic='topic_value',
-
         )
-
         response = client.register_subscriber(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.RegisterSubscriberRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, service.RegisterSubscriberResponse)
-
     assert response.topic == 'topic_value'
 
 
@@ -7278,7 +6988,7 @@ def test_register_subscriber_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -7289,13 +6999,13 @@ def test_register_subscriber_empty_call():
         client.register_subscriber()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.RegisterSubscriberRequest()
+
 
 @pytest.mark.asyncio
 async def test_register_subscriber_async(transport: str = 'grpc_asyncio', request_type=service.RegisterSubscriberRequest):
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -7308,21 +7018,18 @@ async def test_register_subscriber_async(transport: str = 'grpc_asyncio', reques
             type(client.transport.register_subscriber),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.RegisterSubscriberResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.RegisterSubscriberResponse(
             topic='topic_value',
         ))
-
         response = await client.register_subscriber(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.RegisterSubscriberRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, service.RegisterSubscriberResponse)
-
     assert response.topic == 'topic_value'
 
 
@@ -7333,12 +7040,13 @@ async def test_register_subscriber_async_from_dict():
 
 def test_register_subscriber_field_headers():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.RegisterSubscriberRequest()
+
     request.account = 'account/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7346,7 +7054,6 @@ def test_register_subscriber_field_headers():
             type(client.transport.register_subscriber),
             '__call__') as call:
         call.return_value = service.RegisterSubscriberResponse()
-
         client.register_subscriber(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -7365,12 +7072,13 @@ def test_register_subscriber_field_headers():
 @pytest.mark.asyncio
 async def test_register_subscriber_field_headers_async():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.RegisterSubscriberRequest()
+
     request.account = 'account/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7378,7 +7086,6 @@ async def test_register_subscriber_field_headers_async():
             type(client.transport.register_subscriber),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.RegisterSubscriberResponse())
-
         await client.register_subscriber(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -7396,7 +7103,7 @@ async def test_register_subscriber_field_headers_async():
 
 def test_unregister_subscriber(transport: str = 'grpc', request_type=service.UnregisterSubscriberRequest):
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -7411,21 +7118,16 @@ def test_unregister_subscriber(transport: str = 'grpc', request_type=service.Unr
         # Designate an appropriate return value for the call.
         call.return_value = service.UnregisterSubscriberResponse(
             topic='topic_value',
-
         )
-
         response = client.unregister_subscriber(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.UnregisterSubscriberRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, service.UnregisterSubscriberResponse)
-
     assert response.topic == 'topic_value'
 
 
@@ -7437,7 +7139,7 @@ def test_unregister_subscriber_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -7448,13 +7150,13 @@ def test_unregister_subscriber_empty_call():
         client.unregister_subscriber()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.UnregisterSubscriberRequest()
+
 
 @pytest.mark.asyncio
 async def test_unregister_subscriber_async(transport: str = 'grpc_asyncio', request_type=service.UnregisterSubscriberRequest):
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -7467,21 +7169,18 @@ async def test_unregister_subscriber_async(transport: str = 'grpc_asyncio', requ
             type(client.transport.unregister_subscriber),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.UnregisterSubscriberResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.UnregisterSubscriberResponse(
             topic='topic_value',
         ))
-
         response = await client.unregister_subscriber(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.UnregisterSubscriberRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, service.UnregisterSubscriberResponse)
-
     assert response.topic == 'topic_value'
 
 
@@ -7492,12 +7191,13 @@ async def test_unregister_subscriber_async_from_dict():
 
 def test_unregister_subscriber_field_headers():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.UnregisterSubscriberRequest()
+
     request.account = 'account/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7505,7 +7205,6 @@ def test_unregister_subscriber_field_headers():
             type(client.transport.unregister_subscriber),
             '__call__') as call:
         call.return_value = service.UnregisterSubscriberResponse()
-
         client.unregister_subscriber(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -7524,12 +7223,13 @@ def test_unregister_subscriber_field_headers():
 @pytest.mark.asyncio
 async def test_unregister_subscriber_field_headers_async():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.UnregisterSubscriberRequest()
+
     request.account = 'account/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7537,7 +7237,6 @@ async def test_unregister_subscriber_field_headers_async():
             type(client.transport.unregister_subscriber),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.UnregisterSubscriberResponse())
-
         await client.unregister_subscriber(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -7555,7 +7254,7 @@ async def test_unregister_subscriber_field_headers_async():
 
 def test_list_subscribers(transport: str = 'grpc', request_type=service.ListSubscribersRequest):
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -7570,29 +7269,20 @@ def test_list_subscribers(transport: str = 'grpc', request_type=service.ListSubs
         # Designate an appropriate return value for the call.
         call.return_value = service.ListSubscribersResponse(
             topic='topic_value',
-
             service_accounts=['service_accounts_value'],
-
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_subscribers(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListSubscribersRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListSubscribersPager)
-
     assert response.topic == 'topic_value'
-
     assert response.service_accounts == ['service_accounts_value']
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -7604,7 +7294,7 @@ def test_list_subscribers_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -7615,13 +7305,13 @@ def test_list_subscribers_empty_call():
         client.list_subscribers()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListSubscribersRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_subscribers_async(transport: str = 'grpc_asyncio', request_type=service.ListSubscribersRequest):
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -7634,27 +7324,22 @@ async def test_list_subscribers_async(transport: str = 'grpc_asyncio', request_t
             type(client.transport.list_subscribers),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListSubscribersResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.ListSubscribersResponse(
             topic='topic_value',
             service_accounts=['service_accounts_value'],
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_subscribers(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == service.ListSubscribersRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListSubscribersAsyncPager)
-
     assert response.topic == 'topic_value'
-
     assert response.service_accounts == ['service_accounts_value']
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -7665,12 +7350,13 @@ async def test_list_subscribers_async_from_dict():
 
 def test_list_subscribers_field_headers():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListSubscribersRequest()
+
     request.account = 'account/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7678,7 +7364,6 @@ def test_list_subscribers_field_headers():
             type(client.transport.list_subscribers),
             '__call__') as call:
         call.return_value = service.ListSubscribersResponse()
-
         client.list_subscribers(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -7697,12 +7382,13 @@ def test_list_subscribers_field_headers():
 @pytest.mark.asyncio
 async def test_list_subscribers_field_headers_async():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListSubscribersRequest()
+
     request.account = 'account/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7710,7 +7396,6 @@ async def test_list_subscribers_field_headers_async():
             type(client.transport.list_subscribers),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListSubscribersResponse())
-
         await client.list_subscribers(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -7728,7 +7413,7 @@ async def test_list_subscribers_field_headers_async():
 
 def test_list_subscribers_pager():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7781,7 +7466,7 @@ def test_list_subscribers_pager():
 
 def test_list_subscribers_pages():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7823,7 +7508,7 @@ def test_list_subscribers_pages():
 @pytest.mark.asyncio
 async def test_list_subscribers_async_pager():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7871,7 +7556,7 @@ async def test_list_subscribers_async_pager():
 @pytest.mark.asyncio
 async def test_list_subscribers_async_pages():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7916,17 +7601,17 @@ async def test_list_subscribers_async_pages():
 def test_credentials_transport_error():
     # It is an error to provide credentials and a transport instance.
     transport = transports.CloudChannelServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = CloudChannelServiceClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             transport=transport,
         )
 
     # It is an error to provide a credentials file and a transport instance.
     transport = transports.CloudChannelServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = CloudChannelServiceClient(
@@ -7936,7 +7621,7 @@ def test_credentials_transport_error():
 
     # It is an error to provide scopes and a transport instance.
     transport = transports.CloudChannelServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = CloudChannelServiceClient(
@@ -7948,26 +7633,24 @@ def test_credentials_transport_error():
 def test_transport_instance():
     # A client may be instantiated with a custom transport instance.
     transport = transports.CloudChannelServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     client = CloudChannelServiceClient(transport=transport)
     assert client.transport is transport
 
-
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.CloudChannelServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     channel = transport.grpc_channel
     assert channel
 
     transport = transports.CloudChannelServiceGrpcAsyncIOTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     channel = transport.grpc_channel
     assert channel
-
 
 @pytest.mark.parametrize("transport_class", [
     transports.CloudChannelServiceGrpcTransport,
@@ -7975,28 +7658,26 @@ def test_transport_get_channel():
 ])
 def test_transport_adc(transport_class):
     # Test default credentials are used if not provided.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport_class()
         adc.assert_called_once()
-
 
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     assert isinstance(
         client.transport,
         transports.CloudChannelServiceGrpcTransport,
     )
 
-
 def test_cloud_channel_service_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
-    with pytest.raises(exceptions.DuplicateCredentialArgs):
+    with pytest.raises(core_exceptions.DuplicateCredentialArgs):
         transport = transports.CloudChannelServiceTransport(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             credentials_file="credentials.json"
         )
 
@@ -8006,7 +7687,7 @@ def test_cloud_channel_service_base_transport():
     with mock.patch('google.cloud.channel_v1.services.cloud_channel_service.transports.CloudChannelServiceTransport.__init__') as Transport:
         Transport.return_value = None
         transport = transports.CloudChannelServiceTransport(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
         )
 
     # Every method on the transport should just blindly
@@ -8045,7 +7726,7 @@ def test_cloud_channel_service_base_transport():
         'register_subscriber',
         'unregister_subscriber',
         'list_subscribers',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -8056,11 +7737,31 @@ def test_cloud_channel_service_base_transport():
         transport.operations_client
 
 
+@requires_google_auth_gte_1_25_0
 def test_cloud_channel_service_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.channel_v1.services.cloud_channel_service.transports.CloudChannelServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.channel_v1.services.cloud_channel_service.transports.CloudChannelServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
+        load_creds.return_value = (ga_credentials.AnonymousCredentials(), None)
+        transport = transports.CloudChannelServiceTransport(
+            credentials_file="credentials.json",
+            quota_project_id="octopus",
+        )
+        load_creds.assert_called_once_with("credentials.json",
+            scopes=None,
+            default_scopes=(
+            'https://www.googleapis.com/auth/apps.order',
+),
+            quota_project_id="octopus",
+        )
+
+
+@requires_google_auth_lt_1_25_0
+def test_cloud_channel_service_base_transport_with_credentials_file_old_google_auth():
+    # Instantiate the base transport with a credentials file
+    with mock.patch.object(google.auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.channel_v1.services.cloud_channel_service.transports.CloudChannelServiceTransport._prep_wrapped_messages') as Transport:
+        Transport.return_value = None
+        load_creds.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.CloudChannelServiceTransport(
             credentials_file="credentials.json",
             quota_project_id="octopus",
@@ -8074,33 +7775,185 @@ def test_cloud_channel_service_base_transport_with_credentials_file():
 
 def test_cloud_channel_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.channel_v1.services.cloud_channel_service.transports.CloudChannelServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc, mock.patch('google.cloud.channel_v1.services.cloud_channel_service.transports.CloudChannelServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.CloudChannelServiceTransport()
         adc.assert_called_once()
 
 
+@requires_google_auth_gte_1_25_0
 def test_cloud_channel_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         CloudChannelServiceClient()
-        adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/apps.order',),
+        adc.assert_called_once_with(
+            scopes=None,
+            default_scopes=(
+            'https://www.googleapis.com/auth/apps.order',
+),
             quota_project_id=None,
         )
 
 
-def test_cloud_channel_service_transport_auth_adc():
+@requires_google_auth_lt_1_25_0
+def test_cloud_channel_service_auth_adc_old_google_auth():
+    # If no credentials are provided, we should use ADC credentials.
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
+        CloudChannelServiceClient()
+        adc.assert_called_once_with(
+            scopes=(                'https://www.googleapis.com/auth/apps.order',),
+            quota_project_id=None,
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.CloudChannelServiceGrpcTransport,
+        transports.CloudChannelServiceGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_gte_1_25_0
+def test_cloud_channel_service_transport_auth_adc(transport_class):
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transports.CloudChannelServiceGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
-        adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/apps.order',),
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+        adc.assert_called_once_with(
+            scopes=["1", "2"],
+            default_scopes=(                'https://www.googleapis.com/auth/apps.order',),
             quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.CloudChannelServiceGrpcTransport,
+        transports.CloudChannelServiceGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_lt_1_25_0
+def test_cloud_channel_service_transport_auth_adc_old_google_auth(transport_class):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/apps.order',
+),
+            quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.CloudChannelServiceGrpcTransport, grpc_helpers),
+        (transports.CloudChannelServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_gte_1_26_0
+def test_cloud_channel_service_transport_create_channel(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = ga_credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(
+            quota_project_id="octopus",
+            scopes=["1", "2"]
+        )
+
+        create_channel.assert_called_with(
+            "cloudchannel.googleapis.com:443",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            default_scopes=(
+                'https://www.googleapis.com/auth/apps.order',
+),
+            scopes=["1", "2"],
+            default_host="cloudchannel.googleapis.com",
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.CloudChannelServiceGrpcTransport, grpc_helpers),
+        (transports.CloudChannelServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_cloud_channel_service_transport_create_channel_old_api_core(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = ga_credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(quota_project_id="octopus")
+
+        create_channel.assert_called_with(
+            "cloudchannel.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=(
+                'https://www.googleapis.com/auth/apps.order',
+),
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.CloudChannelServiceGrpcTransport, grpc_helpers),
+        (transports.CloudChannelServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_cloud_channel_service_transport_create_channel_user_scopes(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = ga_credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+
+        create_channel.assert_called_with(
+            "cloudchannel.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=["1", "2"],
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
         )
 
 
@@ -8108,7 +7961,7 @@ def test_cloud_channel_service_transport_auth_adc():
 def test_cloud_channel_service_grpc_transport_client_cert_source_for_mtls(
     transport_class
 ):
-    cred = credentials.AnonymousCredentials()
+    cred = ga_credentials.AnonymousCredentials()
 
     # Check ssl_channel_credentials is used if provided.
     with mock.patch.object(transport_class, "create_channel") as mock_create_channel:
@@ -8150,7 +8003,7 @@ def test_cloud_channel_service_grpc_transport_client_cert_source_for_mtls(
 
 def test_cloud_channel_service_host_no_port():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='cloudchannel.googleapis.com'),
     )
     assert client.transport._host == 'cloudchannel.googleapis.com:443'
@@ -8158,11 +8011,10 @@ def test_cloud_channel_service_host_no_port():
 
 def test_cloud_channel_service_host_with_port():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='cloudchannel.googleapis.com:8000'),
     )
     assert client.transport._host == 'cloudchannel.googleapis.com:8000'
-
 
 def test_cloud_channel_service_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -8204,9 +8056,9 @@ def test_cloud_channel_service_transport_channel_mtls_with_client_cert_source(
             mock_grpc_channel = mock.Mock()
             grpc_create_channel.return_value = mock_grpc_channel
 
-            cred = credentials.AnonymousCredentials()
+            cred = ga_credentials.AnonymousCredentials()
             with pytest.warns(DeprecationWarning):
-                with mock.patch.object(auth, 'default') as adc:
+                with mock.patch.object(google.auth, 'default') as adc:
                     adc.return_value = (cred, None)
                     transport = transport_class(
                         host="squid.clam.whelk",
@@ -8280,7 +8132,7 @@ def test_cloud_channel_service_transport_channel_mtls_with_adc(
 
 def test_cloud_channel_service_grpc_lro_client():
     client = CloudChannelServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
     transport = client.transport
@@ -8297,7 +8149,7 @@ def test_cloud_channel_service_grpc_lro_client():
 
 def test_cloud_channel_service_grpc_lro_async_client():
     client = CloudChannelServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc_asyncio',
     )
     transport = client.transport
@@ -8315,7 +8167,6 @@ def test_cloud_channel_service_grpc_lro_async_client():
 def test_customer_path():
     account = "squid"
     customer = "clam"
-
     expected = "accounts/{account}/customers/{customer}".format(account=account, customer=customer, )
     actual = CloudChannelServiceClient.customer_path(account, customer)
     assert expected == actual
@@ -8323,9 +8174,8 @@ def test_customer_path():
 
 def test_parse_customer_path():
     expected = {
-    "account": "whelk",
-    "customer": "octopus",
-
+        "account": "whelk",
+        "customer": "octopus",
     }
     path = CloudChannelServiceClient.customer_path(**expected)
 
@@ -8337,7 +8187,6 @@ def test_entitlement_path():
     account = "oyster"
     customer = "nudibranch"
     entitlement = "cuttlefish"
-
     expected = "accounts/{account}/customers/{customer}/entitlements/{entitlement}".format(account=account, customer=customer, entitlement=entitlement, )
     actual = CloudChannelServiceClient.entitlement_path(account, customer, entitlement)
     assert expected == actual
@@ -8345,10 +8194,9 @@ def test_entitlement_path():
 
 def test_parse_entitlement_path():
     expected = {
-    "account": "mussel",
-    "customer": "winkle",
-    "entitlement": "nautilus",
-
+        "account": "mussel",
+        "customer": "winkle",
+        "entitlement": "nautilus",
     }
     path = CloudChannelServiceClient.entitlement_path(**expected)
 
@@ -8359,7 +8207,6 @@ def test_parse_entitlement_path():
 def test_offer_path():
     account = "scallop"
     offer = "abalone"
-
     expected = "accounts/{account}/offers/{offer}".format(account=account, offer=offer, )
     actual = CloudChannelServiceClient.offer_path(account, offer)
     assert expected == actual
@@ -8367,9 +8214,8 @@ def test_offer_path():
 
 def test_parse_offer_path():
     expected = {
-    "account": "squid",
-    "offer": "clam",
-
+        "account": "squid",
+        "offer": "clam",
     }
     path = CloudChannelServiceClient.offer_path(**expected)
 
@@ -8379,7 +8225,6 @@ def test_parse_offer_path():
 
 def test_product_path():
     product = "whelk"
-
     expected = "products/{product}".format(product=product, )
     actual = CloudChannelServiceClient.product_path(product)
     assert expected == actual
@@ -8387,8 +8232,7 @@ def test_product_path():
 
 def test_parse_product_path():
     expected = {
-    "product": "octopus",
-
+        "product": "octopus",
     }
     path = CloudChannelServiceClient.product_path(**expected)
 
@@ -8399,7 +8243,6 @@ def test_parse_product_path():
 def test_sku_path():
     product = "oyster"
     sku = "nudibranch"
-
     expected = "products/{product}/skus/{sku}".format(product=product, sku=sku, )
     actual = CloudChannelServiceClient.sku_path(product, sku)
     assert expected == actual
@@ -8407,9 +8250,8 @@ def test_sku_path():
 
 def test_parse_sku_path():
     expected = {
-    "product": "cuttlefish",
-    "sku": "mussel",
-
+        "product": "cuttlefish",
+        "sku": "mussel",
     }
     path = CloudChannelServiceClient.sku_path(**expected)
 
@@ -8419,7 +8261,6 @@ def test_parse_sku_path():
 
 def test_common_billing_account_path():
     billing_account = "winkle"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = CloudChannelServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -8427,8 +8268,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "nautilus",
-
+        "billing_account": "nautilus",
     }
     path = CloudChannelServiceClient.common_billing_account_path(**expected)
 
@@ -8438,7 +8278,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "scallop"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = CloudChannelServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -8446,8 +8285,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "abalone",
-
+        "folder": "abalone",
     }
     path = CloudChannelServiceClient.common_folder_path(**expected)
 
@@ -8457,7 +8295,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "squid"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = CloudChannelServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -8465,8 +8302,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "clam",
-
+        "organization": "clam",
     }
     path = CloudChannelServiceClient.common_organization_path(**expected)
 
@@ -8476,7 +8312,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "whelk"
-
     expected = "projects/{project}".format(project=project, )
     actual = CloudChannelServiceClient.common_project_path(project)
     assert expected == actual
@@ -8484,8 +8319,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "octopus",
-
+        "project": "octopus",
     }
     path = CloudChannelServiceClient.common_project_path(**expected)
 
@@ -8496,7 +8330,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "oyster"
     location = "nudibranch"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = CloudChannelServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -8504,9 +8337,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "cuttlefish",
-    "location": "mussel",
-
+        "project": "cuttlefish",
+        "location": "mussel",
     }
     path = CloudChannelServiceClient.common_location_path(**expected)
 
@@ -8520,7 +8352,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
 
     with mock.patch.object(transports.CloudChannelServiceTransport, '_prep_wrapped_messages') as prep:
         client = CloudChannelServiceClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)
@@ -8528,7 +8360,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
     with mock.patch.object(transports.CloudChannelServiceTransport, '_prep_wrapped_messages') as prep:
         transport_class = CloudChannelServiceClient.get_transport_class()
         transport = transport_class(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)

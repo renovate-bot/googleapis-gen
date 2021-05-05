@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v7.common.types import criteria
 
@@ -55,11 +52,29 @@ class CampaignBidModifier(proto.Message):
             Only supported for search campaigns.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    campaign = proto.Field(proto.STRING, number=6, optional=True)
-    criterion_id = proto.Field(proto.INT64, number=7, optional=True)
-    bid_modifier = proto.Field(proto.DOUBLE, number=8, optional=True)
-    interaction_type = proto.Field(proto.MESSAGE, number=5, oneof='criterion',
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    campaign = proto.Field(
+        proto.STRING,
+        number=6,
+        optional=True,
+    )
+    criterion_id = proto.Field(
+        proto.INT64,
+        number=7,
+        optional=True,
+    )
+    bid_modifier = proto.Field(
+        proto.DOUBLE,
+        number=8,
+        optional=True,
+    )
+    interaction_type = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        oneof='criterion',
         message=criteria.InteractionTypeInfo,
     )
 

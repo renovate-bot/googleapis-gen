@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -22,15 +20,14 @@ from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
 import google.api_core.client_options as ClientOptions # type: ignore
-from google.api_core import exceptions                 # type: ignore
+from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
 from google.devtools.clouddebugger_v2.types import controller
 from google.devtools.clouddebugger_v2.types import data
-
 from .transports.base import Controller2Transport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import Controller2GrpcAsyncIOTransport
 from .client import Controller2Client
@@ -68,16 +65,12 @@ class Controller2AsyncClient:
 
     common_billing_account_path = staticmethod(Controller2Client.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(Controller2Client.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(Controller2Client.common_folder_path)
     parse_common_folder_path = staticmethod(Controller2Client.parse_common_folder_path)
-
     common_organization_path = staticmethod(Controller2Client.common_organization_path)
     parse_common_organization_path = staticmethod(Controller2Client.parse_common_organization_path)
-
     common_project_path = staticmethod(Controller2Client.common_project_path)
     parse_common_project_path = staticmethod(Controller2Client.parse_common_project_path)
-
     common_location_path = staticmethod(Controller2Client.common_location_path)
     parse_common_location_path = staticmethod(Controller2Client.parse_common_location_path)
 
@@ -125,7 +118,7 @@ class Controller2AsyncClient:
     get_transport_class = functools.partial(type(Controller2Client).get_transport_class, type(Controller2Client))
 
     def __init__(self, *,
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             transport: Union[str, Controller2Transport] = 'grpc_asyncio',
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -162,7 +155,6 @@ class Controller2AsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = Controller2Client(
             credentials=credentials,
             transport=transport,
@@ -203,7 +195,6 @@ class Controller2AsyncClient:
                 This corresponds to the ``debuggee`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -226,7 +217,6 @@ class Controller2AsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if debuggee is not None:
             request.debuggee = debuggee
 
@@ -280,7 +270,6 @@ class Controller2AsyncClient:
                 This corresponds to the ``debuggee_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -305,7 +294,6 @@ class Controller2AsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if debuggee_id is not None:
             request.debuggee_id = debuggee_id
 
@@ -314,10 +302,7 @@ class Controller2AsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_active_breakpoints,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -376,7 +361,6 @@ class Controller2AsyncClient:
                 This corresponds to the ``breakpoint_`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -402,7 +386,6 @@ class Controller2AsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if debuggee_id is not None:
             request.debuggee_id = debuggee_id
         if breakpoint_ is not None:
@@ -413,10 +396,7 @@ class Controller2AsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.update_active_breakpoint,
             default_retry=retries.Retry(
-                initial=0.1,
-                maximum=60.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -436,8 +416,6 @@ class Controller2AsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

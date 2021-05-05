@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,14 +13,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v4.common.types import simulation
 from google.ads.googleads.v4.enums.types import simulation_modification_method
 from google.ads.googleads.v4.enums.types import simulation_type
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -70,26 +67,44 @@ class CampaignCriterionSimulation(proto.Message):
             BID_MODIFIER.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    campaign_id = proto.Field(proto.MESSAGE, number=2,
-        message=wrappers.Int64Value,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
     )
-    criterion_id = proto.Field(proto.MESSAGE, number=3,
-        message=wrappers.Int64Value,
+    campaign_id = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=wrappers_pb2.Int64Value,
     )
-    type_ = proto.Field(proto.ENUM, number=4,
+    criterion_id = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=wrappers_pb2.Int64Value,
+    )
+    type_ = proto.Field(
+        proto.ENUM,
+        number=4,
         enum=simulation_type.SimulationTypeEnum.SimulationType,
     )
-    modification_method = proto.Field(proto.ENUM, number=5,
+    modification_method = proto.Field(
+        proto.ENUM,
+        number=5,
         enum=simulation_modification_method.SimulationModificationMethodEnum.SimulationModificationMethod,
     )
-    start_date = proto.Field(proto.MESSAGE, number=6,
-        message=wrappers.StringValue,
+    start_date = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        message=wrappers_pb2.StringValue,
     )
-    end_date = proto.Field(proto.MESSAGE, number=7,
-        message=wrappers.StringValue,
+    end_date = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        message=wrappers_pb2.StringValue,
     )
-    bid_modifier_point_list = proto.Field(proto.MESSAGE, number=8, oneof='point_list',
+    bid_modifier_point_list = proto.Field(
+        proto.MESSAGE,
+        number=8,
+        oneof='point_list',
         message=simulation.BidModifierSimulationPointList,
     )
 

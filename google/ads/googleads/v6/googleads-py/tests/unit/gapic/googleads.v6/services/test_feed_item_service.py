@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 from unittest import mock
 
@@ -23,10 +21,9 @@ import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
-from google import auth
 from google.ads.googleads.v6.common.types import custom_parameter
 from google.ads.googleads.v6.common.types import feed_common
-from google.ads.googleads.v6.common.types import policy as gagc_policy
+from google.ads.googleads.v6.common.types import policy
 from google.ads.googleads.v6.enums.types import feed_item_quality_approval_status
 from google.ads.googleads.v6.enums.types import feed_item_quality_disapproval_reason
 from google.ads.googleads.v6.enums.types import feed_item_status
@@ -48,11 +45,12 @@ from google.ads.googleads.v6.services.types import feed_item_service
 from google.api_core import client_options
 from google.api_core import gapic_v1
 from google.api_core import grpc_helpers
-from google.auth import credentials
+from google.auth import credentials as ga_credentials
 from google.auth.exceptions import MutualTLSChannelError
 from google.oauth2 import service_account
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.rpc import status_pb2 as status  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.rpc import status_pb2  # type: ignore
+import google.auth
 
 
 def client_cert_source_callback():
@@ -82,7 +80,7 @@ def test__get_default_mtls_endpoint():
 
 
 def test_feed_item_service_client_from_service_account_info():
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
@@ -93,7 +91,7 @@ def test_feed_item_service_client_from_service_account_info():
 
 
 def test_feed_item_service_client_from_service_account_file():
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_file') as factory:
         factory.return_value = creds
         client = FeedItemServiceClient.from_service_account_file("dummy/file/path.json")
@@ -118,7 +116,7 @@ def test_feed_item_service_client_client_options():
     # Check that if channel is provided we won't create a new one.
     with mock.patch('google.ads.googleads.v6.services.services.feed_item_service.FeedItemServiceClient.get_transport_class') as gtc:
         transport = transports.FeedItemServiceGrpcTransport(
-            credentials=credentials.AnonymousCredentials()
+            credentials=ga_credentials.AnonymousCredentials()
         )
         client = FeedItemServiceClient(transport=transport)
         gtc.assert_not_called()
@@ -268,7 +266,7 @@ def test_feed_item_service_client_client_options_from_dict():
 
 def test_get_feed_item(transport: str = 'grpc', request_type=feed_item_service.GetFeedItemRequest):
     client = FeedItemServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -283,45 +281,28 @@ def test_get_feed_item(transport: str = 'grpc', request_type=feed_item_service.G
         # Designate an appropriate return value for the call.
         call.return_value = feed_item.FeedItem(
             resource_name='resource_name_value',
-
             feed='feed_value',
-
             id=205,
-
             start_date_time='start_date_time_value',
-
             end_date_time='end_date_time_value',
-
             geo_targeting_restriction=geo_targeting_restriction.GeoTargetingRestrictionEnum.GeoTargetingRestriction.UNKNOWN,
-
             status=feed_item_status.FeedItemStatusEnum.FeedItemStatus.UNKNOWN,
-
         )
-
         response = client.get_feed_item(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == feed_item_service.GetFeedItemRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, feed_item.FeedItem)
-
     assert response.resource_name == 'resource_name_value'
-
     assert response.feed == 'feed_value'
-
     assert response.id == 205
-
     assert response.start_date_time == 'start_date_time_value'
-
     assert response.end_date_time == 'end_date_time_value'
-
     assert response.geo_targeting_restriction == geo_targeting_restriction.GeoTargetingRestrictionEnum.GeoTargetingRestriction.UNKNOWN
-
     assert response.status == feed_item_status.FeedItemStatusEnum.FeedItemStatus.UNKNOWN
 
 
@@ -331,12 +312,13 @@ def test_get_feed_item_from_dict():
 
 def test_get_feed_item_field_headers():
     client = FeedItemServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = feed_item_service.GetFeedItemRequest()
+
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -344,7 +326,6 @@ def test_get_feed_item_field_headers():
             type(client.transport.get_feed_item),
             '__call__') as call:
         call.return_value = feed_item.FeedItem()
-
         client.get_feed_item(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -362,7 +343,7 @@ def test_get_feed_item_field_headers():
 
 def test_get_feed_item_flattened():
     client = FeedItemServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -371,7 +352,6 @@ def test_get_feed_item_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = feed_item.FeedItem()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_feed_item(
@@ -382,13 +362,12 @@ def test_get_feed_item_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].resource_name == 'resource_name_value'
 
 
 def test_get_feed_item_flattened_error():
     client = FeedItemServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -402,7 +381,7 @@ def test_get_feed_item_flattened_error():
 
 def test_mutate_feed_items(transport: str = 'grpc', request_type=feed_item_service.MutateFeedItemsRequest):
     client = FeedItemServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -417,17 +396,14 @@ def test_mutate_feed_items(transport: str = 'grpc', request_type=feed_item_servi
         # Designate an appropriate return value for the call.
         call.return_value = feed_item_service.MutateFeedItemsResponse(
         )
-
         response = client.mutate_feed_items(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == feed_item_service.MutateFeedItemsRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, feed_item_service.MutateFeedItemsResponse)
 
 
@@ -437,12 +413,13 @@ def test_mutate_feed_items_from_dict():
 
 def test_mutate_feed_items_field_headers():
     client = FeedItemServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = feed_item_service.MutateFeedItemsRequest()
+
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -450,7 +427,6 @@ def test_mutate_feed_items_field_headers():
             type(client.transport.mutate_feed_items),
             '__call__') as call:
         call.return_value = feed_item_service.MutateFeedItemsResponse()
-
         client.mutate_feed_items(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -468,7 +444,7 @@ def test_mutate_feed_items_field_headers():
 
 def test_mutate_feed_items_flattened():
     client = FeedItemServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -477,27 +453,24 @@ def test_mutate_feed_items_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = feed_item_service.MutateFeedItemsResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_feed_items(
             customer_id='customer_id_value',
-            operations=[feed_item_service.FeedItemOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))],
+            operations=[feed_item_service.FeedItemOperation(update_mask=field_mask_pb2.FieldMask(paths=['paths_value']))],
         )
 
         # Establish that the underlying call was made with the expected
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].customer_id == 'customer_id_value'
-
-        assert args[0].operations == [feed_item_service.FeedItemOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))]
+        assert args[0].operations == [feed_item_service.FeedItemOperation(update_mask=field_mask_pb2.FieldMask(paths=['paths_value']))]
 
 
 def test_mutate_feed_items_flattened_error():
     client = FeedItemServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -506,18 +479,18 @@ def test_mutate_feed_items_flattened_error():
         client.mutate_feed_items(
             feed_item_service.MutateFeedItemsRequest(),
             customer_id='customer_id_value',
-            operations=[feed_item_service.FeedItemOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))],
+            operations=[feed_item_service.FeedItemOperation(update_mask=field_mask_pb2.FieldMask(paths=['paths_value']))],
         )
 
 
 def test_credentials_transport_error():
     # It is an error to provide credentials and a transport instance.
     transport = transports.FeedItemServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = FeedItemServiceClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             transport=transport,
         )
 
@@ -525,7 +498,7 @@ def test_credentials_transport_error():
 def test_transport_instance():
     # A client may be instantiated with a custom transport instance.
     transport = transports.FeedItemServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     client = FeedItemServiceClient(transport=transport)
     assert client.transport is transport
@@ -534,7 +507,7 @@ def test_transport_instance():
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.FeedItemServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     channel = transport.grpc_channel
     assert channel
@@ -543,7 +516,7 @@ def test_transport_get_channel():
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = FeedItemServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     assert isinstance(
         client.transport,
@@ -555,8 +528,8 @@ def test_transport_grpc_default():
 ])
 def test_transport_adc(transport_class):
     # Test default credentials are used if not provided.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport_class()
         adc.assert_called_once()
 
@@ -566,7 +539,7 @@ def test_feed_item_service_base_transport():
     with mock.patch('google.ads.googleads.v6.services.services.feed_item_service.transports.FeedItemServiceTransport.__init__') as Transport:
         Transport.return_value = None
         transport = transports.FeedItemServiceTransport(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
         )
 
     # Every method on the transport should just blindly
@@ -574,7 +547,7 @@ def test_feed_item_service_base_transport():
     methods = (
         'get_feed_item',
         'mutate_feed_items',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -582,17 +555,17 @@ def test_feed_item_service_base_transport():
 
 def test_feed_item_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.ads.googleads.v6.services.services.feed_item_service.transports.FeedItemServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'default') as adc, mock.patch('google.ads.googleads.v6.services.services.feed_item_service.transports.FeedItemServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.FeedItemServiceTransport()
         adc.assert_called_once()
 
 
 def test_feed_item_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         FeedItemServiceClient()
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/adwords',
@@ -602,8 +575,8 @@ def test_feed_item_service_auth_adc():
 def test_feed_item_service_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transports.FeedItemServiceGrpcTransport(host="squid.clam.whelk")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/adwords',
@@ -612,7 +585,7 @@ def test_feed_item_service_transport_auth_adc():
 
 def test_feed_item_service_host_no_port():
     client = FeedItemServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='googleads.googleapis.com'),
     )
     assert client.transport._host == 'googleads.googleapis.com:443'
@@ -620,7 +593,7 @@ def test_feed_item_service_host_no_port():
 
 def test_feed_item_service_host_with_port():
     client = FeedItemServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='googleads.googleapis.com:8000'),
     )
     assert client.transport._host == 'googleads.googleapis.com:8000'
@@ -651,9 +624,9 @@ def test_feed_item_service_transport_channel_mtls_with_client_cert_source(
             mock_grpc_channel = mock.Mock()
             grpc_create_channel.return_value = mock_grpc_channel
 
-            cred = credentials.AnonymousCredentials()
+            cred = ga_credentials.AnonymousCredentials()
             with pytest.warns(DeprecationWarning):
-                with mock.patch.object(auth, 'default') as adc:
+                with mock.patch.object(google.auth, 'default') as adc:
                     adc.return_value = (cred, None)
                     transport = transport_class(
                         host="squid.clam.whelk",
@@ -726,7 +699,6 @@ def test_feed_item_service_transport_channel_mtls_with_adc(
 def test_feed_path():
     customer_id = "squid"
     feed_id = "clam"
-
     expected = "customers/{customer_id}/feeds/{feed_id}".format(customer_id=customer_id, feed_id=feed_id, )
     actual = FeedItemServiceClient.feed_path(customer_id, feed_id)
     assert expected == actual
@@ -734,9 +706,8 @@ def test_feed_path():
 
 def test_parse_feed_path():
     expected = {
-    "customer_id": "whelk",
-    "feed_id": "octopus",
-
+        "customer_id": "whelk",
+        "feed_id": "octopus",
     }
     path = FeedItemServiceClient.feed_path(**expected)
 
@@ -748,7 +719,6 @@ def test_feed_item_path():
     customer_id = "oyster"
     feed_id = "nudibranch"
     feed_item_id = "cuttlefish"
-
     expected = "customers/{customer_id}/feedItems/{feed_id}~{feed_item_id}".format(customer_id=customer_id, feed_id=feed_id, feed_item_id=feed_item_id, )
     actual = FeedItemServiceClient.feed_item_path(customer_id, feed_id, feed_item_id)
     assert expected == actual
@@ -756,10 +726,9 @@ def test_feed_item_path():
 
 def test_parse_feed_item_path():
     expected = {
-    "customer_id": "mussel",
-    "feed_id": "winkle",
-    "feed_item_id": "nautilus",
-
+        "customer_id": "mussel",
+        "feed_id": "winkle",
+        "feed_item_id": "nautilus",
     }
     path = FeedItemServiceClient.feed_item_path(**expected)
 
@@ -769,7 +738,6 @@ def test_parse_feed_item_path():
 
 def test_common_billing_account_path():
     billing_account = "scallop"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = FeedItemServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -777,8 +745,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "abalone",
-
+        "billing_account": "abalone",
     }
     path = FeedItemServiceClient.common_billing_account_path(**expected)
 
@@ -788,7 +755,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "squid"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = FeedItemServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -796,8 +762,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "clam",
-
+        "folder": "clam",
     }
     path = FeedItemServiceClient.common_folder_path(**expected)
 
@@ -807,7 +772,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "whelk"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = FeedItemServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -815,8 +779,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "octopus",
-
+        "organization": "octopus",
     }
     path = FeedItemServiceClient.common_organization_path(**expected)
 
@@ -826,7 +789,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "oyster"
-
     expected = "projects/{project}".format(project=project, )
     actual = FeedItemServiceClient.common_project_path(project)
     assert expected == actual
@@ -834,8 +796,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "nudibranch",
-
+        "project": "nudibranch",
     }
     path = FeedItemServiceClient.common_project_path(**expected)
 
@@ -846,7 +807,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "cuttlefish"
     location = "mussel"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = FeedItemServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -854,9 +814,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "winkle",
-    "location": "nautilus",
-
+        "project": "winkle",
+        "location": "nautilus",
     }
     path = FeedItemServiceClient.common_location_path(**expected)
 
@@ -870,7 +829,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
 
     with mock.patch.object(transports.FeedItemServiceTransport, '_prep_wrapped_messages') as prep:
         client = FeedItemServiceClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)
@@ -878,7 +837,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
     with mock.patch.object(transports.FeedItemServiceTransport, '_prep_wrapped_messages') as prep:
         transport_class = FeedItemServiceClient.get_transport_class()
         transport = transport_class(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)

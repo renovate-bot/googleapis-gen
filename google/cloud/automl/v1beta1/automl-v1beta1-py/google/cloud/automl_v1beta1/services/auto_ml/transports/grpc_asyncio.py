@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,16 +13,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google.api_core import operations_v1              # type: ignore
-from google import auth                                # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
+import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
@@ -38,8 +36,7 @@ from google.cloud.automl_v1beta1.types import model_evaluation
 from google.cloud.automl_v1beta1.types import service
 from google.cloud.automl_v1beta1.types import table_spec
 from google.cloud.automl_v1beta1.types import table_spec as gca_table_spec
-from google.longrunning import operations_pb2 as operations  # type: ignore
-
+from google.longrunning import operations_pb2  # type: ignore
 from .base import AutoMlTransport, DEFAULT_CLIENT_INFO
 from .grpc import AutoMlGrpcTransport
 
@@ -77,7 +74,7 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
     @classmethod
     def create_channel(cls,
                        host: str = 'automl.googleapis.com',
-                       credentials: credentials.Credentials = None,
+                       credentials: ga_credentials.Credentials = None,
                        credentials_file: Optional[str] = None,
                        scopes: Optional[Sequence[str]] = None,
                        quota_project_id: Optional[str] = None,
@@ -103,19 +100,21 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs
         )
 
     def __init__(self, *,
             host: str = 'automl.googleapis.com',
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             credentials_file: Optional[str] = None,
             scopes: Optional[Sequence[str]] = None,
             channel: aio.Channel = None,
@@ -129,7 +128,8 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -188,7 +188,6 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
-
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -370,7 +369,7 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
     @property
     def delete_dataset(self) -> Callable[
             [service.DeleteDatasetRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the delete dataset method over gRPC.
 
         Deletes a dataset and all of its contents. Returns empty
@@ -393,14 +392,14 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
             self._stubs['delete_dataset'] = self.grpc_channel.unary_unary(
                 '/google.cloud.automl.v1beta1.AutoMl/DeleteDataset',
                 request_serializer=service.DeleteDatasetRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['delete_dataset']
 
     @property
     def import_data(self) -> Callable[
             [service.ImportDataRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the import data method over gRPC.
 
         Imports data into a dataset. For Tables this method can only be
@@ -428,14 +427,14 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
             self._stubs['import_data'] = self.grpc_channel.unary_unary(
                 '/google.cloud.automl.v1beta1.AutoMl/ImportData',
                 request_serializer=service.ImportDataRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['import_data']
 
     @property
     def export_data(self) -> Callable[
             [service.ExportDataRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the export data method over gRPC.
 
         Exports dataset's data to the provided output location. Returns
@@ -457,7 +456,7 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
             self._stubs['export_data'] = self.grpc_channel.unary_unary(
                 '/google.cloud.automl.v1beta1.AutoMl/ExportData',
                 request_serializer=service.ExportDataRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['export_data']
 
@@ -646,7 +645,7 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
     @property
     def create_model(self) -> Callable[
             [service.CreateModelRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the create model method over gRPC.
 
         Creates a model. Returns a Model in the
@@ -669,7 +668,7 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
             self._stubs['create_model'] = self.grpc_channel.unary_unary(
                 '/google.cloud.automl.v1beta1.AutoMl/CreateModel',
                 request_serializer=service.CreateModelRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['create_model']
 
@@ -728,7 +727,7 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
     @property
     def delete_model(self) -> Callable[
             [service.DeleteModelRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the delete model method over gRPC.
 
         Deletes a model. Returns ``google.protobuf.Empty`` in the
@@ -750,14 +749,14 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
             self._stubs['delete_model'] = self.grpc_channel.unary_unary(
                 '/google.cloud.automl.v1beta1.AutoMl/DeleteModel',
                 request_serializer=service.DeleteModelRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['delete_model']
 
     @property
     def deploy_model(self) -> Callable[
             [service.DeployModelRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the deploy model method over gRPC.
 
         Deploys a model. If a model is already deployed, deploying it
@@ -790,14 +789,14 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
             self._stubs['deploy_model'] = self.grpc_channel.unary_unary(
                 '/google.cloud.automl.v1beta1.AutoMl/DeployModel',
                 request_serializer=service.DeployModelRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['deploy_model']
 
     @property
     def undeploy_model(self) -> Callable[
             [service.UndeployModelRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the undeploy model method over gRPC.
 
         Undeploys a model. If the model is not deployed this method has
@@ -824,14 +823,14 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
             self._stubs['undeploy_model'] = self.grpc_channel.unary_unary(
                 '/google.cloud.automl.v1beta1.AutoMl/UndeployModel',
                 request_serializer=service.UndeployModelRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['undeploy_model']
 
     @property
     def export_model(self) -> Callable[
             [service.ExportModelRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the export model method over gRPC.
 
         Exports a trained, "export-able", model to a user specified
@@ -858,14 +857,14 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
             self._stubs['export_model'] = self.grpc_channel.unary_unary(
                 '/google.cloud.automl.v1beta1.AutoMl/ExportModel',
                 request_serializer=service.ExportModelRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['export_model']
 
     @property
     def export_evaluated_examples(self) -> Callable[
             [service.ExportEvaluatedExamplesRequest],
-            Awaitable[operations.Operation]]:
+            Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the export evaluated examples method over gRPC.
 
         Exports examples on which the model was evaluated (i.e. which
@@ -898,7 +897,7 @@ class AutoMlGrpcAsyncIOTransport(AutoMlTransport):
             self._stubs['export_evaluated_examples'] = self.grpc_channel.unary_unary(
                 '/google.cloud.automl.v1beta1.AutoMl/ExportEvaluatedExamples',
                 request_serializer=service.ExportEvaluatedExamplesRequest.serialize,
-                response_deserializer=operations.Operation.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['export_evaluated_examples']
 

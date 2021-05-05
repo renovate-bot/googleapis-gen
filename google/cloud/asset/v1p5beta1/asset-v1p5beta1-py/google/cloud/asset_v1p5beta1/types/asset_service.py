@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
 from google.cloud.asset_v1p5beta1.types import assets as gca_assets
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -43,7 +40,6 @@ class ContentType(proto.Enum):
 
 class ListAssetsRequest(proto.Message):
     r"""ListAssets request.
-
     Attributes:
         parent (str):
             Required. Name of the organization or project the assets
@@ -81,26 +77,36 @@ class ListAssetsRequest(proto.Message):
             of assets.
     """
 
-    parent = proto.Field(proto.STRING, number=1)
-
-    read_time = proto.Field(proto.MESSAGE, number=2,
-        message=timestamp.Timestamp,
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
     )
-
-    asset_types = proto.RepeatedField(proto.STRING, number=3)
-
-    content_type = proto.Field(proto.ENUM, number=4,
+    read_time = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=timestamp_pb2.Timestamp,
+    )
+    asset_types = proto.RepeatedField(
+        proto.STRING,
+        number=3,
+    )
+    content_type = proto.Field(
+        proto.ENUM,
+        number=4,
         enum='ContentType',
     )
-
-    page_size = proto.Field(proto.INT32, number=5)
-
-    page_token = proto.Field(proto.STRING, number=6)
+    page_size = proto.Field(
+        proto.INT32,
+        number=5,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=6,
+    )
 
 
 class ListAssetsResponse(proto.Message):
     r"""ListAssets response.
-
     Attributes:
         read_time (google.protobuf.timestamp_pb2.Timestamp):
             Time the snapshot was taken.
@@ -115,15 +121,20 @@ class ListAssetsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    read_time = proto.Field(proto.MESSAGE, number=1,
-        message=timestamp.Timestamp,
+    read_time = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=timestamp_pb2.Timestamp,
     )
-
-    assets = proto.RepeatedField(proto.MESSAGE, number=2,
+    assets = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message=gca_assets.Asset,
     )
-
-    next_page_token = proto.Field(proto.STRING, number=3)
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

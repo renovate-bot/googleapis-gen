@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,20 +14,21 @@
 # limitations under the License.
 #
 
-from google.cloud.talent_v4beta1.services.application_service.async_client import ApplicationServiceAsyncClient
 from google.cloud.talent_v4beta1.services.application_service.client import ApplicationServiceClient
-from google.cloud.talent_v4beta1.services.company_service.async_client import CompanyServiceAsyncClient
+from google.cloud.talent_v4beta1.services.application_service.async_client import ApplicationServiceAsyncClient
 from google.cloud.talent_v4beta1.services.company_service.client import CompanyServiceClient
-from google.cloud.talent_v4beta1.services.completion.async_client import CompletionAsyncClient
+from google.cloud.talent_v4beta1.services.company_service.async_client import CompanyServiceAsyncClient
 from google.cloud.talent_v4beta1.services.completion.client import CompletionClient
-from google.cloud.talent_v4beta1.services.event_service.async_client import EventServiceAsyncClient
+from google.cloud.talent_v4beta1.services.completion.async_client import CompletionAsyncClient
 from google.cloud.talent_v4beta1.services.event_service.client import EventServiceClient
-from google.cloud.talent_v4beta1.services.job_service.async_client import JobServiceAsyncClient
+from google.cloud.talent_v4beta1.services.event_service.async_client import EventServiceAsyncClient
 from google.cloud.talent_v4beta1.services.job_service.client import JobServiceClient
-from google.cloud.talent_v4beta1.services.profile_service.async_client import ProfileServiceAsyncClient
+from google.cloud.talent_v4beta1.services.job_service.async_client import JobServiceAsyncClient
 from google.cloud.talent_v4beta1.services.profile_service.client import ProfileServiceClient
-from google.cloud.talent_v4beta1.services.tenant_service.async_client import TenantServiceAsyncClient
+from google.cloud.talent_v4beta1.services.profile_service.async_client import ProfileServiceAsyncClient
 from google.cloud.talent_v4beta1.services.tenant_service.client import TenantServiceClient
+from google.cloud.talent_v4beta1.services.tenant_service.async_client import TenantServiceAsyncClient
+
 from google.cloud.talent_v4beta1.types.application import Application
 from google.cloud.talent_v4beta1.types.application_service import CreateApplicationRequest
 from google.cloud.talent_v4beta1.types.application_service import DeleteApplicationRequest
@@ -36,32 +36,32 @@ from google.cloud.talent_v4beta1.types.application_service import GetApplication
 from google.cloud.talent_v4beta1.types.application_service import ListApplicationsRequest
 from google.cloud.talent_v4beta1.types.application_service import ListApplicationsResponse
 from google.cloud.talent_v4beta1.types.application_service import UpdateApplicationRequest
-from google.cloud.talent_v4beta1.types.common import AvailabilitySignalType
 from google.cloud.talent_v4beta1.types.common import BatchOperationMetadata
 from google.cloud.talent_v4beta1.types.common import Certification
-from google.cloud.talent_v4beta1.types.common import CommuteMethod
-from google.cloud.talent_v4beta1.types.common import CompanySize
 from google.cloud.talent_v4beta1.types.common import CompensationInfo
-from google.cloud.talent_v4beta1.types.common import ContactInfoUsage
 from google.cloud.talent_v4beta1.types.common import CustomAttribute
-from google.cloud.talent_v4beta1.types.common import DegreeType
 from google.cloud.talent_v4beta1.types.common import DeviceInfo
-from google.cloud.talent_v4beta1.types.common import EmploymentType
-from google.cloud.talent_v4beta1.types.common import HtmlSanitization
 from google.cloud.talent_v4beta1.types.common import Interview
-from google.cloud.talent_v4beta1.types.common import JobBenefit
-from google.cloud.talent_v4beta1.types.common import JobCategory
-from google.cloud.talent_v4beta1.types.common import JobLevel
 from google.cloud.talent_v4beta1.types.common import Location
-from google.cloud.talent_v4beta1.types.common import Outcome
-from google.cloud.talent_v4beta1.types.common import PostingRegion
 from google.cloud.talent_v4beta1.types.common import Rating
 from google.cloud.talent_v4beta1.types.common import RequestMetadata
 from google.cloud.talent_v4beta1.types.common import ResponseMetadata
 from google.cloud.talent_v4beta1.types.common import Skill
-from google.cloud.talent_v4beta1.types.common import SkillProficiencyLevel
 from google.cloud.talent_v4beta1.types.common import SpellingCorrection
 from google.cloud.talent_v4beta1.types.common import TimestampRange
+from google.cloud.talent_v4beta1.types.common import AvailabilitySignalType
+from google.cloud.talent_v4beta1.types.common import CommuteMethod
+from google.cloud.talent_v4beta1.types.common import CompanySize
+from google.cloud.talent_v4beta1.types.common import ContactInfoUsage
+from google.cloud.talent_v4beta1.types.common import DegreeType
+from google.cloud.talent_v4beta1.types.common import EmploymentType
+from google.cloud.talent_v4beta1.types.common import HtmlSanitization
+from google.cloud.talent_v4beta1.types.common import JobBenefit
+from google.cloud.talent_v4beta1.types.common import JobCategory
+from google.cloud.talent_v4beta1.types.common import JobLevel
+from google.cloud.talent_v4beta1.types.common import Outcome
+from google.cloud.talent_v4beta1.types.common import PostingRegion
+from google.cloud.talent_v4beta1.types.common import SkillProficiencyLevel
 from google.cloud.talent_v4beta1.types.common import Visibility
 from google.cloud.talent_v4beta1.types.company import Company
 from google.cloud.talent_v4beta1.types.company_service import CreateCompanyRequest
@@ -103,12 +103,12 @@ from google.cloud.talent_v4beta1.types.job_service import CreateJobRequest
 from google.cloud.talent_v4beta1.types.job_service import DeleteJobRequest
 from google.cloud.talent_v4beta1.types.job_service import GetJobRequest
 from google.cloud.talent_v4beta1.types.job_service import JobOperationResult
-from google.cloud.talent_v4beta1.types.job_service import JobView
 from google.cloud.talent_v4beta1.types.job_service import ListJobsRequest
 from google.cloud.talent_v4beta1.types.job_service import ListJobsResponse
 from google.cloud.talent_v4beta1.types.job_service import SearchJobsRequest
 from google.cloud.talent_v4beta1.types.job_service import SearchJobsResponse
 from google.cloud.talent_v4beta1.types.job_service import UpdateJobRequest
+from google.cloud.talent_v4beta1.types.job_service import JobView
 from google.cloud.talent_v4beta1.types.profile import Activity
 from google.cloud.talent_v4beta1.types.profile import AdditionalContactInfo
 from google.cloud.talent_v4beta1.types.profile import Address
@@ -118,8 +118,8 @@ from google.cloud.talent_v4beta1.types.profile import EducationRecord
 from google.cloud.talent_v4beta1.types.profile import Email
 from google.cloud.talent_v4beta1.types.profile import EmploymentRecord
 from google.cloud.talent_v4beta1.types.profile import Patent
-from google.cloud.talent_v4beta1.types.profile import PersonName
 from google.cloud.talent_v4beta1.types.profile import PersonalUri
+from google.cloud.talent_v4beta1.types.profile import PersonName
 from google.cloud.talent_v4beta1.types.profile import Phone
 from google.cloud.talent_v4beta1.types.profile import Profile
 from google.cloud.talent_v4beta1.types.profile import Publication
@@ -141,130 +141,129 @@ from google.cloud.talent_v4beta1.types.tenant_service import ListTenantsRequest
 from google.cloud.talent_v4beta1.types.tenant_service import ListTenantsResponse
 from google.cloud.talent_v4beta1.types.tenant_service import UpdateTenantRequest
 
-__all__ = (
-    'Activity',
-    'AdditionalContactInfo',
-    'Address',
-    'Application',
-    'ApplicationDateFilter',
-    'ApplicationJobFilter',
-    'ApplicationOutcomeNotesFilter',
+__all__ = ('ApplicationServiceClient',
     'ApplicationServiceAsyncClient',
-    'ApplicationServiceClient',
-    'AvailabilityFilter',
-    'AvailabilitySignal',
-    'AvailabilitySignalType',
-    'BatchCreateJobsRequest',
-    'BatchDeleteJobsRequest',
-    'BatchOperationMetadata',
-    'BatchUpdateJobsRequest',
-    'CandidateAvailabilityFilter',
-    'Certification',
-    'ClientEvent',
-    'CommuteFilter',
-    'CommuteMethod',
-    'Company',
-    'CompanyServiceAsyncClient',
     'CompanyServiceClient',
-    'CompanySize',
-    'CompensationFilter',
-    'CompensationInfo',
-    'CompleteQueryRequest',
-    'CompleteQueryResponse',
-    'CompletionAsyncClient',
+    'CompanyServiceAsyncClient',
     'CompletionClient',
-    'ContactInfoUsage',
-    'CreateApplicationRequest',
-    'CreateClientEventRequest',
-    'CreateCompanyRequest',
-    'CreateJobRequest',
-    'CreateProfileRequest',
-    'CreateTenantRequest',
-    'CustomAttribute',
-    'Degree',
-    'DegreeType',
-    'DeleteApplicationRequest',
-    'DeleteCompanyRequest',
-    'DeleteJobRequest',
-    'DeleteProfileRequest',
-    'DeleteTenantRequest',
-    'DeviceInfo',
-    'EducationFilter',
-    'EducationRecord',
-    'Email',
-    'EmployerFilter',
-    'EmploymentRecord',
-    'EmploymentType',
-    'EventServiceAsyncClient',
+    'CompletionAsyncClient',
     'EventServiceClient',
-    'GetApplicationRequest',
-    'GetCompanyRequest',
-    'GetJobRequest',
-    'GetProfileRequest',
-    'GetTenantRequest',
-    'HistogramQuery',
-    'HistogramQueryResult',
-    'HtmlSanitization',
-    'Interview',
-    'Job',
-    'JobBenefit',
-    'JobCategory',
-    'JobEvent',
-    'JobLevel',
-    'JobOperationResult',
-    'JobQuery',
-    'JobServiceAsyncClient',
+    'EventServiceAsyncClient',
     'JobServiceClient',
-    'JobTitleFilter',
-    'JobView',
+    'JobServiceAsyncClient',
+    'ProfileServiceClient',
+    'ProfileServiceAsyncClient',
+    'TenantServiceClient',
+    'TenantServiceAsyncClient',
+    'Application',
+    'CreateApplicationRequest',
+    'DeleteApplicationRequest',
+    'GetApplicationRequest',
     'ListApplicationsRequest',
     'ListApplicationsResponse',
-    'ListCompaniesRequest',
-    'ListCompaniesResponse',
-    'ListJobsRequest',
-    'ListJobsResponse',
-    'ListProfilesRequest',
-    'ListProfilesResponse',
-    'ListTenantsRequest',
-    'ListTenantsResponse',
+    'UpdateApplicationRequest',
+    'BatchOperationMetadata',
+    'Certification',
+    'CompensationInfo',
+    'CustomAttribute',
+    'DeviceInfo',
+    'Interview',
     'Location',
-    'LocationFilter',
-    'Outcome',
-    'Patent',
-    'PersonName',
-    'PersonNameFilter',
-    'PersonalUri',
-    'Phone',
-    'PostingRegion',
-    'Profile',
-    'ProfileEvent',
-    'ProfileQuery',
-    'ProfileServiceAsyncClient',
-    'ProfileServiceClient',
-    'Publication',
     'Rating',
     'RequestMetadata',
     'ResponseMetadata',
-    'Resume',
+    'Skill',
+    'SpellingCorrection',
+    'TimestampRange',
+    'AvailabilitySignalType',
+    'CommuteMethod',
+    'CompanySize',
+    'ContactInfoUsage',
+    'DegreeType',
+    'EmploymentType',
+    'HtmlSanitization',
+    'JobBenefit',
+    'JobCategory',
+    'JobLevel',
+    'Outcome',
+    'PostingRegion',
+    'SkillProficiencyLevel',
+    'Visibility',
+    'Company',
+    'CreateCompanyRequest',
+    'DeleteCompanyRequest',
+    'GetCompanyRequest',
+    'ListCompaniesRequest',
+    'ListCompaniesResponse',
+    'UpdateCompanyRequest',
+    'CompleteQueryRequest',
+    'CompleteQueryResponse',
+    'ClientEvent',
+    'JobEvent',
+    'ProfileEvent',
+    'CreateClientEventRequest',
+    'ApplicationDateFilter',
+    'ApplicationJobFilter',
+    'ApplicationOutcomeNotesFilter',
+    'AvailabilityFilter',
+    'CandidateAvailabilityFilter',
+    'CommuteFilter',
+    'CompensationFilter',
+    'EducationFilter',
+    'EmployerFilter',
+    'JobQuery',
+    'JobTitleFilter',
+    'LocationFilter',
+    'PersonNameFilter',
+    'ProfileQuery',
+    'SkillFilter',
+    'TimeFilter',
+    'WorkExperienceFilter',
+    'HistogramQuery',
+    'HistogramQueryResult',
+    'Job',
+    'BatchCreateJobsRequest',
+    'BatchDeleteJobsRequest',
+    'BatchUpdateJobsRequest',
+    'CreateJobRequest',
+    'DeleteJobRequest',
+    'GetJobRequest',
+    'JobOperationResult',
+    'ListJobsRequest',
+    'ListJobsResponse',
     'SearchJobsRequest',
     'SearchJobsResponse',
+    'UpdateJobRequest',
+    'JobView',
+    'Activity',
+    'AdditionalContactInfo',
+    'Address',
+    'AvailabilitySignal',
+    'Degree',
+    'EducationRecord',
+    'Email',
+    'EmploymentRecord',
+    'Patent',
+    'PersonalUri',
+    'PersonName',
+    'Phone',
+    'Profile',
+    'Publication',
+    'Resume',
+    'CreateProfileRequest',
+    'DeleteProfileRequest',
+    'GetProfileRequest',
+    'ListProfilesRequest',
+    'ListProfilesResponse',
     'SearchProfilesRequest',
     'SearchProfilesResponse',
-    'Skill',
-    'SkillFilter',
-    'SkillProficiencyLevel',
-    'SpellingCorrection',
     'SummarizedProfile',
-    'Tenant',
-    'TenantServiceAsyncClient',
-    'TenantServiceClient',
-    'TimeFilter',
-    'TimestampRange',
-    'UpdateApplicationRequest',
-    'UpdateCompanyRequest',
-    'UpdateJobRequest',
     'UpdateProfileRequest',
+    'Tenant',
+    'CreateTenantRequest',
+    'DeleteTenantRequest',
+    'GetTenantRequest',
+    'ListTenantsRequest',
+    'ListTenantsResponse',
     'UpdateTenantRequest',
-    'Visibility',
-    'WorkExperienceFilter',
 )

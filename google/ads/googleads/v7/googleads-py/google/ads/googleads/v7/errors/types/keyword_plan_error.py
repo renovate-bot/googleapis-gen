@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -32,7 +30,7 @@ class KeywordPlanErrorEnum(proto.Message):
     keyword plan resource (keyword plan, keyword plan campaign,
     keyword plan ad group or keyword plan keyword) or
     KeywordPlanService RPC.
-    """
+        """
     class KeywordPlanError(proto.Enum):
         r"""Enum describing possible errors from applying a keyword plan."""
         UNSPECIFIED = 0

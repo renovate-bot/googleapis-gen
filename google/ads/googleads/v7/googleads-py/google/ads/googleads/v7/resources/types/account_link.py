@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v7.enums.types import account_link_status
 from google.ads.googleads.v7.enums.types import linked_account_type
@@ -59,28 +56,47 @@ class AccountLink(proto.Message):
             Output only. Google Ads link.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    account_link_id = proto.Field(proto.INT64, number=8, optional=True)
-    status = proto.Field(proto.ENUM, number=3,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    account_link_id = proto.Field(
+        proto.INT64,
+        number=8,
+        optional=True,
+    )
+    status = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=account_link_status.AccountLinkStatusEnum.AccountLinkStatus,
     )
-    type_ = proto.Field(proto.ENUM, number=4,
+    type_ = proto.Field(
+        proto.ENUM,
+        number=4,
         enum=linked_account_type.LinkedAccountTypeEnum.LinkedAccountType,
     )
-    third_party_app_analytics = proto.Field(proto.MESSAGE, number=5, oneof='linked_account',
+    third_party_app_analytics = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        oneof='linked_account',
         message='ThirdPartyAppAnalyticsLinkIdentifier',
     )
-    data_partner = proto.Field(proto.MESSAGE, number=6, oneof='linked_account',
+    data_partner = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        oneof='linked_account',
         message='DataPartnerLinkIdentifier',
     )
-    google_ads = proto.Field(proto.MESSAGE, number=7, oneof='linked_account',
+    google_ads = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        oneof='linked_account',
         message='GoogleAdsLinkIdentifier',
     )
 
 
 class ThirdPartyAppAnalyticsLinkIdentifier(proto.Message):
     r"""The identifiers of a Third Party App Analytics Link.
-
     Attributes:
         app_analytics_provider_id (int):
             Immutable. The ID of the app analytics
@@ -111,16 +127,25 @@ class ThirdPartyAppAnalyticsLinkIdentifier(proto.Message):
             to be modified after the creation of the link.
     """
 
-    app_analytics_provider_id = proto.Field(proto.INT64, number=4, optional=True)
-    app_id = proto.Field(proto.STRING, number=5, optional=True)
-    app_vendor = proto.Field(proto.ENUM, number=3,
+    app_analytics_provider_id = proto.Field(
+        proto.INT64,
+        number=4,
+        optional=True,
+    )
+    app_id = proto.Field(
+        proto.STRING,
+        number=5,
+        optional=True,
+    )
+    app_vendor = proto.Field(
+        proto.ENUM,
+        number=3,
         enum=mobile_app_vendor.MobileAppVendorEnum.MobileAppVendor,
     )
 
 
 class DataPartnerLinkIdentifier(proto.Message):
     r"""The identifier for Data Partner account.
-
     Attributes:
         data_partner_id (int):
             Immutable. The customer ID of the Data
@@ -130,12 +155,15 @@ class DataPartnerLinkIdentifier(proto.Message):
             the creation of the link.
     """
 
-    data_partner_id = proto.Field(proto.INT64, number=1, optional=True)
+    data_partner_id = proto.Field(
+        proto.INT64,
+        number=1,
+        optional=True,
+    )
 
 
 class GoogleAdsLinkIdentifier(proto.Message):
     r"""The identifier for Google Ads account.
-
     Attributes:
         customer (str):
             Immutable. The resource name of the Google
@@ -145,7 +173,11 @@ class GoogleAdsLinkIdentifier(proto.Message):
             creation of the link.
     """
 
-    customer = proto.Field(proto.STRING, number=3, optional=True)
+    customer = proto.Field(
+        proto.STRING,
+        number=3,
+        optional=True,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

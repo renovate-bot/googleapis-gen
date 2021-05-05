@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -28,7 +26,7 @@ __protobuf__ = proto.module(
 
 
 class AdGroupCriterionStatusEnum(proto.Message):
-    r"""Message describing AdGroupCriterion statuses."""
+    r"""Message describing AdGroupCriterion statuses.    """
     class AdGroupCriterionStatus(proto.Enum):
         r"""The possible statuses of an AdGroupCriterion."""
         UNSPECIFIED = 0

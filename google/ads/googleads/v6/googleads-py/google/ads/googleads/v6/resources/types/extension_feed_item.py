@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
-
 
 from google.ads.googleads.v6.common.types import criteria
 from google.ads.googleads.v6.common.types import extensions
@@ -36,7 +33,6 @@ __protobuf__ = proto.module(
 
 class ExtensionFeedItem(proto.Message):
     r"""An extension feed item.
-
     Attributes:
         resource_name (str):
             Immutable. The resource name of the extension feed item.
@@ -112,64 +108,137 @@ class ExtensionFeedItem(proto.Message):
             The targeted ad group.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    id = proto.Field(proto.INT64, number=25, optional=True)
-    extension_type = proto.Field(proto.ENUM, number=13,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    id = proto.Field(
+        proto.INT64,
+        number=25,
+        optional=True,
+    )
+    extension_type = proto.Field(
+        proto.ENUM,
+        number=13,
         enum=gage_extension_type.ExtensionTypeEnum.ExtensionType,
     )
-    start_date_time = proto.Field(proto.STRING, number=26, optional=True)
-    end_date_time = proto.Field(proto.STRING, number=27, optional=True)
-    ad_schedules = proto.RepeatedField(proto.MESSAGE, number=16,
+    start_date_time = proto.Field(
+        proto.STRING,
+        number=26,
+        optional=True,
+    )
+    end_date_time = proto.Field(
+        proto.STRING,
+        number=27,
+        optional=True,
+    )
+    ad_schedules = proto.RepeatedField(
+        proto.MESSAGE,
+        number=16,
         message=criteria.AdScheduleInfo,
     )
-    device = proto.Field(proto.ENUM, number=17,
+    device = proto.Field(
+        proto.ENUM,
+        number=17,
         enum=feed_item_target_device.FeedItemTargetDeviceEnum.FeedItemTargetDevice,
     )
-    targeted_geo_target_constant = proto.Field(proto.STRING, number=30, optional=True)
-    targeted_keyword = proto.Field(proto.MESSAGE, number=22,
+    targeted_geo_target_constant = proto.Field(
+        proto.STRING,
+        number=30,
+        optional=True,
+    )
+    targeted_keyword = proto.Field(
+        proto.MESSAGE,
+        number=22,
         message=criteria.KeywordInfo,
     )
-    status = proto.Field(proto.ENUM, number=4,
+    status = proto.Field(
+        proto.ENUM,
+        number=4,
         enum=feed_item_status.FeedItemStatusEnum.FeedItemStatus,
     )
-    sitelink_feed_item = proto.Field(proto.MESSAGE, number=2, oneof='extension',
+    sitelink_feed_item = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='extension',
         message=extensions.SitelinkFeedItem,
     )
-    structured_snippet_feed_item = proto.Field(proto.MESSAGE, number=3, oneof='extension',
+    structured_snippet_feed_item = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        oneof='extension',
         message=extensions.StructuredSnippetFeedItem,
     )
-    app_feed_item = proto.Field(proto.MESSAGE, number=7, oneof='extension',
+    app_feed_item = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        oneof='extension',
         message=extensions.AppFeedItem,
     )
-    call_feed_item = proto.Field(proto.MESSAGE, number=8, oneof='extension',
+    call_feed_item = proto.Field(
+        proto.MESSAGE,
+        number=8,
+        oneof='extension',
         message=extensions.CallFeedItem,
     )
-    callout_feed_item = proto.Field(proto.MESSAGE, number=9, oneof='extension',
+    callout_feed_item = proto.Field(
+        proto.MESSAGE,
+        number=9,
+        oneof='extension',
         message=extensions.CalloutFeedItem,
     )
-    text_message_feed_item = proto.Field(proto.MESSAGE, number=10, oneof='extension',
+    text_message_feed_item = proto.Field(
+        proto.MESSAGE,
+        number=10,
+        oneof='extension',
         message=extensions.TextMessageFeedItem,
     )
-    price_feed_item = proto.Field(proto.MESSAGE, number=11, oneof='extension',
+    price_feed_item = proto.Field(
+        proto.MESSAGE,
+        number=11,
+        oneof='extension',
         message=extensions.PriceFeedItem,
     )
-    promotion_feed_item = proto.Field(proto.MESSAGE, number=12, oneof='extension',
+    promotion_feed_item = proto.Field(
+        proto.MESSAGE,
+        number=12,
+        oneof='extension',
         message=extensions.PromotionFeedItem,
     )
-    location_feed_item = proto.Field(proto.MESSAGE, number=14, oneof='extension',
+    location_feed_item = proto.Field(
+        proto.MESSAGE,
+        number=14,
+        oneof='extension',
         message=extensions.LocationFeedItem,
     )
-    affiliate_location_feed_item = proto.Field(proto.MESSAGE, number=15, oneof='extension',
+    affiliate_location_feed_item = proto.Field(
+        proto.MESSAGE,
+        number=15,
+        oneof='extension',
         message=extensions.AffiliateLocationFeedItem,
     )
-    hotel_callout_feed_item = proto.Field(proto.MESSAGE, number=23, oneof='extension',
+    hotel_callout_feed_item = proto.Field(
+        proto.MESSAGE,
+        number=23,
+        oneof='extension',
         message=extensions.HotelCalloutFeedItem,
     )
-    image_feed_item = proto.Field(proto.MESSAGE, number=31, oneof='extension',
+    image_feed_item = proto.Field(
+        proto.MESSAGE,
+        number=31,
+        oneof='extension',
         message=extensions.ImageFeedItem,
     )
-    targeted_campaign = proto.Field(proto.STRING, number=28, oneof='serving_resource_targeting')
-    targeted_ad_group = proto.Field(proto.STRING, number=29, oneof='serving_resource_targeting')
+    targeted_campaign = proto.Field(
+        proto.STRING,
+        number=28,
+        oneof='serving_resource_targeting',
+    )
+    targeted_ad_group = proto.Field(
+        proto.STRING,
+        number=29,
+        oneof='serving_resource_targeting',
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

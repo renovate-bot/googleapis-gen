@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -22,18 +20,17 @@ from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
 import google.api_core.client_options as ClientOptions # type: ignore
-from google.api_core import exceptions                 # type: ignore
+from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
 from google.cloud.osconfig_v1.services.os_config_service import pagers
 from google.cloud.osconfig_v1.types import patch_deployments
 from google.cloud.osconfig_v1.types import patch_jobs
-from google.protobuf import duration_pb2 as duration  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
+from google.protobuf import duration_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 from .transports.base import OsConfigServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import OsConfigServiceGrpcAsyncIOTransport
 from .client import OsConfigServiceClient
@@ -57,19 +54,14 @@ class OsConfigServiceAsyncClient:
     parse_patch_deployment_path = staticmethod(OsConfigServiceClient.parse_patch_deployment_path)
     patch_job_path = staticmethod(OsConfigServiceClient.patch_job_path)
     parse_patch_job_path = staticmethod(OsConfigServiceClient.parse_patch_job_path)
-
     common_billing_account_path = staticmethod(OsConfigServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(OsConfigServiceClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(OsConfigServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(OsConfigServiceClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(OsConfigServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(OsConfigServiceClient.parse_common_organization_path)
-
     common_project_path = staticmethod(OsConfigServiceClient.common_project_path)
     parse_common_project_path = staticmethod(OsConfigServiceClient.parse_common_project_path)
-
     common_location_path = staticmethod(OsConfigServiceClient.common_location_path)
     parse_common_location_path = staticmethod(OsConfigServiceClient.parse_common_location_path)
 
@@ -117,7 +109,7 @@ class OsConfigServiceAsyncClient:
     get_transport_class = functools.partial(type(OsConfigServiceClient).get_transport_class, type(OsConfigServiceClient))
 
     def __init__(self, *,
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             transport: Union[str, OsConfigServiceTransport] = 'grpc_asyncio',
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -154,7 +146,6 @@ class OsConfigServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = OsConfigServiceClient(
             credentials=credentials,
             transport=transport,
@@ -177,7 +168,6 @@ class OsConfigServiceAsyncClient:
             request (:class:`google.cloud.osconfig_v1.types.ExecutePatchJobRequest`):
                 The request object. A request message to initiate
                 patching across Compute Engine instances.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -199,7 +189,6 @@ class OsConfigServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = patch_jobs.ExecutePatchJobRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -252,7 +241,6 @@ class OsConfigServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -285,7 +273,6 @@ class OsConfigServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -329,7 +316,6 @@ class OsConfigServiceAsyncClient:
         Args:
             request (:class:`google.cloud.osconfig_v1.types.CancelPatchJobRequest`):
                 The request object. Message for canceling a patch job.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -351,7 +337,6 @@ class OsConfigServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
-
         request = patch_jobs.CancelPatchJobRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -400,7 +385,6 @@ class OsConfigServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -428,7 +412,6 @@ class OsConfigServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -489,7 +472,6 @@ class OsConfigServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -517,7 +499,6 @@ class OsConfigServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -601,7 +582,6 @@ class OsConfigServiceAsyncClient:
                 This corresponds to the ``patch_deployment_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -630,7 +610,6 @@ class OsConfigServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if patch_deployment is not None:
@@ -686,7 +665,6 @@ class OsConfigServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -715,7 +693,6 @@ class OsConfigServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -767,7 +744,6 @@ class OsConfigServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -795,7 +771,6 @@ class OsConfigServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -856,7 +831,6 @@ class OsConfigServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -875,7 +849,6 @@ class OsConfigServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -902,8 +875,6 @@ class OsConfigServiceAsyncClient:
             timeout=timeout,
             metadata=metadata,
         )
-
-
 
 
 

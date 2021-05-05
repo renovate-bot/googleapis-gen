@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -29,7 +27,6 @@ __protobuf__ = proto.module(
 
 class FeedItemSetLink(proto.Message):
     r"""Represents a link between a FeedItem and a FeedItemSet.
-
     Attributes:
         resource_name (str):
             Immutable. The resource name of the feed item set link. Feed
@@ -41,9 +38,18 @@ class FeedItemSetLink(proto.Message):
             Immutable. The linked FeedItemSet.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    feed_item = proto.Field(proto.STRING, number=2)
-    feed_item_set = proto.Field(proto.STRING, number=3)
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    feed_item = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    feed_item_set = proto.Field(
+        proto.STRING,
+        number=3,
+    )
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

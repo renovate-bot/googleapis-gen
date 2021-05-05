@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,8 @@
 #
 
 from .services.os_config_service import OsConfigServiceClient
+from .services.os_config_service import OsConfigServiceAsyncClient
+
 from .types.inventory import Inventory
 from .types.osconfig_common import FixedOrPercent
 from .types.patch_deployments import CreatePatchDeploymentRequest
@@ -51,41 +52,40 @@ from .types.patch_jobs import WindowsUpdateSettings
 from .types.patch_jobs import YumSettings
 from .types.patch_jobs import ZypperSettings
 
-
 __all__ = (
-    'AptSettings',
-    'CancelPatchJobRequest',
-    'CreatePatchDeploymentRequest',
-    'DeletePatchDeploymentRequest',
-    'ExecStep',
-    'ExecStepConfig',
-    'ExecutePatchJobRequest',
-    'FixedOrPercent',
-    'GcsObject',
-    'GetPatchDeploymentRequest',
-    'GetPatchJobRequest',
-    'GooSettings',
-    'Instance',
-    'Inventory',
-    'ListPatchDeploymentsRequest',
-    'ListPatchDeploymentsResponse',
-    'ListPatchJobInstanceDetailsRequest',
-    'ListPatchJobInstanceDetailsResponse',
-    'ListPatchJobsRequest',
-    'ListPatchJobsResponse',
-    'MonthlySchedule',
-    'OneTimeSchedule',
-    'PatchConfig',
-    'PatchDeployment',
-    'PatchInstanceFilter',
-    'PatchJob',
-    'PatchJobInstanceDetails',
-    'PatchRollout',
-    'RecurringSchedule',
-    'WeekDayOfMonth',
-    'WeeklySchedule',
-    'WindowsUpdateSettings',
-    'YumSettings',
-    'ZypperSettings',
+'AptSettings',
+'CancelPatchJobRequest',
+'CreatePatchDeploymentRequest',
+'DeletePatchDeploymentRequest',
+'ExecStep',
+'ExecStepConfig',
+'ExecutePatchJobRequest',
+'FixedOrPercent',
+'GcsObject',
+'GetPatchDeploymentRequest',
+'GetPatchJobRequest',
+'GooSettings',
+'Instance',
+'Inventory',
+'ListPatchDeploymentsRequest',
+'ListPatchDeploymentsResponse',
+'ListPatchJobInstanceDetailsRequest',
+'ListPatchJobInstanceDetailsResponse',
+'ListPatchJobsRequest',
+'ListPatchJobsResponse',
+'MonthlySchedule',
+'OneTimeSchedule',
 'OsConfigServiceClient',
+'PatchConfig',
+'PatchDeployment',
+'PatchInstanceFilter',
+'PatchJob',
+'PatchJobInstanceDetails',
+'PatchRollout',
+'RecurringSchedule',
+'WeekDayOfMonth',
+'WeeklySchedule',
+'WindowsUpdateSettings',
+'YumSettings',
+'ZypperSettings',
 )

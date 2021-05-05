@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.partner.aistreams_v1alpha1.services.ai_streams.async_client import AIStreamsAsyncClient
 from google.partner.aistreams_v1alpha1.services.ai_streams.client import AIStreamsClient
+from google.partner.aistreams_v1alpha1.services.ai_streams.async_client import AIStreamsAsyncClient
+
 from google.partner.aistreams_v1alpha1.types.aistreams import Cluster
 from google.partner.aistreams_v1alpha1.types.aistreams import CreateClusterRequest
 from google.partner.aistreams_v1alpha1.types.aistreams import CreateStreamRequest
@@ -33,9 +33,8 @@ from google.partner.aistreams_v1alpha1.types.aistreams import Stream
 from google.partner.aistreams_v1alpha1.types.aistreams import UpdateClusterRequest
 from google.partner.aistreams_v1alpha1.types.aistreams import UpdateStreamRequest
 
-__all__ = (
+__all__ = ('AIStreamsClient',
     'AIStreamsAsyncClient',
-    'AIStreamsClient',
     'Cluster',
     'CreateClusterRequest',
     'CreateStreamRequest',

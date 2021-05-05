@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 from distutils import util
 import os
@@ -23,10 +21,10 @@ from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib  # type: ignore
-from google.api_core import exceptions                            # type: ignore
+from google.api_core import exceptions as core_exceptions         # type: ignore
 from google.api_core import gapic_v1                              # type: ignore
 from google.api_core import retry as retries                      # type: ignore
-from google.auth import credentials                               # type: ignore
+from google.auth import credentials as ga_credentials             # type: ignore
 from google.auth.transport import mtls                            # type: ignore
 from google.auth.transport.grpc import SslCredentials             # type: ignore
 from google.auth.exceptions import MutualTLSChannelError          # type: ignore
@@ -36,10 +34,9 @@ from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.memcache_v1.services.cloud_memcache import pagers
 from google.cloud.memcache_v1.types import cloud_memcache
-from google.protobuf import empty_pb2 as empty  # type: ignore
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
-
+from google.protobuf import empty_pb2  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 from .transports.base import CloudMemcacheTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import CloudMemcacheGrpcTransport
 from .transports.grpc_asyncio import CloudMemcacheGrpcAsyncIOTransport
@@ -246,7 +243,7 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
         return m.groupdict() if m else {}
 
     def __init__(self, *,
-            credentials: Optional[credentials.Credentials] = None,
+            credentials: Optional[ga_credentials.Credentials] = None,
             transport: Union[str, CloudMemcacheTransport, None] = None,
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -371,7 +368,6 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -401,10 +397,8 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_memcache.ListInstancesRequest):
             request = cloud_memcache.ListInstancesRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
 
@@ -463,7 +457,6 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -488,10 +481,8 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_memcache.GetInstanceRequest):
             request = cloud_memcache.GetInstanceRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -565,7 +556,6 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
                 This corresponds to the ``instance_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -594,10 +584,8 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_memcache.CreateInstanceRequest):
             request = cloud_memcache.CreateInstanceRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if parent is not None:
                 request.parent = parent
             if instance is not None:
@@ -640,7 +628,7 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
             request: cloud_memcache.UpdateInstanceRequest = None,
             *,
             instance: cloud_memcache.Instance = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -667,7 +655,6 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -696,10 +683,8 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_memcache.UpdateInstanceRequest):
             request = cloud_memcache.UpdateInstanceRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if instance is not None:
                 request.instance = instance
             if update_mask is not None:
@@ -740,7 +725,7 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
             request: cloud_memcache.UpdateParametersRequest = None,
             *,
             name: str = None,
-            update_mask: field_mask.FieldMask = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             parameters: cloud_memcache.MemcacheParameters = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -775,7 +760,6 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
                 This corresponds to the ``parameters`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -804,10 +788,8 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_memcache.UpdateParametersRequest):
             request = cloud_memcache.UpdateParametersRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
             if update_mask is not None:
@@ -869,7 +851,6 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -909,10 +890,8 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_memcache.DeleteInstanceRequest):
             request = cloud_memcache.DeleteInstanceRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
 
@@ -940,7 +919,7 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
         response = operation.from_gapic(
             response,
             self._transport.operations_client,
-            empty.Empty,
+            empty_pb2.Empty,
             metadata_type=cloud_memcache.OperationMetadata,
         )
 
@@ -991,7 +970,6 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
                 This corresponds to the ``apply_all`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1020,10 +998,8 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_memcache.ApplyParametersRequest):
             request = cloud_memcache.ApplyParametersRequest(request)
-
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-
             if name is not None:
                 request.name = name
             if node_ids is not None:
@@ -1061,8 +1037,6 @@ class CloudMemcacheClient(metaclass=CloudMemcacheClientMeta):
 
         # Done; return the response.
         return response
-
-
 
 
 

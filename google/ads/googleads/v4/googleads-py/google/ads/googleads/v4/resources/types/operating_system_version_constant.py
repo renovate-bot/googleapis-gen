@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
 from google.ads.googleads.v4.enums.types import operating_system_version_operator_type
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -58,20 +55,33 @@ class OperatingSystemVersionConstant(proto.Message):
             versions.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    id = proto.Field(proto.MESSAGE, number=2,
-        message=wrappers.Int64Value,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
     )
-    name = proto.Field(proto.MESSAGE, number=3,
-        message=wrappers.StringValue,
+    id = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=wrappers_pb2.Int64Value,
     )
-    os_major_version = proto.Field(proto.MESSAGE, number=4,
-        message=wrappers.Int32Value,
+    name = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=wrappers_pb2.StringValue,
     )
-    os_minor_version = proto.Field(proto.MESSAGE, number=5,
-        message=wrappers.Int32Value,
+    os_major_version = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=wrappers_pb2.Int32Value,
     )
-    operator_type = proto.Field(proto.ENUM, number=6,
+    os_minor_version = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        message=wrappers_pb2.Int32Value,
+    )
+    operator_type = proto.Field(
+        proto.ENUM,
+        number=6,
         enum=operating_system_version_operator_type.OperatingSystemVersionOperatorTypeEnum.OperatingSystemVersionOperatorType,
     )
 

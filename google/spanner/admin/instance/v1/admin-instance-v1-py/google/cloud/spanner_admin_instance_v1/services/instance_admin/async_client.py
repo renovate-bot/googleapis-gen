@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from collections import OrderedDict
 import functools
 import re
@@ -22,20 +20,19 @@ from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
 import google.api_core.client_options as ClientOptions # type: ignore
-from google.api_core import exceptions                 # type: ignore
+from google.api_core import exceptions as core_exceptions  # type: ignore
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import retry as retries           # type: ignore
-from google.auth import credentials                    # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.spanner_admin_instance_v1.services.instance_admin import pagers
 from google.cloud.spanner_admin_instance_v1.types import spanner_instance_admin
-from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
-from google.iam.v1 import policy_pb2 as gi_policy  # type: ignore
-from google.protobuf import field_mask_pb2 as gp_field_mask  # type: ignore
-
+from google.iam.v1 import iam_policy_pb2  # type: ignore
+from google.iam.v1 import policy_pb2  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
 from .transports.base import InstanceAdminTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import InstanceAdminGrpcAsyncIOTransport
 from .client import InstanceAdminClient
@@ -74,19 +71,14 @@ class InstanceAdminAsyncClient:
     parse_instance_path = staticmethod(InstanceAdminClient.parse_instance_path)
     instance_config_path = staticmethod(InstanceAdminClient.instance_config_path)
     parse_instance_config_path = staticmethod(InstanceAdminClient.parse_instance_config_path)
-
     common_billing_account_path = staticmethod(InstanceAdminClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(InstanceAdminClient.parse_common_billing_account_path)
-
     common_folder_path = staticmethod(InstanceAdminClient.common_folder_path)
     parse_common_folder_path = staticmethod(InstanceAdminClient.parse_common_folder_path)
-
     common_organization_path = staticmethod(InstanceAdminClient.common_organization_path)
     parse_common_organization_path = staticmethod(InstanceAdminClient.parse_common_organization_path)
-
     common_project_path = staticmethod(InstanceAdminClient.common_project_path)
     parse_common_project_path = staticmethod(InstanceAdminClient.parse_common_project_path)
-
     common_location_path = staticmethod(InstanceAdminClient.common_location_path)
     parse_common_location_path = staticmethod(InstanceAdminClient.parse_common_location_path)
 
@@ -134,7 +126,7 @@ class InstanceAdminAsyncClient:
     get_transport_class = functools.partial(type(InstanceAdminClient).get_transport_class, type(InstanceAdminClient))
 
     def __init__(self, *,
-            credentials: credentials.Credentials = None,
+            credentials: ga_credentials.Credentials = None,
             transport: Union[str, InstanceAdminTransport] = 'grpc_asyncio',
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
@@ -171,7 +163,6 @@ class InstanceAdminAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-
         self._client = InstanceAdminClient(
             credentials=credentials,
             transport=transport,
@@ -203,7 +194,6 @@ class InstanceAdminAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -231,7 +221,6 @@ class InstanceAdminAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -240,10 +229,7 @@ class InstanceAdminAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_instance_configs,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=32.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -304,7 +290,6 @@ class InstanceAdminAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -331,7 +316,6 @@ class InstanceAdminAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -340,10 +324,7 @@ class InstanceAdminAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_instance_config,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=32.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -394,7 +375,6 @@ class InstanceAdminAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -422,7 +402,6 @@ class InstanceAdminAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
 
@@ -431,10 +410,7 @@ class InstanceAdminAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_instances,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=32.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -493,7 +469,6 @@ class InstanceAdminAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -519,7 +494,6 @@ class InstanceAdminAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -528,10 +502,7 @@ class InstanceAdminAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_instance,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=32.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -636,7 +607,6 @@ class InstanceAdminAsyncClient:
                 This corresponds to the ``instance`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -665,7 +635,6 @@ class InstanceAdminAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if parent is not None:
             request.parent = parent
         if instance_id is not None:
@@ -789,7 +758,6 @@ class InstanceAdminAsyncClient:
                 This corresponds to the ``field_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -818,7 +786,6 @@ class InstanceAdminAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if instance is not None:
             request.instance = instance
         if field_mask is not None:
@@ -891,7 +858,6 @@ class InstanceAdminAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -910,7 +876,6 @@ class InstanceAdminAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
-
         if name is not None:
             request.name = name
 
@@ -919,10 +884,7 @@ class InstanceAdminAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_instance,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=32.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -949,13 +911,13 @@ class InstanceAdminAsyncClient:
         )
 
     async def set_iam_policy(self,
-            request: iam_policy.SetIamPolicyRequest = None,
+            request: iam_policy_pb2.SetIamPolicyRequest = None,
             *,
             resource: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> gi_policy.Policy:
+            ) -> policy_pb2.Policy:
         r"""Sets the access control policy on an instance resource. Replaces
         any existing policy.
 
@@ -975,7 +937,6 @@ class InstanceAdminAsyncClient:
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1049,13 +1010,12 @@ class InstanceAdminAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # The request isn't a proto-plus wrapped type,
+         # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
-            request = iam_policy.SetIamPolicyRequest(**request)
-
+            request = iam_policy_pb2.SetIamPolicyRequest(**request)
         elif not request:
-            request = iam_policy.SetIamPolicyRequest(resource=resource, )
+            request = iam_policy_pb2.SetIamPolicyRequest(resource=resource, )
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -1085,13 +1045,13 @@ class InstanceAdminAsyncClient:
         return response
 
     async def get_iam_policy(self,
-            request: iam_policy.GetIamPolicyRequest = None,
+            request: iam_policy_pb2.GetIamPolicyRequest = None,
             *,
             resource: str = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> gi_policy.Policy:
+            ) -> policy_pb2.Policy:
         r"""Gets the access control policy for an instance resource. Returns
         an empty policy if an instance exists but does not have a policy
         set.
@@ -1112,7 +1072,6 @@ class InstanceAdminAsyncClient:
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1186,23 +1145,19 @@ class InstanceAdminAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # The request isn't a proto-plus wrapped type,
+         # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
-            request = iam_policy.GetIamPolicyRequest(**request)
-
+            request = iam_policy_pb2.GetIamPolicyRequest(**request)
         elif not request:
-            request = iam_policy.GetIamPolicyRequest(resource=resource, )
+            request = iam_policy_pb2.GetIamPolicyRequest(resource=resource, )
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_iam_policy,
             default_retry=retries.Retry(
-                initial=1.0,
-                maximum=32.0,
-                multiplier=1.3,
-                predicate=retries.if_exception_type(
+initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1232,14 +1187,14 @@ class InstanceAdminAsyncClient:
         return response
 
     async def test_iam_permissions(self,
-            request: iam_policy.TestIamPermissionsRequest = None,
+            request: iam_policy_pb2.TestIamPermissionsRequest = None,
             *,
             resource: str = None,
             permissions: Sequence[str] = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> iam_policy.TestIamPermissionsResponse:
+            ) -> iam_policy_pb2.TestIamPermissionsResponse:
         r"""Returns permissions that the caller has on the specified
         instance resource.
 
@@ -1270,7 +1225,6 @@ class InstanceAdminAsyncClient:
                 This corresponds to the ``permissions`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1289,13 +1243,12 @@ class InstanceAdminAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-        # The request isn't a proto-plus wrapped type,
+         # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
-            request = iam_policy.TestIamPermissionsRequest(**request)
-
+            request = iam_policy_pb2.TestIamPermissionsRequest(**request)
         elif not request:
-            request = iam_policy.TestIamPermissionsRequest(resource=resource, permissions=permissions, )
+            request = iam_policy_pb2.TestIamPermissionsRequest(resource=resource, permissions=permissions, )
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -1323,8 +1276,6 @@ class InstanceAdminAsyncClient:
 
         # Done; return the response.
         return response
-
-
 
 
 

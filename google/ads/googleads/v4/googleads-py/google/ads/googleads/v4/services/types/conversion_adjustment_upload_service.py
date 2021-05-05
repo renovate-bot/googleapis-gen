@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,13 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
 from google.ads.googleads.v4.enums.types import conversion_adjustment_type
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
-from google.rpc import status_pb2 as status  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
+from google.rpc import status_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -64,12 +61,23 @@ class UploadConversionAdjustmentsRequest(proto.Message):
             executed. Only errors are returned, not results.
     """
 
-    customer_id = proto.Field(proto.STRING, number=1)
-    conversion_adjustments = proto.RepeatedField(proto.MESSAGE, number=2,
+    customer_id = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    conversion_adjustments = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='ConversionAdjustment',
     )
-    partial_failure = proto.Field(proto.BOOL, number=3)
-    validate_only = proto.Field(proto.BOOL, number=4)
+    partial_failure = proto.Field(
+        proto.BOOL,
+        number=3,
+    )
+    validate_only = proto.Field(
+        proto.BOOL,
+        number=4,
+    )
 
 
 class UploadConversionAdjustmentsResponse(proto.Message):
@@ -93,17 +101,20 @@ class UploadConversionAdjustmentsResponse(proto.Message):
             are not returned when validate_only is true.
     """
 
-    partial_failure_error = proto.Field(proto.MESSAGE, number=1,
-        message=status.Status,
+    partial_failure_error = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=status_pb2.Status,
     )
-    results = proto.RepeatedField(proto.MESSAGE, number=2,
+    results = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
         message='ConversionAdjustmentResult',
     )
 
 
 class ConversionAdjustment(proto.Message):
     r"""A conversion adjustment.
-
     Attributes:
         conversion_action (google.protobuf.wrappers_pb2.StringValue):
             Resource name of the conversion action
@@ -140,29 +151,42 @@ class ConversionAdjustment(proto.Message):
             as the identifier here.
     """
 
-    conversion_action = proto.Field(proto.MESSAGE, number=3,
-        message=wrappers.StringValue,
+    conversion_action = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=wrappers_pb2.StringValue,
     )
-    adjustment_date_time = proto.Field(proto.MESSAGE, number=4,
-        message=wrappers.StringValue,
+    adjustment_date_time = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=wrappers_pb2.StringValue,
     )
-    adjustment_type = proto.Field(proto.ENUM, number=5,
+    adjustment_type = proto.Field(
+        proto.ENUM,
+        number=5,
         enum=conversion_adjustment_type.ConversionAdjustmentTypeEnum.ConversionAdjustmentType,
     )
-    restatement_value = proto.Field(proto.MESSAGE, number=6,
+    restatement_value = proto.Field(
+        proto.MESSAGE,
+        number=6,
         message='RestatementValue',
     )
-    gclid_date_time_pair = proto.Field(proto.MESSAGE, number=1, oneof='conversion_identifier',
+    gclid_date_time_pair = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='conversion_identifier',
         message='GclidDateTimePair',
     )
-    order_id = proto.Field(proto.MESSAGE, number=2, oneof='conversion_identifier',
-        message=wrappers.StringValue,
+    order_id = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='conversion_identifier',
+        message=wrappers_pb2.StringValue,
     )
 
 
 class RestatementValue(proto.Message):
     r"""Contains information needed to restate a conversion's value.
-
     Attributes:
         adjusted_value (google.protobuf.wrappers_pb2.DoubleValue):
             The restated conversion value. This is the
@@ -184,11 +208,15 @@ class RestatementValue(proto.Message):
             or EUR.
     """
 
-    adjusted_value = proto.Field(proto.MESSAGE, number=1,
-        message=wrappers.DoubleValue,
+    adjusted_value = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=wrappers_pb2.DoubleValue,
     )
-    currency_code = proto.Field(proto.MESSAGE, number=2,
-        message=wrappers.StringValue,
+    currency_code = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=wrappers_pb2.StringValue,
     )
 
 
@@ -207,11 +235,15 @@ class GclidDateTimePair(proto.Message):
             12:32:45-08:00".
     """
 
-    gclid = proto.Field(proto.MESSAGE, number=1,
-        message=wrappers.StringValue,
+    gclid = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=wrappers_pb2.StringValue,
     )
-    conversion_date_time = proto.Field(proto.MESSAGE, number=2,
-        message=wrappers.StringValue,
+    conversion_date_time = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=wrappers_pb2.StringValue,
     )
 
 
@@ -237,20 +269,32 @@ class ConversionAdjustmentResult(proto.Message):
             adjusted.
     """
 
-    conversion_action = proto.Field(proto.MESSAGE, number=3,
-        message=wrappers.StringValue,
+    conversion_action = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=wrappers_pb2.StringValue,
     )
-    adjustment_date_time = proto.Field(proto.MESSAGE, number=4,
-        message=wrappers.StringValue,
+    adjustment_date_time = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=wrappers_pb2.StringValue,
     )
-    adjustment_type = proto.Field(proto.ENUM, number=5,
+    adjustment_type = proto.Field(
+        proto.ENUM,
+        number=5,
         enum=conversion_adjustment_type.ConversionAdjustmentTypeEnum.ConversionAdjustmentType,
     )
-    gclid_date_time_pair = proto.Field(proto.MESSAGE, number=1, oneof='conversion_identifier',
+    gclid_date_time_pair = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='conversion_identifier',
         message='GclidDateTimePair',
     )
-    order_id = proto.Field(proto.MESSAGE, number=2, oneof='conversion_identifier',
-        message=wrappers.StringValue,
+    order_id = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        oneof='conversion_identifier',
+        message=wrappers_pb2.StringValue,
     )
 
 

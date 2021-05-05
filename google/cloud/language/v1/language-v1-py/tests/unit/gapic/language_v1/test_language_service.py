@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 import mock
+import packaging.version
 
 import grpc
 from grpc.experimental import aio
@@ -24,20 +23,45 @@ import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
-from google import auth
+
 from google.api_core import client_options
-from google.api_core import exceptions
+from google.api_core import exceptions as core_exceptions
 from google.api_core import gapic_v1
 from google.api_core import grpc_helpers
 from google.api_core import grpc_helpers_async
-from google.auth import credentials
+from google.auth import credentials as ga_credentials
 from google.auth.exceptions import MutualTLSChannelError
 from google.cloud.language_v1.services.language_service import LanguageServiceAsyncClient
 from google.cloud.language_v1.services.language_service import LanguageServiceClient
 from google.cloud.language_v1.services.language_service import transports
+from google.cloud.language_v1.services.language_service.transports.base import _API_CORE_VERSION
+from google.cloud.language_v1.services.language_service.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.language_v1.types import language_service
 from google.oauth2 import service_account
+import google.auth
 
+
+# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
+# - Delete all the api-core and auth "less than" test cases
+# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
+requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth < 1.25.0",
+)
+requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth >= 1.25.0",
+)
+
+requires_api_core_lt_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core < 1.26.0",
+)
+
+requires_api_core_gte_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core >= 1.26.0",
+)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -70,7 +94,7 @@ def test__get_default_mtls_endpoint():
     LanguageServiceAsyncClient,
 ])
 def test_language_service_client_from_service_account_info(client_class):
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
@@ -86,7 +110,7 @@ def test_language_service_client_from_service_account_info(client_class):
     LanguageServiceAsyncClient,
 ])
 def test_language_service_client_from_service_account_file(client_class):
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_file') as factory:
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
@@ -121,7 +145,7 @@ def test_language_service_client_client_options(client_class, transport_class, t
     # Check that if channel is provided we won't create a new one.
     with mock.patch.object(LanguageServiceClient, 'get_transport_class') as gtc:
         transport = transport_class(
-            credentials=credentials.AnonymousCredentials()
+            credentials=ga_credentials.AnonymousCredentials()
         )
         client = client_class(transport=transport)
         gtc.assert_not_called()
@@ -205,12 +229,10 @@ def test_language_service_client_client_options(client_class, transport_class, t
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
-
     (LanguageServiceClient, transports.LanguageServiceGrpcTransport, "grpc", "true"),
     (LanguageServiceAsyncClient, transports.LanguageServiceGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (LanguageServiceClient, transports.LanguageServiceGrpcTransport, "grpc", "false"),
     (LanguageServiceAsyncClient, transports.LanguageServiceGrpcAsyncIOTransport, "grpc_asyncio", "false"),
-
 ])
 @mock.patch.object(LanguageServiceClient, "DEFAULT_ENDPOINT", modify_default_endpoint(LanguageServiceClient))
 @mock.patch.object(LanguageServiceAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(LanguageServiceAsyncClient))
@@ -350,7 +372,7 @@ def test_language_service_client_client_options_from_dict():
 
 def test_analyze_sentiment(transport: str = 'grpc', request_type=language_service.AnalyzeSentimentRequest):
     client = LanguageServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -365,21 +387,16 @@ def test_analyze_sentiment(transport: str = 'grpc', request_type=language_servic
         # Designate an appropriate return value for the call.
         call.return_value = language_service.AnalyzeSentimentResponse(
             language='language_value',
-
         )
-
         response = client.analyze_sentiment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == language_service.AnalyzeSentimentRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, language_service.AnalyzeSentimentResponse)
-
     assert response.language == 'language_value'
 
 
@@ -391,7 +408,7 @@ def test_analyze_sentiment_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = LanguageServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -402,13 +419,13 @@ def test_analyze_sentiment_empty_call():
         client.analyze_sentiment()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == language_service.AnalyzeSentimentRequest()
+
 
 @pytest.mark.asyncio
 async def test_analyze_sentiment_async(transport: str = 'grpc_asyncio', request_type=language_service.AnalyzeSentimentRequest):
     client = LanguageServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -421,21 +438,18 @@ async def test_analyze_sentiment_async(transport: str = 'grpc_asyncio', request_
             type(client.transport.analyze_sentiment),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(language_service.AnalyzeSentimentResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(language_service.AnalyzeSentimentResponse(
             language='language_value',
         ))
-
         response = await client.analyze_sentiment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == language_service.AnalyzeSentimentRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, language_service.AnalyzeSentimentResponse)
-
     assert response.language == 'language_value'
 
 
@@ -446,7 +460,7 @@ async def test_analyze_sentiment_async_from_dict():
 
 def test_analyze_sentiment_flattened():
     client = LanguageServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -455,7 +469,6 @@ def test_analyze_sentiment_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = language_service.AnalyzeSentimentResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.analyze_sentiment(
@@ -467,15 +480,13 @@ def test_analyze_sentiment_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].document == language_service.Document(type_=language_service.Document.Type.PLAIN_TEXT)
-
         assert args[0].encoding_type == language_service.EncodingType.UTF8
 
 
 def test_analyze_sentiment_flattened_error():
     client = LanguageServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -491,7 +502,7 @@ def test_analyze_sentiment_flattened_error():
 @pytest.mark.asyncio
 async def test_analyze_sentiment_flattened_async():
     client = LanguageServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -513,16 +524,14 @@ async def test_analyze_sentiment_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].document == language_service.Document(type_=language_service.Document.Type.PLAIN_TEXT)
-
         assert args[0].encoding_type == language_service.EncodingType.UTF8
 
 
 @pytest.mark.asyncio
 async def test_analyze_sentiment_flattened_error_async():
     client = LanguageServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -537,7 +546,7 @@ async def test_analyze_sentiment_flattened_error_async():
 
 def test_analyze_entities(transport: str = 'grpc', request_type=language_service.AnalyzeEntitiesRequest):
     client = LanguageServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -552,21 +561,16 @@ def test_analyze_entities(transport: str = 'grpc', request_type=language_service
         # Designate an appropriate return value for the call.
         call.return_value = language_service.AnalyzeEntitiesResponse(
             language='language_value',
-
         )
-
         response = client.analyze_entities(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == language_service.AnalyzeEntitiesRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, language_service.AnalyzeEntitiesResponse)
-
     assert response.language == 'language_value'
 
 
@@ -578,7 +582,7 @@ def test_analyze_entities_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = LanguageServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -589,13 +593,13 @@ def test_analyze_entities_empty_call():
         client.analyze_entities()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == language_service.AnalyzeEntitiesRequest()
+
 
 @pytest.mark.asyncio
 async def test_analyze_entities_async(transport: str = 'grpc_asyncio', request_type=language_service.AnalyzeEntitiesRequest):
     client = LanguageServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -608,21 +612,18 @@ async def test_analyze_entities_async(transport: str = 'grpc_asyncio', request_t
             type(client.transport.analyze_entities),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(language_service.AnalyzeEntitiesResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(language_service.AnalyzeEntitiesResponse(
             language='language_value',
         ))
-
         response = await client.analyze_entities(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == language_service.AnalyzeEntitiesRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, language_service.AnalyzeEntitiesResponse)
-
     assert response.language == 'language_value'
 
 
@@ -633,7 +634,7 @@ async def test_analyze_entities_async_from_dict():
 
 def test_analyze_entities_flattened():
     client = LanguageServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -642,7 +643,6 @@ def test_analyze_entities_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = language_service.AnalyzeEntitiesResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.analyze_entities(
@@ -654,15 +654,13 @@ def test_analyze_entities_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].document == language_service.Document(type_=language_service.Document.Type.PLAIN_TEXT)
-
         assert args[0].encoding_type == language_service.EncodingType.UTF8
 
 
 def test_analyze_entities_flattened_error():
     client = LanguageServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -678,7 +676,7 @@ def test_analyze_entities_flattened_error():
 @pytest.mark.asyncio
 async def test_analyze_entities_flattened_async():
     client = LanguageServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -700,16 +698,14 @@ async def test_analyze_entities_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].document == language_service.Document(type_=language_service.Document.Type.PLAIN_TEXT)
-
         assert args[0].encoding_type == language_service.EncodingType.UTF8
 
 
 @pytest.mark.asyncio
 async def test_analyze_entities_flattened_error_async():
     client = LanguageServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -724,7 +720,7 @@ async def test_analyze_entities_flattened_error_async():
 
 def test_analyze_entity_sentiment(transport: str = 'grpc', request_type=language_service.AnalyzeEntitySentimentRequest):
     client = LanguageServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -739,21 +735,16 @@ def test_analyze_entity_sentiment(transport: str = 'grpc', request_type=language
         # Designate an appropriate return value for the call.
         call.return_value = language_service.AnalyzeEntitySentimentResponse(
             language='language_value',
-
         )
-
         response = client.analyze_entity_sentiment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == language_service.AnalyzeEntitySentimentRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, language_service.AnalyzeEntitySentimentResponse)
-
     assert response.language == 'language_value'
 
 
@@ -765,7 +756,7 @@ def test_analyze_entity_sentiment_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = LanguageServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -776,13 +767,13 @@ def test_analyze_entity_sentiment_empty_call():
         client.analyze_entity_sentiment()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == language_service.AnalyzeEntitySentimentRequest()
+
 
 @pytest.mark.asyncio
 async def test_analyze_entity_sentiment_async(transport: str = 'grpc_asyncio', request_type=language_service.AnalyzeEntitySentimentRequest):
     client = LanguageServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -795,21 +786,18 @@ async def test_analyze_entity_sentiment_async(transport: str = 'grpc_asyncio', r
             type(client.transport.analyze_entity_sentiment),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(language_service.AnalyzeEntitySentimentResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(language_service.AnalyzeEntitySentimentResponse(
             language='language_value',
         ))
-
         response = await client.analyze_entity_sentiment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == language_service.AnalyzeEntitySentimentRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, language_service.AnalyzeEntitySentimentResponse)
-
     assert response.language == 'language_value'
 
 
@@ -820,7 +808,7 @@ async def test_analyze_entity_sentiment_async_from_dict():
 
 def test_analyze_entity_sentiment_flattened():
     client = LanguageServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -829,7 +817,6 @@ def test_analyze_entity_sentiment_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = language_service.AnalyzeEntitySentimentResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.analyze_entity_sentiment(
@@ -841,15 +828,13 @@ def test_analyze_entity_sentiment_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].document == language_service.Document(type_=language_service.Document.Type.PLAIN_TEXT)
-
         assert args[0].encoding_type == language_service.EncodingType.UTF8
 
 
 def test_analyze_entity_sentiment_flattened_error():
     client = LanguageServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -865,7 +850,7 @@ def test_analyze_entity_sentiment_flattened_error():
 @pytest.mark.asyncio
 async def test_analyze_entity_sentiment_flattened_async():
     client = LanguageServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -887,16 +872,14 @@ async def test_analyze_entity_sentiment_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].document == language_service.Document(type_=language_service.Document.Type.PLAIN_TEXT)
-
         assert args[0].encoding_type == language_service.EncodingType.UTF8
 
 
 @pytest.mark.asyncio
 async def test_analyze_entity_sentiment_flattened_error_async():
     client = LanguageServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -911,7 +894,7 @@ async def test_analyze_entity_sentiment_flattened_error_async():
 
 def test_analyze_syntax(transport: str = 'grpc', request_type=language_service.AnalyzeSyntaxRequest):
     client = LanguageServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -926,21 +909,16 @@ def test_analyze_syntax(transport: str = 'grpc', request_type=language_service.A
         # Designate an appropriate return value for the call.
         call.return_value = language_service.AnalyzeSyntaxResponse(
             language='language_value',
-
         )
-
         response = client.analyze_syntax(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == language_service.AnalyzeSyntaxRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, language_service.AnalyzeSyntaxResponse)
-
     assert response.language == 'language_value'
 
 
@@ -952,7 +930,7 @@ def test_analyze_syntax_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = LanguageServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -963,13 +941,13 @@ def test_analyze_syntax_empty_call():
         client.analyze_syntax()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == language_service.AnalyzeSyntaxRequest()
+
 
 @pytest.mark.asyncio
 async def test_analyze_syntax_async(transport: str = 'grpc_asyncio', request_type=language_service.AnalyzeSyntaxRequest):
     client = LanguageServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -982,21 +960,18 @@ async def test_analyze_syntax_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.analyze_syntax),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(language_service.AnalyzeSyntaxResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(language_service.AnalyzeSyntaxResponse(
             language='language_value',
         ))
-
         response = await client.analyze_syntax(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == language_service.AnalyzeSyntaxRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, language_service.AnalyzeSyntaxResponse)
-
     assert response.language == 'language_value'
 
 
@@ -1007,7 +982,7 @@ async def test_analyze_syntax_async_from_dict():
 
 def test_analyze_syntax_flattened():
     client = LanguageServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1016,7 +991,6 @@ def test_analyze_syntax_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = language_service.AnalyzeSyntaxResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.analyze_syntax(
@@ -1028,15 +1002,13 @@ def test_analyze_syntax_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].document == language_service.Document(type_=language_service.Document.Type.PLAIN_TEXT)
-
         assert args[0].encoding_type == language_service.EncodingType.UTF8
 
 
 def test_analyze_syntax_flattened_error():
     client = LanguageServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1052,7 +1024,7 @@ def test_analyze_syntax_flattened_error():
 @pytest.mark.asyncio
 async def test_analyze_syntax_flattened_async():
     client = LanguageServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1074,16 +1046,14 @@ async def test_analyze_syntax_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].document == language_service.Document(type_=language_service.Document.Type.PLAIN_TEXT)
-
         assert args[0].encoding_type == language_service.EncodingType.UTF8
 
 
 @pytest.mark.asyncio
 async def test_analyze_syntax_flattened_error_async():
     client = LanguageServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1098,7 +1068,7 @@ async def test_analyze_syntax_flattened_error_async():
 
 def test_classify_text(transport: str = 'grpc', request_type=language_service.ClassifyTextRequest):
     client = LanguageServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1113,17 +1083,14 @@ def test_classify_text(transport: str = 'grpc', request_type=language_service.Cl
         # Designate an appropriate return value for the call.
         call.return_value = language_service.ClassifyTextResponse(
         )
-
         response = client.classify_text(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == language_service.ClassifyTextRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, language_service.ClassifyTextResponse)
 
 
@@ -1135,7 +1102,7 @@ def test_classify_text_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = LanguageServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -1146,13 +1113,13 @@ def test_classify_text_empty_call():
         client.classify_text()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == language_service.ClassifyTextRequest()
+
 
 @pytest.mark.asyncio
 async def test_classify_text_async(transport: str = 'grpc_asyncio', request_type=language_service.ClassifyTextRequest):
     client = LanguageServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1165,15 +1132,13 @@ async def test_classify_text_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.classify_text),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(language_service.ClassifyTextResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(language_service.ClassifyTextResponse(
         ))
-
         response = await client.classify_text(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == language_service.ClassifyTextRequest()
 
     # Establish that the response is the type that we expect.
@@ -1187,7 +1152,7 @@ async def test_classify_text_async_from_dict():
 
 def test_classify_text_flattened():
     client = LanguageServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1196,7 +1161,6 @@ def test_classify_text_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = language_service.ClassifyTextResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.classify_text(
@@ -1207,13 +1171,12 @@ def test_classify_text_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].document == language_service.Document(type_=language_service.Document.Type.PLAIN_TEXT)
 
 
 def test_classify_text_flattened_error():
     client = LanguageServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1228,7 +1191,7 @@ def test_classify_text_flattened_error():
 @pytest.mark.asyncio
 async def test_classify_text_flattened_async():
     client = LanguageServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1249,14 +1212,13 @@ async def test_classify_text_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].document == language_service.Document(type_=language_service.Document.Type.PLAIN_TEXT)
 
 
 @pytest.mark.asyncio
 async def test_classify_text_flattened_error_async():
     client = LanguageServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1270,7 +1232,7 @@ async def test_classify_text_flattened_error_async():
 
 def test_annotate_text(transport: str = 'grpc', request_type=language_service.AnnotateTextRequest):
     client = LanguageServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1285,21 +1247,16 @@ def test_annotate_text(transport: str = 'grpc', request_type=language_service.An
         # Designate an appropriate return value for the call.
         call.return_value = language_service.AnnotateTextResponse(
             language='language_value',
-
         )
-
         response = client.annotate_text(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == language_service.AnnotateTextRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, language_service.AnnotateTextResponse)
-
     assert response.language == 'language_value'
 
 
@@ -1311,7 +1268,7 @@ def test_annotate_text_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = LanguageServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -1322,13 +1279,13 @@ def test_annotate_text_empty_call():
         client.annotate_text()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == language_service.AnnotateTextRequest()
+
 
 @pytest.mark.asyncio
 async def test_annotate_text_async(transport: str = 'grpc_asyncio', request_type=language_service.AnnotateTextRequest):
     client = LanguageServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1341,21 +1298,18 @@ async def test_annotate_text_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.annotate_text),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(language_service.AnnotateTextResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(language_service.AnnotateTextResponse(
             language='language_value',
         ))
-
         response = await client.annotate_text(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == language_service.AnnotateTextRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, language_service.AnnotateTextResponse)
-
     assert response.language == 'language_value'
 
 
@@ -1366,7 +1320,7 @@ async def test_annotate_text_async_from_dict():
 
 def test_annotate_text_flattened():
     client = LanguageServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1375,7 +1329,6 @@ def test_annotate_text_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = language_service.AnnotateTextResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.annotate_text(
@@ -1388,17 +1341,14 @@ def test_annotate_text_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].document == language_service.Document(type_=language_service.Document.Type.PLAIN_TEXT)
-
         assert args[0].features == language_service.AnnotateTextRequest.Features(extract_syntax=True)
-
         assert args[0].encoding_type == language_service.EncodingType.UTF8
 
 
 def test_annotate_text_flattened_error():
     client = LanguageServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1415,7 +1365,7 @@ def test_annotate_text_flattened_error():
 @pytest.mark.asyncio
 async def test_annotate_text_flattened_async():
     client = LanguageServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1438,18 +1388,15 @@ async def test_annotate_text_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].document == language_service.Document(type_=language_service.Document.Type.PLAIN_TEXT)
-
         assert args[0].features == language_service.AnnotateTextRequest.Features(extract_syntax=True)
-
         assert args[0].encoding_type == language_service.EncodingType.UTF8
 
 
 @pytest.mark.asyncio
 async def test_annotate_text_flattened_error_async():
     client = LanguageServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1466,17 +1413,17 @@ async def test_annotate_text_flattened_error_async():
 def test_credentials_transport_error():
     # It is an error to provide credentials and a transport instance.
     transport = transports.LanguageServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = LanguageServiceClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             transport=transport,
         )
 
     # It is an error to provide a credentials file and a transport instance.
     transport = transports.LanguageServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = LanguageServiceClient(
@@ -1486,7 +1433,7 @@ def test_credentials_transport_error():
 
     # It is an error to provide scopes and a transport instance.
     transport = transports.LanguageServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = LanguageServiceClient(
@@ -1498,26 +1445,24 @@ def test_credentials_transport_error():
 def test_transport_instance():
     # A client may be instantiated with a custom transport instance.
     transport = transports.LanguageServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     client = LanguageServiceClient(transport=transport)
     assert client.transport is transport
 
-
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.LanguageServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     channel = transport.grpc_channel
     assert channel
 
     transport = transports.LanguageServiceGrpcAsyncIOTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     channel = transport.grpc_channel
     assert channel
-
 
 @pytest.mark.parametrize("transport_class", [
     transports.LanguageServiceGrpcTransport,
@@ -1525,28 +1470,26 @@ def test_transport_get_channel():
 ])
 def test_transport_adc(transport_class):
     # Test default credentials are used if not provided.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport_class()
         adc.assert_called_once()
-
 
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = LanguageServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     assert isinstance(
         client.transport,
         transports.LanguageServiceGrpcTransport,
     )
 
-
 def test_language_service_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
-    with pytest.raises(exceptions.DuplicateCredentialArgs):
+    with pytest.raises(core_exceptions.DuplicateCredentialArgs):
         transport = transports.LanguageServiceTransport(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             credentials_file="credentials.json"
         )
 
@@ -1556,7 +1499,7 @@ def test_language_service_base_transport():
     with mock.patch('google.cloud.language_v1.services.language_service.transports.LanguageServiceTransport.__init__') as Transport:
         Transport.return_value = None
         transport = transports.LanguageServiceTransport(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
         )
 
     # Every method on the transport should just blindly
@@ -1568,17 +1511,38 @@ def test_language_service_base_transport():
         'analyze_syntax',
         'classify_text',
         'annotate_text',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
+@requires_google_auth_gte_1_25_0
 def test_language_service_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.language_v1.services.language_service.transports.LanguageServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.language_v1.services.language_service.transports.LanguageServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
+        load_creds.return_value = (ga_credentials.AnonymousCredentials(), None)
+        transport = transports.LanguageServiceTransport(
+            credentials_file="credentials.json",
+            quota_project_id="octopus",
+        )
+        load_creds.assert_called_once_with("credentials.json",
+            scopes=None,
+            default_scopes=(
+            'https://www.googleapis.com/auth/cloud-language',
+            'https://www.googleapis.com/auth/cloud-platform',
+),
+            quota_project_id="octopus",
+        )
+
+
+@requires_google_auth_lt_1_25_0
+def test_language_service_base_transport_with_credentials_file_old_google_auth():
+    # Instantiate the base transport with a credentials file
+    with mock.patch.object(google.auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.language_v1.services.language_service.transports.LanguageServiceTransport._prep_wrapped_messages') as Transport:
+        Transport.return_value = None
+        load_creds.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.LanguageServiceTransport(
             credentials_file="credentials.json",
             quota_project_id="octopus",
@@ -1593,35 +1557,189 @@ def test_language_service_base_transport_with_credentials_file():
 
 def test_language_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.language_v1.services.language_service.transports.LanguageServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc, mock.patch('google.cloud.language_v1.services.language_service.transports.LanguageServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.LanguageServiceTransport()
         adc.assert_called_once()
 
 
+@requires_google_auth_gte_1_25_0
 def test_language_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         LanguageServiceClient()
-        adc.assert_called_once_with(scopes=(
+        adc.assert_called_once_with(
+            scopes=None,
+            default_scopes=(
             'https://www.googleapis.com/auth/cloud-language',
-            'https://www.googleapis.com/auth/cloud-platform',),
+            'https://www.googleapis.com/auth/cloud-platform',
+),
             quota_project_id=None,
         )
 
 
-def test_language_service_transport_auth_adc():
+@requires_google_auth_lt_1_25_0
+def test_language_service_auth_adc_old_google_auth():
+    # If no credentials are provided, we should use ADC credentials.
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
+        LanguageServiceClient()
+        adc.assert_called_once_with(
+            scopes=(                'https://www.googleapis.com/auth/cloud-language',                'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id=None,
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.LanguageServiceGrpcTransport,
+        transports.LanguageServiceGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_gte_1_25_0
+def test_language_service_transport_auth_adc(transport_class):
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transports.LanguageServiceGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+        adc.assert_called_once_with(
+            scopes=["1", "2"],
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-language',                'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.LanguageServiceGrpcTransport,
+        transports.LanguageServiceGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_lt_1_25_0
+def test_language_service_transport_auth_adc_old_google_auth(transport_class):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/cloud-language',
-            'https://www.googleapis.com/auth/cloud-platform',),
+            'https://www.googleapis.com/auth/cloud-platform',
+),
             quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.LanguageServiceGrpcTransport, grpc_helpers),
+        (transports.LanguageServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_gte_1_26_0
+def test_language_service_transport_create_channel(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = ga_credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(
+            quota_project_id="octopus",
+            scopes=["1", "2"]
+        )
+
+        create_channel.assert_called_with(
+            "language.googleapis.com:443",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            default_scopes=(
+                'https://www.googleapis.com/auth/cloud-language',
+                'https://www.googleapis.com/auth/cloud-platform',
+),
+            scopes=["1", "2"],
+            default_host="language.googleapis.com",
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.LanguageServiceGrpcTransport, grpc_helpers),
+        (transports.LanguageServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_language_service_transport_create_channel_old_api_core(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = ga_credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(quota_project_id="octopus")
+
+        create_channel.assert_called_with(
+            "language.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=(
+                'https://www.googleapis.com/auth/cloud-language',
+                'https://www.googleapis.com/auth/cloud-platform',
+),
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.LanguageServiceGrpcTransport, grpc_helpers),
+        (transports.LanguageServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_language_service_transport_create_channel_user_scopes(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = ga_credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+
+        create_channel.assert_called_with(
+            "language.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=["1", "2"],
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
         )
 
 
@@ -1629,7 +1747,7 @@ def test_language_service_transport_auth_adc():
 def test_language_service_grpc_transport_client_cert_source_for_mtls(
     transport_class
 ):
-    cred = credentials.AnonymousCredentials()
+    cred = ga_credentials.AnonymousCredentials()
 
     # Check ssl_channel_credentials is used if provided.
     with mock.patch.object(transport_class, "create_channel") as mock_create_channel:
@@ -1672,7 +1790,7 @@ def test_language_service_grpc_transport_client_cert_source_for_mtls(
 
 def test_language_service_host_no_port():
     client = LanguageServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='language.googleapis.com'),
     )
     assert client.transport._host == 'language.googleapis.com:443'
@@ -1680,11 +1798,10 @@ def test_language_service_host_no_port():
 
 def test_language_service_host_with_port():
     client = LanguageServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='language.googleapis.com:8000'),
     )
     assert client.transport._host == 'language.googleapis.com:8000'
-
 
 def test_language_service_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -1726,9 +1843,9 @@ def test_language_service_transport_channel_mtls_with_client_cert_source(
             mock_grpc_channel = mock.Mock()
             grpc_create_channel.return_value = mock_grpc_channel
 
-            cred = credentials.AnonymousCredentials()
+            cred = ga_credentials.AnonymousCredentials()
             with pytest.warns(DeprecationWarning):
-                with mock.patch.object(auth, 'default') as adc:
+                with mock.patch.object(google.auth, 'default') as adc:
                     adc.return_value = (cred, None)
                     transport = transport_class(
                         host="squid.clam.whelk",
@@ -1804,7 +1921,6 @@ def test_language_service_transport_channel_mtls_with_adc(
 
 def test_common_billing_account_path():
     billing_account = "squid"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = LanguageServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -1812,8 +1928,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "clam",
-
+        "billing_account": "clam",
     }
     path = LanguageServiceClient.common_billing_account_path(**expected)
 
@@ -1823,7 +1938,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "whelk"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = LanguageServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -1831,8 +1945,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "octopus",
-
+        "folder": "octopus",
     }
     path = LanguageServiceClient.common_folder_path(**expected)
 
@@ -1842,7 +1955,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "oyster"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = LanguageServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -1850,8 +1962,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "nudibranch",
-
+        "organization": "nudibranch",
     }
     path = LanguageServiceClient.common_organization_path(**expected)
 
@@ -1861,7 +1972,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "cuttlefish"
-
     expected = "projects/{project}".format(project=project, )
     actual = LanguageServiceClient.common_project_path(project)
     assert expected == actual
@@ -1869,8 +1979,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "mussel",
-
+        "project": "mussel",
     }
     path = LanguageServiceClient.common_project_path(**expected)
 
@@ -1881,7 +1990,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "winkle"
     location = "nautilus"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = LanguageServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -1889,9 +1997,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "scallop",
-    "location": "abalone",
-
+        "project": "scallop",
+        "location": "abalone",
     }
     path = LanguageServiceClient.common_location_path(**expected)
 
@@ -1905,7 +2012,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
 
     with mock.patch.object(transports.LanguageServiceTransport, '_prep_wrapped_messages') as prep:
         client = LanguageServiceClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)
@@ -1913,7 +2020,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
     with mock.patch.object(transports.LanguageServiceTransport, '_prep_wrapped_messages') as prep:
         transport_class = LanguageServiceClient.get_transport_class()
         transport = transport_class(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)

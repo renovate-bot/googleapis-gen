@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,12 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
-
 from google.ads.googleads.v4.enums.types import geo_target_constant_status
-from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+from google.protobuf import wrappers_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -33,7 +30,6 @@ __protobuf__ = proto.module(
 
 class GeoTargetConstant(proto.Message):
     r"""A geo target constant.
-
     Attributes:
         resource_name (str):
             Output only. The resource name of the geo target constant.
@@ -59,24 +55,39 @@ class GeoTargetConstant(proto.Message):
             of its parent and country.
     """
 
-    resource_name = proto.Field(proto.STRING, number=1)
-    id = proto.Field(proto.MESSAGE, number=3,
-        message=wrappers.Int64Value,
+    resource_name = proto.Field(
+        proto.STRING,
+        number=1,
     )
-    name = proto.Field(proto.MESSAGE, number=4,
-        message=wrappers.StringValue,
+    id = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=wrappers_pb2.Int64Value,
     )
-    country_code = proto.Field(proto.MESSAGE, number=5,
-        message=wrappers.StringValue,
+    name = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=wrappers_pb2.StringValue,
     )
-    target_type = proto.Field(proto.MESSAGE, number=6,
-        message=wrappers.StringValue,
+    country_code = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        message=wrappers_pb2.StringValue,
     )
-    status = proto.Field(proto.ENUM, number=7,
+    target_type = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        message=wrappers_pb2.StringValue,
+    )
+    status = proto.Field(
+        proto.ENUM,
+        number=7,
         enum=geo_target_constant_status.GeoTargetConstantStatusEnum.GeoTargetConstantStatus,
     )
-    canonical_name = proto.Field(proto.MESSAGE, number=8,
-        message=wrappers.StringValue,
+    canonical_name = proto.Field(
+        proto.MESSAGE,
+        number=8,
+        message=wrappers_pb2.StringValue,
     )
 
 

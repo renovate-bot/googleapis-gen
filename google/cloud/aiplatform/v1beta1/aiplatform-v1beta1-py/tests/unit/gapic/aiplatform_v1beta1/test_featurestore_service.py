@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import os
 import mock
+import packaging.version
 
 import grpc
 from grpc.experimental import aio
@@ -24,21 +23,23 @@ import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
-from google import auth
+
 from google.api_core import client_options
-from google.api_core import exceptions
+from google.api_core import exceptions as core_exceptions
 from google.api_core import future
 from google.api_core import gapic_v1
 from google.api_core import grpc_helpers
 from google.api_core import grpc_helpers_async
 from google.api_core import operation_async  # type: ignore
 from google.api_core import operations_v1
-from google.auth import credentials
+from google.auth import credentials as ga_credentials
 from google.auth.exceptions import MutualTLSChannelError
 from google.cloud.aiplatform_v1beta1.services.featurestore_service import FeaturestoreServiceAsyncClient
 from google.cloud.aiplatform_v1beta1.services.featurestore_service import FeaturestoreServiceClient
 from google.cloud.aiplatform_v1beta1.services.featurestore_service import pagers
 from google.cloud.aiplatform_v1beta1.services.featurestore_service import transports
+from google.cloud.aiplatform_v1beta1.services.featurestore_service.transports.base import _API_CORE_VERSION
+from google.cloud.aiplatform_v1beta1.services.featurestore_service.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.aiplatform_v1beta1.types import entity_type
 from google.cloud.aiplatform_v1beta1.types import entity_type as gca_entity_type
 from google.cloud.aiplatform_v1beta1.types import feature
@@ -53,10 +54,33 @@ from google.cloud.aiplatform_v1beta1.types import io
 from google.cloud.aiplatform_v1beta1.types import operation as gca_operation
 from google.longrunning import operations_pb2
 from google.oauth2 import service_account
-from google.protobuf import duration_pb2 as duration  # type: ignore
-from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
-from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+from google.protobuf import duration_pb2  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
+import google.auth
 
+
+# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
+# - Delete all the api-core and auth "less than" test cases
+# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
+requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth < 1.25.0",
+)
+requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
+    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
+    reason="This test requires google-auth >= 1.25.0",
+)
+
+requires_api_core_lt_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core < 1.26.0",
+)
+
+requires_api_core_gte_1_26_0 = pytest.mark.skipif(
+    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
+    reason="This test requires google-api-core >= 1.26.0",
+)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -89,7 +113,7 @@ def test__get_default_mtls_endpoint():
     FeaturestoreServiceAsyncClient,
 ])
 def test_featurestore_service_client_from_service_account_info(client_class):
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
@@ -105,7 +129,7 @@ def test_featurestore_service_client_from_service_account_info(client_class):
     FeaturestoreServiceAsyncClient,
 ])
 def test_featurestore_service_client_from_service_account_file(client_class):
-    creds = credentials.AnonymousCredentials()
+    creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_file') as factory:
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
@@ -140,7 +164,7 @@ def test_featurestore_service_client_client_options(client_class, transport_clas
     # Check that if channel is provided we won't create a new one.
     with mock.patch.object(FeaturestoreServiceClient, 'get_transport_class') as gtc:
         transport = transport_class(
-            credentials=credentials.AnonymousCredentials()
+            credentials=ga_credentials.AnonymousCredentials()
         )
         client = client_class(transport=transport)
         gtc.assert_not_called()
@@ -224,12 +248,10 @@ def test_featurestore_service_client_client_options(client_class, transport_clas
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
-
     (FeaturestoreServiceClient, transports.FeaturestoreServiceGrpcTransport, "grpc", "true"),
     (FeaturestoreServiceAsyncClient, transports.FeaturestoreServiceGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (FeaturestoreServiceClient, transports.FeaturestoreServiceGrpcTransport, "grpc", "false"),
     (FeaturestoreServiceAsyncClient, transports.FeaturestoreServiceGrpcAsyncIOTransport, "grpc_asyncio", "false"),
-
 ])
 @mock.patch.object(FeaturestoreServiceClient, "DEFAULT_ENDPOINT", modify_default_endpoint(FeaturestoreServiceClient))
 @mock.patch.object(FeaturestoreServiceAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(FeaturestoreServiceAsyncClient))
@@ -369,7 +391,7 @@ def test_featurestore_service_client_client_options_from_dict():
 
 def test_create_featurestore(transport: str = 'grpc', request_type=featurestore_service.CreateFeaturestoreRequest):
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -383,13 +405,11 @@ def test_create_featurestore(transport: str = 'grpc', request_type=featurestore_
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.create_featurestore(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.CreateFeaturestoreRequest()
 
     # Establish that the response is the type that we expect.
@@ -404,7 +424,7 @@ def test_create_featurestore_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -415,13 +435,13 @@ def test_create_featurestore_empty_call():
         client.create_featurestore()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.CreateFeaturestoreRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_featurestore_async(transport: str = 'grpc_asyncio', request_type=featurestore_service.CreateFeaturestoreRequest):
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -437,13 +457,11 @@ async def test_create_featurestore_async(transport: str = 'grpc_asyncio', reques
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.create_featurestore(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.CreateFeaturestoreRequest()
 
     # Establish that the response is the type that we expect.
@@ -457,12 +475,13 @@ async def test_create_featurestore_async_from_dict():
 
 def test_create_featurestore_field_headers():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.CreateFeaturestoreRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -470,7 +489,6 @@ def test_create_featurestore_field_headers():
             type(client.transport.create_featurestore),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.create_featurestore(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -489,12 +507,13 @@ def test_create_featurestore_field_headers():
 @pytest.mark.asyncio
 async def test_create_featurestore_field_headers_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.CreateFeaturestoreRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -502,7 +521,6 @@ async def test_create_featurestore_field_headers_async():
             type(client.transport.create_featurestore),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.create_featurestore(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -520,7 +538,7 @@ async def test_create_featurestore_field_headers_async():
 
 def test_create_featurestore_flattened():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -529,7 +547,6 @@ def test_create_featurestore_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_featurestore(
@@ -541,15 +558,13 @@ def test_create_featurestore_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].featurestore == gca_featurestore.Featurestore(name='name_value')
 
 
 def test_create_featurestore_flattened_error():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -565,7 +580,7 @@ def test_create_featurestore_flattened_error():
 @pytest.mark.asyncio
 async def test_create_featurestore_flattened_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -589,16 +604,14 @@ async def test_create_featurestore_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].featurestore == gca_featurestore.Featurestore(name='name_value')
 
 
 @pytest.mark.asyncio
 async def test_create_featurestore_flattened_error_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -613,7 +626,7 @@ async def test_create_featurestore_flattened_error_async():
 
 def test_get_featurestore(transport: str = 'grpc', request_type=featurestore_service.GetFeaturestoreRequest):
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -628,33 +641,22 @@ def test_get_featurestore(transport: str = 'grpc', request_type=featurestore_ser
         # Designate an appropriate return value for the call.
         call.return_value = featurestore.Featurestore(
             name='name_value',
-
             display_name='display_name_value',
-
             etag='etag_value',
-
             state=featurestore.Featurestore.State.STABLE,
-
         )
-
         response = client.get_featurestore(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.GetFeaturestoreRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, featurestore.Featurestore)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.etag == 'etag_value'
-
     assert response.state == featurestore.Featurestore.State.STABLE
 
 
@@ -666,7 +668,7 @@ def test_get_featurestore_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -677,13 +679,13 @@ def test_get_featurestore_empty_call():
         client.get_featurestore()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.GetFeaturestoreRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_featurestore_async(transport: str = 'grpc_asyncio', request_type=featurestore_service.GetFeaturestoreRequest):
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -696,30 +698,24 @@ async def test_get_featurestore_async(transport: str = 'grpc_asyncio', request_t
             type(client.transport.get_featurestore),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(featurestore.Featurestore(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(featurestore.Featurestore(
             name='name_value',
             display_name='display_name_value',
             etag='etag_value',
             state=featurestore.Featurestore.State.STABLE,
         ))
-
         response = await client.get_featurestore(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.GetFeaturestoreRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, featurestore.Featurestore)
-
     assert response.name == 'name_value'
-
     assert response.display_name == 'display_name_value'
-
     assert response.etag == 'etag_value'
-
     assert response.state == featurestore.Featurestore.State.STABLE
 
 
@@ -730,12 +726,13 @@ async def test_get_featurestore_async_from_dict():
 
 def test_get_featurestore_field_headers():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.GetFeaturestoreRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -743,7 +740,6 @@ def test_get_featurestore_field_headers():
             type(client.transport.get_featurestore),
             '__call__') as call:
         call.return_value = featurestore.Featurestore()
-
         client.get_featurestore(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -762,12 +758,13 @@ def test_get_featurestore_field_headers():
 @pytest.mark.asyncio
 async def test_get_featurestore_field_headers_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.GetFeaturestoreRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -775,7 +772,6 @@ async def test_get_featurestore_field_headers_async():
             type(client.transport.get_featurestore),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(featurestore.Featurestore())
-
         await client.get_featurestore(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -793,7 +789,7 @@ async def test_get_featurestore_field_headers_async():
 
 def test_get_featurestore_flattened():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -802,7 +798,6 @@ def test_get_featurestore_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = featurestore.Featurestore()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_featurestore(
@@ -813,13 +808,12 @@ def test_get_featurestore_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 def test_get_featurestore_flattened_error():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -834,7 +828,7 @@ def test_get_featurestore_flattened_error():
 @pytest.mark.asyncio
 async def test_get_featurestore_flattened_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -855,14 +849,13 @@ async def test_get_featurestore_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 @pytest.mark.asyncio
 async def test_get_featurestore_flattened_error_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -876,7 +869,7 @@ async def test_get_featurestore_flattened_error_async():
 
 def test_list_featurestores(transport: str = 'grpc', request_type=featurestore_service.ListFeaturestoresRequest):
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -891,21 +884,16 @@ def test_list_featurestores(transport: str = 'grpc', request_type=featurestore_s
         # Designate an appropriate return value for the call.
         call.return_value = featurestore_service.ListFeaturestoresResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_featurestores(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.ListFeaturestoresRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListFeaturestoresPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -917,7 +905,7 @@ def test_list_featurestores_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -928,13 +916,13 @@ def test_list_featurestores_empty_call():
         client.list_featurestores()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.ListFeaturestoresRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_featurestores_async(transport: str = 'grpc_asyncio', request_type=featurestore_service.ListFeaturestoresRequest):
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -947,21 +935,18 @@ async def test_list_featurestores_async(transport: str = 'grpc_asyncio', request
             type(client.transport.list_featurestores),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(featurestore_service.ListFeaturestoresResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(featurestore_service.ListFeaturestoresResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_featurestores(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.ListFeaturestoresRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListFeaturestoresAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -972,12 +957,13 @@ async def test_list_featurestores_async_from_dict():
 
 def test_list_featurestores_field_headers():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.ListFeaturestoresRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -985,7 +971,6 @@ def test_list_featurestores_field_headers():
             type(client.transport.list_featurestores),
             '__call__') as call:
         call.return_value = featurestore_service.ListFeaturestoresResponse()
-
         client.list_featurestores(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1004,12 +989,13 @@ def test_list_featurestores_field_headers():
 @pytest.mark.asyncio
 async def test_list_featurestores_field_headers_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.ListFeaturestoresRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1017,7 +1003,6 @@ async def test_list_featurestores_field_headers_async():
             type(client.transport.list_featurestores),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(featurestore_service.ListFeaturestoresResponse())
-
         await client.list_featurestores(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1035,7 +1020,7 @@ async def test_list_featurestores_field_headers_async():
 
 def test_list_featurestores_flattened():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1044,7 +1029,6 @@ def test_list_featurestores_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = featurestore_service.ListFeaturestoresResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_featurestores(
@@ -1055,13 +1039,12 @@ def test_list_featurestores_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
 def test_list_featurestores_flattened_error():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1076,7 +1059,7 @@ def test_list_featurestores_flattened_error():
 @pytest.mark.asyncio
 async def test_list_featurestores_flattened_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1097,14 +1080,13 @@ async def test_list_featurestores_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
 @pytest.mark.asyncio
 async def test_list_featurestores_flattened_error_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1118,7 +1100,7 @@ async def test_list_featurestores_flattened_error_async():
 
 def test_list_featurestores_pager():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1171,7 +1153,7 @@ def test_list_featurestores_pager():
 
 def test_list_featurestores_pages():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1213,7 +1195,7 @@ def test_list_featurestores_pages():
 @pytest.mark.asyncio
 async def test_list_featurestores_async_pager():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1261,7 +1243,7 @@ async def test_list_featurestores_async_pager():
 @pytest.mark.asyncio
 async def test_list_featurestores_async_pages():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1302,10 +1284,9 @@ async def test_list_featurestores_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_update_featurestore(transport: str = 'grpc', request_type=featurestore_service.UpdateFeaturestoreRequest):
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1319,13 +1300,11 @@ def test_update_featurestore(transport: str = 'grpc', request_type=featurestore_
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.update_featurestore(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.UpdateFeaturestoreRequest()
 
     # Establish that the response is the type that we expect.
@@ -1340,7 +1319,7 @@ def test_update_featurestore_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -1351,13 +1330,13 @@ def test_update_featurestore_empty_call():
         client.update_featurestore()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.UpdateFeaturestoreRequest()
+
 
 @pytest.mark.asyncio
 async def test_update_featurestore_async(transport: str = 'grpc_asyncio', request_type=featurestore_service.UpdateFeaturestoreRequest):
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1373,13 +1352,11 @@ async def test_update_featurestore_async(transport: str = 'grpc_asyncio', reques
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.update_featurestore(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.UpdateFeaturestoreRequest()
 
     # Establish that the response is the type that we expect.
@@ -1393,12 +1370,13 @@ async def test_update_featurestore_async_from_dict():
 
 def test_update_featurestore_field_headers():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.UpdateFeaturestoreRequest()
+
     request.featurestore.name = 'featurestore.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1406,7 +1384,6 @@ def test_update_featurestore_field_headers():
             type(client.transport.update_featurestore),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.update_featurestore(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1425,12 +1402,13 @@ def test_update_featurestore_field_headers():
 @pytest.mark.asyncio
 async def test_update_featurestore_field_headers_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.UpdateFeaturestoreRequest()
+
     request.featurestore.name = 'featurestore.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1438,7 +1416,6 @@ async def test_update_featurestore_field_headers_async():
             type(client.transport.update_featurestore),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.update_featurestore(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1456,7 +1433,7 @@ async def test_update_featurestore_field_headers_async():
 
 def test_update_featurestore_flattened():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1465,27 +1442,24 @@ def test_update_featurestore_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_featurestore(
             featurestore=gca_featurestore.Featurestore(name='name_value'),
-            update_mask=field_mask.FieldMask(paths=['paths_value']),
+            update_mask=field_mask_pb2.FieldMask(paths=['paths_value']),
         )
 
         # Establish that the underlying call was made with the expected
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].featurestore == gca_featurestore.Featurestore(name='name_value')
-
-        assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
+        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
 
 
 def test_update_featurestore_flattened_error():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1494,14 +1468,14 @@ def test_update_featurestore_flattened_error():
         client.update_featurestore(
             featurestore_service.UpdateFeaturestoreRequest(),
             featurestore=gca_featurestore.Featurestore(name='name_value'),
-            update_mask=field_mask.FieldMask(paths=['paths_value']),
+            update_mask=field_mask_pb2.FieldMask(paths=['paths_value']),
         )
 
 
 @pytest.mark.asyncio
 async def test_update_featurestore_flattened_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1518,23 +1492,21 @@ async def test_update_featurestore_flattened_async():
         # using the keyword arguments to the method.
         response = await client.update_featurestore(
             featurestore=gca_featurestore.Featurestore(name='name_value'),
-            update_mask=field_mask.FieldMask(paths=['paths_value']),
+            update_mask=field_mask_pb2.FieldMask(paths=['paths_value']),
         )
 
         # Establish that the underlying call was made with the expected
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].featurestore == gca_featurestore.Featurestore(name='name_value')
-
-        assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
+        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
 
 
 @pytest.mark.asyncio
 async def test_update_featurestore_flattened_error_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1543,13 +1515,13 @@ async def test_update_featurestore_flattened_error_async():
         await client.update_featurestore(
             featurestore_service.UpdateFeaturestoreRequest(),
             featurestore=gca_featurestore.Featurestore(name='name_value'),
-            update_mask=field_mask.FieldMask(paths=['paths_value']),
+            update_mask=field_mask_pb2.FieldMask(paths=['paths_value']),
         )
 
 
 def test_delete_featurestore(transport: str = 'grpc', request_type=featurestore_service.DeleteFeaturestoreRequest):
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1563,13 +1535,11 @@ def test_delete_featurestore(transport: str = 'grpc', request_type=featurestore_
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.delete_featurestore(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.DeleteFeaturestoreRequest()
 
     # Establish that the response is the type that we expect.
@@ -1584,7 +1554,7 @@ def test_delete_featurestore_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -1595,13 +1565,13 @@ def test_delete_featurestore_empty_call():
         client.delete_featurestore()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.DeleteFeaturestoreRequest()
+
 
 @pytest.mark.asyncio
 async def test_delete_featurestore_async(transport: str = 'grpc_asyncio', request_type=featurestore_service.DeleteFeaturestoreRequest):
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1617,13 +1587,11 @@ async def test_delete_featurestore_async(transport: str = 'grpc_asyncio', reques
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.delete_featurestore(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.DeleteFeaturestoreRequest()
 
     # Establish that the response is the type that we expect.
@@ -1637,12 +1605,13 @@ async def test_delete_featurestore_async_from_dict():
 
 def test_delete_featurestore_field_headers():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.DeleteFeaturestoreRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1650,7 +1619,6 @@ def test_delete_featurestore_field_headers():
             type(client.transport.delete_featurestore),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.delete_featurestore(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1669,12 +1637,13 @@ def test_delete_featurestore_field_headers():
 @pytest.mark.asyncio
 async def test_delete_featurestore_field_headers_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.DeleteFeaturestoreRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1682,7 +1651,6 @@ async def test_delete_featurestore_field_headers_async():
             type(client.transport.delete_featurestore),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.delete_featurestore(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1700,7 +1668,7 @@ async def test_delete_featurestore_field_headers_async():
 
 def test_delete_featurestore_flattened():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1709,7 +1677,6 @@ def test_delete_featurestore_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_featurestore(
@@ -1720,13 +1687,12 @@ def test_delete_featurestore_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 def test_delete_featurestore_flattened_error():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1741,7 +1707,7 @@ def test_delete_featurestore_flattened_error():
 @pytest.mark.asyncio
 async def test_delete_featurestore_flattened_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1764,14 +1730,13 @@ async def test_delete_featurestore_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 @pytest.mark.asyncio
 async def test_delete_featurestore_flattened_error_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1785,7 +1750,7 @@ async def test_delete_featurestore_flattened_error_async():
 
 def test_create_entity_type(transport: str = 'grpc', request_type=featurestore_service.CreateEntityTypeRequest):
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1799,13 +1764,11 @@ def test_create_entity_type(transport: str = 'grpc', request_type=featurestore_s
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.create_entity_type(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.CreateEntityTypeRequest()
 
     # Establish that the response is the type that we expect.
@@ -1820,7 +1783,7 @@ def test_create_entity_type_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -1831,13 +1794,13 @@ def test_create_entity_type_empty_call():
         client.create_entity_type()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.CreateEntityTypeRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_entity_type_async(transport: str = 'grpc_asyncio', request_type=featurestore_service.CreateEntityTypeRequest):
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -1853,13 +1816,11 @@ async def test_create_entity_type_async(transport: str = 'grpc_asyncio', request
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.create_entity_type(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.CreateEntityTypeRequest()
 
     # Establish that the response is the type that we expect.
@@ -1873,12 +1834,13 @@ async def test_create_entity_type_async_from_dict():
 
 def test_create_entity_type_field_headers():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.CreateEntityTypeRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1886,7 +1848,6 @@ def test_create_entity_type_field_headers():
             type(client.transport.create_entity_type),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.create_entity_type(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1905,12 +1866,13 @@ def test_create_entity_type_field_headers():
 @pytest.mark.asyncio
 async def test_create_entity_type_field_headers_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.CreateEntityTypeRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1918,7 +1880,6 @@ async def test_create_entity_type_field_headers_async():
             type(client.transport.create_entity_type),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.create_entity_type(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1936,7 +1897,7 @@ async def test_create_entity_type_field_headers_async():
 
 def test_create_entity_type_flattened():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1945,7 +1906,6 @@ def test_create_entity_type_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_entity_type(
@@ -1957,15 +1917,13 @@ def test_create_entity_type_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].entity_type == gca_entity_type.EntityType(name='name_value')
 
 
 def test_create_entity_type_flattened_error():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -1981,7 +1939,7 @@ def test_create_entity_type_flattened_error():
 @pytest.mark.asyncio
 async def test_create_entity_type_flattened_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2005,16 +1963,14 @@ async def test_create_entity_type_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].entity_type == gca_entity_type.EntityType(name='name_value')
 
 
 @pytest.mark.asyncio
 async def test_create_entity_type_flattened_error_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -2029,7 +1985,7 @@ async def test_create_entity_type_flattened_error_async():
 
 def test_get_entity_type(transport: str = 'grpc', request_type=featurestore_service.GetEntityTypeRequest):
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2044,29 +2000,20 @@ def test_get_entity_type(transport: str = 'grpc', request_type=featurestore_serv
         # Designate an appropriate return value for the call.
         call.return_value = entity_type.EntityType(
             name='name_value',
-
             description='description_value',
-
             etag='etag_value',
-
         )
-
         response = client.get_entity_type(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.GetEntityTypeRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, entity_type.EntityType)
-
     assert response.name == 'name_value'
-
     assert response.description == 'description_value'
-
     assert response.etag == 'etag_value'
 
 
@@ -2078,7 +2025,7 @@ def test_get_entity_type_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -2089,13 +2036,13 @@ def test_get_entity_type_empty_call():
         client.get_entity_type()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.GetEntityTypeRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_entity_type_async(transport: str = 'grpc_asyncio', request_type=featurestore_service.GetEntityTypeRequest):
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2108,27 +2055,22 @@ async def test_get_entity_type_async(transport: str = 'grpc_asyncio', request_ty
             type(client.transport.get_entity_type),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(entity_type.EntityType(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(entity_type.EntityType(
             name='name_value',
             description='description_value',
             etag='etag_value',
         ))
-
         response = await client.get_entity_type(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.GetEntityTypeRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, entity_type.EntityType)
-
     assert response.name == 'name_value'
-
     assert response.description == 'description_value'
-
     assert response.etag == 'etag_value'
 
 
@@ -2139,12 +2081,13 @@ async def test_get_entity_type_async_from_dict():
 
 def test_get_entity_type_field_headers():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.GetEntityTypeRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2152,7 +2095,6 @@ def test_get_entity_type_field_headers():
             type(client.transport.get_entity_type),
             '__call__') as call:
         call.return_value = entity_type.EntityType()
-
         client.get_entity_type(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2171,12 +2113,13 @@ def test_get_entity_type_field_headers():
 @pytest.mark.asyncio
 async def test_get_entity_type_field_headers_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.GetEntityTypeRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2184,7 +2127,6 @@ async def test_get_entity_type_field_headers_async():
             type(client.transport.get_entity_type),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(entity_type.EntityType())
-
         await client.get_entity_type(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2202,7 +2144,7 @@ async def test_get_entity_type_field_headers_async():
 
 def test_get_entity_type_flattened():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2211,7 +2153,6 @@ def test_get_entity_type_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = entity_type.EntityType()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_entity_type(
@@ -2222,13 +2163,12 @@ def test_get_entity_type_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 def test_get_entity_type_flattened_error():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -2243,7 +2183,7 @@ def test_get_entity_type_flattened_error():
 @pytest.mark.asyncio
 async def test_get_entity_type_flattened_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2264,14 +2204,13 @@ async def test_get_entity_type_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 @pytest.mark.asyncio
 async def test_get_entity_type_flattened_error_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -2285,7 +2224,7 @@ async def test_get_entity_type_flattened_error_async():
 
 def test_list_entity_types(transport: str = 'grpc', request_type=featurestore_service.ListEntityTypesRequest):
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2300,21 +2239,16 @@ def test_list_entity_types(transport: str = 'grpc', request_type=featurestore_se
         # Designate an appropriate return value for the call.
         call.return_value = featurestore_service.ListEntityTypesResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_entity_types(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.ListEntityTypesRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListEntityTypesPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -2326,7 +2260,7 @@ def test_list_entity_types_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -2337,13 +2271,13 @@ def test_list_entity_types_empty_call():
         client.list_entity_types()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.ListEntityTypesRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_entity_types_async(transport: str = 'grpc_asyncio', request_type=featurestore_service.ListEntityTypesRequest):
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2356,21 +2290,18 @@ async def test_list_entity_types_async(transport: str = 'grpc_asyncio', request_
             type(client.transport.list_entity_types),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(featurestore_service.ListEntityTypesResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(featurestore_service.ListEntityTypesResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_entity_types(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.ListEntityTypesRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListEntityTypesAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -2381,12 +2312,13 @@ async def test_list_entity_types_async_from_dict():
 
 def test_list_entity_types_field_headers():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.ListEntityTypesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2394,7 +2326,6 @@ def test_list_entity_types_field_headers():
             type(client.transport.list_entity_types),
             '__call__') as call:
         call.return_value = featurestore_service.ListEntityTypesResponse()
-
         client.list_entity_types(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2413,12 +2344,13 @@ def test_list_entity_types_field_headers():
 @pytest.mark.asyncio
 async def test_list_entity_types_field_headers_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.ListEntityTypesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2426,7 +2358,6 @@ async def test_list_entity_types_field_headers_async():
             type(client.transport.list_entity_types),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(featurestore_service.ListEntityTypesResponse())
-
         await client.list_entity_types(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2444,7 +2375,7 @@ async def test_list_entity_types_field_headers_async():
 
 def test_list_entity_types_flattened():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2453,7 +2384,6 @@ def test_list_entity_types_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = featurestore_service.ListEntityTypesResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_entity_types(
@@ -2464,13 +2394,12 @@ def test_list_entity_types_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
 def test_list_entity_types_flattened_error():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -2485,7 +2414,7 @@ def test_list_entity_types_flattened_error():
 @pytest.mark.asyncio
 async def test_list_entity_types_flattened_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2506,14 +2435,13 @@ async def test_list_entity_types_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
 @pytest.mark.asyncio
 async def test_list_entity_types_flattened_error_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -2527,7 +2455,7 @@ async def test_list_entity_types_flattened_error_async():
 
 def test_list_entity_types_pager():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2580,7 +2508,7 @@ def test_list_entity_types_pager():
 
 def test_list_entity_types_pages():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2622,7 +2550,7 @@ def test_list_entity_types_pages():
 @pytest.mark.asyncio
 async def test_list_entity_types_async_pager():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2670,7 +2598,7 @@ async def test_list_entity_types_async_pager():
 @pytest.mark.asyncio
 async def test_list_entity_types_async_pages():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2711,10 +2639,9 @@ async def test_list_entity_types_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_update_entity_type(transport: str = 'grpc', request_type=featurestore_service.UpdateEntityTypeRequest):
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2729,29 +2656,20 @@ def test_update_entity_type(transport: str = 'grpc', request_type=featurestore_s
         # Designate an appropriate return value for the call.
         call.return_value = gca_entity_type.EntityType(
             name='name_value',
-
             description='description_value',
-
             etag='etag_value',
-
         )
-
         response = client.update_entity_type(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.UpdateEntityTypeRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, gca_entity_type.EntityType)
-
     assert response.name == 'name_value'
-
     assert response.description == 'description_value'
-
     assert response.etag == 'etag_value'
 
 
@@ -2763,7 +2681,7 @@ def test_update_entity_type_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -2774,13 +2692,13 @@ def test_update_entity_type_empty_call():
         client.update_entity_type()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.UpdateEntityTypeRequest()
+
 
 @pytest.mark.asyncio
 async def test_update_entity_type_async(transport: str = 'grpc_asyncio', request_type=featurestore_service.UpdateEntityTypeRequest):
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2793,27 +2711,22 @@ async def test_update_entity_type_async(transport: str = 'grpc_asyncio', request
             type(client.transport.update_entity_type),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gca_entity_type.EntityType(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gca_entity_type.EntityType(
             name='name_value',
             description='description_value',
             etag='etag_value',
         ))
-
         response = await client.update_entity_type(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.UpdateEntityTypeRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gca_entity_type.EntityType)
-
     assert response.name == 'name_value'
-
     assert response.description == 'description_value'
-
     assert response.etag == 'etag_value'
 
 
@@ -2824,12 +2737,13 @@ async def test_update_entity_type_async_from_dict():
 
 def test_update_entity_type_field_headers():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.UpdateEntityTypeRequest()
+
     request.entity_type.name = 'entity_type.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2837,7 +2751,6 @@ def test_update_entity_type_field_headers():
             type(client.transport.update_entity_type),
             '__call__') as call:
         call.return_value = gca_entity_type.EntityType()
-
         client.update_entity_type(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2856,12 +2769,13 @@ def test_update_entity_type_field_headers():
 @pytest.mark.asyncio
 async def test_update_entity_type_field_headers_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.UpdateEntityTypeRequest()
+
     request.entity_type.name = 'entity_type.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2869,7 +2783,6 @@ async def test_update_entity_type_field_headers_async():
             type(client.transport.update_entity_type),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gca_entity_type.EntityType())
-
         await client.update_entity_type(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2887,7 +2800,7 @@ async def test_update_entity_type_field_headers_async():
 
 def test_update_entity_type_flattened():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2896,27 +2809,24 @@ def test_update_entity_type_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gca_entity_type.EntityType()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_entity_type(
             entity_type=gca_entity_type.EntityType(name='name_value'),
-            update_mask=field_mask.FieldMask(paths=['paths_value']),
+            update_mask=field_mask_pb2.FieldMask(paths=['paths_value']),
         )
 
         # Establish that the underlying call was made with the expected
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].entity_type == gca_entity_type.EntityType(name='name_value')
-
-        assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
+        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
 
 
 def test_update_entity_type_flattened_error():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -2925,14 +2835,14 @@ def test_update_entity_type_flattened_error():
         client.update_entity_type(
             featurestore_service.UpdateEntityTypeRequest(),
             entity_type=gca_entity_type.EntityType(name='name_value'),
-            update_mask=field_mask.FieldMask(paths=['paths_value']),
+            update_mask=field_mask_pb2.FieldMask(paths=['paths_value']),
         )
 
 
 @pytest.mark.asyncio
 async def test_update_entity_type_flattened_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2947,23 +2857,21 @@ async def test_update_entity_type_flattened_async():
         # using the keyword arguments to the method.
         response = await client.update_entity_type(
             entity_type=gca_entity_type.EntityType(name='name_value'),
-            update_mask=field_mask.FieldMask(paths=['paths_value']),
+            update_mask=field_mask_pb2.FieldMask(paths=['paths_value']),
         )
 
         # Establish that the underlying call was made with the expected
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].entity_type == gca_entity_type.EntityType(name='name_value')
-
-        assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
+        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
 
 
 @pytest.mark.asyncio
 async def test_update_entity_type_flattened_error_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -2972,13 +2880,13 @@ async def test_update_entity_type_flattened_error_async():
         await client.update_entity_type(
             featurestore_service.UpdateEntityTypeRequest(),
             entity_type=gca_entity_type.EntityType(name='name_value'),
-            update_mask=field_mask.FieldMask(paths=['paths_value']),
+            update_mask=field_mask_pb2.FieldMask(paths=['paths_value']),
         )
 
 
 def test_delete_entity_type(transport: str = 'grpc', request_type=featurestore_service.DeleteEntityTypeRequest):
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -2992,13 +2900,11 @@ def test_delete_entity_type(transport: str = 'grpc', request_type=featurestore_s
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.delete_entity_type(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.DeleteEntityTypeRequest()
 
     # Establish that the response is the type that we expect.
@@ -3013,7 +2919,7 @@ def test_delete_entity_type_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -3024,13 +2930,13 @@ def test_delete_entity_type_empty_call():
         client.delete_entity_type()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.DeleteEntityTypeRequest()
+
 
 @pytest.mark.asyncio
 async def test_delete_entity_type_async(transport: str = 'grpc_asyncio', request_type=featurestore_service.DeleteEntityTypeRequest):
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3046,13 +2952,11 @@ async def test_delete_entity_type_async(transport: str = 'grpc_asyncio', request
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.delete_entity_type(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.DeleteEntityTypeRequest()
 
     # Establish that the response is the type that we expect.
@@ -3066,12 +2970,13 @@ async def test_delete_entity_type_async_from_dict():
 
 def test_delete_entity_type_field_headers():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.DeleteEntityTypeRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3079,7 +2984,6 @@ def test_delete_entity_type_field_headers():
             type(client.transport.delete_entity_type),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.delete_entity_type(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3098,12 +3002,13 @@ def test_delete_entity_type_field_headers():
 @pytest.mark.asyncio
 async def test_delete_entity_type_field_headers_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.DeleteEntityTypeRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3111,7 +3016,6 @@ async def test_delete_entity_type_field_headers_async():
             type(client.transport.delete_entity_type),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.delete_entity_type(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3129,7 +3033,7 @@ async def test_delete_entity_type_field_headers_async():
 
 def test_delete_entity_type_flattened():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3138,7 +3042,6 @@ def test_delete_entity_type_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_entity_type(
@@ -3149,13 +3052,12 @@ def test_delete_entity_type_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 def test_delete_entity_type_flattened_error():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -3170,7 +3072,7 @@ def test_delete_entity_type_flattened_error():
 @pytest.mark.asyncio
 async def test_delete_entity_type_flattened_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3193,14 +3095,13 @@ async def test_delete_entity_type_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 @pytest.mark.asyncio
 async def test_delete_entity_type_flattened_error_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -3214,7 +3115,7 @@ async def test_delete_entity_type_flattened_error_async():
 
 def test_create_feature(transport: str = 'grpc', request_type=featurestore_service.CreateFeatureRequest):
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3228,13 +3129,11 @@ def test_create_feature(transport: str = 'grpc', request_type=featurestore_servi
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.create_feature(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.CreateFeatureRequest()
 
     # Establish that the response is the type that we expect.
@@ -3249,7 +3148,7 @@ def test_create_feature_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -3260,13 +3159,13 @@ def test_create_feature_empty_call():
         client.create_feature()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.CreateFeatureRequest()
+
 
 @pytest.mark.asyncio
 async def test_create_feature_async(transport: str = 'grpc_asyncio', request_type=featurestore_service.CreateFeatureRequest):
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3282,13 +3181,11 @@ async def test_create_feature_async(transport: str = 'grpc_asyncio', request_typ
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.create_feature(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.CreateFeatureRequest()
 
     # Establish that the response is the type that we expect.
@@ -3302,12 +3199,13 @@ async def test_create_feature_async_from_dict():
 
 def test_create_feature_field_headers():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.CreateFeatureRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3315,7 +3213,6 @@ def test_create_feature_field_headers():
             type(client.transport.create_feature),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.create_feature(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3334,12 +3231,13 @@ def test_create_feature_field_headers():
 @pytest.mark.asyncio
 async def test_create_feature_field_headers_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.CreateFeatureRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3347,7 +3245,6 @@ async def test_create_feature_field_headers_async():
             type(client.transport.create_feature),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.create_feature(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3365,7 +3262,7 @@ async def test_create_feature_field_headers_async():
 
 def test_create_feature_flattened():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3374,7 +3271,6 @@ def test_create_feature_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_feature(
@@ -3386,15 +3282,13 @@ def test_create_feature_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].feature == gca_feature.Feature(name='name_value')
 
 
 def test_create_feature_flattened_error():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -3410,7 +3304,7 @@ def test_create_feature_flattened_error():
 @pytest.mark.asyncio
 async def test_create_feature_flattened_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3434,16 +3328,14 @@ async def test_create_feature_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].feature == gca_feature.Feature(name='name_value')
 
 
 @pytest.mark.asyncio
 async def test_create_feature_flattened_error_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -3458,7 +3350,7 @@ async def test_create_feature_flattened_error_async():
 
 def test_batch_create_features(transport: str = 'grpc', request_type=featurestore_service.BatchCreateFeaturesRequest):
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3472,13 +3364,11 @@ def test_batch_create_features(transport: str = 'grpc', request_type=featurestor
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.batch_create_features(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.BatchCreateFeaturesRequest()
 
     # Establish that the response is the type that we expect.
@@ -3493,7 +3383,7 @@ def test_batch_create_features_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -3504,13 +3394,13 @@ def test_batch_create_features_empty_call():
         client.batch_create_features()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.BatchCreateFeaturesRequest()
+
 
 @pytest.mark.asyncio
 async def test_batch_create_features_async(transport: str = 'grpc_asyncio', request_type=featurestore_service.BatchCreateFeaturesRequest):
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3526,13 +3416,11 @@ async def test_batch_create_features_async(transport: str = 'grpc_asyncio', requ
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.batch_create_features(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.BatchCreateFeaturesRequest()
 
     # Establish that the response is the type that we expect.
@@ -3546,12 +3434,13 @@ async def test_batch_create_features_async_from_dict():
 
 def test_batch_create_features_field_headers():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.BatchCreateFeaturesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3559,7 +3448,6 @@ def test_batch_create_features_field_headers():
             type(client.transport.batch_create_features),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.batch_create_features(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3578,12 +3466,13 @@ def test_batch_create_features_field_headers():
 @pytest.mark.asyncio
 async def test_batch_create_features_field_headers_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.BatchCreateFeaturesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3591,7 +3480,6 @@ async def test_batch_create_features_field_headers_async():
             type(client.transport.batch_create_features),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.batch_create_features(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3609,7 +3497,7 @@ async def test_batch_create_features_field_headers_async():
 
 def test_batch_create_features_flattened():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3618,7 +3506,6 @@ def test_batch_create_features_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.batch_create_features(
@@ -3630,15 +3517,13 @@ def test_batch_create_features_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].requests == [featurestore_service.CreateFeatureRequest(parent='parent_value')]
 
 
 def test_batch_create_features_flattened_error():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -3654,7 +3539,7 @@ def test_batch_create_features_flattened_error():
 @pytest.mark.asyncio
 async def test_batch_create_features_flattened_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3678,16 +3563,14 @@ async def test_batch_create_features_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
-
         assert args[0].requests == [featurestore_service.CreateFeatureRequest(parent='parent_value')]
 
 
 @pytest.mark.asyncio
 async def test_batch_create_features_flattened_error_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -3702,7 +3585,7 @@ async def test_batch_create_features_flattened_error_async():
 
 def test_get_feature(transport: str = 'grpc', request_type=featurestore_service.GetFeatureRequest):
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3717,33 +3600,22 @@ def test_get_feature(transport: str = 'grpc', request_type=featurestore_service.
         # Designate an appropriate return value for the call.
         call.return_value = feature.Feature(
             name='name_value',
-
             description='description_value',
-
             value_type=feature.Feature.ValueType.BOOL,
-
             etag='etag_value',
-
         )
-
         response = client.get_feature(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.GetFeatureRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, feature.Feature)
-
     assert response.name == 'name_value'
-
     assert response.description == 'description_value'
-
     assert response.value_type == feature.Feature.ValueType.BOOL
-
     assert response.etag == 'etag_value'
 
 
@@ -3755,7 +3627,7 @@ def test_get_feature_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -3766,13 +3638,13 @@ def test_get_feature_empty_call():
         client.get_feature()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.GetFeatureRequest()
+
 
 @pytest.mark.asyncio
 async def test_get_feature_async(transport: str = 'grpc_asyncio', request_type=featurestore_service.GetFeatureRequest):
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3785,30 +3657,24 @@ async def test_get_feature_async(transport: str = 'grpc_asyncio', request_type=f
             type(client.transport.get_feature),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(feature.Feature(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(feature.Feature(
             name='name_value',
             description='description_value',
             value_type=feature.Feature.ValueType.BOOL,
             etag='etag_value',
         ))
-
         response = await client.get_feature(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.GetFeatureRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, feature.Feature)
-
     assert response.name == 'name_value'
-
     assert response.description == 'description_value'
-
     assert response.value_type == feature.Feature.ValueType.BOOL
-
     assert response.etag == 'etag_value'
 
 
@@ -3819,12 +3685,13 @@ async def test_get_feature_async_from_dict():
 
 def test_get_feature_field_headers():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.GetFeatureRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3832,7 +3699,6 @@ def test_get_feature_field_headers():
             type(client.transport.get_feature),
             '__call__') as call:
         call.return_value = feature.Feature()
-
         client.get_feature(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3851,12 +3717,13 @@ def test_get_feature_field_headers():
 @pytest.mark.asyncio
 async def test_get_feature_field_headers_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.GetFeatureRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3864,7 +3731,6 @@ async def test_get_feature_field_headers_async():
             type(client.transport.get_feature),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(feature.Feature())
-
         await client.get_feature(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3882,7 +3748,7 @@ async def test_get_feature_field_headers_async():
 
 def test_get_feature_flattened():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3891,7 +3757,6 @@ def test_get_feature_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = feature.Feature()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_feature(
@@ -3902,13 +3767,12 @@ def test_get_feature_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 def test_get_feature_flattened_error():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -3923,7 +3787,7 @@ def test_get_feature_flattened_error():
 @pytest.mark.asyncio
 async def test_get_feature_flattened_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3944,14 +3808,13 @@ async def test_get_feature_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 @pytest.mark.asyncio
 async def test_get_feature_flattened_error_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -3965,7 +3828,7 @@ async def test_get_feature_flattened_error_async():
 
 def test_list_features(transport: str = 'grpc', request_type=featurestore_service.ListFeaturesRequest):
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -3980,21 +3843,16 @@ def test_list_features(transport: str = 'grpc', request_type=featurestore_servic
         # Designate an appropriate return value for the call.
         call.return_value = featurestore_service.ListFeaturesResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.list_features(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.ListFeaturesRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.ListFeaturesPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -4006,7 +3864,7 @@ def test_list_features_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -4017,13 +3875,13 @@ def test_list_features_empty_call():
         client.list_features()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.ListFeaturesRequest()
+
 
 @pytest.mark.asyncio
 async def test_list_features_async(transport: str = 'grpc_asyncio', request_type=featurestore_service.ListFeaturesRequest):
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -4036,21 +3894,18 @@ async def test_list_features_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.list_features),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(featurestore_service.ListFeaturesResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(featurestore_service.ListFeaturesResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.list_features(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.ListFeaturesRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListFeaturesAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -4061,12 +3916,13 @@ async def test_list_features_async_from_dict():
 
 def test_list_features_field_headers():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.ListFeaturesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4074,7 +3930,6 @@ def test_list_features_field_headers():
             type(client.transport.list_features),
             '__call__') as call:
         call.return_value = featurestore_service.ListFeaturesResponse()
-
         client.list_features(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4093,12 +3948,13 @@ def test_list_features_field_headers():
 @pytest.mark.asyncio
 async def test_list_features_field_headers_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.ListFeaturesRequest()
+
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4106,7 +3962,6 @@ async def test_list_features_field_headers_async():
             type(client.transport.list_features),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(featurestore_service.ListFeaturesResponse())
-
         await client.list_features(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4124,7 +3979,7 @@ async def test_list_features_field_headers_async():
 
 def test_list_features_flattened():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4133,7 +3988,6 @@ def test_list_features_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = featurestore_service.ListFeaturesResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_features(
@@ -4144,13 +3998,12 @@ def test_list_features_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
 def test_list_features_flattened_error():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -4165,7 +4018,7 @@ def test_list_features_flattened_error():
 @pytest.mark.asyncio
 async def test_list_features_flattened_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4186,14 +4039,13 @@ async def test_list_features_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].parent == 'parent_value'
 
 
 @pytest.mark.asyncio
 async def test_list_features_flattened_error_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -4207,7 +4059,7 @@ async def test_list_features_flattened_error_async():
 
 def test_list_features_pager():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4260,7 +4112,7 @@ def test_list_features_pager():
 
 def test_list_features_pages():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4302,7 +4154,7 @@ def test_list_features_pages():
 @pytest.mark.asyncio
 async def test_list_features_async_pager():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4350,7 +4202,7 @@ async def test_list_features_async_pager():
 @pytest.mark.asyncio
 async def test_list_features_async_pages():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4391,10 +4243,9 @@ async def test_list_features_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-
 def test_update_feature(transport: str = 'grpc', request_type=featurestore_service.UpdateFeatureRequest):
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -4409,33 +4260,22 @@ def test_update_feature(transport: str = 'grpc', request_type=featurestore_servi
         # Designate an appropriate return value for the call.
         call.return_value = gca_feature.Feature(
             name='name_value',
-
             description='description_value',
-
             value_type=gca_feature.Feature.ValueType.BOOL,
-
             etag='etag_value',
-
         )
-
         response = client.update_feature(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.UpdateFeatureRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, gca_feature.Feature)
-
     assert response.name == 'name_value'
-
     assert response.description == 'description_value'
-
     assert response.value_type == gca_feature.Feature.ValueType.BOOL
-
     assert response.etag == 'etag_value'
 
 
@@ -4447,7 +4287,7 @@ def test_update_feature_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -4458,13 +4298,13 @@ def test_update_feature_empty_call():
         client.update_feature()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.UpdateFeatureRequest()
+
 
 @pytest.mark.asyncio
 async def test_update_feature_async(transport: str = 'grpc_asyncio', request_type=featurestore_service.UpdateFeatureRequest):
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -4477,30 +4317,24 @@ async def test_update_feature_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.update_feature),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gca_feature.Feature(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gca_feature.Feature(
             name='name_value',
             description='description_value',
             value_type=gca_feature.Feature.ValueType.BOOL,
             etag='etag_value',
         ))
-
         response = await client.update_feature(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.UpdateFeatureRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gca_feature.Feature)
-
     assert response.name == 'name_value'
-
     assert response.description == 'description_value'
-
     assert response.value_type == gca_feature.Feature.ValueType.BOOL
-
     assert response.etag == 'etag_value'
 
 
@@ -4511,12 +4345,13 @@ async def test_update_feature_async_from_dict():
 
 def test_update_feature_field_headers():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.UpdateFeatureRequest()
+
     request.feature.name = 'feature.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4524,7 +4359,6 @@ def test_update_feature_field_headers():
             type(client.transport.update_feature),
             '__call__') as call:
         call.return_value = gca_feature.Feature()
-
         client.update_feature(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4543,12 +4377,13 @@ def test_update_feature_field_headers():
 @pytest.mark.asyncio
 async def test_update_feature_field_headers_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.UpdateFeatureRequest()
+
     request.feature.name = 'feature.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4556,7 +4391,6 @@ async def test_update_feature_field_headers_async():
             type(client.transport.update_feature),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gca_feature.Feature())
-
         await client.update_feature(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4574,7 +4408,7 @@ async def test_update_feature_field_headers_async():
 
 def test_update_feature_flattened():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4583,27 +4417,24 @@ def test_update_feature_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gca_feature.Feature()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_feature(
             feature=gca_feature.Feature(name='name_value'),
-            update_mask=field_mask.FieldMask(paths=['paths_value']),
+            update_mask=field_mask_pb2.FieldMask(paths=['paths_value']),
         )
 
         # Establish that the underlying call was made with the expected
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].feature == gca_feature.Feature(name='name_value')
-
-        assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
+        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
 
 
 def test_update_feature_flattened_error():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -4612,14 +4443,14 @@ def test_update_feature_flattened_error():
         client.update_feature(
             featurestore_service.UpdateFeatureRequest(),
             feature=gca_feature.Feature(name='name_value'),
-            update_mask=field_mask.FieldMask(paths=['paths_value']),
+            update_mask=field_mask_pb2.FieldMask(paths=['paths_value']),
         )
 
 
 @pytest.mark.asyncio
 async def test_update_feature_flattened_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4634,23 +4465,21 @@ async def test_update_feature_flattened_async():
         # using the keyword arguments to the method.
         response = await client.update_feature(
             feature=gca_feature.Feature(name='name_value'),
-            update_mask=field_mask.FieldMask(paths=['paths_value']),
+            update_mask=field_mask_pb2.FieldMask(paths=['paths_value']),
         )
 
         # Establish that the underlying call was made with the expected
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].feature == gca_feature.Feature(name='name_value')
-
-        assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
+        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
 
 
 @pytest.mark.asyncio
 async def test_update_feature_flattened_error_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -4659,13 +4488,13 @@ async def test_update_feature_flattened_error_async():
         await client.update_feature(
             featurestore_service.UpdateFeatureRequest(),
             feature=gca_feature.Feature(name='name_value'),
-            update_mask=field_mask.FieldMask(paths=['paths_value']),
+            update_mask=field_mask_pb2.FieldMask(paths=['paths_value']),
         )
 
 
 def test_delete_feature(transport: str = 'grpc', request_type=featurestore_service.DeleteFeatureRequest):
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -4679,13 +4508,11 @@ def test_delete_feature(transport: str = 'grpc', request_type=featurestore_servi
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.delete_feature(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.DeleteFeatureRequest()
 
     # Establish that the response is the type that we expect.
@@ -4700,7 +4527,7 @@ def test_delete_feature_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -4711,13 +4538,13 @@ def test_delete_feature_empty_call():
         client.delete_feature()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.DeleteFeatureRequest()
+
 
 @pytest.mark.asyncio
 async def test_delete_feature_async(transport: str = 'grpc_asyncio', request_type=featurestore_service.DeleteFeatureRequest):
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -4733,13 +4560,11 @@ async def test_delete_feature_async(transport: str = 'grpc_asyncio', request_typ
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.delete_feature(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.DeleteFeatureRequest()
 
     # Establish that the response is the type that we expect.
@@ -4753,12 +4578,13 @@ async def test_delete_feature_async_from_dict():
 
 def test_delete_feature_field_headers():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.DeleteFeatureRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4766,7 +4592,6 @@ def test_delete_feature_field_headers():
             type(client.transport.delete_feature),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.delete_feature(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4785,12 +4610,13 @@ def test_delete_feature_field_headers():
 @pytest.mark.asyncio
 async def test_delete_feature_field_headers_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.DeleteFeatureRequest()
+
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4798,7 +4624,6 @@ async def test_delete_feature_field_headers_async():
             type(client.transport.delete_feature),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.delete_feature(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4816,7 +4641,7 @@ async def test_delete_feature_field_headers_async():
 
 def test_delete_feature_flattened():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4825,7 +4650,6 @@ def test_delete_feature_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_feature(
@@ -4836,13 +4660,12 @@ def test_delete_feature_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 def test_delete_feature_flattened_error():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -4857,7 +4680,7 @@ def test_delete_feature_flattened_error():
 @pytest.mark.asyncio
 async def test_delete_feature_flattened_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4880,14 +4703,13 @@ async def test_delete_feature_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].name == 'name_value'
 
 
 @pytest.mark.asyncio
 async def test_delete_feature_flattened_error_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -4901,7 +4723,7 @@ async def test_delete_feature_flattened_error_async():
 
 def test_import_feature_values(transport: str = 'grpc', request_type=featurestore_service.ImportFeatureValuesRequest):
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -4915,13 +4737,11 @@ def test_import_feature_values(transport: str = 'grpc', request_type=featurestor
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.import_feature_values(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.ImportFeatureValuesRequest()
 
     # Establish that the response is the type that we expect.
@@ -4936,7 +4756,7 @@ def test_import_feature_values_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -4947,13 +4767,13 @@ def test_import_feature_values_empty_call():
         client.import_feature_values()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.ImportFeatureValuesRequest()
+
 
 @pytest.mark.asyncio
 async def test_import_feature_values_async(transport: str = 'grpc_asyncio', request_type=featurestore_service.ImportFeatureValuesRequest):
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -4969,13 +4789,11 @@ async def test_import_feature_values_async(transport: str = 'grpc_asyncio', requ
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.import_feature_values(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.ImportFeatureValuesRequest()
 
     # Establish that the response is the type that we expect.
@@ -4989,12 +4807,13 @@ async def test_import_feature_values_async_from_dict():
 
 def test_import_feature_values_field_headers():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.ImportFeatureValuesRequest()
+
     request.entity_type = 'entity_type/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5002,7 +4821,6 @@ def test_import_feature_values_field_headers():
             type(client.transport.import_feature_values),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.import_feature_values(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5021,12 +4839,13 @@ def test_import_feature_values_field_headers():
 @pytest.mark.asyncio
 async def test_import_feature_values_field_headers_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.ImportFeatureValuesRequest()
+
     request.entity_type = 'entity_type/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5034,7 +4853,6 @@ async def test_import_feature_values_field_headers_async():
             type(client.transport.import_feature_values),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.import_feature_values(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5052,7 +4870,7 @@ async def test_import_feature_values_field_headers_async():
 
 def test_import_feature_values_flattened():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5061,7 +4879,6 @@ def test_import_feature_values_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.import_feature_values(
@@ -5072,13 +4889,12 @@ def test_import_feature_values_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].entity_type == 'entity_type_value'
 
 
 def test_import_feature_values_flattened_error():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -5093,7 +4909,7 @@ def test_import_feature_values_flattened_error():
 @pytest.mark.asyncio
 async def test_import_feature_values_flattened_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5116,14 +4932,13 @@ async def test_import_feature_values_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].entity_type == 'entity_type_value'
 
 
 @pytest.mark.asyncio
 async def test_import_feature_values_flattened_error_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -5137,7 +4952,7 @@ async def test_import_feature_values_flattened_error_async():
 
 def test_batch_read_feature_values(transport: str = 'grpc', request_type=featurestore_service.BatchReadFeatureValuesRequest):
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -5151,13 +4966,11 @@ def test_batch_read_feature_values(transport: str = 'grpc', request_type=feature
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.batch_read_feature_values(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.BatchReadFeatureValuesRequest()
 
     # Establish that the response is the type that we expect.
@@ -5172,7 +4985,7 @@ def test_batch_read_feature_values_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -5183,13 +4996,13 @@ def test_batch_read_feature_values_empty_call():
         client.batch_read_feature_values()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.BatchReadFeatureValuesRequest()
+
 
 @pytest.mark.asyncio
 async def test_batch_read_feature_values_async(transport: str = 'grpc_asyncio', request_type=featurestore_service.BatchReadFeatureValuesRequest):
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -5205,13 +5018,11 @@ async def test_batch_read_feature_values_async(transport: str = 'grpc_asyncio', 
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.batch_read_feature_values(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.BatchReadFeatureValuesRequest()
 
     # Establish that the response is the type that we expect.
@@ -5225,12 +5036,13 @@ async def test_batch_read_feature_values_async_from_dict():
 
 def test_batch_read_feature_values_field_headers():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.BatchReadFeatureValuesRequest()
+
     request.featurestore = 'featurestore/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5238,7 +5050,6 @@ def test_batch_read_feature_values_field_headers():
             type(client.transport.batch_read_feature_values),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.batch_read_feature_values(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5257,12 +5068,13 @@ def test_batch_read_feature_values_field_headers():
 @pytest.mark.asyncio
 async def test_batch_read_feature_values_field_headers_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.BatchReadFeatureValuesRequest()
+
     request.featurestore = 'featurestore/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5270,7 +5082,6 @@ async def test_batch_read_feature_values_field_headers_async():
             type(client.transport.batch_read_feature_values),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.batch_read_feature_values(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5288,7 +5099,7 @@ async def test_batch_read_feature_values_field_headers_async():
 
 def test_batch_read_feature_values_flattened():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5297,7 +5108,6 @@ def test_batch_read_feature_values_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.batch_read_feature_values(
@@ -5308,13 +5118,12 @@ def test_batch_read_feature_values_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].featurestore == 'featurestore_value'
 
 
 def test_batch_read_feature_values_flattened_error():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -5329,7 +5138,7 @@ def test_batch_read_feature_values_flattened_error():
 @pytest.mark.asyncio
 async def test_batch_read_feature_values_flattened_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5352,14 +5161,13 @@ async def test_batch_read_feature_values_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].featurestore == 'featurestore_value'
 
 
 @pytest.mark.asyncio
 async def test_batch_read_feature_values_flattened_error_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -5373,7 +5181,7 @@ async def test_batch_read_feature_values_flattened_error_async():
 
 def test_export_feature_values(transport: str = 'grpc', request_type=featurestore_service.ExportFeatureValuesRequest):
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -5387,13 +5195,11 @@ def test_export_feature_values(transport: str = 'grpc', request_type=featurestor
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
-
         response = client.export_feature_values(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.ExportFeatureValuesRequest()
 
     # Establish that the response is the type that we expect.
@@ -5408,7 +5214,7 @@ def test_export_feature_values_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -5419,13 +5225,13 @@ def test_export_feature_values_empty_call():
         client.export_feature_values()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.ExportFeatureValuesRequest()
+
 
 @pytest.mark.asyncio
 async def test_export_feature_values_async(transport: str = 'grpc_asyncio', request_type=featurestore_service.ExportFeatureValuesRequest):
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -5441,13 +5247,11 @@ async def test_export_feature_values_async(transport: str = 'grpc_asyncio', requ
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
-
         response = await client.export_feature_values(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.ExportFeatureValuesRequest()
 
     # Establish that the response is the type that we expect.
@@ -5461,12 +5265,13 @@ async def test_export_feature_values_async_from_dict():
 
 def test_export_feature_values_field_headers():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.ExportFeatureValuesRequest()
+
     request.entity_type = 'entity_type/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5474,7 +5279,6 @@ def test_export_feature_values_field_headers():
             type(client.transport.export_feature_values),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         client.export_feature_values(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5493,12 +5297,13 @@ def test_export_feature_values_field_headers():
 @pytest.mark.asyncio
 async def test_export_feature_values_field_headers_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.ExportFeatureValuesRequest()
+
     request.entity_type = 'entity_type/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5506,7 +5311,6 @@ async def test_export_feature_values_field_headers_async():
             type(client.transport.export_feature_values),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
-
         await client.export_feature_values(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5524,7 +5328,7 @@ async def test_export_feature_values_field_headers_async():
 
 def test_export_feature_values_flattened():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5533,7 +5337,6 @@ def test_export_feature_values_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.export_feature_values(
@@ -5544,13 +5347,12 @@ def test_export_feature_values_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].entity_type == 'entity_type_value'
 
 
 def test_export_feature_values_flattened_error():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -5565,7 +5367,7 @@ def test_export_feature_values_flattened_error():
 @pytest.mark.asyncio
 async def test_export_feature_values_flattened_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5588,14 +5390,13 @@ async def test_export_feature_values_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].entity_type == 'entity_type_value'
 
 
 @pytest.mark.asyncio
 async def test_export_feature_values_flattened_error_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -5609,7 +5410,7 @@ async def test_export_feature_values_flattened_error_async():
 
 def test_search_features(transport: str = 'grpc', request_type=featurestore_service.SearchFeaturesRequest):
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -5624,21 +5425,16 @@ def test_search_features(transport: str = 'grpc', request_type=featurestore_serv
         # Designate an appropriate return value for the call.
         call.return_value = featurestore_service.SearchFeaturesResponse(
             next_page_token='next_page_token_value',
-
         )
-
         response = client.search_features(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.SearchFeaturesRequest()
 
     # Establish that the response is the type that we expect.
-
     assert isinstance(response, pagers.SearchFeaturesPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -5650,7 +5446,7 @@ def test_search_features_empty_call():
     # This test is a coverage failsafe to make sure that totally empty calls,
     # i.e. request == None and no flattened fields passed, work.
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
 
@@ -5661,13 +5457,13 @@ def test_search_features_empty_call():
         client.search_features()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.SearchFeaturesRequest()
+
 
 @pytest.mark.asyncio
 async def test_search_features_async(transport: str = 'grpc_asyncio', request_type=featurestore_service.SearchFeaturesRequest):
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
     )
 
@@ -5680,21 +5476,18 @@ async def test_search_features_async(transport: str = 'grpc_asyncio', request_ty
             type(client.transport.search_features),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(featurestore_service.SearchFeaturesResponse(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(featurestore_service.SearchFeaturesResponse(
             next_page_token='next_page_token_value',
         ))
-
         response = await client.search_features(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0] == featurestore_service.SearchFeaturesRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.SearchFeaturesAsyncPager)
-
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -5705,12 +5498,13 @@ async def test_search_features_async_from_dict():
 
 def test_search_features_field_headers():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.SearchFeaturesRequest()
+
     request.location = 'location/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5718,7 +5512,6 @@ def test_search_features_field_headers():
             type(client.transport.search_features),
             '__call__') as call:
         call.return_value = featurestore_service.SearchFeaturesResponse()
-
         client.search_features(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5737,12 +5530,13 @@ def test_search_features_field_headers():
 @pytest.mark.asyncio
 async def test_search_features_field_headers_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = featurestore_service.SearchFeaturesRequest()
+
     request.location = 'location/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5750,7 +5544,6 @@ async def test_search_features_field_headers_async():
             type(client.transport.search_features),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(featurestore_service.SearchFeaturesResponse())
-
         await client.search_features(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5768,7 +5561,7 @@ async def test_search_features_field_headers_async():
 
 def test_search_features_flattened():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5777,7 +5570,6 @@ def test_search_features_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = featurestore_service.SearchFeaturesResponse()
-
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.search_features(
@@ -5788,13 +5580,12 @@ def test_search_features_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-
         assert args[0].location == 'location_value'
 
 
 def test_search_features_flattened_error():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -5809,7 +5600,7 @@ def test_search_features_flattened_error():
 @pytest.mark.asyncio
 async def test_search_features_flattened_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5830,14 +5621,13 @@ async def test_search_features_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-
         assert args[0].location == 'location_value'
 
 
 @pytest.mark.asyncio
 async def test_search_features_flattened_error_async():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
 
     # Attempting to call a method with both a request object and flattened
@@ -5851,7 +5641,7 @@ async def test_search_features_flattened_error_async():
 
 def test_search_features_pager():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5904,7 +5694,7 @@ def test_search_features_pager():
 
 def test_search_features_pages():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5946,7 +5736,7 @@ def test_search_features_pages():
 @pytest.mark.asyncio
 async def test_search_features_async_pager():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5994,7 +5784,7 @@ async def test_search_features_async_pager():
 @pytest.mark.asyncio
 async def test_search_features_async_pages():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials,
+        credentials=ga_credentials.AnonymousCredentials,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6039,17 +5829,17 @@ async def test_search_features_async_pages():
 def test_credentials_transport_error():
     # It is an error to provide credentials and a transport instance.
     transport = transports.FeaturestoreServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = FeaturestoreServiceClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             transport=transport,
         )
 
     # It is an error to provide a credentials file and a transport instance.
     transport = transports.FeaturestoreServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = FeaturestoreServiceClient(
@@ -6059,7 +5849,7 @@ def test_credentials_transport_error():
 
     # It is an error to provide scopes and a transport instance.
     transport = transports.FeaturestoreServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     with pytest.raises(ValueError):
         client = FeaturestoreServiceClient(
@@ -6071,26 +5861,24 @@ def test_credentials_transport_error():
 def test_transport_instance():
     # A client may be instantiated with a custom transport instance.
     transport = transports.FeaturestoreServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     client = FeaturestoreServiceClient(transport=transport)
     assert client.transport is transport
 
-
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.FeaturestoreServiceGrpcTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     channel = transport.grpc_channel
     assert channel
 
     transport = transports.FeaturestoreServiceGrpcAsyncIOTransport(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     channel = transport.grpc_channel
     assert channel
-
 
 @pytest.mark.parametrize("transport_class", [
     transports.FeaturestoreServiceGrpcTransport,
@@ -6098,28 +5886,26 @@ def test_transport_get_channel():
 ])
 def test_transport_adc(transport_class):
     # Test default credentials are used if not provided.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport_class()
         adc.assert_called_once()
-
 
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
     )
     assert isinstance(
         client.transport,
         transports.FeaturestoreServiceGrpcTransport,
     )
 
-
 def test_featurestore_service_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
-    with pytest.raises(exceptions.DuplicateCredentialArgs):
+    with pytest.raises(core_exceptions.DuplicateCredentialArgs):
         transport = transports.FeaturestoreServiceTransport(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             credentials_file="credentials.json"
         )
 
@@ -6129,7 +5915,7 @@ def test_featurestore_service_base_transport():
     with mock.patch('google.cloud.aiplatform_v1beta1.services.featurestore_service.transports.FeaturestoreServiceTransport.__init__') as Transport:
         Transport.return_value = None
         transport = transports.FeaturestoreServiceTransport(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
         )
 
     # Every method on the transport should just blindly
@@ -6155,7 +5941,7 @@ def test_featurestore_service_base_transport():
         'batch_read_feature_values',
         'export_feature_values',
         'search_features',
-        )
+    )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -6166,11 +5952,31 @@ def test_featurestore_service_base_transport():
         transport.operations_client
 
 
+@requires_google_auth_gte_1_25_0
 def test_featurestore_service_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.aiplatform_v1beta1.services.featurestore_service.transports.FeaturestoreServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.aiplatform_v1beta1.services.featurestore_service.transports.FeaturestoreServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
+        load_creds.return_value = (ga_credentials.AnonymousCredentials(), None)
+        transport = transports.FeaturestoreServiceTransport(
+            credentials_file="credentials.json",
+            quota_project_id="octopus",
+        )
+        load_creds.assert_called_once_with("credentials.json",
+            scopes=None,
+            default_scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
+            quota_project_id="octopus",
+        )
+
+
+@requires_google_auth_lt_1_25_0
+def test_featurestore_service_base_transport_with_credentials_file_old_google_auth():
+    # Instantiate the base transport with a credentials file
+    with mock.patch.object(google.auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.aiplatform_v1beta1.services.featurestore_service.transports.FeaturestoreServiceTransport._prep_wrapped_messages') as Transport:
+        Transport.return_value = None
+        load_creds.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.FeaturestoreServiceTransport(
             credentials_file="credentials.json",
             quota_project_id="octopus",
@@ -6184,33 +5990,185 @@ def test_featurestore_service_base_transport_with_credentials_file():
 
 def test_featurestore_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.aiplatform_v1beta1.services.featurestore_service.transports.FeaturestoreServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc, mock.patch('google.cloud.aiplatform_v1beta1.services.featurestore_service.transports.FeaturestoreServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.FeaturestoreServiceTransport()
         adc.assert_called_once()
 
 
+@requires_google_auth_gte_1_25_0
 def test_featurestore_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         FeaturestoreServiceClient()
-        adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',),
+        adc.assert_called_once_with(
+            scopes=None,
+            default_scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
             quota_project_id=None,
         )
 
 
-def test_featurestore_service_transport_auth_adc():
+@requires_google_auth_lt_1_25_0
+def test_featurestore_service_auth_adc_old_google_auth():
+    # If no credentials are provided, we should use ADC credentials.
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
+        FeaturestoreServiceClient()
+        adc.assert_called_once_with(
+            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id=None,
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.FeaturestoreServiceGrpcTransport,
+        transports.FeaturestoreServiceGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_gte_1_25_0
+def test_featurestore_service_transport_auth_adc(transport_class):
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, 'default') as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transports.FeaturestoreServiceGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
-        adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',),
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+        adc.assert_called_once_with(
+            scopes=["1", "2"],
+            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
             quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.FeaturestoreServiceGrpcTransport,
+        transports.FeaturestoreServiceGrpcAsyncIOTransport,
+    ],
+)
+@requires_google_auth_lt_1_25_0
+def test_featurestore_service_transport_auth_adc_old_google_auth(transport_class):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
+        transport_class(quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
+            quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.FeaturestoreServiceGrpcTransport, grpc_helpers),
+        (transports.FeaturestoreServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_gte_1_26_0
+def test_featurestore_service_transport_create_channel(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = ga_credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(
+            quota_project_id="octopus",
+            scopes=["1", "2"]
+        )
+
+        create_channel.assert_called_with(
+            "aiplatform.googleapis.com:443",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            default_scopes=(
+                'https://www.googleapis.com/auth/cloud-platform',
+),
+            scopes=["1", "2"],
+            default_host="aiplatform.googleapis.com",
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.FeaturestoreServiceGrpcTransport, grpc_helpers),
+        (transports.FeaturestoreServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_featurestore_service_transport_create_channel_old_api_core(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = ga_credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(quota_project_id="octopus")
+
+        create_channel.assert_called_with(
+            "aiplatform.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=(
+                'https://www.googleapis.com/auth/cloud-platform',
+),
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.FeaturestoreServiceGrpcTransport, grpc_helpers),
+        (transports.FeaturestoreServiceGrpcAsyncIOTransport, grpc_helpers_async)
+    ],
+)
+@requires_api_core_lt_1_26_0
+def test_featurestore_service_transport_create_channel_user_scopes(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = ga_credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+
+        create_channel.assert_called_with(
+            "aiplatform.googleapis.com",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            scopes=["1", "2"],
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
         )
 
 
@@ -6218,7 +6176,7 @@ def test_featurestore_service_transport_auth_adc():
 def test_featurestore_service_grpc_transport_client_cert_source_for_mtls(
     transport_class
 ):
-    cred = credentials.AnonymousCredentials()
+    cred = ga_credentials.AnonymousCredentials()
 
     # Check ssl_channel_credentials is used if provided.
     with mock.patch.object(transport_class, "create_channel") as mock_create_channel:
@@ -6260,7 +6218,7 @@ def test_featurestore_service_grpc_transport_client_cert_source_for_mtls(
 
 def test_featurestore_service_host_no_port():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='aiplatform.googleapis.com'),
     )
     assert client.transport._host == 'aiplatform.googleapis.com:443'
@@ -6268,11 +6226,10 @@ def test_featurestore_service_host_no_port():
 
 def test_featurestore_service_host_with_port():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         client_options=client_options.ClientOptions(api_endpoint='aiplatform.googleapis.com:8000'),
     )
     assert client.transport._host == 'aiplatform.googleapis.com:8000'
-
 
 def test_featurestore_service_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -6314,9 +6271,9 @@ def test_featurestore_service_transport_channel_mtls_with_client_cert_source(
             mock_grpc_channel = mock.Mock()
             grpc_create_channel.return_value = mock_grpc_channel
 
-            cred = credentials.AnonymousCredentials()
+            cred = ga_credentials.AnonymousCredentials()
             with pytest.warns(DeprecationWarning):
-                with mock.patch.object(auth, 'default') as adc:
+                with mock.patch.object(google.auth, 'default') as adc:
                     adc.return_value = (cred, None)
                     transport = transport_class(
                         host="squid.clam.whelk",
@@ -6390,7 +6347,7 @@ def test_featurestore_service_transport_channel_mtls_with_adc(
 
 def test_featurestore_service_grpc_lro_client():
     client = FeaturestoreServiceClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc',
     )
     transport = client.transport
@@ -6407,7 +6364,7 @@ def test_featurestore_service_grpc_lro_client():
 
 def test_featurestore_service_grpc_lro_async_client():
     client = FeaturestoreServiceAsyncClient(
-        credentials=credentials.AnonymousCredentials(),
+        credentials=ga_credentials.AnonymousCredentials(),
         transport='grpc_asyncio',
     )
     transport = client.transport
@@ -6427,7 +6384,6 @@ def test_entity_type_path():
     location = "clam"
     featurestore = "whelk"
     entity_type = "octopus"
-
     expected = "projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}".format(project=project, location=location, featurestore=featurestore, entity_type=entity_type, )
     actual = FeaturestoreServiceClient.entity_type_path(project, location, featurestore, entity_type)
     assert expected == actual
@@ -6435,11 +6391,10 @@ def test_entity_type_path():
 
 def test_parse_entity_type_path():
     expected = {
-    "project": "oyster",
-    "location": "nudibranch",
-    "featurestore": "cuttlefish",
-    "entity_type": "mussel",
-
+        "project": "oyster",
+        "location": "nudibranch",
+        "featurestore": "cuttlefish",
+        "entity_type": "mussel",
     }
     path = FeaturestoreServiceClient.entity_type_path(**expected)
 
@@ -6453,7 +6408,6 @@ def test_feature_path():
     featurestore = "scallop"
     entity_type = "abalone"
     feature = "squid"
-
     expected = "projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}".format(project=project, location=location, featurestore=featurestore, entity_type=entity_type, feature=feature, )
     actual = FeaturestoreServiceClient.feature_path(project, location, featurestore, entity_type, feature)
     assert expected == actual
@@ -6461,12 +6415,11 @@ def test_feature_path():
 
 def test_parse_feature_path():
     expected = {
-    "project": "clam",
-    "location": "whelk",
-    "featurestore": "octopus",
-    "entity_type": "oyster",
-    "feature": "nudibranch",
-
+        "project": "clam",
+        "location": "whelk",
+        "featurestore": "octopus",
+        "entity_type": "oyster",
+        "feature": "nudibranch",
     }
     path = FeaturestoreServiceClient.feature_path(**expected)
 
@@ -6478,7 +6431,6 @@ def test_featurestore_path():
     project = "cuttlefish"
     location = "mussel"
     featurestore = "winkle"
-
     expected = "projects/{project}/locations/{location}/featurestores/{featurestore}".format(project=project, location=location, featurestore=featurestore, )
     actual = FeaturestoreServiceClient.featurestore_path(project, location, featurestore)
     assert expected == actual
@@ -6486,10 +6438,9 @@ def test_featurestore_path():
 
 def test_parse_featurestore_path():
     expected = {
-    "project": "nautilus",
-    "location": "scallop",
-    "featurestore": "abalone",
-
+        "project": "nautilus",
+        "location": "scallop",
+        "featurestore": "abalone",
     }
     path = FeaturestoreServiceClient.featurestore_path(**expected)
 
@@ -6499,7 +6450,6 @@ def test_parse_featurestore_path():
 
 def test_common_billing_account_path():
     billing_account = "squid"
-
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = FeaturestoreServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -6507,8 +6457,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-    "billing_account": "clam",
-
+        "billing_account": "clam",
     }
     path = FeaturestoreServiceClient.common_billing_account_path(**expected)
 
@@ -6518,7 +6467,6 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "whelk"
-
     expected = "folders/{folder}".format(folder=folder, )
     actual = FeaturestoreServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -6526,8 +6474,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-    "folder": "octopus",
-
+        "folder": "octopus",
     }
     path = FeaturestoreServiceClient.common_folder_path(**expected)
 
@@ -6537,7 +6484,6 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "oyster"
-
     expected = "organizations/{organization}".format(organization=organization, )
     actual = FeaturestoreServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -6545,8 +6491,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-    "organization": "nudibranch",
-
+        "organization": "nudibranch",
     }
     path = FeaturestoreServiceClient.common_organization_path(**expected)
 
@@ -6556,7 +6501,6 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "cuttlefish"
-
     expected = "projects/{project}".format(project=project, )
     actual = FeaturestoreServiceClient.common_project_path(project)
     assert expected == actual
@@ -6564,8 +6508,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-    "project": "mussel",
-
+        "project": "mussel",
     }
     path = FeaturestoreServiceClient.common_project_path(**expected)
 
@@ -6576,7 +6519,6 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "winkle"
     location = "nautilus"
-
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = FeaturestoreServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -6584,9 +6526,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-    "project": "scallop",
-    "location": "abalone",
-
+        "project": "scallop",
+        "location": "abalone",
     }
     path = FeaturestoreServiceClient.common_location_path(**expected)
 
@@ -6600,7 +6541,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
 
     with mock.patch.object(transports.FeaturestoreServiceTransport, '_prep_wrapped_messages') as prep:
         client = FeaturestoreServiceClient(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)
@@ -6608,7 +6549,7 @@ def test_client_withDEFAULT_CLIENT_INFO():
     with mock.patch.object(transports.FeaturestoreServiceTransport, '_prep_wrapped_messages') as prep:
         transport_class = FeaturestoreServiceClient.get_transport_class()
         transport = transport_class(
-            credentials=credentials.AnonymousCredentials(),
+            credentials=ga_credentials.AnonymousCredentials(),
             client_info=client_info,
         )
         prep.assert_called_once_with(client_info)

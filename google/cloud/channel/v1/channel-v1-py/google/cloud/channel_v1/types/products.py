@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import proto  # type: ignore
 
 
@@ -47,9 +45,13 @@ class Product(proto.Message):
             Marketing information for the product.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    marketing_info = proto.Field(proto.MESSAGE, number=2,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    marketing_info = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='MarketingInfo',
     )
 
@@ -70,13 +72,18 @@ class Sku(proto.Message):
             Product the SKU is associated with.
     """
 
-    name = proto.Field(proto.STRING, number=1)
-
-    marketing_info = proto.Field(proto.MESSAGE, number=2,
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    marketing_info = proto.Field(
+        proto.MESSAGE,
+        number=2,
         message='MarketingInfo',
     )
-
-    product = proto.Field(proto.MESSAGE, number=3,
+    product = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='Product',
     )
 
@@ -95,18 +102,23 @@ class MarketingInfo(proto.Message):
             Default logo.
     """
 
-    display_name = proto.Field(proto.STRING, number=1)
-
-    description = proto.Field(proto.STRING, number=2)
-
-    default_logo = proto.Field(proto.MESSAGE, number=3,
+    display_name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    description = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    default_logo = proto.Field(
+        proto.MESSAGE,
+        number=3,
         message='Media',
     )
 
 
 class Media(proto.Message):
     r"""Represents media information.
-
     Attributes:
         title (str):
             Title of the media.
@@ -116,11 +128,17 @@ class Media(proto.Message):
             Type of the media.
     """
 
-    title = proto.Field(proto.STRING, number=1)
-
-    content = proto.Field(proto.STRING, number=2)
-
-    type_ = proto.Field(proto.ENUM, number=3,
+    title = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    content = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    type_ = proto.Field(
+        proto.ENUM,
+        number=3,
         enum='MediaType',
     )
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,6 +15,8 @@
 #
 
 from .services.service_usage import ServiceUsageClient
+from .services.service_usage import ServiceUsageAsyncClient
+
 from .types.resources import OperationMetadata
 from .types.resources import Service
 from .types.resources import ServiceConfig
@@ -32,22 +33,21 @@ from .types.serviceusage import GetServiceRequest
 from .types.serviceusage import ListServicesRequest
 from .types.serviceusage import ListServicesResponse
 
-
 __all__ = (
-    'BatchEnableServicesRequest',
-    'BatchEnableServicesResponse',
-    'BatchGetServicesRequest',
-    'BatchGetServicesResponse',
-    'DisableServiceRequest',
-    'DisableServiceResponse',
-    'EnableServiceRequest',
-    'EnableServiceResponse',
-    'GetServiceRequest',
-    'ListServicesRequest',
-    'ListServicesResponse',
-    'OperationMetadata',
-    'Service',
-    'ServiceConfig',
-    'State',
+'BatchEnableServicesRequest',
+'BatchEnableServicesResponse',
+'BatchGetServicesRequest',
+'BatchGetServicesResponse',
+'DisableServiceRequest',
+'DisableServiceResponse',
+'EnableServiceRequest',
+'EnableServiceResponse',
+'GetServiceRequest',
+'ListServicesRequest',
+'ListServicesResponse',
+'OperationMetadata',
+'Service',
+'ServiceConfig',
 'ServiceUsageClient',
+'State',
 )
