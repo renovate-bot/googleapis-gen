@@ -60,13 +60,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -1601,8 +1601,7 @@ public class ServiceUsageClient implements BackgroundResource {
    * }</pre>
    */
   public final OperationCallable<
-          ImportConsumerOverridesRequest,
-          ImportConsumerOverridesResponse,
+          ImportConsumerOverridesRequest, ImportConsumerOverridesResponse,
           ImportConsumerOverridesMetadata>
       importConsumerOverridesOperationCallable() {
     return stub.importConsumerOverridesOperationCallable();
@@ -1734,10 +1733,7 @@ public class ServiceUsageClient implements BackgroundResource {
 
   public static class ListServicesPagedResponse
       extends AbstractPagedListResponse<
-          ListServicesRequest,
-          ListServicesResponse,
-          Service,
-          ListServicesPage,
+          ListServicesRequest, ListServicesResponse, Service, ListServicesPage,
           ListServicesFixedSizeCollection> {
 
     public static ApiFuture<ListServicesPagedResponse> createAsync(
@@ -1791,10 +1787,7 @@ public class ServiceUsageClient implements BackgroundResource {
 
   public static class ListServicesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListServicesRequest,
-          ListServicesResponse,
-          Service,
-          ListServicesPage,
+          ListServicesRequest, ListServicesResponse, Service, ListServicesPage,
           ListServicesFixedSizeCollection> {
 
     private ListServicesFixedSizeCollection(List<ListServicesPage> pages, int collectionSize) {
@@ -1814,16 +1807,12 @@ public class ServiceUsageClient implements BackgroundResource {
 
   public static class ListConsumerQuotaMetricsPagedResponse
       extends AbstractPagedListResponse<
-          ListConsumerQuotaMetricsRequest,
-          ListConsumerQuotaMetricsResponse,
-          ConsumerQuotaMetric,
-          ListConsumerQuotaMetricsPage,
-          ListConsumerQuotaMetricsFixedSizeCollection> {
+          ListConsumerQuotaMetricsRequest, ListConsumerQuotaMetricsResponse, ConsumerQuotaMetric,
+          ListConsumerQuotaMetricsPage, ListConsumerQuotaMetricsFixedSizeCollection> {
 
     public static ApiFuture<ListConsumerQuotaMetricsPagedResponse> createAsync(
         PageContext<
-                ListConsumerQuotaMetricsRequest,
-                ListConsumerQuotaMetricsResponse,
+                ListConsumerQuotaMetricsRequest, ListConsumerQuotaMetricsResponse,
                 ConsumerQuotaMetric>
             context,
         ApiFuture<ListConsumerQuotaMetricsResponse> futureResponse) {
@@ -1847,15 +1836,12 @@ public class ServiceUsageClient implements BackgroundResource {
 
   public static class ListConsumerQuotaMetricsPage
       extends AbstractPage<
-          ListConsumerQuotaMetricsRequest,
-          ListConsumerQuotaMetricsResponse,
-          ConsumerQuotaMetric,
+          ListConsumerQuotaMetricsRequest, ListConsumerQuotaMetricsResponse, ConsumerQuotaMetric,
           ListConsumerQuotaMetricsPage> {
 
     private ListConsumerQuotaMetricsPage(
         PageContext<
-                ListConsumerQuotaMetricsRequest,
-                ListConsumerQuotaMetricsResponse,
+                ListConsumerQuotaMetricsRequest, ListConsumerQuotaMetricsResponse,
                 ConsumerQuotaMetric>
             context,
         ListConsumerQuotaMetricsResponse response) {
@@ -1869,8 +1855,7 @@ public class ServiceUsageClient implements BackgroundResource {
     @Override
     protected ListConsumerQuotaMetricsPage createPage(
         PageContext<
-                ListConsumerQuotaMetricsRequest,
-                ListConsumerQuotaMetricsResponse,
+                ListConsumerQuotaMetricsRequest, ListConsumerQuotaMetricsResponse,
                 ConsumerQuotaMetric>
             context,
         ListConsumerQuotaMetricsResponse response) {
@@ -1880,8 +1865,7 @@ public class ServiceUsageClient implements BackgroundResource {
     @Override
     public ApiFuture<ListConsumerQuotaMetricsPage> createPageAsync(
         PageContext<
-                ListConsumerQuotaMetricsRequest,
-                ListConsumerQuotaMetricsResponse,
+                ListConsumerQuotaMetricsRequest, ListConsumerQuotaMetricsResponse,
                 ConsumerQuotaMetric>
             context,
         ApiFuture<ListConsumerQuotaMetricsResponse> futureResponse) {
@@ -1891,11 +1875,8 @@ public class ServiceUsageClient implements BackgroundResource {
 
   public static class ListConsumerQuotaMetricsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListConsumerQuotaMetricsRequest,
-          ListConsumerQuotaMetricsResponse,
-          ConsumerQuotaMetric,
-          ListConsumerQuotaMetricsPage,
-          ListConsumerQuotaMetricsFixedSizeCollection> {
+          ListConsumerQuotaMetricsRequest, ListConsumerQuotaMetricsResponse, ConsumerQuotaMetric,
+          ListConsumerQuotaMetricsPage, ListConsumerQuotaMetricsFixedSizeCollection> {
 
     private ListConsumerQuotaMetricsFixedSizeCollection(
         List<ListConsumerQuotaMetricsPage> pages, int collectionSize) {
@@ -1915,11 +1896,8 @@ public class ServiceUsageClient implements BackgroundResource {
 
   public static class ListAdminOverridesPagedResponse
       extends AbstractPagedListResponse<
-          ListAdminOverridesRequest,
-          ListAdminOverridesResponse,
-          QuotaOverride,
-          ListAdminOverridesPage,
-          ListAdminOverridesFixedSizeCollection> {
+          ListAdminOverridesRequest, ListAdminOverridesResponse, QuotaOverride,
+          ListAdminOverridesPage, ListAdminOverridesFixedSizeCollection> {
 
     public static ApiFuture<ListAdminOverridesPagedResponse> createAsync(
         PageContext<ListAdminOverridesRequest, ListAdminOverridesResponse, QuotaOverride> context,
@@ -1944,9 +1922,7 @@ public class ServiceUsageClient implements BackgroundResource {
 
   public static class ListAdminOverridesPage
       extends AbstractPage<
-          ListAdminOverridesRequest,
-          ListAdminOverridesResponse,
-          QuotaOverride,
+          ListAdminOverridesRequest, ListAdminOverridesResponse, QuotaOverride,
           ListAdminOverridesPage> {
 
     private ListAdminOverridesPage(
@@ -1976,11 +1952,8 @@ public class ServiceUsageClient implements BackgroundResource {
 
   public static class ListAdminOverridesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListAdminOverridesRequest,
-          ListAdminOverridesResponse,
-          QuotaOverride,
-          ListAdminOverridesPage,
-          ListAdminOverridesFixedSizeCollection> {
+          ListAdminOverridesRequest, ListAdminOverridesResponse, QuotaOverride,
+          ListAdminOverridesPage, ListAdminOverridesFixedSizeCollection> {
 
     private ListAdminOverridesFixedSizeCollection(
         List<ListAdminOverridesPage> pages, int collectionSize) {
@@ -2000,11 +1973,8 @@ public class ServiceUsageClient implements BackgroundResource {
 
   public static class ListConsumerOverridesPagedResponse
       extends AbstractPagedListResponse<
-          ListConsumerOverridesRequest,
-          ListConsumerOverridesResponse,
-          QuotaOverride,
-          ListConsumerOverridesPage,
-          ListConsumerOverridesFixedSizeCollection> {
+          ListConsumerOverridesRequest, ListConsumerOverridesResponse, QuotaOverride,
+          ListConsumerOverridesPage, ListConsumerOverridesFixedSizeCollection> {
 
     public static ApiFuture<ListConsumerOverridesPagedResponse> createAsync(
         PageContext<ListConsumerOverridesRequest, ListConsumerOverridesResponse, QuotaOverride>
@@ -2030,9 +2000,7 @@ public class ServiceUsageClient implements BackgroundResource {
 
   public static class ListConsumerOverridesPage
       extends AbstractPage<
-          ListConsumerOverridesRequest,
-          ListConsumerOverridesResponse,
-          QuotaOverride,
+          ListConsumerOverridesRequest, ListConsumerOverridesResponse, QuotaOverride,
           ListConsumerOverridesPage> {
 
     private ListConsumerOverridesPage(
@@ -2065,11 +2033,8 @@ public class ServiceUsageClient implements BackgroundResource {
 
   public static class ListConsumerOverridesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListConsumerOverridesRequest,
-          ListConsumerOverridesResponse,
-          QuotaOverride,
-          ListConsumerOverridesPage,
-          ListConsumerOverridesFixedSizeCollection> {
+          ListConsumerOverridesRequest, ListConsumerOverridesResponse, QuotaOverride,
+          ListConsumerOverridesPage, ListConsumerOverridesFixedSizeCollection> {
 
     private ListConsumerOverridesFixedSizeCollection(
         List<ListConsumerOverridesPage> pages, int collectionSize) {

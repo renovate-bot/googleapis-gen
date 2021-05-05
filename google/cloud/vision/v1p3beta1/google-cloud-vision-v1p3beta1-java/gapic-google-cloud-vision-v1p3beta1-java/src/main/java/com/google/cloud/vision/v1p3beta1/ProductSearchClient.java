@@ -77,13 +77,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -188,7 +188,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns INVALID_ARGUMENT if display_name is missing, or is longer than 4096 characters.
+   *   <li> Returns INVALID_ARGUMENT if display_name is missing, or is longer than 4096 characters.
    * </ul>
    *
    * <p>Sample code:
@@ -229,7 +229,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns INVALID_ARGUMENT if display_name is missing, or is longer than 4096 characters.
+   *   <li> Returns INVALID_ARGUMENT if display_name is missing, or is longer than 4096 characters.
    * </ul>
    *
    * <p>Sample code:
@@ -270,7 +270,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns INVALID_ARGUMENT if display_name is missing, or is longer than 4096 characters.
+   *   <li> Returns INVALID_ARGUMENT if display_name is missing, or is longer than 4096 characters.
    * </ul>
    *
    * <p>Sample code:
@@ -301,7 +301,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns INVALID_ARGUMENT if display_name is missing, or is longer than 4096 characters.
+   *   <li> Returns INVALID_ARGUMENT if display_name is missing, or is longer than 4096 characters.
    * </ul>
    *
    * <p>Sample code:
@@ -332,7 +332,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns INVALID_ARGUMENT if page_size is greater than 100, or less than 1.
+   *   <li> Returns INVALID_ARGUMENT if page_size is greater than 100, or less than 1.
    * </ul>
    *
    * <p>Sample code:
@@ -365,7 +365,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns INVALID_ARGUMENT if page_size is greater than 100, or less than 1.
+   *   <li> Returns INVALID_ARGUMENT if page_size is greater than 100, or less than 1.
    * </ul>
    *
    * <p>Sample code:
@@ -395,7 +395,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns INVALID_ARGUMENT if page_size is greater than 100, or less than 1.
+   *   <li> Returns INVALID_ARGUMENT if page_size is greater than 100, or less than 1.
    * </ul>
    *
    * <p>Sample code:
@@ -428,7 +428,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns INVALID_ARGUMENT if page_size is greater than 100, or less than 1.
+   *   <li> Returns INVALID_ARGUMENT if page_size is greater than 100, or less than 1.
    * </ul>
    *
    * <p>Sample code:
@@ -462,7 +462,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns INVALID_ARGUMENT if page_size is greater than 100, or less than 1.
+   *   <li> Returns INVALID_ARGUMENT if page_size is greater than 100, or less than 1.
    * </ul>
    *
    * <p>Sample code:
@@ -503,7 +503,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the ProductSet does not exist.
+   *   <li> Returns NOT_FOUND if the ProductSet does not exist.
    * </ul>
    *
    * <p>Sample code:
@@ -532,7 +532,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the ProductSet does not exist.
+   *   <li> Returns NOT_FOUND if the ProductSet does not exist.
    * </ul>
    *
    * <p>Sample code:
@@ -560,7 +560,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the ProductSet does not exist.
+   *   <li> Returns NOT_FOUND if the ProductSet does not exist.
    * </ul>
    *
    * <p>Sample code:
@@ -589,7 +589,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the ProductSet does not exist.
+   *   <li> Returns NOT_FOUND if the ProductSet does not exist.
    * </ul>
    *
    * <p>Sample code:
@@ -618,8 +618,8 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the ProductSet does not exist.
-   *   <li>Returns INVALID_ARGUMENT if display_name is present in update_mask but missing from the
+   *   <li> Returns NOT_FOUND if the ProductSet does not exist.
+   *   <li> Returns INVALID_ARGUMENT if display_name is present in update_mask but missing from the
    *       request or longer than 4096 characters.
    * </ul>
    *
@@ -655,8 +655,8 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the ProductSet does not exist.
-   *   <li>Returns INVALID_ARGUMENT if display_name is present in update_mask but missing from the
+   *   <li> Returns NOT_FOUND if the ProductSet does not exist.
+   *   <li> Returns INVALID_ARGUMENT if display_name is present in update_mask but missing from the
    *       request or longer than 4096 characters.
    * </ul>
    *
@@ -687,8 +687,8 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the ProductSet does not exist.
-   *   <li>Returns INVALID_ARGUMENT if display_name is present in update_mask but missing from the
+   *   <li> Returns NOT_FOUND if the ProductSet does not exist.
+   *   <li> Returns INVALID_ARGUMENT if display_name is present in update_mask but missing from the
    *       request or longer than 4096 characters.
    * </ul>
    *
@@ -722,7 +722,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the ProductSet does not exist.
+   *   <li> Returns NOT_FOUND if the ProductSet does not exist.
    * </ul>
    *
    * <p>Sample code:
@@ -754,7 +754,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the ProductSet does not exist.
+   *   <li> Returns NOT_FOUND if the ProductSet does not exist.
    * </ul>
    *
    * <p>Sample code:
@@ -785,7 +785,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the ProductSet does not exist.
+   *   <li> Returns NOT_FOUND if the ProductSet does not exist.
    * </ul>
    *
    * <p>Sample code:
@@ -817,7 +817,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the ProductSet does not exist.
+   *   <li> Returns NOT_FOUND if the ProductSet does not exist.
    * </ul>
    *
    * <p>Sample code:
@@ -845,9 +845,9 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns INVALID_ARGUMENT if display_name is missing or longer than 4096 characters.
-   *   <li>Returns INVALID_ARGUMENT if description is longer than 4096 characters.
-   *   <li>Returns INVALID_ARGUMENT if product_category is missing or invalid.
+   *   <li> Returns INVALID_ARGUMENT if display_name is missing or longer than 4096 characters.
+   *   <li> Returns INVALID_ARGUMENT if description is longer than 4096 characters.
+   *   <li> Returns INVALID_ARGUMENT if product_category is missing or invalid.
    * </ul>
    *
    * <p>Sample code:
@@ -887,9 +887,9 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns INVALID_ARGUMENT if display_name is missing or longer than 4096 characters.
-   *   <li>Returns INVALID_ARGUMENT if description is longer than 4096 characters.
-   *   <li>Returns INVALID_ARGUMENT if product_category is missing or invalid.
+   *   <li> Returns INVALID_ARGUMENT if display_name is missing or longer than 4096 characters.
+   *   <li> Returns INVALID_ARGUMENT if description is longer than 4096 characters.
+   *   <li> Returns INVALID_ARGUMENT if product_category is missing or invalid.
    * </ul>
    *
    * <p>Sample code:
@@ -929,9 +929,9 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns INVALID_ARGUMENT if display_name is missing or longer than 4096 characters.
-   *   <li>Returns INVALID_ARGUMENT if description is longer than 4096 characters.
-   *   <li>Returns INVALID_ARGUMENT if product_category is missing or invalid.
+   *   <li> Returns INVALID_ARGUMENT if display_name is missing or longer than 4096 characters.
+   *   <li> Returns INVALID_ARGUMENT if description is longer than 4096 characters.
+   *   <li> Returns INVALID_ARGUMENT if product_category is missing or invalid.
    * </ul>
    *
    * <p>Sample code:
@@ -962,9 +962,9 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns INVALID_ARGUMENT if display_name is missing or longer than 4096 characters.
-   *   <li>Returns INVALID_ARGUMENT if description is longer than 4096 characters.
-   *   <li>Returns INVALID_ARGUMENT if product_category is missing or invalid.
+   *   <li> Returns INVALID_ARGUMENT if display_name is missing or longer than 4096 characters.
+   *   <li> Returns INVALID_ARGUMENT if description is longer than 4096 characters.
+   *   <li> Returns INVALID_ARGUMENT if product_category is missing or invalid.
    * </ul>
    *
    * <p>Sample code:
@@ -994,7 +994,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
+   *   <li> Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
    * </ul>
    *
    * <p>Sample code:
@@ -1027,7 +1027,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
+   *   <li> Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
    * </ul>
    *
    * <p>Sample code:
@@ -1057,7 +1057,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
+   *   <li> Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
    * </ul>
    *
    * <p>Sample code:
@@ -1090,7 +1090,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
+   *   <li> Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
    * </ul>
    *
    * <p>Sample code:
@@ -1124,7 +1124,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
+   *   <li> Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
    * </ul>
    *
    * <p>Sample code:
@@ -1163,7 +1163,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the Product does not exist.
+   *   <li> Returns NOT_FOUND if the Product does not exist.
    * </ul>
    *
    * <p>Sample code:
@@ -1192,7 +1192,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the Product does not exist.
+   *   <li> Returns NOT_FOUND if the Product does not exist.
    * </ul>
    *
    * <p>Sample code:
@@ -1220,7 +1220,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the Product does not exist.
+   *   <li> Returns NOT_FOUND if the Product does not exist.
    * </ul>
    *
    * <p>Sample code:
@@ -1249,7 +1249,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the Product does not exist.
+   *   <li> Returns NOT_FOUND if the Product does not exist.
    * </ul>
    *
    * <p>Sample code:
@@ -1281,12 +1281,12 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the Product does not exist.
-   *   <li>Returns INVALID_ARGUMENT if display_name is present in update_mask but is missing from
+   *   <li> Returns NOT_FOUND if the Product does not exist.
+   *   <li> Returns INVALID_ARGUMENT if display_name is present in update_mask but is missing from
    *       the request or longer than 4096 characters.
-   *   <li>Returns INVALID_ARGUMENT if description is present in update_mask but is longer than 4096
-   *       characters.
-   *   <li>Returns INVALID_ARGUMENT if product_category is present in update_mask.
+   *   <li> Returns INVALID_ARGUMENT if description is present in update_mask but is longer than
+   *       4096 characters.
+   *   <li> Returns INVALID_ARGUMENT if product_category is present in update_mask.
    * </ul>
    *
    * <p>Sample code:
@@ -1323,12 +1323,12 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the Product does not exist.
-   *   <li>Returns INVALID_ARGUMENT if display_name is present in update_mask but is missing from
+   *   <li> Returns NOT_FOUND if the Product does not exist.
+   *   <li> Returns INVALID_ARGUMENT if display_name is present in update_mask but is missing from
    *       the request or longer than 4096 characters.
-   *   <li>Returns INVALID_ARGUMENT if description is present in update_mask but is longer than 4096
-   *       characters.
-   *   <li>Returns INVALID_ARGUMENT if product_category is present in update_mask.
+   *   <li> Returns INVALID_ARGUMENT if description is present in update_mask but is longer than
+   *       4096 characters.
+   *   <li> Returns INVALID_ARGUMENT if product_category is present in update_mask.
    * </ul>
    *
    * <p>Sample code:
@@ -1362,12 +1362,12 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the Product does not exist.
-   *   <li>Returns INVALID_ARGUMENT if display_name is present in update_mask but is missing from
+   *   <li> Returns NOT_FOUND if the Product does not exist.
+   *   <li> Returns INVALID_ARGUMENT if display_name is present in update_mask but is missing from
    *       the request or longer than 4096 characters.
-   *   <li>Returns INVALID_ARGUMENT if description is present in update_mask but is longer than 4096
-   *       characters.
-   *   <li>Returns INVALID_ARGUMENT if product_category is present in update_mask.
+   *   <li> Returns INVALID_ARGUMENT if description is present in update_mask but is longer than
+   *       4096 characters.
+   *   <li> Returns INVALID_ARGUMENT if product_category is present in update_mask.
    * </ul>
    *
    * <p>Sample code:
@@ -1400,7 +1400,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the product does not exist.
+   *   <li> Returns NOT_FOUND if the product does not exist.
    * </ul>
    *
    * <p>Sample code:
@@ -1433,7 +1433,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the product does not exist.
+   *   <li> Returns NOT_FOUND if the product does not exist.
    * </ul>
    *
    * <p>Sample code:
@@ -1465,7 +1465,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the product does not exist.
+   *   <li> Returns NOT_FOUND if the product does not exist.
    * </ul>
    *
    * <p>Sample code:
@@ -1498,7 +1498,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the product does not exist.
+   *   <li> Returns NOT_FOUND if the product does not exist.
    * </ul>
    *
    * <p>Sample code:
@@ -1534,11 +1534,11 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns INVALID_ARGUMENT if the image_uri is missing or longer than 4096 characters.
-   *   <li>Returns INVALID_ARGUMENT if the product does not exist.
-   *   <li>Returns INVALID_ARGUMENT if bounding_poly is not provided, and nothing compatible with
+   *   <li> Returns INVALID_ARGUMENT if the image_uri is missing or longer than 4096 characters.
+   *   <li> Returns INVALID_ARGUMENT if the product does not exist.
+   *   <li> Returns INVALID_ARGUMENT if bounding_poly is not provided, and nothing compatible with
    *       the parent product's product_category is detected.
-   *   <li>Returns INVALID_ARGUMENT if bounding_poly contains more than 10 polygons.
+   *   <li> Returns INVALID_ARGUMENT if bounding_poly contains more than 10 polygons.
    * </ul>
    *
    * <p>Sample code:
@@ -1589,11 +1589,11 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns INVALID_ARGUMENT if the image_uri is missing or longer than 4096 characters.
-   *   <li>Returns INVALID_ARGUMENT if the product does not exist.
-   *   <li>Returns INVALID_ARGUMENT if bounding_poly is not provided, and nothing compatible with
+   *   <li> Returns INVALID_ARGUMENT if the image_uri is missing or longer than 4096 characters.
+   *   <li> Returns INVALID_ARGUMENT if the product does not exist.
+   *   <li> Returns INVALID_ARGUMENT if bounding_poly is not provided, and nothing compatible with
    *       the parent product's product_category is detected.
-   *   <li>Returns INVALID_ARGUMENT if bounding_poly contains more than 10 polygons.
+   *   <li> Returns INVALID_ARGUMENT if bounding_poly contains more than 10 polygons.
    * </ul>
    *
    * <p>Sample code:
@@ -1644,11 +1644,11 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns INVALID_ARGUMENT if the image_uri is missing or longer than 4096 characters.
-   *   <li>Returns INVALID_ARGUMENT if the product does not exist.
-   *   <li>Returns INVALID_ARGUMENT if bounding_poly is not provided, and nothing compatible with
+   *   <li> Returns INVALID_ARGUMENT if the image_uri is missing or longer than 4096 characters.
+   *   <li> Returns INVALID_ARGUMENT if the product does not exist.
+   *   <li> Returns INVALID_ARGUMENT if bounding_poly is not provided, and nothing compatible with
    *       the parent product's product_category is detected.
-   *   <li>Returns INVALID_ARGUMENT if bounding_poly contains more than 10 polygons.
+   *   <li> Returns INVALID_ARGUMENT if bounding_poly contains more than 10 polygons.
    * </ul>
    *
    * <p>Sample code:
@@ -1687,11 +1687,11 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns INVALID_ARGUMENT if the image_uri is missing or longer than 4096 characters.
-   *   <li>Returns INVALID_ARGUMENT if the product does not exist.
-   *   <li>Returns INVALID_ARGUMENT if bounding_poly is not provided, and nothing compatible with
+   *   <li> Returns INVALID_ARGUMENT if the image_uri is missing or longer than 4096 characters.
+   *   <li> Returns INVALID_ARGUMENT if the product does not exist.
+   *   <li> Returns INVALID_ARGUMENT if bounding_poly is not provided, and nothing compatible with
    *       the parent product's product_category is detected.
-   *   <li>Returns INVALID_ARGUMENT if bounding_poly contains more than 10 polygons.
+   *   <li> Returns INVALID_ARGUMENT if bounding_poly contains more than 10 polygons.
    * </ul>
    *
    * <p>Sample code:
@@ -1728,7 +1728,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the reference image does not exist.
+   *   <li> Returns NOT_FOUND if the reference image does not exist.
    * </ul>
    *
    * <p>Sample code:
@@ -1766,7 +1766,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the reference image does not exist.
+   *   <li> Returns NOT_FOUND if the reference image does not exist.
    * </ul>
    *
    * <p>Sample code:
@@ -1803,7 +1803,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the reference image does not exist.
+   *   <li> Returns NOT_FOUND if the reference image does not exist.
    * </ul>
    *
    * <p>Sample code:
@@ -1839,7 +1839,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the reference image does not exist.
+   *   <li> Returns NOT_FOUND if the reference image does not exist.
    * </ul>
    *
    * <p>Sample code:
@@ -1870,8 +1870,8 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the parent product does not exist.
-   *   <li>Returns INVALID_ARGUMENT if the page_size is greater than 100, or less than 1.
+   *   <li> Returns NOT_FOUND if the parent product does not exist.
+   *   <li> Returns INVALID_ARGUMENT if the page_size is greater than 100, or less than 1.
    * </ul>
    *
    * <p>Sample code:
@@ -1904,8 +1904,8 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the parent product does not exist.
-   *   <li>Returns INVALID_ARGUMENT if the page_size is greater than 100, or less than 1.
+   *   <li> Returns NOT_FOUND if the parent product does not exist.
+   *   <li> Returns INVALID_ARGUMENT if the page_size is greater than 100, or less than 1.
    * </ul>
    *
    * <p>Sample code:
@@ -1936,8 +1936,8 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the parent product does not exist.
-   *   <li>Returns INVALID_ARGUMENT if the page_size is greater than 100, or less than 1.
+   *   <li> Returns NOT_FOUND if the parent product does not exist.
+   *   <li> Returns INVALID_ARGUMENT if the page_size is greater than 100, or less than 1.
    * </ul>
    *
    * <p>Sample code:
@@ -1971,8 +1971,8 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the parent product does not exist.
-   *   <li>Returns INVALID_ARGUMENT if the page_size is greater than 100, or less than 1.
+   *   <li> Returns NOT_FOUND if the parent product does not exist.
+   *   <li> Returns INVALID_ARGUMENT if the page_size is greater than 100, or less than 1.
    * </ul>
    *
    * <p>Sample code:
@@ -2006,8 +2006,8 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the parent product does not exist.
-   *   <li>Returns INVALID_ARGUMENT if the page_size is greater than 100, or less than 1.
+   *   <li> Returns NOT_FOUND if the parent product does not exist.
+   *   <li> Returns INVALID_ARGUMENT if the page_size is greater than 100, or less than 1.
    * </ul>
    *
    * <p>Sample code:
@@ -2048,7 +2048,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the specified image does not exist.
+   *   <li> Returns NOT_FOUND if the specified image does not exist.
    * </ul>
    *
    * <p>Sample code:
@@ -2081,7 +2081,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the specified image does not exist.
+   *   <li> Returns NOT_FOUND if the specified image does not exist.
    * </ul>
    *
    * <p>Sample code:
@@ -2112,7 +2112,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the specified image does not exist.
+   *   <li> Returns NOT_FOUND if the specified image does not exist.
    * </ul>
    *
    * <p>Sample code:
@@ -2143,7 +2143,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the specified image does not exist.
+   *   <li> Returns NOT_FOUND if the specified image does not exist.
    * </ul>
    *
    * <p>Sample code:
@@ -2177,7 +2177,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the Product or the ProductSet doesn't exist.
+   *   <li> Returns NOT_FOUND if the Product or the ProductSet doesn't exist.
    * </ul>
    *
    * <p>Sample code:
@@ -2215,7 +2215,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the Product or the ProductSet doesn't exist.
+   *   <li> Returns NOT_FOUND if the Product or the ProductSet doesn't exist.
    * </ul>
    *
    * <p>Sample code:
@@ -2253,7 +2253,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the Product or the ProductSet doesn't exist.
+   *   <li> Returns NOT_FOUND if the Product or the ProductSet doesn't exist.
    * </ul>
    *
    * <p>Sample code:
@@ -2291,7 +2291,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the Product or the ProductSet doesn't exist.
+   *   <li> Returns NOT_FOUND if the Product or the ProductSet doesn't exist.
    * </ul>
    *
    * <p>Sample code:
@@ -2326,7 +2326,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the Product or the ProductSet doesn't exist.
+   *   <li> Returns NOT_FOUND if the Product or the ProductSet doesn't exist.
    * </ul>
    *
    * <p>Sample code:
@@ -2359,7 +2359,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND if the Product or the ProductSet doesn't exist.
+   *   <li> Returns NOT_FOUND if the Product or the ProductSet doesn't exist.
    * </ul>
    *
    * <p>Sample code:
@@ -2390,7 +2390,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND If the Product is not found under the ProductSet.
+   *   <li> Returns NOT_FOUND If the Product is not found under the ProductSet.
    * </ul>
    *
    * <p>Sample code:
@@ -2425,7 +2425,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND If the Product is not found under the ProductSet.
+   *   <li> Returns NOT_FOUND If the Product is not found under the ProductSet.
    * </ul>
    *
    * <p>Sample code:
@@ -2460,7 +2460,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND If the Product is not found under the ProductSet.
+   *   <li> Returns NOT_FOUND If the Product is not found under the ProductSet.
    * </ul>
    *
    * <p>Sample code:
@@ -2495,7 +2495,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND If the Product is not found under the ProductSet.
+   *   <li> Returns NOT_FOUND If the Product is not found under the ProductSet.
    * </ul>
    *
    * <p>Sample code:
@@ -2527,7 +2527,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND If the Product is not found under the ProductSet.
+   *   <li> Returns NOT_FOUND If the Product is not found under the ProductSet.
    * </ul>
    *
    * <p>Sample code:
@@ -2557,7 +2557,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns NOT_FOUND If the Product is not found under the ProductSet.
+   *   <li> Returns NOT_FOUND If the Product is not found under the ProductSet.
    * </ul>
    *
    * <p>Sample code:
@@ -2589,7 +2589,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
+   *   <li> Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
    * </ul>
    *
    * <p>Sample code:
@@ -2623,7 +2623,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
+   *   <li> Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
    * </ul>
    *
    * <p>Sample code:
@@ -2655,7 +2655,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
+   *   <li> Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
    * </ul>
    *
    * <p>Sample code:
@@ -2690,7 +2690,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
+   *   <li> Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
    * </ul>
    *
    * <p>Sample code:
@@ -2725,7 +2725,7 @@ public class ProductSearchClient implements BackgroundResource {
    * <p>Possible errors:
    *
    * <ul>
-   *   <li>Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
+   *   <li> Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
    * </ul>
    *
    * <p>Sample code:
@@ -2974,10 +2974,7 @@ public class ProductSearchClient implements BackgroundResource {
 
   public static class ListProductSetsPagedResponse
       extends AbstractPagedListResponse<
-          ListProductSetsRequest,
-          ListProductSetsResponse,
-          ProductSet,
-          ListProductSetsPage,
+          ListProductSetsRequest, ListProductSetsResponse, ProductSet, ListProductSetsPage,
           ListProductSetsFixedSizeCollection> {
 
     public static ApiFuture<ListProductSetsPagedResponse> createAsync(
@@ -3032,10 +3029,7 @@ public class ProductSearchClient implements BackgroundResource {
 
   public static class ListProductSetsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListProductSetsRequest,
-          ListProductSetsResponse,
-          ProductSet,
-          ListProductSetsPage,
+          ListProductSetsRequest, ListProductSetsResponse, ProductSet, ListProductSetsPage,
           ListProductSetsFixedSizeCollection> {
 
     private ListProductSetsFixedSizeCollection(
@@ -3056,10 +3050,7 @@ public class ProductSearchClient implements BackgroundResource {
 
   public static class ListProductsPagedResponse
       extends AbstractPagedListResponse<
-          ListProductsRequest,
-          ListProductsResponse,
-          Product,
-          ListProductsPage,
+          ListProductsRequest, ListProductsResponse, Product, ListProductsPage,
           ListProductsFixedSizeCollection> {
 
     public static ApiFuture<ListProductsPagedResponse> createAsync(
@@ -3113,10 +3104,7 @@ public class ProductSearchClient implements BackgroundResource {
 
   public static class ListProductsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListProductsRequest,
-          ListProductsResponse,
-          Product,
-          ListProductsPage,
+          ListProductsRequest, ListProductsResponse, Product, ListProductsPage,
           ListProductsFixedSizeCollection> {
 
     private ListProductsFixedSizeCollection(List<ListProductsPage> pages, int collectionSize) {
@@ -3136,11 +3124,8 @@ public class ProductSearchClient implements BackgroundResource {
 
   public static class ListReferenceImagesPagedResponse
       extends AbstractPagedListResponse<
-          ListReferenceImagesRequest,
-          ListReferenceImagesResponse,
-          ReferenceImage,
-          ListReferenceImagesPage,
-          ListReferenceImagesFixedSizeCollection> {
+          ListReferenceImagesRequest, ListReferenceImagesResponse, ReferenceImage,
+          ListReferenceImagesPage, ListReferenceImagesFixedSizeCollection> {
 
     public static ApiFuture<ListReferenceImagesPagedResponse> createAsync(
         PageContext<ListReferenceImagesRequest, ListReferenceImagesResponse, ReferenceImage>
@@ -3166,9 +3151,7 @@ public class ProductSearchClient implements BackgroundResource {
 
   public static class ListReferenceImagesPage
       extends AbstractPage<
-          ListReferenceImagesRequest,
-          ListReferenceImagesResponse,
-          ReferenceImage,
+          ListReferenceImagesRequest, ListReferenceImagesResponse, ReferenceImage,
           ListReferenceImagesPage> {
 
     private ListReferenceImagesPage(
@@ -3201,11 +3184,8 @@ public class ProductSearchClient implements BackgroundResource {
 
   public static class ListReferenceImagesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListReferenceImagesRequest,
-          ListReferenceImagesResponse,
-          ReferenceImage,
-          ListReferenceImagesPage,
-          ListReferenceImagesFixedSizeCollection> {
+          ListReferenceImagesRequest, ListReferenceImagesResponse, ReferenceImage,
+          ListReferenceImagesPage, ListReferenceImagesFixedSizeCollection> {
 
     private ListReferenceImagesFixedSizeCollection(
         List<ListReferenceImagesPage> pages, int collectionSize) {
@@ -3225,11 +3205,8 @@ public class ProductSearchClient implements BackgroundResource {
 
   public static class ListProductsInProductSetPagedResponse
       extends AbstractPagedListResponse<
-          ListProductsInProductSetRequest,
-          ListProductsInProductSetResponse,
-          Product,
-          ListProductsInProductSetPage,
-          ListProductsInProductSetFixedSizeCollection> {
+          ListProductsInProductSetRequest, ListProductsInProductSetResponse, Product,
+          ListProductsInProductSetPage, ListProductsInProductSetFixedSizeCollection> {
 
     public static ApiFuture<ListProductsInProductSetPagedResponse> createAsync(
         PageContext<ListProductsInProductSetRequest, ListProductsInProductSetResponse, Product>
@@ -3255,9 +3232,7 @@ public class ProductSearchClient implements BackgroundResource {
 
   public static class ListProductsInProductSetPage
       extends AbstractPage<
-          ListProductsInProductSetRequest,
-          ListProductsInProductSetResponse,
-          Product,
+          ListProductsInProductSetRequest, ListProductsInProductSetResponse, Product,
           ListProductsInProductSetPage> {
 
     private ListProductsInProductSetPage(
@@ -3290,11 +3265,8 @@ public class ProductSearchClient implements BackgroundResource {
 
   public static class ListProductsInProductSetFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListProductsInProductSetRequest,
-          ListProductsInProductSetResponse,
-          Product,
-          ListProductsInProductSetPage,
-          ListProductsInProductSetFixedSizeCollection> {
+          ListProductsInProductSetRequest, ListProductsInProductSetResponse, Product,
+          ListProductsInProductSetPage, ListProductsInProductSetFixedSizeCollection> {
 
     private ListProductsInProductSetFixedSizeCollection(
         List<ListProductsInProductSetPage> pages, int collectionSize) {

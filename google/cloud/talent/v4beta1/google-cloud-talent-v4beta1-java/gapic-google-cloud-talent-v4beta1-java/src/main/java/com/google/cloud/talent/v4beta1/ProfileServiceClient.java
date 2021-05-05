@@ -58,13 +58,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -824,10 +824,7 @@ public class ProfileServiceClient implements BackgroundResource {
 
   public static class ListProfilesPagedResponse
       extends AbstractPagedListResponse<
-          ListProfilesRequest,
-          ListProfilesResponse,
-          Profile,
-          ListProfilesPage,
+          ListProfilesRequest, ListProfilesResponse, Profile, ListProfilesPage,
           ListProfilesFixedSizeCollection> {
 
     public static ApiFuture<ListProfilesPagedResponse> createAsync(
@@ -881,10 +878,7 @@ public class ProfileServiceClient implements BackgroundResource {
 
   public static class ListProfilesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListProfilesRequest,
-          ListProfilesResponse,
-          Profile,
-          ListProfilesPage,
+          ListProfilesRequest, ListProfilesResponse, Profile, ListProfilesPage,
           ListProfilesFixedSizeCollection> {
 
     private ListProfilesFixedSizeCollection(List<ListProfilesPage> pages, int collectionSize) {
@@ -904,10 +898,7 @@ public class ProfileServiceClient implements BackgroundResource {
 
   public static class SearchProfilesPagedResponse
       extends AbstractPagedListResponse<
-          SearchProfilesRequest,
-          SearchProfilesResponse,
-          HistogramQueryResult,
-          SearchProfilesPage,
+          SearchProfilesRequest, SearchProfilesResponse, HistogramQueryResult, SearchProfilesPage,
           SearchProfilesFixedSizeCollection> {
 
     public static ApiFuture<SearchProfilesPagedResponse> createAsync(
@@ -962,10 +953,7 @@ public class ProfileServiceClient implements BackgroundResource {
 
   public static class SearchProfilesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          SearchProfilesRequest,
-          SearchProfilesResponse,
-          HistogramQueryResult,
-          SearchProfilesPage,
+          SearchProfilesRequest, SearchProfilesResponse, HistogramQueryResult, SearchProfilesPage,
           SearchProfilesFixedSizeCollection> {
 
     private SearchProfilesFixedSizeCollection(List<SearchProfilesPage> pages, int collectionSize) {

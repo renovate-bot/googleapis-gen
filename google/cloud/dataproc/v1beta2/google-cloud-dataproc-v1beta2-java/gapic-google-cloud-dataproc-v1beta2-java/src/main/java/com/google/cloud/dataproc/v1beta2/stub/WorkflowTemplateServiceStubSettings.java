@@ -72,9 +72,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (dataproc.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (dataproc.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -122,8 +122,7 @@ public class WorkflowTemplateServiceStubSettings
   private final UnaryCallSettings<UpdateWorkflowTemplateRequest, WorkflowTemplate>
       updateWorkflowTemplateSettings;
   private final PagedCallSettings<
-          ListWorkflowTemplatesRequest,
-          ListWorkflowTemplatesResponse,
+          ListWorkflowTemplatesRequest, ListWorkflowTemplatesResponse,
           ListWorkflowTemplatesPagedResponse>
       listWorkflowTemplatesSettings;
   private final UnaryCallSettings<DeleteWorkflowTemplateRequest, Empty>
@@ -171,13 +170,11 @@ public class WorkflowTemplateServiceStubSettings
           };
 
   private static final PagedListResponseFactory<
-          ListWorkflowTemplatesRequest,
-          ListWorkflowTemplatesResponse,
+          ListWorkflowTemplatesRequest, ListWorkflowTemplatesResponse,
           ListWorkflowTemplatesPagedResponse>
       LIST_WORKFLOW_TEMPLATES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListWorkflowTemplatesRequest,
-              ListWorkflowTemplatesResponse,
+              ListWorkflowTemplatesRequest, ListWorkflowTemplatesResponse,
               ListWorkflowTemplatesPagedResponse>() {
             @Override
             public ApiFuture<ListWorkflowTemplatesPagedResponse> getFuturePagedResponse(
@@ -238,8 +235,7 @@ public class WorkflowTemplateServiceStubSettings
 
   /** Returns the object with the settings used for calls to listWorkflowTemplates. */
   public PagedCallSettings<
-          ListWorkflowTemplatesRequest,
-          ListWorkflowTemplatesResponse,
+          ListWorkflowTemplatesRequest, ListWorkflowTemplatesResponse,
           ListWorkflowTemplatesPagedResponse>
       listWorkflowTemplatesSettings() {
     return listWorkflowTemplatesSettings;
@@ -355,8 +351,7 @@ public class WorkflowTemplateServiceStubSettings
     private final UnaryCallSettings.Builder<UpdateWorkflowTemplateRequest, WorkflowTemplate>
         updateWorkflowTemplateSettings;
     private final PagedCallSettings.Builder<
-            ListWorkflowTemplatesRequest,
-            ListWorkflowTemplatesResponse,
+            ListWorkflowTemplatesRequest, ListWorkflowTemplatesResponse,
             ListWorkflowTemplatesPagedResponse>
         listWorkflowTemplatesSettings;
     private final UnaryCallSettings.Builder<DeleteWorkflowTemplateRequest, Empty>
@@ -634,8 +629,7 @@ public class WorkflowTemplateServiceStubSettings
 
     /** Returns the builder for the settings used for calls to listWorkflowTemplates. */
     public PagedCallSettings.Builder<
-            ListWorkflowTemplatesRequest,
-            ListWorkflowTemplatesResponse,
+            ListWorkflowTemplatesRequest, ListWorkflowTemplatesResponse,
             ListWorkflowTemplatesPagedResponse>
         listWorkflowTemplatesSettings() {
       return listWorkflowTemplatesSettings;

@@ -109,9 +109,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (aiplatform.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (aiplatform.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -390,8 +390,7 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
           ListMetadataStoresRequest, ListMetadataStoresResponse, ListMetadataStoresPagedResponse>
       LIST_METADATA_STORES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListMetadataStoresRequest,
-              ListMetadataStoresResponse,
+              ListMetadataStoresRequest, ListMetadataStoresResponse,
               ListMetadataStoresPagedResponse>() {
             @Override
             public ApiFuture<ListMetadataStoresPagedResponse> getFuturePagedResponse(
@@ -462,8 +461,7 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
           ListMetadataSchemasRequest, ListMetadataSchemasResponse, ListMetadataSchemasPagedResponse>
       LIST_METADATA_SCHEMAS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListMetadataSchemasRequest,
-              ListMetadataSchemasResponse,
+              ListMetadataSchemasRequest, ListMetadataSchemasResponse,
               ListMetadataSchemasPagedResponse>() {
             @Override
             public ApiFuture<ListMetadataSchemasPagedResponse> getFuturePagedResponse(
@@ -809,8 +807,7 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
     private final UnaryCallSettings.Builder<GetMetadataSchemaRequest, MetadataSchema>
         getMetadataSchemaSettings;
     private final PagedCallSettings.Builder<
-            ListMetadataSchemasRequest,
-            ListMetadataSchemasResponse,
+            ListMetadataSchemasRequest, ListMetadataSchemasResponse,
             ListMetadataSchemasPagedResponse>
         listMetadataSchemasSettings;
     private final UnaryCallSettings.Builder<QueryArtifactLineageSubgraphRequest, LineageSubgraph>
@@ -1385,8 +1382,7 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
 
     /** Returns the builder for the settings used for calls to listMetadataSchemas. */
     public PagedCallSettings.Builder<
-            ListMetadataSchemasRequest,
-            ListMetadataSchemasResponse,
+            ListMetadataSchemasRequest, ListMetadataSchemasResponse,
             ListMetadataSchemasPagedResponse>
         listMetadataSchemasSettings() {
       return listMetadataSchemasSettings;

@@ -57,13 +57,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -394,17 +394,14 @@ public class AdMobApiClient implements BackgroundResource {
 
   public static class ListPublisherAccountsPagedResponse
       extends AbstractPagedListResponse<
-          AdMobApiProto.ListPublisherAccountsRequest,
-          AdMobApiProto.ListPublisherAccountsResponse,
-          AdMobResourcesProto.PublisherAccount,
-          ListPublisherAccountsPage,
+          AdMobApiProto.ListPublisherAccountsRequest, AdMobApiProto.ListPublisherAccountsResponse,
+          AdMobResourcesProto.PublisherAccount, ListPublisherAccountsPage,
           ListPublisherAccountsFixedSizeCollection> {
 
     public static ApiFuture<ListPublisherAccountsPagedResponse> createAsync(
         PageContext<
                 AdMobApiProto.ListPublisherAccountsRequest,
-                AdMobApiProto.ListPublisherAccountsResponse,
-                AdMobResourcesProto.PublisherAccount>
+                AdMobApiProto.ListPublisherAccountsResponse, AdMobResourcesProto.PublisherAccount>
             context,
         ApiFuture<AdMobApiProto.ListPublisherAccountsResponse> futureResponse) {
       ApiFuture<ListPublisherAccountsPage> futurePage =
@@ -427,16 +424,13 @@ public class AdMobApiClient implements BackgroundResource {
 
   public static class ListPublisherAccountsPage
       extends AbstractPage<
-          AdMobApiProto.ListPublisherAccountsRequest,
-          AdMobApiProto.ListPublisherAccountsResponse,
-          AdMobResourcesProto.PublisherAccount,
-          ListPublisherAccountsPage> {
+          AdMobApiProto.ListPublisherAccountsRequest, AdMobApiProto.ListPublisherAccountsResponse,
+          AdMobResourcesProto.PublisherAccount, ListPublisherAccountsPage> {
 
     private ListPublisherAccountsPage(
         PageContext<
                 AdMobApiProto.ListPublisherAccountsRequest,
-                AdMobApiProto.ListPublisherAccountsResponse,
-                AdMobResourcesProto.PublisherAccount>
+                AdMobApiProto.ListPublisherAccountsResponse, AdMobResourcesProto.PublisherAccount>
             context,
         AdMobApiProto.ListPublisherAccountsResponse response) {
       super(context, response);
@@ -450,8 +444,7 @@ public class AdMobApiClient implements BackgroundResource {
     protected ListPublisherAccountsPage createPage(
         PageContext<
                 AdMobApiProto.ListPublisherAccountsRequest,
-                AdMobApiProto.ListPublisherAccountsResponse,
-                AdMobResourcesProto.PublisherAccount>
+                AdMobApiProto.ListPublisherAccountsResponse, AdMobResourcesProto.PublisherAccount>
             context,
         AdMobApiProto.ListPublisherAccountsResponse response) {
       return new ListPublisherAccountsPage(context, response);
@@ -461,8 +454,7 @@ public class AdMobApiClient implements BackgroundResource {
     public ApiFuture<ListPublisherAccountsPage> createPageAsync(
         PageContext<
                 AdMobApiProto.ListPublisherAccountsRequest,
-                AdMobApiProto.ListPublisherAccountsResponse,
-                AdMobResourcesProto.PublisherAccount>
+                AdMobApiProto.ListPublisherAccountsResponse, AdMobResourcesProto.PublisherAccount>
             context,
         ApiFuture<AdMobApiProto.ListPublisherAccountsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -471,10 +463,8 @@ public class AdMobApiClient implements BackgroundResource {
 
   public static class ListPublisherAccountsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          AdMobApiProto.ListPublisherAccountsRequest,
-          AdMobApiProto.ListPublisherAccountsResponse,
-          AdMobResourcesProto.PublisherAccount,
-          ListPublisherAccountsPage,
+          AdMobApiProto.ListPublisherAccountsRequest, AdMobApiProto.ListPublisherAccountsResponse,
+          AdMobResourcesProto.PublisherAccount, ListPublisherAccountsPage,
           ListPublisherAccountsFixedSizeCollection> {
 
     private ListPublisherAccountsFixedSizeCollection(

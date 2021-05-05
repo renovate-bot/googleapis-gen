@@ -102,13 +102,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -818,11 +818,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * @param loggingService Required. The logging service the cluster should use to write logs.
    *     Currently available options:
    *     <ul>
-   *       <li>`logging.googleapis.com/kubernetes` - The Cloud Logging service with a
+   *       <li> `logging.googleapis.com/kubernetes` - The Cloud Logging service with a
    *           Kubernetes-native resource model
-   *       <li>`logging.googleapis.com` - The legacy Cloud Logging service (no longer available as
+   *       <li> `logging.googleapis.com` - The legacy Cloud Logging service (no longer available as
    *           of GKE 1.15).
-   *       <li>`none` - no logs will be exported from the cluster.
+   *       <li> `none` - no logs will be exported from the cluster.
    *     </ul>
    *     <p>If left as an empty string,`logging.googleapis.com/kubernetes` will be used for GKE
    *     1.14+ or `logging.googleapis.com` for earlier versions.
@@ -865,11 +865,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * @param loggingService Required. The logging service the cluster should use to write logs.
    *     Currently available options:
    *     <ul>
-   *       <li>`logging.googleapis.com/kubernetes` - The Cloud Logging service with a
+   *       <li> `logging.googleapis.com/kubernetes` - The Cloud Logging service with a
    *           Kubernetes-native resource model
-   *       <li>`logging.googleapis.com` - The legacy Cloud Logging service (no longer available as
+   *       <li> `logging.googleapis.com` - The legacy Cloud Logging service (no longer available as
    *           of GKE 1.15).
-   *       <li>`none` - no logs will be exported from the cluster.
+   *       <li> `none` - no logs will be exported from the cluster.
    *     </ul>
    *     <p>If left as an empty string,`logging.googleapis.com/kubernetes` will be used for GKE
    *     1.14+ or `logging.googleapis.com` for earlier versions.
@@ -960,11 +960,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * @param monitoringService Required. The monitoring service the cluster should use to write
    *     metrics. Currently available options:
    *     <ul>
-   *       <li>"monitoring.googleapis.com/kubernetes" - The Cloud Monitoring service with a
+   *       <li> "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring service with a
    *           Kubernetes-native resource model
-   *       <li>`monitoring.googleapis.com` - The legacy Cloud Monitoring service (no longer
+   *       <li> `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no longer
    *           available as of GKE 1.15).
-   *       <li>`none` - No metrics will be exported from the cluster.
+   *       <li> `none` - No metrics will be exported from the cluster.
    *     </ul>
    *     <p>If left as an empty string,`monitoring.googleapis.com/kubernetes` will be used for GKE
    *     1.14+ or `monitoring.googleapis.com` for earlier versions.
@@ -1007,11 +1007,11 @@ public class ClusterManagerClient implements BackgroundResource {
    * @param monitoringService Required. The monitoring service the cluster should use to write
    *     metrics. Currently available options:
    *     <ul>
-   *       <li>"monitoring.googleapis.com/kubernetes" - The Cloud Monitoring service with a
+   *       <li> "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring service with a
    *           Kubernetes-native resource model
-   *       <li>`monitoring.googleapis.com` - The legacy Cloud Monitoring service (no longer
+   *       <li> `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no longer
    *           available as of GKE 1.15).
-   *       <li>`none` - No metrics will be exported from the cluster.
+   *       <li> `none` - No metrics will be exported from the cluster.
    *     </ul>
    *     <p>If left as an empty string,`monitoring.googleapis.com/kubernetes` will be used for GKE
    *     1.14+ or `monitoring.googleapis.com` for earlier versions.
@@ -3569,11 +3569,8 @@ public class ClusterManagerClient implements BackgroundResource {
 
   public static class ListUsableSubnetworksPagedResponse
       extends AbstractPagedListResponse<
-          ListUsableSubnetworksRequest,
-          ListUsableSubnetworksResponse,
-          UsableSubnetwork,
-          ListUsableSubnetworksPage,
-          ListUsableSubnetworksFixedSizeCollection> {
+          ListUsableSubnetworksRequest, ListUsableSubnetworksResponse, UsableSubnetwork,
+          ListUsableSubnetworksPage, ListUsableSubnetworksFixedSizeCollection> {
 
     public static ApiFuture<ListUsableSubnetworksPagedResponse> createAsync(
         PageContext<ListUsableSubnetworksRequest, ListUsableSubnetworksResponse, UsableSubnetwork>
@@ -3599,9 +3596,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
   public static class ListUsableSubnetworksPage
       extends AbstractPage<
-          ListUsableSubnetworksRequest,
-          ListUsableSubnetworksResponse,
-          UsableSubnetwork,
+          ListUsableSubnetworksRequest, ListUsableSubnetworksResponse, UsableSubnetwork,
           ListUsableSubnetworksPage> {
 
     private ListUsableSubnetworksPage(
@@ -3634,11 +3629,8 @@ public class ClusterManagerClient implements BackgroundResource {
 
   public static class ListUsableSubnetworksFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListUsableSubnetworksRequest,
-          ListUsableSubnetworksResponse,
-          UsableSubnetwork,
-          ListUsableSubnetworksPage,
-          ListUsableSubnetworksFixedSizeCollection> {
+          ListUsableSubnetworksRequest, ListUsableSubnetworksResponse, UsableSubnetwork,
+          ListUsableSubnetworksPage, ListUsableSubnetworksFixedSizeCollection> {
 
     private ListUsableSubnetworksFixedSizeCollection(
         List<ListUsableSubnetworksPage> pages, int collectionSize) {

@@ -91,13 +91,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -1049,10 +1049,7 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
 
   public static class ListOccurrencesPagedResponse
       extends AbstractPagedListResponse<
-          ListOccurrencesRequest,
-          ListOccurrencesResponse,
-          Occurrence,
-          ListOccurrencesPage,
+          ListOccurrencesRequest, ListOccurrencesResponse, Occurrence, ListOccurrencesPage,
           ListOccurrencesFixedSizeCollection> {
 
     public static ApiFuture<ListOccurrencesPagedResponse> createAsync(
@@ -1107,10 +1104,7 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
 
   public static class ListOccurrencesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListOccurrencesRequest,
-          ListOccurrencesResponse,
-          Occurrence,
-          ListOccurrencesPage,
+          ListOccurrencesRequest, ListOccurrencesResponse, Occurrence, ListOccurrencesPage,
           ListOccurrencesFixedSizeCollection> {
 
     private ListOccurrencesFixedSizeCollection(
@@ -1203,11 +1197,8 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
 
   public static class ListNoteOccurrencesPagedResponse
       extends AbstractPagedListResponse<
-          ListNoteOccurrencesRequest,
-          ListNoteOccurrencesResponse,
-          Occurrence,
-          ListNoteOccurrencesPage,
-          ListNoteOccurrencesFixedSizeCollection> {
+          ListNoteOccurrencesRequest, ListNoteOccurrencesResponse, Occurrence,
+          ListNoteOccurrencesPage, ListNoteOccurrencesFixedSizeCollection> {
 
     public static ApiFuture<ListNoteOccurrencesPagedResponse> createAsync(
         PageContext<ListNoteOccurrencesRequest, ListNoteOccurrencesResponse, Occurrence> context,
@@ -1232,9 +1223,7 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
 
   public static class ListNoteOccurrencesPage
       extends AbstractPage<
-          ListNoteOccurrencesRequest,
-          ListNoteOccurrencesResponse,
-          Occurrence,
+          ListNoteOccurrencesRequest, ListNoteOccurrencesResponse, Occurrence,
           ListNoteOccurrencesPage> {
 
     private ListNoteOccurrencesPage(
@@ -1264,11 +1253,8 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
 
   public static class ListNoteOccurrencesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListNoteOccurrencesRequest,
-          ListNoteOccurrencesResponse,
-          Occurrence,
-          ListNoteOccurrencesPage,
-          ListNoteOccurrencesFixedSizeCollection> {
+          ListNoteOccurrencesRequest, ListNoteOccurrencesResponse, Occurrence,
+          ListNoteOccurrencesPage, ListNoteOccurrencesFixedSizeCollection> {
 
     private ListNoteOccurrencesFixedSizeCollection(
         List<ListNoteOccurrencesPage> pages, int collectionSize) {

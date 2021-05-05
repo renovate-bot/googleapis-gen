@@ -59,13 +59,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -4986,10 +4986,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   public static class ListAccountsPagedResponse
       extends AbstractPagedListResponse<
-          ListAccountsRequest,
-          ListAccountsResponse,
-          Account,
-          ListAccountsPage,
+          ListAccountsRequest, ListAccountsResponse, Account, ListAccountsPage,
           ListAccountsFixedSizeCollection> {
 
     public static ApiFuture<ListAccountsPagedResponse> createAsync(
@@ -5043,10 +5040,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   public static class ListAccountsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListAccountsRequest,
-          ListAccountsResponse,
-          Account,
-          ListAccountsPage,
+          ListAccountsRequest, ListAccountsResponse, Account, ListAccountsPage,
           ListAccountsFixedSizeCollection> {
 
     private ListAccountsFixedSizeCollection(List<ListAccountsPage> pages, int collectionSize) {
@@ -5066,11 +5060,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   public static class ListAccountSummariesPagedResponse
       extends AbstractPagedListResponse<
-          ListAccountSummariesRequest,
-          ListAccountSummariesResponse,
-          AccountSummary,
-          ListAccountSummariesPage,
-          ListAccountSummariesFixedSizeCollection> {
+          ListAccountSummariesRequest, ListAccountSummariesResponse, AccountSummary,
+          ListAccountSummariesPage, ListAccountSummariesFixedSizeCollection> {
 
     public static ApiFuture<ListAccountSummariesPagedResponse> createAsync(
         PageContext<ListAccountSummariesRequest, ListAccountSummariesResponse, AccountSummary>
@@ -5096,9 +5087,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   public static class ListAccountSummariesPage
       extends AbstractPage<
-          ListAccountSummariesRequest,
-          ListAccountSummariesResponse,
-          AccountSummary,
+          ListAccountSummariesRequest, ListAccountSummariesResponse, AccountSummary,
           ListAccountSummariesPage> {
 
     private ListAccountSummariesPage(
@@ -5131,11 +5120,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   public static class ListAccountSummariesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListAccountSummariesRequest,
-          ListAccountSummariesResponse,
-          AccountSummary,
-          ListAccountSummariesPage,
-          ListAccountSummariesFixedSizeCollection> {
+          ListAccountSummariesRequest, ListAccountSummariesResponse, AccountSummary,
+          ListAccountSummariesPage, ListAccountSummariesFixedSizeCollection> {
 
     private ListAccountSummariesFixedSizeCollection(
         List<ListAccountSummariesPage> pages, int collectionSize) {
@@ -5155,10 +5141,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   public static class ListPropertiesPagedResponse
       extends AbstractPagedListResponse<
-          ListPropertiesRequest,
-          ListPropertiesResponse,
-          Property,
-          ListPropertiesPage,
+          ListPropertiesRequest, ListPropertiesResponse, Property, ListPropertiesPage,
           ListPropertiesFixedSizeCollection> {
 
     public static ApiFuture<ListPropertiesPagedResponse> createAsync(
@@ -5213,10 +5196,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   public static class ListPropertiesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListPropertiesRequest,
-          ListPropertiesResponse,
-          Property,
-          ListPropertiesPage,
+          ListPropertiesRequest, ListPropertiesResponse, Property, ListPropertiesPage,
           ListPropertiesFixedSizeCollection> {
 
     private ListPropertiesFixedSizeCollection(List<ListPropertiesPage> pages, int collectionSize) {
@@ -5236,10 +5216,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   public static class ListUserLinksPagedResponse
       extends AbstractPagedListResponse<
-          ListUserLinksRequest,
-          ListUserLinksResponse,
-          UserLink,
-          ListUserLinksPage,
+          ListUserLinksRequest, ListUserLinksResponse, UserLink, ListUserLinksPage,
           ListUserLinksFixedSizeCollection> {
 
     public static ApiFuture<ListUserLinksPagedResponse> createAsync(
@@ -5294,10 +5271,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   public static class ListUserLinksFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListUserLinksRequest,
-          ListUserLinksResponse,
-          UserLink,
-          ListUserLinksPage,
+          ListUserLinksRequest, ListUserLinksResponse, UserLink, ListUserLinksPage,
           ListUserLinksFixedSizeCollection> {
 
     private ListUserLinksFixedSizeCollection(List<ListUserLinksPage> pages, int collectionSize) {
@@ -5317,10 +5291,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   public static class AuditUserLinksPagedResponse
       extends AbstractPagedListResponse<
-          AuditUserLinksRequest,
-          AuditUserLinksResponse,
-          AuditUserLink,
-          AuditUserLinksPage,
+          AuditUserLinksRequest, AuditUserLinksResponse, AuditUserLink, AuditUserLinksPage,
           AuditUserLinksFixedSizeCollection> {
 
     public static ApiFuture<AuditUserLinksPagedResponse> createAsync(
@@ -5375,10 +5346,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   public static class AuditUserLinksFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          AuditUserLinksRequest,
-          AuditUserLinksResponse,
-          AuditUserLink,
-          AuditUserLinksPage,
+          AuditUserLinksRequest, AuditUserLinksResponse, AuditUserLink, AuditUserLinksPage,
           AuditUserLinksFixedSizeCollection> {
 
     private AuditUserLinksFixedSizeCollection(List<AuditUserLinksPage> pages, int collectionSize) {
@@ -5398,11 +5366,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   public static class ListWebDataStreamsPagedResponse
       extends AbstractPagedListResponse<
-          ListWebDataStreamsRequest,
-          ListWebDataStreamsResponse,
-          WebDataStream,
-          ListWebDataStreamsPage,
-          ListWebDataStreamsFixedSizeCollection> {
+          ListWebDataStreamsRequest, ListWebDataStreamsResponse, WebDataStream,
+          ListWebDataStreamsPage, ListWebDataStreamsFixedSizeCollection> {
 
     public static ApiFuture<ListWebDataStreamsPagedResponse> createAsync(
         PageContext<ListWebDataStreamsRequest, ListWebDataStreamsResponse, WebDataStream> context,
@@ -5427,9 +5392,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   public static class ListWebDataStreamsPage
       extends AbstractPage<
-          ListWebDataStreamsRequest,
-          ListWebDataStreamsResponse,
-          WebDataStream,
+          ListWebDataStreamsRequest, ListWebDataStreamsResponse, WebDataStream,
           ListWebDataStreamsPage> {
 
     private ListWebDataStreamsPage(
@@ -5459,11 +5422,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   public static class ListWebDataStreamsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListWebDataStreamsRequest,
-          ListWebDataStreamsResponse,
-          WebDataStream,
-          ListWebDataStreamsPage,
-          ListWebDataStreamsFixedSizeCollection> {
+          ListWebDataStreamsRequest, ListWebDataStreamsResponse, WebDataStream,
+          ListWebDataStreamsPage, ListWebDataStreamsFixedSizeCollection> {
 
     private ListWebDataStreamsFixedSizeCollection(
         List<ListWebDataStreamsPage> pages, int collectionSize) {
@@ -5483,11 +5443,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   public static class ListIosAppDataStreamsPagedResponse
       extends AbstractPagedListResponse<
-          ListIosAppDataStreamsRequest,
-          ListIosAppDataStreamsResponse,
-          IosAppDataStream,
-          ListIosAppDataStreamsPage,
-          ListIosAppDataStreamsFixedSizeCollection> {
+          ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse, IosAppDataStream,
+          ListIosAppDataStreamsPage, ListIosAppDataStreamsFixedSizeCollection> {
 
     public static ApiFuture<ListIosAppDataStreamsPagedResponse> createAsync(
         PageContext<ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse, IosAppDataStream>
@@ -5513,9 +5470,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   public static class ListIosAppDataStreamsPage
       extends AbstractPage<
-          ListIosAppDataStreamsRequest,
-          ListIosAppDataStreamsResponse,
-          IosAppDataStream,
+          ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse, IosAppDataStream,
           ListIosAppDataStreamsPage> {
 
     private ListIosAppDataStreamsPage(
@@ -5548,11 +5503,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   public static class ListIosAppDataStreamsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListIosAppDataStreamsRequest,
-          ListIosAppDataStreamsResponse,
-          IosAppDataStream,
-          ListIosAppDataStreamsPage,
-          ListIosAppDataStreamsFixedSizeCollection> {
+          ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse, IosAppDataStream,
+          ListIosAppDataStreamsPage, ListIosAppDataStreamsFixedSizeCollection> {
 
     private ListIosAppDataStreamsFixedSizeCollection(
         List<ListIosAppDataStreamsPage> pages, int collectionSize) {
@@ -5572,16 +5524,12 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   public static class ListAndroidAppDataStreamsPagedResponse
       extends AbstractPagedListResponse<
-          ListAndroidAppDataStreamsRequest,
-          ListAndroidAppDataStreamsResponse,
-          AndroidAppDataStream,
-          ListAndroidAppDataStreamsPage,
-          ListAndroidAppDataStreamsFixedSizeCollection> {
+          ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse, AndroidAppDataStream,
+          ListAndroidAppDataStreamsPage, ListAndroidAppDataStreamsFixedSizeCollection> {
 
     public static ApiFuture<ListAndroidAppDataStreamsPagedResponse> createAsync(
         PageContext<
-                ListAndroidAppDataStreamsRequest,
-                ListAndroidAppDataStreamsResponse,
+                ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse,
                 AndroidAppDataStream>
             context,
         ApiFuture<ListAndroidAppDataStreamsResponse> futureResponse) {
@@ -5606,15 +5554,12 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   public static class ListAndroidAppDataStreamsPage
       extends AbstractPage<
-          ListAndroidAppDataStreamsRequest,
-          ListAndroidAppDataStreamsResponse,
-          AndroidAppDataStream,
+          ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse, AndroidAppDataStream,
           ListAndroidAppDataStreamsPage> {
 
     private ListAndroidAppDataStreamsPage(
         PageContext<
-                ListAndroidAppDataStreamsRequest,
-                ListAndroidAppDataStreamsResponse,
+                ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse,
                 AndroidAppDataStream>
             context,
         ListAndroidAppDataStreamsResponse response) {
@@ -5628,8 +5573,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     @Override
     protected ListAndroidAppDataStreamsPage createPage(
         PageContext<
-                ListAndroidAppDataStreamsRequest,
-                ListAndroidAppDataStreamsResponse,
+                ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse,
                 AndroidAppDataStream>
             context,
         ListAndroidAppDataStreamsResponse response) {
@@ -5639,8 +5583,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     @Override
     public ApiFuture<ListAndroidAppDataStreamsPage> createPageAsync(
         PageContext<
-                ListAndroidAppDataStreamsRequest,
-                ListAndroidAppDataStreamsResponse,
+                ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse,
                 AndroidAppDataStream>
             context,
         ApiFuture<ListAndroidAppDataStreamsResponse> futureResponse) {
@@ -5650,11 +5593,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   public static class ListAndroidAppDataStreamsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListAndroidAppDataStreamsRequest,
-          ListAndroidAppDataStreamsResponse,
-          AndroidAppDataStream,
-          ListAndroidAppDataStreamsPage,
-          ListAndroidAppDataStreamsFixedSizeCollection> {
+          ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse, AndroidAppDataStream,
+          ListAndroidAppDataStreamsPage, ListAndroidAppDataStreamsFixedSizeCollection> {
 
     private ListAndroidAppDataStreamsFixedSizeCollection(
         List<ListAndroidAppDataStreamsPage> pages, int collectionSize) {
@@ -5674,10 +5614,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   public static class ListFirebaseLinksPagedResponse
       extends AbstractPagedListResponse<
-          ListFirebaseLinksRequest,
-          ListFirebaseLinksResponse,
-          FirebaseLink,
-          ListFirebaseLinksPage,
+          ListFirebaseLinksRequest, ListFirebaseLinksResponse, FirebaseLink, ListFirebaseLinksPage,
           ListFirebaseLinksFixedSizeCollection> {
 
     public static ApiFuture<ListFirebaseLinksPagedResponse> createAsync(
@@ -5703,9 +5640,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   public static class ListFirebaseLinksPage
       extends AbstractPage<
-          ListFirebaseLinksRequest,
-          ListFirebaseLinksResponse,
-          FirebaseLink,
+          ListFirebaseLinksRequest, ListFirebaseLinksResponse, FirebaseLink,
           ListFirebaseLinksPage> {
 
     private ListFirebaseLinksPage(
@@ -5735,10 +5670,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   public static class ListFirebaseLinksFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListFirebaseLinksRequest,
-          ListFirebaseLinksResponse,
-          FirebaseLink,
-          ListFirebaseLinksPage,
+          ListFirebaseLinksRequest, ListFirebaseLinksResponse, FirebaseLink, ListFirebaseLinksPage,
           ListFirebaseLinksFixedSizeCollection> {
 
     private ListFirebaseLinksFixedSizeCollection(
@@ -5759,11 +5691,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   public static class ListGoogleAdsLinksPagedResponse
       extends AbstractPagedListResponse<
-          ListGoogleAdsLinksRequest,
-          ListGoogleAdsLinksResponse,
-          GoogleAdsLink,
-          ListGoogleAdsLinksPage,
-          ListGoogleAdsLinksFixedSizeCollection> {
+          ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse, GoogleAdsLink,
+          ListGoogleAdsLinksPage, ListGoogleAdsLinksFixedSizeCollection> {
 
     public static ApiFuture<ListGoogleAdsLinksPagedResponse> createAsync(
         PageContext<ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse, GoogleAdsLink> context,
@@ -5788,9 +5717,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   public static class ListGoogleAdsLinksPage
       extends AbstractPage<
-          ListGoogleAdsLinksRequest,
-          ListGoogleAdsLinksResponse,
-          GoogleAdsLink,
+          ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse, GoogleAdsLink,
           ListGoogleAdsLinksPage> {
 
     private ListGoogleAdsLinksPage(
@@ -5820,11 +5747,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   public static class ListGoogleAdsLinksFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListGoogleAdsLinksRequest,
-          ListGoogleAdsLinksResponse,
-          GoogleAdsLink,
-          ListGoogleAdsLinksPage,
-          ListGoogleAdsLinksFixedSizeCollection> {
+          ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse, GoogleAdsLink,
+          ListGoogleAdsLinksPage, ListGoogleAdsLinksFixedSizeCollection> {
 
     private ListGoogleAdsLinksFixedSizeCollection(
         List<ListGoogleAdsLinksPage> pages, int collectionSize) {
@@ -5844,16 +5768,12 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   public static class SearchChangeHistoryEventsPagedResponse
       extends AbstractPagedListResponse<
-          SearchChangeHistoryEventsRequest,
-          SearchChangeHistoryEventsResponse,
-          ChangeHistoryEvent,
-          SearchChangeHistoryEventsPage,
-          SearchChangeHistoryEventsFixedSizeCollection> {
+          SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse, ChangeHistoryEvent,
+          SearchChangeHistoryEventsPage, SearchChangeHistoryEventsFixedSizeCollection> {
 
     public static ApiFuture<SearchChangeHistoryEventsPagedResponse> createAsync(
         PageContext<
-                SearchChangeHistoryEventsRequest,
-                SearchChangeHistoryEventsResponse,
+                SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse,
                 ChangeHistoryEvent>
             context,
         ApiFuture<SearchChangeHistoryEventsResponse> futureResponse) {
@@ -5878,15 +5798,12 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   public static class SearchChangeHistoryEventsPage
       extends AbstractPage<
-          SearchChangeHistoryEventsRequest,
-          SearchChangeHistoryEventsResponse,
-          ChangeHistoryEvent,
+          SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse, ChangeHistoryEvent,
           SearchChangeHistoryEventsPage> {
 
     private SearchChangeHistoryEventsPage(
         PageContext<
-                SearchChangeHistoryEventsRequest,
-                SearchChangeHistoryEventsResponse,
+                SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse,
                 ChangeHistoryEvent>
             context,
         SearchChangeHistoryEventsResponse response) {
@@ -5900,8 +5817,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     @Override
     protected SearchChangeHistoryEventsPage createPage(
         PageContext<
-                SearchChangeHistoryEventsRequest,
-                SearchChangeHistoryEventsResponse,
+                SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse,
                 ChangeHistoryEvent>
             context,
         SearchChangeHistoryEventsResponse response) {
@@ -5911,8 +5827,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     @Override
     public ApiFuture<SearchChangeHistoryEventsPage> createPageAsync(
         PageContext<
-                SearchChangeHistoryEventsRequest,
-                SearchChangeHistoryEventsResponse,
+                SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse,
                 ChangeHistoryEvent>
             context,
         ApiFuture<SearchChangeHistoryEventsResponse> futureResponse) {
@@ -5922,11 +5837,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   public static class SearchChangeHistoryEventsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          SearchChangeHistoryEventsRequest,
-          SearchChangeHistoryEventsResponse,
-          ChangeHistoryEvent,
-          SearchChangeHistoryEventsPage,
-          SearchChangeHistoryEventsFixedSizeCollection> {
+          SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse, ChangeHistoryEvent,
+          SearchChangeHistoryEventsPage, SearchChangeHistoryEventsFixedSizeCollection> {
 
     private SearchChangeHistoryEventsFixedSizeCollection(
         List<SearchChangeHistoryEventsPage> pages, int collectionSize) {

@@ -84,13 +84,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -597,8 +597,7 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * }</pre>
    */
   public final OperationCallable<
-          CreateWorkloadIdentityPoolRequest,
-          WorkloadIdentityPool,
+          CreateWorkloadIdentityPoolRequest, WorkloadIdentityPool,
           WorkloadIdentityPoolOperationMetadata>
       createWorkloadIdentityPoolOperationCallable() {
     return stub.createWorkloadIdentityPoolOperationCallable();
@@ -718,8 +717,7 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * }</pre>
    */
   public final OperationCallable<
-          UpdateWorkloadIdentityPoolRequest,
-          WorkloadIdentityPool,
+          UpdateWorkloadIdentityPoolRequest, WorkloadIdentityPool,
           WorkloadIdentityPoolOperationMetadata>
       updateWorkloadIdentityPoolOperationCallable() {
     return stub.updateWorkloadIdentityPoolOperationCallable();
@@ -887,8 +885,7 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * }</pre>
    */
   public final OperationCallable<
-          DeleteWorkloadIdentityPoolRequest,
-          WorkloadIdentityPool,
+          DeleteWorkloadIdentityPoolRequest, WorkloadIdentityPool,
           WorkloadIdentityPoolOperationMetadata>
       deleteWorkloadIdentityPoolOperationCallable() {
     return stub.deleteWorkloadIdentityPoolOperationCallable();
@@ -1040,8 +1037,7 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * }</pre>
    */
   public final OperationCallable<
-          UndeleteWorkloadIdentityPoolRequest,
-          WorkloadIdentityPool,
+          UndeleteWorkloadIdentityPoolRequest, WorkloadIdentityPool,
           WorkloadIdentityPoolOperationMetadata>
       undeleteWorkloadIdentityPoolOperationCallable() {
     return stub.undeleteWorkloadIdentityPoolOperationCallable();
@@ -1548,8 +1544,7 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * }</pre>
    */
   public final OperationCallable<
-          CreateWorkloadIdentityPoolProviderRequest,
-          WorkloadIdentityPoolProvider,
+          CreateWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
           WorkloadIdentityPoolProviderOperationMetadata>
       createWorkloadIdentityPoolProviderOperationCallable() {
     return stub.createWorkloadIdentityPoolProviderOperationCallable();
@@ -1677,8 +1672,7 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * }</pre>
    */
   public final OperationCallable<
-          UpdateWorkloadIdentityPoolProviderRequest,
-          WorkloadIdentityPoolProvider,
+          UpdateWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
           WorkloadIdentityPoolProviderOperationMetadata>
       updateWorkloadIdentityPoolProviderOperationCallable() {
     return stub.updateWorkloadIdentityPoolProviderOperationCallable();
@@ -1852,8 +1846,7 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * }</pre>
    */
   public final OperationCallable<
-          DeleteWorkloadIdentityPoolProviderRequest,
-          WorkloadIdentityPoolProvider,
+          DeleteWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
           WorkloadIdentityPoolProviderOperationMetadata>
       deleteWorkloadIdentityPoolProviderOperationCallable() {
     return stub.deleteWorkloadIdentityPoolProviderOperationCallable();
@@ -2028,8 +2021,7 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
    * }</pre>
    */
   public final OperationCallable<
-          UndeleteWorkloadIdentityPoolProviderRequest,
-          WorkloadIdentityPoolProvider,
+          UndeleteWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
           WorkloadIdentityPoolProviderOperationMetadata>
       undeleteWorkloadIdentityPoolProviderOperationCallable() {
     return stub.undeleteWorkloadIdentityPoolProviderOperationCallable();
@@ -2101,16 +2093,12 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
 
   public static class ListWorkloadIdentityPoolsPagedResponse
       extends AbstractPagedListResponse<
-          ListWorkloadIdentityPoolsRequest,
-          ListWorkloadIdentityPoolsResponse,
-          WorkloadIdentityPool,
-          ListWorkloadIdentityPoolsPage,
-          ListWorkloadIdentityPoolsFixedSizeCollection> {
+          ListWorkloadIdentityPoolsRequest, ListWorkloadIdentityPoolsResponse, WorkloadIdentityPool,
+          ListWorkloadIdentityPoolsPage, ListWorkloadIdentityPoolsFixedSizeCollection> {
 
     public static ApiFuture<ListWorkloadIdentityPoolsPagedResponse> createAsync(
         PageContext<
-                ListWorkloadIdentityPoolsRequest,
-                ListWorkloadIdentityPoolsResponse,
+                ListWorkloadIdentityPoolsRequest, ListWorkloadIdentityPoolsResponse,
                 WorkloadIdentityPool>
             context,
         ApiFuture<ListWorkloadIdentityPoolsResponse> futureResponse) {
@@ -2135,15 +2123,12 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
 
   public static class ListWorkloadIdentityPoolsPage
       extends AbstractPage<
-          ListWorkloadIdentityPoolsRequest,
-          ListWorkloadIdentityPoolsResponse,
-          WorkloadIdentityPool,
+          ListWorkloadIdentityPoolsRequest, ListWorkloadIdentityPoolsResponse, WorkloadIdentityPool,
           ListWorkloadIdentityPoolsPage> {
 
     private ListWorkloadIdentityPoolsPage(
         PageContext<
-                ListWorkloadIdentityPoolsRequest,
-                ListWorkloadIdentityPoolsResponse,
+                ListWorkloadIdentityPoolsRequest, ListWorkloadIdentityPoolsResponse,
                 WorkloadIdentityPool>
             context,
         ListWorkloadIdentityPoolsResponse response) {
@@ -2157,8 +2142,7 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
     @Override
     protected ListWorkloadIdentityPoolsPage createPage(
         PageContext<
-                ListWorkloadIdentityPoolsRequest,
-                ListWorkloadIdentityPoolsResponse,
+                ListWorkloadIdentityPoolsRequest, ListWorkloadIdentityPoolsResponse,
                 WorkloadIdentityPool>
             context,
         ListWorkloadIdentityPoolsResponse response) {
@@ -2168,8 +2152,7 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
     @Override
     public ApiFuture<ListWorkloadIdentityPoolsPage> createPageAsync(
         PageContext<
-                ListWorkloadIdentityPoolsRequest,
-                ListWorkloadIdentityPoolsResponse,
+                ListWorkloadIdentityPoolsRequest, ListWorkloadIdentityPoolsResponse,
                 WorkloadIdentityPool>
             context,
         ApiFuture<ListWorkloadIdentityPoolsResponse> futureResponse) {
@@ -2179,11 +2162,8 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
 
   public static class ListWorkloadIdentityPoolsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListWorkloadIdentityPoolsRequest,
-          ListWorkloadIdentityPoolsResponse,
-          WorkloadIdentityPool,
-          ListWorkloadIdentityPoolsPage,
-          ListWorkloadIdentityPoolsFixedSizeCollection> {
+          ListWorkloadIdentityPoolsRequest, ListWorkloadIdentityPoolsResponse, WorkloadIdentityPool,
+          ListWorkloadIdentityPoolsPage, ListWorkloadIdentityPoolsFixedSizeCollection> {
 
     private ListWorkloadIdentityPoolsFixedSizeCollection(
         List<ListWorkloadIdentityPoolsPage> pages, int collectionSize) {
@@ -2203,16 +2183,13 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
 
   public static class ListWorkloadIdentityPoolProvidersPagedResponse
       extends AbstractPagedListResponse<
-          ListWorkloadIdentityPoolProvidersRequest,
-          ListWorkloadIdentityPoolProvidersResponse,
-          WorkloadIdentityPoolProvider,
-          ListWorkloadIdentityPoolProvidersPage,
+          ListWorkloadIdentityPoolProvidersRequest, ListWorkloadIdentityPoolProvidersResponse,
+          WorkloadIdentityPoolProvider, ListWorkloadIdentityPoolProvidersPage,
           ListWorkloadIdentityPoolProvidersFixedSizeCollection> {
 
     public static ApiFuture<ListWorkloadIdentityPoolProvidersPagedResponse> createAsync(
         PageContext<
-                ListWorkloadIdentityPoolProvidersRequest,
-                ListWorkloadIdentityPoolProvidersResponse,
+                ListWorkloadIdentityPoolProvidersRequest, ListWorkloadIdentityPoolProvidersResponse,
                 WorkloadIdentityPoolProvider>
             context,
         ApiFuture<ListWorkloadIdentityPoolProvidersResponse> futureResponse) {
@@ -2241,15 +2218,12 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
 
   public static class ListWorkloadIdentityPoolProvidersPage
       extends AbstractPage<
-          ListWorkloadIdentityPoolProvidersRequest,
-          ListWorkloadIdentityPoolProvidersResponse,
-          WorkloadIdentityPoolProvider,
-          ListWorkloadIdentityPoolProvidersPage> {
+          ListWorkloadIdentityPoolProvidersRequest, ListWorkloadIdentityPoolProvidersResponse,
+          WorkloadIdentityPoolProvider, ListWorkloadIdentityPoolProvidersPage> {
 
     private ListWorkloadIdentityPoolProvidersPage(
         PageContext<
-                ListWorkloadIdentityPoolProvidersRequest,
-                ListWorkloadIdentityPoolProvidersResponse,
+                ListWorkloadIdentityPoolProvidersRequest, ListWorkloadIdentityPoolProvidersResponse,
                 WorkloadIdentityPoolProvider>
             context,
         ListWorkloadIdentityPoolProvidersResponse response) {
@@ -2263,8 +2237,7 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
     @Override
     protected ListWorkloadIdentityPoolProvidersPage createPage(
         PageContext<
-                ListWorkloadIdentityPoolProvidersRequest,
-                ListWorkloadIdentityPoolProvidersResponse,
+                ListWorkloadIdentityPoolProvidersRequest, ListWorkloadIdentityPoolProvidersResponse,
                 WorkloadIdentityPoolProvider>
             context,
         ListWorkloadIdentityPoolProvidersResponse response) {
@@ -2274,8 +2247,7 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
     @Override
     public ApiFuture<ListWorkloadIdentityPoolProvidersPage> createPageAsync(
         PageContext<
-                ListWorkloadIdentityPoolProvidersRequest,
-                ListWorkloadIdentityPoolProvidersResponse,
+                ListWorkloadIdentityPoolProvidersRequest, ListWorkloadIdentityPoolProvidersResponse,
                 WorkloadIdentityPoolProvider>
             context,
         ApiFuture<ListWorkloadIdentityPoolProvidersResponse> futureResponse) {
@@ -2285,10 +2257,8 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
 
   public static class ListWorkloadIdentityPoolProvidersFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListWorkloadIdentityPoolProvidersRequest,
-          ListWorkloadIdentityPoolProvidersResponse,
-          WorkloadIdentityPoolProvider,
-          ListWorkloadIdentityPoolProvidersPage,
+          ListWorkloadIdentityPoolProvidersRequest, ListWorkloadIdentityPoolProvidersResponse,
+          WorkloadIdentityPoolProvider, ListWorkloadIdentityPoolProvidersPage,
           ListWorkloadIdentityPoolProvidersFixedSizeCollection> {
 
     private ListWorkloadIdentityPoolProvidersFixedSizeCollection(

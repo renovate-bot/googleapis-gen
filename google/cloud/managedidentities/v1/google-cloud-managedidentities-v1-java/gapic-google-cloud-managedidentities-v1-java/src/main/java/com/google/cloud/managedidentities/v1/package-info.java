@@ -33,11 +33,11 @@
  * <p>The Managed Identities service exposes the following resources:
  *
  * <ul>
- *   <li>Locations as global, named as follows: `projects/{project_id}/locations/global`.
+ *   <li> Locations as global, named as follows: `projects/{project_id}/locations/global`.
  * </ul>
  *
  * <ul>
- *   <li>Domains, named as follows: `/projects/{project_id}/locations/global/domain/{domain_name}`.
+ *   <li> Domains, named as follows: `/projects/{project_id}/locations/global/domain/{domain_name}`.
  * </ul>
  *
  * <p>The `{domain_name}` refers to fully qualified domain name in the customer project e.g.

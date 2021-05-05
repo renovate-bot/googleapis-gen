@@ -64,9 +64,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (dialogflow.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (dialogflow.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -101,8 +101,7 @@ public class TransitionRouteGroupsStubSettings
           .build();
 
   private final PagedCallSettings<
-          ListTransitionRouteGroupsRequest,
-          ListTransitionRouteGroupsResponse,
+          ListTransitionRouteGroupsRequest, ListTransitionRouteGroupsResponse,
           ListTransitionRouteGroupsPagedResponse>
       listTransitionRouteGroupsSettings;
   private final UnaryCallSettings<GetTransitionRouteGroupRequest, TransitionRouteGroup>
@@ -118,8 +117,7 @@ public class TransitionRouteGroupsStubSettings
           ListTransitionRouteGroupsRequest, ListTransitionRouteGroupsResponse, TransitionRouteGroup>
       LIST_TRANSITION_ROUTE_GROUPS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ListTransitionRouteGroupsRequest,
-              ListTransitionRouteGroupsResponse,
+              ListTransitionRouteGroupsRequest, ListTransitionRouteGroupsResponse,
               TransitionRouteGroup>() {
             @Override
             public String emptyToken() {
@@ -162,13 +160,11 @@ public class TransitionRouteGroupsStubSettings
           };
 
   private static final PagedListResponseFactory<
-          ListTransitionRouteGroupsRequest,
-          ListTransitionRouteGroupsResponse,
+          ListTransitionRouteGroupsRequest, ListTransitionRouteGroupsResponse,
           ListTransitionRouteGroupsPagedResponse>
       LIST_TRANSITION_ROUTE_GROUPS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListTransitionRouteGroupsRequest,
-              ListTransitionRouteGroupsResponse,
+              ListTransitionRouteGroupsRequest, ListTransitionRouteGroupsResponse,
               ListTransitionRouteGroupsPagedResponse>() {
             @Override
             public ApiFuture<ListTransitionRouteGroupsPagedResponse> getFuturePagedResponse(
@@ -178,8 +174,7 @@ public class TransitionRouteGroupsStubSettings
                 ApiCallContext context,
                 ApiFuture<ListTransitionRouteGroupsResponse> futureResponse) {
               PageContext<
-                      ListTransitionRouteGroupsRequest,
-                      ListTransitionRouteGroupsResponse,
+                      ListTransitionRouteGroupsRequest, ListTransitionRouteGroupsResponse,
                       TransitionRouteGroup>
                   pageContext =
                       PageContext.create(
@@ -191,8 +186,7 @@ public class TransitionRouteGroupsStubSettings
 
   /** Returns the object with the settings used for calls to listTransitionRouteGroups. */
   public PagedCallSettings<
-          ListTransitionRouteGroupsRequest,
-          ListTransitionRouteGroupsResponse,
+          ListTransitionRouteGroupsRequest, ListTransitionRouteGroupsResponse,
           ListTransitionRouteGroupsPagedResponse>
       listTransitionRouteGroupsSettings() {
     return listTransitionRouteGroupsSettings;
@@ -306,8 +300,7 @@ public class TransitionRouteGroupsStubSettings
       extends StubSettings.Builder<TransitionRouteGroupsStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final PagedCallSettings.Builder<
-            ListTransitionRouteGroupsRequest,
-            ListTransitionRouteGroupsResponse,
+            ListTransitionRouteGroupsRequest, ListTransitionRouteGroupsResponse,
             ListTransitionRouteGroupsPagedResponse>
         listTransitionRouteGroupsSettings;
     private final UnaryCallSettings.Builder<GetTransitionRouteGroupRequest, TransitionRouteGroup>
@@ -449,8 +442,7 @@ public class TransitionRouteGroupsStubSettings
 
     /** Returns the builder for the settings used for calls to listTransitionRouteGroups. */
     public PagedCallSettings.Builder<
-            ListTransitionRouteGroupsRequest,
-            ListTransitionRouteGroupsResponse,
+            ListTransitionRouteGroupsRequest, ListTransitionRouteGroupsResponse,
             ListTransitionRouteGroupsPagedResponse>
         listTransitionRouteGroupsSettings() {
       return listTransitionRouteGroupsSettings;

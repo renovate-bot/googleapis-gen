@@ -46,9 +46,9 @@ import javax.annotation.Generated;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (tpu.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (tpu.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -141,8 +141,7 @@ public class TpuSettings extends ClientSettings<TpuSettings> {
 
   /** Returns the object with the settings used for calls to listTensorFlowVersions. */
   public PagedCallSettings<
-          ListTensorFlowVersionsRequest,
-          ListTensorFlowVersionsResponse,
+          ListTensorFlowVersionsRequest, ListTensorFlowVersionsResponse,
           ListTensorFlowVersionsPagedResponse>
       listTensorFlowVersionsSettings() {
     return ((TpuStubSettings) getStubSettings()).listTensorFlowVersionsSettings();
@@ -156,8 +155,7 @@ public class TpuSettings extends ClientSettings<TpuSettings> {
 
   /** Returns the object with the settings used for calls to listAcceleratorTypes. */
   public PagedCallSettings<
-          ListAcceleratorTypesRequest,
-          ListAcceleratorTypesResponse,
+          ListAcceleratorTypesRequest, ListAcceleratorTypesResponse,
           ListAcceleratorTypesPagedResponse>
       listAcceleratorTypesSettings() {
     return ((TpuStubSettings) getStubSettings()).listAcceleratorTypesSettings();
@@ -334,8 +332,7 @@ public class TpuSettings extends ClientSettings<TpuSettings> {
 
     /** Returns the builder for the settings used for calls to listTensorFlowVersions. */
     public PagedCallSettings.Builder<
-            ListTensorFlowVersionsRequest,
-            ListTensorFlowVersionsResponse,
+            ListTensorFlowVersionsRequest, ListTensorFlowVersionsResponse,
             ListTensorFlowVersionsPagedResponse>
         listTensorFlowVersionsSettings() {
       return getStubSettingsBuilder().listTensorFlowVersionsSettings();
@@ -349,8 +346,7 @@ public class TpuSettings extends ClientSettings<TpuSettings> {
 
     /** Returns the builder for the settings used for calls to listAcceleratorTypes. */
     public PagedCallSettings.Builder<
-            ListAcceleratorTypesRequest,
-            ListAcceleratorTypesResponse,
+            ListAcceleratorTypesRequest, ListAcceleratorTypesResponse,
             ListAcceleratorTypesPagedResponse>
         listAcceleratorTypesSettings() {
       return getStubSettingsBuilder().listAcceleratorTypesSettings();

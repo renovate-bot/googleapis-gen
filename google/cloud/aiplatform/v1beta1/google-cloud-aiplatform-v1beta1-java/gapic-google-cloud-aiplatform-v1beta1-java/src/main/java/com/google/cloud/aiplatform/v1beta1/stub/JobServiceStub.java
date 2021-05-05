@@ -272,8 +272,7 @@ public abstract class JobServiceStub implements BackgroundResource {
   }
 
   public OperationCallable<
-          UpdateModelDeploymentMonitoringJobRequest,
-          ModelDeploymentMonitoringJob,
+          UpdateModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob,
           UpdateModelDeploymentMonitoringJobOperationMetadata>
       updateModelDeploymentMonitoringJobOperationCallable() {
     throw new UnsupportedOperationException(

@@ -63,13 +63,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -829,9 +829,9 @@ public class DomainsClient implements BackgroundResource {
    * use the appropriate custom update method:
    *
    * <ul>
-   *   <li>To update management settings, see `ConfigureManagementSettings`
-   *   <li>To update DNS configuration, see `ConfigureDnsSettings`
-   *   <li>To update contact information, see `ConfigureContactSettings`
+   *   <li> To update management settings, see `ConfigureManagementSettings`
+   *   <li> To update DNS configuration, see `ConfigureDnsSettings`
+   *   <li> To update contact information, see `ConfigureContactSettings`
    * </ul>
    *
    * <p>Sample code:
@@ -866,9 +866,9 @@ public class DomainsClient implements BackgroundResource {
    * use the appropriate custom update method:
    *
    * <ul>
-   *   <li>To update management settings, see `ConfigureManagementSettings`
-   *   <li>To update DNS configuration, see `ConfigureDnsSettings`
-   *   <li>To update contact information, see `ConfigureContactSettings`
+   *   <li> To update management settings, see `ConfigureManagementSettings`
+   *   <li> To update DNS configuration, see `ConfigureDnsSettings`
+   *   <li> To update contact information, see `ConfigureContactSettings`
    * </ul>
    *
    * <p>Sample code:
@@ -898,9 +898,9 @@ public class DomainsClient implements BackgroundResource {
    * use the appropriate custom update method:
    *
    * <ul>
-   *   <li>To update management settings, see `ConfigureManagementSettings`
-   *   <li>To update DNS configuration, see `ConfigureDnsSettings`
-   *   <li>To update contact information, see `ConfigureContactSettings`
+   *   <li> To update management settings, see `ConfigureManagementSettings`
+   *   <li> To update DNS configuration, see `ConfigureDnsSettings`
+   *   <li> To update contact information, see `ConfigureContactSettings`
    * </ul>
    *
    * <p>Sample code:
@@ -930,9 +930,9 @@ public class DomainsClient implements BackgroundResource {
    * use the appropriate custom update method:
    *
    * <ul>
-   *   <li>To update management settings, see `ConfigureManagementSettings`
-   *   <li>To update DNS configuration, see `ConfigureDnsSettings`
-   *   <li>To update contact information, see `ConfigureContactSettings`
+   *   <li> To update management settings, see `ConfigureManagementSettings`
+   *   <li> To update DNS configuration, see `ConfigureDnsSettings`
+   *   <li> To update contact information, see `ConfigureContactSettings`
    * </ul>
    *
    * <p>Sample code:
@@ -1450,13 +1450,13 @@ public class DomainsClient implements BackgroundResource {
    * <p>If the export is successful:
    *
    * <ul>
-   *   <li>The resource's `state` becomes `EXPORTED`, meaning that it is no longer managed by Cloud
+   *   <li> The resource's `state` becomes `EXPORTED`, meaning that it is no longer managed by Cloud
    *       Domains
-   *   <li>Because individual users can own domains in Google Domains, the calling user becomes the
+   *   <li> Because individual users can own domains in Google Domains, the calling user becomes the
    *       domain's sole owner. Permissions for the domain are subsequently managed in Google
    *       Domains.
-   *   <li>Without further action, the domain does not renew automatically. The new owner can set up
-   *       billing in Google Domains to renew the domain if needed.
+   *   <li> Without further action, the domain does not renew automatically. The new owner can set
+   *       up billing in Google Domains to renew the domain if needed.
    * </ul>
    *
    * <p>Sample code:
@@ -1489,13 +1489,13 @@ public class DomainsClient implements BackgroundResource {
    * <p>If the export is successful:
    *
    * <ul>
-   *   <li>The resource's `state` becomes `EXPORTED`, meaning that it is no longer managed by Cloud
+   *   <li> The resource's `state` becomes `EXPORTED`, meaning that it is no longer managed by Cloud
    *       Domains
-   *   <li>Because individual users can own domains in Google Domains, the calling user becomes the
+   *   <li> Because individual users can own domains in Google Domains, the calling user becomes the
    *       domain's sole owner. Permissions for the domain are subsequently managed in Google
    *       Domains.
-   *   <li>Without further action, the domain does not renew automatically. The new owner can set up
-   *       billing in Google Domains to renew the domain if needed.
+   *   <li> Without further action, the domain does not renew automatically. The new owner can set
+   *       up billing in Google Domains to renew the domain if needed.
    * </ul>
    *
    * <p>Sample code:
@@ -1526,13 +1526,13 @@ public class DomainsClient implements BackgroundResource {
    * <p>If the export is successful:
    *
    * <ul>
-   *   <li>The resource's `state` becomes `EXPORTED`, meaning that it is no longer managed by Cloud
+   *   <li> The resource's `state` becomes `EXPORTED`, meaning that it is no longer managed by Cloud
    *       Domains
-   *   <li>Because individual users can own domains in Google Domains, the calling user becomes the
+   *   <li> Because individual users can own domains in Google Domains, the calling user becomes the
    *       domain's sole owner. Permissions for the domain are subsequently managed in Google
    *       Domains.
-   *   <li>Without further action, the domain does not renew automatically. The new owner can set up
-   *       billing in Google Domains to renew the domain if needed.
+   *   <li> Without further action, the domain does not renew automatically. The new owner can set
+   *       up billing in Google Domains to renew the domain if needed.
    * </ul>
    *
    * <p>Sample code:
@@ -1563,13 +1563,13 @@ public class DomainsClient implements BackgroundResource {
    * <p>If the export is successful:
    *
    * <ul>
-   *   <li>The resource's `state` becomes `EXPORTED`, meaning that it is no longer managed by Cloud
+   *   <li> The resource's `state` becomes `EXPORTED`, meaning that it is no longer managed by Cloud
    *       Domains
-   *   <li>Because individual users can own domains in Google Domains, the calling user becomes the
+   *   <li> Because individual users can own domains in Google Domains, the calling user becomes the
    *       domain's sole owner. Permissions for the domain are subsequently managed in Google
    *       Domains.
-   *   <li>Without further action, the domain does not renew automatically. The new owner can set up
-   *       billing in Google Domains to renew the domain if needed.
+   *   <li> Without further action, the domain does not renew automatically. The new owner can set
+   *       up billing in Google Domains to renew the domain if needed.
    * </ul>
    *
    * <p>Sample code:
@@ -1600,13 +1600,13 @@ public class DomainsClient implements BackgroundResource {
    * <p>If the export is successful:
    *
    * <ul>
-   *   <li>The resource's `state` becomes `EXPORTED`, meaning that it is no longer managed by Cloud
+   *   <li> The resource's `state` becomes `EXPORTED`, meaning that it is no longer managed by Cloud
    *       Domains
-   *   <li>Because individual users can own domains in Google Domains, the calling user becomes the
+   *   <li> Because individual users can own domains in Google Domains, the calling user becomes the
    *       domain's sole owner. Permissions for the domain are subsequently managed in Google
    *       Domains.
-   *   <li>Without further action, the domain does not renew automatically. The new owner can set up
-   *       billing in Google Domains to renew the domain if needed.
+   *   <li> Without further action, the domain does not renew automatically. The new owner can set
+   *       up billing in Google Domains to renew the domain if needed.
    * </ul>
    *
    * <p>Sample code:
@@ -1634,8 +1634,8 @@ public class DomainsClient implements BackgroundResource {
    * <p>This method only works on resources in one of the following states:
    *
    * <ul>
-   *   <li>`state` is `EXPORTED` with `expire_time` in the past
-   *   <li>`state` is `REGISTRATION_FAILED`
+   *   <li> `state` is `EXPORTED` with `expire_time` in the past
+   *   <li> `state` is `REGISTRATION_FAILED`
    * </ul>
    *
    * <p>Sample code:
@@ -1667,8 +1667,8 @@ public class DomainsClient implements BackgroundResource {
    * <p>This method only works on resources in one of the following states:
    *
    * <ul>
-   *   <li>`state` is `EXPORTED` with `expire_time` in the past
-   *   <li>`state` is `REGISTRATION_FAILED`
+   *   <li> `state` is `EXPORTED` with `expire_time` in the past
+   *   <li> `state` is `REGISTRATION_FAILED`
    * </ul>
    *
    * <p>Sample code:
@@ -1697,8 +1697,8 @@ public class DomainsClient implements BackgroundResource {
    * <p>This method only works on resources in one of the following states:
    *
    * <ul>
-   *   <li>`state` is `EXPORTED` with `expire_time` in the past
-   *   <li>`state` is `REGISTRATION_FAILED`
+   *   <li> `state` is `EXPORTED` with `expire_time` in the past
+   *   <li> `state` is `REGISTRATION_FAILED`
    * </ul>
    *
    * <p>Sample code:
@@ -1728,8 +1728,8 @@ public class DomainsClient implements BackgroundResource {
    * <p>This method only works on resources in one of the following states:
    *
    * <ul>
-   *   <li>`state` is `EXPORTED` with `expire_time` in the past
-   *   <li>`state` is `REGISTRATION_FAILED`
+   *   <li> `state` is `EXPORTED` with `expire_time` in the past
+   *   <li> `state` is `REGISTRATION_FAILED`
    * </ul>
    *
    * <p>Sample code:
@@ -1759,8 +1759,8 @@ public class DomainsClient implements BackgroundResource {
    * <p>This method only works on resources in one of the following states:
    *
    * <ul>
-   *   <li>`state` is `EXPORTED` with `expire_time` in the past
-   *   <li>`state` is `REGISTRATION_FAILED`
+   *   <li> `state` is `EXPORTED` with `expire_time` in the past
+   *   <li> `state` is `REGISTRATION_FAILED`
    * </ul>
    *
    * <p>Sample code:
@@ -2040,10 +2040,7 @@ public class DomainsClient implements BackgroundResource {
 
   public static class ListRegistrationsPagedResponse
       extends AbstractPagedListResponse<
-          ListRegistrationsRequest,
-          ListRegistrationsResponse,
-          Registration,
-          ListRegistrationsPage,
+          ListRegistrationsRequest, ListRegistrationsResponse, Registration, ListRegistrationsPage,
           ListRegistrationsFixedSizeCollection> {
 
     public static ApiFuture<ListRegistrationsPagedResponse> createAsync(
@@ -2069,9 +2066,7 @@ public class DomainsClient implements BackgroundResource {
 
   public static class ListRegistrationsPage
       extends AbstractPage<
-          ListRegistrationsRequest,
-          ListRegistrationsResponse,
-          Registration,
+          ListRegistrationsRequest, ListRegistrationsResponse, Registration,
           ListRegistrationsPage> {
 
     private ListRegistrationsPage(
@@ -2101,10 +2096,7 @@ public class DomainsClient implements BackgroundResource {
 
   public static class ListRegistrationsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListRegistrationsRequest,
-          ListRegistrationsResponse,
-          Registration,
-          ListRegistrationsPage,
+          ListRegistrationsRequest, ListRegistrationsResponse, Registration, ListRegistrationsPage,
           ListRegistrationsFixedSizeCollection> {
 
     private ListRegistrationsFixedSizeCollection(

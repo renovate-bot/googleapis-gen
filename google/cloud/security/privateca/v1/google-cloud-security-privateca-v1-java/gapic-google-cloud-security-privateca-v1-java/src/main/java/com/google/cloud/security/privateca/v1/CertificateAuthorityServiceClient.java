@@ -68,13 +68,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -4288,10 +4288,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
 
   public static class ListCertificatesPagedResponse
       extends AbstractPagedListResponse<
-          ListCertificatesRequest,
-          ListCertificatesResponse,
-          Certificate,
-          ListCertificatesPage,
+          ListCertificatesRequest, ListCertificatesResponse, Certificate, ListCertificatesPage,
           ListCertificatesFixedSizeCollection> {
 
     public static ApiFuture<ListCertificatesPagedResponse> createAsync(
@@ -4346,10 +4343,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
 
   public static class ListCertificatesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListCertificatesRequest,
-          ListCertificatesResponse,
-          Certificate,
-          ListCertificatesPage,
+          ListCertificatesRequest, ListCertificatesResponse, Certificate, ListCertificatesPage,
           ListCertificatesFixedSizeCollection> {
 
     private ListCertificatesFixedSizeCollection(
@@ -4370,16 +4364,13 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
 
   public static class ListCertificateAuthoritiesPagedResponse
       extends AbstractPagedListResponse<
-          ListCertificateAuthoritiesRequest,
-          ListCertificateAuthoritiesResponse,
-          CertificateAuthority,
-          ListCertificateAuthoritiesPage,
+          ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesResponse,
+          CertificateAuthority, ListCertificateAuthoritiesPage,
           ListCertificateAuthoritiesFixedSizeCollection> {
 
     public static ApiFuture<ListCertificateAuthoritiesPagedResponse> createAsync(
         PageContext<
-                ListCertificateAuthoritiesRequest,
-                ListCertificateAuthoritiesResponse,
+                ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesResponse,
                 CertificateAuthority>
             context,
         ApiFuture<ListCertificateAuthoritiesResponse> futureResponse) {
@@ -4405,15 +4396,12 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
 
   public static class ListCertificateAuthoritiesPage
       extends AbstractPage<
-          ListCertificateAuthoritiesRequest,
-          ListCertificateAuthoritiesResponse,
-          CertificateAuthority,
-          ListCertificateAuthoritiesPage> {
+          ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesResponse,
+          CertificateAuthority, ListCertificateAuthoritiesPage> {
 
     private ListCertificateAuthoritiesPage(
         PageContext<
-                ListCertificateAuthoritiesRequest,
-                ListCertificateAuthoritiesResponse,
+                ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesResponse,
                 CertificateAuthority>
             context,
         ListCertificateAuthoritiesResponse response) {
@@ -4427,8 +4415,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
     @Override
     protected ListCertificateAuthoritiesPage createPage(
         PageContext<
-                ListCertificateAuthoritiesRequest,
-                ListCertificateAuthoritiesResponse,
+                ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesResponse,
                 CertificateAuthority>
             context,
         ListCertificateAuthoritiesResponse response) {
@@ -4438,8 +4425,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
     @Override
     public ApiFuture<ListCertificateAuthoritiesPage> createPageAsync(
         PageContext<
-                ListCertificateAuthoritiesRequest,
-                ListCertificateAuthoritiesResponse,
+                ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesResponse,
                 CertificateAuthority>
             context,
         ApiFuture<ListCertificateAuthoritiesResponse> futureResponse) {
@@ -4449,10 +4435,8 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
 
   public static class ListCertificateAuthoritiesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListCertificateAuthoritiesRequest,
-          ListCertificateAuthoritiesResponse,
-          CertificateAuthority,
-          ListCertificateAuthoritiesPage,
+          ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesResponse,
+          CertificateAuthority, ListCertificateAuthoritiesPage,
           ListCertificateAuthoritiesFixedSizeCollection> {
 
     private ListCertificateAuthoritiesFixedSizeCollection(
@@ -4473,10 +4457,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
 
   public static class ListCaPoolsPagedResponse
       extends AbstractPagedListResponse<
-          ListCaPoolsRequest,
-          ListCaPoolsResponse,
-          CaPool,
-          ListCaPoolsPage,
+          ListCaPoolsRequest, ListCaPoolsResponse, CaPool, ListCaPoolsPage,
           ListCaPoolsFixedSizeCollection> {
 
     public static ApiFuture<ListCaPoolsPagedResponse> createAsync(
@@ -4530,10 +4511,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
 
   public static class ListCaPoolsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListCaPoolsRequest,
-          ListCaPoolsResponse,
-          CaPool,
-          ListCaPoolsPage,
+          ListCaPoolsRequest, ListCaPoolsResponse, CaPool, ListCaPoolsPage,
           ListCaPoolsFixedSizeCollection> {
 
     private ListCaPoolsFixedSizeCollection(List<ListCaPoolsPage> pages, int collectionSize) {
@@ -4553,16 +4531,13 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
 
   public static class ListCertificateRevocationListsPagedResponse
       extends AbstractPagedListResponse<
-          ListCertificateRevocationListsRequest,
-          ListCertificateRevocationListsResponse,
-          CertificateRevocationList,
-          ListCertificateRevocationListsPage,
+          ListCertificateRevocationListsRequest, ListCertificateRevocationListsResponse,
+          CertificateRevocationList, ListCertificateRevocationListsPage,
           ListCertificateRevocationListsFixedSizeCollection> {
 
     public static ApiFuture<ListCertificateRevocationListsPagedResponse> createAsync(
         PageContext<
-                ListCertificateRevocationListsRequest,
-                ListCertificateRevocationListsResponse,
+                ListCertificateRevocationListsRequest, ListCertificateRevocationListsResponse,
                 CertificateRevocationList>
             context,
         ApiFuture<ListCertificateRevocationListsResponse> futureResponse) {
@@ -4589,15 +4564,12 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
 
   public static class ListCertificateRevocationListsPage
       extends AbstractPage<
-          ListCertificateRevocationListsRequest,
-          ListCertificateRevocationListsResponse,
-          CertificateRevocationList,
-          ListCertificateRevocationListsPage> {
+          ListCertificateRevocationListsRequest, ListCertificateRevocationListsResponse,
+          CertificateRevocationList, ListCertificateRevocationListsPage> {
 
     private ListCertificateRevocationListsPage(
         PageContext<
-                ListCertificateRevocationListsRequest,
-                ListCertificateRevocationListsResponse,
+                ListCertificateRevocationListsRequest, ListCertificateRevocationListsResponse,
                 CertificateRevocationList>
             context,
         ListCertificateRevocationListsResponse response) {
@@ -4611,8 +4583,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
     @Override
     protected ListCertificateRevocationListsPage createPage(
         PageContext<
-                ListCertificateRevocationListsRequest,
-                ListCertificateRevocationListsResponse,
+                ListCertificateRevocationListsRequest, ListCertificateRevocationListsResponse,
                 CertificateRevocationList>
             context,
         ListCertificateRevocationListsResponse response) {
@@ -4622,8 +4593,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
     @Override
     public ApiFuture<ListCertificateRevocationListsPage> createPageAsync(
         PageContext<
-                ListCertificateRevocationListsRequest,
-                ListCertificateRevocationListsResponse,
+                ListCertificateRevocationListsRequest, ListCertificateRevocationListsResponse,
                 CertificateRevocationList>
             context,
         ApiFuture<ListCertificateRevocationListsResponse> futureResponse) {
@@ -4633,10 +4603,8 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
 
   public static class ListCertificateRevocationListsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListCertificateRevocationListsRequest,
-          ListCertificateRevocationListsResponse,
-          CertificateRevocationList,
-          ListCertificateRevocationListsPage,
+          ListCertificateRevocationListsRequest, ListCertificateRevocationListsResponse,
+          CertificateRevocationList, ListCertificateRevocationListsPage,
           ListCertificateRevocationListsFixedSizeCollection> {
 
     private ListCertificateRevocationListsFixedSizeCollection(
@@ -4657,16 +4625,12 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
 
   public static class ListCertificateTemplatesPagedResponse
       extends AbstractPagedListResponse<
-          ListCertificateTemplatesRequest,
-          ListCertificateTemplatesResponse,
-          CertificateTemplate,
-          ListCertificateTemplatesPage,
-          ListCertificateTemplatesFixedSizeCollection> {
+          ListCertificateTemplatesRequest, ListCertificateTemplatesResponse, CertificateTemplate,
+          ListCertificateTemplatesPage, ListCertificateTemplatesFixedSizeCollection> {
 
     public static ApiFuture<ListCertificateTemplatesPagedResponse> createAsync(
         PageContext<
-                ListCertificateTemplatesRequest,
-                ListCertificateTemplatesResponse,
+                ListCertificateTemplatesRequest, ListCertificateTemplatesResponse,
                 CertificateTemplate>
             context,
         ApiFuture<ListCertificateTemplatesResponse> futureResponse) {
@@ -4690,15 +4654,12 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
 
   public static class ListCertificateTemplatesPage
       extends AbstractPage<
-          ListCertificateTemplatesRequest,
-          ListCertificateTemplatesResponse,
-          CertificateTemplate,
+          ListCertificateTemplatesRequest, ListCertificateTemplatesResponse, CertificateTemplate,
           ListCertificateTemplatesPage> {
 
     private ListCertificateTemplatesPage(
         PageContext<
-                ListCertificateTemplatesRequest,
-                ListCertificateTemplatesResponse,
+                ListCertificateTemplatesRequest, ListCertificateTemplatesResponse,
                 CertificateTemplate>
             context,
         ListCertificateTemplatesResponse response) {
@@ -4712,8 +4673,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
     @Override
     protected ListCertificateTemplatesPage createPage(
         PageContext<
-                ListCertificateTemplatesRequest,
-                ListCertificateTemplatesResponse,
+                ListCertificateTemplatesRequest, ListCertificateTemplatesResponse,
                 CertificateTemplate>
             context,
         ListCertificateTemplatesResponse response) {
@@ -4723,8 +4683,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
     @Override
     public ApiFuture<ListCertificateTemplatesPage> createPageAsync(
         PageContext<
-                ListCertificateTemplatesRequest,
-                ListCertificateTemplatesResponse,
+                ListCertificateTemplatesRequest, ListCertificateTemplatesResponse,
                 CertificateTemplate>
             context,
         ApiFuture<ListCertificateTemplatesResponse> futureResponse) {
@@ -4734,11 +4693,8 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
 
   public static class ListCertificateTemplatesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListCertificateTemplatesRequest,
-          ListCertificateTemplatesResponse,
-          CertificateTemplate,
-          ListCertificateTemplatesPage,
-          ListCertificateTemplatesFixedSizeCollection> {
+          ListCertificateTemplatesRequest, ListCertificateTemplatesResponse, CertificateTemplate,
+          ListCertificateTemplatesPage, ListCertificateTemplatesFixedSizeCollection> {
 
     private ListCertificateTemplatesFixedSizeCollection(
         List<ListCertificateTemplatesPage> pages, int collectionSize) {

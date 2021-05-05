@@ -74,10 +74,10 @@ import javax.annotation.Generated;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (servicemanagement.googleapis.com) and default port (443) are
+ *   <li> The default service address (servicemanagement.googleapis.com) and default port (443) are
  *       used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -424,8 +424,7 @@ public class ServiceManagerSettings extends ClientSettings<ServiceManagerSetting
 
     /** Returns the builder for the settings used for calls to listServiceRollouts. */
     public PagedCallSettings.Builder<
-            ListServiceRolloutsRequest,
-            ListServiceRolloutsResponse,
+            ListServiceRolloutsRequest, ListServiceRolloutsResponse,
             ListServiceRolloutsPagedResponse>
         listServiceRolloutsSettings() {
       return getStubSettingsBuilder().listServiceRolloutsSettings();

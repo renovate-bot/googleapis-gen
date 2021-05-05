@@ -60,13 +60,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -167,9 +167,9 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    * the following requirements:
    *
    * <ul>
-   *   <li>Photo Sphere XMP metadata must be included in the photo medadata. See
+   *   <li> Photo Sphere XMP metadata must be included in the photo medadata. See
    *       https://developers.google.com/streetview/spherical-metadata for the required fields.
-   *   <li>The pixel size of the photo must meet the size requirements listed in
+   *   <li> The pixel size of the photo must meet the size requirements listed in
    *       https://support.google.com/maps/answer/7012050?hl=en&amp;ref_topic=6275604, and the photo
    *       must be a full 360 horizontally.
    * </ul>
@@ -208,9 +208,9 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    * the following requirements:
    *
    * <ul>
-   *   <li>Photo Sphere XMP metadata must be included in the photo medadata. See
+   *   <li> Photo Sphere XMP metadata must be included in the photo medadata. See
    *       https://developers.google.com/streetview/spherical-metadata for the required fields.
-   *   <li>The pixel size of the photo must meet the size requirements listed in
+   *   <li> The pixel size of the photo must meet the size requirements listed in
    *       https://support.google.com/maps/answer/7012050?hl=en&amp;ref_topic=6275604, and the photo
    *       must be a full 360 horizontally.
    * </ul>
@@ -252,11 +252,11 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    * <p>This method returns the following error codes:
    *
    * <ul>
-   *   <li>[google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if the request is
+   *   <li> [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if the request is
    *       malformed or if the uploaded photo is not a 360 photo.
-   *   <li>[google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the upload reference does not
+   *   <li> [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the upload reference does not
    *       exist.
-   *   <li>[google.rpc.Code.RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED] if the account
+   *   <li> [google.rpc.Code.RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED] if the account
    *       has reached the storage limit.
    * </ul>
    *
@@ -296,11 +296,11 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    * <p>This method returns the following error codes:
    *
    * <ul>
-   *   <li>[google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if the request is
+   *   <li> [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if the request is
    *       malformed or if the uploaded photo is not a 360 photo.
-   *   <li>[google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the upload reference does not
+   *   <li> [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the upload reference does not
    *       exist.
-   *   <li>[google.rpc.Code.RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED] if the account
+   *   <li> [google.rpc.Code.RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED] if the account
    *       has reached the storage limit.
    * </ul>
    *
@@ -339,11 +339,11 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    * <p>This method returns the following error codes:
    *
    * <ul>
-   *   <li>[google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if the request is
+   *   <li> [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if the request is
    *       malformed or if the uploaded photo is not a 360 photo.
-   *   <li>[google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the upload reference does not
+   *   <li> [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the upload reference does not
    *       exist.
-   *   <li>[google.rpc.Code.RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED] if the account
+   *   <li> [google.rpc.Code.RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED] if the account
    *       has reached the storage limit.
    * </ul>
    *
@@ -374,11 +374,11 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    * <p>This method returns the following error codes:
    *
    * <ul>
-   *   <li>[google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting
+   *   <li> [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting
    *       user did not create the requested [Photo][google.streetview.publish.v1.Photo].
-   *   <li>[google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested
+   *   <li> [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested
    *       [Photo][google.streetview.publish.v1.Photo] does not exist.
-   *   <li>[google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the requested
+   *   <li> [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the requested
    *       [Photo][google.streetview.publish.v1.Photo] is still being indexed.
    * </ul>
    *
@@ -417,11 +417,11 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    * <p>This method returns the following error codes:
    *
    * <ul>
-   *   <li>[google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting
+   *   <li> [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting
    *       user did not create the requested [Photo][google.streetview.publish.v1.Photo].
-   *   <li>[google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested
+   *   <li> [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested
    *       [Photo][google.streetview.publish.v1.Photo] does not exist.
-   *   <li>[google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the requested
+   *   <li> [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the requested
    *       [Photo][google.streetview.publish.v1.Photo] is still being indexed.
    * </ul>
    *
@@ -454,11 +454,11 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    * <p>This method returns the following error codes:
    *
    * <ul>
-   *   <li>[google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting
+   *   <li> [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting
    *       user did not create the requested [Photo][google.streetview.publish.v1.Photo].
-   *   <li>[google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested
+   *   <li> [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested
    *       [Photo][google.streetview.publish.v1.Photo] does not exist.
-   *   <li>[google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the requested
+   *   <li> [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the requested
    *       [Photo][google.streetview.publish.v1.Photo] is still being indexed.
    * </ul>
    *
@@ -764,13 +764,13 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    * <p>This method returns the following error codes:
    *
    * <ul>
-   *   <li>[google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting
+   *   <li> [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting
    *       user did not create the requested photo.
-   *   <li>[google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if the request is
+   *   <li> [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if the request is
    *       malformed.
-   *   <li>[google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested photo does not
+   *   <li> [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested photo does not
    *       exist.
-   *   <li>[google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the requested
+   *   <li> [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the requested
    *       [Photo][google.streetview.publish.v1.Photo] is still being indexed.
    * </ul>
    *
@@ -796,14 +796,14 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    *     list.
    *     <p>The following fields are valid:
    *     <ul>
-   *       <li>`pose.heading`
-   *       <li>`pose.latLngPair`
-   *       <li>`pose.pitch`
-   *       <li>`pose.roll`
-   *       <li>`pose.level`
-   *       <li>`pose.altitude`
-   *       <li>`connections`
-   *       <li>`places`
+   *       <li> `pose.heading`
+   *       <li> `pose.latLngPair`
+   *       <li> `pose.pitch`
+   *       <li> `pose.roll`
+   *       <li> `pose.level`
+   *       <li> `pose.altitude`
+   *       <li> `connections`
+   *       <li> `places`
    *     </ul>
    *     <p>&lt;aside class="note"&gt;&lt;b&gt;Note:&lt;/b&gt; When
    *     [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask] contains repeated
@@ -835,13 +835,13 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    * <p>This method returns the following error codes:
    *
    * <ul>
-   *   <li>[google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting
+   *   <li> [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting
    *       user did not create the requested photo.
-   *   <li>[google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if the request is
+   *   <li> [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if the request is
    *       malformed.
-   *   <li>[google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested photo does not
+   *   <li> [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested photo does not
    *       exist.
-   *   <li>[google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the requested
+   *   <li> [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the requested
    *       [Photo][google.streetview.publish.v1.Photo] is still being indexed.
    * </ul>
    *
@@ -879,13 +879,13 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    * <p>This method returns the following error codes:
    *
    * <ul>
-   *   <li>[google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting
+   *   <li> [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting
    *       user did not create the requested photo.
-   *   <li>[google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if the request is
+   *   <li> [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if the request is
    *       malformed.
-   *   <li>[google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested photo does not
+   *   <li> [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested photo does not
    *       exist.
-   *   <li>[google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the requested
+   *   <li> [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the requested
    *       [Photo][google.streetview.publish.v1.Photo] is still being indexed.
    * </ul>
    *
@@ -1073,9 +1073,9 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    * <p>This method returns the following error codes:
    *
    * <ul>
-   *   <li>[google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting
+   *   <li> [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting
    *       user did not create the requested photo.
-   *   <li>[google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the photo ID does not exist.
+   *   <li> [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the photo ID does not exist.
    * </ul>
    *
    * <p>Sample code:
@@ -1104,9 +1104,9 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    * <p>This method returns the following error codes:
    *
    * <ul>
-   *   <li>[google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting
+   *   <li> [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting
    *       user did not create the requested photo.
-   *   <li>[google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the photo ID does not exist.
+   *   <li> [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the photo ID does not exist.
    * </ul>
    *
    * <p>Sample code:
@@ -1136,9 +1136,9 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    * <p>This method returns the following error codes:
    *
    * <ul>
-   *   <li>[google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting
+   *   <li> [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting
    *       user did not create the requested photo.
-   *   <li>[google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the photo ID does not exist.
+   *   <li> [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the photo ID does not exist.
    * </ul>
    *
    * <p>Sample code:
@@ -1307,16 +1307,13 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
   public static class ListPhotosPagedResponse
       extends AbstractPagedListResponse<
           StreetViewPublishRpcMessages.ListPhotosRequest,
-          StreetViewPublishRpcMessages.ListPhotosResponse,
-          StreetViewPublishResources.Photo,
-          ListPhotosPage,
-          ListPhotosFixedSizeCollection> {
+          StreetViewPublishRpcMessages.ListPhotosResponse, StreetViewPublishResources.Photo,
+          ListPhotosPage, ListPhotosFixedSizeCollection> {
 
     public static ApiFuture<ListPhotosPagedResponse> createAsync(
         PageContext<
                 StreetViewPublishRpcMessages.ListPhotosRequest,
-                StreetViewPublishRpcMessages.ListPhotosResponse,
-                StreetViewPublishResources.Photo>
+                StreetViewPublishRpcMessages.ListPhotosResponse, StreetViewPublishResources.Photo>
             context,
         ApiFuture<StreetViewPublishRpcMessages.ListPhotosResponse> futureResponse) {
       ApiFuture<ListPhotosPage> futurePage =
@@ -1340,15 +1337,13 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
   public static class ListPhotosPage
       extends AbstractPage<
           StreetViewPublishRpcMessages.ListPhotosRequest,
-          StreetViewPublishRpcMessages.ListPhotosResponse,
-          StreetViewPublishResources.Photo,
+          StreetViewPublishRpcMessages.ListPhotosResponse, StreetViewPublishResources.Photo,
           ListPhotosPage> {
 
     private ListPhotosPage(
         PageContext<
                 StreetViewPublishRpcMessages.ListPhotosRequest,
-                StreetViewPublishRpcMessages.ListPhotosResponse,
-                StreetViewPublishResources.Photo>
+                StreetViewPublishRpcMessages.ListPhotosResponse, StreetViewPublishResources.Photo>
             context,
         StreetViewPublishRpcMessages.ListPhotosResponse response) {
       super(context, response);
@@ -1362,8 +1357,7 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
     protected ListPhotosPage createPage(
         PageContext<
                 StreetViewPublishRpcMessages.ListPhotosRequest,
-                StreetViewPublishRpcMessages.ListPhotosResponse,
-                StreetViewPublishResources.Photo>
+                StreetViewPublishRpcMessages.ListPhotosResponse, StreetViewPublishResources.Photo>
             context,
         StreetViewPublishRpcMessages.ListPhotosResponse response) {
       return new ListPhotosPage(context, response);
@@ -1373,8 +1367,7 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
     public ApiFuture<ListPhotosPage> createPageAsync(
         PageContext<
                 StreetViewPublishRpcMessages.ListPhotosRequest,
-                StreetViewPublishRpcMessages.ListPhotosResponse,
-                StreetViewPublishResources.Photo>
+                StreetViewPublishRpcMessages.ListPhotosResponse, StreetViewPublishResources.Photo>
             context,
         ApiFuture<StreetViewPublishRpcMessages.ListPhotosResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1384,10 +1377,8 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
   public static class ListPhotosFixedSizeCollection
       extends AbstractFixedSizeCollection<
           StreetViewPublishRpcMessages.ListPhotosRequest,
-          StreetViewPublishRpcMessages.ListPhotosResponse,
-          StreetViewPublishResources.Photo,
-          ListPhotosPage,
-          ListPhotosFixedSizeCollection> {
+          StreetViewPublishRpcMessages.ListPhotosResponse, StreetViewPublishResources.Photo,
+          ListPhotosPage, ListPhotosFixedSizeCollection> {
 
     private ListPhotosFixedSizeCollection(List<ListPhotosPage> pages, int collectionSize) {
       super(pages, collectionSize);

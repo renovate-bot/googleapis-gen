@@ -65,13 +65,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -190,11 +190,11 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the region or location, as described in
    *     https://cloud.google.com/apis/design/resource_names.
    *     <ul>
-   *       <li>For `projects.regions.workflowTemplates,create`, the resource name of the region has
+   *       <li> For `projects.regions.workflowTemplates,create`, the resource name of the region has
    *           the following format: `projects/{project_id}/regions/{region}`
    *     </ul>
    *     <ul>
-   *       <li>For `projects.locations.workflowTemplates.create`, the resource name of the location
+   *       <li> For `projects.locations.workflowTemplates.create`, the resource name of the location
    *           has the following format: `projects/{project_id}/locations/{location}`
    *     </ul>
    *
@@ -230,11 +230,11 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the region or location, as described in
    *     https://cloud.google.com/apis/design/resource_names.
    *     <ul>
-   *       <li>For `projects.regions.workflowTemplates,create`, the resource name of the region has
+   *       <li> For `projects.regions.workflowTemplates,create`, the resource name of the region has
    *           the following format: `projects/{project_id}/regions/{region}`
    *     </ul>
    *     <ul>
-   *       <li>For `projects.locations.workflowTemplates.create`, the resource name of the location
+   *       <li> For `projects.locations.workflowTemplates.create`, the resource name of the location
    *           has the following format: `projects/{project_id}/locations/{location}`
    *     </ul>
    *
@@ -273,11 +273,11 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the region or location, as described in
    *     https://cloud.google.com/apis/design/resource_names.
    *     <ul>
-   *       <li>For `projects.regions.workflowTemplates,create`, the resource name of the region has
+   *       <li> For `projects.regions.workflowTemplates,create`, the resource name of the region has
    *           the following format: `projects/{project_id}/regions/{region}`
    *     </ul>
    *     <ul>
-   *       <li>For `projects.locations.workflowTemplates.create`, the resource name of the location
+   *       <li> For `projects.locations.workflowTemplates.create`, the resource name of the location
    *           has the following format: `projects/{project_id}/locations/{location}`
    *     </ul>
    *
@@ -368,13 +368,13 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the workflow template, as described in
    *     https://cloud.google.com/apis/design/resource_names.
    *     <ul>
-   *       <li>For `projects.regions.workflowTemplates.get`, the resource name of the template has
+   *       <li> For `projects.regions.workflowTemplates.get`, the resource name of the template has
    *           the following format:
    *           `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
    *     </ul>
    *     <ul>
-   *       <li>For `projects.locations.workflowTemplates.get`, the resource name of the template has
-   *           the following format:
+   *       <li> For `projects.locations.workflowTemplates.get`, the resource name of the template
+   *           has the following format:
    *           `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
    *     </ul>
    *
@@ -410,13 +410,13 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the workflow template, as described in
    *     https://cloud.google.com/apis/design/resource_names.
    *     <ul>
-   *       <li>For `projects.regions.workflowTemplates.get`, the resource name of the template has
+   *       <li> For `projects.regions.workflowTemplates.get`, the resource name of the template has
    *           the following format:
    *           `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
    *     </ul>
    *     <ul>
-   *       <li>For `projects.locations.workflowTemplates.get`, the resource name of the template has
-   *           the following format:
+   *       <li> For `projects.locations.workflowTemplates.get`, the resource name of the template
+   *           has the following format:
    *           `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
    *     </ul>
    *
@@ -524,12 +524,12 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the workflow template, as described in
    *     https://cloud.google.com/apis/design/resource_names.
    *     <ul>
-   *       <li>For `projects.regions.workflowTemplates.instantiate`, the resource name of the
+   *       <li> For `projects.regions.workflowTemplates.instantiate`, the resource name of the
    *           template has the following format:
    *           `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
    *     </ul>
    *     <ul>
-   *       <li>For `projects.locations.workflowTemplates.instantiate`, the resource name of the
+   *       <li> For `projects.locations.workflowTemplates.instantiate`, the resource name of the
    *           template has the following format:
    *           `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
    *     </ul>
@@ -581,12 +581,12 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the workflow template, as described in
    *     https://cloud.google.com/apis/design/resource_names.
    *     <ul>
-   *       <li>For `projects.regions.workflowTemplates.instantiate`, the resource name of the
+   *       <li> For `projects.regions.workflowTemplates.instantiate`, the resource name of the
    *           template has the following format:
    *           `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
    *     </ul>
    *     <ul>
-   *       <li>For `projects.locations.workflowTemplates.instantiate`, the resource name of the
+   *       <li> For `projects.locations.workflowTemplates.instantiate`, the resource name of the
    *           template has the following format:
    *           `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
    *     </ul>
@@ -636,12 +636,12 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the workflow template, as described in
    *     https://cloud.google.com/apis/design/resource_names.
    *     <ul>
-   *       <li>For `projects.regions.workflowTemplates.instantiate`, the resource name of the
+   *       <li> For `projects.regions.workflowTemplates.instantiate`, the resource name of the
    *           template has the following format:
    *           `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
    *     </ul>
    *     <ul>
-   *       <li>For `projects.locations.workflowTemplates.instantiate`, the resource name of the
+   *       <li> For `projects.locations.workflowTemplates.instantiate`, the resource name of the
    *           template has the following format:
    *           `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
    *     </ul>
@@ -697,12 +697,12 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the workflow template, as described in
    *     https://cloud.google.com/apis/design/resource_names.
    *     <ul>
-   *       <li>For `projects.regions.workflowTemplates.instantiate`, the resource name of the
+   *       <li> For `projects.regions.workflowTemplates.instantiate`, the resource name of the
    *           template has the following format:
    *           `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
    *     </ul>
    *     <ul>
-   *       <li>For `projects.locations.workflowTemplates.instantiate`, the resource name of the
+   *       <li> For `projects.locations.workflowTemplates.instantiate`, the resource name of the
    *           template has the following format:
    *           `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
    *     </ul>
@@ -903,11 +903,11 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the region or location, as described in
    *     https://cloud.google.com/apis/design/resource_names.
    *     <ul>
-   *       <li>For `projects.regions.workflowTemplates,instantiateinline`, the resource name of the
+   *       <li> For `projects.regions.workflowTemplates,instantiateinline`, the resource name of the
    *           region has the following format: `projects/{project_id}/regions/{region}`
    *     </ul>
    *     <ul>
-   *       <li>For `projects.locations.workflowTemplates.instantiateinline`, the resource name of
+   *       <li> For `projects.locations.workflowTemplates.instantiateinline`, the resource name of
    *           the location has the following format: `projects/{project_id}/locations/{location}`
    *     </ul>
    *
@@ -963,11 +963,11 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the region or location, as described in
    *     https://cloud.google.com/apis/design/resource_names.
    *     <ul>
-   *       <li>For `projects.regions.workflowTemplates,instantiateinline`, the resource name of the
+   *       <li> For `projects.regions.workflowTemplates,instantiateinline`, the resource name of the
    *           region has the following format: `projects/{project_id}/regions/{region}`
    *     </ul>
    *     <ul>
-   *       <li>For `projects.locations.workflowTemplates.instantiateinline`, the resource name of
+   *       <li> For `projects.locations.workflowTemplates.instantiateinline`, the resource name of
    *           the location has the following format: `projects/{project_id}/locations/{location}`
    *     </ul>
    *
@@ -1026,11 +1026,11 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the region or location, as described in
    *     https://cloud.google.com/apis/design/resource_names.
    *     <ul>
-   *       <li>For `projects.regions.workflowTemplates,instantiateinline`, the resource name of the
+   *       <li> For `projects.regions.workflowTemplates,instantiateinline`, the resource name of the
    *           region has the following format: `projects/{project_id}/regions/{region}`
    *     </ul>
    *     <ul>
-   *       <li>For `projects.locations.workflowTemplates.instantiateinline`, the resource name of
+   *       <li> For `projects.locations.workflowTemplates.instantiateinline`, the resource name of
    *           the location has the following format: `projects/{project_id}/locations/{location}`
    *     </ul>
    *
@@ -1300,11 +1300,11 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the region or location, as described in
    *     https://cloud.google.com/apis/design/resource_names.
    *     <ul>
-   *       <li>For `projects.regions.workflowTemplates,list`, the resource name of the region has
+   *       <li> For `projects.regions.workflowTemplates,list`, the resource name of the region has
    *           the following format: `projects/{project_id}/regions/{region}`
    *     </ul>
    *     <ul>
-   *       <li>For `projects.locations.workflowTemplates.list`, the resource name of the location
+   *       <li> For `projects.locations.workflowTemplates.list`, the resource name of the location
    *           has the following format: `projects/{project_id}/locations/{location}`
    *     </ul>
    *
@@ -1338,11 +1338,11 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the region or location, as described in
    *     https://cloud.google.com/apis/design/resource_names.
    *     <ul>
-   *       <li>For `projects.regions.workflowTemplates,list`, the resource name of the region has
+   *       <li> For `projects.regions.workflowTemplates,list`, the resource name of the region has
    *           the following format: `projects/{project_id}/regions/{region}`
    *     </ul>
    *     <ul>
-   *       <li>For `projects.locations.workflowTemplates.list`, the resource name of the location
+   *       <li> For `projects.locations.workflowTemplates.list`, the resource name of the location
    *           has the following format: `projects/{project_id}/locations/{location}`
    *     </ul>
    *
@@ -1379,11 +1379,11 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the region or location, as described in
    *     https://cloud.google.com/apis/design/resource_names.
    *     <ul>
-   *       <li>For `projects.regions.workflowTemplates,list`, the resource name of the region has
+   *       <li> For `projects.regions.workflowTemplates,list`, the resource name of the region has
    *           the following format: `projects/{project_id}/regions/{region}`
    *     </ul>
    *     <ul>
-   *       <li>For `projects.locations.workflowTemplates.list`, the resource name of the location
+   *       <li> For `projects.locations.workflowTemplates.list`, the resource name of the location
    *           has the following format: `projects/{project_id}/locations/{location}`
    *     </ul>
    *
@@ -1518,12 +1518,12 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the workflow template, as described in
    *     https://cloud.google.com/apis/design/resource_names.
    *     <ul>
-   *       <li>For `projects.regions.workflowTemplates.delete`, the resource name of the template
+   *       <li> For `projects.regions.workflowTemplates.delete`, the resource name of the template
    *           has the following format:
    *           `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
    *     </ul>
    *     <ul>
-   *       <li>For `projects.locations.workflowTemplates.instantiate`, the resource name of the
+   *       <li> For `projects.locations.workflowTemplates.instantiate`, the resource name of the
    *           template has the following format:
    *           `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
    *     </ul>
@@ -1558,12 +1558,12 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the workflow template, as described in
    *     https://cloud.google.com/apis/design/resource_names.
    *     <ul>
-   *       <li>For `projects.regions.workflowTemplates.delete`, the resource name of the template
+   *       <li> For `projects.regions.workflowTemplates.delete`, the resource name of the template
    *           has the following format:
    *           `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
    *     </ul>
    *     <ul>
-   *       <li>For `projects.locations.workflowTemplates.instantiate`, the resource name of the
+   *       <li> For `projects.locations.workflowTemplates.instantiate`, the resource name of the
    *           template has the following format:
    *           `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
    *     </ul>
@@ -1665,11 +1665,8 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
 
   public static class ListWorkflowTemplatesPagedResponse
       extends AbstractPagedListResponse<
-          ListWorkflowTemplatesRequest,
-          ListWorkflowTemplatesResponse,
-          WorkflowTemplate,
-          ListWorkflowTemplatesPage,
-          ListWorkflowTemplatesFixedSizeCollection> {
+          ListWorkflowTemplatesRequest, ListWorkflowTemplatesResponse, WorkflowTemplate,
+          ListWorkflowTemplatesPage, ListWorkflowTemplatesFixedSizeCollection> {
 
     public static ApiFuture<ListWorkflowTemplatesPagedResponse> createAsync(
         PageContext<ListWorkflowTemplatesRequest, ListWorkflowTemplatesResponse, WorkflowTemplate>
@@ -1695,9 +1692,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
 
   public static class ListWorkflowTemplatesPage
       extends AbstractPage<
-          ListWorkflowTemplatesRequest,
-          ListWorkflowTemplatesResponse,
-          WorkflowTemplate,
+          ListWorkflowTemplatesRequest, ListWorkflowTemplatesResponse, WorkflowTemplate,
           ListWorkflowTemplatesPage> {
 
     private ListWorkflowTemplatesPage(
@@ -1730,11 +1725,8 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
 
   public static class ListWorkflowTemplatesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListWorkflowTemplatesRequest,
-          ListWorkflowTemplatesResponse,
-          WorkflowTemplate,
-          ListWorkflowTemplatesPage,
-          ListWorkflowTemplatesFixedSizeCollection> {
+          ListWorkflowTemplatesRequest, ListWorkflowTemplatesResponse, WorkflowTemplate,
+          ListWorkflowTemplatesPage, ListWorkflowTemplatesFixedSizeCollection> {
 
     private ListWorkflowTemplatesFixedSizeCollection(
         List<ListWorkflowTemplatesPage> pages, int collectionSize) {

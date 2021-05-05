@@ -68,13 +68,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -798,10 +798,10 @@ public class SecurityCenterClient implements BackgroundResource {
    *     fields. For example: "parent,resource_name".
    *     <p>The following fields are supported:
    *     <ul>
-   *       <li>resource_name
-   *       <li>category
-   *       <li>state
-   *       <li>parent
+   *       <li> resource_name
+   *       <li> category
+   *       <li> state
+   *       <li> parent
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -842,10 +842,10 @@ public class SecurityCenterClient implements BackgroundResource {
    *     fields. For example: "parent,resource_name".
    *     <p>The following fields are supported:
    *     <ul>
-   *       <li>resource_name
-   *       <li>category
-   *       <li>state
-   *       <li>parent
+   *       <li> resource_name
+   *       <li> category
+   *       <li> state
+   *       <li> parent
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2099,10 +2099,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
   public static class GroupAssetsPagedResponse
       extends AbstractPagedListResponse<
-          GroupAssetsRequest,
-          GroupAssetsResponse,
-          GroupResult,
-          GroupAssetsPage,
+          GroupAssetsRequest, GroupAssetsResponse, GroupResult, GroupAssetsPage,
           GroupAssetsFixedSizeCollection> {
 
     public static ApiFuture<GroupAssetsPagedResponse> createAsync(
@@ -2156,10 +2153,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
   public static class GroupAssetsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          GroupAssetsRequest,
-          GroupAssetsResponse,
-          GroupResult,
-          GroupAssetsPage,
+          GroupAssetsRequest, GroupAssetsResponse, GroupResult, GroupAssetsPage,
           GroupAssetsFixedSizeCollection> {
 
     private GroupAssetsFixedSizeCollection(List<GroupAssetsPage> pages, int collectionSize) {
@@ -2179,10 +2173,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
   public static class GroupFindingsPagedResponse
       extends AbstractPagedListResponse<
-          GroupFindingsRequest,
-          GroupFindingsResponse,
-          GroupResult,
-          GroupFindingsPage,
+          GroupFindingsRequest, GroupFindingsResponse, GroupResult, GroupFindingsPage,
           GroupFindingsFixedSizeCollection> {
 
     public static ApiFuture<GroupFindingsPagedResponse> createAsync(
@@ -2237,10 +2228,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
   public static class GroupFindingsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          GroupFindingsRequest,
-          GroupFindingsResponse,
-          GroupResult,
-          GroupFindingsPage,
+          GroupFindingsRequest, GroupFindingsResponse, GroupResult, GroupFindingsPage,
           GroupFindingsFixedSizeCollection> {
 
     private GroupFindingsFixedSizeCollection(List<GroupFindingsPage> pages, int collectionSize) {
@@ -2260,11 +2248,8 @@ public class SecurityCenterClient implements BackgroundResource {
 
   public static class ListAssetsPagedResponse
       extends AbstractPagedListResponse<
-          ListAssetsRequest,
-          ListAssetsResponse,
-          ListAssetsResponse.ListAssetsResult,
-          ListAssetsPage,
-          ListAssetsFixedSizeCollection> {
+          ListAssetsRequest, ListAssetsResponse, ListAssetsResponse.ListAssetsResult,
+          ListAssetsPage, ListAssetsFixedSizeCollection> {
 
     public static ApiFuture<ListAssetsPagedResponse> createAsync(
         PageContext<ListAssetsRequest, ListAssetsResponse, ListAssetsResponse.ListAssetsResult>
@@ -2290,9 +2275,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
   public static class ListAssetsPage
       extends AbstractPage<
-          ListAssetsRequest,
-          ListAssetsResponse,
-          ListAssetsResponse.ListAssetsResult,
+          ListAssetsRequest, ListAssetsResponse, ListAssetsResponse.ListAssetsResult,
           ListAssetsPage> {
 
     private ListAssetsPage(
@@ -2325,11 +2308,8 @@ public class SecurityCenterClient implements BackgroundResource {
 
   public static class ListAssetsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListAssetsRequest,
-          ListAssetsResponse,
-          ListAssetsResponse.ListAssetsResult,
-          ListAssetsPage,
-          ListAssetsFixedSizeCollection> {
+          ListAssetsRequest, ListAssetsResponse, ListAssetsResponse.ListAssetsResult,
+          ListAssetsPage, ListAssetsFixedSizeCollection> {
 
     private ListAssetsFixedSizeCollection(List<ListAssetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
@@ -2348,10 +2328,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
   public static class ListFindingsPagedResponse
       extends AbstractPagedListResponse<
-          ListFindingsRequest,
-          ListFindingsResponse,
-          Finding,
-          ListFindingsPage,
+          ListFindingsRequest, ListFindingsResponse, Finding, ListFindingsPage,
           ListFindingsFixedSizeCollection> {
 
     public static ApiFuture<ListFindingsPagedResponse> createAsync(
@@ -2405,10 +2382,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
   public static class ListFindingsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListFindingsRequest,
-          ListFindingsResponse,
-          Finding,
-          ListFindingsPage,
+          ListFindingsRequest, ListFindingsResponse, Finding, ListFindingsPage,
           ListFindingsFixedSizeCollection> {
 
     private ListFindingsFixedSizeCollection(List<ListFindingsPage> pages, int collectionSize) {
@@ -2428,10 +2402,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
   public static class ListSourcesPagedResponse
       extends AbstractPagedListResponse<
-          ListSourcesRequest,
-          ListSourcesResponse,
-          Source,
-          ListSourcesPage,
+          ListSourcesRequest, ListSourcesResponse, Source, ListSourcesPage,
           ListSourcesFixedSizeCollection> {
 
     public static ApiFuture<ListSourcesPagedResponse> createAsync(
@@ -2485,10 +2456,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
   public static class ListSourcesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListSourcesRequest,
-          ListSourcesResponse,
-          Source,
-          ListSourcesPage,
+          ListSourcesRequest, ListSourcesResponse, Source, ListSourcesPage,
           ListSourcesFixedSizeCollection> {
 
     private ListSourcesFixedSizeCollection(List<ListSourcesPage> pages, int collectionSize) {

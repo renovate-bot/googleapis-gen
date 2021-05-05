@@ -99,9 +99,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (container.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (container.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -170,8 +170,7 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
   private final UnaryCallSettings<SetMaintenancePolicyRequest, Operation>
       setMaintenancePolicySettings;
   private final PagedCallSettings<
-          ListUsableSubnetworksRequest,
-          ListUsableSubnetworksResponse,
+          ListUsableSubnetworksRequest, ListUsableSubnetworksResponse,
           ListUsableSubnetworksPagedResponse>
       listUsableSubnetworksSettings;
 
@@ -217,13 +216,11 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
           };
 
   private static final PagedListResponseFactory<
-          ListUsableSubnetworksRequest,
-          ListUsableSubnetworksResponse,
+          ListUsableSubnetworksRequest, ListUsableSubnetworksResponse,
           ListUsableSubnetworksPagedResponse>
       LIST_USABLE_SUBNETWORKS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListUsableSubnetworksRequest,
-              ListUsableSubnetworksResponse,
+              ListUsableSubnetworksRequest, ListUsableSubnetworksResponse,
               ListUsableSubnetworksPagedResponse>() {
             @Override
             public ApiFuture<ListUsableSubnetworksPagedResponse> getFuturePagedResponse(
@@ -405,8 +402,7 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
 
   /** Returns the object with the settings used for calls to listUsableSubnetworks. */
   public PagedCallSettings<
-          ListUsableSubnetworksRequest,
-          ListUsableSubnetworksResponse,
+          ListUsableSubnetworksRequest, ListUsableSubnetworksResponse,
           ListUsableSubnetworksPagedResponse>
       listUsableSubnetworksSettings() {
     return listUsableSubnetworksSettings;
@@ -569,8 +565,7 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
     private final UnaryCallSettings.Builder<SetMaintenancePolicyRequest, Operation>
         setMaintenancePolicySettings;
     private final PagedCallSettings.Builder<
-            ListUsableSubnetworksRequest,
-            ListUsableSubnetworksResponse,
+            ListUsableSubnetworksRequest, ListUsableSubnetworksResponse,
             ListUsableSubnetworksPagedResponse>
         listUsableSubnetworksSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
@@ -1135,8 +1130,7 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
 
     /** Returns the builder for the settings used for calls to listUsableSubnetworks. */
     public PagedCallSettings.Builder<
-            ListUsableSubnetworksRequest,
-            ListUsableSubnetworksResponse,
+            ListUsableSubnetworksRequest, ListUsableSubnetworksResponse,
             ListUsableSubnetworksPagedResponse>
         listUsableSubnetworksSettings() {
       return listUsableSubnetworksSettings;

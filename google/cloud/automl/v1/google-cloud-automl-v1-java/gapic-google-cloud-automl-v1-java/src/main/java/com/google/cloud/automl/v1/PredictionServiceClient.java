@@ -57,13 +57,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -170,46 +170,46 @@ public class PredictionServiceClient implements BackgroundResource {
    * <p>AutoML Vision Classification
    *
    * <ul>
-   *   <li>An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   *   <li> An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
    * </ul>
    *
    * <p>AutoML Vision Object Detection
    *
    * <ul>
-   *   <li>An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   *   <li> An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
    * </ul>
    *
    * <p>AutoML Natural Language Classification
    *
    * <ul>
-   *   <li>A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in .PDF, .TIF or .TIFF
-   *       format with size upto 2MB.
+   *   <li> A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in .PDF, .TIF or
+   *       .TIFF format with size upto 2MB.
    * </ul>
    *
    * <p>AutoML Natural Language Entity Extraction
    *
    * <ul>
-   *   <li>A TextSnippet up to 10,000 characters, UTF-8 NFC encoded or a document in .PDF, .TIF or
+   *   <li> A TextSnippet up to 10,000 characters, UTF-8 NFC encoded or a document in .PDF, .TIF or
    *       .TIFF format with size upto 20MB.
    * </ul>
    *
    * <p>AutoML Natural Language Sentiment Analysis
    *
    * <ul>
-   *   <li>A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in .PDF, .TIF or .TIFF
-   *       format with size upto 2MB.
+   *   <li> A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in .PDF, .TIF or
+   *       .TIFF format with size upto 2MB.
    * </ul>
    *
    * <p>AutoML Translation
    *
    * <ul>
-   *   <li>A TextSnippet up to 25,000 characters, UTF-8 encoded.
+   *   <li> A TextSnippet up to 25,000 characters, UTF-8 encoded.
    * </ul>
    *
    * <p>AutoML Tables
    *
    * <ul>
-   *   <li>A row with column values matching the columns of the model, up to 5MB. Not available for
+   *   <li> A row with column values matching the columns of the model, up to 5MB. Not available for
    *       FORECASTING `prediction_type`.
    * </ul>
    *
@@ -265,46 +265,46 @@ public class PredictionServiceClient implements BackgroundResource {
    * <p>AutoML Vision Classification
    *
    * <ul>
-   *   <li>An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   *   <li> An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
    * </ul>
    *
    * <p>AutoML Vision Object Detection
    *
    * <ul>
-   *   <li>An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   *   <li> An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
    * </ul>
    *
    * <p>AutoML Natural Language Classification
    *
    * <ul>
-   *   <li>A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in .PDF, .TIF or .TIFF
-   *       format with size upto 2MB.
+   *   <li> A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in .PDF, .TIF or
+   *       .TIFF format with size upto 2MB.
    * </ul>
    *
    * <p>AutoML Natural Language Entity Extraction
    *
    * <ul>
-   *   <li>A TextSnippet up to 10,000 characters, UTF-8 NFC encoded or a document in .PDF, .TIF or
+   *   <li> A TextSnippet up to 10,000 characters, UTF-8 NFC encoded or a document in .PDF, .TIF or
    *       .TIFF format with size upto 20MB.
    * </ul>
    *
    * <p>AutoML Natural Language Sentiment Analysis
    *
    * <ul>
-   *   <li>A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in .PDF, .TIF or .TIFF
-   *       format with size upto 2MB.
+   *   <li> A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in .PDF, .TIF or
+   *       .TIFF format with size upto 2MB.
    * </ul>
    *
    * <p>AutoML Translation
    *
    * <ul>
-   *   <li>A TextSnippet up to 25,000 characters, UTF-8 encoded.
+   *   <li> A TextSnippet up to 25,000 characters, UTF-8 encoded.
    * </ul>
    *
    * <p>AutoML Tables
    *
    * <ul>
-   *   <li>A row with column values matching the columns of the model, up to 5MB. Not available for
+   *   <li> A row with column values matching the columns of the model, up to 5MB. Not available for
    *       FORECASTING `prediction_type`.
    * </ul>
    *
@@ -356,46 +356,46 @@ public class PredictionServiceClient implements BackgroundResource {
    * <p>AutoML Vision Classification
    *
    * <ul>
-   *   <li>An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   *   <li> An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
    * </ul>
    *
    * <p>AutoML Vision Object Detection
    *
    * <ul>
-   *   <li>An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   *   <li> An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
    * </ul>
    *
    * <p>AutoML Natural Language Classification
    *
    * <ul>
-   *   <li>A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in .PDF, .TIF or .TIFF
-   *       format with size upto 2MB.
+   *   <li> A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in .PDF, .TIF or
+   *       .TIFF format with size upto 2MB.
    * </ul>
    *
    * <p>AutoML Natural Language Entity Extraction
    *
    * <ul>
-   *   <li>A TextSnippet up to 10,000 characters, UTF-8 NFC encoded or a document in .PDF, .TIF or
+   *   <li> A TextSnippet up to 10,000 characters, UTF-8 NFC encoded or a document in .PDF, .TIF or
    *       .TIFF format with size upto 20MB.
    * </ul>
    *
    * <p>AutoML Natural Language Sentiment Analysis
    *
    * <ul>
-   *   <li>A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in .PDF, .TIF or .TIFF
-   *       format with size upto 2MB.
+   *   <li> A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in .PDF, .TIF or
+   *       .TIFF format with size upto 2MB.
    * </ul>
    *
    * <p>AutoML Translation
    *
    * <ul>
-   *   <li>A TextSnippet up to 25,000 characters, UTF-8 encoded.
+   *   <li> A TextSnippet up to 25,000 characters, UTF-8 encoded.
    * </ul>
    *
    * <p>AutoML Tables
    *
    * <ul>
-   *   <li>A row with column values matching the columns of the model, up to 5MB. Not available for
+   *   <li> A row with column values matching the columns of the model, up to 5MB. Not available for
    *       FORECASTING `prediction_type`.
    * </ul>
    *
@@ -428,46 +428,46 @@ public class PredictionServiceClient implements BackgroundResource {
    * <p>AutoML Vision Classification
    *
    * <ul>
-   *   <li>An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   *   <li> An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
    * </ul>
    *
    * <p>AutoML Vision Object Detection
    *
    * <ul>
-   *   <li>An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   *   <li> An image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
    * </ul>
    *
    * <p>AutoML Natural Language Classification
    *
    * <ul>
-   *   <li>A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in .PDF, .TIF or .TIFF
-   *       format with size upto 2MB.
+   *   <li> A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in .PDF, .TIF or
+   *       .TIFF format with size upto 2MB.
    * </ul>
    *
    * <p>AutoML Natural Language Entity Extraction
    *
    * <ul>
-   *   <li>A TextSnippet up to 10,000 characters, UTF-8 NFC encoded or a document in .PDF, .TIF or
+   *   <li> A TextSnippet up to 10,000 characters, UTF-8 NFC encoded or a document in .PDF, .TIF or
    *       .TIFF format with size upto 20MB.
    * </ul>
    *
    * <p>AutoML Natural Language Sentiment Analysis
    *
    * <ul>
-   *   <li>A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in .PDF, .TIF or .TIFF
-   *       format with size upto 2MB.
+   *   <li> A TextSnippet up to 60,000 characters, UTF-8 encoded or a document in .PDF, .TIF or
+   *       .TIFF format with size upto 2MB.
    * </ul>
    *
    * <p>AutoML Translation
    *
    * <ul>
-   *   <li>A TextSnippet up to 25,000 characters, UTF-8 encoded.
+   *   <li> A TextSnippet up to 25,000 characters, UTF-8 encoded.
    * </ul>
    *
    * <p>AutoML Tables
    *
    * <ul>
-   *   <li>A row with column values matching the columns of the model, up to 5MB. Not available for
+   *   <li> A row with column values matching the columns of the model, up to 5MB. Not available for
    *       FORECASTING `prediction_type`.
    * </ul>
    *
@@ -503,13 +503,13 @@ public class PredictionServiceClient implements BackgroundResource {
    * [response][google.longrunning.Operation.response] field. Available for following ML scenarios:
    *
    * <ul>
-   *   <li>AutoML Vision Classification
-   *   <li>AutoML Vision Object Detection
-   *   <li>AutoML Video Intelligence Classification
-   *   <li>AutoML Video Intelligence Object Tracking &#42; AutoML Natural Language Classification
-   *   <li>AutoML Natural Language Entity Extraction
-   *   <li>AutoML Natural Language Sentiment Analysis
-   *   <li>AutoML Tables
+   *   <li> AutoML Vision Classification
+   *   <li> AutoML Vision Object Detection
+   *   <li> AutoML Video Intelligence Classification
+   *   <li> AutoML Video Intelligence Object Tracking &#42; AutoML Natural Language Classification
+   *   <li> AutoML Natural Language Entity Extraction
+   *   <li> AutoML Natural Language Sentiment Analysis
+   *   <li> AutoML Tables
    * </ul>
    *
    * <p>Sample code:
@@ -604,13 +604,13 @@ public class PredictionServiceClient implements BackgroundResource {
    * [response][google.longrunning.Operation.response] field. Available for following ML scenarios:
    *
    * <ul>
-   *   <li>AutoML Vision Classification
-   *   <li>AutoML Vision Object Detection
-   *   <li>AutoML Video Intelligence Classification
-   *   <li>AutoML Video Intelligence Object Tracking &#42; AutoML Natural Language Classification
-   *   <li>AutoML Natural Language Entity Extraction
-   *   <li>AutoML Natural Language Sentiment Analysis
-   *   <li>AutoML Tables
+   *   <li> AutoML Vision Classification
+   *   <li> AutoML Vision Object Detection
+   *   <li> AutoML Video Intelligence Classification
+   *   <li> AutoML Video Intelligence Object Tracking &#42; AutoML Natural Language Classification
+   *   <li> AutoML Natural Language Entity Extraction
+   *   <li> AutoML Natural Language Sentiment Analysis
+   *   <li> AutoML Tables
    * </ul>
    *
    * <p>Sample code:
@@ -705,13 +705,13 @@ public class PredictionServiceClient implements BackgroundResource {
    * [response][google.longrunning.Operation.response] field. Available for following ML scenarios:
    *
    * <ul>
-   *   <li>AutoML Vision Classification
-   *   <li>AutoML Vision Object Detection
-   *   <li>AutoML Video Intelligence Classification
-   *   <li>AutoML Video Intelligence Object Tracking &#42; AutoML Natural Language Classification
-   *   <li>AutoML Natural Language Entity Extraction
-   *   <li>AutoML Natural Language Sentiment Analysis
-   *   <li>AutoML Tables
+   *   <li> AutoML Vision Classification
+   *   <li> AutoML Vision Object Detection
+   *   <li> AutoML Video Intelligence Classification
+   *   <li> AutoML Video Intelligence Object Tracking &#42; AutoML Natural Language Classification
+   *   <li> AutoML Natural Language Entity Extraction
+   *   <li> AutoML Natural Language Sentiment Analysis
+   *   <li> AutoML Tables
    * </ul>
    *
    * <p>Sample code:
@@ -748,13 +748,13 @@ public class PredictionServiceClient implements BackgroundResource {
    * [response][google.longrunning.Operation.response] field. Available for following ML scenarios:
    *
    * <ul>
-   *   <li>AutoML Vision Classification
-   *   <li>AutoML Vision Object Detection
-   *   <li>AutoML Video Intelligence Classification
-   *   <li>AutoML Video Intelligence Object Tracking &#42; AutoML Natural Language Classification
-   *   <li>AutoML Natural Language Entity Extraction
-   *   <li>AutoML Natural Language Sentiment Analysis
-   *   <li>AutoML Tables
+   *   <li> AutoML Vision Classification
+   *   <li> AutoML Vision Object Detection
+   *   <li> AutoML Video Intelligence Classification
+   *   <li> AutoML Video Intelligence Object Tracking &#42; AutoML Natural Language Classification
+   *   <li> AutoML Natural Language Entity Extraction
+   *   <li> AutoML Natural Language Sentiment Analysis
+   *   <li> AutoML Tables
    * </ul>
    *
    * <p>Sample code:
@@ -791,13 +791,13 @@ public class PredictionServiceClient implements BackgroundResource {
    * [response][google.longrunning.Operation.response] field. Available for following ML scenarios:
    *
    * <ul>
-   *   <li>AutoML Vision Classification
-   *   <li>AutoML Vision Object Detection
-   *   <li>AutoML Video Intelligence Classification
-   *   <li>AutoML Video Intelligence Object Tracking &#42; AutoML Natural Language Classification
-   *   <li>AutoML Natural Language Entity Extraction
-   *   <li>AutoML Natural Language Sentiment Analysis
-   *   <li>AutoML Tables
+   *   <li> AutoML Vision Classification
+   *   <li> AutoML Vision Object Detection
+   *   <li> AutoML Video Intelligence Classification
+   *   <li> AutoML Video Intelligence Object Tracking &#42; AutoML Natural Language Classification
+   *   <li> AutoML Natural Language Entity Extraction
+   *   <li> AutoML Natural Language Sentiment Analysis
+   *   <li> AutoML Tables
    * </ul>
    *
    * <p>Sample code:

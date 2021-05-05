@@ -175,8 +175,7 @@ public abstract class FeaturestoreServiceStub implements BackgroundResource {
   }
 
   public OperationCallable<
-          BatchCreateFeaturesRequest,
-          BatchCreateFeaturesResponse,
+          BatchCreateFeaturesRequest, BatchCreateFeaturesResponse,
           BatchCreateFeaturesOperationMetadata>
       batchCreateFeaturesOperationCallable() {
     throw new UnsupportedOperationException(
@@ -213,8 +212,7 @@ public abstract class FeaturestoreServiceStub implements BackgroundResource {
   }
 
   public OperationCallable<
-          ImportFeatureValuesRequest,
-          ImportFeatureValuesResponse,
+          ImportFeatureValuesRequest, ImportFeatureValuesResponse,
           ImportFeatureValuesOperationMetadata>
       importFeatureValuesOperationCallable() {
     throw new UnsupportedOperationException(
@@ -226,8 +224,7 @@ public abstract class FeaturestoreServiceStub implements BackgroundResource {
   }
 
   public OperationCallable<
-          BatchReadFeatureValuesRequest,
-          BatchReadFeatureValuesResponse,
+          BatchReadFeatureValuesRequest, BatchReadFeatureValuesResponse,
           BatchReadFeatureValuesOperationMetadata>
       batchReadFeatureValuesOperationCallable() {
     throw new UnsupportedOperationException(
@@ -239,8 +236,7 @@ public abstract class FeaturestoreServiceStub implements BackgroundResource {
   }
 
   public OperationCallable<
-          ExportFeatureValuesRequest,
-          ExportFeatureValuesResponse,
+          ExportFeatureValuesRequest, ExportFeatureValuesResponse,
           ExportFeatureValuesOperationMetadata>
       exportFeatureValuesOperationCallable() {
     throw new UnsupportedOperationException(

@@ -67,13 +67,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -846,9 +846,9 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>When uploading source code to the generated signed URL, please follow these restrictions:
    *
    * <ul>
-   *   <li>Source file type should be a zip file.
-   *   <li>Source file size should not exceed 100MB limit.
-   *   <li>No credentials should be attached - the signed URLs provide access to the target bucket
+   *   <li> Source file type should be a zip file.
+   *   <li> Source file size should not exceed 100MB limit.
+   *   <li> No credentials should be attached - the signed URLs provide access to the target bucket
    *       using internal service identity; if credentials were attached, the identity from the
    *       credentials would be used, but that identity does not have permissions to upload files to
    *       the URL.
@@ -857,14 +857,14 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>When making a HTTP PUT request, these two headers need to be specified:
    *
    * <ul>
-   *   <li>`content-type: application/zip`
-   *   <li>`x-goog-content-length-range: 0,104857600`
+   *   <li> `content-type: application/zip`
+   *   <li> `x-goog-content-length-range: 0,104857600`
    * </ul>
    *
    * <p>And this header SHOULD NOT be specified:
    *
    * <ul>
-   *   <li>`Authorization: Bearer YOUR_TOKEN`
+   *   <li> `Authorization: Bearer YOUR_TOKEN`
    * </ul>
    *
    * <p>Sample code:
@@ -895,9 +895,9 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>When uploading source code to the generated signed URL, please follow these restrictions:
    *
    * <ul>
-   *   <li>Source file type should be a zip file.
-   *   <li>Source file size should not exceed 100MB limit.
-   *   <li>No credentials should be attached - the signed URLs provide access to the target bucket
+   *   <li> Source file type should be a zip file.
+   *   <li> Source file size should not exceed 100MB limit.
+   *   <li> No credentials should be attached - the signed URLs provide access to the target bucket
    *       using internal service identity; if credentials were attached, the identity from the
    *       credentials would be used, but that identity does not have permissions to upload files to
    *       the URL.
@@ -906,14 +906,14 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <p>When making a HTTP PUT request, these two headers need to be specified:
    *
    * <ul>
-   *   <li>`content-type: application/zip`
-   *   <li>`x-goog-content-length-range: 0,104857600`
+   *   <li> `content-type: application/zip`
+   *   <li> `x-goog-content-length-range: 0,104857600`
    * </ul>
    *
    * <p>And this header SHOULD NOT be specified:
    *
    * <ul>
-   *   <li>`Authorization: Bearer YOUR_TOKEN`
+   *   <li> `Authorization: Bearer YOUR_TOKEN`
    * </ul>
    *
    * <p>Sample code:
@@ -1178,10 +1178,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
 
   public static class ListFunctionsPagedResponse
       extends AbstractPagedListResponse<
-          ListFunctionsRequest,
-          ListFunctionsResponse,
-          CloudFunction,
-          ListFunctionsPage,
+          ListFunctionsRequest, ListFunctionsResponse, CloudFunction, ListFunctionsPage,
           ListFunctionsFixedSizeCollection> {
 
     public static ApiFuture<ListFunctionsPagedResponse> createAsync(
@@ -1236,10 +1233,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
 
   public static class ListFunctionsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListFunctionsRequest,
-          ListFunctionsResponse,
-          CloudFunction,
-          ListFunctionsPage,
+          ListFunctionsRequest, ListFunctionsResponse, CloudFunction, ListFunctionsPage,
           ListFunctionsFixedSizeCollection> {
 
     private ListFunctionsFixedSizeCollection(List<ListFunctionsPage> pages, int collectionSize) {

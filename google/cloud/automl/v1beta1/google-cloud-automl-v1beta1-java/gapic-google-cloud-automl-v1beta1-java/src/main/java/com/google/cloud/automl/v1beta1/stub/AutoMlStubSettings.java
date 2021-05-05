@@ -102,9 +102,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (automl.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (automl.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -185,8 +185,7 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
   private final UnaryCallSettings<GetModelEvaluationRequest, ModelEvaluation>
       getModelEvaluationSettings;
   private final PagedCallSettings<
-          ListModelEvaluationsRequest,
-          ListModelEvaluationsResponse,
+          ListModelEvaluationsRequest, ListModelEvaluationsResponse,
           ListModelEvaluationsPagedResponse>
       listModelEvaluationsSettings;
 
@@ -448,13 +447,11 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
           };
 
   private static final PagedListResponseFactory<
-          ListModelEvaluationsRequest,
-          ListModelEvaluationsResponse,
+          ListModelEvaluationsRequest, ListModelEvaluationsResponse,
           ListModelEvaluationsPagedResponse>
       LIST_MODEL_EVALUATIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListModelEvaluationsRequest,
-              ListModelEvaluationsResponse,
+              ListModelEvaluationsRequest, ListModelEvaluationsResponse,
               ListModelEvaluationsPagedResponse>() {
             @Override
             public ApiFuture<ListModelEvaluationsPagedResponse> getFuturePagedResponse(
@@ -650,8 +647,7 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
 
   /** Returns the object with the settings used for calls to listModelEvaluations. */
   public PagedCallSettings<
-          ListModelEvaluationsRequest,
-          ListModelEvaluationsResponse,
+          ListModelEvaluationsRequest, ListModelEvaluationsResponse,
           ListModelEvaluationsPagedResponse>
       listModelEvaluationsSettings() {
     return listModelEvaluationsSettings;
@@ -820,8 +816,7 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
     private final UnaryCallSettings.Builder<GetModelEvaluationRequest, ModelEvaluation>
         getModelEvaluationSettings;
     private final PagedCallSettings.Builder<
-            ListModelEvaluationsRequest,
-            ListModelEvaluationsResponse,
+            ListModelEvaluationsRequest, ListModelEvaluationsResponse,
             ListModelEvaluationsPagedResponse>
         listModelEvaluationsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
@@ -1565,8 +1560,7 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
 
     /** Returns the builder for the settings used for calls to listModelEvaluations. */
     public PagedCallSettings.Builder<
-            ListModelEvaluationsRequest,
-            ListModelEvaluationsResponse,
+            ListModelEvaluationsRequest, ListModelEvaluationsResponse,
             ListModelEvaluationsPagedResponse>
         listModelEvaluationsSettings() {
       return listModelEvaluationsSettings;

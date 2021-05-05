@@ -61,13 +61,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -2645,10 +2645,7 @@ public class JobServiceClient implements BackgroundResource {
 
   public static class ListCustomJobsPagedResponse
       extends AbstractPagedListResponse<
-          ListCustomJobsRequest,
-          ListCustomJobsResponse,
-          CustomJob,
-          ListCustomJobsPage,
+          ListCustomJobsRequest, ListCustomJobsResponse, CustomJob, ListCustomJobsPage,
           ListCustomJobsFixedSizeCollection> {
 
     public static ApiFuture<ListCustomJobsPagedResponse> createAsync(
@@ -2703,10 +2700,7 @@ public class JobServiceClient implements BackgroundResource {
 
   public static class ListCustomJobsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListCustomJobsRequest,
-          ListCustomJobsResponse,
-          CustomJob,
-          ListCustomJobsPage,
+          ListCustomJobsRequest, ListCustomJobsResponse, CustomJob, ListCustomJobsPage,
           ListCustomJobsFixedSizeCollection> {
 
     private ListCustomJobsFixedSizeCollection(List<ListCustomJobsPage> pages, int collectionSize) {
@@ -2726,11 +2720,8 @@ public class JobServiceClient implements BackgroundResource {
 
   public static class ListDataLabelingJobsPagedResponse
       extends AbstractPagedListResponse<
-          ListDataLabelingJobsRequest,
-          ListDataLabelingJobsResponse,
-          DataLabelingJob,
-          ListDataLabelingJobsPage,
-          ListDataLabelingJobsFixedSizeCollection> {
+          ListDataLabelingJobsRequest, ListDataLabelingJobsResponse, DataLabelingJob,
+          ListDataLabelingJobsPage, ListDataLabelingJobsFixedSizeCollection> {
 
     public static ApiFuture<ListDataLabelingJobsPagedResponse> createAsync(
         PageContext<ListDataLabelingJobsRequest, ListDataLabelingJobsResponse, DataLabelingJob>
@@ -2756,9 +2747,7 @@ public class JobServiceClient implements BackgroundResource {
 
   public static class ListDataLabelingJobsPage
       extends AbstractPage<
-          ListDataLabelingJobsRequest,
-          ListDataLabelingJobsResponse,
-          DataLabelingJob,
+          ListDataLabelingJobsRequest, ListDataLabelingJobsResponse, DataLabelingJob,
           ListDataLabelingJobsPage> {
 
     private ListDataLabelingJobsPage(
@@ -2791,11 +2780,8 @@ public class JobServiceClient implements BackgroundResource {
 
   public static class ListDataLabelingJobsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListDataLabelingJobsRequest,
-          ListDataLabelingJobsResponse,
-          DataLabelingJob,
-          ListDataLabelingJobsPage,
-          ListDataLabelingJobsFixedSizeCollection> {
+          ListDataLabelingJobsRequest, ListDataLabelingJobsResponse, DataLabelingJob,
+          ListDataLabelingJobsPage, ListDataLabelingJobsFixedSizeCollection> {
 
     private ListDataLabelingJobsFixedSizeCollection(
         List<ListDataLabelingJobsPage> pages, int collectionSize) {
@@ -2815,16 +2801,13 @@ public class JobServiceClient implements BackgroundResource {
 
   public static class ListHyperparameterTuningJobsPagedResponse
       extends AbstractPagedListResponse<
-          ListHyperparameterTuningJobsRequest,
-          ListHyperparameterTuningJobsResponse,
-          HyperparameterTuningJob,
-          ListHyperparameterTuningJobsPage,
+          ListHyperparameterTuningJobsRequest, ListHyperparameterTuningJobsResponse,
+          HyperparameterTuningJob, ListHyperparameterTuningJobsPage,
           ListHyperparameterTuningJobsFixedSizeCollection> {
 
     public static ApiFuture<ListHyperparameterTuningJobsPagedResponse> createAsync(
         PageContext<
-                ListHyperparameterTuningJobsRequest,
-                ListHyperparameterTuningJobsResponse,
+                ListHyperparameterTuningJobsRequest, ListHyperparameterTuningJobsResponse,
                 HyperparameterTuningJob>
             context,
         ApiFuture<ListHyperparameterTuningJobsResponse> futureResponse) {
@@ -2851,15 +2834,12 @@ public class JobServiceClient implements BackgroundResource {
 
   public static class ListHyperparameterTuningJobsPage
       extends AbstractPage<
-          ListHyperparameterTuningJobsRequest,
-          ListHyperparameterTuningJobsResponse,
-          HyperparameterTuningJob,
-          ListHyperparameterTuningJobsPage> {
+          ListHyperparameterTuningJobsRequest, ListHyperparameterTuningJobsResponse,
+          HyperparameterTuningJob, ListHyperparameterTuningJobsPage> {
 
     private ListHyperparameterTuningJobsPage(
         PageContext<
-                ListHyperparameterTuningJobsRequest,
-                ListHyperparameterTuningJobsResponse,
+                ListHyperparameterTuningJobsRequest, ListHyperparameterTuningJobsResponse,
                 HyperparameterTuningJob>
             context,
         ListHyperparameterTuningJobsResponse response) {
@@ -2873,8 +2853,7 @@ public class JobServiceClient implements BackgroundResource {
     @Override
     protected ListHyperparameterTuningJobsPage createPage(
         PageContext<
-                ListHyperparameterTuningJobsRequest,
-                ListHyperparameterTuningJobsResponse,
+                ListHyperparameterTuningJobsRequest, ListHyperparameterTuningJobsResponse,
                 HyperparameterTuningJob>
             context,
         ListHyperparameterTuningJobsResponse response) {
@@ -2884,8 +2863,7 @@ public class JobServiceClient implements BackgroundResource {
     @Override
     public ApiFuture<ListHyperparameterTuningJobsPage> createPageAsync(
         PageContext<
-                ListHyperparameterTuningJobsRequest,
-                ListHyperparameterTuningJobsResponse,
+                ListHyperparameterTuningJobsRequest, ListHyperparameterTuningJobsResponse,
                 HyperparameterTuningJob>
             context,
         ApiFuture<ListHyperparameterTuningJobsResponse> futureResponse) {
@@ -2895,10 +2873,8 @@ public class JobServiceClient implements BackgroundResource {
 
   public static class ListHyperparameterTuningJobsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListHyperparameterTuningJobsRequest,
-          ListHyperparameterTuningJobsResponse,
-          HyperparameterTuningJob,
-          ListHyperparameterTuningJobsPage,
+          ListHyperparameterTuningJobsRequest, ListHyperparameterTuningJobsResponse,
+          HyperparameterTuningJob, ListHyperparameterTuningJobsPage,
           ListHyperparameterTuningJobsFixedSizeCollection> {
 
     private ListHyperparameterTuningJobsFixedSizeCollection(
@@ -2919,11 +2895,8 @@ public class JobServiceClient implements BackgroundResource {
 
   public static class ListBatchPredictionJobsPagedResponse
       extends AbstractPagedListResponse<
-          ListBatchPredictionJobsRequest,
-          ListBatchPredictionJobsResponse,
-          BatchPredictionJob,
-          ListBatchPredictionJobsPage,
-          ListBatchPredictionJobsFixedSizeCollection> {
+          ListBatchPredictionJobsRequest, ListBatchPredictionJobsResponse, BatchPredictionJob,
+          ListBatchPredictionJobsPage, ListBatchPredictionJobsFixedSizeCollection> {
 
     public static ApiFuture<ListBatchPredictionJobsPagedResponse> createAsync(
         PageContext<
@@ -2950,9 +2923,7 @@ public class JobServiceClient implements BackgroundResource {
 
   public static class ListBatchPredictionJobsPage
       extends AbstractPage<
-          ListBatchPredictionJobsRequest,
-          ListBatchPredictionJobsResponse,
-          BatchPredictionJob,
+          ListBatchPredictionJobsRequest, ListBatchPredictionJobsResponse, BatchPredictionJob,
           ListBatchPredictionJobsPage> {
 
     private ListBatchPredictionJobsPage(
@@ -2988,11 +2959,8 @@ public class JobServiceClient implements BackgroundResource {
 
   public static class ListBatchPredictionJobsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListBatchPredictionJobsRequest,
-          ListBatchPredictionJobsResponse,
-          BatchPredictionJob,
-          ListBatchPredictionJobsPage,
-          ListBatchPredictionJobsFixedSizeCollection> {
+          ListBatchPredictionJobsRequest, ListBatchPredictionJobsResponse, BatchPredictionJob,
+          ListBatchPredictionJobsPage, ListBatchPredictionJobsFixedSizeCollection> {
 
     private ListBatchPredictionJobsFixedSizeCollection(
         List<ListBatchPredictionJobsPage> pages, int collectionSize) {

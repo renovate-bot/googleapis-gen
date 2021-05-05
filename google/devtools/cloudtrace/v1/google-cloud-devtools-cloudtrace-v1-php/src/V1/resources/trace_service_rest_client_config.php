@@ -30,14 +30,14 @@ return [
                 'method' => 'get',
                 'uriTemplate' => '/v1/projects/{project_id}/traces/{trace_id}',
                 'placeholders' => [
-                    'trace_id' => [
-                        'getters' => [
-                            'getTraceId',
-                        ],
-                    ],
                     'project_id' => [
                         'getters' => [
                             'getProjectId',
+                        ],
+                    ],
+                    'trace_id' => [
+                        'getters' => [
+                            'getTraceId',
                         ],
                     ],
                 ],

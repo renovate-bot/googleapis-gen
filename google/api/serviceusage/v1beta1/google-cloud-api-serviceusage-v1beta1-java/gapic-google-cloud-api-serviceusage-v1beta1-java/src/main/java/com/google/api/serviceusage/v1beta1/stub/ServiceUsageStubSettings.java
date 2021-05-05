@@ -98,9 +98,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (serviceusage.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (serviceusage.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -145,8 +145,7 @@ public class ServiceUsageStubSettings extends StubSettings<ServiceUsageStubSetti
   private final OperationCallSettings<BatchEnableServicesRequest, Empty, OperationMetadata>
       batchEnableServicesOperationSettings;
   private final PagedCallSettings<
-          ListConsumerQuotaMetricsRequest,
-          ListConsumerQuotaMetricsResponse,
+          ListConsumerQuotaMetricsRequest, ListConsumerQuotaMetricsResponse,
           ListConsumerQuotaMetricsPagedResponse>
       listConsumerQuotaMetricsSettings;
   private final UnaryCallSettings<GetConsumerQuotaMetricRequest, ConsumerQuotaMetric>
@@ -188,15 +187,13 @@ public class ServiceUsageStubSettings extends StubSettings<ServiceUsageStubSetti
   private final OperationCallSettings<DeleteConsumerOverrideRequest, Empty, OperationMetadata>
       deleteConsumerOverrideOperationSettings;
   private final PagedCallSettings<
-          ListConsumerOverridesRequest,
-          ListConsumerOverridesResponse,
+          ListConsumerOverridesRequest, ListConsumerOverridesResponse,
           ListConsumerOverridesPagedResponse>
       listConsumerOverridesSettings;
   private final UnaryCallSettings<ImportConsumerOverridesRequest, Operation>
       importConsumerOverridesSettings;
   private final OperationCallSettings<
-          ImportConsumerOverridesRequest,
-          ImportConsumerOverridesResponse,
+          ImportConsumerOverridesRequest, ImportConsumerOverridesResponse,
           ImportConsumerOverridesMetadata>
       importConsumerOverridesOperationSettings;
   private final UnaryCallSettings<GenerateServiceIdentityRequest, Operation>
@@ -244,8 +241,7 @@ public class ServiceUsageStubSettings extends StubSettings<ServiceUsageStubSetti
           ListConsumerQuotaMetricsRequest, ListConsumerQuotaMetricsResponse, ConsumerQuotaMetric>
       LIST_CONSUMER_QUOTA_METRICS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ListConsumerQuotaMetricsRequest,
-              ListConsumerQuotaMetricsResponse,
+              ListConsumerQuotaMetricsRequest, ListConsumerQuotaMetricsResponse,
               ConsumerQuotaMetric>() {
             @Override
             public String emptyToken() {
@@ -385,13 +381,11 @@ public class ServiceUsageStubSettings extends StubSettings<ServiceUsageStubSetti
           };
 
   private static final PagedListResponseFactory<
-          ListConsumerQuotaMetricsRequest,
-          ListConsumerQuotaMetricsResponse,
+          ListConsumerQuotaMetricsRequest, ListConsumerQuotaMetricsResponse,
           ListConsumerQuotaMetricsPagedResponse>
       LIST_CONSUMER_QUOTA_METRICS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListConsumerQuotaMetricsRequest,
-              ListConsumerQuotaMetricsResponse,
+              ListConsumerQuotaMetricsRequest, ListConsumerQuotaMetricsResponse,
               ListConsumerQuotaMetricsPagedResponse>() {
             @Override
             public ApiFuture<ListConsumerQuotaMetricsPagedResponse> getFuturePagedResponse(
@@ -401,8 +395,7 @@ public class ServiceUsageStubSettings extends StubSettings<ServiceUsageStubSetti
                 ApiCallContext context,
                 ApiFuture<ListConsumerQuotaMetricsResponse> futureResponse) {
               PageContext<
-                      ListConsumerQuotaMetricsRequest,
-                      ListConsumerQuotaMetricsResponse,
+                      ListConsumerQuotaMetricsRequest, ListConsumerQuotaMetricsResponse,
                       ConsumerQuotaMetric>
                   pageContext =
                       PageContext.create(
@@ -415,8 +408,7 @@ public class ServiceUsageStubSettings extends StubSettings<ServiceUsageStubSetti
           ListAdminOverridesRequest, ListAdminOverridesResponse, ListAdminOverridesPagedResponse>
       LIST_ADMIN_OVERRIDES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListAdminOverridesRequest,
-              ListAdminOverridesResponse,
+              ListAdminOverridesRequest, ListAdminOverridesResponse,
               ListAdminOverridesPagedResponse>() {
             @Override
             public ApiFuture<ListAdminOverridesPagedResponse> getFuturePagedResponse(
@@ -433,13 +425,11 @@ public class ServiceUsageStubSettings extends StubSettings<ServiceUsageStubSetti
           };
 
   private static final PagedListResponseFactory<
-          ListConsumerOverridesRequest,
-          ListConsumerOverridesResponse,
+          ListConsumerOverridesRequest, ListConsumerOverridesResponse,
           ListConsumerOverridesPagedResponse>
       LIST_CONSUMER_OVERRIDES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListConsumerOverridesRequest,
-              ListConsumerOverridesResponse,
+              ListConsumerOverridesRequest, ListConsumerOverridesResponse,
               ListConsumerOverridesPagedResponse>() {
             @Override
             public ApiFuture<ListConsumerOverridesPagedResponse> getFuturePagedResponse(
@@ -527,8 +517,7 @@ public class ServiceUsageStubSettings extends StubSettings<ServiceUsageStubSetti
 
   /** Returns the object with the settings used for calls to listConsumerQuotaMetrics. */
   public PagedCallSettings<
-          ListConsumerQuotaMetricsRequest,
-          ListConsumerQuotaMetricsResponse,
+          ListConsumerQuotaMetricsRequest, ListConsumerQuotaMetricsResponse,
           ListConsumerQuotaMetricsPagedResponse>
       listConsumerQuotaMetricsSettings() {
     return listConsumerQuotaMetricsSettings;
@@ -636,8 +625,7 @@ public class ServiceUsageStubSettings extends StubSettings<ServiceUsageStubSetti
 
   /** Returns the object with the settings used for calls to listConsumerOverrides. */
   public PagedCallSettings<
-          ListConsumerOverridesRequest,
-          ListConsumerOverridesResponse,
+          ListConsumerOverridesRequest, ListConsumerOverridesResponse,
           ListConsumerOverridesPagedResponse>
       listConsumerOverridesSettings() {
     return listConsumerOverridesSettings;
@@ -651,8 +639,7 @@ public class ServiceUsageStubSettings extends StubSettings<ServiceUsageStubSetti
 
   /** Returns the object with the settings used for calls to importConsumerOverrides. */
   public OperationCallSettings<
-          ImportConsumerOverridesRequest,
-          ImportConsumerOverridesResponse,
+          ImportConsumerOverridesRequest, ImportConsumerOverridesResponse,
           ImportConsumerOverridesMetadata>
       importConsumerOverridesOperationSettings() {
     return importConsumerOverridesOperationSettings;
@@ -802,8 +789,7 @@ public class ServiceUsageStubSettings extends StubSettings<ServiceUsageStubSetti
             BatchEnableServicesRequest, Empty, OperationMetadata>
         batchEnableServicesOperationSettings;
     private final PagedCallSettings.Builder<
-            ListConsumerQuotaMetricsRequest,
-            ListConsumerQuotaMetricsResponse,
+            ListConsumerQuotaMetricsRequest, ListConsumerQuotaMetricsResponse,
             ListConsumerQuotaMetricsPagedResponse>
         listConsumerQuotaMetricsSettings;
     private final UnaryCallSettings.Builder<GetConsumerQuotaMetricRequest, ConsumerQuotaMetric>
@@ -849,15 +835,13 @@ public class ServiceUsageStubSettings extends StubSettings<ServiceUsageStubSetti
             DeleteConsumerOverrideRequest, Empty, OperationMetadata>
         deleteConsumerOverrideOperationSettings;
     private final PagedCallSettings.Builder<
-            ListConsumerOverridesRequest,
-            ListConsumerOverridesResponse,
+            ListConsumerOverridesRequest, ListConsumerOverridesResponse,
             ListConsumerOverridesPagedResponse>
         listConsumerOverridesSettings;
     private final UnaryCallSettings.Builder<ImportConsumerOverridesRequest, Operation>
         importConsumerOverridesSettings;
     private final OperationCallSettings.Builder<
-            ImportConsumerOverridesRequest,
-            ImportConsumerOverridesResponse,
+            ImportConsumerOverridesRequest, ImportConsumerOverridesResponse,
             ImportConsumerOverridesMetadata>
         importConsumerOverridesOperationSettings;
     private final UnaryCallSettings.Builder<GenerateServiceIdentityRequest, Operation>
@@ -1522,8 +1506,7 @@ public class ServiceUsageStubSettings extends StubSettings<ServiceUsageStubSetti
 
     /** Returns the builder for the settings used for calls to listConsumerQuotaMetrics. */
     public PagedCallSettings.Builder<
-            ListConsumerQuotaMetricsRequest,
-            ListConsumerQuotaMetricsResponse,
+            ListConsumerQuotaMetricsRequest, ListConsumerQuotaMetricsResponse,
             ListConsumerQuotaMetricsPagedResponse>
         listConsumerQuotaMetricsSettings() {
       return listConsumerQuotaMetricsSettings;
@@ -1653,8 +1636,7 @@ public class ServiceUsageStubSettings extends StubSettings<ServiceUsageStubSetti
 
     /** Returns the builder for the settings used for calls to listConsumerOverrides. */
     public PagedCallSettings.Builder<
-            ListConsumerOverridesRequest,
-            ListConsumerOverridesResponse,
+            ListConsumerOverridesRequest, ListConsumerOverridesResponse,
             ListConsumerOverridesPagedResponse>
         listConsumerOverridesSettings() {
       return listConsumerOverridesSettings;
@@ -1670,8 +1652,7 @@ public class ServiceUsageStubSettings extends StubSettings<ServiceUsageStubSetti
     @BetaApi(
         "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
-            ImportConsumerOverridesRequest,
-            ImportConsumerOverridesResponse,
+            ImportConsumerOverridesRequest, ImportConsumerOverridesResponse,
             ImportConsumerOverridesMetadata>
         importConsumerOverridesOperationSettings() {
       return importConsumerOverridesOperationSettings;

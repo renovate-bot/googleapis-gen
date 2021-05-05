@@ -64,9 +64,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (dataproc.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (dataproc.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -105,8 +105,7 @@ public class AutoscalingPolicyServiceStubSettings
   private final UnaryCallSettings<GetAutoscalingPolicyRequest, AutoscalingPolicy>
       getAutoscalingPolicySettings;
   private final PagedCallSettings<
-          ListAutoscalingPoliciesRequest,
-          ListAutoscalingPoliciesResponse,
+          ListAutoscalingPoliciesRequest, ListAutoscalingPoliciesResponse,
           ListAutoscalingPoliciesPagedResponse>
       listAutoscalingPoliciesSettings;
   private final UnaryCallSettings<DeleteAutoscalingPolicyRequest, Empty>
@@ -116,8 +115,7 @@ public class AutoscalingPolicyServiceStubSettings
           ListAutoscalingPoliciesRequest, ListAutoscalingPoliciesResponse, AutoscalingPolicy>
       LIST_AUTOSCALING_POLICIES_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ListAutoscalingPoliciesRequest,
-              ListAutoscalingPoliciesResponse,
+              ListAutoscalingPoliciesRequest, ListAutoscalingPoliciesResponse,
               AutoscalingPolicy>() {
             @Override
             public String emptyToken() {
@@ -158,13 +156,11 @@ public class AutoscalingPolicyServiceStubSettings
           };
 
   private static final PagedListResponseFactory<
-          ListAutoscalingPoliciesRequest,
-          ListAutoscalingPoliciesResponse,
+          ListAutoscalingPoliciesRequest, ListAutoscalingPoliciesResponse,
           ListAutoscalingPoliciesPagedResponse>
       LIST_AUTOSCALING_POLICIES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListAutoscalingPoliciesRequest,
-              ListAutoscalingPoliciesResponse,
+              ListAutoscalingPoliciesRequest, ListAutoscalingPoliciesResponse,
               ListAutoscalingPoliciesPagedResponse>() {
             @Override
             public ApiFuture<ListAutoscalingPoliciesPagedResponse> getFuturePagedResponse(
@@ -174,8 +170,7 @@ public class AutoscalingPolicyServiceStubSettings
                 ApiCallContext context,
                 ApiFuture<ListAutoscalingPoliciesResponse> futureResponse) {
               PageContext<
-                      ListAutoscalingPoliciesRequest,
-                      ListAutoscalingPoliciesResponse,
+                      ListAutoscalingPoliciesRequest, ListAutoscalingPoliciesResponse,
                       AutoscalingPolicy>
                   pageContext =
                       PageContext.create(
@@ -204,8 +199,7 @@ public class AutoscalingPolicyServiceStubSettings
 
   /** Returns the object with the settings used for calls to listAutoscalingPolicies. */
   public PagedCallSettings<
-          ListAutoscalingPoliciesRequest,
-          ListAutoscalingPoliciesResponse,
+          ListAutoscalingPoliciesRequest, ListAutoscalingPoliciesResponse,
           ListAutoscalingPoliciesPagedResponse>
       listAutoscalingPoliciesSettings() {
     return listAutoscalingPoliciesSettings;
@@ -304,8 +298,7 @@ public class AutoscalingPolicyServiceStubSettings
     private final UnaryCallSettings.Builder<GetAutoscalingPolicyRequest, AutoscalingPolicy>
         getAutoscalingPolicySettings;
     private final PagedCallSettings.Builder<
-            ListAutoscalingPoliciesRequest,
-            ListAutoscalingPoliciesResponse,
+            ListAutoscalingPoliciesRequest, ListAutoscalingPoliciesResponse,
             ListAutoscalingPoliciesPagedResponse>
         listAutoscalingPoliciesSettings;
     private final UnaryCallSettings.Builder<DeleteAutoscalingPolicyRequest, Empty>
@@ -471,8 +464,7 @@ public class AutoscalingPolicyServiceStubSettings
 
     /** Returns the builder for the settings used for calls to listAutoscalingPolicies. */
     public PagedCallSettings.Builder<
-            ListAutoscalingPoliciesRequest,
-            ListAutoscalingPoliciesResponse,
+            ListAutoscalingPoliciesRequest, ListAutoscalingPoliciesResponse,
             ListAutoscalingPoliciesPagedResponse>
         listAutoscalingPoliciesSettings() {
       return listAutoscalingPoliciesSettings;

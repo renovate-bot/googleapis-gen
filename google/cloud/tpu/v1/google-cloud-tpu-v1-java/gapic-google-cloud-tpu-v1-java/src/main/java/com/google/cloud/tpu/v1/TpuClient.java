@@ -61,13 +61,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -1433,11 +1433,8 @@ public class TpuClient implements BackgroundResource {
 
   public static class ListTensorFlowVersionsPagedResponse
       extends AbstractPagedListResponse<
-          ListTensorFlowVersionsRequest,
-          ListTensorFlowVersionsResponse,
-          TensorFlowVersion,
-          ListTensorFlowVersionsPage,
-          ListTensorFlowVersionsFixedSizeCollection> {
+          ListTensorFlowVersionsRequest, ListTensorFlowVersionsResponse, TensorFlowVersion,
+          ListTensorFlowVersionsPage, ListTensorFlowVersionsFixedSizeCollection> {
 
     public static ApiFuture<ListTensorFlowVersionsPagedResponse> createAsync(
         PageContext<
@@ -1464,9 +1461,7 @@ public class TpuClient implements BackgroundResource {
 
   public static class ListTensorFlowVersionsPage
       extends AbstractPage<
-          ListTensorFlowVersionsRequest,
-          ListTensorFlowVersionsResponse,
-          TensorFlowVersion,
+          ListTensorFlowVersionsRequest, ListTensorFlowVersionsResponse, TensorFlowVersion,
           ListTensorFlowVersionsPage> {
 
     private ListTensorFlowVersionsPage(
@@ -1502,11 +1497,8 @@ public class TpuClient implements BackgroundResource {
 
   public static class ListTensorFlowVersionsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListTensorFlowVersionsRequest,
-          ListTensorFlowVersionsResponse,
-          TensorFlowVersion,
-          ListTensorFlowVersionsPage,
-          ListTensorFlowVersionsFixedSizeCollection> {
+          ListTensorFlowVersionsRequest, ListTensorFlowVersionsResponse, TensorFlowVersion,
+          ListTensorFlowVersionsPage, ListTensorFlowVersionsFixedSizeCollection> {
 
     private ListTensorFlowVersionsFixedSizeCollection(
         List<ListTensorFlowVersionsPage> pages, int collectionSize) {
@@ -1526,11 +1518,8 @@ public class TpuClient implements BackgroundResource {
 
   public static class ListAcceleratorTypesPagedResponse
       extends AbstractPagedListResponse<
-          ListAcceleratorTypesRequest,
-          ListAcceleratorTypesResponse,
-          AcceleratorType,
-          ListAcceleratorTypesPage,
-          ListAcceleratorTypesFixedSizeCollection> {
+          ListAcceleratorTypesRequest, ListAcceleratorTypesResponse, AcceleratorType,
+          ListAcceleratorTypesPage, ListAcceleratorTypesFixedSizeCollection> {
 
     public static ApiFuture<ListAcceleratorTypesPagedResponse> createAsync(
         PageContext<ListAcceleratorTypesRequest, ListAcceleratorTypesResponse, AcceleratorType>
@@ -1556,9 +1545,7 @@ public class TpuClient implements BackgroundResource {
 
   public static class ListAcceleratorTypesPage
       extends AbstractPage<
-          ListAcceleratorTypesRequest,
-          ListAcceleratorTypesResponse,
-          AcceleratorType,
+          ListAcceleratorTypesRequest, ListAcceleratorTypesResponse, AcceleratorType,
           ListAcceleratorTypesPage> {
 
     private ListAcceleratorTypesPage(
@@ -1591,11 +1578,8 @@ public class TpuClient implements BackgroundResource {
 
   public static class ListAcceleratorTypesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListAcceleratorTypesRequest,
-          ListAcceleratorTypesResponse,
-          AcceleratorType,
-          ListAcceleratorTypesPage,
-          ListAcceleratorTypesFixedSizeCollection> {
+          ListAcceleratorTypesRequest, ListAcceleratorTypesResponse, AcceleratorType,
+          ListAcceleratorTypesPage, ListAcceleratorTypesFixedSizeCollection> {
 
     private ListAcceleratorTypesFixedSizeCollection(
         List<ListAcceleratorTypesPage> pages, int collectionSize) {

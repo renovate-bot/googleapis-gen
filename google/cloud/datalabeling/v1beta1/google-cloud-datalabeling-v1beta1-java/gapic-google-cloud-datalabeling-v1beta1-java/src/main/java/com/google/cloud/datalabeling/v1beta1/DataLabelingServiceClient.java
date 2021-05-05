@@ -63,13 +63,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -3313,22 +3313,22 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *     "projects/&lt;var&gt;{project_id}&lt;/var&gt;"
    * @param filter Optional. To search evaluations, you can filter by the following:
    *     <ul>
-   *       <li>evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_id (the last part of
+   *       <li> evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_id (the last part of
    *           [EvaluationJob.name][google.cloud.datalabeling.v1beta1.EvaluationJob.name])
-   *       <li>evaluation&lt;span&gt;_&lt;/span&gt;job.model_id (the
+   *       <li> evaluation&lt;span&gt;_&lt;/span&gt;job.model_id (the
    *           &lt;var&gt;{model_name}&lt;/var&gt; portion of
    *           [EvaluationJob.modelVersion][google.cloud.datalabeling.v1beta1.EvaluationJob.model_version])
-   *       <li>evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_run_time_start (Minimum
+   *       <li> evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_run_time_start (Minimum
    *           threshold for the
    *           [evaluationJobRunTime][google.cloud.datalabeling.v1beta1.Evaluation.evaluation_job_run_time]
    *           that created the evaluation)
-   *       <li>evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_run_time_end (Maximum
+   *       <li> evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_run_time_end (Maximum
    *           threshold for the
    *           [evaluationJobRunTime][google.cloud.datalabeling.v1beta1.Evaluation.evaluation_job_run_time]
    *           that created the evaluation)
-   *       <li>evaluation&lt;span&gt;_&lt;/span&gt;job.job_state
+   *       <li> evaluation&lt;span&gt;_&lt;/span&gt;job.job_state
    *           ([EvaluationJob.state][google.cloud.datalabeling.v1beta1.EvaluationJob.state])
-   *       <li>annotation&lt;span&gt;_&lt;/span&gt;spec.display_name (the Evaluation contains a
+   *       <li> annotation&lt;span&gt;_&lt;/span&gt;spec.display_name (the Evaluation contains a
    *           metric for the annotation spec with this
    *           [displayName][google.cloud.datalabeling.v1beta1.AnnotationSpec.display_name])
    *     </ul>
@@ -3376,22 +3376,22 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *     "projects/&lt;var&gt;{project_id}&lt;/var&gt;"
    * @param filter Optional. To search evaluations, you can filter by the following:
    *     <ul>
-   *       <li>evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_id (the last part of
+   *       <li> evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_id (the last part of
    *           [EvaluationJob.name][google.cloud.datalabeling.v1beta1.EvaluationJob.name])
-   *       <li>evaluation&lt;span&gt;_&lt;/span&gt;job.model_id (the
+   *       <li> evaluation&lt;span&gt;_&lt;/span&gt;job.model_id (the
    *           &lt;var&gt;{model_name}&lt;/var&gt; portion of
    *           [EvaluationJob.modelVersion][google.cloud.datalabeling.v1beta1.EvaluationJob.model_version])
-   *       <li>evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_run_time_start (Minimum
+   *       <li> evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_run_time_start (Minimum
    *           threshold for the
    *           [evaluationJobRunTime][google.cloud.datalabeling.v1beta1.Evaluation.evaluation_job_run_time]
    *           that created the evaluation)
-   *       <li>evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_run_time_end (Maximum
+   *       <li> evaluation&lt;span&gt;_&lt;/span&gt;job.evaluation_job_run_time_end (Maximum
    *           threshold for the
    *           [evaluationJobRunTime][google.cloud.datalabeling.v1beta1.Evaluation.evaluation_job_run_time]
    *           that created the evaluation)
-   *       <li>evaluation&lt;span&gt;_&lt;/span&gt;job.job_state
+   *       <li> evaluation&lt;span&gt;_&lt;/span&gt;job.job_state
    *           ([EvaluationJob.state][google.cloud.datalabeling.v1beta1.EvaluationJob.state])
-   *       <li>annotation&lt;span&gt;_&lt;/span&gt;spec.display_name (the Evaluation contains a
+   *       <li> annotation&lt;span&gt;_&lt;/span&gt;spec.display_name (the Evaluation contains a
    *           metric for the annotation spec with this
    *           [displayName][google.cloud.datalabeling.v1beta1.AnnotationSpec.display_name])
    *     </ul>
@@ -3793,9 +3793,9 @@ public class DataLabelingServiceClient implements BackgroundResource {
    * @param updateMask Optional. Mask for which fields to update. You can only provide the following
    *     fields:
    *     <ul>
-   *       <li>`evaluationJobConfig.humanAnnotationConfig.instruction`
-   *       <li>`evaluationJobConfig.exampleCount`
-   *       <li>`evaluationJobConfig.exampleSamplePercentage`
+   *       <li> `evaluationJobConfig.humanAnnotationConfig.instruction`
+   *       <li> `evaluationJobConfig.exampleCount`
+   *       <li> `evaluationJobConfig.exampleSamplePercentage`
    *     </ul>
    *     <p>You can provide more than one of these fields by separating them with commas.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -4453,10 +4453,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   public static class ListDatasetsPagedResponse
       extends AbstractPagedListResponse<
-          ListDatasetsRequest,
-          ListDatasetsResponse,
-          Dataset,
-          ListDatasetsPage,
+          ListDatasetsRequest, ListDatasetsResponse, Dataset, ListDatasetsPage,
           ListDatasetsFixedSizeCollection> {
 
     public static ApiFuture<ListDatasetsPagedResponse> createAsync(
@@ -4510,10 +4507,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   public static class ListDatasetsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListDatasetsRequest,
-          ListDatasetsResponse,
-          Dataset,
-          ListDatasetsPage,
+          ListDatasetsRequest, ListDatasetsResponse, Dataset, ListDatasetsPage,
           ListDatasetsFixedSizeCollection> {
 
     private ListDatasetsFixedSizeCollection(List<ListDatasetsPage> pages, int collectionSize) {
@@ -4533,10 +4527,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   public static class ListDataItemsPagedResponse
       extends AbstractPagedListResponse<
-          ListDataItemsRequest,
-          ListDataItemsResponse,
-          DataItem,
-          ListDataItemsPage,
+          ListDataItemsRequest, ListDataItemsResponse, DataItem, ListDataItemsPage,
           ListDataItemsFixedSizeCollection> {
 
     public static ApiFuture<ListDataItemsPagedResponse> createAsync(
@@ -4591,10 +4582,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   public static class ListDataItemsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListDataItemsRequest,
-          ListDataItemsResponse,
-          DataItem,
-          ListDataItemsPage,
+          ListDataItemsRequest, ListDataItemsResponse, DataItem, ListDataItemsPage,
           ListDataItemsFixedSizeCollection> {
 
     private ListDataItemsFixedSizeCollection(List<ListDataItemsPage> pages, int collectionSize) {
@@ -4614,11 +4602,8 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   public static class ListAnnotatedDatasetsPagedResponse
       extends AbstractPagedListResponse<
-          ListAnnotatedDatasetsRequest,
-          ListAnnotatedDatasetsResponse,
-          AnnotatedDataset,
-          ListAnnotatedDatasetsPage,
-          ListAnnotatedDatasetsFixedSizeCollection> {
+          ListAnnotatedDatasetsRequest, ListAnnotatedDatasetsResponse, AnnotatedDataset,
+          ListAnnotatedDatasetsPage, ListAnnotatedDatasetsFixedSizeCollection> {
 
     public static ApiFuture<ListAnnotatedDatasetsPagedResponse> createAsync(
         PageContext<ListAnnotatedDatasetsRequest, ListAnnotatedDatasetsResponse, AnnotatedDataset>
@@ -4644,9 +4629,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   public static class ListAnnotatedDatasetsPage
       extends AbstractPage<
-          ListAnnotatedDatasetsRequest,
-          ListAnnotatedDatasetsResponse,
-          AnnotatedDataset,
+          ListAnnotatedDatasetsRequest, ListAnnotatedDatasetsResponse, AnnotatedDataset,
           ListAnnotatedDatasetsPage> {
 
     private ListAnnotatedDatasetsPage(
@@ -4679,11 +4662,8 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   public static class ListAnnotatedDatasetsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListAnnotatedDatasetsRequest,
-          ListAnnotatedDatasetsResponse,
-          AnnotatedDataset,
-          ListAnnotatedDatasetsPage,
-          ListAnnotatedDatasetsFixedSizeCollection> {
+          ListAnnotatedDatasetsRequest, ListAnnotatedDatasetsResponse, AnnotatedDataset,
+          ListAnnotatedDatasetsPage, ListAnnotatedDatasetsFixedSizeCollection> {
 
     private ListAnnotatedDatasetsFixedSizeCollection(
         List<ListAnnotatedDatasetsPage> pages, int collectionSize) {
@@ -4703,10 +4683,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   public static class ListExamplesPagedResponse
       extends AbstractPagedListResponse<
-          ListExamplesRequest,
-          ListExamplesResponse,
-          Example,
-          ListExamplesPage,
+          ListExamplesRequest, ListExamplesResponse, Example, ListExamplesPage,
           ListExamplesFixedSizeCollection> {
 
     public static ApiFuture<ListExamplesPagedResponse> createAsync(
@@ -4760,10 +4737,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   public static class ListExamplesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListExamplesRequest,
-          ListExamplesResponse,
-          Example,
-          ListExamplesPage,
+          ListExamplesRequest, ListExamplesResponse, Example, ListExamplesPage,
           ListExamplesFixedSizeCollection> {
 
     private ListExamplesFixedSizeCollection(List<ListExamplesPage> pages, int collectionSize) {
@@ -4783,11 +4757,8 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   public static class ListAnnotationSpecSetsPagedResponse
       extends AbstractPagedListResponse<
-          ListAnnotationSpecSetsRequest,
-          ListAnnotationSpecSetsResponse,
-          AnnotationSpecSet,
-          ListAnnotationSpecSetsPage,
-          ListAnnotationSpecSetsFixedSizeCollection> {
+          ListAnnotationSpecSetsRequest, ListAnnotationSpecSetsResponse, AnnotationSpecSet,
+          ListAnnotationSpecSetsPage, ListAnnotationSpecSetsFixedSizeCollection> {
 
     public static ApiFuture<ListAnnotationSpecSetsPagedResponse> createAsync(
         PageContext<
@@ -4814,9 +4785,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   public static class ListAnnotationSpecSetsPage
       extends AbstractPage<
-          ListAnnotationSpecSetsRequest,
-          ListAnnotationSpecSetsResponse,
-          AnnotationSpecSet,
+          ListAnnotationSpecSetsRequest, ListAnnotationSpecSetsResponse, AnnotationSpecSet,
           ListAnnotationSpecSetsPage> {
 
     private ListAnnotationSpecSetsPage(
@@ -4852,11 +4821,8 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   public static class ListAnnotationSpecSetsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListAnnotationSpecSetsRequest,
-          ListAnnotationSpecSetsResponse,
-          AnnotationSpecSet,
-          ListAnnotationSpecSetsPage,
-          ListAnnotationSpecSetsFixedSizeCollection> {
+          ListAnnotationSpecSetsRequest, ListAnnotationSpecSetsResponse, AnnotationSpecSet,
+          ListAnnotationSpecSetsPage, ListAnnotationSpecSetsFixedSizeCollection> {
 
     private ListAnnotationSpecSetsFixedSizeCollection(
         List<ListAnnotationSpecSetsPage> pages, int collectionSize) {
@@ -4876,10 +4842,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   public static class ListInstructionsPagedResponse
       extends AbstractPagedListResponse<
-          ListInstructionsRequest,
-          ListInstructionsResponse,
-          Instruction,
-          ListInstructionsPage,
+          ListInstructionsRequest, ListInstructionsResponse, Instruction, ListInstructionsPage,
           ListInstructionsFixedSizeCollection> {
 
     public static ApiFuture<ListInstructionsPagedResponse> createAsync(
@@ -4934,10 +4897,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   public static class ListInstructionsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListInstructionsRequest,
-          ListInstructionsResponse,
-          Instruction,
-          ListInstructionsPage,
+          ListInstructionsRequest, ListInstructionsResponse, Instruction, ListInstructionsPage,
           ListInstructionsFixedSizeCollection> {
 
     private ListInstructionsFixedSizeCollection(
@@ -4958,10 +4918,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   public static class SearchEvaluationsPagedResponse
       extends AbstractPagedListResponse<
-          SearchEvaluationsRequest,
-          SearchEvaluationsResponse,
-          Evaluation,
-          SearchEvaluationsPage,
+          SearchEvaluationsRequest, SearchEvaluationsResponse, Evaluation, SearchEvaluationsPage,
           SearchEvaluationsFixedSizeCollection> {
 
     public static ApiFuture<SearchEvaluationsPagedResponse> createAsync(
@@ -5016,10 +4973,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   public static class SearchEvaluationsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          SearchEvaluationsRequest,
-          SearchEvaluationsResponse,
-          Evaluation,
-          SearchEvaluationsPage,
+          SearchEvaluationsRequest, SearchEvaluationsResponse, Evaluation, SearchEvaluationsPage,
           SearchEvaluationsFixedSizeCollection> {
 
     private SearchEvaluationsFixedSizeCollection(
@@ -5040,16 +4994,13 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   public static class SearchExampleComparisonsPagedResponse
       extends AbstractPagedListResponse<
-          SearchExampleComparisonsRequest,
-          SearchExampleComparisonsResponse,
-          SearchExampleComparisonsResponse.ExampleComparison,
-          SearchExampleComparisonsPage,
+          SearchExampleComparisonsRequest, SearchExampleComparisonsResponse,
+          SearchExampleComparisonsResponse.ExampleComparison, SearchExampleComparisonsPage,
           SearchExampleComparisonsFixedSizeCollection> {
 
     public static ApiFuture<SearchExampleComparisonsPagedResponse> createAsync(
         PageContext<
-                SearchExampleComparisonsRequest,
-                SearchExampleComparisonsResponse,
+                SearchExampleComparisonsRequest, SearchExampleComparisonsResponse,
                 SearchExampleComparisonsResponse.ExampleComparison>
             context,
         ApiFuture<SearchExampleComparisonsResponse> futureResponse) {
@@ -5073,15 +5024,12 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   public static class SearchExampleComparisonsPage
       extends AbstractPage<
-          SearchExampleComparisonsRequest,
-          SearchExampleComparisonsResponse,
-          SearchExampleComparisonsResponse.ExampleComparison,
-          SearchExampleComparisonsPage> {
+          SearchExampleComparisonsRequest, SearchExampleComparisonsResponse,
+          SearchExampleComparisonsResponse.ExampleComparison, SearchExampleComparisonsPage> {
 
     private SearchExampleComparisonsPage(
         PageContext<
-                SearchExampleComparisonsRequest,
-                SearchExampleComparisonsResponse,
+                SearchExampleComparisonsRequest, SearchExampleComparisonsResponse,
                 SearchExampleComparisonsResponse.ExampleComparison>
             context,
         SearchExampleComparisonsResponse response) {
@@ -5095,8 +5043,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
     @Override
     protected SearchExampleComparisonsPage createPage(
         PageContext<
-                SearchExampleComparisonsRequest,
-                SearchExampleComparisonsResponse,
+                SearchExampleComparisonsRequest, SearchExampleComparisonsResponse,
                 SearchExampleComparisonsResponse.ExampleComparison>
             context,
         SearchExampleComparisonsResponse response) {
@@ -5106,8 +5053,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
     @Override
     public ApiFuture<SearchExampleComparisonsPage> createPageAsync(
         PageContext<
-                SearchExampleComparisonsRequest,
-                SearchExampleComparisonsResponse,
+                SearchExampleComparisonsRequest, SearchExampleComparisonsResponse,
                 SearchExampleComparisonsResponse.ExampleComparison>
             context,
         ApiFuture<SearchExampleComparisonsResponse> futureResponse) {
@@ -5117,10 +5063,8 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   public static class SearchExampleComparisonsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          SearchExampleComparisonsRequest,
-          SearchExampleComparisonsResponse,
-          SearchExampleComparisonsResponse.ExampleComparison,
-          SearchExampleComparisonsPage,
+          SearchExampleComparisonsRequest, SearchExampleComparisonsResponse,
+          SearchExampleComparisonsResponse.ExampleComparison, SearchExampleComparisonsPage,
           SearchExampleComparisonsFixedSizeCollection> {
 
     private SearchExampleComparisonsFixedSizeCollection(
@@ -5141,11 +5085,8 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   public static class ListEvaluationJobsPagedResponse
       extends AbstractPagedListResponse<
-          ListEvaluationJobsRequest,
-          ListEvaluationJobsResponse,
-          EvaluationJob,
-          ListEvaluationJobsPage,
-          ListEvaluationJobsFixedSizeCollection> {
+          ListEvaluationJobsRequest, ListEvaluationJobsResponse, EvaluationJob,
+          ListEvaluationJobsPage, ListEvaluationJobsFixedSizeCollection> {
 
     public static ApiFuture<ListEvaluationJobsPagedResponse> createAsync(
         PageContext<ListEvaluationJobsRequest, ListEvaluationJobsResponse, EvaluationJob> context,
@@ -5170,9 +5111,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   public static class ListEvaluationJobsPage
       extends AbstractPage<
-          ListEvaluationJobsRequest,
-          ListEvaluationJobsResponse,
-          EvaluationJob,
+          ListEvaluationJobsRequest, ListEvaluationJobsResponse, EvaluationJob,
           ListEvaluationJobsPage> {
 
     private ListEvaluationJobsPage(
@@ -5202,11 +5141,8 @@ public class DataLabelingServiceClient implements BackgroundResource {
 
   public static class ListEvaluationJobsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListEvaluationJobsRequest,
-          ListEvaluationJobsResponse,
-          EvaluationJob,
-          ListEvaluationJobsPage,
-          ListEvaluationJobsFixedSizeCollection> {
+          ListEvaluationJobsRequest, ListEvaluationJobsResponse, EvaluationJob,
+          ListEvaluationJobsPage, ListEvaluationJobsFixedSizeCollection> {
 
     private ListEvaluationJobsFixedSizeCollection(
         List<ListEvaluationJobsPage> pages, int collectionSize) {

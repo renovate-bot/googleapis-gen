@@ -192,8 +192,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
   private final UnaryCallable<AnalyzeIamPolicyLongrunningRequest, Operation>
       analyzeIamPolicyLongrunningCallable;
   private final OperationCallable<
-          AnalyzeIamPolicyLongrunningRequest,
-          AnalyzeIamPolicyLongrunningResponse,
+          AnalyzeIamPolicyLongrunningRequest, AnalyzeIamPolicyLongrunningResponse,
           AnalyzeIamPolicyLongrunningRequest>
       analyzeIamPolicyLongrunningOperationCallable;
 
@@ -546,8 +545,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
 
   @Override
   public OperationCallable<
-          AnalyzeIamPolicyLongrunningRequest,
-          AnalyzeIamPolicyLongrunningResponse,
+          AnalyzeIamPolicyLongrunningRequest, AnalyzeIamPolicyLongrunningResponse,
           AnalyzeIamPolicyLongrunningRequest>
       analyzeIamPolicyLongrunningOperationCallable() {
     return analyzeIamPolicyLongrunningOperationCallable;

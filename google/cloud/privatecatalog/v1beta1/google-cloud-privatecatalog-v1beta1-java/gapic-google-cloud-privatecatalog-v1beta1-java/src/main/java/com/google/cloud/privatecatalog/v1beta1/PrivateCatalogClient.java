@@ -78,13 +78,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -491,10 +491,7 @@ public class PrivateCatalogClient implements BackgroundResource {
 
   public static class SearchCatalogsPagedResponse
       extends AbstractPagedListResponse<
-          SearchCatalogsRequest,
-          SearchCatalogsResponse,
-          Catalog,
-          SearchCatalogsPage,
+          SearchCatalogsRequest, SearchCatalogsResponse, Catalog, SearchCatalogsPage,
           SearchCatalogsFixedSizeCollection> {
 
     public static ApiFuture<SearchCatalogsPagedResponse> createAsync(
@@ -549,10 +546,7 @@ public class PrivateCatalogClient implements BackgroundResource {
 
   public static class SearchCatalogsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          SearchCatalogsRequest,
-          SearchCatalogsResponse,
-          Catalog,
-          SearchCatalogsPage,
+          SearchCatalogsRequest, SearchCatalogsResponse, Catalog, SearchCatalogsPage,
           SearchCatalogsFixedSizeCollection> {
 
     private SearchCatalogsFixedSizeCollection(List<SearchCatalogsPage> pages, int collectionSize) {
@@ -572,10 +566,7 @@ public class PrivateCatalogClient implements BackgroundResource {
 
   public static class SearchProductsPagedResponse
       extends AbstractPagedListResponse<
-          SearchProductsRequest,
-          SearchProductsResponse,
-          Product,
-          SearchProductsPage,
+          SearchProductsRequest, SearchProductsResponse, Product, SearchProductsPage,
           SearchProductsFixedSizeCollection> {
 
     public static ApiFuture<SearchProductsPagedResponse> createAsync(
@@ -630,10 +621,7 @@ public class PrivateCatalogClient implements BackgroundResource {
 
   public static class SearchProductsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          SearchProductsRequest,
-          SearchProductsResponse,
-          Product,
-          SearchProductsPage,
+          SearchProductsRequest, SearchProductsResponse, Product, SearchProductsPage,
           SearchProductsFixedSizeCollection> {
 
     private SearchProductsFixedSizeCollection(List<SearchProductsPage> pages, int collectionSize) {
@@ -653,10 +641,7 @@ public class PrivateCatalogClient implements BackgroundResource {
 
   public static class SearchVersionsPagedResponse
       extends AbstractPagedListResponse<
-          SearchVersionsRequest,
-          SearchVersionsResponse,
-          Version,
-          SearchVersionsPage,
+          SearchVersionsRequest, SearchVersionsResponse, Version, SearchVersionsPage,
           SearchVersionsFixedSizeCollection> {
 
     public static ApiFuture<SearchVersionsPagedResponse> createAsync(
@@ -711,10 +696,7 @@ public class PrivateCatalogClient implements BackgroundResource {
 
   public static class SearchVersionsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          SearchVersionsRequest,
-          SearchVersionsResponse,
-          Version,
-          SearchVersionsPage,
+          SearchVersionsRequest, SearchVersionsResponse, Version, SearchVersionsPage,
           SearchVersionsFixedSizeCollection> {
 
     private SearchVersionsFixedSizeCollection(List<SearchVersionsPage> pages, int collectionSize) {

@@ -83,13 +83,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -1813,17 +1813,14 @@ public class NotificationChannelServiceClient implements BackgroundResource {
 
   public static class ListNotificationChannelDescriptorsPagedResponse
       extends AbstractPagedListResponse<
-          ListNotificationChannelDescriptorsRequest,
-          ListNotificationChannelDescriptorsResponse,
-          NotificationChannelDescriptor,
-          ListNotificationChannelDescriptorsPage,
+          ListNotificationChannelDescriptorsRequest, ListNotificationChannelDescriptorsResponse,
+          NotificationChannelDescriptor, ListNotificationChannelDescriptorsPage,
           ListNotificationChannelDescriptorsFixedSizeCollection> {
 
     public static ApiFuture<ListNotificationChannelDescriptorsPagedResponse> createAsync(
         PageContext<
                 ListNotificationChannelDescriptorsRequest,
-                ListNotificationChannelDescriptorsResponse,
-                NotificationChannelDescriptor>
+                ListNotificationChannelDescriptorsResponse, NotificationChannelDescriptor>
             context,
         ApiFuture<ListNotificationChannelDescriptorsResponse> futureResponse) {
       ApiFuture<ListNotificationChannelDescriptorsPage> futurePage =
@@ -1851,16 +1848,13 @@ public class NotificationChannelServiceClient implements BackgroundResource {
 
   public static class ListNotificationChannelDescriptorsPage
       extends AbstractPage<
-          ListNotificationChannelDescriptorsRequest,
-          ListNotificationChannelDescriptorsResponse,
-          NotificationChannelDescriptor,
-          ListNotificationChannelDescriptorsPage> {
+          ListNotificationChannelDescriptorsRequest, ListNotificationChannelDescriptorsResponse,
+          NotificationChannelDescriptor, ListNotificationChannelDescriptorsPage> {
 
     private ListNotificationChannelDescriptorsPage(
         PageContext<
                 ListNotificationChannelDescriptorsRequest,
-                ListNotificationChannelDescriptorsResponse,
-                NotificationChannelDescriptor>
+                ListNotificationChannelDescriptorsResponse, NotificationChannelDescriptor>
             context,
         ListNotificationChannelDescriptorsResponse response) {
       super(context, response);
@@ -1874,8 +1868,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
     protected ListNotificationChannelDescriptorsPage createPage(
         PageContext<
                 ListNotificationChannelDescriptorsRequest,
-                ListNotificationChannelDescriptorsResponse,
-                NotificationChannelDescriptor>
+                ListNotificationChannelDescriptorsResponse, NotificationChannelDescriptor>
             context,
         ListNotificationChannelDescriptorsResponse response) {
       return new ListNotificationChannelDescriptorsPage(context, response);
@@ -1885,8 +1878,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
     public ApiFuture<ListNotificationChannelDescriptorsPage> createPageAsync(
         PageContext<
                 ListNotificationChannelDescriptorsRequest,
-                ListNotificationChannelDescriptorsResponse,
-                NotificationChannelDescriptor>
+                ListNotificationChannelDescriptorsResponse, NotificationChannelDescriptor>
             context,
         ApiFuture<ListNotificationChannelDescriptorsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1895,10 +1887,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
 
   public static class ListNotificationChannelDescriptorsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListNotificationChannelDescriptorsRequest,
-          ListNotificationChannelDescriptorsResponse,
-          NotificationChannelDescriptor,
-          ListNotificationChannelDescriptorsPage,
+          ListNotificationChannelDescriptorsRequest, ListNotificationChannelDescriptorsResponse,
+          NotificationChannelDescriptor, ListNotificationChannelDescriptorsPage,
           ListNotificationChannelDescriptorsFixedSizeCollection> {
 
     private ListNotificationChannelDescriptorsFixedSizeCollection(
@@ -1919,16 +1909,12 @@ public class NotificationChannelServiceClient implements BackgroundResource {
 
   public static class ListNotificationChannelsPagedResponse
       extends AbstractPagedListResponse<
-          ListNotificationChannelsRequest,
-          ListNotificationChannelsResponse,
-          NotificationChannel,
-          ListNotificationChannelsPage,
-          ListNotificationChannelsFixedSizeCollection> {
+          ListNotificationChannelsRequest, ListNotificationChannelsResponse, NotificationChannel,
+          ListNotificationChannelsPage, ListNotificationChannelsFixedSizeCollection> {
 
     public static ApiFuture<ListNotificationChannelsPagedResponse> createAsync(
         PageContext<
-                ListNotificationChannelsRequest,
-                ListNotificationChannelsResponse,
+                ListNotificationChannelsRequest, ListNotificationChannelsResponse,
                 NotificationChannel>
             context,
         ApiFuture<ListNotificationChannelsResponse> futureResponse) {
@@ -1952,15 +1938,12 @@ public class NotificationChannelServiceClient implements BackgroundResource {
 
   public static class ListNotificationChannelsPage
       extends AbstractPage<
-          ListNotificationChannelsRequest,
-          ListNotificationChannelsResponse,
-          NotificationChannel,
+          ListNotificationChannelsRequest, ListNotificationChannelsResponse, NotificationChannel,
           ListNotificationChannelsPage> {
 
     private ListNotificationChannelsPage(
         PageContext<
-                ListNotificationChannelsRequest,
-                ListNotificationChannelsResponse,
+                ListNotificationChannelsRequest, ListNotificationChannelsResponse,
                 NotificationChannel>
             context,
         ListNotificationChannelsResponse response) {
@@ -1974,8 +1957,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
     @Override
     protected ListNotificationChannelsPage createPage(
         PageContext<
-                ListNotificationChannelsRequest,
-                ListNotificationChannelsResponse,
+                ListNotificationChannelsRequest, ListNotificationChannelsResponse,
                 NotificationChannel>
             context,
         ListNotificationChannelsResponse response) {
@@ -1985,8 +1967,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
     @Override
     public ApiFuture<ListNotificationChannelsPage> createPageAsync(
         PageContext<
-                ListNotificationChannelsRequest,
-                ListNotificationChannelsResponse,
+                ListNotificationChannelsRequest, ListNotificationChannelsResponse,
                 NotificationChannel>
             context,
         ApiFuture<ListNotificationChannelsResponse> futureResponse) {
@@ -1996,11 +1977,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
 
   public static class ListNotificationChannelsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListNotificationChannelsRequest,
-          ListNotificationChannelsResponse,
-          NotificationChannel,
-          ListNotificationChannelsPage,
-          ListNotificationChannelsFixedSizeCollection> {
+          ListNotificationChannelsRequest, ListNotificationChannelsResponse, NotificationChannel,
+          ListNotificationChannelsPage, ListNotificationChannelsFixedSizeCollection> {
 
     private ListNotificationChannelsFixedSizeCollection(
         List<ListNotificationChannelsPage> pages, int collectionSize) {

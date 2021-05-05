@@ -89,9 +89,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (cloudiot.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (cloudiot.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -131,8 +131,7 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
       updateDeviceRegistrySettings;
   private final UnaryCallSettings<DeleteDeviceRegistryRequest, Empty> deleteDeviceRegistrySettings;
   private final PagedCallSettings<
-          ListDeviceRegistriesRequest,
-          ListDeviceRegistriesResponse,
+          ListDeviceRegistriesRequest, ListDeviceRegistriesResponse,
           ListDeviceRegistriesPagedResponse>
       listDeviceRegistriesSettings;
   private final UnaryCallSettings<CreateDeviceRequest, Device> createDeviceSettings;
@@ -235,13 +234,11 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
           };
 
   private static final PagedListResponseFactory<
-          ListDeviceRegistriesRequest,
-          ListDeviceRegistriesResponse,
+          ListDeviceRegistriesRequest, ListDeviceRegistriesResponse,
           ListDeviceRegistriesPagedResponse>
       LIST_DEVICE_REGISTRIES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListDeviceRegistriesRequest,
-              ListDeviceRegistriesResponse,
+              ListDeviceRegistriesRequest, ListDeviceRegistriesResponse,
               ListDeviceRegistriesPagedResponse>() {
             @Override
             public ApiFuture<ListDeviceRegistriesPagedResponse> getFuturePagedResponse(
@@ -298,8 +295,7 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
 
   /** Returns the object with the settings used for calls to listDeviceRegistries. */
   public PagedCallSettings<
-          ListDeviceRegistriesRequest,
-          ListDeviceRegistriesResponse,
+          ListDeviceRegistriesRequest, ListDeviceRegistriesResponse,
           ListDeviceRegistriesPagedResponse>
       listDeviceRegistriesSettings() {
     return listDeviceRegistriesSettings;
@@ -485,8 +481,7 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
     private final UnaryCallSettings.Builder<DeleteDeviceRegistryRequest, Empty>
         deleteDeviceRegistrySettings;
     private final PagedCallSettings.Builder<
-            ListDeviceRegistriesRequest,
-            ListDeviceRegistriesResponse,
+            ListDeviceRegistriesRequest, ListDeviceRegistriesResponse,
             ListDeviceRegistriesPagedResponse>
         listDeviceRegistriesSettings;
     private final UnaryCallSettings.Builder<CreateDeviceRequest, Device> createDeviceSettings;
@@ -825,8 +820,7 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
 
     /** Returns the builder for the settings used for calls to listDeviceRegistries. */
     public PagedCallSettings.Builder<
-            ListDeviceRegistriesRequest,
-            ListDeviceRegistriesResponse,
+            ListDeviceRegistriesRequest, ListDeviceRegistriesResponse,
             ListDeviceRegistriesPagedResponse>
         listDeviceRegistriesSettings() {
       return listDeviceRegistriesSettings;

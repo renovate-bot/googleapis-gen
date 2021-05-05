@@ -48,8 +48,7 @@ public abstract class AssetServiceStub implements BackgroundResource {
   }
 
   public OperationCallable<
-          ExportIamPolicyAnalysisRequest,
-          ExportIamPolicyAnalysisResponse,
+          ExportIamPolicyAnalysisRequest, ExportIamPolicyAnalysisResponse,
           ExportIamPolicyAnalysisRequest>
       exportIamPolicyAnalysisOperationCallable() {
     throw new UnsupportedOperationException(

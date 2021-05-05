@@ -61,13 +61,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -1411,10 +1411,7 @@ public class ModelServiceClient implements BackgroundResource {
 
   public static class ListModelsPagedResponse
       extends AbstractPagedListResponse<
-          ListModelsRequest,
-          ListModelsResponse,
-          Model,
-          ListModelsPage,
+          ListModelsRequest, ListModelsResponse, Model, ListModelsPage,
           ListModelsFixedSizeCollection> {
 
     public static ApiFuture<ListModelsPagedResponse> createAsync(
@@ -1468,10 +1465,7 @@ public class ModelServiceClient implements BackgroundResource {
 
   public static class ListModelsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListModelsRequest,
-          ListModelsResponse,
-          Model,
-          ListModelsPage,
+          ListModelsRequest, ListModelsResponse, Model, ListModelsPage,
           ListModelsFixedSizeCollection> {
 
     private ListModelsFixedSizeCollection(List<ListModelsPage> pages, int collectionSize) {
@@ -1491,11 +1485,8 @@ public class ModelServiceClient implements BackgroundResource {
 
   public static class ListModelEvaluationsPagedResponse
       extends AbstractPagedListResponse<
-          ListModelEvaluationsRequest,
-          ListModelEvaluationsResponse,
-          ModelEvaluation,
-          ListModelEvaluationsPage,
-          ListModelEvaluationsFixedSizeCollection> {
+          ListModelEvaluationsRequest, ListModelEvaluationsResponse, ModelEvaluation,
+          ListModelEvaluationsPage, ListModelEvaluationsFixedSizeCollection> {
 
     public static ApiFuture<ListModelEvaluationsPagedResponse> createAsync(
         PageContext<ListModelEvaluationsRequest, ListModelEvaluationsResponse, ModelEvaluation>
@@ -1521,9 +1512,7 @@ public class ModelServiceClient implements BackgroundResource {
 
   public static class ListModelEvaluationsPage
       extends AbstractPage<
-          ListModelEvaluationsRequest,
-          ListModelEvaluationsResponse,
-          ModelEvaluation,
+          ListModelEvaluationsRequest, ListModelEvaluationsResponse, ModelEvaluation,
           ListModelEvaluationsPage> {
 
     private ListModelEvaluationsPage(
@@ -1556,11 +1545,8 @@ public class ModelServiceClient implements BackgroundResource {
 
   public static class ListModelEvaluationsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListModelEvaluationsRequest,
-          ListModelEvaluationsResponse,
-          ModelEvaluation,
-          ListModelEvaluationsPage,
-          ListModelEvaluationsFixedSizeCollection> {
+          ListModelEvaluationsRequest, ListModelEvaluationsResponse, ModelEvaluation,
+          ListModelEvaluationsPage, ListModelEvaluationsFixedSizeCollection> {
 
     private ListModelEvaluationsFixedSizeCollection(
         List<ListModelEvaluationsPage> pages, int collectionSize) {
@@ -1580,16 +1566,12 @@ public class ModelServiceClient implements BackgroundResource {
 
   public static class ListModelEvaluationSlicesPagedResponse
       extends AbstractPagedListResponse<
-          ListModelEvaluationSlicesRequest,
-          ListModelEvaluationSlicesResponse,
-          ModelEvaluationSlice,
-          ListModelEvaluationSlicesPage,
-          ListModelEvaluationSlicesFixedSizeCollection> {
+          ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesResponse, ModelEvaluationSlice,
+          ListModelEvaluationSlicesPage, ListModelEvaluationSlicesFixedSizeCollection> {
 
     public static ApiFuture<ListModelEvaluationSlicesPagedResponse> createAsync(
         PageContext<
-                ListModelEvaluationSlicesRequest,
-                ListModelEvaluationSlicesResponse,
+                ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesResponse,
                 ModelEvaluationSlice>
             context,
         ApiFuture<ListModelEvaluationSlicesResponse> futureResponse) {
@@ -1614,15 +1596,12 @@ public class ModelServiceClient implements BackgroundResource {
 
   public static class ListModelEvaluationSlicesPage
       extends AbstractPage<
-          ListModelEvaluationSlicesRequest,
-          ListModelEvaluationSlicesResponse,
-          ModelEvaluationSlice,
+          ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesResponse, ModelEvaluationSlice,
           ListModelEvaluationSlicesPage> {
 
     private ListModelEvaluationSlicesPage(
         PageContext<
-                ListModelEvaluationSlicesRequest,
-                ListModelEvaluationSlicesResponse,
+                ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesResponse,
                 ModelEvaluationSlice>
             context,
         ListModelEvaluationSlicesResponse response) {
@@ -1636,8 +1615,7 @@ public class ModelServiceClient implements BackgroundResource {
     @Override
     protected ListModelEvaluationSlicesPage createPage(
         PageContext<
-                ListModelEvaluationSlicesRequest,
-                ListModelEvaluationSlicesResponse,
+                ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesResponse,
                 ModelEvaluationSlice>
             context,
         ListModelEvaluationSlicesResponse response) {
@@ -1647,8 +1625,7 @@ public class ModelServiceClient implements BackgroundResource {
     @Override
     public ApiFuture<ListModelEvaluationSlicesPage> createPageAsync(
         PageContext<
-                ListModelEvaluationSlicesRequest,
-                ListModelEvaluationSlicesResponse,
+                ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesResponse,
                 ModelEvaluationSlice>
             context,
         ApiFuture<ListModelEvaluationSlicesResponse> futureResponse) {
@@ -1658,11 +1635,8 @@ public class ModelServiceClient implements BackgroundResource {
 
   public static class ListModelEvaluationSlicesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListModelEvaluationSlicesRequest,
-          ListModelEvaluationSlicesResponse,
-          ModelEvaluationSlice,
-          ListModelEvaluationSlicesPage,
-          ListModelEvaluationSlicesFixedSizeCollection> {
+          ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesResponse, ModelEvaluationSlice,
+          ListModelEvaluationSlicesPage, ListModelEvaluationSlicesFixedSizeCollection> {
 
     private ListModelEvaluationSlicesFixedSizeCollection(
         List<ListModelEvaluationSlicesPage> pages, int collectionSize) {

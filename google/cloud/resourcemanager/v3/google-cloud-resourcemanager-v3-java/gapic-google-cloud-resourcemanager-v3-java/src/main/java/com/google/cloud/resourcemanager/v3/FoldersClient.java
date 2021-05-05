@@ -67,13 +67,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -453,15 +453,15 @@ public class FoldersClient implements BackgroundResource {
    *     state, lifecycleState | Filters by state. |
    *     <p>Some example queries are:
    *     <ul>
-   *       <li>Query `displayName=Test&#42;` returns Folder resources whose display name starts with
-   *           "Test".
-   *       <li>Query `state=ACTIVE` returns Folder resources with `state` set to `ACTIVE`.
-   *       <li>Query `parent=folders/123` returns Folder resources that have `folders/123` as a
+   *       <li> Query `displayName=Test&#42;` returns Folder resources whose display name starts
+   *           with "Test".
+   *       <li> Query `state=ACTIVE` returns Folder resources with `state` set to `ACTIVE`.
+   *       <li> Query `parent=folders/123` returns Folder resources that have `folders/123` as a
    *           parent resource.
-   *       <li>Query `parent=folders/123 AND state=ACTIVE` returns active Folder resources that have
-   *           `folders/123` as a parent resource.
-   *       <li>Query `displayName=\\\\"Test String\\\\"` returns Folder resources with display names
-   *           that include both "Test" and "String".
+   *       <li> Query `parent=folders/123 AND state=ACTIVE` returns active Folder resources that
+   *           have `folders/123` as a parent resource.
+   *       <li> Query `displayName=\\\\"Test String\\\\"` returns Folder resources with display
+   *           names that include both "Test" and "String".
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1807,10 +1807,7 @@ public class FoldersClient implements BackgroundResource {
 
   public static class ListFoldersPagedResponse
       extends AbstractPagedListResponse<
-          ListFoldersRequest,
-          ListFoldersResponse,
-          Folder,
-          ListFoldersPage,
+          ListFoldersRequest, ListFoldersResponse, Folder, ListFoldersPage,
           ListFoldersFixedSizeCollection> {
 
     public static ApiFuture<ListFoldersPagedResponse> createAsync(
@@ -1864,10 +1861,7 @@ public class FoldersClient implements BackgroundResource {
 
   public static class ListFoldersFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListFoldersRequest,
-          ListFoldersResponse,
-          Folder,
-          ListFoldersPage,
+          ListFoldersRequest, ListFoldersResponse, Folder, ListFoldersPage,
           ListFoldersFixedSizeCollection> {
 
     private ListFoldersFixedSizeCollection(List<ListFoldersPage> pages, int collectionSize) {
@@ -1887,10 +1881,7 @@ public class FoldersClient implements BackgroundResource {
 
   public static class SearchFoldersPagedResponse
       extends AbstractPagedListResponse<
-          SearchFoldersRequest,
-          SearchFoldersResponse,
-          Folder,
-          SearchFoldersPage,
+          SearchFoldersRequest, SearchFoldersResponse, Folder, SearchFoldersPage,
           SearchFoldersFixedSizeCollection> {
 
     public static ApiFuture<SearchFoldersPagedResponse> createAsync(
@@ -1944,10 +1935,7 @@ public class FoldersClient implements BackgroundResource {
 
   public static class SearchFoldersFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          SearchFoldersRequest,
-          SearchFoldersResponse,
-          Folder,
-          SearchFoldersPage,
+          SearchFoldersRequest, SearchFoldersResponse, Folder, SearchFoldersPage,
           SearchFoldersFixedSizeCollection> {
 
     private SearchFoldersFixedSizeCollection(List<SearchFoldersPage> pages, int collectionSize) {

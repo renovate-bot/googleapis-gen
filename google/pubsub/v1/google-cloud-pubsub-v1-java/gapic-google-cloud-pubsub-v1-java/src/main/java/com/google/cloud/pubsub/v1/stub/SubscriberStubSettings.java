@@ -415,8 +415,7 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
           ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
       LIST_SUBSCRIPTIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListSubscriptionsRequest,
-              ListSubscriptionsResponse,
+              ListSubscriptionsRequest, ListSubscriptionsResponse,
               ListSubscriptionsPagedResponse>() {
             @Override
             public ApiFuture<ListSubscriptionsPagedResponse> getFuturePagedResponse(

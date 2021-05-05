@@ -69,9 +69,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (gameservices.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (gameservices.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -104,8 +104,7 @@ public class GameServerConfigsServiceStubSettings
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
   private final PagedCallSettings<
-          ListGameServerConfigsRequest,
-          ListGameServerConfigsResponse,
+          ListGameServerConfigsRequest, ListGameServerConfigsResponse,
           ListGameServerConfigsPagedResponse>
       listGameServerConfigsSettings;
   private final UnaryCallSettings<GetGameServerConfigRequest, GameServerConfig>
@@ -162,13 +161,11 @@ public class GameServerConfigsServiceStubSettings
           };
 
   private static final PagedListResponseFactory<
-          ListGameServerConfigsRequest,
-          ListGameServerConfigsResponse,
+          ListGameServerConfigsRequest, ListGameServerConfigsResponse,
           ListGameServerConfigsPagedResponse>
       LIST_GAME_SERVER_CONFIGS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListGameServerConfigsRequest,
-              ListGameServerConfigsResponse,
+              ListGameServerConfigsRequest, ListGameServerConfigsResponse,
               ListGameServerConfigsPagedResponse>() {
             @Override
             public ApiFuture<ListGameServerConfigsPagedResponse> getFuturePagedResponse(
@@ -187,8 +184,7 @@ public class GameServerConfigsServiceStubSettings
 
   /** Returns the object with the settings used for calls to listGameServerConfigs. */
   public PagedCallSettings<
-          ListGameServerConfigsRequest,
-          ListGameServerConfigsResponse,
+          ListGameServerConfigsRequest, ListGameServerConfigsResponse,
           ListGameServerConfigsPagedResponse>
       listGameServerConfigsSettings() {
     return listGameServerConfigsSettings;
@@ -308,8 +304,7 @@ public class GameServerConfigsServiceStubSettings
       extends StubSettings.Builder<GameServerConfigsServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final PagedCallSettings.Builder<
-            ListGameServerConfigsRequest,
-            ListGameServerConfigsResponse,
+            ListGameServerConfigsRequest, ListGameServerConfigsResponse,
             ListGameServerConfigsPagedResponse>
         listGameServerConfigsSettings;
     private final UnaryCallSettings.Builder<GetGameServerConfigRequest, GameServerConfig>
@@ -510,8 +505,7 @@ public class GameServerConfigsServiceStubSettings
 
     /** Returns the builder for the settings used for calls to listGameServerConfigs. */
     public PagedCallSettings.Builder<
-            ListGameServerConfigsRequest,
-            ListGameServerConfigsResponse,
+            ListGameServerConfigsRequest, ListGameServerConfigsResponse,
             ListGameServerConfigsPagedResponse>
         listGameServerConfigsSettings() {
       return listGameServerConfigsSettings;

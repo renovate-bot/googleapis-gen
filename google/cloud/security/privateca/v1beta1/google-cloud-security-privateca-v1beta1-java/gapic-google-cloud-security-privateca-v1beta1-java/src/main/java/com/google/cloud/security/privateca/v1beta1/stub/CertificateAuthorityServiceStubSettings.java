@@ -94,9 +94,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (privateca.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (privateca.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -161,8 +161,7 @@ public class CertificateAuthorityServiceStubSettings
   private final UnaryCallSettings<GetCertificateAuthorityRequest, CertificateAuthority>
       getCertificateAuthoritySettings;
   private final PagedCallSettings<
-          ListCertificateAuthoritiesRequest,
-          ListCertificateAuthoritiesResponse,
+          ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesResponse,
           ListCertificateAuthoritiesPagedResponse>
       listCertificateAuthoritiesSettings;
   private final UnaryCallSettings<RestoreCertificateAuthorityRequest, Operation>
@@ -183,8 +182,7 @@ public class CertificateAuthorityServiceStubSettings
   private final UnaryCallSettings<GetCertificateRevocationListRequest, CertificateRevocationList>
       getCertificateRevocationListSettings;
   private final PagedCallSettings<
-          ListCertificateRevocationListsRequest,
-          ListCertificateRevocationListsResponse,
+          ListCertificateRevocationListsRequest, ListCertificateRevocationListsResponse,
           ListCertificateRevocationListsPagedResponse>
       listCertificateRevocationListsSettings;
   private final UnaryCallSettings<UpdateCertificateRevocationListRequest, Operation>
@@ -239,13 +237,11 @@ public class CertificateAuthorityServiceStubSettings
           };
 
   private static final PagedListDescriptor<
-          ListCertificateAuthoritiesRequest,
-          ListCertificateAuthoritiesResponse,
+          ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesResponse,
           CertificateAuthority>
       LIST_CERTIFICATE_AUTHORITIES_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ListCertificateAuthoritiesRequest,
-              ListCertificateAuthoritiesResponse,
+              ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesResponse,
               CertificateAuthority>() {
             @Override
             public String emptyToken() {
@@ -288,13 +284,11 @@ public class CertificateAuthorityServiceStubSettings
           };
 
   private static final PagedListDescriptor<
-          ListCertificateRevocationListsRequest,
-          ListCertificateRevocationListsResponse,
+          ListCertificateRevocationListsRequest, ListCertificateRevocationListsResponse,
           CertificateRevocationList>
       LIST_CERTIFICATE_REVOCATION_LISTS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ListCertificateRevocationListsRequest,
-              ListCertificateRevocationListsResponse,
+              ListCertificateRevocationListsRequest, ListCertificateRevocationListsResponse,
               CertificateRevocationList>() {
             @Override
             public String emptyToken() {
@@ -396,13 +390,11 @@ public class CertificateAuthorityServiceStubSettings
           };
 
   private static final PagedListResponseFactory<
-          ListCertificateAuthoritiesRequest,
-          ListCertificateAuthoritiesResponse,
+          ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesResponse,
           ListCertificateAuthoritiesPagedResponse>
       LIST_CERTIFICATE_AUTHORITIES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListCertificateAuthoritiesRequest,
-              ListCertificateAuthoritiesResponse,
+              ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesResponse,
               ListCertificateAuthoritiesPagedResponse>() {
             @Override
             public ApiFuture<ListCertificateAuthoritiesPagedResponse> getFuturePagedResponse(
@@ -412,8 +404,7 @@ public class CertificateAuthorityServiceStubSettings
                 ApiCallContext context,
                 ApiFuture<ListCertificateAuthoritiesResponse> futureResponse) {
               PageContext<
-                      ListCertificateAuthoritiesRequest,
-                      ListCertificateAuthoritiesResponse,
+                      ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesResponse,
                       CertificateAuthority>
                   pageContext =
                       PageContext.create(
@@ -424,13 +415,11 @@ public class CertificateAuthorityServiceStubSettings
           };
 
   private static final PagedListResponseFactory<
-          ListCertificateRevocationListsRequest,
-          ListCertificateRevocationListsResponse,
+          ListCertificateRevocationListsRequest, ListCertificateRevocationListsResponse,
           ListCertificateRevocationListsPagedResponse>
       LIST_CERTIFICATE_REVOCATION_LISTS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListCertificateRevocationListsRequest,
-              ListCertificateRevocationListsResponse,
+              ListCertificateRevocationListsRequest, ListCertificateRevocationListsResponse,
               ListCertificateRevocationListsPagedResponse>() {
             @Override
             public ApiFuture<ListCertificateRevocationListsPagedResponse> getFuturePagedResponse(
@@ -442,8 +431,7 @@ public class CertificateAuthorityServiceStubSettings
                 ApiCallContext context,
                 ApiFuture<ListCertificateRevocationListsResponse> futureResponse) {
               PageContext<
-                      ListCertificateRevocationListsRequest,
-                      ListCertificateRevocationListsResponse,
+                      ListCertificateRevocationListsRequest, ListCertificateRevocationListsResponse,
                       CertificateRevocationList>
                   pageContext =
                       PageContext.create(
@@ -460,8 +448,7 @@ public class CertificateAuthorityServiceStubSettings
           ListReusableConfigsRequest, ListReusableConfigsResponse, ListReusableConfigsPagedResponse>
       LIST_REUSABLE_CONFIGS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListReusableConfigsRequest,
-              ListReusableConfigsResponse,
+              ListReusableConfigsRequest, ListReusableConfigsResponse,
               ListReusableConfigsPagedResponse>() {
             @Override
             public ApiFuture<ListReusableConfigsPagedResponse> getFuturePagedResponse(
@@ -571,8 +558,7 @@ public class CertificateAuthorityServiceStubSettings
 
   /** Returns the object with the settings used for calls to listCertificateAuthorities. */
   public PagedCallSettings<
-          ListCertificateAuthoritiesRequest,
-          ListCertificateAuthoritiesResponse,
+          ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesResponse,
           ListCertificateAuthoritiesPagedResponse>
       listCertificateAuthoritiesSettings() {
     return listCertificateAuthoritiesSettings;
@@ -625,8 +611,7 @@ public class CertificateAuthorityServiceStubSettings
 
   /** Returns the object with the settings used for calls to listCertificateRevocationLists. */
   public PagedCallSettings<
-          ListCertificateRevocationListsRequest,
-          ListCertificateRevocationListsResponse,
+          ListCertificateRevocationListsRequest, ListCertificateRevocationListsResponse,
           ListCertificateRevocationListsPagedResponse>
       listCertificateRevocationListsSettings() {
     return listCertificateRevocationListsSettings;
@@ -817,8 +802,7 @@ public class CertificateAuthorityServiceStubSettings
     private final UnaryCallSettings.Builder<GetCertificateAuthorityRequest, CertificateAuthority>
         getCertificateAuthoritySettings;
     private final PagedCallSettings.Builder<
-            ListCertificateAuthoritiesRequest,
-            ListCertificateAuthoritiesResponse,
+            ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesResponse,
             ListCertificateAuthoritiesPagedResponse>
         listCertificateAuthoritiesSettings;
     private final UnaryCallSettings.Builder<RestoreCertificateAuthorityRequest, Operation>
@@ -840,8 +824,7 @@ public class CertificateAuthorityServiceStubSettings
             GetCertificateRevocationListRequest, CertificateRevocationList>
         getCertificateRevocationListSettings;
     private final PagedCallSettings.Builder<
-            ListCertificateRevocationListsRequest,
-            ListCertificateRevocationListsResponse,
+            ListCertificateRevocationListsRequest, ListCertificateRevocationListsResponse,
             ListCertificateRevocationListsPagedResponse>
         listCertificateRevocationListsSettings;
     private final UnaryCallSettings.Builder<UpdateCertificateRevocationListRequest, Operation>
@@ -852,8 +835,7 @@ public class CertificateAuthorityServiceStubSettings
     private final UnaryCallSettings.Builder<GetReusableConfigRequest, ReusableConfig>
         getReusableConfigSettings;
     private final PagedCallSettings.Builder<
-            ListReusableConfigsRequest,
-            ListReusableConfigsResponse,
+            ListReusableConfigsRequest, ListReusableConfigsResponse,
             ListReusableConfigsPagedResponse>
         listReusableConfigsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
@@ -1464,8 +1446,7 @@ public class CertificateAuthorityServiceStubSettings
 
     /** Returns the builder for the settings used for calls to listCertificateAuthorities. */
     public PagedCallSettings.Builder<
-            ListCertificateAuthoritiesRequest,
-            ListCertificateAuthoritiesResponse,
+            ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesResponse,
             ListCertificateAuthoritiesPagedResponse>
         listCertificateAuthoritiesSettings() {
       return listCertificateAuthoritiesSettings;
@@ -1528,8 +1509,7 @@ public class CertificateAuthorityServiceStubSettings
 
     /** Returns the builder for the settings used for calls to listCertificateRevocationLists. */
     public PagedCallSettings.Builder<
-            ListCertificateRevocationListsRequest,
-            ListCertificateRevocationListsResponse,
+            ListCertificateRevocationListsRequest, ListCertificateRevocationListsResponse,
             ListCertificateRevocationListsPagedResponse>
         listCertificateRevocationListsSettings() {
       return listCertificateRevocationListsSettings;
@@ -1558,8 +1538,7 @@ public class CertificateAuthorityServiceStubSettings
 
     /** Returns the builder for the settings used for calls to listReusableConfigs. */
     public PagedCallSettings.Builder<
-            ListReusableConfigsRequest,
-            ListReusableConfigsResponse,
+            ListReusableConfigsRequest, ListReusableConfigsResponse,
             ListReusableConfigsPagedResponse>
         listReusableConfigsSettings() {
       return listReusableConfigsSettings;

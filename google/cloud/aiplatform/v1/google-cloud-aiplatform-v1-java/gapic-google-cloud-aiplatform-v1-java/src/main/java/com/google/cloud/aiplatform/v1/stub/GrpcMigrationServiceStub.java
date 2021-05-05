@@ -82,8 +82,7 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
   private final UnaryCallable<BatchMigrateResourcesRequest, Operation>
       batchMigrateResourcesCallable;
   private final OperationCallable<
-          BatchMigrateResourcesRequest,
-          BatchMigrateResourcesResponse,
+          BatchMigrateResourcesRequest, BatchMigrateResourcesResponse,
           BatchMigrateResourcesOperationMetadata>
       batchMigrateResourcesOperationCallable;
 
@@ -210,8 +209,7 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
 
   @Override
   public OperationCallable<
-          BatchMigrateResourcesRequest,
-          BatchMigrateResourcesResponse,
+          BatchMigrateResourcesRequest, BatchMigrateResourcesResponse,
           BatchMigrateResourcesOperationMetadata>
       batchMigrateResourcesOperationCallable() {
     return batchMigrateResourcesOperationCallable;

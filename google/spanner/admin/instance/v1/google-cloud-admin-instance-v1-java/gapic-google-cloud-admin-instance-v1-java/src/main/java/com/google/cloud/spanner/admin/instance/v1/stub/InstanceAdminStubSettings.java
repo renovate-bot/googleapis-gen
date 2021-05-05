@@ -81,9 +81,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (spanner.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (spanner.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -216,8 +216,7 @@ public class InstanceAdminStubSettings extends StubSettings<InstanceAdminStubSet
           ListInstanceConfigsRequest, ListInstanceConfigsResponse, ListInstanceConfigsPagedResponse>
       LIST_INSTANCE_CONFIGS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListInstanceConfigsRequest,
-              ListInstanceConfigsResponse,
+              ListInstanceConfigsRequest, ListInstanceConfigsResponse,
               ListInstanceConfigsPagedResponse>() {
             @Override
             public ApiFuture<ListInstanceConfigsPagedResponse> getFuturePagedResponse(
@@ -403,8 +402,7 @@ public class InstanceAdminStubSettings extends StubSettings<InstanceAdminStubSet
   public static class Builder extends StubSettings.Builder<InstanceAdminStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final PagedCallSettings.Builder<
-            ListInstanceConfigsRequest,
-            ListInstanceConfigsResponse,
+            ListInstanceConfigsRequest, ListInstanceConfigsResponse,
             ListInstanceConfigsPagedResponse>
         listInstanceConfigsSettings;
     private final UnaryCallSettings.Builder<GetInstanceConfigRequest, InstanceConfig>
@@ -694,8 +692,7 @@ public class InstanceAdminStubSettings extends StubSettings<InstanceAdminStubSet
 
     /** Returns the builder for the settings used for calls to listInstanceConfigs. */
     public PagedCallSettings.Builder<
-            ListInstanceConfigsRequest,
-            ListInstanceConfigsResponse,
+            ListInstanceConfigsRequest, ListInstanceConfigsResponse,
             ListInstanceConfigsPagedResponse>
         listInstanceConfigsSettings() {
       return listInstanceConfigsSettings;

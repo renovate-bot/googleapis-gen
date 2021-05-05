@@ -62,13 +62,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -1977,10 +1977,7 @@ public class ApiGatewayServiceClient implements BackgroundResource {
 
   public static class ListGatewaysPagedResponse
       extends AbstractPagedListResponse<
-          ListGatewaysRequest,
-          ListGatewaysResponse,
-          Gateway,
-          ListGatewaysPage,
+          ListGatewaysRequest, ListGatewaysResponse, Gateway, ListGatewaysPage,
           ListGatewaysFixedSizeCollection> {
 
     public static ApiFuture<ListGatewaysPagedResponse> createAsync(
@@ -2034,10 +2031,7 @@ public class ApiGatewayServiceClient implements BackgroundResource {
 
   public static class ListGatewaysFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListGatewaysRequest,
-          ListGatewaysResponse,
-          Gateway,
-          ListGatewaysPage,
+          ListGatewaysRequest, ListGatewaysResponse, Gateway, ListGatewaysPage,
           ListGatewaysFixedSizeCollection> {
 
     private ListGatewaysFixedSizeCollection(List<ListGatewaysPage> pages, int collectionSize) {
@@ -2127,10 +2121,7 @@ public class ApiGatewayServiceClient implements BackgroundResource {
 
   public static class ListApiConfigsPagedResponse
       extends AbstractPagedListResponse<
-          ListApiConfigsRequest,
-          ListApiConfigsResponse,
-          ApiConfig,
-          ListApiConfigsPage,
+          ListApiConfigsRequest, ListApiConfigsResponse, ApiConfig, ListApiConfigsPage,
           ListApiConfigsFixedSizeCollection> {
 
     public static ApiFuture<ListApiConfigsPagedResponse> createAsync(
@@ -2185,10 +2176,7 @@ public class ApiGatewayServiceClient implements BackgroundResource {
 
   public static class ListApiConfigsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListApiConfigsRequest,
-          ListApiConfigsResponse,
-          ApiConfig,
-          ListApiConfigsPage,
+          ListApiConfigsRequest, ListApiConfigsResponse, ApiConfig, ListApiConfigsPage,
           ListApiConfigsFixedSizeCollection> {
 
     private ListApiConfigsFixedSizeCollection(List<ListApiConfigsPage> pages, int collectionSize) {

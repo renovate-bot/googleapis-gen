@@ -61,13 +61,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -1377,10 +1377,7 @@ public class AIStreamsClient implements BackgroundResource {
 
   public static class ListClustersPagedResponse
       extends AbstractPagedListResponse<
-          ListClustersRequest,
-          ListClustersResponse,
-          Cluster,
-          ListClustersPage,
+          ListClustersRequest, ListClustersResponse, Cluster, ListClustersPage,
           ListClustersFixedSizeCollection> {
 
     public static ApiFuture<ListClustersPagedResponse> createAsync(
@@ -1434,10 +1431,7 @@ public class AIStreamsClient implements BackgroundResource {
 
   public static class ListClustersFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListClustersRequest,
-          ListClustersResponse,
-          Cluster,
-          ListClustersPage,
+          ListClustersRequest, ListClustersResponse, Cluster, ListClustersPage,
           ListClustersFixedSizeCollection> {
 
     private ListClustersFixedSizeCollection(List<ListClustersPage> pages, int collectionSize) {
@@ -1457,10 +1451,7 @@ public class AIStreamsClient implements BackgroundResource {
 
   public static class ListStreamsPagedResponse
       extends AbstractPagedListResponse<
-          ListStreamsRequest,
-          ListStreamsResponse,
-          Stream,
-          ListStreamsPage,
+          ListStreamsRequest, ListStreamsResponse, Stream, ListStreamsPage,
           ListStreamsFixedSizeCollection> {
 
     public static ApiFuture<ListStreamsPagedResponse> createAsync(
@@ -1514,10 +1505,7 @@ public class AIStreamsClient implements BackgroundResource {
 
   public static class ListStreamsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListStreamsRequest,
-          ListStreamsResponse,
-          Stream,
-          ListStreamsPage,
+          ListStreamsRequest, ListStreamsResponse, Stream, ListStreamsPage,
           ListStreamsFixedSizeCollection> {
 
     private ListStreamsFixedSizeCollection(List<ListStreamsPage> pages, int collectionSize) {

@@ -62,10 +62,10 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (recommendationengine.googleapis.com) and default port (443)
+ *   <li> The default service address (recommendationengine.googleapis.com) and default port (443)
  *       are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -101,21 +101,18 @@ public class PredictionApiKeyRegistryStubSettings
           CreatePredictionApiKeyRegistrationRequest, PredictionApiKeyRegistration>
       createPredictionApiKeyRegistrationSettings;
   private final PagedCallSettings<
-          ListPredictionApiKeyRegistrationsRequest,
-          ListPredictionApiKeyRegistrationsResponse,
+          ListPredictionApiKeyRegistrationsRequest, ListPredictionApiKeyRegistrationsResponse,
           ListPredictionApiKeyRegistrationsPagedResponse>
       listPredictionApiKeyRegistrationsSettings;
   private final UnaryCallSettings<DeletePredictionApiKeyRegistrationRequest, Empty>
       deletePredictionApiKeyRegistrationSettings;
 
   private static final PagedListDescriptor<
-          ListPredictionApiKeyRegistrationsRequest,
-          ListPredictionApiKeyRegistrationsResponse,
+          ListPredictionApiKeyRegistrationsRequest, ListPredictionApiKeyRegistrationsResponse,
           PredictionApiKeyRegistration>
       LIST_PREDICTION_API_KEY_REGISTRATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ListPredictionApiKeyRegistrationsRequest,
-              ListPredictionApiKeyRegistrationsResponse,
+              ListPredictionApiKeyRegistrationsRequest, ListPredictionApiKeyRegistrationsResponse,
               PredictionApiKeyRegistration>() {
             @Override
             public String emptyToken() {
@@ -158,13 +155,11 @@ public class PredictionApiKeyRegistryStubSettings
           };
 
   private static final PagedListResponseFactory<
-          ListPredictionApiKeyRegistrationsRequest,
-          ListPredictionApiKeyRegistrationsResponse,
+          ListPredictionApiKeyRegistrationsRequest, ListPredictionApiKeyRegistrationsResponse,
           ListPredictionApiKeyRegistrationsPagedResponse>
       LIST_PREDICTION_API_KEY_REGISTRATIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListPredictionApiKeyRegistrationsRequest,
-              ListPredictionApiKeyRegistrationsResponse,
+              ListPredictionApiKeyRegistrationsRequest, ListPredictionApiKeyRegistrationsResponse,
               ListPredictionApiKeyRegistrationsPagedResponse>() {
             @Override
             public ApiFuture<ListPredictionApiKeyRegistrationsPagedResponse> getFuturePagedResponse(
@@ -177,8 +172,7 @@ public class PredictionApiKeyRegistryStubSettings
                 ApiFuture<ListPredictionApiKeyRegistrationsResponse> futureResponse) {
               PageContext<
                       ListPredictionApiKeyRegistrationsRequest,
-                      ListPredictionApiKeyRegistrationsResponse,
-                      PredictionApiKeyRegistration>
+                      ListPredictionApiKeyRegistrationsResponse, PredictionApiKeyRegistration>
                   pageContext =
                       PageContext.create(
                           callable,
@@ -198,8 +192,7 @@ public class PredictionApiKeyRegistryStubSettings
 
   /** Returns the object with the settings used for calls to listPredictionApiKeyRegistrations. */
   public PagedCallSettings<
-          ListPredictionApiKeyRegistrationsRequest,
-          ListPredictionApiKeyRegistrationsResponse,
+          ListPredictionApiKeyRegistrationsRequest, ListPredictionApiKeyRegistrationsResponse,
           ListPredictionApiKeyRegistrationsPagedResponse>
       listPredictionApiKeyRegistrationsSettings() {
     return listPredictionApiKeyRegistrationsSettings;
@@ -296,8 +289,7 @@ public class PredictionApiKeyRegistryStubSettings
             CreatePredictionApiKeyRegistrationRequest, PredictionApiKeyRegistration>
         createPredictionApiKeyRegistrationSettings;
     private final PagedCallSettings.Builder<
-            ListPredictionApiKeyRegistrationsRequest,
-            ListPredictionApiKeyRegistrationsResponse,
+            ListPredictionApiKeyRegistrationsRequest, ListPredictionApiKeyRegistrationsResponse,
             ListPredictionApiKeyRegistrationsPagedResponse>
         listPredictionApiKeyRegistrationsSettings;
     private final UnaryCallSettings.Builder<DeletePredictionApiKeyRegistrationRequest, Empty>
@@ -429,8 +421,7 @@ public class PredictionApiKeyRegistryStubSettings
 
     /** Returns the builder for the settings used for calls to listPredictionApiKeyRegistrations. */
     public PagedCallSettings.Builder<
-            ListPredictionApiKeyRegistrationsRequest,
-            ListPredictionApiKeyRegistrationsResponse,
+            ListPredictionApiKeyRegistrationsRequest, ListPredictionApiKeyRegistrationsResponse,
             ListPredictionApiKeyRegistrationsPagedResponse>
         listPredictionApiKeyRegistrationsSettings() {
       return listPredictionApiKeyRegistrationsSettings;

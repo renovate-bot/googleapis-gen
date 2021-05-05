@@ -48,9 +48,9 @@ import javax.annotation.Generated;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (vision.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (vision.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -164,8 +164,7 @@ public class ProductSearchSettings extends ClientSettings<ProductSearchSettings>
 
   /** Returns the object with the settings used for calls to listProductsInProductSet. */
   public PagedCallSettings<
-          ListProductsInProductSetRequest,
-          ListProductsInProductSetResponse,
+          ListProductsInProductSetRequest, ListProductsInProductSetResponse,
           ListProductsInProductSetPagedResponse>
       listProductsInProductSetSettings() {
     return ((ProductSearchStubSettings) getStubSettings()).listProductsInProductSetSettings();
@@ -362,8 +361,7 @@ public class ProductSearchSettings extends ClientSettings<ProductSearchSettings>
 
     /** Returns the builder for the settings used for calls to listReferenceImages. */
     public PagedCallSettings.Builder<
-            ListReferenceImagesRequest,
-            ListReferenceImagesResponse,
+            ListReferenceImagesRequest, ListReferenceImagesResponse,
             ListReferenceImagesPagedResponse>
         listReferenceImagesSettings() {
       return getStubSettingsBuilder().listReferenceImagesSettings();
@@ -389,8 +387,7 @@ public class ProductSearchSettings extends ClientSettings<ProductSearchSettings>
 
     /** Returns the builder for the settings used for calls to listProductsInProductSet. */
     public PagedCallSettings.Builder<
-            ListProductsInProductSetRequest,
-            ListProductsInProductSetResponse,
+            ListProductsInProductSetRequest, ListProductsInProductSetResponse,
             ListProductsInProductSetPagedResponse>
         listProductsInProductSetSettings() {
       return getStubSettingsBuilder().listProductsInProductSetSettings();

@@ -63,9 +63,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (osconfig.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (osconfig.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -102,14 +102,12 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
   private final UnaryCallSettings<PatchJobs.CancelPatchJobRequest, PatchJobs.PatchJob>
       cancelPatchJobSettings;
   private final PagedCallSettings<
-          PatchJobs.ListPatchJobsRequest,
-          PatchJobs.ListPatchJobsResponse,
+          PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse,
           ListPatchJobsPagedResponse>
       listPatchJobsSettings;
   private final PagedCallSettings<
           PatchJobs.ListPatchJobInstanceDetailsRequest,
-          PatchJobs.ListPatchJobInstanceDetailsResponse,
-          ListPatchJobInstanceDetailsPagedResponse>
+          PatchJobs.ListPatchJobInstanceDetailsResponse, ListPatchJobInstanceDetailsPagedResponse>
       listPatchJobInstanceDetailsSettings;
   private final UnaryCallSettings<
           PatchDeployments.CreatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
@@ -119,8 +117,7 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
       getPatchDeploymentSettings;
   private final PagedCallSettings<
           PatchDeployments.ListPatchDeploymentsRequest,
-          PatchDeployments.ListPatchDeploymentsResponse,
-          ListPatchDeploymentsPagedResponse>
+          PatchDeployments.ListPatchDeploymentsResponse, ListPatchDeploymentsPagedResponse>
       listPatchDeploymentsSettings;
   private final UnaryCallSettings<PatchDeployments.DeletePatchDeploymentRequest, Empty>
       deletePatchDeploymentSettings;
@@ -129,8 +126,7 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
   private final UnaryCallSettings<GuestPolicies.GetGuestPolicyRequest, GuestPolicies.GuestPolicy>
       getGuestPolicySettings;
   private final PagedCallSettings<
-          GuestPolicies.ListGuestPoliciesRequest,
-          GuestPolicies.ListGuestPoliciesResponse,
+          GuestPolicies.ListGuestPoliciesRequest, GuestPolicies.ListGuestPoliciesResponse,
           ListGuestPoliciesPagedResponse>
       listGuestPoliciesSettings;
   private final UnaryCallSettings<GuestPolicies.UpdateGuestPolicyRequest, GuestPolicies.GuestPolicy>
@@ -145,8 +141,7 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
           PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse, PatchJobs.PatchJob>
       LIST_PATCH_JOBS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              PatchJobs.ListPatchJobsRequest,
-              PatchJobs.ListPatchJobsResponse,
+              PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse,
               PatchJobs.PatchJob>() {
             @Override
             public String emptyToken() {
@@ -188,13 +183,11 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
 
   private static final PagedListDescriptor<
           PatchJobs.ListPatchJobInstanceDetailsRequest,
-          PatchJobs.ListPatchJobInstanceDetailsResponse,
-          PatchJobs.PatchJobInstanceDetails>
+          PatchJobs.ListPatchJobInstanceDetailsResponse, PatchJobs.PatchJobInstanceDetails>
       LIST_PATCH_JOB_INSTANCE_DETAILS_PAGE_STR_DESC =
           new PagedListDescriptor<
               PatchJobs.ListPatchJobInstanceDetailsRequest,
-              PatchJobs.ListPatchJobInstanceDetailsResponse,
-              PatchJobs.PatchJobInstanceDetails>() {
+              PatchJobs.ListPatchJobInstanceDetailsResponse, PatchJobs.PatchJobInstanceDetails>() {
             @Override
             public String emptyToken() {
               return "";
@@ -237,13 +230,11 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
 
   private static final PagedListDescriptor<
           PatchDeployments.ListPatchDeploymentsRequest,
-          PatchDeployments.ListPatchDeploymentsResponse,
-          PatchDeployments.PatchDeployment>
+          PatchDeployments.ListPatchDeploymentsResponse, PatchDeployments.PatchDeployment>
       LIST_PATCH_DEPLOYMENTS_PAGE_STR_DESC =
           new PagedListDescriptor<
               PatchDeployments.ListPatchDeploymentsRequest,
-              PatchDeployments.ListPatchDeploymentsResponse,
-              PatchDeployments.PatchDeployment>() {
+              PatchDeployments.ListPatchDeploymentsResponse, PatchDeployments.PatchDeployment>() {
             @Override
             public String emptyToken() {
               return "";
@@ -285,13 +276,11 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
           };
 
   private static final PagedListDescriptor<
-          GuestPolicies.ListGuestPoliciesRequest,
-          GuestPolicies.ListGuestPoliciesResponse,
+          GuestPolicies.ListGuestPoliciesRequest, GuestPolicies.ListGuestPoliciesResponse,
           GuestPolicies.GuestPolicy>
       LIST_GUEST_POLICIES_PAGE_STR_DESC =
           new PagedListDescriptor<
-              GuestPolicies.ListGuestPoliciesRequest,
-              GuestPolicies.ListGuestPoliciesResponse,
+              GuestPolicies.ListGuestPoliciesRequest, GuestPolicies.ListGuestPoliciesResponse,
               GuestPolicies.GuestPolicy>() {
             @Override
             public String emptyToken() {
@@ -334,13 +323,11 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
           };
 
   private static final PagedListResponseFactory<
-          PatchJobs.ListPatchJobsRequest,
-          PatchJobs.ListPatchJobsResponse,
+          PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse,
           ListPatchJobsPagedResponse>
       LIST_PATCH_JOBS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              PatchJobs.ListPatchJobsRequest,
-              PatchJobs.ListPatchJobsResponse,
+              PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse,
               ListPatchJobsPagedResponse>() {
             @Override
             public ApiFuture<ListPatchJobsPagedResponse> getFuturePagedResponse(
@@ -350,8 +337,7 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
                 ApiCallContext context,
                 ApiFuture<PatchJobs.ListPatchJobsResponse> futureResponse) {
               PageContext<
-                      PatchJobs.ListPatchJobsRequest,
-                      PatchJobs.ListPatchJobsResponse,
+                      PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse,
                       PatchJobs.PatchJob>
                   pageContext =
                       PageContext.create(callable, LIST_PATCH_JOBS_PAGE_STR_DESC, request, context);
@@ -361,8 +347,7 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
 
   private static final PagedListResponseFactory<
           PatchJobs.ListPatchJobInstanceDetailsRequest,
-          PatchJobs.ListPatchJobInstanceDetailsResponse,
-          ListPatchJobInstanceDetailsPagedResponse>
+          PatchJobs.ListPatchJobInstanceDetailsResponse, ListPatchJobInstanceDetailsPagedResponse>
       LIST_PATCH_JOB_INSTANCE_DETAILS_PAGE_STR_FACT =
           new PagedListResponseFactory<
               PatchJobs.ListPatchJobInstanceDetailsRequest,
@@ -394,13 +379,11 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
 
   private static final PagedListResponseFactory<
           PatchDeployments.ListPatchDeploymentsRequest,
-          PatchDeployments.ListPatchDeploymentsResponse,
-          ListPatchDeploymentsPagedResponse>
+          PatchDeployments.ListPatchDeploymentsResponse, ListPatchDeploymentsPagedResponse>
       LIST_PATCH_DEPLOYMENTS_PAGE_STR_FACT =
           new PagedListResponseFactory<
               PatchDeployments.ListPatchDeploymentsRequest,
-              PatchDeployments.ListPatchDeploymentsResponse,
-              ListPatchDeploymentsPagedResponse>() {
+              PatchDeployments.ListPatchDeploymentsResponse, ListPatchDeploymentsPagedResponse>() {
             @Override
             public ApiFuture<ListPatchDeploymentsPagedResponse> getFuturePagedResponse(
                 UnaryCallable<
@@ -422,13 +405,11 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
           };
 
   private static final PagedListResponseFactory<
-          GuestPolicies.ListGuestPoliciesRequest,
-          GuestPolicies.ListGuestPoliciesResponse,
+          GuestPolicies.ListGuestPoliciesRequest, GuestPolicies.ListGuestPoliciesResponse,
           ListGuestPoliciesPagedResponse>
       LIST_GUEST_POLICIES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              GuestPolicies.ListGuestPoliciesRequest,
-              GuestPolicies.ListGuestPoliciesResponse,
+              GuestPolicies.ListGuestPoliciesRequest, GuestPolicies.ListGuestPoliciesResponse,
               ListGuestPoliciesPagedResponse>() {
             @Override
             public ApiFuture<ListGuestPoliciesPagedResponse> getFuturePagedResponse(
@@ -441,8 +422,7 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
                 ApiFuture<GuestPolicies.ListGuestPoliciesResponse> futureResponse) {
               PageContext<
                       GuestPolicies.ListGuestPoliciesRequest,
-                      GuestPolicies.ListGuestPoliciesResponse,
-                      GuestPolicies.GuestPolicy>
+                      GuestPolicies.ListGuestPoliciesResponse, GuestPolicies.GuestPolicy>
                   pageContext =
                       PageContext.create(
                           callable, LIST_GUEST_POLICIES_PAGE_STR_DESC, request, context);
@@ -469,8 +449,7 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
 
   /** Returns the object with the settings used for calls to listPatchJobs. */
   public PagedCallSettings<
-          PatchJobs.ListPatchJobsRequest,
-          PatchJobs.ListPatchJobsResponse,
+          PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse,
           ListPatchJobsPagedResponse>
       listPatchJobsSettings() {
     return listPatchJobsSettings;
@@ -479,8 +458,7 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
   /** Returns the object with the settings used for calls to listPatchJobInstanceDetails. */
   public PagedCallSettings<
           PatchJobs.ListPatchJobInstanceDetailsRequest,
-          PatchJobs.ListPatchJobInstanceDetailsResponse,
-          ListPatchJobInstanceDetailsPagedResponse>
+          PatchJobs.ListPatchJobInstanceDetailsResponse, ListPatchJobInstanceDetailsPagedResponse>
       listPatchJobInstanceDetailsSettings() {
     return listPatchJobInstanceDetailsSettings;
   }
@@ -502,8 +480,7 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
   /** Returns the object with the settings used for calls to listPatchDeployments. */
   public PagedCallSettings<
           PatchDeployments.ListPatchDeploymentsRequest,
-          PatchDeployments.ListPatchDeploymentsResponse,
-          ListPatchDeploymentsPagedResponse>
+          PatchDeployments.ListPatchDeploymentsResponse, ListPatchDeploymentsPagedResponse>
       listPatchDeploymentsSettings() {
     return listPatchDeploymentsSettings;
   }
@@ -528,8 +505,7 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
 
   /** Returns the object with the settings used for calls to listGuestPolicies. */
   public PagedCallSettings<
-          GuestPolicies.ListGuestPoliciesRequest,
-          GuestPolicies.ListGuestPoliciesResponse,
+          GuestPolicies.ListGuestPoliciesRequest, GuestPolicies.ListGuestPoliciesResponse,
           ListGuestPoliciesPagedResponse>
       listGuestPoliciesSettings() {
     return listGuestPoliciesSettings;
@@ -652,14 +628,12 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
     private final UnaryCallSettings.Builder<PatchJobs.CancelPatchJobRequest, PatchJobs.PatchJob>
         cancelPatchJobSettings;
     private final PagedCallSettings.Builder<
-            PatchJobs.ListPatchJobsRequest,
-            PatchJobs.ListPatchJobsResponse,
+            PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse,
             ListPatchJobsPagedResponse>
         listPatchJobsSettings;
     private final PagedCallSettings.Builder<
             PatchJobs.ListPatchJobInstanceDetailsRequest,
-            PatchJobs.ListPatchJobInstanceDetailsResponse,
-            ListPatchJobInstanceDetailsPagedResponse>
+            PatchJobs.ListPatchJobInstanceDetailsResponse, ListPatchJobInstanceDetailsPagedResponse>
         listPatchJobInstanceDetailsSettings;
     private final UnaryCallSettings.Builder<
             PatchDeployments.CreatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
@@ -669,8 +643,7 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
         getPatchDeploymentSettings;
     private final PagedCallSettings.Builder<
             PatchDeployments.ListPatchDeploymentsRequest,
-            PatchDeployments.ListPatchDeploymentsResponse,
-            ListPatchDeploymentsPagedResponse>
+            PatchDeployments.ListPatchDeploymentsResponse, ListPatchDeploymentsPagedResponse>
         listPatchDeploymentsSettings;
     private final UnaryCallSettings.Builder<PatchDeployments.DeletePatchDeploymentRequest, Empty>
         deletePatchDeploymentSettings;
@@ -681,8 +654,7 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
             GuestPolicies.GetGuestPolicyRequest, GuestPolicies.GuestPolicy>
         getGuestPolicySettings;
     private final PagedCallSettings.Builder<
-            GuestPolicies.ListGuestPoliciesRequest,
-            GuestPolicies.ListGuestPoliciesResponse,
+            GuestPolicies.ListGuestPoliciesRequest, GuestPolicies.ListGuestPoliciesResponse,
             ListGuestPoliciesPagedResponse>
         listGuestPoliciesSettings;
     private final UnaryCallSettings.Builder<
@@ -934,8 +906,7 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
 
     /** Returns the builder for the settings used for calls to listPatchJobs. */
     public PagedCallSettings.Builder<
-            PatchJobs.ListPatchJobsRequest,
-            PatchJobs.ListPatchJobsResponse,
+            PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse,
             ListPatchJobsPagedResponse>
         listPatchJobsSettings() {
       return listPatchJobsSettings;
@@ -944,8 +915,7 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
     /** Returns the builder for the settings used for calls to listPatchJobInstanceDetails. */
     public PagedCallSettings.Builder<
             PatchJobs.ListPatchJobInstanceDetailsRequest,
-            PatchJobs.ListPatchJobInstanceDetailsResponse,
-            ListPatchJobInstanceDetailsPagedResponse>
+            PatchJobs.ListPatchJobInstanceDetailsResponse, ListPatchJobInstanceDetailsPagedResponse>
         listPatchJobInstanceDetailsSettings() {
       return listPatchJobInstanceDetailsSettings;
     }
@@ -967,8 +937,7 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
     /** Returns the builder for the settings used for calls to listPatchDeployments. */
     public PagedCallSettings.Builder<
             PatchDeployments.ListPatchDeploymentsRequest,
-            PatchDeployments.ListPatchDeploymentsResponse,
-            ListPatchDeploymentsPagedResponse>
+            PatchDeployments.ListPatchDeploymentsResponse, ListPatchDeploymentsPagedResponse>
         listPatchDeploymentsSettings() {
       return listPatchDeploymentsSettings;
     }
@@ -994,8 +963,7 @@ public class OsConfigServiceStubSettings extends StubSettings<OsConfigServiceStu
 
     /** Returns the builder for the settings used for calls to listGuestPolicies. */
     public PagedCallSettings.Builder<
-            GuestPolicies.ListGuestPoliciesRequest,
-            GuestPolicies.ListGuestPoliciesResponse,
+            GuestPolicies.ListGuestPoliciesRequest, GuestPolicies.ListGuestPoliciesResponse,
             ListGuestPoliciesPagedResponse>
         listGuestPoliciesSettings() {
       return listGuestPoliciesSettings;

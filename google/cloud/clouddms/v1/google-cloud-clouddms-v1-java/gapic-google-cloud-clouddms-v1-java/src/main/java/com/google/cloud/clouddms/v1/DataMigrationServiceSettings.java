@@ -46,9 +46,10 @@ import javax.annotation.Generated;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (datamigration.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (datamigration.googleapis.com) and default port (443) are
+ *       used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -202,8 +203,7 @@ public class DataMigrationServiceSettings extends ClientSettings<DataMigrationSe
 
   /** Returns the object with the settings used for calls to listConnectionProfiles. */
   public PagedCallSettings<
-          ListConnectionProfilesRequest,
-          ListConnectionProfilesResponse,
+          ListConnectionProfilesRequest, ListConnectionProfilesResponse,
           ListConnectionProfilesPagedResponse>
       listConnectionProfilesSettings() {
     return ((DataMigrationServiceStubSettings) getStubSettings()).listConnectionProfilesSettings();
@@ -484,8 +484,7 @@ public class DataMigrationServiceSettings extends ClientSettings<DataMigrationSe
 
     /** Returns the builder for the settings used for calls to listConnectionProfiles. */
     public PagedCallSettings.Builder<
-            ListConnectionProfilesRequest,
-            ListConnectionProfilesResponse,
+            ListConnectionProfilesRequest, ListConnectionProfilesResponse,
             ListConnectionProfilesPagedResponse>
         listConnectionProfilesSettings() {
       return getStubSettingsBuilder().listConnectionProfilesSettings();

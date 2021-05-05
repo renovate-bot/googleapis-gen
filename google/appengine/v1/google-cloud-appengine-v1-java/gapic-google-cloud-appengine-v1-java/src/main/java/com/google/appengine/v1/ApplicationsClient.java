@@ -51,13 +51,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -200,8 +200,8 @@ public class ApplicationsClient implements BackgroundResource {
    * Creates an App Engine application for a Google Cloud Platform project. Required fields:
    *
    * <ul>
-   *   <li>`id` - The ID of the target Cloud Platform project.
-   *   <li>&#42;location&#42; - The [region](https://cloud.google.com/appengine/docs/locations)
+   *   <li> `id` - The ID of the target Cloud Platform project.
+   *   <li> &#42;location&#42; - The [region](https://cloud.google.com/appengine/docs/locations)
    *       where you want the App Engine application located.
    * </ul>
    *
@@ -233,8 +233,8 @@ public class ApplicationsClient implements BackgroundResource {
    * Creates an App Engine application for a Google Cloud Platform project. Required fields:
    *
    * <ul>
-   *   <li>`id` - The ID of the target Cloud Platform project.
-   *   <li>&#42;location&#42; - The [region](https://cloud.google.com/appengine/docs/locations)
+   *   <li> `id` - The ID of the target Cloud Platform project.
+   *   <li> &#42;location&#42; - The [region](https://cloud.google.com/appengine/docs/locations)
    *       where you want the App Engine application located.
    * </ul>
    *
@@ -266,8 +266,8 @@ public class ApplicationsClient implements BackgroundResource {
    * Creates an App Engine application for a Google Cloud Platform project. Required fields:
    *
    * <ul>
-   *   <li>`id` - The ID of the target Cloud Platform project.
-   *   <li>&#42;location&#42; - The [region](https://cloud.google.com/appengine/docs/locations)
+   *   <li> `id` - The ID of the target Cloud Platform project.
+   *   <li> &#42;location&#42; - The [region](https://cloud.google.com/appengine/docs/locations)
    *       where you want the App Engine application located.
    * </ul>
    *
@@ -298,9 +298,9 @@ public class ApplicationsClient implements BackgroundResource {
    * Updates the specified Application resource. You can update the following fields:
    *
    * <ul>
-   *   <li>`auth_domain` - Google authentication domain for controlling user access to the
+   *   <li> `auth_domain` - Google authentication domain for controlling user access to the
    *       application.
-   *   <li>`default_cookie_expiration` - Cookie expiration policy for the application.
+   *   <li> `default_cookie_expiration` - Cookie expiration policy for the application.
    * </ul>
    *
    * <p>Sample code:
@@ -330,9 +330,9 @@ public class ApplicationsClient implements BackgroundResource {
    * Updates the specified Application resource. You can update the following fields:
    *
    * <ul>
-   *   <li>`auth_domain` - Google authentication domain for controlling user access to the
+   *   <li> `auth_domain` - Google authentication domain for controlling user access to the
    *       application.
-   *   <li>`default_cookie_expiration` - Cookie expiration policy for the application.
+   *   <li> `default_cookie_expiration` - Cookie expiration policy for the application.
    * </ul>
    *
    * <p>Sample code:
@@ -362,9 +362,9 @@ public class ApplicationsClient implements BackgroundResource {
    * Updates the specified Application resource. You can update the following fields:
    *
    * <ul>
-   *   <li>`auth_domain` - Google authentication domain for controlling user access to the
+   *   <li> `auth_domain` - Google authentication domain for controlling user access to the
    *       application.
-   *   <li>`default_cookie_expiration` - Cookie expiration policy for the application.
+   *   <li> `default_cookie_expiration` - Cookie expiration policy for the application.
    * </ul>
    *
    * <p>Sample code:

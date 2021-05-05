@@ -88,9 +88,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (cloudbuild.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (cloudbuild.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -246,8 +246,7 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
           ListBuildTriggersRequest, ListBuildTriggersResponse, ListBuildTriggersPagedResponse>
       LIST_BUILD_TRIGGERS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListBuildTriggersRequest,
-              ListBuildTriggersResponse,
+              ListBuildTriggersRequest, ListBuildTriggersResponse,
               ListBuildTriggersPagedResponse>() {
             @Override
             public ApiFuture<ListBuildTriggersPagedResponse> getFuturePagedResponse(

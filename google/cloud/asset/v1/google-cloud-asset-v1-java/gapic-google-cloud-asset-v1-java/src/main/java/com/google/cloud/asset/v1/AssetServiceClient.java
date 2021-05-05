@@ -66,13 +66,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -751,10 +751,10 @@ public class AssetServiceClient implements BackgroundResource {
    *     permission on the desired scope.
    *     <p>The allowed values are:
    *     <ul>
-   *       <li>projects/{PROJECT_ID} (e.g., "projects/foo-bar")
-   *       <li>projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
-   *       <li>folders/{FOLDER_NUMBER} (e.g., "folders/1234567")
-   *       <li>organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
+   *       <li> projects/{PROJECT_ID} (e.g., "projects/foo-bar")
+   *       <li> projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
+   *       <li> folders/{FOLDER_NUMBER} (e.g., "folders/1234567")
+   *       <li> organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
    *     </ul>
    *
    * @param query Optional. The query statement. See [how to construct a
@@ -767,24 +767,24 @@ public class AssetServiceClient implements BackgroundResource {
    *     doc](https://cloud.google.com/iam/docs/policies#structure).
    *     <p>Examples:
    *     <ul>
-   *       <li>`name:Important` to find Cloud resources whose name contains "Important" as a word.
-   *       <li>`displayName:Impor&#42;` to find Cloud resources whose display name contains "Impor"
+   *       <li> `name:Important` to find Cloud resources whose name contains "Important" as a word.
+   *       <li> `displayName:Impor&#42;` to find Cloud resources whose display name contains "Impor"
    *           as a prefix.
-   *       <li>`description:&#42;por&#42;` to find Cloud resources whose description contains "por"
+   *       <li> `description:&#42;por&#42;` to find Cloud resources whose description contains "por"
    *           as a substring.
-   *       <li>`location:us-west&#42;` to find Cloud resources whose location is prefixed with
+   *       <li> `location:us-west&#42;` to find Cloud resources whose location is prefixed with
    *           "us-west".
-   *       <li>`labels:prod` to find Cloud resources whose labels contain "prod" as a key or value.
-   *       <li>`labels.env:prod` to find Cloud resources that have a label "env" and its value is
+   *       <li> `labels:prod` to find Cloud resources whose labels contain "prod" as a key or value.
+   *       <li> `labels.env:prod` to find Cloud resources that have a label "env" and its value is
    *           "prod".
-   *       <li>`labels.env:&#42;` to find Cloud resources that have a label "env".
-   *       <li>`Important` to find Cloud resources that contain "Important" as a word in any of the
+   *       <li> `labels.env:&#42;` to find Cloud resources that have a label "env".
+   *       <li> `Important` to find Cloud resources that contain "Important" as a word in any of the
    *           searchable fields.
-   *       <li>`Impor&#42;` to find Cloud resources that contain "Impor" as a prefix in any of the
+   *       <li> `Impor&#42;` to find Cloud resources that contain "Impor" as a prefix in any of the
    *           searchable fields.
-   *       <li>`&#42;por&#42;` to find Cloud resources that contain "por" as a substring in any of
+   *       <li> `&#42;por&#42;` to find Cloud resources that contain "por" as a substring in any of
    *           the searchable fields.
-   *       <li>`Important location:(us-west1 OR global)` to find Cloud resources that contain
+   *       <li> `Important location:(us-west1 OR global)` to find Cloud resources that contain
    *           "Important" as a word in any of the searchable fields and are also located in the
    *           "us-west1" region or the "global" location.
    *     </ul>
@@ -937,10 +937,10 @@ public class AssetServiceClient implements BackgroundResource {
    *     permission on the desired scope.
    *     <p>The allowed values are:
    *     <ul>
-   *       <li>projects/{PROJECT_ID} (e.g., "projects/foo-bar")
-   *       <li>projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
-   *       <li>folders/{FOLDER_NUMBER} (e.g., "folders/1234567")
-   *       <li>organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
+   *       <li> projects/{PROJECT_ID} (e.g., "projects/foo-bar")
+   *       <li> projects/{PROJECT_NUMBER} (e.g., "projects/12345678")
+   *       <li> folders/{FOLDER_NUMBER} (e.g., "folders/1234567")
+   *       <li> organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
    *     </ul>
    *
    * @param query Optional. The query statement. See [how to construct a
@@ -949,21 +949,21 @@ public class AssetServiceClient implements BackgroundResource {
    *     the specified `scope`.
    *     <p>Examples:
    *     <ul>
-   *       <li>`policy:amy{@literal @}gmail.com` to find IAM policy bindings that specify user
+   *       <li> `policy:amy{@literal @}gmail.com` to find IAM policy bindings that specify user
    *           "amy{@literal @}gmail.com".
-   *       <li>`policy:roles/compute.admin` to find IAM policy bindings that specify the Compute
+   *       <li> `policy:roles/compute.admin` to find IAM policy bindings that specify the Compute
    *           Admin role.
-   *       <li>`policy.role.permissions:storage.buckets.update` to find IAM policy bindings that
+   *       <li> `policy.role.permissions:storage.buckets.update` to find IAM policy bindings that
    *           specify a role containing "storage.buckets.update" permission. Note that if callers
    *           don't have `iam.roles.get` access to a role's included permissions, policy bindings
    *           that specify this role will be dropped from the search results.
-   *       <li>`resource:organizations/123456` to find IAM policy bindings that are set on
+   *       <li> `resource:organizations/123456` to find IAM policy bindings that are set on
    *           "organizations/123456".
-   *       <li>`Important` to find IAM policy bindings that contain "Important" as a word in any of
+   *       <li> `Important` to find IAM policy bindings that contain "Important" as a word in any of
    *           the searchable fields (except for the included permissions).
-   *       <li>`&#42;por&#42;` to find IAM policy bindings that contain "por" as a substring in any
+   *       <li> `&#42;por&#42;` to find IAM policy bindings that contain "por" as a substring in any
    *           of the searchable fields (except for the included permissions).
-   *       <li>`resource:(instance1 OR instance2) policy:amy` to find IAM policy bindings that are
+   *       <li> `resource:(instance1 OR instance2) policy:amy` to find IAM policy bindings that are
    *           set on resources "instance1" or "instance2" and also specify user "amy".
    *     </ul>
    *
@@ -1188,8 +1188,7 @@ public class AssetServiceClient implements BackgroundResource {
    * }</pre>
    */
   public final OperationCallable<
-          AnalyzeIamPolicyLongrunningRequest,
-          AnalyzeIamPolicyLongrunningResponse,
+          AnalyzeIamPolicyLongrunningRequest, AnalyzeIamPolicyLongrunningResponse,
           AnalyzeIamPolicyLongrunningRequest>
       analyzeIamPolicyLongrunningOperationCallable() {
     return stub.analyzeIamPolicyLongrunningOperationCallable();
@@ -1259,11 +1258,8 @@ public class AssetServiceClient implements BackgroundResource {
 
   public static class SearchAllResourcesPagedResponse
       extends AbstractPagedListResponse<
-          SearchAllResourcesRequest,
-          SearchAllResourcesResponse,
-          ResourceSearchResult,
-          SearchAllResourcesPage,
-          SearchAllResourcesFixedSizeCollection> {
+          SearchAllResourcesRequest, SearchAllResourcesResponse, ResourceSearchResult,
+          SearchAllResourcesPage, SearchAllResourcesFixedSizeCollection> {
 
     public static ApiFuture<SearchAllResourcesPagedResponse> createAsync(
         PageContext<SearchAllResourcesRequest, SearchAllResourcesResponse, ResourceSearchResult>
@@ -1289,9 +1285,7 @@ public class AssetServiceClient implements BackgroundResource {
 
   public static class SearchAllResourcesPage
       extends AbstractPage<
-          SearchAllResourcesRequest,
-          SearchAllResourcesResponse,
-          ResourceSearchResult,
+          SearchAllResourcesRequest, SearchAllResourcesResponse, ResourceSearchResult,
           SearchAllResourcesPage> {
 
     private SearchAllResourcesPage(
@@ -1324,11 +1318,8 @@ public class AssetServiceClient implements BackgroundResource {
 
   public static class SearchAllResourcesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          SearchAllResourcesRequest,
-          SearchAllResourcesResponse,
-          ResourceSearchResult,
-          SearchAllResourcesPage,
-          SearchAllResourcesFixedSizeCollection> {
+          SearchAllResourcesRequest, SearchAllResourcesResponse, ResourceSearchResult,
+          SearchAllResourcesPage, SearchAllResourcesFixedSizeCollection> {
 
     private SearchAllResourcesFixedSizeCollection(
         List<SearchAllResourcesPage> pages, int collectionSize) {
@@ -1348,11 +1339,8 @@ public class AssetServiceClient implements BackgroundResource {
 
   public static class SearchAllIamPoliciesPagedResponse
       extends AbstractPagedListResponse<
-          SearchAllIamPoliciesRequest,
-          SearchAllIamPoliciesResponse,
-          IamPolicySearchResult,
-          SearchAllIamPoliciesPage,
-          SearchAllIamPoliciesFixedSizeCollection> {
+          SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse, IamPolicySearchResult,
+          SearchAllIamPoliciesPage, SearchAllIamPoliciesFixedSizeCollection> {
 
     public static ApiFuture<SearchAllIamPoliciesPagedResponse> createAsync(
         PageContext<
@@ -1379,9 +1367,7 @@ public class AssetServiceClient implements BackgroundResource {
 
   public static class SearchAllIamPoliciesPage
       extends AbstractPage<
-          SearchAllIamPoliciesRequest,
-          SearchAllIamPoliciesResponse,
-          IamPolicySearchResult,
+          SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse, IamPolicySearchResult,
           SearchAllIamPoliciesPage> {
 
     private SearchAllIamPoliciesPage(
@@ -1417,11 +1403,8 @@ public class AssetServiceClient implements BackgroundResource {
 
   public static class SearchAllIamPoliciesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          SearchAllIamPoliciesRequest,
-          SearchAllIamPoliciesResponse,
-          IamPolicySearchResult,
-          SearchAllIamPoliciesPage,
-          SearchAllIamPoliciesFixedSizeCollection> {
+          SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse, IamPolicySearchResult,
+          SearchAllIamPoliciesPage, SearchAllIamPoliciesFixedSizeCollection> {
 
     private SearchAllIamPoliciesFixedSizeCollection(
         List<SearchAllIamPoliciesPage> pages, int collectionSize) {

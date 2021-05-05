@@ -84,9 +84,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (cloudasset.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (cloudasset.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -130,8 +130,7 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
           SearchAllResourcesRequest, SearchAllResourcesResponse, SearchAllResourcesPagedResponse>
       searchAllResourcesSettings;
   private final PagedCallSettings<
-          SearchAllIamPoliciesRequest,
-          SearchAllIamPoliciesResponse,
+          SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse,
           SearchAllIamPoliciesPagedResponse>
       searchAllIamPoliciesSettings;
   private final UnaryCallSettings<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
@@ -139,8 +138,7 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
   private final UnaryCallSettings<AnalyzeIamPolicyLongrunningRequest, Operation>
       analyzeIamPolicyLongrunningSettings;
   private final OperationCallSettings<
-          AnalyzeIamPolicyLongrunningRequest,
-          AnalyzeIamPolicyLongrunningResponse,
+          AnalyzeIamPolicyLongrunningRequest, AnalyzeIamPolicyLongrunningResponse,
           AnalyzeIamPolicyLongrunningRequest>
       analyzeIamPolicyLongrunningOperationSettings;
 
@@ -230,8 +228,7 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
           SearchAllResourcesRequest, SearchAllResourcesResponse, SearchAllResourcesPagedResponse>
       SEARCH_ALL_RESOURCES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              SearchAllResourcesRequest,
-              SearchAllResourcesResponse,
+              SearchAllResourcesRequest, SearchAllResourcesResponse,
               SearchAllResourcesPagedResponse>() {
             @Override
             public ApiFuture<SearchAllResourcesPagedResponse> getFuturePagedResponse(
@@ -249,13 +246,11 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
           };
 
   private static final PagedListResponseFactory<
-          SearchAllIamPoliciesRequest,
-          SearchAllIamPoliciesResponse,
+          SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse,
           SearchAllIamPoliciesPagedResponse>
       SEARCH_ALL_IAM_POLICIES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              SearchAllIamPoliciesRequest,
-              SearchAllIamPoliciesResponse,
+              SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse,
               SearchAllIamPoliciesPagedResponse>() {
             @Override
             public ApiFuture<SearchAllIamPoliciesPagedResponse> getFuturePagedResponse(
@@ -264,8 +259,7 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
                 ApiCallContext context,
                 ApiFuture<SearchAllIamPoliciesResponse> futureResponse) {
               PageContext<
-                      SearchAllIamPoliciesRequest,
-                      SearchAllIamPoliciesResponse,
+                      SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse,
                       IamPolicySearchResult>
                   pageContext =
                       PageContext.create(
@@ -325,8 +319,7 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
 
   /** Returns the object with the settings used for calls to searchAllIamPolicies. */
   public PagedCallSettings<
-          SearchAllIamPoliciesRequest,
-          SearchAllIamPoliciesResponse,
+          SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse,
           SearchAllIamPoliciesPagedResponse>
       searchAllIamPoliciesSettings() {
     return searchAllIamPoliciesSettings;
@@ -346,8 +339,7 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
 
   /** Returns the object with the settings used for calls to analyzeIamPolicyLongrunning. */
   public OperationCallSettings<
-          AnalyzeIamPolicyLongrunningRequest,
-          AnalyzeIamPolicyLongrunningResponse,
+          AnalyzeIamPolicyLongrunningRequest, AnalyzeIamPolicyLongrunningResponse,
           AnalyzeIamPolicyLongrunningRequest>
       analyzeIamPolicyLongrunningOperationSettings() {
     return analyzeIamPolicyLongrunningOperationSettings;
@@ -458,8 +450,7 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
             SearchAllResourcesRequest, SearchAllResourcesResponse, SearchAllResourcesPagedResponse>
         searchAllResourcesSettings;
     private final PagedCallSettings.Builder<
-            SearchAllIamPoliciesRequest,
-            SearchAllIamPoliciesResponse,
+            SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse,
             SearchAllIamPoliciesPagedResponse>
         searchAllIamPoliciesSettings;
     private final UnaryCallSettings.Builder<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
@@ -467,8 +458,7 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
     private final UnaryCallSettings.Builder<AnalyzeIamPolicyLongrunningRequest, Operation>
         analyzeIamPolicyLongrunningSettings;
     private final OperationCallSettings.Builder<
-            AnalyzeIamPolicyLongrunningRequest,
-            AnalyzeIamPolicyLongrunningResponse,
+            AnalyzeIamPolicyLongrunningRequest, AnalyzeIamPolicyLongrunningResponse,
             AnalyzeIamPolicyLongrunningRequest>
         analyzeIamPolicyLongrunningOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
@@ -807,8 +797,7 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
 
     /** Returns the builder for the settings used for calls to searchAllIamPolicies. */
     public PagedCallSettings.Builder<
-            SearchAllIamPoliciesRequest,
-            SearchAllIamPoliciesResponse,
+            SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse,
             SearchAllIamPoliciesPagedResponse>
         searchAllIamPoliciesSettings() {
       return searchAllIamPoliciesSettings;
@@ -830,8 +819,7 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
     @BetaApi(
         "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
-            AnalyzeIamPolicyLongrunningRequest,
-            AnalyzeIamPolicyLongrunningResponse,
+            AnalyzeIamPolicyLongrunningRequest, AnalyzeIamPolicyLongrunningResponse,
             AnalyzeIamPolicyLongrunningRequest>
         analyzeIamPolicyLongrunningOperationSettings() {
       return analyzeIamPolicyLongrunningOperationSettings;

@@ -63,13 +63,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -977,16 +977,16 @@ public class JobServiceClient implements BackgroundResource {
    *     <p>Supported operator: =, AND
    *     <p>The fields eligible for filtering are:
    *     <ul>
-   *       <li>`companyName` (Required)
-   *       <li>`requisitionId`
-   *       <li>`status` Available values: OPEN, EXPIRED, ALL. Defaults to OPEN if no value is
+   *       <li> `companyName` (Required)
+   *       <li> `requisitionId`
+   *       <li> `status` Available values: OPEN, EXPIRED, ALL. Defaults to OPEN if no value is
    *           specified.
    *     </ul>
    *     <p>Sample Query:
    *     <ul>
-   *       <li>companyName = "projects/foo/tenants/bar/companies/baz"
-   *       <li>companyName = "projects/foo/tenants/bar/companies/baz" AND requisitionId = "req-1"
-   *       <li>companyName = "projects/foo/tenants/bar/companies/baz" AND status = "EXPIRED"
+   *       <li> companyName = "projects/foo/tenants/bar/companies/baz"
+   *       <li> companyName = "projects/foo/tenants/bar/companies/baz" AND requisitionId = "req-1"
+   *       <li> companyName = "projects/foo/tenants/bar/companies/baz" AND status = "EXPIRED"
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1023,16 +1023,16 @@ public class JobServiceClient implements BackgroundResource {
    *     <p>Supported operator: =, AND
    *     <p>The fields eligible for filtering are:
    *     <ul>
-   *       <li>`companyName` (Required)
-   *       <li>`requisitionId`
-   *       <li>`status` Available values: OPEN, EXPIRED, ALL. Defaults to OPEN if no value is
+   *       <li> `companyName` (Required)
+   *       <li> `requisitionId`
+   *       <li> `status` Available values: OPEN, EXPIRED, ALL. Defaults to OPEN if no value is
    *           specified.
    *     </ul>
    *     <p>Sample Query:
    *     <ul>
-   *       <li>companyName = "projects/foo/tenants/bar/companies/baz"
-   *       <li>companyName = "projects/foo/tenants/bar/companies/baz" AND requisitionId = "req-1"
-   *       <li>companyName = "projects/foo/tenants/bar/companies/baz" AND status = "EXPIRED"
+   *       <li> companyName = "projects/foo/tenants/bar/companies/baz"
+   *       <li> companyName = "projects/foo/tenants/bar/companies/baz" AND requisitionId = "req-1"
+   *       <li> companyName = "projects/foo/tenants/bar/companies/baz" AND status = "EXPIRED"
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails

@@ -143,10 +143,10 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (analyticsadmin.googleapis.com) and default port (443) are
+ *   <li> The default service address (analyticsadmin.googleapis.com) and default port (443) are
  *       used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -192,8 +192,7 @@ public class AnalyticsAdminServiceStubSettings
   private final UnaryCallSettings<ProvisionAccountTicketRequest, ProvisionAccountTicketResponse>
       provisionAccountTicketSettings;
   private final PagedCallSettings<
-          ListAccountSummariesRequest,
-          ListAccountSummariesResponse,
+          ListAccountSummariesRequest, ListAccountSummariesResponse,
           ListAccountSummariesPagedResponse>
       listAccountSummariesSettings;
   private final UnaryCallSettings<GetPropertyRequest, Property> getPropertySettings;
@@ -236,8 +235,7 @@ public class AnalyticsAdminServiceStubSettings
   private final UnaryCallSettings<UpdateIosAppDataStreamRequest, IosAppDataStream>
       updateIosAppDataStreamSettings;
   private final PagedCallSettings<
-          ListIosAppDataStreamsRequest,
-          ListIosAppDataStreamsResponse,
+          ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse,
           ListIosAppDataStreamsPagedResponse>
       listIosAppDataStreamsSettings;
   private final UnaryCallSettings<GetAndroidAppDataStreamRequest, AndroidAppDataStream>
@@ -247,8 +245,7 @@ public class AnalyticsAdminServiceStubSettings
   private final UnaryCallSettings<UpdateAndroidAppDataStreamRequest, AndroidAppDataStream>
       updateAndroidAppDataStreamSettings;
   private final PagedCallSettings<
-          ListAndroidAppDataStreamsRequest,
-          ListAndroidAppDataStreamsResponse,
+          ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse,
           ListAndroidAppDataStreamsPagedResponse>
       listAndroidAppDataStreamsSettings;
   private final UnaryCallSettings<
@@ -277,8 +274,7 @@ public class AnalyticsAdminServiceStubSettings
   private final UnaryCallSettings<GetDataSharingSettingsRequest, DataSharingSettings>
       getDataSharingSettingsSettings;
   private final PagedCallSettings<
-          SearchChangeHistoryEventsRequest,
-          SearchChangeHistoryEventsResponse,
+          SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse,
           SearchChangeHistoryEventsPagedResponse>
       searchChangeHistoryEventsSettings;
 
@@ -554,8 +550,7 @@ public class AnalyticsAdminServiceStubSettings
           ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse, AndroidAppDataStream>
       LIST_ANDROID_APP_DATA_STREAMS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ListAndroidAppDataStreamsRequest,
-              ListAndroidAppDataStreamsResponse,
+              ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse,
               AndroidAppDataStream>() {
             @Override
             public String emptyToken() {
@@ -681,8 +676,7 @@ public class AnalyticsAdminServiceStubSettings
           SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse, ChangeHistoryEvent>
       SEARCH_CHANGE_HISTORY_EVENTS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              SearchChangeHistoryEventsRequest,
-              SearchChangeHistoryEventsResponse,
+              SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse,
               ChangeHistoryEvent>() {
             @Override
             public String emptyToken() {
@@ -742,13 +736,11 @@ public class AnalyticsAdminServiceStubSettings
           };
 
   private static final PagedListResponseFactory<
-          ListAccountSummariesRequest,
-          ListAccountSummariesResponse,
+          ListAccountSummariesRequest, ListAccountSummariesResponse,
           ListAccountSummariesPagedResponse>
       LIST_ACCOUNT_SUMMARIES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListAccountSummariesRequest,
-              ListAccountSummariesResponse,
+              ListAccountSummariesRequest, ListAccountSummariesResponse,
               ListAccountSummariesPagedResponse>() {
             @Override
             public ApiFuture<ListAccountSummariesPagedResponse> getFuturePagedResponse(
@@ -821,8 +813,7 @@ public class AnalyticsAdminServiceStubSettings
           ListWebDataStreamsRequest, ListWebDataStreamsResponse, ListWebDataStreamsPagedResponse>
       LIST_WEB_DATA_STREAMS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListWebDataStreamsRequest,
-              ListWebDataStreamsResponse,
+              ListWebDataStreamsRequest, ListWebDataStreamsResponse,
               ListWebDataStreamsPagedResponse>() {
             @Override
             public ApiFuture<ListWebDataStreamsPagedResponse> getFuturePagedResponse(
@@ -839,13 +830,11 @@ public class AnalyticsAdminServiceStubSettings
           };
 
   private static final PagedListResponseFactory<
-          ListIosAppDataStreamsRequest,
-          ListIosAppDataStreamsResponse,
+          ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse,
           ListIosAppDataStreamsPagedResponse>
       LIST_IOS_APP_DATA_STREAMS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListIosAppDataStreamsRequest,
-              ListIosAppDataStreamsResponse,
+              ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse,
               ListIosAppDataStreamsPagedResponse>() {
             @Override
             public ApiFuture<ListIosAppDataStreamsPagedResponse> getFuturePagedResponse(
@@ -863,13 +852,11 @@ public class AnalyticsAdminServiceStubSettings
           };
 
   private static final PagedListResponseFactory<
-          ListAndroidAppDataStreamsRequest,
-          ListAndroidAppDataStreamsResponse,
+          ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse,
           ListAndroidAppDataStreamsPagedResponse>
       LIST_ANDROID_APP_DATA_STREAMS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListAndroidAppDataStreamsRequest,
-              ListAndroidAppDataStreamsResponse,
+              ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse,
               ListAndroidAppDataStreamsPagedResponse>() {
             @Override
             public ApiFuture<ListAndroidAppDataStreamsPagedResponse> getFuturePagedResponse(
@@ -879,8 +866,7 @@ public class AnalyticsAdminServiceStubSettings
                 ApiCallContext context,
                 ApiFuture<ListAndroidAppDataStreamsResponse> futureResponse) {
               PageContext<
-                      ListAndroidAppDataStreamsRequest,
-                      ListAndroidAppDataStreamsResponse,
+                      ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse,
                       AndroidAppDataStream>
                   pageContext =
                       PageContext.create(
@@ -894,8 +880,7 @@ public class AnalyticsAdminServiceStubSettings
           ListFirebaseLinksRequest, ListFirebaseLinksResponse, ListFirebaseLinksPagedResponse>
       LIST_FIREBASE_LINKS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListFirebaseLinksRequest,
-              ListFirebaseLinksResponse,
+              ListFirebaseLinksRequest, ListFirebaseLinksResponse,
               ListFirebaseLinksPagedResponse>() {
             @Override
             public ApiFuture<ListFirebaseLinksPagedResponse> getFuturePagedResponse(
@@ -915,8 +900,7 @@ public class AnalyticsAdminServiceStubSettings
           ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse, ListGoogleAdsLinksPagedResponse>
       LIST_GOOGLE_ADS_LINKS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListGoogleAdsLinksRequest,
-              ListGoogleAdsLinksResponse,
+              ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse,
               ListGoogleAdsLinksPagedResponse>() {
             @Override
             public ApiFuture<ListGoogleAdsLinksPagedResponse> getFuturePagedResponse(
@@ -933,13 +917,11 @@ public class AnalyticsAdminServiceStubSettings
           };
 
   private static final PagedListResponseFactory<
-          SearchChangeHistoryEventsRequest,
-          SearchChangeHistoryEventsResponse,
+          SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse,
           SearchChangeHistoryEventsPagedResponse>
       SEARCH_CHANGE_HISTORY_EVENTS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              SearchChangeHistoryEventsRequest,
-              SearchChangeHistoryEventsResponse,
+              SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse,
               SearchChangeHistoryEventsPagedResponse>() {
             @Override
             public ApiFuture<SearchChangeHistoryEventsPagedResponse> getFuturePagedResponse(
@@ -949,8 +931,7 @@ public class AnalyticsAdminServiceStubSettings
                 ApiCallContext context,
                 ApiFuture<SearchChangeHistoryEventsResponse> futureResponse) {
               PageContext<
-                      SearchChangeHistoryEventsRequest,
-                      SearchChangeHistoryEventsResponse,
+                      SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse,
                       ChangeHistoryEvent>
                   pageContext =
                       PageContext.create(
@@ -989,8 +970,7 @@ public class AnalyticsAdminServiceStubSettings
 
   /** Returns the object with the settings used for calls to listAccountSummaries. */
   public PagedCallSettings<
-          ListAccountSummariesRequest,
-          ListAccountSummariesResponse,
+          ListAccountSummariesRequest, ListAccountSummariesResponse,
           ListAccountSummariesPagedResponse>
       listAccountSummariesSettings() {
     return listAccountSummariesSettings;
@@ -1127,8 +1107,7 @@ public class AnalyticsAdminServiceStubSettings
 
   /** Returns the object with the settings used for calls to listIosAppDataStreams. */
   public PagedCallSettings<
-          ListIosAppDataStreamsRequest,
-          ListIosAppDataStreamsResponse,
+          ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse,
           ListIosAppDataStreamsPagedResponse>
       listIosAppDataStreamsSettings() {
     return listIosAppDataStreamsSettings;
@@ -1154,8 +1133,7 @@ public class AnalyticsAdminServiceStubSettings
 
   /** Returns the object with the settings used for calls to listAndroidAppDataStreams. */
   public PagedCallSettings<
-          ListAndroidAppDataStreamsRequest,
-          ListAndroidAppDataStreamsResponse,
+          ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse,
           ListAndroidAppDataStreamsPagedResponse>
       listAndroidAppDataStreamsSettings() {
     return listAndroidAppDataStreamsSettings;
@@ -1232,8 +1210,7 @@ public class AnalyticsAdminServiceStubSettings
 
   /** Returns the object with the settings used for calls to searchChangeHistoryEvents. */
   public PagedCallSettings<
-          SearchChangeHistoryEventsRequest,
-          SearchChangeHistoryEventsResponse,
+          SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse,
           SearchChangeHistoryEventsPagedResponse>
       searchChangeHistoryEventsSettings() {
     return searchChangeHistoryEventsSettings;
@@ -1375,8 +1352,7 @@ public class AnalyticsAdminServiceStubSettings
             ProvisionAccountTicketRequest, ProvisionAccountTicketResponse>
         provisionAccountTicketSettings;
     private final PagedCallSettings.Builder<
-            ListAccountSummariesRequest,
-            ListAccountSummariesResponse,
+            ListAccountSummariesRequest, ListAccountSummariesResponse,
             ListAccountSummariesPagedResponse>
         listAccountSummariesSettings;
     private final UnaryCallSettings.Builder<GetPropertyRequest, Property> getPropertySettings;
@@ -1424,8 +1400,7 @@ public class AnalyticsAdminServiceStubSettings
     private final UnaryCallSettings.Builder<UpdateIosAppDataStreamRequest, IosAppDataStream>
         updateIosAppDataStreamSettings;
     private final PagedCallSettings.Builder<
-            ListIosAppDataStreamsRequest,
-            ListIosAppDataStreamsResponse,
+            ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse,
             ListIosAppDataStreamsPagedResponse>
         listIosAppDataStreamsSettings;
     private final UnaryCallSettings.Builder<GetAndroidAppDataStreamRequest, AndroidAppDataStream>
@@ -1435,8 +1410,7 @@ public class AnalyticsAdminServiceStubSettings
     private final UnaryCallSettings.Builder<UpdateAndroidAppDataStreamRequest, AndroidAppDataStream>
         updateAndroidAppDataStreamSettings;
     private final PagedCallSettings.Builder<
-            ListAndroidAppDataStreamsRequest,
-            ListAndroidAppDataStreamsResponse,
+            ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse,
             ListAndroidAppDataStreamsPagedResponse>
         listAndroidAppDataStreamsSettings;
     private final UnaryCallSettings.Builder<
@@ -1468,8 +1442,7 @@ public class AnalyticsAdminServiceStubSettings
     private final UnaryCallSettings.Builder<GetDataSharingSettingsRequest, DataSharingSettings>
         getDataSharingSettingsSettings;
     private final PagedCallSettings.Builder<
-            SearchChangeHistoryEventsRequest,
-            SearchChangeHistoryEventsResponse,
+            SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse,
             SearchChangeHistoryEventsPagedResponse>
         searchChangeHistoryEventsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
@@ -2028,8 +2001,7 @@ public class AnalyticsAdminServiceStubSettings
 
     /** Returns the builder for the settings used for calls to listAccountSummaries. */
     public PagedCallSettings.Builder<
-            ListAccountSummariesRequest,
-            ListAccountSummariesResponse,
+            ListAccountSummariesRequest, ListAccountSummariesResponse,
             ListAccountSummariesPagedResponse>
         listAccountSummariesSettings() {
       return listAccountSummariesSettings;
@@ -2171,8 +2143,7 @@ public class AnalyticsAdminServiceStubSettings
 
     /** Returns the builder for the settings used for calls to listIosAppDataStreams. */
     public PagedCallSettings.Builder<
-            ListIosAppDataStreamsRequest,
-            ListIosAppDataStreamsResponse,
+            ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse,
             ListIosAppDataStreamsPagedResponse>
         listIosAppDataStreamsSettings() {
       return listIosAppDataStreamsSettings;
@@ -2198,8 +2169,7 @@ public class AnalyticsAdminServiceStubSettings
 
     /** Returns the builder for the settings used for calls to listAndroidAppDataStreams. */
     public PagedCallSettings.Builder<
-            ListAndroidAppDataStreamsRequest,
-            ListAndroidAppDataStreamsResponse,
+            ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse,
             ListAndroidAppDataStreamsPagedResponse>
         listAndroidAppDataStreamsSettings() {
       return listAndroidAppDataStreamsSettings;
@@ -2283,8 +2253,7 @@ public class AnalyticsAdminServiceStubSettings
 
     /** Returns the builder for the settings used for calls to searchChangeHistoryEvents. */
     public PagedCallSettings.Builder<
-            SearchChangeHistoryEventsRequest,
-            SearchChangeHistoryEventsResponse,
+            SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse,
             SearchChangeHistoryEventsPagedResponse>
         searchChangeHistoryEventsSettings() {
       return searchChangeHistoryEventsSettings;

@@ -70,9 +70,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (aiplatform.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (aiplatform.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -106,8 +106,7 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
   private final UnaryCallSettings<GetTrainingPipelineRequest, TrainingPipeline>
       getTrainingPipelineSettings;
   private final PagedCallSettings<
-          ListTrainingPipelinesRequest,
-          ListTrainingPipelinesResponse,
+          ListTrainingPipelinesRequest, ListTrainingPipelinesResponse,
           ListTrainingPipelinesPagedResponse>
       listTrainingPipelinesSettings;
   private final UnaryCallSettings<DeleteTrainingPipelineRequest, Operation>
@@ -159,13 +158,11 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
           };
 
   private static final PagedListResponseFactory<
-          ListTrainingPipelinesRequest,
-          ListTrainingPipelinesResponse,
+          ListTrainingPipelinesRequest, ListTrainingPipelinesResponse,
           ListTrainingPipelinesPagedResponse>
       LIST_TRAINING_PIPELINES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListTrainingPipelinesRequest,
-              ListTrainingPipelinesResponse,
+              ListTrainingPipelinesRequest, ListTrainingPipelinesResponse,
               ListTrainingPipelinesPagedResponse>() {
             @Override
             public ApiFuture<ListTrainingPipelinesPagedResponse> getFuturePagedResponse(
@@ -196,8 +193,7 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
 
   /** Returns the object with the settings used for calls to listTrainingPipelines. */
   public PagedCallSettings<
-          ListTrainingPipelinesRequest,
-          ListTrainingPipelinesResponse,
+          ListTrainingPipelinesRequest, ListTrainingPipelinesResponse,
           ListTrainingPipelinesPagedResponse>
       listTrainingPipelinesSettings() {
     return listTrainingPipelinesSettings;
@@ -306,8 +302,7 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
     private final UnaryCallSettings.Builder<GetTrainingPipelineRequest, TrainingPipeline>
         getTrainingPipelineSettings;
     private final PagedCallSettings.Builder<
-            ListTrainingPipelinesRequest,
-            ListTrainingPipelinesResponse,
+            ListTrainingPipelinesRequest, ListTrainingPipelinesResponse,
             ListTrainingPipelinesPagedResponse>
         listTrainingPipelinesSettings;
     private final UnaryCallSettings.Builder<DeleteTrainingPipelineRequest, Operation>
@@ -483,8 +478,7 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
 
     /** Returns the builder for the settings used for calls to listTrainingPipelines. */
     public PagedCallSettings.Builder<
-            ListTrainingPipelinesRequest,
-            ListTrainingPipelinesResponse,
+            ListTrainingPipelinesRequest, ListTrainingPipelinesResponse,
             ListTrainingPipelinesPagedResponse>
         listTrainingPipelinesSettings() {
       return listTrainingPipelinesSettings;

@@ -64,13 +64,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -504,16 +504,13 @@ public class AuthorizedCertificatesClient implements BackgroundResource {
 
   public static class ListAuthorizedCertificatesPagedResponse
       extends AbstractPagedListResponse<
-          ListAuthorizedCertificatesRequest,
-          ListAuthorizedCertificatesResponse,
-          AuthorizedCertificate,
-          ListAuthorizedCertificatesPage,
+          ListAuthorizedCertificatesRequest, ListAuthorizedCertificatesResponse,
+          AuthorizedCertificate, ListAuthorizedCertificatesPage,
           ListAuthorizedCertificatesFixedSizeCollection> {
 
     public static ApiFuture<ListAuthorizedCertificatesPagedResponse> createAsync(
         PageContext<
-                ListAuthorizedCertificatesRequest,
-                ListAuthorizedCertificatesResponse,
+                ListAuthorizedCertificatesRequest, ListAuthorizedCertificatesResponse,
                 AuthorizedCertificate>
             context,
         ApiFuture<ListAuthorizedCertificatesResponse> futureResponse) {
@@ -539,15 +536,12 @@ public class AuthorizedCertificatesClient implements BackgroundResource {
 
   public static class ListAuthorizedCertificatesPage
       extends AbstractPage<
-          ListAuthorizedCertificatesRequest,
-          ListAuthorizedCertificatesResponse,
-          AuthorizedCertificate,
-          ListAuthorizedCertificatesPage> {
+          ListAuthorizedCertificatesRequest, ListAuthorizedCertificatesResponse,
+          AuthorizedCertificate, ListAuthorizedCertificatesPage> {
 
     private ListAuthorizedCertificatesPage(
         PageContext<
-                ListAuthorizedCertificatesRequest,
-                ListAuthorizedCertificatesResponse,
+                ListAuthorizedCertificatesRequest, ListAuthorizedCertificatesResponse,
                 AuthorizedCertificate>
             context,
         ListAuthorizedCertificatesResponse response) {
@@ -561,8 +555,7 @@ public class AuthorizedCertificatesClient implements BackgroundResource {
     @Override
     protected ListAuthorizedCertificatesPage createPage(
         PageContext<
-                ListAuthorizedCertificatesRequest,
-                ListAuthorizedCertificatesResponse,
+                ListAuthorizedCertificatesRequest, ListAuthorizedCertificatesResponse,
                 AuthorizedCertificate>
             context,
         ListAuthorizedCertificatesResponse response) {
@@ -572,8 +565,7 @@ public class AuthorizedCertificatesClient implements BackgroundResource {
     @Override
     public ApiFuture<ListAuthorizedCertificatesPage> createPageAsync(
         PageContext<
-                ListAuthorizedCertificatesRequest,
-                ListAuthorizedCertificatesResponse,
+                ListAuthorizedCertificatesRequest, ListAuthorizedCertificatesResponse,
                 AuthorizedCertificate>
             context,
         ApiFuture<ListAuthorizedCertificatesResponse> futureResponse) {
@@ -583,10 +575,8 @@ public class AuthorizedCertificatesClient implements BackgroundResource {
 
   public static class ListAuthorizedCertificatesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListAuthorizedCertificatesRequest,
-          ListAuthorizedCertificatesResponse,
-          AuthorizedCertificate,
-          ListAuthorizedCertificatesPage,
+          ListAuthorizedCertificatesRequest, ListAuthorizedCertificatesResponse,
+          AuthorizedCertificate, ListAuthorizedCertificatesPage,
           ListAuthorizedCertificatesFixedSizeCollection> {
 
     private ListAuthorizedCertificatesFixedSizeCollection(

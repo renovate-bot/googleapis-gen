@@ -44,10 +44,10 @@ import javax.annotation.Generated;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (bigquerymigration.googleapis.com) and default port (443) are
+ *   <li> The default service address (bigquerymigration.googleapis.com) and default port (443) are
  *       used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -88,8 +88,7 @@ public class MigrationServiceSettings extends ClientSettings<MigrationServiceSet
 
   /** Returns the object with the settings used for calls to listMigrationWorkflows. */
   public PagedCallSettings<
-          ListMigrationWorkflowsRequest,
-          ListMigrationWorkflowsResponse,
+          ListMigrationWorkflowsRequest, ListMigrationWorkflowsResponse,
           ListMigrationWorkflowsPagedResponse>
       listMigrationWorkflowsSettings() {
     return ((MigrationServiceStubSettings) getStubSettings()).listMigrationWorkflowsSettings();
@@ -114,8 +113,7 @@ public class MigrationServiceSettings extends ClientSettings<MigrationServiceSet
 
   /** Returns the object with the settings used for calls to listMigrationSubtasks. */
   public PagedCallSettings<
-          ListMigrationSubtasksRequest,
-          ListMigrationSubtasksResponse,
+          ListMigrationSubtasksRequest, ListMigrationSubtasksResponse,
           ListMigrationSubtasksPagedResponse>
       listMigrationSubtasksSettings() {
     return ((MigrationServiceStubSettings) getStubSettings()).listMigrationSubtasksSettings();
@@ -233,8 +231,7 @@ public class MigrationServiceSettings extends ClientSettings<MigrationServiceSet
 
     /** Returns the builder for the settings used for calls to listMigrationWorkflows. */
     public PagedCallSettings.Builder<
-            ListMigrationWorkflowsRequest,
-            ListMigrationWorkflowsResponse,
+            ListMigrationWorkflowsRequest, ListMigrationWorkflowsResponse,
             ListMigrationWorkflowsPagedResponse>
         listMigrationWorkflowsSettings() {
       return getStubSettingsBuilder().listMigrationWorkflowsSettings();
@@ -260,8 +257,7 @@ public class MigrationServiceSettings extends ClientSettings<MigrationServiceSet
 
     /** Returns the builder for the settings used for calls to listMigrationSubtasks. */
     public PagedCallSettings.Builder<
-            ListMigrationSubtasksRequest,
-            ListMigrationSubtasksResponse,
+            ListMigrationSubtasksRequest, ListMigrationSubtasksResponse,
             ListMigrationSubtasksPagedResponse>
         listMigrationSubtasksSettings() {
       return getStubSettingsBuilder().listMigrationSubtasksSettings();

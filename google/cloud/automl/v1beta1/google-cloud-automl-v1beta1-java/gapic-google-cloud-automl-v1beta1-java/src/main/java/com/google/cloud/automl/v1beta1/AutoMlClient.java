@@ -73,13 +73,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -697,7 +697,7 @@ public class AutoMlClient implements BackgroundResource {
    * <p>For Tables:
    *
    * <ul>
-   *   <li>A [schema_inference_version][google.cloud.automl.v1beta1.InputConfig.params] parameter
+   *   <li> A [schema_inference_version][google.cloud.automl.v1beta1.InputConfig.params] parameter
    *       must be explicitly set. Returns an empty response in the
    *       [response][google.longrunning.Operation.response] field when it completes.
    * </ul>
@@ -735,7 +735,7 @@ public class AutoMlClient implements BackgroundResource {
    * <p>For Tables:
    *
    * <ul>
-   *   <li>A [schema_inference_version][google.cloud.automl.v1beta1.InputConfig.params] parameter
+   *   <li> A [schema_inference_version][google.cloud.automl.v1beta1.InputConfig.params] parameter
    *       must be explicitly set. Returns an empty response in the
    *       [response][google.longrunning.Operation.response] field when it completes.
    * </ul>
@@ -770,7 +770,7 @@ public class AutoMlClient implements BackgroundResource {
    * <p>For Tables:
    *
    * <ul>
-   *   <li>A [schema_inference_version][google.cloud.automl.v1beta1.InputConfig.params] parameter
+   *   <li> A [schema_inference_version][google.cloud.automl.v1beta1.InputConfig.params] parameter
    *       must be explicitly set. Returns an empty response in the
    *       [response][google.longrunning.Operation.response] field when it completes.
    * </ul>
@@ -803,7 +803,7 @@ public class AutoMlClient implements BackgroundResource {
    * <p>For Tables:
    *
    * <ul>
-   *   <li>A [schema_inference_version][google.cloud.automl.v1beta1.InputConfig.params] parameter
+   *   <li> A [schema_inference_version][google.cloud.automl.v1beta1.InputConfig.params] parameter
    *       must be explicitly set. Returns an empty response in the
    *       [response][google.longrunning.Operation.response] field when it completes.
    * </ul>
@@ -836,7 +836,7 @@ public class AutoMlClient implements BackgroundResource {
    * <p>For Tables:
    *
    * <ul>
-   *   <li>A [schema_inference_version][google.cloud.automl.v1beta1.InputConfig.params] parameter
+   *   <li> A [schema_inference_version][google.cloud.automl.v1beta1.InputConfig.params] parameter
    *       must be explicitly set. Returns an empty response in the
    *       [response][google.longrunning.Operation.response] field when it completes.
    * </ul>
@@ -3127,10 +3127,7 @@ public class AutoMlClient implements BackgroundResource {
 
   public static class ListDatasetsPagedResponse
       extends AbstractPagedListResponse<
-          ListDatasetsRequest,
-          ListDatasetsResponse,
-          Dataset,
-          ListDatasetsPage,
+          ListDatasetsRequest, ListDatasetsResponse, Dataset, ListDatasetsPage,
           ListDatasetsFixedSizeCollection> {
 
     public static ApiFuture<ListDatasetsPagedResponse> createAsync(
@@ -3184,10 +3181,7 @@ public class AutoMlClient implements BackgroundResource {
 
   public static class ListDatasetsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListDatasetsRequest,
-          ListDatasetsResponse,
-          Dataset,
-          ListDatasetsPage,
+          ListDatasetsRequest, ListDatasetsResponse, Dataset, ListDatasetsPage,
           ListDatasetsFixedSizeCollection> {
 
     private ListDatasetsFixedSizeCollection(List<ListDatasetsPage> pages, int collectionSize) {
@@ -3207,10 +3201,7 @@ public class AutoMlClient implements BackgroundResource {
 
   public static class ListTableSpecsPagedResponse
       extends AbstractPagedListResponse<
-          ListTableSpecsRequest,
-          ListTableSpecsResponse,
-          TableSpec,
-          ListTableSpecsPage,
+          ListTableSpecsRequest, ListTableSpecsResponse, TableSpec, ListTableSpecsPage,
           ListTableSpecsFixedSizeCollection> {
 
     public static ApiFuture<ListTableSpecsPagedResponse> createAsync(
@@ -3265,10 +3256,7 @@ public class AutoMlClient implements BackgroundResource {
 
   public static class ListTableSpecsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListTableSpecsRequest,
-          ListTableSpecsResponse,
-          TableSpec,
-          ListTableSpecsPage,
+          ListTableSpecsRequest, ListTableSpecsResponse, TableSpec, ListTableSpecsPage,
           ListTableSpecsFixedSizeCollection> {
 
     private ListTableSpecsFixedSizeCollection(List<ListTableSpecsPage> pages, int collectionSize) {
@@ -3288,10 +3276,7 @@ public class AutoMlClient implements BackgroundResource {
 
   public static class ListColumnSpecsPagedResponse
       extends AbstractPagedListResponse<
-          ListColumnSpecsRequest,
-          ListColumnSpecsResponse,
-          ColumnSpec,
-          ListColumnSpecsPage,
+          ListColumnSpecsRequest, ListColumnSpecsResponse, ColumnSpec, ListColumnSpecsPage,
           ListColumnSpecsFixedSizeCollection> {
 
     public static ApiFuture<ListColumnSpecsPagedResponse> createAsync(
@@ -3346,10 +3331,7 @@ public class AutoMlClient implements BackgroundResource {
 
   public static class ListColumnSpecsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListColumnSpecsRequest,
-          ListColumnSpecsResponse,
-          ColumnSpec,
-          ListColumnSpecsPage,
+          ListColumnSpecsRequest, ListColumnSpecsResponse, ColumnSpec, ListColumnSpecsPage,
           ListColumnSpecsFixedSizeCollection> {
 
     private ListColumnSpecsFixedSizeCollection(
@@ -3370,10 +3352,7 @@ public class AutoMlClient implements BackgroundResource {
 
   public static class ListModelsPagedResponse
       extends AbstractPagedListResponse<
-          ListModelsRequest,
-          ListModelsResponse,
-          Model,
-          ListModelsPage,
+          ListModelsRequest, ListModelsResponse, Model, ListModelsPage,
           ListModelsFixedSizeCollection> {
 
     public static ApiFuture<ListModelsPagedResponse> createAsync(
@@ -3427,10 +3406,7 @@ public class AutoMlClient implements BackgroundResource {
 
   public static class ListModelsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListModelsRequest,
-          ListModelsResponse,
-          Model,
-          ListModelsPage,
+          ListModelsRequest, ListModelsResponse, Model, ListModelsPage,
           ListModelsFixedSizeCollection> {
 
     private ListModelsFixedSizeCollection(List<ListModelsPage> pages, int collectionSize) {
@@ -3450,11 +3426,8 @@ public class AutoMlClient implements BackgroundResource {
 
   public static class ListModelEvaluationsPagedResponse
       extends AbstractPagedListResponse<
-          ListModelEvaluationsRequest,
-          ListModelEvaluationsResponse,
-          ModelEvaluation,
-          ListModelEvaluationsPage,
-          ListModelEvaluationsFixedSizeCollection> {
+          ListModelEvaluationsRequest, ListModelEvaluationsResponse, ModelEvaluation,
+          ListModelEvaluationsPage, ListModelEvaluationsFixedSizeCollection> {
 
     public static ApiFuture<ListModelEvaluationsPagedResponse> createAsync(
         PageContext<ListModelEvaluationsRequest, ListModelEvaluationsResponse, ModelEvaluation>
@@ -3480,9 +3453,7 @@ public class AutoMlClient implements BackgroundResource {
 
   public static class ListModelEvaluationsPage
       extends AbstractPage<
-          ListModelEvaluationsRequest,
-          ListModelEvaluationsResponse,
-          ModelEvaluation,
+          ListModelEvaluationsRequest, ListModelEvaluationsResponse, ModelEvaluation,
           ListModelEvaluationsPage> {
 
     private ListModelEvaluationsPage(
@@ -3515,11 +3486,8 @@ public class AutoMlClient implements BackgroundResource {
 
   public static class ListModelEvaluationsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListModelEvaluationsRequest,
-          ListModelEvaluationsResponse,
-          ModelEvaluation,
-          ListModelEvaluationsPage,
-          ListModelEvaluationsFixedSizeCollection> {
+          ListModelEvaluationsRequest, ListModelEvaluationsResponse, ModelEvaluation,
+          ListModelEvaluationsPage, ListModelEvaluationsFixedSizeCollection> {
 
     private ListModelEvaluationsFixedSizeCollection(
         List<ListModelEvaluationsPage> pages, int collectionSize) {

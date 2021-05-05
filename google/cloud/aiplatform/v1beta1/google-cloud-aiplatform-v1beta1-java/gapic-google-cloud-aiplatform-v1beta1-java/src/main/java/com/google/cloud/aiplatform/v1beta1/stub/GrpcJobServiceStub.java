@@ -503,8 +503,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
   private final UnaryCallable<UpdateModelDeploymentMonitoringJobRequest, Operation>
       updateModelDeploymentMonitoringJobCallable;
   private final OperationCallable<
-          UpdateModelDeploymentMonitoringJobRequest,
-          ModelDeploymentMonitoringJob,
+          UpdateModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob,
           UpdateModelDeploymentMonitoringJobOperationMetadata>
       updateModelDeploymentMonitoringJobOperationCallable;
   private final UnaryCallable<DeleteModelDeploymentMonitoringJobRequest, Operation>
@@ -1395,8 +1394,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
 
   @Override
   public OperationCallable<
-          UpdateModelDeploymentMonitoringJobRequest,
-          ModelDeploymentMonitoringJob,
+          UpdateModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob,
           UpdateModelDeploymentMonitoringJobOperationMetadata>
       updateModelDeploymentMonitoringJobOperationCallable() {
     return updateModelDeploymentMonitoringJobOperationCallable;

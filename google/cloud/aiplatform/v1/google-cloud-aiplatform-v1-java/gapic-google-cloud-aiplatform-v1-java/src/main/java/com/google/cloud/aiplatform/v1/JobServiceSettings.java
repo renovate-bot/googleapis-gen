@@ -48,9 +48,9 @@ import javax.annotation.Generated;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (aiplatform.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (aiplatform.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -122,8 +122,7 @@ public class JobServiceSettings extends ClientSettings<JobServiceSettings> {
 
   /** Returns the object with the settings used for calls to listDataLabelingJobs. */
   public PagedCallSettings<
-          ListDataLabelingJobsRequest,
-          ListDataLabelingJobsResponse,
+          ListDataLabelingJobsRequest, ListDataLabelingJobsResponse,
           ListDataLabelingJobsPagedResponse>
       listDataLabelingJobsSettings() {
     return ((JobServiceStubSettings) getStubSettings()).listDataLabelingJobsSettings();
@@ -160,8 +159,7 @@ public class JobServiceSettings extends ClientSettings<JobServiceSettings> {
 
   /** Returns the object with the settings used for calls to listHyperparameterTuningJobs. */
   public PagedCallSettings<
-          ListHyperparameterTuningJobsRequest,
-          ListHyperparameterTuningJobsResponse,
+          ListHyperparameterTuningJobsRequest, ListHyperparameterTuningJobsResponse,
           ListHyperparameterTuningJobsPagedResponse>
       listHyperparameterTuningJobsSettings() {
     return ((JobServiceStubSettings) getStubSettings()).listHyperparameterTuningJobsSettings();
@@ -200,8 +198,7 @@ public class JobServiceSettings extends ClientSettings<JobServiceSettings> {
 
   /** Returns the object with the settings used for calls to listBatchPredictionJobs. */
   public PagedCallSettings<
-          ListBatchPredictionJobsRequest,
-          ListBatchPredictionJobsResponse,
+          ListBatchPredictionJobsRequest, ListBatchPredictionJobsResponse,
           ListBatchPredictionJobsPagedResponse>
       listBatchPredictionJobsSettings() {
     return ((JobServiceStubSettings) getStubSettings()).listBatchPredictionJobsSettings();
@@ -369,8 +366,7 @@ public class JobServiceSettings extends ClientSettings<JobServiceSettings> {
 
     /** Returns the builder for the settings used for calls to listDataLabelingJobs. */
     public PagedCallSettings.Builder<
-            ListDataLabelingJobsRequest,
-            ListDataLabelingJobsResponse,
+            ListDataLabelingJobsRequest, ListDataLabelingJobsResponse,
             ListDataLabelingJobsPagedResponse>
         listDataLabelingJobsSettings() {
       return getStubSettingsBuilder().listDataLabelingJobsSettings();
@@ -409,8 +405,7 @@ public class JobServiceSettings extends ClientSettings<JobServiceSettings> {
 
     /** Returns the builder for the settings used for calls to listHyperparameterTuningJobs. */
     public PagedCallSettings.Builder<
-            ListHyperparameterTuningJobsRequest,
-            ListHyperparameterTuningJobsResponse,
+            ListHyperparameterTuningJobsRequest, ListHyperparameterTuningJobsResponse,
             ListHyperparameterTuningJobsPagedResponse>
         listHyperparameterTuningJobsSettings() {
       return getStubSettingsBuilder().listHyperparameterTuningJobsSettings();
@@ -449,8 +444,7 @@ public class JobServiceSettings extends ClientSettings<JobServiceSettings> {
 
     /** Returns the builder for the settings used for calls to listBatchPredictionJobs. */
     public PagedCallSettings.Builder<
-            ListBatchPredictionJobsRequest,
-            ListBatchPredictionJobsResponse,
+            ListBatchPredictionJobsRequest, ListBatchPredictionJobsResponse,
             ListBatchPredictionJobsPagedResponse>
         listBatchPredictionJobsSettings() {
       return getStubSettingsBuilder().listBatchPredictionJobsSettings();

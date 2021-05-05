@@ -69,9 +69,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (recommender.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (recommender.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -215,8 +215,7 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
           ListRecommendationsRequest, ListRecommendationsResponse, ListRecommendationsPagedResponse>
       LIST_RECOMMENDATIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListRecommendationsRequest,
-              ListRecommendationsResponse,
+              ListRecommendationsRequest, ListRecommendationsResponse,
               ListRecommendationsPagedResponse>() {
             @Override
             public ApiFuture<ListRecommendationsPagedResponse> getFuturePagedResponse(
@@ -368,8 +367,7 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
     private final UnaryCallSettings.Builder<MarkInsightAcceptedRequest, Insight>
         markInsightAcceptedSettings;
     private final PagedCallSettings.Builder<
-            ListRecommendationsRequest,
-            ListRecommendationsResponse,
+            ListRecommendationsRequest, ListRecommendationsResponse,
             ListRecommendationsPagedResponse>
         listRecommendationsSettings;
     private final UnaryCallSettings.Builder<GetRecommendationRequest, Recommendation>
@@ -569,8 +567,7 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
 
     /** Returns the builder for the settings used for calls to listRecommendations. */
     public PagedCallSettings.Builder<
-            ListRecommendationsRequest,
-            ListRecommendationsResponse,
+            ListRecommendationsRequest, ListRecommendationsResponse,
             ListRecommendationsPagedResponse>
         listRecommendationsSettings() {
       return listRecommendationsSettings;

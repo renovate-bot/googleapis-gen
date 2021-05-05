@@ -66,13 +66,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -193,9 +193,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     result in all data assets (in the specified scope) that the user has access to.
    *     <p>Query strings can be simple as "x" or more qualified as:
    *     <ul>
-   *       <li>name:x
-   *       <li>column:x
-   *       <li>description:y
+   *       <li> name:x
+   *       <li> column:x
+   *       <li> description:y
    *     </ul>
    *     <p>Note: Query tokens need to have a minimum of 3 characters for substring matching to work
    *     correctly. See [Data Catalog Search
@@ -896,7 +896,7 @@ public class DataCatalogClient implements BackgroundResource {
    * @param parent Required. The name of the location that contains the entry groups, which can be
    *     provided in URL format. Example:
    *     <ul>
-   *       <li>projects/{project_id}/locations/{location}
+   *       <li> projects/{project_id}/locations/{location}
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -927,7 +927,7 @@ public class DataCatalogClient implements BackgroundResource {
    * @param parent Required. The name of the location that contains the entry groups, which can be
    *     provided in URL format. Example:
    *     <ul>
-   *       <li>projects/{project_id}/locations/{location}
+   *       <li> projects/{project_id}/locations/{location}
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1219,10 +1219,10 @@ public class DataCatalogClient implements BackgroundResource {
    *     fields are non-required and omitted in the request body, their values are emptied.
    *     <p>The following fields are modifiable:
    *     <ul>
-   *       <li>For entries with type `DATA_STREAM`: &#42; `schema`
-   *       <li>For entries with type `FILESET`: &#42; `schema` &#42; `display_name` &#42;
+   *       <li> For entries with type `DATA_STREAM`: &#42; `schema`
+   *       <li> For entries with type `FILESET`: &#42; `schema` &#42; `display_name` &#42;
    *           `description` &#42; `gcs_fileset_spec` &#42; `gcs_fileset_spec.file_patterns`
-   *       <li>For entries with `user_specified_type`: &#42; `schema` &#42; `display_name` &#42;
+   *       <li> For entries with `user_specified_type`: &#42; `schema` &#42; `display_name` &#42;
    *           `description` &#42; `user_specified_type` &#42; `user_specified_system` &#42;
    *           `linked_resource` &#42; `source_system_timestamps`
    *     </ul>
@@ -1305,7 +1305,8 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param name Required. The name of the entry. Example:
    *     <ul>
-   *       <li>projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+   *       <li>
+   *           projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1335,7 +1336,8 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param name Required. The name of the entry. Example:
    *     <ul>
-   *       <li>projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+   *       <li>
+   *           projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1415,7 +1417,8 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param name Required. The name of the entry. Example:
    *     <ul>
-   *       <li>projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+   *       <li>
+   *           projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1441,7 +1444,8 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param name Required. The name of the entry. Example:
    *     <ul>
-   *       <li>projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+   *       <li>
+   *           projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1557,7 +1561,7 @@ public class DataCatalogClient implements BackgroundResource {
    * @param parent Required. The name of the entry group that contains the entries, which can be
    *     provided in URL format. Example:
    *     <ul>
-   *       <li>projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
+   *       <li> projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1588,7 +1592,7 @@ public class DataCatalogClient implements BackgroundResource {
    * @param parent Required. The name of the entry group that contains the entries, which can be
    *     provided in URL format. Example:
    *     <ul>
-   *       <li>projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
+   *       <li> projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1711,7 +1715,7 @@ public class DataCatalogClient implements BackgroundResource {
    *     [region](https://cloud.google.com/data-catalog/docs/concepts/regions).
    *     <p>Example:
    *     <ul>
-   *       <li>projects/{project_id}/locations/us-central1
+   *       <li> projects/{project_id}/locations/us-central1
    *     </ul>
    *
    * @param tagTemplateId Required. The ID of the tag template to create.
@@ -1754,7 +1758,7 @@ public class DataCatalogClient implements BackgroundResource {
    *     [region](https://cloud.google.com/data-catalog/docs/concepts/regions).
    *     <p>Example:
    *     <ul>
-   *       <li>projects/{project_id}/locations/us-central1
+   *       <li> projects/{project_id}/locations/us-central1
    *     </ul>
    *
    * @param tagTemplateId Required. The ID of the tag template to create.
@@ -1845,7 +1849,7 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param name Required. The name of the tag template. Example:
    *     <ul>
-   *       <li>projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
+   *       <li> projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1871,7 +1875,7 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param name Required. The name of the tag template. Example:
    *     <ul>
-   *       <li>projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
+   *       <li> projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2061,7 +2065,7 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param name Required. The name of the tag template to delete. Example:
    *     <ul>
-   *       <li>projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
+   *       <li> projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
    *     </ul>
    *
    * @param force Required. Currently, this field must always be set to `true`. This confirms the
@@ -2096,7 +2100,7 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param name Required. The name of the tag template to delete. Example:
    *     <ul>
-   *       <li>projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
+   *       <li> projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
    *     </ul>
    *
    * @param force Required. Currently, this field must always be set to `true`. This confirms the
@@ -2184,7 +2188,7 @@ public class DataCatalogClient implements BackgroundResource {
    *     [region](https://cloud.google.com/data-catalog/docs/concepts/regions).
    *     <p>Example:
    *     <ul>
-   *       <li>projects/{project_id}/locations/us-central1/tagTemplates/{tag_template_id}
+   *       <li> projects/{project_id}/locations/us-central1/tagTemplates/{tag_template_id}
    *     </ul>
    *
    * @param tagTemplateFieldId Required. The ID of the tag template field to create.
@@ -2229,7 +2233,7 @@ public class DataCatalogClient implements BackgroundResource {
    *     [region](https://cloud.google.com/data-catalog/docs/concepts/regions).
    *     <p>Example:
    *     <ul>
-   *       <li>projects/{project_id}/locations/us-central1/tagTemplates/{tag_template_id}
+   *       <li> projects/{project_id}/locations/us-central1/tagTemplates/{tag_template_id}
    *     </ul>
    *
    * @param tagTemplateFieldId Required. The ID of the tag template field to create.
@@ -2328,7 +2332,8 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param name Required. The name of the tag template field. Example:
    *     <ul>
-   *       <li>projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
+   *       <li>
+   *           projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
    *     </ul>
    *
    * @param tagTemplateField Required. The template to update.
@@ -2365,7 +2370,8 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param name Required. The name of the tag template field. Example:
    *     <ul>
-   *       <li>projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
+   *       <li>
+   *           projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
    *     </ul>
    *
    * @param tagTemplateField Required. The template to update.
@@ -2403,7 +2409,8 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param name Required. The name of the tag template field. Example:
    *     <ul>
-   *       <li>projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
+   *       <li>
+   *           projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
    *     </ul>
    *
    * @param tagTemplateField Required. The template to update.
@@ -2456,7 +2463,8 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param name Required. The name of the tag template field. Example:
    *     <ul>
-   *       <li>projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
+   *       <li>
+   *           projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
    *     </ul>
    *
    * @param tagTemplateField Required. The template to update.
@@ -2568,7 +2576,8 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param name Required. The name of the tag template. Example:
    *     <ul>
-   *       <li>projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
+   *       <li>
+   *           projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
    *     </ul>
    *
    * @param newTagTemplateFieldId Required. The new ID of this tag template field. For example,
@@ -2607,7 +2616,8 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param name Required. The name of the tag template. Example:
    *     <ul>
-   *       <li>projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
+   *       <li>
+   *           projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
    *     </ul>
    *
    * @param newTagTemplateFieldId Required. The new ID of this tag template field. For example,
@@ -2706,7 +2716,8 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param name Required. The name of the enum field value. Example:
    *     <ul>
-   *       <li>projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}/enumValues/{enum_value_display_name}
+   *       <li>
+   *           projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}/enumValues/{enum_value_display_name}
    *     </ul>
    *
    * @param newEnumValueDisplayName Required. The new display name of the enum value. For example,
@@ -2748,7 +2759,8 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param name Required. The name of the enum field value. Example:
    *     <ul>
-   *       <li>projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}/enumValues/{enum_value_display_name}
+   *       <li>
+   *           projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}/enumValues/{enum_value_display_name}
    *     </ul>
    *
    * @param newEnumValueDisplayName Required. The new display name of the enum value. For example,
@@ -2851,7 +2863,8 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param name Required. The name of the tag template field to delete. Example:
    *     <ul>
-   *       <li>projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
+   *       <li>
+   *           projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
    *     </ul>
    *
    * @param force Required. Currently, this field must always be set to `true`. This confirms the
@@ -2889,7 +2902,8 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param name Required. The name of the tag template field to delete. Example:
    *     <ul>
-   *       <li>projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
+   *       <li>
+   *           projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
    *     </ul>
    *
    * @param force Required. Currently, this field must always be set to `true`. This confirms the
@@ -3202,7 +3216,8 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param name Required. The name of the tag to delete. Example:
    *     <ul>
-   *       <li>projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
+   *       <li>
+   *           projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3229,7 +3244,8 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * @param name Required. The name of the tag to delete. Example:
    *     <ul>
-   *       <li>projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
+   *       <li>
+   *           projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3308,8 +3324,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     [EntryGroup][google.cloud.datacatalog.v1.EntryGroup].
    *     <p>Examples:
    *     <ul>
-   *       <li>projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-   *       <li>projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+   *       <li> projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
+   *       <li>
+   *           projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3341,8 +3358,9 @@ public class DataCatalogClient implements BackgroundResource {
    *     [EntryGroup][google.cloud.datacatalog.v1.EntryGroup].
    *     <p>Examples:
    *     <ul>
-   *       <li>projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-   *       <li>projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+   *       <li> projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
+   *       <li>
+   *           projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3805,10 +3823,7 @@ public class DataCatalogClient implements BackgroundResource {
 
   public static class SearchCatalogPagedResponse
       extends AbstractPagedListResponse<
-          SearchCatalogRequest,
-          SearchCatalogResponse,
-          SearchCatalogResult,
-          SearchCatalogPage,
+          SearchCatalogRequest, SearchCatalogResponse, SearchCatalogResult, SearchCatalogPage,
           SearchCatalogFixedSizeCollection> {
 
     public static ApiFuture<SearchCatalogPagedResponse> createAsync(
@@ -3863,10 +3878,7 @@ public class DataCatalogClient implements BackgroundResource {
 
   public static class SearchCatalogFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          SearchCatalogRequest,
-          SearchCatalogResponse,
-          SearchCatalogResult,
-          SearchCatalogPage,
+          SearchCatalogRequest, SearchCatalogResponse, SearchCatalogResult, SearchCatalogPage,
           SearchCatalogFixedSizeCollection> {
 
     private SearchCatalogFixedSizeCollection(List<SearchCatalogPage> pages, int collectionSize) {
@@ -3886,10 +3898,7 @@ public class DataCatalogClient implements BackgroundResource {
 
   public static class ListEntryGroupsPagedResponse
       extends AbstractPagedListResponse<
-          ListEntryGroupsRequest,
-          ListEntryGroupsResponse,
-          EntryGroup,
-          ListEntryGroupsPage,
+          ListEntryGroupsRequest, ListEntryGroupsResponse, EntryGroup, ListEntryGroupsPage,
           ListEntryGroupsFixedSizeCollection> {
 
     public static ApiFuture<ListEntryGroupsPagedResponse> createAsync(
@@ -3944,10 +3953,7 @@ public class DataCatalogClient implements BackgroundResource {
 
   public static class ListEntryGroupsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListEntryGroupsRequest,
-          ListEntryGroupsResponse,
-          EntryGroup,
-          ListEntryGroupsPage,
+          ListEntryGroupsRequest, ListEntryGroupsResponse, EntryGroup, ListEntryGroupsPage,
           ListEntryGroupsFixedSizeCollection> {
 
     private ListEntryGroupsFixedSizeCollection(
@@ -3968,10 +3974,7 @@ public class DataCatalogClient implements BackgroundResource {
 
   public static class ListEntriesPagedResponse
       extends AbstractPagedListResponse<
-          ListEntriesRequest,
-          ListEntriesResponse,
-          Entry,
-          ListEntriesPage,
+          ListEntriesRequest, ListEntriesResponse, Entry, ListEntriesPage,
           ListEntriesFixedSizeCollection> {
 
     public static ApiFuture<ListEntriesPagedResponse> createAsync(
@@ -4025,10 +4028,7 @@ public class DataCatalogClient implements BackgroundResource {
 
   public static class ListEntriesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListEntriesRequest,
-          ListEntriesResponse,
-          Entry,
-          ListEntriesPage,
+          ListEntriesRequest, ListEntriesResponse, Entry, ListEntriesPage,
           ListEntriesFixedSizeCollection> {
 
     private ListEntriesFixedSizeCollection(List<ListEntriesPage> pages, int collectionSize) {

@@ -80,9 +80,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (iam.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (iam.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -115,8 +115,7 @@ public class WorkloadIdentityPoolsStubSettings
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
   private final PagedCallSettings<
-          ListWorkloadIdentityPoolsRequest,
-          ListWorkloadIdentityPoolsResponse,
+          ListWorkloadIdentityPoolsRequest, ListWorkloadIdentityPoolsResponse,
           ListWorkloadIdentityPoolsPagedResponse>
       listWorkloadIdentityPoolsSettings;
   private final UnaryCallSettings<GetWorkloadIdentityPoolRequest, WorkloadIdentityPool>
@@ -124,34 +123,29 @@ public class WorkloadIdentityPoolsStubSettings
   private final UnaryCallSettings<CreateWorkloadIdentityPoolRequest, Operation>
       createWorkloadIdentityPoolSettings;
   private final OperationCallSettings<
-          CreateWorkloadIdentityPoolRequest,
-          WorkloadIdentityPool,
+          CreateWorkloadIdentityPoolRequest, WorkloadIdentityPool,
           WorkloadIdentityPoolOperationMetadata>
       createWorkloadIdentityPoolOperationSettings;
   private final UnaryCallSettings<UpdateWorkloadIdentityPoolRequest, Operation>
       updateWorkloadIdentityPoolSettings;
   private final OperationCallSettings<
-          UpdateWorkloadIdentityPoolRequest,
-          WorkloadIdentityPool,
+          UpdateWorkloadIdentityPoolRequest, WorkloadIdentityPool,
           WorkloadIdentityPoolOperationMetadata>
       updateWorkloadIdentityPoolOperationSettings;
   private final UnaryCallSettings<DeleteWorkloadIdentityPoolRequest, Operation>
       deleteWorkloadIdentityPoolSettings;
   private final OperationCallSettings<
-          DeleteWorkloadIdentityPoolRequest,
-          WorkloadIdentityPool,
+          DeleteWorkloadIdentityPoolRequest, WorkloadIdentityPool,
           WorkloadIdentityPoolOperationMetadata>
       deleteWorkloadIdentityPoolOperationSettings;
   private final UnaryCallSettings<UndeleteWorkloadIdentityPoolRequest, Operation>
       undeleteWorkloadIdentityPoolSettings;
   private final OperationCallSettings<
-          UndeleteWorkloadIdentityPoolRequest,
-          WorkloadIdentityPool,
+          UndeleteWorkloadIdentityPoolRequest, WorkloadIdentityPool,
           WorkloadIdentityPoolOperationMetadata>
       undeleteWorkloadIdentityPoolOperationSettings;
   private final PagedCallSettings<
-          ListWorkloadIdentityPoolProvidersRequest,
-          ListWorkloadIdentityPoolProvidersResponse,
+          ListWorkloadIdentityPoolProvidersRequest, ListWorkloadIdentityPoolProvidersResponse,
           ListWorkloadIdentityPoolProvidersPagedResponse>
       listWorkloadIdentityPoolProvidersSettings;
   private final UnaryCallSettings<
@@ -160,29 +154,25 @@ public class WorkloadIdentityPoolsStubSettings
   private final UnaryCallSettings<CreateWorkloadIdentityPoolProviderRequest, Operation>
       createWorkloadIdentityPoolProviderSettings;
   private final OperationCallSettings<
-          CreateWorkloadIdentityPoolProviderRequest,
-          WorkloadIdentityPoolProvider,
+          CreateWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
           WorkloadIdentityPoolProviderOperationMetadata>
       createWorkloadIdentityPoolProviderOperationSettings;
   private final UnaryCallSettings<UpdateWorkloadIdentityPoolProviderRequest, Operation>
       updateWorkloadIdentityPoolProviderSettings;
   private final OperationCallSettings<
-          UpdateWorkloadIdentityPoolProviderRequest,
-          WorkloadIdentityPoolProvider,
+          UpdateWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
           WorkloadIdentityPoolProviderOperationMetadata>
       updateWorkloadIdentityPoolProviderOperationSettings;
   private final UnaryCallSettings<DeleteWorkloadIdentityPoolProviderRequest, Operation>
       deleteWorkloadIdentityPoolProviderSettings;
   private final OperationCallSettings<
-          DeleteWorkloadIdentityPoolProviderRequest,
-          WorkloadIdentityPoolProvider,
+          DeleteWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
           WorkloadIdentityPoolProviderOperationMetadata>
       deleteWorkloadIdentityPoolProviderOperationSettings;
   private final UnaryCallSettings<UndeleteWorkloadIdentityPoolProviderRequest, Operation>
       undeleteWorkloadIdentityPoolProviderSettings;
   private final OperationCallSettings<
-          UndeleteWorkloadIdentityPoolProviderRequest,
-          WorkloadIdentityPoolProvider,
+          UndeleteWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
           WorkloadIdentityPoolProviderOperationMetadata>
       undeleteWorkloadIdentityPoolProviderOperationSettings;
 
@@ -190,8 +180,7 @@ public class WorkloadIdentityPoolsStubSettings
           ListWorkloadIdentityPoolsRequest, ListWorkloadIdentityPoolsResponse, WorkloadIdentityPool>
       LIST_WORKLOAD_IDENTITY_POOLS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ListWorkloadIdentityPoolsRequest,
-              ListWorkloadIdentityPoolsResponse,
+              ListWorkloadIdentityPoolsRequest, ListWorkloadIdentityPoolsResponse,
               WorkloadIdentityPool>() {
             @Override
             public String emptyToken() {
@@ -234,13 +223,11 @@ public class WorkloadIdentityPoolsStubSettings
           };
 
   private static final PagedListDescriptor<
-          ListWorkloadIdentityPoolProvidersRequest,
-          ListWorkloadIdentityPoolProvidersResponse,
+          ListWorkloadIdentityPoolProvidersRequest, ListWorkloadIdentityPoolProvidersResponse,
           WorkloadIdentityPoolProvider>
       LIST_WORKLOAD_IDENTITY_POOL_PROVIDERS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ListWorkloadIdentityPoolProvidersRequest,
-              ListWorkloadIdentityPoolProvidersResponse,
+              ListWorkloadIdentityPoolProvidersRequest, ListWorkloadIdentityPoolProvidersResponse,
               WorkloadIdentityPoolProvider>() {
             @Override
             public String emptyToken() {
@@ -283,13 +270,11 @@ public class WorkloadIdentityPoolsStubSettings
           };
 
   private static final PagedListResponseFactory<
-          ListWorkloadIdentityPoolsRequest,
-          ListWorkloadIdentityPoolsResponse,
+          ListWorkloadIdentityPoolsRequest, ListWorkloadIdentityPoolsResponse,
           ListWorkloadIdentityPoolsPagedResponse>
       LIST_WORKLOAD_IDENTITY_POOLS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListWorkloadIdentityPoolsRequest,
-              ListWorkloadIdentityPoolsResponse,
+              ListWorkloadIdentityPoolsRequest, ListWorkloadIdentityPoolsResponse,
               ListWorkloadIdentityPoolsPagedResponse>() {
             @Override
             public ApiFuture<ListWorkloadIdentityPoolsPagedResponse> getFuturePagedResponse(
@@ -299,8 +284,7 @@ public class WorkloadIdentityPoolsStubSettings
                 ApiCallContext context,
                 ApiFuture<ListWorkloadIdentityPoolsResponse> futureResponse) {
               PageContext<
-                      ListWorkloadIdentityPoolsRequest,
-                      ListWorkloadIdentityPoolsResponse,
+                      ListWorkloadIdentityPoolsRequest, ListWorkloadIdentityPoolsResponse,
                       WorkloadIdentityPool>
                   pageContext =
                       PageContext.create(
@@ -311,13 +295,11 @@ public class WorkloadIdentityPoolsStubSettings
           };
 
   private static final PagedListResponseFactory<
-          ListWorkloadIdentityPoolProvidersRequest,
-          ListWorkloadIdentityPoolProvidersResponse,
+          ListWorkloadIdentityPoolProvidersRequest, ListWorkloadIdentityPoolProvidersResponse,
           ListWorkloadIdentityPoolProvidersPagedResponse>
       LIST_WORKLOAD_IDENTITY_POOL_PROVIDERS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListWorkloadIdentityPoolProvidersRequest,
-              ListWorkloadIdentityPoolProvidersResponse,
+              ListWorkloadIdentityPoolProvidersRequest, ListWorkloadIdentityPoolProvidersResponse,
               ListWorkloadIdentityPoolProvidersPagedResponse>() {
             @Override
             public ApiFuture<ListWorkloadIdentityPoolProvidersPagedResponse> getFuturePagedResponse(
@@ -330,8 +312,7 @@ public class WorkloadIdentityPoolsStubSettings
                 ApiFuture<ListWorkloadIdentityPoolProvidersResponse> futureResponse) {
               PageContext<
                       ListWorkloadIdentityPoolProvidersRequest,
-                      ListWorkloadIdentityPoolProvidersResponse,
-                      WorkloadIdentityPoolProvider>
+                      ListWorkloadIdentityPoolProvidersResponse, WorkloadIdentityPoolProvider>
                   pageContext =
                       PageContext.create(
                           callable,
@@ -345,8 +326,7 @@ public class WorkloadIdentityPoolsStubSettings
 
   /** Returns the object with the settings used for calls to listWorkloadIdentityPools. */
   public PagedCallSettings<
-          ListWorkloadIdentityPoolsRequest,
-          ListWorkloadIdentityPoolsResponse,
+          ListWorkloadIdentityPoolsRequest, ListWorkloadIdentityPoolsResponse,
           ListWorkloadIdentityPoolsPagedResponse>
       listWorkloadIdentityPoolsSettings() {
     return listWorkloadIdentityPoolsSettings;
@@ -366,8 +346,7 @@ public class WorkloadIdentityPoolsStubSettings
 
   /** Returns the object with the settings used for calls to createWorkloadIdentityPool. */
   public OperationCallSettings<
-          CreateWorkloadIdentityPoolRequest,
-          WorkloadIdentityPool,
+          CreateWorkloadIdentityPoolRequest, WorkloadIdentityPool,
           WorkloadIdentityPoolOperationMetadata>
       createWorkloadIdentityPoolOperationSettings() {
     return createWorkloadIdentityPoolOperationSettings;
@@ -381,8 +360,7 @@ public class WorkloadIdentityPoolsStubSettings
 
   /** Returns the object with the settings used for calls to updateWorkloadIdentityPool. */
   public OperationCallSettings<
-          UpdateWorkloadIdentityPoolRequest,
-          WorkloadIdentityPool,
+          UpdateWorkloadIdentityPoolRequest, WorkloadIdentityPool,
           WorkloadIdentityPoolOperationMetadata>
       updateWorkloadIdentityPoolOperationSettings() {
     return updateWorkloadIdentityPoolOperationSettings;
@@ -396,8 +374,7 @@ public class WorkloadIdentityPoolsStubSettings
 
   /** Returns the object with the settings used for calls to deleteWorkloadIdentityPool. */
   public OperationCallSettings<
-          DeleteWorkloadIdentityPoolRequest,
-          WorkloadIdentityPool,
+          DeleteWorkloadIdentityPoolRequest, WorkloadIdentityPool,
           WorkloadIdentityPoolOperationMetadata>
       deleteWorkloadIdentityPoolOperationSettings() {
     return deleteWorkloadIdentityPoolOperationSettings;
@@ -411,8 +388,7 @@ public class WorkloadIdentityPoolsStubSettings
 
   /** Returns the object with the settings used for calls to undeleteWorkloadIdentityPool. */
   public OperationCallSettings<
-          UndeleteWorkloadIdentityPoolRequest,
-          WorkloadIdentityPool,
+          UndeleteWorkloadIdentityPoolRequest, WorkloadIdentityPool,
           WorkloadIdentityPoolOperationMetadata>
       undeleteWorkloadIdentityPoolOperationSettings() {
     return undeleteWorkloadIdentityPoolOperationSettings;
@@ -420,8 +396,7 @@ public class WorkloadIdentityPoolsStubSettings
 
   /** Returns the object with the settings used for calls to listWorkloadIdentityPoolProviders. */
   public PagedCallSettings<
-          ListWorkloadIdentityPoolProvidersRequest,
-          ListWorkloadIdentityPoolProvidersResponse,
+          ListWorkloadIdentityPoolProvidersRequest, ListWorkloadIdentityPoolProvidersResponse,
           ListWorkloadIdentityPoolProvidersPagedResponse>
       listWorkloadIdentityPoolProvidersSettings() {
     return listWorkloadIdentityPoolProvidersSettings;
@@ -441,8 +416,7 @@ public class WorkloadIdentityPoolsStubSettings
 
   /** Returns the object with the settings used for calls to createWorkloadIdentityPoolProvider. */
   public OperationCallSettings<
-          CreateWorkloadIdentityPoolProviderRequest,
-          WorkloadIdentityPoolProvider,
+          CreateWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
           WorkloadIdentityPoolProviderOperationMetadata>
       createWorkloadIdentityPoolProviderOperationSettings() {
     return createWorkloadIdentityPoolProviderOperationSettings;
@@ -456,8 +430,7 @@ public class WorkloadIdentityPoolsStubSettings
 
   /** Returns the object with the settings used for calls to updateWorkloadIdentityPoolProvider. */
   public OperationCallSettings<
-          UpdateWorkloadIdentityPoolProviderRequest,
-          WorkloadIdentityPoolProvider,
+          UpdateWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
           WorkloadIdentityPoolProviderOperationMetadata>
       updateWorkloadIdentityPoolProviderOperationSettings() {
     return updateWorkloadIdentityPoolProviderOperationSettings;
@@ -471,8 +444,7 @@ public class WorkloadIdentityPoolsStubSettings
 
   /** Returns the object with the settings used for calls to deleteWorkloadIdentityPoolProvider. */
   public OperationCallSettings<
-          DeleteWorkloadIdentityPoolProviderRequest,
-          WorkloadIdentityPoolProvider,
+          DeleteWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
           WorkloadIdentityPoolProviderOperationMetadata>
       deleteWorkloadIdentityPoolProviderOperationSettings() {
     return deleteWorkloadIdentityPoolProviderOperationSettings;
@@ -490,8 +462,7 @@ public class WorkloadIdentityPoolsStubSettings
    * Returns the object with the settings used for calls to undeleteWorkloadIdentityPoolProvider.
    */
   public OperationCallSettings<
-          UndeleteWorkloadIdentityPoolProviderRequest,
-          WorkloadIdentityPoolProvider,
+          UndeleteWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
           WorkloadIdentityPoolProviderOperationMetadata>
       undeleteWorkloadIdentityPoolProviderOperationSettings() {
     return undeleteWorkloadIdentityPoolProviderOperationSettings;
@@ -611,8 +582,7 @@ public class WorkloadIdentityPoolsStubSettings
       extends StubSettings.Builder<WorkloadIdentityPoolsStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final PagedCallSettings.Builder<
-            ListWorkloadIdentityPoolsRequest,
-            ListWorkloadIdentityPoolsResponse,
+            ListWorkloadIdentityPoolsRequest, ListWorkloadIdentityPoolsResponse,
             ListWorkloadIdentityPoolsPagedResponse>
         listWorkloadIdentityPoolsSettings;
     private final UnaryCallSettings.Builder<GetWorkloadIdentityPoolRequest, WorkloadIdentityPool>
@@ -620,34 +590,29 @@ public class WorkloadIdentityPoolsStubSettings
     private final UnaryCallSettings.Builder<CreateWorkloadIdentityPoolRequest, Operation>
         createWorkloadIdentityPoolSettings;
     private final OperationCallSettings.Builder<
-            CreateWorkloadIdentityPoolRequest,
-            WorkloadIdentityPool,
+            CreateWorkloadIdentityPoolRequest, WorkloadIdentityPool,
             WorkloadIdentityPoolOperationMetadata>
         createWorkloadIdentityPoolOperationSettings;
     private final UnaryCallSettings.Builder<UpdateWorkloadIdentityPoolRequest, Operation>
         updateWorkloadIdentityPoolSettings;
     private final OperationCallSettings.Builder<
-            UpdateWorkloadIdentityPoolRequest,
-            WorkloadIdentityPool,
+            UpdateWorkloadIdentityPoolRequest, WorkloadIdentityPool,
             WorkloadIdentityPoolOperationMetadata>
         updateWorkloadIdentityPoolOperationSettings;
     private final UnaryCallSettings.Builder<DeleteWorkloadIdentityPoolRequest, Operation>
         deleteWorkloadIdentityPoolSettings;
     private final OperationCallSettings.Builder<
-            DeleteWorkloadIdentityPoolRequest,
-            WorkloadIdentityPool,
+            DeleteWorkloadIdentityPoolRequest, WorkloadIdentityPool,
             WorkloadIdentityPoolOperationMetadata>
         deleteWorkloadIdentityPoolOperationSettings;
     private final UnaryCallSettings.Builder<UndeleteWorkloadIdentityPoolRequest, Operation>
         undeleteWorkloadIdentityPoolSettings;
     private final OperationCallSettings.Builder<
-            UndeleteWorkloadIdentityPoolRequest,
-            WorkloadIdentityPool,
+            UndeleteWorkloadIdentityPoolRequest, WorkloadIdentityPool,
             WorkloadIdentityPoolOperationMetadata>
         undeleteWorkloadIdentityPoolOperationSettings;
     private final PagedCallSettings.Builder<
-            ListWorkloadIdentityPoolProvidersRequest,
-            ListWorkloadIdentityPoolProvidersResponse,
+            ListWorkloadIdentityPoolProvidersRequest, ListWorkloadIdentityPoolProvidersResponse,
             ListWorkloadIdentityPoolProvidersPagedResponse>
         listWorkloadIdentityPoolProvidersSettings;
     private final UnaryCallSettings.Builder<
@@ -656,29 +621,25 @@ public class WorkloadIdentityPoolsStubSettings
     private final UnaryCallSettings.Builder<CreateWorkloadIdentityPoolProviderRequest, Operation>
         createWorkloadIdentityPoolProviderSettings;
     private final OperationCallSettings.Builder<
-            CreateWorkloadIdentityPoolProviderRequest,
-            WorkloadIdentityPoolProvider,
+            CreateWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
             WorkloadIdentityPoolProviderOperationMetadata>
         createWorkloadIdentityPoolProviderOperationSettings;
     private final UnaryCallSettings.Builder<UpdateWorkloadIdentityPoolProviderRequest, Operation>
         updateWorkloadIdentityPoolProviderSettings;
     private final OperationCallSettings.Builder<
-            UpdateWorkloadIdentityPoolProviderRequest,
-            WorkloadIdentityPoolProvider,
+            UpdateWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
             WorkloadIdentityPoolProviderOperationMetadata>
         updateWorkloadIdentityPoolProviderOperationSettings;
     private final UnaryCallSettings.Builder<DeleteWorkloadIdentityPoolProviderRequest, Operation>
         deleteWorkloadIdentityPoolProviderSettings;
     private final OperationCallSettings.Builder<
-            DeleteWorkloadIdentityPoolProviderRequest,
-            WorkloadIdentityPoolProvider,
+            DeleteWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
             WorkloadIdentityPoolProviderOperationMetadata>
         deleteWorkloadIdentityPoolProviderOperationSettings;
     private final UnaryCallSettings.Builder<UndeleteWorkloadIdentityPoolProviderRequest, Operation>
         undeleteWorkloadIdentityPoolProviderSettings;
     private final OperationCallSettings.Builder<
-            UndeleteWorkloadIdentityPoolProviderRequest,
-            WorkloadIdentityPoolProvider,
+            UndeleteWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
             WorkloadIdentityPoolProviderOperationMetadata>
         undeleteWorkloadIdentityPoolProviderOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
@@ -1122,8 +1083,7 @@ public class WorkloadIdentityPoolsStubSettings
 
     /** Returns the builder for the settings used for calls to listWorkloadIdentityPools. */
     public PagedCallSettings.Builder<
-            ListWorkloadIdentityPoolsRequest,
-            ListWorkloadIdentityPoolsResponse,
+            ListWorkloadIdentityPoolsRequest, ListWorkloadIdentityPoolsResponse,
             ListWorkloadIdentityPoolsPagedResponse>
         listWorkloadIdentityPoolsSettings() {
       return listWorkloadIdentityPoolsSettings;
@@ -1145,8 +1105,7 @@ public class WorkloadIdentityPoolsStubSettings
     @BetaApi(
         "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
-            CreateWorkloadIdentityPoolRequest,
-            WorkloadIdentityPool,
+            CreateWorkloadIdentityPoolRequest, WorkloadIdentityPool,
             WorkloadIdentityPoolOperationMetadata>
         createWorkloadIdentityPoolOperationSettings() {
       return createWorkloadIdentityPoolOperationSettings;
@@ -1162,8 +1121,7 @@ public class WorkloadIdentityPoolsStubSettings
     @BetaApi(
         "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
-            UpdateWorkloadIdentityPoolRequest,
-            WorkloadIdentityPool,
+            UpdateWorkloadIdentityPoolRequest, WorkloadIdentityPool,
             WorkloadIdentityPoolOperationMetadata>
         updateWorkloadIdentityPoolOperationSettings() {
       return updateWorkloadIdentityPoolOperationSettings;
@@ -1179,8 +1137,7 @@ public class WorkloadIdentityPoolsStubSettings
     @BetaApi(
         "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
-            DeleteWorkloadIdentityPoolRequest,
-            WorkloadIdentityPool,
+            DeleteWorkloadIdentityPoolRequest, WorkloadIdentityPool,
             WorkloadIdentityPoolOperationMetadata>
         deleteWorkloadIdentityPoolOperationSettings() {
       return deleteWorkloadIdentityPoolOperationSettings;
@@ -1196,8 +1153,7 @@ public class WorkloadIdentityPoolsStubSettings
     @BetaApi(
         "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
-            UndeleteWorkloadIdentityPoolRequest,
-            WorkloadIdentityPool,
+            UndeleteWorkloadIdentityPoolRequest, WorkloadIdentityPool,
             WorkloadIdentityPoolOperationMetadata>
         undeleteWorkloadIdentityPoolOperationSettings() {
       return undeleteWorkloadIdentityPoolOperationSettings;
@@ -1205,8 +1161,7 @@ public class WorkloadIdentityPoolsStubSettings
 
     /** Returns the builder for the settings used for calls to listWorkloadIdentityPoolProviders. */
     public PagedCallSettings.Builder<
-            ListWorkloadIdentityPoolProvidersRequest,
-            ListWorkloadIdentityPoolProvidersResponse,
+            ListWorkloadIdentityPoolProvidersRequest, ListWorkloadIdentityPoolProvidersResponse,
             ListWorkloadIdentityPoolProvidersPagedResponse>
         listWorkloadIdentityPoolProvidersSettings() {
       return listWorkloadIdentityPoolProvidersSettings;
@@ -1233,8 +1188,7 @@ public class WorkloadIdentityPoolsStubSettings
     @BetaApi(
         "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
-            CreateWorkloadIdentityPoolProviderRequest,
-            WorkloadIdentityPoolProvider,
+            CreateWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
             WorkloadIdentityPoolProviderOperationMetadata>
         createWorkloadIdentityPoolProviderOperationSettings() {
       return createWorkloadIdentityPoolProviderOperationSettings;
@@ -1254,8 +1208,7 @@ public class WorkloadIdentityPoolsStubSettings
     @BetaApi(
         "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
-            UpdateWorkloadIdentityPoolProviderRequest,
-            WorkloadIdentityPoolProvider,
+            UpdateWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
             WorkloadIdentityPoolProviderOperationMetadata>
         updateWorkloadIdentityPoolProviderOperationSettings() {
       return updateWorkloadIdentityPoolProviderOperationSettings;
@@ -1275,8 +1228,7 @@ public class WorkloadIdentityPoolsStubSettings
     @BetaApi(
         "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
-            DeleteWorkloadIdentityPoolProviderRequest,
-            WorkloadIdentityPoolProvider,
+            DeleteWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
             WorkloadIdentityPoolProviderOperationMetadata>
         deleteWorkloadIdentityPoolProviderOperationSettings() {
       return deleteWorkloadIdentityPoolProviderOperationSettings;
@@ -1296,8 +1248,7 @@ public class WorkloadIdentityPoolsStubSettings
     @BetaApi(
         "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
-            UndeleteWorkloadIdentityPoolProviderRequest,
-            WorkloadIdentityPoolProvider,
+            UndeleteWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
             WorkloadIdentityPoolProviderOperationMetadata>
         undeleteWorkloadIdentityPoolProviderOperationSettings() {
       return undeleteWorkloadIdentityPoolProviderOperationSettings;

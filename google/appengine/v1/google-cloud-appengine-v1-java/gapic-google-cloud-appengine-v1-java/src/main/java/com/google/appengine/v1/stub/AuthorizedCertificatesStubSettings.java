@@ -64,9 +64,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (appengine.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (appengine.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -102,8 +102,7 @@ public class AuthorizedCertificatesStubSettings
           .build();
 
   private final PagedCallSettings<
-          ListAuthorizedCertificatesRequest,
-          ListAuthorizedCertificatesResponse,
+          ListAuthorizedCertificatesRequest, ListAuthorizedCertificatesResponse,
           ListAuthorizedCertificatesPagedResponse>
       listAuthorizedCertificatesSettings;
   private final UnaryCallSettings<GetAuthorizedCertificateRequest, AuthorizedCertificate>
@@ -116,13 +115,11 @@ public class AuthorizedCertificatesStubSettings
       deleteAuthorizedCertificateSettings;
 
   private static final PagedListDescriptor<
-          ListAuthorizedCertificatesRequest,
-          ListAuthorizedCertificatesResponse,
+          ListAuthorizedCertificatesRequest, ListAuthorizedCertificatesResponse,
           AuthorizedCertificate>
       LIST_AUTHORIZED_CERTIFICATES_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ListAuthorizedCertificatesRequest,
-              ListAuthorizedCertificatesResponse,
+              ListAuthorizedCertificatesRequest, ListAuthorizedCertificatesResponse,
               AuthorizedCertificate>() {
             @Override
             public String emptyToken() {
@@ -165,13 +162,11 @@ public class AuthorizedCertificatesStubSettings
           };
 
   private static final PagedListResponseFactory<
-          ListAuthorizedCertificatesRequest,
-          ListAuthorizedCertificatesResponse,
+          ListAuthorizedCertificatesRequest, ListAuthorizedCertificatesResponse,
           ListAuthorizedCertificatesPagedResponse>
       LIST_AUTHORIZED_CERTIFICATES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListAuthorizedCertificatesRequest,
-              ListAuthorizedCertificatesResponse,
+              ListAuthorizedCertificatesRequest, ListAuthorizedCertificatesResponse,
               ListAuthorizedCertificatesPagedResponse>() {
             @Override
             public ApiFuture<ListAuthorizedCertificatesPagedResponse> getFuturePagedResponse(
@@ -181,8 +176,7 @@ public class AuthorizedCertificatesStubSettings
                 ApiCallContext context,
                 ApiFuture<ListAuthorizedCertificatesResponse> futureResponse) {
               PageContext<
-                      ListAuthorizedCertificatesRequest,
-                      ListAuthorizedCertificatesResponse,
+                      ListAuthorizedCertificatesRequest, ListAuthorizedCertificatesResponse,
                       AuthorizedCertificate>
                   pageContext =
                       PageContext.create(
@@ -194,8 +188,7 @@ public class AuthorizedCertificatesStubSettings
 
   /** Returns the object with the settings used for calls to listAuthorizedCertificates. */
   public PagedCallSettings<
-          ListAuthorizedCertificatesRequest,
-          ListAuthorizedCertificatesResponse,
+          ListAuthorizedCertificatesRequest, ListAuthorizedCertificatesResponse,
           ListAuthorizedCertificatesPagedResponse>
       listAuthorizedCertificatesSettings() {
     return listAuthorizedCertificatesSettings;
@@ -310,8 +303,7 @@ public class AuthorizedCertificatesStubSettings
       extends StubSettings.Builder<AuthorizedCertificatesStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final PagedCallSettings.Builder<
-            ListAuthorizedCertificatesRequest,
-            ListAuthorizedCertificatesResponse,
+            ListAuthorizedCertificatesRequest, ListAuthorizedCertificatesResponse,
             ListAuthorizedCertificatesPagedResponse>
         listAuthorizedCertificatesSettings;
     private final UnaryCallSettings.Builder<GetAuthorizedCertificateRequest, AuthorizedCertificate>
@@ -454,8 +446,7 @@ public class AuthorizedCertificatesStubSettings
 
     /** Returns the builder for the settings used for calls to listAuthorizedCertificates. */
     public PagedCallSettings.Builder<
-            ListAuthorizedCertificatesRequest,
-            ListAuthorizedCertificatesResponse,
+            ListAuthorizedCertificatesRequest, ListAuthorizedCertificatesResponse,
             ListAuthorizedCertificatesPagedResponse>
         listAuthorizedCertificatesSettings() {
       return listAuthorizedCertificatesSettings;

@@ -82,9 +82,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (logging.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (logging.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -126,8 +126,7 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
           ListLogEntriesRequest, ListLogEntriesResponse, ListLogEntriesPagedResponse>
       listLogEntriesSettings;
   private final PagedCallSettings<
-          ListMonitoredResourceDescriptorsRequest,
-          ListMonitoredResourceDescriptorsResponse,
+          ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
           ListMonitoredResourceDescriptorsPagedResponse>
       listMonitoredResourceDescriptorsSettings;
   private final PagedCallSettings<ListLogsRequest, ListLogsResponse, ListLogsPagedResponse>
@@ -173,13 +172,11 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
           };
 
   private static final PagedListDescriptor<
-          ListMonitoredResourceDescriptorsRequest,
-          ListMonitoredResourceDescriptorsResponse,
+          ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
           MonitoredResourceDescriptor>
       LIST_MONITORED_RESOURCE_DESCRIPTORS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ListMonitoredResourceDescriptorsRequest,
-              ListMonitoredResourceDescriptorsResponse,
+              ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
               MonitoredResourceDescriptor>() {
             @Override
             public String emptyToken() {
@@ -275,13 +272,11 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
           };
 
   private static final PagedListResponseFactory<
-          ListMonitoredResourceDescriptorsRequest,
-          ListMonitoredResourceDescriptorsResponse,
+          ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
           ListMonitoredResourceDescriptorsPagedResponse>
       LIST_MONITORED_RESOURCE_DESCRIPTORS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListMonitoredResourceDescriptorsRequest,
-              ListMonitoredResourceDescriptorsResponse,
+              ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
               ListMonitoredResourceDescriptorsPagedResponse>() {
             @Override
             public ApiFuture<ListMonitoredResourceDescriptorsPagedResponse> getFuturePagedResponse(
@@ -294,8 +289,7 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
                 ApiFuture<ListMonitoredResourceDescriptorsResponse> futureResponse) {
               PageContext<
                       ListMonitoredResourceDescriptorsRequest,
-                      ListMonitoredResourceDescriptorsResponse,
-                      MonitoredResourceDescriptor>
+                      ListMonitoredResourceDescriptorsResponse, MonitoredResourceDescriptor>
                   pageContext =
                       PageContext.create(
                           callable,
@@ -403,8 +397,7 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
 
   /** Returns the object with the settings used for calls to listMonitoredResourceDescriptors. */
   public PagedCallSettings<
-          ListMonitoredResourceDescriptorsRequest,
-          ListMonitoredResourceDescriptorsResponse,
+          ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
           ListMonitoredResourceDescriptorsPagedResponse>
       listMonitoredResourceDescriptorsSettings() {
     return listMonitoredResourceDescriptorsSettings;
@@ -510,8 +503,7 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
             ListLogEntriesRequest, ListLogEntriesResponse, ListLogEntriesPagedResponse>
         listLogEntriesSettings;
     private final PagedCallSettings.Builder<
-            ListMonitoredResourceDescriptorsRequest,
-            ListMonitoredResourceDescriptorsResponse,
+            ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
             ListMonitoredResourceDescriptorsPagedResponse>
         listMonitoredResourceDescriptorsSettings;
     private final PagedCallSettings.Builder<
@@ -711,8 +703,7 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
 
     /** Returns the builder for the settings used for calls to listMonitoredResourceDescriptors. */
     public PagedCallSettings.Builder<
-            ListMonitoredResourceDescriptorsRequest,
-            ListMonitoredResourceDescriptorsResponse,
+            ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
             ListMonitoredResourceDescriptorsPagedResponse>
         listMonitoredResourceDescriptorsSettings() {
       return listMonitoredResourceDescriptorsSettings;

@@ -53,10 +53,10 @@ import javax.annotation.Generated;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (analyticsadmin.googleapis.com) and default port (443) are
+ *   <li> The default service address (analyticsadmin.googleapis.com) and default port (443) are
  *       used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -113,8 +113,7 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
 
   /** Returns the object with the settings used for calls to listAccountSummaries. */
   public PagedCallSettings<
-          ListAccountSummariesRequest,
-          ListAccountSummariesResponse,
+          ListAccountSummariesRequest, ListAccountSummariesResponse,
           ListAccountSummariesPagedResponse>
       listAccountSummariesSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).listAccountSummariesSettings();
@@ -251,8 +250,7 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
 
   /** Returns the object with the settings used for calls to listIosAppDataStreams. */
   public PagedCallSettings<
-          ListIosAppDataStreamsRequest,
-          ListIosAppDataStreamsResponse,
+          ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse,
           ListIosAppDataStreamsPagedResponse>
       listIosAppDataStreamsSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).listIosAppDataStreamsSettings();
@@ -281,8 +279,7 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
 
   /** Returns the object with the settings used for calls to listAndroidAppDataStreams. */
   public PagedCallSettings<
-          ListAndroidAppDataStreamsRequest,
-          ListAndroidAppDataStreamsResponse,
+          ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse,
           ListAndroidAppDataStreamsPagedResponse>
       listAndroidAppDataStreamsSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings())
@@ -362,8 +359,7 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
 
   /** Returns the object with the settings used for calls to searchChangeHistoryEvents. */
   public PagedCallSettings<
-          SearchChangeHistoryEventsRequest,
-          SearchChangeHistoryEventsResponse,
+          SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse,
           SearchChangeHistoryEventsPagedResponse>
       searchChangeHistoryEventsSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings())
@@ -499,8 +495,7 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
 
     /** Returns the builder for the settings used for calls to listAccountSummaries. */
     public PagedCallSettings.Builder<
-            ListAccountSummariesRequest,
-            ListAccountSummariesResponse,
+            ListAccountSummariesRequest, ListAccountSummariesResponse,
             ListAccountSummariesPagedResponse>
         listAccountSummariesSettings() {
       return getStubSettingsBuilder().listAccountSummariesSettings();
@@ -642,8 +637,7 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
 
     /** Returns the builder for the settings used for calls to listIosAppDataStreams. */
     public PagedCallSettings.Builder<
-            ListIosAppDataStreamsRequest,
-            ListIosAppDataStreamsResponse,
+            ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse,
             ListIosAppDataStreamsPagedResponse>
         listIosAppDataStreamsSettings() {
       return getStubSettingsBuilder().listIosAppDataStreamsSettings();
@@ -669,8 +663,7 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
 
     /** Returns the builder for the settings used for calls to listAndroidAppDataStreams. */
     public PagedCallSettings.Builder<
-            ListAndroidAppDataStreamsRequest,
-            ListAndroidAppDataStreamsResponse,
+            ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse,
             ListAndroidAppDataStreamsPagedResponse>
         listAndroidAppDataStreamsSettings() {
       return getStubSettingsBuilder().listAndroidAppDataStreamsSettings();
@@ -754,8 +747,7 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
 
     /** Returns the builder for the settings used for calls to searchChangeHistoryEvents. */
     public PagedCallSettings.Builder<
-            SearchChangeHistoryEventsRequest,
-            SearchChangeHistoryEventsResponse,
+            SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse,
             SearchChangeHistoryEventsPagedResponse>
         searchChangeHistoryEventsSettings() {
       return getStubSettingsBuilder().searchChangeHistoryEventsSettings();

@@ -49,13 +49,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -151,7 +151,7 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    * <p>This endpoint accepts &#42;&#42;either&#42;&#42; an OAuth token,
    *
    * <ul>
-   *   <li>&#42;or&#42;&#42; an [API key](https://support.google.com/cloud/answer/6158862) for
+   *   <li> &#42;or&#42;&#42; an [API key](https://support.google.com/cloud/answer/6158862) for
    *       authentication. To use an API key, append it to the URL as the value of a `key`
    *       parameter. For example:
    * </ul>
@@ -201,7 +201,7 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    * <p>This endpoint accepts &#42;&#42;either&#42;&#42; an OAuth token,
    *
    * <ul>
-   *   <li>&#42;or&#42;&#42; an [API key](https://support.google.com/cloud/answer/6158862) for
+   *   <li> &#42;or&#42;&#42; an [API key](https://support.google.com/cloud/answer/6158862) for
    *       authentication. To use an API key, append it to the URL as the value of a `key`
    *       parameter. For example:
    * </ul>
@@ -248,7 +248,7 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    * <p>This endpoint accepts &#42;&#42;either&#42;&#42; an OAuth token,
    *
    * <ul>
-   *   <li>&#42;or&#42;&#42; an [API key](https://support.google.com/cloud/answer/6158862) for
+   *   <li> &#42;or&#42;&#42; an [API key](https://support.google.com/cloud/answer/6158862) for
    *       authentication. To use an API key, append it to the URL as the value of a `key`
    *       parameter. For example:
    * </ul>
@@ -290,7 +290,7 @@ public class ReportErrorsServiceClient implements BackgroundResource {
    * <p>This endpoint accepts &#42;&#42;either&#42;&#42; an OAuth token,
    *
    * <ul>
-   *   <li>&#42;or&#42;&#42; an [API key](https://support.google.com/cloud/answer/6158862) for
+   *   <li> &#42;or&#42;&#42; an [API key](https://support.google.com/cloud/answer/6158862) for
    *       authentication. To use an API key, append it to the URL as the value of a `key`
    *       parameter. For example:
    * </ul>

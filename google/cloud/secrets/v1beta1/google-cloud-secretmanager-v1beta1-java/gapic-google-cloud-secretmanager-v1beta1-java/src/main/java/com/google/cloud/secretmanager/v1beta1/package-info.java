@@ -25,8 +25,8 @@
  * objects:
  *
  * <ul>
- *   <li>[Secret][google.cloud.secrets.v1beta1.Secret]
- *   <li>[SecretVersion][google.cloud.secrets.v1beta1.SecretVersion]
+ *   <li> [Secret][google.cloud.secrets.v1beta1.Secret]
+ *   <li> [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion]
  * </ul>
  *
  * <p>Sample for SecretManagerServiceClient:

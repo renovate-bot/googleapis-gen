@@ -63,13 +63,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -3276,10 +3276,7 @@ public class TensorboardServiceClient implements BackgroundResource {
 
   public static class ListTensorboardsPagedResponse
       extends AbstractPagedListResponse<
-          ListTensorboardsRequest,
-          ListTensorboardsResponse,
-          Tensorboard,
-          ListTensorboardsPage,
+          ListTensorboardsRequest, ListTensorboardsResponse, Tensorboard, ListTensorboardsPage,
           ListTensorboardsFixedSizeCollection> {
 
     public static ApiFuture<ListTensorboardsPagedResponse> createAsync(
@@ -3334,10 +3331,7 @@ public class TensorboardServiceClient implements BackgroundResource {
 
   public static class ListTensorboardsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListTensorboardsRequest,
-          ListTensorboardsResponse,
-          Tensorboard,
-          ListTensorboardsPage,
+          ListTensorboardsRequest, ListTensorboardsResponse, Tensorboard, ListTensorboardsPage,
           ListTensorboardsFixedSizeCollection> {
 
     private ListTensorboardsFixedSizeCollection(
@@ -3358,16 +3352,13 @@ public class TensorboardServiceClient implements BackgroundResource {
 
   public static class ListTensorboardExperimentsPagedResponse
       extends AbstractPagedListResponse<
-          ListTensorboardExperimentsRequest,
-          ListTensorboardExperimentsResponse,
-          TensorboardExperiment,
-          ListTensorboardExperimentsPage,
+          ListTensorboardExperimentsRequest, ListTensorboardExperimentsResponse,
+          TensorboardExperiment, ListTensorboardExperimentsPage,
           ListTensorboardExperimentsFixedSizeCollection> {
 
     public static ApiFuture<ListTensorboardExperimentsPagedResponse> createAsync(
         PageContext<
-                ListTensorboardExperimentsRequest,
-                ListTensorboardExperimentsResponse,
+                ListTensorboardExperimentsRequest, ListTensorboardExperimentsResponse,
                 TensorboardExperiment>
             context,
         ApiFuture<ListTensorboardExperimentsResponse> futureResponse) {
@@ -3393,15 +3384,12 @@ public class TensorboardServiceClient implements BackgroundResource {
 
   public static class ListTensorboardExperimentsPage
       extends AbstractPage<
-          ListTensorboardExperimentsRequest,
-          ListTensorboardExperimentsResponse,
-          TensorboardExperiment,
-          ListTensorboardExperimentsPage> {
+          ListTensorboardExperimentsRequest, ListTensorboardExperimentsResponse,
+          TensorboardExperiment, ListTensorboardExperimentsPage> {
 
     private ListTensorboardExperimentsPage(
         PageContext<
-                ListTensorboardExperimentsRequest,
-                ListTensorboardExperimentsResponse,
+                ListTensorboardExperimentsRequest, ListTensorboardExperimentsResponse,
                 TensorboardExperiment>
             context,
         ListTensorboardExperimentsResponse response) {
@@ -3415,8 +3403,7 @@ public class TensorboardServiceClient implements BackgroundResource {
     @Override
     protected ListTensorboardExperimentsPage createPage(
         PageContext<
-                ListTensorboardExperimentsRequest,
-                ListTensorboardExperimentsResponse,
+                ListTensorboardExperimentsRequest, ListTensorboardExperimentsResponse,
                 TensorboardExperiment>
             context,
         ListTensorboardExperimentsResponse response) {
@@ -3426,8 +3413,7 @@ public class TensorboardServiceClient implements BackgroundResource {
     @Override
     public ApiFuture<ListTensorboardExperimentsPage> createPageAsync(
         PageContext<
-                ListTensorboardExperimentsRequest,
-                ListTensorboardExperimentsResponse,
+                ListTensorboardExperimentsRequest, ListTensorboardExperimentsResponse,
                 TensorboardExperiment>
             context,
         ApiFuture<ListTensorboardExperimentsResponse> futureResponse) {
@@ -3437,10 +3423,8 @@ public class TensorboardServiceClient implements BackgroundResource {
 
   public static class ListTensorboardExperimentsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListTensorboardExperimentsRequest,
-          ListTensorboardExperimentsResponse,
-          TensorboardExperiment,
-          ListTensorboardExperimentsPage,
+          ListTensorboardExperimentsRequest, ListTensorboardExperimentsResponse,
+          TensorboardExperiment, ListTensorboardExperimentsPage,
           ListTensorboardExperimentsFixedSizeCollection> {
 
     private ListTensorboardExperimentsFixedSizeCollection(
@@ -3461,11 +3445,8 @@ public class TensorboardServiceClient implements BackgroundResource {
 
   public static class ListTensorboardRunsPagedResponse
       extends AbstractPagedListResponse<
-          ListTensorboardRunsRequest,
-          ListTensorboardRunsResponse,
-          TensorboardRun,
-          ListTensorboardRunsPage,
-          ListTensorboardRunsFixedSizeCollection> {
+          ListTensorboardRunsRequest, ListTensorboardRunsResponse, TensorboardRun,
+          ListTensorboardRunsPage, ListTensorboardRunsFixedSizeCollection> {
 
     public static ApiFuture<ListTensorboardRunsPagedResponse> createAsync(
         PageContext<ListTensorboardRunsRequest, ListTensorboardRunsResponse, TensorboardRun>
@@ -3491,9 +3472,7 @@ public class TensorboardServiceClient implements BackgroundResource {
 
   public static class ListTensorboardRunsPage
       extends AbstractPage<
-          ListTensorboardRunsRequest,
-          ListTensorboardRunsResponse,
-          TensorboardRun,
+          ListTensorboardRunsRequest, ListTensorboardRunsResponse, TensorboardRun,
           ListTensorboardRunsPage> {
 
     private ListTensorboardRunsPage(
@@ -3526,11 +3505,8 @@ public class TensorboardServiceClient implements BackgroundResource {
 
   public static class ListTensorboardRunsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListTensorboardRunsRequest,
-          ListTensorboardRunsResponse,
-          TensorboardRun,
-          ListTensorboardRunsPage,
-          ListTensorboardRunsFixedSizeCollection> {
+          ListTensorboardRunsRequest, ListTensorboardRunsResponse, TensorboardRun,
+          ListTensorboardRunsPage, ListTensorboardRunsFixedSizeCollection> {
 
     private ListTensorboardRunsFixedSizeCollection(
         List<ListTensorboardRunsPage> pages, int collectionSize) {
@@ -3550,16 +3526,13 @@ public class TensorboardServiceClient implements BackgroundResource {
 
   public static class ListTensorboardTimeSeriesPagedResponse
       extends AbstractPagedListResponse<
-          ListTensorboardTimeSeriesRequest,
-          ListTensorboardTimeSeriesResponse,
-          TensorboardTimeSeries,
-          ListTensorboardTimeSeriesPage,
+          ListTensorboardTimeSeriesRequest, ListTensorboardTimeSeriesResponse,
+          TensorboardTimeSeries, ListTensorboardTimeSeriesPage,
           ListTensorboardTimeSeriesFixedSizeCollection> {
 
     public static ApiFuture<ListTensorboardTimeSeriesPagedResponse> createAsync(
         PageContext<
-                ListTensorboardTimeSeriesRequest,
-                ListTensorboardTimeSeriesResponse,
+                ListTensorboardTimeSeriesRequest, ListTensorboardTimeSeriesResponse,
                 TensorboardTimeSeries>
             context,
         ApiFuture<ListTensorboardTimeSeriesResponse> futureResponse) {
@@ -3584,15 +3557,12 @@ public class TensorboardServiceClient implements BackgroundResource {
 
   public static class ListTensorboardTimeSeriesPage
       extends AbstractPage<
-          ListTensorboardTimeSeriesRequest,
-          ListTensorboardTimeSeriesResponse,
-          TensorboardTimeSeries,
-          ListTensorboardTimeSeriesPage> {
+          ListTensorboardTimeSeriesRequest, ListTensorboardTimeSeriesResponse,
+          TensorboardTimeSeries, ListTensorboardTimeSeriesPage> {
 
     private ListTensorboardTimeSeriesPage(
         PageContext<
-                ListTensorboardTimeSeriesRequest,
-                ListTensorboardTimeSeriesResponse,
+                ListTensorboardTimeSeriesRequest, ListTensorboardTimeSeriesResponse,
                 TensorboardTimeSeries>
             context,
         ListTensorboardTimeSeriesResponse response) {
@@ -3606,8 +3576,7 @@ public class TensorboardServiceClient implements BackgroundResource {
     @Override
     protected ListTensorboardTimeSeriesPage createPage(
         PageContext<
-                ListTensorboardTimeSeriesRequest,
-                ListTensorboardTimeSeriesResponse,
+                ListTensorboardTimeSeriesRequest, ListTensorboardTimeSeriesResponse,
                 TensorboardTimeSeries>
             context,
         ListTensorboardTimeSeriesResponse response) {
@@ -3617,8 +3586,7 @@ public class TensorboardServiceClient implements BackgroundResource {
     @Override
     public ApiFuture<ListTensorboardTimeSeriesPage> createPageAsync(
         PageContext<
-                ListTensorboardTimeSeriesRequest,
-                ListTensorboardTimeSeriesResponse,
+                ListTensorboardTimeSeriesRequest, ListTensorboardTimeSeriesResponse,
                 TensorboardTimeSeries>
             context,
         ApiFuture<ListTensorboardTimeSeriesResponse> futureResponse) {
@@ -3628,10 +3596,8 @@ public class TensorboardServiceClient implements BackgroundResource {
 
   public static class ListTensorboardTimeSeriesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListTensorboardTimeSeriesRequest,
-          ListTensorboardTimeSeriesResponse,
-          TensorboardTimeSeries,
-          ListTensorboardTimeSeriesPage,
+          ListTensorboardTimeSeriesRequest, ListTensorboardTimeSeriesResponse,
+          TensorboardTimeSeries, ListTensorboardTimeSeriesPage,
           ListTensorboardTimeSeriesFixedSizeCollection> {
 
     private ListTensorboardTimeSeriesFixedSizeCollection(
@@ -3652,16 +3618,13 @@ public class TensorboardServiceClient implements BackgroundResource {
 
   public static class ExportTensorboardTimeSeriesDataPagedResponse
       extends AbstractPagedListResponse<
-          ExportTensorboardTimeSeriesDataRequest,
-          ExportTensorboardTimeSeriesDataResponse,
-          TimeSeriesDataPoint,
-          ExportTensorboardTimeSeriesDataPage,
+          ExportTensorboardTimeSeriesDataRequest, ExportTensorboardTimeSeriesDataResponse,
+          TimeSeriesDataPoint, ExportTensorboardTimeSeriesDataPage,
           ExportTensorboardTimeSeriesDataFixedSizeCollection> {
 
     public static ApiFuture<ExportTensorboardTimeSeriesDataPagedResponse> createAsync(
         PageContext<
-                ExportTensorboardTimeSeriesDataRequest,
-                ExportTensorboardTimeSeriesDataResponse,
+                ExportTensorboardTimeSeriesDataRequest, ExportTensorboardTimeSeriesDataResponse,
                 TimeSeriesDataPoint>
             context,
         ApiFuture<ExportTensorboardTimeSeriesDataResponse> futureResponse) {
@@ -3688,15 +3651,12 @@ public class TensorboardServiceClient implements BackgroundResource {
 
   public static class ExportTensorboardTimeSeriesDataPage
       extends AbstractPage<
-          ExportTensorboardTimeSeriesDataRequest,
-          ExportTensorboardTimeSeriesDataResponse,
-          TimeSeriesDataPoint,
-          ExportTensorboardTimeSeriesDataPage> {
+          ExportTensorboardTimeSeriesDataRequest, ExportTensorboardTimeSeriesDataResponse,
+          TimeSeriesDataPoint, ExportTensorboardTimeSeriesDataPage> {
 
     private ExportTensorboardTimeSeriesDataPage(
         PageContext<
-                ExportTensorboardTimeSeriesDataRequest,
-                ExportTensorboardTimeSeriesDataResponse,
+                ExportTensorboardTimeSeriesDataRequest, ExportTensorboardTimeSeriesDataResponse,
                 TimeSeriesDataPoint>
             context,
         ExportTensorboardTimeSeriesDataResponse response) {
@@ -3710,8 +3670,7 @@ public class TensorboardServiceClient implements BackgroundResource {
     @Override
     protected ExportTensorboardTimeSeriesDataPage createPage(
         PageContext<
-                ExportTensorboardTimeSeriesDataRequest,
-                ExportTensorboardTimeSeriesDataResponse,
+                ExportTensorboardTimeSeriesDataRequest, ExportTensorboardTimeSeriesDataResponse,
                 TimeSeriesDataPoint>
             context,
         ExportTensorboardTimeSeriesDataResponse response) {
@@ -3721,8 +3680,7 @@ public class TensorboardServiceClient implements BackgroundResource {
     @Override
     public ApiFuture<ExportTensorboardTimeSeriesDataPage> createPageAsync(
         PageContext<
-                ExportTensorboardTimeSeriesDataRequest,
-                ExportTensorboardTimeSeriesDataResponse,
+                ExportTensorboardTimeSeriesDataRequest, ExportTensorboardTimeSeriesDataResponse,
                 TimeSeriesDataPoint>
             context,
         ApiFuture<ExportTensorboardTimeSeriesDataResponse> futureResponse) {
@@ -3732,10 +3690,8 @@ public class TensorboardServiceClient implements BackgroundResource {
 
   public static class ExportTensorboardTimeSeriesDataFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ExportTensorboardTimeSeriesDataRequest,
-          ExportTensorboardTimeSeriesDataResponse,
-          TimeSeriesDataPoint,
-          ExportTensorboardTimeSeriesDataPage,
+          ExportTensorboardTimeSeriesDataRequest, ExportTensorboardTimeSeriesDataResponse,
+          TimeSeriesDataPoint, ExportTensorboardTimeSeriesDataPage,
           ExportTensorboardTimeSeriesDataFixedSizeCollection> {
 
     private ExportTensorboardTimeSeriesDataFixedSizeCollection(

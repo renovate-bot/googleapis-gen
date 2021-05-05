@@ -88,9 +88,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (dialogflow.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (dialogflow.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -248,8 +248,7 @@ public class TestCasesStubSettings extends StubSettings<TestCasesStubSettings> {
           ListTestCaseResultsRequest, ListTestCaseResultsResponse, ListTestCaseResultsPagedResponse>
       LIST_TEST_CASE_RESULTS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListTestCaseResultsRequest,
-              ListTestCaseResultsResponse,
+              ListTestCaseResultsRequest, ListTestCaseResultsResponse,
               ListTestCaseResultsPagedResponse>() {
             @Override
             public ApiFuture<ListTestCaseResultsPagedResponse> getFuturePagedResponse(
@@ -476,8 +475,7 @@ public class TestCasesStubSettings extends StubSettings<TestCasesStubSettings> {
             ExportTestCasesRequest, ExportTestCasesResponse, ExportTestCasesMetadata>
         exportTestCasesOperationSettings;
     private final PagedCallSettings.Builder<
-            ListTestCaseResultsRequest,
-            ListTestCaseResultsResponse,
+            ListTestCaseResultsRequest, ListTestCaseResultsResponse,
             ListTestCaseResultsPagedResponse>
         listTestCaseResultsSettings;
     private final UnaryCallSettings.Builder<GetTestCaseResultRequest, TestCaseResult>
@@ -872,8 +870,7 @@ public class TestCasesStubSettings extends StubSettings<TestCasesStubSettings> {
 
     /** Returns the builder for the settings used for calls to listTestCaseResults. */
     public PagedCallSettings.Builder<
-            ListTestCaseResultsRequest,
-            ListTestCaseResultsResponse,
+            ListTestCaseResultsRequest, ListTestCaseResultsResponse,
             ListTestCaseResultsPagedResponse>
         listTestCaseResultsSettings() {
       return listTestCaseResultsSettings;

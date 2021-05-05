@@ -95,9 +95,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (spanner.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (spanner.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -158,13 +158,11 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
   private final OperationCallSettings<RestoreDatabaseRequest, Database, RestoreDatabaseMetadata>
       restoreDatabaseOperationSettings;
   private final PagedCallSettings<
-          ListDatabaseOperationsRequest,
-          ListDatabaseOperationsResponse,
+          ListDatabaseOperationsRequest, ListDatabaseOperationsResponse,
           ListDatabaseOperationsPagedResponse>
       listDatabaseOperationsSettings;
   private final PagedCallSettings<
-          ListBackupOperationsRequest,
-          ListBackupOperationsResponse,
+          ListBackupOperationsRequest, ListBackupOperationsResponse,
           ListBackupOperationsPagedResponse>
       listBackupOperationsSettings;
 
@@ -357,13 +355,11 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
           };
 
   private static final PagedListResponseFactory<
-          ListDatabaseOperationsRequest,
-          ListDatabaseOperationsResponse,
+          ListDatabaseOperationsRequest, ListDatabaseOperationsResponse,
           ListDatabaseOperationsPagedResponse>
       LIST_DATABASE_OPERATIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListDatabaseOperationsRequest,
-              ListDatabaseOperationsResponse,
+              ListDatabaseOperationsRequest, ListDatabaseOperationsResponse,
               ListDatabaseOperationsPagedResponse>() {
             @Override
             public ApiFuture<ListDatabaseOperationsPagedResponse> getFuturePagedResponse(
@@ -381,13 +377,11 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
           };
 
   private static final PagedListResponseFactory<
-          ListBackupOperationsRequest,
-          ListBackupOperationsResponse,
+          ListBackupOperationsRequest, ListBackupOperationsResponse,
           ListBackupOperationsPagedResponse>
       LIST_BACKUP_OPERATIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListBackupOperationsRequest,
-              ListBackupOperationsResponse,
+              ListBackupOperationsRequest, ListBackupOperationsResponse,
               ListBackupOperationsPagedResponse>() {
             @Override
             public ApiFuture<ListBackupOperationsPagedResponse> getFuturePagedResponse(
@@ -507,8 +501,7 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
 
   /** Returns the object with the settings used for calls to listDatabaseOperations. */
   public PagedCallSettings<
-          ListDatabaseOperationsRequest,
-          ListDatabaseOperationsResponse,
+          ListDatabaseOperationsRequest, ListDatabaseOperationsResponse,
           ListDatabaseOperationsPagedResponse>
       listDatabaseOperationsSettings() {
     return listDatabaseOperationsSettings;
@@ -516,8 +509,7 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
 
   /** Returns the object with the settings used for calls to listBackupOperations. */
   public PagedCallSettings<
-          ListBackupOperationsRequest,
-          ListBackupOperationsResponse,
+          ListBackupOperationsRequest, ListBackupOperationsResponse,
           ListBackupOperationsPagedResponse>
       listBackupOperationsSettings() {
     return listBackupOperationsSettings;
@@ -655,13 +647,11 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
             RestoreDatabaseRequest, Database, RestoreDatabaseMetadata>
         restoreDatabaseOperationSettings;
     private final PagedCallSettings.Builder<
-            ListDatabaseOperationsRequest,
-            ListDatabaseOperationsResponse,
+            ListDatabaseOperationsRequest, ListDatabaseOperationsResponse,
             ListDatabaseOperationsPagedResponse>
         listDatabaseOperationsSettings;
     private final PagedCallSettings.Builder<
-            ListBackupOperationsRequest,
-            ListBackupOperationsResponse,
+            ListBackupOperationsRequest, ListBackupOperationsResponse,
             ListBackupOperationsPagedResponse>
         listBackupOperationsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
@@ -1161,8 +1151,7 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
 
     /** Returns the builder for the settings used for calls to listDatabaseOperations. */
     public PagedCallSettings.Builder<
-            ListDatabaseOperationsRequest,
-            ListDatabaseOperationsResponse,
+            ListDatabaseOperationsRequest, ListDatabaseOperationsResponse,
             ListDatabaseOperationsPagedResponse>
         listDatabaseOperationsSettings() {
       return listDatabaseOperationsSettings;
@@ -1170,8 +1159,7 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
 
     /** Returns the builder for the settings used for calls to listBackupOperations. */
     public PagedCallSettings.Builder<
-            ListBackupOperationsRequest,
-            ListBackupOperationsResponse,
+            ListBackupOperationsRequest, ListBackupOperationsResponse,
             ListBackupOperationsPagedResponse>
         listBackupOperationsSettings() {
       return listBackupOperationsSettings;

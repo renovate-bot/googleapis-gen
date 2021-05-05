@@ -61,13 +61,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -183,23 +183,23 @@ public class PredictionServiceClient implements BackgroundResource {
    *     models that will be used to make the prediction.
    *     <p>We currently support three placements with the following IDs by default:
    *     <ul>
-   *       <li>`shopping_cart`: Predicts items frequently bought together with one or more catalog
+   *       <li> `shopping_cart`: Predicts items frequently bought together with one or more catalog
    *           items in the same shopping session. Commonly displayed after `add-to-cart` events, on
    *           product detail pages, or on the shopping cart page.
    *     </ul>
    *     <ul>
-   *       <li>`home_page`: Predicts the next product that a user will most likely engage with or
+   *       <li> `home_page`: Predicts the next product that a user will most likely engage with or
    *           purchase based on the shopping or viewing history of the specified `userId` or
    *           `visitorId`. For example - Recommendations for you.
    *     </ul>
    *     <ul>
-   *       <li>`product_detail`: Predicts the next product that a user will most likely engage with
+   *       <li> `product_detail`: Predicts the next product that a user will most likely engage with
    *           or purchase. The prediction is based on the shopping or viewing history of the
    *           specified `userId` or `visitorId` and its relevance to a specified `CatalogItem`.
    *           Typically used on product detail pages. For example - More items like this.
    *     </ul>
    *     <ul>
-   *       <li>`recently_viewed_default`: Returns up to 75 items recently viewed by the specified
+   *       <li> `recently_viewed_default`: Returns up to 75 items recently viewed by the specified
    *           `userId` or `visitorId`, most recent ones first. Returns nothing if neither of them
    *           has viewed any items yet. For example - Recently viewed.
    *     </ul>
@@ -248,23 +248,23 @@ public class PredictionServiceClient implements BackgroundResource {
    *     models that will be used to make the prediction.
    *     <p>We currently support three placements with the following IDs by default:
    *     <ul>
-   *       <li>`shopping_cart`: Predicts items frequently bought together with one or more catalog
+   *       <li> `shopping_cart`: Predicts items frequently bought together with one or more catalog
    *           items in the same shopping session. Commonly displayed after `add-to-cart` events, on
    *           product detail pages, or on the shopping cart page.
    *     </ul>
    *     <ul>
-   *       <li>`home_page`: Predicts the next product that a user will most likely engage with or
+   *       <li> `home_page`: Predicts the next product that a user will most likely engage with or
    *           purchase based on the shopping or viewing history of the specified `userId` or
    *           `visitorId`. For example - Recommendations for you.
    *     </ul>
    *     <ul>
-   *       <li>`product_detail`: Predicts the next product that a user will most likely engage with
+   *       <li> `product_detail`: Predicts the next product that a user will most likely engage with
    *           or purchase. The prediction is based on the shopping or viewing history of the
    *           specified `userId` or `visitorId` and its relevance to a specified `CatalogItem`.
    *           Typically used on product detail pages. For example - More items like this.
    *     </ul>
    *     <ul>
-   *       <li>`recently_viewed_default`: Returns up to 75 items recently viewed by the specified
+   *       <li> `recently_viewed_default`: Returns up to 75 items recently viewed by the specified
    *           `userId` or `visitorId`, most recent ones first. Returns nothing if neither of them
    *           has viewed any items yet. For example - Recently viewed.
    *     </ul>
@@ -435,10 +435,7 @@ public class PredictionServiceClient implements BackgroundResource {
 
   public static class PredictPagedResponse
       extends AbstractPagedListResponse<
-          PredictRequest,
-          PredictResponse,
-          PredictResponse.PredictionResult,
-          PredictPage,
+          PredictRequest, PredictResponse, PredictResponse.PredictionResult, PredictPage,
           PredictFixedSizeCollection> {
 
     public static ApiFuture<PredictPagedResponse> createAsync(
@@ -493,10 +490,7 @@ public class PredictionServiceClient implements BackgroundResource {
 
   public static class PredictFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          PredictRequest,
-          PredictResponse,
-          PredictResponse.PredictionResult,
-          PredictPage,
+          PredictRequest, PredictResponse, PredictResponse.PredictionResult, PredictPage,
           PredictFixedSizeCollection> {
 
     private PredictFixedSizeCollection(List<PredictPage> pages, int collectionSize) {

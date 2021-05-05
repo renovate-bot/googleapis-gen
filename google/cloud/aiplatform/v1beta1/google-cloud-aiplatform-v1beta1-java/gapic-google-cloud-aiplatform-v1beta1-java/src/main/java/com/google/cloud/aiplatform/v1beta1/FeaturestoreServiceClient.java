@@ -62,13 +62,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -1669,8 +1669,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * }</pre>
    */
   public final OperationCallable<
-          BatchCreateFeaturesRequest,
-          BatchCreateFeaturesResponse,
+          BatchCreateFeaturesRequest, BatchCreateFeaturesResponse,
           BatchCreateFeaturesOperationMetadata>
       batchCreateFeaturesOperationCallable() {
     return stub.batchCreateFeaturesOperationCallable();
@@ -2354,8 +2353,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * }</pre>
    */
   public final OperationCallable<
-          ImportFeatureValuesRequest,
-          ImportFeatureValuesResponse,
+          ImportFeatureValuesRequest, ImportFeatureValuesResponse,
           ImportFeatureValuesOperationMetadata>
       importFeatureValuesOperationCallable() {
     return stub.importFeatureValuesOperationCallable();
@@ -2533,8 +2531,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * }</pre>
    */
   public final OperationCallable<
-          BatchReadFeatureValuesRequest,
-          BatchReadFeatureValuesResponse,
+          BatchReadFeatureValuesRequest, BatchReadFeatureValuesResponse,
           BatchReadFeatureValuesOperationMetadata>
       batchReadFeatureValuesOperationCallable() {
     return stub.batchReadFeatureValuesOperationCallable();
@@ -2683,8 +2680,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * }</pre>
    */
   public final OperationCallable<
-          ExportFeatureValuesRequest,
-          ExportFeatureValuesResponse,
+          ExportFeatureValuesRequest, ExportFeatureValuesResponse,
           ExportFeatureValuesOperationMetadata>
       exportFeatureValuesOperationCallable() {
     return stub.exportFeatureValuesOperationCallable();
@@ -2895,10 +2891,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
 
   public static class ListFeaturestoresPagedResponse
       extends AbstractPagedListResponse<
-          ListFeaturestoresRequest,
-          ListFeaturestoresResponse,
-          Featurestore,
-          ListFeaturestoresPage,
+          ListFeaturestoresRequest, ListFeaturestoresResponse, Featurestore, ListFeaturestoresPage,
           ListFeaturestoresFixedSizeCollection> {
 
     public static ApiFuture<ListFeaturestoresPagedResponse> createAsync(
@@ -2924,9 +2917,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
 
   public static class ListFeaturestoresPage
       extends AbstractPage<
-          ListFeaturestoresRequest,
-          ListFeaturestoresResponse,
-          Featurestore,
+          ListFeaturestoresRequest, ListFeaturestoresResponse, Featurestore,
           ListFeaturestoresPage> {
 
     private ListFeaturestoresPage(
@@ -2956,10 +2947,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
 
   public static class ListFeaturestoresFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListFeaturestoresRequest,
-          ListFeaturestoresResponse,
-          Featurestore,
-          ListFeaturestoresPage,
+          ListFeaturestoresRequest, ListFeaturestoresResponse, Featurestore, ListFeaturestoresPage,
           ListFeaturestoresFixedSizeCollection> {
 
     private ListFeaturestoresFixedSizeCollection(
@@ -2980,10 +2968,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
 
   public static class ListEntityTypesPagedResponse
       extends AbstractPagedListResponse<
-          ListEntityTypesRequest,
-          ListEntityTypesResponse,
-          EntityType,
-          ListEntityTypesPage,
+          ListEntityTypesRequest, ListEntityTypesResponse, EntityType, ListEntityTypesPage,
           ListEntityTypesFixedSizeCollection> {
 
     public static ApiFuture<ListEntityTypesPagedResponse> createAsync(
@@ -3038,10 +3023,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
 
   public static class ListEntityTypesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListEntityTypesRequest,
-          ListEntityTypesResponse,
-          EntityType,
-          ListEntityTypesPage,
+          ListEntityTypesRequest, ListEntityTypesResponse, EntityType, ListEntityTypesPage,
           ListEntityTypesFixedSizeCollection> {
 
     private ListEntityTypesFixedSizeCollection(
@@ -3062,10 +3044,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
 
   public static class ListFeaturesPagedResponse
       extends AbstractPagedListResponse<
-          ListFeaturesRequest,
-          ListFeaturesResponse,
-          Feature,
-          ListFeaturesPage,
+          ListFeaturesRequest, ListFeaturesResponse, Feature, ListFeaturesPage,
           ListFeaturesFixedSizeCollection> {
 
     public static ApiFuture<ListFeaturesPagedResponse> createAsync(
@@ -3119,10 +3098,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
 
   public static class ListFeaturesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListFeaturesRequest,
-          ListFeaturesResponse,
-          Feature,
-          ListFeaturesPage,
+          ListFeaturesRequest, ListFeaturesResponse, Feature, ListFeaturesPage,
           ListFeaturesFixedSizeCollection> {
 
     private ListFeaturesFixedSizeCollection(List<ListFeaturesPage> pages, int collectionSize) {
@@ -3142,10 +3118,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
 
   public static class SearchFeaturesPagedResponse
       extends AbstractPagedListResponse<
-          SearchFeaturesRequest,
-          SearchFeaturesResponse,
-          Feature,
-          SearchFeaturesPage,
+          SearchFeaturesRequest, SearchFeaturesResponse, Feature, SearchFeaturesPage,
           SearchFeaturesFixedSizeCollection> {
 
     public static ApiFuture<SearchFeaturesPagedResponse> createAsync(
@@ -3200,10 +3173,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
 
   public static class SearchFeaturesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          SearchFeaturesRequest,
-          SearchFeaturesResponse,
-          Feature,
-          SearchFeaturesPage,
+          SearchFeaturesRequest, SearchFeaturesResponse, Feature, SearchFeaturesPage,
           SearchFeaturesFixedSizeCollection> {
 
     private SearchFeaturesFixedSizeCollection(List<SearchFeaturesPage> pages, int collectionSize) {

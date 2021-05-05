@@ -46,9 +46,9 @@ import javax.annotation.Generated;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (cloudasset.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (cloudasset.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -124,8 +124,7 @@ public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
 
   /** Returns the object with the settings used for calls to searchAllIamPolicies. */
   public PagedCallSettings<
-          SearchAllIamPoliciesRequest,
-          SearchAllIamPoliciesResponse,
+          SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse,
           SearchAllIamPoliciesPagedResponse>
       searchAllIamPoliciesSettings() {
     return ((AssetServiceStubSettings) getStubSettings()).searchAllIamPoliciesSettings();
@@ -145,8 +144,7 @@ public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
 
   /** Returns the object with the settings used for calls to analyzeIamPolicyLongrunning. */
   public OperationCallSettings<
-          AnalyzeIamPolicyLongrunningRequest,
-          AnalyzeIamPolicyLongrunningResponse,
+          AnalyzeIamPolicyLongrunningRequest, AnalyzeIamPolicyLongrunningResponse,
           AnalyzeIamPolicyLongrunningRequest>
       analyzeIamPolicyLongrunningOperationSettings() {
     return ((AssetServiceStubSettings) getStubSettings())
@@ -303,8 +301,7 @@ public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
 
     /** Returns the builder for the settings used for calls to searchAllIamPolicies. */
     public PagedCallSettings.Builder<
-            SearchAllIamPoliciesRequest,
-            SearchAllIamPoliciesResponse,
+            SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse,
             SearchAllIamPoliciesPagedResponse>
         searchAllIamPoliciesSettings() {
       return getStubSettingsBuilder().searchAllIamPoliciesSettings();
@@ -324,8 +321,7 @@ public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
 
     /** Returns the builder for the settings used for calls to analyzeIamPolicyLongrunning. */
     public OperationCallSettings.Builder<
-            AnalyzeIamPolicyLongrunningRequest,
-            AnalyzeIamPolicyLongrunningResponse,
+            AnalyzeIamPolicyLongrunningRequest, AnalyzeIamPolicyLongrunningResponse,
             AnalyzeIamPolicyLongrunningRequest>
         analyzeIamPolicyLongrunningOperationSettings() {
       return getStubSettingsBuilder().analyzeIamPolicyLongrunningOperationSettings();

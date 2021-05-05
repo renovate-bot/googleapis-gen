@@ -55,10 +55,10 @@ import javax.annotation.Generated;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (securitycenter.googleapis.com) and default port (443) are
+ *   <li> The default service address (securitycenter.googleapis.com) and default port (443) are
  *       used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -154,8 +154,7 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
 
   /** Returns the object with the settings used for calls to listNotificationConfigs. */
   public PagedCallSettings<
-          ListNotificationConfigsRequest,
-          ListNotificationConfigsResponse,
+          ListNotificationConfigsRequest, ListNotificationConfigsResponse,
           ListNotificationConfigsPagedResponse>
       listNotificationConfigsSettings() {
     return ((SecurityCenterStubSettings) getStubSettings()).listNotificationConfigsSettings();
@@ -393,8 +392,7 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
 
     /** Returns the builder for the settings used for calls to listNotificationConfigs. */
     public PagedCallSettings.Builder<
-            ListNotificationConfigsRequest,
-            ListNotificationConfigsResponse,
+            ListNotificationConfigsRequest, ListNotificationConfigsResponse,
             ListNotificationConfigsPagedResponse>
         listNotificationConfigsSettings() {
       return getStubSettingsBuilder().listNotificationConfigsSettings();

@@ -45,9 +45,9 @@ import javax.annotation.Generated;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (osconfig.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (osconfig.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -92,8 +92,7 @@ public class OsConfigServiceSettings extends ClientSettings<OsConfigServiceSetti
 
   /** Returns the object with the settings used for calls to listPatchJobs. */
   public PagedCallSettings<
-          PatchJobs.ListPatchJobsRequest,
-          PatchJobs.ListPatchJobsResponse,
+          PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse,
           ListPatchJobsPagedResponse>
       listPatchJobsSettings() {
     return ((OsConfigServiceStubSettings) getStubSettings()).listPatchJobsSettings();
@@ -102,8 +101,7 @@ public class OsConfigServiceSettings extends ClientSettings<OsConfigServiceSetti
   /** Returns the object with the settings used for calls to listPatchJobInstanceDetails. */
   public PagedCallSettings<
           PatchJobs.ListPatchJobInstanceDetailsRequest,
-          PatchJobs.ListPatchJobInstanceDetailsResponse,
-          ListPatchJobInstanceDetailsPagedResponse>
+          PatchJobs.ListPatchJobInstanceDetailsResponse, ListPatchJobInstanceDetailsPagedResponse>
       listPatchJobInstanceDetailsSettings() {
     return ((OsConfigServiceStubSettings) getStubSettings()).listPatchJobInstanceDetailsSettings();
   }
@@ -125,8 +123,7 @@ public class OsConfigServiceSettings extends ClientSettings<OsConfigServiceSetti
   /** Returns the object with the settings used for calls to listPatchDeployments. */
   public PagedCallSettings<
           PatchDeployments.ListPatchDeploymentsRequest,
-          PatchDeployments.ListPatchDeploymentsResponse,
-          ListPatchDeploymentsPagedResponse>
+          PatchDeployments.ListPatchDeploymentsResponse, ListPatchDeploymentsPagedResponse>
       listPatchDeploymentsSettings() {
     return ((OsConfigServiceStubSettings) getStubSettings()).listPatchDeploymentsSettings();
   }
@@ -255,8 +252,7 @@ public class OsConfigServiceSettings extends ClientSettings<OsConfigServiceSetti
 
     /** Returns the builder for the settings used for calls to listPatchJobs. */
     public PagedCallSettings.Builder<
-            PatchJobs.ListPatchJobsRequest,
-            PatchJobs.ListPatchJobsResponse,
+            PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse,
             ListPatchJobsPagedResponse>
         listPatchJobsSettings() {
       return getStubSettingsBuilder().listPatchJobsSettings();
@@ -265,8 +261,7 @@ public class OsConfigServiceSettings extends ClientSettings<OsConfigServiceSetti
     /** Returns the builder for the settings used for calls to listPatchJobInstanceDetails. */
     public PagedCallSettings.Builder<
             PatchJobs.ListPatchJobInstanceDetailsRequest,
-            PatchJobs.ListPatchJobInstanceDetailsResponse,
-            ListPatchJobInstanceDetailsPagedResponse>
+            PatchJobs.ListPatchJobInstanceDetailsResponse, ListPatchJobInstanceDetailsPagedResponse>
         listPatchJobInstanceDetailsSettings() {
       return getStubSettingsBuilder().listPatchJobInstanceDetailsSettings();
     }
@@ -288,8 +283,7 @@ public class OsConfigServiceSettings extends ClientSettings<OsConfigServiceSetti
     /** Returns the builder for the settings used for calls to listPatchDeployments. */
     public PagedCallSettings.Builder<
             PatchDeployments.ListPatchDeploymentsRequest,
-            PatchDeployments.ListPatchDeploymentsResponse,
-            ListPatchDeploymentsPagedResponse>
+            PatchDeployments.ListPatchDeploymentsResponse, ListPatchDeploymentsPagedResponse>
         listPatchDeploymentsSettings() {
       return getStubSettingsBuilder().listPatchDeploymentsSettings();
     }

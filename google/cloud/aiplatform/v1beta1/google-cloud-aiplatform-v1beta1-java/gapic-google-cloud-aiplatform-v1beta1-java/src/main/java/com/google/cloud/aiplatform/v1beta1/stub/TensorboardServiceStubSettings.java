@@ -107,9 +107,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (aiplatform.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (aiplatform.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -162,8 +162,7 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
   private final UnaryCallSettings<UpdateTensorboardExperimentRequest, TensorboardExperiment>
       updateTensorboardExperimentSettings;
   private final PagedCallSettings<
-          ListTensorboardExperimentsRequest,
-          ListTensorboardExperimentsResponse,
+          ListTensorboardExperimentsRequest, ListTensorboardExperimentsResponse,
           ListTensorboardExperimentsPagedResponse>
       listTensorboardExperimentsSettings;
   private final UnaryCallSettings<DeleteTensorboardExperimentRequest, Operation>
@@ -191,8 +190,7 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
   private final UnaryCallSettings<UpdateTensorboardTimeSeriesRequest, TensorboardTimeSeries>
       updateTensorboardTimeSeriesSettings;
   private final PagedCallSettings<
-          ListTensorboardTimeSeriesRequest,
-          ListTensorboardTimeSeriesResponse,
+          ListTensorboardTimeSeriesRequest, ListTensorboardTimeSeriesResponse,
           ListTensorboardTimeSeriesPagedResponse>
       listTensorboardTimeSeriesSettings;
   private final UnaryCallSettings<DeleteTensorboardTimeSeriesRequest, Operation>
@@ -209,8 +207,7 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
   private final UnaryCallSettings<WriteTensorboardRunDataRequest, WriteTensorboardRunDataResponse>
       writeTensorboardRunDataSettings;
   private final PagedCallSettings<
-          ExportTensorboardTimeSeriesDataRequest,
-          ExportTensorboardTimeSeriesDataResponse,
+          ExportTensorboardTimeSeriesDataRequest, ExportTensorboardTimeSeriesDataResponse,
           ExportTensorboardTimeSeriesDataPagedResponse>
       exportTensorboardTimeSeriesDataSettings;
 
@@ -255,13 +252,11 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
           };
 
   private static final PagedListDescriptor<
-          ListTensorboardExperimentsRequest,
-          ListTensorboardExperimentsResponse,
+          ListTensorboardExperimentsRequest, ListTensorboardExperimentsResponse,
           TensorboardExperiment>
       LIST_TENSORBOARD_EXPERIMENTS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ListTensorboardExperimentsRequest,
-              ListTensorboardExperimentsResponse,
+              ListTensorboardExperimentsRequest, ListTensorboardExperimentsResponse,
               TensorboardExperiment>() {
             @Override
             public String emptyToken() {
@@ -344,13 +339,11 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
           };
 
   private static final PagedListDescriptor<
-          ListTensorboardTimeSeriesRequest,
-          ListTensorboardTimeSeriesResponse,
+          ListTensorboardTimeSeriesRequest, ListTensorboardTimeSeriesResponse,
           TensorboardTimeSeries>
       LIST_TENSORBOARD_TIME_SERIES_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ListTensorboardTimeSeriesRequest,
-              ListTensorboardTimeSeriesResponse,
+              ListTensorboardTimeSeriesRequest, ListTensorboardTimeSeriesResponse,
               TensorboardTimeSeries>() {
             @Override
             public String emptyToken() {
@@ -393,13 +386,11 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
           };
 
   private static final PagedListDescriptor<
-          ExportTensorboardTimeSeriesDataRequest,
-          ExportTensorboardTimeSeriesDataResponse,
+          ExportTensorboardTimeSeriesDataRequest, ExportTensorboardTimeSeriesDataResponse,
           TimeSeriesDataPoint>
       EXPORT_TENSORBOARD_TIME_SERIES_DATA_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ExportTensorboardTimeSeriesDataRequest,
-              ExportTensorboardTimeSeriesDataResponse,
+              ExportTensorboardTimeSeriesDataRequest, ExportTensorboardTimeSeriesDataResponse,
               TimeSeriesDataPoint>() {
             @Override
             public String emptyToken() {
@@ -461,13 +452,11 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
           };
 
   private static final PagedListResponseFactory<
-          ListTensorboardExperimentsRequest,
-          ListTensorboardExperimentsResponse,
+          ListTensorboardExperimentsRequest, ListTensorboardExperimentsResponse,
           ListTensorboardExperimentsPagedResponse>
       LIST_TENSORBOARD_EXPERIMENTS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListTensorboardExperimentsRequest,
-              ListTensorboardExperimentsResponse,
+              ListTensorboardExperimentsRequest, ListTensorboardExperimentsResponse,
               ListTensorboardExperimentsPagedResponse>() {
             @Override
             public ApiFuture<ListTensorboardExperimentsPagedResponse> getFuturePagedResponse(
@@ -477,8 +466,7 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
                 ApiCallContext context,
                 ApiFuture<ListTensorboardExperimentsResponse> futureResponse) {
               PageContext<
-                      ListTensorboardExperimentsRequest,
-                      ListTensorboardExperimentsResponse,
+                      ListTensorboardExperimentsRequest, ListTensorboardExperimentsResponse,
                       TensorboardExperiment>
                   pageContext =
                       PageContext.create(
@@ -492,8 +480,7 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
           ListTensorboardRunsRequest, ListTensorboardRunsResponse, ListTensorboardRunsPagedResponse>
       LIST_TENSORBOARD_RUNS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListTensorboardRunsRequest,
-              ListTensorboardRunsResponse,
+              ListTensorboardRunsRequest, ListTensorboardRunsResponse,
               ListTensorboardRunsPagedResponse>() {
             @Override
             public ApiFuture<ListTensorboardRunsPagedResponse> getFuturePagedResponse(
@@ -510,13 +497,11 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
           };
 
   private static final PagedListResponseFactory<
-          ListTensorboardTimeSeriesRequest,
-          ListTensorboardTimeSeriesResponse,
+          ListTensorboardTimeSeriesRequest, ListTensorboardTimeSeriesResponse,
           ListTensorboardTimeSeriesPagedResponse>
       LIST_TENSORBOARD_TIME_SERIES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListTensorboardTimeSeriesRequest,
-              ListTensorboardTimeSeriesResponse,
+              ListTensorboardTimeSeriesRequest, ListTensorboardTimeSeriesResponse,
               ListTensorboardTimeSeriesPagedResponse>() {
             @Override
             public ApiFuture<ListTensorboardTimeSeriesPagedResponse> getFuturePagedResponse(
@@ -526,8 +511,7 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
                 ApiCallContext context,
                 ApiFuture<ListTensorboardTimeSeriesResponse> futureResponse) {
               PageContext<
-                      ListTensorboardTimeSeriesRequest,
-                      ListTensorboardTimeSeriesResponse,
+                      ListTensorboardTimeSeriesRequest, ListTensorboardTimeSeriesResponse,
                       TensorboardTimeSeries>
                   pageContext =
                       PageContext.create(
@@ -538,13 +522,11 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
           };
 
   private static final PagedListResponseFactory<
-          ExportTensorboardTimeSeriesDataRequest,
-          ExportTensorboardTimeSeriesDataResponse,
+          ExportTensorboardTimeSeriesDataRequest, ExportTensorboardTimeSeriesDataResponse,
           ExportTensorboardTimeSeriesDataPagedResponse>
       EXPORT_TENSORBOARD_TIME_SERIES_DATA_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ExportTensorboardTimeSeriesDataRequest,
-              ExportTensorboardTimeSeriesDataResponse,
+              ExportTensorboardTimeSeriesDataRequest, ExportTensorboardTimeSeriesDataResponse,
               ExportTensorboardTimeSeriesDataPagedResponse>() {
             @Override
             public ApiFuture<ExportTensorboardTimeSeriesDataPagedResponse> getFuturePagedResponse(
@@ -557,8 +539,7 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
                 ApiFuture<ExportTensorboardTimeSeriesDataResponse> futureResponse) {
               PageContext<
                       ExportTensorboardTimeSeriesDataRequest,
-                      ExportTensorboardTimeSeriesDataResponse,
-                      TimeSeriesDataPoint>
+                      ExportTensorboardTimeSeriesDataResponse, TimeSeriesDataPoint>
                   pageContext =
                       PageContext.create(
                           callable,
@@ -637,8 +618,7 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
 
   /** Returns the object with the settings used for calls to listTensorboardExperiments. */
   public PagedCallSettings<
-          ListTensorboardExperimentsRequest,
-          ListTensorboardExperimentsResponse,
+          ListTensorboardExperimentsRequest, ListTensorboardExperimentsResponse,
           ListTensorboardExperimentsPagedResponse>
       listTensorboardExperimentsSettings() {
     return listTensorboardExperimentsSettings;
@@ -711,8 +691,7 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
 
   /** Returns the object with the settings used for calls to listTensorboardTimeSeries. */
   public PagedCallSettings<
-          ListTensorboardTimeSeriesRequest,
-          ListTensorboardTimeSeriesResponse,
+          ListTensorboardTimeSeriesRequest, ListTensorboardTimeSeriesResponse,
           ListTensorboardTimeSeriesPagedResponse>
       listTensorboardTimeSeriesSettings() {
     return listTensorboardTimeSeriesSettings;
@@ -752,8 +731,7 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
 
   /** Returns the object with the settings used for calls to exportTensorboardTimeSeriesData. */
   public PagedCallSettings<
-          ExportTensorboardTimeSeriesDataRequest,
-          ExportTensorboardTimeSeriesDataResponse,
+          ExportTensorboardTimeSeriesDataRequest, ExportTensorboardTimeSeriesDataResponse,
           ExportTensorboardTimeSeriesDataPagedResponse>
       exportTensorboardTimeSeriesDataSettings() {
     return exportTensorboardTimeSeriesDataSettings;
@@ -908,8 +886,7 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
             UpdateTensorboardExperimentRequest, TensorboardExperiment>
         updateTensorboardExperimentSettings;
     private final PagedCallSettings.Builder<
-            ListTensorboardExperimentsRequest,
-            ListTensorboardExperimentsResponse,
+            ListTensorboardExperimentsRequest, ListTensorboardExperimentsResponse,
             ListTensorboardExperimentsPagedResponse>
         listTensorboardExperimentsSettings;
     private final UnaryCallSettings.Builder<DeleteTensorboardExperimentRequest, Operation>
@@ -924,8 +901,7 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
     private final UnaryCallSettings.Builder<UpdateTensorboardRunRequest, TensorboardRun>
         updateTensorboardRunSettings;
     private final PagedCallSettings.Builder<
-            ListTensorboardRunsRequest,
-            ListTensorboardRunsResponse,
+            ListTensorboardRunsRequest, ListTensorboardRunsResponse,
             ListTensorboardRunsPagedResponse>
         listTensorboardRunsSettings;
     private final UnaryCallSettings.Builder<DeleteTensorboardRunRequest, Operation>
@@ -942,8 +918,7 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
             UpdateTensorboardTimeSeriesRequest, TensorboardTimeSeries>
         updateTensorboardTimeSeriesSettings;
     private final PagedCallSettings.Builder<
-            ListTensorboardTimeSeriesRequest,
-            ListTensorboardTimeSeriesResponse,
+            ListTensorboardTimeSeriesRequest, ListTensorboardTimeSeriesResponse,
             ListTensorboardTimeSeriesPagedResponse>
         listTensorboardTimeSeriesSettings;
     private final UnaryCallSettings.Builder<DeleteTensorboardTimeSeriesRequest, Operation>
@@ -961,8 +936,7 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
             WriteTensorboardRunDataRequest, WriteTensorboardRunDataResponse>
         writeTensorboardRunDataSettings;
     private final PagedCallSettings.Builder<
-            ExportTensorboardTimeSeriesDataRequest,
-            ExportTensorboardTimeSeriesDataResponse,
+            ExportTensorboardTimeSeriesDataRequest, ExportTensorboardTimeSeriesDataResponse,
             ExportTensorboardTimeSeriesDataPagedResponse>
         exportTensorboardTimeSeriesDataSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
@@ -1502,8 +1476,7 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
 
     /** Returns the builder for the settings used for calls to listTensorboardExperiments. */
     public PagedCallSettings.Builder<
-            ListTensorboardExperimentsRequest,
-            ListTensorboardExperimentsResponse,
+            ListTensorboardExperimentsRequest, ListTensorboardExperimentsResponse,
             ListTensorboardExperimentsPagedResponse>
         listTensorboardExperimentsSettings() {
       return listTensorboardExperimentsSettings;
@@ -1544,8 +1517,7 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
 
     /** Returns the builder for the settings used for calls to listTensorboardRuns. */
     public PagedCallSettings.Builder<
-            ListTensorboardRunsRequest,
-            ListTensorboardRunsResponse,
+            ListTensorboardRunsRequest, ListTensorboardRunsResponse,
             ListTensorboardRunsPagedResponse>
         listTensorboardRunsSettings() {
       return listTensorboardRunsSettings;
@@ -1586,8 +1558,7 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
 
     /** Returns the builder for the settings used for calls to listTensorboardTimeSeries. */
     public PagedCallSettings.Builder<
-            ListTensorboardTimeSeriesRequest,
-            ListTensorboardTimeSeriesResponse,
+            ListTensorboardTimeSeriesRequest, ListTensorboardTimeSeriesResponse,
             ListTensorboardTimeSeriesPagedResponse>
         listTensorboardTimeSeriesSettings() {
       return listTensorboardTimeSeriesSettings;
@@ -1631,8 +1602,7 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
 
     /** Returns the builder for the settings used for calls to exportTensorboardTimeSeriesData. */
     public PagedCallSettings.Builder<
-            ExportTensorboardTimeSeriesDataRequest,
-            ExportTensorboardTimeSeriesDataResponse,
+            ExportTensorboardTimeSeriesDataRequest, ExportTensorboardTimeSeriesDataResponse,
             ExportTensorboardTimeSeriesDataPagedResponse>
         exportTensorboardTimeSeriesDataSettings() {
       return exportTensorboardTimeSeriesDataSettings;

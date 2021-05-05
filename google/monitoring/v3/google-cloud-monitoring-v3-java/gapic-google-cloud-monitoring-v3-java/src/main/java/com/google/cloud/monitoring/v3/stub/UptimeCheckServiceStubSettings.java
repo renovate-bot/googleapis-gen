@@ -68,9 +68,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (monitoring.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (monitoring.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -105,8 +105,7 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
           .build();
 
   private final PagedCallSettings<
-          ListUptimeCheckConfigsRequest,
-          ListUptimeCheckConfigsResponse,
+          ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse,
           ListUptimeCheckConfigsPagedResponse>
       listUptimeCheckConfigsSettings;
   private final UnaryCallSettings<GetUptimeCheckConfigRequest, UptimeCheckConfig>
@@ -205,13 +204,11 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
           };
 
   private static final PagedListResponseFactory<
-          ListUptimeCheckConfigsRequest,
-          ListUptimeCheckConfigsResponse,
+          ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse,
           ListUptimeCheckConfigsPagedResponse>
       LIST_UPTIME_CHECK_CONFIGS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListUptimeCheckConfigsRequest,
-              ListUptimeCheckConfigsResponse,
+              ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse,
               ListUptimeCheckConfigsPagedResponse>() {
             @Override
             public ApiFuture<ListUptimeCheckConfigsPagedResponse> getFuturePagedResponse(
@@ -221,8 +218,7 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
                 ApiCallContext context,
                 ApiFuture<ListUptimeCheckConfigsResponse> futureResponse) {
               PageContext<
-                      ListUptimeCheckConfigsRequest,
-                      ListUptimeCheckConfigsResponse,
+                      ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse,
                       UptimeCheckConfig>
                   pageContext =
                       PageContext.create(
@@ -235,8 +231,7 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
           ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse, ListUptimeCheckIpsPagedResponse>
       LIST_UPTIME_CHECK_IPS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListUptimeCheckIpsRequest,
-              ListUptimeCheckIpsResponse,
+              ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse,
               ListUptimeCheckIpsPagedResponse>() {
             @Override
             public ApiFuture<ListUptimeCheckIpsPagedResponse> getFuturePagedResponse(
@@ -254,8 +249,7 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
 
   /** Returns the object with the settings used for calls to listUptimeCheckConfigs. */
   public PagedCallSettings<
-          ListUptimeCheckConfigsRequest,
-          ListUptimeCheckConfigsResponse,
+          ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse,
           ListUptimeCheckConfigsPagedResponse>
       listUptimeCheckConfigsSettings() {
     return listUptimeCheckConfigsSettings;
@@ -374,8 +368,7 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
       extends StubSettings.Builder<UptimeCheckServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final PagedCallSettings.Builder<
-            ListUptimeCheckConfigsRequest,
-            ListUptimeCheckConfigsResponse,
+            ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse,
             ListUptimeCheckConfigsPagedResponse>
         listUptimeCheckConfigsSettings;
     private final UnaryCallSettings.Builder<GetUptimeCheckConfigRequest, UptimeCheckConfig>
@@ -542,8 +535,7 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
 
     /** Returns the builder for the settings used for calls to listUptimeCheckConfigs. */
     public PagedCallSettings.Builder<
-            ListUptimeCheckConfigsRequest,
-            ListUptimeCheckConfigsResponse,
+            ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse,
             ListUptimeCheckConfigsPagedResponse>
         listUptimeCheckConfigsSettings() {
       return listUptimeCheckConfigsSettings;

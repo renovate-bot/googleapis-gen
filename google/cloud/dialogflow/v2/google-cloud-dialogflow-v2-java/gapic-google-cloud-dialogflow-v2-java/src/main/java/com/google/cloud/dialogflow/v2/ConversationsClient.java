@@ -57,13 +57,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -954,10 +954,7 @@ public class ConversationsClient implements BackgroundResource {
 
   public static class ListConversationsPagedResponse
       extends AbstractPagedListResponse<
-          ListConversationsRequest,
-          ListConversationsResponse,
-          Conversation,
-          ListConversationsPage,
+          ListConversationsRequest, ListConversationsResponse, Conversation, ListConversationsPage,
           ListConversationsFixedSizeCollection> {
 
     public static ApiFuture<ListConversationsPagedResponse> createAsync(
@@ -983,9 +980,7 @@ public class ConversationsClient implements BackgroundResource {
 
   public static class ListConversationsPage
       extends AbstractPage<
-          ListConversationsRequest,
-          ListConversationsResponse,
-          Conversation,
+          ListConversationsRequest, ListConversationsResponse, Conversation,
           ListConversationsPage> {
 
     private ListConversationsPage(
@@ -1015,10 +1010,7 @@ public class ConversationsClient implements BackgroundResource {
 
   public static class ListConversationsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListConversationsRequest,
-          ListConversationsResponse,
-          Conversation,
-          ListConversationsPage,
+          ListConversationsRequest, ListConversationsResponse, Conversation, ListConversationsPage,
           ListConversationsFixedSizeCollection> {
 
     private ListConversationsFixedSizeCollection(
@@ -1039,10 +1031,7 @@ public class ConversationsClient implements BackgroundResource {
 
   public static class ListMessagesPagedResponse
       extends AbstractPagedListResponse<
-          ListMessagesRequest,
-          ListMessagesResponse,
-          Message,
-          ListMessagesPage,
+          ListMessagesRequest, ListMessagesResponse, Message, ListMessagesPage,
           ListMessagesFixedSizeCollection> {
 
     public static ApiFuture<ListMessagesPagedResponse> createAsync(
@@ -1096,10 +1085,7 @@ public class ConversationsClient implements BackgroundResource {
 
   public static class ListMessagesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListMessagesRequest,
-          ListMessagesResponse,
-          Message,
-          ListMessagesPage,
+          ListMessagesRequest, ListMessagesResponse, Message, ListMessagesPage,
           ListMessagesFixedSizeCollection> {
 
     private ListMessagesFixedSizeCollection(List<ListMessagesPage> pages, int collectionSize) {

@@ -109,13 +109,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -3139,10 +3139,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   public static class ListTablesPagedResponse
       extends AbstractPagedListResponse<
-          ListTablesRequest,
-          ListTablesResponse,
-          Table,
-          ListTablesPage,
+          ListTablesRequest, ListTablesResponse, Table, ListTablesPage,
           ListTablesFixedSizeCollection> {
 
     public static ApiFuture<ListTablesPagedResponse> createAsync(
@@ -3196,10 +3193,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   public static class ListTablesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListTablesRequest,
-          ListTablesResponse,
-          Table,
-          ListTablesPage,
+          ListTablesRequest, ListTablesResponse, Table, ListTablesPage,
           ListTablesFixedSizeCollection> {
 
     private ListTablesFixedSizeCollection(List<ListTablesPage> pages, int collectionSize) {
@@ -3219,10 +3213,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   public static class ListSnapshotsPagedResponse
       extends AbstractPagedListResponse<
-          ListSnapshotsRequest,
-          ListSnapshotsResponse,
-          Snapshot,
-          ListSnapshotsPage,
+          ListSnapshotsRequest, ListSnapshotsResponse, Snapshot, ListSnapshotsPage,
           ListSnapshotsFixedSizeCollection> {
 
     public static ApiFuture<ListSnapshotsPagedResponse> createAsync(
@@ -3277,10 +3268,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   public static class ListSnapshotsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListSnapshotsRequest,
-          ListSnapshotsResponse,
-          Snapshot,
-          ListSnapshotsPage,
+          ListSnapshotsRequest, ListSnapshotsResponse, Snapshot, ListSnapshotsPage,
           ListSnapshotsFixedSizeCollection> {
 
     private ListSnapshotsFixedSizeCollection(List<ListSnapshotsPage> pages, int collectionSize) {
@@ -3300,10 +3288,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   public static class ListBackupsPagedResponse
       extends AbstractPagedListResponse<
-          ListBackupsRequest,
-          ListBackupsResponse,
-          Backup,
-          ListBackupsPage,
+          ListBackupsRequest, ListBackupsResponse, Backup, ListBackupsPage,
           ListBackupsFixedSizeCollection> {
 
     public static ApiFuture<ListBackupsPagedResponse> createAsync(
@@ -3357,10 +3342,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
 
   public static class ListBackupsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListBackupsRequest,
-          ListBackupsResponse,
-          Backup,
-          ListBackupsPage,
+          ListBackupsRequest, ListBackupsResponse, Backup, ListBackupsPage,
           ListBackupsFixedSizeCollection> {
 
     private ListBackupsFixedSizeCollection(List<ListBackupsPage> pages, int collectionSize) {

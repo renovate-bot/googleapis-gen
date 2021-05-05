@@ -91,10 +91,10 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (servicemanagement.googleapis.com) and default port (443) are
+ *   <li> The default service address (servicemanagement.googleapis.com) and default port (443) are
  *       used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -308,8 +308,7 @@ public class ServiceManagerStubSettings extends StubSettings<ServiceManagerStubS
           ListServiceConfigsRequest, ListServiceConfigsResponse, ListServiceConfigsPagedResponse>
       LIST_SERVICE_CONFIGS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListServiceConfigsRequest,
-              ListServiceConfigsResponse,
+              ListServiceConfigsRequest, ListServiceConfigsResponse,
               ListServiceConfigsPagedResponse>() {
             @Override
             public ApiFuture<ListServiceConfigsPagedResponse> getFuturePagedResponse(
@@ -329,8 +328,7 @@ public class ServiceManagerStubSettings extends StubSettings<ServiceManagerStubS
           ListServiceRolloutsRequest, ListServiceRolloutsResponse, ListServiceRolloutsPagedResponse>
       LIST_SERVICE_ROLLOUTS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListServiceRolloutsRequest,
-              ListServiceRolloutsResponse,
+              ListServiceRolloutsRequest, ListServiceRolloutsResponse,
               ListServiceRolloutsPagedResponse>() {
             @Override
             public ApiFuture<ListServiceRolloutsPagedResponse> getFuturePagedResponse(
@@ -607,8 +605,7 @@ public class ServiceManagerStubSettings extends StubSettings<ServiceManagerStubS
             SubmitConfigSourceRequest, SubmitConfigSourceResponse, OperationMetadata>
         submitConfigSourceOperationSettings;
     private final PagedCallSettings.Builder<
-            ListServiceRolloutsRequest,
-            ListServiceRolloutsResponse,
+            ListServiceRolloutsRequest, ListServiceRolloutsResponse,
             ListServiceRolloutsPagedResponse>
         listServiceRolloutsSettings;
     private final UnaryCallSettings.Builder<GetServiceRolloutRequest, Rollout>
@@ -1117,8 +1114,7 @@ public class ServiceManagerStubSettings extends StubSettings<ServiceManagerStubS
 
     /** Returns the builder for the settings used for calls to listServiceRollouts. */
     public PagedCallSettings.Builder<
-            ListServiceRolloutsRequest,
-            ListServiceRolloutsResponse,
+            ListServiceRolloutsRequest, ListServiceRolloutsResponse,
             ListServiceRolloutsPagedResponse>
         listServiceRolloutsSettings() {
       return listServiceRolloutsSettings;

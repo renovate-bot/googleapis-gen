@@ -73,9 +73,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (monitoring.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (monitoring.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -110,16 +110,14 @@ public class MetricServiceStubSettings extends StubSettings<MetricServiceStubSet
           .build();
 
   private final PagedCallSettings<
-          ListMonitoredResourceDescriptorsRequest,
-          ListMonitoredResourceDescriptorsResponse,
+          ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
           ListMonitoredResourceDescriptorsPagedResponse>
       listMonitoredResourceDescriptorsSettings;
   private final UnaryCallSettings<
           GetMonitoredResourceDescriptorRequest, MonitoredResourceDescriptor>
       getMonitoredResourceDescriptorSettings;
   private final PagedCallSettings<
-          ListMetricDescriptorsRequest,
-          ListMetricDescriptorsResponse,
+          ListMetricDescriptorsRequest, ListMetricDescriptorsResponse,
           ListMetricDescriptorsPagedResponse>
       listMetricDescriptorsSettings;
   private final UnaryCallSettings<GetMetricDescriptorRequest, MetricDescriptor>
@@ -134,13 +132,11 @@ public class MetricServiceStubSettings extends StubSettings<MetricServiceStubSet
   private final UnaryCallSettings<CreateTimeSeriesRequest, Empty> createTimeSeriesSettings;
 
   private static final PagedListDescriptor<
-          ListMonitoredResourceDescriptorsRequest,
-          ListMonitoredResourceDescriptorsResponse,
+          ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
           MonitoredResourceDescriptor>
       LIST_MONITORED_RESOURCE_DESCRIPTORS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ListMonitoredResourceDescriptorsRequest,
-              ListMonitoredResourceDescriptorsResponse,
+              ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
               MonitoredResourceDescriptor>() {
             @Override
             public String emptyToken() {
@@ -262,13 +258,11 @@ public class MetricServiceStubSettings extends StubSettings<MetricServiceStubSet
           };
 
   private static final PagedListResponseFactory<
-          ListMonitoredResourceDescriptorsRequest,
-          ListMonitoredResourceDescriptorsResponse,
+          ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
           ListMonitoredResourceDescriptorsPagedResponse>
       LIST_MONITORED_RESOURCE_DESCRIPTORS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListMonitoredResourceDescriptorsRequest,
-              ListMonitoredResourceDescriptorsResponse,
+              ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
               ListMonitoredResourceDescriptorsPagedResponse>() {
             @Override
             public ApiFuture<ListMonitoredResourceDescriptorsPagedResponse> getFuturePagedResponse(
@@ -281,8 +275,7 @@ public class MetricServiceStubSettings extends StubSettings<MetricServiceStubSet
                 ApiFuture<ListMonitoredResourceDescriptorsResponse> futureResponse) {
               PageContext<
                       ListMonitoredResourceDescriptorsRequest,
-                      ListMonitoredResourceDescriptorsResponse,
-                      MonitoredResourceDescriptor>
+                      ListMonitoredResourceDescriptorsResponse, MonitoredResourceDescriptor>
                   pageContext =
                       PageContext.create(
                           callable,
@@ -295,13 +288,11 @@ public class MetricServiceStubSettings extends StubSettings<MetricServiceStubSet
           };
 
   private static final PagedListResponseFactory<
-          ListMetricDescriptorsRequest,
-          ListMetricDescriptorsResponse,
+          ListMetricDescriptorsRequest, ListMetricDescriptorsResponse,
           ListMetricDescriptorsPagedResponse>
       LIST_METRIC_DESCRIPTORS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListMetricDescriptorsRequest,
-              ListMetricDescriptorsResponse,
+              ListMetricDescriptorsRequest, ListMetricDescriptorsResponse,
               ListMetricDescriptorsPagedResponse>() {
             @Override
             public ApiFuture<ListMetricDescriptorsPagedResponse> getFuturePagedResponse(
@@ -337,8 +328,7 @@ public class MetricServiceStubSettings extends StubSettings<MetricServiceStubSet
 
   /** Returns the object with the settings used for calls to listMonitoredResourceDescriptors. */
   public PagedCallSettings<
-          ListMonitoredResourceDescriptorsRequest,
-          ListMonitoredResourceDescriptorsResponse,
+          ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
           ListMonitoredResourceDescriptorsPagedResponse>
       listMonitoredResourceDescriptorsSettings() {
     return listMonitoredResourceDescriptorsSettings;
@@ -352,8 +342,7 @@ public class MetricServiceStubSettings extends StubSettings<MetricServiceStubSet
 
   /** Returns the object with the settings used for calls to listMetricDescriptors. */
   public PagedCallSettings<
-          ListMetricDescriptorsRequest,
-          ListMetricDescriptorsResponse,
+          ListMetricDescriptorsRequest, ListMetricDescriptorsResponse,
           ListMetricDescriptorsPagedResponse>
       listMetricDescriptorsSettings() {
     return listMetricDescriptorsSettings;
@@ -473,16 +462,14 @@ public class MetricServiceStubSettings extends StubSettings<MetricServiceStubSet
   public static class Builder extends StubSettings.Builder<MetricServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final PagedCallSettings.Builder<
-            ListMonitoredResourceDescriptorsRequest,
-            ListMonitoredResourceDescriptorsResponse,
+            ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
             ListMonitoredResourceDescriptorsPagedResponse>
         listMonitoredResourceDescriptorsSettings;
     private final UnaryCallSettings.Builder<
             GetMonitoredResourceDescriptorRequest, MonitoredResourceDescriptor>
         getMonitoredResourceDescriptorSettings;
     private final PagedCallSettings.Builder<
-            ListMetricDescriptorsRequest,
-            ListMetricDescriptorsResponse,
+            ListMetricDescriptorsRequest, ListMetricDescriptorsResponse,
             ListMetricDescriptorsPagedResponse>
         listMetricDescriptorsSettings;
     private final UnaryCallSettings.Builder<GetMetricDescriptorRequest, MetricDescriptor>
@@ -669,8 +656,7 @@ public class MetricServiceStubSettings extends StubSettings<MetricServiceStubSet
 
     /** Returns the builder for the settings used for calls to listMonitoredResourceDescriptors. */
     public PagedCallSettings.Builder<
-            ListMonitoredResourceDescriptorsRequest,
-            ListMonitoredResourceDescriptorsResponse,
+            ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
             ListMonitoredResourceDescriptorsPagedResponse>
         listMonitoredResourceDescriptorsSettings() {
       return listMonitoredResourceDescriptorsSettings;
@@ -685,8 +671,7 @@ public class MetricServiceStubSettings extends StubSettings<MetricServiceStubSet
 
     /** Returns the builder for the settings used for calls to listMetricDescriptors. */
     public PagedCallSettings.Builder<
-            ListMetricDescriptorsRequest,
-            ListMetricDescriptorsResponse,
+            ListMetricDescriptorsRequest, ListMetricDescriptorsResponse,
             ListMetricDescriptorsPagedResponse>
         listMetricDescriptorsSettings() {
       return listMetricDescriptorsSettings;

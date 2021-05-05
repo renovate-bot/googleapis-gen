@@ -61,13 +61,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -1921,10 +1921,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   public static class ListDataSourcesPagedResponse
       extends AbstractPagedListResponse<
-          ListDataSourcesRequest,
-          ListDataSourcesResponse,
-          DataSource,
-          ListDataSourcesPage,
+          ListDataSourcesRequest, ListDataSourcesResponse, DataSource, ListDataSourcesPage,
           ListDataSourcesFixedSizeCollection> {
 
     public static ApiFuture<ListDataSourcesPagedResponse> createAsync(
@@ -1979,10 +1976,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   public static class ListDataSourcesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListDataSourcesRequest,
-          ListDataSourcesResponse,
-          DataSource,
-          ListDataSourcesPage,
+          ListDataSourcesRequest, ListDataSourcesResponse, DataSource, ListDataSourcesPage,
           ListDataSourcesFixedSizeCollection> {
 
     private ListDataSourcesFixedSizeCollection(
@@ -2003,11 +1997,8 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   public static class ListTransferConfigsPagedResponse
       extends AbstractPagedListResponse<
-          ListTransferConfigsRequest,
-          ListTransferConfigsResponse,
-          TransferConfig,
-          ListTransferConfigsPage,
-          ListTransferConfigsFixedSizeCollection> {
+          ListTransferConfigsRequest, ListTransferConfigsResponse, TransferConfig,
+          ListTransferConfigsPage, ListTransferConfigsFixedSizeCollection> {
 
     public static ApiFuture<ListTransferConfigsPagedResponse> createAsync(
         PageContext<ListTransferConfigsRequest, ListTransferConfigsResponse, TransferConfig>
@@ -2033,9 +2024,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   public static class ListTransferConfigsPage
       extends AbstractPage<
-          ListTransferConfigsRequest,
-          ListTransferConfigsResponse,
-          TransferConfig,
+          ListTransferConfigsRequest, ListTransferConfigsResponse, TransferConfig,
           ListTransferConfigsPage> {
 
     private ListTransferConfigsPage(
@@ -2068,11 +2057,8 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   public static class ListTransferConfigsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListTransferConfigsRequest,
-          ListTransferConfigsResponse,
-          TransferConfig,
-          ListTransferConfigsPage,
-          ListTransferConfigsFixedSizeCollection> {
+          ListTransferConfigsRequest, ListTransferConfigsResponse, TransferConfig,
+          ListTransferConfigsPage, ListTransferConfigsFixedSizeCollection> {
 
     private ListTransferConfigsFixedSizeCollection(
         List<ListTransferConfigsPage> pages, int collectionSize) {
@@ -2092,10 +2078,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   public static class ListTransferRunsPagedResponse
       extends AbstractPagedListResponse<
-          ListTransferRunsRequest,
-          ListTransferRunsResponse,
-          TransferRun,
-          ListTransferRunsPage,
+          ListTransferRunsRequest, ListTransferRunsResponse, TransferRun, ListTransferRunsPage,
           ListTransferRunsFixedSizeCollection> {
 
     public static ApiFuture<ListTransferRunsPagedResponse> createAsync(
@@ -2150,10 +2133,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   public static class ListTransferRunsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListTransferRunsRequest,
-          ListTransferRunsResponse,
-          TransferRun,
-          ListTransferRunsPage,
+          ListTransferRunsRequest, ListTransferRunsResponse, TransferRun, ListTransferRunsPage,
           ListTransferRunsFixedSizeCollection> {
 
     private ListTransferRunsFixedSizeCollection(
@@ -2174,10 +2154,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   public static class ListTransferLogsPagedResponse
       extends AbstractPagedListResponse<
-          ListTransferLogsRequest,
-          ListTransferLogsResponse,
-          TransferMessage,
-          ListTransferLogsPage,
+          ListTransferLogsRequest, ListTransferLogsResponse, TransferMessage, ListTransferLogsPage,
           ListTransferLogsFixedSizeCollection> {
 
     public static ApiFuture<ListTransferLogsPagedResponse> createAsync(
@@ -2203,9 +2180,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   public static class ListTransferLogsPage
       extends AbstractPage<
-          ListTransferLogsRequest,
-          ListTransferLogsResponse,
-          TransferMessage,
+          ListTransferLogsRequest, ListTransferLogsResponse, TransferMessage,
           ListTransferLogsPage> {
 
     private ListTransferLogsPage(
@@ -2235,10 +2210,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   public static class ListTransferLogsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListTransferLogsRequest,
-          ListTransferLogsResponse,
-          TransferMessage,
-          ListTransferLogsPage,
+          ListTransferLogsRequest, ListTransferLogsResponse, TransferMessage, ListTransferLogsPage,
           ListTransferLogsFixedSizeCollection> {
 
     private ListTransferLogsFixedSizeCollection(

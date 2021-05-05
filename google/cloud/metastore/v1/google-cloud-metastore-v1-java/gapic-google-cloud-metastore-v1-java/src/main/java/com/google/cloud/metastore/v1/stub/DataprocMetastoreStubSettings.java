@@ -79,9 +79,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (metastore.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (metastore.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -240,8 +240,7 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
           ListMetadataImportsRequest, ListMetadataImportsResponse, ListMetadataImportsPagedResponse>
       LIST_METADATA_IMPORTS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListMetadataImportsRequest,
-              ListMetadataImportsResponse,
+              ListMetadataImportsRequest, ListMetadataImportsResponse,
               ListMetadataImportsPagedResponse>() {
             @Override
             public ApiFuture<ListMetadataImportsPagedResponse> getFuturePagedResponse(
@@ -452,8 +451,7 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
     private final OperationCallSettings.Builder<DeleteServiceRequest, Empty, OperationMetadata>
         deleteServiceOperationSettings;
     private final PagedCallSettings.Builder<
-            ListMetadataImportsRequest,
-            ListMetadataImportsResponse,
+            ListMetadataImportsRequest, ListMetadataImportsResponse,
             ListMetadataImportsPagedResponse>
         listMetadataImportsSettings;
     private final UnaryCallSettings.Builder<GetMetadataImportRequest, MetadataImport>
@@ -868,8 +866,7 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
 
     /** Returns the builder for the settings used for calls to listMetadataImports. */
     public PagedCallSettings.Builder<
-            ListMetadataImportsRequest,
-            ListMetadataImportsResponse,
+            ListMetadataImportsRequest, ListMetadataImportsResponse,
             ListMetadataImportsPagedResponse>
         listMetadataImportsSettings() {
       return listMetadataImportsSettings;

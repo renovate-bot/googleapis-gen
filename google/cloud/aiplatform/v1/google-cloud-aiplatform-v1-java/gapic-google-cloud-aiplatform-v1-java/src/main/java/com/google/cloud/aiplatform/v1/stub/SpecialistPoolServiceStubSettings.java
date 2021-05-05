@@ -72,9 +72,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (aiplatform.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (aiplatform.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -169,8 +169,7 @@ public class SpecialistPoolServiceStubSettings
           ListSpecialistPoolsRequest, ListSpecialistPoolsResponse, ListSpecialistPoolsPagedResponse>
       LIST_SPECIALIST_POOLS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListSpecialistPoolsRequest,
-              ListSpecialistPoolsResponse,
+              ListSpecialistPoolsRequest, ListSpecialistPoolsResponse,
               ListSpecialistPoolsPagedResponse>() {
             @Override
             public ApiFuture<ListSpecialistPoolsPagedResponse> getFuturePagedResponse(
@@ -327,8 +326,7 @@ public class SpecialistPoolServiceStubSettings
     private final UnaryCallSettings.Builder<GetSpecialistPoolRequest, SpecialistPool>
         getSpecialistPoolSettings;
     private final PagedCallSettings.Builder<
-            ListSpecialistPoolsRequest,
-            ListSpecialistPoolsResponse,
+            ListSpecialistPoolsRequest, ListSpecialistPoolsResponse,
             ListSpecialistPoolsPagedResponse>
         listSpecialistPoolsSettings;
     private final UnaryCallSettings.Builder<DeleteSpecialistPoolRequest, Operation>
@@ -572,8 +570,7 @@ public class SpecialistPoolServiceStubSettings
 
     /** Returns the builder for the settings used for calls to listSpecialistPools. */
     public PagedCallSettings.Builder<
-            ListSpecialistPoolsRequest,
-            ListSpecialistPoolsResponse,
+            ListSpecialistPoolsRequest, ListSpecialistPoolsResponse,
             ListSpecialistPoolsPagedResponse>
         listSpecialistPoolsSettings() {
       return listSpecialistPoolsSettings;

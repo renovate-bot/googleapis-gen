@@ -104,9 +104,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (iam.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (iam.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -177,8 +177,7 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
   private final UnaryCallSettings<DeleteRoleRequest, Role> deleteRoleSettings;
   private final UnaryCallSettings<UndeleteRoleRequest, Role> undeleteRoleSettings;
   private final PagedCallSettings<
-          QueryTestablePermissionsRequest,
-          QueryTestablePermissionsResponse,
+          QueryTestablePermissionsRequest, QueryTestablePermissionsResponse,
           QueryTestablePermissionsPagedResponse>
       queryTestablePermissionsSettings;
   private final UnaryCallSettings<QueryAuditableServicesRequest, QueryAuditableServicesResponse>
@@ -348,8 +347,7 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
           ListServiceAccountsRequest, ListServiceAccountsResponse, ListServiceAccountsPagedResponse>
       LIST_SERVICE_ACCOUNTS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListServiceAccountsRequest,
-              ListServiceAccountsResponse,
+              ListServiceAccountsRequest, ListServiceAccountsResponse,
               ListServiceAccountsPagedResponse>() {
             @Override
             public ApiFuture<ListServiceAccountsPagedResponse> getFuturePagedResponse(
@@ -369,8 +367,7 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
           QueryGrantableRolesRequest, QueryGrantableRolesResponse, QueryGrantableRolesPagedResponse>
       QUERY_GRANTABLE_ROLES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              QueryGrantableRolesRequest,
-              QueryGrantableRolesResponse,
+              QueryGrantableRolesRequest, QueryGrantableRolesResponse,
               QueryGrantableRolesPagedResponse>() {
             @Override
             public ApiFuture<QueryGrantableRolesPagedResponse> getFuturePagedResponse(
@@ -404,13 +401,11 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
           };
 
   private static final PagedListResponseFactory<
-          QueryTestablePermissionsRequest,
-          QueryTestablePermissionsResponse,
+          QueryTestablePermissionsRequest, QueryTestablePermissionsResponse,
           QueryTestablePermissionsPagedResponse>
       QUERY_TESTABLE_PERMISSIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              QueryTestablePermissionsRequest,
-              QueryTestablePermissionsResponse,
+              QueryTestablePermissionsRequest, QueryTestablePermissionsResponse,
               QueryTestablePermissionsPagedResponse>() {
             @Override
             public ApiFuture<QueryTestablePermissionsPagedResponse> getFuturePagedResponse(
@@ -584,8 +579,7 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
 
   /** Returns the object with the settings used for calls to queryTestablePermissions. */
   public PagedCallSettings<
-          QueryTestablePermissionsRequest,
-          QueryTestablePermissionsResponse,
+          QueryTestablePermissionsRequest, QueryTestablePermissionsResponse,
           QueryTestablePermissionsPagedResponse>
       queryTestablePermissionsSettings() {
     return queryTestablePermissionsSettings;
@@ -705,8 +699,7 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
   public static class Builder extends StubSettings.Builder<IAMStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final PagedCallSettings.Builder<
-            ListServiceAccountsRequest,
-            ListServiceAccountsResponse,
+            ListServiceAccountsRequest, ListServiceAccountsResponse,
             ListServiceAccountsPagedResponse>
         listServiceAccountsSettings;
     private final UnaryCallSettings.Builder<GetServiceAccountRequest, ServiceAccount>
@@ -744,8 +737,7 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings;
     private final PagedCallSettings.Builder<
-            QueryGrantableRolesRequest,
-            QueryGrantableRolesResponse,
+            QueryGrantableRolesRequest, QueryGrantableRolesResponse,
             QueryGrantableRolesPagedResponse>
         queryGrantableRolesSettings;
     private final PagedCallSettings.Builder<
@@ -757,8 +749,7 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
     private final UnaryCallSettings.Builder<DeleteRoleRequest, Role> deleteRoleSettings;
     private final UnaryCallSettings.Builder<UndeleteRoleRequest, Role> undeleteRoleSettings;
     private final PagedCallSettings.Builder<
-            QueryTestablePermissionsRequest,
-            QueryTestablePermissionsResponse,
+            QueryTestablePermissionsRequest, QueryTestablePermissionsResponse,
             QueryTestablePermissionsPagedResponse>
         queryTestablePermissionsSettings;
     private final UnaryCallSettings.Builder<
@@ -1130,8 +1121,7 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
 
     /** Returns the builder for the settings used for calls to listServiceAccounts. */
     public PagedCallSettings.Builder<
-            ListServiceAccountsRequest,
-            ListServiceAccountsResponse,
+            ListServiceAccountsRequest, ListServiceAccountsResponse,
             ListServiceAccountsPagedResponse>
         listServiceAccountsSettings() {
       return listServiceAccountsSettings;
@@ -1253,8 +1243,7 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
 
     /** Returns the builder for the settings used for calls to queryGrantableRoles. */
     public PagedCallSettings.Builder<
-            QueryGrantableRolesRequest,
-            QueryGrantableRolesResponse,
+            QueryGrantableRolesRequest, QueryGrantableRolesResponse,
             QueryGrantableRolesPagedResponse>
         queryGrantableRolesSettings() {
       return queryGrantableRolesSettings;
@@ -1293,8 +1282,7 @@ public class IAMStubSettings extends StubSettings<IAMStubSettings> {
 
     /** Returns the builder for the settings used for calls to queryTestablePermissions. */
     public PagedCallSettings.Builder<
-            QueryTestablePermissionsRequest,
-            QueryTestablePermissionsResponse,
+            QueryTestablePermissionsRequest, QueryTestablePermissionsResponse,
             QueryTestablePermissionsPagedResponse>
         queryTestablePermissionsSettings() {
       return queryTestablePermissionsSettings;

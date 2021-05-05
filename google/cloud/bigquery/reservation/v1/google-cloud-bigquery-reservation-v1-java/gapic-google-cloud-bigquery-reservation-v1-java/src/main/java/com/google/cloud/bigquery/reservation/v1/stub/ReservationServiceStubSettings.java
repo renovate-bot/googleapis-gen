@@ -88,10 +88,10 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (bigqueryreservation.googleapis.com) and default port (443) are
- *       used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (bigqueryreservation.googleapis.com) and default port (443)
+ *       are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -134,8 +134,7 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
   private final UnaryCallSettings<CreateCapacityCommitmentRequest, CapacityCommitment>
       createCapacityCommitmentSettings;
   private final PagedCallSettings<
-          ListCapacityCommitmentsRequest,
-          ListCapacityCommitmentsResponse,
+          ListCapacityCommitmentsRequest, ListCapacityCommitmentsResponse,
           ListCapacityCommitmentsPagedResponse>
       listCapacityCommitmentsSettings;
   private final UnaryCallSettings<GetCapacityCommitmentRequest, CapacityCommitment>
@@ -205,8 +204,7 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
           ListCapacityCommitmentsRequest, ListCapacityCommitmentsResponse, CapacityCommitment>
       LIST_CAPACITY_COMMITMENTS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ListCapacityCommitmentsRequest,
-              ListCapacityCommitmentsResponse,
+              ListCapacityCommitmentsRequest, ListCapacityCommitmentsResponse,
               CapacityCommitment>() {
             @Override
             public String emptyToken() {
@@ -345,13 +343,11 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
           };
 
   private static final PagedListResponseFactory<
-          ListCapacityCommitmentsRequest,
-          ListCapacityCommitmentsResponse,
+          ListCapacityCommitmentsRequest, ListCapacityCommitmentsResponse,
           ListCapacityCommitmentsPagedResponse>
       LIST_CAPACITY_COMMITMENTS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListCapacityCommitmentsRequest,
-              ListCapacityCommitmentsResponse,
+              ListCapacityCommitmentsRequest, ListCapacityCommitmentsResponse,
               ListCapacityCommitmentsPagedResponse>() {
             @Override
             public ApiFuture<ListCapacityCommitmentsPagedResponse> getFuturePagedResponse(
@@ -361,8 +357,7 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
                 ApiCallContext context,
                 ApiFuture<ListCapacityCommitmentsResponse> futureResponse) {
               PageContext<
-                      ListCapacityCommitmentsRequest,
-                      ListCapacityCommitmentsResponse,
+                      ListCapacityCommitmentsRequest, ListCapacityCommitmentsResponse,
                       CapacityCommitment>
                   pageContext =
                       PageContext.create(
@@ -392,8 +387,7 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
           SearchAssignmentsRequest, SearchAssignmentsResponse, SearchAssignmentsPagedResponse>
       SEARCH_ASSIGNMENTS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              SearchAssignmentsRequest,
-              SearchAssignmentsResponse,
+              SearchAssignmentsRequest, SearchAssignmentsResponse,
               SearchAssignmentsPagedResponse>() {
             @Override
             public ApiFuture<SearchAssignmentsPagedResponse> getFuturePagedResponse(
@@ -444,8 +438,7 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
 
   /** Returns the object with the settings used for calls to listCapacityCommitments. */
   public PagedCallSettings<
-          ListCapacityCommitmentsRequest,
-          ListCapacityCommitmentsResponse,
+          ListCapacityCommitmentsRequest, ListCapacityCommitmentsResponse,
           ListCapacityCommitmentsPagedResponse>
       listCapacityCommitmentsSettings() {
     return listCapacityCommitmentsSettings;
@@ -629,8 +622,7 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
     private final UnaryCallSettings.Builder<CreateCapacityCommitmentRequest, CapacityCommitment>
         createCapacityCommitmentSettings;
     private final PagedCallSettings.Builder<
-            ListCapacityCommitmentsRequest,
-            ListCapacityCommitmentsResponse,
+            ListCapacityCommitmentsRequest, ListCapacityCommitmentsResponse,
             ListCapacityCommitmentsPagedResponse>
         listCapacityCommitmentsSettings;
     private final UnaryCallSettings.Builder<GetCapacityCommitmentRequest, CapacityCommitment>
@@ -964,8 +956,7 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
 
     /** Returns the builder for the settings used for calls to listCapacityCommitments. */
     public PagedCallSettings.Builder<
-            ListCapacityCommitmentsRequest,
-            ListCapacityCommitmentsResponse,
+            ListCapacityCommitmentsRequest, ListCapacityCommitmentsResponse,
             ListCapacityCommitmentsPagedResponse>
         listCapacityCommitmentsSettings() {
       return listCapacityCommitmentsSettings;

@@ -86,9 +86,10 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (datamigration.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (datamigration.googleapis.com) and default port (443) are
+ *       used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -154,8 +155,7 @@ public class DataMigrationServiceStubSettings
       restartMigrationJobOperationSettings;
   private final UnaryCallSettings<GenerateSshScriptRequest, SshScript> generateSshScriptSettings;
   private final PagedCallSettings<
-          ListConnectionProfilesRequest,
-          ListConnectionProfilesResponse,
+          ListConnectionProfilesRequest, ListConnectionProfilesResponse,
           ListConnectionProfilesPagedResponse>
       listConnectionProfilesSettings;
   private final UnaryCallSettings<GetConnectionProfileRequest, ConnectionProfile>
@@ -262,8 +262,7 @@ public class DataMigrationServiceStubSettings
           ListMigrationJobsRequest, ListMigrationJobsResponse, ListMigrationJobsPagedResponse>
       LIST_MIGRATION_JOBS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListMigrationJobsRequest,
-              ListMigrationJobsResponse,
+              ListMigrationJobsRequest, ListMigrationJobsResponse,
               ListMigrationJobsPagedResponse>() {
             @Override
             public ApiFuture<ListMigrationJobsPagedResponse> getFuturePagedResponse(
@@ -280,13 +279,11 @@ public class DataMigrationServiceStubSettings
           };
 
   private static final PagedListResponseFactory<
-          ListConnectionProfilesRequest,
-          ListConnectionProfilesResponse,
+          ListConnectionProfilesRequest, ListConnectionProfilesResponse,
           ListConnectionProfilesPagedResponse>
       LIST_CONNECTION_PROFILES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListConnectionProfilesRequest,
-              ListConnectionProfilesResponse,
+              ListConnectionProfilesRequest, ListConnectionProfilesResponse,
               ListConnectionProfilesPagedResponse>() {
             @Override
             public ApiFuture<ListConnectionProfilesPagedResponse> getFuturePagedResponse(
@@ -296,8 +293,7 @@ public class DataMigrationServiceStubSettings
                 ApiCallContext context,
                 ApiFuture<ListConnectionProfilesResponse> futureResponse) {
               PageContext<
-                      ListConnectionProfilesRequest,
-                      ListConnectionProfilesResponse,
+                      ListConnectionProfilesRequest, ListConnectionProfilesResponse,
                       ConnectionProfile>
                   pageContext =
                       PageContext.create(
@@ -424,8 +420,7 @@ public class DataMigrationServiceStubSettings
 
   /** Returns the object with the settings used for calls to listConnectionProfiles. */
   public PagedCallSettings<
-          ListConnectionProfilesRequest,
-          ListConnectionProfilesResponse,
+          ListConnectionProfilesRequest, ListConnectionProfilesResponse,
           ListConnectionProfilesPagedResponse>
       listConnectionProfilesSettings() {
     return listConnectionProfilesSettings;
@@ -640,8 +635,7 @@ public class DataMigrationServiceStubSettings
     private final UnaryCallSettings.Builder<GenerateSshScriptRequest, SshScript>
         generateSshScriptSettings;
     private final PagedCallSettings.Builder<
-            ListConnectionProfilesRequest,
-            ListConnectionProfilesResponse,
+            ListConnectionProfilesRequest, ListConnectionProfilesResponse,
             ListConnectionProfilesPagedResponse>
         listConnectionProfilesSettings;
     private final UnaryCallSettings.Builder<GetConnectionProfileRequest, ConnectionProfile>
@@ -1365,8 +1359,7 @@ public class DataMigrationServiceStubSettings
 
     /** Returns the builder for the settings used for calls to listConnectionProfiles. */
     public PagedCallSettings.Builder<
-            ListConnectionProfilesRequest,
-            ListConnectionProfilesResponse,
+            ListConnectionProfilesRequest, ListConnectionProfilesResponse,
             ListConnectionProfilesPagedResponse>
         listConnectionProfilesSettings() {
       return listConnectionProfilesSettings;

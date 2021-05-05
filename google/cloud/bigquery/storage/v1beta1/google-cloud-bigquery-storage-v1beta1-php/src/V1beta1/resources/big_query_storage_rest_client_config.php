@@ -15,16 +15,16 @@ return [
                     ],
                 ],
                 'placeholders' => [
-                    'table_reference.project_id' => [
-                        'getters' => [
-                            'getTableReference',
-                            'getProjectId',
-                        ],
-                    ],
                     'table_reference.dataset_id' => [
                         'getters' => [
                             'getTableReference',
                             'getDatasetId',
+                        ],
+                    ],
+                    'table_reference.project_id' => [
+                        'getters' => [
+                            'getTableReference',
+                            'getProjectId',
                         ],
                     ],
                 ],

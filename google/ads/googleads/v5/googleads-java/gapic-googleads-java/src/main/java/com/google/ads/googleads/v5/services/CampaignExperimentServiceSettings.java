@@ -46,9 +46,9 @@ import javax.annotation.Generated;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (googleads.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (googleads.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -134,8 +134,7 @@ public class CampaignExperimentServiceSettings
 
   /** Returns the object with the settings used for calls to listCampaignExperimentAsyncErrors. */
   public PagedCallSettings<
-          ListCampaignExperimentAsyncErrorsRequest,
-          ListCampaignExperimentAsyncErrorsResponse,
+          ListCampaignExperimentAsyncErrorsRequest, ListCampaignExperimentAsyncErrorsResponse,
           ListCampaignExperimentAsyncErrorsPagedResponse>
       listCampaignExperimentAsyncErrorsSettings() {
     return ((CampaignExperimentServiceStubSettings) getStubSettings())
@@ -294,8 +293,7 @@ public class CampaignExperimentServiceSettings
 
     /** Returns the builder for the settings used for calls to listCampaignExperimentAsyncErrors. */
     public PagedCallSettings.Builder<
-            ListCampaignExperimentAsyncErrorsRequest,
-            ListCampaignExperimentAsyncErrorsResponse,
+            ListCampaignExperimentAsyncErrorsRequest, ListCampaignExperimentAsyncErrorsResponse,
             ListCampaignExperimentAsyncErrorsPagedResponse>
         listCampaignExperimentAsyncErrorsSettings() {
       return getStubSettingsBuilder().listCampaignExperimentAsyncErrorsSettings();

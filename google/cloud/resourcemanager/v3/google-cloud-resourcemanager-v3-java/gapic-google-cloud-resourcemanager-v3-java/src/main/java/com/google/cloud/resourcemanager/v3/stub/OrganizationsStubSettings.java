@@ -65,10 +65,10 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (cloudresourcemanager.googleapis.com) and default port (443)
+ *   <li> The default service address (cloudresourcemanager.googleapis.com) and default port (443)
  *       are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -153,8 +153,7 @@ public class OrganizationsStubSettings extends StubSettings<OrganizationsStubSet
           SearchOrganizationsRequest, SearchOrganizationsResponse, SearchOrganizationsPagedResponse>
       SEARCH_ORGANIZATIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              SearchOrganizationsRequest,
-              SearchOrganizationsResponse,
+              SearchOrganizationsRequest, SearchOrganizationsResponse,
               SearchOrganizationsPagedResponse>() {
             @Override
             public ApiFuture<SearchOrganizationsPagedResponse> getFuturePagedResponse(
@@ -280,8 +279,7 @@ public class OrganizationsStubSettings extends StubSettings<OrganizationsStubSet
     private final UnaryCallSettings.Builder<GetOrganizationRequest, Organization>
         getOrganizationSettings;
     private final PagedCallSettings.Builder<
-            SearchOrganizationsRequest,
-            SearchOrganizationsResponse,
+            SearchOrganizationsRequest, SearchOrganizationsResponse,
             SearchOrganizationsPagedResponse>
         searchOrganizationsSettings;
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
@@ -438,8 +436,7 @@ public class OrganizationsStubSettings extends StubSettings<OrganizationsStubSet
 
     /** Returns the builder for the settings used for calls to searchOrganizations. */
     public PagedCallSettings.Builder<
-            SearchOrganizationsRequest,
-            SearchOrganizationsResponse,
+            SearchOrganizationsRequest, SearchOrganizationsResponse,
             SearchOrganizationsPagedResponse>
         searchOrganizationsSettings() {
       return searchOrganizationsSettings;

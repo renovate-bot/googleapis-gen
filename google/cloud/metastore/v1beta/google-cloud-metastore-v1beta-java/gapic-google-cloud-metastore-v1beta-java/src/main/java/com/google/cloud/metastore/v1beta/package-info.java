@@ -28,11 +28,11 @@
  * <p>The Dataproc Metastore API defines the following resource model:
  *
  * <ul>
- *   <li>The service works with a collection of Google Cloud projects, named: `/projects/&#42;`
- *   <li>Each project has a collection of available locations, named: `/locations/&#42;` (a location
- *       must refer to a Google Cloud `region`)
- *   <li>Each location has a collection of services, named: `/services/&#42;`
- *   <li>Dataproc Metastore services are resources with names of the form:
+ *   <li> The service works with a collection of Google Cloud projects, named: `/projects/&#42;`
+ *   <li> Each project has a collection of available locations, named: `/locations/&#42;` (a
+ *       location must refer to a Google Cloud `region`)
+ *   <li> Each location has a collection of services, named: `/services/&#42;`
+ *   <li> Dataproc Metastore services are resources with names of the form:
  * </ul>
  *
  * <p>`/projects/{project_number}/locations/{location_id}/services/{service_id}`.

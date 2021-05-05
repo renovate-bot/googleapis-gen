@@ -58,9 +58,9 @@ import javax.annotation.Generated;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (monitoring.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (monitoring.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -87,8 +87,7 @@ public class MetricServiceSettings extends ClientSettings<MetricServiceSettings>
 
   /** Returns the object with the settings used for calls to listMonitoredResourceDescriptors. */
   public PagedCallSettings<
-          ListMonitoredResourceDescriptorsRequest,
-          ListMonitoredResourceDescriptorsResponse,
+          ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
           ListMonitoredResourceDescriptorsPagedResponse>
       listMonitoredResourceDescriptorsSettings() {
     return ((MetricServiceStubSettings) getStubSettings())
@@ -103,8 +102,7 @@ public class MetricServiceSettings extends ClientSettings<MetricServiceSettings>
 
   /** Returns the object with the settings used for calls to listMetricDescriptors. */
   public PagedCallSettings<
-          ListMetricDescriptorsRequest,
-          ListMetricDescriptorsResponse,
+          ListMetricDescriptorsRequest, ListMetricDescriptorsResponse,
           ListMetricDescriptorsPagedResponse>
       listMetricDescriptorsSettings() {
     return ((MetricServiceStubSettings) getStubSettings()).listMetricDescriptorsSettings();
@@ -239,8 +237,7 @@ public class MetricServiceSettings extends ClientSettings<MetricServiceSettings>
 
     /** Returns the builder for the settings used for calls to listMonitoredResourceDescriptors. */
     public PagedCallSettings.Builder<
-            ListMonitoredResourceDescriptorsRequest,
-            ListMonitoredResourceDescriptorsResponse,
+            ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
             ListMonitoredResourceDescriptorsPagedResponse>
         listMonitoredResourceDescriptorsSettings() {
       return getStubSettingsBuilder().listMonitoredResourceDescriptorsSettings();
@@ -255,8 +252,7 @@ public class MetricServiceSettings extends ClientSettings<MetricServiceSettings>
 
     /** Returns the builder for the settings used for calls to listMetricDescriptors. */
     public PagedCallSettings.Builder<
-            ListMetricDescriptorsRequest,
-            ListMetricDescriptorsResponse,
+            ListMetricDescriptorsRequest, ListMetricDescriptorsResponse,
             ListMetricDescriptorsPagedResponse>
         listMetricDescriptorsSettings() {
       return getStubSettingsBuilder().listMetricDescriptorsSettings();

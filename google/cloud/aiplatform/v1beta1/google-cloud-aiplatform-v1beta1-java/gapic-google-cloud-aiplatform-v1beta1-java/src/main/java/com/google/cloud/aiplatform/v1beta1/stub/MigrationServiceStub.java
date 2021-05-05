@@ -57,8 +57,7 @@ public abstract class MigrationServiceStub implements BackgroundResource {
   }
 
   public OperationCallable<
-          BatchMigrateResourcesRequest,
-          BatchMigrateResourcesResponse,
+          BatchMigrateResourcesRequest, BatchMigrateResourcesResponse,
           BatchMigrateResourcesOperationMetadata>
       batchMigrateResourcesOperationCallable() {
     throw new UnsupportedOperationException(

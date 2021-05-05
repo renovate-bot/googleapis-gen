@@ -57,13 +57,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -169,19 +169,19 @@ public class PredictionServiceClient implements BackgroundResource {
    * Available for following ML problems, and their expected request payloads:
    *
    * <ul>
-   *   <li>Image Classification - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
-   *   <li>Image Object Detection - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
-   *   <li>Text Classification - TextSnippet, content up to 60,000 characters, UTF-8 encoded.
-   *   <li>Text Extraction - TextSnippet, content up to 30,000 characters, UTF-8 NFC encoded.
-   *   <li>Translation - TextSnippet, content up to 25,000 characters, UTF-8 encoded.
-   *   <li>Tables - Row, with column values matching the columns of the model, up to 5MB. Not
+   *   <li> Image Classification - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   *   <li> Image Object Detection - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   *   <li> Text Classification - TextSnippet, content up to 60,000 characters, UTF-8 encoded.
+   *   <li> Text Extraction - TextSnippet, content up to 30,000 characters, UTF-8 NFC encoded.
+   *   <li> Translation - TextSnippet, content up to 25,000 characters, UTF-8 encoded.
+   *   <li> Tables - Row, with column values matching the columns of the model, up to 5MB. Not
    *       available for FORECASTING
    * </ul>
    *
    * <p>[prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type].
    *
    * <ul>
-   *   <li>Text Sentiment - TextSnippet, content up 500 characters, UTF-8 encoded.
+   *   <li> Text Sentiment - TextSnippet, content up 500 characters, UTF-8 encoded.
    * </ul>
    *
    * <p>Sample code:
@@ -201,7 +201,7 @@ public class PredictionServiceClient implements BackgroundResource {
    * @param params Additional domain-specific parameters, any string must be up to 25000 characters
    *     long.
    *     <ul>
-   *       <li>For Image Classification:
+   *       <li> For Image Classification:
    *     </ul>
    *     <p>`score_threshold` - (float) A value from 0.0 to 1.0. When the model makes predictions
    *     for an image, it will only produce results that have at least this confidence score. The
@@ -212,7 +212,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *     than this number of bounding boxes will be returned in the response. Default is 100, the
    *     requested value may be limited by server.
    *     <ul>
-   *       <li>For Tables: feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature
+   *       <li> For Tables: feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature
    *           importance should be populated in the returned TablesAnnotation. The default is
    *           false.
    *     </ul>
@@ -236,19 +236,19 @@ public class PredictionServiceClient implements BackgroundResource {
    * Available for following ML problems, and their expected request payloads:
    *
    * <ul>
-   *   <li>Image Classification - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
-   *   <li>Image Object Detection - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
-   *   <li>Text Classification - TextSnippet, content up to 60,000 characters, UTF-8 encoded.
-   *   <li>Text Extraction - TextSnippet, content up to 30,000 characters, UTF-8 NFC encoded.
-   *   <li>Translation - TextSnippet, content up to 25,000 characters, UTF-8 encoded.
-   *   <li>Tables - Row, with column values matching the columns of the model, up to 5MB. Not
+   *   <li> Image Classification - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   *   <li> Image Object Detection - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   *   <li> Text Classification - TextSnippet, content up to 60,000 characters, UTF-8 encoded.
+   *   <li> Text Extraction - TextSnippet, content up to 30,000 characters, UTF-8 NFC encoded.
+   *   <li> Translation - TextSnippet, content up to 25,000 characters, UTF-8 encoded.
+   *   <li> Tables - Row, with column values matching the columns of the model, up to 5MB. Not
    *       available for FORECASTING
    * </ul>
    *
    * <p>[prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type].
    *
    * <ul>
-   *   <li>Text Sentiment - TextSnippet, content up 500 characters, UTF-8 encoded.
+   *   <li> Text Sentiment - TextSnippet, content up 500 characters, UTF-8 encoded.
    * </ul>
    *
    * <p>Sample code:
@@ -268,7 +268,7 @@ public class PredictionServiceClient implements BackgroundResource {
    * @param params Additional domain-specific parameters, any string must be up to 25000 characters
    *     long.
    *     <ul>
-   *       <li>For Image Classification:
+   *       <li> For Image Classification:
    *     </ul>
    *     <p>`score_threshold` - (float) A value from 0.0 to 1.0. When the model makes predictions
    *     for an image, it will only produce results that have at least this confidence score. The
@@ -279,7 +279,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *     than this number of bounding boxes will be returned in the response. Default is 100, the
    *     requested value may be limited by server.
    *     <ul>
-   *       <li>For Tables: feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature
+   *       <li> For Tables: feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature
    *           importance should be populated in the returned TablesAnnotation. The default is
    *           false.
    *     </ul>
@@ -299,19 +299,19 @@ public class PredictionServiceClient implements BackgroundResource {
    * Available for following ML problems, and their expected request payloads:
    *
    * <ul>
-   *   <li>Image Classification - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
-   *   <li>Image Object Detection - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
-   *   <li>Text Classification - TextSnippet, content up to 60,000 characters, UTF-8 encoded.
-   *   <li>Text Extraction - TextSnippet, content up to 30,000 characters, UTF-8 NFC encoded.
-   *   <li>Translation - TextSnippet, content up to 25,000 characters, UTF-8 encoded.
-   *   <li>Tables - Row, with column values matching the columns of the model, up to 5MB. Not
+   *   <li> Image Classification - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   *   <li> Image Object Detection - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   *   <li> Text Classification - TextSnippet, content up to 60,000 characters, UTF-8 encoded.
+   *   <li> Text Extraction - TextSnippet, content up to 30,000 characters, UTF-8 NFC encoded.
+   *   <li> Translation - TextSnippet, content up to 25,000 characters, UTF-8 encoded.
+   *   <li> Tables - Row, with column values matching the columns of the model, up to 5MB. Not
    *       available for FORECASTING
    * </ul>
    *
    * <p>[prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type].
    *
    * <ul>
-   *   <li>Text Sentiment - TextSnippet, content up 500 characters, UTF-8 encoded.
+   *   <li> Text Sentiment - TextSnippet, content up 500 characters, UTF-8 encoded.
    * </ul>
    *
    * <p>Sample code:
@@ -341,19 +341,19 @@ public class PredictionServiceClient implements BackgroundResource {
    * Available for following ML problems, and their expected request payloads:
    *
    * <ul>
-   *   <li>Image Classification - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
-   *   <li>Image Object Detection - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
-   *   <li>Text Classification - TextSnippet, content up to 60,000 characters, UTF-8 encoded.
-   *   <li>Text Extraction - TextSnippet, content up to 30,000 characters, UTF-8 NFC encoded.
-   *   <li>Translation - TextSnippet, content up to 25,000 characters, UTF-8 encoded.
-   *   <li>Tables - Row, with column values matching the columns of the model, up to 5MB. Not
+   *   <li> Image Classification - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   *   <li> Image Object Detection - Image in .JPEG, .GIF or .PNG format, image_bytes up to 30MB.
+   *   <li> Text Classification - TextSnippet, content up to 60,000 characters, UTF-8 encoded.
+   *   <li> Text Extraction - TextSnippet, content up to 30,000 characters, UTF-8 NFC encoded.
+   *   <li> Translation - TextSnippet, content up to 25,000 characters, UTF-8 encoded.
+   *   <li> Tables - Row, with column values matching the columns of the model, up to 5MB. Not
    *       available for FORECASTING
    * </ul>
    *
    * <p>[prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type].
    *
    * <ul>
-   *   <li>Text Sentiment - TextSnippet, content up 500 characters, UTF-8 encoded.
+   *   <li> Text Sentiment - TextSnippet, content up 500 characters, UTF-8 encoded.
    * </ul>
    *
    * <p>Sample code:
@@ -388,11 +388,11 @@ public class PredictionServiceClient implements BackgroundResource {
    * [response][google.longrunning.Operation.response] field. Available for following ML problems:
    *
    * <ul>
-   *   <li>Image Classification
-   *   <li>Image Object Detection
-   *   <li>Video Classification
-   *   <li>Video Object Tracking &#42; Text Extraction
-   *   <li>Tables
+   *   <li> Image Classification
+   *   <li> Image Object Detection
+   *   <li> Video Classification
+   *   <li> Video Object Tracking &#42; Text Extraction
+   *   <li> Tables
    * </ul>
    *
    * <p>Sample code:
@@ -415,19 +415,19 @@ public class PredictionServiceClient implements BackgroundResource {
    * @param params Required. Additional domain-specific parameters for the predictions, any string
    *     must be up to 25000 characters long.
    *     <ul>
-   *       <li>For Text Classification:
+   *       <li> For Text Classification:
    *     </ul>
    *     <p>`score_threshold` - (float) A value from 0.0 to 1.0. When the model makes predictions
    *     for a text snippet, it will only produce results that have at least this confidence score.
    *     The default is 0.5.
    *     <ul>
-   *       <li>For Image Classification:
+   *       <li> For Image Classification:
    *     </ul>
    *     <p>`score_threshold` - (float) A value from 0.0 to 1.0. When the model makes predictions
    *     for an image, it will only produce results that have at least this confidence score. The
    *     default is 0.5.
    *     <ul>
-   *       <li>For Image Object Detection:
+   *       <li> For Image Object Detection:
    *     </ul>
    *     <p>`score_threshold` - (float) When Model detects objects on the image, it will only
    *     produce bounding boxes which have at least this confidence score. Value in 0 to 1 range,
@@ -435,7 +435,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *     boxes will be produced per image. Default is 100, the requested value may be limited by
    *     server.
    *     <ul>
-   *       <li>For Video Classification :
+   *       <li> For Video Classification :
    *     </ul>
    *     <p>`score_threshold` - (float) A value from 0.0 to 1.0. When the model makes predictions
    *     for a video, it will only produce results that have at least this confidence score. The
@@ -456,12 +456,12 @@ public class PredictionServiceClient implements BackgroundResource {
    *     the quality of it depends on training data, but there are no metrics provided to describe
    *     that quality. The default is "false".
    *     <ul>
-   *       <li>For Tables:
+   *       <li> For Tables:
    *     </ul>
    *     <p>feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature importance
    *     should be populated in the returned TablesAnnotations. The default is false.
    *     <ul>
-   *       <li>For Video Object Tracking:
+   *       <li> For Video Object Tracking:
    *     </ul>
    *     <p>`score_threshold` - (float) When Model detects objects on video frames, it will only
    *     produce bounding boxes which have at least this confidence score. Value in 0 to 1 range,
@@ -498,11 +498,11 @@ public class PredictionServiceClient implements BackgroundResource {
    * [response][google.longrunning.Operation.response] field. Available for following ML problems:
    *
    * <ul>
-   *   <li>Image Classification
-   *   <li>Image Object Detection
-   *   <li>Video Classification
-   *   <li>Video Object Tracking &#42; Text Extraction
-   *   <li>Tables
+   *   <li> Image Classification
+   *   <li> Image Object Detection
+   *   <li> Video Classification
+   *   <li> Video Object Tracking &#42; Text Extraction
+   *   <li> Tables
    * </ul>
    *
    * <p>Sample code:
@@ -525,19 +525,19 @@ public class PredictionServiceClient implements BackgroundResource {
    * @param params Required. Additional domain-specific parameters for the predictions, any string
    *     must be up to 25000 characters long.
    *     <ul>
-   *       <li>For Text Classification:
+   *       <li> For Text Classification:
    *     </ul>
    *     <p>`score_threshold` - (float) A value from 0.0 to 1.0. When the model makes predictions
    *     for a text snippet, it will only produce results that have at least this confidence score.
    *     The default is 0.5.
    *     <ul>
-   *       <li>For Image Classification:
+   *       <li> For Image Classification:
    *     </ul>
    *     <p>`score_threshold` - (float) A value from 0.0 to 1.0. When the model makes predictions
    *     for an image, it will only produce results that have at least this confidence score. The
    *     default is 0.5.
    *     <ul>
-   *       <li>For Image Object Detection:
+   *       <li> For Image Object Detection:
    *     </ul>
    *     <p>`score_threshold` - (float) When Model detects objects on the image, it will only
    *     produce bounding boxes which have at least this confidence score. Value in 0 to 1 range,
@@ -545,7 +545,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *     boxes will be produced per image. Default is 100, the requested value may be limited by
    *     server.
    *     <ul>
-   *       <li>For Video Classification :
+   *       <li> For Video Classification :
    *     </ul>
    *     <p>`score_threshold` - (float) A value from 0.0 to 1.0. When the model makes predictions
    *     for a video, it will only produce results that have at least this confidence score. The
@@ -566,12 +566,12 @@ public class PredictionServiceClient implements BackgroundResource {
    *     the quality of it depends on training data, but there are no metrics provided to describe
    *     that quality. The default is "false".
    *     <ul>
-   *       <li>For Tables:
+   *       <li> For Tables:
    *     </ul>
    *     <p>feature_imp&lt;span&gt;ortan&lt;/span&gt;ce - (boolean) Whether feature importance
    *     should be populated in the returned TablesAnnotations. The default is false.
    *     <ul>
-   *       <li>For Video Object Tracking:
+   *       <li> For Video Object Tracking:
    *     </ul>
    *     <p>`score_threshold` - (float) When Model detects objects on video frames, it will only
    *     produce bounding boxes which have at least this confidence score. Value in 0 to 1 range,
@@ -608,11 +608,11 @@ public class PredictionServiceClient implements BackgroundResource {
    * [response][google.longrunning.Operation.response] field. Available for following ML problems:
    *
    * <ul>
-   *   <li>Image Classification
-   *   <li>Image Object Detection
-   *   <li>Video Classification
-   *   <li>Video Object Tracking &#42; Text Extraction
-   *   <li>Tables
+   *   <li> Image Classification
+   *   <li> Image Object Detection
+   *   <li> Video Classification
+   *   <li> Video Object Tracking &#42; Text Extraction
+   *   <li> Tables
    * </ul>
    *
    * <p>Sample code:
@@ -649,11 +649,11 @@ public class PredictionServiceClient implements BackgroundResource {
    * [response][google.longrunning.Operation.response] field. Available for following ML problems:
    *
    * <ul>
-   *   <li>Image Classification
-   *   <li>Image Object Detection
-   *   <li>Video Classification
-   *   <li>Video Object Tracking &#42; Text Extraction
-   *   <li>Tables
+   *   <li> Image Classification
+   *   <li> Image Object Detection
+   *   <li> Video Classification
+   *   <li> Video Object Tracking &#42; Text Extraction
+   *   <li> Tables
    * </ul>
    *
    * <p>Sample code:
@@ -690,11 +690,11 @@ public class PredictionServiceClient implements BackgroundResource {
    * [response][google.longrunning.Operation.response] field. Available for following ML problems:
    *
    * <ul>
-   *   <li>Image Classification
-   *   <li>Image Object Detection
-   *   <li>Video Classification
-   *   <li>Video Object Tracking &#42; Text Extraction
-   *   <li>Tables
+   *   <li> Image Classification
+   *   <li> Image Object Detection
+   *   <li> Video Classification
+   *   <li> Video Object Tracking &#42; Text Extraction
+   *   <li> Tables
    * </ul>
    *
    * <p>Sample code:

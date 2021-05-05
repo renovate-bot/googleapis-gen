@@ -78,13 +78,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -997,11 +997,8 @@ public class UptimeCheckServiceClient implements BackgroundResource {
 
   public static class ListUptimeCheckConfigsPagedResponse
       extends AbstractPagedListResponse<
-          ListUptimeCheckConfigsRequest,
-          ListUptimeCheckConfigsResponse,
-          UptimeCheckConfig,
-          ListUptimeCheckConfigsPage,
-          ListUptimeCheckConfigsFixedSizeCollection> {
+          ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse, UptimeCheckConfig,
+          ListUptimeCheckConfigsPage, ListUptimeCheckConfigsFixedSizeCollection> {
 
     public static ApiFuture<ListUptimeCheckConfigsPagedResponse> createAsync(
         PageContext<
@@ -1028,9 +1025,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
 
   public static class ListUptimeCheckConfigsPage
       extends AbstractPage<
-          ListUptimeCheckConfigsRequest,
-          ListUptimeCheckConfigsResponse,
-          UptimeCheckConfig,
+          ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse, UptimeCheckConfig,
           ListUptimeCheckConfigsPage> {
 
     private ListUptimeCheckConfigsPage(
@@ -1066,11 +1061,8 @@ public class UptimeCheckServiceClient implements BackgroundResource {
 
   public static class ListUptimeCheckConfigsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListUptimeCheckConfigsRequest,
-          ListUptimeCheckConfigsResponse,
-          UptimeCheckConfig,
-          ListUptimeCheckConfigsPage,
-          ListUptimeCheckConfigsFixedSizeCollection> {
+          ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse, UptimeCheckConfig,
+          ListUptimeCheckConfigsPage, ListUptimeCheckConfigsFixedSizeCollection> {
 
     private ListUptimeCheckConfigsFixedSizeCollection(
         List<ListUptimeCheckConfigsPage> pages, int collectionSize) {
@@ -1090,11 +1082,8 @@ public class UptimeCheckServiceClient implements BackgroundResource {
 
   public static class ListUptimeCheckIpsPagedResponse
       extends AbstractPagedListResponse<
-          ListUptimeCheckIpsRequest,
-          ListUptimeCheckIpsResponse,
-          UptimeCheckIp,
-          ListUptimeCheckIpsPage,
-          ListUptimeCheckIpsFixedSizeCollection> {
+          ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse, UptimeCheckIp,
+          ListUptimeCheckIpsPage, ListUptimeCheckIpsFixedSizeCollection> {
 
     public static ApiFuture<ListUptimeCheckIpsPagedResponse> createAsync(
         PageContext<ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse, UptimeCheckIp> context,
@@ -1119,9 +1108,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
 
   public static class ListUptimeCheckIpsPage
       extends AbstractPage<
-          ListUptimeCheckIpsRequest,
-          ListUptimeCheckIpsResponse,
-          UptimeCheckIp,
+          ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse, UptimeCheckIp,
           ListUptimeCheckIpsPage> {
 
     private ListUptimeCheckIpsPage(
@@ -1151,11 +1138,8 @@ public class UptimeCheckServiceClient implements BackgroundResource {
 
   public static class ListUptimeCheckIpsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListUptimeCheckIpsRequest,
-          ListUptimeCheckIpsResponse,
-          UptimeCheckIp,
-          ListUptimeCheckIpsPage,
-          ListUptimeCheckIpsFixedSizeCollection> {
+          ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse, UptimeCheckIp,
+          ListUptimeCheckIpsPage, ListUptimeCheckIpsFixedSizeCollection> {
 
     private ListUptimeCheckIpsFixedSizeCollection(
         List<ListUptimeCheckIpsPage> pages, int collectionSize) {

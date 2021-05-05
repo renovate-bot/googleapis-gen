@@ -61,13 +61,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -828,7 +828,7 @@ public class CloudBillingClient implements BackgroundResource {
    * the name of an
    *
    * <ul>
-   *   <li>open&#42; billing account.
+   *   <li> open&#42; billing account.
    * </ul>
    *
    * <p>Sample code:
@@ -887,7 +887,7 @@ public class CloudBillingClient implements BackgroundResource {
    * the name of an
    *
    * <ul>
-   *   <li>open&#42; billing account.
+   *   <li> open&#42; billing account.
    * </ul>
    *
    * <p>Sample code:
@@ -940,7 +940,7 @@ public class CloudBillingClient implements BackgroundResource {
    * the name of an
    *
    * <ul>
-   *   <li>open&#42; billing account.
+   *   <li> open&#42; billing account.
    * </ul>
    *
    * <p>Sample code:
@@ -1335,11 +1335,8 @@ public class CloudBillingClient implements BackgroundResource {
 
   public static class ListBillingAccountsPagedResponse
       extends AbstractPagedListResponse<
-          ListBillingAccountsRequest,
-          ListBillingAccountsResponse,
-          BillingAccount,
-          ListBillingAccountsPage,
-          ListBillingAccountsFixedSizeCollection> {
+          ListBillingAccountsRequest, ListBillingAccountsResponse, BillingAccount,
+          ListBillingAccountsPage, ListBillingAccountsFixedSizeCollection> {
 
     public static ApiFuture<ListBillingAccountsPagedResponse> createAsync(
         PageContext<ListBillingAccountsRequest, ListBillingAccountsResponse, BillingAccount>
@@ -1365,9 +1362,7 @@ public class CloudBillingClient implements BackgroundResource {
 
   public static class ListBillingAccountsPage
       extends AbstractPage<
-          ListBillingAccountsRequest,
-          ListBillingAccountsResponse,
-          BillingAccount,
+          ListBillingAccountsRequest, ListBillingAccountsResponse, BillingAccount,
           ListBillingAccountsPage> {
 
     private ListBillingAccountsPage(
@@ -1400,11 +1395,8 @@ public class CloudBillingClient implements BackgroundResource {
 
   public static class ListBillingAccountsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListBillingAccountsRequest,
-          ListBillingAccountsResponse,
-          BillingAccount,
-          ListBillingAccountsPage,
-          ListBillingAccountsFixedSizeCollection> {
+          ListBillingAccountsRequest, ListBillingAccountsResponse, BillingAccount,
+          ListBillingAccountsPage, ListBillingAccountsFixedSizeCollection> {
 
     private ListBillingAccountsFixedSizeCollection(
         List<ListBillingAccountsPage> pages, int collectionSize) {
@@ -1424,11 +1416,8 @@ public class CloudBillingClient implements BackgroundResource {
 
   public static class ListProjectBillingInfoPagedResponse
       extends AbstractPagedListResponse<
-          ListProjectBillingInfoRequest,
-          ListProjectBillingInfoResponse,
-          ProjectBillingInfo,
-          ListProjectBillingInfoPage,
-          ListProjectBillingInfoFixedSizeCollection> {
+          ListProjectBillingInfoRequest, ListProjectBillingInfoResponse, ProjectBillingInfo,
+          ListProjectBillingInfoPage, ListProjectBillingInfoFixedSizeCollection> {
 
     public static ApiFuture<ListProjectBillingInfoPagedResponse> createAsync(
         PageContext<
@@ -1455,9 +1444,7 @@ public class CloudBillingClient implements BackgroundResource {
 
   public static class ListProjectBillingInfoPage
       extends AbstractPage<
-          ListProjectBillingInfoRequest,
-          ListProjectBillingInfoResponse,
-          ProjectBillingInfo,
+          ListProjectBillingInfoRequest, ListProjectBillingInfoResponse, ProjectBillingInfo,
           ListProjectBillingInfoPage> {
 
     private ListProjectBillingInfoPage(
@@ -1493,11 +1480,8 @@ public class CloudBillingClient implements BackgroundResource {
 
   public static class ListProjectBillingInfoFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListProjectBillingInfoRequest,
-          ListProjectBillingInfoResponse,
-          ProjectBillingInfo,
-          ListProjectBillingInfoPage,
-          ListProjectBillingInfoFixedSizeCollection> {
+          ListProjectBillingInfoRequest, ListProjectBillingInfoResponse, ProjectBillingInfo,
+          ListProjectBillingInfoPage, ListProjectBillingInfoFixedSizeCollection> {
 
     private ListProjectBillingInfoFixedSizeCollection(
         List<ListProjectBillingInfoPage> pages, int collectionSize) {

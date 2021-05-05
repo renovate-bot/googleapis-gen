@@ -62,13 +62,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -856,16 +856,12 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
 
   public static class ListTransitionRouteGroupsPagedResponse
       extends AbstractPagedListResponse<
-          ListTransitionRouteGroupsRequest,
-          ListTransitionRouteGroupsResponse,
-          TransitionRouteGroup,
-          ListTransitionRouteGroupsPage,
-          ListTransitionRouteGroupsFixedSizeCollection> {
+          ListTransitionRouteGroupsRequest, ListTransitionRouteGroupsResponse, TransitionRouteGroup,
+          ListTransitionRouteGroupsPage, ListTransitionRouteGroupsFixedSizeCollection> {
 
     public static ApiFuture<ListTransitionRouteGroupsPagedResponse> createAsync(
         PageContext<
-                ListTransitionRouteGroupsRequest,
-                ListTransitionRouteGroupsResponse,
+                ListTransitionRouteGroupsRequest, ListTransitionRouteGroupsResponse,
                 TransitionRouteGroup>
             context,
         ApiFuture<ListTransitionRouteGroupsResponse> futureResponse) {
@@ -890,15 +886,12 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
 
   public static class ListTransitionRouteGroupsPage
       extends AbstractPage<
-          ListTransitionRouteGroupsRequest,
-          ListTransitionRouteGroupsResponse,
-          TransitionRouteGroup,
+          ListTransitionRouteGroupsRequest, ListTransitionRouteGroupsResponse, TransitionRouteGroup,
           ListTransitionRouteGroupsPage> {
 
     private ListTransitionRouteGroupsPage(
         PageContext<
-                ListTransitionRouteGroupsRequest,
-                ListTransitionRouteGroupsResponse,
+                ListTransitionRouteGroupsRequest, ListTransitionRouteGroupsResponse,
                 TransitionRouteGroup>
             context,
         ListTransitionRouteGroupsResponse response) {
@@ -912,8 +905,7 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
     @Override
     protected ListTransitionRouteGroupsPage createPage(
         PageContext<
-                ListTransitionRouteGroupsRequest,
-                ListTransitionRouteGroupsResponse,
+                ListTransitionRouteGroupsRequest, ListTransitionRouteGroupsResponse,
                 TransitionRouteGroup>
             context,
         ListTransitionRouteGroupsResponse response) {
@@ -923,8 +915,7 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
     @Override
     public ApiFuture<ListTransitionRouteGroupsPage> createPageAsync(
         PageContext<
-                ListTransitionRouteGroupsRequest,
-                ListTransitionRouteGroupsResponse,
+                ListTransitionRouteGroupsRequest, ListTransitionRouteGroupsResponse,
                 TransitionRouteGroup>
             context,
         ApiFuture<ListTransitionRouteGroupsResponse> futureResponse) {
@@ -934,11 +925,8 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
 
   public static class ListTransitionRouteGroupsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListTransitionRouteGroupsRequest,
-          ListTransitionRouteGroupsResponse,
-          TransitionRouteGroup,
-          ListTransitionRouteGroupsPage,
-          ListTransitionRouteGroupsFixedSizeCollection> {
+          ListTransitionRouteGroupsRequest, ListTransitionRouteGroupsResponse, TransitionRouteGroup,
+          ListTransitionRouteGroupsPage, ListTransitionRouteGroupsFixedSizeCollection> {
 
     private ListTransitionRouteGroupsFixedSizeCollection(
         List<ListTransitionRouteGroupsPage> pages, int collectionSize) {

@@ -64,13 +64,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -1342,8 +1342,7 @@ public class VizierServiceClient implements BackgroundResource {
    * }</pre>
    */
   public final OperationCallable<
-          CheckTrialEarlyStoppingStateRequest,
-          CheckTrialEarlyStoppingStateResponse,
+          CheckTrialEarlyStoppingStateRequest, CheckTrialEarlyStoppingStateResponse,
           CheckTrialEarlyStoppingStateMetatdata>
       checkTrialEarlyStoppingStateOperationCallable() {
     return stub.checkTrialEarlyStoppingStateOperationCallable();
@@ -1554,10 +1553,7 @@ public class VizierServiceClient implements BackgroundResource {
 
   public static class ListStudiesPagedResponse
       extends AbstractPagedListResponse<
-          ListStudiesRequest,
-          ListStudiesResponse,
-          Study,
-          ListStudiesPage,
+          ListStudiesRequest, ListStudiesResponse, Study, ListStudiesPage,
           ListStudiesFixedSizeCollection> {
 
     public static ApiFuture<ListStudiesPagedResponse> createAsync(
@@ -1611,10 +1607,7 @@ public class VizierServiceClient implements BackgroundResource {
 
   public static class ListStudiesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListStudiesRequest,
-          ListStudiesResponse,
-          Study,
-          ListStudiesPage,
+          ListStudiesRequest, ListStudiesResponse, Study, ListStudiesPage,
           ListStudiesFixedSizeCollection> {
 
     private ListStudiesFixedSizeCollection(List<ListStudiesPage> pages, int collectionSize) {
@@ -1634,10 +1627,7 @@ public class VizierServiceClient implements BackgroundResource {
 
   public static class ListTrialsPagedResponse
       extends AbstractPagedListResponse<
-          ListTrialsRequest,
-          ListTrialsResponse,
-          Trial,
-          ListTrialsPage,
+          ListTrialsRequest, ListTrialsResponse, Trial, ListTrialsPage,
           ListTrialsFixedSizeCollection> {
 
     public static ApiFuture<ListTrialsPagedResponse> createAsync(
@@ -1691,10 +1681,7 @@ public class VizierServiceClient implements BackgroundResource {
 
   public static class ListTrialsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListTrialsRequest,
-          ListTrialsResponse,
-          Trial,
-          ListTrialsPage,
+          ListTrialsRequest, ListTrialsResponse, Trial, ListTrialsPage,
           ListTrialsFixedSizeCollection> {
 
     private ListTrialsFixedSizeCollection(List<ListTrialsPage> pages, int collectionSize) {

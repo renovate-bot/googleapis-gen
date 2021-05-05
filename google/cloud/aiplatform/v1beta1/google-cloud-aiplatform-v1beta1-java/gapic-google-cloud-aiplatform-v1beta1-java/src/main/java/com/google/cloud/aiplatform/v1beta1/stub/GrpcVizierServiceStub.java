@@ -227,8 +227,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
   private final UnaryCallable<CheckTrialEarlyStoppingStateRequest, Operation>
       checkTrialEarlyStoppingStateCallable;
   private final OperationCallable<
-          CheckTrialEarlyStoppingStateRequest,
-          CheckTrialEarlyStoppingStateResponse,
+          CheckTrialEarlyStoppingStateRequest, CheckTrialEarlyStoppingStateResponse,
           CheckTrialEarlyStoppingStateMetatdata>
       checkTrialEarlyStoppingStateOperationCallable;
   private final UnaryCallable<StopTrialRequest, Trial> stopTrialCallable;
@@ -638,8 +637,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
 
   @Override
   public OperationCallable<
-          CheckTrialEarlyStoppingStateRequest,
-          CheckTrialEarlyStoppingStateResponse,
+          CheckTrialEarlyStoppingStateRequest, CheckTrialEarlyStoppingStateResponse,
           CheckTrialEarlyStoppingStateMetatdata>
       checkTrialEarlyStoppingStateOperationCallable() {
     return checkTrialEarlyStoppingStateOperationCallable;

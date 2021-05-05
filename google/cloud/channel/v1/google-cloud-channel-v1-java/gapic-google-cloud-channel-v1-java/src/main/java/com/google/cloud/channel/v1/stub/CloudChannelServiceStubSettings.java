@@ -131,9 +131,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (cloudchannel.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (cloudchannel.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -181,13 +181,11 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
           ListEntitlementsRequest, ListEntitlementsResponse, ListEntitlementsPagedResponse>
       listEntitlementsSettings;
   private final PagedCallSettings<
-          ListTransferableSkusRequest,
-          ListTransferableSkusResponse,
+          ListTransferableSkusRequest, ListTransferableSkusResponse,
           ListTransferableSkusPagedResponse>
       listTransferableSkusSettings;
   private final PagedCallSettings<
-          ListTransferableOffersRequest,
-          ListTransferableOffersResponse,
+          ListTransferableOffersRequest, ListTransferableOffersResponse,
           ListTransferableOffersPagedResponse>
       listTransferableOffersSettings;
   private final UnaryCallSettings<GetEntitlementRequest, Entitlement> getEntitlementSettings;
@@ -227,8 +225,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
   private final OperationCallSettings<TransferEntitlementsToGoogleRequest, Empty, OperationMetadata>
       transferEntitlementsToGoogleOperationSettings;
   private final PagedCallSettings<
-          ListChannelPartnerLinksRequest,
-          ListChannelPartnerLinksResponse,
+          ListChannelPartnerLinksRequest, ListChannelPartnerLinksResponse,
           ListChannelPartnerLinksPagedResponse>
       listChannelPartnerLinksSettings;
   private final UnaryCallSettings<GetChannelPartnerLinkRequest, ChannelPartnerLink>
@@ -248,8 +245,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
           ListPurchasableSkusRequest, ListPurchasableSkusResponse, ListPurchasableSkusPagedResponse>
       listPurchasableSkusSettings;
   private final PagedCallSettings<
-          ListPurchasableOffersRequest,
-          ListPurchasableOffersResponse,
+          ListPurchasableOffersRequest, ListPurchasableOffersResponse,
           ListPurchasableOffersPagedResponse>
       listPurchasableOffersSettings;
   private final UnaryCallSettings<RegisterSubscriberRequest, RegisterSubscriberResponse>
@@ -424,8 +420,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
           ListChannelPartnerLinksRequest, ListChannelPartnerLinksResponse, ChannelPartnerLink>
       LIST_CHANNEL_PARTNER_LINKS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ListChannelPartnerLinksRequest,
-              ListChannelPartnerLinksResponse,
+              ListChannelPartnerLinksRequest, ListChannelPartnerLinksResponse,
               ChannelPartnerLink>() {
             @Override
             public String emptyToken() {
@@ -729,13 +724,11 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
           };
 
   private static final PagedListResponseFactory<
-          ListTransferableSkusRequest,
-          ListTransferableSkusResponse,
+          ListTransferableSkusRequest, ListTransferableSkusResponse,
           ListTransferableSkusPagedResponse>
       LIST_TRANSFERABLE_SKUS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListTransferableSkusRequest,
-              ListTransferableSkusResponse,
+              ListTransferableSkusRequest, ListTransferableSkusResponse,
               ListTransferableSkusPagedResponse>() {
             @Override
             public ApiFuture<ListTransferableSkusPagedResponse> getFuturePagedResponse(
@@ -753,13 +746,11 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
           };
 
   private static final PagedListResponseFactory<
-          ListTransferableOffersRequest,
-          ListTransferableOffersResponse,
+          ListTransferableOffersRequest, ListTransferableOffersResponse,
           ListTransferableOffersPagedResponse>
       LIST_TRANSFERABLE_OFFERS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListTransferableOffersRequest,
-              ListTransferableOffersResponse,
+              ListTransferableOffersRequest, ListTransferableOffersResponse,
               ListTransferableOffersPagedResponse>() {
             @Override
             public ApiFuture<ListTransferableOffersPagedResponse> getFuturePagedResponse(
@@ -769,8 +760,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
                 ApiCallContext context,
                 ApiFuture<ListTransferableOffersResponse> futureResponse) {
               PageContext<
-                      ListTransferableOffersRequest,
-                      ListTransferableOffersResponse,
+                      ListTransferableOffersRequest, ListTransferableOffersResponse,
                       TransferableOffer>
                   pageContext =
                       PageContext.create(
@@ -780,13 +770,11 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
           };
 
   private static final PagedListResponseFactory<
-          ListChannelPartnerLinksRequest,
-          ListChannelPartnerLinksResponse,
+          ListChannelPartnerLinksRequest, ListChannelPartnerLinksResponse,
           ListChannelPartnerLinksPagedResponse>
       LIST_CHANNEL_PARTNER_LINKS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListChannelPartnerLinksRequest,
-              ListChannelPartnerLinksResponse,
+              ListChannelPartnerLinksRequest, ListChannelPartnerLinksResponse,
               ListChannelPartnerLinksPagedResponse>() {
             @Override
             public ApiFuture<ListChannelPartnerLinksPagedResponse> getFuturePagedResponse(
@@ -796,8 +784,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
                 ApiCallContext context,
                 ApiFuture<ListChannelPartnerLinksResponse> futureResponse) {
               PageContext<
-                      ListChannelPartnerLinksRequest,
-                      ListChannelPartnerLinksResponse,
+                      ListChannelPartnerLinksRequest, ListChannelPartnerLinksResponse,
                       ChannelPartnerLink>
                   pageContext =
                       PageContext.create(
@@ -860,8 +847,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
           ListPurchasableSkusRequest, ListPurchasableSkusResponse, ListPurchasableSkusPagedResponse>
       LIST_PURCHASABLE_SKUS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListPurchasableSkusRequest,
-              ListPurchasableSkusResponse,
+              ListPurchasableSkusRequest, ListPurchasableSkusResponse,
               ListPurchasableSkusPagedResponse>() {
             @Override
             public ApiFuture<ListPurchasableSkusPagedResponse> getFuturePagedResponse(
@@ -878,13 +864,11 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
           };
 
   private static final PagedListResponseFactory<
-          ListPurchasableOffersRequest,
-          ListPurchasableOffersResponse,
+          ListPurchasableOffersRequest, ListPurchasableOffersResponse,
           ListPurchasableOffersPagedResponse>
       LIST_PURCHASABLE_OFFERS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListPurchasableOffersRequest,
-              ListPurchasableOffersResponse,
+              ListPurchasableOffersRequest, ListPurchasableOffersResponse,
               ListPurchasableOffersPagedResponse>() {
             @Override
             public ApiFuture<ListPurchasableOffersPagedResponse> getFuturePagedResponse(
@@ -972,8 +956,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
 
   /** Returns the object with the settings used for calls to listTransferableSkus. */
   public PagedCallSettings<
-          ListTransferableSkusRequest,
-          ListTransferableSkusResponse,
+          ListTransferableSkusRequest, ListTransferableSkusResponse,
           ListTransferableSkusPagedResponse>
       listTransferableSkusSettings() {
     return listTransferableSkusSettings;
@@ -981,8 +964,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
 
   /** Returns the object with the settings used for calls to listTransferableOffers. */
   public PagedCallSettings<
-          ListTransferableOffersRequest,
-          ListTransferableOffersResponse,
+          ListTransferableOffersRequest, ListTransferableOffersResponse,
           ListTransferableOffersPagedResponse>
       listTransferableOffersSettings() {
     return listTransferableOffersSettings;
@@ -1108,8 +1090,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
 
   /** Returns the object with the settings used for calls to listChannelPartnerLinks. */
   public PagedCallSettings<
-          ListChannelPartnerLinksRequest,
-          ListChannelPartnerLinksResponse,
+          ListChannelPartnerLinksRequest, ListChannelPartnerLinksResponse,
           ListChannelPartnerLinksPagedResponse>
       listChannelPartnerLinksSettings() {
     return listChannelPartnerLinksSettings;
@@ -1160,8 +1141,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
 
   /** Returns the object with the settings used for calls to listPurchasableOffers. */
   public PagedCallSettings<
-          ListPurchasableOffersRequest,
-          ListPurchasableOffersResponse,
+          ListPurchasableOffersRequest, ListPurchasableOffersResponse,
           ListPurchasableOffersPagedResponse>
       listPurchasableOffersSettings() {
     return listPurchasableOffersSettings;
@@ -1334,13 +1314,11 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
             ListEntitlementsRequest, ListEntitlementsResponse, ListEntitlementsPagedResponse>
         listEntitlementsSettings;
     private final PagedCallSettings.Builder<
-            ListTransferableSkusRequest,
-            ListTransferableSkusResponse,
+            ListTransferableSkusRequest, ListTransferableSkusResponse,
             ListTransferableSkusPagedResponse>
         listTransferableSkusSettings;
     private final PagedCallSettings.Builder<
-            ListTransferableOffersRequest,
-            ListTransferableOffersResponse,
+            ListTransferableOffersRequest, ListTransferableOffersResponse,
             ListTransferableOffersPagedResponse>
         listTransferableOffersSettings;
     private final UnaryCallSettings.Builder<GetEntitlementRequest, Entitlement>
@@ -1393,8 +1371,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
             TransferEntitlementsToGoogleRequest, Empty, OperationMetadata>
         transferEntitlementsToGoogleOperationSettings;
     private final PagedCallSettings.Builder<
-            ListChannelPartnerLinksRequest,
-            ListChannelPartnerLinksResponse,
+            ListChannelPartnerLinksRequest, ListChannelPartnerLinksResponse,
             ListChannelPartnerLinksPagedResponse>
         listChannelPartnerLinksSettings;
     private final UnaryCallSettings.Builder<GetChannelPartnerLinkRequest, ChannelPartnerLink>
@@ -1413,13 +1390,11 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
             ListOffersRequest, ListOffersResponse, ListOffersPagedResponse>
         listOffersSettings;
     private final PagedCallSettings.Builder<
-            ListPurchasableSkusRequest,
-            ListPurchasableSkusResponse,
+            ListPurchasableSkusRequest, ListPurchasableSkusResponse,
             ListPurchasableSkusPagedResponse>
         listPurchasableSkusSettings;
     private final PagedCallSettings.Builder<
-            ListPurchasableOffersRequest,
-            ListPurchasableOffersResponse,
+            ListPurchasableOffersRequest, ListPurchasableOffersResponse,
             ListPurchasableOffersPagedResponse>
         listPurchasableOffersSettings;
     private final UnaryCallSettings.Builder<RegisterSubscriberRequest, RegisterSubscriberResponse>
@@ -2177,8 +2152,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
 
     /** Returns the builder for the settings used for calls to listTransferableSkus. */
     public PagedCallSettings.Builder<
-            ListTransferableSkusRequest,
-            ListTransferableSkusResponse,
+            ListTransferableSkusRequest, ListTransferableSkusResponse,
             ListTransferableSkusPagedResponse>
         listTransferableSkusSettings() {
       return listTransferableSkusSettings;
@@ -2186,8 +2160,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
 
     /** Returns the builder for the settings used for calls to listTransferableOffers. */
     public PagedCallSettings.Builder<
-            ListTransferableOffersRequest,
-            ListTransferableOffersResponse,
+            ListTransferableOffersRequest, ListTransferableOffersResponse,
             ListTransferableOffersPagedResponse>
         listTransferableOffersSettings() {
       return listTransferableOffersSettings;
@@ -2342,8 +2315,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
 
     /** Returns the builder for the settings used for calls to listChannelPartnerLinks. */
     public PagedCallSettings.Builder<
-            ListChannelPartnerLinksRequest,
-            ListChannelPartnerLinksResponse,
+            ListChannelPartnerLinksRequest, ListChannelPartnerLinksResponse,
             ListChannelPartnerLinksPagedResponse>
         listChannelPartnerLinksSettings() {
       return listChannelPartnerLinksSettings;
@@ -2388,8 +2360,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
 
     /** Returns the builder for the settings used for calls to listPurchasableSkus. */
     public PagedCallSettings.Builder<
-            ListPurchasableSkusRequest,
-            ListPurchasableSkusResponse,
+            ListPurchasableSkusRequest, ListPurchasableSkusResponse,
             ListPurchasableSkusPagedResponse>
         listPurchasableSkusSettings() {
       return listPurchasableSkusSettings;
@@ -2397,8 +2368,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
 
     /** Returns the builder for the settings used for calls to listPurchasableOffers. */
     public PagedCallSettings.Builder<
-            ListPurchasableOffersRequest,
-            ListPurchasableOffersResponse,
+            ListPurchasableOffersRequest, ListPurchasableOffersResponse,
             ListPurchasableOffersPagedResponse>
         listPurchasableOffersSettings() {
       return listPurchasableOffersSettings;

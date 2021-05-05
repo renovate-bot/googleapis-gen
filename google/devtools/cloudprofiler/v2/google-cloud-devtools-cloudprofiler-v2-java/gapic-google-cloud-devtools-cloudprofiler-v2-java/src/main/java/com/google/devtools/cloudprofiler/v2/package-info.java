@@ -25,8 +25,8 @@
  * <p>General guidelines:
  *
  * <ul>
- *   <li>Profiles for a single deployment must be created in ascending time order.
- *   <li>Profiles can be created in either online or offline mode, see below.
+ *   <li> Profiles for a single deployment must be created in ascending time order.
+ *   <li> Profiles can be created in either online or offline mode, see below.
  * </ul>
  *
  * <p>Sample for ProfilerServiceClient:

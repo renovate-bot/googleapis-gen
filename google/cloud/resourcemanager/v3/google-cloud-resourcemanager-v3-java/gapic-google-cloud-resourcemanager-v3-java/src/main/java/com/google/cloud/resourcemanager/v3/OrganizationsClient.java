@@ -61,13 +61,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -275,9 +275,9 @@ public class OrganizationsClient implements BackgroundResource {
    *     <p>Organizations may be queried by `directoryCustomerId` or by `domain`, where the domain
    *     is a G Suite domain, for example:
    *     <ul>
-   *       <li>Query `directorycustomerid:123456789` returns Organization resources with
+   *       <li> Query `directorycustomerid:123456789` returns Organization resources with
    *           `owner.directory_customer_id` equal to `123456789`.
-   *       <li>Query `domain:google.com` returns Organization resources corresponding to the domain
+   *       <li> Query `domain:google.com` returns Organization resources corresponding to the domain
    *           `google.com`.
    *     </ul>
    *
@@ -776,11 +776,8 @@ public class OrganizationsClient implements BackgroundResource {
 
   public static class SearchOrganizationsPagedResponse
       extends AbstractPagedListResponse<
-          SearchOrganizationsRequest,
-          SearchOrganizationsResponse,
-          Organization,
-          SearchOrganizationsPage,
-          SearchOrganizationsFixedSizeCollection> {
+          SearchOrganizationsRequest, SearchOrganizationsResponse, Organization,
+          SearchOrganizationsPage, SearchOrganizationsFixedSizeCollection> {
 
     public static ApiFuture<SearchOrganizationsPagedResponse> createAsync(
         PageContext<SearchOrganizationsRequest, SearchOrganizationsResponse, Organization> context,
@@ -805,9 +802,7 @@ public class OrganizationsClient implements BackgroundResource {
 
   public static class SearchOrganizationsPage
       extends AbstractPage<
-          SearchOrganizationsRequest,
-          SearchOrganizationsResponse,
-          Organization,
+          SearchOrganizationsRequest, SearchOrganizationsResponse, Organization,
           SearchOrganizationsPage> {
 
     private SearchOrganizationsPage(
@@ -837,11 +832,8 @@ public class OrganizationsClient implements BackgroundResource {
 
   public static class SearchOrganizationsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          SearchOrganizationsRequest,
-          SearchOrganizationsResponse,
-          Organization,
-          SearchOrganizationsPage,
-          SearchOrganizationsFixedSizeCollection> {
+          SearchOrganizationsRequest, SearchOrganizationsResponse, Organization,
+          SearchOrganizationsPage, SearchOrganizationsFixedSizeCollection> {
 
     private SearchOrganizationsFixedSizeCollection(
         List<SearchOrganizationsPage> pages, int collectionSize) {

@@ -343,8 +343,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
       createFeatureOperationCallable;
   private final UnaryCallable<BatchCreateFeaturesRequest, Operation> batchCreateFeaturesCallable;
   private final OperationCallable<
-          BatchCreateFeaturesRequest,
-          BatchCreateFeaturesResponse,
+          BatchCreateFeaturesRequest, BatchCreateFeaturesResponse,
           BatchCreateFeaturesOperationMetadata>
       batchCreateFeaturesOperationCallable;
   private final UnaryCallable<GetFeatureRequest, Feature> getFeatureCallable;
@@ -357,21 +356,18 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
       deleteFeatureOperationCallable;
   private final UnaryCallable<ImportFeatureValuesRequest, Operation> importFeatureValuesCallable;
   private final OperationCallable<
-          ImportFeatureValuesRequest,
-          ImportFeatureValuesResponse,
+          ImportFeatureValuesRequest, ImportFeatureValuesResponse,
           ImportFeatureValuesOperationMetadata>
       importFeatureValuesOperationCallable;
   private final UnaryCallable<BatchReadFeatureValuesRequest, Operation>
       batchReadFeatureValuesCallable;
   private final OperationCallable<
-          BatchReadFeatureValuesRequest,
-          BatchReadFeatureValuesResponse,
+          BatchReadFeatureValuesRequest, BatchReadFeatureValuesResponse,
           BatchReadFeatureValuesOperationMetadata>
       batchReadFeatureValuesOperationCallable;
   private final UnaryCallable<ExportFeatureValuesRequest, Operation> exportFeatureValuesCallable;
   private final OperationCallable<
-          ExportFeatureValuesRequest,
-          ExportFeatureValuesResponse,
+          ExportFeatureValuesRequest, ExportFeatureValuesResponse,
           ExportFeatureValuesOperationMetadata>
       exportFeatureValuesOperationCallable;
   private final UnaryCallable<SearchFeaturesRequest, SearchFeaturesResponse> searchFeaturesCallable;
@@ -967,8 +963,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
 
   @Override
   public OperationCallable<
-          BatchCreateFeaturesRequest,
-          BatchCreateFeaturesResponse,
+          BatchCreateFeaturesRequest, BatchCreateFeaturesResponse,
           BatchCreateFeaturesOperationMetadata>
       batchCreateFeaturesOperationCallable() {
     return batchCreateFeaturesOperationCallable;
@@ -1012,8 +1007,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
 
   @Override
   public OperationCallable<
-          ImportFeatureValuesRequest,
-          ImportFeatureValuesResponse,
+          ImportFeatureValuesRequest, ImportFeatureValuesResponse,
           ImportFeatureValuesOperationMetadata>
       importFeatureValuesOperationCallable() {
     return importFeatureValuesOperationCallable;
@@ -1026,8 +1020,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
 
   @Override
   public OperationCallable<
-          BatchReadFeatureValuesRequest,
-          BatchReadFeatureValuesResponse,
+          BatchReadFeatureValuesRequest, BatchReadFeatureValuesResponse,
           BatchReadFeatureValuesOperationMetadata>
       batchReadFeatureValuesOperationCallable() {
     return batchReadFeatureValuesOperationCallable;
@@ -1040,8 +1033,7 @@ public class GrpcFeaturestoreServiceStub extends FeaturestoreServiceStub {
 
   @Override
   public OperationCallable<
-          ExportFeatureValuesRequest,
-          ExportFeatureValuesResponse,
+          ExportFeatureValuesRequest, ExportFeatureValuesResponse,
           ExportFeatureValuesOperationMetadata>
       exportFeatureValuesOperationCallable() {
     return exportFeatureValuesOperationCallable;

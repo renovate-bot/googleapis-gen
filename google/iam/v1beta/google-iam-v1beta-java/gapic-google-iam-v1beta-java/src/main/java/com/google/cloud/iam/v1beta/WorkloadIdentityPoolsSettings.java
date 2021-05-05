@@ -63,9 +63,9 @@ import javax.annotation.Generated;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (iam.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (iam.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -95,8 +95,7 @@ public class WorkloadIdentityPoolsSettings extends ClientSettings<WorkloadIdenti
 
   /** Returns the object with the settings used for calls to listWorkloadIdentityPools. */
   public PagedCallSettings<
-          ListWorkloadIdentityPoolsRequest,
-          ListWorkloadIdentityPoolsResponse,
+          ListWorkloadIdentityPoolsRequest, ListWorkloadIdentityPoolsResponse,
           ListWorkloadIdentityPoolsPagedResponse>
       listWorkloadIdentityPoolsSettings() {
     return ((WorkloadIdentityPoolsStubSettings) getStubSettings())
@@ -119,8 +118,7 @@ public class WorkloadIdentityPoolsSettings extends ClientSettings<WorkloadIdenti
 
   /** Returns the object with the settings used for calls to createWorkloadIdentityPool. */
   public OperationCallSettings<
-          CreateWorkloadIdentityPoolRequest,
-          WorkloadIdentityPool,
+          CreateWorkloadIdentityPoolRequest, WorkloadIdentityPool,
           WorkloadIdentityPoolOperationMetadata>
       createWorkloadIdentityPoolOperationSettings() {
     return ((WorkloadIdentityPoolsStubSettings) getStubSettings())
@@ -136,8 +134,7 @@ public class WorkloadIdentityPoolsSettings extends ClientSettings<WorkloadIdenti
 
   /** Returns the object with the settings used for calls to updateWorkloadIdentityPool. */
   public OperationCallSettings<
-          UpdateWorkloadIdentityPoolRequest,
-          WorkloadIdentityPool,
+          UpdateWorkloadIdentityPoolRequest, WorkloadIdentityPool,
           WorkloadIdentityPoolOperationMetadata>
       updateWorkloadIdentityPoolOperationSettings() {
     return ((WorkloadIdentityPoolsStubSettings) getStubSettings())
@@ -153,8 +150,7 @@ public class WorkloadIdentityPoolsSettings extends ClientSettings<WorkloadIdenti
 
   /** Returns the object with the settings used for calls to deleteWorkloadIdentityPool. */
   public OperationCallSettings<
-          DeleteWorkloadIdentityPoolRequest,
-          WorkloadIdentityPool,
+          DeleteWorkloadIdentityPoolRequest, WorkloadIdentityPool,
           WorkloadIdentityPoolOperationMetadata>
       deleteWorkloadIdentityPoolOperationSettings() {
     return ((WorkloadIdentityPoolsStubSettings) getStubSettings())
@@ -170,8 +166,7 @@ public class WorkloadIdentityPoolsSettings extends ClientSettings<WorkloadIdenti
 
   /** Returns the object with the settings used for calls to undeleteWorkloadIdentityPool. */
   public OperationCallSettings<
-          UndeleteWorkloadIdentityPoolRequest,
-          WorkloadIdentityPool,
+          UndeleteWorkloadIdentityPoolRequest, WorkloadIdentityPool,
           WorkloadIdentityPoolOperationMetadata>
       undeleteWorkloadIdentityPoolOperationSettings() {
     return ((WorkloadIdentityPoolsStubSettings) getStubSettings())
@@ -180,8 +175,7 @@ public class WorkloadIdentityPoolsSettings extends ClientSettings<WorkloadIdenti
 
   /** Returns the object with the settings used for calls to listWorkloadIdentityPoolProviders. */
   public PagedCallSettings<
-          ListWorkloadIdentityPoolProvidersRequest,
-          ListWorkloadIdentityPoolProvidersResponse,
+          ListWorkloadIdentityPoolProvidersRequest, ListWorkloadIdentityPoolProvidersResponse,
           ListWorkloadIdentityPoolProvidersPagedResponse>
       listWorkloadIdentityPoolProvidersSettings() {
     return ((WorkloadIdentityPoolsStubSettings) getStubSettings())
@@ -204,8 +198,7 @@ public class WorkloadIdentityPoolsSettings extends ClientSettings<WorkloadIdenti
 
   /** Returns the object with the settings used for calls to createWorkloadIdentityPoolProvider. */
   public OperationCallSettings<
-          CreateWorkloadIdentityPoolProviderRequest,
-          WorkloadIdentityPoolProvider,
+          CreateWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
           WorkloadIdentityPoolProviderOperationMetadata>
       createWorkloadIdentityPoolProviderOperationSettings() {
     return ((WorkloadIdentityPoolsStubSettings) getStubSettings())
@@ -221,8 +214,7 @@ public class WorkloadIdentityPoolsSettings extends ClientSettings<WorkloadIdenti
 
   /** Returns the object with the settings used for calls to updateWorkloadIdentityPoolProvider. */
   public OperationCallSettings<
-          UpdateWorkloadIdentityPoolProviderRequest,
-          WorkloadIdentityPoolProvider,
+          UpdateWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
           WorkloadIdentityPoolProviderOperationMetadata>
       updateWorkloadIdentityPoolProviderOperationSettings() {
     return ((WorkloadIdentityPoolsStubSettings) getStubSettings())
@@ -238,8 +230,7 @@ public class WorkloadIdentityPoolsSettings extends ClientSettings<WorkloadIdenti
 
   /** Returns the object with the settings used for calls to deleteWorkloadIdentityPoolProvider. */
   public OperationCallSettings<
-          DeleteWorkloadIdentityPoolProviderRequest,
-          WorkloadIdentityPoolProvider,
+          DeleteWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
           WorkloadIdentityPoolProviderOperationMetadata>
       deleteWorkloadIdentityPoolProviderOperationSettings() {
     return ((WorkloadIdentityPoolsStubSettings) getStubSettings())
@@ -259,8 +250,7 @@ public class WorkloadIdentityPoolsSettings extends ClientSettings<WorkloadIdenti
    * Returns the object with the settings used for calls to undeleteWorkloadIdentityPoolProvider.
    */
   public OperationCallSettings<
-          UndeleteWorkloadIdentityPoolProviderRequest,
-          WorkloadIdentityPoolProvider,
+          UndeleteWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
           WorkloadIdentityPoolProviderOperationMetadata>
       undeleteWorkloadIdentityPoolProviderOperationSettings() {
     return ((WorkloadIdentityPoolsStubSettings) getStubSettings())
@@ -368,8 +358,7 @@ public class WorkloadIdentityPoolsSettings extends ClientSettings<WorkloadIdenti
 
     /** Returns the builder for the settings used for calls to listWorkloadIdentityPools. */
     public PagedCallSettings.Builder<
-            ListWorkloadIdentityPoolsRequest,
-            ListWorkloadIdentityPoolsResponse,
+            ListWorkloadIdentityPoolsRequest, ListWorkloadIdentityPoolsResponse,
             ListWorkloadIdentityPoolsPagedResponse>
         listWorkloadIdentityPoolsSettings() {
       return getStubSettingsBuilder().listWorkloadIdentityPoolsSettings();
@@ -389,8 +378,7 @@ public class WorkloadIdentityPoolsSettings extends ClientSettings<WorkloadIdenti
 
     /** Returns the builder for the settings used for calls to createWorkloadIdentityPool. */
     public OperationCallSettings.Builder<
-            CreateWorkloadIdentityPoolRequest,
-            WorkloadIdentityPool,
+            CreateWorkloadIdentityPoolRequest, WorkloadIdentityPool,
             WorkloadIdentityPoolOperationMetadata>
         createWorkloadIdentityPoolOperationSettings() {
       return getStubSettingsBuilder().createWorkloadIdentityPoolOperationSettings();
@@ -404,8 +392,7 @@ public class WorkloadIdentityPoolsSettings extends ClientSettings<WorkloadIdenti
 
     /** Returns the builder for the settings used for calls to updateWorkloadIdentityPool. */
     public OperationCallSettings.Builder<
-            UpdateWorkloadIdentityPoolRequest,
-            WorkloadIdentityPool,
+            UpdateWorkloadIdentityPoolRequest, WorkloadIdentityPool,
             WorkloadIdentityPoolOperationMetadata>
         updateWorkloadIdentityPoolOperationSettings() {
       return getStubSettingsBuilder().updateWorkloadIdentityPoolOperationSettings();
@@ -419,8 +406,7 @@ public class WorkloadIdentityPoolsSettings extends ClientSettings<WorkloadIdenti
 
     /** Returns the builder for the settings used for calls to deleteWorkloadIdentityPool. */
     public OperationCallSettings.Builder<
-            DeleteWorkloadIdentityPoolRequest,
-            WorkloadIdentityPool,
+            DeleteWorkloadIdentityPoolRequest, WorkloadIdentityPool,
             WorkloadIdentityPoolOperationMetadata>
         deleteWorkloadIdentityPoolOperationSettings() {
       return getStubSettingsBuilder().deleteWorkloadIdentityPoolOperationSettings();
@@ -434,8 +420,7 @@ public class WorkloadIdentityPoolsSettings extends ClientSettings<WorkloadIdenti
 
     /** Returns the builder for the settings used for calls to undeleteWorkloadIdentityPool. */
     public OperationCallSettings.Builder<
-            UndeleteWorkloadIdentityPoolRequest,
-            WorkloadIdentityPool,
+            UndeleteWorkloadIdentityPoolRequest, WorkloadIdentityPool,
             WorkloadIdentityPoolOperationMetadata>
         undeleteWorkloadIdentityPoolOperationSettings() {
       return getStubSettingsBuilder().undeleteWorkloadIdentityPoolOperationSettings();
@@ -443,8 +428,7 @@ public class WorkloadIdentityPoolsSettings extends ClientSettings<WorkloadIdenti
 
     /** Returns the builder for the settings used for calls to listWorkloadIdentityPoolProviders. */
     public PagedCallSettings.Builder<
-            ListWorkloadIdentityPoolProvidersRequest,
-            ListWorkloadIdentityPoolProvidersResponse,
+            ListWorkloadIdentityPoolProvidersRequest, ListWorkloadIdentityPoolProvidersResponse,
             ListWorkloadIdentityPoolProvidersPagedResponse>
         listWorkloadIdentityPoolProvidersSettings() {
       return getStubSettingsBuilder().listWorkloadIdentityPoolProvidersSettings();
@@ -469,8 +453,7 @@ public class WorkloadIdentityPoolsSettings extends ClientSettings<WorkloadIdenti
      * Returns the builder for the settings used for calls to createWorkloadIdentityPoolProvider.
      */
     public OperationCallSettings.Builder<
-            CreateWorkloadIdentityPoolProviderRequest,
-            WorkloadIdentityPoolProvider,
+            CreateWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
             WorkloadIdentityPoolProviderOperationMetadata>
         createWorkloadIdentityPoolProviderOperationSettings() {
       return getStubSettingsBuilder().createWorkloadIdentityPoolProviderOperationSettings();
@@ -488,8 +471,7 @@ public class WorkloadIdentityPoolsSettings extends ClientSettings<WorkloadIdenti
      * Returns the builder for the settings used for calls to updateWorkloadIdentityPoolProvider.
      */
     public OperationCallSettings.Builder<
-            UpdateWorkloadIdentityPoolProviderRequest,
-            WorkloadIdentityPoolProvider,
+            UpdateWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
             WorkloadIdentityPoolProviderOperationMetadata>
         updateWorkloadIdentityPoolProviderOperationSettings() {
       return getStubSettingsBuilder().updateWorkloadIdentityPoolProviderOperationSettings();
@@ -507,8 +489,7 @@ public class WorkloadIdentityPoolsSettings extends ClientSettings<WorkloadIdenti
      * Returns the builder for the settings used for calls to deleteWorkloadIdentityPoolProvider.
      */
     public OperationCallSettings.Builder<
-            DeleteWorkloadIdentityPoolProviderRequest,
-            WorkloadIdentityPoolProvider,
+            DeleteWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
             WorkloadIdentityPoolProviderOperationMetadata>
         deleteWorkloadIdentityPoolProviderOperationSettings() {
       return getStubSettingsBuilder().deleteWorkloadIdentityPoolProviderOperationSettings();
@@ -526,8 +507,7 @@ public class WorkloadIdentityPoolsSettings extends ClientSettings<WorkloadIdenti
      * Returns the builder for the settings used for calls to undeleteWorkloadIdentityPoolProvider.
      */
     public OperationCallSettings.Builder<
-            UndeleteWorkloadIdentityPoolProviderRequest,
-            WorkloadIdentityPoolProvider,
+            UndeleteWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
             WorkloadIdentityPoolProviderOperationMetadata>
         undeleteWorkloadIdentityPoolProviderOperationSettings() {
       return getStubSettingsBuilder().undeleteWorkloadIdentityPoolProviderOperationSettings();

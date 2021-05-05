@@ -72,9 +72,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (monitoring.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (monitoring.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -121,8 +121,7 @@ public class ServiceMonitoringServiceStubSettings
   private final UnaryCallSettings<GetServiceLevelObjectiveRequest, ServiceLevelObjective>
       getServiceLevelObjectiveSettings;
   private final PagedCallSettings<
-          ListServiceLevelObjectivesRequest,
-          ListServiceLevelObjectivesResponse,
+          ListServiceLevelObjectivesRequest, ListServiceLevelObjectivesResponse,
           ListServiceLevelObjectivesPagedResponse>
       listServiceLevelObjectivesSettings;
   private final UnaryCallSettings<UpdateServiceLevelObjectiveRequest, ServiceLevelObjective>
@@ -167,13 +166,11 @@ public class ServiceMonitoringServiceStubSettings
           };
 
   private static final PagedListDescriptor<
-          ListServiceLevelObjectivesRequest,
-          ListServiceLevelObjectivesResponse,
+          ListServiceLevelObjectivesRequest, ListServiceLevelObjectivesResponse,
           ServiceLevelObjective>
       LIST_SERVICE_LEVEL_OBJECTIVES_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ListServiceLevelObjectivesRequest,
-              ListServiceLevelObjectivesResponse,
+              ListServiceLevelObjectivesRequest, ListServiceLevelObjectivesResponse,
               ServiceLevelObjective>() {
             @Override
             public String emptyToken() {
@@ -233,13 +230,11 @@ public class ServiceMonitoringServiceStubSettings
           };
 
   private static final PagedListResponseFactory<
-          ListServiceLevelObjectivesRequest,
-          ListServiceLevelObjectivesResponse,
+          ListServiceLevelObjectivesRequest, ListServiceLevelObjectivesResponse,
           ListServiceLevelObjectivesPagedResponse>
       LIST_SERVICE_LEVEL_OBJECTIVES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListServiceLevelObjectivesRequest,
-              ListServiceLevelObjectivesResponse,
+              ListServiceLevelObjectivesRequest, ListServiceLevelObjectivesResponse,
               ListServiceLevelObjectivesPagedResponse>() {
             @Override
             public ApiFuture<ListServiceLevelObjectivesPagedResponse> getFuturePagedResponse(
@@ -249,8 +244,7 @@ public class ServiceMonitoringServiceStubSettings
                 ApiCallContext context,
                 ApiFuture<ListServiceLevelObjectivesResponse> futureResponse) {
               PageContext<
-                      ListServiceLevelObjectivesRequest,
-                      ListServiceLevelObjectivesResponse,
+                      ListServiceLevelObjectivesRequest, ListServiceLevelObjectivesResponse,
                       ServiceLevelObjective>
                   pageContext =
                       PageContext.create(
@@ -300,8 +294,7 @@ public class ServiceMonitoringServiceStubSettings
 
   /** Returns the object with the settings used for calls to listServiceLevelObjectives. */
   public PagedCallSettings<
-          ListServiceLevelObjectivesRequest,
-          ListServiceLevelObjectivesResponse,
+          ListServiceLevelObjectivesRequest, ListServiceLevelObjectivesResponse,
           ListServiceLevelObjectivesPagedResponse>
       listServiceLevelObjectivesSettings() {
     return listServiceLevelObjectivesSettings;
@@ -421,8 +414,7 @@ public class ServiceMonitoringServiceStubSettings
     private final UnaryCallSettings.Builder<GetServiceLevelObjectiveRequest, ServiceLevelObjective>
         getServiceLevelObjectiveSettings;
     private final PagedCallSettings.Builder<
-            ListServiceLevelObjectivesRequest,
-            ListServiceLevelObjectivesResponse,
+            ListServiceLevelObjectivesRequest, ListServiceLevelObjectivesResponse,
             ListServiceLevelObjectivesPagedResponse>
         listServiceLevelObjectivesSettings;
     private final UnaryCallSettings.Builder<
@@ -660,8 +652,7 @@ public class ServiceMonitoringServiceStubSettings
 
     /** Returns the builder for the settings used for calls to listServiceLevelObjectives. */
     public PagedCallSettings.Builder<
-            ListServiceLevelObjectivesRequest,
-            ListServiceLevelObjectivesResponse,
+            ListServiceLevelObjectivesRequest, ListServiceLevelObjectivesResponse,
             ListServiceLevelObjectivesPagedResponse>
         listServiceLevelObjectivesSettings() {
       return listServiceLevelObjectivesSettings;

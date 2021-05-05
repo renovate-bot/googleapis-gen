@@ -345,8 +345,7 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
   private final UnaryCallable<ImportConsumerOverridesRequest, Operation>
       importConsumerOverridesCallable;
   private final OperationCallable<
-          ImportConsumerOverridesRequest,
-          ImportConsumerOverridesResponse,
+          ImportConsumerOverridesRequest, ImportConsumerOverridesResponse,
           ImportConsumerOverridesMetadata>
       importConsumerOverridesOperationCallable;
   private final UnaryCallable<GenerateServiceIdentityRequest, Operation>
@@ -1024,8 +1023,7 @@ public class GrpcServiceUsageStub extends ServiceUsageStub {
 
   @Override
   public OperationCallable<
-          ImportConsumerOverridesRequest,
-          ImportConsumerOverridesResponse,
+          ImportConsumerOverridesRequest, ImportConsumerOverridesResponse,
           ImportConsumerOverridesMetadata>
       importConsumerOverridesOperationCallable() {
     return importConsumerOverridesOperationCallable;

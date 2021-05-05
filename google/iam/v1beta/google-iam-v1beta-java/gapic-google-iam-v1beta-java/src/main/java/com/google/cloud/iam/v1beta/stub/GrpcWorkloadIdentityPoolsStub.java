@@ -224,29 +224,25 @@ public class GrpcWorkloadIdentityPoolsStub extends WorkloadIdentityPoolsStub {
   private final UnaryCallable<CreateWorkloadIdentityPoolRequest, Operation>
       createWorkloadIdentityPoolCallable;
   private final OperationCallable<
-          CreateWorkloadIdentityPoolRequest,
-          WorkloadIdentityPool,
+          CreateWorkloadIdentityPoolRequest, WorkloadIdentityPool,
           WorkloadIdentityPoolOperationMetadata>
       createWorkloadIdentityPoolOperationCallable;
   private final UnaryCallable<UpdateWorkloadIdentityPoolRequest, Operation>
       updateWorkloadIdentityPoolCallable;
   private final OperationCallable<
-          UpdateWorkloadIdentityPoolRequest,
-          WorkloadIdentityPool,
+          UpdateWorkloadIdentityPoolRequest, WorkloadIdentityPool,
           WorkloadIdentityPoolOperationMetadata>
       updateWorkloadIdentityPoolOperationCallable;
   private final UnaryCallable<DeleteWorkloadIdentityPoolRequest, Operation>
       deleteWorkloadIdentityPoolCallable;
   private final OperationCallable<
-          DeleteWorkloadIdentityPoolRequest,
-          WorkloadIdentityPool,
+          DeleteWorkloadIdentityPoolRequest, WorkloadIdentityPool,
           WorkloadIdentityPoolOperationMetadata>
       deleteWorkloadIdentityPoolOperationCallable;
   private final UnaryCallable<UndeleteWorkloadIdentityPoolRequest, Operation>
       undeleteWorkloadIdentityPoolCallable;
   private final OperationCallable<
-          UndeleteWorkloadIdentityPoolRequest,
-          WorkloadIdentityPool,
+          UndeleteWorkloadIdentityPoolRequest, WorkloadIdentityPool,
           WorkloadIdentityPoolOperationMetadata>
       undeleteWorkloadIdentityPoolOperationCallable;
   private final UnaryCallable<
@@ -260,29 +256,25 @@ public class GrpcWorkloadIdentityPoolsStub extends WorkloadIdentityPoolsStub {
   private final UnaryCallable<CreateWorkloadIdentityPoolProviderRequest, Operation>
       createWorkloadIdentityPoolProviderCallable;
   private final OperationCallable<
-          CreateWorkloadIdentityPoolProviderRequest,
-          WorkloadIdentityPoolProvider,
+          CreateWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
           WorkloadIdentityPoolProviderOperationMetadata>
       createWorkloadIdentityPoolProviderOperationCallable;
   private final UnaryCallable<UpdateWorkloadIdentityPoolProviderRequest, Operation>
       updateWorkloadIdentityPoolProviderCallable;
   private final OperationCallable<
-          UpdateWorkloadIdentityPoolProviderRequest,
-          WorkloadIdentityPoolProvider,
+          UpdateWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
           WorkloadIdentityPoolProviderOperationMetadata>
       updateWorkloadIdentityPoolProviderOperationCallable;
   private final UnaryCallable<DeleteWorkloadIdentityPoolProviderRequest, Operation>
       deleteWorkloadIdentityPoolProviderCallable;
   private final OperationCallable<
-          DeleteWorkloadIdentityPoolProviderRequest,
-          WorkloadIdentityPoolProvider,
+          DeleteWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
           WorkloadIdentityPoolProviderOperationMetadata>
       deleteWorkloadIdentityPoolProviderOperationCallable;
   private final UnaryCallable<UndeleteWorkloadIdentityPoolProviderRequest, Operation>
       undeleteWorkloadIdentityPoolProviderCallable;
   private final OperationCallable<
-          UndeleteWorkloadIdentityPoolProviderRequest,
-          WorkloadIdentityPoolProvider,
+          UndeleteWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
           WorkloadIdentityPoolProviderOperationMetadata>
       undeleteWorkloadIdentityPoolProviderOperationCallable;
 
@@ -672,8 +664,7 @@ public class GrpcWorkloadIdentityPoolsStub extends WorkloadIdentityPoolsStub {
 
   @Override
   public OperationCallable<
-          CreateWorkloadIdentityPoolRequest,
-          WorkloadIdentityPool,
+          CreateWorkloadIdentityPoolRequest, WorkloadIdentityPool,
           WorkloadIdentityPoolOperationMetadata>
       createWorkloadIdentityPoolOperationCallable() {
     return createWorkloadIdentityPoolOperationCallable;
@@ -687,8 +678,7 @@ public class GrpcWorkloadIdentityPoolsStub extends WorkloadIdentityPoolsStub {
 
   @Override
   public OperationCallable<
-          UpdateWorkloadIdentityPoolRequest,
-          WorkloadIdentityPool,
+          UpdateWorkloadIdentityPoolRequest, WorkloadIdentityPool,
           WorkloadIdentityPoolOperationMetadata>
       updateWorkloadIdentityPoolOperationCallable() {
     return updateWorkloadIdentityPoolOperationCallable;
@@ -702,8 +692,7 @@ public class GrpcWorkloadIdentityPoolsStub extends WorkloadIdentityPoolsStub {
 
   @Override
   public OperationCallable<
-          DeleteWorkloadIdentityPoolRequest,
-          WorkloadIdentityPool,
+          DeleteWorkloadIdentityPoolRequest, WorkloadIdentityPool,
           WorkloadIdentityPoolOperationMetadata>
       deleteWorkloadIdentityPoolOperationCallable() {
     return deleteWorkloadIdentityPoolOperationCallable;
@@ -717,8 +706,7 @@ public class GrpcWorkloadIdentityPoolsStub extends WorkloadIdentityPoolsStub {
 
   @Override
   public OperationCallable<
-          UndeleteWorkloadIdentityPoolRequest,
-          WorkloadIdentityPool,
+          UndeleteWorkloadIdentityPoolRequest, WorkloadIdentityPool,
           WorkloadIdentityPoolOperationMetadata>
       undeleteWorkloadIdentityPoolOperationCallable() {
     return undeleteWorkloadIdentityPoolOperationCallable;
@@ -752,8 +740,7 @@ public class GrpcWorkloadIdentityPoolsStub extends WorkloadIdentityPoolsStub {
 
   @Override
   public OperationCallable<
-          CreateWorkloadIdentityPoolProviderRequest,
-          WorkloadIdentityPoolProvider,
+          CreateWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
           WorkloadIdentityPoolProviderOperationMetadata>
       createWorkloadIdentityPoolProviderOperationCallable() {
     return createWorkloadIdentityPoolProviderOperationCallable;
@@ -767,8 +754,7 @@ public class GrpcWorkloadIdentityPoolsStub extends WorkloadIdentityPoolsStub {
 
   @Override
   public OperationCallable<
-          UpdateWorkloadIdentityPoolProviderRequest,
-          WorkloadIdentityPoolProvider,
+          UpdateWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
           WorkloadIdentityPoolProviderOperationMetadata>
       updateWorkloadIdentityPoolProviderOperationCallable() {
     return updateWorkloadIdentityPoolProviderOperationCallable;
@@ -782,8 +768,7 @@ public class GrpcWorkloadIdentityPoolsStub extends WorkloadIdentityPoolsStub {
 
   @Override
   public OperationCallable<
-          DeleteWorkloadIdentityPoolProviderRequest,
-          WorkloadIdentityPoolProvider,
+          DeleteWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
           WorkloadIdentityPoolProviderOperationMetadata>
       deleteWorkloadIdentityPoolProviderOperationCallable() {
     return deleteWorkloadIdentityPoolProviderOperationCallable;
@@ -797,8 +782,7 @@ public class GrpcWorkloadIdentityPoolsStub extends WorkloadIdentityPoolsStub {
 
   @Override
   public OperationCallable<
-          UndeleteWorkloadIdentityPoolProviderRequest,
-          WorkloadIdentityPoolProvider,
+          UndeleteWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
           WorkloadIdentityPoolProviderOperationMetadata>
       undeleteWorkloadIdentityPoolProviderOperationCallable() {
     return undeleteWorkloadIdentityPoolProviderOperationCallable;

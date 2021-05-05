@@ -56,9 +56,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (cloudasset.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (cloudasset.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -93,8 +93,7 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
   private final UnaryCallSettings<ExportIamPolicyAnalysisRequest, Operation>
       exportIamPolicyAnalysisSettings;
   private final OperationCallSettings<
-          ExportIamPolicyAnalysisRequest,
-          ExportIamPolicyAnalysisResponse,
+          ExportIamPolicyAnalysisRequest, ExportIamPolicyAnalysisResponse,
           ExportIamPolicyAnalysisRequest>
       exportIamPolicyAnalysisOperationSettings;
 
@@ -112,8 +111,7 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
 
   /** Returns the object with the settings used for calls to exportIamPolicyAnalysis. */
   public OperationCallSettings<
-          ExportIamPolicyAnalysisRequest,
-          ExportIamPolicyAnalysisResponse,
+          ExportIamPolicyAnalysisRequest, ExportIamPolicyAnalysisResponse,
           ExportIamPolicyAnalysisRequest>
       exportIamPolicyAnalysisOperationSettings() {
     return exportIamPolicyAnalysisOperationSettings;
@@ -202,8 +200,7 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
     private final UnaryCallSettings.Builder<ExportIamPolicyAnalysisRequest, Operation>
         exportIamPolicyAnalysisSettings;
     private final OperationCallSettings.Builder<
-            ExportIamPolicyAnalysisRequest,
-            ExportIamPolicyAnalysisResponse,
+            ExportIamPolicyAnalysisRequest, ExportIamPolicyAnalysisResponse,
             ExportIamPolicyAnalysisRequest>
         exportIamPolicyAnalysisOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
@@ -360,8 +357,7 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
     @BetaApi(
         "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
-            ExportIamPolicyAnalysisRequest,
-            ExportIamPolicyAnalysisResponse,
+            ExportIamPolicyAnalysisRequest, ExportIamPolicyAnalysisResponse,
             ExportIamPolicyAnalysisRequest>
         exportIamPolicyAnalysisOperationSettings() {
       return exportIamPolicyAnalysisOperationSettings;

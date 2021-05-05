@@ -43,10 +43,10 @@ import javax.annotation.Generated;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (recommendationengine.googleapis.com) and default port (443)
+ *   <li> The default service address (recommendationengine.googleapis.com) and default port (443)
  *       are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -84,8 +84,7 @@ public class PredictionApiKeyRegistrySettings
 
   /** Returns the object with the settings used for calls to listPredictionApiKeyRegistrations. */
   public PagedCallSettings<
-          ListPredictionApiKeyRegistrationsRequest,
-          ListPredictionApiKeyRegistrationsResponse,
+          ListPredictionApiKeyRegistrationsRequest, ListPredictionApiKeyRegistrationsResponse,
           ListPredictionApiKeyRegistrationsPagedResponse>
       listPredictionApiKeyRegistrationsSettings() {
     return ((PredictionApiKeyRegistryStubSettings) getStubSettings())
@@ -209,8 +208,7 @@ public class PredictionApiKeyRegistrySettings
 
     /** Returns the builder for the settings used for calls to listPredictionApiKeyRegistrations. */
     public PagedCallSettings.Builder<
-            ListPredictionApiKeyRegistrationsRequest,
-            ListPredictionApiKeyRegistrationsResponse,
+            ListPredictionApiKeyRegistrationsRequest, ListPredictionApiKeyRegistrationsResponse,
             ListPredictionApiKeyRegistrationsPagedResponse>
         listPredictionApiKeyRegistrationsSettings() {
       return getStubSettingsBuilder().listPredictionApiKeyRegistrationsSettings();

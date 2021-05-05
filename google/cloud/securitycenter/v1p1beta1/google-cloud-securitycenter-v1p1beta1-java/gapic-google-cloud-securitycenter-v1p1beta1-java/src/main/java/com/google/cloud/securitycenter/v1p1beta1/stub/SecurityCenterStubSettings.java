@@ -105,10 +105,10 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (securitycenter.googleapis.com) and default port (443) are
+ *   <li> The default service address (securitycenter.googleapis.com) and default port (443) are
  *       used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -161,8 +161,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
           ListFindingsRequest, ListFindingsResponse, ListFindingsPagedResponse>
       listFindingsSettings;
   private final PagedCallSettings<
-          ListNotificationConfigsRequest,
-          ListNotificationConfigsResponse,
+          ListNotificationConfigsRequest, ListNotificationConfigsResponse,
           ListNotificationConfigsPagedResponse>
       listNotificationConfigsSettings;
   private final PagedCallSettings<ListSourcesRequest, ListSourcesResponse, ListSourcesPagedResponse>
@@ -298,8 +297,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
           ListFindingsRequest, ListFindingsResponse, ListFindingsResponse.ListFindingsResult>
       LIST_FINDINGS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ListFindingsRequest,
-              ListFindingsResponse,
+              ListFindingsRequest, ListFindingsResponse,
               ListFindingsResponse.ListFindingsResult>() {
             @Override
             public String emptyToken() {
@@ -339,8 +337,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
           ListNotificationConfigsRequest, ListNotificationConfigsResponse, NotificationConfig>
       LIST_NOTIFICATION_CONFIGS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ListNotificationConfigsRequest,
-              ListNotificationConfigsResponse,
+              ListNotificationConfigsRequest, ListNotificationConfigsResponse,
               NotificationConfig>() {
             @Override
             public String emptyToken() {
@@ -481,8 +478,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
                 ApiCallContext context,
                 ApiFuture<ListFindingsResponse> futureResponse) {
               PageContext<
-                      ListFindingsRequest,
-                      ListFindingsResponse,
+                      ListFindingsRequest, ListFindingsResponse,
                       ListFindingsResponse.ListFindingsResult>
                   pageContext =
                       PageContext.create(callable, LIST_FINDINGS_PAGE_STR_DESC, request, context);
@@ -491,13 +487,11 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
           };
 
   private static final PagedListResponseFactory<
-          ListNotificationConfigsRequest,
-          ListNotificationConfigsResponse,
+          ListNotificationConfigsRequest, ListNotificationConfigsResponse,
           ListNotificationConfigsPagedResponse>
       LIST_NOTIFICATION_CONFIGS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListNotificationConfigsRequest,
-              ListNotificationConfigsResponse,
+              ListNotificationConfigsRequest, ListNotificationConfigsResponse,
               ListNotificationConfigsPagedResponse>() {
             @Override
             public ApiFuture<ListNotificationConfigsPagedResponse> getFuturePagedResponse(
@@ -507,8 +501,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
                 ApiCallContext context,
                 ApiFuture<ListNotificationConfigsResponse> futureResponse) {
               PageContext<
-                      ListNotificationConfigsRequest,
-                      ListNotificationConfigsResponse,
+                      ListNotificationConfigsRequest, ListNotificationConfigsResponse,
                       NotificationConfig>
                   pageContext =
                       PageContext.create(
@@ -604,8 +597,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
 
   /** Returns the object with the settings used for calls to listNotificationConfigs. */
   public PagedCallSettings<
-          ListNotificationConfigsRequest,
-          ListNotificationConfigsResponse,
+          ListNotificationConfigsRequest, ListNotificationConfigsResponse,
           ListNotificationConfigsPagedResponse>
       listNotificationConfigsSettings() {
     return listNotificationConfigsSettings;
@@ -797,8 +789,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
             ListFindingsRequest, ListFindingsResponse, ListFindingsPagedResponse>
         listFindingsSettings;
     private final PagedCallSettings.Builder<
-            ListNotificationConfigsRequest,
-            ListNotificationConfigsResponse,
+            ListNotificationConfigsRequest, ListNotificationConfigsResponse,
             ListNotificationConfigsPagedResponse>
         listNotificationConfigsSettings;
     private final PagedCallSettings.Builder<
@@ -1251,8 +1242,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
 
     /** Returns the builder for the settings used for calls to listNotificationConfigs. */
     public PagedCallSettings.Builder<
-            ListNotificationConfigsRequest,
-            ListNotificationConfigsResponse,
+            ListNotificationConfigsRequest, ListNotificationConfigsResponse,
             ListNotificationConfigsPagedResponse>
         listNotificationConfigsSettings() {
       return listNotificationConfigsSettings;

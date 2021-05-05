@@ -73,9 +73,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (cloudbilling.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (cloudbilling.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -114,8 +114,7 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
   private final UnaryCallSettings<CreateBillingAccountRequest, BillingAccount>
       createBillingAccountSettings;
   private final PagedCallSettings<
-          ListProjectBillingInfoRequest,
-          ListProjectBillingInfoResponse,
+          ListProjectBillingInfoRequest, ListProjectBillingInfoResponse,
           ListProjectBillingInfoPagedResponse>
       listProjectBillingInfoSettings;
   private final UnaryCallSettings<GetProjectBillingInfoRequest, ProjectBillingInfo>
@@ -214,8 +213,7 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
           ListBillingAccountsRequest, ListBillingAccountsResponse, ListBillingAccountsPagedResponse>
       LIST_BILLING_ACCOUNTS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListBillingAccountsRequest,
-              ListBillingAccountsResponse,
+              ListBillingAccountsRequest, ListBillingAccountsResponse,
               ListBillingAccountsPagedResponse>() {
             @Override
             public ApiFuture<ListBillingAccountsPagedResponse> getFuturePagedResponse(
@@ -232,13 +230,11 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
           };
 
   private static final PagedListResponseFactory<
-          ListProjectBillingInfoRequest,
-          ListProjectBillingInfoResponse,
+          ListProjectBillingInfoRequest, ListProjectBillingInfoResponse,
           ListProjectBillingInfoPagedResponse>
       LIST_PROJECT_BILLING_INFO_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListProjectBillingInfoRequest,
-              ListProjectBillingInfoResponse,
+              ListProjectBillingInfoRequest, ListProjectBillingInfoResponse,
               ListProjectBillingInfoPagedResponse>() {
             @Override
             public ApiFuture<ListProjectBillingInfoPagedResponse> getFuturePagedResponse(
@@ -248,8 +244,7 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
                 ApiCallContext context,
                 ApiFuture<ListProjectBillingInfoResponse> futureResponse) {
               PageContext<
-                      ListProjectBillingInfoRequest,
-                      ListProjectBillingInfoResponse,
+                      ListProjectBillingInfoRequest, ListProjectBillingInfoResponse,
                       ProjectBillingInfo>
                   pageContext =
                       PageContext.create(
@@ -284,8 +279,7 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
 
   /** Returns the object with the settings used for calls to listProjectBillingInfo. */
   public PagedCallSettings<
-          ListProjectBillingInfoRequest,
-          ListProjectBillingInfoResponse,
+          ListProjectBillingInfoRequest, ListProjectBillingInfoResponse,
           ListProjectBillingInfoPagedResponse>
       listProjectBillingInfoSettings() {
     return listProjectBillingInfoSettings;
@@ -406,8 +400,7 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
     private final UnaryCallSettings.Builder<GetBillingAccountRequest, BillingAccount>
         getBillingAccountSettings;
     private final PagedCallSettings.Builder<
-            ListBillingAccountsRequest,
-            ListBillingAccountsResponse,
+            ListBillingAccountsRequest, ListBillingAccountsResponse,
             ListBillingAccountsPagedResponse>
         listBillingAccountsSettings;
     private final UnaryCallSettings.Builder<UpdateBillingAccountRequest, BillingAccount>
@@ -415,8 +408,7 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
     private final UnaryCallSettings.Builder<CreateBillingAccountRequest, BillingAccount>
         createBillingAccountSettings;
     private final PagedCallSettings.Builder<
-            ListProjectBillingInfoRequest,
-            ListProjectBillingInfoResponse,
+            ListProjectBillingInfoRequest, ListProjectBillingInfoResponse,
             ListProjectBillingInfoPagedResponse>
         listProjectBillingInfoSettings;
     private final UnaryCallSettings.Builder<GetProjectBillingInfoRequest, ProjectBillingInfo>
@@ -622,8 +614,7 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
 
     /** Returns the builder for the settings used for calls to listBillingAccounts. */
     public PagedCallSettings.Builder<
-            ListBillingAccountsRequest,
-            ListBillingAccountsResponse,
+            ListBillingAccountsRequest, ListBillingAccountsResponse,
             ListBillingAccountsPagedResponse>
         listBillingAccountsSettings() {
       return listBillingAccountsSettings;
@@ -643,8 +634,7 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
 
     /** Returns the builder for the settings used for calls to listProjectBillingInfo. */
     public PagedCallSettings.Builder<
-            ListProjectBillingInfoRequest,
-            ListProjectBillingInfoResponse,
+            ListProjectBillingInfoRequest, ListProjectBillingInfoResponse,
             ListProjectBillingInfoPagedResponse>
         listProjectBillingInfoSettings() {
       return listProjectBillingInfoSettings;

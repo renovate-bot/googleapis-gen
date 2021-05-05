@@ -93,13 +93,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -602,26 +602,26 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>For triggered builds:
    *
    * <ul>
-   *   <li>Triggered builds resolve to a precise revision; therefore a retry of a triggered build
+   *   <li> Triggered builds resolve to a precise revision; therefore a retry of a triggered build
    *       will result in a build that uses the same revision.
    * </ul>
    *
    * <p>For non-triggered builds that specify `RepoSource`:
    *
    * <ul>
-   *   <li>If the original build built from the tip of a branch, the retried build will build from
+   *   <li> If the original build built from the tip of a branch, the retried build will build from
    *       the tip of that branch, which may not be the same revision as the original build.
-   *   <li>If the original build specified a commit sha or revision ID, the retried build will use
+   *   <li> If the original build specified a commit sha or revision ID, the retried build will use
    *       the identical source.
    * </ul>
    *
    * <p>For builds that specify `StorageSource`:
    *
    * <ul>
-   *   <li>If the original build pulled source from Google Cloud Storage without specifying the
+   *   <li> If the original build pulled source from Google Cloud Storage without specifying the
    *       generation of the object, the new build will use the current object, which may be
    *       different from the original build source.
-   *   <li>If the original build pulled source from Cloud Storage and specified the generation of
+   *   <li> If the original build pulled source from Cloud Storage and specified the generation of
    *       the object, the new build will attempt to use the same object, which may or may not be
    *       available depending on the bucket's lifecycle management settings.
    * </ul>
@@ -657,26 +657,26 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>For triggered builds:
    *
    * <ul>
-   *   <li>Triggered builds resolve to a precise revision; therefore a retry of a triggered build
+   *   <li> Triggered builds resolve to a precise revision; therefore a retry of a triggered build
    *       will result in a build that uses the same revision.
    * </ul>
    *
    * <p>For non-triggered builds that specify `RepoSource`:
    *
    * <ul>
-   *   <li>If the original build built from the tip of a branch, the retried build will build from
+   *   <li> If the original build built from the tip of a branch, the retried build will build from
    *       the tip of that branch, which may not be the same revision as the original build.
-   *   <li>If the original build specified a commit sha or revision ID, the retried build will use
+   *   <li> If the original build specified a commit sha or revision ID, the retried build will use
    *       the identical source.
    * </ul>
    *
    * <p>For builds that specify `StorageSource`:
    *
    * <ul>
-   *   <li>If the original build pulled source from Google Cloud Storage without specifying the
+   *   <li> If the original build pulled source from Google Cloud Storage without specifying the
    *       generation of the object, the new build will use the current object, which may be
    *       different from the original build source.
-   *   <li>If the original build pulled source from Cloud Storage and specified the generation of
+   *   <li> If the original build pulled source from Cloud Storage and specified the generation of
    *       the object, the new build will attempt to use the same object, which may or may not be
    *       available depending on the bucket's lifecycle management settings.
    * </ul>
@@ -713,26 +713,26 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>For triggered builds:
    *
    * <ul>
-   *   <li>Triggered builds resolve to a precise revision; therefore a retry of a triggered build
+   *   <li> Triggered builds resolve to a precise revision; therefore a retry of a triggered build
    *       will result in a build that uses the same revision.
    * </ul>
    *
    * <p>For non-triggered builds that specify `RepoSource`:
    *
    * <ul>
-   *   <li>If the original build built from the tip of a branch, the retried build will build from
+   *   <li> If the original build built from the tip of a branch, the retried build will build from
    *       the tip of that branch, which may not be the same revision as the original build.
-   *   <li>If the original build specified a commit sha or revision ID, the retried build will use
+   *   <li> If the original build specified a commit sha or revision ID, the retried build will use
    *       the identical source.
    * </ul>
    *
    * <p>For builds that specify `StorageSource`:
    *
    * <ul>
-   *   <li>If the original build pulled source from Google Cloud Storage without specifying the
+   *   <li> If the original build pulled source from Google Cloud Storage without specifying the
    *       generation of the object, the new build will use the current object, which may be
    *       different from the original build source.
-   *   <li>If the original build pulled source from Cloud Storage and specified the generation of
+   *   <li> If the original build pulled source from Cloud Storage and specified the generation of
    *       the object, the new build will attempt to use the same object, which may or may not be
    *       available depending on the bucket's lifecycle management settings.
    * </ul>
@@ -769,26 +769,26 @@ public class CloudBuildClient implements BackgroundResource {
    * <p>For triggered builds:
    *
    * <ul>
-   *   <li>Triggered builds resolve to a precise revision; therefore a retry of a triggered build
+   *   <li> Triggered builds resolve to a precise revision; therefore a retry of a triggered build
    *       will result in a build that uses the same revision.
    * </ul>
    *
    * <p>For non-triggered builds that specify `RepoSource`:
    *
    * <ul>
-   *   <li>If the original build built from the tip of a branch, the retried build will build from
+   *   <li> If the original build built from the tip of a branch, the retried build will build from
    *       the tip of that branch, which may not be the same revision as the original build.
-   *   <li>If the original build specified a commit sha or revision ID, the retried build will use
+   *   <li> If the original build specified a commit sha or revision ID, the retried build will use
    *       the identical source.
    * </ul>
    *
    * <p>For builds that specify `StorageSource`:
    *
    * <ul>
-   *   <li>If the original build pulled source from Google Cloud Storage without specifying the
+   *   <li> If the original build pulled source from Google Cloud Storage without specifying the
    *       generation of the object, the new build will use the current object, which may be
    *       different from the original build source.
-   *   <li>If the original build pulled source from Cloud Storage and specified the generation of
+   *   <li> If the original build pulled source from Cloud Storage and specified the generation of
    *       the object, the new build will attempt to use the same object, which may or may not be
    *       available depending on the bucket's lifecycle management settings.
    * </ul>
@@ -1694,10 +1694,7 @@ public class CloudBuildClient implements BackgroundResource {
 
   public static class ListBuildsPagedResponse
       extends AbstractPagedListResponse<
-          ListBuildsRequest,
-          ListBuildsResponse,
-          Build,
-          ListBuildsPage,
+          ListBuildsRequest, ListBuildsResponse, Build, ListBuildsPage,
           ListBuildsFixedSizeCollection> {
 
     public static ApiFuture<ListBuildsPagedResponse> createAsync(
@@ -1751,10 +1748,7 @@ public class CloudBuildClient implements BackgroundResource {
 
   public static class ListBuildsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListBuildsRequest,
-          ListBuildsResponse,
-          Build,
-          ListBuildsPage,
+          ListBuildsRequest, ListBuildsResponse, Build, ListBuildsPage,
           ListBuildsFixedSizeCollection> {
 
     private ListBuildsFixedSizeCollection(List<ListBuildsPage> pages, int collectionSize) {
@@ -1774,10 +1768,7 @@ public class CloudBuildClient implements BackgroundResource {
 
   public static class ListBuildTriggersPagedResponse
       extends AbstractPagedListResponse<
-          ListBuildTriggersRequest,
-          ListBuildTriggersResponse,
-          BuildTrigger,
-          ListBuildTriggersPage,
+          ListBuildTriggersRequest, ListBuildTriggersResponse, BuildTrigger, ListBuildTriggersPage,
           ListBuildTriggersFixedSizeCollection> {
 
     public static ApiFuture<ListBuildTriggersPagedResponse> createAsync(
@@ -1803,9 +1794,7 @@ public class CloudBuildClient implements BackgroundResource {
 
   public static class ListBuildTriggersPage
       extends AbstractPage<
-          ListBuildTriggersRequest,
-          ListBuildTriggersResponse,
-          BuildTrigger,
+          ListBuildTriggersRequest, ListBuildTriggersResponse, BuildTrigger,
           ListBuildTriggersPage> {
 
     private ListBuildTriggersPage(
@@ -1835,10 +1824,7 @@ public class CloudBuildClient implements BackgroundResource {
 
   public static class ListBuildTriggersFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListBuildTriggersRequest,
-          ListBuildTriggersResponse,
-          BuildTrigger,
-          ListBuildTriggersPage,
+          ListBuildTriggersRequest, ListBuildTriggersResponse, BuildTrigger, ListBuildTriggersPage,
           ListBuildTriggersFixedSizeCollection> {
 
     private ListBuildTriggersFixedSizeCollection(

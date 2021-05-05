@@ -49,17 +49,17 @@ import javax.annotation.Generated;
  * Memcached below) instances:
  *
  * <ul>
- *   <li>The service works with a collection of cloud projects, named: `/projects/&#42;`
- *   <li>Each project has a collection of available locations, named: `/locations/&#42;`
- *   <li>Each location has a collection of Memcached instances, named: `/instances/&#42;`
- *   <li>As such, Memcached instances are resources of the form:
+ *   <li> The service works with a collection of cloud projects, named: `/projects/&#42;`
+ *   <li> Each project has a collection of available locations, named: `/locations/&#42;`
+ *   <li> Each location has a collection of Memcached instances, named: `/instances/&#42;`
+ *   <li> As such, Memcached instances are resources of the form:
  *       `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
  * </ul>
  *
  * <p>Note that location_id must be a GCP `region`; for example:
  *
  * <ul>
- *   <li>`projects/my-memcached-project/locations/us-central1/instances/my-memcached`
+ *   <li> `projects/my-memcached-project/locations/us-central1/instances/my-memcached`
  * </ul>
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
@@ -79,13 +79,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -441,11 +441,11 @@ public class CloudMemcacheClient implements BackgroundResource {
    * @param instanceId Required. The logical name of the Memcached instance in the user project with
    *     the following restrictions:
    *     <ul>
-   *       <li>Must contain only lowercase letters, numbers, and hyphens.
-   *       <li>Must start with a letter.
-   *       <li>Must be between 1-40 characters.
-   *       <li>Must end with a number or a letter.
-   *       <li>Must be unique within the user project / location.
+   *       <li> Must contain only lowercase letters, numbers, and hyphens.
+   *       <li> Must start with a letter.
+   *       <li> Must be between 1-40 characters.
+   *       <li> Must end with a number or a letter.
+   *       <li> Must be unique within the user project / location.
    *     </ul>
    *     <p>If any of the above are not met, the API raises an invalid argument error.
    * @param resource Required. A Memcached [Instance] resource
@@ -483,11 +483,11 @@ public class CloudMemcacheClient implements BackgroundResource {
    * @param instanceId Required. The logical name of the Memcached instance in the user project with
    *     the following restrictions:
    *     <ul>
-   *       <li>Must contain only lowercase letters, numbers, and hyphens.
-   *       <li>Must start with a letter.
-   *       <li>Must be between 1-40 characters.
-   *       <li>Must end with a number or a letter.
-   *       <li>Must be unique within the user project / location.
+   *       <li> Must contain only lowercase letters, numbers, and hyphens.
+   *       <li> Must start with a letter.
+   *       <li> Must be between 1-40 characters.
+   *       <li> Must end with a number or a letter.
+   *       <li> Must be unique within the user project / location.
    *     </ul>
    *     <p>If any of the above are not met, the API raises an invalid argument error.
    * @param resource Required. A Memcached [Instance] resource
@@ -1283,10 +1283,7 @@ public class CloudMemcacheClient implements BackgroundResource {
 
   public static class ListInstancesPagedResponse
       extends AbstractPagedListResponse<
-          ListInstancesRequest,
-          ListInstancesResponse,
-          Instance,
-          ListInstancesPage,
+          ListInstancesRequest, ListInstancesResponse, Instance, ListInstancesPage,
           ListInstancesFixedSizeCollection> {
 
     public static ApiFuture<ListInstancesPagedResponse> createAsync(
@@ -1341,10 +1338,7 @@ public class CloudMemcacheClient implements BackgroundResource {
 
   public static class ListInstancesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListInstancesRequest,
-          ListInstancesResponse,
-          Instance,
-          ListInstancesPage,
+          ListInstancesRequest, ListInstancesResponse, Instance, ListInstancesPage,
           ListInstancesFixedSizeCollection> {
 
     private ListInstancesFixedSizeCollection(List<ListInstancesPage> pages, int collectionSize) {

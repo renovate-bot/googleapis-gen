@@ -89,9 +89,9 @@ import javax.annotation.Generated;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (iam.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (iam.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -272,8 +272,7 @@ public class IAMSettings extends ClientSettings<IAMSettings> {
 
   /** Returns the object with the settings used for calls to queryTestablePermissions. */
   public PagedCallSettings<
-          QueryTestablePermissionsRequest,
-          QueryTestablePermissionsResponse,
+          QueryTestablePermissionsRequest, QueryTestablePermissionsResponse,
           QueryTestablePermissionsPagedResponse>
       queryTestablePermissionsSettings() {
     return ((IAMStubSettings) getStubSettings()).queryTestablePermissionsSettings();
@@ -389,8 +388,7 @@ public class IAMSettings extends ClientSettings<IAMSettings> {
 
     /** Returns the builder for the settings used for calls to listServiceAccounts. */
     public PagedCallSettings.Builder<
-            ListServiceAccountsRequest,
-            ListServiceAccountsResponse,
+            ListServiceAccountsRequest, ListServiceAccountsResponse,
             ListServiceAccountsPagedResponse>
         listServiceAccountsSettings() {
       return getStubSettingsBuilder().listServiceAccountsSettings();
@@ -512,8 +510,7 @@ public class IAMSettings extends ClientSettings<IAMSettings> {
 
     /** Returns the builder for the settings used for calls to queryGrantableRoles. */
     public PagedCallSettings.Builder<
-            QueryGrantableRolesRequest,
-            QueryGrantableRolesResponse,
+            QueryGrantableRolesRequest, QueryGrantableRolesResponse,
             QueryGrantableRolesPagedResponse>
         queryGrantableRolesSettings() {
       return getStubSettingsBuilder().queryGrantableRolesSettings();
@@ -552,8 +549,7 @@ public class IAMSettings extends ClientSettings<IAMSettings> {
 
     /** Returns the builder for the settings used for calls to queryTestablePermissions. */
     public PagedCallSettings.Builder<
-            QueryTestablePermissionsRequest,
-            QueryTestablePermissionsResponse,
+            QueryTestablePermissionsRequest, QueryTestablePermissionsResponse,
             QueryTestablePermissionsPagedResponse>
         queryTestablePermissionsSettings() {
       return getStubSettingsBuilder().queryTestablePermissionsSettings();

@@ -81,9 +81,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (tpu.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (tpu.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -130,15 +130,13 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
   private final OperationCallSettings<StartNodeRequest, Node, OperationMetadata>
       startNodeOperationSettings;
   private final PagedCallSettings<
-          ListTensorFlowVersionsRequest,
-          ListTensorFlowVersionsResponse,
+          ListTensorFlowVersionsRequest, ListTensorFlowVersionsResponse,
           ListTensorFlowVersionsPagedResponse>
       listTensorFlowVersionsSettings;
   private final UnaryCallSettings<GetTensorFlowVersionRequest, TensorFlowVersion>
       getTensorFlowVersionSettings;
   private final PagedCallSettings<
-          ListAcceleratorTypesRequest,
-          ListAcceleratorTypesResponse,
+          ListAcceleratorTypesRequest, ListAcceleratorTypesResponse,
           ListAcceleratorTypesPagedResponse>
       listAcceleratorTypesSettings;
   private final UnaryCallSettings<GetAcceleratorTypeRequest, AcceleratorType>
@@ -282,13 +280,11 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
           };
 
   private static final PagedListResponseFactory<
-          ListTensorFlowVersionsRequest,
-          ListTensorFlowVersionsResponse,
+          ListTensorFlowVersionsRequest, ListTensorFlowVersionsResponse,
           ListTensorFlowVersionsPagedResponse>
       LIST_TENSOR_FLOW_VERSIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListTensorFlowVersionsRequest,
-              ListTensorFlowVersionsResponse,
+              ListTensorFlowVersionsRequest, ListTensorFlowVersionsResponse,
               ListTensorFlowVersionsPagedResponse>() {
             @Override
             public ApiFuture<ListTensorFlowVersionsPagedResponse> getFuturePagedResponse(
@@ -298,8 +294,7 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
                 ApiCallContext context,
                 ApiFuture<ListTensorFlowVersionsResponse> futureResponse) {
               PageContext<
-                      ListTensorFlowVersionsRequest,
-                      ListTensorFlowVersionsResponse,
+                      ListTensorFlowVersionsRequest, ListTensorFlowVersionsResponse,
                       TensorFlowVersion>
                   pageContext =
                       PageContext.create(
@@ -309,13 +304,11 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
           };
 
   private static final PagedListResponseFactory<
-          ListAcceleratorTypesRequest,
-          ListAcceleratorTypesResponse,
+          ListAcceleratorTypesRequest, ListAcceleratorTypesResponse,
           ListAcceleratorTypesPagedResponse>
       LIST_ACCELERATOR_TYPES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListAcceleratorTypesRequest,
-              ListAcceleratorTypesResponse,
+              ListAcceleratorTypesRequest, ListAcceleratorTypesResponse,
               ListAcceleratorTypesPagedResponse>() {
             @Override
             public ApiFuture<ListAcceleratorTypesPagedResponse> getFuturePagedResponse(
@@ -400,8 +393,7 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
 
   /** Returns the object with the settings used for calls to listTensorFlowVersions. */
   public PagedCallSettings<
-          ListTensorFlowVersionsRequest,
-          ListTensorFlowVersionsResponse,
+          ListTensorFlowVersionsRequest, ListTensorFlowVersionsResponse,
           ListTensorFlowVersionsPagedResponse>
       listTensorFlowVersionsSettings() {
     return listTensorFlowVersionsSettings;
@@ -415,8 +407,7 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
 
   /** Returns the object with the settings used for calls to listAcceleratorTypes. */
   public PagedCallSettings<
-          ListAcceleratorTypesRequest,
-          ListAcceleratorTypesResponse,
+          ListAcceleratorTypesRequest, ListAcceleratorTypesResponse,
           ListAcceleratorTypesPagedResponse>
       listAcceleratorTypesSettings() {
     return listAcceleratorTypesSettings;
@@ -537,15 +528,13 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
     private final OperationCallSettings.Builder<StartNodeRequest, Node, OperationMetadata>
         startNodeOperationSettings;
     private final PagedCallSettings.Builder<
-            ListTensorFlowVersionsRequest,
-            ListTensorFlowVersionsResponse,
+            ListTensorFlowVersionsRequest, ListTensorFlowVersionsResponse,
             ListTensorFlowVersionsPagedResponse>
         listTensorFlowVersionsSettings;
     private final UnaryCallSettings.Builder<GetTensorFlowVersionRequest, TensorFlowVersion>
         getTensorFlowVersionSettings;
     private final PagedCallSettings.Builder<
-            ListAcceleratorTypesRequest,
-            ListAcceleratorTypesResponse,
+            ListAcceleratorTypesRequest, ListAcceleratorTypesResponse,
             ListAcceleratorTypesPagedResponse>
         listAcceleratorTypesSettings;
     private final UnaryCallSettings.Builder<GetAcceleratorTypeRequest, AcceleratorType>
@@ -928,8 +917,7 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
 
     /** Returns the builder for the settings used for calls to listTensorFlowVersions. */
     public PagedCallSettings.Builder<
-            ListTensorFlowVersionsRequest,
-            ListTensorFlowVersionsResponse,
+            ListTensorFlowVersionsRequest, ListTensorFlowVersionsResponse,
             ListTensorFlowVersionsPagedResponse>
         listTensorFlowVersionsSettings() {
       return listTensorFlowVersionsSettings;
@@ -943,8 +931,7 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
 
     /** Returns the builder for the settings used for calls to listAcceleratorTypes. */
     public PagedCallSettings.Builder<
-            ListAcceleratorTypesRequest,
-            ListAcceleratorTypesResponse,
+            ListAcceleratorTypesRequest, ListAcceleratorTypesResponse,
             ListAcceleratorTypesPagedResponse>
         listAcceleratorTypesSettings() {
       return listAcceleratorTypesSettings;

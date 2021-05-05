@@ -63,13 +63,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -649,12 +649,12 @@ public class UserEventServiceClient implements BackgroundResource {
    *     filter is not allowed. This filter can also be used with ListUserEvents API to list events
    *     that will be deleted. The eligible fields for filtering are:
    *     <ul>
-   *       <li>eventType - UserEvent.eventType field of type string.
-   *       <li>eventTime - in ISO 8601 "zulu" format.
-   *       <li>visitorId - field of type string. Specifying this will delete all events associated
+   *       <li> eventType - UserEvent.eventType field of type string.
+   *       <li> eventTime - in ISO 8601 "zulu" format.
+   *       <li> visitorId - field of type string. Specifying this will delete all events associated
    *           with a visitor.
-   *       <li>userId - field of type string. Specifying this will delete all events associated with
-   *           a user. Example 1: Deleting all events in a time range. `eventTime &gt;
+   *       <li> userId - field of type string. Specifying this will delete all events associated
+   *           with a user. Example 1: Deleting all events in a time range. `eventTime &gt;
    *           "2012-04-23T18:25:43.511Z" eventTime &lt; "2012-04-23T18:30:43.511Z"` Example 2:
    *           Deleting specific eventType in time range. `eventTime &gt; "2012-04-23T18:25:43.511Z"
    *           eventType = "detail-page-view"` Example 3: Deleting all events for a specific visitor
@@ -703,12 +703,12 @@ public class UserEventServiceClient implements BackgroundResource {
    *     filter is not allowed. This filter can also be used with ListUserEvents API to list events
    *     that will be deleted. The eligible fields for filtering are:
    *     <ul>
-   *       <li>eventType - UserEvent.eventType field of type string.
-   *       <li>eventTime - in ISO 8601 "zulu" format.
-   *       <li>visitorId - field of type string. Specifying this will delete all events associated
+   *       <li> eventType - UserEvent.eventType field of type string.
+   *       <li> eventTime - in ISO 8601 "zulu" format.
+   *       <li> visitorId - field of type string. Specifying this will delete all events associated
    *           with a visitor.
-   *       <li>userId - field of type string. Specifying this will delete all events associated with
-   *           a user. Example 1: Deleting all events in a time range. `eventTime &gt;
+   *       <li> userId - field of type string. Specifying this will delete all events associated
+   *           with a user. Example 1: Deleting all events in a time range. `eventTime &gt;
    *           "2012-04-23T18:25:43.511Z" eventTime &lt; "2012-04-23T18:30:43.511Z"` Example 2:
    *           Deleting specific eventType in time range. `eventTime &gt; "2012-04-23T18:25:43.511Z"
    *           eventType = "detail-page-view"` Example 3: Deleting all events for a specific visitor
@@ -1049,10 +1049,7 @@ public class UserEventServiceClient implements BackgroundResource {
 
   public static class ListUserEventsPagedResponse
       extends AbstractPagedListResponse<
-          ListUserEventsRequest,
-          ListUserEventsResponse,
-          UserEvent,
-          ListUserEventsPage,
+          ListUserEventsRequest, ListUserEventsResponse, UserEvent, ListUserEventsPage,
           ListUserEventsFixedSizeCollection> {
 
     public static ApiFuture<ListUserEventsPagedResponse> createAsync(
@@ -1107,10 +1104,7 @@ public class UserEventServiceClient implements BackgroundResource {
 
   public static class ListUserEventsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListUserEventsRequest,
-          ListUserEventsResponse,
-          UserEvent,
-          ListUserEventsPage,
+          ListUserEventsRequest, ListUserEventsResponse, UserEvent, ListUserEventsPage,
           ListUserEventsFixedSizeCollection> {
 
     private ListUserEventsFixedSizeCollection(List<ListUserEventsPage> pages, int collectionSize) {

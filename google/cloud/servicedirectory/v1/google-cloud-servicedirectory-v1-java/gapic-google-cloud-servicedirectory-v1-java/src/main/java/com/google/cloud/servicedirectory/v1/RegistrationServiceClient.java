@@ -77,13 +77,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -1932,10 +1932,7 @@ public class RegistrationServiceClient implements BackgroundResource {
 
   public static class ListNamespacesPagedResponse
       extends AbstractPagedListResponse<
-          ListNamespacesRequest,
-          ListNamespacesResponse,
-          Namespace,
-          ListNamespacesPage,
+          ListNamespacesRequest, ListNamespacesResponse, Namespace, ListNamespacesPage,
           ListNamespacesFixedSizeCollection> {
 
     public static ApiFuture<ListNamespacesPagedResponse> createAsync(
@@ -1990,10 +1987,7 @@ public class RegistrationServiceClient implements BackgroundResource {
 
   public static class ListNamespacesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListNamespacesRequest,
-          ListNamespacesResponse,
-          Namespace,
-          ListNamespacesPage,
+          ListNamespacesRequest, ListNamespacesResponse, Namespace, ListNamespacesPage,
           ListNamespacesFixedSizeCollection> {
 
     private ListNamespacesFixedSizeCollection(List<ListNamespacesPage> pages, int collectionSize) {
@@ -2013,10 +2007,7 @@ public class RegistrationServiceClient implements BackgroundResource {
 
   public static class ListServicesPagedResponse
       extends AbstractPagedListResponse<
-          ListServicesRequest,
-          ListServicesResponse,
-          Service,
-          ListServicesPage,
+          ListServicesRequest, ListServicesResponse, Service, ListServicesPage,
           ListServicesFixedSizeCollection> {
 
     public static ApiFuture<ListServicesPagedResponse> createAsync(
@@ -2070,10 +2061,7 @@ public class RegistrationServiceClient implements BackgroundResource {
 
   public static class ListServicesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListServicesRequest,
-          ListServicesResponse,
-          Service,
-          ListServicesPage,
+          ListServicesRequest, ListServicesResponse, Service, ListServicesPage,
           ListServicesFixedSizeCollection> {
 
     private ListServicesFixedSizeCollection(List<ListServicesPage> pages, int collectionSize) {
@@ -2093,10 +2081,7 @@ public class RegistrationServiceClient implements BackgroundResource {
 
   public static class ListEndpointsPagedResponse
       extends AbstractPagedListResponse<
-          ListEndpointsRequest,
-          ListEndpointsResponse,
-          Endpoint,
-          ListEndpointsPage,
+          ListEndpointsRequest, ListEndpointsResponse, Endpoint, ListEndpointsPage,
           ListEndpointsFixedSizeCollection> {
 
     public static ApiFuture<ListEndpointsPagedResponse> createAsync(
@@ -2151,10 +2136,7 @@ public class RegistrationServiceClient implements BackgroundResource {
 
   public static class ListEndpointsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListEndpointsRequest,
-          ListEndpointsResponse,
-          Endpoint,
-          ListEndpointsPage,
+          ListEndpointsRequest, ListEndpointsResponse, Endpoint, ListEndpointsPage,
           ListEndpointsFixedSizeCollection> {
 
     private ListEndpointsFixedSizeCollection(List<ListEndpointsPage> pages, int collectionSize) {

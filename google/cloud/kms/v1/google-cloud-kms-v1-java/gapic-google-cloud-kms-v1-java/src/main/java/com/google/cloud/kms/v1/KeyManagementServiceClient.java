@@ -82,13 +82,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -3089,10 +3089,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
   public static class ListKeyRingsPagedResponse
       extends AbstractPagedListResponse<
-          ListKeyRingsRequest,
-          ListKeyRingsResponse,
-          KeyRing,
-          ListKeyRingsPage,
+          ListKeyRingsRequest, ListKeyRingsResponse, KeyRing, ListKeyRingsPage,
           ListKeyRingsFixedSizeCollection> {
 
     public static ApiFuture<ListKeyRingsPagedResponse> createAsync(
@@ -3146,10 +3143,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
   public static class ListKeyRingsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListKeyRingsRequest,
-          ListKeyRingsResponse,
-          KeyRing,
-          ListKeyRingsPage,
+          ListKeyRingsRequest, ListKeyRingsResponse, KeyRing, ListKeyRingsPage,
           ListKeyRingsFixedSizeCollection> {
 
     private ListKeyRingsFixedSizeCollection(List<ListKeyRingsPage> pages, int collectionSize) {
@@ -3169,10 +3163,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
   public static class ListCryptoKeysPagedResponse
       extends AbstractPagedListResponse<
-          ListCryptoKeysRequest,
-          ListCryptoKeysResponse,
-          CryptoKey,
-          ListCryptoKeysPage,
+          ListCryptoKeysRequest, ListCryptoKeysResponse, CryptoKey, ListCryptoKeysPage,
           ListCryptoKeysFixedSizeCollection> {
 
     public static ApiFuture<ListCryptoKeysPagedResponse> createAsync(
@@ -3227,10 +3218,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
   public static class ListCryptoKeysFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListCryptoKeysRequest,
-          ListCryptoKeysResponse,
-          CryptoKey,
-          ListCryptoKeysPage,
+          ListCryptoKeysRequest, ListCryptoKeysResponse, CryptoKey, ListCryptoKeysPage,
           ListCryptoKeysFixedSizeCollection> {
 
     private ListCryptoKeysFixedSizeCollection(List<ListCryptoKeysPage> pages, int collectionSize) {
@@ -3250,11 +3238,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
   public static class ListCryptoKeyVersionsPagedResponse
       extends AbstractPagedListResponse<
-          ListCryptoKeyVersionsRequest,
-          ListCryptoKeyVersionsResponse,
-          CryptoKeyVersion,
-          ListCryptoKeyVersionsPage,
-          ListCryptoKeyVersionsFixedSizeCollection> {
+          ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse, CryptoKeyVersion,
+          ListCryptoKeyVersionsPage, ListCryptoKeyVersionsFixedSizeCollection> {
 
     public static ApiFuture<ListCryptoKeyVersionsPagedResponse> createAsync(
         PageContext<ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse, CryptoKeyVersion>
@@ -3280,9 +3265,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
   public static class ListCryptoKeyVersionsPage
       extends AbstractPage<
-          ListCryptoKeyVersionsRequest,
-          ListCryptoKeyVersionsResponse,
-          CryptoKeyVersion,
+          ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse, CryptoKeyVersion,
           ListCryptoKeyVersionsPage> {
 
     private ListCryptoKeyVersionsPage(
@@ -3315,11 +3298,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
   public static class ListCryptoKeyVersionsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListCryptoKeyVersionsRequest,
-          ListCryptoKeyVersionsResponse,
-          CryptoKeyVersion,
-          ListCryptoKeyVersionsPage,
-          ListCryptoKeyVersionsFixedSizeCollection> {
+          ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse, CryptoKeyVersion,
+          ListCryptoKeyVersionsPage, ListCryptoKeyVersionsFixedSizeCollection> {
 
     private ListCryptoKeyVersionsFixedSizeCollection(
         List<ListCryptoKeyVersionsPage> pages, int collectionSize) {
@@ -3339,10 +3319,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
   public static class ListImportJobsPagedResponse
       extends AbstractPagedListResponse<
-          ListImportJobsRequest,
-          ListImportJobsResponse,
-          ImportJob,
-          ListImportJobsPage,
+          ListImportJobsRequest, ListImportJobsResponse, ImportJob, ListImportJobsPage,
           ListImportJobsFixedSizeCollection> {
 
     public static ApiFuture<ListImportJobsPagedResponse> createAsync(
@@ -3397,10 +3374,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
 
   public static class ListImportJobsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListImportJobsRequest,
-          ListImportJobsResponse,
-          ImportJob,
-          ListImportJobsPage,
+          ListImportJobsRequest, ListImportJobsResponse, ImportJob, ListImportJobsPage,
           ListImportJobsFixedSizeCollection> {
 
     private ListImportJobsFixedSizeCollection(List<ListImportJobsPage> pages, int collectionSize) {

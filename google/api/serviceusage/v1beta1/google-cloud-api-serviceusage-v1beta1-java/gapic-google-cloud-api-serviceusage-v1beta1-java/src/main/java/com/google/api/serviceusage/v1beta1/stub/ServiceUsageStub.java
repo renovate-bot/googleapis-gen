@@ -240,8 +240,7 @@ public abstract class ServiceUsageStub implements BackgroundResource {
   }
 
   public OperationCallable<
-          ImportConsumerOverridesRequest,
-          ImportConsumerOverridesResponse,
+          ImportConsumerOverridesRequest, ImportConsumerOverridesResponse,
           ImportConsumerOverridesMetadata>
       importConsumerOverridesOperationCallable() {
     throw new UnsupportedOperationException(

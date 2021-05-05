@@ -53,9 +53,9 @@ import javax.annotation.Generated;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (datalabeling.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (datalabeling.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -147,8 +147,7 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
 
   /** Returns the object with the settings used for calls to listAnnotatedDatasets. */
   public PagedCallSettings<
-          ListAnnotatedDatasetsRequest,
-          ListAnnotatedDatasetsResponse,
+          ListAnnotatedDatasetsRequest, ListAnnotatedDatasetsResponse,
           ListAnnotatedDatasetsPagedResponse>
       listAnnotatedDatasetsSettings() {
     return ((DataLabelingServiceStubSettings) getStubSettings()).listAnnotatedDatasetsSettings();
@@ -217,8 +216,7 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
 
   /** Returns the object with the settings used for calls to listAnnotationSpecSets. */
   public PagedCallSettings<
-          ListAnnotationSpecSetsRequest,
-          ListAnnotationSpecSetsResponse,
+          ListAnnotationSpecSetsRequest, ListAnnotationSpecSetsResponse,
           ListAnnotationSpecSetsPagedResponse>
       listAnnotationSpecSetsSettings() {
     return ((DataLabelingServiceStubSettings) getStubSettings()).listAnnotationSpecSetsSettings();
@@ -273,8 +271,7 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
 
   /** Returns the object with the settings used for calls to searchExampleComparisons. */
   public PagedCallSettings<
-          SearchExampleComparisonsRequest,
-          SearchExampleComparisonsResponse,
+          SearchExampleComparisonsRequest, SearchExampleComparisonsResponse,
           SearchExampleComparisonsPagedResponse>
       searchExampleComparisonsSettings() {
     return ((DataLabelingServiceStubSettings) getStubSettings()).searchExampleComparisonsSettings();
@@ -483,8 +480,7 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
 
     /** Returns the builder for the settings used for calls to listAnnotatedDatasets. */
     public PagedCallSettings.Builder<
-            ListAnnotatedDatasetsRequest,
-            ListAnnotatedDatasetsResponse,
+            ListAnnotatedDatasetsRequest, ListAnnotatedDatasetsResponse,
             ListAnnotatedDatasetsPagedResponse>
         listAnnotatedDatasetsSettings() {
       return getStubSettingsBuilder().listAnnotatedDatasetsSettings();
@@ -557,8 +553,7 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
 
     /** Returns the builder for the settings used for calls to listAnnotationSpecSets. */
     public PagedCallSettings.Builder<
-            ListAnnotationSpecSetsRequest,
-            ListAnnotationSpecSetsResponse,
+            ListAnnotationSpecSetsRequest, ListAnnotationSpecSetsResponse,
             ListAnnotationSpecSetsPagedResponse>
         listAnnotationSpecSetsSettings() {
       return getStubSettingsBuilder().listAnnotationSpecSetsSettings();
@@ -614,8 +609,7 @@ public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServ
 
     /** Returns the builder for the settings used for calls to searchExampleComparisons. */
     public PagedCallSettings.Builder<
-            SearchExampleComparisonsRequest,
-            SearchExampleComparisonsResponse,
+            SearchExampleComparisonsRequest, SearchExampleComparisonsResponse,
             SearchExampleComparisonsPagedResponse>
         searchExampleComparisonsSettings() {
       return getStubSettingsBuilder().searchExampleComparisonsSettings();

@@ -72,13 +72,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -180,10 +180,10 @@ public class OrgPolicyClient implements BackgroundResource {
    * @param parent Required. The Cloud resource that parents the constraint. Must be in one of the
    *     following forms:
    *     <ul>
-   *       <li>`projects/{project_number}`
-   *       <li>`projects/{project_id}`
-   *       <li>`folders/{folder_id}`
-   *       <li>`organizations/{organization_id}`
+   *       <li> `projects/{project_number}`
+   *       <li> `projects/{project_id}`
+   *       <li> `folders/{folder_id}`
+   *       <li> `organizations/{organization_id}`
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -214,10 +214,10 @@ public class OrgPolicyClient implements BackgroundResource {
    * @param parent Required. The Cloud resource that parents the constraint. Must be in one of the
    *     following forms:
    *     <ul>
-   *       <li>`projects/{project_number}`
-   *       <li>`projects/{project_id}`
-   *       <li>`folders/{folder_id}`
-   *       <li>`organizations/{organization_id}`
+   *       <li> `projects/{project_number}`
+   *       <li> `projects/{project_id}`
+   *       <li> `folders/{folder_id}`
+   *       <li> `organizations/{organization_id}`
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -248,10 +248,10 @@ public class OrgPolicyClient implements BackgroundResource {
    * @param parent Required. The Cloud resource that parents the constraint. Must be in one of the
    *     following forms:
    *     <ul>
-   *       <li>`projects/{project_number}`
-   *       <li>`projects/{project_id}`
-   *       <li>`folders/{folder_id}`
-   *       <li>`organizations/{organization_id}`
+   *       <li> `projects/{project_number}`
+   *       <li> `projects/{project_id}`
+   *       <li> `folders/{folder_id}`
+   *       <li> `organizations/{organization_id}`
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -283,10 +283,10 @@ public class OrgPolicyClient implements BackgroundResource {
    * @param parent Required. The Cloud resource that parents the constraint. Must be in one of the
    *     following forms:
    *     <ul>
-   *       <li>`projects/{project_number}`
-   *       <li>`projects/{project_id}`
-   *       <li>`folders/{folder_id}`
-   *       <li>`organizations/{organization_id}`
+   *       <li> `projects/{project_number}`
+   *       <li> `projects/{project_id}`
+   *       <li> `folders/{folder_id}`
+   *       <li> `organizations/{organization_id}`
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -406,10 +406,10 @@ public class OrgPolicyClient implements BackgroundResource {
    * @param parent Required. The target Cloud resource that parents the set of constraints and
    *     policies that will be returned from this call. Must be in one of the following forms:
    *     <ul>
-   *       <li>`projects/{project_number}`
-   *       <li>`projects/{project_id}`
-   *       <li>`folders/{folder_id}`
-   *       <li>`organizations/{organization_id}`
+   *       <li> `projects/{project_number}`
+   *       <li> `projects/{project_id}`
+   *       <li> `folders/{folder_id}`
+   *       <li> `organizations/{organization_id}`
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -440,10 +440,10 @@ public class OrgPolicyClient implements BackgroundResource {
    * @param parent Required. The target Cloud resource that parents the set of constraints and
    *     policies that will be returned from this call. Must be in one of the following forms:
    *     <ul>
-   *       <li>`projects/{project_number}`
-   *       <li>`projects/{project_id}`
-   *       <li>`folders/{folder_id}`
-   *       <li>`organizations/{organization_id}`
+   *       <li> `projects/{project_number}`
+   *       <li> `projects/{project_id}`
+   *       <li> `folders/{folder_id}`
+   *       <li> `organizations/{organization_id}`
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -474,10 +474,10 @@ public class OrgPolicyClient implements BackgroundResource {
    * @param parent Required. The target Cloud resource that parents the set of constraints and
    *     policies that will be returned from this call. Must be in one of the following forms:
    *     <ul>
-   *       <li>`projects/{project_number}`
-   *       <li>`projects/{project_id}`
-   *       <li>`folders/{folder_id}`
-   *       <li>`organizations/{organization_id}`
+   *       <li> `projects/{project_number}`
+   *       <li> `projects/{project_id}`
+   *       <li> `folders/{folder_id}`
+   *       <li> `organizations/{organization_id}`
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -508,10 +508,10 @@ public class OrgPolicyClient implements BackgroundResource {
    * @param parent Required. The target Cloud resource that parents the set of constraints and
    *     policies that will be returned from this call. Must be in one of the following forms:
    *     <ul>
-   *       <li>`projects/{project_number}`
-   *       <li>`projects/{project_id}`
-   *       <li>`folders/{folder_id}`
-   *       <li>`organizations/{organization_id}`
+   *       <li> `projects/{project_number}`
+   *       <li> `projects/{project_id}`
+   *       <li> `folders/{folder_id}`
+   *       <li> `organizations/{organization_id}`
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -832,10 +832,10 @@ public class OrgPolicyClient implements BackgroundResource {
    * @param parent Required. The Cloud resource that will parent the new Policy. Must be in one of
    *     the following forms:
    *     <ul>
-   *       <li>`projects/{project_number}`
-   *       <li>`projects/{project_id}`
-   *       <li>`folders/{folder_id}`
-   *       <li>`organizations/{organization_id}`
+   *       <li> `projects/{project_number}`
+   *       <li> `projects/{project_id}`
+   *       <li> `folders/{folder_id}`
+   *       <li> `organizations/{organization_id}`
    *     </ul>
    *
    * @param policy Required. `Policy` to create.
@@ -871,10 +871,10 @@ public class OrgPolicyClient implements BackgroundResource {
    * @param parent Required. The Cloud resource that will parent the new Policy. Must be in one of
    *     the following forms:
    *     <ul>
-   *       <li>`projects/{project_number}`
-   *       <li>`projects/{project_id}`
-   *       <li>`folders/{folder_id}`
-   *       <li>`organizations/{organization_id}`
+   *       <li> `projects/{project_number}`
+   *       <li> `projects/{project_id}`
+   *       <li> `folders/{folder_id}`
+   *       <li> `organizations/{organization_id}`
    *     </ul>
    *
    * @param policy Required. `Policy` to create.
@@ -910,10 +910,10 @@ public class OrgPolicyClient implements BackgroundResource {
    * @param parent Required. The Cloud resource that will parent the new Policy. Must be in one of
    *     the following forms:
    *     <ul>
-   *       <li>`projects/{project_number}`
-   *       <li>`projects/{project_id}`
-   *       <li>`folders/{folder_id}`
-   *       <li>`organizations/{organization_id}`
+   *       <li> `projects/{project_number}`
+   *       <li> `projects/{project_id}`
+   *       <li> `folders/{folder_id}`
+   *       <li> `organizations/{organization_id}`
    *     </ul>
    *
    * @param policy Required. `Policy` to create.
@@ -949,10 +949,10 @@ public class OrgPolicyClient implements BackgroundResource {
    * @param parent Required. The Cloud resource that will parent the new Policy. Must be in one of
    *     the following forms:
    *     <ul>
-   *       <li>`projects/{project_number}`
-   *       <li>`projects/{project_id}`
-   *       <li>`folders/{folder_id}`
-   *       <li>`organizations/{organization_id}`
+   *       <li> `projects/{project_number}`
+   *       <li> `projects/{project_id}`
+   *       <li> `folders/{folder_id}`
+   *       <li> `organizations/{organization_id}`
    *     </ul>
    *
    * @param policy Required. `Policy` to create.
@@ -1231,10 +1231,7 @@ public class OrgPolicyClient implements BackgroundResource {
 
   public static class ListConstraintsPagedResponse
       extends AbstractPagedListResponse<
-          ListConstraintsRequest,
-          ListConstraintsResponse,
-          Constraint,
-          ListConstraintsPage,
+          ListConstraintsRequest, ListConstraintsResponse, Constraint, ListConstraintsPage,
           ListConstraintsFixedSizeCollection> {
 
     public static ApiFuture<ListConstraintsPagedResponse> createAsync(
@@ -1289,10 +1286,7 @@ public class OrgPolicyClient implements BackgroundResource {
 
   public static class ListConstraintsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListConstraintsRequest,
-          ListConstraintsResponse,
-          Constraint,
-          ListConstraintsPage,
+          ListConstraintsRequest, ListConstraintsResponse, Constraint, ListConstraintsPage,
           ListConstraintsFixedSizeCollection> {
 
     private ListConstraintsFixedSizeCollection(
@@ -1313,10 +1307,7 @@ public class OrgPolicyClient implements BackgroundResource {
 
   public static class ListPoliciesPagedResponse
       extends AbstractPagedListResponse<
-          ListPoliciesRequest,
-          ListPoliciesResponse,
-          Policy,
-          ListPoliciesPage,
+          ListPoliciesRequest, ListPoliciesResponse, Policy, ListPoliciesPage,
           ListPoliciesFixedSizeCollection> {
 
     public static ApiFuture<ListPoliciesPagedResponse> createAsync(
@@ -1370,10 +1361,7 @@ public class OrgPolicyClient implements BackgroundResource {
 
   public static class ListPoliciesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListPoliciesRequest,
-          ListPoliciesResponse,
-          Policy,
-          ListPoliciesPage,
+          ListPoliciesRequest, ListPoliciesResponse, Policy, ListPoliciesPage,
           ListPoliciesFixedSizeCollection> {
 
     private ListPoliciesFixedSizeCollection(List<ListPoliciesPage> pages, int collectionSize) {

@@ -63,13 +63,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -833,11 +833,8 @@ public class PipelineServiceClient implements BackgroundResource {
 
   public static class ListTrainingPipelinesPagedResponse
       extends AbstractPagedListResponse<
-          ListTrainingPipelinesRequest,
-          ListTrainingPipelinesResponse,
-          TrainingPipeline,
-          ListTrainingPipelinesPage,
-          ListTrainingPipelinesFixedSizeCollection> {
+          ListTrainingPipelinesRequest, ListTrainingPipelinesResponse, TrainingPipeline,
+          ListTrainingPipelinesPage, ListTrainingPipelinesFixedSizeCollection> {
 
     public static ApiFuture<ListTrainingPipelinesPagedResponse> createAsync(
         PageContext<ListTrainingPipelinesRequest, ListTrainingPipelinesResponse, TrainingPipeline>
@@ -863,9 +860,7 @@ public class PipelineServiceClient implements BackgroundResource {
 
   public static class ListTrainingPipelinesPage
       extends AbstractPage<
-          ListTrainingPipelinesRequest,
-          ListTrainingPipelinesResponse,
-          TrainingPipeline,
+          ListTrainingPipelinesRequest, ListTrainingPipelinesResponse, TrainingPipeline,
           ListTrainingPipelinesPage> {
 
     private ListTrainingPipelinesPage(
@@ -898,11 +893,8 @@ public class PipelineServiceClient implements BackgroundResource {
 
   public static class ListTrainingPipelinesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListTrainingPipelinesRequest,
-          ListTrainingPipelinesResponse,
-          TrainingPipeline,
-          ListTrainingPipelinesPage,
-          ListTrainingPipelinesFixedSizeCollection> {
+          ListTrainingPipelinesRequest, ListTrainingPipelinesResponse, TrainingPipeline,
+          ListTrainingPipelinesPage, ListTrainingPipelinesFixedSizeCollection> {
 
     private ListTrainingPipelinesFixedSizeCollection(
         List<ListTrainingPipelinesPage> pages, int collectionSize) {

@@ -94,22 +94,22 @@ import javax.annotation.Generated;
  * <p>You can use this service to work with all of the following resources:
  *
  * <ul>
- *   <li>&#42;&#42;Service accounts&#42;&#42;, which identify an application or a virtual machine
+ *   <li> &#42;&#42;Service accounts&#42;&#42;, which identify an application or a virtual machine
  *       (VM) instance rather than a person
- *   <li>&#42;&#42;Service account keys&#42;&#42;, which service accounts use to authenticate with
+ *   <li> &#42;&#42;Service account keys&#42;&#42;, which service accounts use to authenticate with
  *       Google APIs
- *   <li>&#42;&#42;IAM policies for service accounts&#42;&#42;, which specify the roles that a
+ *   <li> &#42;&#42;IAM policies for service accounts&#42;&#42;, which specify the roles that a
  *       member has for the service account
- *   <li>&#42;&#42;IAM custom roles&#42;&#42;, which help you limit the number of permissions that
+ *   <li> &#42;&#42;IAM custom roles&#42;&#42;, which help you limit the number of permissions that
  *       you grant to members
  * </ul>
  *
  * <p>In addition, you can use this service to complete the following tasks, among others:
  *
  * <ul>
- *   <li>Test whether a service account can use specific permissions
- *   <li>Check which roles you can grant for a specific resource
- *   <li>Lint, or validate, condition expressions in an IAM policy
+ *   <li> Test whether a service account can use specific permissions
+ *   <li> Check which roles you can grant for a specific resource
+ *   <li> Lint, or validate, condition expressions in an IAM policy
  * </ul>
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
@@ -129,13 +129,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -2617,17 +2617,17 @@ public class IAMClient implements BackgroundResource {
    * <p>When you delete a custom role, the following changes occur immediately:
    *
    * <ul>
-   *   <li>You cannot bind a member to the custom role in an IAM [Policy][google.iam.v1.Policy].
-   *   <li>Existing bindings to the custom role are not changed, but they have no effect.
-   *   <li>By default, the response from [ListRoles][google.iam.admin.v1.IAM.ListRoles] does not
+   *   <li> You cannot bind a member to the custom role in an IAM [Policy][google.iam.v1.Policy].
+   *   <li> Existing bindings to the custom role are not changed, but they have no effect.
+   *   <li> By default, the response from [ListRoles][google.iam.admin.v1.IAM.ListRoles] does not
    *       include the custom role.
    * </ul>
    *
    * <p>You have 7 days to undelete the custom role. After 7 days, the following changes occur:
    *
    * <ul>
-   *   <li>The custom role is permanently deleted and cannot be recovered.
-   *   <li>If an IAM policy contains a binding to the custom role, the binding is permanently
+   *   <li> The custom role is permanently deleted and cannot be recovered.
+   *   <li> If an IAM policy contains a binding to the custom role, the binding is permanently
    *       removed.
    * </ul>
    *
@@ -2658,17 +2658,17 @@ public class IAMClient implements BackgroundResource {
    * <p>When you delete a custom role, the following changes occur immediately:
    *
    * <ul>
-   *   <li>You cannot bind a member to the custom role in an IAM [Policy][google.iam.v1.Policy].
-   *   <li>Existing bindings to the custom role are not changed, but they have no effect.
-   *   <li>By default, the response from [ListRoles][google.iam.admin.v1.IAM.ListRoles] does not
+   *   <li> You cannot bind a member to the custom role in an IAM [Policy][google.iam.v1.Policy].
+   *   <li> Existing bindings to the custom role are not changed, but they have no effect.
+   *   <li> By default, the response from [ListRoles][google.iam.admin.v1.IAM.ListRoles] does not
    *       include the custom role.
    * </ul>
    *
    * <p>You have 7 days to undelete the custom role. After 7 days, the following changes occur:
    *
    * <ul>
-   *   <li>The custom role is permanently deleted and cannot be recovered.
-   *   <li>If an IAM policy contains a binding to the custom role, the binding is permanently
+   *   <li> The custom role is permanently deleted and cannot be recovered.
+   *   <li> If an IAM policy contains a binding to the custom role, the binding is permanently
    *       removed.
    * </ul>
    *
@@ -2971,11 +2971,8 @@ public class IAMClient implements BackgroundResource {
 
   public static class ListServiceAccountsPagedResponse
       extends AbstractPagedListResponse<
-          ListServiceAccountsRequest,
-          ListServiceAccountsResponse,
-          ServiceAccount,
-          ListServiceAccountsPage,
-          ListServiceAccountsFixedSizeCollection> {
+          ListServiceAccountsRequest, ListServiceAccountsResponse, ServiceAccount,
+          ListServiceAccountsPage, ListServiceAccountsFixedSizeCollection> {
 
     public static ApiFuture<ListServiceAccountsPagedResponse> createAsync(
         PageContext<ListServiceAccountsRequest, ListServiceAccountsResponse, ServiceAccount>
@@ -3001,9 +2998,7 @@ public class IAMClient implements BackgroundResource {
 
   public static class ListServiceAccountsPage
       extends AbstractPage<
-          ListServiceAccountsRequest,
-          ListServiceAccountsResponse,
-          ServiceAccount,
+          ListServiceAccountsRequest, ListServiceAccountsResponse, ServiceAccount,
           ListServiceAccountsPage> {
 
     private ListServiceAccountsPage(
@@ -3036,11 +3031,8 @@ public class IAMClient implements BackgroundResource {
 
   public static class ListServiceAccountsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListServiceAccountsRequest,
-          ListServiceAccountsResponse,
-          ServiceAccount,
-          ListServiceAccountsPage,
-          ListServiceAccountsFixedSizeCollection> {
+          ListServiceAccountsRequest, ListServiceAccountsResponse, ServiceAccount,
+          ListServiceAccountsPage, ListServiceAccountsFixedSizeCollection> {
 
     private ListServiceAccountsFixedSizeCollection(
         List<ListServiceAccountsPage> pages, int collectionSize) {
@@ -3060,10 +3052,7 @@ public class IAMClient implements BackgroundResource {
 
   public static class QueryGrantableRolesPagedResponse
       extends AbstractPagedListResponse<
-          QueryGrantableRolesRequest,
-          QueryGrantableRolesResponse,
-          Role,
-          QueryGrantableRolesPage,
+          QueryGrantableRolesRequest, QueryGrantableRolesResponse, Role, QueryGrantableRolesPage,
           QueryGrantableRolesFixedSizeCollection> {
 
     public static ApiFuture<QueryGrantableRolesPagedResponse> createAsync(
@@ -3118,10 +3107,7 @@ public class IAMClient implements BackgroundResource {
 
   public static class QueryGrantableRolesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          QueryGrantableRolesRequest,
-          QueryGrantableRolesResponse,
-          Role,
-          QueryGrantableRolesPage,
+          QueryGrantableRolesRequest, QueryGrantableRolesResponse, Role, QueryGrantableRolesPage,
           QueryGrantableRolesFixedSizeCollection> {
 
     private QueryGrantableRolesFixedSizeCollection(
@@ -3214,11 +3200,8 @@ public class IAMClient implements BackgroundResource {
 
   public static class QueryTestablePermissionsPagedResponse
       extends AbstractPagedListResponse<
-          QueryTestablePermissionsRequest,
-          QueryTestablePermissionsResponse,
-          Permission,
-          QueryTestablePermissionsPage,
-          QueryTestablePermissionsFixedSizeCollection> {
+          QueryTestablePermissionsRequest, QueryTestablePermissionsResponse, Permission,
+          QueryTestablePermissionsPage, QueryTestablePermissionsFixedSizeCollection> {
 
     public static ApiFuture<QueryTestablePermissionsPagedResponse> createAsync(
         PageContext<QueryTestablePermissionsRequest, QueryTestablePermissionsResponse, Permission>
@@ -3244,9 +3227,7 @@ public class IAMClient implements BackgroundResource {
 
   public static class QueryTestablePermissionsPage
       extends AbstractPage<
-          QueryTestablePermissionsRequest,
-          QueryTestablePermissionsResponse,
-          Permission,
+          QueryTestablePermissionsRequest, QueryTestablePermissionsResponse, Permission,
           QueryTestablePermissionsPage> {
 
     private QueryTestablePermissionsPage(
@@ -3279,11 +3260,8 @@ public class IAMClient implements BackgroundResource {
 
   public static class QueryTestablePermissionsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          QueryTestablePermissionsRequest,
-          QueryTestablePermissionsResponse,
-          Permission,
-          QueryTestablePermissionsPage,
-          QueryTestablePermissionsFixedSizeCollection> {
+          QueryTestablePermissionsRequest, QueryTestablePermissionsResponse, Permission,
+          QueryTestablePermissionsPage, QueryTestablePermissionsFixedSizeCollection> {
 
     private QueryTestablePermissionsFixedSizeCollection(
         List<QueryTestablePermissionsPage> pages, int collectionSize) {

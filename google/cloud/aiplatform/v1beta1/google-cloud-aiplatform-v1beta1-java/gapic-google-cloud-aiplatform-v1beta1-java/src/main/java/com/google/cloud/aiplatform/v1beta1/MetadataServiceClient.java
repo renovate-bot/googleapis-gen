@@ -62,13 +62,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -3315,11 +3315,8 @@ public class MetadataServiceClient implements BackgroundResource {
 
   public static class ListMetadataStoresPagedResponse
       extends AbstractPagedListResponse<
-          ListMetadataStoresRequest,
-          ListMetadataStoresResponse,
-          MetadataStore,
-          ListMetadataStoresPage,
-          ListMetadataStoresFixedSizeCollection> {
+          ListMetadataStoresRequest, ListMetadataStoresResponse, MetadataStore,
+          ListMetadataStoresPage, ListMetadataStoresFixedSizeCollection> {
 
     public static ApiFuture<ListMetadataStoresPagedResponse> createAsync(
         PageContext<ListMetadataStoresRequest, ListMetadataStoresResponse, MetadataStore> context,
@@ -3344,9 +3341,7 @@ public class MetadataServiceClient implements BackgroundResource {
 
   public static class ListMetadataStoresPage
       extends AbstractPage<
-          ListMetadataStoresRequest,
-          ListMetadataStoresResponse,
-          MetadataStore,
+          ListMetadataStoresRequest, ListMetadataStoresResponse, MetadataStore,
           ListMetadataStoresPage> {
 
     private ListMetadataStoresPage(
@@ -3376,11 +3371,8 @@ public class MetadataServiceClient implements BackgroundResource {
 
   public static class ListMetadataStoresFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListMetadataStoresRequest,
-          ListMetadataStoresResponse,
-          MetadataStore,
-          ListMetadataStoresPage,
-          ListMetadataStoresFixedSizeCollection> {
+          ListMetadataStoresRequest, ListMetadataStoresResponse, MetadataStore,
+          ListMetadataStoresPage, ListMetadataStoresFixedSizeCollection> {
 
     private ListMetadataStoresFixedSizeCollection(
         List<ListMetadataStoresPage> pages, int collectionSize) {
@@ -3400,10 +3392,7 @@ public class MetadataServiceClient implements BackgroundResource {
 
   public static class ListArtifactsPagedResponse
       extends AbstractPagedListResponse<
-          ListArtifactsRequest,
-          ListArtifactsResponse,
-          Artifact,
-          ListArtifactsPage,
+          ListArtifactsRequest, ListArtifactsResponse, Artifact, ListArtifactsPage,
           ListArtifactsFixedSizeCollection> {
 
     public static ApiFuture<ListArtifactsPagedResponse> createAsync(
@@ -3458,10 +3447,7 @@ public class MetadataServiceClient implements BackgroundResource {
 
   public static class ListArtifactsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListArtifactsRequest,
-          ListArtifactsResponse,
-          Artifact,
-          ListArtifactsPage,
+          ListArtifactsRequest, ListArtifactsResponse, Artifact, ListArtifactsPage,
           ListArtifactsFixedSizeCollection> {
 
     private ListArtifactsFixedSizeCollection(List<ListArtifactsPage> pages, int collectionSize) {
@@ -3481,10 +3467,7 @@ public class MetadataServiceClient implements BackgroundResource {
 
   public static class ListContextsPagedResponse
       extends AbstractPagedListResponse<
-          ListContextsRequest,
-          ListContextsResponse,
-          Context,
-          ListContextsPage,
+          ListContextsRequest, ListContextsResponse, Context, ListContextsPage,
           ListContextsFixedSizeCollection> {
 
     public static ApiFuture<ListContextsPagedResponse> createAsync(
@@ -3538,10 +3521,7 @@ public class MetadataServiceClient implements BackgroundResource {
 
   public static class ListContextsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListContextsRequest,
-          ListContextsResponse,
-          Context,
-          ListContextsPage,
+          ListContextsRequest, ListContextsResponse, Context, ListContextsPage,
           ListContextsFixedSizeCollection> {
 
     private ListContextsFixedSizeCollection(List<ListContextsPage> pages, int collectionSize) {
@@ -3561,10 +3541,7 @@ public class MetadataServiceClient implements BackgroundResource {
 
   public static class ListExecutionsPagedResponse
       extends AbstractPagedListResponse<
-          ListExecutionsRequest,
-          ListExecutionsResponse,
-          Execution,
-          ListExecutionsPage,
+          ListExecutionsRequest, ListExecutionsResponse, Execution, ListExecutionsPage,
           ListExecutionsFixedSizeCollection> {
 
     public static ApiFuture<ListExecutionsPagedResponse> createAsync(
@@ -3619,10 +3596,7 @@ public class MetadataServiceClient implements BackgroundResource {
 
   public static class ListExecutionsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListExecutionsRequest,
-          ListExecutionsResponse,
-          Execution,
-          ListExecutionsPage,
+          ListExecutionsRequest, ListExecutionsResponse, Execution, ListExecutionsPage,
           ListExecutionsFixedSizeCollection> {
 
     private ListExecutionsFixedSizeCollection(List<ListExecutionsPage> pages, int collectionSize) {
@@ -3642,11 +3616,8 @@ public class MetadataServiceClient implements BackgroundResource {
 
   public static class ListMetadataSchemasPagedResponse
       extends AbstractPagedListResponse<
-          ListMetadataSchemasRequest,
-          ListMetadataSchemasResponse,
-          MetadataSchema,
-          ListMetadataSchemasPage,
-          ListMetadataSchemasFixedSizeCollection> {
+          ListMetadataSchemasRequest, ListMetadataSchemasResponse, MetadataSchema,
+          ListMetadataSchemasPage, ListMetadataSchemasFixedSizeCollection> {
 
     public static ApiFuture<ListMetadataSchemasPagedResponse> createAsync(
         PageContext<ListMetadataSchemasRequest, ListMetadataSchemasResponse, MetadataSchema>
@@ -3672,9 +3643,7 @@ public class MetadataServiceClient implements BackgroundResource {
 
   public static class ListMetadataSchemasPage
       extends AbstractPage<
-          ListMetadataSchemasRequest,
-          ListMetadataSchemasResponse,
-          MetadataSchema,
+          ListMetadataSchemasRequest, ListMetadataSchemasResponse, MetadataSchema,
           ListMetadataSchemasPage> {
 
     private ListMetadataSchemasPage(
@@ -3707,11 +3676,8 @@ public class MetadataServiceClient implements BackgroundResource {
 
   public static class ListMetadataSchemasFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListMetadataSchemasRequest,
-          ListMetadataSchemasResponse,
-          MetadataSchema,
-          ListMetadataSchemasPage,
-          ListMetadataSchemasFixedSizeCollection> {
+          ListMetadataSchemasRequest, ListMetadataSchemasResponse, MetadataSchema,
+          ListMetadataSchemasPage, ListMetadataSchemasFixedSizeCollection> {
 
     private ListMetadataSchemasFixedSizeCollection(
         List<ListMetadataSchemasPage> pages, int collectionSize) {

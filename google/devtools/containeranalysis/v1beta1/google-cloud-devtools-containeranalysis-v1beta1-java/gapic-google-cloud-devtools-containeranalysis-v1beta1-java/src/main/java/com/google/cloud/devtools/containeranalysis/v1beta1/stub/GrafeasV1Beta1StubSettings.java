@@ -82,10 +82,10 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (containeranalysis.googleapis.com) and default port (443) are
+ *   <li> The default service address (containeranalysis.googleapis.com) and default port (443) are
  *       used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -293,8 +293,7 @@ public class GrafeasV1Beta1StubSettings extends StubSettings<GrafeasV1Beta1StubS
           ListNoteOccurrencesRequest, ListNoteOccurrencesResponse, ListNoteOccurrencesPagedResponse>
       LIST_NOTE_OCCURRENCES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListNoteOccurrencesRequest,
-              ListNoteOccurrencesResponse,
+              ListNoteOccurrencesRequest, ListNoteOccurrencesResponse,
               ListNoteOccurrencesPagedResponse>() {
             @Override
             public ApiFuture<ListNoteOccurrencesPagedResponse> getFuturePagedResponse(
@@ -509,8 +508,7 @@ public class GrafeasV1Beta1StubSettings extends StubSettings<GrafeasV1Beta1StubS
         batchCreateNotesSettings;
     private final UnaryCallSettings.Builder<UpdateNoteRequest, Note> updateNoteSettings;
     private final PagedCallSettings.Builder<
-            ListNoteOccurrencesRequest,
-            ListNoteOccurrencesResponse,
+            ListNoteOccurrencesRequest, ListNoteOccurrencesResponse,
             ListNoteOccurrencesPagedResponse>
         listNoteOccurrencesSettings;
     private final UnaryCallSettings.Builder<
@@ -822,8 +820,7 @@ public class GrafeasV1Beta1StubSettings extends StubSettings<GrafeasV1Beta1StubS
 
     /** Returns the builder for the settings used for calls to listNoteOccurrences. */
     public PagedCallSettings.Builder<
-            ListNoteOccurrencesRequest,
-            ListNoteOccurrencesResponse,
+            ListNoteOccurrencesRequest, ListNoteOccurrencesResponse,
             ListNoteOccurrencesPagedResponse>
         listNoteOccurrencesSettings() {
       return listNoteOccurrencesSettings;

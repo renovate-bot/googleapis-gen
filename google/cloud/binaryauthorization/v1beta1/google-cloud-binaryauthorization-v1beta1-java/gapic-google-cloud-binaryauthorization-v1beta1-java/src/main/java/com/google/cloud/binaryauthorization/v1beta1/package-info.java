@@ -25,8 +25,8 @@
  * <p>This API implements a REST model with the following objects:
  *
  * <ul>
- *   <li>[Policy][google.cloud.binaryauthorization.v1beta1.Policy]
- *   <li>[Attestor][google.cloud.binaryauthorization.v1beta1.Attestor]
+ *   <li> [Policy][google.cloud.binaryauthorization.v1beta1.Policy]
+ *   <li> [Attestor][google.cloud.binaryauthorization.v1beta1.Attestor]
  * </ul>
  *
  * <p>Sample for BinauthzManagementServiceV1Beta1Client:

@@ -87,9 +87,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (aiplatform.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (aiplatform.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -139,8 +139,7 @@ public class VizierServiceStubSettings extends StubSettings<VizierServiceStubSet
   private final UnaryCallSettings<CheckTrialEarlyStoppingStateRequest, Operation>
       checkTrialEarlyStoppingStateSettings;
   private final OperationCallSettings<
-          CheckTrialEarlyStoppingStateRequest,
-          CheckTrialEarlyStoppingStateResponse,
+          CheckTrialEarlyStoppingStateRequest, CheckTrialEarlyStoppingStateResponse,
           CheckTrialEarlyStoppingStateMetatdata>
       checkTrialEarlyStoppingStateOperationSettings;
   private final UnaryCallSettings<StopTrialRequest, Trial> stopTrialSettings;
@@ -329,8 +328,7 @@ public class VizierServiceStubSettings extends StubSettings<VizierServiceStubSet
 
   /** Returns the object with the settings used for calls to checkTrialEarlyStoppingState. */
   public OperationCallSettings<
-          CheckTrialEarlyStoppingStateRequest,
-          CheckTrialEarlyStoppingStateResponse,
+          CheckTrialEarlyStoppingStateRequest, CheckTrialEarlyStoppingStateResponse,
           CheckTrialEarlyStoppingStateMetatdata>
       checkTrialEarlyStoppingStateOperationSettings() {
     return checkTrialEarlyStoppingStateOperationSettings;
@@ -463,8 +461,7 @@ public class VizierServiceStubSettings extends StubSettings<VizierServiceStubSet
     private final UnaryCallSettings.Builder<CheckTrialEarlyStoppingStateRequest, Operation>
         checkTrialEarlyStoppingStateSettings;
     private final OperationCallSettings.Builder<
-            CheckTrialEarlyStoppingStateRequest,
-            CheckTrialEarlyStoppingStateResponse,
+            CheckTrialEarlyStoppingStateRequest, CheckTrialEarlyStoppingStateResponse,
             CheckTrialEarlyStoppingStateMetatdata>
         checkTrialEarlyStoppingStateOperationSettings;
     private final UnaryCallSettings.Builder<StopTrialRequest, Trial> stopTrialSettings;
@@ -824,8 +821,7 @@ public class VizierServiceStubSettings extends StubSettings<VizierServiceStubSet
     @BetaApi(
         "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
-            CheckTrialEarlyStoppingStateRequest,
-            CheckTrialEarlyStoppingStateResponse,
+            CheckTrialEarlyStoppingStateRequest, CheckTrialEarlyStoppingStateResponse,
             CheckTrialEarlyStoppingStateMetatdata>
         checkTrialEarlyStoppingStateOperationSettings() {
       return checkTrialEarlyStoppingStateOperationSettings;

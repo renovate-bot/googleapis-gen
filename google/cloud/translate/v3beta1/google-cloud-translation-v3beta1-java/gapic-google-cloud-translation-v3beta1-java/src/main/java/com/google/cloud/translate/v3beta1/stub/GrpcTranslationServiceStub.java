@@ -193,8 +193,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
   private final UnaryCallable<BatchTranslateDocumentRequest, Operation>
       batchTranslateDocumentCallable;
   private final OperationCallable<
-          BatchTranslateDocumentRequest,
-          BatchTranslateDocumentResponse,
+          BatchTranslateDocumentRequest, BatchTranslateDocumentResponse,
           BatchTranslateDocumentMetadata>
       batchTranslateDocumentOperationCallable;
   private final UnaryCallable<CreateGlossaryRequest, Operation> createGlossaryCallable;
@@ -504,8 +503,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
 
   @Override
   public OperationCallable<
-          BatchTranslateDocumentRequest,
-          BatchTranslateDocumentResponse,
+          BatchTranslateDocumentRequest, BatchTranslateDocumentResponse,
           BatchTranslateDocumentMetadata>
       batchTranslateDocumentOperationCallable() {
     return batchTranslateDocumentOperationCallable;

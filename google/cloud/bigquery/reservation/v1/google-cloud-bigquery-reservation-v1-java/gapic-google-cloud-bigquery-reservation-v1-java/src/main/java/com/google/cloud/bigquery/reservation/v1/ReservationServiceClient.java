@@ -73,13 +73,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -1563,8 +1563,8 @@ public class ReservationServiceClient implements BackgroundResource {
    * <p>Example:
    *
    * <ul>
-   *   <li>The organization `organizationA` contains two projects, `project1` and `project2`.
-   *   <li>Assignments for all three entities (`organizationA`, `project1`, and `project2`) could
+   *   <li> The organization `organizationA` contains two projects, `project1` and `project2`.
+   *   <li> Assignments for all three entities (`organizationA`, `project1`, and `project2`) could
    *       all be created and mapped to the same or different reservations.
    * </ul>
    *
@@ -1617,8 +1617,8 @@ public class ReservationServiceClient implements BackgroundResource {
    * <p>Example:
    *
    * <ul>
-   *   <li>The organization `organizationA` contains two projects, `project1` and `project2`.
-   *   <li>Assignments for all three entities (`organizationA`, `project1`, and `project2`) could
+   *   <li> The organization `organizationA` contains two projects, `project1` and `project2`.
+   *   <li> Assignments for all three entities (`organizationA`, `project1`, and `project2`) could
    *       all be created and mapped to the same or different reservations.
    * </ul>
    *
@@ -1669,8 +1669,8 @@ public class ReservationServiceClient implements BackgroundResource {
    * <p>Example:
    *
    * <ul>
-   *   <li>The organization `organizationA` contains two projects, `project1` and `project2`.
-   *   <li>Assignments for all three entities (`organizationA`, `project1`, and `project2`) could
+   *   <li> The organization `organizationA` contains two projects, `project1` and `project2`.
+   *   <li> Assignments for all three entities (`organizationA`, `project1`, and `project2`) could
    *       all be created and mapped to the same or different reservations.
    * </ul>
    *
@@ -1721,8 +1721,8 @@ public class ReservationServiceClient implements BackgroundResource {
    * <p>Example:
    *
    * <ul>
-   *   <li>The organization `organizationA` contains two projects, `project1` and `project2`.
-   *   <li>Assignments for all three entities (`organizationA`, `project1`, and `project2`) could
+   *   <li> The organization `organizationA` contains two projects, `project1` and `project2`.
+   *   <li> Assignments for all three entities (`organizationA`, `project1`, and `project2`) could
    *       all be created and mapped to the same or different reservations.
    * </ul>
    *
@@ -1763,9 +1763,9 @@ public class ReservationServiceClient implements BackgroundResource {
    * <p>Example:
    *
    * <ul>
-   *   <li>Organization `organizationA` contains two projects, `project1` and `project2`.
-   *   <li>Reservation `res1` exists and was created previously.
-   *   <li>CreateAssignment was used previously to define the following associations between
+   *   <li> Organization `organizationA` contains two projects, `project1` and `project2`.
+   *   <li> Reservation `res1` exists and was created previously.
+   *   <li> CreateAssignment was used previously to define the following associations between
    *       entities and reservations: `&lt;organizationA, res1&gt;` and `&lt;project1, res1&gt;`
    * </ul>
    *
@@ -1811,9 +1811,9 @@ public class ReservationServiceClient implements BackgroundResource {
    * <p>Example:
    *
    * <ul>
-   *   <li>Organization `organizationA` contains two projects, `project1` and `project2`.
-   *   <li>Reservation `res1` exists and was created previously.
-   *   <li>CreateAssignment was used previously to define the following associations between
+   *   <li> Organization `organizationA` contains two projects, `project1` and `project2`.
+   *   <li> Reservation `res1` exists and was created previously.
+   *   <li> CreateAssignment was used previously to define the following associations between
    *       entities and reservations: `&lt;organizationA, res1&gt;` and `&lt;project1, res1&gt;`
    * </ul>
    *
@@ -1857,9 +1857,9 @@ public class ReservationServiceClient implements BackgroundResource {
    * <p>Example:
    *
    * <ul>
-   *   <li>Organization `organizationA` contains two projects, `project1` and `project2`.
-   *   <li>Reservation `res1` exists and was created previously.
-   *   <li>CreateAssignment was used previously to define the following associations between
+   *   <li> Organization `organizationA` contains two projects, `project1` and `project2`.
+   *   <li> Reservation `res1` exists and was created previously.
+   *   <li> CreateAssignment was used previously to define the following associations between
    *       entities and reservations: `&lt;organizationA, res1&gt;` and `&lt;project1, res1&gt;`
    * </ul>
    *
@@ -1905,9 +1905,9 @@ public class ReservationServiceClient implements BackgroundResource {
    * <p>Example:
    *
    * <ul>
-   *   <li>Organization `organizationA` contains two projects, `project1` and `project2`.
-   *   <li>Reservation `res1` exists and was created previously.
-   *   <li>CreateAssignment was used previously to define the following associations between
+   *   <li> Organization `organizationA` contains two projects, `project1` and `project2`.
+   *   <li> Reservation `res1` exists and was created previously.
+   *   <li> CreateAssignment was used previously to define the following associations between
    *       entities and reservations: `&lt;organizationA, res1&gt;` and `&lt;project1, res1&gt;`
    * </ul>
    *
@@ -1954,9 +1954,9 @@ public class ReservationServiceClient implements BackgroundResource {
    * <p>Example:
    *
    * <ul>
-   *   <li>Organization `organizationA` contains two projects, `project1` and `project2`.
-   *   <li>Reservation `res1` exists and was created previously.
-   *   <li>CreateAssignment was used previously to define the following associations between
+   *   <li> Organization `organizationA` contains two projects, `project1` and `project2`.
+   *   <li> Reservation `res1` exists and was created previously.
+   *   <li> CreateAssignment was used previously to define the following associations between
    *       entities and reservations: `&lt;organizationA, res1&gt;` and `&lt;project1, res1&gt;`
    * </ul>
    *
@@ -2008,9 +2008,9 @@ public class ReservationServiceClient implements BackgroundResource {
    * <p>Example:
    *
    * <ul>
-   *   <li>Organization `organizationA` contains two projects, `project1` and `project2`.
-   *   <li>Reservation `res1` exists and was created previously.
-   *   <li>CreateAssignment was used previously to define the following associations between
+   *   <li> Organization `organizationA` contains two projects, `project1` and `project2`.
+   *   <li> Reservation `res1` exists and was created previously.
+   *   <li> CreateAssignment was used previously to define the following associations between
    *       entities and reservations: `&lt;organizationA, res1&gt;` and `&lt;project1, res1&gt;`
    * </ul>
    *
@@ -2045,9 +2045,9 @@ public class ReservationServiceClient implements BackgroundResource {
    * <p>Example:
    *
    * <ul>
-   *   <li>Organization `organizationA` contains two projects, `project1` and `project2`.
-   *   <li>Reservation `res1` exists and was created previously.
-   *   <li>CreateAssignment was used previously to define the following associations between
+   *   <li> Organization `organizationA` contains two projects, `project1` and `project2`.
+   *   <li> Reservation `res1` exists and was created previously.
+   *   <li> CreateAssignment was used previously to define the following associations between
    *       entities and reservations: `&lt;organizationA, res1&gt;` and `&lt;project1, res1&gt;`
    * </ul>
    *
@@ -2081,9 +2081,9 @@ public class ReservationServiceClient implements BackgroundResource {
    * <p>Example:
    *
    * <ul>
-   *   <li>Organization `organizationA` contains two projects, `project1` and `project2`.
-   *   <li>Reservation `res1` exists and was created previously.
-   *   <li>CreateAssignment was used previously to define the following associations between
+   *   <li> Organization `organizationA` contains two projects, `project1` and `project2`.
+   *   <li> Reservation `res1` exists and was created previously.
+   *   <li> CreateAssignment was used previously to define the following associations between
    *       entities and reservations: `&lt;organizationA, res1&gt;` and `&lt;project1, res1&gt;`
    * </ul>
    *
@@ -2119,9 +2119,9 @@ public class ReservationServiceClient implements BackgroundResource {
    * <p>Example:
    *
    * <ul>
-   *   <li>Organization `organizationA` contains two projects, `project1` and `project2`.
-   *   <li>Reservation `res1` exists and was created previously.
-   *   <li>CreateAssignment was used previously to define the following associations between
+   *   <li> Organization `organizationA` contains two projects, `project1` and `project2`.
+   *   <li> Reservation `res1` exists and was created previously.
+   *   <li> CreateAssignment was used previously to define the following associations between
    *       entities and reservations: `&lt;organizationA, res1&gt;` and `&lt;project1, res1&gt;`
    * </ul>
    *
@@ -2191,9 +2191,9 @@ public class ReservationServiceClient implements BackgroundResource {
    * @param query Please specify resource name as assignee in the query.
    *     <p>Examples:
    *     <ul>
-   *       <li>`assignee=projects/myproject`
-   *       <li>`assignee=folders/123`
-   *       <li>`assignee=organizations/456`
+   *       <li> `assignee=projects/myproject`
+   *       <li> `assignee=folders/123`
+   *       <li> `assignee=organizations/456`
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2248,9 +2248,9 @@ public class ReservationServiceClient implements BackgroundResource {
    * @param query Please specify resource name as assignee in the query.
    *     <p>Examples:
    *     <ul>
-   *       <li>`assignee=projects/myproject`
-   *       <li>`assignee=folders/123`
-   *       <li>`assignee=organizations/456`
+   *       <li> `assignee=projects/myproject`
+   *       <li> `assignee=folders/123`
+   *       <li> `assignee=organizations/456`
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2825,10 +2825,7 @@ public class ReservationServiceClient implements BackgroundResource {
 
   public static class ListReservationsPagedResponse
       extends AbstractPagedListResponse<
-          ListReservationsRequest,
-          ListReservationsResponse,
-          Reservation,
-          ListReservationsPage,
+          ListReservationsRequest, ListReservationsResponse, Reservation, ListReservationsPage,
           ListReservationsFixedSizeCollection> {
 
     public static ApiFuture<ListReservationsPagedResponse> createAsync(
@@ -2883,10 +2880,7 @@ public class ReservationServiceClient implements BackgroundResource {
 
   public static class ListReservationsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListReservationsRequest,
-          ListReservationsResponse,
-          Reservation,
-          ListReservationsPage,
+          ListReservationsRequest, ListReservationsResponse, Reservation, ListReservationsPage,
           ListReservationsFixedSizeCollection> {
 
     private ListReservationsFixedSizeCollection(
@@ -2907,11 +2901,8 @@ public class ReservationServiceClient implements BackgroundResource {
 
   public static class ListCapacityCommitmentsPagedResponse
       extends AbstractPagedListResponse<
-          ListCapacityCommitmentsRequest,
-          ListCapacityCommitmentsResponse,
-          CapacityCommitment,
-          ListCapacityCommitmentsPage,
-          ListCapacityCommitmentsFixedSizeCollection> {
+          ListCapacityCommitmentsRequest, ListCapacityCommitmentsResponse, CapacityCommitment,
+          ListCapacityCommitmentsPage, ListCapacityCommitmentsFixedSizeCollection> {
 
     public static ApiFuture<ListCapacityCommitmentsPagedResponse> createAsync(
         PageContext<
@@ -2938,9 +2929,7 @@ public class ReservationServiceClient implements BackgroundResource {
 
   public static class ListCapacityCommitmentsPage
       extends AbstractPage<
-          ListCapacityCommitmentsRequest,
-          ListCapacityCommitmentsResponse,
-          CapacityCommitment,
+          ListCapacityCommitmentsRequest, ListCapacityCommitmentsResponse, CapacityCommitment,
           ListCapacityCommitmentsPage> {
 
     private ListCapacityCommitmentsPage(
@@ -2976,11 +2965,8 @@ public class ReservationServiceClient implements BackgroundResource {
 
   public static class ListCapacityCommitmentsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListCapacityCommitmentsRequest,
-          ListCapacityCommitmentsResponse,
-          CapacityCommitment,
-          ListCapacityCommitmentsPage,
-          ListCapacityCommitmentsFixedSizeCollection> {
+          ListCapacityCommitmentsRequest, ListCapacityCommitmentsResponse, CapacityCommitment,
+          ListCapacityCommitmentsPage, ListCapacityCommitmentsFixedSizeCollection> {
 
     private ListCapacityCommitmentsFixedSizeCollection(
         List<ListCapacityCommitmentsPage> pages, int collectionSize) {
@@ -3000,10 +2986,7 @@ public class ReservationServiceClient implements BackgroundResource {
 
   public static class ListAssignmentsPagedResponse
       extends AbstractPagedListResponse<
-          ListAssignmentsRequest,
-          ListAssignmentsResponse,
-          Assignment,
-          ListAssignmentsPage,
+          ListAssignmentsRequest, ListAssignmentsResponse, Assignment, ListAssignmentsPage,
           ListAssignmentsFixedSizeCollection> {
 
     public static ApiFuture<ListAssignmentsPagedResponse> createAsync(
@@ -3058,10 +3041,7 @@ public class ReservationServiceClient implements BackgroundResource {
 
   public static class ListAssignmentsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListAssignmentsRequest,
-          ListAssignmentsResponse,
-          Assignment,
-          ListAssignmentsPage,
+          ListAssignmentsRequest, ListAssignmentsResponse, Assignment, ListAssignmentsPage,
           ListAssignmentsFixedSizeCollection> {
 
     private ListAssignmentsFixedSizeCollection(
@@ -3082,10 +3062,7 @@ public class ReservationServiceClient implements BackgroundResource {
 
   public static class SearchAssignmentsPagedResponse
       extends AbstractPagedListResponse<
-          SearchAssignmentsRequest,
-          SearchAssignmentsResponse,
-          Assignment,
-          SearchAssignmentsPage,
+          SearchAssignmentsRequest, SearchAssignmentsResponse, Assignment, SearchAssignmentsPage,
           SearchAssignmentsFixedSizeCollection> {
 
     public static ApiFuture<SearchAssignmentsPagedResponse> createAsync(
@@ -3140,10 +3117,7 @@ public class ReservationServiceClient implements BackgroundResource {
 
   public static class SearchAssignmentsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          SearchAssignmentsRequest,
-          SearchAssignmentsResponse,
-          Assignment,
-          SearchAssignmentsPage,
+          SearchAssignmentsRequest, SearchAssignmentsResponse, Assignment, SearchAssignmentsPage,
           SearchAssignmentsFixedSizeCollection> {
 
     private SearchAssignmentsFixedSizeCollection(

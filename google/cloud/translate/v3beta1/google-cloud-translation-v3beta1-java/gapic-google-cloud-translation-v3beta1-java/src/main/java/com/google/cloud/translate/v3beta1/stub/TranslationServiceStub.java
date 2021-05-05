@@ -93,8 +93,7 @@ public abstract class TranslationServiceStub implements BackgroundResource {
   }
 
   public OperationCallable<
-          BatchTranslateDocumentRequest,
-          BatchTranslateDocumentResponse,
+          BatchTranslateDocumentRequest, BatchTranslateDocumentResponse,
           BatchTranslateDocumentMetadata>
       batchTranslateDocumentOperationCallable() {
     throw new UnsupportedOperationException(

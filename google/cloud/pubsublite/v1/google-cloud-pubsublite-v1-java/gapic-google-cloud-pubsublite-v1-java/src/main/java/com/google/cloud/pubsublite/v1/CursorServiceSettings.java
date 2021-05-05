@@ -49,9 +49,9 @@ import javax.annotation.Generated;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (pubsublite.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (pubsublite.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -89,8 +89,7 @@ public class CursorServiceSettings extends ClientSettings<CursorServiceSettings>
 
   /** Returns the object with the settings used for calls to listPartitionCursors. */
   public PagedCallSettings<
-          ListPartitionCursorsRequest,
-          ListPartitionCursorsResponse,
+          ListPartitionCursorsRequest, ListPartitionCursorsResponse,
           ListPartitionCursorsPagedResponse>
       listPartitionCursorsSettings() {
     return ((CursorServiceStubSettings) getStubSettings()).listPartitionCursorsSettings();
@@ -209,8 +208,7 @@ public class CursorServiceSettings extends ClientSettings<CursorServiceSettings>
 
     /** Returns the builder for the settings used for calls to listPartitionCursors. */
     public PagedCallSettings.Builder<
-            ListPartitionCursorsRequest,
-            ListPartitionCursorsResponse,
+            ListPartitionCursorsRequest, ListPartitionCursorsResponse,
             ListPartitionCursorsPagedResponse>
         listPartitionCursorsSettings() {
       return getStubSettingsBuilder().listPartitionCursorsSettings();

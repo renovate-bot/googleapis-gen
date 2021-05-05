@@ -109,9 +109,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (aiplatform.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (aiplatform.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -154,8 +154,7 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
   private final UnaryCallSettings<GetDataLabelingJobRequest, DataLabelingJob>
       getDataLabelingJobSettings;
   private final PagedCallSettings<
-          ListDataLabelingJobsRequest,
-          ListDataLabelingJobsResponse,
+          ListDataLabelingJobsRequest, ListDataLabelingJobsResponse,
           ListDataLabelingJobsPagedResponse>
       listDataLabelingJobsSettings;
   private final UnaryCallSettings<DeleteDataLabelingJobRequest, Operation>
@@ -169,8 +168,7 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
   private final UnaryCallSettings<GetHyperparameterTuningJobRequest, HyperparameterTuningJob>
       getHyperparameterTuningJobSettings;
   private final PagedCallSettings<
-          ListHyperparameterTuningJobsRequest,
-          ListHyperparameterTuningJobsResponse,
+          ListHyperparameterTuningJobsRequest, ListHyperparameterTuningJobsResponse,
           ListHyperparameterTuningJobsPagedResponse>
       listHyperparameterTuningJobsSettings;
   private final UnaryCallSettings<DeleteHyperparameterTuningJobRequest, Operation>
@@ -185,8 +183,7 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
   private final UnaryCallSettings<GetBatchPredictionJobRequest, BatchPredictionJob>
       getBatchPredictionJobSettings;
   private final PagedCallSettings<
-          ListBatchPredictionJobsRequest,
-          ListBatchPredictionJobsResponse,
+          ListBatchPredictionJobsRequest, ListBatchPredictionJobsResponse,
           ListBatchPredictionJobsPagedResponse>
       listBatchPredictionJobsSettings;
   private final UnaryCallSettings<DeleteBatchPredictionJobRequest, Operation>
@@ -208,15 +205,13 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
           GetModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob>
       getModelDeploymentMonitoringJobSettings;
   private final PagedCallSettings<
-          ListModelDeploymentMonitoringJobsRequest,
-          ListModelDeploymentMonitoringJobsResponse,
+          ListModelDeploymentMonitoringJobsRequest, ListModelDeploymentMonitoringJobsResponse,
           ListModelDeploymentMonitoringJobsPagedResponse>
       listModelDeploymentMonitoringJobsSettings;
   private final UnaryCallSettings<UpdateModelDeploymentMonitoringJobRequest, Operation>
       updateModelDeploymentMonitoringJobSettings;
   private final OperationCallSettings<
-          UpdateModelDeploymentMonitoringJobRequest,
-          ModelDeploymentMonitoringJob,
+          UpdateModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob,
           UpdateModelDeploymentMonitoringJobOperationMetadata>
       updateModelDeploymentMonitoringJobOperationSettings;
   private final UnaryCallSettings<DeleteModelDeploymentMonitoringJobRequest, Operation>
@@ -308,13 +303,11 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
           };
 
   private static final PagedListDescriptor<
-          ListHyperparameterTuningJobsRequest,
-          ListHyperparameterTuningJobsResponse,
+          ListHyperparameterTuningJobsRequest, ListHyperparameterTuningJobsResponse,
           HyperparameterTuningJob>
       LIST_HYPERPARAMETER_TUNING_JOBS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ListHyperparameterTuningJobsRequest,
-              ListHyperparameterTuningJobsResponse,
+              ListHyperparameterTuningJobsRequest, ListHyperparameterTuningJobsResponse,
               HyperparameterTuningJob>() {
             @Override
             public String emptyToken() {
@@ -360,8 +353,7 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
           ListBatchPredictionJobsRequest, ListBatchPredictionJobsResponse, BatchPredictionJob>
       LIST_BATCH_PREDICTION_JOBS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ListBatchPredictionJobsRequest,
-              ListBatchPredictionJobsResponse,
+              ListBatchPredictionJobsRequest, ListBatchPredictionJobsResponse,
               BatchPredictionJob>() {
             @Override
             public String emptyToken() {
@@ -403,8 +395,7 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
 
   private static final PagedListDescriptor<
           SearchModelDeploymentMonitoringStatsAnomaliesRequest,
-          SearchModelDeploymentMonitoringStatsAnomaliesResponse,
-          ModelMonitoringStatsAnomalies>
+          SearchModelDeploymentMonitoringStatsAnomaliesResponse, ModelMonitoringStatsAnomalies>
       SEARCH_MODEL_DEPLOYMENT_MONITORING_STATS_ANOMALIES_PAGE_STR_DESC =
           new PagedListDescriptor<
               SearchModelDeploymentMonitoringStatsAnomaliesRequest,
@@ -453,13 +444,11 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
           };
 
   private static final PagedListDescriptor<
-          ListModelDeploymentMonitoringJobsRequest,
-          ListModelDeploymentMonitoringJobsResponse,
+          ListModelDeploymentMonitoringJobsRequest, ListModelDeploymentMonitoringJobsResponse,
           ModelDeploymentMonitoringJob>
       LIST_MODEL_DEPLOYMENT_MONITORING_JOBS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ListModelDeploymentMonitoringJobsRequest,
-              ListModelDeploymentMonitoringJobsResponse,
+              ListModelDeploymentMonitoringJobsRequest, ListModelDeploymentMonitoringJobsResponse,
               ModelDeploymentMonitoringJob>() {
             @Override
             public String emptyToken() {
@@ -519,13 +508,11 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
           };
 
   private static final PagedListResponseFactory<
-          ListDataLabelingJobsRequest,
-          ListDataLabelingJobsResponse,
+          ListDataLabelingJobsRequest, ListDataLabelingJobsResponse,
           ListDataLabelingJobsPagedResponse>
       LIST_DATA_LABELING_JOBS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListDataLabelingJobsRequest,
-              ListDataLabelingJobsResponse,
+              ListDataLabelingJobsRequest, ListDataLabelingJobsResponse,
               ListDataLabelingJobsPagedResponse>() {
             @Override
             public ApiFuture<ListDataLabelingJobsPagedResponse> getFuturePagedResponse(
@@ -543,13 +530,11 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
           };
 
   private static final PagedListResponseFactory<
-          ListHyperparameterTuningJobsRequest,
-          ListHyperparameterTuningJobsResponse,
+          ListHyperparameterTuningJobsRequest, ListHyperparameterTuningJobsResponse,
           ListHyperparameterTuningJobsPagedResponse>
       LIST_HYPERPARAMETER_TUNING_JOBS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListHyperparameterTuningJobsRequest,
-              ListHyperparameterTuningJobsResponse,
+              ListHyperparameterTuningJobsRequest, ListHyperparameterTuningJobsResponse,
               ListHyperparameterTuningJobsPagedResponse>() {
             @Override
             public ApiFuture<ListHyperparameterTuningJobsPagedResponse> getFuturePagedResponse(
@@ -560,8 +545,7 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
                 ApiCallContext context,
                 ApiFuture<ListHyperparameterTuningJobsResponse> futureResponse) {
               PageContext<
-                      ListHyperparameterTuningJobsRequest,
-                      ListHyperparameterTuningJobsResponse,
+                      ListHyperparameterTuningJobsRequest, ListHyperparameterTuningJobsResponse,
                       HyperparameterTuningJob>
                   pageContext =
                       PageContext.create(
@@ -575,13 +559,11 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
           };
 
   private static final PagedListResponseFactory<
-          ListBatchPredictionJobsRequest,
-          ListBatchPredictionJobsResponse,
+          ListBatchPredictionJobsRequest, ListBatchPredictionJobsResponse,
           ListBatchPredictionJobsPagedResponse>
       LIST_BATCH_PREDICTION_JOBS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListBatchPredictionJobsRequest,
-              ListBatchPredictionJobsResponse,
+              ListBatchPredictionJobsRequest, ListBatchPredictionJobsResponse,
               ListBatchPredictionJobsPagedResponse>() {
             @Override
             public ApiFuture<ListBatchPredictionJobsPagedResponse> getFuturePagedResponse(
@@ -591,8 +573,7 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
                 ApiCallContext context,
                 ApiFuture<ListBatchPredictionJobsResponse> futureResponse) {
               PageContext<
-                      ListBatchPredictionJobsRequest,
-                      ListBatchPredictionJobsResponse,
+                      ListBatchPredictionJobsRequest, ListBatchPredictionJobsResponse,
                       BatchPredictionJob>
                   pageContext =
                       PageContext.create(
@@ -637,13 +618,11 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
           };
 
   private static final PagedListResponseFactory<
-          ListModelDeploymentMonitoringJobsRequest,
-          ListModelDeploymentMonitoringJobsResponse,
+          ListModelDeploymentMonitoringJobsRequest, ListModelDeploymentMonitoringJobsResponse,
           ListModelDeploymentMonitoringJobsPagedResponse>
       LIST_MODEL_DEPLOYMENT_MONITORING_JOBS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListModelDeploymentMonitoringJobsRequest,
-              ListModelDeploymentMonitoringJobsResponse,
+              ListModelDeploymentMonitoringJobsRequest, ListModelDeploymentMonitoringJobsResponse,
               ListModelDeploymentMonitoringJobsPagedResponse>() {
             @Override
             public ApiFuture<ListModelDeploymentMonitoringJobsPagedResponse> getFuturePagedResponse(
@@ -656,8 +635,7 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
                 ApiFuture<ListModelDeploymentMonitoringJobsResponse> futureResponse) {
               PageContext<
                       ListModelDeploymentMonitoringJobsRequest,
-                      ListModelDeploymentMonitoringJobsResponse,
-                      ModelDeploymentMonitoringJob>
+                      ListModelDeploymentMonitoringJobsResponse, ModelDeploymentMonitoringJob>
                   pageContext =
                       PageContext.create(
                           callable,
@@ -716,8 +694,7 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
 
   /** Returns the object with the settings used for calls to listDataLabelingJobs. */
   public PagedCallSettings<
-          ListDataLabelingJobsRequest,
-          ListDataLabelingJobsResponse,
+          ListDataLabelingJobsRequest, ListDataLabelingJobsResponse,
           ListDataLabelingJobsPagedResponse>
       listDataLabelingJobsSettings() {
     return listDataLabelingJobsSettings;
@@ -754,8 +731,7 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
 
   /** Returns the object with the settings used for calls to listHyperparameterTuningJobs. */
   public PagedCallSettings<
-          ListHyperparameterTuningJobsRequest,
-          ListHyperparameterTuningJobsResponse,
+          ListHyperparameterTuningJobsRequest, ListHyperparameterTuningJobsResponse,
           ListHyperparameterTuningJobsPagedResponse>
       listHyperparameterTuningJobsSettings() {
     return listHyperparameterTuningJobsSettings;
@@ -793,8 +769,7 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
 
   /** Returns the object with the settings used for calls to listBatchPredictionJobs. */
   public PagedCallSettings<
-          ListBatchPredictionJobsRequest,
-          ListBatchPredictionJobsResponse,
+          ListBatchPredictionJobsRequest, ListBatchPredictionJobsResponse,
           ListBatchPredictionJobsPagedResponse>
       listBatchPredictionJobsSettings() {
     return listBatchPredictionJobsSettings;
@@ -844,8 +819,7 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
 
   /** Returns the object with the settings used for calls to listModelDeploymentMonitoringJobs. */
   public PagedCallSettings<
-          ListModelDeploymentMonitoringJobsRequest,
-          ListModelDeploymentMonitoringJobsResponse,
+          ListModelDeploymentMonitoringJobsRequest, ListModelDeploymentMonitoringJobsResponse,
           ListModelDeploymentMonitoringJobsPagedResponse>
       listModelDeploymentMonitoringJobsSettings() {
     return listModelDeploymentMonitoringJobsSettings;
@@ -859,8 +833,7 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
 
   /** Returns the object with the settings used for calls to updateModelDeploymentMonitoringJob. */
   public OperationCallSettings<
-          UpdateModelDeploymentMonitoringJobRequest,
-          ModelDeploymentMonitoringJob,
+          UpdateModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob,
           UpdateModelDeploymentMonitoringJobOperationMetadata>
       updateModelDeploymentMonitoringJobOperationSettings() {
     return updateModelDeploymentMonitoringJobOperationSettings;
@@ -1034,8 +1007,7 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
     private final UnaryCallSettings.Builder<GetDataLabelingJobRequest, DataLabelingJob>
         getDataLabelingJobSettings;
     private final PagedCallSettings.Builder<
-            ListDataLabelingJobsRequest,
-            ListDataLabelingJobsResponse,
+            ListDataLabelingJobsRequest, ListDataLabelingJobsResponse,
             ListDataLabelingJobsPagedResponse>
         listDataLabelingJobsSettings;
     private final UnaryCallSettings.Builder<DeleteDataLabelingJobRequest, Operation>
@@ -1052,8 +1024,7 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
             GetHyperparameterTuningJobRequest, HyperparameterTuningJob>
         getHyperparameterTuningJobSettings;
     private final PagedCallSettings.Builder<
-            ListHyperparameterTuningJobsRequest,
-            ListHyperparameterTuningJobsResponse,
+            ListHyperparameterTuningJobsRequest, ListHyperparameterTuningJobsResponse,
             ListHyperparameterTuningJobsPagedResponse>
         listHyperparameterTuningJobsSettings;
     private final UnaryCallSettings.Builder<DeleteHyperparameterTuningJobRequest, Operation>
@@ -1068,8 +1039,7 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
     private final UnaryCallSettings.Builder<GetBatchPredictionJobRequest, BatchPredictionJob>
         getBatchPredictionJobSettings;
     private final PagedCallSettings.Builder<
-            ListBatchPredictionJobsRequest,
-            ListBatchPredictionJobsResponse,
+            ListBatchPredictionJobsRequest, ListBatchPredictionJobsResponse,
             ListBatchPredictionJobsPagedResponse>
         listBatchPredictionJobsSettings;
     private final UnaryCallSettings.Builder<DeleteBatchPredictionJobRequest, Operation>
@@ -1091,15 +1061,13 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
             GetModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob>
         getModelDeploymentMonitoringJobSettings;
     private final PagedCallSettings.Builder<
-            ListModelDeploymentMonitoringJobsRequest,
-            ListModelDeploymentMonitoringJobsResponse,
+            ListModelDeploymentMonitoringJobsRequest, ListModelDeploymentMonitoringJobsResponse,
             ListModelDeploymentMonitoringJobsPagedResponse>
         listModelDeploymentMonitoringJobsSettings;
     private final UnaryCallSettings.Builder<UpdateModelDeploymentMonitoringJobRequest, Operation>
         updateModelDeploymentMonitoringJobSettings;
     private final OperationCallSettings.Builder<
-            UpdateModelDeploymentMonitoringJobRequest,
-            ModelDeploymentMonitoringJob,
+            UpdateModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob,
             UpdateModelDeploymentMonitoringJobOperationMetadata>
         updateModelDeploymentMonitoringJobOperationSettings;
     private final UnaryCallSettings.Builder<DeleteModelDeploymentMonitoringJobRequest, Operation>
@@ -1685,8 +1653,7 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
 
     /** Returns the builder for the settings used for calls to listDataLabelingJobs. */
     public PagedCallSettings.Builder<
-            ListDataLabelingJobsRequest,
-            ListDataLabelingJobsResponse,
+            ListDataLabelingJobsRequest, ListDataLabelingJobsResponse,
             ListDataLabelingJobsPagedResponse>
         listDataLabelingJobsSettings() {
       return listDataLabelingJobsSettings;
@@ -1727,8 +1694,7 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
 
     /** Returns the builder for the settings used for calls to listHyperparameterTuningJobs. */
     public PagedCallSettings.Builder<
-            ListHyperparameterTuningJobsRequest,
-            ListHyperparameterTuningJobsResponse,
+            ListHyperparameterTuningJobsRequest, ListHyperparameterTuningJobsResponse,
             ListHyperparameterTuningJobsPagedResponse>
         listHyperparameterTuningJobsSettings() {
       return listHyperparameterTuningJobsSettings;
@@ -1769,8 +1735,7 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
 
     /** Returns the builder for the settings used for calls to listBatchPredictionJobs. */
     public PagedCallSettings.Builder<
-            ListBatchPredictionJobsRequest,
-            ListBatchPredictionJobsResponse,
+            ListBatchPredictionJobsRequest, ListBatchPredictionJobsResponse,
             ListBatchPredictionJobsPagedResponse>
         listBatchPredictionJobsSettings() {
       return listBatchPredictionJobsSettings;
@@ -1827,8 +1792,7 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
 
     /** Returns the builder for the settings used for calls to listModelDeploymentMonitoringJobs. */
     public PagedCallSettings.Builder<
-            ListModelDeploymentMonitoringJobsRequest,
-            ListModelDeploymentMonitoringJobsResponse,
+            ListModelDeploymentMonitoringJobsRequest, ListModelDeploymentMonitoringJobsResponse,
             ListModelDeploymentMonitoringJobsPagedResponse>
         listModelDeploymentMonitoringJobsSettings() {
       return listModelDeploymentMonitoringJobsSettings;
@@ -1848,8 +1812,7 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
     @BetaApi(
         "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
-            UpdateModelDeploymentMonitoringJobRequest,
-            ModelDeploymentMonitoringJob,
+            UpdateModelDeploymentMonitoringJobRequest, ModelDeploymentMonitoringJob,
             UpdateModelDeploymentMonitoringJobOperationMetadata>
         updateModelDeploymentMonitoringJobOperationSettings() {
       return updateModelDeploymentMonitoringJobOperationSettings;

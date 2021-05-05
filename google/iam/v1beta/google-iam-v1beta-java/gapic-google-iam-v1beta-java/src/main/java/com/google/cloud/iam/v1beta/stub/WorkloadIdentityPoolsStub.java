@@ -76,8 +76,7 @@ public abstract class WorkloadIdentityPoolsStub implements BackgroundResource {
   }
 
   public OperationCallable<
-          CreateWorkloadIdentityPoolRequest,
-          WorkloadIdentityPool,
+          CreateWorkloadIdentityPoolRequest, WorkloadIdentityPool,
           WorkloadIdentityPoolOperationMetadata>
       createWorkloadIdentityPoolOperationCallable() {
     throw new UnsupportedOperationException(
@@ -91,8 +90,7 @@ public abstract class WorkloadIdentityPoolsStub implements BackgroundResource {
   }
 
   public OperationCallable<
-          UpdateWorkloadIdentityPoolRequest,
-          WorkloadIdentityPool,
+          UpdateWorkloadIdentityPoolRequest, WorkloadIdentityPool,
           WorkloadIdentityPoolOperationMetadata>
       updateWorkloadIdentityPoolOperationCallable() {
     throw new UnsupportedOperationException(
@@ -106,8 +104,7 @@ public abstract class WorkloadIdentityPoolsStub implements BackgroundResource {
   }
 
   public OperationCallable<
-          DeleteWorkloadIdentityPoolRequest,
-          WorkloadIdentityPool,
+          DeleteWorkloadIdentityPoolRequest, WorkloadIdentityPool,
           WorkloadIdentityPoolOperationMetadata>
       deleteWorkloadIdentityPoolOperationCallable() {
     throw new UnsupportedOperationException(
@@ -121,8 +118,7 @@ public abstract class WorkloadIdentityPoolsStub implements BackgroundResource {
   }
 
   public OperationCallable<
-          UndeleteWorkloadIdentityPoolRequest,
-          WorkloadIdentityPool,
+          UndeleteWorkloadIdentityPoolRequest, WorkloadIdentityPool,
           WorkloadIdentityPoolOperationMetadata>
       undeleteWorkloadIdentityPoolOperationCallable() {
     throw new UnsupportedOperationException(
@@ -156,8 +152,7 @@ public abstract class WorkloadIdentityPoolsStub implements BackgroundResource {
   }
 
   public OperationCallable<
-          CreateWorkloadIdentityPoolProviderRequest,
-          WorkloadIdentityPoolProvider,
+          CreateWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
           WorkloadIdentityPoolProviderOperationMetadata>
       createWorkloadIdentityPoolProviderOperationCallable() {
     throw new UnsupportedOperationException(
@@ -171,8 +166,7 @@ public abstract class WorkloadIdentityPoolsStub implements BackgroundResource {
   }
 
   public OperationCallable<
-          UpdateWorkloadIdentityPoolProviderRequest,
-          WorkloadIdentityPoolProvider,
+          UpdateWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
           WorkloadIdentityPoolProviderOperationMetadata>
       updateWorkloadIdentityPoolProviderOperationCallable() {
     throw new UnsupportedOperationException(
@@ -186,8 +180,7 @@ public abstract class WorkloadIdentityPoolsStub implements BackgroundResource {
   }
 
   public OperationCallable<
-          DeleteWorkloadIdentityPoolProviderRequest,
-          WorkloadIdentityPoolProvider,
+          DeleteWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
           WorkloadIdentityPoolProviderOperationMetadata>
       deleteWorkloadIdentityPoolProviderOperationCallable() {
     throw new UnsupportedOperationException(
@@ -201,8 +194,7 @@ public abstract class WorkloadIdentityPoolsStub implements BackgroundResource {
   }
 
   public OperationCallable<
-          UndeleteWorkloadIdentityPoolProviderRequest,
-          WorkloadIdentityPoolProvider,
+          UndeleteWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider,
           WorkloadIdentityPoolProviderOperationMetadata>
       undeleteWorkloadIdentityPoolProviderOperationCallable() {
     throw new UnsupportedOperationException(

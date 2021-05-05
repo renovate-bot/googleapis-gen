@@ -43,9 +43,9 @@ import javax.annotation.Generated;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (admob.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (admob.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -79,8 +79,7 @@ public class AdMobApiSettings extends ClientSettings<AdMobApiSettings> {
 
   /** Returns the object with the settings used for calls to listPublisherAccounts. */
   public PagedCallSettings<
-          AdMobApiProto.ListPublisherAccountsRequest,
-          AdMobApiProto.ListPublisherAccountsResponse,
+          AdMobApiProto.ListPublisherAccountsRequest, AdMobApiProto.ListPublisherAccountsResponse,
           ListPublisherAccountsPagedResponse>
       listPublisherAccountsSettings() {
     return ((AdMobApiStubSettings) getStubSettings()).listPublisherAccountsSettings();
@@ -207,8 +206,7 @@ public class AdMobApiSettings extends ClientSettings<AdMobApiSettings> {
 
     /** Returns the builder for the settings used for calls to listPublisherAccounts. */
     public PagedCallSettings.Builder<
-            AdMobApiProto.ListPublisherAccountsRequest,
-            AdMobApiProto.ListPublisherAccountsResponse,
+            AdMobApiProto.ListPublisherAccountsRequest, AdMobApiProto.ListPublisherAccountsResponse,
             ListPublisherAccountsPagedResponse>
         listPublisherAccountsSettings() {
       return getStubSettingsBuilder().listPublisherAccountsSettings();

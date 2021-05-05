@@ -67,9 +67,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (aiplatform.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (aiplatform.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -100,15 +100,13 @@ public class MigrationServiceStubSettings extends StubSettings<MigrationServiceS
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
   private final PagedCallSettings<
-          SearchMigratableResourcesRequest,
-          SearchMigratableResourcesResponse,
+          SearchMigratableResourcesRequest, SearchMigratableResourcesResponse,
           SearchMigratableResourcesPagedResponse>
       searchMigratableResourcesSettings;
   private final UnaryCallSettings<BatchMigrateResourcesRequest, Operation>
       batchMigrateResourcesSettings;
   private final OperationCallSettings<
-          BatchMigrateResourcesRequest,
-          BatchMigrateResourcesResponse,
+          BatchMigrateResourcesRequest, BatchMigrateResourcesResponse,
           BatchMigrateResourcesOperationMetadata>
       batchMigrateResourcesOperationSettings;
 
@@ -116,8 +114,7 @@ public class MigrationServiceStubSettings extends StubSettings<MigrationServiceS
           SearchMigratableResourcesRequest, SearchMigratableResourcesResponse, MigratableResource>
       SEARCH_MIGRATABLE_RESOURCES_PAGE_STR_DESC =
           new PagedListDescriptor<
-              SearchMigratableResourcesRequest,
-              SearchMigratableResourcesResponse,
+              SearchMigratableResourcesRequest, SearchMigratableResourcesResponse,
               MigratableResource>() {
             @Override
             public String emptyToken() {
@@ -160,13 +157,11 @@ public class MigrationServiceStubSettings extends StubSettings<MigrationServiceS
           };
 
   private static final PagedListResponseFactory<
-          SearchMigratableResourcesRequest,
-          SearchMigratableResourcesResponse,
+          SearchMigratableResourcesRequest, SearchMigratableResourcesResponse,
           SearchMigratableResourcesPagedResponse>
       SEARCH_MIGRATABLE_RESOURCES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              SearchMigratableResourcesRequest,
-              SearchMigratableResourcesResponse,
+              SearchMigratableResourcesRequest, SearchMigratableResourcesResponse,
               SearchMigratableResourcesPagedResponse>() {
             @Override
             public ApiFuture<SearchMigratableResourcesPagedResponse> getFuturePagedResponse(
@@ -176,8 +171,7 @@ public class MigrationServiceStubSettings extends StubSettings<MigrationServiceS
                 ApiCallContext context,
                 ApiFuture<SearchMigratableResourcesResponse> futureResponse) {
               PageContext<
-                      SearchMigratableResourcesRequest,
-                      SearchMigratableResourcesResponse,
+                      SearchMigratableResourcesRequest, SearchMigratableResourcesResponse,
                       MigratableResource>
                   pageContext =
                       PageContext.create(
@@ -189,8 +183,7 @@ public class MigrationServiceStubSettings extends StubSettings<MigrationServiceS
 
   /** Returns the object with the settings used for calls to searchMigratableResources. */
   public PagedCallSettings<
-          SearchMigratableResourcesRequest,
-          SearchMigratableResourcesResponse,
+          SearchMigratableResourcesRequest, SearchMigratableResourcesResponse,
           SearchMigratableResourcesPagedResponse>
       searchMigratableResourcesSettings() {
     return searchMigratableResourcesSettings;
@@ -204,8 +197,7 @@ public class MigrationServiceStubSettings extends StubSettings<MigrationServiceS
 
   /** Returns the object with the settings used for calls to batchMigrateResources. */
   public OperationCallSettings<
-          BatchMigrateResourcesRequest,
-          BatchMigrateResourcesResponse,
+          BatchMigrateResourcesRequest, BatchMigrateResourcesResponse,
           BatchMigrateResourcesOperationMetadata>
       batchMigrateResourcesOperationSettings() {
     return batchMigrateResourcesOperationSettings;
@@ -290,15 +282,13 @@ public class MigrationServiceStubSettings extends StubSettings<MigrationServiceS
   public static class Builder extends StubSettings.Builder<MigrationServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final PagedCallSettings.Builder<
-            SearchMigratableResourcesRequest,
-            SearchMigratableResourcesResponse,
+            SearchMigratableResourcesRequest, SearchMigratableResourcesResponse,
             SearchMigratableResourcesPagedResponse>
         searchMigratableResourcesSettings;
     private final UnaryCallSettings.Builder<BatchMigrateResourcesRequest, Operation>
         batchMigrateResourcesSettings;
     private final OperationCallSettings.Builder<
-            BatchMigrateResourcesRequest,
-            BatchMigrateResourcesResponse,
+            BatchMigrateResourcesRequest, BatchMigrateResourcesResponse,
             BatchMigrateResourcesOperationMetadata>
         batchMigrateResourcesOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
@@ -421,8 +411,7 @@ public class MigrationServiceStubSettings extends StubSettings<MigrationServiceS
 
     /** Returns the builder for the settings used for calls to searchMigratableResources. */
     public PagedCallSettings.Builder<
-            SearchMigratableResourcesRequest,
-            SearchMigratableResourcesResponse,
+            SearchMigratableResourcesRequest, SearchMigratableResourcesResponse,
             SearchMigratableResourcesPagedResponse>
         searchMigratableResourcesSettings() {
       return searchMigratableResourcesSettings;
@@ -438,8 +427,7 @@ public class MigrationServiceStubSettings extends StubSettings<MigrationServiceS
     @BetaApi(
         "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
-            BatchMigrateResourcesRequest,
-            BatchMigrateResourcesResponse,
+            BatchMigrateResourcesRequest, BatchMigrateResourcesResponse,
             BatchMigrateResourcesOperationMetadata>
         batchMigrateResourcesOperationSettings() {
       return batchMigrateResourcesOperationSettings;

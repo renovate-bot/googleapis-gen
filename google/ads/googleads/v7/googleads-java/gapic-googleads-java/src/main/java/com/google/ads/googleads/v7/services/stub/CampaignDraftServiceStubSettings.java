@@ -70,9 +70,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (googleads.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (googleads.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -111,8 +111,7 @@ public class CampaignDraftServiceStubSettings
   private final OperationCallSettings<PromoteCampaignDraftRequest, Empty, Empty>
       promoteCampaignDraftOperationSettings;
   private final PagedCallSettings<
-          ListCampaignDraftAsyncErrorsRequest,
-          ListCampaignDraftAsyncErrorsResponse,
+          ListCampaignDraftAsyncErrorsRequest, ListCampaignDraftAsyncErrorsResponse,
           ListCampaignDraftAsyncErrorsPagedResponse>
       listCampaignDraftAsyncErrorsSettings;
 
@@ -161,13 +160,11 @@ public class CampaignDraftServiceStubSettings
           };
 
   private static final PagedListResponseFactory<
-          ListCampaignDraftAsyncErrorsRequest,
-          ListCampaignDraftAsyncErrorsResponse,
+          ListCampaignDraftAsyncErrorsRequest, ListCampaignDraftAsyncErrorsResponse,
           ListCampaignDraftAsyncErrorsPagedResponse>
       LIST_CAMPAIGN_DRAFT_ASYNC_ERRORS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListCampaignDraftAsyncErrorsRequest,
-              ListCampaignDraftAsyncErrorsResponse,
+              ListCampaignDraftAsyncErrorsRequest, ListCampaignDraftAsyncErrorsResponse,
               ListCampaignDraftAsyncErrorsPagedResponse>() {
             @Override
             public ApiFuture<ListCampaignDraftAsyncErrorsPagedResponse> getFuturePagedResponse(
@@ -178,8 +175,7 @@ public class CampaignDraftServiceStubSettings
                 ApiCallContext context,
                 ApiFuture<ListCampaignDraftAsyncErrorsResponse> futureResponse) {
               PageContext<
-                      ListCampaignDraftAsyncErrorsRequest,
-                      ListCampaignDraftAsyncErrorsResponse,
+                      ListCampaignDraftAsyncErrorsRequest, ListCampaignDraftAsyncErrorsResponse,
                       Status>
                   pageContext =
                       PageContext.create(
@@ -216,8 +212,7 @@ public class CampaignDraftServiceStubSettings
 
   /** Returns the object with the settings used for calls to listCampaignDraftAsyncErrors. */
   public PagedCallSettings<
-          ListCampaignDraftAsyncErrorsRequest,
-          ListCampaignDraftAsyncErrorsResponse,
+          ListCampaignDraftAsyncErrorsRequest, ListCampaignDraftAsyncErrorsResponse,
           ListCampaignDraftAsyncErrorsPagedResponse>
       listCampaignDraftAsyncErrorsSettings() {
     return listCampaignDraftAsyncErrorsSettings;
@@ -315,8 +310,7 @@ public class CampaignDraftServiceStubSettings
     private final OperationCallSettings.Builder<PromoteCampaignDraftRequest, Empty, Empty>
         promoteCampaignDraftOperationSettings;
     private final PagedCallSettings.Builder<
-            ListCampaignDraftAsyncErrorsRequest,
-            ListCampaignDraftAsyncErrorsResponse,
+            ListCampaignDraftAsyncErrorsRequest, ListCampaignDraftAsyncErrorsResponse,
             ListCampaignDraftAsyncErrorsPagedResponse>
         listCampaignDraftAsyncErrorsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
@@ -497,8 +491,7 @@ public class CampaignDraftServiceStubSettings
 
     /** Returns the builder for the settings used for calls to listCampaignDraftAsyncErrors. */
     public PagedCallSettings.Builder<
-            ListCampaignDraftAsyncErrorsRequest,
-            ListCampaignDraftAsyncErrorsResponse,
+            ListCampaignDraftAsyncErrorsRequest, ListCampaignDraftAsyncErrorsResponse,
             ListCampaignDraftAsyncErrorsPagedResponse>
         listCampaignDraftAsyncErrorsSettings() {
       return listCampaignDraftAsyncErrorsSettings;

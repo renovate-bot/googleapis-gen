@@ -51,11 +51,11 @@ import javax.annotation.Generated;
  * <p>The Dataproc Metastore API defines the following resource model:
  *
  * <ul>
- *   <li>The service works with a collection of Google Cloud projects, named: `/projects/&#42;`
- *   <li>Each project has a collection of available locations, named: `/locations/&#42;` (a location
- *       must refer to a Google Cloud `region`)
- *   <li>Each location has a collection of services, named: `/services/&#42;`
- *   <li>Dataproc Metastore services are resources with names of the form:
+ *   <li> The service works with a collection of Google Cloud projects, named: `/projects/&#42;`
+ *   <li> Each project has a collection of available locations, named: `/locations/&#42;` (a
+ *       location must refer to a Google Cloud `region`)
+ *   <li> Each location has a collection of services, named: `/services/&#42;`
+ *   <li> Dataproc Metastore services are resources with names of the form:
  * </ul>
  *
  * <p>`/projects/{project_number}/locations/{location_id}/services/{service_id}`.
@@ -78,13 +78,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -2169,10 +2169,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
 
   public static class ListServicesPagedResponse
       extends AbstractPagedListResponse<
-          ListServicesRequest,
-          ListServicesResponse,
-          Service,
-          ListServicesPage,
+          ListServicesRequest, ListServicesResponse, Service, ListServicesPage,
           ListServicesFixedSizeCollection> {
 
     public static ApiFuture<ListServicesPagedResponse> createAsync(
@@ -2226,10 +2223,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
 
   public static class ListServicesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListServicesRequest,
-          ListServicesResponse,
-          Service,
-          ListServicesPage,
+          ListServicesRequest, ListServicesResponse, Service, ListServicesPage,
           ListServicesFixedSizeCollection> {
 
     private ListServicesFixedSizeCollection(List<ListServicesPage> pages, int collectionSize) {
@@ -2249,11 +2243,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
 
   public static class ListMetadataImportsPagedResponse
       extends AbstractPagedListResponse<
-          ListMetadataImportsRequest,
-          ListMetadataImportsResponse,
-          MetadataImport,
-          ListMetadataImportsPage,
-          ListMetadataImportsFixedSizeCollection> {
+          ListMetadataImportsRequest, ListMetadataImportsResponse, MetadataImport,
+          ListMetadataImportsPage, ListMetadataImportsFixedSizeCollection> {
 
     public static ApiFuture<ListMetadataImportsPagedResponse> createAsync(
         PageContext<ListMetadataImportsRequest, ListMetadataImportsResponse, MetadataImport>
@@ -2279,9 +2270,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
 
   public static class ListMetadataImportsPage
       extends AbstractPage<
-          ListMetadataImportsRequest,
-          ListMetadataImportsResponse,
-          MetadataImport,
+          ListMetadataImportsRequest, ListMetadataImportsResponse, MetadataImport,
           ListMetadataImportsPage> {
 
     private ListMetadataImportsPage(
@@ -2314,11 +2303,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
 
   public static class ListMetadataImportsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListMetadataImportsRequest,
-          ListMetadataImportsResponse,
-          MetadataImport,
-          ListMetadataImportsPage,
-          ListMetadataImportsFixedSizeCollection> {
+          ListMetadataImportsRequest, ListMetadataImportsResponse, MetadataImport,
+          ListMetadataImportsPage, ListMetadataImportsFixedSizeCollection> {
 
     private ListMetadataImportsFixedSizeCollection(
         List<ListMetadataImportsPage> pages, int collectionSize) {
@@ -2338,10 +2324,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
 
   public static class ListBackupsPagedResponse
       extends AbstractPagedListResponse<
-          ListBackupsRequest,
-          ListBackupsResponse,
-          Backup,
-          ListBackupsPage,
+          ListBackupsRequest, ListBackupsResponse, Backup, ListBackupsPage,
           ListBackupsFixedSizeCollection> {
 
     public static ApiFuture<ListBackupsPagedResponse> createAsync(
@@ -2395,10 +2378,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
 
   public static class ListBackupsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListBackupsRequest,
-          ListBackupsResponse,
-          Backup,
-          ListBackupsPage,
+          ListBackupsRequest, ListBackupsResponse, Backup, ListBackupsPage,
           ListBackupsFixedSizeCollection> {
 
     private ListBackupsFixedSizeCollection(List<ListBackupsPage> pages, int collectionSize) {

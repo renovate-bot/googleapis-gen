@@ -60,13 +60,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -177,10 +177,10 @@ public class AssetServiceClient implements BackgroundResource {
    * @param scope Required. The relative name of an asset. The search is limited to the resources
    *     within the `scope`. The allowed value must be:
    *     <ul>
-   *       <li>Organization number (such as "organizations/123")
-   *       <li>Folder number(such as "folders/1234")
-   *       <li>Project number (such as "projects/12345")
-   *       <li>Project id (such as "projects/abc")
+   *       <li> Organization number (such as "organizations/123")
+   *       <li> Folder number(such as "folders/1234")
+   *       <li> Project number (such as "projects/12345")
+   *       <li> Project id (such as "projects/abc")
    *     </ul>
    *
    * @param query Optional. The query statement.
@@ -336,16 +336,16 @@ public class AssetServiceClient implements BackgroundResource {
    * @param scope Required. The relative name of an asset. The search is limited to the resources
    *     within the `scope`. The allowed value must be:
    *     <ul>
-   *       <li>Organization number (such as "organizations/123")
-   *       <li>Folder number(such as "folders/1234")
-   *       <li>Project number (such as "projects/12345")
-   *       <li>Project id (such as "projects/abc")
+   *       <li> Organization number (such as "organizations/123")
+   *       <li> Folder number(such as "folders/1234")
+   *       <li> Project number (such as "projects/12345")
+   *       <li> Project id (such as "projects/abc")
    *     </ul>
    *
    * @param query Optional. The query statement. Examples:
    *     <ul>
-   *       <li>"policy:myuser{@literal @}mydomain.com"
-   *       <li>"policy:(myuser{@literal @}mydomain.com viewer)"
+   *       <li> "policy:myuser{@literal @}mydomain.com"
+   *       <li> "policy:(myuser{@literal @}mydomain.com viewer)"
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -495,11 +495,8 @@ public class AssetServiceClient implements BackgroundResource {
 
   public static class SearchAllResourcesPagedResponse
       extends AbstractPagedListResponse<
-          SearchAllResourcesRequest,
-          SearchAllResourcesResponse,
-          StandardResourceMetadata,
-          SearchAllResourcesPage,
-          SearchAllResourcesFixedSizeCollection> {
+          SearchAllResourcesRequest, SearchAllResourcesResponse, StandardResourceMetadata,
+          SearchAllResourcesPage, SearchAllResourcesFixedSizeCollection> {
 
     public static ApiFuture<SearchAllResourcesPagedResponse> createAsync(
         PageContext<SearchAllResourcesRequest, SearchAllResourcesResponse, StandardResourceMetadata>
@@ -525,9 +522,7 @@ public class AssetServiceClient implements BackgroundResource {
 
   public static class SearchAllResourcesPage
       extends AbstractPage<
-          SearchAllResourcesRequest,
-          SearchAllResourcesResponse,
-          StandardResourceMetadata,
+          SearchAllResourcesRequest, SearchAllResourcesResponse, StandardResourceMetadata,
           SearchAllResourcesPage> {
 
     private SearchAllResourcesPage(
@@ -560,11 +555,8 @@ public class AssetServiceClient implements BackgroundResource {
 
   public static class SearchAllResourcesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          SearchAllResourcesRequest,
-          SearchAllResourcesResponse,
-          StandardResourceMetadata,
-          SearchAllResourcesPage,
-          SearchAllResourcesFixedSizeCollection> {
+          SearchAllResourcesRequest, SearchAllResourcesResponse, StandardResourceMetadata,
+          SearchAllResourcesPage, SearchAllResourcesFixedSizeCollection> {
 
     private SearchAllResourcesFixedSizeCollection(
         List<SearchAllResourcesPage> pages, int collectionSize) {
@@ -584,11 +576,8 @@ public class AssetServiceClient implements BackgroundResource {
 
   public static class SearchAllIamPoliciesPagedResponse
       extends AbstractPagedListResponse<
-          SearchAllIamPoliciesRequest,
-          SearchAllIamPoliciesResponse,
-          IamPolicySearchResult,
-          SearchAllIamPoliciesPage,
-          SearchAllIamPoliciesFixedSizeCollection> {
+          SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse, IamPolicySearchResult,
+          SearchAllIamPoliciesPage, SearchAllIamPoliciesFixedSizeCollection> {
 
     public static ApiFuture<SearchAllIamPoliciesPagedResponse> createAsync(
         PageContext<
@@ -615,9 +604,7 @@ public class AssetServiceClient implements BackgroundResource {
 
   public static class SearchAllIamPoliciesPage
       extends AbstractPage<
-          SearchAllIamPoliciesRequest,
-          SearchAllIamPoliciesResponse,
-          IamPolicySearchResult,
+          SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse, IamPolicySearchResult,
           SearchAllIamPoliciesPage> {
 
     private SearchAllIamPoliciesPage(
@@ -653,11 +640,8 @@ public class AssetServiceClient implements BackgroundResource {
 
   public static class SearchAllIamPoliciesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          SearchAllIamPoliciesRequest,
-          SearchAllIamPoliciesResponse,
-          IamPolicySearchResult,
-          SearchAllIamPoliciesPage,
-          SearchAllIamPoliciesFixedSizeCollection> {
+          SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse, IamPolicySearchResult,
+          SearchAllIamPoliciesPage, SearchAllIamPoliciesFixedSizeCollection> {
 
     private SearchAllIamPoliciesFixedSizeCollection(
         List<SearchAllIamPoliciesPage> pages, int collectionSize) {

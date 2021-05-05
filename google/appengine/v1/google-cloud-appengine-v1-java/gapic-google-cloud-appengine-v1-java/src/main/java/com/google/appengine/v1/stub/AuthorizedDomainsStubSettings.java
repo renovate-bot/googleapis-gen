@@ -59,9 +59,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (appengine.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (appengine.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -96,8 +96,7 @@ public class AuthorizedDomainsStubSettings extends StubSettings<AuthorizedDomain
           .build();
 
   private final PagedCallSettings<
-          ListAuthorizedDomainsRequest,
-          ListAuthorizedDomainsResponse,
+          ListAuthorizedDomainsRequest, ListAuthorizedDomainsResponse,
           ListAuthorizedDomainsPagedResponse>
       listAuthorizedDomainsSettings;
 
@@ -143,13 +142,11 @@ public class AuthorizedDomainsStubSettings extends StubSettings<AuthorizedDomain
           };
 
   private static final PagedListResponseFactory<
-          ListAuthorizedDomainsRequest,
-          ListAuthorizedDomainsResponse,
+          ListAuthorizedDomainsRequest, ListAuthorizedDomainsResponse,
           ListAuthorizedDomainsPagedResponse>
       LIST_AUTHORIZED_DOMAINS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListAuthorizedDomainsRequest,
-              ListAuthorizedDomainsResponse,
+              ListAuthorizedDomainsRequest, ListAuthorizedDomainsResponse,
               ListAuthorizedDomainsPagedResponse>() {
             @Override
             public ApiFuture<ListAuthorizedDomainsPagedResponse> getFuturePagedResponse(
@@ -168,8 +165,7 @@ public class AuthorizedDomainsStubSettings extends StubSettings<AuthorizedDomain
 
   /** Returns the object with the settings used for calls to listAuthorizedDomains. */
   public PagedCallSettings<
-          ListAuthorizedDomainsRequest,
-          ListAuthorizedDomainsResponse,
+          ListAuthorizedDomainsRequest, ListAuthorizedDomainsResponse,
           ListAuthorizedDomainsPagedResponse>
       listAuthorizedDomainsSettings() {
     return listAuthorizedDomainsSettings;
@@ -251,8 +247,7 @@ public class AuthorizedDomainsStubSettings extends StubSettings<AuthorizedDomain
   public static class Builder extends StubSettings.Builder<AuthorizedDomainsStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final PagedCallSettings.Builder<
-            ListAuthorizedDomainsRequest,
-            ListAuthorizedDomainsResponse,
+            ListAuthorizedDomainsRequest, ListAuthorizedDomainsResponse,
             ListAuthorizedDomainsPagedResponse>
         listAuthorizedDomainsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
@@ -344,8 +339,7 @@ public class AuthorizedDomainsStubSettings extends StubSettings<AuthorizedDomain
 
     /** Returns the builder for the settings used for calls to listAuthorizedDomains. */
     public PagedCallSettings.Builder<
-            ListAuthorizedDomainsRequest,
-            ListAuthorizedDomainsResponse,
+            ListAuthorizedDomainsRequest, ListAuthorizedDomainsResponse,
             ListAuthorizedDomainsPagedResponse>
         listAuthorizedDomainsSettings() {
       return listAuthorizedDomainsSettings;

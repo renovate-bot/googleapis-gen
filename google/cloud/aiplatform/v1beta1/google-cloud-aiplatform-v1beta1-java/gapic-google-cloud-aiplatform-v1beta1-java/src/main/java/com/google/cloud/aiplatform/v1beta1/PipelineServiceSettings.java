@@ -46,9 +46,9 @@ import javax.annotation.Generated;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (aiplatform.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (aiplatform.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -89,8 +89,7 @@ public class PipelineServiceSettings extends ClientSettings<PipelineServiceSetti
 
   /** Returns the object with the settings used for calls to listTrainingPipelines. */
   public PagedCallSettings<
-          ListTrainingPipelinesRequest,
-          ListTrainingPipelinesResponse,
+          ListTrainingPipelinesRequest, ListTrainingPipelinesResponse,
           ListTrainingPipelinesPagedResponse>
       listTrainingPipelinesSettings() {
     return ((PipelineServiceStubSettings) getStubSettings()).listTrainingPipelinesSettings();
@@ -259,8 +258,7 @@ public class PipelineServiceSettings extends ClientSettings<PipelineServiceSetti
 
     /** Returns the builder for the settings used for calls to listTrainingPipelines. */
     public PagedCallSettings.Builder<
-            ListTrainingPipelinesRequest,
-            ListTrainingPipelinesResponse,
+            ListTrainingPipelinesRequest, ListTrainingPipelinesResponse,
             ListTrainingPipelinesPagedResponse>
         listTrainingPipelinesSettings() {
       return getStubSettingsBuilder().listTrainingPipelinesSettings();

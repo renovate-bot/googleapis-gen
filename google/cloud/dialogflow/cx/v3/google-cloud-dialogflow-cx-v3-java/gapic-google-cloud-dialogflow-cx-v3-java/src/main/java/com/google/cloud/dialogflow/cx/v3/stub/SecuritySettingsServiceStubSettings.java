@@ -64,9 +64,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (dialogflow.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (dialogflow.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -107,8 +107,7 @@ public class SecuritySettingsServiceStubSettings
   private final UnaryCallSettings<UpdateSecuritySettingsRequest, SecuritySettings>
       updateSecuritySettingsSettings;
   private final PagedCallSettings<
-          ListSecuritySettingsRequest,
-          ListSecuritySettingsResponse,
+          ListSecuritySettingsRequest, ListSecuritySettingsResponse,
           ListSecuritySettingsPagedResponse>
       listSecuritySettingsSettings;
   private final UnaryCallSettings<DeleteSecuritySettingsRequest, Empty>
@@ -156,13 +155,11 @@ public class SecuritySettingsServiceStubSettings
           };
 
   private static final PagedListResponseFactory<
-          ListSecuritySettingsRequest,
-          ListSecuritySettingsResponse,
+          ListSecuritySettingsRequest, ListSecuritySettingsResponse,
           ListSecuritySettingsPagedResponse>
       LIST_SECURITY_SETTINGS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListSecuritySettingsRequest,
-              ListSecuritySettingsResponse,
+              ListSecuritySettingsRequest, ListSecuritySettingsResponse,
               ListSecuritySettingsPagedResponse>() {
             @Override
             public ApiFuture<ListSecuritySettingsPagedResponse> getFuturePagedResponse(
@@ -199,8 +196,7 @@ public class SecuritySettingsServiceStubSettings
 
   /** Returns the object with the settings used for calls to listSecuritySettings. */
   public PagedCallSettings<
-          ListSecuritySettingsRequest,
-          ListSecuritySettingsResponse,
+          ListSecuritySettingsRequest, ListSecuritySettingsResponse,
           ListSecuritySettingsPagedResponse>
       listSecuritySettingsSettings() {
     return listSecuritySettingsSettings;
@@ -298,8 +294,7 @@ public class SecuritySettingsServiceStubSettings
     private final UnaryCallSettings.Builder<UpdateSecuritySettingsRequest, SecuritySettings>
         updateSecuritySettingsSettings;
     private final PagedCallSettings.Builder<
-            ListSecuritySettingsRequest,
-            ListSecuritySettingsResponse,
+            ListSecuritySettingsRequest, ListSecuritySettingsResponse,
             ListSecuritySettingsPagedResponse>
         listSecuritySettingsSettings;
     private final UnaryCallSettings.Builder<DeleteSecuritySettingsRequest, Empty>
@@ -453,8 +448,7 @@ public class SecuritySettingsServiceStubSettings
 
     /** Returns the builder for the settings used for calls to listSecuritySettings. */
     public PagedCallSettings.Builder<
-            ListSecuritySettingsRequest,
-            ListSecuritySettingsResponse,
+            ListSecuritySettingsRequest, ListSecuritySettingsResponse,
             ListSecuritySettingsPagedResponse>
         listSecuritySettingsSettings() {
       return listSecuritySettingsSettings;

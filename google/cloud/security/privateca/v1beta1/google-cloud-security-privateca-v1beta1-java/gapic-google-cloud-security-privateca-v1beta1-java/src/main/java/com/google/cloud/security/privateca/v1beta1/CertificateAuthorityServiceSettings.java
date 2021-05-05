@@ -47,9 +47,9 @@ import javax.annotation.Generated;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (privateca.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (privateca.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -185,8 +185,7 @@ public class CertificateAuthorityServiceSettings
 
   /** Returns the object with the settings used for calls to listCertificateAuthorities. */
   public PagedCallSettings<
-          ListCertificateAuthoritiesRequest,
-          ListCertificateAuthoritiesResponse,
+          ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesResponse,
           ListCertificateAuthoritiesPagedResponse>
       listCertificateAuthoritiesSettings() {
     return ((CertificateAuthorityServiceStubSettings) getStubSettings())
@@ -247,8 +246,7 @@ public class CertificateAuthorityServiceSettings
 
   /** Returns the object with the settings used for calls to listCertificateRevocationLists. */
   public PagedCallSettings<
-          ListCertificateRevocationListsRequest,
-          ListCertificateRevocationListsResponse,
+          ListCertificateRevocationListsRequest, ListCertificateRevocationListsResponse,
           ListCertificateRevocationListsPagedResponse>
       listCertificateRevocationListsSettings() {
     return ((CertificateAuthorityServiceStubSettings) getStubSettings())
@@ -480,8 +478,7 @@ public class CertificateAuthorityServiceSettings
 
     /** Returns the builder for the settings used for calls to listCertificateAuthorities. */
     public PagedCallSettings.Builder<
-            ListCertificateAuthoritiesRequest,
-            ListCertificateAuthoritiesResponse,
+            ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesResponse,
             ListCertificateAuthoritiesPagedResponse>
         listCertificateAuthoritiesSettings() {
       return getStubSettingsBuilder().listCertificateAuthoritiesSettings();
@@ -538,8 +535,7 @@ public class CertificateAuthorityServiceSettings
 
     /** Returns the builder for the settings used for calls to listCertificateRevocationLists. */
     public PagedCallSettings.Builder<
-            ListCertificateRevocationListsRequest,
-            ListCertificateRevocationListsResponse,
+            ListCertificateRevocationListsRequest, ListCertificateRevocationListsResponse,
             ListCertificateRevocationListsPagedResponse>
         listCertificateRevocationListsSettings() {
       return getStubSettingsBuilder().listCertificateRevocationListsSettings();
@@ -566,8 +562,7 @@ public class CertificateAuthorityServiceSettings
 
     /** Returns the builder for the settings used for calls to listReusableConfigs. */
     public PagedCallSettings.Builder<
-            ListReusableConfigsRequest,
-            ListReusableConfigsResponse,
+            ListReusableConfigsRequest, ListReusableConfigsResponse,
             ListReusableConfigsPagedResponse>
         listReusableConfigsSettings() {
       return getStubSettingsBuilder().listReusableConfigsSettings();

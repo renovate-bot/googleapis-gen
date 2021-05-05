@@ -69,13 +69,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -683,7 +683,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   ResourceName resource = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+   *   ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
    *   Policy response = securityCenterClient.getIamPolicy(resource);
    * }
    * }</pre>
@@ -708,7 +708,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   String resource = SourceName.of("[ORGANIZATION]", "[SOURCE]").toString();
+   *   String resource = AssetName.of("[ORGANIZATION]", "[ASSET]").toString();
    *   Policy response = securityCenterClient.getIamPolicy(resource);
    * }
    * }</pre>
@@ -732,7 +732,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+   *           .setResource(AssetName.of("[ORGANIZATION]", "[ASSET]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = securityCenterClient.getIamPolicy(request);
@@ -756,7 +756,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+   *           .setResource(AssetName.of("[ORGANIZATION]", "[ASSET]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = securityCenterClient.getIamPolicyCallable().futureCall(request);
@@ -1180,15 +1180,15 @@ public class SecurityCenterClient implements BackgroundResource {
    *     of fields. For example: "parent,resource_name".
    *     <p>The following fields are supported:
    *     <ul>
-   *       <li>resource_name
-   *       <li>category
-   *       <li>state
-   *       <li>parent
-   *       <li>severity
+   *       <li> resource_name
+   *       <li> category
+   *       <li> state
+   *       <li> parent
+   *       <li> severity
    *     </ul>
    *     <p>The following fields are supported when compare_duration is set:
    *     <ul>
-   *       <li>state_change
+   *       <li> state_change
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1229,15 +1229,15 @@ public class SecurityCenterClient implements BackgroundResource {
    *     of fields. For example: "parent,resource_name".
    *     <p>The following fields are supported:
    *     <ul>
-   *       <li>resource_name
-   *       <li>category
-   *       <li>state
-   *       <li>parent
-   *       <li>severity
+   *       <li> resource_name
+   *       <li> category
+   *       <li> state
+   *       <li> parent
+   *       <li> severity
    *     </ul>
    *     <p>The following fields are supported when compare_duration is set:
    *     <ul>
-   *       <li>state_change
+   *       <li> state_change
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2118,7 +2118,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   ResourceName resource = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+   *   ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = securityCenterClient.setIamPolicy(resource, policy);
    * }
@@ -2148,7 +2148,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   String resource = SourceName.of("[ORGANIZATION]", "[SOURCE]").toString();
+   *   String resource = AssetName.of("[ORGANIZATION]", "[ASSET]").toString();
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = securityCenterClient.setIamPolicy(resource, policy);
    * }
@@ -2177,7 +2177,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+   *           .setResource(AssetName.of("[ORGANIZATION]", "[ASSET]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .build();
    *   Policy response = securityCenterClient.setIamPolicy(request);
@@ -2201,7 +2201,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+   *           .setResource(AssetName.of("[ORGANIZATION]", "[ASSET]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = securityCenterClient.setIamPolicyCallable().futureCall(request);
@@ -2222,7 +2222,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   ResourceName resource = SourceName.of("[ORGANIZATION]", "[SOURCE]");
+   *   ResourceName resource = AssetName.of("[ORGANIZATION]", "[ASSET]");
    *   List<String> permissions = new ArrayList<>();
    *   TestIamPermissionsResponse response =
    *       securityCenterClient.testIamPermissions(resource, permissions);
@@ -2254,7 +2254,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   String resource = SourceName.of("[ORGANIZATION]", "[SOURCE]").toString();
+   *   String resource = AssetName.of("[ORGANIZATION]", "[ASSET]").toString();
    *   List<String> permissions = new ArrayList<>();
    *   TestIamPermissionsResponse response =
    *       securityCenterClient.testIamPermissions(resource, permissions);
@@ -2288,7 +2288,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+   *           .setResource(AssetName.of("[ORGANIZATION]", "[ASSET]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = securityCenterClient.testIamPermissions(request);
@@ -2312,7 +2312,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
+   *           .setResource(AssetName.of("[ORGANIZATION]", "[ASSET]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =
@@ -2759,10 +2759,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
   public static class GroupAssetsPagedResponse
       extends AbstractPagedListResponse<
-          GroupAssetsRequest,
-          GroupAssetsResponse,
-          GroupResult,
-          GroupAssetsPage,
+          GroupAssetsRequest, GroupAssetsResponse, GroupResult, GroupAssetsPage,
           GroupAssetsFixedSizeCollection> {
 
     public static ApiFuture<GroupAssetsPagedResponse> createAsync(
@@ -2816,10 +2813,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
   public static class GroupAssetsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          GroupAssetsRequest,
-          GroupAssetsResponse,
-          GroupResult,
-          GroupAssetsPage,
+          GroupAssetsRequest, GroupAssetsResponse, GroupResult, GroupAssetsPage,
           GroupAssetsFixedSizeCollection> {
 
     private GroupAssetsFixedSizeCollection(List<GroupAssetsPage> pages, int collectionSize) {
@@ -2839,10 +2833,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
   public static class GroupFindingsPagedResponse
       extends AbstractPagedListResponse<
-          GroupFindingsRequest,
-          GroupFindingsResponse,
-          GroupResult,
-          GroupFindingsPage,
+          GroupFindingsRequest, GroupFindingsResponse, GroupResult, GroupFindingsPage,
           GroupFindingsFixedSizeCollection> {
 
     public static ApiFuture<GroupFindingsPagedResponse> createAsync(
@@ -2897,10 +2888,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
   public static class GroupFindingsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          GroupFindingsRequest,
-          GroupFindingsResponse,
-          GroupResult,
-          GroupFindingsPage,
+          GroupFindingsRequest, GroupFindingsResponse, GroupResult, GroupFindingsPage,
           GroupFindingsFixedSizeCollection> {
 
     private GroupFindingsFixedSizeCollection(List<GroupFindingsPage> pages, int collectionSize) {
@@ -2920,11 +2908,8 @@ public class SecurityCenterClient implements BackgroundResource {
 
   public static class ListAssetsPagedResponse
       extends AbstractPagedListResponse<
-          ListAssetsRequest,
-          ListAssetsResponse,
-          ListAssetsResponse.ListAssetsResult,
-          ListAssetsPage,
-          ListAssetsFixedSizeCollection> {
+          ListAssetsRequest, ListAssetsResponse, ListAssetsResponse.ListAssetsResult,
+          ListAssetsPage, ListAssetsFixedSizeCollection> {
 
     public static ApiFuture<ListAssetsPagedResponse> createAsync(
         PageContext<ListAssetsRequest, ListAssetsResponse, ListAssetsResponse.ListAssetsResult>
@@ -2950,9 +2935,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
   public static class ListAssetsPage
       extends AbstractPage<
-          ListAssetsRequest,
-          ListAssetsResponse,
-          ListAssetsResponse.ListAssetsResult,
+          ListAssetsRequest, ListAssetsResponse, ListAssetsResponse.ListAssetsResult,
           ListAssetsPage> {
 
     private ListAssetsPage(
@@ -2985,11 +2968,8 @@ public class SecurityCenterClient implements BackgroundResource {
 
   public static class ListAssetsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListAssetsRequest,
-          ListAssetsResponse,
-          ListAssetsResponse.ListAssetsResult,
-          ListAssetsPage,
-          ListAssetsFixedSizeCollection> {
+          ListAssetsRequest, ListAssetsResponse, ListAssetsResponse.ListAssetsResult,
+          ListAssetsPage, ListAssetsFixedSizeCollection> {
 
     private ListAssetsFixedSizeCollection(List<ListAssetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
@@ -3008,11 +2988,8 @@ public class SecurityCenterClient implements BackgroundResource {
 
   public static class ListFindingsPagedResponse
       extends AbstractPagedListResponse<
-          ListFindingsRequest,
-          ListFindingsResponse,
-          ListFindingsResponse.ListFindingsResult,
-          ListFindingsPage,
-          ListFindingsFixedSizeCollection> {
+          ListFindingsRequest, ListFindingsResponse, ListFindingsResponse.ListFindingsResult,
+          ListFindingsPage, ListFindingsFixedSizeCollection> {
 
     public static ApiFuture<ListFindingsPagedResponse> createAsync(
         PageContext<
@@ -3039,9 +3016,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
   public static class ListFindingsPage
       extends AbstractPage<
-          ListFindingsRequest,
-          ListFindingsResponse,
-          ListFindingsResponse.ListFindingsResult,
+          ListFindingsRequest, ListFindingsResponse, ListFindingsResponse.ListFindingsResult,
           ListFindingsPage> {
 
     private ListFindingsPage(
@@ -3077,11 +3052,8 @@ public class SecurityCenterClient implements BackgroundResource {
 
   public static class ListFindingsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListFindingsRequest,
-          ListFindingsResponse,
-          ListFindingsResponse.ListFindingsResult,
-          ListFindingsPage,
-          ListFindingsFixedSizeCollection> {
+          ListFindingsRequest, ListFindingsResponse, ListFindingsResponse.ListFindingsResult,
+          ListFindingsPage, ListFindingsFixedSizeCollection> {
 
     private ListFindingsFixedSizeCollection(List<ListFindingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
@@ -3100,11 +3072,8 @@ public class SecurityCenterClient implements BackgroundResource {
 
   public static class ListNotificationConfigsPagedResponse
       extends AbstractPagedListResponse<
-          ListNotificationConfigsRequest,
-          ListNotificationConfigsResponse,
-          NotificationConfig,
-          ListNotificationConfigsPage,
-          ListNotificationConfigsFixedSizeCollection> {
+          ListNotificationConfigsRequest, ListNotificationConfigsResponse, NotificationConfig,
+          ListNotificationConfigsPage, ListNotificationConfigsFixedSizeCollection> {
 
     public static ApiFuture<ListNotificationConfigsPagedResponse> createAsync(
         PageContext<
@@ -3131,9 +3100,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
   public static class ListNotificationConfigsPage
       extends AbstractPage<
-          ListNotificationConfigsRequest,
-          ListNotificationConfigsResponse,
-          NotificationConfig,
+          ListNotificationConfigsRequest, ListNotificationConfigsResponse, NotificationConfig,
           ListNotificationConfigsPage> {
 
     private ListNotificationConfigsPage(
@@ -3169,11 +3136,8 @@ public class SecurityCenterClient implements BackgroundResource {
 
   public static class ListNotificationConfigsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListNotificationConfigsRequest,
-          ListNotificationConfigsResponse,
-          NotificationConfig,
-          ListNotificationConfigsPage,
-          ListNotificationConfigsFixedSizeCollection> {
+          ListNotificationConfigsRequest, ListNotificationConfigsResponse, NotificationConfig,
+          ListNotificationConfigsPage, ListNotificationConfigsFixedSizeCollection> {
 
     private ListNotificationConfigsFixedSizeCollection(
         List<ListNotificationConfigsPage> pages, int collectionSize) {
@@ -3193,10 +3157,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
   public static class ListSourcesPagedResponse
       extends AbstractPagedListResponse<
-          ListSourcesRequest,
-          ListSourcesResponse,
-          Source,
-          ListSourcesPage,
+          ListSourcesRequest, ListSourcesResponse, Source, ListSourcesPage,
           ListSourcesFixedSizeCollection> {
 
     public static ApiFuture<ListSourcesPagedResponse> createAsync(
@@ -3250,10 +3211,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
   public static class ListSourcesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListSourcesRequest,
-          ListSourcesResponse,
-          Source,
-          ListSourcesPage,
+          ListSourcesRequest, ListSourcesResponse, Source, ListSourcesPage,
           ListSourcesFixedSizeCollection> {
 
     private ListSourcesFixedSizeCollection(List<ListSourcesPage> pages, int collectionSize) {

@@ -119,8 +119,7 @@ public abstract class AssetServiceStub implements BackgroundResource {
   }
 
   public OperationCallable<
-          AnalyzeIamPolicyLongrunningRequest,
-          AnalyzeIamPolicyLongrunningResponse,
+          AnalyzeIamPolicyLongrunningRequest, AnalyzeIamPolicyLongrunningResponse,
           AnalyzeIamPolicyLongrunningRequest>
       analyzeIamPolicyLongrunningOperationCallable() {
     throw new UnsupportedOperationException(

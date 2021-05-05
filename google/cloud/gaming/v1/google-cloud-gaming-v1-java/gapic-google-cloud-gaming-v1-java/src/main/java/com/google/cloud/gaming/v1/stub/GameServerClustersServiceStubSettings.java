@@ -76,9 +76,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (gameservices.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (gameservices.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -110,8 +110,7 @@ public class GameServerClustersServiceStubSettings
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
   private final PagedCallSettings<
-          ListGameServerClustersRequest,
-          ListGameServerClustersResponse,
+          ListGameServerClustersRequest, ListGameServerClustersResponse,
           ListGameServerClustersPagedResponse>
       listGameServerClustersSettings;
   private final UnaryCallSettings<GetGameServerClusterRequest, GameServerCluster>
@@ -184,13 +183,11 @@ public class GameServerClustersServiceStubSettings
           };
 
   private static final PagedListResponseFactory<
-          ListGameServerClustersRequest,
-          ListGameServerClustersResponse,
+          ListGameServerClustersRequest, ListGameServerClustersResponse,
           ListGameServerClustersPagedResponse>
       LIST_GAME_SERVER_CLUSTERS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListGameServerClustersRequest,
-              ListGameServerClustersResponse,
+              ListGameServerClustersRequest, ListGameServerClustersResponse,
               ListGameServerClustersPagedResponse>() {
             @Override
             public ApiFuture<ListGameServerClustersPagedResponse> getFuturePagedResponse(
@@ -200,8 +197,7 @@ public class GameServerClustersServiceStubSettings
                 ApiCallContext context,
                 ApiFuture<ListGameServerClustersResponse> futureResponse) {
               PageContext<
-                      ListGameServerClustersRequest,
-                      ListGameServerClustersResponse,
+                      ListGameServerClustersRequest, ListGameServerClustersResponse,
                       GameServerCluster>
                   pageContext =
                       PageContext.create(
@@ -212,8 +208,7 @@ public class GameServerClustersServiceStubSettings
 
   /** Returns the object with the settings used for calls to listGameServerClusters. */
   public PagedCallSettings<
-          ListGameServerClustersRequest,
-          ListGameServerClustersResponse,
+          ListGameServerClustersRequest, ListGameServerClustersResponse,
           ListGameServerClustersPagedResponse>
       listGameServerClustersSettings() {
     return listGameServerClustersSettings;
@@ -375,8 +370,7 @@ public class GameServerClustersServiceStubSettings
       extends StubSettings.Builder<GameServerClustersServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final PagedCallSettings.Builder<
-            ListGameServerClustersRequest,
-            ListGameServerClustersResponse,
+            ListGameServerClustersRequest, ListGameServerClustersResponse,
             ListGameServerClustersPagedResponse>
         listGameServerClustersSettings;
     private final UnaryCallSettings.Builder<GetGameServerClusterRequest, GameServerCluster>
@@ -667,8 +661,7 @@ public class GameServerClustersServiceStubSettings
 
     /** Returns the builder for the settings used for calls to listGameServerClusters. */
     public PagedCallSettings.Builder<
-            ListGameServerClustersRequest,
-            ListGameServerClustersResponse,
+            ListGameServerClustersRequest, ListGameServerClustersResponse,
             ListGameServerClustersPagedResponse>
         listGameServerClustersSettings() {
       return listGameServerClustersSettings;

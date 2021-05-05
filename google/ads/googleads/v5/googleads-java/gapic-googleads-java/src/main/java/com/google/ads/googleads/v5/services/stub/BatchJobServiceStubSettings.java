@@ -72,9 +72,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (googleads.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (googleads.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -159,8 +159,7 @@ public class BatchJobServiceStubSettings extends StubSettings<BatchJobServiceStu
           ListBatchJobResultsRequest, ListBatchJobResultsResponse, ListBatchJobResultsPagedResponse>
       LIST_BATCH_JOB_RESULTS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListBatchJobResultsRequest,
-              ListBatchJobResultsResponse,
+              ListBatchJobResultsRequest, ListBatchJobResultsResponse,
               ListBatchJobResultsPagedResponse>() {
             @Override
             public ApiFuture<ListBatchJobResultsPagedResponse> getFuturePagedResponse(
@@ -294,8 +293,7 @@ public class BatchJobServiceStubSettings extends StubSettings<BatchJobServiceStu
         mutateBatchJobSettings;
     private final UnaryCallSettings.Builder<GetBatchJobRequest, BatchJob> getBatchJobSettings;
     private final PagedCallSettings.Builder<
-            ListBatchJobResultsRequest,
-            ListBatchJobResultsResponse,
+            ListBatchJobResultsRequest, ListBatchJobResultsResponse,
             ListBatchJobResultsPagedResponse>
         listBatchJobResultsSettings;
     private final UnaryCallSettings.Builder<RunBatchJobRequest, Operation> runBatchJobSettings;
@@ -475,8 +473,7 @@ public class BatchJobServiceStubSettings extends StubSettings<BatchJobServiceStu
 
     /** Returns the builder for the settings used for calls to listBatchJobResults. */
     public PagedCallSettings.Builder<
-            ListBatchJobResultsRequest,
-            ListBatchJobResultsResponse,
+            ListBatchJobResultsRequest, ListBatchJobResultsResponse,
             ListBatchJobResultsPagedResponse>
         listBatchJobResultsSettings() {
       return listBatchJobResultsSettings;

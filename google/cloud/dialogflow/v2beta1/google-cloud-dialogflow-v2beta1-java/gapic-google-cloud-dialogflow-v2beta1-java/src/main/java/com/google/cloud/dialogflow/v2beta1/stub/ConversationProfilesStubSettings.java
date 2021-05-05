@@ -64,9 +64,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (dialogflow.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (dialogflow.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -102,8 +102,7 @@ public class ConversationProfilesStubSettings
           .build();
 
   private final PagedCallSettings<
-          ListConversationProfilesRequest,
-          ListConversationProfilesResponse,
+          ListConversationProfilesRequest, ListConversationProfilesResponse,
           ListConversationProfilesPagedResponse>
       listConversationProfilesSettings;
   private final UnaryCallSettings<GetConversationProfileRequest, ConversationProfile>
@@ -119,8 +118,7 @@ public class ConversationProfilesStubSettings
           ListConversationProfilesRequest, ListConversationProfilesResponse, ConversationProfile>
       LIST_CONVERSATION_PROFILES_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ListConversationProfilesRequest,
-              ListConversationProfilesResponse,
+              ListConversationProfilesRequest, ListConversationProfilesResponse,
               ConversationProfile>() {
             @Override
             public String emptyToken() {
@@ -163,13 +161,11 @@ public class ConversationProfilesStubSettings
           };
 
   private static final PagedListResponseFactory<
-          ListConversationProfilesRequest,
-          ListConversationProfilesResponse,
+          ListConversationProfilesRequest, ListConversationProfilesResponse,
           ListConversationProfilesPagedResponse>
       LIST_CONVERSATION_PROFILES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListConversationProfilesRequest,
-              ListConversationProfilesResponse,
+              ListConversationProfilesRequest, ListConversationProfilesResponse,
               ListConversationProfilesPagedResponse>() {
             @Override
             public ApiFuture<ListConversationProfilesPagedResponse> getFuturePagedResponse(
@@ -179,8 +175,7 @@ public class ConversationProfilesStubSettings
                 ApiCallContext context,
                 ApiFuture<ListConversationProfilesResponse> futureResponse) {
               PageContext<
-                      ListConversationProfilesRequest,
-                      ListConversationProfilesResponse,
+                      ListConversationProfilesRequest, ListConversationProfilesResponse,
                       ConversationProfile>
                   pageContext =
                       PageContext.create(
@@ -191,8 +186,7 @@ public class ConversationProfilesStubSettings
 
   /** Returns the object with the settings used for calls to listConversationProfiles. */
   public PagedCallSettings<
-          ListConversationProfilesRequest,
-          ListConversationProfilesResponse,
+          ListConversationProfilesRequest, ListConversationProfilesResponse,
           ListConversationProfilesPagedResponse>
       listConversationProfilesSettings() {
     return listConversationProfilesSettings;
@@ -303,8 +297,7 @@ public class ConversationProfilesStubSettings
       extends StubSettings.Builder<ConversationProfilesStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final PagedCallSettings.Builder<
-            ListConversationProfilesRequest,
-            ListConversationProfilesResponse,
+            ListConversationProfilesRequest, ListConversationProfilesResponse,
             ListConversationProfilesPagedResponse>
         listConversationProfilesSettings;
     private final UnaryCallSettings.Builder<GetConversationProfileRequest, ConversationProfile>
@@ -446,8 +439,7 @@ public class ConversationProfilesStubSettings
 
     /** Returns the builder for the settings used for calls to listConversationProfiles. */
     public PagedCallSettings.Builder<
-            ListConversationProfilesRequest,
-            ListConversationProfilesResponse,
+            ListConversationProfilesRequest, ListConversationProfilesResponse,
             ListConversationProfilesPagedResponse>
         listConversationProfilesSettings() {
       return listConversationProfilesSettings;

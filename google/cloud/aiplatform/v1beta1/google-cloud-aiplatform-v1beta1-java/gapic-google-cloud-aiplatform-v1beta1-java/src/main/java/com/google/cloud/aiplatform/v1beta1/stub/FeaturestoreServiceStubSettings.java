@@ -105,9 +105,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (aiplatform.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (aiplatform.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -171,8 +171,7 @@ public class FeaturestoreServiceStubSettings extends StubSettings<FeaturestoreSe
   private final UnaryCallSettings<BatchCreateFeaturesRequest, Operation>
       batchCreateFeaturesSettings;
   private final OperationCallSettings<
-          BatchCreateFeaturesRequest,
-          BatchCreateFeaturesResponse,
+          BatchCreateFeaturesRequest, BatchCreateFeaturesResponse,
           BatchCreateFeaturesOperationMetadata>
       batchCreateFeaturesOperationSettings;
   private final UnaryCallSettings<GetFeatureRequest, Feature> getFeatureSettings;
@@ -186,22 +185,19 @@ public class FeaturestoreServiceStubSettings extends StubSettings<FeaturestoreSe
   private final UnaryCallSettings<ImportFeatureValuesRequest, Operation>
       importFeatureValuesSettings;
   private final OperationCallSettings<
-          ImportFeatureValuesRequest,
-          ImportFeatureValuesResponse,
+          ImportFeatureValuesRequest, ImportFeatureValuesResponse,
           ImportFeatureValuesOperationMetadata>
       importFeatureValuesOperationSettings;
   private final UnaryCallSettings<BatchReadFeatureValuesRequest, Operation>
       batchReadFeatureValuesSettings;
   private final OperationCallSettings<
-          BatchReadFeatureValuesRequest,
-          BatchReadFeatureValuesResponse,
+          BatchReadFeatureValuesRequest, BatchReadFeatureValuesResponse,
           BatchReadFeatureValuesOperationMetadata>
       batchReadFeatureValuesOperationSettings;
   private final UnaryCallSettings<ExportFeatureValuesRequest, Operation>
       exportFeatureValuesSettings;
   private final OperationCallSettings<
-          ExportFeatureValuesRequest,
-          ExportFeatureValuesResponse,
+          ExportFeatureValuesRequest, ExportFeatureValuesResponse,
           ExportFeatureValuesOperationMetadata>
       exportFeatureValuesOperationSettings;
   private final PagedCallSettings<
@@ -364,8 +360,7 @@ public class FeaturestoreServiceStubSettings extends StubSettings<FeaturestoreSe
           ListFeaturestoresRequest, ListFeaturestoresResponse, ListFeaturestoresPagedResponse>
       LIST_FEATURESTORES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListFeaturestoresRequest,
-              ListFeaturestoresResponse,
+              ListFeaturestoresRequest, ListFeaturestoresResponse,
               ListFeaturestoresPagedResponse>() {
             @Override
             public ApiFuture<ListFeaturestoresPagedResponse> getFuturePagedResponse(
@@ -537,8 +532,7 @@ public class FeaturestoreServiceStubSettings extends StubSettings<FeaturestoreSe
 
   /** Returns the object with the settings used for calls to batchCreateFeatures. */
   public OperationCallSettings<
-          BatchCreateFeaturesRequest,
-          BatchCreateFeaturesResponse,
+          BatchCreateFeaturesRequest, BatchCreateFeaturesResponse,
           BatchCreateFeaturesOperationMetadata>
       batchCreateFeaturesOperationSettings() {
     return batchCreateFeaturesOperationSettings;
@@ -578,8 +572,7 @@ public class FeaturestoreServiceStubSettings extends StubSettings<FeaturestoreSe
 
   /** Returns the object with the settings used for calls to importFeatureValues. */
   public OperationCallSettings<
-          ImportFeatureValuesRequest,
-          ImportFeatureValuesResponse,
+          ImportFeatureValuesRequest, ImportFeatureValuesResponse,
           ImportFeatureValuesOperationMetadata>
       importFeatureValuesOperationSettings() {
     return importFeatureValuesOperationSettings;
@@ -593,8 +586,7 @@ public class FeaturestoreServiceStubSettings extends StubSettings<FeaturestoreSe
 
   /** Returns the object with the settings used for calls to batchReadFeatureValues. */
   public OperationCallSettings<
-          BatchReadFeatureValuesRequest,
-          BatchReadFeatureValuesResponse,
+          BatchReadFeatureValuesRequest, BatchReadFeatureValuesResponse,
           BatchReadFeatureValuesOperationMetadata>
       batchReadFeatureValuesOperationSettings() {
     return batchReadFeatureValuesOperationSettings;
@@ -607,8 +599,7 @@ public class FeaturestoreServiceStubSettings extends StubSettings<FeaturestoreSe
 
   /** Returns the object with the settings used for calls to exportFeatureValues. */
   public OperationCallSettings<
-          ExportFeatureValuesRequest,
-          ExportFeatureValuesResponse,
+          ExportFeatureValuesRequest, ExportFeatureValuesResponse,
           ExportFeatureValuesOperationMetadata>
       exportFeatureValuesOperationSettings() {
     return exportFeatureValuesOperationSettings;
@@ -777,8 +768,7 @@ public class FeaturestoreServiceStubSettings extends StubSettings<FeaturestoreSe
     private final UnaryCallSettings.Builder<BatchCreateFeaturesRequest, Operation>
         batchCreateFeaturesSettings;
     private final OperationCallSettings.Builder<
-            BatchCreateFeaturesRequest,
-            BatchCreateFeaturesResponse,
+            BatchCreateFeaturesRequest, BatchCreateFeaturesResponse,
             BatchCreateFeaturesOperationMetadata>
         batchCreateFeaturesOperationSettings;
     private final UnaryCallSettings.Builder<GetFeatureRequest, Feature> getFeatureSettings;
@@ -793,22 +783,19 @@ public class FeaturestoreServiceStubSettings extends StubSettings<FeaturestoreSe
     private final UnaryCallSettings.Builder<ImportFeatureValuesRequest, Operation>
         importFeatureValuesSettings;
     private final OperationCallSettings.Builder<
-            ImportFeatureValuesRequest,
-            ImportFeatureValuesResponse,
+            ImportFeatureValuesRequest, ImportFeatureValuesResponse,
             ImportFeatureValuesOperationMetadata>
         importFeatureValuesOperationSettings;
     private final UnaryCallSettings.Builder<BatchReadFeatureValuesRequest, Operation>
         batchReadFeatureValuesSettings;
     private final OperationCallSettings.Builder<
-            BatchReadFeatureValuesRequest,
-            BatchReadFeatureValuesResponse,
+            BatchReadFeatureValuesRequest, BatchReadFeatureValuesResponse,
             BatchReadFeatureValuesOperationMetadata>
         batchReadFeatureValuesOperationSettings;
     private final UnaryCallSettings.Builder<ExportFeatureValuesRequest, Operation>
         exportFeatureValuesSettings;
     private final OperationCallSettings.Builder<
-            ExportFeatureValuesRequest,
-            ExportFeatureValuesResponse,
+            ExportFeatureValuesRequest, ExportFeatureValuesResponse,
             ExportFeatureValuesOperationMetadata>
         exportFeatureValuesOperationSettings;
     private final PagedCallSettings.Builder<
@@ -1509,8 +1496,7 @@ public class FeaturestoreServiceStubSettings extends StubSettings<FeaturestoreSe
     @BetaApi(
         "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
-            BatchCreateFeaturesRequest,
-            BatchCreateFeaturesResponse,
+            BatchCreateFeaturesRequest, BatchCreateFeaturesResponse,
             BatchCreateFeaturesOperationMetadata>
         batchCreateFeaturesOperationSettings() {
       return batchCreateFeaturesOperationSettings;
@@ -1556,8 +1542,7 @@ public class FeaturestoreServiceStubSettings extends StubSettings<FeaturestoreSe
     @BetaApi(
         "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
-            ImportFeatureValuesRequest,
-            ImportFeatureValuesResponse,
+            ImportFeatureValuesRequest, ImportFeatureValuesResponse,
             ImportFeatureValuesOperationMetadata>
         importFeatureValuesOperationSettings() {
       return importFeatureValuesOperationSettings;
@@ -1573,8 +1558,7 @@ public class FeaturestoreServiceStubSettings extends StubSettings<FeaturestoreSe
     @BetaApi(
         "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
-            BatchReadFeatureValuesRequest,
-            BatchReadFeatureValuesResponse,
+            BatchReadFeatureValuesRequest, BatchReadFeatureValuesResponse,
             BatchReadFeatureValuesOperationMetadata>
         batchReadFeatureValuesOperationSettings() {
       return batchReadFeatureValuesOperationSettings;
@@ -1590,8 +1574,7 @@ public class FeaturestoreServiceStubSettings extends StubSettings<FeaturestoreSe
     @BetaApi(
         "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
-            ExportFeatureValuesRequest,
-            ExportFeatureValuesResponse,
+            ExportFeatureValuesRequest, ExportFeatureValuesResponse,
             ExportFeatureValuesOperationMetadata>
         exportFeatureValuesOperationSettings() {
       return exportFeatureValuesOperationSettings;

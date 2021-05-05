@@ -24,22 +24,22 @@
  * <p>You can use this service to work with all of the following resources:
  *
  * <ul>
- *   <li>&#42;&#42;Service accounts&#42;&#42;, which identify an application or a virtual machine
+ *   <li> &#42;&#42;Service accounts&#42;&#42;, which identify an application or a virtual machine
  *       (VM) instance rather than a person
- *   <li>&#42;&#42;Service account keys&#42;&#42;, which service accounts use to authenticate with
+ *   <li> &#42;&#42;Service account keys&#42;&#42;, which service accounts use to authenticate with
  *       Google APIs
- *   <li>&#42;&#42;IAM policies for service accounts&#42;&#42;, which specify the roles that a
+ *   <li> &#42;&#42;IAM policies for service accounts&#42;&#42;, which specify the roles that a
  *       member has for the service account
- *   <li>&#42;&#42;IAM custom roles&#42;&#42;, which help you limit the number of permissions that
+ *   <li> &#42;&#42;IAM custom roles&#42;&#42;, which help you limit the number of permissions that
  *       you grant to members
  * </ul>
  *
  * <p>In addition, you can use this service to complete the following tasks, among others:
  *
  * <ul>
- *   <li>Test whether a service account can use specific permissions
- *   <li>Check which roles you can grant for a specific resource
- *   <li>Lint, or validate, condition expressions in an IAM policy
+ *   <li> Test whether a service account can use specific permissions
+ *   <li> Check which roles you can grant for a specific resource
+ *   <li> Lint, or validate, condition expressions in an IAM policy
  * </ul>
  *
  * <p>Sample for IAMClient:

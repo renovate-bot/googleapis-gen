@@ -80,9 +80,10 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (secretmanager.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (secretmanager.googleapis.com) and default port (443) are
+ *       used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -234,8 +235,7 @@ public class SecretManagerServiceStubSettings
           ListSecretVersionsRequest, ListSecretVersionsResponse, ListSecretVersionsPagedResponse>
       LIST_SECRET_VERSIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListSecretVersionsRequest,
-              ListSecretVersionsResponse,
+              ListSecretVersionsRequest, ListSecretVersionsResponse,
               ListSecretVersionsPagedResponse>() {
             @Override
             public ApiFuture<ListSecretVersionsPagedResponse> getFuturePagedResponse(

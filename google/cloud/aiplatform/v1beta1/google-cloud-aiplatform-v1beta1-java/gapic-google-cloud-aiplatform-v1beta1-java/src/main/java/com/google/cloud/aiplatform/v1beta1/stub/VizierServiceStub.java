@@ -128,8 +128,7 @@ public abstract class VizierServiceStub implements BackgroundResource {
   }
 
   public OperationCallable<
-          CheckTrialEarlyStoppingStateRequest,
-          CheckTrialEarlyStoppingStateResponse,
+          CheckTrialEarlyStoppingStateRequest, CheckTrialEarlyStoppingStateResponse,
           CheckTrialEarlyStoppingStateMetatdata>
       checkTrialEarlyStoppingStateOperationCallable() {
     throw new UnsupportedOperationException(

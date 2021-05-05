@@ -99,13 +99,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -980,9 +980,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
-   *   ResourceName resource =
-   *       CryptoKeyVersionName.of(
-   *           "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+   *   ResourceName resource = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = databaseAdminClient.setIamPolicy(resource, policy);
    * }
@@ -1017,10 +1015,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
-   *   String resource =
-   *       CryptoKeyVersionName.of(
-   *               "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]")
-   *           .toString();
+   *   String resource = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]").toString();
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = databaseAdminClient.setIamPolicy(resource, policy);
    * }
@@ -1054,14 +1049,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               CryptoKeyVersionName.of(
-   *                       "[PROJECT]",
-   *                       "[LOCATION]",
-   *                       "[KEY_RING]",
-   *                       "[CRYPTO_KEY]",
-   *                       "[CRYPTO_KEY_VERSION]")
-   *                   .toString())
+   *           .setResource(DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .build();
    *   Policy response = databaseAdminClient.setIamPolicy(request);
@@ -1090,14 +1078,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               CryptoKeyVersionName.of(
-   *                       "[PROJECT]",
-   *                       "[LOCATION]",
-   *                       "[KEY_RING]",
-   *                       "[CRYPTO_KEY]",
-   *                       "[CRYPTO_KEY_VERSION]")
-   *                   .toString())
+   *           .setResource(DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = databaseAdminClient.setIamPolicyCallable().futureCall(request);
@@ -1124,9 +1105,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
-   *   ResourceName resource =
-   *       CryptoKeyVersionName.of(
-   *           "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+   *   ResourceName resource = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
    *   Policy response = databaseAdminClient.getIamPolicy(resource);
    * }
    * }</pre>
@@ -1157,10 +1136,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
-   *   String resource =
-   *       CryptoKeyVersionName.of(
-   *               "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]")
-   *           .toString();
+   *   String resource = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]").toString();
    *   Policy response = databaseAdminClient.getIamPolicy(resource);
    * }
    * }</pre>
@@ -1190,14 +1166,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               CryptoKeyVersionName.of(
-   *                       "[PROJECT]",
-   *                       "[LOCATION]",
-   *                       "[KEY_RING]",
-   *                       "[CRYPTO_KEY]",
-   *                       "[CRYPTO_KEY_VERSION]")
-   *                   .toString())
+   *           .setResource(DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = databaseAdminClient.getIamPolicy(request);
@@ -1227,14 +1196,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               CryptoKeyVersionName.of(
-   *                       "[PROJECT]",
-   *                       "[LOCATION]",
-   *                       "[KEY_RING]",
-   *                       "[CRYPTO_KEY]",
-   *                       "[CRYPTO_KEY_VERSION]")
-   *                   .toString())
+   *           .setResource(DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = databaseAdminClient.getIamPolicyCallable().futureCall(request);
@@ -1261,9 +1223,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
-   *   ResourceName resource =
-   *       CryptoKeyVersionName.of(
-   *           "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
+   *   ResourceName resource = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
    *   List<String> permissions = new ArrayList<>();
    *   TestIamPermissionsResponse response =
    *       databaseAdminClient.testIamPermissions(resource, permissions);
@@ -1301,10 +1261,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
-   *   String resource =
-   *       CryptoKeyVersionName.of(
-   *               "[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]")
-   *           .toString();
+   *   String resource = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]").toString();
    *   List<String> permissions = new ArrayList<>();
    *   TestIamPermissionsResponse response =
    *       databaseAdminClient.testIamPermissions(resource, permissions);
@@ -1344,14 +1301,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(
-   *               CryptoKeyVersionName.of(
-   *                       "[PROJECT]",
-   *                       "[LOCATION]",
-   *                       "[KEY_RING]",
-   *                       "[CRYPTO_KEY]",
-   *                       "[CRYPTO_KEY_VERSION]")
-   *                   .toString())
+   *           .setResource(DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = databaseAdminClient.testIamPermissions(request);
@@ -1381,14 +1331,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(
-   *               CryptoKeyVersionName.of(
-   *                       "[PROJECT]",
-   *                       "[LOCATION]",
-   *                       "[KEY_RING]",
-   *                       "[CRYPTO_KEY]",
-   *                       "[CRYPTO_KEY_VERSION]")
-   *                   .toString())
+   *           .setResource(DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =
@@ -2709,10 +2652,7 @@ public class DatabaseAdminClient implements BackgroundResource {
 
   public static class ListDatabasesPagedResponse
       extends AbstractPagedListResponse<
-          ListDatabasesRequest,
-          ListDatabasesResponse,
-          Database,
-          ListDatabasesPage,
+          ListDatabasesRequest, ListDatabasesResponse, Database, ListDatabasesPage,
           ListDatabasesFixedSizeCollection> {
 
     public static ApiFuture<ListDatabasesPagedResponse> createAsync(
@@ -2767,10 +2707,7 @@ public class DatabaseAdminClient implements BackgroundResource {
 
   public static class ListDatabasesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListDatabasesRequest,
-          ListDatabasesResponse,
-          Database,
-          ListDatabasesPage,
+          ListDatabasesRequest, ListDatabasesResponse, Database, ListDatabasesPage,
           ListDatabasesFixedSizeCollection> {
 
     private ListDatabasesFixedSizeCollection(List<ListDatabasesPage> pages, int collectionSize) {
@@ -2790,10 +2727,7 @@ public class DatabaseAdminClient implements BackgroundResource {
 
   public static class ListBackupsPagedResponse
       extends AbstractPagedListResponse<
-          ListBackupsRequest,
-          ListBackupsResponse,
-          Backup,
-          ListBackupsPage,
+          ListBackupsRequest, ListBackupsResponse, Backup, ListBackupsPage,
           ListBackupsFixedSizeCollection> {
 
     public static ApiFuture<ListBackupsPagedResponse> createAsync(
@@ -2847,10 +2781,7 @@ public class DatabaseAdminClient implements BackgroundResource {
 
   public static class ListBackupsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListBackupsRequest,
-          ListBackupsResponse,
-          Backup,
-          ListBackupsPage,
+          ListBackupsRequest, ListBackupsResponse, Backup, ListBackupsPage,
           ListBackupsFixedSizeCollection> {
 
     private ListBackupsFixedSizeCollection(List<ListBackupsPage> pages, int collectionSize) {
@@ -2870,11 +2801,8 @@ public class DatabaseAdminClient implements BackgroundResource {
 
   public static class ListDatabaseOperationsPagedResponse
       extends AbstractPagedListResponse<
-          ListDatabaseOperationsRequest,
-          ListDatabaseOperationsResponse,
-          Operation,
-          ListDatabaseOperationsPage,
-          ListDatabaseOperationsFixedSizeCollection> {
+          ListDatabaseOperationsRequest, ListDatabaseOperationsResponse, Operation,
+          ListDatabaseOperationsPage, ListDatabaseOperationsFixedSizeCollection> {
 
     public static ApiFuture<ListDatabaseOperationsPagedResponse> createAsync(
         PageContext<ListDatabaseOperationsRequest, ListDatabaseOperationsResponse, Operation>
@@ -2900,9 +2828,7 @@ public class DatabaseAdminClient implements BackgroundResource {
 
   public static class ListDatabaseOperationsPage
       extends AbstractPage<
-          ListDatabaseOperationsRequest,
-          ListDatabaseOperationsResponse,
-          Operation,
+          ListDatabaseOperationsRequest, ListDatabaseOperationsResponse, Operation,
           ListDatabaseOperationsPage> {
 
     private ListDatabaseOperationsPage(
@@ -2935,11 +2861,8 @@ public class DatabaseAdminClient implements BackgroundResource {
 
   public static class ListDatabaseOperationsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListDatabaseOperationsRequest,
-          ListDatabaseOperationsResponse,
-          Operation,
-          ListDatabaseOperationsPage,
-          ListDatabaseOperationsFixedSizeCollection> {
+          ListDatabaseOperationsRequest, ListDatabaseOperationsResponse, Operation,
+          ListDatabaseOperationsPage, ListDatabaseOperationsFixedSizeCollection> {
 
     private ListDatabaseOperationsFixedSizeCollection(
         List<ListDatabaseOperationsPage> pages, int collectionSize) {
@@ -2959,11 +2882,8 @@ public class DatabaseAdminClient implements BackgroundResource {
 
   public static class ListBackupOperationsPagedResponse
       extends AbstractPagedListResponse<
-          ListBackupOperationsRequest,
-          ListBackupOperationsResponse,
-          Operation,
-          ListBackupOperationsPage,
-          ListBackupOperationsFixedSizeCollection> {
+          ListBackupOperationsRequest, ListBackupOperationsResponse, Operation,
+          ListBackupOperationsPage, ListBackupOperationsFixedSizeCollection> {
 
     public static ApiFuture<ListBackupOperationsPagedResponse> createAsync(
         PageContext<ListBackupOperationsRequest, ListBackupOperationsResponse, Operation> context,
@@ -2988,9 +2908,7 @@ public class DatabaseAdminClient implements BackgroundResource {
 
   public static class ListBackupOperationsPage
       extends AbstractPage<
-          ListBackupOperationsRequest,
-          ListBackupOperationsResponse,
-          Operation,
+          ListBackupOperationsRequest, ListBackupOperationsResponse, Operation,
           ListBackupOperationsPage> {
 
     private ListBackupOperationsPage(
@@ -3020,11 +2938,8 @@ public class DatabaseAdminClient implements BackgroundResource {
 
   public static class ListBackupOperationsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListBackupOperationsRequest,
-          ListBackupOperationsResponse,
-          Operation,
-          ListBackupOperationsPage,
-          ListBackupOperationsFixedSizeCollection> {
+          ListBackupOperationsRequest, ListBackupOperationsResponse, Operation,
+          ListBackupOperationsPage, ListBackupOperationsFixedSizeCollection> {
 
     private ListBackupOperationsFixedSizeCollection(
         List<ListBackupOperationsPage> pages, int collectionSize) {

@@ -69,10 +69,10 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (bigquerymigration.googleapis.com) and default port (443) are
+ *   <li> The default service address (bigquerymigration.googleapis.com) and default port (443) are
  *       used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -107,8 +107,7 @@ public class MigrationServiceStubSettings extends StubSettings<MigrationServiceS
   private final UnaryCallSettings<GetMigrationWorkflowRequest, MigrationWorkflow>
       getMigrationWorkflowSettings;
   private final PagedCallSettings<
-          ListMigrationWorkflowsRequest,
-          ListMigrationWorkflowsResponse,
+          ListMigrationWorkflowsRequest, ListMigrationWorkflowsResponse,
           ListMigrationWorkflowsPagedResponse>
       listMigrationWorkflowsSettings;
   private final UnaryCallSettings<DeleteMigrationWorkflowRequest, Empty>
@@ -118,8 +117,7 @@ public class MigrationServiceStubSettings extends StubSettings<MigrationServiceS
   private final UnaryCallSettings<GetMigrationSubtaskRequest, MigrationSubtask>
       getMigrationSubtaskSettings;
   private final PagedCallSettings<
-          ListMigrationSubtasksRequest,
-          ListMigrationSubtasksResponse,
+          ListMigrationSubtasksRequest, ListMigrationSubtasksResponse,
           ListMigrationSubtasksPagedResponse>
       listMigrationSubtasksSettings;
 
@@ -208,13 +206,11 @@ public class MigrationServiceStubSettings extends StubSettings<MigrationServiceS
           };
 
   private static final PagedListResponseFactory<
-          ListMigrationWorkflowsRequest,
-          ListMigrationWorkflowsResponse,
+          ListMigrationWorkflowsRequest, ListMigrationWorkflowsResponse,
           ListMigrationWorkflowsPagedResponse>
       LIST_MIGRATION_WORKFLOWS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListMigrationWorkflowsRequest,
-              ListMigrationWorkflowsResponse,
+              ListMigrationWorkflowsRequest, ListMigrationWorkflowsResponse,
               ListMigrationWorkflowsPagedResponse>() {
             @Override
             public ApiFuture<ListMigrationWorkflowsPagedResponse> getFuturePagedResponse(
@@ -224,8 +220,7 @@ public class MigrationServiceStubSettings extends StubSettings<MigrationServiceS
                 ApiCallContext context,
                 ApiFuture<ListMigrationWorkflowsResponse> futureResponse) {
               PageContext<
-                      ListMigrationWorkflowsRequest,
-                      ListMigrationWorkflowsResponse,
+                      ListMigrationWorkflowsRequest, ListMigrationWorkflowsResponse,
                       MigrationWorkflow>
                   pageContext =
                       PageContext.create(
@@ -235,13 +230,11 @@ public class MigrationServiceStubSettings extends StubSettings<MigrationServiceS
           };
 
   private static final PagedListResponseFactory<
-          ListMigrationSubtasksRequest,
-          ListMigrationSubtasksResponse,
+          ListMigrationSubtasksRequest, ListMigrationSubtasksResponse,
           ListMigrationSubtasksPagedResponse>
       LIST_MIGRATION_SUBTASKS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListMigrationSubtasksRequest,
-              ListMigrationSubtasksResponse,
+              ListMigrationSubtasksRequest, ListMigrationSubtasksResponse,
               ListMigrationSubtasksPagedResponse>() {
             @Override
             public ApiFuture<ListMigrationSubtasksPagedResponse> getFuturePagedResponse(
@@ -272,8 +265,7 @@ public class MigrationServiceStubSettings extends StubSettings<MigrationServiceS
 
   /** Returns the object with the settings used for calls to listMigrationWorkflows. */
   public PagedCallSettings<
-          ListMigrationWorkflowsRequest,
-          ListMigrationWorkflowsResponse,
+          ListMigrationWorkflowsRequest, ListMigrationWorkflowsResponse,
           ListMigrationWorkflowsPagedResponse>
       listMigrationWorkflowsSettings() {
     return listMigrationWorkflowsSettings;
@@ -298,8 +290,7 @@ public class MigrationServiceStubSettings extends StubSettings<MigrationServiceS
 
   /** Returns the object with the settings used for calls to listMigrationSubtasks. */
   public PagedCallSettings<
-          ListMigrationSubtasksRequest,
-          ListMigrationSubtasksResponse,
+          ListMigrationSubtasksRequest, ListMigrationSubtasksResponse,
           ListMigrationSubtasksPagedResponse>
       listMigrationSubtasksSettings() {
     return listMigrationSubtasksSettings;
@@ -391,8 +382,7 @@ public class MigrationServiceStubSettings extends StubSettings<MigrationServiceS
     private final UnaryCallSettings.Builder<GetMigrationWorkflowRequest, MigrationWorkflow>
         getMigrationWorkflowSettings;
     private final PagedCallSettings.Builder<
-            ListMigrationWorkflowsRequest,
-            ListMigrationWorkflowsResponse,
+            ListMigrationWorkflowsRequest, ListMigrationWorkflowsResponse,
             ListMigrationWorkflowsPagedResponse>
         listMigrationWorkflowsSettings;
     private final UnaryCallSettings.Builder<DeleteMigrationWorkflowRequest, Empty>
@@ -402,8 +392,7 @@ public class MigrationServiceStubSettings extends StubSettings<MigrationServiceS
     private final UnaryCallSettings.Builder<GetMigrationSubtaskRequest, MigrationSubtask>
         getMigrationSubtaskSettings;
     private final PagedCallSettings.Builder<
-            ListMigrationSubtasksRequest,
-            ListMigrationSubtasksResponse,
+            ListMigrationSubtasksRequest, ListMigrationSubtasksResponse,
             ListMigrationSubtasksPagedResponse>
         listMigrationSubtasksSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
@@ -578,8 +567,7 @@ public class MigrationServiceStubSettings extends StubSettings<MigrationServiceS
 
     /** Returns the builder for the settings used for calls to listMigrationWorkflows. */
     public PagedCallSettings.Builder<
-            ListMigrationWorkflowsRequest,
-            ListMigrationWorkflowsResponse,
+            ListMigrationWorkflowsRequest, ListMigrationWorkflowsResponse,
             ListMigrationWorkflowsPagedResponse>
         listMigrationWorkflowsSettings() {
       return listMigrationWorkflowsSettings;
@@ -605,8 +593,7 @@ public class MigrationServiceStubSettings extends StubSettings<MigrationServiceS
 
     /** Returns the builder for the settings used for calls to listMigrationSubtasks. */
     public PagedCallSettings.Builder<
-            ListMigrationSubtasksRequest,
-            ListMigrationSubtasksResponse,
+            ListMigrationSubtasksRequest, ListMigrationSubtasksResponse,
             ListMigrationSubtasksPagedResponse>
         listMigrationSubtasksSettings() {
       return listMigrationSubtasksSettings;

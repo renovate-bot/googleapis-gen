@@ -85,9 +85,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (aiplatform.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (aiplatform.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -134,15 +134,13 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
   private final UnaryCallSettings<GetModelEvaluationRequest, ModelEvaluation>
       getModelEvaluationSettings;
   private final PagedCallSettings<
-          ListModelEvaluationsRequest,
-          ListModelEvaluationsResponse,
+          ListModelEvaluationsRequest, ListModelEvaluationsResponse,
           ListModelEvaluationsPagedResponse>
       listModelEvaluationsSettings;
   private final UnaryCallSettings<GetModelEvaluationSliceRequest, ModelEvaluationSlice>
       getModelEvaluationSliceSettings;
   private final PagedCallSettings<
-          ListModelEvaluationSlicesRequest,
-          ListModelEvaluationSlicesResponse,
+          ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesResponse,
           ListModelEvaluationSlicesPagedResponse>
       listModelEvaluationSlicesSettings;
 
@@ -227,8 +225,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
           ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesResponse, ModelEvaluationSlice>
       LIST_MODEL_EVALUATION_SLICES_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ListModelEvaluationSlicesRequest,
-              ListModelEvaluationSlicesResponse,
+              ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesResponse,
               ModelEvaluationSlice>() {
             @Override
             public String emptyToken() {
@@ -288,13 +285,11 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
           };
 
   private static final PagedListResponseFactory<
-          ListModelEvaluationsRequest,
-          ListModelEvaluationsResponse,
+          ListModelEvaluationsRequest, ListModelEvaluationsResponse,
           ListModelEvaluationsPagedResponse>
       LIST_MODEL_EVALUATIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListModelEvaluationsRequest,
-              ListModelEvaluationsResponse,
+              ListModelEvaluationsRequest, ListModelEvaluationsResponse,
               ListModelEvaluationsPagedResponse>() {
             @Override
             public ApiFuture<ListModelEvaluationsPagedResponse> getFuturePagedResponse(
@@ -312,13 +307,11 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
           };
 
   private static final PagedListResponseFactory<
-          ListModelEvaluationSlicesRequest,
-          ListModelEvaluationSlicesResponse,
+          ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesResponse,
           ListModelEvaluationSlicesPagedResponse>
       LIST_MODEL_EVALUATION_SLICES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListModelEvaluationSlicesRequest,
-              ListModelEvaluationSlicesResponse,
+              ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesResponse,
               ListModelEvaluationSlicesPagedResponse>() {
             @Override
             public ApiFuture<ListModelEvaluationSlicesPagedResponse> getFuturePagedResponse(
@@ -328,8 +321,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
                 ApiCallContext context,
                 ApiFuture<ListModelEvaluationSlicesResponse> futureResponse) {
               PageContext<
-                      ListModelEvaluationSlicesRequest,
-                      ListModelEvaluationSlicesResponse,
+                      ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesResponse,
                       ModelEvaluationSlice>
                   pageContext =
                       PageContext.create(
@@ -398,8 +390,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
 
   /** Returns the object with the settings used for calls to listModelEvaluations. */
   public PagedCallSettings<
-          ListModelEvaluationsRequest,
-          ListModelEvaluationsResponse,
+          ListModelEvaluationsRequest, ListModelEvaluationsResponse,
           ListModelEvaluationsPagedResponse>
       listModelEvaluationsSettings() {
     return listModelEvaluationsSettings;
@@ -413,8 +404,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
 
   /** Returns the object with the settings used for calls to listModelEvaluationSlices. */
   public PagedCallSettings<
-          ListModelEvaluationSlicesRequest,
-          ListModelEvaluationSlicesResponse,
+          ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesResponse,
           ListModelEvaluationSlicesPagedResponse>
       listModelEvaluationSlicesSettings() {
     return listModelEvaluationSlicesSettings;
@@ -526,15 +516,13 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     private final UnaryCallSettings.Builder<GetModelEvaluationRequest, ModelEvaluation>
         getModelEvaluationSettings;
     private final PagedCallSettings.Builder<
-            ListModelEvaluationsRequest,
-            ListModelEvaluationsResponse,
+            ListModelEvaluationsRequest, ListModelEvaluationsResponse,
             ListModelEvaluationsPagedResponse>
         listModelEvaluationsSettings;
     private final UnaryCallSettings.Builder<GetModelEvaluationSliceRequest, ModelEvaluationSlice>
         getModelEvaluationSliceSettings;
     private final PagedCallSettings.Builder<
-            ListModelEvaluationSlicesRequest,
-            ListModelEvaluationSlicesResponse,
+            ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesResponse,
             ListModelEvaluationSlicesPagedResponse>
         listModelEvaluationSlicesSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
@@ -850,8 +838,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
 
     /** Returns the builder for the settings used for calls to listModelEvaluations. */
     public PagedCallSettings.Builder<
-            ListModelEvaluationsRequest,
-            ListModelEvaluationsResponse,
+            ListModelEvaluationsRequest, ListModelEvaluationsResponse,
             ListModelEvaluationsPagedResponse>
         listModelEvaluationsSettings() {
       return listModelEvaluationsSettings;
@@ -865,8 +852,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
 
     /** Returns the builder for the settings used for calls to listModelEvaluationSlices. */
     public PagedCallSettings.Builder<
-            ListModelEvaluationSlicesRequest,
-            ListModelEvaluationSlicesResponse,
+            ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesResponse,
             ListModelEvaluationSlicesPagedResponse>
         listModelEvaluationSlicesSettings() {
       return listModelEvaluationSlicesSettings;

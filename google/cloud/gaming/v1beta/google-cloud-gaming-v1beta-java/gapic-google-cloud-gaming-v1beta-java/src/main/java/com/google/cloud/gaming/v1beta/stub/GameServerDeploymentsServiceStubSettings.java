@@ -77,9 +77,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (gameservices.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (gameservices.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -112,8 +112,7 @@ public class GameServerDeploymentsServiceStubSettings
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
   private final PagedCallSettings<
-          ListGameServerDeploymentsRequest,
-          ListGameServerDeploymentsResponse,
+          ListGameServerDeploymentsRequest, ListGameServerDeploymentsResponse,
           ListGameServerDeploymentsPagedResponse>
       listGameServerDeploymentsSettings;
   private final UnaryCallSettings<GetGameServerDeploymentRequest, GameServerDeployment>
@@ -150,8 +149,7 @@ public class GameServerDeploymentsServiceStubSettings
           ListGameServerDeploymentsRequest, ListGameServerDeploymentsResponse, GameServerDeployment>
       LIST_GAME_SERVER_DEPLOYMENTS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ListGameServerDeploymentsRequest,
-              ListGameServerDeploymentsResponse,
+              ListGameServerDeploymentsRequest, ListGameServerDeploymentsResponse,
               GameServerDeployment>() {
             @Override
             public String emptyToken() {
@@ -194,13 +192,11 @@ public class GameServerDeploymentsServiceStubSettings
           };
 
   private static final PagedListResponseFactory<
-          ListGameServerDeploymentsRequest,
-          ListGameServerDeploymentsResponse,
+          ListGameServerDeploymentsRequest, ListGameServerDeploymentsResponse,
           ListGameServerDeploymentsPagedResponse>
       LIST_GAME_SERVER_DEPLOYMENTS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListGameServerDeploymentsRequest,
-              ListGameServerDeploymentsResponse,
+              ListGameServerDeploymentsRequest, ListGameServerDeploymentsResponse,
               ListGameServerDeploymentsPagedResponse>() {
             @Override
             public ApiFuture<ListGameServerDeploymentsPagedResponse> getFuturePagedResponse(
@@ -210,8 +206,7 @@ public class GameServerDeploymentsServiceStubSettings
                 ApiCallContext context,
                 ApiFuture<ListGameServerDeploymentsResponse> futureResponse) {
               PageContext<
-                      ListGameServerDeploymentsRequest,
-                      ListGameServerDeploymentsResponse,
+                      ListGameServerDeploymentsRequest, ListGameServerDeploymentsResponse,
                       GameServerDeployment>
                   pageContext =
                       PageContext.create(
@@ -223,8 +218,7 @@ public class GameServerDeploymentsServiceStubSettings
 
   /** Returns the object with the settings used for calls to listGameServerDeployments. */
   public PagedCallSettings<
-          ListGameServerDeploymentsRequest,
-          ListGameServerDeploymentsResponse,
+          ListGameServerDeploymentsRequest, ListGameServerDeploymentsResponse,
           ListGameServerDeploymentsPagedResponse>
       listGameServerDeploymentsSettings() {
     return listGameServerDeploymentsSettings;
@@ -406,8 +400,7 @@ public class GameServerDeploymentsServiceStubSettings
       extends StubSettings.Builder<GameServerDeploymentsServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final PagedCallSettings.Builder<
-            ListGameServerDeploymentsRequest,
-            ListGameServerDeploymentsResponse,
+            ListGameServerDeploymentsRequest, ListGameServerDeploymentsResponse,
             ListGameServerDeploymentsPagedResponse>
         listGameServerDeploymentsSettings;
     private final UnaryCallSettings.Builder<GetGameServerDeploymentRequest, GameServerDeployment>
@@ -733,8 +726,7 @@ public class GameServerDeploymentsServiceStubSettings
 
     /** Returns the builder for the settings used for calls to listGameServerDeployments. */
     public PagedCallSettings.Builder<
-            ListGameServerDeploymentsRequest,
-            ListGameServerDeploymentsResponse,
+            ListGameServerDeploymentsRequest, ListGameServerDeploymentsResponse,
             ListGameServerDeploymentsPagedResponse>
         listGameServerDeploymentsSettings() {
       return listGameServerDeploymentsSettings;

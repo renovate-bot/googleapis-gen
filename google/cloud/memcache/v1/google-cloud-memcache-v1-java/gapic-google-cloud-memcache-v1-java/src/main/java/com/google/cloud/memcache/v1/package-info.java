@@ -26,17 +26,17 @@
  * Memcached below) instances:
  *
  * <ul>
- *   <li>The service works with a collection of cloud projects, named: `/projects/&#42;`
- *   <li>Each project has a collection of available locations, named: `/locations/&#42;`
- *   <li>Each location has a collection of Memcached instances, named: `/instances/&#42;`
- *   <li>As such, Memcached instances are resources of the form:
+ *   <li> The service works with a collection of cloud projects, named: `/projects/&#42;`
+ *   <li> Each project has a collection of available locations, named: `/locations/&#42;`
+ *   <li> Each location has a collection of Memcached instances, named: `/instances/&#42;`
+ *   <li> As such, Memcached instances are resources of the form:
  *       `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
  * </ul>
  *
  * <p>Note that location_id must be a GCP `region`; for example:
  *
  * <ul>
- *   <li>`projects/my-memcached-project/locations/us-central1/instances/my-memcached`
+ *   <li> `projects/my-memcached-project/locations/us-central1/instances/my-memcached`
  * </ul>
  *
  * <p>Sample for CloudMemcacheClient:

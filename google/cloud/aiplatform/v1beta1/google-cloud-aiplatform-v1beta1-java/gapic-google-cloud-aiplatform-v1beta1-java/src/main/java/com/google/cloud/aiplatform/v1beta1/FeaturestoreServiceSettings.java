@@ -48,9 +48,9 @@ import javax.annotation.Generated;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (aiplatform.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (aiplatform.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -188,8 +188,7 @@ public class FeaturestoreServiceSettings extends ClientSettings<FeaturestoreServ
 
   /** Returns the object with the settings used for calls to batchCreateFeatures. */
   public OperationCallSettings<
-          BatchCreateFeaturesRequest,
-          BatchCreateFeaturesResponse,
+          BatchCreateFeaturesRequest, BatchCreateFeaturesResponse,
           BatchCreateFeaturesOperationMetadata>
       batchCreateFeaturesOperationSettings() {
     return ((FeaturestoreServiceStubSettings) getStubSettings())
@@ -230,8 +229,7 @@ public class FeaturestoreServiceSettings extends ClientSettings<FeaturestoreServ
 
   /** Returns the object with the settings used for calls to importFeatureValues. */
   public OperationCallSettings<
-          ImportFeatureValuesRequest,
-          ImportFeatureValuesResponse,
+          ImportFeatureValuesRequest, ImportFeatureValuesResponse,
           ImportFeatureValuesOperationMetadata>
       importFeatureValuesOperationSettings() {
     return ((FeaturestoreServiceStubSettings) getStubSettings())
@@ -246,8 +244,7 @@ public class FeaturestoreServiceSettings extends ClientSettings<FeaturestoreServ
 
   /** Returns the object with the settings used for calls to batchReadFeatureValues. */
   public OperationCallSettings<
-          BatchReadFeatureValuesRequest,
-          BatchReadFeatureValuesResponse,
+          BatchReadFeatureValuesRequest, BatchReadFeatureValuesResponse,
           BatchReadFeatureValuesOperationMetadata>
       batchReadFeatureValuesOperationSettings() {
     return ((FeaturestoreServiceStubSettings) getStubSettings())
@@ -261,8 +258,7 @@ public class FeaturestoreServiceSettings extends ClientSettings<FeaturestoreServ
 
   /** Returns the object with the settings used for calls to exportFeatureValues. */
   public OperationCallSettings<
-          ExportFeatureValuesRequest,
-          ExportFeatureValuesResponse,
+          ExportFeatureValuesRequest, ExportFeatureValuesResponse,
           ExportFeatureValuesOperationMetadata>
       exportFeatureValuesOperationSettings() {
     return ((FeaturestoreServiceStubSettings) getStubSettings())
@@ -488,8 +484,7 @@ public class FeaturestoreServiceSettings extends ClientSettings<FeaturestoreServ
 
     /** Returns the builder for the settings used for calls to batchCreateFeatures. */
     public OperationCallSettings.Builder<
-            BatchCreateFeaturesRequest,
-            BatchCreateFeaturesResponse,
+            BatchCreateFeaturesRequest, BatchCreateFeaturesResponse,
             BatchCreateFeaturesOperationMetadata>
         batchCreateFeaturesOperationSettings() {
       return getStubSettingsBuilder().batchCreateFeaturesOperationSettings();
@@ -531,8 +526,7 @@ public class FeaturestoreServiceSettings extends ClientSettings<FeaturestoreServ
 
     /** Returns the builder for the settings used for calls to importFeatureValues. */
     public OperationCallSettings.Builder<
-            ImportFeatureValuesRequest,
-            ImportFeatureValuesResponse,
+            ImportFeatureValuesRequest, ImportFeatureValuesResponse,
             ImportFeatureValuesOperationMetadata>
         importFeatureValuesOperationSettings() {
       return getStubSettingsBuilder().importFeatureValuesOperationSettings();
@@ -546,8 +540,7 @@ public class FeaturestoreServiceSettings extends ClientSettings<FeaturestoreServ
 
     /** Returns the builder for the settings used for calls to batchReadFeatureValues. */
     public OperationCallSettings.Builder<
-            BatchReadFeatureValuesRequest,
-            BatchReadFeatureValuesResponse,
+            BatchReadFeatureValuesRequest, BatchReadFeatureValuesResponse,
             BatchReadFeatureValuesOperationMetadata>
         batchReadFeatureValuesOperationSettings() {
       return getStubSettingsBuilder().batchReadFeatureValuesOperationSettings();
@@ -561,8 +554,7 @@ public class FeaturestoreServiceSettings extends ClientSettings<FeaturestoreServ
 
     /** Returns the builder for the settings used for calls to exportFeatureValues. */
     public OperationCallSettings.Builder<
-            ExportFeatureValuesRequest,
-            ExportFeatureValuesResponse,
+            ExportFeatureValuesRequest, ExportFeatureValuesResponse,
             ExportFeatureValuesOperationMetadata>
         exportFeatureValuesOperationSettings() {
       return getStubSettingsBuilder().exportFeatureValuesOperationSettings();

@@ -127,9 +127,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (datalabeling.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (datalabeling.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -181,8 +181,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
   private final UnaryCallSettings<GetAnnotatedDatasetRequest, AnnotatedDataset>
       getAnnotatedDatasetSettings;
   private final PagedCallSettings<
-          ListAnnotatedDatasetsRequest,
-          ListAnnotatedDatasetsResponse,
+          ListAnnotatedDatasetsRequest, ListAnnotatedDatasetsResponse,
           ListAnnotatedDatasetsPagedResponse>
       listAnnotatedDatasetsSettings;
   private final UnaryCallSettings<DeleteAnnotatedDatasetRequest, Empty>
@@ -205,8 +204,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
   private final UnaryCallSettings<GetAnnotationSpecSetRequest, AnnotationSpecSet>
       getAnnotationSpecSetSettings;
   private final PagedCallSettings<
-          ListAnnotationSpecSetsRequest,
-          ListAnnotationSpecSetsResponse,
+          ListAnnotationSpecSetsRequest, ListAnnotationSpecSetsResponse,
           ListAnnotationSpecSetsPagedResponse>
       listAnnotationSpecSetsSettings;
   private final UnaryCallSettings<DeleteAnnotationSpecSetRequest, Empty>
@@ -225,8 +223,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
           SearchEvaluationsRequest, SearchEvaluationsResponse, SearchEvaluationsPagedResponse>
       searchEvaluationsSettings;
   private final PagedCallSettings<
-          SearchExampleComparisonsRequest,
-          SearchExampleComparisonsResponse,
+          SearchExampleComparisonsRequest, SearchExampleComparisonsResponse,
           SearchExampleComparisonsPagedResponse>
       searchExampleComparisonsSettings;
   private final UnaryCallSettings<CreateEvaluationJobRequest, EvaluationJob>
@@ -514,13 +511,11 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
           };
 
   private static final PagedListDescriptor<
-          SearchExampleComparisonsRequest,
-          SearchExampleComparisonsResponse,
+          SearchExampleComparisonsRequest, SearchExampleComparisonsResponse,
           SearchExampleComparisonsResponse.ExampleComparison>
       SEARCH_EXAMPLE_COMPARISONS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              SearchExampleComparisonsRequest,
-              SearchExampleComparisonsResponse,
+              SearchExampleComparisonsRequest, SearchExampleComparisonsResponse,
               SearchExampleComparisonsResponse.ExampleComparison>() {
             @Override
             public String emptyToken() {
@@ -637,13 +632,11 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
           };
 
   private static final PagedListResponseFactory<
-          ListAnnotatedDatasetsRequest,
-          ListAnnotatedDatasetsResponse,
+          ListAnnotatedDatasetsRequest, ListAnnotatedDatasetsResponse,
           ListAnnotatedDatasetsPagedResponse>
       LIST_ANNOTATED_DATASETS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListAnnotatedDatasetsRequest,
-              ListAnnotatedDatasetsResponse,
+              ListAnnotatedDatasetsRequest, ListAnnotatedDatasetsResponse,
               ListAnnotatedDatasetsPagedResponse>() {
             @Override
             public ApiFuture<ListAnnotatedDatasetsPagedResponse> getFuturePagedResponse(
@@ -678,13 +671,11 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
           };
 
   private static final PagedListResponseFactory<
-          ListAnnotationSpecSetsRequest,
-          ListAnnotationSpecSetsResponse,
+          ListAnnotationSpecSetsRequest, ListAnnotationSpecSetsResponse,
           ListAnnotationSpecSetsPagedResponse>
       LIST_ANNOTATION_SPEC_SETS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListAnnotationSpecSetsRequest,
-              ListAnnotationSpecSetsResponse,
+              ListAnnotationSpecSetsRequest, ListAnnotationSpecSetsResponse,
               ListAnnotationSpecSetsPagedResponse>() {
             @Override
             public ApiFuture<ListAnnotationSpecSetsPagedResponse> getFuturePagedResponse(
@@ -694,8 +685,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
                 ApiCallContext context,
                 ApiFuture<ListAnnotationSpecSetsResponse> futureResponse) {
               PageContext<
-                      ListAnnotationSpecSetsRequest,
-                      ListAnnotationSpecSetsResponse,
+                      ListAnnotationSpecSetsRequest, ListAnnotationSpecSetsResponse,
                       AnnotationSpecSet>
                   pageContext =
                       PageContext.create(
@@ -727,8 +717,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
           SearchEvaluationsRequest, SearchEvaluationsResponse, SearchEvaluationsPagedResponse>
       SEARCH_EVALUATIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              SearchEvaluationsRequest,
-              SearchEvaluationsResponse,
+              SearchEvaluationsRequest, SearchEvaluationsResponse,
               SearchEvaluationsPagedResponse>() {
             @Override
             public ApiFuture<SearchEvaluationsPagedResponse> getFuturePagedResponse(
@@ -745,13 +734,11 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
           };
 
   private static final PagedListResponseFactory<
-          SearchExampleComparisonsRequest,
-          SearchExampleComparisonsResponse,
+          SearchExampleComparisonsRequest, SearchExampleComparisonsResponse,
           SearchExampleComparisonsPagedResponse>
       SEARCH_EXAMPLE_COMPARISONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              SearchExampleComparisonsRequest,
-              SearchExampleComparisonsResponse,
+              SearchExampleComparisonsRequest, SearchExampleComparisonsResponse,
               SearchExampleComparisonsPagedResponse>() {
             @Override
             public ApiFuture<SearchExampleComparisonsPagedResponse> getFuturePagedResponse(
@@ -761,8 +748,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
                 ApiCallContext context,
                 ApiFuture<SearchExampleComparisonsResponse> futureResponse) {
               PageContext<
-                      SearchExampleComparisonsRequest,
-                      SearchExampleComparisonsResponse,
+                      SearchExampleComparisonsRequest, SearchExampleComparisonsResponse,
                       SearchExampleComparisonsResponse.ExampleComparison>
                   pageContext =
                       PageContext.create(
@@ -775,8 +761,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
           ListEvaluationJobsRequest, ListEvaluationJobsResponse, ListEvaluationJobsPagedResponse>
       LIST_EVALUATION_JOBS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListEvaluationJobsRequest,
-              ListEvaluationJobsResponse,
+              ListEvaluationJobsRequest, ListEvaluationJobsResponse,
               ListEvaluationJobsPagedResponse>() {
             @Override
             public ApiFuture<ListEvaluationJobsPagedResponse> getFuturePagedResponse(
@@ -856,8 +841,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
 
   /** Returns the object with the settings used for calls to listAnnotatedDatasets. */
   public PagedCallSettings<
-          ListAnnotatedDatasetsRequest,
-          ListAnnotatedDatasetsResponse,
+          ListAnnotatedDatasetsRequest, ListAnnotatedDatasetsResponse,
           ListAnnotatedDatasetsPagedResponse>
       listAnnotatedDatasetsSettings() {
     return listAnnotatedDatasetsSettings;
@@ -926,8 +910,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
 
   /** Returns the object with the settings used for calls to listAnnotationSpecSets. */
   public PagedCallSettings<
-          ListAnnotationSpecSetsRequest,
-          ListAnnotationSpecSetsResponse,
+          ListAnnotationSpecSetsRequest, ListAnnotationSpecSetsResponse,
           ListAnnotationSpecSetsPagedResponse>
       listAnnotationSpecSetsSettings() {
     return listAnnotationSpecSetsSettings;
@@ -981,8 +964,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
 
   /** Returns the object with the settings used for calls to searchExampleComparisons. */
   public PagedCallSettings<
-          SearchExampleComparisonsRequest,
-          SearchExampleComparisonsResponse,
+          SearchExampleComparisonsRequest, SearchExampleComparisonsResponse,
           SearchExampleComparisonsPagedResponse>
       searchExampleComparisonsSettings() {
     return searchExampleComparisonsSettings;
@@ -1164,8 +1146,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
     private final UnaryCallSettings.Builder<GetAnnotatedDatasetRequest, AnnotatedDataset>
         getAnnotatedDatasetSettings;
     private final PagedCallSettings.Builder<
-            ListAnnotatedDatasetsRequest,
-            ListAnnotatedDatasetsResponse,
+            ListAnnotatedDatasetsRequest, ListAnnotatedDatasetsResponse,
             ListAnnotatedDatasetsPagedResponse>
         listAnnotatedDatasetsSettings;
     private final UnaryCallSettings.Builder<DeleteAnnotatedDatasetRequest, Empty>
@@ -1191,8 +1172,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
     private final UnaryCallSettings.Builder<GetAnnotationSpecSetRequest, AnnotationSpecSet>
         getAnnotationSpecSetSettings;
     private final PagedCallSettings.Builder<
-            ListAnnotationSpecSetsRequest,
-            ListAnnotationSpecSetsResponse,
+            ListAnnotationSpecSetsRequest, ListAnnotationSpecSetsResponse,
             ListAnnotationSpecSetsPagedResponse>
         listAnnotationSpecSetsSettings;
     private final UnaryCallSettings.Builder<DeleteAnnotationSpecSetRequest, Empty>
@@ -1214,8 +1194,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
             SearchEvaluationsRequest, SearchEvaluationsResponse, SearchEvaluationsPagedResponse>
         searchEvaluationsSettings;
     private final PagedCallSettings.Builder<
-            SearchExampleComparisonsRequest,
-            SearchExampleComparisonsResponse,
+            SearchExampleComparisonsRequest, SearchExampleComparisonsResponse,
             SearchExampleComparisonsPagedResponse>
         searchExampleComparisonsSettings;
     private final UnaryCallSettings.Builder<CreateEvaluationJobRequest, EvaluationJob>
@@ -1866,8 +1845,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
 
     /** Returns the builder for the settings used for calls to listAnnotatedDatasets. */
     public PagedCallSettings.Builder<
-            ListAnnotatedDatasetsRequest,
-            ListAnnotatedDatasetsResponse,
+            ListAnnotatedDatasetsRequest, ListAnnotatedDatasetsResponse,
             ListAnnotatedDatasetsPagedResponse>
         listAnnotatedDatasetsSettings() {
       return listAnnotatedDatasetsSettings;
@@ -1946,8 +1924,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
 
     /** Returns the builder for the settings used for calls to listAnnotationSpecSets. */
     public PagedCallSettings.Builder<
-            ListAnnotationSpecSetsRequest,
-            ListAnnotationSpecSetsResponse,
+            ListAnnotationSpecSetsRequest, ListAnnotationSpecSetsResponse,
             ListAnnotationSpecSetsPagedResponse>
         listAnnotationSpecSetsSettings() {
       return listAnnotationSpecSetsSettings;
@@ -2005,8 +1982,7 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
 
     /** Returns the builder for the settings used for calls to searchExampleComparisons. */
     public PagedCallSettings.Builder<
-            SearchExampleComparisonsRequest,
-            SearchExampleComparisonsResponse,
+            SearchExampleComparisonsRequest, SearchExampleComparisonsResponse,
             SearchExampleComparisonsPagedResponse>
         searchExampleComparisonsSettings() {
       return searchExampleComparisonsSettings;

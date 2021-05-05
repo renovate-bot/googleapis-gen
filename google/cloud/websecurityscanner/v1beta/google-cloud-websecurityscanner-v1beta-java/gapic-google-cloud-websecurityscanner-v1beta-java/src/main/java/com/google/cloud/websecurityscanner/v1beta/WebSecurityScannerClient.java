@@ -61,13 +61,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -1591,10 +1591,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
 
   public static class ListScanConfigsPagedResponse
       extends AbstractPagedListResponse<
-          ListScanConfigsRequest,
-          ListScanConfigsResponse,
-          ScanConfig,
-          ListScanConfigsPage,
+          ListScanConfigsRequest, ListScanConfigsResponse, ScanConfig, ListScanConfigsPage,
           ListScanConfigsFixedSizeCollection> {
 
     public static ApiFuture<ListScanConfigsPagedResponse> createAsync(
@@ -1649,10 +1646,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
 
   public static class ListScanConfigsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListScanConfigsRequest,
-          ListScanConfigsResponse,
-          ScanConfig,
-          ListScanConfigsPage,
+          ListScanConfigsRequest, ListScanConfigsResponse, ScanConfig, ListScanConfigsPage,
           ListScanConfigsFixedSizeCollection> {
 
     private ListScanConfigsFixedSizeCollection(
@@ -1673,10 +1667,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
 
   public static class ListScanRunsPagedResponse
       extends AbstractPagedListResponse<
-          ListScanRunsRequest,
-          ListScanRunsResponse,
-          ScanRun,
-          ListScanRunsPage,
+          ListScanRunsRequest, ListScanRunsResponse, ScanRun, ListScanRunsPage,
           ListScanRunsFixedSizeCollection> {
 
     public static ApiFuture<ListScanRunsPagedResponse> createAsync(
@@ -1730,10 +1721,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
 
   public static class ListScanRunsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListScanRunsRequest,
-          ListScanRunsResponse,
-          ScanRun,
-          ListScanRunsPage,
+          ListScanRunsRequest, ListScanRunsResponse, ScanRun, ListScanRunsPage,
           ListScanRunsFixedSizeCollection> {
 
     private ListScanRunsFixedSizeCollection(List<ListScanRunsPage> pages, int collectionSize) {
@@ -1753,10 +1741,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
 
   public static class ListCrawledUrlsPagedResponse
       extends AbstractPagedListResponse<
-          ListCrawledUrlsRequest,
-          ListCrawledUrlsResponse,
-          CrawledUrl,
-          ListCrawledUrlsPage,
+          ListCrawledUrlsRequest, ListCrawledUrlsResponse, CrawledUrl, ListCrawledUrlsPage,
           ListCrawledUrlsFixedSizeCollection> {
 
     public static ApiFuture<ListCrawledUrlsPagedResponse> createAsync(
@@ -1811,10 +1796,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
 
   public static class ListCrawledUrlsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListCrawledUrlsRequest,
-          ListCrawledUrlsResponse,
-          CrawledUrl,
-          ListCrawledUrlsPage,
+          ListCrawledUrlsRequest, ListCrawledUrlsResponse, CrawledUrl, ListCrawledUrlsPage,
           ListCrawledUrlsFixedSizeCollection> {
 
     private ListCrawledUrlsFixedSizeCollection(
@@ -1835,10 +1817,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
 
   public static class ListFindingsPagedResponse
       extends AbstractPagedListResponse<
-          ListFindingsRequest,
-          ListFindingsResponse,
-          Finding,
-          ListFindingsPage,
+          ListFindingsRequest, ListFindingsResponse, Finding, ListFindingsPage,
           ListFindingsFixedSizeCollection> {
 
     public static ApiFuture<ListFindingsPagedResponse> createAsync(
@@ -1892,10 +1871,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
 
   public static class ListFindingsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListFindingsRequest,
-          ListFindingsResponse,
-          Finding,
-          ListFindingsPage,
+          ListFindingsRequest, ListFindingsResponse, Finding, ListFindingsPage,
           ListFindingsFixedSizeCollection> {
 
     private ListFindingsFixedSizeCollection(List<ListFindingsPage> pages, int collectionSize) {

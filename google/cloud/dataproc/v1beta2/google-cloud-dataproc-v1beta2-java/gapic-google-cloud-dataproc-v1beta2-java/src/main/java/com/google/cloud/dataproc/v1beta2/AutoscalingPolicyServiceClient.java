@@ -61,13 +61,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -177,11 +177,11 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * @param parent Required. The "resource name" of the region or location, as described in
    *     https://cloud.google.com/apis/design/resource_names.
    *     <ul>
-   *       <li>For `projects.regions.autoscalingPolicies.create`, the resource name has the
+   *       <li> For `projects.regions.autoscalingPolicies.create`, the resource name has the
    *           following format: `projects/{project_id}/regions/{region}`
    *     </ul>
    *     <ul>
-   *       <li>For `projects.locations.autoscalingPolicies.create`, the resource name has the
+   *       <li> For `projects.locations.autoscalingPolicies.create`, the resource name has the
    *           following format: `projects/{project_id}/locations/{location}`
    *     </ul>
    *
@@ -217,11 +217,11 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * @param parent Required. The "resource name" of the region or location, as described in
    *     https://cloud.google.com/apis/design/resource_names.
    *     <ul>
-   *       <li>For `projects.regions.autoscalingPolicies.create`, the resource name has the
+   *       <li> For `projects.regions.autoscalingPolicies.create`, the resource name has the
    *           following format: `projects/{project_id}/regions/{region}`
    *     </ul>
    *     <ul>
-   *       <li>For `projects.locations.autoscalingPolicies.create`, the resource name has the
+   *       <li> For `projects.locations.autoscalingPolicies.create`, the resource name has the
    *           following format: `projects/{project_id}/locations/{location}`
    *     </ul>
    *
@@ -260,11 +260,11 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * @param parent Required. The "resource name" of the region or location, as described in
    *     https://cloud.google.com/apis/design/resource_names.
    *     <ul>
-   *       <li>For `projects.regions.autoscalingPolicies.create`, the resource name has the
+   *       <li> For `projects.regions.autoscalingPolicies.create`, the resource name has the
    *           following format: `projects/{project_id}/regions/{region}`
    *     </ul>
    *     <ul>
-   *       <li>For `projects.locations.autoscalingPolicies.create`, the resource name has the
+   *       <li> For `projects.locations.autoscalingPolicies.create`, the resource name has the
    *           following format: `projects/{project_id}/locations/{location}`
    *     </ul>
    *
@@ -431,13 +431,13 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * @param name Required. The "resource name" of the autoscaling policy, as described in
    *     https://cloud.google.com/apis/design/resource_names.
    *     <ul>
-   *       <li>For `projects.regions.autoscalingPolicies.get`, the resource name of the policy has
+   *       <li> For `projects.regions.autoscalingPolicies.get`, the resource name of the policy has
    *           the following format:
    *           `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
    *     </ul>
    *     <ul>
-   *       <li>For `projects.locations.autoscalingPolicies.get`, the resource name of the policy has
-   *           the following format:
+   *       <li> For `projects.locations.autoscalingPolicies.get`, the resource name of the policy
+   *           has the following format:
    *           `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`
    *     </ul>
    *
@@ -471,13 +471,13 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * @param name Required. The "resource name" of the autoscaling policy, as described in
    *     https://cloud.google.com/apis/design/resource_names.
    *     <ul>
-   *       <li>For `projects.regions.autoscalingPolicies.get`, the resource name of the policy has
+   *       <li> For `projects.regions.autoscalingPolicies.get`, the resource name of the policy has
    *           the following format:
    *           `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
    *     </ul>
    *     <ul>
-   *       <li>For `projects.locations.autoscalingPolicies.get`, the resource name of the policy has
-   *           the following format:
+   *       <li> For `projects.locations.autoscalingPolicies.get`, the resource name of the policy
+   *           has the following format:
    *           `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`
    *     </ul>
    *
@@ -564,11 +564,11 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * @param parent Required. The "resource name" of the region or location, as described in
    *     https://cloud.google.com/apis/design/resource_names.
    *     <ul>
-   *       <li>For `projects.regions.autoscalingPolicies.list`, the resource name of the region has
+   *       <li> For `projects.regions.autoscalingPolicies.list`, the resource name of the region has
    *           the following format: `projects/{project_id}/regions/{region}`
    *     </ul>
    *     <ul>
-   *       <li>For `projects.locations.autoscalingPolicies.list`, the resource name of the location
+   *       <li> For `projects.locations.autoscalingPolicies.list`, the resource name of the location
    *           has the following format: `projects/{project_id}/locations/{location}`
    *     </ul>
    *
@@ -602,11 +602,11 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * @param parent Required. The "resource name" of the region or location, as described in
    *     https://cloud.google.com/apis/design/resource_names.
    *     <ul>
-   *       <li>For `projects.regions.autoscalingPolicies.list`, the resource name of the region has
+   *       <li> For `projects.regions.autoscalingPolicies.list`, the resource name of the region has
    *           the following format: `projects/{project_id}/regions/{region}`
    *     </ul>
    *     <ul>
-   *       <li>For `projects.locations.autoscalingPolicies.list`, the resource name of the location
+   *       <li> For `projects.locations.autoscalingPolicies.list`, the resource name of the location
    *           has the following format: `projects/{project_id}/locations/{location}`
    *     </ul>
    *
@@ -643,11 +643,11 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * @param parent Required. The "resource name" of the region or location, as described in
    *     https://cloud.google.com/apis/design/resource_names.
    *     <ul>
-   *       <li>For `projects.regions.autoscalingPolicies.list`, the resource name of the region has
+   *       <li> For `projects.regions.autoscalingPolicies.list`, the resource name of the region has
    *           the following format: `projects/{project_id}/regions/{region}`
    *     </ul>
    *     <ul>
-   *       <li>For `projects.locations.autoscalingPolicies.list`, the resource name of the location
+   *       <li> For `projects.locations.autoscalingPolicies.list`, the resource name of the location
    *           has the following format: `projects/{project_id}/locations/{location}`
    *     </ul>
    *
@@ -783,12 +783,12 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * @param name Required. The "resource name" of the autoscaling policy, as described in
    *     https://cloud.google.com/apis/design/resource_names.
    *     <ul>
-   *       <li>For `projects.regions.autoscalingPolicies.delete`, the resource name of the policy
+   *       <li> For `projects.regions.autoscalingPolicies.delete`, the resource name of the policy
    *           has the following format:
    *           `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
    *     </ul>
    *     <ul>
-   *       <li>For `projects.locations.autoscalingPolicies.delete`, the resource name of the policy
+   *       <li> For `projects.locations.autoscalingPolicies.delete`, the resource name of the policy
    *           has the following format:
    *           `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`
    *     </ul>
@@ -824,12 +824,12 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * @param name Required. The "resource name" of the autoscaling policy, as described in
    *     https://cloud.google.com/apis/design/resource_names.
    *     <ul>
-   *       <li>For `projects.regions.autoscalingPolicies.delete`, the resource name of the policy
+   *       <li> For `projects.regions.autoscalingPolicies.delete`, the resource name of the policy
    *           has the following format:
    *           `projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id}`
    *     </ul>
    *     <ul>
-   *       <li>For `projects.locations.autoscalingPolicies.delete`, the resource name of the policy
+   *       <li> For `projects.locations.autoscalingPolicies.delete`, the resource name of the policy
    *           has the following format:
    *           `projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}`
    *     </ul>
@@ -931,11 +931,8 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
 
   public static class ListAutoscalingPoliciesPagedResponse
       extends AbstractPagedListResponse<
-          ListAutoscalingPoliciesRequest,
-          ListAutoscalingPoliciesResponse,
-          AutoscalingPolicy,
-          ListAutoscalingPoliciesPage,
-          ListAutoscalingPoliciesFixedSizeCollection> {
+          ListAutoscalingPoliciesRequest, ListAutoscalingPoliciesResponse, AutoscalingPolicy,
+          ListAutoscalingPoliciesPage, ListAutoscalingPoliciesFixedSizeCollection> {
 
     public static ApiFuture<ListAutoscalingPoliciesPagedResponse> createAsync(
         PageContext<
@@ -962,9 +959,7 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
 
   public static class ListAutoscalingPoliciesPage
       extends AbstractPage<
-          ListAutoscalingPoliciesRequest,
-          ListAutoscalingPoliciesResponse,
-          AutoscalingPolicy,
+          ListAutoscalingPoliciesRequest, ListAutoscalingPoliciesResponse, AutoscalingPolicy,
           ListAutoscalingPoliciesPage> {
 
     private ListAutoscalingPoliciesPage(
@@ -1000,11 +995,8 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
 
   public static class ListAutoscalingPoliciesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListAutoscalingPoliciesRequest,
-          ListAutoscalingPoliciesResponse,
-          AutoscalingPolicy,
-          ListAutoscalingPoliciesPage,
-          ListAutoscalingPoliciesFixedSizeCollection> {
+          ListAutoscalingPoliciesRequest, ListAutoscalingPoliciesResponse, AutoscalingPolicy,
+          ListAutoscalingPoliciesPage, ListAutoscalingPoliciesFixedSizeCollection> {
 
     private ListAutoscalingPoliciesFixedSizeCollection(
         List<ListAutoscalingPoliciesPage> pages, int collectionSize) {

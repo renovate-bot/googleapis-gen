@@ -64,13 +64,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -1343,10 +1343,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   public static class ListTaxonomiesPagedResponse
       extends AbstractPagedListResponse<
-          ListTaxonomiesRequest,
-          ListTaxonomiesResponse,
-          Taxonomy,
-          ListTaxonomiesPage,
+          ListTaxonomiesRequest, ListTaxonomiesResponse, Taxonomy, ListTaxonomiesPage,
           ListTaxonomiesFixedSizeCollection> {
 
     public static ApiFuture<ListTaxonomiesPagedResponse> createAsync(
@@ -1401,10 +1398,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   public static class ListTaxonomiesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListTaxonomiesRequest,
-          ListTaxonomiesResponse,
-          Taxonomy,
-          ListTaxonomiesPage,
+          ListTaxonomiesRequest, ListTaxonomiesResponse, Taxonomy, ListTaxonomiesPage,
           ListTaxonomiesFixedSizeCollection> {
 
     private ListTaxonomiesFixedSizeCollection(List<ListTaxonomiesPage> pages, int collectionSize) {
@@ -1424,10 +1418,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   public static class ListPolicyTagsPagedResponse
       extends AbstractPagedListResponse<
-          ListPolicyTagsRequest,
-          ListPolicyTagsResponse,
-          PolicyTag,
-          ListPolicyTagsPage,
+          ListPolicyTagsRequest, ListPolicyTagsResponse, PolicyTag, ListPolicyTagsPage,
           ListPolicyTagsFixedSizeCollection> {
 
     public static ApiFuture<ListPolicyTagsPagedResponse> createAsync(
@@ -1482,10 +1473,7 @@ public class PolicyTagManagerClient implements BackgroundResource {
 
   public static class ListPolicyTagsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListPolicyTagsRequest,
-          ListPolicyTagsResponse,
-          PolicyTag,
-          ListPolicyTagsPage,
+          ListPolicyTagsRequest, ListPolicyTagsResponse, PolicyTag, ListPolicyTagsPage,
           ListPolicyTagsFixedSizeCollection> {
 
     private ListPolicyTagsFixedSizeCollection(List<ListPolicyTagsPage> pages, int collectionSize) {

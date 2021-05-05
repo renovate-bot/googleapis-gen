@@ -66,13 +66,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -175,23 +175,24 @@ public class RoutesPreferredClient implements BackgroundResource {
    * <p>For example, in this method:
    *
    * <ul>
-   *   <li>Field mask of all available fields (for manual inspection): `X-Goog-FieldMask: &#42;`
-   *   <li>Field mask of Route-level duration, distance, and polyline (an example production setup):
-   *       `X-Goog-FieldMask: routes.duration,routes.distanceMeters,routes.polyline.encodedPolyline`
+   *   <li> Field mask of all available fields (for manual inspection): `X-Goog-FieldMask: &#42;`
+   *   <li> Field mask of Route-level duration, distance, and polyline (an example production
+   *       setup): `X-Goog-FieldMask:
+   *       routes.duration,routes.distanceMeters,routes.polyline.encodedPolyline`
    * </ul>
    *
    * <p>Google discourage the use of the wildcard (`&#42;`) response field mask, or specifying the
    * field mask at the top level (`routes`), because:
    *
    * <ul>
-   *   <li>Selecting only the fields that you need helps our server save computation cycles,
+   *   <li> Selecting only the fields that you need helps our server save computation cycles,
    *       allowing us to return the result to you with a lower latency.
-   *   <li>Selecting only the fields that you need in your production job ensures stable latency
+   *   <li> Selecting only the fields that you need in your production job ensures stable latency
    *       performance. We might add more response fields in the future, and those new fields might
    *       require extra computation time. If you select all fields, or if you select all fields at
    *       the top level, then you might experience performance degradation because any new field we
    *       add will be automatically included in the response.
-   *   <li>Selecting only the fields that you need results in a smaller response size, and thus
+   *   <li> Selecting only the fields that you need results in a smaller response size, and thus
    *       higher network throughput.
    * </ul>
    *
@@ -240,23 +241,24 @@ public class RoutesPreferredClient implements BackgroundResource {
    * <p>For example, in this method:
    *
    * <ul>
-   *   <li>Field mask of all available fields (for manual inspection): `X-Goog-FieldMask: &#42;`
-   *   <li>Field mask of Route-level duration, distance, and polyline (an example production setup):
-   *       `X-Goog-FieldMask: routes.duration,routes.distanceMeters,routes.polyline.encodedPolyline`
+   *   <li> Field mask of all available fields (for manual inspection): `X-Goog-FieldMask: &#42;`
+   *   <li> Field mask of Route-level duration, distance, and polyline (an example production
+   *       setup): `X-Goog-FieldMask:
+   *       routes.duration,routes.distanceMeters,routes.polyline.encodedPolyline`
    * </ul>
    *
    * <p>Google discourage the use of the wildcard (`&#42;`) response field mask, or specifying the
    * field mask at the top level (`routes`), because:
    *
    * <ul>
-   *   <li>Selecting only the fields that you need helps our server save computation cycles,
+   *   <li> Selecting only the fields that you need helps our server save computation cycles,
    *       allowing us to return the result to you with a lower latency.
-   *   <li>Selecting only the fields that you need in your production job ensures stable latency
+   *   <li> Selecting only the fields that you need in your production job ensures stable latency
    *       performance. We might add more response fields in the future, and those new fields might
    *       require extra computation time. If you select all fields, or if you select all fields at
    *       the top level, then you might experience performance degradation because any new field we
    *       add will be automatically included in the response.
-   *   <li>Selecting only the fields that you need results in a smaller response size, and thus
+   *   <li> Selecting only the fields that you need results in a smaller response size, and thus
    *       higher network throughput.
    * </ul>
    *
@@ -306,8 +308,8 @@ public class RoutesPreferredClient implements BackgroundResource {
    * <p>For example, in this method:
    *
    * <ul>
-   *   <li>Field mask of all available fields (for manual inspection): `X-Goog-FieldMask: &#42;`
-   *   <li>Field mask of route durations, distances, element status, condition, and element indices
+   *   <li> Field mask of all available fields (for manual inspection): `X-Goog-FieldMask: &#42;`
+   *   <li> Field mask of route durations, distances, element status, condition, and element indices
    *       (an example production setup): `X-Goog-FieldMask:
    *       originIndex,destinationIndex,status,condition,distanceMeters,duration`
    * </ul>
@@ -317,14 +319,14 @@ public class RoutesPreferredClient implements BackgroundResource {
    * because:
    *
    * <ul>
-   *   <li>Selecting only the fields that you need helps our server save computation cycles,
+   *   <li> Selecting only the fields that you need helps our server save computation cycles,
    *       allowing us to return the result to you with a lower latency.
-   *   <li>Selecting only the fields that you need in your production job ensures stable latency
+   *   <li> Selecting only the fields that you need in your production job ensures stable latency
    *       performance. We might add more response fields in the future, and those new fields might
    *       require extra computation time. If you select all fields, or if you select all fields at
    *       the top level, then you might experience performance degradation because any new field we
    *       add will be automatically included in the response.
-   *   <li>Selecting only the fields that you need results in a smaller response size, and thus
+   *   <li> Selecting only the fields that you need results in a smaller response size, and thus
    *       higher network throughput.
    * </ul>
    *

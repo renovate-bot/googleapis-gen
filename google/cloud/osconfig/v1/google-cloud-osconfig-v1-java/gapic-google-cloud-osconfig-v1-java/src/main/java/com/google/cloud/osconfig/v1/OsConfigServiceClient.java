@@ -67,13 +67,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -679,11 +679,11 @@ public class OsConfigServiceClient implements BackgroundResource {
    * @param patchDeploymentId Required. A name for the patch deployment in the project. When
    *     creating a name the following rules apply:
    *     <ul>
-   *       <li>Must contain only lowercase letters, numbers, and hyphens.
-   *       <li>Must start with a letter.
-   *       <li>Must be between 1-63 characters.
-   *       <li>Must end with a number or a letter.
-   *       <li>Must be unique within the project.
+   *       <li> Must contain only lowercase letters, numbers, and hyphens.
+   *       <li> Must start with a letter.
+   *       <li> Must be between 1-63 characters.
+   *       <li> Must end with a number or a letter.
+   *       <li> Must be unique within the project.
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -724,11 +724,11 @@ public class OsConfigServiceClient implements BackgroundResource {
    * @param patchDeploymentId Required. A name for the patch deployment in the project. When
    *     creating a name the following rules apply:
    *     <ul>
-   *       <li>Must contain only lowercase letters, numbers, and hyphens.
-   *       <li>Must start with a letter.
-   *       <li>Must be between 1-63 characters.
-   *       <li>Must end with a number or a letter.
-   *       <li>Must be unique within the project.
+   *       <li> Must contain only lowercase letters, numbers, and hyphens.
+   *       <li> Must start with a letter.
+   *       <li> Must be between 1-63 characters.
+   *       <li> Must end with a number or a letter.
+   *       <li> Must be unique within the project.
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1167,11 +1167,8 @@ public class OsConfigServiceClient implements BackgroundResource {
 
   public static class ListPatchJobsPagedResponse
       extends AbstractPagedListResponse<
-          PatchJobs.ListPatchJobsRequest,
-          PatchJobs.ListPatchJobsResponse,
-          PatchJobs.PatchJob,
-          ListPatchJobsPage,
-          ListPatchJobsFixedSizeCollection> {
+          PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse, PatchJobs.PatchJob,
+          ListPatchJobsPage, ListPatchJobsFixedSizeCollection> {
 
     public static ApiFuture<ListPatchJobsPagedResponse> createAsync(
         PageContext<
@@ -1198,9 +1195,7 @@ public class OsConfigServiceClient implements BackgroundResource {
 
   public static class ListPatchJobsPage
       extends AbstractPage<
-          PatchJobs.ListPatchJobsRequest,
-          PatchJobs.ListPatchJobsResponse,
-          PatchJobs.PatchJob,
+          PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse, PatchJobs.PatchJob,
           ListPatchJobsPage> {
 
     private ListPatchJobsPage(
@@ -1236,11 +1231,8 @@ public class OsConfigServiceClient implements BackgroundResource {
 
   public static class ListPatchJobsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          PatchJobs.ListPatchJobsRequest,
-          PatchJobs.ListPatchJobsResponse,
-          PatchJobs.PatchJob,
-          ListPatchJobsPage,
-          ListPatchJobsFixedSizeCollection> {
+          PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse, PatchJobs.PatchJob,
+          ListPatchJobsPage, ListPatchJobsFixedSizeCollection> {
 
     private ListPatchJobsFixedSizeCollection(List<ListPatchJobsPage> pages, int collectionSize) {
       super(pages, collectionSize);
@@ -1260,16 +1252,13 @@ public class OsConfigServiceClient implements BackgroundResource {
   public static class ListPatchJobInstanceDetailsPagedResponse
       extends AbstractPagedListResponse<
           PatchJobs.ListPatchJobInstanceDetailsRequest,
-          PatchJobs.ListPatchJobInstanceDetailsResponse,
-          PatchJobs.PatchJobInstanceDetails,
-          ListPatchJobInstanceDetailsPage,
-          ListPatchJobInstanceDetailsFixedSizeCollection> {
+          PatchJobs.ListPatchJobInstanceDetailsResponse, PatchJobs.PatchJobInstanceDetails,
+          ListPatchJobInstanceDetailsPage, ListPatchJobInstanceDetailsFixedSizeCollection> {
 
     public static ApiFuture<ListPatchJobInstanceDetailsPagedResponse> createAsync(
         PageContext<
                 PatchJobs.ListPatchJobInstanceDetailsRequest,
-                PatchJobs.ListPatchJobInstanceDetailsResponse,
-                PatchJobs.PatchJobInstanceDetails>
+                PatchJobs.ListPatchJobInstanceDetailsResponse, PatchJobs.PatchJobInstanceDetails>
             context,
         ApiFuture<PatchJobs.ListPatchJobInstanceDetailsResponse> futureResponse) {
       ApiFuture<ListPatchJobInstanceDetailsPage> futurePage =
@@ -1296,15 +1285,13 @@ public class OsConfigServiceClient implements BackgroundResource {
   public static class ListPatchJobInstanceDetailsPage
       extends AbstractPage<
           PatchJobs.ListPatchJobInstanceDetailsRequest,
-          PatchJobs.ListPatchJobInstanceDetailsResponse,
-          PatchJobs.PatchJobInstanceDetails,
+          PatchJobs.ListPatchJobInstanceDetailsResponse, PatchJobs.PatchJobInstanceDetails,
           ListPatchJobInstanceDetailsPage> {
 
     private ListPatchJobInstanceDetailsPage(
         PageContext<
                 PatchJobs.ListPatchJobInstanceDetailsRequest,
-                PatchJobs.ListPatchJobInstanceDetailsResponse,
-                PatchJobs.PatchJobInstanceDetails>
+                PatchJobs.ListPatchJobInstanceDetailsResponse, PatchJobs.PatchJobInstanceDetails>
             context,
         PatchJobs.ListPatchJobInstanceDetailsResponse response) {
       super(context, response);
@@ -1318,8 +1305,7 @@ public class OsConfigServiceClient implements BackgroundResource {
     protected ListPatchJobInstanceDetailsPage createPage(
         PageContext<
                 PatchJobs.ListPatchJobInstanceDetailsRequest,
-                PatchJobs.ListPatchJobInstanceDetailsResponse,
-                PatchJobs.PatchJobInstanceDetails>
+                PatchJobs.ListPatchJobInstanceDetailsResponse, PatchJobs.PatchJobInstanceDetails>
             context,
         PatchJobs.ListPatchJobInstanceDetailsResponse response) {
       return new ListPatchJobInstanceDetailsPage(context, response);
@@ -1329,8 +1315,7 @@ public class OsConfigServiceClient implements BackgroundResource {
     public ApiFuture<ListPatchJobInstanceDetailsPage> createPageAsync(
         PageContext<
                 PatchJobs.ListPatchJobInstanceDetailsRequest,
-                PatchJobs.ListPatchJobInstanceDetailsResponse,
-                PatchJobs.PatchJobInstanceDetails>
+                PatchJobs.ListPatchJobInstanceDetailsResponse, PatchJobs.PatchJobInstanceDetails>
             context,
         ApiFuture<PatchJobs.ListPatchJobInstanceDetailsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1340,10 +1325,8 @@ public class OsConfigServiceClient implements BackgroundResource {
   public static class ListPatchJobInstanceDetailsFixedSizeCollection
       extends AbstractFixedSizeCollection<
           PatchJobs.ListPatchJobInstanceDetailsRequest,
-          PatchJobs.ListPatchJobInstanceDetailsResponse,
-          PatchJobs.PatchJobInstanceDetails,
-          ListPatchJobInstanceDetailsPage,
-          ListPatchJobInstanceDetailsFixedSizeCollection> {
+          PatchJobs.ListPatchJobInstanceDetailsResponse, PatchJobs.PatchJobInstanceDetails,
+          ListPatchJobInstanceDetailsPage, ListPatchJobInstanceDetailsFixedSizeCollection> {
 
     private ListPatchJobInstanceDetailsFixedSizeCollection(
         List<ListPatchJobInstanceDetailsPage> pages, int collectionSize) {
@@ -1364,16 +1347,13 @@ public class OsConfigServiceClient implements BackgroundResource {
   public static class ListPatchDeploymentsPagedResponse
       extends AbstractPagedListResponse<
           PatchDeployments.ListPatchDeploymentsRequest,
-          PatchDeployments.ListPatchDeploymentsResponse,
-          PatchDeployments.PatchDeployment,
-          ListPatchDeploymentsPage,
-          ListPatchDeploymentsFixedSizeCollection> {
+          PatchDeployments.ListPatchDeploymentsResponse, PatchDeployments.PatchDeployment,
+          ListPatchDeploymentsPage, ListPatchDeploymentsFixedSizeCollection> {
 
     public static ApiFuture<ListPatchDeploymentsPagedResponse> createAsync(
         PageContext<
                 PatchDeployments.ListPatchDeploymentsRequest,
-                PatchDeployments.ListPatchDeploymentsResponse,
-                PatchDeployments.PatchDeployment>
+                PatchDeployments.ListPatchDeploymentsResponse, PatchDeployments.PatchDeployment>
             context,
         ApiFuture<PatchDeployments.ListPatchDeploymentsResponse> futureResponse) {
       ApiFuture<ListPatchDeploymentsPage> futurePage =
@@ -1397,15 +1377,13 @@ public class OsConfigServiceClient implements BackgroundResource {
   public static class ListPatchDeploymentsPage
       extends AbstractPage<
           PatchDeployments.ListPatchDeploymentsRequest,
-          PatchDeployments.ListPatchDeploymentsResponse,
-          PatchDeployments.PatchDeployment,
+          PatchDeployments.ListPatchDeploymentsResponse, PatchDeployments.PatchDeployment,
           ListPatchDeploymentsPage> {
 
     private ListPatchDeploymentsPage(
         PageContext<
                 PatchDeployments.ListPatchDeploymentsRequest,
-                PatchDeployments.ListPatchDeploymentsResponse,
-                PatchDeployments.PatchDeployment>
+                PatchDeployments.ListPatchDeploymentsResponse, PatchDeployments.PatchDeployment>
             context,
         PatchDeployments.ListPatchDeploymentsResponse response) {
       super(context, response);
@@ -1419,8 +1397,7 @@ public class OsConfigServiceClient implements BackgroundResource {
     protected ListPatchDeploymentsPage createPage(
         PageContext<
                 PatchDeployments.ListPatchDeploymentsRequest,
-                PatchDeployments.ListPatchDeploymentsResponse,
-                PatchDeployments.PatchDeployment>
+                PatchDeployments.ListPatchDeploymentsResponse, PatchDeployments.PatchDeployment>
             context,
         PatchDeployments.ListPatchDeploymentsResponse response) {
       return new ListPatchDeploymentsPage(context, response);
@@ -1430,8 +1407,7 @@ public class OsConfigServiceClient implements BackgroundResource {
     public ApiFuture<ListPatchDeploymentsPage> createPageAsync(
         PageContext<
                 PatchDeployments.ListPatchDeploymentsRequest,
-                PatchDeployments.ListPatchDeploymentsResponse,
-                PatchDeployments.PatchDeployment>
+                PatchDeployments.ListPatchDeploymentsResponse, PatchDeployments.PatchDeployment>
             context,
         ApiFuture<PatchDeployments.ListPatchDeploymentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1441,10 +1417,8 @@ public class OsConfigServiceClient implements BackgroundResource {
   public static class ListPatchDeploymentsFixedSizeCollection
       extends AbstractFixedSizeCollection<
           PatchDeployments.ListPatchDeploymentsRequest,
-          PatchDeployments.ListPatchDeploymentsResponse,
-          PatchDeployments.PatchDeployment,
-          ListPatchDeploymentsPage,
-          ListPatchDeploymentsFixedSizeCollection> {
+          PatchDeployments.ListPatchDeploymentsResponse, PatchDeployments.PatchDeployment,
+          ListPatchDeploymentsPage, ListPatchDeploymentsFixedSizeCollection> {
 
     private ListPatchDeploymentsFixedSizeCollection(
         List<ListPatchDeploymentsPage> pages, int collectionSize) {

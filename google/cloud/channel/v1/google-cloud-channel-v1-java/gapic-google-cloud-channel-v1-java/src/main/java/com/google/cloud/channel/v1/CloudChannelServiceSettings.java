@@ -55,9 +55,9 @@ import javax.annotation.Generated;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (cloudchannel.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (cloudchannel.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -140,8 +140,7 @@ public class CloudChannelServiceSettings extends ClientSettings<CloudChannelServ
 
   /** Returns the object with the settings used for calls to listTransferableSkus. */
   public PagedCallSettings<
-          ListTransferableSkusRequest,
-          ListTransferableSkusResponse,
+          ListTransferableSkusRequest, ListTransferableSkusResponse,
           ListTransferableSkusPagedResponse>
       listTransferableSkusSettings() {
     return ((CloudChannelServiceStubSettings) getStubSettings()).listTransferableSkusSettings();
@@ -149,8 +148,7 @@ public class CloudChannelServiceSettings extends ClientSettings<CloudChannelServ
 
   /** Returns the object with the settings used for calls to listTransferableOffers. */
   public PagedCallSettings<
-          ListTransferableOffersRequest,
-          ListTransferableOffersResponse,
+          ListTransferableOffersRequest, ListTransferableOffersResponse,
           ListTransferableOffersPagedResponse>
       listTransferableOffersSettings() {
     return ((CloudChannelServiceStubSettings) getStubSettings()).listTransferableOffersSettings();
@@ -286,8 +284,7 @@ public class CloudChannelServiceSettings extends ClientSettings<CloudChannelServ
 
   /** Returns the object with the settings used for calls to listChannelPartnerLinks. */
   public PagedCallSettings<
-          ListChannelPartnerLinksRequest,
-          ListChannelPartnerLinksResponse,
+          ListChannelPartnerLinksRequest, ListChannelPartnerLinksResponse,
           ListChannelPartnerLinksPagedResponse>
       listChannelPartnerLinksSettings() {
     return ((CloudChannelServiceStubSettings) getStubSettings()).listChannelPartnerLinksSettings();
@@ -338,8 +335,7 @@ public class CloudChannelServiceSettings extends ClientSettings<CloudChannelServ
 
   /** Returns the object with the settings used for calls to listPurchasableOffers. */
   public PagedCallSettings<
-          ListPurchasableOffersRequest,
-          ListPurchasableOffersResponse,
+          ListPurchasableOffersRequest, ListPurchasableOffersResponse,
           ListPurchasableOffersPagedResponse>
       listPurchasableOffersSettings() {
     return ((CloudChannelServiceStubSettings) getStubSettings()).listPurchasableOffersSettings();
@@ -517,8 +513,7 @@ public class CloudChannelServiceSettings extends ClientSettings<CloudChannelServ
 
     /** Returns the builder for the settings used for calls to listTransferableSkus. */
     public PagedCallSettings.Builder<
-            ListTransferableSkusRequest,
-            ListTransferableSkusResponse,
+            ListTransferableSkusRequest, ListTransferableSkusResponse,
             ListTransferableSkusPagedResponse>
         listTransferableSkusSettings() {
       return getStubSettingsBuilder().listTransferableSkusSettings();
@@ -526,8 +521,7 @@ public class CloudChannelServiceSettings extends ClientSettings<CloudChannelServ
 
     /** Returns the builder for the settings used for calls to listTransferableOffers. */
     public PagedCallSettings.Builder<
-            ListTransferableOffersRequest,
-            ListTransferableOffersResponse,
+            ListTransferableOffersRequest, ListTransferableOffersResponse,
             ListTransferableOffersPagedResponse>
         listTransferableOffersSettings() {
       return getStubSettingsBuilder().listTransferableOffersSettings();
@@ -662,8 +656,7 @@ public class CloudChannelServiceSettings extends ClientSettings<CloudChannelServ
 
     /** Returns the builder for the settings used for calls to listChannelPartnerLinks. */
     public PagedCallSettings.Builder<
-            ListChannelPartnerLinksRequest,
-            ListChannelPartnerLinksResponse,
+            ListChannelPartnerLinksRequest, ListChannelPartnerLinksResponse,
             ListChannelPartnerLinksPagedResponse>
         listChannelPartnerLinksSettings() {
       return getStubSettingsBuilder().listChannelPartnerLinksSettings();
@@ -708,8 +701,7 @@ public class CloudChannelServiceSettings extends ClientSettings<CloudChannelServ
 
     /** Returns the builder for the settings used for calls to listPurchasableSkus. */
     public PagedCallSettings.Builder<
-            ListPurchasableSkusRequest,
-            ListPurchasableSkusResponse,
+            ListPurchasableSkusRequest, ListPurchasableSkusResponse,
             ListPurchasableSkusPagedResponse>
         listPurchasableSkusSettings() {
       return getStubSettingsBuilder().listPurchasableSkusSettings();
@@ -717,8 +709,7 @@ public class CloudChannelServiceSettings extends ClientSettings<CloudChannelServ
 
     /** Returns the builder for the settings used for calls to listPurchasableOffers. */
     public PagedCallSettings.Builder<
-            ListPurchasableOffersRequest,
-            ListPurchasableOffersResponse,
+            ListPurchasableOffersRequest, ListPurchasableOffersResponse,
             ListPurchasableOffersPagedResponse>
         listPurchasableOffersSettings() {
       return getStubSettingsBuilder().listPurchasableOffersSettings();

@@ -59,9 +59,9 @@ import org.threeten.bp.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- *   <li>The default service address (admob.googleapis.com) and default port (443) are used.
- *   <li>Credentials are acquired automatically through Application Default Credentials.
- *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li> The default service address (admob.googleapis.com) and default port (443) are used.
+ *   <li> Credentials are acquired automatically through Application Default Credentials.
+ *   <li> Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
@@ -93,8 +93,7 @@ public class AdMobApiStubSettings extends StubSettings<AdMobApiStubSettings> {
           AdMobApiProto.GetPublisherAccountRequest, AdMobResourcesProto.PublisherAccount>
       getPublisherAccountSettings;
   private final PagedCallSettings<
-          AdMobApiProto.ListPublisherAccountsRequest,
-          AdMobApiProto.ListPublisherAccountsResponse,
+          AdMobApiProto.ListPublisherAccountsRequest, AdMobApiProto.ListPublisherAccountsResponse,
           ListPublisherAccountsPagedResponse>
       listPublisherAccountsSettings;
   private final ServerStreamingCallSettings<
@@ -106,14 +105,12 @@ public class AdMobApiStubSettings extends StubSettings<AdMobApiStubSettings> {
       generateMediationReportSettings;
 
   private static final PagedListDescriptor<
-          AdMobApiProto.ListPublisherAccountsRequest,
-          AdMobApiProto.ListPublisherAccountsResponse,
+          AdMobApiProto.ListPublisherAccountsRequest, AdMobApiProto.ListPublisherAccountsResponse,
           AdMobResourcesProto.PublisherAccount>
       LIST_PUBLISHER_ACCOUNTS_PAGE_STR_DESC =
           new PagedListDescriptor<
               AdMobApiProto.ListPublisherAccountsRequest,
-              AdMobApiProto.ListPublisherAccountsResponse,
-              AdMobResourcesProto.PublisherAccount>() {
+              AdMobApiProto.ListPublisherAccountsResponse, AdMobResourcesProto.PublisherAccount>() {
             @Override
             public String emptyToken() {
               return "";
@@ -155,14 +152,12 @@ public class AdMobApiStubSettings extends StubSettings<AdMobApiStubSettings> {
           };
 
   private static final PagedListResponseFactory<
-          AdMobApiProto.ListPublisherAccountsRequest,
-          AdMobApiProto.ListPublisherAccountsResponse,
+          AdMobApiProto.ListPublisherAccountsRequest, AdMobApiProto.ListPublisherAccountsResponse,
           ListPublisherAccountsPagedResponse>
       LIST_PUBLISHER_ACCOUNTS_PAGE_STR_FACT =
           new PagedListResponseFactory<
               AdMobApiProto.ListPublisherAccountsRequest,
-              AdMobApiProto.ListPublisherAccountsResponse,
-              ListPublisherAccountsPagedResponse>() {
+              AdMobApiProto.ListPublisherAccountsResponse, ListPublisherAccountsPagedResponse>() {
             @Override
             public ApiFuture<ListPublisherAccountsPagedResponse> getFuturePagedResponse(
                 UnaryCallable<
@@ -192,8 +187,7 @@ public class AdMobApiStubSettings extends StubSettings<AdMobApiStubSettings> {
 
   /** Returns the object with the settings used for calls to listPublisherAccounts. */
   public PagedCallSettings<
-          AdMobApiProto.ListPublisherAccountsRequest,
-          AdMobApiProto.ListPublisherAccountsResponse,
+          AdMobApiProto.ListPublisherAccountsRequest, AdMobApiProto.ListPublisherAccountsResponse,
           ListPublisherAccountsPagedResponse>
       listPublisherAccountsSettings() {
     return listPublisherAccountsSettings;
@@ -295,8 +289,7 @@ public class AdMobApiStubSettings extends StubSettings<AdMobApiStubSettings> {
             AdMobApiProto.GetPublisherAccountRequest, AdMobResourcesProto.PublisherAccount>
         getPublisherAccountSettings;
     private final PagedCallSettings.Builder<
-            AdMobApiProto.ListPublisherAccountsRequest,
-            AdMobApiProto.ListPublisherAccountsResponse,
+            AdMobApiProto.ListPublisherAccountsRequest, AdMobApiProto.ListPublisherAccountsResponse,
             ListPublisherAccountsPagedResponse>
         listPublisherAccountsSettings;
     private final ServerStreamingCallSettings.Builder<
@@ -429,8 +422,7 @@ public class AdMobApiStubSettings extends StubSettings<AdMobApiStubSettings> {
 
     /** Returns the builder for the settings used for calls to listPublisherAccounts. */
     public PagedCallSettings.Builder<
-            AdMobApiProto.ListPublisherAccountsRequest,
-            AdMobApiProto.ListPublisherAccountsResponse,
+            AdMobApiProto.ListPublisherAccountsRequest, AdMobApiProto.ListPublisherAccountsResponse,
             ListPublisherAccountsPagedResponse>
         listPublisherAccountsSettings() {
       return listPublisherAccountsSettings;
