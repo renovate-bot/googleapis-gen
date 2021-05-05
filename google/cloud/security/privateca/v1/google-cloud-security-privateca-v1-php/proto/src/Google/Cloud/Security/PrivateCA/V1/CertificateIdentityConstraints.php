@@ -26,21 +26,22 @@ class CertificateIdentityConstraints extends \Google\Protobuf\Internal\Message
      */
     protected $cel_expression = null;
     /**
-     * Optional. If this is set, the [Subject][google.cloud.security.privateca.v1.Subject] field may be copied from a certificate
+     * Required. If this is true, the [Subject][google.cloud.security.privateca.v1.Subject] field may be copied from a certificate
      * request into the signed certificate. Otherwise, the requested [Subject][google.cloud.security.privateca.v1.Subject]
-     * will be discarded.
+     * will be discarded. The bool is optional to indicate an unset field, which suggests a forgotten value that needs to be set by the caller.
      *
-     * Generated from protobuf field <code>bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * Generated from protobuf field <code>bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    protected $allow_subject_passthrough = false;
+    protected $allow_subject_passthrough = null;
     /**
-     * Optional. If this is set, the [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] extension may be copied from a
+     * Required. If this is true, the [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] extension may be copied from a
      * certificate request into the signed certificate. Otherwise, the requested
      * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] will be discarded.
+     * The bool is optional to indicate an unset field, which suggests a forgotten value that needs to be set by the caller.
      *
-     * Generated from protobuf field <code>bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * Generated from protobuf field <code>bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    protected $allow_subject_alt_names_passthrough = false;
+    protected $allow_subject_alt_names_passthrough = null;
 
     /**
      * Constructor.
@@ -54,13 +55,14 @@ class CertificateIdentityConstraints extends \Google\Protobuf\Internal\Message
      *           To see the full allowed syntax and some examples, see
      *           https://cloud.google.com/certificate-authority-service/docs/cel-guide
      *     @type bool $allow_subject_passthrough
-     *           Optional. If this is set, the [Subject][google.cloud.security.privateca.v1.Subject] field may be copied from a certificate
+     *           Required. If this is true, the [Subject][google.cloud.security.privateca.v1.Subject] field may be copied from a certificate
      *           request into the signed certificate. Otherwise, the requested [Subject][google.cloud.security.privateca.v1.Subject]
-     *           will be discarded.
+     *           will be discarded. The bool is optional to indicate an unset field, which suggests a forgotten value that needs to be set by the caller.
      *     @type bool $allow_subject_alt_names_passthrough
-     *           Optional. If this is set, the [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] extension may be copied from a
+     *           Required. If this is true, the [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] extension may be copied from a
      *           certificate request into the signed certificate. Otherwise, the requested
      *           [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] will be discarded.
+     *           The bool is optional to indicate an unset field, which suggests a forgotten value that needs to be set by the caller.
      * }
      */
     public function __construct($data = NULL) {
@@ -111,24 +113,34 @@ class CertificateIdentityConstraints extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. If this is set, the [Subject][google.cloud.security.privateca.v1.Subject] field may be copied from a certificate
+     * Required. If this is true, the [Subject][google.cloud.security.privateca.v1.Subject] field may be copied from a certificate
      * request into the signed certificate. Otherwise, the requested [Subject][google.cloud.security.privateca.v1.Subject]
-     * will be discarded.
+     * will be discarded. The bool is optional to indicate an unset field, which suggests a forgotten value that needs to be set by the caller.
      *
-     * Generated from protobuf field <code>bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * Generated from protobuf field <code>bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return bool
      */
     public function getAllowSubjectPassthrough()
     {
-        return $this->allow_subject_passthrough;
+        return isset($this->allow_subject_passthrough) ? $this->allow_subject_passthrough : false;
+    }
+
+    public function hasAllowSubjectPassthrough()
+    {
+        return isset($this->allow_subject_passthrough);
+    }
+
+    public function clearAllowSubjectPassthrough()
+    {
+        unset($this->allow_subject_passthrough);
     }
 
     /**
-     * Optional. If this is set, the [Subject][google.cloud.security.privateca.v1.Subject] field may be copied from a certificate
+     * Required. If this is true, the [Subject][google.cloud.security.privateca.v1.Subject] field may be copied from a certificate
      * request into the signed certificate. Otherwise, the requested [Subject][google.cloud.security.privateca.v1.Subject]
-     * will be discarded.
+     * will be discarded. The bool is optional to indicate an unset field, which suggests a forgotten value that needs to be set by the caller.
      *
-     * Generated from protobuf field <code>bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * Generated from protobuf field <code>bool allow_subject_passthrough = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param bool $var
      * @return $this
      */
@@ -141,24 +153,36 @@ class CertificateIdentityConstraints extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. If this is set, the [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] extension may be copied from a
+     * Required. If this is true, the [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] extension may be copied from a
      * certificate request into the signed certificate. Otherwise, the requested
      * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] will be discarded.
+     * The bool is optional to indicate an unset field, which suggests a forgotten value that needs to be set by the caller.
      *
-     * Generated from protobuf field <code>bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * Generated from protobuf field <code>bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return bool
      */
     public function getAllowSubjectAltNamesPassthrough()
     {
-        return $this->allow_subject_alt_names_passthrough;
+        return isset($this->allow_subject_alt_names_passthrough) ? $this->allow_subject_alt_names_passthrough : false;
+    }
+
+    public function hasAllowSubjectAltNamesPassthrough()
+    {
+        return isset($this->allow_subject_alt_names_passthrough);
+    }
+
+    public function clearAllowSubjectAltNamesPassthrough()
+    {
+        unset($this->allow_subject_alt_names_passthrough);
     }
 
     /**
-     * Optional. If this is set, the [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] extension may be copied from a
+     * Required. If this is true, the [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] extension may be copied from a
      * certificate request into the signed certificate. Otherwise, the requested
      * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames] will be discarded.
+     * The bool is optional to indicate an unset field, which suggests a forgotten value that needs to be set by the caller.
      *
-     * Generated from protobuf field <code>bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * Generated from protobuf field <code>bool allow_subject_alt_names_passthrough = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param bool $var
      * @return $this
      */

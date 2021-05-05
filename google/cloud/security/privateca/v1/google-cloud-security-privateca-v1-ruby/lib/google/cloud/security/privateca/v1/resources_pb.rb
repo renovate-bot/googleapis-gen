@@ -277,8 +277,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "google.cloud.security.privateca.v1.CertificateIdentityConstraints" do
       optional :cel_expression, :message, 1, "google.type.Expr"
-      optional :allow_subject_passthrough, :bool, 2
-      optional :allow_subject_alt_names_passthrough, :bool, 3
+      proto3_optional :allow_subject_passthrough, :bool, 2
+      proto3_optional :allow_subject_alt_names_passthrough, :bool, 3
     end
     add_message "google.cloud.security.privateca.v1.CertificateExtensionConstraints" do
       repeated :known_extensions, :enum, 1, "google.cloud.security.privateca.v1.CertificateExtensionConstraints.KnownCertificateExtension"
