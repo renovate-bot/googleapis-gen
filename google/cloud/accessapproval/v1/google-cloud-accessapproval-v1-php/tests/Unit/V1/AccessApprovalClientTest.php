@@ -83,10 +83,10 @@ class AccessApprovalClientTest extends GeneratedTest
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
-        $name = 'name3373707';
+        $name2 = 'name2-1052831874';
         $requestedResourceName = 'requestedResourceName-1409378037';
         $expectedResponse = new ApprovalRequest();
-        $expectedResponse->setName($name);
+        $expectedResponse->setName($name2);
         $expectedResponse->setRequestedResourceName($requestedResourceName);
         $transport->addResponse($expectedResponse);
         $response = $client->approveApprovalRequest();
@@ -198,10 +198,10 @@ class AccessApprovalClientTest extends GeneratedTest
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
-        $name = 'name3373707';
+        $name2 = 'name2-1052831874';
         $requestedResourceName = 'requestedResourceName-1409378037';
         $expectedResponse = new ApprovalRequest();
-        $expectedResponse->setName($name);
+        $expectedResponse->setName($name2);
         $expectedResponse->setRequestedResourceName($requestedResourceName);
         $transport->addResponse($expectedResponse);
         $response = $client->dismissApprovalRequest();
@@ -258,10 +258,10 @@ class AccessApprovalClientTest extends GeneratedTest
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
-        $name = 'name3373707';
+        $name2 = 'name2-1052831874';
         $enrolledAncestor = false;
         $expectedResponse = new AccessApprovalSettings();
-        $expectedResponse->setName($name);
+        $expectedResponse->setName($name2);
         $expectedResponse->setEnrolledAncestor($enrolledAncestor);
         $transport->addResponse($expectedResponse);
         $response = $client->getAccessApprovalSettings();
@@ -318,10 +318,10 @@ class AccessApprovalClientTest extends GeneratedTest
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
-        $name = 'name3373707';
+        $name2 = 'name2-1052831874';
         $requestedResourceName = 'requestedResourceName-1409378037';
         $expectedResponse = new ApprovalRequest();
-        $expectedResponse->setName($name);
+        $expectedResponse->setName($name2);
         $expectedResponse->setRequestedResourceName($requestedResourceName);
         $transport->addResponse($expectedResponse);
         $response = $client->getApprovalRequest();

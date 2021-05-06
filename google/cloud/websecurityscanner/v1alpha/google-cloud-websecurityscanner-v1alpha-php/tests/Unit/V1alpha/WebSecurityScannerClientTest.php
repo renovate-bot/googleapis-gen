@@ -101,6 +101,10 @@ class WebSecurityScannerClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->projectName('[PROJECT]');
         $scanConfig = new ScanConfig();
+        $scanConfigDisplayName = 'scanConfigDisplayName-609132338';
+        $scanConfig->setDisplayName($scanConfigDisplayName);
+        $scanConfigStartingUrls = [];
+        $scanConfig->setStartingUrls($scanConfigStartingUrls);
         $response = $client->createScanConfig($formattedParent, $scanConfig);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -138,6 +142,10 @@ class WebSecurityScannerClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->projectName('[PROJECT]');
         $scanConfig = new ScanConfig();
+        $scanConfigDisplayName = 'scanConfigDisplayName-609132338';
+        $scanConfig->setDisplayName($scanConfigDisplayName);
+        $scanConfigStartingUrls = [];
+        $scanConfig->setStartingUrls($scanConfigStartingUrls);
         try {
             $client->createScanConfig($formattedParent, $scanConfig);
             // If the $client method call did not throw, fail the test
@@ -951,6 +959,10 @@ class WebSecurityScannerClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $scanConfig = new ScanConfig();
+        $scanConfigDisplayName = 'scanConfigDisplayName-609132338';
+        $scanConfig->setDisplayName($scanConfigDisplayName);
+        $scanConfigStartingUrls = [];
+        $scanConfig->setStartingUrls($scanConfigStartingUrls);
         $updateMask = new FieldMask();
         $response = $client->updateScanConfig($scanConfig, $updateMask);
         $this->assertEquals($expectedResponse, $response);
@@ -988,6 +1000,10 @@ class WebSecurityScannerClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
         // Mock request
         $scanConfig = new ScanConfig();
+        $scanConfigDisplayName = 'scanConfigDisplayName-609132338';
+        $scanConfig->setDisplayName($scanConfigDisplayName);
+        $scanConfigStartingUrls = [];
+        $scanConfig->setStartingUrls($scanConfigStartingUrls);
         $updateMask = new FieldMask();
         try {
             $client->updateScanConfig($scanConfig, $updateMask);

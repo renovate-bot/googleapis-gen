@@ -30,19 +30,30 @@ use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
 
+use Google\Cloud\Osconfig\V1beta\Assignment;
 use Google\Cloud\Osconfig\V1beta\EffectiveGuestPolicy;
 use Google\Cloud\Osconfig\V1beta\GuestPolicy;
 use Google\Cloud\Osconfig\V1beta\ListGuestPoliciesResponse;
 use Google\Cloud\Osconfig\V1beta\ListPatchDeploymentsResponse;
 use Google\Cloud\Osconfig\V1beta\ListPatchJobInstanceDetailsResponse;
 use Google\Cloud\Osconfig\V1beta\ListPatchJobsResponse;
+use Google\Cloud\Osconfig\V1beta\MonthlySchedule;
+use Google\Cloud\Osconfig\V1beta\OneTimeSchedule;
 use Google\Cloud\Osconfig\V1beta\OsConfigServiceClient;
 use Google\Cloud\Osconfig\V1beta\PatchDeployment;
 use Google\Cloud\Osconfig\V1beta\PatchInstanceFilter;
 use Google\Cloud\Osconfig\V1beta\PatchJob;
 use Google\Cloud\Osconfig\V1beta\PatchJobInstanceDetails;
+use Google\Cloud\Osconfig\V1beta\RecurringSchedule;
+use Google\Cloud\Osconfig\V1beta\RecurringSchedule\Frequency;
+use Google\Cloud\Osconfig\V1beta\WeekDayOfMonth;
+use Google\Cloud\Osconfig\V1beta\WeeklySchedule;
 use Google\Protobuf\GPBEmpty;
+use Google\Protobuf\Timestamp;
 use Google\Rpc\Code;
+use Google\Type\DayOfWeek;
+use Google\Type\TimeOfDay;
+use Google\Type\TimeZone;
 use stdClass;
 
 /**
@@ -178,6 +189,10 @@ class OsConfigServiceClientTest extends GeneratedTest
         $formattedParent = $client->projectName('[PROJECT]');
         $guestPolicyId = 'guestPolicyId26354081';
         $guestPolicy = new GuestPolicy();
+        $guestPolicyName = 'guestPolicyName1032799957';
+        $guestPolicy->setName($guestPolicyName);
+        $guestPolicyAssignment = new Assignment();
+        $guestPolicy->setAssignment($guestPolicyAssignment);
         $response = $client->createGuestPolicy($formattedParent, $guestPolicyId, $guestPolicy);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -218,6 +233,10 @@ class OsConfigServiceClientTest extends GeneratedTest
         $formattedParent = $client->projectName('[PROJECT]');
         $guestPolicyId = 'guestPolicyId26354081';
         $guestPolicy = new GuestPolicy();
+        $guestPolicyName = 'guestPolicyName1032799957';
+        $guestPolicy->setName($guestPolicyName);
+        $guestPolicyAssignment = new Assignment();
+        $guestPolicy->setAssignment($guestPolicyAssignment);
         try {
             $client->createGuestPolicy($formattedParent, $guestPolicyId, $guestPolicy);
             // If the $client method call did not throw, fail the test
@@ -252,6 +271,34 @@ class OsConfigServiceClientTest extends GeneratedTest
         $parent = 'parent-995424086';
         $patchDeploymentId = 'patchDeploymentId-1817061090';
         $patchDeployment = new PatchDeployment();
+        $patchDeploymentInstanceFilter = new PatchInstanceFilter();
+        $patchDeployment->setInstanceFilter($patchDeploymentInstanceFilter);
+        $patchDeploymentOneTimeSchedule = new OneTimeSchedule();
+        $oneTimeScheduleExecuteTime = new Timestamp();
+        $patchDeploymentOneTimeSchedule->setExecuteTime($oneTimeScheduleExecuteTime);
+        $patchDeployment->setOneTimeSchedule($patchDeploymentOneTimeSchedule);
+        $patchDeploymentRecurringSchedule = new RecurringSchedule();
+        $recurringScheduleTimeZone = new TimeZone();
+        $patchDeploymentRecurringSchedule->setTimeZone($recurringScheduleTimeZone);
+        $recurringScheduleTimeOfDay = new TimeOfDay();
+        $patchDeploymentRecurringSchedule->setTimeOfDay($recurringScheduleTimeOfDay);
+        $recurringScheduleFrequency = Frequency::FREQUENCY_UNSPECIFIED;
+        $patchDeploymentRecurringSchedule->setFrequency($recurringScheduleFrequency);
+        $recurringScheduleWeekly = new WeeklySchedule();
+        $weeklyDayOfWeek = DayOfWeek::DAY_OF_WEEK_UNSPECIFIED;
+        $recurringScheduleWeekly->setDayOfWeek($weeklyDayOfWeek);
+        $patchDeploymentRecurringSchedule->setWeekly($recurringScheduleWeekly);
+        $recurringScheduleMonthly = new MonthlySchedule();
+        $monthlyWeekDayOfMonth = new WeekDayOfMonth();
+        $weekDayOfMonthWeekOrdinal = 1918414244;
+        $monthlyWeekDayOfMonth->setWeekOrdinal($weekDayOfMonthWeekOrdinal);
+        $weekDayOfMonthDayOfWeek = DayOfWeek::DAY_OF_WEEK_UNSPECIFIED;
+        $monthlyWeekDayOfMonth->setDayOfWeek($weekDayOfMonthDayOfWeek);
+        $recurringScheduleMonthly->setWeekDayOfMonth($monthlyWeekDayOfMonth);
+        $monthlyMonthDay = 1149931479;
+        $recurringScheduleMonthly->setMonthDay($monthlyMonthDay);
+        $patchDeploymentRecurringSchedule->setMonthly($recurringScheduleMonthly);
+        $patchDeployment->setRecurringSchedule($patchDeploymentRecurringSchedule);
         $response = $client->createPatchDeployment($parent, $patchDeploymentId, $patchDeployment);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -292,6 +339,34 @@ class OsConfigServiceClientTest extends GeneratedTest
         $parent = 'parent-995424086';
         $patchDeploymentId = 'patchDeploymentId-1817061090';
         $patchDeployment = new PatchDeployment();
+        $patchDeploymentInstanceFilter = new PatchInstanceFilter();
+        $patchDeployment->setInstanceFilter($patchDeploymentInstanceFilter);
+        $patchDeploymentOneTimeSchedule = new OneTimeSchedule();
+        $oneTimeScheduleExecuteTime = new Timestamp();
+        $patchDeploymentOneTimeSchedule->setExecuteTime($oneTimeScheduleExecuteTime);
+        $patchDeployment->setOneTimeSchedule($patchDeploymentOneTimeSchedule);
+        $patchDeploymentRecurringSchedule = new RecurringSchedule();
+        $recurringScheduleTimeZone = new TimeZone();
+        $patchDeploymentRecurringSchedule->setTimeZone($recurringScheduleTimeZone);
+        $recurringScheduleTimeOfDay = new TimeOfDay();
+        $patchDeploymentRecurringSchedule->setTimeOfDay($recurringScheduleTimeOfDay);
+        $recurringScheduleFrequency = Frequency::FREQUENCY_UNSPECIFIED;
+        $patchDeploymentRecurringSchedule->setFrequency($recurringScheduleFrequency);
+        $recurringScheduleWeekly = new WeeklySchedule();
+        $weeklyDayOfWeek = DayOfWeek::DAY_OF_WEEK_UNSPECIFIED;
+        $recurringScheduleWeekly->setDayOfWeek($weeklyDayOfWeek);
+        $patchDeploymentRecurringSchedule->setWeekly($recurringScheduleWeekly);
+        $recurringScheduleMonthly = new MonthlySchedule();
+        $monthlyWeekDayOfMonth = new WeekDayOfMonth();
+        $weekDayOfMonthWeekOrdinal = 1918414244;
+        $monthlyWeekDayOfMonth->setWeekOrdinal($weekDayOfMonthWeekOrdinal);
+        $weekDayOfMonthDayOfWeek = DayOfWeek::DAY_OF_WEEK_UNSPECIFIED;
+        $monthlyWeekDayOfMonth->setDayOfWeek($weekDayOfMonthDayOfWeek);
+        $recurringScheduleMonthly->setWeekDayOfMonth($monthlyWeekDayOfMonth);
+        $monthlyMonthDay = 1149931479;
+        $recurringScheduleMonthly->setMonthDay($monthlyMonthDay);
+        $patchDeploymentRecurringSchedule->setMonthly($recurringScheduleMonthly);
+        $patchDeployment->setRecurringSchedule($patchDeploymentRecurringSchedule);
         try {
             $client->createPatchDeployment($parent, $patchDeploymentId, $patchDeployment);
             // If the $client method call did not throw, fail the test
@@ -439,17 +514,17 @@ class OsConfigServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $name = 'name3373707';
-        $displayName = 'displayName1615086568';
-        $description = 'description-1724546052';
-        $dryRun = false;
+        $displayName2 = 'displayName21615000987';
+        $description2 = 'description2568623279';
+        $dryRun2 = true;
         $errorMessage = 'errorMessage-1938755376';
         $percentComplete = -1.96096922E8;
         $patchDeployment = 'patchDeployment633565980';
         $expectedResponse = new PatchJob();
         $expectedResponse->setName($name);
-        $expectedResponse->setDisplayName($displayName);
-        $expectedResponse->setDescription($description);
-        $expectedResponse->setDryRun($dryRun);
+        $expectedResponse->setDisplayName($displayName2);
+        $expectedResponse->setDescription($description2);
+        $expectedResponse->setDryRun($dryRun2);
         $expectedResponse->setErrorMessage($errorMessage);
         $expectedResponse->setPercentComplete($percentComplete);
         $expectedResponse->setPatchDeployment($patchDeployment);
@@ -1088,6 +1163,10 @@ class OsConfigServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $guestPolicy = new GuestPolicy();
+        $guestPolicyName = 'guestPolicyName1032799957';
+        $guestPolicy->setName($guestPolicyName);
+        $guestPolicyAssignment = new Assignment();
+        $guestPolicy->setAssignment($guestPolicyAssignment);
         $response = $client->updateGuestPolicy($guestPolicy);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -1122,6 +1201,10 @@ class OsConfigServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
         // Mock request
         $guestPolicy = new GuestPolicy();
+        $guestPolicyName = 'guestPolicyName1032799957';
+        $guestPolicy->setName($guestPolicyName);
+        $guestPolicyAssignment = new Assignment();
+        $guestPolicy->setAssignment($guestPolicyAssignment);
         try {
             $client->updateGuestPolicy($guestPolicy);
             // If the $client method call did not throw, fail the test

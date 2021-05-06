@@ -419,6 +419,8 @@ class TranslationServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $glossary = new Glossary();
+        $glossaryName = 'glossaryName-297469495';
+        $glossary->setName($glossaryName);
         $response = $client->createGlossary($formattedParent, $glossary);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -488,6 +490,8 @@ class TranslationServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $glossary = new Glossary();
+        $glossaryName = 'glossaryName-297469495';
+        $glossary->setName($glossaryName);
         $response = $client->createGlossary($formattedParent, $glossary);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -906,9 +910,9 @@ class TranslationServiceClientTest extends GeneratedTest
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
-        $model = 'model104069929';
+        $model2 = 'model21226956956';
         $expectedResponse = new TranslateDocumentResponse();
-        $expectedResponse->setModel($model);
+        $expectedResponse->setModel($model2);
         $transport->addResponse($expectedResponse);
         // Mock request
         $parent = 'parent-995424086';

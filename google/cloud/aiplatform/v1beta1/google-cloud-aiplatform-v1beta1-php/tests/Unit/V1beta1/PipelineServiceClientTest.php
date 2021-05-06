@@ -41,6 +41,8 @@ use Google\LongRunning\GetOperationRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\Any;
 use Google\Protobuf\GPBEmpty;
+use Google\Protobuf\Struct;
+use Google\Protobuf\Value;
 use Google\Rpc\Code;
 use stdClass;
 
@@ -224,6 +226,8 @@ class PipelineServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $pipelineJob = new PipelineJob();
+        $pipelineJobPipelineSpec = new Struct();
+        $pipelineJob->setPipelineSpec($pipelineJobPipelineSpec);
         $response = $client->createPipelineJob($formattedParent, $pipelineJob);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -261,6 +265,8 @@ class PipelineServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $pipelineJob = new PipelineJob();
+        $pipelineJobPipelineSpec = new Struct();
+        $pipelineJob->setPipelineSpec($pipelineJobPipelineSpec);
         try {
             $client->createPipelineJob($formattedParent, $pipelineJob);
             // If the $client method call did not throw, fail the test
@@ -296,6 +302,12 @@ class PipelineServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $trainingPipeline = new TrainingPipeline();
+        $trainingPipelineDisplayName = 'trainingPipelineDisplayName-236550351';
+        $trainingPipeline->setDisplayName($trainingPipelineDisplayName);
+        $trainingPipelineTrainingTaskDefinition = 'trainingPipelineTrainingTaskDefinition2032083182';
+        $trainingPipeline->setTrainingTaskDefinition($trainingPipelineTrainingTaskDefinition);
+        $trainingPipelineTrainingTaskInputs = new Value();
+        $trainingPipeline->setTrainingTaskInputs($trainingPipelineTrainingTaskInputs);
         $response = $client->createTrainingPipeline($formattedParent, $trainingPipeline);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -333,6 +345,12 @@ class PipelineServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $trainingPipeline = new TrainingPipeline();
+        $trainingPipelineDisplayName = 'trainingPipelineDisplayName-236550351';
+        $trainingPipeline->setDisplayName($trainingPipelineDisplayName);
+        $trainingPipelineTrainingTaskDefinition = 'trainingPipelineTrainingTaskDefinition2032083182';
+        $trainingPipeline->setTrainingTaskDefinition($trainingPipelineTrainingTaskDefinition);
+        $trainingPipelineTrainingTaskInputs = new Value();
+        $trainingPipeline->setTrainingTaskInputs($trainingPipelineTrainingTaskInputs);
         try {
             $client->createTrainingPipeline($formattedParent, $trainingPipeline);
             // If the $client method call did not throw, fail the test

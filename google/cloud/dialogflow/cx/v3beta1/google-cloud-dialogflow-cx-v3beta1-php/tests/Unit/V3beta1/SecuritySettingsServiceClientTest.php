@@ -96,6 +96,10 @@ class SecuritySettingsServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $securitySettings = new SecuritySettings();
+        $securitySettingsName = 'securitySettingsName-1610888018';
+        $securitySettings->setName($securitySettingsName);
+        $securitySettingsDisplayName = 'securitySettingsDisplayName1233938154';
+        $securitySettings->setDisplayName($securitySettingsDisplayName);
         $response = $client->createSecuritySettings($formattedParent, $securitySettings);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -133,6 +137,10 @@ class SecuritySettingsServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $securitySettings = new SecuritySettings();
+        $securitySettingsName = 'securitySettingsName-1610888018';
+        $securitySettings->setName($securitySettingsName);
+        $securitySettingsDisplayName = 'securitySettingsDisplayName1233938154';
+        $securitySettings->setDisplayName($securitySettingsDisplayName);
         try {
             $client->createSecuritySettings($formattedParent, $securitySettings);
             // If the $client method call did not throw, fail the test
@@ -372,6 +380,10 @@ class SecuritySettingsServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $securitySettings = new SecuritySettings();
+        $securitySettingsName = 'securitySettingsName-1610888018';
+        $securitySettings->setName($securitySettingsName);
+        $securitySettingsDisplayName = 'securitySettingsDisplayName1233938154';
+        $securitySettings->setDisplayName($securitySettingsDisplayName);
         $updateMask = new FieldMask();
         $response = $client->updateSecuritySettings($securitySettings, $updateMask);
         $this->assertEquals($expectedResponse, $response);
@@ -409,6 +421,10 @@ class SecuritySettingsServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
         // Mock request
         $securitySettings = new SecuritySettings();
+        $securitySettingsName = 'securitySettingsName-1610888018';
+        $securitySettings->setName($securitySettingsName);
+        $securitySettingsDisplayName = 'securitySettingsDisplayName1233938154';
+        $securitySettings->setDisplayName($securitySettingsDisplayName);
         $updateMask = new FieldMask();
         try {
             $client->updateSecuritySettings($securitySettings, $updateMask);

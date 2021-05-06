@@ -38,6 +38,7 @@ use Google\Cloud\Dlp\V2\HybridInspectResponse;
 use Google\Cloud\Dlp\V2\InspectContentResponse;
 use Google\Cloud\Dlp\V2\InspectTemplate;
 use Google\Cloud\Dlp\V2\JobTrigger;
+use Google\Cloud\Dlp\V2\JobTrigger\Status;
 use Google\Cloud\Dlp\V2\ListDeidentifyTemplatesResponse;
 use Google\Cloud\Dlp\V2\ListDlpJobsResponse;
 use Google\Cloud\Dlp\V2\ListInfoTypesResponse;
@@ -445,6 +446,8 @@ class DlpServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->projectName('[PROJECT]');
         $jobTrigger = new JobTrigger();
+        $jobTriggerStatus = Status::STATUS_UNSPECIFIED;
+        $jobTrigger->setStatus($jobTriggerStatus);
         $response = $client->createJobTrigger($formattedParent, $jobTrigger);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -482,6 +485,8 @@ class DlpServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->projectName('[PROJECT]');
         $jobTrigger = new JobTrigger();
+        $jobTriggerStatus = Status::STATUS_UNSPECIFIED;
+        $jobTrigger->setStatus($jobTriggerStatus);
         try {
             $client->createJobTrigger($formattedParent, $jobTrigger);
             // If the $client method call did not throw, fail the test

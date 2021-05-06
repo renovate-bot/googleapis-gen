@@ -101,9 +101,9 @@ class CloudShellServiceClientTest extends GeneratedTest
         $incompleteOperation->setName('operations/addPublicKeyTest');
         $incompleteOperation->setDone(false);
         $transport->addResponse($incompleteOperation);
-        $key = 'key106079';
+        $key2 = 'key2101944914';
         $expectedResponse = new AddPublicKeyResponse();
-        $expectedResponse->setKey($key);
+        $expectedResponse->setKey($key2);
         $anyResponse = new Any();
         $anyResponse->setValue($expectedResponse->serializeToString());
         $completeOperation = new Operation();

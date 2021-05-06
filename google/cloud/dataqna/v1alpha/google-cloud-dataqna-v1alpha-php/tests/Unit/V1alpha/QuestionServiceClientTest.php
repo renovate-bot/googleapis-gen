@@ -91,6 +91,10 @@ class QuestionServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $question = new Question();
+        $questionScopes = [];
+        $question->setScopes($questionScopes);
+        $questionQuery = 'questionQuery-1043239806';
+        $question->setQuery($questionQuery);
         $response = $client->createQuestion($formattedParent, $question);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -128,6 +132,10 @@ class QuestionServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $question = new Question();
+        $questionScopes = [];
+        $question->setScopes($questionScopes);
+        $questionQuery = 'questionQuery-1043239806';
+        $question->setQuery($questionQuery);
         try {
             $client->createQuestion($formattedParent, $question);
             // If the $client method call did not throw, fail the test
@@ -366,6 +374,8 @@ class QuestionServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $userFeedback = new UserFeedback();
+        $userFeedbackName = 'userFeedbackName1795127067';
+        $userFeedback->setName($userFeedbackName);
         $response = $client->updateUserFeedback($userFeedback);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -400,6 +410,8 @@ class QuestionServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
         // Mock request
         $userFeedback = new UserFeedback();
+        $userFeedbackName = 'userFeedbackName1795127067';
+        $userFeedback->setName($userFeedbackName);
         try {
             $client->updateUserFeedback($userFeedback);
             // If the $client method call did not throw, fail the test

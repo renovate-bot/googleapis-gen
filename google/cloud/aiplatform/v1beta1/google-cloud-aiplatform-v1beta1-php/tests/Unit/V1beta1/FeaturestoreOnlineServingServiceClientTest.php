@@ -33,6 +33,7 @@ use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
 use Google\Cloud\Aiplatform\V1beta1\FeatureSelector;
 use Google\Cloud\Aiplatform\V1beta1\FeaturestoreOnlineServingServiceClient;
+use Google\Cloud\Aiplatform\V1beta1\IdMatcher;
 use Google\Cloud\Aiplatform\V1beta1\ReadFeatureValuesResponse;
 use Google\Rpc\Code;
 use stdClass;
@@ -88,6 +89,10 @@ class FeaturestoreOnlineServingServiceClientTest extends GeneratedTest
         $formattedEntityType = $client->entityTypeName('[PROJECT]', '[LOCATION]', '[FEATURESTORE]', '[ENTITY_TYPE]');
         $entityId = 'entityId-740565257';
         $featureSelector = new FeatureSelector();
+        $featureSelectorIdMatcher = new IdMatcher();
+        $idMatcherIds = [];
+        $featureSelectorIdMatcher->setIds($idMatcherIds);
+        $featureSelector->setIdMatcher($featureSelectorIdMatcher);
         $response = $client->readFeatureValues($formattedEntityType, $entityId, $featureSelector);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -128,6 +133,10 @@ class FeaturestoreOnlineServingServiceClientTest extends GeneratedTest
         $formattedEntityType = $client->entityTypeName('[PROJECT]', '[LOCATION]', '[FEATURESTORE]', '[ENTITY_TYPE]');
         $entityId = 'entityId-740565257';
         $featureSelector = new FeatureSelector();
+        $featureSelectorIdMatcher = new IdMatcher();
+        $idMatcherIds = [];
+        $featureSelectorIdMatcher->setIds($idMatcherIds);
+        $featureSelector->setIdMatcher($featureSelectorIdMatcher);
         try {
             $client->readFeatureValues($formattedEntityType, $entityId, $featureSelector);
             // If the $client method call did not throw, fail the test
@@ -162,6 +171,10 @@ class FeaturestoreOnlineServingServiceClientTest extends GeneratedTest
         $formattedEntityType = $client->entityTypeName('[PROJECT]', '[LOCATION]', '[FEATURESTORE]', '[ENTITY_TYPE]');
         $entityIds = [];
         $featureSelector = new FeatureSelector();
+        $featureSelectorIdMatcher = new IdMatcher();
+        $idMatcherIds = [];
+        $featureSelectorIdMatcher->setIds($idMatcherIds);
+        $featureSelector->setIdMatcher($featureSelectorIdMatcher);
         $serverStream = $client->streamingReadFeatureValues($formattedEntityType, $entityIds, $featureSelector);
         $this->assertInstanceOf(ServerStream::class, $serverStream);
         $responses = iterator_to_array($serverStream->readAll());
@@ -208,6 +221,10 @@ class FeaturestoreOnlineServingServiceClientTest extends GeneratedTest
         $formattedEntityType = $client->entityTypeName('[PROJECT]', '[LOCATION]', '[FEATURESTORE]', '[ENTITY_TYPE]');
         $entityIds = [];
         $featureSelector = new FeatureSelector();
+        $featureSelectorIdMatcher = new IdMatcher();
+        $idMatcherIds = [];
+        $featureSelectorIdMatcher->setIds($idMatcherIds);
+        $featureSelector->setIdMatcher($featureSelectorIdMatcher);
         $serverStream = $client->streamingReadFeatureValues($formattedEntityType, $entityIds, $featureSelector);
         $results = $serverStream->readAll();
         try {

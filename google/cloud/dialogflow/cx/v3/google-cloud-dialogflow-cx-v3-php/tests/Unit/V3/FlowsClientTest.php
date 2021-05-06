@@ -102,6 +102,8 @@ class FlowsClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->agentName('[PROJECT]', '[LOCATION]', '[AGENT]');
         $flow = new Flow();
+        $flowDisplayName = 'flowDisplayName-554265505';
+        $flow->setDisplayName($flowDisplayName);
         $response = $client->createFlow($formattedParent, $flow);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -139,6 +141,8 @@ class FlowsClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->agentName('[PROJECT]', '[LOCATION]', '[AGENT]');
         $flow = new Flow();
+        $flowDisplayName = 'flowDisplayName-554265505';
+        $flow->setDisplayName($flowDisplayName);
         try {
             $client->createFlow($formattedParent, $flow);
             // If the $client method call did not throw, fail the test
@@ -236,9 +240,9 @@ class FlowsClientTest extends GeneratedTest
         $incompleteOperation->setName('operations/exportFlowTest');
         $incompleteOperation->setDone(false);
         $transport->addResponse($incompleteOperation);
-        $flowUri = 'flowUri2029825755';
+        $flowUri2 = 'flowUri2747401166';
         $expectedResponse = new ExportFlowResponse();
-        $expectedResponse->setFlowUri($flowUri);
+        $expectedResponse->setFlowUri($flowUri2);
         $anyResponse = new Any();
         $anyResponse->setValue($expectedResponse->serializeToString());
         $completeOperation = new Operation();
@@ -805,6 +809,8 @@ class FlowsClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $flow = new Flow();
+        $flowDisplayName = 'flowDisplayName-554265505';
+        $flow->setDisplayName($flowDisplayName);
         $updateMask = new FieldMask();
         $response = $client->updateFlow($flow, $updateMask);
         $this->assertEquals($expectedResponse, $response);
@@ -842,6 +848,8 @@ class FlowsClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
         // Mock request
         $flow = new Flow();
+        $flowDisplayName = 'flowDisplayName-554265505';
+        $flow->setDisplayName($flowDisplayName);
         $updateMask = new FieldMask();
         try {
             $client->updateFlow($flow, $updateMask);

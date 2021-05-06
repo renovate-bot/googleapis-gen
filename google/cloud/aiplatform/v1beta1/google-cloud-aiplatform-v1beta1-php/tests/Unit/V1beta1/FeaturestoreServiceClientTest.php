@@ -37,10 +37,13 @@ use Google\Cloud\Aiplatform\V1beta1\BatchReadFeatureValuesResponse;
 use Google\Cloud\Aiplatform\V1beta1\EntityType;
 use Google\Cloud\Aiplatform\V1beta1\ExportFeatureValuesResponse;
 use Google\Cloud\Aiplatform\V1beta1\Feature;
+use Google\Cloud\Aiplatform\V1beta1\Feature\ValueType;
 use Google\Cloud\Aiplatform\V1beta1\FeatureSelector;
 use Google\Cloud\Aiplatform\V1beta1\Featurestore;
+use Google\Cloud\Aiplatform\V1beta1\Featurestore\OnlineServingConfig;
 use Google\Cloud\Aiplatform\V1beta1\FeaturestoreServiceClient;
 use Google\Cloud\Aiplatform\V1beta1\FeatureValueDestination;
+use Google\Cloud\Aiplatform\V1beta1\IdMatcher;
 use Google\Cloud\Aiplatform\V1beta1\ImportFeatureValuesResponse;
 use Google\Cloud\Aiplatform\V1beta1\ListEntityTypesResponse;
 use Google\Cloud\Aiplatform\V1beta1\ListFeaturesResponse;
@@ -512,6 +515,8 @@ class FeaturestoreServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->entityTypeName('[PROJECT]', '[LOCATION]', '[FEATURESTORE]', '[ENTITY_TYPE]');
         $feature = new Feature();
+        $featureValueType = ValueType::VALUE_TYPE_UNSPECIFIED;
+        $feature->setValueType($featureValueType);
         $featureId = 'featureId-150697212';
         $response = $client->createFeature($formattedParent, $feature, $featureId);
         $this->assertFalse($response->isDone());
@@ -584,6 +589,8 @@ class FeaturestoreServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->entityTypeName('[PROJECT]', '[LOCATION]', '[FEATURESTORE]', '[ENTITY_TYPE]');
         $feature = new Feature();
+        $featureValueType = ValueType::VALUE_TYPE_UNSPECIFIED;
+        $feature->setValueType($featureValueType);
         $featureId = 'featureId-150697212';
         $response = $client->createFeature($formattedParent, $feature, $featureId);
         $this->assertFalse($response->isDone());
@@ -647,6 +654,12 @@ class FeaturestoreServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $featurestore = new Featurestore();
+        $featurestoreDisplayName = 'featurestoreDisplayName-1127502398';
+        $featurestore->setDisplayName($featurestoreDisplayName);
+        $featurestoreOnlineServingConfig = new OnlineServingConfig();
+        $onlineServingConfigFixedNodeCount = 1784461612;
+        $featurestoreOnlineServingConfig->setFixedNodeCount($onlineServingConfigFixedNodeCount);
+        $featurestore->setOnlineServingConfig($featurestoreOnlineServingConfig);
         $featurestoreId = 'featurestoreId-2136676817';
         $response = $client->createFeaturestore($formattedParent, $featurestore, $featurestoreId);
         $this->assertFalse($response->isDone());
@@ -719,6 +732,12 @@ class FeaturestoreServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $featurestore = new Featurestore();
+        $featurestoreDisplayName = 'featurestoreDisplayName-1127502398';
+        $featurestore->setDisplayName($featurestoreDisplayName);
+        $featurestoreOnlineServingConfig = new OnlineServingConfig();
+        $onlineServingConfigFixedNodeCount = 1784461612;
+        $featurestoreOnlineServingConfig->setFixedNodeCount($onlineServingConfigFixedNodeCount);
+        $featurestore->setOnlineServingConfig($featurestoreOnlineServingConfig);
         $featurestoreId = 'featurestoreId-2136676817';
         $response = $client->createFeaturestore($formattedParent, $featurestore, $featurestoreId);
         $this->assertFalse($response->isDone());
@@ -1140,6 +1159,10 @@ class FeaturestoreServiceClientTest extends GeneratedTest
         $formattedEntityType = $client->entityTypeName('[PROJECT]', '[LOCATION]', '[FEATURESTORE]', '[ENTITY_TYPE]');
         $destination = new FeatureValueDestination();
         $featureSelector = new FeatureSelector();
+        $featureSelectorIdMatcher = new IdMatcher();
+        $idMatcherIds = [];
+        $featureSelectorIdMatcher->setIds($idMatcherIds);
+        $featureSelector->setIdMatcher($featureSelectorIdMatcher);
         $response = $client->exportFeatureValues($formattedEntityType, $destination, $featureSelector);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -1212,6 +1235,10 @@ class FeaturestoreServiceClientTest extends GeneratedTest
         $formattedEntityType = $client->entityTypeName('[PROJECT]', '[LOCATION]', '[FEATURESTORE]', '[ENTITY_TYPE]');
         $destination = new FeatureValueDestination();
         $featureSelector = new FeatureSelector();
+        $featureSelectorIdMatcher = new IdMatcher();
+        $idMatcherIds = [];
+        $featureSelectorIdMatcher->setIds($idMatcherIds);
+        $featureSelector->setIdMatcher($featureSelectorIdMatcher);
         $response = $client->exportFeatureValues($formattedEntityType, $destination, $featureSelector);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -1944,6 +1971,8 @@ class FeaturestoreServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $feature = new Feature();
+        $featureValueType = ValueType::VALUE_TYPE_UNSPECIFIED;
+        $feature->setValueType($featureValueType);
         $response = $client->updateFeature($feature);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -1978,6 +2007,8 @@ class FeaturestoreServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
         // Mock request
         $feature = new Feature();
+        $featureValueType = ValueType::VALUE_TYPE_UNSPECIFIED;
+        $feature->setValueType($featureValueType);
         try {
             $client->updateFeature($feature);
             // If the $client method call did not throw, fail the test
@@ -2030,6 +2061,12 @@ class FeaturestoreServiceClientTest extends GeneratedTest
         $operationsTransport->addResponse($completeOperation);
         // Mock request
         $featurestore = new Featurestore();
+        $featurestoreDisplayName = 'featurestoreDisplayName-1127502398';
+        $featurestore->setDisplayName($featurestoreDisplayName);
+        $featurestoreOnlineServingConfig = new OnlineServingConfig();
+        $onlineServingConfigFixedNodeCount = 1784461612;
+        $featurestoreOnlineServingConfig->setFixedNodeCount($onlineServingConfigFixedNodeCount);
+        $featurestore->setOnlineServingConfig($featurestoreOnlineServingConfig);
         $response = $client->updateFeaturestore($featurestore);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -2096,6 +2133,12 @@ class FeaturestoreServiceClientTest extends GeneratedTest
         $operationsTransport->addResponse(null, $status);
         // Mock request
         $featurestore = new Featurestore();
+        $featurestoreDisplayName = 'featurestoreDisplayName-1127502398';
+        $featurestore->setDisplayName($featurestoreDisplayName);
+        $featurestoreOnlineServingConfig = new OnlineServingConfig();
+        $onlineServingConfigFixedNodeCount = 1784461612;
+        $featurestoreOnlineServingConfig->setFixedNodeCount($onlineServingConfigFixedNodeCount);
+        $featurestore->setOnlineServingConfig($featurestoreOnlineServingConfig);
         $response = $client->updateFeaturestore($featurestore);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());

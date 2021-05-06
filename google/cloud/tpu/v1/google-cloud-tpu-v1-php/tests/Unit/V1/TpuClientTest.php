@@ -135,6 +135,10 @@ class TpuClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $node = new Node();
+        $nodeAcceleratorType = 'nodeAcceleratorType-620315165';
+        $node->setAcceleratorType($nodeAcceleratorType);
+        $nodeTensorflowVersion = 'nodeTensorflowVersion-1950315537';
+        $node->setTensorflowVersion($nodeTensorflowVersion);
         $response = $client->createNode($formattedParent, $node);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -204,6 +208,10 @@ class TpuClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $node = new Node();
+        $nodeAcceleratorType = 'nodeAcceleratorType-620315165';
+        $node->setAcceleratorType($nodeAcceleratorType);
+        $nodeTensorflowVersion = 'nodeTensorflowVersion-1950315537';
+        $node->setTensorflowVersion($nodeTensorflowVersion);
         $response = $client->createNode($formattedParent, $node);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -824,25 +832,25 @@ class TpuClientTest extends GeneratedTest
         $incompleteOperation->setName('operations/reimageNodeTest');
         $incompleteOperation->setDone(false);
         $transport->addResponse($incompleteOperation);
-        $name = 'name3373707';
+        $name2 = 'name2-1052831874';
         $description = 'description-1724546052';
         $acceleratorType = 'acceleratorType1748643982';
         $ipAddress = 'ipAddress1480014044';
         $port = 'port3446913';
         $healthDescription = 'healthDescription-1057342823';
-        $tensorflowVersion = 'tensorflowVersion-1353701984';
+        $tensorflowVersion2 = 'tensorflowVersion2467487059';
         $network = 'network1843485230';
         $cidrBlock = 'cidrBlock313022466';
         $serviceAccount = 'serviceAccount-1948028253';
         $useServiceNetworking = true;
         $expectedResponse = new Node();
-        $expectedResponse->setName($name);
+        $expectedResponse->setName($name2);
         $expectedResponse->setDescription($description);
         $expectedResponse->setAcceleratorType($acceleratorType);
         $expectedResponse->setIpAddress($ipAddress);
         $expectedResponse->setPort($port);
         $expectedResponse->setHealthDescription($healthDescription);
-        $expectedResponse->setTensorflowVersion($tensorflowVersion);
+        $expectedResponse->setTensorflowVersion($tensorflowVersion2);
         $expectedResponse->setNetwork($network);
         $expectedResponse->setCidrBlock($cidrBlock);
         $expectedResponse->setServiceAccount($serviceAccount);
@@ -961,7 +969,7 @@ class TpuClientTest extends GeneratedTest
         $incompleteOperation->setName('operations/startNodeTest');
         $incompleteOperation->setDone(false);
         $transport->addResponse($incompleteOperation);
-        $name = 'name3373707';
+        $name2 = 'name2-1052831874';
         $description = 'description-1724546052';
         $acceleratorType = 'acceleratorType1748643982';
         $ipAddress = 'ipAddress1480014044';
@@ -973,7 +981,7 @@ class TpuClientTest extends GeneratedTest
         $serviceAccount = 'serviceAccount-1948028253';
         $useServiceNetworking = true;
         $expectedResponse = new Node();
-        $expectedResponse->setName($name);
+        $expectedResponse->setName($name2);
         $expectedResponse->setDescription($description);
         $expectedResponse->setAcceleratorType($acceleratorType);
         $expectedResponse->setIpAddress($ipAddress);
@@ -1098,7 +1106,7 @@ class TpuClientTest extends GeneratedTest
         $incompleteOperation->setName('operations/stopNodeTest');
         $incompleteOperation->setDone(false);
         $transport->addResponse($incompleteOperation);
-        $name = 'name3373707';
+        $name2 = 'name2-1052831874';
         $description = 'description-1724546052';
         $acceleratorType = 'acceleratorType1748643982';
         $ipAddress = 'ipAddress1480014044';
@@ -1110,7 +1118,7 @@ class TpuClientTest extends GeneratedTest
         $serviceAccount = 'serviceAccount-1948028253';
         $useServiceNetworking = true;
         $expectedResponse = new Node();
-        $expectedResponse->setName($name);
+        $expectedResponse->setName($name2);
         $expectedResponse->setDescription($description);
         $expectedResponse->setAcceleratorType($acceleratorType);
         $expectedResponse->setIpAddress($ipAddress);

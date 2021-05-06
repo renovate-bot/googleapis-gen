@@ -80,10 +80,10 @@ class ThirdPartyAppAnalyticsLinkServiceClientTest extends GeneratedTest
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
-        $resourceName = 'resourceName979421212';
+        $resourceName2 = 'resourceName2625949903';
         $shareableLinkId = 'shareableLinkId-1457601798';
         $expectedResponse = new ThirdPartyAppAnalyticsLink();
-        $expectedResponse->setResourceName($resourceName);
+        $expectedResponse->setResourceName($resourceName2);
         $expectedResponse->setShareableLinkId($shareableLinkId);
         $transport->addResponse($expectedResponse);
         $response = $client->getThirdPartyAppAnalyticsLink();

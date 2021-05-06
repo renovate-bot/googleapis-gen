@@ -535,6 +535,8 @@ class MetadataServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->metadataStoreName('[PROJECT]', '[LOCATION]', '[METADATA_STORE]');
         $metadataSchema = new MetadataSchema();
+        $metadataSchemaSchema = 'metadataSchemaSchema-249734287';
+        $metadataSchema->setSchema($metadataSchemaSchema);
         $response = $client->createMetadataSchema($formattedParent, $metadataSchema);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -572,6 +574,8 @@ class MetadataServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->metadataStoreName('[PROJECT]', '[LOCATION]', '[METADATA_STORE]');
         $metadataSchema = new MetadataSchema();
+        $metadataSchemaSchema = 'metadataSchemaSchema-249734287';
+        $metadataSchema->setSchema($metadataSchemaSchema);
         try {
             $client->createMetadataSchema($formattedParent, $metadataSchema);
             // If the $client method call did not throw, fail the test

@@ -37,6 +37,8 @@ use Google\Cloud\ManagedIdentities\V1\ListDomainsResponse;
 use Google\Cloud\ManagedIdentities\V1\ManagedIdentitiesServiceClient;
 use Google\Cloud\ManagedIdentities\V1\ResetAdminPasswordResponse;
 use Google\Cloud\ManagedIdentities\V1\Trust;
+use Google\Cloud\ManagedIdentities\V1\Trust\TrustDirection;
+use Google\Cloud\ManagedIdentities\V1\Trust\TrustType;
 use Google\LongRunning\GetOperationRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\Any;
@@ -123,6 +125,16 @@ class ManagedIdentitiesServiceClientTest extends GeneratedTest
         // Mock request
         $formattedName = $client->domainName('[PROJECT]', '[LOCATION]', '[DOMAIN]');
         $trust = new Trust();
+        $trustTargetDomainName = 'trustTargetDomainName-39985064';
+        $trust->setTargetDomainName($trustTargetDomainName);
+        $trustTrustType = TrustType::TRUST_TYPE_UNSPECIFIED;
+        $trust->setTrustType($trustTrustType);
+        $trustTrustDirection = TrustDirection::TRUST_DIRECTION_UNSPECIFIED;
+        $trust->setTrustDirection($trustTrustDirection);
+        $trustTargetDnsIpAddresses = [];
+        $trust->setTargetDnsIpAddresses($trustTargetDnsIpAddresses);
+        $trustTrustHandshakeSecret = 'trustTrustHandshakeSecret-1896647033';
+        $trust->setTrustHandshakeSecret($trustTrustHandshakeSecret);
         $response = $client->attachTrust($formattedName, $trust);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -192,6 +204,16 @@ class ManagedIdentitiesServiceClientTest extends GeneratedTest
         // Mock request
         $formattedName = $client->domainName('[PROJECT]', '[LOCATION]', '[DOMAIN]');
         $trust = new Trust();
+        $trustTargetDomainName = 'trustTargetDomainName-39985064';
+        $trust->setTargetDomainName($trustTargetDomainName);
+        $trustTrustType = TrustType::TRUST_TYPE_UNSPECIFIED;
+        $trust->setTrustType($trustTrustType);
+        $trustTrustDirection = TrustDirection::TRUST_DIRECTION_UNSPECIFIED;
+        $trust->setTrustDirection($trustTrustDirection);
+        $trustTargetDnsIpAddresses = [];
+        $trust->setTargetDnsIpAddresses($trustTargetDnsIpAddresses);
+        $trustTrustHandshakeSecret = 'trustTrustHandshakeSecret-1896647033';
+        $trust->setTrustHandshakeSecret($trustTrustHandshakeSecret);
         $response = $client->attachTrust($formattedName, $trust);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -259,6 +281,12 @@ class ManagedIdentitiesServiceClientTest extends GeneratedTest
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $domainName = 'domainName104118566';
         $domain = new Domain();
+        $domainName = 'domainName-1244085905';
+        $domain->setName($domainName);
+        $domainReservedIpRange = 'domainReservedIpRange1357926058';
+        $domain->setReservedIpRange($domainReservedIpRange);
+        $domainLocations = [];
+        $domain->setLocations($domainLocations);
         $response = $client->createMicrosoftAdDomain($formattedParent, $domainName, $domain);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -331,6 +359,12 @@ class ManagedIdentitiesServiceClientTest extends GeneratedTest
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $domainName = 'domainName104118566';
         $domain = new Domain();
+        $domainName = 'domainName-1244085905';
+        $domain->setName($domainName);
+        $domainReservedIpRange = 'domainReservedIpRange1357926058';
+        $domain->setReservedIpRange($domainReservedIpRange);
+        $domainLocations = [];
+        $domain->setLocations($domainLocations);
         $response = $client->createMicrosoftAdDomain($formattedParent, $domainName, $domain);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -518,6 +552,16 @@ class ManagedIdentitiesServiceClientTest extends GeneratedTest
         // Mock request
         $formattedName = $client->domainName('[PROJECT]', '[LOCATION]', '[DOMAIN]');
         $trust = new Trust();
+        $trustTargetDomainName = 'trustTargetDomainName-39985064';
+        $trust->setTargetDomainName($trustTargetDomainName);
+        $trustTrustType = TrustType::TRUST_TYPE_UNSPECIFIED;
+        $trust->setTrustType($trustTrustType);
+        $trustTrustDirection = TrustDirection::TRUST_DIRECTION_UNSPECIFIED;
+        $trust->setTrustDirection($trustTrustDirection);
+        $trustTargetDnsIpAddresses = [];
+        $trust->setTargetDnsIpAddresses($trustTargetDnsIpAddresses);
+        $trustTrustHandshakeSecret = 'trustTrustHandshakeSecret-1896647033';
+        $trust->setTrustHandshakeSecret($trustTrustHandshakeSecret);
         $response = $client->detachTrust($formattedName, $trust);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -587,6 +631,16 @@ class ManagedIdentitiesServiceClientTest extends GeneratedTest
         // Mock request
         $formattedName = $client->domainName('[PROJECT]', '[LOCATION]', '[DOMAIN]');
         $trust = new Trust();
+        $trustTargetDomainName = 'trustTargetDomainName-39985064';
+        $trust->setTargetDomainName($trustTargetDomainName);
+        $trustTrustType = TrustType::TRUST_TYPE_UNSPECIFIED;
+        $trust->setTrustType($trustTrustType);
+        $trustTrustDirection = TrustDirection::TRUST_DIRECTION_UNSPECIFIED;
+        $trust->setTrustDirection($trustTrustDirection);
+        $trustTargetDnsIpAddresses = [];
+        $trust->setTargetDnsIpAddresses($trustTargetDnsIpAddresses);
+        $trustTrustHandshakeSecret = 'trustTrustHandshakeSecret-1896647033';
+        $trust->setTrustHandshakeSecret($trustTrustHandshakeSecret);
         $response = $client->detachTrust($formattedName, $trust);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -1000,6 +1054,12 @@ class ManagedIdentitiesServiceClientTest extends GeneratedTest
         // Mock request
         $updateMask = new FieldMask();
         $domain = new Domain();
+        $domainName = 'domainName-1244085905';
+        $domain->setName($domainName);
+        $domainReservedIpRange = 'domainReservedIpRange1357926058';
+        $domain->setReservedIpRange($domainReservedIpRange);
+        $domainLocations = [];
+        $domain->setLocations($domainLocations);
         $response = $client->updateDomain($updateMask, $domain);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -1069,6 +1129,12 @@ class ManagedIdentitiesServiceClientTest extends GeneratedTest
         // Mock request
         $updateMask = new FieldMask();
         $domain = new Domain();
+        $domainName = 'domainName-1244085905';
+        $domain->setName($domainName);
+        $domainReservedIpRange = 'domainReservedIpRange1357926058';
+        $domain->setReservedIpRange($domainReservedIpRange);
+        $domainLocations = [];
+        $domain->setLocations($domainLocations);
         $response = $client->updateDomain($updateMask, $domain);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -1135,6 +1201,16 @@ class ManagedIdentitiesServiceClientTest extends GeneratedTest
         // Mock request
         $formattedName = $client->domainName('[PROJECT]', '[LOCATION]', '[DOMAIN]');
         $trust = new Trust();
+        $trustTargetDomainName = 'trustTargetDomainName-39985064';
+        $trust->setTargetDomainName($trustTargetDomainName);
+        $trustTrustType = TrustType::TRUST_TYPE_UNSPECIFIED;
+        $trust->setTrustType($trustTrustType);
+        $trustTrustDirection = TrustDirection::TRUST_DIRECTION_UNSPECIFIED;
+        $trust->setTrustDirection($trustTrustDirection);
+        $trustTargetDnsIpAddresses = [];
+        $trust->setTargetDnsIpAddresses($trustTargetDnsIpAddresses);
+        $trustTrustHandshakeSecret = 'trustTrustHandshakeSecret-1896647033';
+        $trust->setTrustHandshakeSecret($trustTrustHandshakeSecret);
         $response = $client->validateTrust($formattedName, $trust);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -1204,6 +1280,16 @@ class ManagedIdentitiesServiceClientTest extends GeneratedTest
         // Mock request
         $formattedName = $client->domainName('[PROJECT]', '[LOCATION]', '[DOMAIN]');
         $trust = new Trust();
+        $trustTargetDomainName = 'trustTargetDomainName-39985064';
+        $trust->setTargetDomainName($trustTargetDomainName);
+        $trustTrustType = TrustType::TRUST_TYPE_UNSPECIFIED;
+        $trust->setTrustType($trustTrustType);
+        $trustTrustDirection = TrustDirection::TRUST_DIRECTION_UNSPECIFIED;
+        $trust->setTrustDirection($trustTrustDirection);
+        $trustTargetDnsIpAddresses = [];
+        $trust->setTargetDnsIpAddresses($trustTargetDnsIpAddresses);
+        $trustTrustHandshakeSecret = 'trustTrustHandshakeSecret-1896647033';
+        $trust->setTrustHandshakeSecret($trustTrustHandshakeSecret);
         $response = $client->validateTrust($formattedName, $trust);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());

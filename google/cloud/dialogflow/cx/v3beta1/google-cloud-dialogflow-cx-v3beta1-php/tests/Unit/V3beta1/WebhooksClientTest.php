@@ -93,6 +93,8 @@ class WebhooksClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->agentName('[PROJECT]', '[LOCATION]', '[AGENT]');
         $webhook = new Webhook();
+        $webhookDisplayName = 'webhookDisplayName1755228022';
+        $webhook->setDisplayName($webhookDisplayName);
         $response = $client->createWebhook($formattedParent, $webhook);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -130,6 +132,8 @@ class WebhooksClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->agentName('[PROJECT]', '[LOCATION]', '[AGENT]');
         $webhook = new Webhook();
+        $webhookDisplayName = 'webhookDisplayName1755228022';
+        $webhook->setDisplayName($webhookDisplayName);
         try {
             $client->createWebhook($formattedParent, $webhook);
             // If the $client method call did not throw, fail the test
@@ -365,6 +369,8 @@ class WebhooksClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $webhook = new Webhook();
+        $webhookDisplayName = 'webhookDisplayName1755228022';
+        $webhook->setDisplayName($webhookDisplayName);
         $response = $client->updateWebhook($webhook);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -399,6 +405,8 @@ class WebhooksClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
         // Mock request
         $webhook = new Webhook();
+        $webhookDisplayName = 'webhookDisplayName1755228022';
+        $webhook->setDisplayName($webhookDisplayName);
         try {
             $client->updateWebhook($webhook);
             // If the $client method call did not throw, fail the test

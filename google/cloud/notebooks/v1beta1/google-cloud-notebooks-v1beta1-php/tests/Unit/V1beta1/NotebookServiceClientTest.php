@@ -282,6 +282,8 @@ class NotebookServiceClientTest extends GeneratedTest
         $parent = 'parent-995424086';
         $instanceId = 'instanceId-2101995259';
         $instance = new Instance();
+        $instanceMachineType = 'instanceMachineType-107765684';
+        $instance->setMachineType($instanceMachineType);
         $response = $client->createInstance($parent, $instanceId, $instance);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -354,6 +356,8 @@ class NotebookServiceClientTest extends GeneratedTest
         $parent = 'parent-995424086';
         $instanceId = 'instanceId-2101995259';
         $instance = new Instance();
+        $instanceMachineType = 'instanceMachineType-107765684';
+        $instance->setMachineType($instanceMachineType);
         $response = $client->createInstance($parent, $instanceId, $instance);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());

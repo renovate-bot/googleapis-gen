@@ -95,6 +95,8 @@ class SessionsClientTest extends GeneratedTest
         // Mock request
         $formattedSession = $client->sessionName('[PROJECT]', '[LOCATION]', '[AGENT]', '[SESSION]');
         $queryInput = new QueryInput();
+        $queryInputLanguageCode = 'queryInputLanguageCode478766695';
+        $queryInput->setLanguageCode($queryInputLanguageCode);
         $response = $client->detectIntent($formattedSession, $queryInput);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -132,6 +134,8 @@ class SessionsClientTest extends GeneratedTest
         // Mock request
         $formattedSession = $client->sessionName('[PROJECT]', '[LOCATION]', '[AGENT]', '[SESSION]');
         $queryInput = new QueryInput();
+        $queryInputLanguageCode = 'queryInputLanguageCode478766695';
+        $queryInput->setLanguageCode($queryInputLanguageCode);
         try {
             $client->detectIntent($formattedSession, $queryInput);
             // If the $client method call did not throw, fail the test
@@ -223,6 +227,8 @@ class SessionsClientTest extends GeneratedTest
         // Mock request
         $formattedSession = $client->sessionName('[PROJECT]', '[LOCATION]', '[AGENT]', '[SESSION]');
         $queryInput = new QueryInput();
+        $queryInputLanguageCode = 'queryInputLanguageCode478766695';
+        $queryInput->setLanguageCode($queryInputLanguageCode);
         $response = $client->matchIntent($formattedSession, $queryInput);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -260,6 +266,8 @@ class SessionsClientTest extends GeneratedTest
         // Mock request
         $formattedSession = $client->sessionName('[PROJECT]', '[LOCATION]', '[AGENT]', '[SESSION]');
         $queryInput = new QueryInput();
+        $queryInputLanguageCode = 'queryInputLanguageCode478766695';
+        $queryInput->setLanguageCode($queryInputLanguageCode);
         try {
             $client->matchIntent($formattedSession, $queryInput);
             // If the $client method call did not throw, fail the test
@@ -292,12 +300,18 @@ class SessionsClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse3);
         // Mock request
         $queryInput = new QueryInput();
+        $queryInputLanguageCode = 'queryInputLanguageCode478766695';
+        $queryInput->setLanguageCode($queryInputLanguageCode);
         $request = new StreamingDetectIntentRequest();
         $request->setQueryInput($queryInput);
         $queryInput2 = new QueryInput();
+        $queryInputLanguageCode = 'queryInputLanguageCode478766695';
+        $queryInput2->setLanguageCode($queryInputLanguageCode);
         $request2 = new StreamingDetectIntentRequest();
         $request2->setQueryInput($queryInput2);
         $queryInput3 = new QueryInput();
+        $queryInputLanguageCode = 'queryInputLanguageCode478766695';
+        $queryInput3->setLanguageCode($queryInputLanguageCode);
         $request3 = new StreamingDetectIntentRequest();
         $request3->setQueryInput($queryInput3);
         $bidi = $client->streamingDetectIntent();

@@ -91,6 +91,8 @@ class TransitionRouteGroupsClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->flowName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]');
         $transitionRouteGroup = new TransitionRouteGroup();
+        $transitionRouteGroupDisplayName = 'transitionRouteGroupDisplayName-1406267262';
+        $transitionRouteGroup->setDisplayName($transitionRouteGroupDisplayName);
         $response = $client->createTransitionRouteGroup($formattedParent, $transitionRouteGroup);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -128,6 +130,8 @@ class TransitionRouteGroupsClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->flowName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]');
         $transitionRouteGroup = new TransitionRouteGroup();
+        $transitionRouteGroupDisplayName = 'transitionRouteGroupDisplayName-1406267262';
+        $transitionRouteGroup->setDisplayName($transitionRouteGroupDisplayName);
         try {
             $client->createTransitionRouteGroup($formattedParent, $transitionRouteGroup);
             // If the $client method call did not throw, fail the test
@@ -359,6 +363,8 @@ class TransitionRouteGroupsClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $transitionRouteGroup = new TransitionRouteGroup();
+        $transitionRouteGroupDisplayName = 'transitionRouteGroupDisplayName-1406267262';
+        $transitionRouteGroup->setDisplayName($transitionRouteGroupDisplayName);
         $response = $client->updateTransitionRouteGroup($transitionRouteGroup);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -393,6 +399,8 @@ class TransitionRouteGroupsClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
         // Mock request
         $transitionRouteGroup = new TransitionRouteGroup();
+        $transitionRouteGroupDisplayName = 'transitionRouteGroupDisplayName-1406267262';
+        $transitionRouteGroup->setDisplayName($transitionRouteGroupDisplayName);
         try {
             $client->updateTransitionRouteGroup($transitionRouteGroup);
             // If the $client method call did not throw, fail the test

@@ -48,6 +48,7 @@ use Google\LongRunning\Operation;
 use Google\Protobuf\Any;
 use Google\Protobuf\FieldMask;
 use Google\Protobuf\GPBEmpty;
+use Google\Protobuf\Value;
 use Google\Rpc\Code;
 use stdClass;
 
@@ -127,6 +128,12 @@ class DatasetServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $dataset = new Dataset();
+        $datasetDisplayName = 'datasetDisplayName1912393429';
+        $dataset->setDisplayName($datasetDisplayName);
+        $datasetMetadataSchemaUri = 'datasetMetadataSchemaUri-1520763900';
+        $dataset->setMetadataSchemaUri($datasetMetadataSchemaUri);
+        $datasetMetadata = new Value();
+        $dataset->setMetadata($datasetMetadata);
         $response = $client->createDataset($formattedParent, $dataset);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -196,6 +203,12 @@ class DatasetServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $dataset = new Dataset();
+        $datasetDisplayName = 'datasetDisplayName1912393429';
+        $dataset->setDisplayName($datasetDisplayName);
+        $datasetMetadataSchemaUri = 'datasetMetadataSchemaUri-1520763900';
+        $dataset->setMetadataSchemaUri($datasetMetadataSchemaUri);
+        $datasetMetadata = new Value();
+        $dataset->setMetadata($datasetMetadata);
         $response = $client->createDataset($formattedParent, $dataset);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -966,6 +979,12 @@ class DatasetServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $dataset = new Dataset();
+        $datasetDisplayName = 'datasetDisplayName1912393429';
+        $dataset->setDisplayName($datasetDisplayName);
+        $datasetMetadataSchemaUri = 'datasetMetadataSchemaUri-1520763900';
+        $dataset->setMetadataSchemaUri($datasetMetadataSchemaUri);
+        $datasetMetadata = new Value();
+        $dataset->setMetadata($datasetMetadata);
         $updateMask = new FieldMask();
         $response = $client->updateDataset($dataset, $updateMask);
         $this->assertEquals($expectedResponse, $response);
@@ -1003,6 +1022,12 @@ class DatasetServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
         // Mock request
         $dataset = new Dataset();
+        $datasetDisplayName = 'datasetDisplayName1912393429';
+        $dataset->setDisplayName($datasetDisplayName);
+        $datasetMetadataSchemaUri = 'datasetMetadataSchemaUri-1520763900';
+        $dataset->setMetadataSchemaUri($datasetMetadataSchemaUri);
+        $datasetMetadata = new Value();
+        $dataset->setMetadata($datasetMetadata);
         $updateMask = new FieldMask();
         try {
             $client->updateDataset($dataset, $updateMask);

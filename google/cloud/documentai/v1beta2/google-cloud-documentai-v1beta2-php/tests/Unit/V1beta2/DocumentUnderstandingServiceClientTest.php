@@ -218,6 +218,8 @@ class DocumentUnderstandingServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $inputConfig = new InputConfig();
+        $inputConfigMimeType = 'inputConfigMimeType-1630458534';
+        $inputConfig->setMimeType($inputConfigMimeType);
         $response = $client->processDocument($inputConfig);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -252,6 +254,8 @@ class DocumentUnderstandingServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
         // Mock request
         $inputConfig = new InputConfig();
+        $inputConfigMimeType = 'inputConfigMimeType-1630458534';
+        $inputConfig->setMimeType($inputConfigMimeType);
         try {
             $client->processDocument($inputConfig);
             // If the $client method call did not throw, fail the test

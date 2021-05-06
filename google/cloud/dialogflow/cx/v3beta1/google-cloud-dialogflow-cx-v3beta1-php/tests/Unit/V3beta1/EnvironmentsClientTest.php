@@ -118,6 +118,10 @@ class EnvironmentsClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->agentName('[PROJECT]', '[LOCATION]', '[AGENT]');
         $environment = new Environment();
+        $environmentDisplayName = 'environmentDisplayName747655770';
+        $environment->setDisplayName($environmentDisplayName);
+        $environmentVersionConfigs = [];
+        $environment->setVersionConfigs($environmentVersionConfigs);
         $response = $client->createEnvironment($formattedParent, $environment);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -187,6 +191,10 @@ class EnvironmentsClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->agentName('[PROJECT]', '[LOCATION]', '[AGENT]');
         $environment = new Environment();
+        $environmentDisplayName = 'environmentDisplayName747655770';
+        $environment->setDisplayName($environmentDisplayName);
+        $environmentVersionConfigs = [];
+        $environment->setVersionConfigs($environmentVersionConfigs);
         $response = $client->createEnvironment($formattedParent, $environment);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -521,6 +529,10 @@ class EnvironmentsClientTest extends GeneratedTest
         $operationsTransport->addResponse($completeOperation);
         // Mock request
         $environment = new Environment();
+        $environmentDisplayName = 'environmentDisplayName747655770';
+        $environment->setDisplayName($environmentDisplayName);
+        $environmentVersionConfigs = [];
+        $environment->setVersionConfigs($environmentVersionConfigs);
         $updateMask = new FieldMask();
         $response = $client->updateEnvironment($environment, $updateMask);
         $this->assertFalse($response->isDone());
@@ -590,6 +602,10 @@ class EnvironmentsClientTest extends GeneratedTest
         $operationsTransport->addResponse(null, $status);
         // Mock request
         $environment = new Environment();
+        $environmentDisplayName = 'environmentDisplayName747655770';
+        $environment->setDisplayName($environmentDisplayName);
+        $environmentVersionConfigs = [];
+        $environment->setVersionConfigs($environmentVersionConfigs);
         $updateMask = new FieldMask();
         $response = $client->updateEnvironment($environment, $updateMask);
         $this->assertFalse($response->isDone());

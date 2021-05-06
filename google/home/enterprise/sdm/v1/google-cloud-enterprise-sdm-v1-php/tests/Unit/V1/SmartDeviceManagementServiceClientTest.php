@@ -141,10 +141,10 @@ class SmartDeviceManagementServiceClientTest extends GeneratedTest
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
-        $name = 'name3373707';
+        $name2 = 'name2-1052831874';
         $type = 'type3575610';
         $expectedResponse = new Device();
-        $expectedResponse->setName($name);
+        $expectedResponse->setName($name2);
         $expectedResponse->setType($type);
         $transport->addResponse($expectedResponse);
         $response = $client->getDevice();
@@ -201,9 +201,9 @@ class SmartDeviceManagementServiceClientTest extends GeneratedTest
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
-        $name = 'name3373707';
+        $name2 = 'name2-1052831874';
         $expectedResponse = new Room();
-        $expectedResponse->setName($name);
+        $expectedResponse->setName($name2);
         $transport->addResponse($expectedResponse);
         $response = $client->getRoom();
         $this->assertEquals($expectedResponse, $response);
@@ -259,9 +259,9 @@ class SmartDeviceManagementServiceClientTest extends GeneratedTest
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
-        $name = 'name3373707';
+        $name2 = 'name2-1052831874';
         $expectedResponse = new Structure();
-        $expectedResponse->setName($name);
+        $expectedResponse->setName($name2);
         $transport->addResponse($expectedResponse);
         $response = $client->getStructure();
         $this->assertEquals($expectedResponse, $response);

@@ -224,6 +224,8 @@ class ConversationsClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->projectName('[PROJECT]');
         $conversation = new Conversation();
+        $conversationConversationProfile = $client->conversationProfileName('[PROJECT]', '[CONVERSATION_PROFILE]');
+        $conversation->setConversationProfile($conversationConversationProfile);
         $response = $client->createConversation($formattedParent, $conversation);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -261,6 +263,8 @@ class ConversationsClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->projectName('[PROJECT]');
         $conversation = new Conversation();
+        $conversationConversationProfile = $client->conversationProfileName('[PROJECT]', '[CONVERSATION_PROFILE]');
+        $conversation->setConversationProfile($conversationConversationProfile);
         try {
             $client->createConversation($formattedParent, $conversation);
             // If the $client method call did not throw, fail the test

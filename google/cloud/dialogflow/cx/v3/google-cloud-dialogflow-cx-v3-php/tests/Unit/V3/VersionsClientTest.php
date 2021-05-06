@@ -117,6 +117,8 @@ class VersionsClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->flowName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]');
         $version = new Version();
+        $versionDisplayName = 'versionDisplayName1702521461';
+        $version->setDisplayName($versionDisplayName);
         $response = $client->createVersion($formattedParent, $version);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -186,6 +188,8 @@ class VersionsClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->flowName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]');
         $version = new Version();
+        $versionDisplayName = 'versionDisplayName1702521461';
+        $version->setDisplayName($versionDisplayName);
         $response = $client->createVersion($formattedParent, $version);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -551,6 +555,8 @@ class VersionsClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $version = new Version();
+        $versionDisplayName = 'versionDisplayName1702521461';
+        $version->setDisplayName($versionDisplayName);
         $updateMask = new FieldMask();
         $response = $client->updateVersion($version, $updateMask);
         $this->assertEquals($expectedResponse, $response);
@@ -588,6 +594,8 @@ class VersionsClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
         // Mock request
         $version = new Version();
+        $versionDisplayName = 'versionDisplayName1702521461';
+        $version->setDisplayName($versionDisplayName);
         $updateMask = new FieldMask();
         try {
             $client->updateVersion($version, $updateMask);

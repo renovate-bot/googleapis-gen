@@ -122,6 +122,12 @@ class DocumentsClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->knowledgeBaseName('[PROJECT]', '[KNOWLEDGE_BASE]');
         $document = new Document();
+        $documentDisplayName = 'documentDisplayName-59212206';
+        $document->setDisplayName($documentDisplayName);
+        $documentMimeType = 'documentMimeType1242814409';
+        $document->setMimeType($documentMimeType);
+        $documentKnowledgeTypes = [];
+        $document->setKnowledgeTypes($documentKnowledgeTypes);
         $response = $client->createDocument($formattedParent, $document);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -191,6 +197,12 @@ class DocumentsClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->knowledgeBaseName('[PROJECT]', '[KNOWLEDGE_BASE]');
         $document = new Document();
+        $documentDisplayName = 'documentDisplayName-59212206';
+        $document->setDisplayName($documentDisplayName);
+        $documentMimeType = 'documentMimeType1242814409';
+        $document->setMimeType($documentMimeType);
+        $documentKnowledgeTypes = [];
+        $document->setKnowledgeTypes($documentKnowledgeTypes);
         $response = $client->createDocument($formattedParent, $document);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -440,6 +452,10 @@ class DocumentsClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->knowledgeBaseName('[PROJECT]', '[KNOWLEDGE_BASE]');
         $documentTemplate = new ImportDocumentTemplate();
+        $documentTemplateMimeType = 'documentTemplateMimeType-1300921501';
+        $documentTemplate->setMimeType($documentTemplateMimeType);
+        $documentTemplateKnowledgeTypes = [];
+        $documentTemplate->setKnowledgeTypes($documentTemplateKnowledgeTypes);
         $response = $client->importDocuments($formattedParent, $documentTemplate);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -509,6 +525,10 @@ class DocumentsClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->knowledgeBaseName('[PROJECT]', '[KNOWLEDGE_BASE]');
         $documentTemplate = new ImportDocumentTemplate();
+        $documentTemplateMimeType = 'documentTemplateMimeType-1300921501';
+        $documentTemplate->setMimeType($documentTemplateMimeType);
+        $documentTemplateKnowledgeTypes = [];
+        $documentTemplate->setKnowledgeTypes($documentTemplateKnowledgeTypes);
         $response = $client->importDocuments($formattedParent, $documentTemplate);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -777,6 +797,12 @@ class DocumentsClientTest extends GeneratedTest
         $operationsTransport->addResponse($completeOperation);
         // Mock request
         $document = new Document();
+        $documentDisplayName = 'documentDisplayName-59212206';
+        $document->setDisplayName($documentDisplayName);
+        $documentMimeType = 'documentMimeType1242814409';
+        $document->setMimeType($documentMimeType);
+        $documentKnowledgeTypes = [];
+        $document->setKnowledgeTypes($documentKnowledgeTypes);
         $response = $client->updateDocument($document);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -843,6 +869,12 @@ class DocumentsClientTest extends GeneratedTest
         $operationsTransport->addResponse(null, $status);
         // Mock request
         $document = new Document();
+        $documentDisplayName = 'documentDisplayName-59212206';
+        $document->setDisplayName($documentDisplayName);
+        $documentMimeType = 'documentMimeType1242814409';
+        $document->setMimeType($documentMimeType);
+        $documentKnowledgeTypes = [];
+        $document->setKnowledgeTypes($documentKnowledgeTypes);
         $response = $client->updateDocument($document);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());

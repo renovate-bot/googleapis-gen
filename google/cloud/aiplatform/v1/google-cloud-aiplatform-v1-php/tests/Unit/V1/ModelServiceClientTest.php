@@ -783,6 +783,8 @@ class ModelServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $model = new Model();
+        $modelDisplayName = 'modelDisplayName1578770308';
+        $model->setDisplayName($modelDisplayName);
         $updateMask = new FieldMask();
         $response = $client->updateModel($model, $updateMask);
         $this->assertEquals($expectedResponse, $response);
@@ -820,6 +822,8 @@ class ModelServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
         // Mock request
         $model = new Model();
+        $modelDisplayName = 'modelDisplayName1578770308';
+        $model->setDisplayName($modelDisplayName);
         $updateMask = new FieldMask();
         try {
             $client->updateModel($model, $updateMask);
@@ -870,6 +874,8 @@ class ModelServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $model = new Model();
+        $modelDisplayName = 'modelDisplayName1578770308';
+        $model->setDisplayName($modelDisplayName);
         $response = $client->uploadModel($formattedParent, $model);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -939,6 +945,8 @@ class ModelServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $model = new Model();
+        $modelDisplayName = 'modelDisplayName1578770308';
+        $model->setDisplayName($modelDisplayName);
         $response = $client->uploadModel($formattedParent, $model);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());

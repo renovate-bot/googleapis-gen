@@ -44,6 +44,7 @@ use Google\Cloud\Aiplatform\V1beta1\TensorboardExperiment;
 use Google\Cloud\Aiplatform\V1beta1\TensorboardRun;
 use Google\Cloud\Aiplatform\V1beta1\TensorboardServiceClient;
 use Google\Cloud\Aiplatform\V1beta1\TensorboardTimeSeries;
+use Google\Cloud\Aiplatform\V1beta1\TensorboardTimeSeries\ValueType;
 use Google\Cloud\Aiplatform\V1beta1\TimeSeriesDataPoint;
 use Google\Cloud\Aiplatform\V1beta1\WriteTensorboardRunDataResponse;
 use Google\LongRunning\GetOperationRequest;
@@ -134,6 +135,8 @@ class TensorboardServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->tensorboardName('[PROJECT]', '[LOCATION]', '[TENSORBOARD]');
         $tensorboard = new Tensorboard();
+        $tensorboardDisplayName = 'tensorboardDisplayName-448676352';
+        $tensorboard->setDisplayName($tensorboardDisplayName);
         $response = $client->createTensorboard($formattedParent, $tensorboard);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -203,6 +206,8 @@ class TensorboardServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->tensorboardName('[PROJECT]', '[LOCATION]', '[TENSORBOARD]');
         $tensorboard = new Tensorboard();
+        $tensorboardDisplayName = 'tensorboardDisplayName-448676352';
+        $tensorboard->setDisplayName($tensorboardDisplayName);
         $response = $client->createTensorboard($formattedParent, $tensorboard);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -325,6 +330,8 @@ class TensorboardServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->tensorboardRunName('[PROJECT]', '[LOCATION]', '[TENSORBOARD]', '[EXPERIMENT]', '[RUN]');
         $tensorboardRun = new TensorboardRun();
+        $tensorboardRunDisplayName = 'tensorboardRunDisplayName-996156817';
+        $tensorboardRun->setDisplayName($tensorboardRunDisplayName);
         $tensorboardRunId = 'tensorboardRunId1793766817';
         $response = $client->createTensorboardRun($formattedParent, $tensorboardRun, $tensorboardRunId);
         $this->assertEquals($expectedResponse, $response);
@@ -365,6 +372,8 @@ class TensorboardServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->tensorboardRunName('[PROJECT]', '[LOCATION]', '[TENSORBOARD]', '[EXPERIMENT]', '[RUN]');
         $tensorboardRun = new TensorboardRun();
+        $tensorboardRunDisplayName = 'tensorboardRunDisplayName-996156817';
+        $tensorboardRun->setDisplayName($tensorboardRunDisplayName);
         $tensorboardRunId = 'tensorboardRunId1793766817';
         try {
             $client->createTensorboardRun($formattedParent, $tensorboardRun, $tensorboardRunId);
@@ -407,6 +416,10 @@ class TensorboardServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->tensorboardTimeSeriesName('[PROJECT]', '[LOCATION]', '[TENSORBOARD]', '[EXPERIMENT]', '[RUN]', '[TIME_SERIES]');
         $tensorboardTimeSeries = new TensorboardTimeSeries();
+        $tensorboardTimeSeriesDisplayName = 'tensorboardTimeSeriesDisplayName1084140540';
+        $tensorboardTimeSeries->setDisplayName($tensorboardTimeSeriesDisplayName);
+        $tensorboardTimeSeriesValueType = ValueType::VALUE_TYPE_UNSPECIFIED;
+        $tensorboardTimeSeries->setValueType($tensorboardTimeSeriesValueType);
         $response = $client->createTensorboardTimeSeries($formattedParent, $tensorboardTimeSeries);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -444,6 +457,10 @@ class TensorboardServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->tensorboardTimeSeriesName('[PROJECT]', '[LOCATION]', '[TENSORBOARD]', '[EXPERIMENT]', '[RUN]', '[TIME_SERIES]');
         $tensorboardTimeSeries = new TensorboardTimeSeries();
+        $tensorboardTimeSeriesDisplayName = 'tensorboardTimeSeriesDisplayName1084140540';
+        $tensorboardTimeSeries->setDisplayName($tensorboardTimeSeriesDisplayName);
+        $tensorboardTimeSeriesValueType = ValueType::VALUE_TYPE_UNSPECIFIED;
+        $tensorboardTimeSeries->setValueType($tensorboardTimeSeriesValueType);
         try {
             $client->createTensorboardTimeSeries($formattedParent, $tensorboardTimeSeries);
             // If the $client method call did not throw, fail the test
@@ -1773,6 +1790,8 @@ class TensorboardServiceClientTest extends GeneratedTest
         // Mock request
         $updateMask = new FieldMask();
         $tensorboard = new Tensorboard();
+        $tensorboardDisplayName = 'tensorboardDisplayName-448676352';
+        $tensorboard->setDisplayName($tensorboardDisplayName);
         $response = $client->updateTensorboard($updateMask, $tensorboard);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -1842,6 +1861,8 @@ class TensorboardServiceClientTest extends GeneratedTest
         // Mock request
         $updateMask = new FieldMask();
         $tensorboard = new Tensorboard();
+        $tensorboardDisplayName = 'tensorboardDisplayName-448676352';
+        $tensorboard->setDisplayName($tensorboardDisplayName);
         $response = $client->updateTensorboard($updateMask, $tensorboard);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -1964,6 +1985,8 @@ class TensorboardServiceClientTest extends GeneratedTest
         // Mock request
         $updateMask = new FieldMask();
         $tensorboardRun = new TensorboardRun();
+        $tensorboardRunDisplayName = 'tensorboardRunDisplayName-996156817';
+        $tensorboardRun->setDisplayName($tensorboardRunDisplayName);
         $response = $client->updateTensorboardRun($updateMask, $tensorboardRun);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -2001,6 +2024,8 @@ class TensorboardServiceClientTest extends GeneratedTest
         // Mock request
         $updateMask = new FieldMask();
         $tensorboardRun = new TensorboardRun();
+        $tensorboardRunDisplayName = 'tensorboardRunDisplayName-996156817';
+        $tensorboardRun->setDisplayName($tensorboardRunDisplayName);
         try {
             $client->updateTensorboardRun($updateMask, $tensorboardRun);
             // If the $client method call did not throw, fail the test
@@ -2042,6 +2067,10 @@ class TensorboardServiceClientTest extends GeneratedTest
         // Mock request
         $updateMask = new FieldMask();
         $tensorboardTimeSeries = new TensorboardTimeSeries();
+        $tensorboardTimeSeriesDisplayName = 'tensorboardTimeSeriesDisplayName1084140540';
+        $tensorboardTimeSeries->setDisplayName($tensorboardTimeSeriesDisplayName);
+        $tensorboardTimeSeriesValueType = ValueType::VALUE_TYPE_UNSPECIFIED;
+        $tensorboardTimeSeries->setValueType($tensorboardTimeSeriesValueType);
         $response = $client->updateTensorboardTimeSeries($updateMask, $tensorboardTimeSeries);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -2079,6 +2108,10 @@ class TensorboardServiceClientTest extends GeneratedTest
         // Mock request
         $updateMask = new FieldMask();
         $tensorboardTimeSeries = new TensorboardTimeSeries();
+        $tensorboardTimeSeriesDisplayName = 'tensorboardTimeSeriesDisplayName1084140540';
+        $tensorboardTimeSeries->setDisplayName($tensorboardTimeSeriesDisplayName);
+        $tensorboardTimeSeriesValueType = ValueType::VALUE_TYPE_UNSPECIFIED;
+        $tensorboardTimeSeries->setValueType($tensorboardTimeSeriesValueType);
         try {
             $client->updateTensorboardTimeSeries($updateMask, $tensorboardTimeSeries);
             // If the $client method call did not throw, fail the test

@@ -1040,13 +1040,13 @@ class ServiceUsageClientTest extends GeneratedTest
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
-        $name = 'name3373707';
+        $name2 = 'name2-1052831874';
         $metric = 'metric-1077545552';
         $unit = 'unit3594628';
         $isPrecise = true;
         $allowsAdminOverrides = true;
         $expectedResponse = new ConsumerQuotaLimit();
-        $expectedResponse->setName($name);
+        $expectedResponse->setName($name2);
         $expectedResponse->setMetric($metric);
         $expectedResponse->setUnit($unit);
         $expectedResponse->setIsPrecise($isPrecise);
@@ -1106,12 +1106,12 @@ class ServiceUsageClientTest extends GeneratedTest
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
-        $name = 'name3373707';
+        $name2 = 'name2-1052831874';
         $metric = 'metric-1077545552';
         $displayName = 'displayName1615086568';
         $unit = 'unit3594628';
         $expectedResponse = new ConsumerQuotaMetric();
-        $expectedResponse->setName($name);
+        $expectedResponse->setName($name2);
         $expectedResponse->setMetric($metric);
         $expectedResponse->setDisplayName($displayName);
         $expectedResponse->setUnit($unit);
@@ -1170,10 +1170,10 @@ class ServiceUsageClientTest extends GeneratedTest
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
-        $name = 'name3373707';
+        $name2 = 'name2-1052831874';
         $parent = 'parent-995424086';
         $expectedResponse = new Service();
-        $expectedResponse->setName($name);
+        $expectedResponse->setName($name2);
         $expectedResponse->setParent($parent);
         $transport->addResponse($expectedResponse);
         $response = $client->getService();
@@ -1736,13 +1736,13 @@ class ServiceUsageClientTest extends GeneratedTest
         $incompleteOperation->setName('operations/updateAdminOverrideTest');
         $incompleteOperation->setDone(false);
         $transport->addResponse($incompleteOperation);
-        $name = 'name3373707';
+        $name2 = 'name2-1052831874';
         $overrideValue = 355006658;
         $metric = 'metric-1077545552';
         $unit = 'unit3594628';
         $adminOverrideAncestor = 'adminOverrideAncestor133790710';
         $expectedResponse = new QuotaOverride();
-        $expectedResponse->setName($name);
+        $expectedResponse->setName($name2);
         $expectedResponse->setOverrideValue($overrideValue);
         $expectedResponse->setMetric($metric);
         $expectedResponse->setUnit($unit);
@@ -1861,13 +1861,13 @@ class ServiceUsageClientTest extends GeneratedTest
         $incompleteOperation->setName('operations/updateConsumerOverrideTest');
         $incompleteOperation->setDone(false);
         $transport->addResponse($incompleteOperation);
-        $name = 'name3373707';
+        $name2 = 'name2-1052831874';
         $overrideValue = 355006658;
         $metric = 'metric-1077545552';
         $unit = 'unit3594628';
         $adminOverrideAncestor = 'adminOverrideAncestor133790710';
         $expectedResponse = new QuotaOverride();
-        $expectedResponse->setName($name);
+        $expectedResponse->setName($name2);
         $expectedResponse->setOverrideValue($overrideValue);
         $expectedResponse->setMetric($metric);
         $expectedResponse->setUnit($unit);

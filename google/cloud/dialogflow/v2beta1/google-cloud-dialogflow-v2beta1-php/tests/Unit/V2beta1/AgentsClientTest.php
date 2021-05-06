@@ -162,9 +162,9 @@ class AgentsClientTest extends GeneratedTest
         $incompleteOperation->setName('operations/exportAgentTest');
         $incompleteOperation->setDone(false);
         $transport->addResponse($incompleteOperation);
-        $agentUri = 'agentUri-1700713166';
+        $agentUri2 = 'agentUri21997190245';
         $expectedResponse = new ExportAgentResponse();
-        $expectedResponse->setAgentUri($agentUri);
+        $expectedResponse->setAgentUri($agentUri2);
         $anyResponse = new Any();
         $anyResponse->setValue($expectedResponse->serializeToString());
         $completeOperation = new Operation();
@@ -747,6 +747,8 @@ class AgentsClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $agent = new Agent();
+        $agentParent = $client->projectName('[PROJECT]');
+        $agent->setParent($agentParent);
         $response = $client->setAgent($agent);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -781,6 +783,8 @@ class AgentsClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
         // Mock request
         $agent = new Agent();
+        $agentParent = $client->projectName('[PROJECT]');
+        $agent->setParent($agentParent);
         try {
             $client->setAgent($agent);
             // If the $client method call did not throw, fail the test

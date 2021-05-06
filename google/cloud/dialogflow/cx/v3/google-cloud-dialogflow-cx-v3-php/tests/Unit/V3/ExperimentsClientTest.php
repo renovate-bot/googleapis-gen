@@ -94,6 +94,8 @@ class ExperimentsClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->environmentName('[PROJECT]', '[LOCATION]', '[AGENT]', '[ENVIRONMENT]');
         $experiment = new Experiment();
+        $experimentDisplayName = 'experimentDisplayName-1508560336';
+        $experiment->setDisplayName($experimentDisplayName);
         $response = $client->createExperiment($formattedParent, $experiment);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -131,6 +133,8 @@ class ExperimentsClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->environmentName('[PROJECT]', '[LOCATION]', '[AGENT]', '[ENVIRONMENT]');
         $experiment = new Experiment();
+        $experimentDisplayName = 'experimentDisplayName-1508560336';
+        $experiment->setDisplayName($experimentDisplayName);
         try {
             $client->createExperiment($formattedParent, $experiment);
             // If the $client method call did not throw, fail the test
@@ -502,6 +506,8 @@ class ExperimentsClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $experiment = new Experiment();
+        $experimentDisplayName = 'experimentDisplayName-1508560336';
+        $experiment->setDisplayName($experimentDisplayName);
         $updateMask = new FieldMask();
         $response = $client->updateExperiment($experiment, $updateMask);
         $this->assertEquals($expectedResponse, $response);
@@ -539,6 +545,8 @@ class ExperimentsClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
         // Mock request
         $experiment = new Experiment();
+        $experimentDisplayName = 'experimentDisplayName-1508560336';
+        $experiment->setDisplayName($experimentDisplayName);
         $updateMask = new FieldMask();
         try {
             $client->updateExperiment($experiment, $updateMask);

@@ -80,10 +80,10 @@ class QuotaControllerClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $operationId = 'operationId-274116877';
-        $serviceConfigId = 'serviceConfigId1573171758';
+        $serviceConfigId2 = 'serviceConfigId2-10425759';
         $expectedResponse = new AllocateQuotaResponse();
         $expectedResponse->setOperationId($operationId);
-        $expectedResponse->setServiceConfigId($serviceConfigId);
+        $expectedResponse->setServiceConfigId($serviceConfigId2);
         $transport->addResponse($expectedResponse);
         $response = $client->allocateQuota();
         $this->assertEquals($expectedResponse, $response);

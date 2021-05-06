@@ -80,9 +80,9 @@ class AnswerRecordsClientTest extends GeneratedTest
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
-        $name = 'name3373707';
+        $name2 = 'name2-1052831874';
         $expectedResponse = new AnswerRecord();
-        $expectedResponse->setName($name);
+        $expectedResponse->setName($name2);
         $transport->addResponse($expectedResponse);
         $response = $client->getAnswerRecord();
         $this->assertEquals($expectedResponse, $response);

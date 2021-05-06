@@ -122,6 +122,8 @@ class EndpointServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $endpoint = new Endpoint();
+        $endpointDisplayName = 'endpointDisplayName697270680';
+        $endpoint->setDisplayName($endpointDisplayName);
         $response = $client->createEndpoint($formattedParent, $endpoint);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -191,6 +193,8 @@ class EndpointServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $endpoint = new Endpoint();
+        $endpointDisplayName = 'endpointDisplayName697270680';
+        $endpoint->setDisplayName($endpointDisplayName);
         $response = $client->createEndpoint($formattedParent, $endpoint);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -368,6 +372,8 @@ class EndpointServiceClientTest extends GeneratedTest
         // Mock request
         $formattedEndpoint = $client->endpointName('[PROJECT]', '[LOCATION]', '[ENDPOINT]');
         $deployedModel = new DeployedModel();
+        $deployedModelModel = $client->modelName('[PROJECT]', '[LOCATION]', '[MODEL]');
+        $deployedModel->setModel($deployedModelModel);
         $response = $client->deployModel($formattedEndpoint, $deployedModel);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -437,6 +443,8 @@ class EndpointServiceClientTest extends GeneratedTest
         // Mock request
         $formattedEndpoint = $client->endpointName('[PROJECT]', '[LOCATION]', '[ENDPOINT]');
         $deployedModel = new DeployedModel();
+        $deployedModelModel = $client->modelName('[PROJECT]', '[LOCATION]', '[MODEL]');
+        $deployedModel->setModel($deployedModelModel);
         $response = $client->deployModel($formattedEndpoint, $deployedModel);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -749,6 +757,8 @@ class EndpointServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $endpoint = new Endpoint();
+        $endpointDisplayName = 'endpointDisplayName697270680';
+        $endpoint->setDisplayName($endpointDisplayName);
         $updateMask = new FieldMask();
         $response = $client->updateEndpoint($endpoint, $updateMask);
         $this->assertEquals($expectedResponse, $response);
@@ -786,6 +796,8 @@ class EndpointServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
         // Mock request
         $endpoint = new Endpoint();
+        $endpointDisplayName = 'endpointDisplayName697270680';
+        $endpoint->setDisplayName($endpointDisplayName);
         $updateMask = new FieldMask();
         try {
             $client->updateEndpoint($endpoint, $updateMask);

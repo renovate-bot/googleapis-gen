@@ -117,6 +117,10 @@ class SpecialistPoolServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $specialistPool = new SpecialistPool();
+        $specialistPoolName = 'specialistPoolName-1068552936';
+        $specialistPool->setName($specialistPoolName);
+        $specialistPoolDisplayName = 'specialistPoolDisplayName703175488';
+        $specialistPool->setDisplayName($specialistPoolDisplayName);
         $response = $client->createSpecialistPool($formattedParent, $specialistPool);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -186,6 +190,10 @@ class SpecialistPoolServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $specialistPool = new SpecialistPool();
+        $specialistPoolName = 'specialistPoolName-1068552936';
+        $specialistPool->setName($specialistPoolName);
+        $specialistPoolDisplayName = 'specialistPoolDisplayName703175488';
+        $specialistPool->setDisplayName($specialistPoolDisplayName);
         $response = $client->createSpecialistPool($formattedParent, $specialistPool);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -508,6 +516,10 @@ class SpecialistPoolServiceClientTest extends GeneratedTest
         $operationsTransport->addResponse($completeOperation);
         // Mock request
         $specialistPool = new SpecialistPool();
+        $specialistPoolName = 'specialistPoolName-1068552936';
+        $specialistPool->setName($specialistPoolName);
+        $specialistPoolDisplayName = 'specialistPoolDisplayName703175488';
+        $specialistPool->setDisplayName($specialistPoolDisplayName);
         $updateMask = new FieldMask();
         $response = $client->updateSpecialistPool($specialistPool, $updateMask);
         $this->assertFalse($response->isDone());
@@ -577,6 +589,10 @@ class SpecialistPoolServiceClientTest extends GeneratedTest
         $operationsTransport->addResponse(null, $status);
         // Mock request
         $specialistPool = new SpecialistPool();
+        $specialistPoolName = 'specialistPoolName-1068552936';
+        $specialistPool->setName($specialistPoolName);
+        $specialistPoolDisplayName = 'specialistPoolDisplayName703175488';
+        $specialistPool->setDisplayName($specialistPoolDisplayName);
         $updateMask = new FieldMask();
         $response = $client->updateSpecialistPool($specialistPool, $updateMask);
         $this->assertFalse($response->isDone());

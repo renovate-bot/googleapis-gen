@@ -30,6 +30,9 @@ use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
 
+use Google\Cloud\BinaryAuthorization\V1beta1\AdmissionRule;
+use Google\Cloud\BinaryAuthorization\V1beta1\AdmissionRule\EnforcementMode;
+use Google\Cloud\BinaryAuthorization\V1beta1\AdmissionRule\EvaluationMode;
 use Google\Cloud\BinaryAuthorization\V1beta1\Attestor;
 use Google\Cloud\BinaryAuthorization\V1beta1\BinauthzManagementServiceV1Beta1Client;
 use Google\Cloud\BinaryAuthorization\V1beta1\ListAttestorsResponse;
@@ -93,6 +96,8 @@ class BinauthzManagementServiceV1Beta1ClientTest extends GeneratedTest
         $formattedParent = $client->projectName('[PROJECT]');
         $attestorId = 'attestorId-696764206';
         $attestor = new Attestor();
+        $attestorName = 'attestorName-125367661';
+        $attestor->setName($attestorName);
         $response = $client->createAttestor($formattedParent, $attestorId, $attestor);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -133,6 +138,8 @@ class BinauthzManagementServiceV1Beta1ClientTest extends GeneratedTest
         $formattedParent = $client->projectName('[PROJECT]');
         $attestorId = 'attestorId-696764206';
         $attestor = new Attestor();
+        $attestorName = 'attestorName-125367661';
+        $attestor->setName($attestorName);
         try {
             $client->createAttestor($formattedParent, $attestorId, $attestor);
             // If the $client method call did not throw, fail the test
@@ -430,6 +437,8 @@ class BinauthzManagementServiceV1Beta1ClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $attestor = new Attestor();
+        $attestorName = 'attestorName-125367661';
+        $attestor->setName($attestorName);
         $response = $client->updateAttestor($attestor);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -464,6 +473,8 @@ class BinauthzManagementServiceV1Beta1ClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
         // Mock request
         $attestor = new Attestor();
+        $attestorName = 'attestorName-125367661';
+        $attestor->setName($attestorName);
         try {
             $client->updateAttestor($attestor);
             // If the $client method call did not throw, fail the test
@@ -496,6 +507,12 @@ class BinauthzManagementServiceV1Beta1ClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $policy = new Policy();
+        $policyDefaultAdmissionRule = new AdmissionRule();
+        $defaultAdmissionRuleEvaluationMode = EvaluationMode::EVALUATION_MODE_UNSPECIFIED;
+        $policyDefaultAdmissionRule->setEvaluationMode($defaultAdmissionRuleEvaluationMode);
+        $defaultAdmissionRuleEnforcementMode = EnforcementMode::ENFORCEMENT_MODE_UNSPECIFIED;
+        $policyDefaultAdmissionRule->setEnforcementMode($defaultAdmissionRuleEnforcementMode);
+        $policy->setDefaultAdmissionRule($policyDefaultAdmissionRule);
         $response = $client->updatePolicy($policy);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -530,6 +547,12 @@ class BinauthzManagementServiceV1Beta1ClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
         // Mock request
         $policy = new Policy();
+        $policyDefaultAdmissionRule = new AdmissionRule();
+        $defaultAdmissionRuleEvaluationMode = EvaluationMode::EVALUATION_MODE_UNSPECIFIED;
+        $policyDefaultAdmissionRule->setEvaluationMode($defaultAdmissionRuleEvaluationMode);
+        $defaultAdmissionRuleEnforcementMode = EnforcementMode::ENFORCEMENT_MODE_UNSPECIFIED;
+        $policyDefaultAdmissionRule->setEnforcementMode($defaultAdmissionRuleEnforcementMode);
+        $policy->setDefaultAdmissionRule($policyDefaultAdmissionRule);
         try {
             $client->updatePolicy($policy);
             // If the $client method call did not throw, fail the test

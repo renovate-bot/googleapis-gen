@@ -31,6 +31,7 @@ use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
 
 use Google\Cloud\Billing\Budgets\V1beta1\Budget;
+use Google\Cloud\Billing\Budgets\V1beta1\BudgetAmount;
 use Google\Cloud\Billing\Budgets\V1beta1\BudgetServiceClient;
 use Google\Cloud\Billing\Budgets\V1beta1\ListBudgetsResponse;
 use Google\Protobuf\GPBEmpty;
@@ -93,6 +94,8 @@ class BudgetServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->billingAccountName('[BILLING_ACCOUNT]');
         $budget = new Budget();
+        $budgetAmount = new BudgetAmount();
+        $budget->setAmount($budgetAmount);
         $response = $client->createBudget($formattedParent, $budget);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -130,6 +133,8 @@ class BudgetServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->billingAccountName('[BILLING_ACCOUNT]');
         $budget = new Budget();
+        $budgetAmount = new BudgetAmount();
+        $budget->setAmount($budgetAmount);
         try {
             $client->createBudget($formattedParent, $budget);
             // If the $client method call did not throw, fail the test
@@ -365,6 +370,8 @@ class BudgetServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $budget = new Budget();
+        $budgetAmount = new BudgetAmount();
+        $budget->setAmount($budgetAmount);
         $response = $client->updateBudget($budget);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -399,6 +406,8 @@ class BudgetServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
         // Mock request
         $budget = new Budget();
+        $budgetAmount = new BudgetAmount();
+        $budget->setAmount($budgetAmount);
         try {
             $client->updateBudget($budget);
             // If the $client method call did not throw, fail the test

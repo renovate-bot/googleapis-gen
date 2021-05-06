@@ -94,6 +94,8 @@ class AssetServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $analysisQuery = new IamPolicyAnalysisQuery();
+        $analysisQueryParent = 'analysisQueryParent1746643734';
+        $analysisQuery->setParent($analysisQueryParent);
         $response = $client->analyzeIamPolicy($analysisQuery);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -128,6 +130,8 @@ class AssetServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
         // Mock request
         $analysisQuery = new IamPolicyAnalysisQuery();
+        $analysisQueryParent = 'analysisQueryParent1746643734';
+        $analysisQuery->setParent($analysisQueryParent);
         try {
             $client->analyzeIamPolicy($analysisQuery);
             // If the $client method call did not throw, fail the test
@@ -174,6 +178,8 @@ class AssetServiceClientTest extends GeneratedTest
         $operationsTransport->addResponse($completeOperation);
         // Mock request
         $analysisQuery = new IamPolicyAnalysisQuery();
+        $analysisQueryParent = 'analysisQueryParent1746643734';
+        $analysisQuery->setParent($analysisQueryParent);
         $outputConfig = new IamPolicyAnalysisOutputConfig();
         $response = $client->exportIamPolicyAnalysis($analysisQuery, $outputConfig);
         $this->assertFalse($response->isDone());
@@ -243,6 +249,8 @@ class AssetServiceClientTest extends GeneratedTest
         $operationsTransport->addResponse(null, $status);
         // Mock request
         $analysisQuery = new IamPolicyAnalysisQuery();
+        $analysisQueryParent = 'analysisQueryParent1746643734';
+        $analysisQuery->setParent($analysisQueryParent);
         $outputConfig = new IamPolicyAnalysisOutputConfig();
         $response = $client->exportIamPolicyAnalysis($analysisQuery, $outputConfig);
         $this->assertFalse($response->isDone());

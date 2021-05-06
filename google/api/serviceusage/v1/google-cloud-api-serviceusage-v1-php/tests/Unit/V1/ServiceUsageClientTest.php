@@ -491,10 +491,10 @@ class ServiceUsageClientTest extends GeneratedTest
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
-        $name = 'name3373707';
+        $name2 = 'name2-1052831874';
         $parent = 'parent-995424086';
         $expectedResponse = new Service();
-        $expectedResponse->setName($name);
+        $expectedResponse->setName($name2);
         $expectedResponse->setParent($parent);
         $transport->addResponse($expectedResponse);
         $response = $client->getService();

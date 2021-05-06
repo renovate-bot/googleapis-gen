@@ -91,6 +91,8 @@ class PagesClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->flowName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]');
         $page = new Page();
+        $pageDisplayName = 'pageDisplayName-1368703906';
+        $page->setDisplayName($pageDisplayName);
         $response = $client->createPage($formattedParent, $page);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -128,6 +130,8 @@ class PagesClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->flowName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]');
         $page = new Page();
+        $pageDisplayName = 'pageDisplayName-1368703906';
+        $page->setDisplayName($pageDisplayName);
         try {
             $client->createPage($formattedParent, $page);
             // If the $client method call did not throw, fail the test
@@ -359,6 +363,8 @@ class PagesClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $page = new Page();
+        $pageDisplayName = 'pageDisplayName-1368703906';
+        $page->setDisplayName($pageDisplayName);
         $response = $client->updatePage($page);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -393,6 +399,8 @@ class PagesClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
         // Mock request
         $page = new Page();
+        $pageDisplayName = 'pageDisplayName-1368703906';
+        $page->setDisplayName($pageDisplayName);
         try {
             $client->updatePage($page);
             // If the $client method call did not throw, fail the test

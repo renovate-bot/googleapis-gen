@@ -1614,6 +1614,10 @@ class DataLabelingServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->datasetName('[PROJECT]', '[DATASET]');
         $basicConfig = new HumanAnnotationConfig();
+        $basicConfigInstruction = 'basicConfigInstruction-1726324386';
+        $basicConfig->setInstruction($basicConfigInstruction);
+        $basicConfigAnnotatedDatasetDisplayName = 'basicConfigAnnotatedDatasetDisplayName568435293';
+        $basicConfig->setAnnotatedDatasetDisplayName($basicConfigAnnotatedDatasetDisplayName);
         $feature = Feature::FEATURE_UNSPECIFIED;
         $response = $client->labelImage($formattedParent, $basicConfig, $feature);
         $this->assertFalse($response->isDone());
@@ -1686,6 +1690,10 @@ class DataLabelingServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->datasetName('[PROJECT]', '[DATASET]');
         $basicConfig = new HumanAnnotationConfig();
+        $basicConfigInstruction = 'basicConfigInstruction-1726324386';
+        $basicConfig->setInstruction($basicConfigInstruction);
+        $basicConfigAnnotatedDatasetDisplayName = 'basicConfigAnnotatedDatasetDisplayName568435293';
+        $basicConfig->setAnnotatedDatasetDisplayName($basicConfigAnnotatedDatasetDisplayName);
         $feature = Feature::FEATURE_UNSPECIFIED;
         $response = $client->labelImage($formattedParent, $basicConfig, $feature);
         $this->assertFalse($response->isDone());
@@ -1753,6 +1761,10 @@ class DataLabelingServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->datasetName('[PROJECT]', '[DATASET]');
         $basicConfig = new HumanAnnotationConfig();
+        $basicConfigInstruction = 'basicConfigInstruction-1726324386';
+        $basicConfig->setInstruction($basicConfigInstruction);
+        $basicConfigAnnotatedDatasetDisplayName = 'basicConfigAnnotatedDatasetDisplayName568435293';
+        $basicConfig->setAnnotatedDatasetDisplayName($basicConfigAnnotatedDatasetDisplayName);
         $feature = \Google\Cloud\DataLabeling\V1beta1\LabelTextRequest\Feature::FEATURE_UNSPECIFIED;
         $response = $client->labelText($formattedParent, $basicConfig, $feature);
         $this->assertFalse($response->isDone());
@@ -1825,6 +1837,10 @@ class DataLabelingServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->datasetName('[PROJECT]', '[DATASET]');
         $basicConfig = new HumanAnnotationConfig();
+        $basicConfigInstruction = 'basicConfigInstruction-1726324386';
+        $basicConfig->setInstruction($basicConfigInstruction);
+        $basicConfigAnnotatedDatasetDisplayName = 'basicConfigAnnotatedDatasetDisplayName568435293';
+        $basicConfig->setAnnotatedDatasetDisplayName($basicConfigAnnotatedDatasetDisplayName);
         $feature = \Google\Cloud\DataLabeling\V1beta1\LabelTextRequest\Feature::FEATURE_UNSPECIFIED;
         $response = $client->labelText($formattedParent, $basicConfig, $feature);
         $this->assertFalse($response->isDone());
@@ -1892,6 +1908,10 @@ class DataLabelingServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->datasetName('[PROJECT]', '[DATASET]');
         $basicConfig = new HumanAnnotationConfig();
+        $basicConfigInstruction = 'basicConfigInstruction-1726324386';
+        $basicConfig->setInstruction($basicConfigInstruction);
+        $basicConfigAnnotatedDatasetDisplayName = 'basicConfigAnnotatedDatasetDisplayName568435293';
+        $basicConfig->setAnnotatedDatasetDisplayName($basicConfigAnnotatedDatasetDisplayName);
         $feature = \Google\Cloud\DataLabeling\V1beta1\LabelVideoRequest\Feature::FEATURE_UNSPECIFIED;
         $response = $client->labelVideo($formattedParent, $basicConfig, $feature);
         $this->assertFalse($response->isDone());
@@ -1964,6 +1984,10 @@ class DataLabelingServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->datasetName('[PROJECT]', '[DATASET]');
         $basicConfig = new HumanAnnotationConfig();
+        $basicConfigInstruction = 'basicConfigInstruction-1726324386';
+        $basicConfig->setInstruction($basicConfigInstruction);
+        $basicConfigAnnotatedDatasetDisplayName = 'basicConfigAnnotatedDatasetDisplayName568435293';
+        $basicConfig->setAnnotatedDatasetDisplayName($basicConfigAnnotatedDatasetDisplayName);
         $feature = \Google\Cloud\DataLabeling\V1beta1\LabelVideoRequest\Feature::FEATURE_UNSPECIFIED;
         $response = $client->labelVideo($formattedParent, $basicConfig, $feature);
         $this->assertFalse($response->isDone());

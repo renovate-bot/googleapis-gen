@@ -224,12 +224,12 @@ class AdMobApiClientTest extends GeneratedTest
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
-        $name = 'name3373707';
+        $name2 = 'name2-1052831874';
         $publisherId = 'publisherId-1858159042';
         $reportingTimeZone = 'reportingTimeZone1270653197';
         $currencyCode = 'currencyCode1108728155';
         $expectedResponse = new PublisherAccount();
-        $expectedResponse->setName($name);
+        $expectedResponse->setName($name2);
         $expectedResponse->setPublisherId($publisherId);
         $expectedResponse->setReportingTimeZone($reportingTimeZone);
         $expectedResponse->setCurrencyCode($currencyCode);

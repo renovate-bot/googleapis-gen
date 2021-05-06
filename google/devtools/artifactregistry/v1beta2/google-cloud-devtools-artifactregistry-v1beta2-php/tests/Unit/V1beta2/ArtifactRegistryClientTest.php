@@ -678,11 +678,11 @@ class ArtifactRegistryClientTest extends GeneratedTest
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
-        $name = 'name3373707';
+        $name2 = 'name2-1052831874';
         $sizeBytes = 1796325715;
         $owner = 'owner106164915';
         $expectedResponse = new File();
-        $expectedResponse->setName($name);
+        $expectedResponse->setName($name2);
         $expectedResponse->setSizeBytes($sizeBytes);
         $expectedResponse->setOwner($owner);
         $transport->addResponse($expectedResponse);
@@ -806,10 +806,10 @@ class ArtifactRegistryClientTest extends GeneratedTest
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
-        $name = 'name3373707';
+        $name2 = 'name2-1052831874';
         $displayName = 'displayName1615086568';
         $expectedResponse = new Package();
-        $expectedResponse->setName($name);
+        $expectedResponse->setName($name2);
         $expectedResponse->setDisplayName($displayName);
         $transport->addResponse($expectedResponse);
         $response = $client->getPackage();
@@ -866,11 +866,11 @@ class ArtifactRegistryClientTest extends GeneratedTest
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
-        $name = 'name3373707';
+        $name2 = 'name2-1052831874';
         $description = 'description-1724546052';
         $kmsKeyName = 'kmsKeyName2094986649';
         $expectedResponse = new Repository();
-        $expectedResponse->setName($name);
+        $expectedResponse->setName($name2);
         $expectedResponse->setDescription($description);
         $expectedResponse->setKmsKeyName($kmsKeyName);
         $transport->addResponse($expectedResponse);
@@ -928,10 +928,10 @@ class ArtifactRegistryClientTest extends GeneratedTest
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
-        $name = 'name3373707';
+        $name2 = 'name2-1052831874';
         $version = 'version351608024';
         $expectedResponse = new Tag();
-        $expectedResponse->setName($name);
+        $expectedResponse->setName($name2);
         $expectedResponse->setVersion($version);
         $transport->addResponse($expectedResponse);
         $response = $client->getTag();
@@ -988,10 +988,10 @@ class ArtifactRegistryClientTest extends GeneratedTest
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
-        $name = 'name3373707';
+        $name2 = 'name2-1052831874';
         $description = 'description-1724546052';
         $expectedResponse = new Version();
-        $expectedResponse->setName($name);
+        $expectedResponse->setName($name2);
         $expectedResponse->setDescription($description);
         $transport->addResponse($expectedResponse);
         $response = $client->getVersion();

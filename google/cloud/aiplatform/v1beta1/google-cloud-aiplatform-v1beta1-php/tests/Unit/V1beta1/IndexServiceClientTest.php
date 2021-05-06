@@ -120,6 +120,8 @@ class IndexServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $index = new Index();
+        $indexDisplayName = 'indexDisplayName-632619461';
+        $index->setDisplayName($indexDisplayName);
         $response = $client->createIndex($formattedParent, $index);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -189,6 +191,8 @@ class IndexServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $index = new Index();
+        $indexDisplayName = 'indexDisplayName-632619461';
+        $index->setDisplayName($indexDisplayName);
         $response = $client->createIndex($formattedParent, $index);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -519,6 +523,8 @@ class IndexServiceClientTest extends GeneratedTest
         $operationsTransport->addResponse($completeOperation);
         // Mock request
         $index = new Index();
+        $indexDisplayName = 'indexDisplayName-632619461';
+        $index->setDisplayName($indexDisplayName);
         $response = $client->updateIndex($index);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -585,6 +591,8 @@ class IndexServiceClientTest extends GeneratedTest
         $operationsTransport->addResponse(null, $status);
         // Mock request
         $index = new Index();
+        $indexDisplayName = 'indexDisplayName-632619461';
+        $index->setDisplayName($indexDisplayName);
         $response = $client->updateIndex($index);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());

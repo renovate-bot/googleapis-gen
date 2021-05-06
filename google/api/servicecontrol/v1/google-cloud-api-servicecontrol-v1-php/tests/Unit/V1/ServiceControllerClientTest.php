@@ -81,11 +81,11 @@ class ServiceControllerClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $operationId = 'operationId-274116877';
-        $serviceConfigId = 'serviceConfigId1573171758';
+        $serviceConfigId2 = 'serviceConfigId2-10425759';
         $serviceRolloutId = 'serviceRolloutId600703539';
         $expectedResponse = new CheckResponse();
         $expectedResponse->setOperationId($operationId);
-        $expectedResponse->setServiceConfigId($serviceConfigId);
+        $expectedResponse->setServiceConfigId($serviceConfigId2);
         $expectedResponse->setServiceRolloutId($serviceRolloutId);
         $transport->addResponse($expectedResponse);
         $response = $client->check();
@@ -142,10 +142,10 @@ class ServiceControllerClientTest extends GeneratedTest
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
-        $serviceConfigId = 'serviceConfigId1573171758';
+        $serviceConfigId2 = 'serviceConfigId2-10425759';
         $serviceRolloutId = 'serviceRolloutId600703539';
         $expectedResponse = new ReportResponse();
-        $expectedResponse->setServiceConfigId($serviceConfigId);
+        $expectedResponse->setServiceConfigId($serviceConfigId2);
         $expectedResponse->setServiceRolloutId($serviceRolloutId);
         $transport->addResponse($expectedResponse);
         $response = $client->report();

@@ -32,6 +32,7 @@ use Google\ApiCore\Testing\MockTransport;
 
 use Google\Cloud\Dataproc\V1beta2\AutoscalingPolicy;
 use Google\Cloud\Dataproc\V1beta2\AutoscalingPolicyServiceClient;
+use Google\Cloud\Dataproc\V1beta2\InstanceGroupAutoscalingPolicyConfig;
 use Google\Cloud\Dataproc\V1beta2\ListAutoscalingPoliciesResponse;
 use Google\Protobuf\GPBEmpty;
 use Google\Rpc\Code;
@@ -91,6 +92,10 @@ class AutoscalingPolicyServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->regionName('[PROJECT]', '[REGION]');
         $policy = new AutoscalingPolicy();
+        $policyId = 'policyId546908653';
+        $policy->setId($policyId);
+        $policyWorkerConfig = new InstanceGroupAutoscalingPolicyConfig();
+        $policy->setWorkerConfig($policyWorkerConfig);
         $response = $client->createAutoscalingPolicy($formattedParent, $policy);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -128,6 +133,10 @@ class AutoscalingPolicyServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->regionName('[PROJECT]', '[REGION]');
         $policy = new AutoscalingPolicy();
+        $policyId = 'policyId546908653';
+        $policy->setId($policyId);
+        $policyWorkerConfig = new InstanceGroupAutoscalingPolicyConfig();
+        $policy->setWorkerConfig($policyWorkerConfig);
         try {
             $client->createAutoscalingPolicy($formattedParent, $policy);
             // If the $client method call did not throw, fail the test
@@ -359,6 +368,10 @@ class AutoscalingPolicyServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $policy = new AutoscalingPolicy();
+        $policyId = 'policyId546908653';
+        $policy->setId($policyId);
+        $policyWorkerConfig = new InstanceGroupAutoscalingPolicyConfig();
+        $policy->setWorkerConfig($policyWorkerConfig);
         $response = $client->updateAutoscalingPolicy($policy);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -393,6 +406,10 @@ class AutoscalingPolicyServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
         // Mock request
         $policy = new AutoscalingPolicy();
+        $policyId = 'policyId546908653';
+        $policy->setId($policyId);
+        $policyWorkerConfig = new InstanceGroupAutoscalingPolicyConfig();
+        $policy->setWorkerConfig($policyWorkerConfig);
         try {
             $client->updateAutoscalingPolicy($policy);
             // If the $client method call did not throw, fail the test

@@ -114,6 +114,10 @@ class AgentsClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $agent = new Agent();
+        $agentDisplayName = 'agentDisplayName2121176616';
+        $agent->setDisplayName($agentDisplayName);
+        $agentTimeZone = 'agentTimeZone-453669314';
+        $agent->setTimeZone($agentTimeZone);
         $response = $client->createAgent($formattedParent, $agent);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -151,6 +155,10 @@ class AgentsClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $agent = new Agent();
+        $agentDisplayName = 'agentDisplayName2121176616';
+        $agent->setDisplayName($agentDisplayName);
+        $agentTimeZone = 'agentTimeZone-453669314';
+        $agent->setTimeZone($agentTimeZone);
         try {
             $client->createAgent($formattedParent, $agent);
             // If the $client method call did not throw, fail the test
@@ -248,9 +256,9 @@ class AgentsClientTest extends GeneratedTest
         $incompleteOperation->setName('operations/exportAgentTest');
         $incompleteOperation->setDone(false);
         $transport->addResponse($incompleteOperation);
-        $agentUri = 'agentUri-1700713166';
+        $agentUri2 = 'agentUri21997190245';
         $expectedResponse = new ExportAgentResponse();
-        $expectedResponse->setAgentUri($agentUri);
+        $expectedResponse->setAgentUri($agentUri2);
         $anyResponse = new Any();
         $anyResponse->setValue($expectedResponse->serializeToString());
         $completeOperation = new Operation();
@@ -722,6 +730,10 @@ class AgentsClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $agent = new Agent();
+        $agentDisplayName = 'agentDisplayName2121176616';
+        $agent->setDisplayName($agentDisplayName);
+        $agentTimeZone = 'agentTimeZone-453669314';
+        $agent->setTimeZone($agentTimeZone);
         $response = $client->updateAgent($agent);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -756,6 +768,10 @@ class AgentsClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
         // Mock request
         $agent = new Agent();
+        $agentDisplayName = 'agentDisplayName2121176616';
+        $agent->setDisplayName($agentDisplayName);
+        $agentTimeZone = 'agentTimeZone-453669314';
+        $agent->setTimeZone($agentTimeZone);
         try {
             $client->updateAgent($agent);
             // If the $client method call did not throw, fail the test

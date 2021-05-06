@@ -146,9 +146,9 @@ class HomeGraphApiServiceClientTest extends GeneratedTest
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
-        $requestId = 'requestId37109963';
+        $requestId2 = 'requestId21302939070';
         $expectedResponse = new QueryResponse();
-        $expectedResponse->setRequestId($requestId);
+        $expectedResponse->setRequestId($requestId2);
         $transport->addResponse($expectedResponse);
         // Mock request
         $agentUserId = 'agentUserId-525008171';
@@ -214,9 +214,9 @@ class HomeGraphApiServiceClientTest extends GeneratedTest
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
-        $requestId = 'requestId37109963';
+        $requestId2 = 'requestId21302939070';
         $expectedResponse = new ReportStateAndNotificationResponse();
-        $expectedResponse->setRequestId($requestId);
+        $expectedResponse->setRequestId($requestId2);
         $transport->addResponse($expectedResponse);
         // Mock request
         $agentUserId = 'agentUserId-525008171';
@@ -344,9 +344,9 @@ class HomeGraphApiServiceClientTest extends GeneratedTest
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
-        $requestId = 'requestId37109963';
+        $requestId2 = 'requestId21302939070';
         $expectedResponse = new SyncResponse();
-        $expectedResponse->setRequestId($requestId);
+        $expectedResponse->setRequestId($requestId2);
         $transport->addResponse($expectedResponse);
         // Mock request
         $agentUserId = 'agentUserId-525008171';

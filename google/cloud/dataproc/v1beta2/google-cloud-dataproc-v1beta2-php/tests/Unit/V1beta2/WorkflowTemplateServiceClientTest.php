@@ -98,6 +98,8 @@ class WorkflowTemplateServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->regionName('[PROJECT]', '[REGION]');
         $template = new WorkflowTemplate();
+        $templateId = 'templateId1304010549';
+        $template->setId($templateId);
         $response = $client->createWorkflowTemplate($formattedParent, $template);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -135,6 +137,8 @@ class WorkflowTemplateServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->regionName('[PROJECT]', '[REGION]');
         $template = new WorkflowTemplate();
+        $templateId = 'templateId1304010549';
+        $template->setId($templateId);
         try {
             $client->createWorkflowTemplate($formattedParent, $template);
             // If the $client method call did not throw, fail the test
@@ -222,11 +226,11 @@ class WorkflowTemplateServiceClientTest extends GeneratedTest
         // Mock response
         $id = 'id3355';
         $name2 = 'name2-1052831874';
-        $version = 351608024;
+        $version2 = 1407102325;
         $expectedResponse = new WorkflowTemplate();
         $expectedResponse->setId($id);
         $expectedResponse->setName($name2);
-        $expectedResponse->setVersion($version);
+        $expectedResponse->setVersion($version2);
         $transport->addResponse($expectedResponse);
         // Mock request
         $formattedName = $client->workflowTemplateName('[PROJECT]', '[REGION]', '[WORKFLOW_TEMPLATE]');
@@ -311,6 +315,8 @@ class WorkflowTemplateServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->regionName('[PROJECT]', '[REGION]');
         $template = new WorkflowTemplate();
+        $templateId = 'templateId1304010549';
+        $template->setId($templateId);
         $response = $client->instantiateInlineWorkflowTemplate($formattedParent, $template);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -380,6 +386,8 @@ class WorkflowTemplateServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->regionName('[PROJECT]', '[REGION]');
         $template = new WorkflowTemplate();
+        $templateId = 'templateId1304010549';
+        $template->setId($templateId);
         $response = $client->instantiateInlineWorkflowTemplate($formattedParent, $template);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -616,6 +624,8 @@ class WorkflowTemplateServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $template = new WorkflowTemplate();
+        $templateId = 'templateId1304010549';
+        $template->setId($templateId);
         $response = $client->updateWorkflowTemplate($template);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -650,6 +660,8 @@ class WorkflowTemplateServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
         // Mock request
         $template = new WorkflowTemplate();
+        $templateId = 'templateId1304010549';
+        $template->setId($templateId);
         try {
             $client->updateWorkflowTemplate($template);
             // If the $client method call did not throw, fail the test

@@ -210,7 +210,7 @@ class WebSecurityScannerClientTest extends GeneratedTest
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
-        $name = 'name3373707';
+        $name2 = 'name2-1052831874';
         $findingType = 'findingType274496048';
         $httpMethod = 'httpMethod820747384';
         $fuzzedUrl = 'fuzzedUrl-2120677666';
@@ -221,7 +221,7 @@ class WebSecurityScannerClientTest extends GeneratedTest
         $finalUrl = 'finalUrl355601190';
         $trackingId = 'trackingId1878901667';
         $expectedResponse = new Finding();
-        $expectedResponse->setName($name);
+        $expectedResponse->setName($name2);
         $expectedResponse->setFindingType($findingType);
         $expectedResponse->setHttpMethod($httpMethod);
         $expectedResponse->setFuzzedUrl($fuzzedUrl);
@@ -286,13 +286,13 @@ class WebSecurityScannerClientTest extends GeneratedTest
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
-        $name = 'name3373707';
+        $name2 = 'name2-1052831874';
         $displayName = 'displayName1615086568';
         $maxQps = 844445913;
         $managedScan = false;
         $staticIpScan = true;
         $expectedResponse = new ScanConfig();
-        $expectedResponse->setName($name);
+        $expectedResponse->setName($name2);
         $expectedResponse->setDisplayName($displayName);
         $expectedResponse->setMaxQps($maxQps);
         $expectedResponse->setManagedScan($managedScan);
@@ -352,13 +352,13 @@ class WebSecurityScannerClientTest extends GeneratedTest
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
-        $name = 'name3373707';
+        $name2 = 'name2-1052831874';
         $urlsCrawledCount = 1749797253;
         $urlsTestedCount = 1498664068;
         $hasVulnerabilities = false;
         $progressPercent = 2137894861;
         $expectedResponse = new ScanRun();
-        $expectedResponse->setName($name);
+        $expectedResponse->setName($name2);
         $expectedResponse->setUrlsCrawledCount($urlsCrawledCount);
         $expectedResponse->setUrlsTestedCount($urlsTestedCount);
         $expectedResponse->setHasVulnerabilities($hasVulnerabilities);
@@ -738,13 +738,13 @@ class WebSecurityScannerClientTest extends GeneratedTest
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
-        $name = 'name3373707';
+        $name2 = 'name2-1052831874';
         $urlsCrawledCount = 1749797253;
         $urlsTestedCount = 1498664068;
         $hasVulnerabilities = false;
         $progressPercent = 2137894861;
         $expectedResponse = new ScanRun();
-        $expectedResponse->setName($name);
+        $expectedResponse->setName($name2);
         $expectedResponse->setUrlsCrawledCount($urlsCrawledCount);
         $expectedResponse->setUrlsTestedCount($urlsTestedCount);
         $expectedResponse->setHasVulnerabilities($hasVulnerabilities);
@@ -804,13 +804,13 @@ class WebSecurityScannerClientTest extends GeneratedTest
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
-        $name = 'name3373707';
+        $name2 = 'name2-1052831874';
         $urlsCrawledCount = 1749797253;
         $urlsTestedCount = 1498664068;
         $hasVulnerabilities = false;
         $progressPercent = 2137894861;
         $expectedResponse = new ScanRun();
-        $expectedResponse->setName($name);
+        $expectedResponse->setName($name2);
         $expectedResponse->setUrlsCrawledCount($urlsCrawledCount);
         $expectedResponse->setUrlsTestedCount($urlsTestedCount);
         $expectedResponse->setHasVulnerabilities($hasVulnerabilities);

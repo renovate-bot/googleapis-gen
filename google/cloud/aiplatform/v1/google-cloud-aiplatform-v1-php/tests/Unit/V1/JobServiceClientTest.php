@@ -32,8 +32,11 @@ use Google\ApiCore\Testing\GeneratedTest;
 
 use Google\ApiCore\Testing\MockTransport;
 use Google\Cloud\Aiplatform\V1\BatchPredictionJob;
-use Google\Cloud\Aiplatform\V1\CustomJob;
+use Google\Cloud\Aiplatform\V1\BatchPredictionJob\InputConfig;
 
+use Google\Cloud\Aiplatform\V1\BatchPredictionJob\OutputConfig;
+use Google\Cloud\Aiplatform\V1\CustomJob;
+use Google\Cloud\Aiplatform\V1\CustomJobSpec;
 use Google\Cloud\Aiplatform\V1\DataLabelingJob;
 use Google\Cloud\Aiplatform\V1\HyperparameterTuningJob;
 use Google\Cloud\Aiplatform\V1\JobServiceClient;
@@ -41,10 +44,12 @@ use Google\Cloud\Aiplatform\V1\ListBatchPredictionJobsResponse;
 use Google\Cloud\Aiplatform\V1\ListCustomJobsResponse;
 use Google\Cloud\Aiplatform\V1\ListDataLabelingJobsResponse;
 use Google\Cloud\Aiplatform\V1\ListHyperparameterTuningJobsResponse;
+use Google\Cloud\Aiplatform\V1\StudySpec;
 use Google\LongRunning\GetOperationRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\Any;
 use Google\Protobuf\GPBEmpty;
+use Google\Protobuf\Value;
 use Google\Rpc\Code;
 use stdClass;
 
@@ -348,6 +353,18 @@ class JobServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $batchPredictionJob = new BatchPredictionJob();
+        $batchPredictionJobDisplayName = 'batchPredictionJobDisplayName-916867527';
+        $batchPredictionJob->setDisplayName($batchPredictionJobDisplayName);
+        $batchPredictionJobModel = $client->modelName('[PROJECT]', '[LOCATION]', '[MODEL]');
+        $batchPredictionJob->setModel($batchPredictionJobModel);
+        $batchPredictionJobInputConfig = new InputConfig();
+        $inputConfigInstancesFormat = 'inputConfigInstancesFormat883633865';
+        $batchPredictionJobInputConfig->setInstancesFormat($inputConfigInstancesFormat);
+        $batchPredictionJob->setInputConfig($batchPredictionJobInputConfig);
+        $batchPredictionJobOutputConfig = new OutputConfig();
+        $outputConfigPredictionsFormat = 'outputConfigPredictionsFormat999432568';
+        $batchPredictionJobOutputConfig->setPredictionsFormat($outputConfigPredictionsFormat);
+        $batchPredictionJob->setOutputConfig($batchPredictionJobOutputConfig);
         $response = $client->createBatchPredictionJob($formattedParent, $batchPredictionJob);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -385,6 +402,18 @@ class JobServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $batchPredictionJob = new BatchPredictionJob();
+        $batchPredictionJobDisplayName = 'batchPredictionJobDisplayName-916867527';
+        $batchPredictionJob->setDisplayName($batchPredictionJobDisplayName);
+        $batchPredictionJobModel = $client->modelName('[PROJECT]', '[LOCATION]', '[MODEL]');
+        $batchPredictionJob->setModel($batchPredictionJobModel);
+        $batchPredictionJobInputConfig = new InputConfig();
+        $inputConfigInstancesFormat = 'inputConfigInstancesFormat883633865';
+        $batchPredictionJobInputConfig->setInstancesFormat($inputConfigInstancesFormat);
+        $batchPredictionJob->setInputConfig($batchPredictionJobInputConfig);
+        $batchPredictionJobOutputConfig = new OutputConfig();
+        $outputConfigPredictionsFormat = 'outputConfigPredictionsFormat999432568';
+        $batchPredictionJobOutputConfig->setPredictionsFormat($outputConfigPredictionsFormat);
+        $batchPredictionJob->setOutputConfig($batchPredictionJobOutputConfig);
         try {
             $client->createBatchPredictionJob($formattedParent, $batchPredictionJob);
             // If the $client method call did not throw, fail the test
@@ -418,6 +447,12 @@ class JobServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $customJob = new CustomJob();
+        $customJobDisplayName = 'customJobDisplayName-299624383';
+        $customJob->setDisplayName($customJobDisplayName);
+        $customJobJobSpec = new CustomJobSpec();
+        $jobSpecWorkerPoolSpecs = [];
+        $customJobJobSpec->setWorkerPoolSpecs($jobSpecWorkerPoolSpecs);
+        $customJob->setJobSpec($customJobJobSpec);
         $response = $client->createCustomJob($formattedParent, $customJob);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -455,6 +490,12 @@ class JobServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $customJob = new CustomJob();
+        $customJobDisplayName = 'customJobDisplayName-299624383';
+        $customJob->setDisplayName($customJobDisplayName);
+        $customJobJobSpec = new CustomJobSpec();
+        $jobSpecWorkerPoolSpecs = [];
+        $customJobJobSpec->setWorkerPoolSpecs($jobSpecWorkerPoolSpecs);
+        $customJob->setJobSpec($customJobJobSpec);
         try {
             $client->createCustomJob($formattedParent, $customJob);
             // If the $client method call did not throw, fail the test
@@ -496,6 +537,20 @@ class JobServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $dataLabelingJob = new DataLabelingJob();
+        $dataLabelingJobDisplayName = 'dataLabelingJobDisplayName708178632';
+        $dataLabelingJob->setDisplayName($dataLabelingJobDisplayName);
+        $dataLabelingJobDatasets = [
+            $client->datasetName('[PROJECT]', '[LOCATION]', '[DATASET]'),
+        ];
+        $dataLabelingJob->setDatasets($dataLabelingJobDatasets);
+        $dataLabelingJobLabelerCount = 500093453;
+        $dataLabelingJob->setLabelerCount($dataLabelingJobLabelerCount);
+        $dataLabelingJobInstructionUri = 'dataLabelingJobInstructionUri-886362173';
+        $dataLabelingJob->setInstructionUri($dataLabelingJobInstructionUri);
+        $dataLabelingJobInputsSchemaUri = 'dataLabelingJobInputsSchemaUri-1486933251';
+        $dataLabelingJob->setInputsSchemaUri($dataLabelingJobInputsSchemaUri);
+        $dataLabelingJobInputs = new Value();
+        $dataLabelingJob->setInputs($dataLabelingJobInputs);
         $response = $client->createDataLabelingJob($formattedParent, $dataLabelingJob);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -533,6 +588,20 @@ class JobServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $dataLabelingJob = new DataLabelingJob();
+        $dataLabelingJobDisplayName = 'dataLabelingJobDisplayName708178632';
+        $dataLabelingJob->setDisplayName($dataLabelingJobDisplayName);
+        $dataLabelingJobDatasets = [
+            $client->datasetName('[PROJECT]', '[LOCATION]', '[DATASET]'),
+        ];
+        $dataLabelingJob->setDatasets($dataLabelingJobDatasets);
+        $dataLabelingJobLabelerCount = 500093453;
+        $dataLabelingJob->setLabelerCount($dataLabelingJobLabelerCount);
+        $dataLabelingJobInstructionUri = 'dataLabelingJobInstructionUri-886362173';
+        $dataLabelingJob->setInstructionUri($dataLabelingJobInstructionUri);
+        $dataLabelingJobInputsSchemaUri = 'dataLabelingJobInputsSchemaUri-1486933251';
+        $dataLabelingJob->setInputsSchemaUri($dataLabelingJobInputsSchemaUri);
+        $dataLabelingJobInputs = new Value();
+        $dataLabelingJob->setInputs($dataLabelingJobInputs);
         try {
             $client->createDataLabelingJob($formattedParent, $dataLabelingJob);
             // If the $client method call did not throw, fail the test
@@ -572,6 +641,22 @@ class JobServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $hyperparameterTuningJob = new HyperparameterTuningJob();
+        $hyperparameterTuningJobDisplayName = 'hyperparameterTuningJobDisplayName279209698';
+        $hyperparameterTuningJob->setDisplayName($hyperparameterTuningJobDisplayName);
+        $hyperparameterTuningJobStudySpec = new StudySpec();
+        $studySpecMetrics = [];
+        $hyperparameterTuningJobStudySpec->setMetrics($studySpecMetrics);
+        $studySpecParameters = [];
+        $hyperparameterTuningJobStudySpec->setParameters($studySpecParameters);
+        $hyperparameterTuningJob->setStudySpec($hyperparameterTuningJobStudySpec);
+        $hyperparameterTuningJobMaxTrialCount = 1019368622;
+        $hyperparameterTuningJob->setMaxTrialCount($hyperparameterTuningJobMaxTrialCount);
+        $hyperparameterTuningJobParallelTrialCount = 1531269397;
+        $hyperparameterTuningJob->setParallelTrialCount($hyperparameterTuningJobParallelTrialCount);
+        $hyperparameterTuningJobTrialJobSpec = new CustomJobSpec();
+        $trialJobSpecWorkerPoolSpecs = [];
+        $hyperparameterTuningJobTrialJobSpec->setWorkerPoolSpecs($trialJobSpecWorkerPoolSpecs);
+        $hyperparameterTuningJob->setTrialJobSpec($hyperparameterTuningJobTrialJobSpec);
         $response = $client->createHyperparameterTuningJob($formattedParent, $hyperparameterTuningJob);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -609,6 +694,22 @@ class JobServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $hyperparameterTuningJob = new HyperparameterTuningJob();
+        $hyperparameterTuningJobDisplayName = 'hyperparameterTuningJobDisplayName279209698';
+        $hyperparameterTuningJob->setDisplayName($hyperparameterTuningJobDisplayName);
+        $hyperparameterTuningJobStudySpec = new StudySpec();
+        $studySpecMetrics = [];
+        $hyperparameterTuningJobStudySpec->setMetrics($studySpecMetrics);
+        $studySpecParameters = [];
+        $hyperparameterTuningJobStudySpec->setParameters($studySpecParameters);
+        $hyperparameterTuningJob->setStudySpec($hyperparameterTuningJobStudySpec);
+        $hyperparameterTuningJobMaxTrialCount = 1019368622;
+        $hyperparameterTuningJob->setMaxTrialCount($hyperparameterTuningJobMaxTrialCount);
+        $hyperparameterTuningJobParallelTrialCount = 1531269397;
+        $hyperparameterTuningJob->setParallelTrialCount($hyperparameterTuningJobParallelTrialCount);
+        $hyperparameterTuningJobTrialJobSpec = new CustomJobSpec();
+        $trialJobSpecWorkerPoolSpecs = [];
+        $hyperparameterTuningJobTrialJobSpec->setWorkerPoolSpecs($trialJobSpecWorkerPoolSpecs);
+        $hyperparameterTuningJob->setTrialJobSpec($hyperparameterTuningJobTrialJobSpec);
         try {
             $client->createHyperparameterTuningJob($formattedParent, $hyperparameterTuningJob);
             // If the $client method call did not throw, fail the test

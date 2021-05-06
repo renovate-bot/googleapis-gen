@@ -38,6 +38,7 @@ use Google\Cloud\Aiplatform\V1beta1\ListStudiesResponse;
 use Google\Cloud\Aiplatform\V1beta1\ListTrialsResponse;
 use Google\Cloud\Aiplatform\V1beta1\Measurement;
 use Google\Cloud\Aiplatform\V1beta1\Study;
+use Google\Cloud\Aiplatform\V1beta1\StudySpec;
 use Google\Cloud\Aiplatform\V1beta1\SuggestTrialsResponse;
 use Google\Cloud\Aiplatform\V1beta1\Trial;
 use Google\Cloud\Aiplatform\V1beta1\VizierServiceClient;
@@ -295,13 +296,13 @@ class VizierServiceClientTest extends GeneratedTest
         $name2 = 'name2-1052831874';
         $id = 'id3355';
         $clientId = 'clientId-1904089585';
-        $infeasibleReason = 'infeasibleReason1225702715';
+        $infeasibleReason2 = 'infeasibleReason21079273006';
         $customJob = 'customJob-1581369873';
         $expectedResponse = new Trial();
         $expectedResponse->setName($name2);
         $expectedResponse->setId($id);
         $expectedResponse->setClientId($clientId);
-        $expectedResponse->setInfeasibleReason($infeasibleReason);
+        $expectedResponse->setInfeasibleReason($infeasibleReason2);
         $expectedResponse->setCustomJob($customJob);
         $transport->addResponse($expectedResponse);
         // Mock request
@@ -375,6 +376,14 @@ class VizierServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $study = new Study();
+        $studyDisplayName = 'studyDisplayName-569693980';
+        $study->setDisplayName($studyDisplayName);
+        $studyStudySpec = new StudySpec();
+        $studySpecMetrics = [];
+        $studyStudySpec->setMetrics($studySpecMetrics);
+        $studySpecParameters = [];
+        $studyStudySpec->setParameters($studySpecParameters);
+        $study->setStudySpec($studyStudySpec);
         $response = $client->createStudy($formattedParent, $study);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -412,6 +421,14 @@ class VizierServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $study = new Study();
+        $studyDisplayName = 'studyDisplayName-569693980';
+        $study->setDisplayName($studyDisplayName);
+        $studyStudySpec = new StudySpec();
+        $studySpecMetrics = [];
+        $studyStudySpec->setMetrics($studySpecMetrics);
+        $studySpecParameters = [];
+        $studyStudySpec->setParameters($studySpecParameters);
+        $study->setStudySpec($studyStudySpec);
         try {
             $client->createStudy($formattedParent, $study);
             // If the $client method call did not throw, fail the test

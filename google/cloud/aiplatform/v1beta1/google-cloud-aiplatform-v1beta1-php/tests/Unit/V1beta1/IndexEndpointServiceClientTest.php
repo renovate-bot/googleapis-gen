@@ -124,6 +124,10 @@ class IndexEndpointServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $indexEndpoint = new IndexEndpoint();
+        $indexEndpointDisplayName = 'indexEndpointDisplayName-894895258';
+        $indexEndpoint->setDisplayName($indexEndpointDisplayName);
+        $indexEndpointNetwork = 'indexEndpointNetwork-517872729';
+        $indexEndpoint->setNetwork($indexEndpointNetwork);
         $response = $client->createIndexEndpoint($formattedParent, $indexEndpoint);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -193,6 +197,10 @@ class IndexEndpointServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $indexEndpoint = new IndexEndpoint();
+        $indexEndpointDisplayName = 'indexEndpointDisplayName-894895258';
+        $indexEndpoint->setDisplayName($indexEndpointDisplayName);
+        $indexEndpointNetwork = 'indexEndpointNetwork-517872729';
+        $indexEndpoint->setNetwork($indexEndpointNetwork);
         $response = $client->createIndexEndpoint($formattedParent, $indexEndpoint);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -370,6 +378,10 @@ class IndexEndpointServiceClientTest extends GeneratedTest
         // Mock request
         $formattedIndexEndpoint = $client->indexEndpointName('[PROJECT]', '[LOCATION]', '[INDEX_ENDPOINT]');
         $deployedIndex = new DeployedIndex();
+        $deployedIndexId = 'deployedIndexId-1101212953';
+        $deployedIndex->setId($deployedIndexId);
+        $deployedIndexIndex = $client->indexName('[PROJECT]', '[LOCATION]', '[INDEX]');
+        $deployedIndex->setIndex($deployedIndexIndex);
         $response = $client->deployIndex($formattedIndexEndpoint, $deployedIndex);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -439,6 +451,10 @@ class IndexEndpointServiceClientTest extends GeneratedTest
         // Mock request
         $formattedIndexEndpoint = $client->indexEndpointName('[PROJECT]', '[LOCATION]', '[INDEX_ENDPOINT]');
         $deployedIndex = new DeployedIndex();
+        $deployedIndexId = 'deployedIndexId-1101212953';
+        $deployedIndex->setId($deployedIndexId);
+        $deployedIndexIndex = $client->indexName('[PROJECT]', '[LOCATION]', '[INDEX]');
+        $deployedIndex->setIndex($deployedIndexIndex);
         $response = $client->deployIndex($formattedIndexEndpoint, $deployedIndex);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -755,6 +771,10 @@ class IndexEndpointServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $indexEndpoint = new IndexEndpoint();
+        $indexEndpointDisplayName = 'indexEndpointDisplayName-894895258';
+        $indexEndpoint->setDisplayName($indexEndpointDisplayName);
+        $indexEndpointNetwork = 'indexEndpointNetwork-517872729';
+        $indexEndpoint->setNetwork($indexEndpointNetwork);
         $updateMask = new FieldMask();
         $response = $client->updateIndexEndpoint($indexEndpoint, $updateMask);
         $this->assertEquals($expectedResponse, $response);
@@ -792,6 +812,10 @@ class IndexEndpointServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
         // Mock request
         $indexEndpoint = new IndexEndpoint();
+        $indexEndpointDisplayName = 'indexEndpointDisplayName-894895258';
+        $indexEndpoint->setDisplayName($indexEndpointDisplayName);
+        $indexEndpointNetwork = 'indexEndpointNetwork-517872729';
+        $indexEndpoint->setNetwork($indexEndpointNetwork);
         $updateMask = new FieldMask();
         try {
             $client->updateIndexEndpoint($indexEndpoint, $updateMask);

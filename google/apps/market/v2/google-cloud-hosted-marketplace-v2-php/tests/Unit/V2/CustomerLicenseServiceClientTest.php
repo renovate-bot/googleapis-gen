@@ -81,15 +81,15 @@ class CustomerLicenseServiceClientTest extends GeneratedTest
         // Mock response
         $kind = 'kind3292052';
         $state = 'state109757585';
-        $applicationId = 'applicationId-1287148950';
+        $applicationId2 = 'applicationId2443293';
         $id = 'id3355';
-        $customerId = 'customerId-1772061412';
+        $customerId2 = 'customerId2-2143964721';
         $expectedResponse = new CustomerLicense();
         $expectedResponse->setKind($kind);
         $expectedResponse->setState($state);
-        $expectedResponse->setApplicationId($applicationId);
+        $expectedResponse->setApplicationId($applicationId2);
         $expectedResponse->setId($id);
-        $expectedResponse->setCustomerId($customerId);
+        $expectedResponse->setCustomerId($customerId2);
         $transport->addResponse($expectedResponse);
         $response = $client->get();
         $this->assertEquals($expectedResponse, $response);

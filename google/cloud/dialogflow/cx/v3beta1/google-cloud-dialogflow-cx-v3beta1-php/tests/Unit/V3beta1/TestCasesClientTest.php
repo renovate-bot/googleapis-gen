@@ -372,6 +372,8 @@ class TestCasesClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->agentName('[PROJECT]', '[LOCATION]', '[AGENT]');
         $testCase = new \Google\Cloud\Dialogflow\Cx\V3beta1\TestCase();
+        $testCaseDisplayName = 'testCaseDisplayName1109893675';
+        $testCase->setDisplayName($testCaseDisplayName);
         $response = $client->createTestCase($formattedParent, $testCase);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -409,6 +411,8 @@ class TestCasesClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->agentName('[PROJECT]', '[LOCATION]', '[AGENT]');
         $testCase = new \Google\Cloud\Dialogflow\Cx\V3beta1\TestCase();
+        $testCaseDisplayName = 'testCaseDisplayName1109893675';
+        $testCase->setDisplayName($testCaseDisplayName);
         try {
             $client->createTestCase($formattedParent, $testCase);
             // If the $client method call did not throw, fail the test
@@ -445,9 +449,9 @@ class TestCasesClientTest extends GeneratedTest
         $incompleteOperation->setName('operations/exportTestCasesTest');
         $incompleteOperation->setDone(false);
         $transport->addResponse($incompleteOperation);
-        $gcsUri = 'gcsUri-132964284';
+        $gcsUri2 = 'gcsUri21070344951';
         $expectedResponse = new ExportTestCasesResponse();
-        $expectedResponse->setGcsUri($gcsUri);
+        $expectedResponse->setGcsUri($gcsUri2);
         $anyResponse = new Any();
         $anyResponse->setValue($expectedResponse->serializeToString());
         $completeOperation = new Operation();
@@ -1086,6 +1090,8 @@ class TestCasesClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $testCase = new \Google\Cloud\Dialogflow\Cx\V3beta1\TestCase();
+        $testCaseDisplayName = 'testCaseDisplayName1109893675';
+        $testCase->setDisplayName($testCaseDisplayName);
         $updateMask = new FieldMask();
         $response = $client->updateTestCase($testCase, $updateMask);
         $this->assertEquals($expectedResponse, $response);
@@ -1123,6 +1129,8 @@ class TestCasesClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
         // Mock request
         $testCase = new \Google\Cloud\Dialogflow\Cx\V3beta1\TestCase();
+        $testCaseDisplayName = 'testCaseDisplayName1109893675';
+        $testCase->setDisplayName($testCaseDisplayName);
         $updateMask = new FieldMask();
         try {
             $client->updateTestCase($testCase, $updateMask);

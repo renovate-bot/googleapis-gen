@@ -93,6 +93,8 @@ class DashboardsServiceClientTest extends GeneratedTest
         // Mock request
         $parent = 'parent-995424086';
         $dashboard = new Dashboard();
+        $dashboardDisplayName = 'dashboardDisplayName1638395705';
+        $dashboard->setDisplayName($dashboardDisplayName);
         $response = $client->createDashboard($parent, $dashboard);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -130,6 +132,8 @@ class DashboardsServiceClientTest extends GeneratedTest
         // Mock request
         $parent = 'parent-995424086';
         $dashboard = new Dashboard();
+        $dashboardDisplayName = 'dashboardDisplayName1638395705';
+        $dashboard->setDisplayName($dashboardDisplayName);
         try {
             $client->createDashboard($parent, $dashboard);
             // If the $client method call did not throw, fail the test
@@ -365,6 +369,8 @@ class DashboardsServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $dashboard = new Dashboard();
+        $dashboardDisplayName = 'dashboardDisplayName1638395705';
+        $dashboard->setDisplayName($dashboardDisplayName);
         $response = $client->updateDashboard($dashboard);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -399,6 +405,8 @@ class DashboardsServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
         // Mock request
         $dashboard = new Dashboard();
+        $dashboardDisplayName = 'dashboardDisplayName1638395705';
+        $dashboard->setDisplayName($dashboardDisplayName);
         try {
             $client->updateDashboard($dashboard);
             // If the $client method call did not throw, fail the test
