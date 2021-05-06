@@ -80,6 +80,20 @@ private static final long serialVersionUID = 0L;
             sourceCase_ = 3;
             break;
           }
+          case 66: {
+            com.google.cloudbuild.v1.StorageSourceManifest.Builder subBuilder = null;
+            if (sourceCase_ == 8) {
+              subBuilder = ((com.google.cloudbuild.v1.StorageSourceManifest) source_).toBuilder();
+            }
+            source_ =
+                input.readMessage(com.google.cloudbuild.v1.StorageSourceManifest.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.google.cloudbuild.v1.StorageSourceManifest) source_);
+              source_ = subBuilder.buildPartial();
+            }
+            sourceCase_ = 8;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -119,6 +133,7 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     STORAGE_SOURCE(2),
     REPO_SOURCE(3),
+    STORAGE_SOURCE_MANIFEST(8),
     SOURCE_NOT_SET(0);
     private final int value;
     private SourceCase(int value) {
@@ -138,6 +153,7 @@ private static final long serialVersionUID = 0L;
       switch (value) {
         case 2: return STORAGE_SOURCE;
         case 3: return REPO_SOURCE;
+        case 8: return STORAGE_SOURCE_MANIFEST;
         case 0: return SOURCE_NOT_SET;
         default: return null;
       }
@@ -242,6 +258,52 @@ private static final long serialVersionUID = 0L;
     return com.google.cloudbuild.v1.RepoSource.getDefaultInstance();
   }
 
+  public static final int STORAGE_SOURCE_MANIFEST_FIELD_NUMBER = 8;
+  /**
+   * <pre>
+   * If provided, get the source from this manifest in Google Cloud Storage.
+   * This feature is in Preview.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.StorageSourceManifest storage_source_manifest = 8;</code>
+   * @return Whether the storageSourceManifest field is set.
+   */
+  @java.lang.Override
+  public boolean hasStorageSourceManifest() {
+    return sourceCase_ == 8;
+  }
+  /**
+   * <pre>
+   * If provided, get the source from this manifest in Google Cloud Storage.
+   * This feature is in Preview.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.StorageSourceManifest storage_source_manifest = 8;</code>
+   * @return The storageSourceManifest.
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.StorageSourceManifest getStorageSourceManifest() {
+    if (sourceCase_ == 8) {
+       return (com.google.cloudbuild.v1.StorageSourceManifest) source_;
+    }
+    return com.google.cloudbuild.v1.StorageSourceManifest.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * If provided, get the source from this manifest in Google Cloud Storage.
+   * This feature is in Preview.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.StorageSourceManifest storage_source_manifest = 8;</code>
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.StorageSourceManifestOrBuilder getStorageSourceManifestOrBuilder() {
+    if (sourceCase_ == 8) {
+       return (com.google.cloudbuild.v1.StorageSourceManifest) source_;
+    }
+    return com.google.cloudbuild.v1.StorageSourceManifest.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -262,6 +324,9 @@ private static final long serialVersionUID = 0L;
     if (sourceCase_ == 3) {
       output.writeMessage(3, (com.google.cloudbuild.v1.RepoSource) source_);
     }
+    if (sourceCase_ == 8) {
+      output.writeMessage(8, (com.google.cloudbuild.v1.StorageSourceManifest) source_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -278,6 +343,10 @@ private static final long serialVersionUID = 0L;
     if (sourceCase_ == 3) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, (com.google.cloudbuild.v1.RepoSource) source_);
+    }
+    if (sourceCase_ == 8) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, (com.google.cloudbuild.v1.StorageSourceManifest) source_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -304,6 +373,10 @@ private static final long serialVersionUID = 0L;
         if (!getRepoSource()
             .equals(other.getRepoSource())) return false;
         break;
+      case 8:
+        if (!getStorageSourceManifest()
+            .equals(other.getStorageSourceManifest())) return false;
+        break;
       case 0:
       default:
     }
@@ -326,6 +399,10 @@ private static final long serialVersionUID = 0L;
       case 3:
         hash = (37 * hash) + REPO_SOURCE_FIELD_NUMBER;
         hash = (53 * hash) + getRepoSource().hashCode();
+        break;
+      case 8:
+        hash = (37 * hash) + STORAGE_SOURCE_MANIFEST_FIELD_NUMBER;
+        hash = (53 * hash) + getStorageSourceManifest().hashCode();
         break;
       case 0:
       default:
@@ -509,6 +586,13 @@ private static final long serialVersionUID = 0L;
           result.source_ = repoSourceBuilder_.build();
         }
       }
+      if (sourceCase_ == 8) {
+        if (storageSourceManifestBuilder_ == null) {
+          result.source_ = source_;
+        } else {
+          result.source_ = storageSourceManifestBuilder_.build();
+        }
+      }
       result.sourceCase_ = sourceCase_;
       onBuilt();
       return result;
@@ -565,6 +649,10 @@ private static final long serialVersionUID = 0L;
         }
         case REPO_SOURCE: {
           mergeRepoSource(other.getRepoSource());
+          break;
+        }
+        case STORAGE_SOURCE_MANIFEST: {
+          mergeStorageSourceManifest(other.getStorageSourceManifest());
           break;
         }
         case SOURCE_NOT_SET: {
@@ -976,6 +1064,192 @@ private static final long serialVersionUID = 0L;
       sourceCase_ = 3;
       onChanged();;
       return repoSourceBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloudbuild.v1.StorageSourceManifest, com.google.cloudbuild.v1.StorageSourceManifest.Builder, com.google.cloudbuild.v1.StorageSourceManifestOrBuilder> storageSourceManifestBuilder_;
+    /**
+     * <pre>
+     * If provided, get the source from this manifest in Google Cloud Storage.
+     * This feature is in Preview.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.StorageSourceManifest storage_source_manifest = 8;</code>
+     * @return Whether the storageSourceManifest field is set.
+     */
+    @java.lang.Override
+    public boolean hasStorageSourceManifest() {
+      return sourceCase_ == 8;
+    }
+    /**
+     * <pre>
+     * If provided, get the source from this manifest in Google Cloud Storage.
+     * This feature is in Preview.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.StorageSourceManifest storage_source_manifest = 8;</code>
+     * @return The storageSourceManifest.
+     */
+    @java.lang.Override
+    public com.google.cloudbuild.v1.StorageSourceManifest getStorageSourceManifest() {
+      if (storageSourceManifestBuilder_ == null) {
+        if (sourceCase_ == 8) {
+          return (com.google.cloudbuild.v1.StorageSourceManifest) source_;
+        }
+        return com.google.cloudbuild.v1.StorageSourceManifest.getDefaultInstance();
+      } else {
+        if (sourceCase_ == 8) {
+          return storageSourceManifestBuilder_.getMessage();
+        }
+        return com.google.cloudbuild.v1.StorageSourceManifest.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * If provided, get the source from this manifest in Google Cloud Storage.
+     * This feature is in Preview.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.StorageSourceManifest storage_source_manifest = 8;</code>
+     */
+    public Builder setStorageSourceManifest(com.google.cloudbuild.v1.StorageSourceManifest value) {
+      if (storageSourceManifestBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        source_ = value;
+        onChanged();
+      } else {
+        storageSourceManifestBuilder_.setMessage(value);
+      }
+      sourceCase_ = 8;
+      return this;
+    }
+    /**
+     * <pre>
+     * If provided, get the source from this manifest in Google Cloud Storage.
+     * This feature is in Preview.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.StorageSourceManifest storage_source_manifest = 8;</code>
+     */
+    public Builder setStorageSourceManifest(
+        com.google.cloudbuild.v1.StorageSourceManifest.Builder builderForValue) {
+      if (storageSourceManifestBuilder_ == null) {
+        source_ = builderForValue.build();
+        onChanged();
+      } else {
+        storageSourceManifestBuilder_.setMessage(builderForValue.build());
+      }
+      sourceCase_ = 8;
+      return this;
+    }
+    /**
+     * <pre>
+     * If provided, get the source from this manifest in Google Cloud Storage.
+     * This feature is in Preview.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.StorageSourceManifest storage_source_manifest = 8;</code>
+     */
+    public Builder mergeStorageSourceManifest(com.google.cloudbuild.v1.StorageSourceManifest value) {
+      if (storageSourceManifestBuilder_ == null) {
+        if (sourceCase_ == 8 &&
+            source_ != com.google.cloudbuild.v1.StorageSourceManifest.getDefaultInstance()) {
+          source_ = com.google.cloudbuild.v1.StorageSourceManifest.newBuilder((com.google.cloudbuild.v1.StorageSourceManifest) source_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          source_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceCase_ == 8) {
+          storageSourceManifestBuilder_.mergeFrom(value);
+        }
+        storageSourceManifestBuilder_.setMessage(value);
+      }
+      sourceCase_ = 8;
+      return this;
+    }
+    /**
+     * <pre>
+     * If provided, get the source from this manifest in Google Cloud Storage.
+     * This feature is in Preview.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.StorageSourceManifest storage_source_manifest = 8;</code>
+     */
+    public Builder clearStorageSourceManifest() {
+      if (storageSourceManifestBuilder_ == null) {
+        if (sourceCase_ == 8) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceCase_ == 8) {
+          sourceCase_ = 0;
+          source_ = null;
+        }
+        storageSourceManifestBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * If provided, get the source from this manifest in Google Cloud Storage.
+     * This feature is in Preview.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.StorageSourceManifest storage_source_manifest = 8;</code>
+     */
+    public com.google.cloudbuild.v1.StorageSourceManifest.Builder getStorageSourceManifestBuilder() {
+      return getStorageSourceManifestFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * If provided, get the source from this manifest in Google Cloud Storage.
+     * This feature is in Preview.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.StorageSourceManifest storage_source_manifest = 8;</code>
+     */
+    @java.lang.Override
+    public com.google.cloudbuild.v1.StorageSourceManifestOrBuilder getStorageSourceManifestOrBuilder() {
+      if ((sourceCase_ == 8) && (storageSourceManifestBuilder_ != null)) {
+        return storageSourceManifestBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceCase_ == 8) {
+          return (com.google.cloudbuild.v1.StorageSourceManifest) source_;
+        }
+        return com.google.cloudbuild.v1.StorageSourceManifest.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * If provided, get the source from this manifest in Google Cloud Storage.
+     * This feature is in Preview.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.StorageSourceManifest storage_source_manifest = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloudbuild.v1.StorageSourceManifest, com.google.cloudbuild.v1.StorageSourceManifest.Builder, com.google.cloudbuild.v1.StorageSourceManifestOrBuilder> 
+        getStorageSourceManifestFieldBuilder() {
+      if (storageSourceManifestBuilder_ == null) {
+        if (!(sourceCase_ == 8)) {
+          source_ = com.google.cloudbuild.v1.StorageSourceManifest.getDefaultInstance();
+        }
+        storageSourceManifestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v1.StorageSourceManifest, com.google.cloudbuild.v1.StorageSourceManifest.Builder, com.google.cloudbuild.v1.StorageSourceManifestOrBuilder>(
+                (com.google.cloudbuild.v1.StorageSourceManifest) source_,
+                getParentForChildren(),
+                isClean());
+        source_ = null;
+      }
+      sourceCase_ = 8;
+      onChanged();;
+      return storageSourceManifestBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
