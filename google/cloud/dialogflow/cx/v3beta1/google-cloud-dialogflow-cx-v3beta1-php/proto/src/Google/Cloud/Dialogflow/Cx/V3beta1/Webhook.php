@@ -66,6 +66,9 @@ class Webhook extends \Google\Protobuf\Internal\Message
      *           Required. The human-readable name of the webhook, unique within the agent.
      *     @type \Google\Cloud\Dialogflow\Cx\V3beta1\Webhook\GenericWebService $generic_web_service
      *           Configuration for a generic web service.
+     *     @type \Google\Cloud\Dialogflow\Cx\V3beta1\Webhook\ServiceDirectoryConfig $service_directory
+     *           Configuration for a [Service
+     *           Directory](https://cloud.google.com/service-directory) service.
      *     @type \Google\Protobuf\Duration $timeout
      *           Webhook execution timeout. Execution is considered failed if Dialogflow
      *           doesn't receive a response from webhook at the end of the timeout period.
@@ -166,6 +169,39 @@ class Webhook extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\Dialogflow\Cx\V3beta1\Webhook\GenericWebService::class);
         $this->writeOneof(4, $var);
+
+        return $this;
+    }
+
+    /**
+     * Configuration for a [Service
+     * Directory](https://cloud.google.com/service-directory) service.
+     *
+     * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig service_directory = 7;</code>
+     * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Webhook\ServiceDirectoryConfig|null
+     */
+    public function getServiceDirectory()
+    {
+        return $this->readOneof(7);
+    }
+
+    public function hasServiceDirectory()
+    {
+        return $this->hasOneof(7);
+    }
+
+    /**
+     * Configuration for a [Service
+     * Directory](https://cloud.google.com/service-directory) service.
+     *
+     * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.Webhook.ServiceDirectoryConfig service_directory = 7;</code>
+     * @param \Google\Cloud\Dialogflow\Cx\V3beta1\Webhook\ServiceDirectoryConfig $var
+     * @return $this
+     */
+    public function setServiceDirectory($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Dialogflow\Cx\V3beta1\Webhook\ServiceDirectoryConfig::class);
+        $this->writeOneof(7, $var);
 
         return $this;
     }

@@ -32,8 +32,8 @@ class MessageType
      * additional results). The client should stop sending additional audio
      * data, half-close the gRPC connection, and wait for any additional results
      * until the server closes the gRPC connection. This message is only sent if
-     * [`single_utterance`][google.cloud.dialogflow.cx.v3beta1.InputAudioConfig.single_utterance]
-     * was set to `true`, and is not used otherwise.
+     * [`single_utterance`][google.cloud.dialogflow.cx.v3beta1.InputAudioConfig.single_utterance] was set to
+     * `true`, and is not used otherwise.
      *
      * Generated from protobuf enum <code>END_OF_SINGLE_UTTERANCE = 2;</code>
      */

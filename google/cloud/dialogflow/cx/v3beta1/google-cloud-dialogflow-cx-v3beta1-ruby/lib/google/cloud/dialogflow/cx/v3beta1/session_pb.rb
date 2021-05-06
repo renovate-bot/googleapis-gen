@@ -4,7 +4,6 @@
 require 'google/protobuf'
 
 require 'google/api/annotations_pb'
-require 'google/api/client_pb'
 require 'google/api/field_behavior_pb'
 require 'google/api/resource_pb'
 require 'google/cloud/dialogflow/cx/v3beta1/audio_config_pb'
@@ -17,6 +16,7 @@ require 'google/protobuf/duration_pb'
 require 'google/protobuf/struct_pb'
 require 'google/rpc/status_pb'
 require 'google/type/latlng_pb'
+require 'google/api/client_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("google/cloud/dialogflow/cx/v3beta1/session.proto", :syntax => :proto3) do
     add_message "google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest" do

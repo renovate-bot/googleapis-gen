@@ -54,9 +54,8 @@ use Google\Cloud\Dialogflow\Cx\V3beta1\StreamingDetectIntentResponse;
 
 /**
  * Service Description: A session represents an interaction with a user. You retrieve user input
- * and pass it to the
- * [DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent]
- * method to determine user intent and respond.
+ * and pass it to the [DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent] method to determine
+ * user intent and respond.
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -471,13 +470,9 @@ class SessionsGapicClient
     }
 
     /**
-     * Fulfills a matched intent returned by
-     * [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent].
-     * Must be called after
-     * [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent],
-     * with input from
-     * [MatchIntentResponse][google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse].
-     * Otherwise, the behavior is undefined.
+     * Fulfills a matched intent returned by [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent].
+     * Must be called after [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent], with input from
+     * [MatchIntentResponse][google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse]. Otherwise, the behavior is undefined.
      *
      * Sample code:
      * ```

@@ -59,6 +59,10 @@ class Webhook(proto.Message):
             webhook, unique within the agent.
         generic_web_service (google.cloud.dialogflowcx_v3beta1.types.Webhook.GenericWebService):
             Configuration for a generic web service.
+        service_directory (google.cloud.dialogflowcx_v3beta1.types.Webhook.ServiceDirectoryConfig):
+            Configuration for a `Service
+            Directory <https://cloud.google.com/service-directory>`__
+            service.
         timeout (google.protobuf.duration_pb2.Duration):
             Webhook execution timeout. Execution is
             considered failed if Dialogflow doesn't receive
@@ -102,6 +106,33 @@ class Webhook(proto.Message):
             number=4,
         )
 
+    class ServiceDirectoryConfig(proto.Message):
+        r"""Represents configuration for a `Service
+        Directory <https://cloud.google.com/service-directory>`__ service.
+
+        Attributes:
+            service (str):
+                Required. The name of `Service
+                Directory <https://cloud.google.com/service-directory>`__
+                service. Format:
+                ``projects/<Project ID>/locations/<Location ID>/namespaces/<Namespace ID>/services/<Service ID>``.
+                ``Location ID`` of the service directory must be the same as
+                the location of the agent.
+            generic_web_service (google.cloud.dialogflowcx_v3beta1.types.Webhook.GenericWebService):
+                Generic Service configuration of this
+                webhook.
+        """
+
+        service = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        generic_web_service = proto.Field(
+            proto.MESSAGE,
+            number=2,
+            message='Webhook.GenericWebService',
+        )
+
     name = proto.Field(
         proto.STRING,
         number=1,
@@ -115,6 +146,12 @@ class Webhook(proto.Message):
         number=4,
         oneof='webhook',
         message=GenericWebService,
+    )
+    service_directory = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        oneof='webhook',
+        message=ServiceDirectoryConfig,
     )
     timeout = proto.Field(
         proto.MESSAGE,

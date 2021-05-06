@@ -25,8 +25,7 @@ class QueryResult extends \Google\Protobuf\Internal\Message
      */
     protected $language_code = '';
     /**
-     * The collected [session
-     * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+     * The collected [session parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
@@ -59,29 +58,25 @@ class QueryResult extends \Google\Protobuf\Internal\Message
      */
     private $webhook_statuses;
     /**
-     * The list of webhook payload in
-     * [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload],
-     * in the order of call sequence. If some webhook call fails or doesn't return
+     * The list of webhook payload in [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload], in
+     * the order of call sequence. If some webhook call fails or doesn't return
      * any payload, an empty `Struct` would be used instead.
      *
      * Generated from protobuf field <code>repeated .google.protobuf.Struct webhook_payloads = 6;</code>
      */
     private $webhook_payloads;
     /**
-     * The current [Page][google.cloud.dialogflow.cx.v3beta1.Page]. Some, not all
-     * fields are filled in this message, including but not limited to `name` and
-     * `display_name`.
+     * The current [Page][google.cloud.dialogflow.cx.v3beta1.Page]. Some, not all fields are filled in this message,
+     * including but not limited to `name` and `display_name`.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.Page current_page = 7;</code>
      */
     protected $current_page = null;
     /**
-     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the
-     * conversational query. Some, not all fields are filled in this message,
-     * including but not limited to: `name` and `display_name`. This field is
-     * deprecated, please use
-     * [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match]
-     * instead.
+     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the conversational query. Some, not all fields
+     * are filled in this message, including but not limited to: `name` and
+     * `display_name`.
+     * This field is deprecated, please use [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match] instead.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
      * @deprecated
@@ -94,9 +89,7 @@ class QueryResult extends \Google\Protobuf\Internal\Message
      * help match the best intent within the classification threshold.
      * This value may change for the same end-user expression at any time due to a
      * model retraining or change in implementation.
-     * This field is deprecated, please use
-     * [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match]
-     * instead.
+     * This field is deprecated, please use [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match] instead.
      *
      * Generated from protobuf field <code>float intent_detection_confidence = 9 [deprecated = true];</code>
      * @deprecated
@@ -119,8 +112,7 @@ class QueryResult extends \Google\Protobuf\Internal\Message
     /**
      * The sentiment analyss result, which depends on
      * [`analyze_query_text_sentiment`]
-     * [google.cloud.dialogflow.cx.v3beta1.QueryParameters.analyze_query_text_sentiment],
-     * specified in the request.
+     * [google.cloud.dialogflow.cx.v3beta1.QueryParameters.analyze_query_text_sentiment], specified in the request.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult sentiment_analysis_result = 17;</code>
      */
@@ -134,28 +126,26 @@ class QueryResult extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $text
-     *           If [natural language text][google.cloud.dialogflow.cx.v3beta1.TextInput]
-     *           was provided as input, this field will contain a copy of the text.
+     *           If [natural language text][google.cloud.dialogflow.cx.v3beta1.TextInput] was provided as input, this field
+     *           will contain a copy of the text.
      *     @type string $trigger_intent
-     *           If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was
-     *           provided as input, this field will contain a copy of the intent
-     *           identifier. Format: `projects/<Project ID>/locations/<Location
-     *           ID>/agents/<Agent ID>/intents/<Intent ID>`.
+     *           If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was provided as input, this field will
+     *           contain a copy of the intent identifier.
+     *           Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     *           ID>/intents/<Intent ID>`.
      *     @type string $transcript
-     *           If [natural language speech
-     *           audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as
-     *           input, this field will contain the transcript for the audio.
+     *           If [natural language speech audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as input,
+     *           this field will contain the transcript for the audio.
      *     @type string $trigger_event
-     *           If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided
-     *           as input, this field will contain the name of the event.
+     *           If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided as input, this field will contain
+     *           the name of the event.
      *     @type string $language_code
      *           The language that was triggered during intent detection.
      *           See [Language
      *           Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
      *           for a list of the currently supported language codes.
      *     @type \Google\Protobuf\Struct $parameters
-     *           The collected [session
-     *           parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+     *           The collected [session parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
      *           Depending on your protocol or client library language, this is a
      *           map, associative array, symbol table, dictionary, or JSON object
      *           composed of a collection of (MapKey, MapValue) pairs:
@@ -176,21 +166,17 @@ class QueryResult extends \Google\Protobuf\Internal\Message
      *     @type \Google\Rpc\Status[]|\Google\Protobuf\Internal\RepeatedField $webhook_statuses
      *           The list of webhook call status in the order of call sequence.
      *     @type \Google\Protobuf\Struct[]|\Google\Protobuf\Internal\RepeatedField $webhook_payloads
-     *           The list of webhook payload in
-     *           [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload],
-     *           in the order of call sequence. If some webhook call fails or doesn't return
+     *           The list of webhook payload in [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload], in
+     *           the order of call sequence. If some webhook call fails or doesn't return
      *           any payload, an empty `Struct` would be used instead.
      *     @type \Google\Cloud\Dialogflow\Cx\V3beta1\Page $current_page
-     *           The current [Page][google.cloud.dialogflow.cx.v3beta1.Page]. Some, not all
-     *           fields are filled in this message, including but not limited to `name` and
-     *           `display_name`.
+     *           The current [Page][google.cloud.dialogflow.cx.v3beta1.Page]. Some, not all fields are filled in this message,
+     *           including but not limited to `name` and `display_name`.
      *     @type \Google\Cloud\Dialogflow\Cx\V3beta1\Intent $intent
-     *           The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the
-     *           conversational query. Some, not all fields are filled in this message,
-     *           including but not limited to: `name` and `display_name`. This field is
-     *           deprecated, please use
-     *           [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match]
-     *           instead.
+     *           The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the conversational query. Some, not all fields
+     *           are filled in this message, including but not limited to: `name` and
+     *           `display_name`.
+     *           This field is deprecated, please use [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match] instead.
      *     @type float $intent_detection_confidence
      *           The intent detection confidence. Values range from 0.0 (completely
      *           uncertain) to 1.0 (completely certain).
@@ -198,9 +184,7 @@ class QueryResult extends \Google\Protobuf\Internal\Message
      *           help match the best intent within the classification threshold.
      *           This value may change for the same end-user expression at any time due to a
      *           model retraining or change in implementation.
-     *           This field is deprecated, please use
-     *           [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match]
-     *           instead.
+     *           This field is deprecated, please use [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match] instead.
      *     @type \Google\Cloud\Dialogflow\Cx\V3beta1\Match $match
      *           Intent match result, could be an intent or an event.
      *     @type \Google\Protobuf\Struct $diagnostic_info
@@ -210,8 +194,7 @@ class QueryResult extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\Dialogflow\Cx\V3beta1\SentimentAnalysisResult $sentiment_analysis_result
      *           The sentiment analyss result, which depends on
      *           [`analyze_query_text_sentiment`]
-     *           [google.cloud.dialogflow.cx.v3beta1.QueryParameters.analyze_query_text_sentiment],
-     *           specified in the request.
+     *           [google.cloud.dialogflow.cx.v3beta1.QueryParameters.analyze_query_text_sentiment], specified in the request.
      * }
      */
     public function __construct($data = NULL) {
@@ -220,8 +203,8 @@ class QueryResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If [natural language text][google.cloud.dialogflow.cx.v3beta1.TextInput]
-     * was provided as input, this field will contain a copy of the text.
+     * If [natural language text][google.cloud.dialogflow.cx.v3beta1.TextInput] was provided as input, this field
+     * will contain a copy of the text.
      *
      * Generated from protobuf field <code>string text = 1;</code>
      * @return string
@@ -237,8 +220,8 @@ class QueryResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If [natural language text][google.cloud.dialogflow.cx.v3beta1.TextInput]
-     * was provided as input, this field will contain a copy of the text.
+     * If [natural language text][google.cloud.dialogflow.cx.v3beta1.TextInput] was provided as input, this field
+     * will contain a copy of the text.
      *
      * Generated from protobuf field <code>string text = 1;</code>
      * @param string $var
@@ -253,10 +236,10 @@ class QueryResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was
-     * provided as input, this field will contain a copy of the intent
-     * identifier. Format: `projects/<Project ID>/locations/<Location
-     * ID>/agents/<Agent ID>/intents/<Intent ID>`.
+     * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was provided as input, this field will
+     * contain a copy of the intent identifier.
+     * Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     * ID>/intents/<Intent ID>`.
      *
      * Generated from protobuf field <code>string trigger_intent = 11 [(.google.api.resource_reference) = {</code>
      * @return string
@@ -272,10 +255,10 @@ class QueryResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was
-     * provided as input, this field will contain a copy of the intent
-     * identifier. Format: `projects/<Project ID>/locations/<Location
-     * ID>/agents/<Agent ID>/intents/<Intent ID>`.
+     * If an [intent][google.cloud.dialogflow.cx.v3beta1.IntentInput] was provided as input, this field will
+     * contain a copy of the intent identifier.
+     * Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     * ID>/intents/<Intent ID>`.
      *
      * Generated from protobuf field <code>string trigger_intent = 11 [(.google.api.resource_reference) = {</code>
      * @param string $var
@@ -290,9 +273,8 @@ class QueryResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If [natural language speech
-     * audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as
-     * input, this field will contain the transcript for the audio.
+     * If [natural language speech audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as input,
+     * this field will contain the transcript for the audio.
      *
      * Generated from protobuf field <code>string transcript = 12;</code>
      * @return string
@@ -308,9 +290,8 @@ class QueryResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If [natural language speech
-     * audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as
-     * input, this field will contain the transcript for the audio.
+     * If [natural language speech audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as input,
+     * this field will contain the transcript for the audio.
      *
      * Generated from protobuf field <code>string transcript = 12;</code>
      * @param string $var
@@ -325,8 +306,8 @@ class QueryResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided
-     * as input, this field will contain the name of the event.
+     * If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided as input, this field will contain
+     * the name of the event.
      *
      * Generated from protobuf field <code>string trigger_event = 14;</code>
      * @return string
@@ -342,8 +323,8 @@ class QueryResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided
-     * as input, this field will contain the name of the event.
+     * If an [event][google.cloud.dialogflow.cx.v3beta1.EventInput] was provided as input, this field will contain
+     * the name of the event.
      *
      * Generated from protobuf field <code>string trigger_event = 14;</code>
      * @param string $var
@@ -390,8 +371,7 @@ class QueryResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The collected [session
-     * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+     * The collected [session parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
@@ -425,8 +405,7 @@ class QueryResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The collected [session
-     * parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+     * The collected [session parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
@@ -510,9 +489,8 @@ class QueryResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The list of webhook payload in
-     * [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload],
-     * in the order of call sequence. If some webhook call fails or doesn't return
+     * The list of webhook payload in [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload], in
+     * the order of call sequence. If some webhook call fails or doesn't return
      * any payload, an empty `Struct` would be used instead.
      *
      * Generated from protobuf field <code>repeated .google.protobuf.Struct webhook_payloads = 6;</code>
@@ -524,9 +502,8 @@ class QueryResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The list of webhook payload in
-     * [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload],
-     * in the order of call sequence. If some webhook call fails or doesn't return
+     * The list of webhook payload in [WebhookResponse.payload][google.cloud.dialogflow.cx.v3beta1.WebhookResponse.payload], in
+     * the order of call sequence. If some webhook call fails or doesn't return
      * any payload, an empty `Struct` would be used instead.
      *
      * Generated from protobuf field <code>repeated .google.protobuf.Struct webhook_payloads = 6;</code>
@@ -542,9 +519,8 @@ class QueryResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The current [Page][google.cloud.dialogflow.cx.v3beta1.Page]. Some, not all
-     * fields are filled in this message, including but not limited to `name` and
-     * `display_name`.
+     * The current [Page][google.cloud.dialogflow.cx.v3beta1.Page]. Some, not all fields are filled in this message,
+     * including but not limited to `name` and `display_name`.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.Page current_page = 7;</code>
      * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Page|null
@@ -565,9 +541,8 @@ class QueryResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The current [Page][google.cloud.dialogflow.cx.v3beta1.Page]. Some, not all
-     * fields are filled in this message, including but not limited to `name` and
-     * `display_name`.
+     * The current [Page][google.cloud.dialogflow.cx.v3beta1.Page]. Some, not all fields are filled in this message,
+     * including but not limited to `name` and `display_name`.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.Page current_page = 7;</code>
      * @param \Google\Cloud\Dialogflow\Cx\V3beta1\Page $var
@@ -582,12 +557,10 @@ class QueryResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the
-     * conversational query. Some, not all fields are filled in this message,
-     * including but not limited to: `name` and `display_name`. This field is
-     * deprecated, please use
-     * [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match]
-     * instead.
+     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the conversational query. Some, not all fields
+     * are filled in this message, including but not limited to: `name` and
+     * `display_name`.
+     * This field is deprecated, please use [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match] instead.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
      * @return \Google\Cloud\Dialogflow\Cx\V3beta1\Intent|null
@@ -612,12 +585,10 @@ class QueryResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the
-     * conversational query. Some, not all fields are filled in this message,
-     * including but not limited to: `name` and `display_name`. This field is
-     * deprecated, please use
-     * [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match]
-     * instead.
+     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the conversational query. Some, not all fields
+     * are filled in this message, including but not limited to: `name` and
+     * `display_name`.
+     * This field is deprecated, please use [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match] instead.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
      * @param \Google\Cloud\Dialogflow\Cx\V3beta1\Intent $var
@@ -640,9 +611,7 @@ class QueryResult extends \Google\Protobuf\Internal\Message
      * help match the best intent within the classification threshold.
      * This value may change for the same end-user expression at any time due to a
      * model retraining or change in implementation.
-     * This field is deprecated, please use
-     * [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match]
-     * instead.
+     * This field is deprecated, please use [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match] instead.
      *
      * Generated from protobuf field <code>float intent_detection_confidence = 9 [deprecated = true];</code>
      * @return float
@@ -661,9 +630,7 @@ class QueryResult extends \Google\Protobuf\Internal\Message
      * help match the best intent within the classification threshold.
      * This value may change for the same end-user expression at any time due to a
      * model retraining or change in implementation.
-     * This field is deprecated, please use
-     * [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match]
-     * instead.
+     * This field is deprecated, please use [QueryResult.match][google.cloud.dialogflow.cx.v3beta1.QueryResult.match] instead.
      *
      * Generated from protobuf field <code>float intent_detection_confidence = 9 [deprecated = true];</code>
      * @param float $var
@@ -758,8 +725,7 @@ class QueryResult extends \Google\Protobuf\Internal\Message
     /**
      * The sentiment analyss result, which depends on
      * [`analyze_query_text_sentiment`]
-     * [google.cloud.dialogflow.cx.v3beta1.QueryParameters.analyze_query_text_sentiment],
-     * specified in the request.
+     * [google.cloud.dialogflow.cx.v3beta1.QueryParameters.analyze_query_text_sentiment], specified in the request.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult sentiment_analysis_result = 17;</code>
      * @return \Google\Cloud\Dialogflow\Cx\V3beta1\SentimentAnalysisResult|null
@@ -782,8 +748,7 @@ class QueryResult extends \Google\Protobuf\Internal\Message
     /**
      * The sentiment analyss result, which depends on
      * [`analyze_query_text_sentiment`]
-     * [google.cloud.dialogflow.cx.v3beta1.QueryParameters.analyze_query_text_sentiment],
-     * specified in the request.
+     * [google.cloud.dialogflow.cx.v3beta1.QueryParameters.analyze_query_text_sentiment], specified in the request.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult sentiment_analysis_result = 17;</code>
      * @param \Google\Cloud\Dialogflow\Cx\V3beta1\SentimentAnalysisResult $var
