@@ -15,6 +15,9 @@
 #
 import proto  # type: ignore
 
+from google.cloud.dialogflow_v2beta1.types import audio_config
+from google.cloud.dialogflow_v2beta1.types import fulfillment as gcd_fulfillment
+from google.protobuf import field_mask_pb2  # type: ignore
 from google.protobuf import timestamp_pb2  # type: ignore
 
 
@@ -22,8 +25,15 @@ __protobuf__ = proto.module(
     package='google.cloud.dialogflow.v2beta1',
     manifest={
         'Environment',
+        'TextToSpeechSettings',
         'ListEnvironmentsRequest',
         'ListEnvironmentsResponse',
+        'GetEnvironmentRequest',
+        'CreateEnvironmentRequest',
+        'UpdateEnvironmentRequest',
+        'DeleteEnvironmentRequest',
+        'GetEnvironmentHistoryRequest',
+        'EnvironmentHistory',
     },
 )
 
@@ -75,6 +85,12 @@ class Environment(proto.Message):
             Output only. The last update time of this
             environment. This field is read-only, i.e., it
             cannot be set by create and update methods.
+        text_to_speech_settings (google.cloud.dialogflow_v2beta1.types.TextToSpeechSettings):
+            Optional. Text to speech settings for this
+            environment.
+        fulfillment (google.cloud.dialogflow_v2beta1.types.Fulfillment):
+            Optional. The fulfillment settings to use for
+            this environment.
     """
     class State(proto.Enum):
         r"""Represents an environment state. When an environment is pointed to a
@@ -110,6 +126,65 @@ class Environment(proto.Message):
         proto.MESSAGE,
         number=5,
         message=timestamp_pb2.Timestamp,
+    )
+    text_to_speech_settings = proto.Field(
+        proto.MESSAGE,
+        number=7,
+        message='TextToSpeechSettings',
+    )
+    fulfillment = proto.Field(
+        proto.MESSAGE,
+        number=8,
+        message=gcd_fulfillment.Fulfillment,
+    )
+
+
+class TextToSpeechSettings(proto.Message):
+    r"""Instructs the speech synthesizer on how to generate the
+    output audio content.
+
+    Attributes:
+        enable_text_to_speech (bool):
+            Optional. Indicates whether text to speech is
+            enabled. Even when this field is false, other
+            settings in this proto are still retained.
+        output_audio_encoding (google.cloud.dialogflow_v2beta1.types.OutputAudioEncoding):
+            Required. Audio encoding of the synthesized
+            audio content.
+        sample_rate_hertz (int):
+            Optional. The synthesis sample rate (in
+            hertz) for this audio. If not provided, then the
+            synthesizer will use the default sample rate
+            based on the audio encoding. If this is
+            different from the voice's natural sample rate,
+            then the synthesizer will honor this request by
+            converting to the desired sample rate (which
+            might result in worse audio quality).
+        synthesize_speech_configs (Sequence[google.cloud.dialogflow_v2beta1.types.TextToSpeechSettings.SynthesizeSpeechConfigsEntry]):
+            Optional. Configuration of how speech should
+            be synthesized, mapping from language
+            (https://cloud.google.com/dialogflow/docs/reference/language)
+            to SynthesizeSpeechConfig.
+    """
+
+    enable_text_to_speech = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
+    output_audio_encoding = proto.Field(
+        proto.ENUM,
+        number=2,
+        enum=audio_config.OutputAudioEncoding,
+    )
+    sample_rate_hertz = proto.Field(
+        proto.INT32,
+        number=3,
+    )
+    synthesize_speech_configs = proto.MapField(
+        proto.STRING,
+        proto.MESSAGE,
+        number=4,
+        message=audio_config.SynthesizeSpeechConfig,
     )
 
 
@@ -173,6 +248,211 @@ class ListEnvironmentsResponse(proto.Message):
     next_page_token = proto.Field(
         proto.STRING,
         number=2,
+    )
+
+
+class GetEnvironmentRequest(proto.Message):
+    r"""The request message for
+    [Environments.GetEnvironment][google.cloud.dialogflow.v2beta1.Environments.GetEnvironment].
+
+    Attributes:
+        name (str):
+            Required. The name of the environment. Supported formats:
+
+            -  ``projects/<Project Number / ID>/agent/environments/<Environment ID>``
+            -  ``projects/<Project Number / ID>/locations/<Location ID>/agent/environments/<Environment ID>``
+    """
+
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+
+
+class CreateEnvironmentRequest(proto.Message):
+    r"""The request message for
+    [Environments.CreateEnvironment][google.cloud.dialogflow.v2beta1.Environments.CreateEnvironment].
+
+    Attributes:
+        parent (str):
+            Required. The agent to create an environment for. Supported
+            formats:
+
+            -  ``projects/<Project Number / ID>/agent``
+            -  ``projects/<Project Number / ID>/locations/<Location ID>/agent``
+        environment (google.cloud.dialogflow_v2beta1.types.Environment):
+            Required. The environment to create.
+        environment_id (str):
+            Required. The unique id of the new
+            environment.
+    """
+
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    environment = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message='Environment',
+    )
+    environment_id = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+
+
+class UpdateEnvironmentRequest(proto.Message):
+    r"""The request message for
+    [Environments.UpdateEnvironment][google.cloud.dialogflow.v2beta1.Environments.UpdateEnvironment].
+
+    Attributes:
+        environment (google.cloud.dialogflow_v2beta1.types.Environment):
+            Required. The environment to update.
+        update_mask (google.protobuf.field_mask_pb2.FieldMask):
+            Required. The mask to control which fields
+            get updated.
+        allow_load_to_draft_and_discard_changes (bool):
+            Optional. This field is used to prevent accidental overwrite
+            of the draft environment, which is an operation that cannot
+            be undone. To confirm that the caller desires this
+            overwrite, this field must be explicitly set to true when
+            updating the draft environment (environment ID = ``-``).
+    """
+
+    environment = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message='Environment',
+    )
+    update_mask = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=field_mask_pb2.FieldMask,
+    )
+    allow_load_to_draft_and_discard_changes = proto.Field(
+        proto.BOOL,
+        number=3,
+    )
+
+
+class DeleteEnvironmentRequest(proto.Message):
+    r"""The request message for
+    [Environments.DeleteEnvironment][google.cloud.dialogflow.v2beta1.Environments.DeleteEnvironment].
+
+    Attributes:
+        name (str):
+            Required. The name of the environment to delete. / Format:
+
+            -  ``projects/<Project Number / ID>/agent/environments/<Environment ID>``
+            -  ``projects/<Project Number / ID>/locations/<Location ID>/agent/environments/<Environment ID>``
+    """
+
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+
+
+class GetEnvironmentHistoryRequest(proto.Message):
+    r"""The request message for
+    [Environments.GetEnvironmentHistory][google.cloud.dialogflow.v2beta1.Environments.GetEnvironmentHistory].
+
+    Attributes:
+        parent (str):
+            Required. The name of the environment to retrieve history
+            for. Supported formats:
+
+            -  ``projects/<Project Number / ID>/agent/environments/<Environment ID>``
+            -  ``projects/<Project Number / ID>/locations/<Location ID>/agent/environments/<Environment ID>``
+        page_size (int):
+            Optional. The maximum number of items to
+            return in a single page. By default 100 and at
+            most 1000.
+        page_token (str):
+            Optional. The next_page_token value returned from a previous
+            list request.
+    """
+
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    page_size = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    page_token = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+
+
+class EnvironmentHistory(proto.Message):
+    r"""The response message for
+    [Environments.GetEnvironmentHistory][google.cloud.dialogflow.v2beta1.Environments.GetEnvironmentHistory].
+
+    Attributes:
+        parent (str):
+            Output only. The name of the environment this history is
+            for. Supported formats:
+
+            -  ``projects/<Project Number / ID>/agent/environments/<Environment ID>``
+            -  ``projects/<Project Number / ID>/locations/<Location ID>/agent/environments/<Environment ID>``
+        entries (Sequence[google.cloud.dialogflow_v2beta1.types.EnvironmentHistory.Entry]):
+            Output only. The list of agent environments. There will be a
+            maximum number of items returned based on the page_size
+            field in the request.
+        next_page_token (str):
+            Output only. Token to retrieve the next page
+            of results, or empty if there are no more
+            results in the list.
+    """
+
+    class Entry(proto.Message):
+        r"""Represents an environment history entry.
+        Attributes:
+            agent_version (str):
+                The agent version loaded into this
+                environment history entry.
+            description (str):
+                The developer-provided description for this
+                environment history entry.
+            create_time (google.protobuf.timestamp_pb2.Timestamp):
+                The creation time of this environment history
+                entry.
+        """
+
+        agent_version = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        description = proto.Field(
+            proto.STRING,
+            number=2,
+        )
+        create_time = proto.Field(
+            proto.MESSAGE,
+            number=3,
+            message=timestamp_pb2.Timestamp,
+        )
+
+    @property
+    def raw_page(self):
+        return self
+
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    entries = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
+        message=Entry,
+    )
+    next_page_token = proto.Field(
+        proto.STRING,
+        number=3,
     )
 
 

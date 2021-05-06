@@ -29,11 +29,13 @@
     "documents",
     "entity types",
     "environments",
+    "fulfillments",
     "intents",
     "knowledge bases",
     "participants",
     "session entity types",
-    "sessions"
+    "sessions",
+    "versions"
   ],
   "scripts": {
     "clean": "gts clean",

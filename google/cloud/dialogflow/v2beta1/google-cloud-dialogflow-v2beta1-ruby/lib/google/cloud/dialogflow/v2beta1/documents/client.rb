@@ -419,6 +419,8 @@ module Google
 
             ##
             # Create documents by importing data from external sources.
+            # Dialogflow supports up to 350 documents in each request. If you try to
+            # import more, Dialogflow will return an error.
             #
             # @overload import_documents(request, options = nil)
             #   Pass arguments to `import_documents` via a request object, either of type

@@ -23,14 +23,14 @@ class Context
         \GPBMetadata\Google\Protobuf\Struct::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Û"
--google/cloud/dialogflow/v2beta1/context.protogoogle.cloud.dialogflow.v2beta1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.protogoogle/protobuf/empty.proto google/protobuf/field_mask.protogoogle/protobuf/struct.proto"ƒ
+Ø#
+-google/cloud/dialogflow/v2beta1/context.protogoogle.cloud.dialogflow.v2beta1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.protogoogle/protobuf/empty.proto google/protobuf/field_mask.protogoogle/protobuf/struct.proto"€
 Context
 name (	
 lifespan_count (+
 
-parameters (2.google.protobuf.Struct:¤êA 
-!dialogflow.googleapis.com/Context>projects/{project}/agent/sessions/{session}/contexts/{context}fprojects/{project}/agent/environments/{environment}/users/{user}/sessions/{session}/contexts/{context}Sprojects/{project}/locations/{location}/agent/sessions/{session}/contexts/{context}"w
+parameters (2.google.protobuf.Struct:¡êA
+!dialogflow.googleapis.com/Context>projects/{project}/agent/sessions/{session}/contexts/{context}fprojects/{project}/agent/environments/{environment}/users/{user}/sessions/{session}/contexts/{context}Sprojects/{project}/locations/{location}/agent/sessions/{session}/contexts/{context}{projects/{project}/locations/{location}/agent/environments/{environment}/users/{user}/sessions/{session}/contexts/{context}"w
 ListContextsRequest9
 parent (	B)àAúA#!dialogflow.googleapis.com/Context
 	page_size (

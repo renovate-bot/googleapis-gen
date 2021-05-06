@@ -5,8 +5,7 @@ package com.google.cloud.dialogflow.v2beta1;
 
 /**
  * <pre>
- * Request message for
- * [AnswerRecords.GetAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.GetAnswerRecord].
+ * Request message for [AnswerRecords.GetAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.GetAnswerRecord].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.GetAnswerRecordRequest}
@@ -298,8 +297,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Request message for
-   * [AnswerRecords.GetAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.GetAnswerRecord].
+   * Request message for [AnswerRecords.GetAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.GetAnswerRecord].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.GetAnswerRecordRequest}

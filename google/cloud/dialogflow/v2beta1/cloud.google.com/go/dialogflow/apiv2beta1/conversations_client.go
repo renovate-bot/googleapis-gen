@@ -152,8 +152,7 @@ type ConversationsClient struct {
 
 // NewConversationsClient creates a new conversations client.
 //
-// Service for managing
-// Conversations.
+// Service for managing Conversations.
 func NewConversationsClient(ctx context.Context, opts ...option.ClientOption) (*ConversationsClient, error) {
 	clientOpts := defaultConversationsClientOptions()
 
@@ -221,14 +220,11 @@ func (c *ConversationsClient) setGoogleClientInfo(keyval ...string) {
 // For Assist Stage, there’s no dialogflow agent responding to user queries.
 // But we will provide suggestions which are generated from conversation.
 //
-// If
-// Conversation.conversation_profile
-// is configured for a dialogflow agent, conversation will start from
-// Automated Agent Stage, otherwise, it will start from Assist Stage. And
-// during Automated Agent Stage, once an
-// Intent with
-// Intent.live_agent_handoff
-// is triggered, conversation will transfer to Assist Stage.
+// If Conversation.conversation_profile is configured for a dialogflow
+// agent, conversation will start from Automated Agent Stage, otherwise, it
+// will start from Assist Stage. And during Automated Agent Stage, once an
+// Intent with Intent.live_agent_handoff is triggered, conversation
+// will transfer to Assist Stage.
 func (c *ConversationsClient) CreateConversation(ctx context.Context, req *dialogflowpb.CreateConversationRequest, opts ...gax.CallOption) (*dialogflowpb.Conversation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)

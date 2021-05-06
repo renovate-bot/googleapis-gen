@@ -125,9 +125,21 @@ from .entity_type import (
     UpdateEntityTypeRequest,
 )
 from .environment import (
+    CreateEnvironmentRequest,
+    DeleteEnvironmentRequest,
     Environment,
+    EnvironmentHistory,
+    GetEnvironmentHistoryRequest,
+    GetEnvironmentRequest,
     ListEnvironmentsRequest,
     ListEnvironmentsResponse,
+    TextToSpeechSettings,
+    UpdateEnvironmentRequest,
+)
+from .fulfillment import (
+    Fulfillment,
+    GetFulfillmentRequest,
+    UpdateFulfillmentRequest,
 )
 from .gcs import (
     GcsSource,
@@ -220,6 +232,15 @@ from .session_entity_type import (
 from .validation_result import (
     ValidationError,
     ValidationResult,
+)
+from .version import (
+    CreateVersionRequest,
+    DeleteVersionRequest,
+    GetVersionRequest,
+    ListVersionsRequest,
+    ListVersionsResponse,
+    UpdateVersionRequest,
+    Version,
 )
 from .webhook import (
     OriginalDetectIntentRequest,
@@ -321,9 +342,19 @@ __all__ = (
     'ListEntityTypesRequest',
     'ListEntityTypesResponse',
     'UpdateEntityTypeRequest',
+    'CreateEnvironmentRequest',
+    'DeleteEnvironmentRequest',
     'Environment',
+    'EnvironmentHistory',
+    'GetEnvironmentHistoryRequest',
+    'GetEnvironmentRequest',
     'ListEnvironmentsRequest',
     'ListEnvironmentsResponse',
+    'TextToSpeechSettings',
+    'UpdateEnvironmentRequest',
+    'Fulfillment',
+    'GetFulfillmentRequest',
+    'UpdateFulfillmentRequest',
     'GcsSource',
     'GcsSources',
     'HumanAgentAssistantEvent',
@@ -400,6 +431,13 @@ __all__ = (
     'UpdateSessionEntityTypeRequest',
     'ValidationError',
     'ValidationResult',
+    'CreateVersionRequest',
+    'DeleteVersionRequest',
+    'GetVersionRequest',
+    'ListVersionsRequest',
+    'ListVersionsResponse',
+    'UpdateVersionRequest',
+    'Version',
     'OriginalDetectIntentRequest',
     'WebhookRequest',
     'WebhookResponse',

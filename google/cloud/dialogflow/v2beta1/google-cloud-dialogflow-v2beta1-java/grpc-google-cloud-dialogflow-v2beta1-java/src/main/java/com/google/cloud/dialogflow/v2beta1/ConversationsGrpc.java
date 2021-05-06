@@ -4,8 +4,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
  * <pre>
- * Service for managing
- * [Conversations][google.cloud.dialogflow.v2beta1.Conversation].
+ * Service for managing [Conversations][google.cloud.dialogflow.v2beta1.Conversation].
  * </pre>
  */
 @javax.annotation.Generated(
@@ -250,8 +249,7 @@ public final class ConversationsGrpc {
 
   /**
    * <pre>
-   * Service for managing
-   * [Conversations][google.cloud.dialogflow.v2beta1.Conversation].
+   * Service for managing [Conversations][google.cloud.dialogflow.v2beta1.Conversation].
    * </pre>
    */
   public static abstract class ConversationsImplBase implements io.grpc.BindableService {
@@ -267,14 +265,11 @@ public final class ConversationsGrpc {
      * user queries.
      * For Assist Stage, there's no dialogflow agent responding to user queries.
      * But we will provide suggestions which are generated from conversation.
-     * If
-     * [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile]
-     * is configured for a dialogflow agent, conversation will start from
-     * `Automated Agent Stage`, otherwise, it will start from `Assist Stage`. And
-     * during `Automated Agent Stage`, once an
-     * [Intent][google.cloud.dialogflow.v2beta1.Intent] with
-     * [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff]
-     * is triggered, conversation will transfer to Assist Stage.
+     * If [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile] is configured for a dialogflow
+     * agent, conversation will start from `Automated Agent Stage`, otherwise, it
+     * will start from `Assist Stage`. And during `Automated Agent Stage`, once an
+     * [Intent][google.cloud.dialogflow.v2beta1.Intent] with [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff] is triggered, conversation
+     * will transfer to Assist Stage.
      * </pre>
      */
     public void createConversation(com.google.cloud.dialogflow.v2beta1.CreateConversationRequest request,
@@ -388,8 +383,7 @@ public final class ConversationsGrpc {
 
   /**
    * <pre>
-   * Service for managing
-   * [Conversations][google.cloud.dialogflow.v2beta1.Conversation].
+   * Service for managing [Conversations][google.cloud.dialogflow.v2beta1.Conversation].
    * </pre>
    */
   public static final class ConversationsStub extends io.grpc.stub.AbstractAsyncStub<ConversationsStub> {
@@ -415,14 +409,11 @@ public final class ConversationsGrpc {
      * user queries.
      * For Assist Stage, there's no dialogflow agent responding to user queries.
      * But we will provide suggestions which are generated from conversation.
-     * If
-     * [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile]
-     * is configured for a dialogflow agent, conversation will start from
-     * `Automated Agent Stage`, otherwise, it will start from `Assist Stage`. And
-     * during `Automated Agent Stage`, once an
-     * [Intent][google.cloud.dialogflow.v2beta1.Intent] with
-     * [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff]
-     * is triggered, conversation will transfer to Assist Stage.
+     * If [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile] is configured for a dialogflow
+     * agent, conversation will start from `Automated Agent Stage`, otherwise, it
+     * will start from `Assist Stage`. And during `Automated Agent Stage`, once an
+     * [Intent][google.cloud.dialogflow.v2beta1.Intent] with [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff] is triggered, conversation
+     * will transfer to Assist Stage.
      * </pre>
      */
     public void createConversation(com.google.cloud.dialogflow.v2beta1.CreateConversationRequest request,
@@ -495,8 +486,7 @@ public final class ConversationsGrpc {
 
   /**
    * <pre>
-   * Service for managing
-   * [Conversations][google.cloud.dialogflow.v2beta1.Conversation].
+   * Service for managing [Conversations][google.cloud.dialogflow.v2beta1.Conversation].
    * </pre>
    */
   public static final class ConversationsBlockingStub extends io.grpc.stub.AbstractBlockingStub<ConversationsBlockingStub> {
@@ -522,14 +512,11 @@ public final class ConversationsGrpc {
      * user queries.
      * For Assist Stage, there's no dialogflow agent responding to user queries.
      * But we will provide suggestions which are generated from conversation.
-     * If
-     * [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile]
-     * is configured for a dialogflow agent, conversation will start from
-     * `Automated Agent Stage`, otherwise, it will start from `Assist Stage`. And
-     * during `Automated Agent Stage`, once an
-     * [Intent][google.cloud.dialogflow.v2beta1.Intent] with
-     * [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff]
-     * is triggered, conversation will transfer to Assist Stage.
+     * If [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile] is configured for a dialogflow
+     * agent, conversation will start from `Automated Agent Stage`, otherwise, it
+     * will start from `Assist Stage`. And during `Automated Agent Stage`, once an
+     * [Intent][google.cloud.dialogflow.v2beta1.Intent] with [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff] is triggered, conversation
+     * will transfer to Assist Stage.
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.Conversation createConversation(com.google.cloud.dialogflow.v2beta1.CreateConversationRequest request) {
@@ -596,8 +583,7 @@ public final class ConversationsGrpc {
 
   /**
    * <pre>
-   * Service for managing
-   * [Conversations][google.cloud.dialogflow.v2beta1.Conversation].
+   * Service for managing [Conversations][google.cloud.dialogflow.v2beta1.Conversation].
    * </pre>
    */
   public static final class ConversationsFutureStub extends io.grpc.stub.AbstractFutureStub<ConversationsFutureStub> {
@@ -623,14 +609,11 @@ public final class ConversationsGrpc {
      * user queries.
      * For Assist Stage, there's no dialogflow agent responding to user queries.
      * But we will provide suggestions which are generated from conversation.
-     * If
-     * [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile]
-     * is configured for a dialogflow agent, conversation will start from
-     * `Automated Agent Stage`, otherwise, it will start from `Assist Stage`. And
-     * during `Automated Agent Stage`, once an
-     * [Intent][google.cloud.dialogflow.v2beta1.Intent] with
-     * [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff]
-     * is triggered, conversation will transfer to Assist Stage.
+     * If [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile] is configured for a dialogflow
+     * agent, conversation will start from `Automated Agent Stage`, otherwise, it
+     * will start from `Assist Stage`. And during `Automated Agent Stage`, once an
+     * [Intent][google.cloud.dialogflow.v2beta1.Intent] with [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff] is triggered, conversation
+     * will transfer to Assist Stage.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.v2beta1.Conversation> createConversation(

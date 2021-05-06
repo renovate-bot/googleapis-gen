@@ -53,6 +53,9 @@ class ::Google::Cloud::Dialogflow::V2beta1::Intents::ClientPathsTest < Minitest:
 
       path = client.context_path project: "value0", location: "value1", session: "value2", context: "value3"
       assert_equal "projects/value0/locations/value1/agent/sessions/value2/contexts/value3", path
+
+      path = client.context_path project: "value0", location: "value1", environment: "value2", user: "value3", session: "value4", context: "value5"
+      assert_equal "projects/value0/locations/value1/agent/environments/value2/users/value3/sessions/value4/contexts/value5", path
     end
   end
 

@@ -59,7 +59,7 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
             "bnMve2xvY2F0aW9ufS9jb252ZXJzYXRpb25Qcm9maWxlcy97Y29udmVyc2F0",
             "aW9uX3Byb2ZpbGV9Ik4KFEF1dG9tYXRlZEFnZW50Q29uZmlnEjYKBWFnZW50",
             "GAEgASgJQifgQQL6QSEKH2RpYWxvZ2Zsb3cuZ29vZ2xlYXBpcy5jb20vQWdl",
-            "bnQiwxIKGUh1bWFuQWdlbnRBc3Npc3RhbnRDb25maWcSUAoTbm90aWZpY2F0",
+            "bnQi8BIKGUh1bWFuQWdlbnRBc3Npc3RhbnRDb25maWcSUAoTbm90aWZpY2F0",
             "aW9uX2NvbmZpZxgCIAEoCzIzLmdvb2dsZS5jbG91ZC5kaWFsb2dmbG93LnYy",
             "YmV0YTEuTm90aWZpY2F0aW9uQ29uZmlnEnIKHWh1bWFuX2FnZW50X3N1Z2dl",
             "c3Rpb25fY29uZmlnGAMgASgLMksuZ29vZ2xlLmNsb3VkLmRpYWxvZ2Zsb3cu",
@@ -108,8 +108,9 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
             "YWxvZ2Zsb3cuZ29vZ2xlYXBpcy5jb20vQWdlbnQadgoVQ29udGV4dEZpbHRl",
             "clNldHRpbmdzEh0KFWRyb3BfaGFuZG9mZl9tZXNzYWdlcxgBIAEoCBIjChtk",
             "cm9wX3ZpcnR1YWxfYWdlbnRfbWVzc2FnZXMYAiABKAgSGQoRZHJvcF9pdnJf",
-            "bWVzc2FnZXMYAyABKAhCDgoMcXVlcnlfc291cmNlGi0KF0NvbnZlcnNhdGlv",
-            "bk1vZGVsQ29uZmlnEhIKBW1vZGVsGAEgASgJQgPgQQIaXAoVTWVzc2FnZUFu",
+            "bWVzc2FnZXMYAyABKAhCDgoMcXVlcnlfc291cmNlGloKF0NvbnZlcnNhdGlv",
+            "bk1vZGVsQ29uZmlnEj8KBW1vZGVsGAEgASgJQjD6QS0KK2RpYWxvZ2Zsb3cu",
+            "Z29vZ2xlYXBpcy5jb20vQ29udmVyc2F0aW9uTW9kZWwaXAoVTWVzc2FnZUFu",
             "YWx5c2lzQ29uZmlnEiAKGGVuYWJsZV9lbnRpdHlfZXh0cmFjdGlvbhgCIAEo",
             "CBIhChllbmFibGVfc2VudGltZW50X2FuYWx5c2lzGAMgASgIIs4DChdIdW1h",
             "bkFnZW50SGFuZG9mZkNvbmZpZxJnChJsaXZlX3BlcnNvbl9jb25maWcYASAB",
@@ -185,11 +186,17 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
             "bnMvKi9jb252ZXJzYXRpb25Qcm9maWxlcy8qfdpBBG5hbWUaeMpBGWRpYWxv",
             "Z2Zsb3cuZ29vZ2xlYXBpcy5jb23SQVlodHRwczovL3d3dy5nb29nbGVhcGlz",
             "LmNvbS9hdXRoL2Nsb3VkLXBsYXRmb3JtLGh0dHBzOi8vd3d3Lmdvb2dsZWFw",
-            "aXMuY29tL2F1dGgvZGlhbG9nZmxvd0K2AQojY29tLmdvb2dsZS5jbG91ZC5k",
+            "aXMuY29tL2F1dGgvZGlhbG9nZmxvd0K2AwojY29tLmdvb2dsZS5jbG91ZC5k",
             "aWFsb2dmbG93LnYyYmV0YTFCGENvbnZlcnNhdGlvblByb2ZpbGVQcm90b1AB",
             "Wklnb29nbGUuZ29sYW5nLm9yZy9nZW5wcm90by9nb29nbGVhcGlzL2Nsb3Vk",
             "L2RpYWxvZ2Zsb3cvdjJiZXRhMTtkaWFsb2dmbG93+AEBogICREaqAh9Hb29n",
-            "bGUuQ2xvdWQuRGlhbG9nZmxvdy5WMmJldGExYgZwcm90bzM="));
+            "bGUuQ2xvdWQuRGlhbG9nZmxvdy5WMmJldGEx6kF8CixkaWFsb2dmbG93Lmdv",
+            "b2dsZWFwaXMuY29tL0NYU2VjdXJpdHlTZXR0aW5ncxJMcHJvamVjdHMve3By",
+            "b2plY3R9L2xvY2F0aW9ucy97bG9jYXRpb259L3NlY3VyaXR5U2V0dGluZ3Mv",
+            "e3NlY3VyaXR5X3NldHRpbmdzfepBfgorZGlhbG9nZmxvdy5nb29nbGVhcGlz",
+            "LmNvbS9Db252ZXJzYXRpb25Nb2RlbBJPcHJvamVjdHMve3Byb2plY3R9L2xv",
+            "Y2F0aW9ucy97bG9jYXRpb259L2NvbnZlcnNhdGlvbk1vZGVscy97Y29udmVy",
+            "c2F0aW9uX21vZGVsfWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Api.ClientReflection.Descriptor, global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Api.ResourceReflection.Descriptor, global::Google.Cloud.Dialogflow.V2beta1.AudioConfigReflection.Descriptor, global::Google.Cloud.Dialogflow.V2beta1.DocumentReflection.Descriptor, global::Google.Cloud.Dialogflow.V2beta1.ParticipantReflection.Descriptor, global::Google.LongRunning.OperationsReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.FieldMaskReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -363,6 +370,9 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
     private global::Google.Cloud.Dialogflow.V2beta1.HumanAgentHandoffConfig humanAgentHandoffConfig_;
     /// <summary>
     /// Configuration for connecting to a live agent.
+    ///
+    /// Currently, this feature is not general available, please contact Google
+    /// to get access.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Cloud.Dialogflow.V2beta1.HumanAgentHandoffConfig HumanAgentHandoffConfig {
@@ -1184,6 +1194,9 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
     private global::Google.Cloud.Dialogflow.V2beta1.HumanAgentAssistantConfig.Types.SuggestionConfig endUserSuggestionConfig_;
     /// <summary>
     /// Configuration for agent assistance of end user participant.
+    ///
+    /// Currently, this feature is not general available, please contact Google
+    /// to get access.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Cloud.Dialogflow.V2beta1.HumanAgentAssistantConfig.Types.SuggestionConfig EndUserSuggestionConfig {
@@ -3566,7 +3579,7 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
         public const int ModelFieldNumber = 1;
         private string model_ = "";
         /// <summary>
-        /// Required. Conversation model resource name. Format: `projects/&lt;Project
+        /// Conversation model resource name. Format: `projects/&lt;Project
         /// ID>/conversationModels/&lt;Model ID>`.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3749,6 +3762,9 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
         /// Enable entity extraction in conversation messages on [agent assist
         /// stage](https://cloud.google.com/dialogflow/priv/docs/contact-center/basics#stages).
         /// If unspecified, defaults to false.
+        ///
+        /// Currently, this feature is not general available, please contact Google
+        /// to get access.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public bool EnableEntityExtraction {
@@ -3940,6 +3956,9 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
   /// <summary>
   /// Defines the hand off to a live agent, typically on which external agent
   /// service provider to connect to a conversation.
+  ///
+  /// Currently, this feature is not general available, please contact Google
+  /// to get access.
   /// </summary>
   public sealed partial class HumanAgentHandoffConfig : pb::IMessage<HumanAgentHandoffConfig>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

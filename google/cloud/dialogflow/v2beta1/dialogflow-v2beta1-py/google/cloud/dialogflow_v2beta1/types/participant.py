@@ -1257,7 +1257,7 @@ class ListSuggestionsRequest(proto.Message):
             are supported. ``create_time`` only support milliseconds
             accuracy. E.g.,
             ``create_time_epoch_microseconds > 1551790877964485`` or
-            ``create_time > 2017-01-15T01:30:15.01Z``
+            ``create_time > "2017-01-15T01:30:15.01Z"``
 
             For more information about filtering, see `API
             Filtering <https://aip.dev/160>`__.

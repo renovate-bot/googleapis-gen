@@ -68,7 +68,7 @@ package com.google.cloud.dialogflow.v2beta1;
    * `create_time` and `create_time_epoch_microseconds` are supported.
    * `create_time` only support milliseconds accuracy. E.g.,
    * `create_time_epoch_microseconds &gt; 1551790877964485` or
-   * `create_time &gt; 2017-01-15T01:30:15.01Z`
+   * `create_time &gt; "2017-01-15T01:30:15.01Z"`
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
    * </pre>
@@ -83,7 +83,7 @@ package com.google.cloud.dialogflow.v2beta1;
    * `create_time` and `create_time_epoch_microseconds` are supported.
    * `create_time` only support milliseconds accuracy. E.g.,
    * `create_time_epoch_microseconds &gt; 1551790877964485` or
-   * `create_time &gt; 2017-01-15T01:30:15.01Z`
+   * `create_time &gt; "2017-01-15T01:30:15.01Z"`
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
    * </pre>

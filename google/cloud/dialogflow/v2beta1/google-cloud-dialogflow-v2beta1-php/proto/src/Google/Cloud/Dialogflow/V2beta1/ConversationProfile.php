@@ -55,6 +55,8 @@ class ConversationProfile extends \Google\Protobuf\Internal\Message
     protected $human_agent_assistant_config = null;
     /**
      * Configuration for connecting to a live agent.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.HumanAgentHandoffConfig human_agent_handoff_config = 5;</code>
      */
@@ -115,6 +117,8 @@ class ConversationProfile extends \Google\Protobuf\Internal\Message
      *           Configuration for agent assistance to use with this profile.
      *     @type \Google\Cloud\Dialogflow\V2beta1\HumanAgentHandoffConfig $human_agent_handoff_config
      *           Configuration for connecting to a live agent.
+     *           Currently, this feature is not general available, please contact Google
+     *           to get access.
      *     @type \Google\Cloud\Dialogflow\V2beta1\NotificationConfig $notification_config
      *           Configuration for publishing conversation lifecycle events.
      *     @type \Google\Cloud\Dialogflow\V2beta1\LoggingConfig $logging_config
@@ -337,6 +341,8 @@ class ConversationProfile extends \Google\Protobuf\Internal\Message
 
     /**
      * Configuration for connecting to a live agent.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.HumanAgentHandoffConfig human_agent_handoff_config = 5;</code>
      * @return \Google\Cloud\Dialogflow\V2beta1\HumanAgentHandoffConfig|null
@@ -358,6 +364,8 @@ class ConversationProfile extends \Google\Protobuf\Internal\Message
 
     /**
      * Configuration for connecting to a live agent.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.HumanAgentHandoffConfig human_agent_handoff_config = 5;</code>
      * @param \Google\Cloud\Dialogflow\V2beta1\HumanAgentHandoffConfig $var

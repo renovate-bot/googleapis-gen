@@ -47,6 +47,14 @@ namespace Google.Cloud.Dialogflow.V2beta1
             /// <c>projects/{project}/locations/{location}/agent/sessions/{session}/contexts/{context}</c>.
             /// </summary>
             ProjectLocationSessionContext = 3,
+
+            /// <summary>
+            /// A resource name with pattern
+            /// <c>
+            /// projects/{project}/locations/{location}/agent/environments/{environment}/users/{user}/sessions/{session}/contexts/{context}</c>
+            /// .
+            /// </summary>
+            ProjectLocationEnvironmentUserSessionContext = 4,
         }
 
         private static gax::PathTemplate s_projectSessionContext = new gax::PathTemplate("projects/{project}/agent/sessions/{session}/contexts/{context}");
@@ -54,6 +62,8 @@ namespace Google.Cloud.Dialogflow.V2beta1
         private static gax::PathTemplate s_projectEnvironmentUserSessionContext = new gax::PathTemplate("projects/{project}/agent/environments/{environment}/users/{user}/sessions/{session}/contexts/{context}");
 
         private static gax::PathTemplate s_projectLocationSessionContext = new gax::PathTemplate("projects/{project}/locations/{location}/agent/sessions/{session}/contexts/{context}");
+
+        private static gax::PathTemplate s_projectLocationEnvironmentUserSessionContext = new gax::PathTemplate("projects/{project}/locations/{location}/agent/environments/{environment}/users/{user}/sessions/{session}/contexts/{context}");
 
         /// <summary>Creates a <see cref="ContextName"/> containing an unparsed resource name.</summary>
         /// <param name="unparsedResourceName">The unparsed resource name. Must not be <c>null</c>.</param>
@@ -99,6 +109,22 @@ namespace Google.Cloud.Dialogflow.V2beta1
         /// <returns>A new instance of <see cref="ContextName"/> constructed from the provided ids.</returns>
         public static ContextName FromProjectLocationSessionContext(string projectId, string locationId, string sessionId, string contextId) =>
             new ContextName(ResourceNameType.ProjectLocationSessionContext, projectId: gax::GaxPreconditions.CheckNotNullOrEmpty(projectId, nameof(projectId)), locationId: gax::GaxPreconditions.CheckNotNullOrEmpty(locationId, nameof(locationId)), sessionId: gax::GaxPreconditions.CheckNotNullOrEmpty(sessionId, nameof(sessionId)), contextId: gax::GaxPreconditions.CheckNotNullOrEmpty(contextId, nameof(contextId)));
+
+        /// <summary>
+        /// Creates a <see cref="ContextName"/> with the pattern
+        /// <c>
+        /// projects/{project}/locations/{location}/agent/environments/{environment}/users/{user}/sessions/{session}/contexts/{context}</c>
+        /// .
+        /// </summary>
+        /// <param name="projectId">The <c>Project</c> ID. Must not be <c>null</c> or empty.</param>
+        /// <param name="locationId">The <c>Location</c> ID. Must not be <c>null</c> or empty.</param>
+        /// <param name="environmentId">The <c>Environment</c> ID. Must not be <c>null</c> or empty.</param>
+        /// <param name="userId">The <c>User</c> ID. Must not be <c>null</c> or empty.</param>
+        /// <param name="sessionId">The <c>Session</c> ID. Must not be <c>null</c> or empty.</param>
+        /// <param name="contextId">The <c>Context</c> ID. Must not be <c>null</c> or empty.</param>
+        /// <returns>A new instance of <see cref="ContextName"/> constructed from the provided ids.</returns>
+        public static ContextName FromProjectLocationEnvironmentUserSessionContext(string projectId, string locationId, string environmentId, string userId, string sessionId, string contextId) =>
+            new ContextName(ResourceNameType.ProjectLocationEnvironmentUserSessionContext, projectId: gax::GaxPreconditions.CheckNotNullOrEmpty(projectId, nameof(projectId)), locationId: gax::GaxPreconditions.CheckNotNullOrEmpty(locationId, nameof(locationId)), environmentId: gax::GaxPreconditions.CheckNotNullOrEmpty(environmentId, nameof(environmentId)), userId: gax::GaxPreconditions.CheckNotNullOrEmpty(userId, nameof(userId)), sessionId: gax::GaxPreconditions.CheckNotNullOrEmpty(sessionId, nameof(sessionId)), contextId: gax::GaxPreconditions.CheckNotNullOrEmpty(contextId, nameof(contextId)));
 
         /// <summary>
         /// Formats the IDs into the string representation of this <see cref="ContextName"/> with pattern
@@ -161,6 +187,27 @@ namespace Google.Cloud.Dialogflow.V2beta1
         public static string FormatProjectLocationSessionContext(string projectId, string locationId, string sessionId, string contextId) =>
             s_projectLocationSessionContext.Expand(gax::GaxPreconditions.CheckNotNullOrEmpty(projectId, nameof(projectId)), gax::GaxPreconditions.CheckNotNullOrEmpty(locationId, nameof(locationId)), gax::GaxPreconditions.CheckNotNullOrEmpty(sessionId, nameof(sessionId)), gax::GaxPreconditions.CheckNotNullOrEmpty(contextId, nameof(contextId)));
 
+        /// <summary>
+        /// Formats the IDs into the string representation of this <see cref="ContextName"/> with pattern
+        /// <c>
+        /// projects/{project}/locations/{location}/agent/environments/{environment}/users/{user}/sessions/{session}/contexts/{context}</c>
+        /// .
+        /// </summary>
+        /// <param name="projectId">The <c>Project</c> ID. Must not be <c>null</c> or empty.</param>
+        /// <param name="locationId">The <c>Location</c> ID. Must not be <c>null</c> or empty.</param>
+        /// <param name="environmentId">The <c>Environment</c> ID. Must not be <c>null</c> or empty.</param>
+        /// <param name="userId">The <c>User</c> ID. Must not be <c>null</c> or empty.</param>
+        /// <param name="sessionId">The <c>Session</c> ID. Must not be <c>null</c> or empty.</param>
+        /// <param name="contextId">The <c>Context</c> ID. Must not be <c>null</c> or empty.</param>
+        /// <returns>
+        /// The string representation of this <see cref="ContextName"/> with pattern
+        /// <c>
+        /// projects/{project}/locations/{location}/agent/environments/{environment}/users/{user}/sessions/{session}/contexts/{context}</c>
+        /// .
+        /// </returns>
+        public static string FormatProjectLocationEnvironmentUserSessionContext(string projectId, string locationId, string environmentId, string userId, string sessionId, string contextId) =>
+            s_projectLocationEnvironmentUserSessionContext.Expand(gax::GaxPreconditions.CheckNotNullOrEmpty(projectId, nameof(projectId)), gax::GaxPreconditions.CheckNotNullOrEmpty(locationId, nameof(locationId)), gax::GaxPreconditions.CheckNotNullOrEmpty(environmentId, nameof(environmentId)), gax::GaxPreconditions.CheckNotNullOrEmpty(userId, nameof(userId)), gax::GaxPreconditions.CheckNotNullOrEmpty(sessionId, nameof(sessionId)), gax::GaxPreconditions.CheckNotNullOrEmpty(contextId, nameof(contextId)));
+
         /// <summary>Parses the given resource name string into a new <see cref="ContextName"/> instance.</summary>
         /// <remarks>
         /// To parse successfully, the resource name must be formatted as one of the following:
@@ -176,6 +223,12 @@ namespace Google.Cloud.Dialogflow.V2beta1
         /// <item>
         /// <description>
         /// <c>projects/{project}/locations/{location}/agent/sessions/{session}/contexts/{context}</c>
+        /// </description>
+        /// </item>
+        /// <item>
+        /// <description>
+        /// <c>
+        /// projects/{project}/locations/{location}/agent/environments/{environment}/users/{user}/sessions/{session}/contexts/{context}</c>
         /// </description>
         /// </item>
         /// </list>
@@ -202,6 +255,12 @@ namespace Google.Cloud.Dialogflow.V2beta1
         /// <item>
         /// <description>
         /// <c>projects/{project}/locations/{location}/agent/sessions/{session}/contexts/{context}</c>
+        /// </description>
+        /// </item>
+        /// <item>
+        /// <description>
+        /// <c>
+        /// projects/{project}/locations/{location}/agent/environments/{environment}/users/{user}/sessions/{session}/contexts/{context}</c>
         /// </description>
         /// </item>
         /// </list>
@@ -236,6 +295,12 @@ namespace Google.Cloud.Dialogflow.V2beta1
         /// <c>projects/{project}/locations/{location}/agent/sessions/{session}/contexts/{context}</c>
         /// </description>
         /// </item>
+        /// <item>
+        /// <description>
+        /// <c>
+        /// projects/{project}/locations/{location}/agent/environments/{environment}/users/{user}/sessions/{session}/contexts/{context}</c>
+        /// </description>
+        /// </item>
         /// </list>
         /// </remarks>
         /// <param name="contextName">The resource name in string form. Must not be <c>null</c>.</param>
@@ -263,6 +328,12 @@ namespace Google.Cloud.Dialogflow.V2beta1
         /// <item>
         /// <description>
         /// <c>projects/{project}/locations/{location}/agent/sessions/{session}/contexts/{context}</c>
+        /// </description>
+        /// </item>
+        /// <item>
+        /// <description>
+        /// <c>
+        /// projects/{project}/locations/{location}/agent/environments/{environment}/users/{user}/sessions/{session}/contexts/{context}</c>
         /// </description>
         /// </item>
         /// </list>
@@ -295,6 +366,11 @@ namespace Google.Cloud.Dialogflow.V2beta1
             if (s_projectLocationSessionContext.TryParseName(contextName, out resourceName))
             {
                 result = FromProjectLocationSessionContext(resourceName[0], resourceName[1], resourceName[2], resourceName[3]);
+                return true;
+            }
+            if (s_projectLocationEnvironmentUserSessionContext.TryParseName(contextName, out resourceName))
+            {
+                result = FromProjectLocationEnvironmentUserSessionContext(resourceName[0], resourceName[1], resourceName[2], resourceName[3], resourceName[4], resourceName[5]);
                 return true;
             }
             if (allowUnparsed)
@@ -385,6 +461,7 @@ namespace Google.Cloud.Dialogflow.V2beta1
                 case ResourceNameType.ProjectSessionContext: return s_projectSessionContext.Expand(ProjectId, SessionId, ContextId);
                 case ResourceNameType.ProjectEnvironmentUserSessionContext: return s_projectEnvironmentUserSessionContext.Expand(ProjectId, EnvironmentId, UserId, SessionId, ContextId);
                 case ResourceNameType.ProjectLocationSessionContext: return s_projectLocationSessionContext.Expand(ProjectId, LocationId, SessionId, ContextId);
+                case ResourceNameType.ProjectLocationEnvironmentUserSessionContext: return s_projectLocationEnvironmentUserSessionContext.Expand(ProjectId, LocationId, EnvironmentId, UserId, SessionId, ContextId);
                 default: throw new sys::InvalidOperationException("Unrecognized resource-type.");
             }
         }

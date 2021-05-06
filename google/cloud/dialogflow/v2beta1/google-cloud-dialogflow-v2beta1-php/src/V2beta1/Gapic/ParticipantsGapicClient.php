@@ -562,7 +562,7 @@ class ParticipantsGapicClient
      *
      * Note: Always use agent versions for production traffic
      * sent to virtual agents. See [Versions and
-     * environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
+     * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
      *
      * Sample code:
      * ```
@@ -910,7 +910,7 @@ class ParticipantsGapicClient
      * This method should be used by human agent client software to fetch auto
      * generated suggestions in real-time, while the conversation with an end user
      * is in progress. The functionality is implemented in terms of the
-     * [list pagination](https://cloud.google.com/apis/design/design_patterns#list_pagination)
+     * [list pagination](/apis/design/design_patterns#list_pagination)
      * design pattern. The client app should use the `next_page_token` field
      * to fetch the next batch of suggestions. `suggestions` are sorted by
      * `create_time` in descending order.
@@ -962,7 +962,7 @@ class ParticipantsGapicClient
      *           `create_time` and `create_time_epoch_microseconds` are supported.
      *           `create_time` only support milliseconds accuracy. E.g.,
      *           `create_time_epoch_microseconds > 1551790877964485` or
-     *           `create_time > 2017-01-15T01:30:15.01Z`
+     *           `create_time > "2017-01-15T01:30:15.01Z"`
      *
      *           For more information about filtering, see
      *           [API Filtering](https://aip.dev/160).

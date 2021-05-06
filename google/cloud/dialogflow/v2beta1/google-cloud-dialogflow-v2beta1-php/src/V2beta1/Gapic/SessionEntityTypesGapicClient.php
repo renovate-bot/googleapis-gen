@@ -108,6 +108,10 @@ class SessionEntityTypesGapicClient
 
     private static $projectEnvironmentUserSessionEntityTypeNameTemplate;
 
+    private static $projectLocationEnvironmentUserSessionNameTemplate;
+
+    private static $projectLocationEnvironmentUserSessionEntityTypeNameTemplate;
+
     private static $projectLocationSessionNameTemplate;
 
     private static $projectLocationSessionEntityTypeNameTemplate;
@@ -157,6 +161,24 @@ class SessionEntityTypesGapicClient
         }
 
         return self::$projectEnvironmentUserSessionEntityTypeNameTemplate;
+    }
+
+    private static function getProjectLocationEnvironmentUserSessionNameTemplate()
+    {
+        if (self::$projectLocationEnvironmentUserSessionNameTemplate == null) {
+            self::$projectLocationEnvironmentUserSessionNameTemplate = new PathTemplate('projects/{project}/locations/{location}/agent/environments/{environment}/users/{user}/sessions/{session}');
+        }
+
+        return self::$projectLocationEnvironmentUserSessionNameTemplate;
+    }
+
+    private static function getProjectLocationEnvironmentUserSessionEntityTypeNameTemplate()
+    {
+        if (self::$projectLocationEnvironmentUserSessionEntityTypeNameTemplate == null) {
+            self::$projectLocationEnvironmentUserSessionEntityTypeNameTemplate = new PathTemplate('projects/{project}/locations/{location}/agent/environments/{environment}/users/{user}/sessions/{session}/entityTypes/{entity_type}');
+        }
+
+        return self::$projectLocationEnvironmentUserSessionEntityTypeNameTemplate;
     }
 
     private static function getProjectLocationSessionNameTemplate()
@@ -219,6 +241,8 @@ class SessionEntityTypesGapicClient
             self::$pathTemplateMap = [
                 'projectEnvironmentUserSession' => self::getProjectEnvironmentUserSessionNameTemplate(),
                 'projectEnvironmentUserSessionEntityType' => self::getProjectEnvironmentUserSessionEntityTypeNameTemplate(),
+                'projectLocationEnvironmentUserSession' => self::getProjectLocationEnvironmentUserSessionNameTemplate(),
+                'projectLocationEnvironmentUserSessionEntityType' => self::getProjectLocationEnvironmentUserSessionEntityTypeNameTemplate(),
                 'projectLocationSession' => self::getProjectLocationSessionNameTemplate(),
                 'projectLocationSessionEntityType' => self::getProjectLocationSessionEntityTypeNameTemplate(),
                 'projectSession' => self::getProjectSessionNameTemplate(),
@@ -272,6 +296,58 @@ class SessionEntityTypesGapicClient
     {
         return self::getProjectEnvironmentUserSessionEntityTypeNameTemplate()->render([
             'project' => $project,
+            'environment' => $environment,
+            'user' => $user,
+            'session' => $session,
+            'entity_type' => $entityType,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * project_location_environment_user_session resource.
+     *
+     * @param string $project
+     * @param string $location
+     * @param string $environment
+     * @param string $user
+     * @param string $session
+     *
+     * @return string The formatted project_location_environment_user_session resource.
+     *
+     * @experimental
+     */
+    public static function projectLocationEnvironmentUserSessionName($project, $location, $environment, $user, $session)
+    {
+        return self::getProjectLocationEnvironmentUserSessionNameTemplate()->render([
+            'project' => $project,
+            'location' => $location,
+            'environment' => $environment,
+            'user' => $user,
+            'session' => $session,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * project_location_environment_user_session_entity_type resource.
+     *
+     * @param string $project
+     * @param string $location
+     * @param string $environment
+     * @param string $user
+     * @param string $session
+     * @param string $entityType
+     *
+     * @return string The formatted project_location_environment_user_session_entity_type resource.
+     *
+     * @experimental
+     */
+    public static function projectLocationEnvironmentUserSessionEntityTypeName($project, $location, $environment, $user, $session, $entityType)
+    {
+        return self::getProjectLocationEnvironmentUserSessionEntityTypeNameTemplate()->render([
+            'project' => $project,
+            'location' => $location,
             'environment' => $environment,
             'user' => $user,
             'session' => $session,
@@ -409,6 +485,8 @@ class SessionEntityTypesGapicClient
      * Template: Pattern
      * - projectEnvironmentUserSession: projects/{project}/agent/environments/{environment}/users/{user}/sessions/{session}
      * - projectEnvironmentUserSessionEntityType: projects/{project}/agent/environments/{environment}/users/{user}/sessions/{session}/entityTypes/{entity_type}
+     * - projectLocationEnvironmentUserSession: projects/{project}/locations/{location}/agent/environments/{environment}/users/{user}/sessions/{session}
+     * - projectLocationEnvironmentUserSessionEntityType: projects/{project}/locations/{location}/agent/environments/{environment}/users/{user}/sessions/{session}/entityTypes/{entity_type}
      * - projectLocationSession: projects/{project}/locations/{location}/agent/sessions/{session}
      * - projectLocationSessionEntityType: projects/{project}/locations/{location}/agent/sessions/{session}/entityTypes/{entity_type}
      * - projectSession: projects/{project}/agent/sessions/{session}

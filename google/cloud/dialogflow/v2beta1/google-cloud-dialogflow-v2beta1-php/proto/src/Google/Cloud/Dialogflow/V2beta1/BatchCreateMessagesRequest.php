@@ -26,8 +26,7 @@ class BatchCreateMessagesRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. A maximum of 1000 Messages can be created in a batch.
      * [CreateMessageRequest.message.send_time][] is required. All created
-     * messages will have identical
-     * [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
+     * messages will have identical [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
      *
      * Generated from protobuf field <code>repeated .google.cloud.dialogflow.v2beta1.CreateMessageRequest requests = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -46,8 +45,7 @@ class BatchCreateMessagesRequest extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\Dialogflow\V2beta1\CreateMessageRequest[]|\Google\Protobuf\Internal\RepeatedField $requests
      *           Required. A maximum of 1000 Messages can be created in a batch.
      *           [CreateMessageRequest.message.send_time][] is required. All created
-     *           messages will have identical
-     *           [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
+     *           messages will have identical [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
      * }
      */
     public function __construct($data = NULL) {
@@ -88,8 +86,7 @@ class BatchCreateMessagesRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. A maximum of 1000 Messages can be created in a batch.
      * [CreateMessageRequest.message.send_time][] is required. All created
-     * messages will have identical
-     * [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
+     * messages will have identical [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
      *
      * Generated from protobuf field <code>repeated .google.cloud.dialogflow.v2beta1.CreateMessageRequest requests = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -102,8 +99,7 @@ class BatchCreateMessagesRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. A maximum of 1000 Messages can be created in a batch.
      * [CreateMessageRequest.message.send_time][] is required. All created
-     * messages will have identical
-     * [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
+     * messages will have identical [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
      *
      * Generated from protobuf field <code>repeated .google.cloud.dialogflow.v2beta1.CreateMessageRequest requests = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Dialogflow\V2beta1\CreateMessageRequest[]|\Google\Protobuf\Internal\RepeatedField $var

@@ -135,4 +135,58 @@ public interface EnvironmentOrBuilder extends
    * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   * <pre>
+   * Optional. Text to speech settings for this environment.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.TextToSpeechSettings text_to_speech_settings = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the textToSpeechSettings field is set.
+   */
+  boolean hasTextToSpeechSettings();
+  /**
+   * <pre>
+   * Optional. Text to speech settings for this environment.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.TextToSpeechSettings text_to_speech_settings = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The textToSpeechSettings.
+   */
+  com.google.cloud.dialogflow.v2beta1.TextToSpeechSettings getTextToSpeechSettings();
+  /**
+   * <pre>
+   * Optional. Text to speech settings for this environment.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.TextToSpeechSettings text_to_speech_settings = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  com.google.cloud.dialogflow.v2beta1.TextToSpeechSettingsOrBuilder getTextToSpeechSettingsOrBuilder();
+
+  /**
+   * <pre>
+   * Optional. The fulfillment settings to use for this environment.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.Fulfillment fulfillment = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the fulfillment field is set.
+   */
+  boolean hasFulfillment();
+  /**
+   * <pre>
+   * Optional. The fulfillment settings to use for this environment.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.Fulfillment fulfillment = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The fulfillment.
+   */
+  com.google.cloud.dialogflow.v2beta1.Fulfillment getFulfillment();
+  /**
+   * <pre>
+   * Optional. The fulfillment settings to use for this environment.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.Fulfillment fulfillment = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  com.google.cloud.dialogflow.v2beta1.FulfillmentOrBuilder getFulfillmentOrBuilder();
 }

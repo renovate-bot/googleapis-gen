@@ -880,6 +880,8 @@ namespace Google.Cloud.Dialogflow.V2beta1
 
         /// <summary>
         /// Create documents by importing data from external sources.
+        /// Dialogflow supports up to 350 documents in each request. If you try to
+        /// import more, Dialogflow will return an error.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -889,6 +891,8 @@ namespace Google.Cloud.Dialogflow.V2beta1
 
         /// <summary>
         /// Create documents by importing data from external sources.
+        /// Dialogflow supports up to 350 documents in each request. If you try to
+        /// import more, Dialogflow will return an error.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -898,6 +902,8 @@ namespace Google.Cloud.Dialogflow.V2beta1
 
         /// <summary>
         /// Create documents by importing data from external sources.
+        /// Dialogflow supports up to 350 documents in each request. If you try to
+        /// import more, Dialogflow will return an error.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
@@ -1721,6 +1727,8 @@ namespace Google.Cloud.Dialogflow.V2beta1
 
         /// <summary>
         /// Create documents by importing data from external sources.
+        /// Dialogflow supports up to 350 documents in each request. If you try to
+        /// import more, Dialogflow will return an error.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -1733,6 +1741,8 @@ namespace Google.Cloud.Dialogflow.V2beta1
 
         /// <summary>
         /// Create documents by importing data from external sources.
+        /// Dialogflow supports up to 350 documents in each request. If you try to
+        /// import more, Dialogflow will return an error.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>

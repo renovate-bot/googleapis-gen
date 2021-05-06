@@ -5,6 +5,25 @@
   "protoPackage": "google.cloud.dialogflow.v2beta1",
   "libraryPackage": "::Google::Cloud::Dialogflow::V2beta1",
   "services": {
+    "Fulfillments": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Dialogflow::V2beta1::Fulfillments::Client",
+          "rpcs": {
+            "GetFulfillment": {
+              "methods": [
+                "get_fulfillment"
+              ]
+            },
+            "UpdateFulfillment": {
+              "methods": [
+                "update_fulfillment"
+              ]
+            }
+          }
+        }
+      }
+    },
     "Environments": {
       "clients": {
         "grpc": {
@@ -13,6 +32,31 @@
             "ListEnvironments": {
               "methods": [
                 "list_environments"
+              ]
+            },
+            "GetEnvironment": {
+              "methods": [
+                "get_environment"
+              ]
+            },
+            "CreateEnvironment": {
+              "methods": [
+                "create_environment"
+              ]
+            },
+            "UpdateEnvironment": {
+              "methods": [
+                "update_environment"
+              ]
+            },
+            "DeleteEnvironment": {
+              "methods": [
+                "delete_environment"
+              ]
+            },
+            "GetEnvironmentHistory": {
+              "methods": [
+                "get_environment_history"
               ]
             }
           }
@@ -496,6 +540,40 @@
             "UpdateKnowledgeBase": {
               "methods": [
                 "update_knowledge_base"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "Versions": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Dialogflow::V2beta1::Versions::Client",
+          "rpcs": {
+            "ListVersions": {
+              "methods": [
+                "list_versions"
+              ]
+            },
+            "GetVersion": {
+              "methods": [
+                "get_version"
+              ]
+            },
+            "CreateVersion": {
+              "methods": [
+                "create_version"
+              ]
+            },
+            "UpdateVersion": {
+              "methods": [
+                "update_version"
+              ]
+            },
+            "DeleteVersion": {
+              "methods": [
+                "delete_version"
               ]
             }
           }

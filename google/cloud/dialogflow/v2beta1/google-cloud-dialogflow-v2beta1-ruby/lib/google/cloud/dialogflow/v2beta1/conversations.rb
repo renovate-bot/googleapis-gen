@@ -31,8 +31,7 @@ module Google
     module Dialogflow
       module V2beta1
         ##
-        # Service for managing
-        # {::Google::Cloud::Dialogflow::V2beta1::Conversation Conversations}.
+        # Service for managing {::Google::Cloud::Dialogflow::V2beta1::Conversation Conversations}.
         #
         # To load this service and instantiate a client:
         #

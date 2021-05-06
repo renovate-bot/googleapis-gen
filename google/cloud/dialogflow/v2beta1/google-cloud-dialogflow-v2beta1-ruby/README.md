@@ -31,9 +31,9 @@ In order to use this library, you first need to go through the following steps:
 ```ruby
 require "google/cloud/dialogflow/v2beta1"
 
-client = ::Google::Cloud::Dialogflow::V2beta1::Environments::Client.new
+client = ::Google::Cloud::Dialogflow::V2beta1::Fulfillments::Client.new
 request = my_create_request
-response = client.list_environments request
+response = client.get_fulfillment request
 ```
 
 View the [Client Library Documentation](https://googleapis.dev/ruby/google-cloud-dialogflow-v2beta1/latest)

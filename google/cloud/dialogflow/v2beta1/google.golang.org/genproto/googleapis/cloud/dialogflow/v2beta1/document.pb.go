@@ -678,6 +678,9 @@ type ImportDocumentsRequest struct {
 	// created, one corresponding to each object, and all of these documents will
 	// be created using the same document template.
 	//
+	// Dialogflow supports up to 350 documents in each request. If you try to
+	// import more, Dialogflow will return an error.
+	//
 	// Types that are assignable to Source:
 	//	*ImportDocumentsRequest_GcsSource
 	Source isImportDocumentsRequest_Source `protobuf_oneof:"source"`
@@ -1914,6 +1917,8 @@ type DocumentsClient interface {
 	// only use `projects.knowledgeBases.documents`.
 	CreateDocument(ctx context.Context, in *CreateDocumentRequest, opts ...grpc.CallOption) (*longrunning.Operation, error)
 	// Create documents by importing data from external sources.
+	// Dialogflow supports up to 350 documents in each request. If you try to
+	// import more, Dialogflow will return an error.
 	ImportDocuments(ctx context.Context, in *ImportDocumentsRequest, opts ...grpc.CallOption) (*longrunning.Operation, error)
 	// Deletes the specified document.
 	//
@@ -2027,6 +2032,8 @@ type DocumentsServer interface {
 	// only use `projects.knowledgeBases.documents`.
 	CreateDocument(context.Context, *CreateDocumentRequest) (*longrunning.Operation, error)
 	// Create documents by importing data from external sources.
+	// Dialogflow supports up to 350 documents in each request. If you try to
+	// import more, Dialogflow will return an error.
 	ImportDocuments(context.Context, *ImportDocumentsRequest) (*longrunning.Operation, error)
 	// Deletes the specified document.
 	//

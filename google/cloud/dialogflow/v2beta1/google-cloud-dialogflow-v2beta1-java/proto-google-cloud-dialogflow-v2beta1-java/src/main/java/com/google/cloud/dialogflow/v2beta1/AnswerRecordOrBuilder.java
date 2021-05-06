@@ -10,9 +10,8 @@ public interface AnswerRecordOrBuilder extends
   /**
    * <pre>
    * The unique identifier of this answer record.
-   * Required for
-   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord]
-   * method. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * Required for [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord] method.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/answerRecords/&lt;Answer Record ID&gt;`.
    * </pre>
    *
@@ -23,9 +22,8 @@ public interface AnswerRecordOrBuilder extends
   /**
    * <pre>
    * The unique identifier of this answer record.
-   * Required for
-   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord]
-   * method. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * Required for [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord] method.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/answerRecords/&lt;Answer Record ID&gt;`.
    * </pre>
    *
@@ -38,8 +36,8 @@ public interface AnswerRecordOrBuilder extends
   /**
    * <pre>
    * Optional. The AnswerFeedback for this record. You can set this with
-   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord]
-   * in order to give us feedback about this answer.
+   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
+   * this answer.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.AnswerFeedback answer_feedback = 3;</code>
@@ -49,8 +47,8 @@ public interface AnswerRecordOrBuilder extends
   /**
    * <pre>
    * Optional. The AnswerFeedback for this record. You can set this with
-   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord]
-   * in order to give us feedback about this answer.
+   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
+   * this answer.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.AnswerFeedback answer_feedback = 3;</code>
@@ -60,8 +58,8 @@ public interface AnswerRecordOrBuilder extends
   /**
    * <pre>
    * Optional. The AnswerFeedback for this record. You can set this with
-   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord]
-   * in order to give us feedback about this answer.
+   * [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
+   * this answer.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.AnswerFeedback answer_feedback = 3;</code>

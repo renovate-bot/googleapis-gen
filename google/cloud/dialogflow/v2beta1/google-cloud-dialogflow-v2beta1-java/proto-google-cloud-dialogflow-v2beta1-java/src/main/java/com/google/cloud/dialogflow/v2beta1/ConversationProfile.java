@@ -475,6 +475,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Configuration for connecting to a live agent.
+   * Currently, this feature is not general available, please contact Google
+   * to get access.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.HumanAgentHandoffConfig human_agent_handoff_config = 5;</code>
@@ -487,6 +489,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Configuration for connecting to a live agent.
+   * Currently, this feature is not general available, please contact Google
+   * to get access.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.HumanAgentHandoffConfig human_agent_handoff_config = 5;</code>
@@ -499,6 +503,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Configuration for connecting to a live agent.
+   * Currently, this feature is not general available, please contact Google
+   * to get access.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.HumanAgentHandoffConfig human_agent_handoff_config = 5;</code>
@@ -2151,6 +2157,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration for connecting to a live agent.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.HumanAgentHandoffConfig human_agent_handoff_config = 5;</code>
@@ -2162,6 +2170,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration for connecting to a live agent.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.HumanAgentHandoffConfig human_agent_handoff_config = 5;</code>
@@ -2177,6 +2187,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration for connecting to a live agent.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.HumanAgentHandoffConfig human_agent_handoff_config = 5;</code>
@@ -2197,6 +2209,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration for connecting to a live agent.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.HumanAgentHandoffConfig human_agent_handoff_config = 5;</code>
@@ -2215,6 +2229,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration for connecting to a live agent.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.HumanAgentHandoffConfig human_agent_handoff_config = 5;</code>
@@ -2237,6 +2253,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration for connecting to a live agent.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.HumanAgentHandoffConfig human_agent_handoff_config = 5;</code>
@@ -2255,6 +2273,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration for connecting to a live agent.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.HumanAgentHandoffConfig human_agent_handoff_config = 5;</code>
@@ -2267,6 +2287,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration for connecting to a live agent.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.HumanAgentHandoffConfig human_agent_handoff_config = 5;</code>
@@ -2282,6 +2304,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration for connecting to a live agent.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.HumanAgentHandoffConfig human_agent_handoff_config = 5;</code>

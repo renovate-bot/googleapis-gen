@@ -331,7 +331,9 @@ class DocumentsGrpcTransport(DocumentsTransport):
         r"""Return a callable for the import documents method over gRPC.
 
         Create documents by importing data from external
-        sources.
+        sources. Dialogflow supports up to 350 documents in each
+        request. If you try to import more, Dialogflow will
+        return an error.
 
         Returns:
             Callable[[~.ImportDocumentsRequest],

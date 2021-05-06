@@ -211,8 +211,7 @@ namespace Google.Cloud.Dialogflow.V2beta1
 
     /// <summary>Conversations client wrapper, for convenient use.</summary>
     /// <remarks>
-    /// Service for managing
-    /// [Conversations][google.cloud.dialogflow.v2beta1.Conversation].
+    /// Service for managing [Conversations][google.cloud.dialogflow.v2beta1.Conversation].
     /// </remarks>
     public abstract partial class ConversationsClient
     {
@@ -306,14 +305,11 @@ namespace Google.Cloud.Dialogflow.V2beta1
         /// For Assist Stage, there's no dialogflow agent responding to user queries.
         /// But we will provide suggestions which are generated from conversation.
         /// 
-        /// If
-        /// [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile]
-        /// is configured for a dialogflow agent, conversation will start from
-        /// `Automated Agent Stage`, otherwise, it will start from `Assist Stage`. And
-        /// during `Automated Agent Stage`, once an
-        /// [Intent][google.cloud.dialogflow.v2beta1.Intent] with
-        /// [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff]
-        /// is triggered, conversation will transfer to Assist Stage.
+        /// If [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile] is configured for a dialogflow
+        /// agent, conversation will start from `Automated Agent Stage`, otherwise, it
+        /// will start from `Assist Stage`. And during `Automated Agent Stage`, once an
+        /// [Intent][google.cloud.dialogflow.v2beta1.Intent] with [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff] is triggered, conversation
+        /// will transfer to Assist Stage.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -335,14 +331,11 @@ namespace Google.Cloud.Dialogflow.V2beta1
         /// For Assist Stage, there's no dialogflow agent responding to user queries.
         /// But we will provide suggestions which are generated from conversation.
         /// 
-        /// If
-        /// [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile]
-        /// is configured for a dialogflow agent, conversation will start from
-        /// `Automated Agent Stage`, otherwise, it will start from `Assist Stage`. And
-        /// during `Automated Agent Stage`, once an
-        /// [Intent][google.cloud.dialogflow.v2beta1.Intent] with
-        /// [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff]
-        /// is triggered, conversation will transfer to Assist Stage.
+        /// If [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile] is configured for a dialogflow
+        /// agent, conversation will start from `Automated Agent Stage`, otherwise, it
+        /// will start from `Assist Stage`. And during `Automated Agent Stage`, once an
+        /// [Intent][google.cloud.dialogflow.v2beta1.Intent] with [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff] is triggered, conversation
+        /// will transfer to Assist Stage.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -364,14 +357,11 @@ namespace Google.Cloud.Dialogflow.V2beta1
         /// For Assist Stage, there's no dialogflow agent responding to user queries.
         /// But we will provide suggestions which are generated from conversation.
         /// 
-        /// If
-        /// [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile]
-        /// is configured for a dialogflow agent, conversation will start from
-        /// `Automated Agent Stage`, otherwise, it will start from `Assist Stage`. And
-        /// during `Automated Agent Stage`, once an
-        /// [Intent][google.cloud.dialogflow.v2beta1.Intent] with
-        /// [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff]
-        /// is triggered, conversation will transfer to Assist Stage.
+        /// If [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile] is configured for a dialogflow
+        /// agent, conversation will start from `Automated Agent Stage`, otherwise, it
+        /// will start from `Assist Stage`. And during `Automated Agent Stage`, once an
+        /// [Intent][google.cloud.dialogflow.v2beta1.Intent] with [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff] is triggered, conversation
+        /// will transfer to Assist Stage.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
@@ -393,14 +383,11 @@ namespace Google.Cloud.Dialogflow.V2beta1
         /// For Assist Stage, there's no dialogflow agent responding to user queries.
         /// But we will provide suggestions which are generated from conversation.
         /// 
-        /// If
-        /// [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile]
-        /// is configured for a dialogflow agent, conversation will start from
-        /// `Automated Agent Stage`, otherwise, it will start from `Assist Stage`. And
-        /// during `Automated Agent Stage`, once an
-        /// [Intent][google.cloud.dialogflow.v2beta1.Intent] with
-        /// [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff]
-        /// is triggered, conversation will transfer to Assist Stage.
+        /// If [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile] is configured for a dialogflow
+        /// agent, conversation will start from `Automated Agent Stage`, otherwise, it
+        /// will start from `Assist Stage`. And during `Automated Agent Stage`, once an
+        /// [Intent][google.cloud.dialogflow.v2beta1.Intent] with [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff] is triggered, conversation
+        /// will transfer to Assist Stage.
         /// </summary>
         /// <param name="parent">
         /// Required. Resource identifier of the project creating the conversation.
@@ -432,14 +419,11 @@ namespace Google.Cloud.Dialogflow.V2beta1
         /// For Assist Stage, there's no dialogflow agent responding to user queries.
         /// But we will provide suggestions which are generated from conversation.
         /// 
-        /// If
-        /// [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile]
-        /// is configured for a dialogflow agent, conversation will start from
-        /// `Automated Agent Stage`, otherwise, it will start from `Assist Stage`. And
-        /// during `Automated Agent Stage`, once an
-        /// [Intent][google.cloud.dialogflow.v2beta1.Intent] with
-        /// [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff]
-        /// is triggered, conversation will transfer to Assist Stage.
+        /// If [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile] is configured for a dialogflow
+        /// agent, conversation will start from `Automated Agent Stage`, otherwise, it
+        /// will start from `Assist Stage`. And during `Automated Agent Stage`, once an
+        /// [Intent][google.cloud.dialogflow.v2beta1.Intent] with [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff] is triggered, conversation
+        /// will transfer to Assist Stage.
         /// </summary>
         /// <param name="parent">
         /// Required. Resource identifier of the project creating the conversation.
@@ -471,14 +455,11 @@ namespace Google.Cloud.Dialogflow.V2beta1
         /// For Assist Stage, there's no dialogflow agent responding to user queries.
         /// But we will provide suggestions which are generated from conversation.
         /// 
-        /// If
-        /// [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile]
-        /// is configured for a dialogflow agent, conversation will start from
-        /// `Automated Agent Stage`, otherwise, it will start from `Assist Stage`. And
-        /// during `Automated Agent Stage`, once an
-        /// [Intent][google.cloud.dialogflow.v2beta1.Intent] with
-        /// [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff]
-        /// is triggered, conversation will transfer to Assist Stage.
+        /// If [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile] is configured for a dialogflow
+        /// agent, conversation will start from `Automated Agent Stage`, otherwise, it
+        /// will start from `Assist Stage`. And during `Automated Agent Stage`, once an
+        /// [Intent][google.cloud.dialogflow.v2beta1.Intent] with [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff] is triggered, conversation
+        /// will transfer to Assist Stage.
         /// </summary>
         /// <param name="parent">
         /// Required. Resource identifier of the project creating the conversation.
@@ -506,14 +487,11 @@ namespace Google.Cloud.Dialogflow.V2beta1
         /// For Assist Stage, there's no dialogflow agent responding to user queries.
         /// But we will provide suggestions which are generated from conversation.
         /// 
-        /// If
-        /// [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile]
-        /// is configured for a dialogflow agent, conversation will start from
-        /// `Automated Agent Stage`, otherwise, it will start from `Assist Stage`. And
-        /// during `Automated Agent Stage`, once an
-        /// [Intent][google.cloud.dialogflow.v2beta1.Intent] with
-        /// [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff]
-        /// is triggered, conversation will transfer to Assist Stage.
+        /// If [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile] is configured for a dialogflow
+        /// agent, conversation will start from `Automated Agent Stage`, otherwise, it
+        /// will start from `Assist Stage`. And during `Automated Agent Stage`, once an
+        /// [Intent][google.cloud.dialogflow.v2beta1.Intent] with [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff] is triggered, conversation
+        /// will transfer to Assist Stage.
         /// </summary>
         /// <param name="parent">
         /// Required. Resource identifier of the project creating the conversation.
@@ -545,14 +523,11 @@ namespace Google.Cloud.Dialogflow.V2beta1
         /// For Assist Stage, there's no dialogflow agent responding to user queries.
         /// But we will provide suggestions which are generated from conversation.
         /// 
-        /// If
-        /// [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile]
-        /// is configured for a dialogflow agent, conversation will start from
-        /// `Automated Agent Stage`, otherwise, it will start from `Assist Stage`. And
-        /// during `Automated Agent Stage`, once an
-        /// [Intent][google.cloud.dialogflow.v2beta1.Intent] with
-        /// [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff]
-        /// is triggered, conversation will transfer to Assist Stage.
+        /// If [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile] is configured for a dialogflow
+        /// agent, conversation will start from `Automated Agent Stage`, otherwise, it
+        /// will start from `Assist Stage`. And during `Automated Agent Stage`, once an
+        /// [Intent][google.cloud.dialogflow.v2beta1.Intent] with [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff] is triggered, conversation
+        /// will transfer to Assist Stage.
         /// </summary>
         /// <param name="parent">
         /// Required. Resource identifier of the project creating the conversation.
@@ -584,14 +559,11 @@ namespace Google.Cloud.Dialogflow.V2beta1
         /// For Assist Stage, there's no dialogflow agent responding to user queries.
         /// But we will provide suggestions which are generated from conversation.
         /// 
-        /// If
-        /// [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile]
-        /// is configured for a dialogflow agent, conversation will start from
-        /// `Automated Agent Stage`, otherwise, it will start from `Assist Stage`. And
-        /// during `Automated Agent Stage`, once an
-        /// [Intent][google.cloud.dialogflow.v2beta1.Intent] with
-        /// [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff]
-        /// is triggered, conversation will transfer to Assist Stage.
+        /// If [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile] is configured for a dialogflow
+        /// agent, conversation will start from `Automated Agent Stage`, otherwise, it
+        /// will start from `Assist Stage`. And during `Automated Agent Stage`, once an
+        /// [Intent][google.cloud.dialogflow.v2beta1.Intent] with [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff] is triggered, conversation
+        /// will transfer to Assist Stage.
         /// </summary>
         /// <param name="parent">
         /// Required. Resource identifier of the project creating the conversation.
@@ -619,14 +591,11 @@ namespace Google.Cloud.Dialogflow.V2beta1
         /// For Assist Stage, there's no dialogflow agent responding to user queries.
         /// But we will provide suggestions which are generated from conversation.
         /// 
-        /// If
-        /// [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile]
-        /// is configured for a dialogflow agent, conversation will start from
-        /// `Automated Agent Stage`, otherwise, it will start from `Assist Stage`. And
-        /// during `Automated Agent Stage`, once an
-        /// [Intent][google.cloud.dialogflow.v2beta1.Intent] with
-        /// [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff]
-        /// is triggered, conversation will transfer to Assist Stage.
+        /// If [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile] is configured for a dialogflow
+        /// agent, conversation will start from `Automated Agent Stage`, otherwise, it
+        /// will start from `Assist Stage`. And during `Automated Agent Stage`, once an
+        /// [Intent][google.cloud.dialogflow.v2beta1.Intent] with [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff] is triggered, conversation
+        /// will transfer to Assist Stage.
         /// </summary>
         /// <param name="parent">
         /// Required. Resource identifier of the project creating the conversation.
@@ -658,14 +627,11 @@ namespace Google.Cloud.Dialogflow.V2beta1
         /// For Assist Stage, there's no dialogflow agent responding to user queries.
         /// But we will provide suggestions which are generated from conversation.
         /// 
-        /// If
-        /// [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile]
-        /// is configured for a dialogflow agent, conversation will start from
-        /// `Automated Agent Stage`, otherwise, it will start from `Assist Stage`. And
-        /// during `Automated Agent Stage`, once an
-        /// [Intent][google.cloud.dialogflow.v2beta1.Intent] with
-        /// [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff]
-        /// is triggered, conversation will transfer to Assist Stage.
+        /// If [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile] is configured for a dialogflow
+        /// agent, conversation will start from `Automated Agent Stage`, otherwise, it
+        /// will start from `Assist Stage`. And during `Automated Agent Stage`, once an
+        /// [Intent][google.cloud.dialogflow.v2beta1.Intent] with [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff] is triggered, conversation
+        /// will transfer to Assist Stage.
         /// </summary>
         /// <param name="parent">
         /// Required. Resource identifier of the project creating the conversation.
@@ -697,14 +663,11 @@ namespace Google.Cloud.Dialogflow.V2beta1
         /// For Assist Stage, there's no dialogflow agent responding to user queries.
         /// But we will provide suggestions which are generated from conversation.
         /// 
-        /// If
-        /// [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile]
-        /// is configured for a dialogflow agent, conversation will start from
-        /// `Automated Agent Stage`, otherwise, it will start from `Assist Stage`. And
-        /// during `Automated Agent Stage`, once an
-        /// [Intent][google.cloud.dialogflow.v2beta1.Intent] with
-        /// [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff]
-        /// is triggered, conversation will transfer to Assist Stage.
+        /// If [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile] is configured for a dialogflow
+        /// agent, conversation will start from `Automated Agent Stage`, otherwise, it
+        /// will start from `Assist Stage`. And during `Automated Agent Stage`, once an
+        /// [Intent][google.cloud.dialogflow.v2beta1.Intent] with [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff] is triggered, conversation
+        /// will transfer to Assist Stage.
         /// </summary>
         /// <param name="parent">
         /// Required. Resource identifier of the project creating the conversation.
@@ -1404,8 +1367,7 @@ namespace Google.Cloud.Dialogflow.V2beta1
 
     /// <summary>Conversations client wrapper implementation, for convenient use.</summary>
     /// <remarks>
-    /// Service for managing
-    /// [Conversations][google.cloud.dialogflow.v2beta1.Conversation].
+    /// Service for managing [Conversations][google.cloud.dialogflow.v2beta1.Conversation].
     /// </remarks>
     public sealed partial class ConversationsClientImpl : ConversationsClient
     {
@@ -1497,14 +1459,11 @@ namespace Google.Cloud.Dialogflow.V2beta1
         /// For Assist Stage, there's no dialogflow agent responding to user queries.
         /// But we will provide suggestions which are generated from conversation.
         /// 
-        /// If
-        /// [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile]
-        /// is configured for a dialogflow agent, conversation will start from
-        /// `Automated Agent Stage`, otherwise, it will start from `Assist Stage`. And
-        /// during `Automated Agent Stage`, once an
-        /// [Intent][google.cloud.dialogflow.v2beta1.Intent] with
-        /// [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff]
-        /// is triggered, conversation will transfer to Assist Stage.
+        /// If [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile] is configured for a dialogflow
+        /// agent, conversation will start from `Automated Agent Stage`, otherwise, it
+        /// will start from `Assist Stage`. And during `Automated Agent Stage`, once an
+        /// [Intent][google.cloud.dialogflow.v2beta1.Intent] with [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff] is triggered, conversation
+        /// will transfer to Assist Stage.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -1529,14 +1488,11 @@ namespace Google.Cloud.Dialogflow.V2beta1
         /// For Assist Stage, there's no dialogflow agent responding to user queries.
         /// But we will provide suggestions which are generated from conversation.
         /// 
-        /// If
-        /// [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile]
-        /// is configured for a dialogflow agent, conversation will start from
-        /// `Automated Agent Stage`, otherwise, it will start from `Assist Stage`. And
-        /// during `Automated Agent Stage`, once an
-        /// [Intent][google.cloud.dialogflow.v2beta1.Intent] with
-        /// [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff]
-        /// is triggered, conversation will transfer to Assist Stage.
+        /// If [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile] is configured for a dialogflow
+        /// agent, conversation will start from `Automated Agent Stage`, otherwise, it
+        /// will start from `Assist Stage`. And during `Automated Agent Stage`, once an
+        /// [Intent][google.cloud.dialogflow.v2beta1.Intent] with [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff] is triggered, conversation
+        /// will transfer to Assist Stage.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>

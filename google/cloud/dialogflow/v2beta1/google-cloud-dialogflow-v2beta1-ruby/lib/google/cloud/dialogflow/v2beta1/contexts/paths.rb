@@ -57,6 +57,18 @@ module Google
             #   @param session [String]
             #   @param context [String]
             #
+            # @overload context_path(project:, location:, environment:, user:, session:, context:)
+            #   The resource will be in the following format:
+            #
+            #   `projects/{project}/locations/{location}/agent/environments/{environment}/users/{user}/sessions/{session}/contexts/{context}`
+            #
+            #   @param project [String]
+            #   @param location [String]
+            #   @param environment [String]
+            #   @param user [String]
+            #   @param session [String]
+            #   @param context [String]
+            #
             # @return [::String]
             def context_path **args
               resources = {
@@ -80,6 +92,15 @@ module Google
                   raise ::ArgumentError, "session cannot contain /" if session.to_s.include? "/"
 
                   "projects/#{project}/locations/#{location}/agent/sessions/#{session}/contexts/#{context}"
+                end),
+                "context:environment:location:project:session:user" => (proc do |project:, location:, environment:, user:, session:, context:|
+                  raise ::ArgumentError, "project cannot contain /" if project.to_s.include? "/"
+                  raise ::ArgumentError, "location cannot contain /" if location.to_s.include? "/"
+                  raise ::ArgumentError, "environment cannot contain /" if environment.to_s.include? "/"
+                  raise ::ArgumentError, "user cannot contain /" if user.to_s.include? "/"
+                  raise ::ArgumentError, "session cannot contain /" if session.to_s.include? "/"
+
+                  "projects/#{project}/locations/#{location}/agent/environments/#{environment}/users/#{user}/sessions/#{session}/contexts/#{context}"
                 end)
               }
 
@@ -118,6 +139,17 @@ module Google
             #   @param location [String]
             #   @param session [String]
             #
+            # @overload session_path(project:, location:, environment:, user:, session:)
+            #   The resource will be in the following format:
+            #
+            #   `projects/{project}/locations/{location}/agent/environments/{environment}/users/{user}/sessions/{session}`
+            #
+            #   @param project [String]
+            #   @param location [String]
+            #   @param environment [String]
+            #   @param user [String]
+            #   @param session [String]
+            #
             # @return [::String]
             def session_path **args
               resources = {
@@ -138,6 +170,14 @@ module Google
                   raise ::ArgumentError, "location cannot contain /" if location.to_s.include? "/"
 
                   "projects/#{project}/locations/#{location}/agent/sessions/#{session}"
+                end),
+                "environment:location:project:session:user" => (proc do |project:, location:, environment:, user:, session:|
+                  raise ::ArgumentError, "project cannot contain /" if project.to_s.include? "/"
+                  raise ::ArgumentError, "location cannot contain /" if location.to_s.include? "/"
+                  raise ::ArgumentError, "environment cannot contain /" if environment.to_s.include? "/"
+                  raise ::ArgumentError, "user cannot contain /" if user.to_s.include? "/"
+
+                  "projects/#{project}/locations/#{location}/agent/environments/#{environment}/users/#{user}/sessions/#{session}"
                 end)
               }
 

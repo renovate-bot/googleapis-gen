@@ -37,8 +37,12 @@ from google.cloud.dialogflow_v2beta1.services.environments import pagers
 from google.cloud.dialogflow_v2beta1.services.environments import transports
 from google.cloud.dialogflow_v2beta1.services.environments.transports.base import _API_CORE_VERSION
 from google.cloud.dialogflow_v2beta1.services.environments.transports.base import _GOOGLE_AUTH_VERSION
+from google.cloud.dialogflow_v2beta1.types import audio_config
 from google.cloud.dialogflow_v2beta1.types import environment
+from google.cloud.dialogflow_v2beta1.types import fulfillment
 from google.oauth2 import service_account
+from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 import google.auth
 
 
@@ -788,6 +792,981 @@ async def test_list_environments_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+def test_get_environment(transport: str = 'grpc', request_type=environment.GetEnvironmentRequest):
+    client = EnvironmentsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_environment),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = environment.Environment(
+            name='name_value',
+            description='description_value',
+            agent_version='agent_version_value',
+            state=environment.Environment.State.STOPPED,
+        )
+        response = client.get_environment(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == environment.GetEnvironmentRequest()
+
+    # Establish that the response is the type that we expect.
+    assert isinstance(response, environment.Environment)
+    assert response.name == 'name_value'
+    assert response.description == 'description_value'
+    assert response.agent_version == 'agent_version_value'
+    assert response.state == environment.Environment.State.STOPPED
+
+
+def test_get_environment_from_dict():
+    test_get_environment(request_type=dict)
+
+
+def test_get_environment_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = EnvironmentsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_environment),
+            '__call__') as call:
+        client.get_environment()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == environment.GetEnvironmentRequest()
+
+
+@pytest.mark.asyncio
+async def test_get_environment_async(transport: str = 'grpc_asyncio', request_type=environment.GetEnvironmentRequest):
+    client = EnvironmentsAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_environment),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(environment.Environment(
+            name='name_value',
+            description='description_value',
+            agent_version='agent_version_value',
+            state=environment.Environment.State.STOPPED,
+        ))
+        response = await client.get_environment(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == environment.GetEnvironmentRequest()
+
+    # Establish that the response is the type that we expect.
+    assert isinstance(response, environment.Environment)
+    assert response.name == 'name_value'
+    assert response.description == 'description_value'
+    assert response.agent_version == 'agent_version_value'
+    assert response.state == environment.Environment.State.STOPPED
+
+
+@pytest.mark.asyncio
+async def test_get_environment_async_from_dict():
+    await test_get_environment_async(request_type=dict)
+
+
+def test_get_environment_field_headers():
+    client = EnvironmentsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = environment.GetEnvironmentRequest()
+
+    request.name = 'name/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_environment),
+            '__call__') as call:
+        call.return_value = environment.Environment()
+        client.get_environment(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'name=name/value',
+    ) in kw['metadata']
+
+
+@pytest.mark.asyncio
+async def test_get_environment_field_headers_async():
+    client = EnvironmentsAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = environment.GetEnvironmentRequest()
+
+    request.name = 'name/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_environment),
+            '__call__') as call:
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(environment.Environment())
+        await client.get_environment(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'name=name/value',
+    ) in kw['metadata']
+
+
+def test_create_environment(transport: str = 'grpc', request_type=environment.CreateEnvironmentRequest):
+    client = EnvironmentsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_environment),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = environment.Environment(
+            name='name_value',
+            description='description_value',
+            agent_version='agent_version_value',
+            state=environment.Environment.State.STOPPED,
+        )
+        response = client.create_environment(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == environment.CreateEnvironmentRequest()
+
+    # Establish that the response is the type that we expect.
+    assert isinstance(response, environment.Environment)
+    assert response.name == 'name_value'
+    assert response.description == 'description_value'
+    assert response.agent_version == 'agent_version_value'
+    assert response.state == environment.Environment.State.STOPPED
+
+
+def test_create_environment_from_dict():
+    test_create_environment(request_type=dict)
+
+
+def test_create_environment_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = EnvironmentsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_environment),
+            '__call__') as call:
+        client.create_environment()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == environment.CreateEnvironmentRequest()
+
+
+@pytest.mark.asyncio
+async def test_create_environment_async(transport: str = 'grpc_asyncio', request_type=environment.CreateEnvironmentRequest):
+    client = EnvironmentsAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_environment),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(environment.Environment(
+            name='name_value',
+            description='description_value',
+            agent_version='agent_version_value',
+            state=environment.Environment.State.STOPPED,
+        ))
+        response = await client.create_environment(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == environment.CreateEnvironmentRequest()
+
+    # Establish that the response is the type that we expect.
+    assert isinstance(response, environment.Environment)
+    assert response.name == 'name_value'
+    assert response.description == 'description_value'
+    assert response.agent_version == 'agent_version_value'
+    assert response.state == environment.Environment.State.STOPPED
+
+
+@pytest.mark.asyncio
+async def test_create_environment_async_from_dict():
+    await test_create_environment_async(request_type=dict)
+
+
+def test_create_environment_field_headers():
+    client = EnvironmentsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = environment.CreateEnvironmentRequest()
+
+    request.parent = 'parent/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_environment),
+            '__call__') as call:
+        call.return_value = environment.Environment()
+        client.create_environment(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'parent=parent/value',
+    ) in kw['metadata']
+
+
+@pytest.mark.asyncio
+async def test_create_environment_field_headers_async():
+    client = EnvironmentsAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = environment.CreateEnvironmentRequest()
+
+    request.parent = 'parent/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_environment),
+            '__call__') as call:
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(environment.Environment())
+        await client.create_environment(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'parent=parent/value',
+    ) in kw['metadata']
+
+
+def test_update_environment(transport: str = 'grpc', request_type=environment.UpdateEnvironmentRequest):
+    client = EnvironmentsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_environment),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = environment.Environment(
+            name='name_value',
+            description='description_value',
+            agent_version='agent_version_value',
+            state=environment.Environment.State.STOPPED,
+        )
+        response = client.update_environment(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == environment.UpdateEnvironmentRequest()
+
+    # Establish that the response is the type that we expect.
+    assert isinstance(response, environment.Environment)
+    assert response.name == 'name_value'
+    assert response.description == 'description_value'
+    assert response.agent_version == 'agent_version_value'
+    assert response.state == environment.Environment.State.STOPPED
+
+
+def test_update_environment_from_dict():
+    test_update_environment(request_type=dict)
+
+
+def test_update_environment_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = EnvironmentsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_environment),
+            '__call__') as call:
+        client.update_environment()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == environment.UpdateEnvironmentRequest()
+
+
+@pytest.mark.asyncio
+async def test_update_environment_async(transport: str = 'grpc_asyncio', request_type=environment.UpdateEnvironmentRequest):
+    client = EnvironmentsAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_environment),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(environment.Environment(
+            name='name_value',
+            description='description_value',
+            agent_version='agent_version_value',
+            state=environment.Environment.State.STOPPED,
+        ))
+        response = await client.update_environment(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == environment.UpdateEnvironmentRequest()
+
+    # Establish that the response is the type that we expect.
+    assert isinstance(response, environment.Environment)
+    assert response.name == 'name_value'
+    assert response.description == 'description_value'
+    assert response.agent_version == 'agent_version_value'
+    assert response.state == environment.Environment.State.STOPPED
+
+
+@pytest.mark.asyncio
+async def test_update_environment_async_from_dict():
+    await test_update_environment_async(request_type=dict)
+
+
+def test_update_environment_field_headers():
+    client = EnvironmentsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = environment.UpdateEnvironmentRequest()
+
+    request.environment.name = 'environment.name/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_environment),
+            '__call__') as call:
+        call.return_value = environment.Environment()
+        client.update_environment(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'environment.name=environment.name/value',
+    ) in kw['metadata']
+
+
+@pytest.mark.asyncio
+async def test_update_environment_field_headers_async():
+    client = EnvironmentsAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = environment.UpdateEnvironmentRequest()
+
+    request.environment.name = 'environment.name/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_environment),
+            '__call__') as call:
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(environment.Environment())
+        await client.update_environment(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'environment.name=environment.name/value',
+    ) in kw['metadata']
+
+
+def test_delete_environment(transport: str = 'grpc', request_type=environment.DeleteEnvironmentRequest):
+    client = EnvironmentsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_environment),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = None
+        response = client.delete_environment(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == environment.DeleteEnvironmentRequest()
+
+    # Establish that the response is the type that we expect.
+    assert response is None
+
+
+def test_delete_environment_from_dict():
+    test_delete_environment(request_type=dict)
+
+
+def test_delete_environment_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = EnvironmentsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_environment),
+            '__call__') as call:
+        client.delete_environment()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == environment.DeleteEnvironmentRequest()
+
+
+@pytest.mark.asyncio
+async def test_delete_environment_async(transport: str = 'grpc_asyncio', request_type=environment.DeleteEnvironmentRequest):
+    client = EnvironmentsAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_environment),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+        response = await client.delete_environment(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == environment.DeleteEnvironmentRequest()
+
+    # Establish that the response is the type that we expect.
+    assert response is None
+
+
+@pytest.mark.asyncio
+async def test_delete_environment_async_from_dict():
+    await test_delete_environment_async(request_type=dict)
+
+
+def test_delete_environment_field_headers():
+    client = EnvironmentsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = environment.DeleteEnvironmentRequest()
+
+    request.name = 'name/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_environment),
+            '__call__') as call:
+        call.return_value = None
+        client.delete_environment(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'name=name/value',
+    ) in kw['metadata']
+
+
+@pytest.mark.asyncio
+async def test_delete_environment_field_headers_async():
+    client = EnvironmentsAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = environment.DeleteEnvironmentRequest()
+
+    request.name = 'name/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_environment),
+            '__call__') as call:
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+        await client.delete_environment(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'name=name/value',
+    ) in kw['metadata']
+
+
+def test_get_environment_history(transport: str = 'grpc', request_type=environment.GetEnvironmentHistoryRequest):
+    client = EnvironmentsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_environment_history),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = environment.EnvironmentHistory(
+            parent='parent_value',
+            next_page_token='next_page_token_value',
+        )
+        response = client.get_environment_history(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == environment.GetEnvironmentHistoryRequest()
+
+    # Establish that the response is the type that we expect.
+    assert isinstance(response, pagers.GetEnvironmentHistoryPager)
+    assert response.parent == 'parent_value'
+    assert response.next_page_token == 'next_page_token_value'
+
+
+def test_get_environment_history_from_dict():
+    test_get_environment_history(request_type=dict)
+
+
+def test_get_environment_history_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = EnvironmentsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_environment_history),
+            '__call__') as call:
+        client.get_environment_history()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == environment.GetEnvironmentHistoryRequest()
+
+
+@pytest.mark.asyncio
+async def test_get_environment_history_async(transport: str = 'grpc_asyncio', request_type=environment.GetEnvironmentHistoryRequest):
+    client = EnvironmentsAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_environment_history),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(environment.EnvironmentHistory(
+            parent='parent_value',
+            next_page_token='next_page_token_value',
+        ))
+        response = await client.get_environment_history(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == environment.GetEnvironmentHistoryRequest()
+
+    # Establish that the response is the type that we expect.
+    assert isinstance(response, pagers.GetEnvironmentHistoryAsyncPager)
+    assert response.parent == 'parent_value'
+    assert response.next_page_token == 'next_page_token_value'
+
+
+@pytest.mark.asyncio
+async def test_get_environment_history_async_from_dict():
+    await test_get_environment_history_async(request_type=dict)
+
+
+def test_get_environment_history_field_headers():
+    client = EnvironmentsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = environment.GetEnvironmentHistoryRequest()
+
+    request.parent = 'parent/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_environment_history),
+            '__call__') as call:
+        call.return_value = environment.EnvironmentHistory()
+        client.get_environment_history(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'parent=parent/value',
+    ) in kw['metadata']
+
+
+@pytest.mark.asyncio
+async def test_get_environment_history_field_headers_async():
+    client = EnvironmentsAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = environment.GetEnvironmentHistoryRequest()
+
+    request.parent = 'parent/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_environment_history),
+            '__call__') as call:
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(environment.EnvironmentHistory())
+        await client.get_environment_history(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'parent=parent/value',
+    ) in kw['metadata']
+
+
+def test_get_environment_history_pager():
+    client = EnvironmentsClient(
+        credentials=ga_credentials.AnonymousCredentials,
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_environment_history),
+            '__call__') as call:
+        # Set the response to a series of pages.
+        call.side_effect = (
+            environment.EnvironmentHistory(
+                entries=[
+                    environment.EnvironmentHistory.Entry(),
+                    environment.EnvironmentHistory.Entry(),
+                    environment.EnvironmentHistory.Entry(),
+                ],
+                next_page_token='abc',
+            ),
+            environment.EnvironmentHistory(
+                entries=[],
+                next_page_token='def',
+            ),
+            environment.EnvironmentHistory(
+                entries=[
+                    environment.EnvironmentHistory.Entry(),
+                ],
+                next_page_token='ghi',
+            ),
+            environment.EnvironmentHistory(
+                entries=[
+                    environment.EnvironmentHistory.Entry(),
+                    environment.EnvironmentHistory.Entry(),
+                ],
+            ),
+            RuntimeError,
+        )
+
+        metadata = ()
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ('parent', ''),
+            )),
+        )
+        pager = client.get_environment_history(request={})
+
+        assert pager._metadata == metadata
+
+        results = [i for i in pager]
+        assert len(results) == 6
+        assert all(isinstance(i, environment.EnvironmentHistory.Entry)
+                   for i in results)
+
+def test_get_environment_history_pages():
+    client = EnvironmentsClient(
+        credentials=ga_credentials.AnonymousCredentials,
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_environment_history),
+            '__call__') as call:
+        # Set the response to a series of pages.
+        call.side_effect = (
+            environment.EnvironmentHistory(
+                entries=[
+                    environment.EnvironmentHistory.Entry(),
+                    environment.EnvironmentHistory.Entry(),
+                    environment.EnvironmentHistory.Entry(),
+                ],
+                next_page_token='abc',
+            ),
+            environment.EnvironmentHistory(
+                entries=[],
+                next_page_token='def',
+            ),
+            environment.EnvironmentHistory(
+                entries=[
+                    environment.EnvironmentHistory.Entry(),
+                ],
+                next_page_token='ghi',
+            ),
+            environment.EnvironmentHistory(
+                entries=[
+                    environment.EnvironmentHistory.Entry(),
+                    environment.EnvironmentHistory.Entry(),
+                ],
+            ),
+            RuntimeError,
+        )
+        pages = list(client.get_environment_history(request={}).pages)
+        for page_, token in zip(pages, ['abc','def','ghi', '']):
+            assert page_.raw_page.next_page_token == token
+
+@pytest.mark.asyncio
+async def test_get_environment_history_async_pager():
+    client = EnvironmentsAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials,
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_environment_history),
+            '__call__', new_callable=mock.AsyncMock) as call:
+        # Set the response to a series of pages.
+        call.side_effect = (
+            environment.EnvironmentHistory(
+                entries=[
+                    environment.EnvironmentHistory.Entry(),
+                    environment.EnvironmentHistory.Entry(),
+                    environment.EnvironmentHistory.Entry(),
+                ],
+                next_page_token='abc',
+            ),
+            environment.EnvironmentHistory(
+                entries=[],
+                next_page_token='def',
+            ),
+            environment.EnvironmentHistory(
+                entries=[
+                    environment.EnvironmentHistory.Entry(),
+                ],
+                next_page_token='ghi',
+            ),
+            environment.EnvironmentHistory(
+                entries=[
+                    environment.EnvironmentHistory.Entry(),
+                    environment.EnvironmentHistory.Entry(),
+                ],
+            ),
+            RuntimeError,
+        )
+        async_pager = await client.get_environment_history(request={},)
+        assert async_pager.next_page_token == 'abc'
+        responses = []
+        async for response in async_pager:
+            responses.append(response)
+
+        assert len(responses) == 6
+        assert all(isinstance(i, environment.EnvironmentHistory.Entry)
+                   for i in responses)
+
+@pytest.mark.asyncio
+async def test_get_environment_history_async_pages():
+    client = EnvironmentsAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials,
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_environment_history),
+            '__call__', new_callable=mock.AsyncMock) as call:
+        # Set the response to a series of pages.
+        call.side_effect = (
+            environment.EnvironmentHistory(
+                entries=[
+                    environment.EnvironmentHistory.Entry(),
+                    environment.EnvironmentHistory.Entry(),
+                    environment.EnvironmentHistory.Entry(),
+                ],
+                next_page_token='abc',
+            ),
+            environment.EnvironmentHistory(
+                entries=[],
+                next_page_token='def',
+            ),
+            environment.EnvironmentHistory(
+                entries=[
+                    environment.EnvironmentHistory.Entry(),
+                ],
+                next_page_token='ghi',
+            ),
+            environment.EnvironmentHistory(
+                entries=[
+                    environment.EnvironmentHistory.Entry(),
+                    environment.EnvironmentHistory.Entry(),
+                ],
+            ),
+            RuntimeError,
+        )
+        pages = []
+        async for page_ in (await client.get_environment_history(request={})).pages:
+            pages.append(page_)
+        for page_, token in zip(pages, ['abc','def','ghi', '']):
+            assert page_.raw_page.next_page_token == token
+
 
 def test_credentials_transport_error():
     # It is an error to provide credentials and a transport instance.
@@ -885,6 +1864,11 @@ def test_environments_base_transport():
     # raise NotImplementedError.
     methods = (
         'list_environments',
+        'get_environment',
+        'create_environment',
+        'update_environment',
+        'delete_environment',
+        'get_environment_history',
     )
     for method in methods:
         with pytest.raises(NotImplementedError):
@@ -1312,8 +2296,25 @@ def test_parse_environment_path():
     actual = EnvironmentsClient.parse_environment_path(path)
     assert expected == actual
 
+def test_fulfillment_path():
+    project = "oyster"
+    expected = "projects/{project}/agent/fulfillment".format(project=project, )
+    actual = EnvironmentsClient.fulfillment_path(project)
+    assert expected == actual
+
+
+def test_parse_fulfillment_path():
+    expected = {
+        "project": "nudibranch",
+    }
+    path = EnvironmentsClient.fulfillment_path(**expected)
+
+    # Check that the path construction is reversible.
+    actual = EnvironmentsClient.parse_fulfillment_path(path)
+    assert expected == actual
+
 def test_common_billing_account_path():
-    billing_account = "oyster"
+    billing_account = "cuttlefish"
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = EnvironmentsClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -1321,7 +2322,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "nudibranch",
+        "billing_account": "mussel",
     }
     path = EnvironmentsClient.common_billing_account_path(**expected)
 
@@ -1330,7 +2331,7 @@ def test_parse_common_billing_account_path():
     assert expected == actual
 
 def test_common_folder_path():
-    folder = "cuttlefish"
+    folder = "winkle"
     expected = "folders/{folder}".format(folder=folder, )
     actual = EnvironmentsClient.common_folder_path(folder)
     assert expected == actual
@@ -1338,7 +2339,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "mussel",
+        "folder": "nautilus",
     }
     path = EnvironmentsClient.common_folder_path(**expected)
 
@@ -1347,7 +2348,7 @@ def test_parse_common_folder_path():
     assert expected == actual
 
 def test_common_organization_path():
-    organization = "winkle"
+    organization = "scallop"
     expected = "organizations/{organization}".format(organization=organization, )
     actual = EnvironmentsClient.common_organization_path(organization)
     assert expected == actual
@@ -1355,7 +2356,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nautilus",
+        "organization": "abalone",
     }
     path = EnvironmentsClient.common_organization_path(**expected)
 
@@ -1364,7 +2365,7 @@ def test_parse_common_organization_path():
     assert expected == actual
 
 def test_common_project_path():
-    project = "scallop"
+    project = "squid"
     expected = "projects/{project}".format(project=project, )
     actual = EnvironmentsClient.common_project_path(project)
     assert expected == actual
@@ -1372,7 +2373,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "abalone",
+        "project": "clam",
     }
     path = EnvironmentsClient.common_project_path(**expected)
 
@@ -1381,8 +2382,8 @@ def test_parse_common_project_path():
     assert expected == actual
 
 def test_common_location_path():
-    project = "squid"
-    location = "clam"
+    project = "whelk"
+    location = "octopus"
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = EnvironmentsClient.common_location_path(project, location)
     assert expected == actual
@@ -1390,8 +2391,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "whelk",
-        "location": "octopus",
+        "project": "oyster",
+        "location": "nudibranch",
     }
     path = EnvironmentsClient.common_location_path(**expected)
 

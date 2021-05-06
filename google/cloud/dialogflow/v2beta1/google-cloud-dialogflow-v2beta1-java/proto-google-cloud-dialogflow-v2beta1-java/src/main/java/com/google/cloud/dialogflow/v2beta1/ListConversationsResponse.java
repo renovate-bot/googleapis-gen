@@ -5,8 +5,7 @@ package com.google.cloud.dialogflow.v2beta1;
 
 /**
  * <pre>
- * The response message for
- * [Conversations.ListConversations][google.cloud.dialogflow.v2beta1.Conversations.ListConversations].
+ * The response message for [Conversations.ListConversations][google.cloud.dialogflow.v2beta1.Conversations.ListConversations].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.ListConversationsResponse}
@@ -388,8 +387,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The response message for
-   * [Conversations.ListConversations][google.cloud.dialogflow.v2beta1.Conversations.ListConversations].
+   * The response message for [Conversations.ListConversations][google.cloud.dialogflow.v2beta1.Conversations.ListConversations].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.ListConversationsResponse}

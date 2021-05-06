@@ -9,8 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * The request message for
- * [Conversations.GetConversation][google.cloud.dialogflow.v2beta1.Conversations.GetConversation].
+ * The request message for [Conversations.GetConversation][google.cloud.dialogflow.v2beta1.Conversations.GetConversation].
  *
  * Generated from protobuf message <code>google.cloud.dialogflow.v2beta1.GetConversationRequest</code>
  */

@@ -489,7 +489,7 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
         Returns:
             google.cloud.dialogflow_v2beta1.services.conversations.pagers.ListConversationsPager:
                 The response message for
-                   [Conversations.ListConversations][google.cloud.dialogflow.v2beta1.Conversations.ListConversations].
+                [Conversations.ListConversations][google.cloud.dialogflow.v2beta1.Conversations.ListConversations].
 
                 Iterating over this object will yield results and
                 resolve additional pages automatically.
@@ -822,7 +822,7 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
         Returns:
             google.cloud.dialogflow_v2beta1.services.conversations.pagers.ListMessagesPager:
                 The response message for
-                   [Conversations.ListMessages][google.cloud.dialogflow.v2beta1.Conversations.ListMessages].
+                [Conversations.ListMessages][google.cloud.dialogflow.v2beta1.Conversations.ListMessages].
 
                 Iterating over this object will yield results and
                 resolve additional pages automatically.

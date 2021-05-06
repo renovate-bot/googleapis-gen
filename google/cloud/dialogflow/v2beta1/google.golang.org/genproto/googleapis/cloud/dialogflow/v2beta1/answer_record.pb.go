@@ -284,12 +284,9 @@ func (AgentAssistantFeedback_DocumentEfficiency) EnumDescriptor() ([]byte, []int
 // A typical workflow for customers provide feedback to an answer is:
 //
 // 1. For human agent assistant, customers get suggestion via ListSuggestions
-//    API. Together with the answers,
-//    [AnswerRecord.name][google.cloud.dialogflow.v2beta1.AnswerRecord.name] are
-//    returned to the customers.
-// 2. The customer uses the
-// [AnswerRecord.name][google.cloud.dialogflow.v2beta1.AnswerRecord.name] to
-// call the
+//    API. Together with the answers, [AnswerRecord.name][google.cloud.dialogflow.v2beta1.AnswerRecord.name] are returned to the
+//    customers.
+// 2. The customer uses the [AnswerRecord.name][google.cloud.dialogflow.v2beta1.AnswerRecord.name] to call the
 //    [UpdateAnswerRecord][] method to send feedback about a specific answer
 //    that they believe is wrong.
 type AnswerRecord struct {
@@ -298,14 +295,13 @@ type AnswerRecord struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The unique identifier of this answer record.
-	// Required for
-	// [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord]
-	// method. Format: `projects/<Project ID>/locations/<Location
+	// Required for [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord] method.
+	// Format: `projects/<Project ID>/locations/<Location
 	// ID>/answerRecords/<Answer Record ID>`.
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	// Optional. The AnswerFeedback for this record. You can set this with
-	// [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord]
-	// in order to give us feedback about this answer.
+	// [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord] in order to give us feedback about
+	// this answer.
 	AnswerFeedback *AnswerFeedback `protobuf:"bytes,3,opt,name=answer_feedback,json=answerFeedback,proto3" json:"answer_feedback,omitempty"`
 	// Output only. The record for this answer.
 	//
@@ -615,9 +611,7 @@ type AgentAssistantFeedback struct {
 	DocumentCorrectness AgentAssistantFeedback_DocumentCorrectness `protobuf:"varint,2,opt,name=document_correctness,json=documentCorrectness,proto3,enum=google.cloud.dialogflow.v2beta1.AgentAssistantFeedback_DocumentCorrectness" json:"document_correctness,omitempty"`
 	// Optional. Whether or not the suggested document is efficient. For example,
 	// if the document is poorly written, hard to understand, hard to use or
-	// too long to find useful information,
-	// [document_efficiency][google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.document_efficiency]
-	// is
+	// too long to find useful information, [document_efficiency][google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.document_efficiency] is
 	// [DocumentEfficiency.INEFFICIENT][google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.DocumentEfficiency.INEFFICIENT].
 	DocumentEfficiency AgentAssistantFeedback_DocumentEfficiency `protobuf:"varint,3,opt,name=document_efficiency,json=documentEfficiency,proto3,enum=google.cloud.dialogflow.v2beta1.AgentAssistantFeedback_DocumentEfficiency" json:"document_efficiency,omitempty"`
 	// Feedback for conversation summarization.
@@ -684,8 +678,7 @@ func (x *AgentAssistantFeedback) GetSummarizationFeedback() *AgentAssistantFeedb
 	return nil
 }
 
-// Request message for
-// [AnswerRecords.GetAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.GetAnswerRecord].
+// Request message for [AnswerRecords.GetAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.GetAnswerRecord].
 type GetAnswerRecordRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -736,8 +729,7 @@ func (x *GetAnswerRecordRequest) GetName() string {
 	return ""
 }
 
-// Request message for
-// [AnswerRecords.ListAnswerRecords][google.cloud.dialogflow.v2beta1.AnswerRecords.ListAnswerRecords].
+// Request message for [AnswerRecords.ListAnswerRecords][google.cloud.dialogflow.v2beta1.AnswerRecords.ListAnswerRecords].
 type ListAnswerRecordsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -811,8 +803,7 @@ func (x *ListAnswerRecordsRequest) GetPageToken() string {
 	return ""
 }
 
-// Response message for
-// [AnswerRecords.ListAnswerRecords][google.cloud.dialogflow.v2beta1.AnswerRecords.ListAnswerRecords].
+// Response message for [AnswerRecords.ListAnswerRecords][google.cloud.dialogflow.v2beta1.AnswerRecords.ListAnswerRecords].
 type ListAnswerRecordsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -875,8 +866,7 @@ func (x *ListAnswerRecordsResponse) GetNextPageToken() string {
 	return ""
 }
 
-// Request message for
-// [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord].
+// Request message for [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2beta1.AnswerRecords.UpdateAnswerRecord].
 type UpdateAnswerRecordRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

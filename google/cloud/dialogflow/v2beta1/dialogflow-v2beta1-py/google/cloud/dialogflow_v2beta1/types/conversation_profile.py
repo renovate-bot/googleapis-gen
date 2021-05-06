@@ -65,6 +65,8 @@ class ConversationProfile(proto.Message):
             with this profile.
         human_agent_handoff_config (google.cloud.dialogflow_v2beta1.types.HumanAgentHandoffConfig):
             Configuration for connecting to a live agent.
+            Currently, this feature is not general
+            available, please contact Google to get access.
         notification_config (google.cloud.dialogflow_v2beta1.types.NotificationConfig):
             Configuration for publishing conversation
             lifecycle events.
@@ -187,6 +189,8 @@ class HumanAgentAssistantConfig(proto.Message):
         end_user_suggestion_config (google.cloud.dialogflow_v2beta1.types.HumanAgentAssistantConfig.SuggestionConfig):
             Configuration for agent assistance of end
             user participant.
+            Currently, this feature is not general
+            available, please contact Google to get access.
         message_analysis_config (google.cloud.dialogflow_v2beta1.types.HumanAgentAssistantConfig.MessageAnalysisConfig):
             Configuration for message analysis.
     """
@@ -455,7 +459,7 @@ class HumanAgentAssistantConfig(proto.Message):
 
         Attributes:
             model (str):
-                Required. Conversation model resource name. Format:
+                Conversation model resource name. Format:
                 ``projects/<Project ID>/conversationModels/<Model ID>``.
         """
 
@@ -474,6 +478,9 @@ class HumanAgentAssistantConfig(proto.Message):
                 assist
                 stage <https://cloud.google.com/dialogflow/priv/docs/contact-center/basics#stages>`__.
                 If unspecified, defaults to false.
+
+                Currently, this feature is not general available, please
+                contact Google to get access.
             enable_sentiment_analysis (bool):
                 Enable sentiment analysis in conversation messages on `agent
                 assist
@@ -533,6 +540,8 @@ class HumanAgentAssistantConfig(proto.Message):
 class HumanAgentHandoffConfig(proto.Message):
     r"""Defines the hand off to a live agent, typically on which
     external agent service provider to connect to a conversation.
+    Currently, this feature is not general available, please contact
+    Google to get access.
 
     Attributes:
         live_person_config (google.cloud.dialogflow_v2beta1.types.HumanAgentHandoffConfig.LivePersonConfig):

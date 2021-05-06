@@ -209,7 +209,7 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
       ///
       /// Note: Always use agent versions for production traffic
       /// sent to virtual agents. See [Versions and
-      /// environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
+      /// environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -271,7 +271,7 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
       /// This method should be used by human agent client software to fetch auto
       /// generated suggestions in real-time, while the conversation with an end user
       /// is in progress. The functionality is implemented in terms of the
-      /// [list pagination](https://cloud.google.com/apis/design/design_patterns#list_pagination)
+      /// [list pagination](/apis/design/design_patterns#list_pagination)
       /// design pattern. The client app should use the `next_page_token` field
       /// to fetch the next batch of suggestions. `suggestions` are sorted by
       /// `create_time` in descending order.
@@ -513,7 +513,7 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
       ///
       /// Note: Always use agent versions for production traffic
       /// sent to virtual agents. See [Versions and
-      /// environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
+      /// environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -530,7 +530,7 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
       ///
       /// Note: Always use agent versions for production traffic
       /// sent to virtual agents. See [Versions and
-      /// environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
+      /// environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -545,7 +545,7 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
       ///
       /// Note: Always use agent versions for production traffic
       /// sent to virtual agents. See [Versions and
-      /// environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
+      /// environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -562,7 +562,7 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
       ///
       /// Note: Always use agent versions for production traffic
       /// sent to virtual agents. See [Versions and
-      /// environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
+      /// environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -743,7 +743,7 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
       /// This method should be used by human agent client software to fetch auto
       /// generated suggestions in real-time, while the conversation with an end user
       /// is in progress. The functionality is implemented in terms of the
-      /// [list pagination](https://cloud.google.com/apis/design/design_patterns#list_pagination)
+      /// [list pagination](/apis/design/design_patterns#list_pagination)
       /// design pattern. The client app should use the `next_page_token` field
       /// to fetch the next batch of suggestions. `suggestions` are sorted by
       /// `create_time` in descending order.
@@ -773,7 +773,7 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
       /// This method should be used by human agent client software to fetch auto
       /// generated suggestions in real-time, while the conversation with an end user
       /// is in progress. The functionality is implemented in terms of the
-      /// [list pagination](https://cloud.google.com/apis/design/design_patterns#list_pagination)
+      /// [list pagination](/apis/design/design_patterns#list_pagination)
       /// design pattern. The client app should use the `next_page_token` field
       /// to fetch the next batch of suggestions. `suggestions` are sorted by
       /// `create_time` in descending order.
@@ -801,7 +801,7 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
       /// This method should be used by human agent client software to fetch auto
       /// generated suggestions in real-time, while the conversation with an end user
       /// is in progress. The functionality is implemented in terms of the
-      /// [list pagination](https://cloud.google.com/apis/design/design_patterns#list_pagination)
+      /// [list pagination](/apis/design/design_patterns#list_pagination)
       /// design pattern. The client app should use the `next_page_token` field
       /// to fetch the next batch of suggestions. `suggestions` are sorted by
       /// `create_time` in descending order.
@@ -831,7 +831,7 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
       /// This method should be used by human agent client software to fetch auto
       /// generated suggestions in real-time, while the conversation with an end user
       /// is in progress. The functionality is implemented in terms of the
-      /// [list pagination](https://cloud.google.com/apis/design/design_patterns#list_pagination)
+      /// [list pagination](/apis/design/design_patterns#list_pagination)
       /// design pattern. The client app should use the `next_page_token` field
       /// to fetch the next batch of suggestions. `suggestions` are sorted by
       /// `create_time` in descending order.

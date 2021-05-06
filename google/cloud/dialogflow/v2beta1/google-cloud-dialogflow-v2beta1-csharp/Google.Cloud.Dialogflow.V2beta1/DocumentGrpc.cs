@@ -174,6 +174,8 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
 
       /// <summary>
       /// Create documents by importing data from external sources.
+      /// Dialogflow supports up to 350 documents in each request. If you try to
+      /// import more, Dialogflow will return an error.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -426,6 +428,8 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
       }
       /// <summary>
       /// Create documents by importing data from external sources.
+      /// Dialogflow supports up to 350 documents in each request. If you try to
+      /// import more, Dialogflow will return an error.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -438,6 +442,8 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
       }
       /// <summary>
       /// Create documents by importing data from external sources.
+      /// Dialogflow supports up to 350 documents in each request. If you try to
+      /// import more, Dialogflow will return an error.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -448,6 +454,8 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
       }
       /// <summary>
       /// Create documents by importing data from external sources.
+      /// Dialogflow supports up to 350 documents in each request. If you try to
+      /// import more, Dialogflow will return an error.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -460,6 +468,8 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
       }
       /// <summary>
       /// Create documents by importing data from external sources.
+      /// Dialogflow supports up to 350 documents in each request. If you try to
+      /// import more, Dialogflow will return an error.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>

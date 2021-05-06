@@ -8241,21 +8241,21 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Required. Conversation model resource name. Format: `projects/&lt;Project
+     * Conversation model resource name. Format: `projects/&lt;Project
      * ID&gt;/conversationModels/&lt;Model ID&gt;`.
      * </pre>
      *
-     * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string model = 1 [(.google.api.resource_reference) = { ... }</code>
      * @return The model.
      */
     java.lang.String getModel();
     /**
      * <pre>
-     * Required. Conversation model resource name. Format: `projects/&lt;Project
+     * Conversation model resource name. Format: `projects/&lt;Project
      * ID&gt;/conversationModels/&lt;Model ID&gt;`.
      * </pre>
      *
-     * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string model = 1 [(.google.api.resource_reference) = { ... }</code>
      * @return The bytes for model.
      */
     com.google.protobuf.ByteString
@@ -8354,11 +8354,11 @@ private static final long serialVersionUID = 0L;
     private volatile java.lang.Object model_;
     /**
      * <pre>
-     * Required. Conversation model resource name. Format: `projects/&lt;Project
+     * Conversation model resource name. Format: `projects/&lt;Project
      * ID&gt;/conversationModels/&lt;Model ID&gt;`.
      * </pre>
      *
-     * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string model = 1 [(.google.api.resource_reference) = { ... }</code>
      * @return The model.
      */
     @java.lang.Override
@@ -8376,11 +8376,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Conversation model resource name. Format: `projects/&lt;Project
+     * Conversation model resource name. Format: `projects/&lt;Project
      * ID&gt;/conversationModels/&lt;Model ID&gt;`.
      * </pre>
      *
-     * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string model = 1 [(.google.api.resource_reference) = { ... }</code>
      * @return The bytes for model.
      */
     @java.lang.Override
@@ -8708,11 +8708,11 @@ private static final long serialVersionUID = 0L;
       private java.lang.Object model_ = "";
       /**
        * <pre>
-       * Required. Conversation model resource name. Format: `projects/&lt;Project
+       * Conversation model resource name. Format: `projects/&lt;Project
        * ID&gt;/conversationModels/&lt;Model ID&gt;`.
        * </pre>
        *
-       * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string model = 1 [(.google.api.resource_reference) = { ... }</code>
        * @return The model.
        */
       public java.lang.String getModel() {
@@ -8729,11 +8729,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. Conversation model resource name. Format: `projects/&lt;Project
+       * Conversation model resource name. Format: `projects/&lt;Project
        * ID&gt;/conversationModels/&lt;Model ID&gt;`.
        * </pre>
        *
-       * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string model = 1 [(.google.api.resource_reference) = { ... }</code>
        * @return The bytes for model.
        */
       public com.google.protobuf.ByteString
@@ -8751,11 +8751,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. Conversation model resource name. Format: `projects/&lt;Project
+       * Conversation model resource name. Format: `projects/&lt;Project
        * ID&gt;/conversationModels/&lt;Model ID&gt;`.
        * </pre>
        *
-       * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string model = 1 [(.google.api.resource_reference) = { ... }</code>
        * @param value The model to set.
        * @return This builder for chaining.
        */
@@ -8771,11 +8771,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. Conversation model resource name. Format: `projects/&lt;Project
+       * Conversation model resource name. Format: `projects/&lt;Project
        * ID&gt;/conversationModels/&lt;Model ID&gt;`.
        * </pre>
        *
-       * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string model = 1 [(.google.api.resource_reference) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearModel() {
@@ -8786,11 +8786,11 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. Conversation model resource name. Format: `projects/&lt;Project
+       * Conversation model resource name. Format: `projects/&lt;Project
        * ID&gt;/conversationModels/&lt;Model ID&gt;`.
        * </pre>
        *
-       * <code>string model = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string model = 1 [(.google.api.resource_reference) = { ... }</code>
        * @param value The bytes for model to set.
        * @return This builder for chaining.
        */
@@ -8867,6 +8867,8 @@ private static final long serialVersionUID = 0L;
      * Enable entity extraction in conversation messages on [agent assist
      * stage](https://cloud.google.com/dialogflow/priv/docs/contact-center/basics#stages).
      * If unspecified, defaults to false.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>bool enable_entity_extraction = 2;</code>
@@ -8995,6 +8997,8 @@ private static final long serialVersionUID = 0L;
      * Enable entity extraction in conversation messages on [agent assist
      * stage](https://cloud.google.com/dialogflow/priv/docs/contact-center/basics#stages).
      * If unspecified, defaults to false.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>bool enable_entity_extraction = 2;</code>
@@ -9364,6 +9368,8 @@ private static final long serialVersionUID = 0L;
        * Enable entity extraction in conversation messages on [agent assist
        * stage](https://cloud.google.com/dialogflow/priv/docs/contact-center/basics#stages).
        * If unspecified, defaults to false.
+       * Currently, this feature is not general available, please contact Google
+       * to get access.
        * </pre>
        *
        * <code>bool enable_entity_extraction = 2;</code>
@@ -9378,6 +9384,8 @@ private static final long serialVersionUID = 0L;
        * Enable entity extraction in conversation messages on [agent assist
        * stage](https://cloud.google.com/dialogflow/priv/docs/contact-center/basics#stages).
        * If unspecified, defaults to false.
+       * Currently, this feature is not general available, please contact Google
+       * to get access.
        * </pre>
        *
        * <code>bool enable_entity_extraction = 2;</code>
@@ -9395,6 +9403,8 @@ private static final long serialVersionUID = 0L;
        * Enable entity extraction in conversation messages on [agent assist
        * stage](https://cloud.google.com/dialogflow/priv/docs/contact-center/basics#stages).
        * If unspecified, defaults to false.
+       * Currently, this feature is not general available, please contact Google
+       * to get access.
        * </pre>
        *
        * <code>bool enable_entity_extraction = 2;</code>
@@ -9622,6 +9632,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Configuration for agent assistance of end user participant.
+   * Currently, this feature is not general available, please contact Google
+   * to get access.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig end_user_suggestion_config = 4;</code>
@@ -9634,6 +9646,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Configuration for agent assistance of end user participant.
+   * Currently, this feature is not general available, please contact Google
+   * to get access.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig end_user_suggestion_config = 4;</code>
@@ -9646,6 +9660,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Configuration for agent assistance of end user participant.
+   * Currently, this feature is not general available, please contact Google
+   * to get access.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig end_user_suggestion_config = 4;</code>
@@ -10418,6 +10434,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration for agent assistance of end user participant.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig end_user_suggestion_config = 4;</code>
@@ -10429,6 +10447,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration for agent assistance of end user participant.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig end_user_suggestion_config = 4;</code>
@@ -10444,6 +10464,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration for agent assistance of end user participant.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig end_user_suggestion_config = 4;</code>
@@ -10464,6 +10486,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration for agent assistance of end user participant.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig end_user_suggestion_config = 4;</code>
@@ -10482,6 +10506,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration for agent assistance of end user participant.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig end_user_suggestion_config = 4;</code>
@@ -10504,6 +10530,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration for agent assistance of end user participant.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig end_user_suggestion_config = 4;</code>
@@ -10522,6 +10550,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration for agent assistance of end user participant.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig end_user_suggestion_config = 4;</code>
@@ -10534,6 +10564,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration for agent assistance of end user participant.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig end_user_suggestion_config = 4;</code>
@@ -10549,6 +10581,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Configuration for agent assistance of end user participant.
+     * Currently, this feature is not general available, please contact Google
+     * to get access.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig end_user_suggestion_config = 4;</code>

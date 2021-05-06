@@ -19,8 +19,7 @@
 namespace Google\Cloud\Dialogflow\V2beta1;
 
 /**
- * Service for managing
- * [Conversations][google.cloud.dialogflow.v2beta1.Conversation].
+ * Service for managing [Conversations][google.cloud.dialogflow.v2beta1.Conversation].
  */
 class ConversationsGrpcClient extends \Grpc\BaseStub {
 
@@ -47,14 +46,11 @@ class ConversationsGrpcClient extends \Grpc\BaseStub {
      * For Assist Stage, there's no dialogflow agent responding to user queries.
      * But we will provide suggestions which are generated from conversation.
      *
-     * If
-     * [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile]
-     * is configured for a dialogflow agent, conversation will start from
-     * `Automated Agent Stage`, otherwise, it will start from `Assist Stage`. And
-     * during `Automated Agent Stage`, once an
-     * [Intent][google.cloud.dialogflow.v2beta1.Intent] with
-     * [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff]
-     * is triggered, conversation will transfer to Assist Stage.
+     * If [Conversation.conversation_profile][google.cloud.dialogflow.v2beta1.Conversation.conversation_profile] is configured for a dialogflow
+     * agent, conversation will start from `Automated Agent Stage`, otherwise, it
+     * will start from `Assist Stage`. And during `Automated Agent Stage`, once an
+     * [Intent][google.cloud.dialogflow.v2beta1.Intent] with [Intent.live_agent_handoff][google.cloud.dialogflow.v2beta1.Intent.live_agent_handoff] is triggered, conversation
+     * will transfer to Assist Stage.
      * @param \Google\Cloud\Dialogflow\V2beta1\CreateConversationRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

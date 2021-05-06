@@ -503,8 +503,8 @@ class ParticipantsAsyncClient:
         example) message from a participant into the conversation.
 
         Note: Always use agent versions for production traffic sent to
-        virtual agents. See [Versions and
-        environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
+        virtual agents. See `Versions and
+        environments <https://cloud.google.com/dialogflow/es/docs/agents-versions>`__.
 
         Args:
             request (:class:`google.cloud.dialogflow_v2beta1.types.AnalyzeContentRequest`):
@@ -850,7 +850,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         fetch auto generated suggestions in real-time, while the
         conversation with an end user is in progress. The functionality
         is implemented in terms of the `list
-        pagination <https://cloud.google.com/apis/design/design_patterns#list_pagination>`__
+        pagination </apis/design/design_patterns#list_pagination>`__
         design pattern. The client app should use the
         ``next_page_token`` field to fetch the next batch of
         suggestions. ``suggestions`` are sorted by ``create_time`` in

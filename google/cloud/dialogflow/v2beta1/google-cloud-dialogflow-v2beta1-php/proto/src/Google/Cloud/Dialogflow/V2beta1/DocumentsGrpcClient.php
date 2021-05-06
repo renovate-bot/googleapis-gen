@@ -88,6 +88,8 @@ class DocumentsGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Create documents by importing data from external sources.
+     * Dialogflow supports up to 350 documents in each request. If you try to
+     * import more, Dialogflow will return an error.
      * @param \Google\Cloud\Dialogflow\V2beta1\ImportDocumentsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

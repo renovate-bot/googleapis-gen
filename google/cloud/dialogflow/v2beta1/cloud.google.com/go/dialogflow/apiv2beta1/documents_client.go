@@ -334,6 +334,8 @@ func (c *DocumentsClient) CreateDocument(ctx context.Context, req *dialogflowpb.
 }
 
 // ImportDocuments create documents by importing data from external sources.
+// Dialogflow supports up to 350 documents in each request. If you try to
+// import more, Dialogflow will return an error.
 func (c *DocumentsClient) ImportDocuments(ctx context.Context, req *dialogflowpb.ImportDocumentsRequest, opts ...gax.CallOption) (*ImportDocumentsOperation, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)

@@ -26,6 +26,7 @@ from google.api_core import retry as retries  # type: ignore
 from google.auth import credentials as ga_credentials  # type: ignore
 
 from google.cloud.dialogflow_v2beta1.types import environment
+from google.protobuf import empty_pb2  # type: ignore
 
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
@@ -166,6 +167,31 @@ class EnvironmentsTransport(abc.ABC):
                 default_timeout=None,
                 client_info=client_info,
             ),
+            self.get_environment: gapic_v1.method.wrap_method(
+                self.get_environment,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.create_environment: gapic_v1.method.wrap_method(
+                self.create_environment,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.update_environment: gapic_v1.method.wrap_method(
+                self.update_environment,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.delete_environment: gapic_v1.method.wrap_method(
+                self.delete_environment,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.get_environment_history: gapic_v1.method.wrap_method(
+                self.get_environment_history,
+                default_timeout=None,
+                client_info=client_info,
+            ),
          }
 
     @property
@@ -174,6 +200,51 @@ class EnvironmentsTransport(abc.ABC):
             Union[
                 environment.ListEnvironmentsResponse,
                 Awaitable[environment.ListEnvironmentsResponse]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def get_environment(self) -> Callable[
+            [environment.GetEnvironmentRequest],
+            Union[
+                environment.Environment,
+                Awaitable[environment.Environment]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def create_environment(self) -> Callable[
+            [environment.CreateEnvironmentRequest],
+            Union[
+                environment.Environment,
+                Awaitable[environment.Environment]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def update_environment(self) -> Callable[
+            [environment.UpdateEnvironmentRequest],
+            Union[
+                environment.Environment,
+                Awaitable[environment.Environment]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def delete_environment(self) -> Callable[
+            [environment.DeleteEnvironmentRequest],
+            Union[
+                empty_pb2.Empty,
+                Awaitable[empty_pb2.Empty]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def get_environment_history(self) -> Callable[
+            [environment.GetEnvironmentHistoryRequest],
+            Union[
+                environment.EnvironmentHistory,
+                Awaitable[environment.EnvironmentHistory]
             ]]:
         raise NotImplementedError()
 

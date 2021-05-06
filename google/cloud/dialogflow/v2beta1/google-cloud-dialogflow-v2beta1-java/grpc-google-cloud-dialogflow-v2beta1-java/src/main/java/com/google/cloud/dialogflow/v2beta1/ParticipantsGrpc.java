@@ -424,7 +424,7 @@ public final class ParticipantsGrpc {
      * message from a participant into the conversation.
      * Note: Always use agent versions for production traffic
      * sent to virtual agents. See [Versions and
-     * environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
+     * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
      * </pre>
      */
     public void analyzeContent(com.google.cloud.dialogflow.v2beta1.AnalyzeContentRequest request,
@@ -479,7 +479,7 @@ public final class ParticipantsGrpc {
      * This method should be used by human agent client software to fetch auto
      * generated suggestions in real-time, while the conversation with an end user
      * is in progress. The functionality is implemented in terms of the
-     * [list pagination](https://cloud.google.com/apis/design/design_patterns#list_pagination)
+     * [list pagination](/apis/design/design_patterns#list_pagination)
      * design pattern. The client app should use the `next_page_token` field
      * to fetch the next batch of suggestions. `suggestions` are sorted by
      * `create_time` in descending order.
@@ -654,7 +654,7 @@ public final class ParticipantsGrpc {
      * message from a participant into the conversation.
      * Note: Always use agent versions for production traffic
      * sent to virtual agents. See [Versions and
-     * environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
+     * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
      * </pre>
      */
     public void analyzeContent(com.google.cloud.dialogflow.v2beta1.AnalyzeContentRequest request,
@@ -713,7 +713,7 @@ public final class ParticipantsGrpc {
      * This method should be used by human agent client software to fetch auto
      * generated suggestions in real-time, while the conversation with an end user
      * is in progress. The functionality is implemented in terms of the
-     * [list pagination](https://cloud.google.com/apis/design/design_patterns#list_pagination)
+     * [list pagination](/apis/design/design_patterns#list_pagination)
      * design pattern. The client app should use the `next_page_token` field
      * to fetch the next batch of suggestions. `suggestions` are sorted by
      * `create_time` in descending order.
@@ -811,7 +811,7 @@ public final class ParticipantsGrpc {
      * message from a participant into the conversation.
      * Note: Always use agent versions for production traffic
      * sent to virtual agents. See [Versions and
-     * environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
+     * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.AnalyzeContentResponse analyzeContent(com.google.cloud.dialogflow.v2beta1.AnalyzeContentRequest request) {
@@ -866,7 +866,7 @@ public final class ParticipantsGrpc {
      * This method should be used by human agent client software to fetch auto
      * generated suggestions in real-time, while the conversation with an end user
      * is in progress. The functionality is implemented in terms of the
-     * [list pagination](https://cloud.google.com/apis/design/design_patterns#list_pagination)
+     * [list pagination](/apis/design/design_patterns#list_pagination)
      * design pattern. The client app should use the `next_page_token` field
      * to fetch the next batch of suggestions. `suggestions` are sorted by
      * `create_time` in descending order.
@@ -966,7 +966,7 @@ public final class ParticipantsGrpc {
      * message from a participant into the conversation.
      * Note: Always use agent versions for production traffic
      * sent to virtual agents. See [Versions and
-     * environments(https://cloud.google.com/dialogflow/es/docs/agents-versions).
+     * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.v2beta1.AnalyzeContentResponse> analyzeContent(
@@ -1025,7 +1025,7 @@ public final class ParticipantsGrpc {
      * This method should be used by human agent client software to fetch auto
      * generated suggestions in real-time, while the conversation with an end user
      * is in progress. The functionality is implemented in terms of the
-     * [list pagination](https://cloud.google.com/apis/design/design_patterns#list_pagination)
+     * [list pagination](/apis/design/design_patterns#list_pagination)
      * design pattern. The client app should use the `next_page_token` field
      * to fetch the next batch of suggestions. `suggestions` are sorted by
      * `create_time` in descending order.

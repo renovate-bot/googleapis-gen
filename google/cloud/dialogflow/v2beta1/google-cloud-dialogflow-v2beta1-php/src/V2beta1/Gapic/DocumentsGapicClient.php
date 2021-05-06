@@ -708,6 +708,8 @@ class DocumentsGapicClient
 
     /**
      * Create documents by importing data from external sources.
+     * Dialogflow supports up to 350 documents in each request. If you try to
+     * import more, Dialogflow will return an error.
      *
      * Sample code:
      * ```

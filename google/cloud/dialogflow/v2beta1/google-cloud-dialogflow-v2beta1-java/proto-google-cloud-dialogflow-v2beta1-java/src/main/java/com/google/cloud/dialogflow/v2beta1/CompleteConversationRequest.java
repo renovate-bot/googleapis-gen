@@ -5,8 +5,7 @@ package com.google.cloud.dialogflow.v2beta1;
 
 /**
  * <pre>
- * The request message for
- * [Conversations.CompleteConversation][google.cloud.dialogflow.v2beta1.Conversations.CompleteConversation].
+ * The request message for [Conversations.CompleteConversation][google.cloud.dialogflow.v2beta1.Conversations.CompleteConversation].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.CompleteConversationRequest}
@@ -298,8 +297,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The request message for
-   * [Conversations.CompleteConversation][google.cloud.dialogflow.v2beta1.Conversations.CompleteConversation].
+   * The request message for [Conversations.CompleteConversation][google.cloud.dialogflow.v2beta1.Conversations.CompleteConversation].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.CompleteConversationRequest}

@@ -24,8 +24,7 @@ module Google
     module Dialogflow
       module V2beta1
         module AnswerRecords
-          # Service for managing
-          # [AnswerRecords][google.cloud.dialogflow.v2beta1.AnswerRecord].
+          # Service for managing [AnswerRecords][google.cloud.dialogflow.v2beta1.AnswerRecord].
           class Service
 
             include GRPC::GenericService

@@ -49,6 +49,8 @@ module Google
             # only use `projects.knowledgeBases.documents`.
             rpc :CreateDocument, ::Google::Cloud::Dialogflow::V2beta1::CreateDocumentRequest, ::Google::Longrunning::Operation
             # Create documents by importing data from external sources.
+            # Dialogflow supports up to 350 documents in each request. If you try to
+            # import more, Dialogflow will return an error.
             rpc :ImportDocuments, ::Google::Cloud::Dialogflow::V2beta1::ImportDocumentsRequest, ::Google::Longrunning::Operation
             # Deletes the specified document.
             #

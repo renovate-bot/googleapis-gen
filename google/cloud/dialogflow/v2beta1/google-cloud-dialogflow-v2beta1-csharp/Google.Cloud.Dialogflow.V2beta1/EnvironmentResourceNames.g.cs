@@ -320,4 +320,50 @@ namespace Google.Cloud.Dialogflow.V2beta1
             set => Parent = value?.ToString() ?? "";
         }
     }
+
+    public partial class GetEnvironmentRequest
+    {
+        /// <summary>
+        /// <see cref="gcdv::EnvironmentName"/>-typed view over the <see cref="Name"/> resource name property.
+        /// </summary>
+        public gcdv::EnvironmentName EnvironmentName
+        {
+            get => string.IsNullOrEmpty(Name) ? null : gcdv::EnvironmentName.Parse(Name, allowUnparsed: true);
+            set => Name = value?.ToString() ?? "";
+        }
+    }
+
+    public partial class CreateEnvironmentRequest
+    {
+        /// <summary><see cref="AgentName"/>-typed view over the <see cref="Parent"/> resource name property.</summary>
+        public AgentName ParentAsAgentName
+        {
+            get => string.IsNullOrEmpty(Parent) ? null : AgentName.Parse(Parent, allowUnparsed: true);
+            set => Parent = value?.ToString() ?? "";
+        }
+    }
+
+    public partial class DeleteEnvironmentRequest
+    {
+        /// <summary>
+        /// <see cref="gcdv::EnvironmentName"/>-typed view over the <see cref="Name"/> resource name property.
+        /// </summary>
+        public gcdv::EnvironmentName EnvironmentName
+        {
+            get => string.IsNullOrEmpty(Name) ? null : gcdv::EnvironmentName.Parse(Name, allowUnparsed: true);
+            set => Name = value?.ToString() ?? "";
+        }
+    }
+
+    public partial class GetEnvironmentHistoryRequest
+    {
+        /// <summary>
+        /// <see cref="EnvironmentName"/>-typed view over the <see cref="Parent"/> resource name property.
+        /// </summary>
+        public EnvironmentName ParentAsEnvironmentName
+        {
+            get => string.IsNullOrEmpty(Parent) ? null : EnvironmentName.Parse(Parent, allowUnparsed: true);
+            set => Parent = value?.ToString() ?? "";
+        }
+    }
 }

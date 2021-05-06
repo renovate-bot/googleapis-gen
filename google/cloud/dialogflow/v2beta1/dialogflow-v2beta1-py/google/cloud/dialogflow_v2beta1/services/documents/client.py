@@ -619,7 +619,9 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> operation.Operation:
         r"""Create documents by importing data from external
-        sources.
+        sources. Dialogflow supports up to 350 documents in each
+        request. If you try to import more, Dialogflow will
+        return an error.
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.ImportDocumentsRequest):

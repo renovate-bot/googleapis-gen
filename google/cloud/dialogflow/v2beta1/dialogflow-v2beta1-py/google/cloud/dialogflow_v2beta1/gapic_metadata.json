@@ -568,9 +568,34 @@
         "grpc": {
           "libraryClient": "EnvironmentsClient",
           "rpcs": {
+            "CreateEnvironment": {
+              "methods": [
+                "create_environment"
+              ]
+            },
+            "DeleteEnvironment": {
+              "methods": [
+                "delete_environment"
+              ]
+            },
+            "GetEnvironment": {
+              "methods": [
+                "get_environment"
+              ]
+            },
+            "GetEnvironmentHistory": {
+              "methods": [
+                "get_environment_history"
+              ]
+            },
             "ListEnvironments": {
               "methods": [
                 "list_environments"
+              ]
+            },
+            "UpdateEnvironment": {
+              "methods": [
+                "update_environment"
               ]
             }
           }
@@ -578,9 +603,68 @@
         "grpc-async": {
           "libraryClient": "EnvironmentsAsyncClient",
           "rpcs": {
+            "CreateEnvironment": {
+              "methods": [
+                "create_environment"
+              ]
+            },
+            "DeleteEnvironment": {
+              "methods": [
+                "delete_environment"
+              ]
+            },
+            "GetEnvironment": {
+              "methods": [
+                "get_environment"
+              ]
+            },
+            "GetEnvironmentHistory": {
+              "methods": [
+                "get_environment_history"
+              ]
+            },
             "ListEnvironments": {
               "methods": [
                 "list_environments"
+              ]
+            },
+            "UpdateEnvironment": {
+              "methods": [
+                "update_environment"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "Fulfillments": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "FulfillmentsClient",
+          "rpcs": {
+            "GetFulfillment": {
+              "methods": [
+                "get_fulfillment"
+              ]
+            },
+            "UpdateFulfillment": {
+              "methods": [
+                "update_fulfillment"
+              ]
+            }
+          }
+        },
+        "grpc-async": {
+          "libraryClient": "FulfillmentsAsyncClient",
+          "rpcs": {
+            "GetFulfillment": {
+              "methods": [
+                "get_fulfillment"
+              ]
+            },
+            "UpdateFulfillment": {
+              "methods": [
+                "update_fulfillment"
               ]
             }
           }
@@ -941,6 +1025,70 @@
             "StreamingDetectIntent": {
               "methods": [
                 "streaming_detect_intent"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "Versions": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "VersionsClient",
+          "rpcs": {
+            "CreateVersion": {
+              "methods": [
+                "create_version"
+              ]
+            },
+            "DeleteVersion": {
+              "methods": [
+                "delete_version"
+              ]
+            },
+            "GetVersion": {
+              "methods": [
+                "get_version"
+              ]
+            },
+            "ListVersions": {
+              "methods": [
+                "list_versions"
+              ]
+            },
+            "UpdateVersion": {
+              "methods": [
+                "update_version"
+              ]
+            }
+          }
+        },
+        "grpc-async": {
+          "libraryClient": "VersionsAsyncClient",
+          "rpcs": {
+            "CreateVersion": {
+              "methods": [
+                "create_version"
+              ]
+            },
+            "DeleteVersion": {
+              "methods": [
+                "delete_version"
+              ]
+            },
+            "GetVersion": {
+              "methods": [
+                "get_version"
+              ]
+            },
+            "ListVersions": {
+              "methods": [
+                "list_versions"
+              ]
+            },
+            "UpdateVersion": {
+              "methods": [
+                "update_version"
               ]
             }
           }

@@ -9,8 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * The request message for
- * [Conversations.ListMessages][google.cloud.dialogflow.v2beta1.Conversations.ListMessages].
+ * The request message for [Conversations.ListMessages][google.cloud.dialogflow.v2beta1.Conversations.ListMessages].
  *
  * Generated from protobuf message <code>google.cloud.dialogflow.v2beta1.ListMessagesRequest</code>
  */
@@ -29,7 +28,7 @@ class ListMessagesRequest extends \Google\Protobuf\Internal\Message
      * and `create_time_epoch_microseconds` are supported. `create_time` only
      * support milliseconds accuracy. E.g.,
      * `create_time_epoch_microseconds > 1551790877964485` or
-     * `create_time > 2017-01-15T01:30:15.01Z`.
+     * `create_time > "2017-01-15T01:30:15.01Z"`.
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      *
@@ -65,7 +64,7 @@ class ListMessagesRequest extends \Google\Protobuf\Internal\Message
      *           and `create_time_epoch_microseconds` are supported. `create_time` only
      *           support milliseconds accuracy. E.g.,
      *           `create_time_epoch_microseconds > 1551790877964485` or
-     *           `create_time > 2017-01-15T01:30:15.01Z`.
+     *           `create_time > "2017-01-15T01:30:15.01Z"`.
      *           For more information about filtering, see
      *           [API Filtering](https://aip.dev/160).
      *     @type int $page_size
@@ -115,7 +114,7 @@ class ListMessagesRequest extends \Google\Protobuf\Internal\Message
      * and `create_time_epoch_microseconds` are supported. `create_time` only
      * support milliseconds accuracy. E.g.,
      * `create_time_epoch_microseconds > 1551790877964485` or
-     * `create_time > 2017-01-15T01:30:15.01Z`.
+     * `create_time > "2017-01-15T01:30:15.01Z"`.
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      *
@@ -132,7 +131,7 @@ class ListMessagesRequest extends \Google\Protobuf\Internal\Message
      * and `create_time_epoch_microseconds` are supported. `create_time` only
      * support milliseconds accuracy. E.g.,
      * `create_time_epoch_microseconds > 1551790877964485` or
-     * `create_time > 2017-01-15T01:30:15.01Z`.
+     * `create_time > "2017-01-15T01:30:15.01Z"`.
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
      *
