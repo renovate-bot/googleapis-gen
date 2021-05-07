@@ -16,10 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class Match extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that matched the query.
-     * Some, not all fields are filled in this message, including but not limited
-     * to: `name` and `display_name`. Only filled for
-     * [`INTENT`][google.cloud.dialogflow.cx.v3.Match.MatchType] match type.
+     * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that matched the query. Some, not all fields are filled in
+     * this message, including but not limited to: `name` and `display_name`. Only
+     * filled for [`INTENT`][google.cloud.dialogflow.cx.v3.Match.MatchType] match type.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.Intent intent = 1;</code>
      */
@@ -83,10 +82,9 @@ class Match extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Dialogflow\Cx\V3\Intent $intent
-     *           The [Intent][google.cloud.dialogflow.cx.v3.Intent] that matched the query.
-     *           Some, not all fields are filled in this message, including but not limited
-     *           to: `name` and `display_name`. Only filled for
-     *           [`INTENT`][google.cloud.dialogflow.cx.v3.Match.MatchType] match type.
+     *           The [Intent][google.cloud.dialogflow.cx.v3.Intent] that matched the query. Some, not all fields are filled in
+     *           this message, including but not limited to: `name` and `display_name`. Only
+     *           filled for [`INTENT`][google.cloud.dialogflow.cx.v3.Match.MatchType] match type.
      *     @type string $event
      *           The event that matched the query. Only filled for
      *           [`EVENT`][google.cloud.dialogflow.cx.v3.Match.MatchType] match type.
@@ -126,10 +124,9 @@ class Match extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that matched the query.
-     * Some, not all fields are filled in this message, including but not limited
-     * to: `name` and `display_name`. Only filled for
-     * [`INTENT`][google.cloud.dialogflow.cx.v3.Match.MatchType] match type.
+     * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that matched the query. Some, not all fields are filled in
+     * this message, including but not limited to: `name` and `display_name`. Only
+     * filled for [`INTENT`][google.cloud.dialogflow.cx.v3.Match.MatchType] match type.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.Intent intent = 1;</code>
      * @return \Google\Cloud\Dialogflow\Cx\V3\Intent|null
@@ -150,10 +147,9 @@ class Match extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that matched the query.
-     * Some, not all fields are filled in this message, including but not limited
-     * to: `name` and `display_name`. Only filled for
-     * [`INTENT`][google.cloud.dialogflow.cx.v3.Match.MatchType] match type.
+     * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that matched the query. Some, not all fields are filled in
+     * this message, including but not limited to: `name` and `display_name`. Only
+     * filled for [`INTENT`][google.cloud.dialogflow.cx.v3.Match.MatchType] match type.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.Intent intent = 1;</code>
      * @param \Google\Cloud\Dialogflow\Cx\V3\Intent $var

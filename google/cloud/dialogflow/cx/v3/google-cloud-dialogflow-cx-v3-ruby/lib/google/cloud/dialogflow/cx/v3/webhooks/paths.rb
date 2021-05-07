@@ -45,6 +45,27 @@ module Google
               end
 
               ##
+              # Create a fully-qualified Service resource string.
+              #
+              # The resource will be in the following format:
+              #
+              # `projects/{project}/locations/{location}/namespaces/{namespace}/services/{service}`
+              #
+              # @param project [String]
+              # @param location [String]
+              # @param namespace [String]
+              # @param service [String]
+              #
+              # @return [::String]
+              def service_path project:, location:, namespace:, service:
+                raise ::ArgumentError, "project cannot contain /" if project.to_s.include? "/"
+                raise ::ArgumentError, "location cannot contain /" if location.to_s.include? "/"
+                raise ::ArgumentError, "namespace cannot contain /" if namespace.to_s.include? "/"
+
+                "projects/#{project}/locations/#{location}/namespaces/#{namespace}/services/#{service}"
+              end
+
+              ##
               # Create a fully-qualified Webhook resource string.
               #
               # The resource will be in the following format:

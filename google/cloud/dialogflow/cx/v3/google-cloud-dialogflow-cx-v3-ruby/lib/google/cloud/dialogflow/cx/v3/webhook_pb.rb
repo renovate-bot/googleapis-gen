@@ -21,6 +21,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :disabled, :bool, 5
       oneof :webhook do
         optional :generic_web_service, :message, 4, "google.cloud.dialogflow.cx.v3.Webhook.GenericWebService"
+        optional :service_directory, :message, 7, "google.cloud.dialogflow.cx.v3.Webhook.ServiceDirectoryConfig"
       end
     end
     add_message "google.cloud.dialogflow.cx.v3.Webhook.GenericWebService" do
@@ -28,6 +29,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :username, :string, 2
       optional :password, :string, 3
       map :request_headers, :string, :string, 4
+    end
+    add_message "google.cloud.dialogflow.cx.v3.Webhook.ServiceDirectoryConfig" do
+      optional :service, :string, 1
+      optional :generic_web_service, :message, 2, "google.cloud.dialogflow.cx.v3.Webhook.GenericWebService"
     end
     add_message "google.cloud.dialogflow.cx.v3.ListWebhooksRequest" do
       optional :parent, :string, 1
@@ -140,6 +145,7 @@ module Google
         module V3
           Webhook = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.Webhook").msgclass
           Webhook::GenericWebService = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.Webhook.GenericWebService").msgclass
+          Webhook::ServiceDirectoryConfig = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.Webhook.ServiceDirectoryConfig").msgclass
           ListWebhooksRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.ListWebhooksRequest").msgclass
           ListWebhooksResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.ListWebhooksResponse").msgclass
           GetWebhookRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.GetWebhookRequest").msgclass

@@ -46,6 +46,8 @@ class WebhooksAsyncClient:
     DEFAULT_ENDPOINT = WebhooksClient.DEFAULT_ENDPOINT
     DEFAULT_MTLS_ENDPOINT = WebhooksClient.DEFAULT_MTLS_ENDPOINT
 
+    service_path = staticmethod(WebhooksClient.service_path)
+    parse_service_path = staticmethod(WebhooksClient.parse_service_path)
     webhook_path = staticmethod(WebhooksClient.webhook_path)
     parse_webhook_path = staticmethod(WebhooksClient.parse_webhook_path)
     common_billing_account_path = staticmethod(WebhooksClient.common_billing_account_path)

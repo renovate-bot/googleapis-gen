@@ -23,9 +23,8 @@ class MatchIntentResponse extends \Google\Protobuf\Internal\Message
      */
     private $matches;
     /**
-     * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all
-     * fields are filled in this message, including but not limited to `name` and
-     * `display_name`.
+     * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all fields are filled in this message,
+     * including but not limited to `name` and `display_name`.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.Page current_page = 5;</code>
      */
@@ -39,27 +38,25 @@ class MatchIntentResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $text
-     *           If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was
-     *           provided as input, this field will contain a copy of the text.
+     *           If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was provided as input, this field
+     *           will contain a copy of the text.
      *     @type string $trigger_intent
-     *           If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
-     *           input, this field will contain a copy of the intent identifier. Format:
-     *           `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     *           If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
+     *           contain a copy of the intent identifier.
+     *           Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
      *           ID>/intents/<Intent ID>`.
      *     @type string $transcript
-     *           If [natural language speech
-     *           audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
+     *           If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
      *           this field will contain the transcript for the audio.
      *     @type string $trigger_event
-     *           If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as
-     *           input, this field will contain a copy of the event name.
+     *           If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as input, this field will
+     *           contain a copy of the event name.
      *     @type \Google\Cloud\Dialogflow\Cx\V3\Match[]|\Google\Protobuf\Internal\RepeatedField $matches
      *           Match results, if more than one, ordered descendingly by the confidence
      *           we have that the particular intent matches the query.
      *     @type \Google\Cloud\Dialogflow\Cx\V3\Page $current_page
-     *           The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all
-     *           fields are filled in this message, including but not limited to `name` and
-     *           `display_name`.
+     *           The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all fields are filled in this message,
+     *           including but not limited to `name` and `display_name`.
      * }
      */
     public function __construct($data = NULL) {
@@ -68,8 +65,8 @@ class MatchIntentResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was
-     * provided as input, this field will contain a copy of the text.
+     * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was provided as input, this field
+     * will contain a copy of the text.
      *
      * Generated from protobuf field <code>string text = 1;</code>
      * @return string
@@ -85,8 +82,8 @@ class MatchIntentResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was
-     * provided as input, this field will contain a copy of the text.
+     * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was provided as input, this field
+     * will contain a copy of the text.
      *
      * Generated from protobuf field <code>string text = 1;</code>
      * @param string $var
@@ -101,9 +98,9 @@ class MatchIntentResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
-     * input, this field will contain a copy of the intent identifier. Format:
-     * `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
+     * contain a copy of the intent identifier.
+     * Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
      * ID>/intents/<Intent ID>`.
      *
      * Generated from protobuf field <code>string trigger_intent = 2 [(.google.api.resource_reference) = {</code>
@@ -120,9 +117,9 @@ class MatchIntentResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
-     * input, this field will contain a copy of the intent identifier. Format:
-     * `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
+     * contain a copy of the intent identifier.
+     * Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
      * ID>/intents/<Intent ID>`.
      *
      * Generated from protobuf field <code>string trigger_intent = 2 [(.google.api.resource_reference) = {</code>
@@ -138,8 +135,7 @@ class MatchIntentResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If [natural language speech
-     * audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
+     * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
      * this field will contain the transcript for the audio.
      *
      * Generated from protobuf field <code>string transcript = 3;</code>
@@ -156,8 +152,7 @@ class MatchIntentResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If [natural language speech
-     * audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
+     * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
      * this field will contain the transcript for the audio.
      *
      * Generated from protobuf field <code>string transcript = 3;</code>
@@ -173,8 +168,8 @@ class MatchIntentResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as
-     * input, this field will contain a copy of the event name.
+     * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as input, this field will
+     * contain a copy of the event name.
      *
      * Generated from protobuf field <code>string trigger_event = 6;</code>
      * @return string
@@ -190,8 +185,8 @@ class MatchIntentResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as
-     * input, this field will contain a copy of the event name.
+     * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as input, this field will
+     * contain a copy of the event name.
      *
      * Generated from protobuf field <code>string trigger_event = 6;</code>
      * @param string $var
@@ -234,9 +229,8 @@ class MatchIntentResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all
-     * fields are filled in this message, including but not limited to `name` and
-     * `display_name`.
+     * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all fields are filled in this message,
+     * including but not limited to `name` and `display_name`.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.Page current_page = 5;</code>
      * @return \Google\Cloud\Dialogflow\Cx\V3\Page|null
@@ -257,9 +251,8 @@ class MatchIntentResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all
-     * fields are filled in this message, including but not limited to `name` and
-     * `display_name`.
+     * The current [Page][google.cloud.dialogflow.cx.v3.Page]. Some, not all fields are filled in this message,
+     * including but not limited to `name` and `display_name`.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.Page current_page = 5;</code>
      * @param \Google\Cloud\Dialogflow\Cx\V3\Page $var

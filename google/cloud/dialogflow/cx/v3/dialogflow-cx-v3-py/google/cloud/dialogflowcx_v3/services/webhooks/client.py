@@ -158,6 +158,17 @@ class WebhooksClient(metaclass=WebhooksClientMeta):
         return self._transport
 
     @staticmethod
+    def service_path(project: str,location: str,namespace: str,service: str,) -> str:
+        """Return a fully-qualified service string."""
+        return "projects/{project}/locations/{location}/namespaces/{namespace}/services/{service}".format(project=project, location=location, namespace=namespace, service=service, )
+
+    @staticmethod
+    def parse_service_path(path: str) -> Dict[str,str]:
+        """Parse a service path into its component segments."""
+        m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/namespaces/(?P<namespace>.+?)/services/(?P<service>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
     def webhook_path(project: str,location: str,agent: str,webhook: str,) -> str:
         """Return a fully-qualified webhook string."""
         return "projects/{project}/locations/{location}/agents/{agent}/webhooks/{webhook}".format(project=project, location=location, agent=agent, webhook=webhook, )

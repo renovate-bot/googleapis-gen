@@ -95,8 +95,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object text_;
   /**
    * <pre>
-   * Required. The UTF-8 encoded natural language text to be processed. Text
-   * length must not exceed 256 characters.
+   * Required. The UTF-8 encoded natural language text to be processed. Text length must
+   * not exceed 256 characters.
    * </pre>
    *
    * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -117,8 +117,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The UTF-8 encoded natural language text to be processed. Text
-   * length must not exceed 256 characters.
+   * Required. The UTF-8 encoded natural language text to be processed. Text length must
+   * not exceed 256 characters.
    * </pre>
    *
    * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -448,8 +448,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object text_ = "";
     /**
      * <pre>
-     * Required. The UTF-8 encoded natural language text to be processed. Text
-     * length must not exceed 256 characters.
+     * Required. The UTF-8 encoded natural language text to be processed. Text length must
+     * not exceed 256 characters.
      * </pre>
      *
      * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -469,8 +469,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The UTF-8 encoded natural language text to be processed. Text
-     * length must not exceed 256 characters.
+     * Required. The UTF-8 encoded natural language text to be processed. Text length must
+     * not exceed 256 characters.
      * </pre>
      *
      * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -491,8 +491,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The UTF-8 encoded natural language text to be processed. Text
-     * length must not exceed 256 characters.
+     * Required. The UTF-8 encoded natural language text to be processed. Text length must
+     * not exceed 256 characters.
      * </pre>
      *
      * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -511,8 +511,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The UTF-8 encoded natural language text to be processed. Text
-     * length must not exceed 256 characters.
+     * Required. The UTF-8 encoded natural language text to be processed. Text length must
+     * not exceed 256 characters.
      * </pre>
      *
      * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -526,8 +526,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The UTF-8 encoded natural language text to be processed. Text
-     * length must not exceed 256 characters.
+     * Required. The UTF-8 encoded natural language text to be processed. Text length must
+     * not exceed 256 characters.
      * </pre>
      *
      * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>

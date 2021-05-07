@@ -39,6 +39,10 @@ module Google
           # @!attribute [rw] generic_web_service
           #   @return [::Google::Cloud::Dialogflow::Cx::V3::Webhook::GenericWebService]
           #     Configuration for a generic web service.
+          # @!attribute [rw] service_directory
+          #   @return [::Google::Cloud::Dialogflow::Cx::V3::Webhook::ServiceDirectoryConfig]
+          #     Configuration for a [Service
+          #     Directory](https://cloud.google.com/service-directory) service.
           # @!attribute [rw] timeout
           #   @return [::Google::Protobuf::Duration]
           #     Webhook execution timeout. Execution is considered failed if Dialogflow
@@ -77,6 +81,24 @@ module Google
                 include ::Google::Protobuf::MessageExts
                 extend ::Google::Protobuf::MessageExts::ClassMethods
               end
+            end
+
+            # Represents configuration for a [Service
+            # Directory](https://cloud.google.com/service-directory) service.
+            # @!attribute [rw] service
+            #   @return [::String]
+            #     Required. The name of [Service
+            #     Directory](https://cloud.google.com/service-directory) service.
+            #     Format: `projects/<Project ID>/locations/<Location
+            #     ID>/namespaces/<Namespace ID>/services/<Service ID>`.
+            #     `Location ID` of the service directory must be the same as the location
+            #     of the agent.
+            # @!attribute [rw] generic_web_service
+            #   @return [::Google::Cloud::Dialogflow::Cx::V3::Webhook::GenericWebService]
+            #     Generic Service configuration of this webhook.
+            class ServiceDirectoryConfig
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
             end
           end
 

@@ -35,6 +35,18 @@ class ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::ClientPathsTest < Minitest:
     end
   end
 
+  def test_service_path
+    grpc_channel = ::GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    ::Gapic::ServiceStub.stub :new, nil do
+      client = ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      path = client.service_path project: "value0", location: "value1", namespace: "value2", service: "value3"
+      assert_equal "projects/value0/locations/value1/namespaces/value2/services/value3", path
+    end
+  end
+
   def test_webhook_path
     grpc_channel = ::GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     ::Gapic::ServiceStub.stub :new, nil do

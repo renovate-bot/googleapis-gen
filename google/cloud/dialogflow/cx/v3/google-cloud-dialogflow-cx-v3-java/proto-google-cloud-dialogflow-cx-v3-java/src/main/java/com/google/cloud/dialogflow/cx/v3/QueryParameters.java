@@ -510,18 +510,16 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object currentPage_;
   /**
    * <pre>
-   * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to
-   * override the [current page][QueryResult.current_page] in the session.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/pages/&lt;page ID&gt;`.
+   * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to override the [current
+   * page][QueryResult.current_page] in the session. Format: `projects/&lt;Project
+   * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/pages/&lt;page ID&gt;`.
    * If `current_page` is specified, the previous state of the session will be
    * ignored by Dialogflow, including the [previous
    * page][QueryResult.current_page] and the [previous session
    * parameters][QueryResult.parameters].
-   * In most cases,
-   * [current_page][google.cloud.dialogflow.cx.v3.QueryParameters.current_page]
-   * and [parameters][google.cloud.dialogflow.cx.v3.QueryParameters.parameters]
-   * should be configured together to direct a session to a specific state.
+   * In most cases, [current_page][google.cloud.dialogflow.cx.v3.QueryParameters.current_page] and
+   * [parameters][google.cloud.dialogflow.cx.v3.QueryParameters.parameters] should be configured together to
+   * direct a session to a specific state.
    * </pre>
    *
    * <code>string current_page = 6 [(.google.api.resource_reference) = { ... }</code>
@@ -542,18 +540,16 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to
-   * override the [current page][QueryResult.current_page] in the session.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/pages/&lt;page ID&gt;`.
+   * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to override the [current
+   * page][QueryResult.current_page] in the session. Format: `projects/&lt;Project
+   * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/pages/&lt;page ID&gt;`.
    * If `current_page` is specified, the previous state of the session will be
    * ignored by Dialogflow, including the [previous
    * page][QueryResult.current_page] and the [previous session
    * parameters][QueryResult.parameters].
-   * In most cases,
-   * [current_page][google.cloud.dialogflow.cx.v3.QueryParameters.current_page]
-   * and [parameters][google.cloud.dialogflow.cx.v3.QueryParameters.parameters]
-   * should be configured together to direct a session to a specific state.
+   * In most cases, [current_page][google.cloud.dialogflow.cx.v3.QueryParameters.current_page] and
+   * [parameters][google.cloud.dialogflow.cx.v3.QueryParameters.parameters] should be configured together to
+   * direct a session to a specific state.
    * </pre>
    *
    * <code>string current_page = 6 [(.google.api.resource_reference) = { ... }</code>
@@ -2464,18 +2460,16 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object currentPage_ = "";
     /**
      * <pre>
-     * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to
-     * override the [current page][QueryResult.current_page] in the session.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/pages/&lt;page ID&gt;`.
+     * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to override the [current
+     * page][QueryResult.current_page] in the session. Format: `projects/&lt;Project
+     * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/pages/&lt;page ID&gt;`.
      * If `current_page` is specified, the previous state of the session will be
      * ignored by Dialogflow, including the [previous
      * page][QueryResult.current_page] and the [previous session
      * parameters][QueryResult.parameters].
-     * In most cases,
-     * [current_page][google.cloud.dialogflow.cx.v3.QueryParameters.current_page]
-     * and [parameters][google.cloud.dialogflow.cx.v3.QueryParameters.parameters]
-     * should be configured together to direct a session to a specific state.
+     * In most cases, [current_page][google.cloud.dialogflow.cx.v3.QueryParameters.current_page] and
+     * [parameters][google.cloud.dialogflow.cx.v3.QueryParameters.parameters] should be configured together to
+     * direct a session to a specific state.
      * </pre>
      *
      * <code>string current_page = 6 [(.google.api.resource_reference) = { ... }</code>
@@ -2495,18 +2489,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to
-     * override the [current page][QueryResult.current_page] in the session.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/pages/&lt;page ID&gt;`.
+     * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to override the [current
+     * page][QueryResult.current_page] in the session. Format: `projects/&lt;Project
+     * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/pages/&lt;page ID&gt;`.
      * If `current_page` is specified, the previous state of the session will be
      * ignored by Dialogflow, including the [previous
      * page][QueryResult.current_page] and the [previous session
      * parameters][QueryResult.parameters].
-     * In most cases,
-     * [current_page][google.cloud.dialogflow.cx.v3.QueryParameters.current_page]
-     * and [parameters][google.cloud.dialogflow.cx.v3.QueryParameters.parameters]
-     * should be configured together to direct a session to a specific state.
+     * In most cases, [current_page][google.cloud.dialogflow.cx.v3.QueryParameters.current_page] and
+     * [parameters][google.cloud.dialogflow.cx.v3.QueryParameters.parameters] should be configured together to
+     * direct a session to a specific state.
      * </pre>
      *
      * <code>string current_page = 6 [(.google.api.resource_reference) = { ... }</code>
@@ -2527,18 +2519,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to
-     * override the [current page][QueryResult.current_page] in the session.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/pages/&lt;page ID&gt;`.
+     * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to override the [current
+     * page][QueryResult.current_page] in the session. Format: `projects/&lt;Project
+     * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/pages/&lt;page ID&gt;`.
      * If `current_page` is specified, the previous state of the session will be
      * ignored by Dialogflow, including the [previous
      * page][QueryResult.current_page] and the [previous session
      * parameters][QueryResult.parameters].
-     * In most cases,
-     * [current_page][google.cloud.dialogflow.cx.v3.QueryParameters.current_page]
-     * and [parameters][google.cloud.dialogflow.cx.v3.QueryParameters.parameters]
-     * should be configured together to direct a session to a specific state.
+     * In most cases, [current_page][google.cloud.dialogflow.cx.v3.QueryParameters.current_page] and
+     * [parameters][google.cloud.dialogflow.cx.v3.QueryParameters.parameters] should be configured together to
+     * direct a session to a specific state.
      * </pre>
      *
      * <code>string current_page = 6 [(.google.api.resource_reference) = { ... }</code>
@@ -2557,18 +2547,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to
-     * override the [current page][QueryResult.current_page] in the session.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/pages/&lt;page ID&gt;`.
+     * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to override the [current
+     * page][QueryResult.current_page] in the session. Format: `projects/&lt;Project
+     * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/pages/&lt;page ID&gt;`.
      * If `current_page` is specified, the previous state of the session will be
      * ignored by Dialogflow, including the [previous
      * page][QueryResult.current_page] and the [previous session
      * parameters][QueryResult.parameters].
-     * In most cases,
-     * [current_page][google.cloud.dialogflow.cx.v3.QueryParameters.current_page]
-     * and [parameters][google.cloud.dialogflow.cx.v3.QueryParameters.parameters]
-     * should be configured together to direct a session to a specific state.
+     * In most cases, [current_page][google.cloud.dialogflow.cx.v3.QueryParameters.current_page] and
+     * [parameters][google.cloud.dialogflow.cx.v3.QueryParameters.parameters] should be configured together to
+     * direct a session to a specific state.
      * </pre>
      *
      * <code>string current_page = 6 [(.google.api.resource_reference) = { ... }</code>
@@ -2582,18 +2570,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to
-     * override the [current page][QueryResult.current_page] in the session.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/pages/&lt;page ID&gt;`.
+     * The unique identifier of the [page][google.cloud.dialogflow.cx.v3.Page] to override the [current
+     * page][QueryResult.current_page] in the session. Format: `projects/&lt;Project
+     * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/pages/&lt;page ID&gt;`.
      * If `current_page` is specified, the previous state of the session will be
      * ignored by Dialogflow, including the [previous
      * page][QueryResult.current_page] and the [previous session
      * parameters][QueryResult.parameters].
-     * In most cases,
-     * [current_page][google.cloud.dialogflow.cx.v3.QueryParameters.current_page]
-     * and [parameters][google.cloud.dialogflow.cx.v3.QueryParameters.parameters]
-     * should be configured together to direct a session to a specific state.
+     * In most cases, [current_page][google.cloud.dialogflow.cx.v3.QueryParameters.current_page] and
+     * [parameters][google.cloud.dialogflow.cx.v3.QueryParameters.parameters] should be configured together to
+     * direct a session to a specific state.
      * </pre>
      *
      * <code>string current_page = 6 [(.google.api.resource_reference) = { ... }</code>
