@@ -15,6 +15,8 @@
 #
 import proto  # type: ignore
 
+from google.cloud.securitycenter_v1p1beta1.types import folder
+
 
 __protobuf__ = proto.module(
     package='google.cloud.securitycenter.v1p1beta1',
@@ -40,6 +42,12 @@ class Resource(proto.Message):
             The full resource name of resource's parent.
         parent_display_name (str):
             The human readable name of resource's parent.
+        folders (Sequence[google.cloud.securitycenter_v1p1beta1.types.Folder]):
+            Output only. Contains a Folder message for
+            each folder in the assets ancestry. The first
+            folder is the deepest nested folder, and the
+            last folder is the folder directly under the
+            Organization.
     """
 
     name = proto.Field(
@@ -61,6 +69,11 @@ class Resource(proto.Message):
     parent_display_name = proto.Field(
         proto.STRING,
         number=5,
+    )
+    folders = proto.RepeatedField(
+        proto.MESSAGE,
+        number=7,
+        message=folder.Folder,
     )
 
 

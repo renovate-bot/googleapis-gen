@@ -161,9 +161,12 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. Name of the source the findings belong to. Its format is
-   * "organizations/[organization_id]/sources/[source_id]". To list across all
-   * sources provide a source_id of `-`. For example:
-   * organizations/{organization_id}/sources/-
+   * "organizations/[organization_id]/sources/[source_id],
+   * folders/[folder_id]/sources/[source_id], or
+   * projects/[project_id]/sources/[source_id]". To list across all sources
+   * provide a source_id of `-`. For example:
+   * organizations/{organization_id}/sources/-, folders/{folder_id}/sources/- or
+   * projects/{projects_id}/sources/-
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -185,9 +188,12 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. Name of the source the findings belong to. Its format is
-   * "organizations/[organization_id]/sources/[source_id]". To list across all
-   * sources provide a source_id of `-`. For example:
-   * organizations/{organization_id}/sources/-
+   * "organizations/[organization_id]/sources/[source_id],
+   * folders/[folder_id]/sources/[source_id], or
+   * projects/[project_id]/sources/[source_id]". To list across all sources
+   * provide a source_id of `-`. For example:
+   * organizations/{organization_id}/sources/-, folders/{folder_id}/sources/- or
+   * projects/{projects_id}/sources/-
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -1139,9 +1145,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. Name of the source the findings belong to. Its format is
-     * "organizations/[organization_id]/sources/[source_id]". To list across all
-     * sources provide a source_id of `-`. For example:
-     * organizations/{organization_id}/sources/-
+     * "organizations/[organization_id]/sources/[source_id],
+     * folders/[folder_id]/sources/[source_id], or
+     * projects/[project_id]/sources/[source_id]". To list across all sources
+     * provide a source_id of `-`. For example:
+     * organizations/{organization_id}/sources/-, folders/{folder_id}/sources/- or
+     * projects/{projects_id}/sources/-
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -1162,9 +1171,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. Name of the source the findings belong to. Its format is
-     * "organizations/[organization_id]/sources/[source_id]". To list across all
-     * sources provide a source_id of `-`. For example:
-     * organizations/{organization_id}/sources/-
+     * "organizations/[organization_id]/sources/[source_id],
+     * folders/[folder_id]/sources/[source_id], or
+     * projects/[project_id]/sources/[source_id]". To list across all sources
+     * provide a source_id of `-`. For example:
+     * organizations/{organization_id}/sources/-, folders/{folder_id}/sources/- or
+     * projects/{projects_id}/sources/-
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -1186,9 +1198,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. Name of the source the findings belong to. Its format is
-     * "organizations/[organization_id]/sources/[source_id]". To list across all
-     * sources provide a source_id of `-`. For example:
-     * organizations/{organization_id}/sources/-
+     * "organizations/[organization_id]/sources/[source_id],
+     * folders/[folder_id]/sources/[source_id], or
+     * projects/[project_id]/sources/[source_id]". To list across all sources
+     * provide a source_id of `-`. For example:
+     * organizations/{organization_id}/sources/-, folders/{folder_id}/sources/- or
+     * projects/{projects_id}/sources/-
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -1208,9 +1223,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. Name of the source the findings belong to. Its format is
-     * "organizations/[organization_id]/sources/[source_id]". To list across all
-     * sources provide a source_id of `-`. For example:
-     * organizations/{organization_id}/sources/-
+     * "organizations/[organization_id]/sources/[source_id],
+     * folders/[folder_id]/sources/[source_id], or
+     * projects/[project_id]/sources/[source_id]". To list across all sources
+     * provide a source_id of `-`. For example:
+     * organizations/{organization_id}/sources/-, folders/{folder_id}/sources/- or
+     * projects/{projects_id}/sources/-
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -1225,9 +1243,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. Name of the source the findings belong to. Its format is
-     * "organizations/[organization_id]/sources/[source_id]". To list across all
-     * sources provide a source_id of `-`. For example:
-     * organizations/{organization_id}/sources/-
+     * "organizations/[organization_id]/sources/[source_id],
+     * folders/[folder_id]/sources/[source_id], or
+     * projects/[project_id]/sources/[source_id]". To list across all sources
+     * provide a source_id of `-`. For example:
+     * organizations/{organization_id}/sources/-, folders/{folder_id}/sources/- or
+     * projects/{projects_id}/sources/-
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

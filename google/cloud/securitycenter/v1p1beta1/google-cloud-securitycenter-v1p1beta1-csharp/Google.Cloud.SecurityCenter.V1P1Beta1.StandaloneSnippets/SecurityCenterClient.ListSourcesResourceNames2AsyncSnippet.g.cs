@@ -30,12 +30,12 @@ namespace Google.Cloud.SecurityCenter.V1P1Beta1.Snippets
         /// This snippet has been automatically generated for illustrative purposes only.
         /// It may require modifications to work in your environment.
         /// </remarks>
-        public async Task ListSourcesResourceNamesAsync()
+        public async Task ListSourcesResourceNames2Async()
         {
             // Create client
             SecurityCenterClient securityCenterClient = await SecurityCenterClient.CreateAsync();
             // Initialize request argument(s)
-            OrganizationName parent = OrganizationName.FromOrganization("[ORGANIZATION]");
+            FolderName parent = FolderName.FromFolder("[FOLDER]");
             // Make the request
             PagedAsyncEnumerable<ListSourcesResponse, Source> response = securityCenterClient.ListSourcesAsync(parent);
 

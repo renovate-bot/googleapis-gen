@@ -28,12 +28,12 @@ namespace Google.Cloud.SecurityCenter.V1P1Beta1.Snippets
         /// This snippet has been automatically generated for illustrative purposes only.
         /// It may require modifications to work in your environment.
         /// </remarks>
-        public void ListSourcesResourceNames()
+        public void ListSourcesResourceNames2()
         {
             // Create client
             SecurityCenterClient securityCenterClient = SecurityCenterClient.Create();
             // Initialize request argument(s)
-            OrganizationName parent = OrganizationName.FromOrganization("[ORGANIZATION]");
+            FolderName parent = FolderName.FromFolder("[FOLDER]");
             // Make the request
             PagedEnumerable<ListSourcesResponse, Source> response = securityCenterClient.ListSources(parent);
 

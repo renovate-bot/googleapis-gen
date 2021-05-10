@@ -20,34 +20,32 @@ namespace Google.Cloud.SecurityCenter.V1P1Beta1.Snippets
     using Google.Api.Gax.ResourceNames;
     using Google.Cloud.SecurityCenter.V1P1Beta1;
     using System;
-    using System.Linq;
-    using System.Threading.Tasks;
 
     public sealed partial class GeneratedSecurityCenterClientStandaloneSnippets
     {
-        /// <summary>Snippet for ListAssetsAsync</summary>
+        /// <summary>Snippet for ListAssets</summary>
         /// <remarks>
         /// This snippet has been automatically generated for illustrative purposes only.
         /// It may require modifications to work in your environment.
         /// </remarks>
-        public async Task ListAssetsResourceNamesAsync()
+        public void ListAssetsResourceNames3()
         {
             // Create client
-            SecurityCenterClient securityCenterClient = await SecurityCenterClient.CreateAsync();
+            SecurityCenterClient securityCenterClient = SecurityCenterClient.Create();
             // Initialize request argument(s)
-            OrganizationName parent = OrganizationName.FromOrganization("[ORGANIZATION]");
+            ProjectName parent = ProjectName.FromProject("[PROJECT]");
             // Make the request
-            PagedAsyncEnumerable<ListAssetsResponse, ListAssetsResponse.Types.ListAssetsResult> response = securityCenterClient.ListAssetsAsync(parent);
+            PagedEnumerable<ListAssetsResponse, ListAssetsResponse.Types.ListAssetsResult> response = securityCenterClient.ListAssets(parent);
 
             // Iterate over all response items, lazily performing RPCs as required
-            await response.ForEachAsync((ListAssetsResponse.Types.ListAssetsResult item) =>
+            foreach (ListAssetsResponse.Types.ListAssetsResult item in response)
             {
                 // Do something with each item
                 Console.WriteLine(item);
-            });
+            }
 
             // Or iterate over pages (of server-defined size), performing one RPC per page
-            await response.AsRawResponses().ForEachAsync((ListAssetsResponse page) =>
+            foreach (ListAssetsResponse page in response.AsRawResponses())
             {
                 // Do something with each page of items
                 Console.WriteLine("A page of results:");
@@ -56,11 +54,11 @@ namespace Google.Cloud.SecurityCenter.V1P1Beta1.Snippets
                     // Do something with each item
                     Console.WriteLine(item);
                 }
-            });
+            }
 
             // Or retrieve a single page of known size (unless it's the final page), performing as many RPCs as required
             int pageSize = 10;
-            Page<ListAssetsResponse.Types.ListAssetsResult> singlePage = await response.ReadPageAsync(pageSize);
+            Page<ListAssetsResponse.Types.ListAssetsResult> singlePage = response.ReadPage(pageSize);
             // Do something with the page of items
             Console.WriteLine($"A page of {pageSize} results (unless it's the final page):");
             foreach (ListAssetsResponse.Types.ListAssetsResult item in singlePage)

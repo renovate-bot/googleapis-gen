@@ -494,8 +494,9 @@ class SecurityCenterGrpcTransport(SecurityCenterTransport):
         their specified properties.
 
         To group across all sources provide a ``-`` as the source id.
-        Example:
-        /v1p1beta1/organizations/{organization_id}/sources/-/findings
+        Example: /v1/organizations/{organization_id}/sources/-/findings,
+        /v1/folders/{folder_id}/sources/-/findings,
+        /v1/projects/{project_id}/sources/-/findings
 
         Returns:
             Callable[[~.GroupFindingsRequest],

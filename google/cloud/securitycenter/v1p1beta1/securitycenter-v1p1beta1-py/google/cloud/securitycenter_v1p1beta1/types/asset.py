@@ -15,6 +15,7 @@
 #
 import proto  # type: ignore
 
+from google.cloud.securitycenter_v1p1beta1.types import folder
 from google.cloud.securitycenter_v1p1beta1.types import security_marks as gcs_security_marks
 from google.protobuf import struct_pb2  # type: ignore
 from google.protobuf import timestamp_pb2  # type: ignore
@@ -61,14 +62,20 @@ class Asset(proto.Message):
             The time at which the asset was created in
             Security Command Center.
         update_time (google.protobuf.timestamp_pb2.Timestamp):
-            The time at which the asset was last updated,
-            added, or deleted in Cloud SCC.
+            The time at which the asset was last updated
+            or added in Cloud SCC.
         iam_policy (google.cloud.securitycenter_v1p1beta1.types.Asset.IamPolicy):
             Cloud IAM Policy information associated with
             the Google Cloud resource described by the
             Security Command Center asset. This information
             is managed and defined by the Google Cloud
             resource and cannot be modified by the user.
+        canonical_name (str):
+            The canonical name of the resource. It's either
+            "organizations/{organization_id}/assets/{asset_id}",
+            "folders/{folder_id}/assets/{asset_id}" or
+            "projects/{project_number}/assets/{asset_id}", depending on
+            the closest CRM ancestor of the resource.
     """
 
     class SecurityCenterProperties(proto.Message):
@@ -108,6 +115,11 @@ class Asset(proto.Message):
             resource_project_display_name (str):
                 The user defined display name for the project
                 of this resource.
+            folders (Sequence[google.cloud.securitycenter_v1p1beta1.types.Folder]):
+                Contains a Folder message for each folder in
+                the assets ancestry. The first folder is the
+                deepest nested folder, and the last folder is
+                the folder directly under the Organization.
         """
 
         resource_name = proto.Field(
@@ -141,6 +153,11 @@ class Asset(proto.Message):
         resource_project_display_name = proto.Field(
             proto.STRING,
             number=8,
+        )
+        folders = proto.RepeatedField(
+            proto.MESSAGE,
+            number=10,
+            message=folder.Folder,
         )
 
     class IamPolicy(proto.Message):
@@ -196,6 +213,10 @@ class Asset(proto.Message):
         proto.MESSAGE,
         number=11,
         message=IamPolicy,
+    )
+    canonical_name = proto.Field(
+        proto.STRING,
+        number=13,
     )
 
 
