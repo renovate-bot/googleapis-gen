@@ -797,7 +797,7 @@ func (c *BigtableTableAdminClient) ListBackups(ctx context.Context, req *adminpb
 }
 
 // RestoreTable create a new table by restoring from a completed backup. The new table
-// must be in the same instance as the instance containing the backup.  The
+// must be in the same project as the instance containing the backup.  The
 // returned table [long-running operation][google.longrunning.Operation] can
 // be used to track the progress of the operation, and to cancel it.  The
 // metadata field type is

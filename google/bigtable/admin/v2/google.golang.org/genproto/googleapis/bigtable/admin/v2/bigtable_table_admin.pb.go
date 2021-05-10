@@ -58,8 +58,8 @@ type RestoreTableRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Required. The name of the instance in which to create the restored
-	// table. This instance must be the parent of the source backup. Values are
-	// of the form `projects/<project>/instances/<instance>`.
+	// table. This instance must be in the same project as the source backup.
+	// Values are of the form `projects/<project>/instances/<instance>`.
 	Parent string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
 	// Required. The id of the table to create and restore to. This
 	// table must not already exist. The `table_id` appended to
@@ -3637,7 +3637,7 @@ type BigtableTableAdminClient interface {
 	// backups.
 	ListBackups(ctx context.Context, in *ListBackupsRequest, opts ...grpc.CallOption) (*ListBackupsResponse, error)
 	// Create a new table by restoring from a completed backup. The new table
-	// must be in the same instance as the instance containing the backup.  The
+	// must be in the same project as the instance containing the backup.  The
 	// returned table [long-running operation][google.longrunning.Operation] can
 	// be used to track the progress of the operation, and to cancel it.  The
 	// [metadata][google.longrunning.Operation.metadata] field type is
@@ -3953,7 +3953,7 @@ type BigtableTableAdminServer interface {
 	// backups.
 	ListBackups(context.Context, *ListBackupsRequest) (*ListBackupsResponse, error)
 	// Create a new table by restoring from a completed backup. The new table
-	// must be in the same instance as the instance containing the backup.  The
+	// must be in the same project as the instance containing the backup.  The
 	// returned table [long-running operation][google.longrunning.Operation] can
 	// be used to track the progress of the operation, and to cancel it.  The
 	// [metadata][google.longrunning.Operation.metadata] field type is

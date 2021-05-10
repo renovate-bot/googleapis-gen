@@ -65,8 +65,8 @@ class RestoreTableRequest(proto.Message):
     Attributes:
         parent (str):
             Required. The name of the instance in which to create the
-            restored table. This instance must be the parent of the
-            source backup. Values are of the form
+            restored table. This instance must be in the same project as
+            the source backup. Values are of the form
             ``projects/<project>/instances/<instance>``.
         table_id (str):
             Required. The id of the table to create and restore to. This

@@ -1899,7 +1899,7 @@ export class BigtableTableAdminClient {
           {}|null|undefined>): void;
 /**
  * Create a new table by restoring from a completed backup. The new table
- * must be in the same instance as the instance containing the backup.  The
+ * must be in the same project as the instance containing the backup.  The
  * returned table {@link google.longrunning.Operation|long-running operation} can
  * be used to track the progress of the operation, and to cancel it.  The
  * {@link google.longrunning.Operation.metadata|metadata} field type is
@@ -1911,8 +1911,8 @@ export class BigtableTableAdminClient {
  *   The request object that will be sent.
  * @param {string} request.parent
  *   Required. The name of the instance in which to create the restored
- *   table. This instance must be the parent of the source backup. Values are
- *   of the form `projects/<project>/instances/<instance>`.
+ *   table. This instance must be in the same project as the source backup.
+ *   Values are of the form `projects/<project>/instances/<instance>`.
  * @param {string} request.tableId
  *   Required. The id of the table to create and restore to. This
  *   table must not already exist. The `table_id` appended to

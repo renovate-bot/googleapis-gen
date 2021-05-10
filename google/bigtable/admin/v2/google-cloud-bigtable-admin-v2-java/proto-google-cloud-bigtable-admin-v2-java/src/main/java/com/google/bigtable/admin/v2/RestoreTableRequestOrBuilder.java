@@ -10,8 +10,8 @@ public interface RestoreTableRequestOrBuilder extends
   /**
    * <pre>
    * Required. The name of the instance in which to create the restored
-   * table. This instance must be the parent of the source backup. Values are
-   * of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * table. This instance must be in the same project as the source backup.
+   * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -21,8 +21,8 @@ public interface RestoreTableRequestOrBuilder extends
   /**
    * <pre>
    * Required. The name of the instance in which to create the restored
-   * table. This instance must be the parent of the source backup. Values are
-   * of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * table. This instance must be in the same project as the source backup.
+   * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
