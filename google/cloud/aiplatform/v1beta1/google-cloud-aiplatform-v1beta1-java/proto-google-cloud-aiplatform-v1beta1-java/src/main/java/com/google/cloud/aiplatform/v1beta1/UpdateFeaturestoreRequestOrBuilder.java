@@ -56,7 +56,7 @@ public interface UpdateFeaturestoreRequestOrBuilder extends
    *   * `display_name`
    *   * `labels`
    *   * `online_serving_config.fixed_node_count`
-   *   * `online_serving_config.max_online_serving_size`
+   *   * `retention_policy.online_storage_ttl_days`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -76,7 +76,7 @@ public interface UpdateFeaturestoreRequestOrBuilder extends
    *   * `display_name`
    *   * `labels`
    *   * `online_serving_config.fixed_node_count`
-   *   * `online_serving_config.max_online_serving_size`
+   *   * `retention_policy.online_storage_ttl_days`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -96,7 +96,7 @@ public interface UpdateFeaturestoreRequestOrBuilder extends
    *   * `display_name`
    *   * `labels`
    *   * `online_serving_config.fixed_node_count`
-   *   * `online_serving_config.max_online_serving_size`
+   *   * `retention_policy.online_storage_ttl_days`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>

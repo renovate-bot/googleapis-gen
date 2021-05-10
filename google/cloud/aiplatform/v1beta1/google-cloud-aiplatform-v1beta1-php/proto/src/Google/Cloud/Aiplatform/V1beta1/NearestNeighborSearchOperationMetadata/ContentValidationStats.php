@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class ContentValidationStats extends \Google\Protobuf\Internal\Message
 {
     /**
-     * GCS uri pointing to the original file in user's bucket.
+     * Cloud Storage URI pointing to the original file in user's bucket.
      *
      * Generated from protobuf field <code>string source_gcs_uri = 1;</code>
      */
@@ -47,7 +47,7 @@ class ContentValidationStats extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $source_gcs_uri
-     *           GCS uri pointing to the original file in user's bucket.
+     *           Cloud Storage URI pointing to the original file in user's bucket.
      *     @type int|string $valid_record_count
      *           Number of records in this file that were successfully processed.
      *     @type int|string $invalid_record_count
@@ -64,7 +64,7 @@ class ContentValidationStats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * GCS uri pointing to the original file in user's bucket.
+     * Cloud Storage URI pointing to the original file in user's bucket.
      *
      * Generated from protobuf field <code>string source_gcs_uri = 1;</code>
      * @return string
@@ -75,7 +75,7 @@ class ContentValidationStats extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * GCS uri pointing to the original file in user's bucket.
+     * Cloud Storage URI pointing to the original file in user's bucket.
      *
      * Generated from protobuf field <code>string source_gcs_uri = 1;</code>
      * @param string $var

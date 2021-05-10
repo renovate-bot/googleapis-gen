@@ -641,7 +641,6 @@ def test_get_featurestore(transport: str = 'grpc', request_type=featurestore_ser
         # Designate an appropriate return value for the call.
         call.return_value = featurestore.Featurestore(
             name='name_value',
-            display_name='display_name_value',
             etag='etag_value',
             state=featurestore.Featurestore.State.STABLE,
         )
@@ -655,7 +654,6 @@ def test_get_featurestore(transport: str = 'grpc', request_type=featurestore_ser
     # Establish that the response is the type that we expect.
     assert isinstance(response, featurestore.Featurestore)
     assert response.name == 'name_value'
-    assert response.display_name == 'display_name_value'
     assert response.etag == 'etag_value'
     assert response.state == featurestore.Featurestore.State.STABLE
 
@@ -700,7 +698,6 @@ async def test_get_featurestore_async(transport: str = 'grpc_asyncio', request_t
         # Designate an appropriate return value for the call.
         call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(featurestore.Featurestore(
             name='name_value',
-            display_name='display_name_value',
             etag='etag_value',
             state=featurestore.Featurestore.State.STABLE,
         ))
@@ -714,7 +711,6 @@ async def test_get_featurestore_async(transport: str = 'grpc_asyncio', request_t
     # Establish that the response is the type that we expect.
     assert isinstance(response, featurestore.Featurestore)
     assert response.name == 'name_value'
-    assert response.display_name == 'display_name_value'
     assert response.etag == 'etag_value'
     assert response.state == featurestore.Featurestore.State.STABLE
 

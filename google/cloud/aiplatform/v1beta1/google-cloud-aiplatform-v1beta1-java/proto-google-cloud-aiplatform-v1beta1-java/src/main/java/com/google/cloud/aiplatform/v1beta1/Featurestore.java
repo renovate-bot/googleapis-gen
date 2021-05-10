@@ -21,7 +21,6 @@ private static final long serialVersionUID = 0L;
   }
   private Featurestore() {
     name_ = "";
-    displayName_ = "";
     etag_ = "";
     state_ = 0;
   }
@@ -61,12 +60,6 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             name_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            displayName_ = s;
             break;
           }
           case 26: {
@@ -916,60 +909,6 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
-  /**
-   * <pre>
-   * Required. The user-defined name of the Featurestore.
-   * The name can be up to 128 characters long and can consist of any UTF-8
-   * characters.
-   * Display name of a Featurestore must be unique within a single Project and
-   * Location Pair.
-   * </pre>
-   *
-   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The displayName.
-   */
-  @java.lang.Override
-  public java.lang.String getDisplayName() {
-    java.lang.Object ref = displayName_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      displayName_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Required. The user-defined name of the Featurestore.
-   * The name can be up to 128 characters long and can consist of any UTF-8
-   * characters.
-   * Display name of a Featurestore must be unique within a single Project and
-   * Location Pair.
-   * </pre>
-   *
-   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-   * @return The bytes for displayName.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getDisplayNameBytes() {
-    java.lang.Object ref = displayName_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      displayName_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
   /**
@@ -1305,9 +1244,6 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, displayName_);
-    }
     if (createTime_ != null) {
       output.writeMessage(3, getCreateTime());
     }
@@ -1340,9 +1276,6 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
-    }
-    if (!getDisplayNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, displayName_);
     }
     if (createTime_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -1390,8 +1323,6 @@ private static final long serialVersionUID = 0L;
 
     if (!getName()
         .equals(other.getName())) return false;
-    if (!getDisplayName()
-        .equals(other.getDisplayName())) return false;
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
       if (!getCreateTime()
@@ -1425,8 +1356,6 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getDisplayName().hashCode();
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
@@ -1608,8 +1537,6 @@ private static final long serialVersionUID = 0L;
       super.clear();
       name_ = "";
 
-      displayName_ = "";
-
       if (createTimeBuilder_ == null) {
         createTime_ = null;
       } else {
@@ -1661,7 +1588,6 @@ private static final long serialVersionUID = 0L;
       com.google.cloud.aiplatform.v1beta1.Featurestore result = new com.google.cloud.aiplatform.v1beta1.Featurestore(this);
       int from_bitField0_ = bitField0_;
       result.name_ = name_;
-      result.displayName_ = displayName_;
       if (createTimeBuilder_ == null) {
         result.createTime_ = createTime_;
       } else {
@@ -1731,10 +1657,6 @@ private static final long serialVersionUID = 0L;
       if (other == com.google.cloud.aiplatform.v1beta1.Featurestore.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        onChanged();
-      }
-      if (!other.getDisplayName().isEmpty()) {
-        displayName_ = other.displayName_;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -1882,122 +1804,6 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       name_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object displayName_ = "";
-    /**
-     * <pre>
-     * Required. The user-defined name of the Featurestore.
-     * The name can be up to 128 characters long and can consist of any UTF-8
-     * characters.
-     * Display name of a Featurestore must be unique within a single Project and
-     * Location Pair.
-     * </pre>
-     *
-     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return The displayName.
-     */
-    public java.lang.String getDisplayName() {
-      java.lang.Object ref = displayName_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        displayName_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Required. The user-defined name of the Featurestore.
-     * The name can be up to 128 characters long and can consist of any UTF-8
-     * characters.
-     * Display name of a Featurestore must be unique within a single Project and
-     * Location Pair.
-     * </pre>
-     *
-     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return The bytes for displayName.
-     */
-    public com.google.protobuf.ByteString
-        getDisplayNameBytes() {
-      java.lang.Object ref = displayName_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        displayName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Required. The user-defined name of the Featurestore.
-     * The name can be up to 128 characters long and can consist of any UTF-8
-     * characters.
-     * Display name of a Featurestore must be unique within a single Project and
-     * Location Pair.
-     * </pre>
-     *
-     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param value The displayName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDisplayName(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      displayName_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Required. The user-defined name of the Featurestore.
-     * The name can be up to 128 characters long and can consist of any UTF-8
-     * characters.
-     * Display name of a Featurestore must be unique within a single Project and
-     * Location Pair.
-     * </pre>
-     *
-     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearDisplayName() {
-      
-      displayName_ = getDefaultInstance().getDisplayName();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Required. The user-defined name of the Featurestore.
-     * The name can be up to 128 characters long and can consist of any UTF-8
-     * characters.
-     * Display name of a Featurestore must be unique within a single Project and
-     * Location Pair.
-     * </pre>
-     *
-     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param value The bytes for displayName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDisplayNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      displayName_ = value;
       onChanged();
       return this;
     }

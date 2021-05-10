@@ -2173,7 +2173,7 @@ class FeaturestoreServiceGapicClient
      *           * `display_name`
      *           * `labels`
      *           * `online_serving_config.fixed_node_count`
-     *           * `online_serving_config.max_online_serving_size`
+     *           * `retention_policy.online_storage_ttl_days`
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry

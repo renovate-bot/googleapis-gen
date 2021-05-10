@@ -172,7 +172,7 @@ private static final long serialVersionUID = 0L;
    *   * `display_name`
    *   * `labels`
    *   * `online_serving_config.fixed_node_count`
-   *   * `online_serving_config.max_online_serving_size`
+   *   * `retention_policy.online_storage_ttl_days`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -195,7 +195,7 @@ private static final long serialVersionUID = 0L;
    *   * `display_name`
    *   * `labels`
    *   * `online_serving_config.fixed_node_count`
-   *   * `online_serving_config.max_online_serving_size`
+   *   * `retention_policy.online_storage_ttl_days`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -218,7 +218,7 @@ private static final long serialVersionUID = 0L;
    *   * `display_name`
    *   * `labels`
    *   * `online_serving_config.fixed_node_count`
-   *   * `online_serving_config.max_online_serving_size`
+   *   * `retention_policy.online_storage_ttl_days`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -775,7 +775,7 @@ private static final long serialVersionUID = 0L;
      *   * `display_name`
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
-     *   * `online_serving_config.max_online_serving_size`
+     *   * `retention_policy.online_storage_ttl_days`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -797,7 +797,7 @@ private static final long serialVersionUID = 0L;
      *   * `display_name`
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
-     *   * `online_serving_config.max_online_serving_size`
+     *   * `retention_policy.online_storage_ttl_days`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -823,7 +823,7 @@ private static final long serialVersionUID = 0L;
      *   * `display_name`
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
-     *   * `online_serving_config.max_online_serving_size`
+     *   * `retention_policy.online_storage_ttl_days`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -854,7 +854,7 @@ private static final long serialVersionUID = 0L;
      *   * `display_name`
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
-     *   * `online_serving_config.max_online_serving_size`
+     *   * `retention_policy.online_storage_ttl_days`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -883,7 +883,7 @@ private static final long serialVersionUID = 0L;
      *   * `display_name`
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
-     *   * `online_serving_config.max_online_serving_size`
+     *   * `retention_policy.online_storage_ttl_days`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -916,7 +916,7 @@ private static final long serialVersionUID = 0L;
      *   * `display_name`
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
-     *   * `online_serving_config.max_online_serving_size`
+     *   * `retention_policy.online_storage_ttl_days`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -945,7 +945,7 @@ private static final long serialVersionUID = 0L;
      *   * `display_name`
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
-     *   * `online_serving_config.max_online_serving_size`
+     *   * `retention_policy.online_storage_ttl_days`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -968,7 +968,7 @@ private static final long serialVersionUID = 0L;
      *   * `display_name`
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
-     *   * `online_serving_config.max_online_serving_size`
+     *   * `retention_policy.online_storage_ttl_days`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -994,7 +994,7 @@ private static final long serialVersionUID = 0L;
      *   * `display_name`
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
-     *   * `online_serving_config.max_online_serving_size`
+     *   * `retention_policy.online_storage_ttl_days`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

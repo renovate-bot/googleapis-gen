@@ -60,6 +60,14 @@ public enum AcceleratorType
    * <code>NVIDIA_TESLA_T4 = 5;</code>
    */
   NVIDIA_TESLA_T4(5),
+  /**
+   * <pre>
+   * Nvidia Tesla A100 GPU.
+   * </pre>
+   *
+   * <code>NVIDIA_TESLA_A100 = 8;</code>
+   */
+  NVIDIA_TESLA_A100(8),
   UNRECOGNIZED(-1),
   ;
 
@@ -111,6 +119,14 @@ public enum AcceleratorType
    * <code>NVIDIA_TESLA_T4 = 5;</code>
    */
   public static final int NVIDIA_TESLA_T4_VALUE = 5;
+  /**
+   * <pre>
+   * Nvidia Tesla A100 GPU.
+   * </pre>
+   *
+   * <code>NVIDIA_TESLA_A100 = 8;</code>
+   */
+  public static final int NVIDIA_TESLA_A100_VALUE = 8;
 
 
   public final int getNumber() {
@@ -143,6 +159,7 @@ public enum AcceleratorType
       case 3: return NVIDIA_TESLA_V100;
       case 4: return NVIDIA_TESLA_P4;
       case 5: return NVIDIA_TESLA_T4;
+      case 8: return NVIDIA_TESLA_A100;
       default: return null;
     }
   }

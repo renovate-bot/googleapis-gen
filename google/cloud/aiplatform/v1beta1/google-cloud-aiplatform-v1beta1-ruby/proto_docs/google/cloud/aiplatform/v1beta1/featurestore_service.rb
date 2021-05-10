@@ -150,7 +150,7 @@ module Google
         #       * `display_name`
         #       * `labels`
         #       * `online_serving_config.fixed_node_count`
-        #       * `online_serving_config.max_online_serving_size`
+        #       * `retention_policy.online_storage_ttl_days`
         class UpdateFeaturestoreRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -240,6 +240,13 @@ module Google
         # @!attribute [rw] imported_feature_value_count
         #   @return [::Integer]
         #     Number of Feature values that have been imported by the operation.
+        # @!attribute [rw] invalid_row_count
+        #   @return [::Integer]
+        #     The number of rows in input source that weren't imported due to either
+        #     * Not having any featureValues.
+        #     * Having a null entityId.
+        #     * Having a null timestamp.
+        #     * Not being parsable (applicable for CSV sources).
         class ImportFeatureValuesResponse
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -865,6 +872,13 @@ module Google
         # @!attribute [rw] imported_feature_value_count
         #   @return [::Integer]
         #     Number of feature values that have been imported by the operation.
+        # @!attribute [rw] invalid_row_count
+        #   @return [::Integer]
+        #     The number of rows in input source that weren't imported due to either
+        #     * Not having any featureValues.
+        #     * Having a null entityId.
+        #     * Having a null timestamp.
+        #     * Not being parsable (applicable for CSV sources).
         class ImportFeatureValuesOperationMetadata
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

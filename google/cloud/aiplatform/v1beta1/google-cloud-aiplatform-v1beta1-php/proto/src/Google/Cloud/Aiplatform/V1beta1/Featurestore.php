@@ -23,16 +23,6 @@ class Featurestore extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * Required. The user-defined name of the Featurestore.
-     * The name can be up to 128 characters long and can consist of any UTF-8
-     * characters.
-     * Display name of a Featurestore must be unique within a single Project and
-     * Location Pair.
-     *
-     * Generated from protobuf field <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     */
-    protected $display_name = '';
-    /**
      * Output only. Timestamp when this Featurestore was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -87,12 +77,6 @@ class Featurestore extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *           Output only. Name of the Featurestore. Format:
      *           `projects/{project}/locations/{location}/featurestores/{featurestore}`
-     *     @type string $display_name
-     *           Required. The user-defined name of the Featurestore.
-     *           The name can be up to 128 characters long and can consist of any UTF-8
-     *           characters.
-     *           Display name of a Featurestore must be unique within a single Project and
-     *           Location Pair.
      *     @type \Google\Protobuf\Timestamp $create_time
      *           Output only. Timestamp when this Featurestore was created.
      *     @type \Google\Protobuf\Timestamp $update_time
@@ -145,40 +129,6 @@ class Featurestore extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->name = $var;
-
-        return $this;
-    }
-
-    /**
-     * Required. The user-defined name of the Featurestore.
-     * The name can be up to 128 characters long and can consist of any UTF-8
-     * characters.
-     * Display name of a Featurestore must be unique within a single Project and
-     * Location Pair.
-     *
-     * Generated from protobuf field <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @return string
-     */
-    public function getDisplayName()
-    {
-        return $this->display_name;
-    }
-
-    /**
-     * Required. The user-defined name of the Featurestore.
-     * The name can be up to 128 characters long and can consist of any UTF-8
-     * characters.
-     * Display name of a Featurestore must be unique within a single Project and
-     * Location Pair.
-     *
-     * Generated from protobuf field <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setDisplayName($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->display_name = $var;
 
         return $this;
     }

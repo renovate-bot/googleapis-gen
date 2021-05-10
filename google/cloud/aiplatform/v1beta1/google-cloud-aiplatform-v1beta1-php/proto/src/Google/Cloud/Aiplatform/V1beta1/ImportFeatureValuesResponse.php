@@ -27,6 +27,16 @@ class ImportFeatureValuesResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int64 imported_feature_value_count = 2;</code>
      */
     protected $imported_feature_value_count = 0;
+    /**
+     * The number of rows in input source that weren't imported due to either
+     * * Not having any featureValues.
+     * * Having a null entityId.
+     * * Having a null timestamp.
+     * * Not being parsable (applicable for CSV sources).
+     *
+     * Generated from protobuf field <code>int64 invalid_row_count = 6;</code>
+     */
+    protected $invalid_row_count = 0;
 
     /**
      * Constructor.
@@ -38,6 +48,12 @@ class ImportFeatureValuesResponse extends \Google\Protobuf\Internal\Message
      *           Number of entities that have been imported by the operation.
      *     @type int|string $imported_feature_value_count
      *           Number of Feature values that have been imported by the operation.
+     *     @type int|string $invalid_row_count
+     *           The number of rows in input source that weren't imported due to either
+     *           * Not having any featureValues.
+     *           * Having a null entityId.
+     *           * Having a null timestamp.
+     *           * Not being parsable (applicable for CSV sources).
      * }
      */
     public function __construct($data = NULL) {
@@ -93,6 +109,40 @@ class ImportFeatureValuesResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->imported_feature_value_count = $var;
+
+        return $this;
+    }
+
+    /**
+     * The number of rows in input source that weren't imported due to either
+     * * Not having any featureValues.
+     * * Having a null entityId.
+     * * Having a null timestamp.
+     * * Not being parsable (applicable for CSV sources).
+     *
+     * Generated from protobuf field <code>int64 invalid_row_count = 6;</code>
+     * @return int|string
+     */
+    public function getInvalidRowCount()
+    {
+        return $this->invalid_row_count;
+    }
+
+    /**
+     * The number of rows in input source that weren't imported due to either
+     * * Not having any featureValues.
+     * * Having a null entityId.
+     * * Having a null timestamp.
+     * * Not being parsable (applicable for CSV sources).
+     *
+     * Generated from protobuf field <code>int64 invalid_row_count = 6;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setInvalidRowCount($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->invalid_row_count = $var;
 
         return $this;
     }

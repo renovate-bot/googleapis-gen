@@ -147,7 +147,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * GCS uri pointing to the original file in user's bucket.
+     * Cloud Storage URI pointing to the original file in user's bucket.
      * </pre>
      *
      * <code>string source_gcs_uri = 3;</code>
@@ -156,7 +156,7 @@ private static final long serialVersionUID = 0L;
     java.lang.String getSourceGcsUri();
     /**
      * <pre>
-     * GCS uri pointing to the original file in user's bucket.
+     * Cloud Storage URI pointing to the original file in user's bucket.
      * </pre>
      *
      * <code>string source_gcs_uri = 3;</code>
@@ -626,7 +626,7 @@ private static final long serialVersionUID = 0L;
     private volatile java.lang.Object sourceGcsUri_;
     /**
      * <pre>
-     * GCS uri pointing to the original file in user's bucket.
+     * Cloud Storage URI pointing to the original file in user's bucket.
      * </pre>
      *
      * <code>string source_gcs_uri = 3;</code>
@@ -647,7 +647,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * GCS uri pointing to the original file in user's bucket.
+     * Cloud Storage URI pointing to the original file in user's bucket.
      * </pre>
      *
      * <code>string source_gcs_uri = 3;</code>
@@ -1312,7 +1312,7 @@ private static final long serialVersionUID = 0L;
       private java.lang.Object sourceGcsUri_ = "";
       /**
        * <pre>
-       * GCS uri pointing to the original file in user's bucket.
+       * Cloud Storage URI pointing to the original file in user's bucket.
        * </pre>
        *
        * <code>string source_gcs_uri = 3;</code>
@@ -1332,7 +1332,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * GCS uri pointing to the original file in user's bucket.
+       * Cloud Storage URI pointing to the original file in user's bucket.
        * </pre>
        *
        * <code>string source_gcs_uri = 3;</code>
@@ -1353,7 +1353,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * GCS uri pointing to the original file in user's bucket.
+       * Cloud Storage URI pointing to the original file in user's bucket.
        * </pre>
        *
        * <code>string source_gcs_uri = 3;</code>
@@ -1372,7 +1372,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * GCS uri pointing to the original file in user's bucket.
+       * Cloud Storage URI pointing to the original file in user's bucket.
        * </pre>
        *
        * <code>string source_gcs_uri = 3;</code>
@@ -1386,7 +1386,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * GCS uri pointing to the original file in user's bucket.
+       * Cloud Storage URI pointing to the original file in user's bucket.
        * </pre>
        *
        * <code>string source_gcs_uri = 3;</code>
@@ -1655,7 +1655,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * GCS uri pointing to the original file in user's bucket.
+     * Cloud Storage URI pointing to the original file in user's bucket.
      * </pre>
      *
      * <code>string source_gcs_uri = 1;</code>
@@ -1664,7 +1664,7 @@ private static final long serialVersionUID = 0L;
     java.lang.String getSourceGcsUri();
     /**
      * <pre>
-     * GCS uri pointing to the original file in user's bucket.
+     * Cloud Storage URI pointing to the original file in user's bucket.
      * </pre>
      *
      * <code>string source_gcs_uri = 1;</code>
@@ -1859,7 +1859,7 @@ private static final long serialVersionUID = 0L;
     private volatile java.lang.Object sourceGcsUri_;
     /**
      * <pre>
-     * GCS uri pointing to the original file in user's bucket.
+     * Cloud Storage URI pointing to the original file in user's bucket.
      * </pre>
      *
      * <code>string source_gcs_uri = 1;</code>
@@ -1880,7 +1880,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * GCS uri pointing to the original file in user's bucket.
+     * Cloud Storage URI pointing to the original file in user's bucket.
      * </pre>
      *
      * <code>string source_gcs_uri = 1;</code>
@@ -2399,7 +2399,7 @@ private static final long serialVersionUID = 0L;
       private java.lang.Object sourceGcsUri_ = "";
       /**
        * <pre>
-       * GCS uri pointing to the original file in user's bucket.
+       * Cloud Storage URI pointing to the original file in user's bucket.
        * </pre>
        *
        * <code>string source_gcs_uri = 1;</code>
@@ -2419,7 +2419,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * GCS uri pointing to the original file in user's bucket.
+       * Cloud Storage URI pointing to the original file in user's bucket.
        * </pre>
        *
        * <code>string source_gcs_uri = 1;</code>
@@ -2440,7 +2440,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * GCS uri pointing to the original file in user's bucket.
+       * Cloud Storage URI pointing to the original file in user's bucket.
        * </pre>
        *
        * <code>string source_gcs_uri = 1;</code>
@@ -2459,7 +2459,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * GCS uri pointing to the original file in user's bucket.
+       * Cloud Storage URI pointing to the original file in user's bucket.
        * </pre>
        *
        * <code>string source_gcs_uri = 1;</code>
@@ -2473,7 +2473,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * GCS uri pointing to the original file in user's bucket.
+       * Cloud Storage URI pointing to the original file in user's bucket.
        * </pre>
        *
        * <code>string source_gcs_uri = 1;</code>

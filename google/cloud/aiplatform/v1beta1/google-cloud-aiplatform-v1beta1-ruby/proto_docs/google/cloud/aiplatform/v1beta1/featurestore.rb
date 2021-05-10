@@ -26,13 +26,6 @@ module Google
         #   @return [::String]
         #     Output only. Name of the Featurestore. Format:
         #     `projects/{project}/locations/{location}/featurestores/{featurestore}`
-        # @!attribute [rw] display_name
-        #   @return [::String]
-        #     Required. The user-defined name of the Featurestore.
-        #     The name can be up to 128 characters long and can consist of any UTF-8
-        #     characters.
-        #     Display name of a Featurestore must be unique within a single Project and
-        #     Location Pair.
         # @!attribute [r] create_time
         #   @return [::Google::Protobuf::Timestamp]
         #     Output only. Timestamp when this Featurestore was created.

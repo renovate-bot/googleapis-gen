@@ -638,11 +638,9 @@ class FeaturestoreServiceClientTest extends GeneratedTest
         $incompleteOperation->setDone(false);
         $transport->addResponse($incompleteOperation);
         $name = 'name3373707';
-        $displayName = 'displayName1615086568';
         $etag = 'etag3123477';
         $expectedResponse = new Featurestore();
         $expectedResponse->setName($name);
-        $expectedResponse->setDisplayName($displayName);
         $expectedResponse->setEtag($etag);
         $anyResponse = new Any();
         $anyResponse->setValue($expectedResponse->serializeToString());
@@ -654,8 +652,6 @@ class FeaturestoreServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $featurestore = new Featurestore();
-        $featurestoreDisplayName = 'featurestoreDisplayName-1127502398';
-        $featurestore->setDisplayName($featurestoreDisplayName);
         $featurestoreOnlineServingConfig = new OnlineServingConfig();
         $onlineServingConfigFixedNodeCount = 1784461612;
         $featurestoreOnlineServingConfig->setFixedNodeCount($onlineServingConfigFixedNodeCount);
@@ -732,8 +728,6 @@ class FeaturestoreServiceClientTest extends GeneratedTest
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
         $featurestore = new Featurestore();
-        $featurestoreDisplayName = 'featurestoreDisplayName-1127502398';
-        $featurestore->setDisplayName($featurestoreDisplayName);
         $featurestoreOnlineServingConfig = new OnlineServingConfig();
         $onlineServingConfigFixedNodeCount = 1784461612;
         $featurestoreOnlineServingConfig->setFixedNodeCount($onlineServingConfigFixedNodeCount);
@@ -1409,11 +1403,9 @@ class FeaturestoreServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $name2 = 'name2-1052831874';
-        $displayName = 'displayName1615086568';
         $etag = 'etag3123477';
         $expectedResponse = new Featurestore();
         $expectedResponse->setName($name2);
-        $expectedResponse->setDisplayName($displayName);
         $expectedResponse->setEtag($etag);
         $transport->addResponse($expectedResponse);
         // Mock request
@@ -1490,9 +1482,11 @@ class FeaturestoreServiceClientTest extends GeneratedTest
         $transport->addResponse($incompleteOperation);
         $importedEntityCount = 1840044274;
         $importedFeatureValueCount = 1221471427;
+        $invalidRowCount = 366655966;
         $expectedResponse = new ImportFeatureValuesResponse();
         $expectedResponse->setImportedEntityCount($importedEntityCount);
         $expectedResponse->setImportedFeatureValueCount($importedFeatureValueCount);
+        $expectedResponse->setInvalidRowCount($invalidRowCount);
         $anyResponse = new Any();
         $anyResponse->setValue($expectedResponse->serializeToString());
         $completeOperation = new Operation();
@@ -2046,11 +2040,9 @@ class FeaturestoreServiceClientTest extends GeneratedTest
         $incompleteOperation->setDone(false);
         $transport->addResponse($incompleteOperation);
         $name = 'name3373707';
-        $displayName = 'displayName1615086568';
         $etag = 'etag3123477';
         $expectedResponse = new Featurestore();
         $expectedResponse->setName($name);
-        $expectedResponse->setDisplayName($displayName);
         $expectedResponse->setEtag($etag);
         $anyResponse = new Any();
         $anyResponse->setValue($expectedResponse->serializeToString());
@@ -2061,8 +2053,6 @@ class FeaturestoreServiceClientTest extends GeneratedTest
         $operationsTransport->addResponse($completeOperation);
         // Mock request
         $featurestore = new Featurestore();
-        $featurestoreDisplayName = 'featurestoreDisplayName-1127502398';
-        $featurestore->setDisplayName($featurestoreDisplayName);
         $featurestoreOnlineServingConfig = new OnlineServingConfig();
         $onlineServingConfigFixedNodeCount = 1784461612;
         $featurestoreOnlineServingConfig->setFixedNodeCount($onlineServingConfigFixedNodeCount);
@@ -2133,8 +2123,6 @@ class FeaturestoreServiceClientTest extends GeneratedTest
         $operationsTransport->addResponse(null, $status);
         // Mock request
         $featurestore = new Featurestore();
-        $featurestoreDisplayName = 'featurestoreDisplayName-1127502398';
-        $featurestore->setDisplayName($featurestoreDisplayName);
         $featurestoreOnlineServingConfig = new OnlineServingConfig();
         $onlineServingConfigFixedNodeCount = 1784461612;
         $featurestoreOnlineServingConfig->setFixedNodeCount($onlineServingConfigFixedNodeCount);

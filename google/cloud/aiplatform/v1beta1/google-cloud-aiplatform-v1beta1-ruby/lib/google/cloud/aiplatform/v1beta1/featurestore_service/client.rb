@@ -496,7 +496,7 @@ module Google
             #       * `display_name`
             #       * `labels`
             #       * `online_serving_config.fixed_node_count`
-            #       * `online_serving_config.max_online_serving_size`
+            #       * `retention_policy.online_storage_ttl_days`
             #
             # @yield [response, operation] Access the result along with the RPC operation
             # @yieldparam response [::Gapic::Operation]

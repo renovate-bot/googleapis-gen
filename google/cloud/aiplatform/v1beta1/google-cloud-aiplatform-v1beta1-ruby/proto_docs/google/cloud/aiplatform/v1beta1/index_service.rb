@@ -154,7 +154,7 @@ module Google
           #     should check against error_type as the source of truth.
           # @!attribute [rw] source_gcs_uri
           #   @return [::String]
-          #     GCS uri pointing to the original file in user's bucket.
+          #     Cloud Storage URI pointing to the original file in user's bucket.
           # @!attribute [rw] embedding_id
           #   @return [::String]
           #     Empty if the embedding id is failed to parse.
@@ -195,7 +195,7 @@ module Google
 
           # @!attribute [rw] source_gcs_uri
           #   @return [::String]
-          #     GCS uri pointing to the original file in user's bucket.
+          #     Cloud Storage URI pointing to the original file in user's bucket.
           # @!attribute [rw] valid_record_count
           #   @return [::Integer]
           #     Number of records in this file that were successfully processed.

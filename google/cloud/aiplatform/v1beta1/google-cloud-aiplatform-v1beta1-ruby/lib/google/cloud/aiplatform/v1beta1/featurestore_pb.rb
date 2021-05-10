@@ -11,7 +11,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("google/cloud/aiplatform/v1beta1/featurestore.proto", :syntax => :proto3) do
     add_message "google.cloud.aiplatform.v1beta1.Featurestore" do
       optional :name, :string, 1
-      optional :display_name, :string, 2
       optional :create_time, :message, 3, "google.protobuf.Timestamp"
       optional :update_time, :message, 4, "google.protobuf.Timestamp"
       optional :etag, :string, 5

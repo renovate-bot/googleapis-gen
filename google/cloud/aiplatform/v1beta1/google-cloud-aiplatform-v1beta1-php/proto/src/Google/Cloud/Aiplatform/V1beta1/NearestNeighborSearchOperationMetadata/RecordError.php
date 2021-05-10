@@ -28,7 +28,7 @@ class RecordError extends \Google\Protobuf\Internal\Message
      */
     protected $error_message = '';
     /**
-     * GCS uri pointing to the original file in user's bucket.
+     * Cloud Storage URI pointing to the original file in user's bucket.
      *
      * Generated from protobuf field <code>string source_gcs_uri = 3;</code>
      */
@@ -59,7 +59,7 @@ class RecordError extends \Google\Protobuf\Internal\Message
      *           error. Note that this message may change from time to time, your code
      *           should check against error_type as the source of truth.
      *     @type string $source_gcs_uri
-     *           GCS uri pointing to the original file in user's bucket.
+     *           Cloud Storage URI pointing to the original file in user's bucket.
      *     @type string $embedding_id
      *           Empty if the embedding id is failed to parse.
      *     @type string $raw_record
@@ -128,7 +128,7 @@ class RecordError extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * GCS uri pointing to the original file in user's bucket.
+     * Cloud Storage URI pointing to the original file in user's bucket.
      *
      * Generated from protobuf field <code>string source_gcs_uri = 3;</code>
      * @return string
@@ -139,7 +139,7 @@ class RecordError extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * GCS uri pointing to the original file in user's bucket.
+     * Cloud Storage URI pointing to the original file in user's bucket.
      *
      * Generated from protobuf field <code>string source_gcs_uri = 3;</code>
      * @param string $var

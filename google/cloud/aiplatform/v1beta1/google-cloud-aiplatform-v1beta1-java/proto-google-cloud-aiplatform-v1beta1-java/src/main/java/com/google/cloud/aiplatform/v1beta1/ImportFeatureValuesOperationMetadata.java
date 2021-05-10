@@ -75,6 +75,11 @@ private static final long serialVersionUID = 0L;
             importedFeatureValueCount_ = input.readInt64();
             break;
           }
+          case 48: {
+
+            invalidRowCount_ = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -175,6 +180,25 @@ private static final long serialVersionUID = 0L;
     return importedFeatureValueCount_;
   }
 
+  public static final int INVALID_ROW_COUNT_FIELD_NUMBER = 6;
+  private long invalidRowCount_;
+  /**
+   * <pre>
+   * The number of rows in input source that weren't imported due to either
+   * * Not having any featureValues.
+   * * Having a null entityId.
+   * * Having a null timestamp.
+   * * Not being parsable (applicable for CSV sources).
+   * </pre>
+   *
+   * <code>int64 invalid_row_count = 6;</code>
+   * @return The invalidRowCount.
+   */
+  @java.lang.Override
+  public long getInvalidRowCount() {
+    return invalidRowCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -198,6 +222,9 @@ private static final long serialVersionUID = 0L;
     if (importedFeatureValueCount_ != 0L) {
       output.writeInt64(3, importedFeatureValueCount_);
     }
+    if (invalidRowCount_ != 0L) {
+      output.writeInt64(6, invalidRowCount_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -218,6 +245,10 @@ private static final long serialVersionUID = 0L;
     if (importedFeatureValueCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, importedFeatureValueCount_);
+    }
+    if (invalidRowCount_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(6, invalidRowCount_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -243,6 +274,8 @@ private static final long serialVersionUID = 0L;
         != other.getImportedEntityCount()) return false;
     if (getImportedFeatureValueCount()
         != other.getImportedFeatureValueCount()) return false;
+    if (getInvalidRowCount()
+        != other.getInvalidRowCount()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -264,6 +297,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + IMPORTED_FEATURE_VALUE_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getImportedFeatureValueCount());
+    hash = (37 * hash) + INVALID_ROW_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getInvalidRowCount());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -411,6 +447,8 @@ private static final long serialVersionUID = 0L;
 
       importedFeatureValueCount_ = 0L;
 
+      invalidRowCount_ = 0L;
+
       return this;
     }
 
@@ -444,6 +482,7 @@ private static final long serialVersionUID = 0L;
       }
       result.importedEntityCount_ = importedEntityCount_;
       result.importedFeatureValueCount_ = importedFeatureValueCount_;
+      result.invalidRowCount_ = invalidRowCount_;
       onBuilt();
       return result;
     }
@@ -500,6 +539,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getImportedFeatureValueCount() != 0L) {
         setImportedFeatureValueCount(other.getImportedFeatureValueCount());
+      }
+      if (other.getInvalidRowCount() != 0L) {
+        setInvalidRowCount(other.getInvalidRowCount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -767,6 +809,61 @@ private static final long serialVersionUID = 0L;
     public Builder clearImportedFeatureValueCount() {
       
       importedFeatureValueCount_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long invalidRowCount_ ;
+    /**
+     * <pre>
+     * The number of rows in input source that weren't imported due to either
+     * * Not having any featureValues.
+     * * Having a null entityId.
+     * * Having a null timestamp.
+     * * Not being parsable (applicable for CSV sources).
+     * </pre>
+     *
+     * <code>int64 invalid_row_count = 6;</code>
+     * @return The invalidRowCount.
+     */
+    @java.lang.Override
+    public long getInvalidRowCount() {
+      return invalidRowCount_;
+    }
+    /**
+     * <pre>
+     * The number of rows in input source that weren't imported due to either
+     * * Not having any featureValues.
+     * * Having a null entityId.
+     * * Having a null timestamp.
+     * * Not being parsable (applicable for CSV sources).
+     * </pre>
+     *
+     * <code>int64 invalid_row_count = 6;</code>
+     * @param value The invalidRowCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInvalidRowCount(long value) {
+      
+      invalidRowCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The number of rows in input source that weren't imported due to either
+     * * Not having any featureValues.
+     * * Having a null entityId.
+     * * Having a null timestamp.
+     * * Not being parsable (applicable for CSV sources).
+     * </pre>
+     *
+     * <code>int64 invalid_row_count = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearInvalidRowCount() {
+      
+      invalidRowCount_ = 0L;
       onChanged();
       return this;
     }
