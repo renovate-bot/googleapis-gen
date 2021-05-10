@@ -86,13 +86,23 @@ class Finding(proto.Message):
             believes the firewall became open. The accuracy
             is determined by the detector. If the finding
             were to be resolved afterward, this time would
-            reflect when the finding was resolved.
+            reflect when the finding was resolved. Must not
+            be set to a value greater than the current
+            timestamp.
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             The time at which the finding was created in
             Security Command Center.
         severity (google.cloud.securitycenter_v1.types.Finding.Severity):
             The severity of the finding. This field is
             managed by the source that writes the finding.
+        canonical_name (str):
+            The canonical name of the finding. It's either
+            "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}",
+            "folders/{folder_id}/sources/{source_id}/findings/{finding_id}"
+            or
+            "projects/{project_number}/sources/{source_id}/findings/{finding_id}",
+            depending on the closest CRM ancestor of the resource
+            associated with the finding.
     """
     class State(proto.Enum):
         r"""The state of the finding."""
@@ -158,6 +168,10 @@ class Finding(proto.Message):
         proto.ENUM,
         number=12,
         enum=Severity,
+    )
+    canonical_name = proto.Field(
+        proto.STRING,
+        number=14,
     )
 
 

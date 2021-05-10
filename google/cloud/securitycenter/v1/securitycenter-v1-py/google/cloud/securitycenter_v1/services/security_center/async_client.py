@@ -1027,7 +1027,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         their specified properties.
 
         To group across all sources provide a ``-`` as the source id.
-        Example: /v1/organizations/{organization_id}/sources/-/findings
+        Example: /v1/organizations/{organization_id}/sources/-/findings,
+        /v1/folders/{folder_id}/sources/-/findings,
+        /v1/projects/{project_id}/sources/-/findings
 
         Args:
             request (:class:`google.cloud.securitycenter_v1.types.GroupFindingsRequest`):
@@ -1035,10 +1037,13 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 findings.
             parent (:class:`str`):
                 Required. Name of the source to groupBy. Its format is
-                "organizations/[organization_id]/sources/[source_id]".
-                To groupBy across all sources provide a source_id of
-                ``-``. For example:
-                organizations/{organization_id}/sources/-
+                "organizations/[organization_id]/sources/[source_id]",
+                folders/[folder_id]/sources/[source_id], or
+                projects/[project_id]/sources/[source_id]. To groupBy
+                across all sources provide a source_id of ``-``. For
+                example: organizations/{organization_id}/sources/-,
+                folders/{folder_id}/sources/-, or
+                projects/{project_id}/sources/-
 
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -1400,7 +1405,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
             parent (:class:`str`):
                 Required. Resource name of the parent of sources to
                 list. Its format should be
-                "organizations/[organization_id]".
+                "organizations/[organization_id], folders/[folder_id],
+                or projects/[project_id]".
 
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this

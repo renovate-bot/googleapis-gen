@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
   }
   private SecurityMarks() {
     name_ = "";
+    canonicalName_ = "";
   }
 
   @java.lang.Override
@@ -74,6 +75,12 @@ private static final long serialVersionUID = 0L;
                 MarksDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
             marks_.getMutableMap().put(
                 marks__.getKey(), marks__.getValue());
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            canonicalName_ = s;
             break;
           }
           default: {
@@ -295,6 +302,66 @@ private static final long serialVersionUID = 0L;
     return map.get(key);
   }
 
+  public static final int CANONICAL_NAME_FIELD_NUMBER = 3;
+  private volatile java.lang.Object canonicalName_;
+  /**
+   * <pre>
+   * The canonical name of the marks.
+   * Examples:
+   * "organizations/{organization_id}/assets/{asset_id}/securityMarks"
+   * "folders/{folder_id}/assets/{asset_id}/securityMarks"
+   * "projects/{project_number}/assets/{asset_id}/securityMarks"
+   * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}/securityMarks"
+   * "folders/{folder_id}/sources/{source_id}/findings/{finding_id}/securityMarks"
+   * "projects/{project_number}/sources/{source_id}/findings/{finding_id}/securityMarks"
+   * </pre>
+   *
+   * <code>string canonical_name = 3;</code>
+   * @return The canonicalName.
+   */
+  @java.lang.Override
+  public java.lang.String getCanonicalName() {
+    java.lang.Object ref = canonicalName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      canonicalName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The canonical name of the marks.
+   * Examples:
+   * "organizations/{organization_id}/assets/{asset_id}/securityMarks"
+   * "folders/{folder_id}/assets/{asset_id}/securityMarks"
+   * "projects/{project_number}/assets/{asset_id}/securityMarks"
+   * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}/securityMarks"
+   * "folders/{folder_id}/sources/{source_id}/findings/{finding_id}/securityMarks"
+   * "projects/{project_number}/sources/{source_id}/findings/{finding_id}/securityMarks"
+   * </pre>
+   *
+   * <code>string canonical_name = 3;</code>
+   * @return The bytes for canonicalName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCanonicalNameBytes() {
+    java.lang.Object ref = canonicalName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      canonicalName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -318,6 +385,9 @@ private static final long serialVersionUID = 0L;
         internalGetMarks(),
         MarksDefaultEntryHolder.defaultEntry,
         2);
+    if (!getCanonicalNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, canonicalName_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -340,6 +410,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, marks__);
     }
+    if (!getCanonicalNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, canonicalName_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -359,6 +432,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getName())) return false;
     if (!internalGetMarks().equals(
         other.internalGetMarks())) return false;
+    if (!getCanonicalName()
+        .equals(other.getCanonicalName())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -376,6 +451,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + MARKS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetMarks().hashCode();
     }
+    hash = (37 * hash) + CANONICAL_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getCanonicalName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -541,6 +618,8 @@ private static final long serialVersionUID = 0L;
       name_ = "";
 
       internalGetMutableMarks().clear();
+      canonicalName_ = "";
+
       return this;
     }
 
@@ -571,6 +650,7 @@ private static final long serialVersionUID = 0L;
       result.name_ = name_;
       result.marks_ = internalGetMarks();
       result.marks_.makeImmutable();
+      result.canonicalName_ = canonicalName_;
       onBuilt();
       return result;
     }
@@ -625,6 +705,10 @@ private static final long serialVersionUID = 0L;
       }
       internalGetMutableMarks().mergeFrom(
           other.internalGetMarks());
+      if (!other.getCanonicalName().isEmpty()) {
+        canonicalName_ = other.canonicalName_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -966,6 +1050,137 @@ private static final long serialVersionUID = 0L;
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableMarks().getMutableMap()
           .putAll(values);
+      return this;
+    }
+
+    private java.lang.Object canonicalName_ = "";
+    /**
+     * <pre>
+     * The canonical name of the marks.
+     * Examples:
+     * "organizations/{organization_id}/assets/{asset_id}/securityMarks"
+     * "folders/{folder_id}/assets/{asset_id}/securityMarks"
+     * "projects/{project_number}/assets/{asset_id}/securityMarks"
+     * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}/securityMarks"
+     * "folders/{folder_id}/sources/{source_id}/findings/{finding_id}/securityMarks"
+     * "projects/{project_number}/sources/{source_id}/findings/{finding_id}/securityMarks"
+     * </pre>
+     *
+     * <code>string canonical_name = 3;</code>
+     * @return The canonicalName.
+     */
+    public java.lang.String getCanonicalName() {
+      java.lang.Object ref = canonicalName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        canonicalName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The canonical name of the marks.
+     * Examples:
+     * "organizations/{organization_id}/assets/{asset_id}/securityMarks"
+     * "folders/{folder_id}/assets/{asset_id}/securityMarks"
+     * "projects/{project_number}/assets/{asset_id}/securityMarks"
+     * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}/securityMarks"
+     * "folders/{folder_id}/sources/{source_id}/findings/{finding_id}/securityMarks"
+     * "projects/{project_number}/sources/{source_id}/findings/{finding_id}/securityMarks"
+     * </pre>
+     *
+     * <code>string canonical_name = 3;</code>
+     * @return The bytes for canonicalName.
+     */
+    public com.google.protobuf.ByteString
+        getCanonicalNameBytes() {
+      java.lang.Object ref = canonicalName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        canonicalName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The canonical name of the marks.
+     * Examples:
+     * "organizations/{organization_id}/assets/{asset_id}/securityMarks"
+     * "folders/{folder_id}/assets/{asset_id}/securityMarks"
+     * "projects/{project_number}/assets/{asset_id}/securityMarks"
+     * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}/securityMarks"
+     * "folders/{folder_id}/sources/{source_id}/findings/{finding_id}/securityMarks"
+     * "projects/{project_number}/sources/{source_id}/findings/{finding_id}/securityMarks"
+     * </pre>
+     *
+     * <code>string canonical_name = 3;</code>
+     * @param value The canonicalName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCanonicalName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      canonicalName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The canonical name of the marks.
+     * Examples:
+     * "organizations/{organization_id}/assets/{asset_id}/securityMarks"
+     * "folders/{folder_id}/assets/{asset_id}/securityMarks"
+     * "projects/{project_number}/assets/{asset_id}/securityMarks"
+     * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}/securityMarks"
+     * "folders/{folder_id}/sources/{source_id}/findings/{finding_id}/securityMarks"
+     * "projects/{project_number}/sources/{source_id}/findings/{finding_id}/securityMarks"
+     * </pre>
+     *
+     * <code>string canonical_name = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCanonicalName() {
+      
+      canonicalName_ = getDefaultInstance().getCanonicalName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The canonical name of the marks.
+     * Examples:
+     * "organizations/{organization_id}/assets/{asset_id}/securityMarks"
+     * "folders/{folder_id}/assets/{asset_id}/securityMarks"
+     * "projects/{project_number}/assets/{asset_id}/securityMarks"
+     * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}/securityMarks"
+     * "folders/{folder_id}/sources/{source_id}/findings/{finding_id}/securityMarks"
+     * "projects/{project_number}/sources/{source_id}/findings/{finding_id}/securityMarks"
+     * </pre>
+     *
+     * <code>string canonical_name = 3;</code>
+     * @param value The bytes for canonicalName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCanonicalNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      canonicalName_ = value;
+      onChanged();
       return this;
     }
     @java.lang.Override

@@ -10,7 +10,8 @@ public interface ListAssetsRequestOrBuilder extends
   /**
    * <pre>
    * Required. Name of the organization assets should belong to. Its format is
-   * "organizations/[organization_id]".
+   * "organizations/[organization_id], folders/[folder_id], or
+   * projects/[project_id]".
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -20,7 +21,8 @@ public interface ListAssetsRequestOrBuilder extends
   /**
    * <pre>
    * Required. Name of the organization assets should belong to. Its format is
-   * "organizations/[organization_id]".
+   * "organizations/[organization_id], folders/[folder_id], or
+   * projects/[project_id]".
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

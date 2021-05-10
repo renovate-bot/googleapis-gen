@@ -19,6 +19,7 @@ from .services.security_center import SecurityCenterAsyncClient
 
 from .types.asset import Asset
 from .types.finding import Finding
+from .types.folder import Folder
 from .types.notification_config import NotificationConfig
 from .types.notification_message import NotificationMessage
 from .types.organization_settings import OrganizationSettings
@@ -61,6 +62,7 @@ __all__ = (
 'CreateSourceRequest',
 'DeleteNotificationConfigRequest',
 'Finding',
+'Folder',
 'GetNotificationConfigRequest',
 'GetOrganizationSettingsRequest',
 'GetSourceRequest',

@@ -10,9 +10,12 @@ public interface GroupFindingsRequestOrBuilder extends
   /**
    * <pre>
    * Required. Name of the source to groupBy. Its format is
-   * "organizations/[organization_id]/sources/[source_id]". To groupBy across
-   * all sources provide a source_id of `-`. For example:
-   * organizations/{organization_id}/sources/-
+   * "organizations/[organization_id]/sources/[source_id]",
+   * folders/[folder_id]/sources/[source_id], or
+   * projects/[project_id]/sources/[source_id]. To groupBy across all sources
+   * provide a source_id of `-`. For example:
+   * organizations/{organization_id}/sources/-, folders/{folder_id}/sources/-,
+   * or projects/{project_id}/sources/-
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -22,9 +25,12 @@ public interface GroupFindingsRequestOrBuilder extends
   /**
    * <pre>
    * Required. Name of the source to groupBy. Its format is
-   * "organizations/[organization_id]/sources/[source_id]". To groupBy across
-   * all sources provide a source_id of `-`. For example:
-   * organizations/{organization_id}/sources/-
+   * "organizations/[organization_id]/sources/[source_id]",
+   * folders/[folder_id]/sources/[source_id], or
+   * projects/[project_id]/sources/[source_id]. To groupBy across all sources
+   * provide a source_id of `-`. For example:
+   * organizations/{organization_id}/sources/-, folders/{folder_id}/sources/-,
+   * or projects/{project_id}/sources/-
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

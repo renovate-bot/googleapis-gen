@@ -173,6 +173,51 @@ private static final long serialVersionUID = 0L;
      * @return The inclusionMode.
      */
     com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode getInclusionMode();
+
+    /**
+     * <pre>
+     * The folder ids to use for filtering asset discovery.
+     * It consists of only digits, e.g., 756619654966.
+     * </pre>
+     *
+     * <code>repeated string folder_ids = 3;</code>
+     * @return A list containing the folderIds.
+     */
+    java.util.List<java.lang.String>
+        getFolderIdsList();
+    /**
+     * <pre>
+     * The folder ids to use for filtering asset discovery.
+     * It consists of only digits, e.g., 756619654966.
+     * </pre>
+     *
+     * <code>repeated string folder_ids = 3;</code>
+     * @return The count of folderIds.
+     */
+    int getFolderIdsCount();
+    /**
+     * <pre>
+     * The folder ids to use for filtering asset discovery.
+     * It consists of only digits, e.g., 756619654966.
+     * </pre>
+     *
+     * <code>repeated string folder_ids = 3;</code>
+     * @param index The index of the element to return.
+     * @return The folderIds at the given index.
+     */
+    java.lang.String getFolderIds(int index);
+    /**
+     * <pre>
+     * The folder ids to use for filtering asset discovery.
+     * It consists of only digits, e.g., 756619654966.
+     * </pre>
+     *
+     * <code>repeated string folder_ids = 3;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the folderIds at the given index.
+     */
+    com.google.protobuf.ByteString
+        getFolderIdsBytes(int index);
   }
   /**
    * <pre>
@@ -193,6 +238,7 @@ private static final long serialVersionUID = 0L;
     private AssetDiscoveryConfig() {
       projectIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       inclusionMode_ = 0;
+      folderIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -241,6 +287,15 @@ private static final long serialVersionUID = 0L;
               inclusionMode_ = rawValue;
               break;
             }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                folderIds_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              folderIds_.add(s);
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -258,6 +313,9 @@ private static final long serialVersionUID = 0L;
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           projectIds_ = projectIds_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          folderIds_ = folderIds_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -512,6 +570,61 @@ private static final long serialVersionUID = 0L;
       return result == null ? com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode.UNRECOGNIZED : result;
     }
 
+    public static final int FOLDER_IDS_FIELD_NUMBER = 3;
+    private com.google.protobuf.LazyStringList folderIds_;
+    /**
+     * <pre>
+     * The folder ids to use for filtering asset discovery.
+     * It consists of only digits, e.g., 756619654966.
+     * </pre>
+     *
+     * <code>repeated string folder_ids = 3;</code>
+     * @return A list containing the folderIds.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getFolderIdsList() {
+      return folderIds_;
+    }
+    /**
+     * <pre>
+     * The folder ids to use for filtering asset discovery.
+     * It consists of only digits, e.g., 756619654966.
+     * </pre>
+     *
+     * <code>repeated string folder_ids = 3;</code>
+     * @return The count of folderIds.
+     */
+    public int getFolderIdsCount() {
+      return folderIds_.size();
+    }
+    /**
+     * <pre>
+     * The folder ids to use for filtering asset discovery.
+     * It consists of only digits, e.g., 756619654966.
+     * </pre>
+     *
+     * <code>repeated string folder_ids = 3;</code>
+     * @param index The index of the element to return.
+     * @return The folderIds at the given index.
+     */
+    public java.lang.String getFolderIds(int index) {
+      return folderIds_.get(index);
+    }
+    /**
+     * <pre>
+     * The folder ids to use for filtering asset discovery.
+     * It consists of only digits, e.g., 756619654966.
+     * </pre>
+     *
+     * <code>repeated string folder_ids = 3;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the folderIds at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getFolderIdsBytes(int index) {
+      return folderIds_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -531,6 +644,9 @@ private static final long serialVersionUID = 0L;
       }
       if (inclusionMode_ != com.google.cloud.securitycenter.v1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode.INCLUSION_MODE_UNSPECIFIED.getNumber()) {
         output.writeEnum(2, inclusionMode_);
+      }
+      for (int i = 0; i < folderIds_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, folderIds_.getRaw(i));
       }
       unknownFields.writeTo(output);
     }
@@ -553,6 +669,14 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, inclusionMode_);
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < folderIds_.size(); i++) {
+          dataSize += computeStringSizeNoTag(folderIds_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getFolderIdsList().size();
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -571,6 +695,8 @@ private static final long serialVersionUID = 0L;
       if (!getProjectIdsList()
           .equals(other.getProjectIdsList())) return false;
       if (inclusionMode_ != other.inclusionMode_) return false;
+      if (!getFolderIdsList()
+          .equals(other.getFolderIdsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -588,6 +714,10 @@ private static final long serialVersionUID = 0L;
       }
       hash = (37 * hash) + INCLUSION_MODE_FIELD_NUMBER;
       hash = (53 * hash) + inclusionMode_;
+      if (getFolderIdsCount() > 0) {
+        hash = (37 * hash) + FOLDER_IDS_FIELD_NUMBER;
+        hash = (53 * hash) + getFolderIdsList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -729,6 +859,8 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
         inclusionMode_ = 0;
 
+        folderIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -762,6 +894,11 @@ private static final long serialVersionUID = 0L;
         }
         result.projectIds_ = projectIds_;
         result.inclusionMode_ = inclusionMode_;
+        if (((bitField0_ & 0x00000002) != 0)) {
+          folderIds_ = folderIds_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.folderIds_ = folderIds_;
         onBuilt();
         return result;
       }
@@ -822,6 +959,16 @@ private static final long serialVersionUID = 0L;
         }
         if (other.inclusionMode_ != 0) {
           setInclusionModeValue(other.getInclusionModeValue());
+        }
+        if (!other.folderIds_.isEmpty()) {
+          if (folderIds_.isEmpty()) {
+            folderIds_ = other.folderIds_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureFolderIdsIsMutable();
+            folderIds_.addAll(other.folderIds_);
+          }
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1069,6 +1216,161 @@ private static final long serialVersionUID = 0L;
       public Builder clearInclusionMode() {
         
         inclusionMode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList folderIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureFolderIdsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          folderIds_ = new com.google.protobuf.LazyStringArrayList(folderIds_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <pre>
+       * The folder ids to use for filtering asset discovery.
+       * It consists of only digits, e.g., 756619654966.
+       * </pre>
+       *
+       * <code>repeated string folder_ids = 3;</code>
+       * @return A list containing the folderIds.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getFolderIdsList() {
+        return folderIds_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * The folder ids to use for filtering asset discovery.
+       * It consists of only digits, e.g., 756619654966.
+       * </pre>
+       *
+       * <code>repeated string folder_ids = 3;</code>
+       * @return The count of folderIds.
+       */
+      public int getFolderIdsCount() {
+        return folderIds_.size();
+      }
+      /**
+       * <pre>
+       * The folder ids to use for filtering asset discovery.
+       * It consists of only digits, e.g., 756619654966.
+       * </pre>
+       *
+       * <code>repeated string folder_ids = 3;</code>
+       * @param index The index of the element to return.
+       * @return The folderIds at the given index.
+       */
+      public java.lang.String getFolderIds(int index) {
+        return folderIds_.get(index);
+      }
+      /**
+       * <pre>
+       * The folder ids to use for filtering asset discovery.
+       * It consists of only digits, e.g., 756619654966.
+       * </pre>
+       *
+       * <code>repeated string folder_ids = 3;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the folderIds at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getFolderIdsBytes(int index) {
+        return folderIds_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * The folder ids to use for filtering asset discovery.
+       * It consists of only digits, e.g., 756619654966.
+       * </pre>
+       *
+       * <code>repeated string folder_ids = 3;</code>
+       * @param index The index to set the value at.
+       * @param value The folderIds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFolderIds(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureFolderIdsIsMutable();
+        folderIds_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The folder ids to use for filtering asset discovery.
+       * It consists of only digits, e.g., 756619654966.
+       * </pre>
+       *
+       * <code>repeated string folder_ids = 3;</code>
+       * @param value The folderIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFolderIds(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureFolderIdsIsMutable();
+        folderIds_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The folder ids to use for filtering asset discovery.
+       * It consists of only digits, e.g., 756619654966.
+       * </pre>
+       *
+       * <code>repeated string folder_ids = 3;</code>
+       * @param values The folderIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllFolderIds(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureFolderIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, folderIds_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The folder ids to use for filtering asset discovery.
+       * It consists of only digits, e.g., 756619654966.
+       * </pre>
+       *
+       * <code>repeated string folder_ids = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFolderIds() {
+        folderIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The folder ids to use for filtering asset discovery.
+       * It consists of only digits, e.g., 756619654966.
+       * </pre>
+       *
+       * <code>repeated string folder_ids = 3;</code>
+       * @param value The bytes of the folderIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFolderIdsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureFolderIdsIsMutable();
+        folderIds_.add(value);
         onChanged();
         return this;
       }

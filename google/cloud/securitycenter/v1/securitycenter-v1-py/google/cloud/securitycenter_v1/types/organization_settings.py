@@ -53,6 +53,10 @@ class OrganizationSettings(proto.Message):
             inclusion_mode (google.cloud.securitycenter_v1.types.OrganizationSettings.AssetDiscoveryConfig.InclusionMode):
                 The mode to use for filtering asset
                 discovery.
+            folder_ids (Sequence[str]):
+                The folder ids to use for filtering asset
+                discovery. It consists of only digits, e.g.,
+                756619654966.
         """
         class InclusionMode(proto.Enum):
             r"""The mode of inclusion when running Asset Discovery. Asset discovery
@@ -76,6 +80,10 @@ class OrganizationSettings(proto.Message):
             proto.ENUM,
             number=2,
             enum='OrganizationSettings.AssetDiscoveryConfig.InclusionMode',
+        )
+        folder_ids = proto.RepeatedField(
+            proto.STRING,
+            number=3,
         )
 
     name = proto.Field(

@@ -48,6 +48,14 @@ class SecurityMarks(proto.Message):
             -  Values have leading and trailing whitespace trimmed,
                remaining characters must be between 1 - 4096 characters
                (inclusive)
+        canonical_name (str):
+            The canonical name of the marks. Examples:
+            "organizations/{organization_id}/assets/{asset_id}/securityMarks"
+            "folders/{folder_id}/assets/{asset_id}/securityMarks"
+            "projects/{project_number}/assets/{asset_id}/securityMarks"
+            "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}/securityMarks"
+            "folders/{folder_id}/sources/{source_id}/findings/{finding_id}/securityMarks"
+            "projects/{project_number}/sources/{source_id}/findings/{finding_id}/securityMarks".
     """
 
     name = proto.Field(
@@ -58,6 +66,10 @@ class SecurityMarks(proto.Message):
         proto.STRING,
         proto.STRING,
         number=2,
+    )
+    canonical_name = proto.Field(
+        proto.STRING,
+        number=3,
     )
 
 

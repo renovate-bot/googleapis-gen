@@ -413,6 +413,7 @@ def test_create_source(transport: str = 'grpc', request_type=securitycenter_serv
             name='name_value',
             display_name='display_name_value',
             description='description_value',
+            canonical_name='canonical_name_value',
         )
         response = client.create_source(request)
 
@@ -426,6 +427,7 @@ def test_create_source(transport: str = 'grpc', request_type=securitycenter_serv
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
+    assert response.canonical_name == 'canonical_name_value'
 
 
 def test_create_source_from_dict():
@@ -470,6 +472,7 @@ async def test_create_source_async(transport: str = 'grpc_asyncio', request_type
             name='name_value',
             display_name='display_name_value',
             description='description_value',
+            canonical_name='canonical_name_value',
         ))
         response = await client.create_source(request)
 
@@ -483,6 +486,7 @@ async def test_create_source_async(transport: str = 'grpc_asyncio', request_type
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
+    assert response.canonical_name == 'canonical_name_value'
 
 
 @pytest.mark.asyncio
@@ -662,6 +666,7 @@ def test_create_finding(transport: str = 'grpc', request_type=securitycenter_ser
             category='category_value',
             external_uri='external_uri_value',
             severity=gcs_finding.Finding.Severity.CRITICAL,
+            canonical_name='canonical_name_value',
         )
         response = client.create_finding(request)
 
@@ -679,6 +684,7 @@ def test_create_finding(transport: str = 'grpc', request_type=securitycenter_ser
     assert response.category == 'category_value'
     assert response.external_uri == 'external_uri_value'
     assert response.severity == gcs_finding.Finding.Severity.CRITICAL
+    assert response.canonical_name == 'canonical_name_value'
 
 
 def test_create_finding_from_dict():
@@ -727,6 +733,7 @@ async def test_create_finding_async(transport: str = 'grpc_asyncio', request_typ
             category='category_value',
             external_uri='external_uri_value',
             severity=gcs_finding.Finding.Severity.CRITICAL,
+            canonical_name='canonical_name_value',
         ))
         response = await client.create_finding(request)
 
@@ -744,6 +751,7 @@ async def test_create_finding_async(transport: str = 'grpc_asyncio', request_typ
     assert response.category == 'category_value'
     assert response.external_uri == 'external_uri_value'
     assert response.severity == gcs_finding.Finding.Severity.CRITICAL
+    assert response.canonical_name == 'canonical_name_value'
 
 
 @pytest.mark.asyncio
@@ -2137,6 +2145,7 @@ def test_get_source(transport: str = 'grpc', request_type=securitycenter_service
             name='name_value',
             display_name='display_name_value',
             description='description_value',
+            canonical_name='canonical_name_value',
         )
         response = client.get_source(request)
 
@@ -2150,6 +2159,7 @@ def test_get_source(transport: str = 'grpc', request_type=securitycenter_service
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
+    assert response.canonical_name == 'canonical_name_value'
 
 
 def test_get_source_from_dict():
@@ -2194,6 +2204,7 @@ async def test_get_source_async(transport: str = 'grpc_asyncio', request_type=se
             name='name_value',
             display_name='display_name_value',
             description='description_value',
+            canonical_name='canonical_name_value',
         ))
         response = await client.get_source(request)
 
@@ -2207,6 +2218,7 @@ async def test_get_source_async(transport: str = 'grpc_asyncio', request_type=se
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
+    assert response.canonical_name == 'canonical_name_value'
 
 
 @pytest.mark.asyncio
@@ -4893,6 +4905,7 @@ def test_set_finding_state(transport: str = 'grpc', request_type=securitycenter_
             category='category_value',
             external_uri='external_uri_value',
             severity=finding.Finding.Severity.CRITICAL,
+            canonical_name='canonical_name_value',
         )
         response = client.set_finding_state(request)
 
@@ -4910,6 +4923,7 @@ def test_set_finding_state(transport: str = 'grpc', request_type=securitycenter_
     assert response.category == 'category_value'
     assert response.external_uri == 'external_uri_value'
     assert response.severity == finding.Finding.Severity.CRITICAL
+    assert response.canonical_name == 'canonical_name_value'
 
 
 def test_set_finding_state_from_dict():
@@ -4958,6 +4972,7 @@ async def test_set_finding_state_async(transport: str = 'grpc_asyncio', request_
             category='category_value',
             external_uri='external_uri_value',
             severity=finding.Finding.Severity.CRITICAL,
+            canonical_name='canonical_name_value',
         ))
         response = await client.set_finding_state(request)
 
@@ -4975,6 +4990,7 @@ async def test_set_finding_state_async(transport: str = 'grpc_asyncio', request_
     assert response.category == 'category_value'
     assert response.external_uri == 'external_uri_value'
     assert response.severity == finding.Finding.Severity.CRITICAL
+    assert response.canonical_name == 'canonical_name_value'
 
 
 @pytest.mark.asyncio
@@ -5666,6 +5682,7 @@ def test_update_finding(transport: str = 'grpc', request_type=securitycenter_ser
             category='category_value',
             external_uri='external_uri_value',
             severity=gcs_finding.Finding.Severity.CRITICAL,
+            canonical_name='canonical_name_value',
         )
         response = client.update_finding(request)
 
@@ -5683,6 +5700,7 @@ def test_update_finding(transport: str = 'grpc', request_type=securitycenter_ser
     assert response.category == 'category_value'
     assert response.external_uri == 'external_uri_value'
     assert response.severity == gcs_finding.Finding.Severity.CRITICAL
+    assert response.canonical_name == 'canonical_name_value'
 
 
 def test_update_finding_from_dict():
@@ -5731,6 +5749,7 @@ async def test_update_finding_async(transport: str = 'grpc_asyncio', request_typ
             category='category_value',
             external_uri='external_uri_value',
             severity=gcs_finding.Finding.Severity.CRITICAL,
+            canonical_name='canonical_name_value',
         ))
         response = await client.update_finding(request)
 
@@ -5748,6 +5767,7 @@ async def test_update_finding_async(transport: str = 'grpc_asyncio', request_typ
     assert response.category == 'category_value'
     assert response.external_uri == 'external_uri_value'
     assert response.severity == gcs_finding.Finding.Severity.CRITICAL
+    assert response.canonical_name == 'canonical_name_value'
 
 
 @pytest.mark.asyncio
@@ -6402,6 +6422,7 @@ def test_update_source(transport: str = 'grpc', request_type=securitycenter_serv
             name='name_value',
             display_name='display_name_value',
             description='description_value',
+            canonical_name='canonical_name_value',
         )
         response = client.update_source(request)
 
@@ -6415,6 +6436,7 @@ def test_update_source(transport: str = 'grpc', request_type=securitycenter_serv
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
+    assert response.canonical_name == 'canonical_name_value'
 
 
 def test_update_source_from_dict():
@@ -6459,6 +6481,7 @@ async def test_update_source_async(transport: str = 'grpc_asyncio', request_type
             name='name_value',
             display_name='display_name_value',
             description='description_value',
+            canonical_name='canonical_name_value',
         ))
         response = await client.update_source(request)
 
@@ -6472,6 +6495,7 @@ async def test_update_source_async(transport: str = 'grpc_asyncio', request_type
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
+    assert response.canonical_name == 'canonical_name_value'
 
 
 @pytest.mark.asyncio
@@ -6639,6 +6663,7 @@ def test_update_security_marks(transport: str = 'grpc', request_type=securitycen
         # Designate an appropriate return value for the call.
         call.return_value = gcs_security_marks.SecurityMarks(
             name='name_value',
+            canonical_name='canonical_name_value',
         )
         response = client.update_security_marks(request)
 
@@ -6650,6 +6675,7 @@ def test_update_security_marks(transport: str = 'grpc', request_type=securitycen
     # Establish that the response is the type that we expect.
     assert isinstance(response, gcs_security_marks.SecurityMarks)
     assert response.name == 'name_value'
+    assert response.canonical_name == 'canonical_name_value'
 
 
 def test_update_security_marks_from_dict():
@@ -6692,6 +6718,7 @@ async def test_update_security_marks_async(transport: str = 'grpc_asyncio', requ
         # Designate an appropriate return value for the call.
         call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gcs_security_marks.SecurityMarks(
             name='name_value',
+            canonical_name='canonical_name_value',
         ))
         response = await client.update_security_marks(request)
 
@@ -6703,6 +6730,7 @@ async def test_update_security_marks_async(transport: str = 'grpc_asyncio', requ
     # Establish that the response is the type that we expect.
     assert isinstance(response, gcs_security_marks.SecurityMarks)
     assert response.name == 'name_value'
+    assert response.canonical_name == 'canonical_name_value'
 
 
 @pytest.mark.asyncio

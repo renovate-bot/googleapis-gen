@@ -19,6 +19,9 @@ from .asset import (
 from .finding import (
     Finding,
 )
+from .folder import (
+    Folder,
+)
 from .notification_config import (
     NotificationConfig,
 )
@@ -73,6 +76,7 @@ from .source import (
 __all__ = (
     'Asset',
     'Finding',
+    'Folder',
     'NotificationConfig',
     'NotificationMessage',
     'OrganizationSettings',

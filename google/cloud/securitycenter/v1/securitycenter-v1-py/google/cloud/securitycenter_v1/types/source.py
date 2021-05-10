@@ -53,6 +53,13 @@ class Source(proto.Message):
             cross-site-scripting (XSS), Flash injection,
             mixed content (HTTP in HTTPS), and outdated or
             insecure libraries.".
+        canonical_name (str):
+            The canonical name of the finding. It's either
+            "organizations/{organization_id}/sources/{source_id}",
+            "folders/{folder_id}/sources/{source_id}" or
+            "projects/{project_number}/sources/{source_id}", depending
+            on the closest CRM ancestor of the resource associated with
+            the finding.
     """
 
     name = proto.Field(
@@ -66,6 +73,10 @@ class Source(proto.Message):
     description = proto.Field(
         proto.STRING,
         number=3,
+    )
+    canonical_name = proto.Field(
+        proto.STRING,
+        number=14,
     )
 
 
