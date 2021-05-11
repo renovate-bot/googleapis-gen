@@ -25,33 +25,38 @@ public final class RoutesServiceProto {
     java.lang.String[] descriptorData = {
       "\n)google/maps/routes/v1/route_service.pr" +
       "oto\022\025google.maps.routes.v1\032\034google/api/a" +
-      "nnotations.proto\0328google/maps/routes/v1/" +
-      "compute_route_matrix_request.proto\0322goog" +
-      "le/maps/routes/v1/compute_routes_request" +
-      ".proto\0323google/maps/routes/v1/compute_ro" +
-      "utes_response.proto\0320google/maps/routes/" +
-      "v1/route_matrix_element.proto\032\027google/ap" +
-      "i/client.proto2\230\003\n\017RoutesPreferred\022\210\001\n\rC" +
-      "omputeRoutes\022+.google.maps.routes.v1.Com" +
-      "puteRoutesRequest\032,.google.maps.routes.v" +
-      "1.ComputeRoutesResponse\"\034\202\323\344\223\002\026\"\021/v1:com" +
-      "puteRoutes:\001*\022\226\001\n\022ComputeRouteMatrix\0220.g" +
-      "oogle.maps.routes.v1.ComputeRouteMatrixR" +
-      "equest\032).google.maps.routes.v1.RouteMatr" +
-      "ixElement\"!\202\323\344\223\002\033\"\026/v1:computeRouteMatri" +
-      "x:\001*0\001\032a\312A\036routespreferred.googleapis.co" +
-      "m\322A=https://www.googleapis.com/auth/maps" +
-      "-platform.routespreferredB\250\001\n\031com.google" +
-      ".maps.routes.v1B\022RoutesServiceProtoP\001Z;g" +
-      "oogle.golang.org/genproto/googleapis/map" +
-      "s/routes/v1;routes\370\001\001\242\002\004GMRS\252\002\025Google.Ma" +
-      "ps.Routes.V1\312\002\025Google\\Maps\\Routes\\V1b\006pr" +
-      "oto3"
+      "nnotations.proto\0329google/maps/routes/v1/" +
+      "compute_custom_routes_request.proto\032:goo" +
+      "gle/maps/routes/v1/compute_custom_routes" +
+      "_response.proto\0328google/maps/routes/v1/c" +
+      "ompute_route_matrix_request.proto\0322googl" +
+      "e/maps/routes/v1/compute_routes_request." +
+      "proto\0323google/maps/routes/v1/compute_rou" +
+      "tes_response.proto\0320google/maps/routes/v" +
+      "1/route_matrix_element.proto\032\027google/api" +
+      "/client.proto2\230\003\n\017RoutesPreferred\022\210\001\n\rCo" +
+      "mputeRoutes\022+.google.maps.routes.v1.Comp" +
+      "uteRoutesRequest\032,.google.maps.routes.v1" +
+      ".ComputeRoutesResponse\"\034\202\323\344\223\002\026\"\021/v1:comp" +
+      "uteRoutes:\001*\022\226\001\n\022ComputeRouteMatrix\0220.go" +
+      "ogle.maps.routes.v1.ComputeRouteMatrixRe" +
+      "quest\032).google.maps.routes.v1.RouteMatri" +
+      "xElement\"!\202\323\344\223\002\033\"\026/v1:computeRouteMatrix" +
+      ":\001*0\001\032a\312A\036routespreferred.googleapis.com" +
+      "\322A=https://www.googleapis.com/auth/maps-" +
+      "platform.routespreferredB\250\001\n\031com.google." +
+      "maps.routes.v1B\022RoutesServiceProtoP\001Z;go" +
+      "ogle.golang.org/genproto/googleapis/maps" +
+      "/routes/v1;routes\370\001\001\242\002\004GMRS\252\002\025Google.Map" +
+      "s.Routes.V1\312\002\025Google\\Maps\\Routes\\V1b\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.maps.routes.v1.ComputeCustomRoutesRequestProto.getDescriptor(),
+          com.google.maps.routes.v1.ComputeCustomRoutesResponseProto.getDescriptor(),
           com.google.maps.routes.v1.ComputeRouteMatrixRequestProto.getDescriptor(),
           com.google.maps.routes.v1.ComputeRoutesRequestProto.getDescriptor(),
           com.google.maps.routes.v1.ComputeRoutesResponseProto.getDescriptor(),
@@ -66,6 +71,8 @@ public final class RoutesServiceProto {
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.maps.routes.v1.ComputeCustomRoutesRequestProto.getDescriptor();
+    com.google.maps.routes.v1.ComputeCustomRoutesResponseProto.getDescriptor();
     com.google.maps.routes.v1.ComputeRouteMatrixRequestProto.getDescriptor();
     com.google.maps.routes.v1.ComputeRoutesRequestProto.getDescriptor();
     com.google.maps.routes.v1.ComputeRoutesResponseProto.getDescriptor();
