@@ -17,6 +17,7 @@
 from google.cloud.binaryauthorization_v1beta1.services.binauthz_management_service_v1_beta1.client import BinauthzManagementServiceV1Beta1Client
 from google.cloud.binaryauthorization_v1beta1.services.binauthz_management_service_v1_beta1.async_client import BinauthzManagementServiceV1Beta1AsyncClient
 
+from google.cloud.binaryauthorization_v1beta1.types.continuous_validation_logging import ContinuousValidationEvent
 from google.cloud.binaryauthorization_v1beta1.types.resources import AdmissionRule
 from google.cloud.binaryauthorization_v1beta1.types.resources import AdmissionWhitelistPattern
 from google.cloud.binaryauthorization_v1beta1.types.resources import Attestor
@@ -35,6 +36,7 @@ from google.cloud.binaryauthorization_v1beta1.types.service import UpdatePolicyR
 
 __all__ = ('BinauthzManagementServiceV1Beta1Client',
     'BinauthzManagementServiceV1Beta1AsyncClient',
+    'ContinuousValidationEvent',
     'AdmissionRule',
     'AdmissionWhitelistPattern',
     'Attestor',
