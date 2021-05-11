@@ -24,8 +24,6 @@
  * @experimental
  */
 
-declare(strict_types=1);
-
 namespace Google\Cloud\PhishingProtection\V1beta1;
 
 use Google\Cloud\PhishingProtection\V1beta1\Gapic\PhishingProtectionServiceV1Beta1GapicClient;

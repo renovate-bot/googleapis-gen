@@ -22,8 +22,6 @@
  * Updates to the above are reflected here through a refresh process.
  */
 
-declare(strict_types=1);
-
 namespace Google\Apps\Market\V2\Gapic;
 
 use Google\ApiCore\ApiException;
@@ -47,7 +45,7 @@ use Google\Auth\FetchAuthTokenInterface;
  * ```
  * $licenseNotificationServiceClient = new LicenseNotificationServiceClient();
  * try {
- *     $response = $licenseNotificationServiceClient->list();
+ *     $response = $licenseNotificationServiceClient->list_();
  * } finally {
  *     $licenseNotificationServiceClient->close();
  * }
@@ -167,7 +165,7 @@ class LicenseNotificationServiceGapicClient
      * ```
      * $licenseNotificationServiceClient = new LicenseNotificationServiceClient();
      * try {
-     *     $response = $licenseNotificationServiceClient->list();
+     *     $response = $licenseNotificationServiceClient->list_();
      * } finally {
      *     $licenseNotificationServiceClient->close();
      * }
@@ -193,7 +191,7 @@ class LicenseNotificationServiceGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list(array $optionalArgs = [])
+    public function list_(array $optionalArgs = [])
     {
         $request = new LicenseNotificationListRequest();
         $requestParamHeaders = [];

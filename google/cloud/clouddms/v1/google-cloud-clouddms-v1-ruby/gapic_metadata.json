@@ -3,12 +3,12 @@
   "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
   "language": "ruby",
   "protoPackage": "google.cloud.clouddms.v1",
-  "libraryPackage": "::Google::Cloud::Clouddms::V1",
+  "libraryPackage": "::Google::Cloud::CloudDMS::V1",
   "services": {
     "DataMigrationService": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Clouddms::V1::DataMigrationService::Client",
+          "libraryClient": "::Google::Cloud::CloudDMS::V1::DataMigrationService::Client",
           "rpcs": {
             "ListMigrationJobs": {
               "methods": [

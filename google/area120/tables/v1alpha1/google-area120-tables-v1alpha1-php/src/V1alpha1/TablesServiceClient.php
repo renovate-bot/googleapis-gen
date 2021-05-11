@@ -24,8 +24,6 @@
  * @experimental
  */
 
-declare(strict_types=1);
-
 namespace Google\Area120\Tables\V1alpha1;
 
 use Google\Area120\Tables\V1alpha1\Gapic\TablesServiceGapicClient;

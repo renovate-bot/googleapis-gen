@@ -24,8 +24,6 @@
  * @experimental
  */
 
-declare(strict_types=1);
-
 namespace Google\Cloud\Partner\Aistreams\V1alpha1;
 
 use Google\Cloud\Partner\Aistreams\V1alpha1\Gapic\AIStreamsGapicClient;

@@ -24,8 +24,6 @@
  * @experimental
  */
 
-declare(strict_types=1);
-
 namespace Google\Cloud\Translate\V3beta1;
 
 use Google\Cloud\Translate\V3beta1\Gapic\TranslationServiceGapicClient;

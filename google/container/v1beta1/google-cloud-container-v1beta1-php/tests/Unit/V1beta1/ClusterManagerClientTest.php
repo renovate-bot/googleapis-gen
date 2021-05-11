@@ -20,8 +20,6 @@
  * This file was automatically generated - do not edit!
  */
 
-declare(strict_types=1);
-
 namespace Google\Cloud\Container\Tests\Unit\V1beta1;
 
 use Google\ApiCore\ApiException;
@@ -1586,7 +1584,10 @@ class ClusterManagerClientTest extends GeneratedTest
         $projectId = 'projectId-1969970175';
         $zone = 'zone3744684';
         $clusterId = 'clusterId240280960';
-        $resourceLabels = [];
+        $resourceLabelsValue = 'resourceLabelsValue-1244473404';
+        $resourceLabels = [
+            'resourceLabelsKey' => $resourceLabelsValue,
+        ];
         $labelFingerprint = 'labelFingerprint714995737';
         $response = $client->setLabels($projectId, $zone, $clusterId, $resourceLabels, $labelFingerprint);
         $this->assertEquals($expectedResponse, $response);
@@ -1632,7 +1633,10 @@ class ClusterManagerClientTest extends GeneratedTest
         $projectId = 'projectId-1969970175';
         $zone = 'zone3744684';
         $clusterId = 'clusterId240280960';
-        $resourceLabels = [];
+        $resourceLabelsValue = 'resourceLabelsValue-1244473404';
+        $resourceLabels = [
+            'resourceLabelsKey' => $resourceLabelsValue,
+        ];
         $labelFingerprint = 'labelFingerprint714995737';
         try {
             $client->setLabels($projectId, $zone, $clusterId, $resourceLabels, $labelFingerprint);

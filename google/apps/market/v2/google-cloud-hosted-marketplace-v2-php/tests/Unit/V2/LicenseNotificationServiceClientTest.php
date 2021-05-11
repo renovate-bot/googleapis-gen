@@ -20,8 +20,6 @@
  * This file was automatically generated - do not edit!
  */
 
-declare(strict_types=1);
-
 namespace Google\Apps\Market\Tests\Unit\V2;
 
 use Google\ApiCore\ApiException;
@@ -85,7 +83,7 @@ class LicenseNotificationServiceClientTest extends GeneratedTest
         $expectedResponse->setKind($kind);
         $expectedResponse->setNextPageToken($nextPageToken);
         $transport->addResponse($expectedResponse);
-        $response = $client->list();
+        $response = $client->list_();
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -116,7 +114,7 @@ class LicenseNotificationServiceClientTest extends GeneratedTest
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
         try {
-            $client->list();
+            $client->list_();
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

@@ -20,8 +20,6 @@
  * This file was automatically generated - do not edit!
  */
 
-declare(strict_types=1);
-
 namespace Google\Streetview\Publish\Tests\Unit\V1;
 
 use Google\ApiCore\ApiException;

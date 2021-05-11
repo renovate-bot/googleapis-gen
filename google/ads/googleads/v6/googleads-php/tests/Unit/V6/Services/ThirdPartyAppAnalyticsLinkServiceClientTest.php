@@ -20,8 +20,6 @@
  * This file was automatically generated - do not edit!
  */
 
-declare(strict_types=1);
-
 namespace Google\Ads\GoogleAds\Tests\Unit\V6\Services;
 
 use Google\Ads\GoogleAds\V6\Services\ThirdPartyAppAnalyticsLinkServiceClient;

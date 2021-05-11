@@ -24,8 +24,6 @@
  * @experimental
  */
 
-declare(strict_types=1);
-
 namespace Google\Cloud\Asset\V1p5beta1;
 
 use Google\Cloud\Asset\V1p5beta1\Gapic\AssetServiceGapicClient;

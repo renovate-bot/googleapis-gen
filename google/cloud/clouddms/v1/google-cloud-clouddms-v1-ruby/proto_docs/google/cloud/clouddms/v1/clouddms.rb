@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Clouddms
+    module CloudDMS
       module V1
         # Retrieve a list of all migration jobs in a given project and location.
         # @!attribute [rw] parent
@@ -60,7 +60,7 @@ module Google
 
         # Response message for 'ListMigrationJobs' request.
         # @!attribute [rw] migration_jobs
-        #   @return [::Array<::Google::Cloud::Clouddms::V1::MigrationJob>]
+        #   @return [::Array<::Google::Cloud::CloudDMS::V1::MigrationJob>]
         #     The list of migration jobs objects.
         # @!attribute [rw] next_page_token
         #   @return [::String]
@@ -92,7 +92,7 @@ module Google
         #   @return [::String]
         #     Required. The ID of the instance to create.
         # @!attribute [rw] migration_job
-        #   @return [::Google::Cloud::Clouddms::V1::MigrationJob]
+        #   @return [::Google::Cloud::CloudDMS::V1::MigrationJob]
         #     Required. Represents a [migration
         #     job](https://cloud.google.com/database-migration/reference/rest/v1/projects.locations.migrationJobs)
         #     object.
@@ -116,7 +116,7 @@ module Google
         #     Required. Field mask is used to specify the fields to be overwritten in the
         #     migration job resource by the update.
         # @!attribute [rw] migration_job
-        #   @return [::Google::Cloud::Clouddms::V1::MigrationJob]
+        #   @return [::Google::Cloud::CloudDMS::V1::MigrationJob]
         #     Required. The migration job parameters to update.
         # @!attribute [rw] request_id
         #   @return [::String]
@@ -217,10 +217,10 @@ module Google
         #   @return [::String]
         #     Required. Bastion VM Instance name to use or to create.
         # @!attribute [rw] vm_creation_config
-        #   @return [::Google::Cloud::Clouddms::V1::VmCreationConfig]
+        #   @return [::Google::Cloud::CloudDMS::V1::VmCreationConfig]
         #     The VM creation configuration
         # @!attribute [rw] vm_selection_config
-        #   @return [::Google::Cloud::Clouddms::V1::VmSelectionConfig]
+        #   @return [::Google::Cloud::CloudDMS::V1::VmSelectionConfig]
         #     The VM selection configuration
         # @!attribute [rw] vm_port
         #   @return [::Integer]
@@ -301,7 +301,7 @@ module Google
 
         # Response message for 'ListConnectionProfiles' request.
         # @!attribute [rw] connection_profiles
-        #   @return [::Array<::Google::Cloud::Clouddms::V1::ConnectionProfile>]
+        #   @return [::Array<::Google::Cloud::CloudDMS::V1::ConnectionProfile>]
         #     The response list of connection profiles.
         # @!attribute [rw] next_page_token
         #   @return [::String]
@@ -332,7 +332,7 @@ module Google
         #   @return [::String]
         #     Required. The connection profile identifier.
         # @!attribute [rw] connection_profile
-        #   @return [::Google::Cloud::Clouddms::V1::ConnectionProfile]
+        #   @return [::Google::Cloud::CloudDMS::V1::ConnectionProfile]
         #     Required. The create request body including the connection profile data
         # @!attribute [rw] request_id
         #   @return [::String]
@@ -354,7 +354,7 @@ module Google
         #     Required. Field mask is used to specify the fields to be overwritten in the
         #     connection profile resource by the update.
         # @!attribute [rw] connection_profile
-        #   @return [::Google::Cloud::Clouddms::V1::ConnectionProfile]
+        #   @return [::Google::Cloud::CloudDMS::V1::ConnectionProfile]
         #     Required. The connection profile parameters to update.
         # @!attribute [rw] request_id
         #   @return [::String]

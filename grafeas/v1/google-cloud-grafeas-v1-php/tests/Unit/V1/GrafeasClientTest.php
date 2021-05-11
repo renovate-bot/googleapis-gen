@@ -20,8 +20,6 @@
  * This file was automatically generated - do not edit!
  */
 
-declare(strict_types=1);
-
 namespace Grafeas\Tests\Unit\V1;
 
 use Google\ApiCore\ApiException;
@@ -91,7 +89,10 @@ class GrafeasClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $formattedParent = $client->projectName('[PROJECT]');
-        $notes = [];
+        $notesValue = new Note();
+        $notes = [
+            'notesKey' => $notesValue,
+        ];
         $response = $client->batchCreateNotes($formattedParent, $notes);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
@@ -128,7 +129,10 @@ class GrafeasClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
         // Mock request
         $formattedParent = $client->projectName('[PROJECT]');
-        $notes = [];
+        $notesValue = new Note();
+        $notes = [
+            'notesKey' => $notesValue,
+        ];
         try {
             $client->batchCreateNotes($formattedParent, $notes);
             // If the $client method call did not throw, fail the test

@@ -25,9 +25,9 @@ export V1_CREDENTIALS=path/to/keyfile.json
 3. Initialize the client.
 
 ```ruby
-require "google/cloud/clouddms/v1"
+require "google/cloud/cloud_dms/v1"
 
-client = ::Google::Cloud::Clouddms::V1::DataMigrationService::Client.new
+client = ::Google::Cloud::CloudDMS::V1::DataMigrationService::Client.new
 ```
 
 ## Credential Lookup
@@ -64,7 +64,7 @@ containers where writing files is difficult or not encouraged.
 
 The environment variables that google-cloud-clouddms-v1
 checks for credentials are configured on the service Credentials class (such as
-{::Google::Cloud::Clouddms::V1::DataMigrationService::Credentials}):
+{::Google::Cloud::CloudDMS::V1::DataMigrationService::Credentials}):
 
 1. `V1_CREDENTIALS` - Path to JSON file, or JSON contents
 2. `V1_KEYFILE` - Path to JSON file, or JSON contents
@@ -73,11 +73,11 @@ checks for credentials are configured on the service Credentials class (such as
 5. `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
 
 ```ruby
-require "google/cloud/clouddms/v1"
+require "google/cloud/cloud_dms/v1"
 
 ENV["V1_CREDENTIALS"] = "path/to/keyfile.json"
 
-client = ::Google::Cloud::Clouddms::V1::DataMigrationService::Client.new
+client = ::Google::Cloud::CloudDMS::V1::DataMigrationService::Client.new
 ```
 
 ### Configuration
@@ -86,9 +86,9 @@ The **Credentials JSON** can be configured instead of placing them in
 environment variables. Either on an individual client initialization:
 
 ```ruby
-require "google/cloud/clouddms/v1"
+require "google/cloud/cloud_dms/v1"
 
-client = ::Google::Cloud::Clouddms::V1::DataMigrationService::Client.new do |config|
+client = ::Google::Cloud::CloudDMS::V1::DataMigrationService::Client.new do |config|
   config.credentials = "path/to/keyfile.json"
 end
 ```
@@ -96,13 +96,13 @@ end
 Or configured globally for all clients:
 
 ```ruby
-require "google/cloud/clouddms/v1"
+require "google/cloud/cloud_dms/v1"
 
-::Google::Cloud::Clouddms::V1::DataMigrationService::Client.configure do |config|
+::Google::Cloud::CloudDMS::V1::DataMigrationService::Client.configure do |config|
   config.credentials = "path/to/keyfile.json"
 end
 
-client = ::Google::Cloud::Clouddms::V1::DataMigrationService::Client.new
+client = ::Google::Cloud::CloudDMS::V1::DataMigrationService::Client.new
 ```
 
 ### Cloud SDK

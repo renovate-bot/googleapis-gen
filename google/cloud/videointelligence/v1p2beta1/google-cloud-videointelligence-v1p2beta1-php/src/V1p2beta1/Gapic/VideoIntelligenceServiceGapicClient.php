@@ -24,8 +24,6 @@
  * @experimental
  */
 
-declare(strict_types=1);
-
 namespace Google\Cloud\VideoIntelligence\V1p2beta1\Gapic;
 
 use Google\ApiCore\ApiException;

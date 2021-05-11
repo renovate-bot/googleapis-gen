@@ -24,8 +24,6 @@
  * @experimental
  */
 
-declare(strict_types=1);
-
 namespace Google\Cloud\Privatecatalog\V1beta1;
 
 use Google\Cloud\Privatecatalog\V1beta1\Gapic\PrivateCatalogGapicClient;

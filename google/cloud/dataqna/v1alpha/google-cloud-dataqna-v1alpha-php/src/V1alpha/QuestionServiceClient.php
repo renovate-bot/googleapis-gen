@@ -24,8 +24,6 @@
  * @experimental
  */
 
-declare(strict_types=1);
-
 namespace Google\Cloud\DataQnA\V1alpha;
 
 use Google\Cloud\DataQnA\V1alpha\Gapic\QuestionServiceGapicClient;

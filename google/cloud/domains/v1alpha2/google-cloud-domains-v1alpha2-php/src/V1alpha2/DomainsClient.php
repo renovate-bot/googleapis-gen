@@ -24,8 +24,6 @@
  * @experimental
  */
 
-declare(strict_types=1);
-
 namespace Google\Cloud\Domains\V1alpha2;
 
 use Google\Cloud\Domains\V1alpha2\Gapic\DomainsGapicClient;

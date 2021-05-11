@@ -24,8 +24,6 @@
  * @experimental
  */
 
-declare(strict_types=1);
-
 namespace Google\Cloud\Bigquery\Migration\V2alpha;
 
 use Google\Cloud\Bigquery\Migration\V2alpha\Gapic\MigrationServiceGapicClient;

@@ -24,8 +24,6 @@
  * @experimental
  */
 
-declare(strict_types=1);
-
 namespace Google\Cloud\Gaming\V1beta;
 
 use Google\Cloud\Gaming\V1beta\Gapic\GameServerClustersServiceGapicClient;

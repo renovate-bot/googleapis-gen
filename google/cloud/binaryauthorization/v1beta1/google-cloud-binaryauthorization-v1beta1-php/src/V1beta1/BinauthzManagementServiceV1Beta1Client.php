@@ -24,8 +24,6 @@
  * @experimental
  */
 
-declare(strict_types=1);
-
 namespace Google\Cloud\BinaryAuthorization\V1beta1;
 
 use Google\Cloud\BinaryAuthorization\V1beta1\Gapic\BinauthzManagementServiceV1Beta1GapicClient;

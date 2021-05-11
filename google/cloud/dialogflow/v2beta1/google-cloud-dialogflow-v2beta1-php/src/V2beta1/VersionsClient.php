@@ -24,8 +24,6 @@
  * @experimental
  */
 
-declare(strict_types=1);
-
 namespace Google\Cloud\Dialogflow\V2beta1;
 
 use Google\Cloud\Dialogflow\V2beta1\Gapic\VersionsGapicClient;

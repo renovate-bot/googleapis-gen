@@ -20,8 +20,6 @@
  * This file was automatically generated - do not edit!
  */
 
-declare(strict_types=1);
-
 namespace Google\Cloud\Dialogflow\Tests\Unit\V2beta1;
 
 use Google\ApiCore\ApiException;

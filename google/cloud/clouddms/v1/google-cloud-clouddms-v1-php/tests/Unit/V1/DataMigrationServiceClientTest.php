@@ -20,19 +20,19 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Cloud\Clouddms\Tests\Unit\V1;
+namespace Google\Cloud\CloudDms\Tests\Unit\V1;
 
-use Google\Cloud\Clouddms\V1\DataMigrationServiceClient;
+use Google\Cloud\CloudDms\V1\DataMigrationServiceClient;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\LongRunning\OperationsClient;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
-use Google\Cloud\Clouddms\V1\ConnectionProfile;
-use Google\Cloud\Clouddms\V1\ListConnectionProfilesResponse;
-use Google\Cloud\Clouddms\V1\ListMigrationJobsResponse;
-use Google\Cloud\Clouddms\V1\MigrationJob;
-use Google\Cloud\Clouddms\V1\SshScript;
+use Google\Cloud\CloudDms\V1\ConnectionProfile;
+use Google\Cloud\CloudDms\V1\ListConnectionProfilesResponse;
+use Google\Cloud\CloudDms\V1\ListMigrationJobsResponse;
+use Google\Cloud\CloudDms\V1\MigrationJob;
+use Google\Cloud\CloudDms\V1\SshScript;
 use Google\LongRunning\GetOperationRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\Any;

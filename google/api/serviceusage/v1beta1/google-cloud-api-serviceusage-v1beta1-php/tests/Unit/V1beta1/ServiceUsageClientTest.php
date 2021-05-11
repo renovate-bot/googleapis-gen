@@ -20,8 +20,6 @@
  * This file was automatically generated - do not edit!
  */
 
-declare(strict_types=1);
-
 namespace Google\Api\ServiceUsage\Tests\Unit\V1beta1;
 
 use Google\Api\ServiceUsage\V1beta1\ConsumerQuotaLimit;

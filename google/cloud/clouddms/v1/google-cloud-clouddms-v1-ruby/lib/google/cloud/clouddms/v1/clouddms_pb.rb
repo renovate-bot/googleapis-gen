@@ -127,7 +127,7 @@ end
 
 module Google
   module Cloud
-    module Clouddms
+    module CloudDMS
       module V1
         ListMigrationJobsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.clouddms.v1.ListMigrationJobsRequest").msgclass
         ListMigrationJobsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.clouddms.v1.ListMigrationJobsResponse").msgclass

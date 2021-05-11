@@ -22,8 +22,6 @@
  * Updates to the above are reflected here through a refresh process.
  */
 
-declare(strict_types=1);
-
 namespace Google\Apps\Market\V2;
 
 use Google\Apps\Market\V2\Gapic\UserLicenseServiceGapicClient;

@@ -85,8 +85,8 @@ task :acceptance, :project, :keyfile do |t, args|
   if project.nil? || keyfile.nil?
     fail "You must provide a project and keyfile. e.g. rake acceptance[test123, /path/to/keyfile.json] or V1_TEST_PROJECT=test123 V1_TEST_KEYFILE=/path/to/keyfile.json rake acceptance"
   end
-  require "google/cloud/clouddms/v1/data_migration_service/credentials"
-  ::Google::Cloud::Clouddms::V1::DataMigrationService::Credentials.env_vars.each do |path|
+  require "google/cloud/cloud_dms/v1/data_migration_service/credentials"
+  ::Google::Cloud::CloudDMS::V1::DataMigrationService::Credentials.env_vars.each do |path|
     ENV[path] = nil
   end
   ENV["V1_PROJECT"] = project

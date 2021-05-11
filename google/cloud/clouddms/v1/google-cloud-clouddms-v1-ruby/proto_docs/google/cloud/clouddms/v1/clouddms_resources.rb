@@ -19,11 +19,11 @@
 
 module Google
   module Cloud
-    module Clouddms
+    module CloudDMS
       module V1
         # SSL configuration information.
         # @!attribute [r] type
-        #   @return [::Google::Cloud::Clouddms::V1::SslConfig::SslType]
+        #   @return [::Google::Cloud::CloudDMS::V1::SslConfig::SslType]
         #     Output only. The ssl config type according to 'client_key', 'client_certificate' and
         #     'ca_certificate'.
         # @!attribute [rw] client_key
@@ -79,7 +79,7 @@ module Google
         #   @return [::Boolean]
         #     Output only. Indicates If this connection profile password is stored.
         # @!attribute [rw] ssl
-        #   @return [::Google::Cloud::Clouddms::V1::SslConfig]
+        #   @return [::Google::Cloud::CloudDMS::V1::SslConfig]
         #     SSL configuration for the destination to connect to the source database.
         # @!attribute [rw] cloud_sql_id
         #   @return [::String]
@@ -111,7 +111,7 @@ module Google
         #   @return [::Boolean]
         #     Output only. Indicates If this connection profile password is stored.
         # @!attribute [rw] ssl
-        #   @return [::Google::Cloud::Clouddms::V1::SslConfig]
+        #   @return [::Google::Cloud::CloudDMS::V1::SslConfig]
         #     SSL configuration for the destination to connect to the source database.
         # @!attribute [rw] cloud_sql_id
         #   @return [::String]
@@ -128,7 +128,7 @@ module Google
         #   @return [::String]
         #     Output only. The Cloud SQL instance ID that this connection profile is associated with.
         # @!attribute [rw] settings
-        #   @return [::Google::Cloud::Clouddms::V1::CloudSqlSettings]
+        #   @return [::Google::Cloud::CloudDMS::V1::CloudSqlSettings]
         #     Immutable. Metadata used to create the destination Cloud SQL database.
         # @!attribute [r] private_ip
         #   @return [::String]
@@ -169,13 +169,13 @@ module Google
         #   @return [::String]
         #     The resource link for the VPC network from which the Cloud SQL instance is
         #     accessible for private IP. For example,
-        #     `/projects/myProject/global/networks/default`. This setting can
+        #     `projects/myProject/global/networks/default`. This setting can
         #     be updated, but it cannot be removed after it is set.
         # @!attribute [rw] require_ssl
         #   @return [::Google::Protobuf::BoolValue]
         #     Whether SSL connections over IP should be enforced or not.
         # @!attribute [rw] authorized_networks
-        #   @return [::Array<::Google::Cloud::Clouddms::V1::SqlAclEntry>]
+        #   @return [::Array<::Google::Cloud::CloudDMS::V1::SqlAclEntry>]
         #     The list of external networks that are allowed to connect to the instance
         #     using the IP. See
         #     https://en.wikipedia.org/wiki/CIDR_notation#CIDR_notation, also known as
@@ -187,7 +187,7 @@ module Google
 
         # Settings for creating a Cloud SQL database instance.
         # @!attribute [rw] database_version
-        #   @return [::Google::Cloud::Clouddms::V1::CloudSqlSettings::SqlDatabaseVersion]
+        #   @return [::Google::Cloud::CloudDMS::V1::CloudSqlSettings::SqlDatabaseVersion]
         #     The database engine type and version.
         # @!attribute [rw] user_labels
         #   @return [::Google::Protobuf::Map{::String => ::String}]
@@ -209,7 +209,7 @@ module Google
         #     The maximum size to which storage capacity can be automatically increased.
         #     The default value is 0, which specifies that there is no limit.
         # @!attribute [rw] activation_policy
-        #   @return [::Google::Cloud::Clouddms::V1::CloudSqlSettings::SqlActivationPolicy]
+        #   @return [::Google::Cloud::CloudDMS::V1::CloudSqlSettings::SqlActivationPolicy]
         #     The activation policy specifies when the instance is activated; it is
         #     applicable only when the instance state is 'RUNNABLE'. Valid values:
         #
@@ -219,7 +219,7 @@ module Google
         #     `NEVER`: The instance is off; it is not activated, even if a
         #     connection request arrives.
         # @!attribute [rw] ip_config
-        #   @return [::Google::Cloud::Clouddms::V1::SqlIpConfig]
+        #   @return [::Google::Cloud::CloudDMS::V1::SqlIpConfig]
         #     The settings for IP Management. This allows to enable or disable the
         #     instance IP and manage which external networks can connect to the instance.
         #     The IPv4 address cannot be disabled.
@@ -236,7 +236,7 @@ module Google
         #     An object containing a list of "key": value pairs.
         #     Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
         # @!attribute [rw] data_disk_type
-        #   @return [::Google::Cloud::Clouddms::V1::CloudSqlSettings::SqlDataDiskType]
+        #   @return [::Google::Cloud::CloudDMS::V1::CloudSqlSettings::SqlDataDiskType]
         #     The type of storage: `PD_SSD` (default) or `PD_HDD`.
         # @!attribute [rw] data_disk_size_gb
         #   @return [::Google::Protobuf::Int64Value]
@@ -385,10 +385,10 @@ module Google
 
         # A message defining the database engine and provider.
         # @!attribute [rw] provider
-        #   @return [::Google::Cloud::Clouddms::V1::DatabaseProvider]
+        #   @return [::Google::Cloud::CloudDMS::V1::DatabaseProvider]
         #     The database provider.
         # @!attribute [rw] engine
-        #   @return [::Google::Cloud::Clouddms::V1::DatabaseEngine]
+        #   @return [::Google::Cloud::CloudDMS::V1::DatabaseEngine]
         #     The database engine.
         class DatabaseType
           include ::Google::Protobuf::MessageExts
@@ -421,13 +421,13 @@ module Google
         #   @return [::String]
         #     The migration job display name.
         # @!attribute [rw] state
-        #   @return [::Google::Cloud::Clouddms::V1::MigrationJob::State]
+        #   @return [::Google::Cloud::CloudDMS::V1::MigrationJob::State]
         #     The current migration job state.
         # @!attribute [r] phase
-        #   @return [::Google::Cloud::Clouddms::V1::MigrationJob::Phase]
+        #   @return [::Google::Cloud::CloudDMS::V1::MigrationJob::Phase]
         #     Output only. The current migration job phase.
         # @!attribute [rw] type
-        #   @return [::Google::Cloud::Clouddms::V1::MigrationJob::Type]
+        #   @return [::Google::Cloud::CloudDMS::V1::MigrationJob::Type]
         #     Required. The migration job type.
         # @!attribute [rw] dump_path
         #   @return [::String]
@@ -440,14 +440,14 @@ module Google
         #   @return [::String]
         #     Required. The resource name (URI) of the destination connection profile.
         # @!attribute [rw] reverse_ssh_connectivity
-        #   @return [::Google::Cloud::Clouddms::V1::ReverseSshConnectivity]
+        #   @return [::Google::Cloud::CloudDMS::V1::ReverseSshConnectivity]
         #     The details needed to communicate to the source over Reverse SSH
         #     tunnel connectivity.
         # @!attribute [rw] vpc_peering_connectivity
-        #   @return [::Google::Cloud::Clouddms::V1::VpcPeeringConnectivity]
+        #   @return [::Google::Cloud::CloudDMS::V1::VpcPeeringConnectivity]
         #     The details of the VPC network that the source database is located in.
         # @!attribute [rw] static_ip_connectivity
-        #   @return [::Google::Cloud::Clouddms::V1::StaticIpConnectivity]
+        #   @return [::Google::Cloud::CloudDMS::V1::StaticIpConnectivity]
         #     static ip connectivity data (default, no additional details needed).
         # @!attribute [r] duration
         #   @return [::Google::Protobuf::Duration]
@@ -457,10 +457,10 @@ module Google
         #   @return [::Google::Rpc::Status]
         #     Output only. The error details in case of state FAILED.
         # @!attribute [rw] source_database
-        #   @return [::Google::Cloud::Clouddms::V1::DatabaseType]
+        #   @return [::Google::Cloud::CloudDMS::V1::DatabaseType]
         #     The database engine type and provider of the source.
         # @!attribute [rw] destination_database
-        #   @return [::Google::Cloud::Clouddms::V1::DatabaseType]
+        #   @return [::Google::Cloud::CloudDMS::V1::DatabaseType]
         #     The database engine type and provider of the destination.
         # @!attribute [r] end_time
         #   @return [::Google::Protobuf::Timestamp]
@@ -586,25 +586,25 @@ module Google
         #
         #     Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
         # @!attribute [rw] state
-        #   @return [::Google::Cloud::Clouddms::V1::ConnectionProfile::State]
+        #   @return [::Google::Cloud::CloudDMS::V1::ConnectionProfile::State]
         #     The current connection profile state (e.g. DRAFT, READY, or FAILED).
         # @!attribute [rw] display_name
         #   @return [::String]
         #     The connection profile display name.
         # @!attribute [rw] mysql
-        #   @return [::Google::Cloud::Clouddms::V1::MySqlConnectionProfile]
+        #   @return [::Google::Cloud::CloudDMS::V1::MySqlConnectionProfile]
         #     A MySQL database connection profile.
         # @!attribute [rw] postgresql
-        #   @return [::Google::Cloud::Clouddms::V1::PostgreSqlConnectionProfile]
+        #   @return [::Google::Cloud::CloudDMS::V1::PostgreSqlConnectionProfile]
         #     A PostgreSQL database connection profile.
         # @!attribute [rw] cloudsql
-        #   @return [::Google::Cloud::Clouddms::V1::CloudSqlConnectionProfile]
+        #   @return [::Google::Cloud::CloudDMS::V1::CloudSqlConnectionProfile]
         #     A CloudSQL database connection profile.
         # @!attribute [r] error
         #   @return [::Google::Rpc::Status]
         #     Output only. The error details in case of state FAILED.
         # @!attribute [rw] provider
-        #   @return [::Google::Cloud::Clouddms::V1::DatabaseProvider]
+        #   @return [::Google::Cloud::CloudDMS::V1::DatabaseProvider]
         #     The database provider.
         class ConnectionProfile
           include ::Google::Protobuf::MessageExts
@@ -649,7 +649,7 @@ module Google
 
         # Error message of a verification Migration job.
         # @!attribute [r] error_code
-        #   @return [::Google::Cloud::Clouddms::V1::MigrationJobVerificationError::ErrorCode]
+        #   @return [::Google::Cloud::CloudDMS::V1::MigrationJobVerificationError::ErrorCode]
         #     Output only. An instance of ErrorCode specifying the error that occurred.
         # @!attribute [r] error_message
         #   @return [::String]

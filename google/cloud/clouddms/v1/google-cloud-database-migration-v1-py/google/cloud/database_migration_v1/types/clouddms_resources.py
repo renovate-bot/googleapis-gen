@@ -325,9 +325,8 @@ class SqlIpConfig(proto.Message):
         private_network (str):
             The resource link for the VPC network from which the Cloud
             SQL instance is accessible for private IP. For example,
-            ``/projects/myProject/global/networks/default``. This
-            setting can be updated, but it cannot be removed after it is
-            set.
+            ``projects/myProject/global/networks/default``. This setting
+            can be updated, but it cannot be removed after it is set.
         require_ssl (google.protobuf.wrappers_pb2.BoolValue):
             Whether SSL connections over IP should be
             enforced or not.

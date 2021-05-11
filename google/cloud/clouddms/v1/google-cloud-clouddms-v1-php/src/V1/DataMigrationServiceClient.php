@@ -24,9 +24,9 @@
  * @experimental
  */
 
-namespace Google\Cloud\Clouddms\V1;
+namespace Google\Cloud\CloudDms\V1;
 
-use Google\Cloud\Clouddms\V1\Gapic\DataMigrationServiceGapicClient;
+use Google\Cloud\CloudDms\V1\Gapic\DataMigrationServiceGapicClient;
 
 /**
  * {@inheritdoc}

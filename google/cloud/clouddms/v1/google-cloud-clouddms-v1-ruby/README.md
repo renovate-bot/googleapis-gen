@@ -29,9 +29,9 @@ In order to use this library, you first need to go through the following steps:
 ## Quick Start
 
 ```ruby
-require "google/cloud/clouddms/v1"
+require "google/cloud/cloud_dms/v1"
 
-client = ::Google::Cloud::Clouddms::V1::DataMigrationService::Client.new
+client = ::Google::Cloud::CloudDMS::V1::DataMigrationService::Client.new
 request = my_create_request
 response = client.list_migration_jobs request
 ```

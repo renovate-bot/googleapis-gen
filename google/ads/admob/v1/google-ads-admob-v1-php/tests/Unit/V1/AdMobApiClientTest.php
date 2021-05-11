@@ -20,8 +20,6 @@
  * This file was automatically generated - do not edit!
  */
 
-declare(strict_types=1);
-
 namespace Google\Ads\Admob\Tests\Unit\V1;
 
 use Google\Ads\Admob\V1\AdMobApiClient;

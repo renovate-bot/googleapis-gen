@@ -22,8 +22,6 @@
  * Updates to the above are reflected here through a refresh process.
  */
 
-declare(strict_types=1);
-
 namespace Google\Ads\GoogleAds\V5\Services\Gapic;
 
 use Google\Ads\GoogleAds\V5\Resources\DistanceView;

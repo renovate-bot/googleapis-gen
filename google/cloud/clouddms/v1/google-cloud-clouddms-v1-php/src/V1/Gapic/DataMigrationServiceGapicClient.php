@@ -24,7 +24,7 @@
  * @experimental
  */
 
-namespace Google\Cloud\Clouddms\V1\Gapic;
+namespace Google\Cloud\CloudDms\V1\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
@@ -37,30 +37,30 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
-use Google\Cloud\Clouddms\V1\ConnectionProfile;
-use Google\Cloud\Clouddms\V1\CreateConnectionProfileRequest;
-use Google\Cloud\Clouddms\V1\CreateMigrationJobRequest;
-use Google\Cloud\Clouddms\V1\DeleteConnectionProfileRequest;
-use Google\Cloud\Clouddms\V1\DeleteMigrationJobRequest;
-use Google\Cloud\Clouddms\V1\GenerateSshScriptRequest;
-use Google\Cloud\Clouddms\V1\GetConnectionProfileRequest;
-use Google\Cloud\Clouddms\V1\GetMigrationJobRequest;
-use Google\Cloud\Clouddms\V1\ListConnectionProfilesRequest;
-use Google\Cloud\Clouddms\V1\ListConnectionProfilesResponse;
-use Google\Cloud\Clouddms\V1\ListMigrationJobsRequest;
-use Google\Cloud\Clouddms\V1\ListMigrationJobsResponse;
-use Google\Cloud\Clouddms\V1\MigrationJob;
-use Google\Cloud\Clouddms\V1\PromoteMigrationJobRequest;
-use Google\Cloud\Clouddms\V1\RestartMigrationJobRequest;
-use Google\Cloud\Clouddms\V1\ResumeMigrationJobRequest;
-use Google\Cloud\Clouddms\V1\SshScript;
-use Google\Cloud\Clouddms\V1\StartMigrationJobRequest;
-use Google\Cloud\Clouddms\V1\StopMigrationJobRequest;
-use Google\Cloud\Clouddms\V1\UpdateConnectionProfileRequest;
-use Google\Cloud\Clouddms\V1\UpdateMigrationJobRequest;
-use Google\Cloud\Clouddms\V1\VerifyMigrationJobRequest;
-use Google\Cloud\Clouddms\V1\VmCreationConfig;
-use Google\Cloud\Clouddms\V1\VmSelectionConfig;
+use Google\Cloud\CloudDms\V1\ConnectionProfile;
+use Google\Cloud\CloudDms\V1\CreateConnectionProfileRequest;
+use Google\Cloud\CloudDms\V1\CreateMigrationJobRequest;
+use Google\Cloud\CloudDms\V1\DeleteConnectionProfileRequest;
+use Google\Cloud\CloudDms\V1\DeleteMigrationJobRequest;
+use Google\Cloud\CloudDms\V1\GenerateSshScriptRequest;
+use Google\Cloud\CloudDms\V1\GetConnectionProfileRequest;
+use Google\Cloud\CloudDms\V1\GetMigrationJobRequest;
+use Google\Cloud\CloudDms\V1\ListConnectionProfilesRequest;
+use Google\Cloud\CloudDms\V1\ListConnectionProfilesResponse;
+use Google\Cloud\CloudDms\V1\ListMigrationJobsRequest;
+use Google\Cloud\CloudDms\V1\ListMigrationJobsResponse;
+use Google\Cloud\CloudDms\V1\MigrationJob;
+use Google\Cloud\CloudDms\V1\PromoteMigrationJobRequest;
+use Google\Cloud\CloudDms\V1\RestartMigrationJobRequest;
+use Google\Cloud\CloudDms\V1\ResumeMigrationJobRequest;
+use Google\Cloud\CloudDms\V1\SshScript;
+use Google\Cloud\CloudDms\V1\StartMigrationJobRequest;
+use Google\Cloud\CloudDms\V1\StopMigrationJobRequest;
+use Google\Cloud\CloudDms\V1\UpdateConnectionProfileRequest;
+use Google\Cloud\CloudDms\V1\UpdateMigrationJobRequest;
+use Google\Cloud\CloudDms\V1\VerifyMigrationJobRequest;
+use Google\Cloud\CloudDms\V1\VmCreationConfig;
+use Google\Cloud\CloudDms\V1\VmSelectionConfig;
 use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
 
@@ -517,7 +517,7 @@ class DataMigrationServiceGapicClient
      *          {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Clouddms\V1\MigrationJob
+     * @return \Google\Cloud\CloudDms\V1\MigrationJob
      *
      * @throws ApiException if the remote call fails
      * @experimental
@@ -1345,7 +1345,7 @@ class DataMigrationServiceGapicClient
      *          {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Clouddms\V1\SshScript
+     * @return \Google\Cloud\CloudDms\V1\SshScript
      *
      * @throws ApiException if the remote call fails
      * @experimental
@@ -1505,7 +1505,7 @@ class DataMigrationServiceGapicClient
      *          {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Clouddms\V1\ConnectionProfile
+     * @return \Google\Cloud\CloudDms\V1\ConnectionProfile
      *
      * @throws ApiException if the remote call fails
      * @experimental

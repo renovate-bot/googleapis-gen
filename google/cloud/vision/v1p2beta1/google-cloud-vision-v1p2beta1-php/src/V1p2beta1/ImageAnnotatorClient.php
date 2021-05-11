@@ -24,8 +24,6 @@
  * @experimental
  */
 
-declare(strict_types=1);
-
 namespace Google\Cloud\Vision\V1p2beta1;
 
 use Google\Cloud\Vision\V1p2beta1\Gapic\ImageAnnotatorGapicClient;

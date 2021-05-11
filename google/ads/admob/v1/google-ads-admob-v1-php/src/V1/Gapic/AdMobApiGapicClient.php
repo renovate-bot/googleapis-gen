@@ -22,8 +22,6 @@
  * Updates to the above are reflected here through a refresh process.
  */
 
-declare(strict_types=1);
-
 namespace Google\Ads\Admob\V1\Gapic;
 
 use Google\Ads\Admob\V1\GenerateMediationReportRequest;

@@ -24,8 +24,6 @@
  * @experimental
  */
 
-declare(strict_types=1);
-
 namespace Google\Cloud\Websecurityscanner\V1alpha;
 
 use Google\Cloud\Websecurityscanner\V1alpha\Gapic\WebSecurityScannerGapicClient;

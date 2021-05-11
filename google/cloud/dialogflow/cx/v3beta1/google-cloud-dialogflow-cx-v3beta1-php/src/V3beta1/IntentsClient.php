@@ -24,8 +24,6 @@
  * @experimental
  */
 
-declare(strict_types=1);
-
 namespace Google\Cloud\Dialogflow\Cx\V3beta1;
 
 use Google\Cloud\Dialogflow\Cx\V3beta1\Gapic\IntentsGapicClient;

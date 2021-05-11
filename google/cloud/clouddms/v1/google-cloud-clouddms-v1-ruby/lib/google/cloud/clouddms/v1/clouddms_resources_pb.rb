@@ -235,7 +235,7 @@ end
 
 module Google
   module Cloud
-    module Clouddms
+    module CloudDMS
       module V1
         SslConfig = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.clouddms.v1.SslConfig").msgclass
         SslConfig::SslType = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.clouddms.v1.SslConfig.SslType").enummodule
