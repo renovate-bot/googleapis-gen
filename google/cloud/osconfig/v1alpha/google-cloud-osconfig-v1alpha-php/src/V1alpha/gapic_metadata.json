@@ -1,0 +1,78 @@
+{
+    "schema": "1.0",
+    "comment": "This file maps proto services\/RPCs to the corresponding library clients\/methods",
+    "language": "php",
+    "protoPackage": "google.cloud.osconfig.v1alpha",
+    "libraryPackage": "Google\\Cloud\\OsConfig\\V1alpha",
+    "services": {
+        "OsConfigZonalService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "OsConfigZonalServiceGapicClient",
+                    "rpcs": {
+                        "CreateOSPolicyAssignment": {
+                            "methods": [
+                                "createOSPolicyAssignment"
+                            ]
+                        },
+                        "DeleteOSPolicyAssignment": {
+                            "methods": [
+                                "deleteOSPolicyAssignment"
+                            ]
+                        },
+                        "GetInstanceOSPoliciesCompliance": {
+                            "methods": [
+                                "getInstanceOSPoliciesCompliance"
+                            ]
+                        },
+                        "GetInventory": {
+                            "methods": [
+                                "getInventory"
+                            ]
+                        },
+                        "GetOSPolicyAssignment": {
+                            "methods": [
+                                "getOSPolicyAssignment"
+                            ]
+                        },
+                        "GetVulnerabilityReport": {
+                            "methods": [
+                                "getVulnerabilityReport"
+                            ]
+                        },
+                        "ListInstanceOSPoliciesCompliances": {
+                            "methods": [
+                                "listInstanceOSPoliciesCompliances"
+                            ]
+                        },
+                        "ListInventories": {
+                            "methods": [
+                                "listInventories"
+                            ]
+                        },
+                        "ListOSPolicyAssignmentRevisions": {
+                            "methods": [
+                                "listOSPolicyAssignmentRevisions"
+                            ]
+                        },
+                        "ListOSPolicyAssignments": {
+                            "methods": [
+                                "listOSPolicyAssignments"
+                            ]
+                        },
+                        "ListVulnerabilityReports": {
+                            "methods": [
+                                "listVulnerabilityReports"
+                            ]
+                        },
+                        "UpdateOSPolicyAssignment": {
+                            "methods": [
+                                "updateOSPolicyAssignment"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
