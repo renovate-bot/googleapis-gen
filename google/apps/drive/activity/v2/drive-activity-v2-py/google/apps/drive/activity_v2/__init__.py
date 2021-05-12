@@ -56,6 +56,7 @@ from .types.target import TeamDrive
 from .types.target import TeamDriveReference
 
 __all__ = (
+    'DriveActivityServiceAsyncClient',
 'Action',
 'ActionDetail',
 'Actor',

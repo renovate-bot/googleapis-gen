@@ -110,6 +110,10 @@ from .types.workflow_templates import WorkflowTemplate
 from .types.workflow_templates import WorkflowTemplatePlacement
 
 __all__ = (
+    'AutoscalingPolicyServiceAsyncClient',
+    'ClusterControllerAsyncClient',
+    'JobControllerAsyncClient',
+    'WorkflowTemplateServiceAsyncClient',
 'AcceleratorConfig',
 'AutoscalingConfig',
 'AutoscalingPolicy',

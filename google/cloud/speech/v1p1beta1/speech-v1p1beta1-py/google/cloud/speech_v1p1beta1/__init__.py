@@ -54,6 +54,8 @@ from .types.resource import PhraseSet
 from .types.resource import SpeechAdaptation
 
 __all__ = (
+    'AdaptationAsyncClient',
+    'SpeechAsyncClient',
 'AdaptationClient',
 'CreateCustomClassRequest',
 'CreatePhraseSetRequest',

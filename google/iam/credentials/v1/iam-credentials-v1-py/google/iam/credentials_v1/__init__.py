@@ -27,6 +27,7 @@ from .types.common import SignJwtRequest
 from .types.common import SignJwtResponse
 
 __all__ = (
+    'IAMCredentialsAsyncClient',
 'GenerateAccessTokenRequest',
 'GenerateAccessTokenResponse',
 'GenerateIdTokenRequest',

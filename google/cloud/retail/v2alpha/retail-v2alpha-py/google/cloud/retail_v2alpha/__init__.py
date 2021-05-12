@@ -65,6 +65,10 @@ from .types.user_event_service import RejoinUserEventsResponse
 from .types.user_event_service import WriteUserEventRequest
 
 __all__ = (
+    'CatalogServiceAsyncClient',
+    'PredictionServiceAsyncClient',
+    'ProductServiceAsyncClient',
+    'UserEventServiceAsyncClient',
 'BigQuerySource',
 'Catalog',
 'CatalogServiceClient',

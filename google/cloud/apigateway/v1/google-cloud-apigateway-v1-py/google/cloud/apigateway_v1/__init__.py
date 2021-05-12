@@ -41,6 +41,7 @@ from .types.apigateway import UpdateApiRequest
 from .types.apigateway import UpdateGatewayRequest
 
 __all__ = (
+    'ApiGatewayServiceAsyncClient',
 'Api',
 'ApiConfig',
 'ApiGatewayServiceClient',

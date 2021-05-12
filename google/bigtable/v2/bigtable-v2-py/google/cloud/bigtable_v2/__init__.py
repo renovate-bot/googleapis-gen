@@ -43,6 +43,7 @@ from .types.data import TimestampRange
 from .types.data import ValueRange
 
 __all__ = (
+    'BigtableAsyncClient',
 'BigtableClient',
 'Cell',
 'CheckAndMutateRowRequest',

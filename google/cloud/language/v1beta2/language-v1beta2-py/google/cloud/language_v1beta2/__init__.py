@@ -42,6 +42,7 @@ from .types.language_service import Token
 from .types.language_service import EncodingType
 
 __all__ = (
+    'LanguageServiceAsyncClient',
 'AnalyzeEntitiesRequest',
 'AnalyzeEntitiesResponse',
 'AnalyzeEntitySentimentRequest',

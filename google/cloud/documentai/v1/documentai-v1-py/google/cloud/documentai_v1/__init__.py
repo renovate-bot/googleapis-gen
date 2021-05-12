@@ -39,6 +39,7 @@ from .types.geometry import NormalizedVertex
 from .types.geometry import Vertex
 
 __all__ = (
+    'DocumentProcessorServiceAsyncClient',
 'BatchDocumentsInputConfig',
 'BatchProcessMetadata',
 'BatchProcessRequest',

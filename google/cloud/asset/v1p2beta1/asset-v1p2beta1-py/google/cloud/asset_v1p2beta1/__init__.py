@@ -35,6 +35,7 @@ from .types.assets import TemporalAsset
 from .types.assets import TimeWindow
 
 __all__ = (
+    'AssetServiceAsyncClient',
 'Asset',
 'AssetServiceClient',
 'ContentType',

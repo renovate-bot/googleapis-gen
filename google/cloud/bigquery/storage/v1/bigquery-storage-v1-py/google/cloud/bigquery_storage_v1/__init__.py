@@ -34,6 +34,7 @@ from .types.stream import ReadStream
 from .types.stream import DataFormat
 
 __all__ = (
+    'BigQueryReadAsyncClient',
 'ArrowRecordBatch',
 'ArrowSchema',
 'ArrowSerializationOptions',

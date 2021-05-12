@@ -27,6 +27,7 @@ from .types.resource_settings import Value
 from .types.resource_settings import SettingView
 
 __all__ = (
+    'ResourceSettingsServiceAsyncClient',
 'GetSettingRequest',
 'ListSettingsRequest',
 'ListSettingsResponse',

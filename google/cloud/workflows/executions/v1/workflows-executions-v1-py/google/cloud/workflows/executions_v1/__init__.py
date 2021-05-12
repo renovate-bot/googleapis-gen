@@ -26,6 +26,7 @@ from .types.executions import ListExecutionsResponse
 from .types.executions import ExecutionView
 
 __all__ = (
+    'ExecutionsAsyncClient',
 'CancelExecutionRequest',
 'CreateExecutionRequest',
 'Execution',

@@ -75,6 +75,7 @@ from .types.service import UpdateCertificateRevocationListRequest
 from .types.service import UpdateCertificateTemplateRequest
 
 __all__ = (
+    'CertificateAuthorityServiceAsyncClient',
 'ActivateCertificateAuthorityRequest',
 'CaPool',
 'Certificate',

@@ -52,6 +52,7 @@ from .types.task import Task
 from .types.task import TaskStatus
 
 __all__ = (
+    'CloudTasksAsyncClient',
 'AcknowledgeTaskRequest',
 'AppEngineHttpRequest',
 'AppEngineHttpTarget',

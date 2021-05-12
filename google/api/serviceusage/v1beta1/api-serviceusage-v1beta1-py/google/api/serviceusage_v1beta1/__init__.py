@@ -68,6 +68,7 @@ from .types.serviceusage import UpdateAdminQuotaPolicyMetadata
 from .types.serviceusage import UpdateConsumerOverrideRequest
 
 __all__ = (
+    'ServiceUsageAsyncClient',
 'AdminQuotaPolicy',
 'BatchCreateAdminOverridesResponse',
 'BatchCreateConsumerOverridesResponse',

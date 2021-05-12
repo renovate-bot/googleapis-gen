@@ -86,6 +86,8 @@ from .types.table import Table
 from .types.table import RestoreSourceType
 
 __all__ = (
+    'BigtableInstanceAdminAsyncClient',
+    'BigtableTableAdminAsyncClient',
 'AppProfile',
 'Backup',
 'BackupInfo',

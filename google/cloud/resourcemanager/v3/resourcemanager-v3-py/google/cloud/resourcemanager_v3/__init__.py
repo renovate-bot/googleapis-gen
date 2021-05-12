@@ -94,6 +94,12 @@ from .types.tag_values import UpdateTagValueMetadata
 from .types.tag_values import UpdateTagValueRequest
 
 __all__ = (
+    'FoldersAsyncClient',
+    'OrganizationsAsyncClient',
+    'ProjectsAsyncClient',
+    'TagBindingsAsyncClient',
+    'TagKeysAsyncClient',
+    'TagValuesAsyncClient',
 'CreateFolderMetadata',
 'CreateFolderRequest',
 'CreateProjectMetadata',

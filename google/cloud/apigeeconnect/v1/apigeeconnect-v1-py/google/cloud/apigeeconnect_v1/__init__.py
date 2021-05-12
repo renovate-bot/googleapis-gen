@@ -36,6 +36,8 @@ from .types.tether import Scheme
 from .types.tether import TetherEndpoint
 
 __all__ = (
+    'ConnectionServiceAsyncClient',
+    'TetherAsyncClient',
 'Action',
 'Cluster',
 'Connection',

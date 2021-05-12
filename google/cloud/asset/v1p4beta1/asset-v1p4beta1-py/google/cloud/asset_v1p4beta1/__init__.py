@@ -26,6 +26,7 @@ from .types.asset_service import IamPolicyAnalysisQuery
 from .types.assets import IamPolicyAnalysisResult
 
 __all__ = (
+    'AssetServiceAsyncClient',
 'AnalyzeIamPolicyRequest',
 'AnalyzeIamPolicyResponse',
 'AssetServiceClient',

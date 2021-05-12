@@ -49,6 +49,7 @@ from .types.transfer import TransferState
 from .types.transfer import TransferType
 
 __all__ = (
+    'DataTransferServiceAsyncClient',
 'CheckValidCredsRequest',
 'CheckValidCredsResponse',
 'CreateTransferConfigRequest',

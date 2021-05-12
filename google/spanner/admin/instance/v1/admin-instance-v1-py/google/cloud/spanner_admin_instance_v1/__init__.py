@@ -33,6 +33,7 @@ from .types.spanner_instance_admin import UpdateInstanceMetadata
 from .types.spanner_instance_admin import UpdateInstanceRequest
 
 __all__ = (
+    'InstanceAdminAsyncClient',
 'CreateInstanceMetadata',
 'CreateInstanceRequest',
 'DeleteInstanceRequest',

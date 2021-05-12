@@ -59,6 +59,7 @@ from .types.data import MetricAggregation
 from .types.data import MetricType
 
 __all__ = (
+    'BetaAnalyticsDataAsyncClient',
 'BatchRunPivotReportsRequest',
 'BatchRunPivotReportsResponse',
 'BatchRunReportsRequest',

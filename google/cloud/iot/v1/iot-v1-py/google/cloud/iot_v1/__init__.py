@@ -64,6 +64,7 @@ from .types.resources import PublicKeyCertificateFormat
 from .types.resources import PublicKeyFormat
 
 __all__ = (
+    'DeviceManagerAsyncClient',
 'BindDeviceToGatewayRequest',
 'BindDeviceToGatewayResponse',
 'CreateDeviceRegistryRequest',

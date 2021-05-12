@@ -40,6 +40,7 @@ from .types.operation import Progress
 from .types.operation import OperationState
 
 __all__ = (
+    'FirestoreAdminAsyncClient',
 'CreateIndexRequest',
 'DeleteIndexRequest',
 'ExportDocumentsMetadata',

@@ -27,6 +27,7 @@ from .types.oslogin import LoginProfile
 from .types.oslogin import UpdateSshPublicKeyRequest
 
 __all__ = (
+    'OsLoginServiceAsyncClient',
 'DeletePosixAccountRequest',
 'DeleteSshPublicKeyRequest',
 'GetLoginProfileRequest',

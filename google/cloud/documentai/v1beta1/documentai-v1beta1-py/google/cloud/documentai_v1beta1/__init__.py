@@ -38,6 +38,7 @@ from .types.geometry import NormalizedVertex
 from .types.geometry import Vertex
 
 __all__ = (
+    'DocumentUnderstandingServiceAsyncClient',
 'BatchProcessDocumentsRequest',
 'BatchProcessDocumentsResponse',
 'BoundingPoly',

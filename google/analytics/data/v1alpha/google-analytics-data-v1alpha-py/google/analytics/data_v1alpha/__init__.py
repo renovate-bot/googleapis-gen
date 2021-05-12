@@ -60,6 +60,7 @@ from .types.data import MetricAggregation
 from .types.data import MetricType
 
 __all__ = (
+    'AlphaAnalyticsDataAsyncClient',
 'AlphaAnalyticsDataClient',
 'BatchRunPivotReportsRequest',
 'BatchRunPivotReportsResponse',

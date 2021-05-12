@@ -42,6 +42,8 @@ from .types.cloud_catalog import Service
 from .types.cloud_catalog import Sku
 
 __all__ = (
+    'CloudBillingAsyncClient',
+    'CloudCatalogAsyncClient',
 'AggregationInfo',
 'BillingAccount',
 'Category',

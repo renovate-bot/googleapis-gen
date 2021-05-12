@@ -37,6 +37,7 @@ from .types.workload_identity_pool import WorkloadIdentityPoolProvider
 from .types.workload_identity_pool import WorkloadIdentityPoolProviderOperationMetadata
 
 __all__ = (
+    'WorkloadIdentityPoolsAsyncClient',
 'CreateWorkloadIdentityPoolProviderRequest',
 'CreateWorkloadIdentityPoolRequest',
 'DeleteWorkloadIdentityPoolProviderRequest',

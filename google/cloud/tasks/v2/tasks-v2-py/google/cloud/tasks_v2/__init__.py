@@ -46,6 +46,7 @@ from .types.task import Attempt
 from .types.task import Task
 
 __all__ = (
+    'CloudTasksAsyncClient',
 'AppEngineHttpRequest',
 'AppEngineRouting',
 'Attempt',

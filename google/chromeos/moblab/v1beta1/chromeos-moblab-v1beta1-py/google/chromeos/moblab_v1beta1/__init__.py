@@ -31,6 +31,7 @@ from .types.resources import Milestone
 from .types.resources import Model
 
 __all__ = (
+    'BuildServiceAsyncClient',
 'Build',
 'BuildArtifact',
 'BuildServiceClient',

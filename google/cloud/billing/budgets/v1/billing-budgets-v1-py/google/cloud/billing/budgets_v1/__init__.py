@@ -33,6 +33,7 @@ from .types.budget_service import ListBudgetsResponse
 from .types.budget_service import UpdateBudgetRequest
 
 __all__ = (
+    'BudgetServiceAsyncClient',
 'Budget',
 'BudgetAmount',
 'BudgetServiceClient',

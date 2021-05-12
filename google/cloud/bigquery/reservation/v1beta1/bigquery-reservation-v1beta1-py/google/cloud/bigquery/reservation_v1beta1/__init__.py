@@ -47,6 +47,7 @@ from .types.reservation import UpdateCapacityCommitmentRequest
 from .types.reservation import UpdateReservationRequest
 
 __all__ = (
+    'ReservationServiceAsyncClient',
 'Assignment',
 'BiReservation',
 'CapacityCommitment',

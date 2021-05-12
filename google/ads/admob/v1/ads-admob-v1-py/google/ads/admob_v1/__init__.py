@@ -37,6 +37,7 @@ from .types.admob_resources import StringList
 from .types.admob_resources import SortOrder
 
 __all__ = (
+    'AdMobApiAsyncClient',
 'AdMobApiClient',
 'DateRange',
 'GenerateMediationReportRequest',

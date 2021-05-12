@@ -53,6 +53,7 @@ from .types.patch_jobs import YumSettings
 from .types.patch_jobs import ZypperSettings
 
 __all__ = (
+    'OsConfigServiceAsyncClient',
 'AptSettings',
 'CancelPatchJobRequest',
 'CreatePatchDeploymentRequest',

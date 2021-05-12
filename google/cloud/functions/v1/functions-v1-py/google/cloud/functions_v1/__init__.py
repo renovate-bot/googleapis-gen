@@ -39,6 +39,7 @@ from .types.operations import OperationMetadataV1
 from .types.operations import OperationType
 
 __all__ = (
+    'CloudFunctionsServiceAsyncClient',
 'CallFunctionRequest',
 'CallFunctionResponse',
 'CloudFunction',

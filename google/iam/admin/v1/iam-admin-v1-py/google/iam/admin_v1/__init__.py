@@ -65,6 +65,7 @@ from .types.iam import ServiceAccountPrivateKeyType
 from .types.iam import ServiceAccountPublicKeyType
 
 __all__ = (
+    'IAMAsyncClient',
 'AuditData',
 'CreateRoleRequest',
 'CreateServiceAccountKeyRequest',

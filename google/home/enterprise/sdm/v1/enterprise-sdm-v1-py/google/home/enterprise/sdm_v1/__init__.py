@@ -34,6 +34,7 @@ from .types.smart_device_management_service import ListStructuresRequest
 from .types.smart_device_management_service import ListStructuresResponse
 
 __all__ = (
+    'SmartDeviceManagementServiceAsyncClient',
 'Device',
 'ExecuteDeviceCommandRequest',
 'ExecuteDeviceCommandResponse',

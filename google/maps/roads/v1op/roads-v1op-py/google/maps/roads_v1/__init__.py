@@ -25,6 +25,7 @@ from .types.roads import SnapToRoadsResponse
 from .types.roads import TravelMode
 
 __all__ = (
+    'RoadsServiceAsyncClient',
 'ListNearestRoadsRequest',
 'ListNearestRoadsResponse',
 'RoadsServiceClient',

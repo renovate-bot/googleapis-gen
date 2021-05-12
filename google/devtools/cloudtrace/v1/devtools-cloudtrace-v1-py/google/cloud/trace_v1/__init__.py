@@ -26,6 +26,7 @@ from .types.trace import Traces
 from .types.trace import TraceSpan
 
 __all__ = (
+    'TraceServiceAsyncClient',
 'GetTraceRequest',
 'ListTracesRequest',
 'ListTracesResponse',

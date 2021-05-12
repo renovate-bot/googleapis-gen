@@ -34,6 +34,7 @@ from .types.aistreams import UpdateClusterRequest
 from .types.aistreams import UpdateStreamRequest
 
 __all__ = (
+    'AIStreamsAsyncClient',
 'AIStreamsClient',
 'Cluster',
 'CreateClusterRequest',

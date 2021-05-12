@@ -30,6 +30,7 @@ from .types.cloud_tts import AudioEncoding
 from .types.cloud_tts import SsmlVoiceGender
 
 __all__ = (
+    'TextToSpeechAsyncClient',
 'AudioConfig',
 'AudioEncoding',
 'ListVoicesRequest',

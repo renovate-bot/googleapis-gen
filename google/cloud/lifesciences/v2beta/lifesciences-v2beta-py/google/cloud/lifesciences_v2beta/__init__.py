@@ -47,6 +47,7 @@ from .types.workflows import WorkerAssignedEvent
 from .types.workflows import WorkerReleasedEvent
 
 __all__ = (
+    'WorkflowsServiceV2BetaAsyncClient',
 'Accelerator',
 'Action',
 'ContainerKilledEvent',

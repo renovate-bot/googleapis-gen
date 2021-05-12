@@ -36,6 +36,7 @@ from .types.hub import UpdateSpokeRequest
 from .types.hub import State
 
 __all__ = (
+    'HubServiceAsyncClient',
 'CreateHubRequest',
 'CreateSpokeRequest',
 'DeleteHubRequest',

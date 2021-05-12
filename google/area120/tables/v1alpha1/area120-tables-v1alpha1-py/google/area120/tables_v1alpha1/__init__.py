@@ -44,6 +44,7 @@ from .types.tables import Workspace
 from .types.tables import View
 
 __all__ = (
+    'TablesServiceAsyncClient',
 'BatchCreateRowsRequest',
 'BatchCreateRowsResponse',
 'BatchDeleteRowsRequest',

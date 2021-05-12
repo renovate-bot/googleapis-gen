@@ -38,6 +38,8 @@ from .types.service_controller import ReportRequest
 from .types.service_controller import ReportResponse
 
 __all__ = (
+    'QuotaControllerAsyncClient',
+    'ServiceControllerAsyncClient',
 'AllocateQuotaRequest',
 'AllocateQuotaResponse',
 'CheckError',

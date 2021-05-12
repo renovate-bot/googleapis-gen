@@ -134,6 +134,14 @@ from .types.version import InboundServiceType
 from .types.version import ServingStatus
 
 __all__ = (
+    'ApplicationsAsyncClient',
+    'AuthorizedCertificatesAsyncClient',
+    'AuthorizedDomainsAsyncClient',
+    'DomainMappingsAsyncClient',
+    'FirewallAsyncClient',
+    'InstancesAsyncClient',
+    'ServicesAsyncClient',
+    'VersionsAsyncClient',
 'ApiConfigHandler',
 'ApiEndpointHandler',
 'Application',

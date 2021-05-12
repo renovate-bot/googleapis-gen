@@ -24,6 +24,7 @@ from .types.assets import Asset
 from .types.assets import Resource
 
 __all__ = (
+    'AssetServiceAsyncClient',
 'Asset',
 'AssetServiceClient',
 'ContentType',

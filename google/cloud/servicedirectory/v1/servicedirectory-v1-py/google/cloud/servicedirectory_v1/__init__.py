@@ -44,6 +44,8 @@ from .types.registration_service import UpdateServiceRequest
 from .types.service import Service
 
 __all__ = (
+    'LookupServiceAsyncClient',
+    'RegistrationServiceAsyncClient',
 'CreateEndpointRequest',
 'CreateNamespaceRequest',
 'CreateServiceRequest',

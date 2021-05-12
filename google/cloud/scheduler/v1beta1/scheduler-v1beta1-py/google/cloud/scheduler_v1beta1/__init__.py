@@ -37,6 +37,7 @@ from .types.target import PubsubTarget
 from .types.target import HttpMethod
 
 __all__ = (
+    'CloudSchedulerAsyncClient',
 'AppEngineHttpTarget',
 'AppEngineRouting',
 'CloudSchedulerClient',

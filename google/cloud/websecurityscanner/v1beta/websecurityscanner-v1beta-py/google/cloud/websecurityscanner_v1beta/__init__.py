@@ -51,6 +51,7 @@ from .types.web_security_scanner import StopScanRunRequest
 from .types.web_security_scanner import UpdateScanConfigRequest
 
 __all__ = (
+    'WebSecurityScannerAsyncClient',
 'CrawledUrl',
 'CreateScanConfigRequest',
 'DeleteScanConfigRequest',

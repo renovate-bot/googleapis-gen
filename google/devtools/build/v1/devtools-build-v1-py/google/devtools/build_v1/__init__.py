@@ -27,6 +27,7 @@ from .types.publish_build_event import PublishBuildToolEventStreamResponse
 from .types.publish_build_event import PublishLifecycleEventRequest
 
 __all__ = (
+    'PublishBuildEventAsyncClient',
 'BuildEvent',
 'BuildStatus',
 'ConsoleOutputStream',

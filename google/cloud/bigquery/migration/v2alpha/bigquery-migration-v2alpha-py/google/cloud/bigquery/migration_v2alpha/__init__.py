@@ -38,6 +38,7 @@ from .types.migration_service import ListMigrationWorkflowsResponse
 from .types.migration_service import StartMigrationWorkflowRequest
 
 __all__ = (
+    'MigrationServiceAsyncClient',
 'CreateMigrationWorkflowRequest',
 'DeleteMigrationWorkflowRequest',
 'ErrorDetail',

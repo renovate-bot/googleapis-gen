@@ -50,6 +50,7 @@ from .types.services import ListJobTemplatesRequest
 from .types.services import ListJobTemplatesResponse
 
 __all__ = (
+    'TranscoderServiceAsyncClient',
 'AdBreak',
 'AudioStream',
 'CreateJobRequest',

@@ -32,6 +32,7 @@ from .types.orgpolicy import PolicySpec
 from .types.orgpolicy import UpdatePolicyRequest
 
 __all__ = (
+    'OrgPolicyAsyncClient',
 'AlternatePolicySpec',
 'Constraint',
 'CreatePolicyRequest',

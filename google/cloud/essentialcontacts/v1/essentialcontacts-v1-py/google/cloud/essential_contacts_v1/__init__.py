@@ -31,6 +31,7 @@ from .types.service import SendTestMessageRequest
 from .types.service import UpdateContactRequest
 
 __all__ = (
+    'EssentialContactsServiceAsyncClient',
 'ComputeContactsRequest',
 'ComputeContactsResponse',
 'Contact',

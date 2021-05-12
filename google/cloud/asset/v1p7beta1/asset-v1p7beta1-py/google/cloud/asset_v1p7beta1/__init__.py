@@ -33,6 +33,7 @@ from .types.assets import RelationshipAttributes
 from .types.assets import Resource
 
 __all__ = (
+    'AssetServiceAsyncClient',
 'Asset',
 'AssetServiceClient',
 'BigQueryDestination',

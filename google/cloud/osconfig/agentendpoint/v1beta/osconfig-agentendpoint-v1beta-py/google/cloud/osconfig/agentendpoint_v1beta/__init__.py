@@ -58,6 +58,7 @@ from .types.tasks import TaskDirective
 from .types.tasks import TaskType
 
 __all__ = (
+    'AgentEndpointServiceAsyncClient',
 'AgentEndpointServiceClient',
 'ApplyPatchesTask',
 'ApplyPatchesTaskOutput',

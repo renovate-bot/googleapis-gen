@@ -87,6 +87,12 @@ from .types.topic_stats import ComputeTimeCursorRequest
 from .types.topic_stats import ComputeTimeCursorResponse
 
 __all__ = (
+    'AdminServiceAsyncClient',
+    'CursorServiceAsyncClient',
+    'PartitionAssignmentServiceAsyncClient',
+    'PublisherServiceAsyncClient',
+    'SubscriberServiceAsyncClient',
+    'TopicStatsServiceAsyncClient',
 'AdminServiceClient',
 'AttributeValues',
 'CommitCursorRequest',

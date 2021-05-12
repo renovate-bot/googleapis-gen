@@ -69,6 +69,7 @@ from .types.cloudbuild import WorkerConfig
 from .types.cloudbuild import WorkerPool
 
 __all__ = (
+    'CloudBuildAsyncClient',
 'ArtifactResult',
 'Artifacts',
 'Build',

@@ -154,6 +154,7 @@ from .types.operations import LabelVideoObjectDetectionOperationMetadata
 from .types.operations import LabelVideoObjectTrackingOperationMetadata
 
 __all__ = (
+    'DataLabelingServiceAsyncClient',
 'AnnotatedDataset',
 'AnnotatedDatasetMetadata',
 'Annotation',

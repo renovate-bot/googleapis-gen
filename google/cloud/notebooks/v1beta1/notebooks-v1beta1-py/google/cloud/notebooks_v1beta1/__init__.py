@@ -46,6 +46,7 @@ from .types.service import UpgradeInstanceInternalRequest
 from .types.service import UpgradeInstanceRequest
 
 __all__ = (
+    'NotebookServiceAsyncClient',
 'ContainerImage',
 'CreateEnvironmentRequest',
 'CreateInstanceRequest',

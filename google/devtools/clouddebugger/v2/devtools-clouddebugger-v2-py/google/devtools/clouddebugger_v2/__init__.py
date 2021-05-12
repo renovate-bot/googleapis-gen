@@ -43,6 +43,8 @@ from .types.debugger import SetBreakpointRequest
 from .types.debugger import SetBreakpointResponse
 
 __all__ = (
+    'Controller2AsyncClient',
+    'Debugger2AsyncClient',
 'Breakpoint',
 'Controller2Client',
 'Debuggee',

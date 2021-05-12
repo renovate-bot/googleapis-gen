@@ -62,6 +62,7 @@ from .types.write import Write
 from .types.write import WriteResult
 
 __all__ = (
+    'FirestoreAsyncClient',
 'ArrayValue',
 'BatchGetDocumentsRequest',
 'BatchGetDocumentsResponse',

@@ -142,6 +142,13 @@ from .types.tenant_service import ListTenantsResponse
 from .types.tenant_service import UpdateTenantRequest
 
 __all__ = (
+    'ApplicationServiceAsyncClient',
+    'CompanyServiceAsyncClient',
+    'CompletionAsyncClient',
+    'EventServiceAsyncClient',
+    'JobServiceAsyncClient',
+    'ProfileServiceAsyncClient',
+    'TenantServiceAsyncClient',
 'Activity',
 'AdditionalContactInfo',
 'Address',

@@ -36,6 +36,7 @@ from .types.accessapproval import UpdateAccessApprovalSettingsMessage
 from .types.accessapproval import EnrollmentLevel
 
 __all__ = (
+    'AccessApprovalAsyncClient',
 'AccessApprovalClient',
 'AccessApprovalSettings',
 'AccessLocations',

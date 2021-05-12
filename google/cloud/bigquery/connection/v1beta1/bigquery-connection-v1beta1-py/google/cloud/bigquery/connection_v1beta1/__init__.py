@@ -30,6 +30,7 @@ from .types.connection import UpdateConnectionCredentialRequest
 from .types.connection import UpdateConnectionRequest
 
 __all__ = (
+    'ConnectionServiceAsyncClient',
 'CloudSqlCredential',
 'CloudSqlProperties',
 'Connection',

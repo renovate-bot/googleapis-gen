@@ -114,6 +114,7 @@ from .types.cluster_service import WorkloadIdentityConfig
 from .types.cluster_service import WorkloadMetadataConfig
 
 __all__ = (
+    'ClusterManagerAsyncClient',
 'AcceleratorConfig',
 'AddonsConfig',
 'AuthenticatorGroupsConfig',

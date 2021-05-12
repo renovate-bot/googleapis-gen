@@ -48,6 +48,9 @@ from .types.report_errors_service import ReportErrorEventRequest
 from .types.report_errors_service import ReportErrorEventResponse
 
 __all__ = (
+    'ErrorGroupServiceAsyncClient',
+    'ErrorStatsServiceAsyncClient',
+    'ReportErrorsServiceAsyncClient',
 'DeleteEventsRequest',
 'DeleteEventsResponse',
 'ErrorContext',

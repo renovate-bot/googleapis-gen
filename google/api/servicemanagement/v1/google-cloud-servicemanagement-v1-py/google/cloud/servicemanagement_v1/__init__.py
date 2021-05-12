@@ -50,6 +50,7 @@ from .types.servicemanager import UndeleteServiceRequest
 from .types.servicemanager import UndeleteServiceResponse
 
 __all__ = (
+    'ServiceManagerAsyncClient',
 'ChangeReport',
 'ConfigFile',
 'ConfigRef',

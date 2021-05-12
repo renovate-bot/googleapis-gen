@@ -49,6 +49,7 @@ from .types.settings import Settings
 from .types.sink_settings import SinkSettings
 
 __all__ = (
+    'SecurityCenterSettingsServiceAsyncClient',
 'BatchCalculateEffectiveSettingsRequest',
 'BatchCalculateEffectiveSettingsResponse',
 'BatchGetSettingsRequest',

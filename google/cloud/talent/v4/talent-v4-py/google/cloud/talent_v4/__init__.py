@@ -88,6 +88,11 @@ from .types.tenant_service import ListTenantsResponse
 from .types.tenant_service import UpdateTenantRequest
 
 __all__ = (
+    'CompanyServiceAsyncClient',
+    'CompletionAsyncClient',
+    'EventServiceAsyncClient',
+    'JobServiceAsyncClient',
+    'TenantServiceAsyncClient',
 'BatchCreateJobsRequest',
 'BatchCreateJobsResponse',
 'BatchDeleteJobsRequest',

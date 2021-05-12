@@ -27,6 +27,7 @@ from .types.workflows import UpdateWorkflowRequest
 from .types.workflows import Workflow
 
 __all__ = (
+    'WorkflowsAsyncClient',
 'CreateWorkflowRequest',
 'DeleteWorkflowRequest',
 'GetWorkflowRequest',

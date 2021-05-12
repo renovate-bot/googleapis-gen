@@ -50,6 +50,7 @@ from .types.version import Version
 from .types.version import VersionView
 
 __all__ = (
+    'ArtifactRegistryAsyncClient',
 'ArtifactRegistryClient',
 'CreateRepositoryRequest',
 'CreateTagRequest',

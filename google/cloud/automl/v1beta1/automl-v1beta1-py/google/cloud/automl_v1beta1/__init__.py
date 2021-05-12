@@ -143,6 +143,8 @@ from .types.video import VideoObjectTrackingDatasetMetadata
 from .types.video import VideoObjectTrackingModelMetadata
 
 __all__ = (
+    'AutoMlAsyncClient',
+    'PredictionServiceAsyncClient',
 'AnnotationPayload',
 'AnnotationSpec',
 'ArrayStats',

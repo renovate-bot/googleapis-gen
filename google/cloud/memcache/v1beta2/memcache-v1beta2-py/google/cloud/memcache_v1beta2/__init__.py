@@ -34,6 +34,7 @@ from .types.cloud_memcache import ZoneMetadata
 from .types.cloud_memcache import MemcacheVersion
 
 __all__ = (
+    'CloudMemcacheAsyncClient',
 'ApplyParametersRequest',
 'ApplySoftwareUpdateRequest',
 'CloudMemcacheClient',

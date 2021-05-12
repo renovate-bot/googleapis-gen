@@ -37,6 +37,7 @@ from .types.cloud_redis import UpgradeInstanceRequest
 from .types.cloud_redis import ZoneMetadata
 
 __all__ = (
+    'CloudRedisAsyncClient',
 'CloudRedisClient',
 'CreateInstanceRequest',
 'DeleteInstanceRequest',

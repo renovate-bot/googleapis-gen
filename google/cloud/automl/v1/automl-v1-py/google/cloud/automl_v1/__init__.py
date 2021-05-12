@@ -103,6 +103,8 @@ from .types.translation import TranslationEvaluationMetrics
 from .types.translation import TranslationModelMetadata
 
 __all__ = (
+    'AutoMlAsyncClient',
+    'PredictionServiceAsyncClient',
 'AnnotationPayload',
 'AnnotationSpec',
 'AutoMlClient',

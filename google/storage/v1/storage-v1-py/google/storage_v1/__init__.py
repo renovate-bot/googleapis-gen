@@ -102,6 +102,7 @@ from .types.storage_resources import ProjectTeam
 from .types.storage_resources import ServiceAccount
 
 __all__ = (
+    'StorageAsyncClient',
 'Bucket',
 'BucketAccessControl',
 'Channel',

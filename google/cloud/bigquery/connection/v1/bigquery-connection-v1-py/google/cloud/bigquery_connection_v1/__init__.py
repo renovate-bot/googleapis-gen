@@ -30,6 +30,7 @@ from .types.connection import ListConnectionsResponse
 from .types.connection import UpdateConnectionRequest
 
 __all__ = (
+    'ConnectionServiceAsyncClient',
 'AwsCrossAccountRole',
 'AwsProperties',
 'CloudSqlCredential',

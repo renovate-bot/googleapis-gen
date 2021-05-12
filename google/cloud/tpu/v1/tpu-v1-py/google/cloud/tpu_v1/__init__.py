@@ -40,6 +40,7 @@ from .types.cloud_tpu import Symptom
 from .types.cloud_tpu import TensorFlowVersion
 
 __all__ = (
+    'TpuAsyncClient',
 'AcceleratorType',
 'CreateNodeRequest',
 'DeleteNodeRequest',

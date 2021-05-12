@@ -26,6 +26,7 @@ from .types.assets import Permissions
 from .types.assets import StandardResourceMetadata
 
 __all__ = (
+    'AssetServiceAsyncClient',
 'AssetServiceClient',
 'IamPolicySearchResult',
 'Permissions',

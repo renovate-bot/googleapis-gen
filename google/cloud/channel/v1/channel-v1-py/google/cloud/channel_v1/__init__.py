@@ -113,6 +113,7 @@ from .types.subscriber_event import EntitlementEvent
 from .types.subscriber_event import SubscriberEvent
 
 __all__ = (
+    'CloudChannelServiceAsyncClient',
 'ActivateEntitlementRequest',
 'AdminUser',
 'AssociationInfo',

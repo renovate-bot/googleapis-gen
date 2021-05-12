@@ -25,6 +25,7 @@ from .types.profiler import UpdateProfileRequest
 from .types.profiler import ProfileType
 
 __all__ = (
+    'ProfilerServiceAsyncClient',
 'CreateOfflineProfileRequest',
 'CreateProfileRequest',
 'Deployment',

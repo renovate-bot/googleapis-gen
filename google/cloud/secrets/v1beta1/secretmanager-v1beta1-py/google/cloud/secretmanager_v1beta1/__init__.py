@@ -38,6 +38,7 @@ from .types.service import ListSecretVersionsResponse
 from .types.service import UpdateSecretRequest
 
 __all__ = (
+    'SecretManagerServiceAsyncClient',
 'AccessSecretVersionRequest',
 'AccessSecretVersionResponse',
 'AddSecretVersionRequest',

@@ -39,6 +39,7 @@ from .types.homegraph import SyncResponse
 from .types.homegraph import SyncResponsePayload
 
 __all__ = (
+    'HomeGraphApiServiceAsyncClient',
 'AgentDeviceId',
 'AgentOtherDeviceId',
 'DeleteAgentUserRequest',

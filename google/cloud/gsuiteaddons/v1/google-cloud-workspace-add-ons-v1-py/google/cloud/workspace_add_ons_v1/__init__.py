@@ -33,6 +33,7 @@ from .types.gsuiteaddons import ReplaceDeploymentRequest
 from .types.gsuiteaddons import UninstallDeploymentRequest
 
 __all__ = (
+    'GSuiteAddOnsAsyncClient',
 'AddOns',
 'Authorization',
 'CreateDeploymentRequest',

@@ -46,6 +46,7 @@ from .types.domains import DomainNotice
 from .types.domains import TransferLockState
 
 __all__ = (
+    'DomainsAsyncClient',
 'AuthorizationCode',
 'ConfigureContactSettingsRequest',
 'ConfigureDnsSettingsRequest',

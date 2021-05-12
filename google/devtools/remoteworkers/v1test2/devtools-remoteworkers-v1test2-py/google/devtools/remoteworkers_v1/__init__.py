@@ -37,6 +37,7 @@ from .types.worker import Device
 from .types.worker import Worker
 
 __all__ = (
+    'BotsAsyncClient',
 'AdminTemp',
 'Blob',
 'BotSession',

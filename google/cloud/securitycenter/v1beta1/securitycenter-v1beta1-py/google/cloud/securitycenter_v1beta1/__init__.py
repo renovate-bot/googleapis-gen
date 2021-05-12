@@ -46,6 +46,7 @@ from .types.securitycenter_service import UpdateSourceRequest
 from .types.source import Source
 
 __all__ = (
+    'SecurityCenterAsyncClient',
 'Asset',
 'CreateFindingRequest',
 'CreateSourceRequest',

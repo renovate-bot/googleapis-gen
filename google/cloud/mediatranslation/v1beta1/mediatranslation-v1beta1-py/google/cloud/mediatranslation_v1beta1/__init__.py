@@ -24,6 +24,7 @@ from .types.media_translation import StreamingTranslateSpeechResult
 from .types.media_translation import TranslateSpeechConfig
 
 __all__ = (
+    'SpeechTranslationServiceAsyncClient',
 'SpeechTranslationServiceClient',
 'StreamingTranslateSpeechConfig',
 'StreamingTranslateSpeechRequest',

@@ -132,6 +132,7 @@ from .types.cluster_service import DatapathProvider
 from .types.cluster_service import UpgradeResourceType
 
 __all__ = (
+    'ClusterManagerAsyncClient',
 'AcceleratorConfig',
 'AddonsConfig',
 'AuthenticatorGroupsConfig',

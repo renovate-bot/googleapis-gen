@@ -56,6 +56,7 @@ from .types.type import Type
 from .types.type import TypeCode
 
 __all__ = (
+    'SpannerAsyncClient',
 'BatchCreateSessionsRequest',
 'BatchCreateSessionsResponse',
 'BeginTransactionRequest',

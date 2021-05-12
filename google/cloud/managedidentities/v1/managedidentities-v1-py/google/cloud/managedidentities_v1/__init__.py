@@ -34,6 +34,7 @@ from .types.resource import Domain
 from .types.resource import Trust
 
 __all__ = (
+    'ManagedIdentitiesServiceAsyncClient',
 'AttachTrustRequest',
 'CreateMicrosoftAdDomainRequest',
 'DeleteDomainRequest',

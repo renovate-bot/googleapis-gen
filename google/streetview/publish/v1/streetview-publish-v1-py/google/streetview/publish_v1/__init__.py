@@ -40,6 +40,7 @@ from .types.rpcmessages import UpdatePhotoRequest
 from .types.rpcmessages import PhotoView
 
 __all__ = (
+    'StreetViewPublishServiceAsyncClient',
 'BatchDeletePhotosRequest',
 'BatchDeletePhotosResponse',
 'BatchGetPhotosRequest',

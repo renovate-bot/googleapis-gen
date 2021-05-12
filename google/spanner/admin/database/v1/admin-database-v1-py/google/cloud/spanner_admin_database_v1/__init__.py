@@ -53,6 +53,7 @@ from .types.spanner_database_admin import UpdateDatabaseDdlRequest
 from .types.spanner_database_admin import RestoreSourceType
 
 __all__ = (
+    'DatabaseAdminAsyncClient',
 'Backup',
 'BackupInfo',
 'CreateBackupEncryptionConfig',

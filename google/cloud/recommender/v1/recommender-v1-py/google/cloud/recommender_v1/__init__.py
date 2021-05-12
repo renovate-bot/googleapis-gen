@@ -39,6 +39,7 @@ from .types.recommender_service import MarkRecommendationFailedRequest
 from .types.recommender_service import MarkRecommendationSucceededRequest
 
 __all__ = (
+    'RecommenderAsyncClient',
 'CostProjection',
 'GetInsightRequest',
 'GetRecommendationRequest',

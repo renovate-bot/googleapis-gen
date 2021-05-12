@@ -34,6 +34,7 @@ from .types.serviceusage import ListServicesRequest
 from .types.serviceusage import ListServicesResponse
 
 __all__ = (
+    'ServiceUsageAsyncClient',
 'BatchEnableServicesRequest',
 'BatchEnableServicesResponse',
 'BatchGetServicesRequest',

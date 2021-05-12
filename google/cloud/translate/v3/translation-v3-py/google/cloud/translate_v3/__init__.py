@@ -46,6 +46,7 @@ from .types.translation_service import TranslateTextResponse
 from .types.translation_service import Translation
 
 __all__ = (
+    'TranslationServiceAsyncClient',
 'BatchTranslateMetadata',
 'BatchTranslateResponse',
 'BatchTranslateTextRequest',

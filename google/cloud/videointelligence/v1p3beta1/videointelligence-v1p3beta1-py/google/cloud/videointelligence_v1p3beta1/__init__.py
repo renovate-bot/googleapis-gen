@@ -80,6 +80,8 @@ from .types.video_intelligence import Likelihood
 from .types.video_intelligence import StreamingFeature
 
 __all__ = (
+    'StreamingVideoIntelligenceServiceAsyncClient',
+    'VideoIntelligenceServiceAsyncClient',
 'AnnotateVideoProgress',
 'AnnotateVideoRequest',
 'AnnotateVideoResponse',

@@ -48,6 +48,7 @@ from .types.vulnerability import ListVulnerabilityReportsResponse
 from .types.vulnerability import VulnerabilityReport
 
 __all__ = (
+    'OsConfigZonalServiceAsyncClient',
 'CVSSv3',
 'CreateOSPolicyAssignmentRequest',
 'DeleteOSPolicyAssignmentRequest',

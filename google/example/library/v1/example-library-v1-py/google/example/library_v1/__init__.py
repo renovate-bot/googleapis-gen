@@ -34,6 +34,7 @@ from .types.library import Shelf
 from .types.library import UpdateBookRequest
 
 __all__ = (
+    'LibraryServiceAsyncClient',
 'Book',
 'CreateBookRequest',
 'CreateShelfRequest',

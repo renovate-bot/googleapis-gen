@@ -25,6 +25,7 @@ from .types.trace import TruncatableString
 from .types.tracing import BatchWriteSpansRequest
 
 __all__ = (
+    'TraceServiceAsyncClient',
 'AttributeValue',
 'BatchWriteSpansRequest',
 'Module',

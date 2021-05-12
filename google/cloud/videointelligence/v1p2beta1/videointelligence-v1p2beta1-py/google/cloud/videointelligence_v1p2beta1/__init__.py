@@ -47,6 +47,7 @@ from .types.video_intelligence import LabelDetectionMode
 from .types.video_intelligence import Likelihood
 
 __all__ = (
+    'VideoIntelligenceServiceAsyncClient',
 'AnnotateVideoProgress',
 'AnnotateVideoRequest',
 'AnnotateVideoResponse',

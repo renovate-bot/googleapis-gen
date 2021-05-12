@@ -227,6 +227,20 @@ from .types.webhook import WebhookRequest
 from .types.webhook import WebhookResponse
 
 __all__ = (
+    'AgentsAsyncClient',
+    'EntityTypesAsyncClient',
+    'EnvironmentsAsyncClient',
+    'ExperimentsAsyncClient',
+    'FlowsAsyncClient',
+    'IntentsAsyncClient',
+    'PagesAsyncClient',
+    'SecuritySettingsServiceAsyncClient',
+    'SessionEntityTypesAsyncClient',
+    'SessionsAsyncClient',
+    'TestCasesAsyncClient',
+    'TransitionRouteGroupsAsyncClient',
+    'VersionsAsyncClient',
+    'WebhooksAsyncClient',
 'Agent',
 'AgentValidationResult',
 'AgentsClient',

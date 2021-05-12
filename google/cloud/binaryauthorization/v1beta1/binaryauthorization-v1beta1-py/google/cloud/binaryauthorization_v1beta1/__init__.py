@@ -35,6 +35,7 @@ from .types.service import UpdateAttestorRequest
 from .types.service import UpdatePolicyRequest
 
 __all__ = (
+    'BinauthzManagementServiceV1Beta1AsyncClient',
 'AdmissionRule',
 'AdmissionWhitelistPattern',
 'Attestor',

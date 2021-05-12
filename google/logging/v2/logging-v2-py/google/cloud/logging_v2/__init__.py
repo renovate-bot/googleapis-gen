@@ -79,6 +79,9 @@ from .types.logging_metrics import LogMetric
 from .types.logging_metrics import UpdateLogMetricRequest
 
 __all__ = (
+    'ConfigServiceV2AsyncClient',
+    'LoggingServiceV2AsyncClient',
+    'MetricsServiceV2AsyncClient',
 'BigQueryOptions',
 'CmekSettings',
 'ConfigServiceV2Client',

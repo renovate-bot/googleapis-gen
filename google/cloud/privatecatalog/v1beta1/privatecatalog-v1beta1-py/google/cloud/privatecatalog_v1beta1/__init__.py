@@ -32,6 +32,7 @@ from .types.private_catalog import SearchVersionsResponse
 from .types.private_catalog import Version
 
 __all__ = (
+    'PrivateCatalogAsyncClient',
 'AssetReference',
 'Catalog',
 'GcsSource',

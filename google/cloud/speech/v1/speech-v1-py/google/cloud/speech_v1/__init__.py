@@ -36,6 +36,7 @@ from .types.cloud_speech import StreamingRecognizeResponse
 from .types.cloud_speech import WordInfo
 
 __all__ = (
+    'SpeechAsyncClient',
 'LongRunningRecognizeMetadata',
 'LongRunningRecognizeRequest',
 'LongRunningRecognizeResponse',

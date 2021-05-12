@@ -81,6 +81,10 @@ from .types.realms import Realm
 from .types.realms import UpdateRealmRequest
 
 __all__ = (
+    'GameServerClustersServiceAsyncClient',
+    'GameServerConfigsServiceAsyncClient',
+    'GameServerDeploymentsServiceAsyncClient',
+    'RealmsServiceAsyncClient',
 'CreateGameServerClusterRequest',
 'CreateGameServerConfigRequest',
 'CreateGameServerDeploymentRequest',

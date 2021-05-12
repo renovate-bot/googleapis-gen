@@ -44,6 +44,7 @@ from .types.membership import ValidateExclusivityRequest
 from .types.membership import ValidateExclusivityResponse
 
 __all__ = (
+    'GkeHubMembershipServiceAsyncClient',
 'Authority',
 'ConnectAgent',
 'ConnectAgentResource',

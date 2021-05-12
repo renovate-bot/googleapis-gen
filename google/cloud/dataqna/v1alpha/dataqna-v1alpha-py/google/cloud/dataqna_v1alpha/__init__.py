@@ -43,6 +43,8 @@ from .types.question_service import UpdateUserFeedbackRequest
 from .types.user_feedback import UserFeedback
 
 __all__ = (
+    'AutoSuggestionServiceAsyncClient',
+    'QuestionServiceAsyncClient',
 'AnnotatedString',
 'AutoSuggestionServiceClient',
 'BigQueryJob',

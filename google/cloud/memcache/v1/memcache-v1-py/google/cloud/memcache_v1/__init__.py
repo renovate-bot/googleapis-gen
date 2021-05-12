@@ -31,6 +31,7 @@ from .types.cloud_memcache import UpdateParametersRequest
 from .types.cloud_memcache import MemcacheVersion
 
 __all__ = (
+    'CloudMemcacheAsyncClient',
 'ApplyParametersRequest',
 'CloudMemcacheClient',
 'CreateInstanceRequest',

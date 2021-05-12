@@ -66,6 +66,10 @@ from .types.user_event_service import PurgeUserEventsResponse
 from .types.user_event_service import WriteUserEventRequest
 
 __all__ = (
+    'CatalogServiceAsyncClient',
+    'PredictionApiKeyRegistryAsyncClient',
+    'PredictionServiceAsyncClient',
+    'UserEventServiceAsyncClient',
 'CatalogInlineSource',
 'CatalogItem',
 'CatalogServiceClient',

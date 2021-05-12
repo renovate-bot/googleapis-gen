@@ -102,6 +102,7 @@ from .types.resources import IndustryCategory
 from .types.resources import MaximumUserAccess
 
 __all__ = (
+    'AnalyticsAdminServiceAsyncClient',
 'Account',
 'AccountSummary',
 'ActionType',

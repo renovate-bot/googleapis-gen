@@ -105,6 +105,8 @@ from .types.text_annotation import Word
 from .types.web_detection import WebDetection
 
 __all__ = (
+    'ImageAnnotatorAsyncClient',
+    'ProductSearchAsyncClient',
 'AddProductToProductSetRequest',
 'AnnotateFileRequest',
 'AnnotateFileResponse',

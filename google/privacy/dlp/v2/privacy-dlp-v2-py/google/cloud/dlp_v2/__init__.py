@@ -174,6 +174,7 @@ from .types.storage import FileType
 from .types.storage import Likelihood
 
 __all__ = (
+    'DlpServiceAsyncClient',
 'Action',
 'ActivateJobTriggerRequest',
 'AnalyzeDataSourceRiskDetails',

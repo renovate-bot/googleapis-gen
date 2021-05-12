@@ -26,6 +26,7 @@ from .types.vpc_access import ListConnectorsResponse
 from .types.vpc_access import OperationMetadata
 
 __all__ = (
+    'VpcAccessServiceAsyncClient',
 'Connector',
 'CreateConnectorRequest',
 'DeleteConnectorRequest',

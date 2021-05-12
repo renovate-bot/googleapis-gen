@@ -26,6 +26,7 @@ from .types.explanations import AccessState
 from .types.explanations import HeuristicRelevance
 
 __all__ = (
+    'IamCheckerAsyncClient',
 'AccessState',
 'AccessTuple',
 'BindingExplanation',

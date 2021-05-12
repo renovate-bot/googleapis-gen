@@ -97,6 +97,9 @@ from .types.tags import TagTemplateField
 from .types.timestamps import SystemTimestamps
 
 __all__ = (
+    'DataCatalogAsyncClient',
+    'PolicyTagManagerAsyncClient',
+    'PolicyTagManagerSerializationAsyncClient',
 'BigQueryDateShardedSpec',
 'BigQueryTableSpec',
 'ColumnSchema',

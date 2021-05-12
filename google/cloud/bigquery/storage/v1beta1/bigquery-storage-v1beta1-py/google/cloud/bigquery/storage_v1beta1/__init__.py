@@ -42,6 +42,7 @@ from .types.table_reference import TableModifiers
 from .types.table_reference import TableReference
 
 __all__ = (
+    'BigQueryStorageAsyncClient',
 'ArrowRecordBatch',
 'ArrowSchema',
 'AvroRows',

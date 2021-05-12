@@ -36,6 +36,7 @@ from .types.cloudshell import StartEnvironmentRequest
 from .types.cloudshell import StartEnvironmentResponse
 
 __all__ = (
+    'CloudShellServiceAsyncClient',
 'AddPublicKeyMetadata',
 'AddPublicKeyRequest',
 'AddPublicKeyResponse',

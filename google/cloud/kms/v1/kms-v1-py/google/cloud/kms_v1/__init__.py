@@ -61,6 +61,7 @@ from .types.service import UpdateCryptoKeyRequest
 from .types.service import UpdateCryptoKeyVersionRequest
 
 __all__ = (
+    'KeyManagementServiceAsyncClient',
 'AsymmetricDecryptRequest',
 'AsymmetricDecryptResponse',
 'AsymmetricSignRequest',

@@ -31,6 +31,7 @@ from .types.standard_sql import StandardSqlStructType
 from .types.table_reference import TableReference
 
 __all__ = (
+    'ModelServiceAsyncClient',
 'DeleteModelRequest',
 'EncryptionConfiguration',
 'GetModelRequest',

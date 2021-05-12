@@ -43,6 +43,7 @@ from .types.xychart import ChartOptions
 from .types.xychart import XyChart
 
 __all__ = (
+    'DashboardsServiceAsyncClient',
 'Aggregation',
 'ChartOptions',
 'ColumnLayout',

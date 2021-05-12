@@ -34,6 +34,7 @@ from .types.webrisk import CompressionType
 from .types.webrisk import ThreatType
 
 __all__ = (
+    'WebRiskServiceAsyncClient',
 'CompressionType',
 'ComputeThreatListDiffRequest',
 'ComputeThreatListDiffResponse',

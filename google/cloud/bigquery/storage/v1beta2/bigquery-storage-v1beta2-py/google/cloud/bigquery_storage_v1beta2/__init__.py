@@ -52,6 +52,8 @@ from .types.table import TableFieldSchema
 from .types.table import TableSchema
 
 __all__ = (
+    'BigQueryReadAsyncClient',
+    'BigQueryWriteAsyncClient',
 'AppendRowsRequest',
 'AppendRowsResponse',
 'ArrowRecordBatch',

@@ -58,6 +58,7 @@ from .types.clouddms_resources import DatabaseEngine
 from .types.clouddms_resources import DatabaseProvider
 
 __all__ = (
+    'DataMigrationServiceAsyncClient',
 'CloudSqlConnectionProfile',
 'CloudSqlSettings',
 'ConnectionProfile',

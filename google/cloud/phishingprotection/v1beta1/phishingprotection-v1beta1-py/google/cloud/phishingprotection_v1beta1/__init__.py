@@ -21,6 +21,7 @@ from .types.phishingprotection import ReportPhishingRequest
 from .types.phishingprotection import ReportPhishingResponse
 
 __all__ = (
+    'PhishingProtectionServiceV1Beta1AsyncClient',
 'PhishingProtectionServiceV1Beta1Client',
 'ReportPhishingRequest',
 'ReportPhishingResponse',
