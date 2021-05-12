@@ -368,6 +368,7 @@ export class AgentEndpointServiceClient {
  *   specified below:
  *   APPLY_PATCHES = ApplyPatchesTaskProgress
  *   EXEC_STEP = Progress not supported for this type.
+ *   APPLY_CONFIG_TASK = ApplyConfigTaskProgress
  * @param {google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskProgress} request.applyPatchesTaskProgress
  *   Details about the progress of the apply patches task.
  * @param {google.cloud.osconfig.agentendpoint.v1.ExecStepTaskProgress} request.execStepTaskProgress
@@ -450,6 +451,7 @@ export class AgentEndpointServiceClient {
  *   specified below:
  *   APPLY_PATCHES = ApplyPatchesTaskOutput
  *   EXEC_STEP = ExecStepTaskOutput
+ *   APPLY_CONFIG_TASK = ApplyConfigTaskOutput
  * @param {string} request.errorMessage
  *   Descriptive error message if the task execution ended in error.
  * @param {google.cloud.osconfig.agentendpoint.v1.ApplyPatchesTaskOutput} request.applyPatchesTaskOutput
@@ -530,6 +532,7 @@ export class AgentEndpointServiceClient {
  *   Required. The capabilities supported by the agent. Supported values are:
  *   PATCH_GA
  *   GUEST_POLICY_BETA
+ *   CONFIG_V1
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -597,12 +600,12 @@ export class AgentEndpointServiceClient {
  *   https://cloud.google.com/compute/docs/instances/verifying-instance-identity
  *   where the audience is 'osconfig.googleapis.com' and the format is 'full'.
  * @param {string} request.inventoryChecksum
- *   Required. This is a client created checksum that should be generated based on the
- *   contents of the reported inventory.  This will be used by the service to
- *   determine if it has the latest version of inventory.
+ *   Required. This is a client created checksum that should be generated based
+ *   on the contents of the reported inventory.  This will be used by the
+ *   service to determine if it has the latest version of inventory.
  * @param {google.cloud.osconfig.agentendpoint.v1.Inventory} [request.inventory]
- *   Optional. This is the details of the inventory.  Should only be provided if the
- *   inventory has changed since the last report, or if instructed by the
+ *   Optional. This is the details of the inventory.  Should only be provided if
+ *   the inventory has changed since the last report, or if instructed by the
  *   service to provide full inventory.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.

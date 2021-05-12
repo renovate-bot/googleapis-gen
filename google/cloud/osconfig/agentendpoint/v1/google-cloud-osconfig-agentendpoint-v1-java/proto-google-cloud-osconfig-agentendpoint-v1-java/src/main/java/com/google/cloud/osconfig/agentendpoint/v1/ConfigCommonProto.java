@@ -24,6 +24,11 @@ public final class ConfigCommonProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_osconfig_agentendpoint_v1_OSPolicyResourceCompliance_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_osconfig_agentendpoint_v1_OSPolicyResourceCompliance_ExecResourceOutput_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_osconfig_agentendpoint_v1_OSPolicyResourceCompliance_ExecResourceOutput_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -35,31 +40,36 @@ public final class ConfigCommonProto {
     java.lang.String[] descriptorData = {
       "\n:google/cloud/osconfig/agentendpoint/v1" +
       "/config_common.proto\022&google.cloud.oscon" +
-      "fig.agentendpoint.v1\"\240\003\n\032OSPolicyResourc" +
+      "fig.agentendpoint.v1\"\267\003\n\032OSPolicyResourc" +
       "eConfigStep\022U\n\004type\030\001 \001(\0162G.google.cloud" +
       ".osconfig.agentendpoint.v1.OSPolicyResou" +
       "rceConfigStep.Type\022[\n\007outcome\030\002 \001(\0162J.go" +
       "ogle.cloud.osconfig.agentendpoint.v1.OSP" +
-      "olicyResourceConfigStep.Outcome\"\216\001\n\004Type" +
-      "\022\024\n\020TYPE_UNSPECIFIED\020\000\022\016\n\nVALIDATION\020\001\022\027" +
-      "\n\023DESIRED_STATE_CHECK\020\002\022\035\n\031DESIRED_STATE" +
-      "_ENFORCEMENT\020\003\022(\n$DESIRED_STATE_CHECK_PO" +
-      "ST_ENFORCEMENT\020\004\"=\n\007Outcome\022\027\n\023OUTCOME_U" +
-      "NSPECIFIED\020\000\022\r\n\tSUCCEEDED\020\001\022\n\n\006FAILED\020\002\"" +
-      "\345\001\n\032OSPolicyResourceCompliance\022\035\n\025os_pol" +
-      "icy_resource_id\030\001 \001(\t\022X\n\014config_steps\030\002 " +
-      "\003(\0132B.google.cloud.osconfig.agentendpoin" +
-      "t.v1.OSPolicyResourceConfigStep\022N\n\005state" +
-      "\030\003 \001(\0162?.google.cloud.osconfig.agentendp" +
-      "oint.v1.OSPolicyComplianceState*\223\001\n\027OSPo" +
-      "licyComplianceState\022*\n&OS_POLICY_COMPLIA" +
-      "NCE_STATE_UNSPECIFIED\020\000\022\r\n\tCOMPLIANT\020\001\022\021" +
-      "\n\rNON_COMPLIANT\020\002\022\013\n\007UNKNOWN\020\003\022\035\n\031NO_OS_" +
-      "POLICIES_APPLICABLE\020\004B\226\001\n*com.google.clo" +
-      "ud.osconfig.agentendpoint.v1B\021ConfigComm" +
-      "onProtoP\001ZSgoogle.golang.org/genproto/go" +
-      "ogleapis/cloud/osconfig/agentendpoint/v1" +
-      ";agentendpointb\006proto3"
+      "olicyResourceConfigStep.Outcome\022\025\n\rerror" +
+      "_message\030\003 \001(\t\"\216\001\n\004Type\022\024\n\020TYPE_UNSPECIF" +
+      "IED\020\000\022\016\n\nVALIDATION\020\001\022\027\n\023DESIRED_STATE_C" +
+      "HECK\020\002\022\035\n\031DESIRED_STATE_ENFORCEMENT\020\003\022(\n" +
+      "$DESIRED_STATE_CHECK_POST_ENFORCEMENT\020\004\"" +
+      "=\n\007Outcome\022\027\n\023OUTCOME_UNSPECIFIED\020\000\022\r\n\tS" +
+      "UCCEEDED\020\001\022\n\n\006FAILED\020\002\"\230\003\n\032OSPolicyResou" +
+      "rceCompliance\022\035\n\025os_policy_resource_id\030\001" +
+      " \001(\t\022X\n\014config_steps\030\002 \003(\0132B.google.clou" +
+      "d.osconfig.agentendpoint.v1.OSPolicyReso" +
+      "urceConfigStep\022N\n\005state\030\003 \001(\0162?.google.c" +
+      "loud.osconfig.agentendpoint.v1.OSPolicyC" +
+      "omplianceState\022u\n\024exec_resource_output\030\004" +
+      " \001(\0132U.google.cloud.osconfig.agentendpoi" +
+      "nt.v1.OSPolicyResourceCompliance.ExecRes" +
+      "ourceOutputH\000\0320\n\022ExecResourceOutput\022\032\n\022e" +
+      "nforcement_output\030\002 \001(\014B\010\n\006output*\223\001\n\027OS" +
+      "PolicyComplianceState\022*\n&OS_POLICY_COMPL" +
+      "IANCE_STATE_UNSPECIFIED\020\000\022\r\n\tCOMPLIANT\020\001" +
+      "\022\021\n\rNON_COMPLIANT\020\002\022\013\n\007UNKNOWN\020\003\022\035\n\031NO_O" +
+      "S_POLICIES_APPLICABLE\020\004B\226\001\n*com.google.c" +
+      "loud.osconfig.agentendpoint.v1B\021ConfigCo" +
+      "mmonProtoP\001ZSgoogle.golang.org/genproto/" +
+      "googleapis/cloud/osconfig/agentendpoint/" +
+      "v1;agentendpointb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -70,13 +80,19 @@ public final class ConfigCommonProto {
     internal_static_google_cloud_osconfig_agentendpoint_v1_OSPolicyResourceConfigStep_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_osconfig_agentendpoint_v1_OSPolicyResourceConfigStep_descriptor,
-        new java.lang.String[] { "Type", "Outcome", });
+        new java.lang.String[] { "Type", "Outcome", "ErrorMessage", });
     internal_static_google_cloud_osconfig_agentendpoint_v1_OSPolicyResourceCompliance_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_google_cloud_osconfig_agentendpoint_v1_OSPolicyResourceCompliance_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_osconfig_agentendpoint_v1_OSPolicyResourceCompliance_descriptor,
-        new java.lang.String[] { "OsPolicyResourceId", "ConfigSteps", "State", });
+        new java.lang.String[] { "OsPolicyResourceId", "ConfigSteps", "State", "ExecResourceOutput", "Output", });
+    internal_static_google_cloud_osconfig_agentendpoint_v1_OSPolicyResourceCompliance_ExecResourceOutput_descriptor =
+      internal_static_google_cloud_osconfig_agentendpoint_v1_OSPolicyResourceCompliance_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_osconfig_agentendpoint_v1_OSPolicyResourceCompliance_ExecResourceOutput_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_osconfig_agentendpoint_v1_OSPolicyResourceCompliance_ExecResourceOutput_descriptor,
+        new java.lang.String[] { "EnforcementOutput", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

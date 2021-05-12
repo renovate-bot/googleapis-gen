@@ -126,7 +126,7 @@ class ReportTaskProgressRequest(proto.Message):
             Progress must include the appropriate message based on this
             enum as specified below: APPLY_PATCHES =
             ApplyPatchesTaskProgress EXEC_STEP = Progress not supported
-            for this type.
+            for this type. APPLY_CONFIG_TASK = ApplyConfigTaskProgress
         apply_patches_task_progress (google.cloud.osconfig.agentendpoint_v1.types.ApplyPatchesTaskProgress):
             Details about the progress of the apply
             patches task.
@@ -208,6 +208,7 @@ class ReportTaskCompleteRequest(proto.Message):
             Output must include the appropriate message based on this
             enum as specified below: APPLY_PATCHES =
             ApplyPatchesTaskOutput EXEC_STEP = ExecStepTaskOutput
+            APPLY_CONFIG_TASK = ApplyConfigTaskOutput
         error_message (str):
             Descriptive error message if the task
             execution ended in error.
@@ -278,7 +279,7 @@ class RegisterAgentRequest(proto.Message):
             Required. The version of the agent.
         supported_capabilities (Sequence[str]):
             Required. The capabilities supported by the agent. Supported
-            values are: PATCH_GA GUEST_POLICY_BETA
+            values are: PATCH_GA GUEST_POLICY_BETA CONFIG_V1
     """
 
     instance_id_token = proto.Field(

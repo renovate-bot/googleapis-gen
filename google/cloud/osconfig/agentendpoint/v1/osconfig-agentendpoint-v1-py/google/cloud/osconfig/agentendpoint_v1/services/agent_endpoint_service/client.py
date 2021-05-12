@@ -518,7 +518,8 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
                 Progress must include the appropriate message based on
                 this enum as specified below: APPLY_PATCHES =
                 ApplyPatchesTaskProgress EXEC_STEP = Progress not
-                supported for this type.
+                supported for this type. APPLY_CONFIG_TASK =
+                ApplyConfigTaskProgress
 
                 This corresponds to the ``task_type`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -615,6 +616,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
                 Output must include the appropriate message based on
                 this enum as specified below: APPLY_PATCHES =
                 ApplyPatchesTaskOutput EXEC_STEP = ExecStepTaskOutput
+                APPLY_CONFIG_TASK = ApplyConfigTaskOutput
 
                 This corresponds to the ``task_type`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -713,6 +715,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
             supported_capabilities (Sequence[str]):
                 Required. The capabilities supported by the agent.
                 Supported values are: PATCH_GA GUEST_POLICY_BETA
+                CONFIG_V1
 
                 This corresponds to the ``supported_capabilities`` field
                 on the ``request`` instance; if ``request`` is provided, this

@@ -324,6 +324,7 @@ module Google
               #     specified below:
               #     APPLY_PATCHES = ApplyPatchesTaskProgress
               #     EXEC_STEP = Progress not supported for this type.
+              #     APPLY_CONFIG_TASK = ApplyConfigTaskProgress
               #   @param apply_patches_task_progress [::Google::Cloud::Osconfig::Agentendpoint::V1::ApplyPatchesTaskProgress, ::Hash]
               #     Details about the progress of the apply patches task.
               #   @param exec_step_task_progress [::Google::Cloud::Osconfig::Agentendpoint::V1::ExecStepTaskProgress, ::Hash]
@@ -402,6 +403,7 @@ module Google
               #     specified below:
               #     APPLY_PATCHES = ApplyPatchesTaskOutput
               #     EXEC_STEP = ExecStepTaskOutput
+              #     APPLY_CONFIG_TASK = ApplyConfigTaskOutput
               #   @param error_message [::String]
               #     Descriptive error message if the task execution ended in error.
               #   @param apply_patches_task_output [::Google::Cloud::Osconfig::Agentendpoint::V1::ApplyPatchesTaskOutput, ::Hash]
@@ -478,6 +480,7 @@ module Google
               #     Required. The capabilities supported by the agent. Supported values are:
               #     PATCH_GA
               #     GUEST_POLICY_BETA
+              #     CONFIG_V1
               #
               # @yield [response, operation] Access the result along with the RPC operation
               # @yieldparam response [::Google::Cloud::Osconfig::Agentendpoint::V1::RegisterAgentResponse]
@@ -541,12 +544,12 @@ module Google
               #     https://cloud.google.com/compute/docs/instances/verifying-instance-identity
               #     where the audience is 'osconfig.googleapis.com' and the format is 'full'.
               #   @param inventory_checksum [::String]
-              #     Required. This is a client created checksum that should be generated based on the
-              #     contents of the reported inventory.  This will be used by the service to
-              #     determine if it has the latest version of inventory.
+              #     Required. This is a client created checksum that should be generated based
+              #     on the contents of the reported inventory.  This will be used by the
+              #     service to determine if it has the latest version of inventory.
               #   @param inventory [::Google::Cloud::Osconfig::Agentendpoint::V1::Inventory, ::Hash]
-              #     Optional. This is the details of the inventory.  Should only be provided if the
-              #     inventory has changed since the last report, or if instructed by the
+              #     Optional. This is the details of the inventory.  Should only be provided if
+              #     the inventory has changed since the last report, or if instructed by the
               #     service to provide full inventory.
               #
               # @yield [response, operation] Access the result along with the RPC operation

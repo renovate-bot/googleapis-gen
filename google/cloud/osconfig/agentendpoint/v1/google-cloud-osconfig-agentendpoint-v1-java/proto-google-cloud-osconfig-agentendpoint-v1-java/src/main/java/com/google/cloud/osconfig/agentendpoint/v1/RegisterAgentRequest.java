@@ -215,6 +215,7 @@ private static final long serialVersionUID = 0L;
    * Required. The capabilities supported by the agent. Supported values are:
    * PATCH_GA
    * GUEST_POLICY_BETA
+   * CONFIG_V1
    * </pre>
    *
    * <code>repeated string supported_capabilities = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -229,6 +230,7 @@ private static final long serialVersionUID = 0L;
    * Required. The capabilities supported by the agent. Supported values are:
    * PATCH_GA
    * GUEST_POLICY_BETA
+   * CONFIG_V1
    * </pre>
    *
    * <code>repeated string supported_capabilities = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -242,6 +244,7 @@ private static final long serialVersionUID = 0L;
    * Required. The capabilities supported by the agent. Supported values are:
    * PATCH_GA
    * GUEST_POLICY_BETA
+   * CONFIG_V1
    * </pre>
    *
    * <code>repeated string supported_capabilities = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -256,6 +259,7 @@ private static final long serialVersionUID = 0L;
    * Required. The capabilities supported by the agent. Supported values are:
    * PATCH_GA
    * GUEST_POLICY_BETA
+   * CONFIG_V1
    * </pre>
    *
    * <code>repeated string supported_capabilities = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -840,6 +844,7 @@ private static final long serialVersionUID = 0L;
      * Required. The capabilities supported by the agent. Supported values are:
      * PATCH_GA
      * GUEST_POLICY_BETA
+     * CONFIG_V1
      * </pre>
      *
      * <code>repeated string supported_capabilities = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -854,6 +859,7 @@ private static final long serialVersionUID = 0L;
      * Required. The capabilities supported by the agent. Supported values are:
      * PATCH_GA
      * GUEST_POLICY_BETA
+     * CONFIG_V1
      * </pre>
      *
      * <code>repeated string supported_capabilities = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -867,6 +873,7 @@ private static final long serialVersionUID = 0L;
      * Required. The capabilities supported by the agent. Supported values are:
      * PATCH_GA
      * GUEST_POLICY_BETA
+     * CONFIG_V1
      * </pre>
      *
      * <code>repeated string supported_capabilities = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -881,6 +888,7 @@ private static final long serialVersionUID = 0L;
      * Required. The capabilities supported by the agent. Supported values are:
      * PATCH_GA
      * GUEST_POLICY_BETA
+     * CONFIG_V1
      * </pre>
      *
      * <code>repeated string supported_capabilities = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -896,6 +904,7 @@ private static final long serialVersionUID = 0L;
      * Required. The capabilities supported by the agent. Supported values are:
      * PATCH_GA
      * GUEST_POLICY_BETA
+     * CONFIG_V1
      * </pre>
      *
      * <code>repeated string supported_capabilities = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -918,6 +927,7 @@ private static final long serialVersionUID = 0L;
      * Required. The capabilities supported by the agent. Supported values are:
      * PATCH_GA
      * GUEST_POLICY_BETA
+     * CONFIG_V1
      * </pre>
      *
      * <code>repeated string supported_capabilities = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -939,6 +949,7 @@ private static final long serialVersionUID = 0L;
      * Required. The capabilities supported by the agent. Supported values are:
      * PATCH_GA
      * GUEST_POLICY_BETA
+     * CONFIG_V1
      * </pre>
      *
      * <code>repeated string supported_capabilities = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -958,6 +969,7 @@ private static final long serialVersionUID = 0L;
      * Required. The capabilities supported by the agent. Supported values are:
      * PATCH_GA
      * GUEST_POLICY_BETA
+     * CONFIG_V1
      * </pre>
      *
      * <code>repeated string supported_capabilities = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -974,6 +986,7 @@ private static final long serialVersionUID = 0L;
      * Required. The capabilities supported by the agent. Supported values are:
      * PATCH_GA
      * GUEST_POLICY_BETA
+     * CONFIG_V1
      * </pre>
      *
      * <code>repeated string supported_capabilities = 3 [(.google.api.field_behavior) = REQUIRED];</code>

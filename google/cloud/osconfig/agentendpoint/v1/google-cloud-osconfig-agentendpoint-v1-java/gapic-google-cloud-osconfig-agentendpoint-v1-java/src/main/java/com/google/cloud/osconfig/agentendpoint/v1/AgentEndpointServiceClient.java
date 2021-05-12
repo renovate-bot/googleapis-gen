@@ -265,6 +265,7 @@ public class AgentEndpointServiceClient implements BackgroundResource {
    * @param taskType Required. The type of task to report progress on.
    *     <p>Progress must include the appropriate message based on this enum as specified below:
    *     APPLY_PATCHES = ApplyPatchesTaskProgress EXEC_STEP = Progress not supported for this type.
+   *     APPLY_CONFIG_TASK = ApplyConfigTaskProgress
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ReportTaskProgressResponse reportTaskProgress(
@@ -356,7 +357,8 @@ public class AgentEndpointServiceClient implements BackgroundResource {
    * @param taskId Required. Unique identifier of the task this applies to.
    * @param taskType Required. The type of task to report completed.
    *     <p>Output must include the appropriate message based on this enum as specified below:
-   *     APPLY_PATCHES = ApplyPatchesTaskOutput EXEC_STEP = ExecStepTaskOutput
+   *     APPLY_PATCHES = ApplyPatchesTaskOutput EXEC_STEP = ExecStepTaskOutput APPLY_CONFIG_TASK =
+   *     ApplyConfigTaskOutput
    * @param errorMessage Descriptive error message if the task execution ended in error.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -450,7 +452,7 @@ public class AgentEndpointServiceClient implements BackgroundResource {
    *     audience is 'osconfig.googleapis.com' and the format is 'full'.
    * @param agentVersion Required. The version of the agent.
    * @param supportedCapabilities Required. The capabilities supported by the agent. Supported
-   *     values are: PATCH_GA GUEST_POLICY_BETA
+   *     values are: PATCH_GA GUEST_POLICY_BETA CONFIG_V1
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final RegisterAgentResponse registerAgent(

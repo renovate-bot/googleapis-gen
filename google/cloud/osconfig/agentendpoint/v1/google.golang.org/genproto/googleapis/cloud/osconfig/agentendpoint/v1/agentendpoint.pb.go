@@ -263,6 +263,7 @@ type ReportTaskProgressRequest struct {
 	// specified below:
 	// APPLY_PATCHES = ApplyPatchesTaskProgress
 	// EXEC_STEP = Progress not supported for this type.
+	// APPLY_CONFIG_TASK = ApplyConfigTaskProgress
 	TaskType TaskType `protobuf:"varint,3,opt,name=task_type,json=taskType,proto3,enum=google.cloud.osconfig.agentendpoint.v1.TaskType" json:"task_type,omitempty"`
 	// Intermediate progress of the current task.
 	//
@@ -446,6 +447,7 @@ type ReportTaskCompleteRequest struct {
 	// specified below:
 	// APPLY_PATCHES = ApplyPatchesTaskOutput
 	// EXEC_STEP = ExecStepTaskOutput
+	// APPLY_CONFIG_TASK = ApplyConfigTaskOutput
 	TaskType TaskType `protobuf:"varint,3,opt,name=task_type,json=taskType,proto3,enum=google.cloud.osconfig.agentendpoint.v1.TaskType" json:"task_type,omitempty"`
 	// Descriptive error message if the task execution ended in error.
 	ErrorMessage string `protobuf:"bytes,4,opt,name=error_message,json=errorMessage,proto3" json:"error_message,omitempty"`
@@ -625,6 +627,7 @@ type RegisterAgentRequest struct {
 	// Required. The capabilities supported by the agent. Supported values are:
 	// PATCH_GA
 	// GUEST_POLICY_BETA
+	// CONFIG_V1
 	SupportedCapabilities []string `protobuf:"bytes,3,rep,name=supported_capabilities,json=supportedCapabilities,proto3" json:"supported_capabilities,omitempty"`
 }
 
@@ -730,12 +733,12 @@ type ReportInventoryRequest struct {
 	// https://cloud.google.com/compute/docs/instances/verifying-instance-identity
 	// where the audience is 'osconfig.googleapis.com' and the format is 'full'.
 	InstanceIdToken string `protobuf:"bytes,1,opt,name=instance_id_token,json=instanceIdToken,proto3" json:"instance_id_token,omitempty"`
-	// Required. This is a client created checksum that should be generated based on the
-	// contents of the reported inventory.  This will be used by the service to
-	// determine if it has the latest version of inventory.
+	// Required. This is a client created checksum that should be generated based
+	// on the contents of the reported inventory.  This will be used by the
+	// service to determine if it has the latest version of inventory.
 	InventoryChecksum string `protobuf:"bytes,2,opt,name=inventory_checksum,json=inventoryChecksum,proto3" json:"inventory_checksum,omitempty"`
-	// Optional. This is the details of the inventory.  Should only be provided if the
-	// inventory has changed since the last report, or if instructed by the
+	// Optional. This is the details of the inventory.  Should only be provided if
+	// the inventory has changed since the last report, or if instructed by the
 	// service to provide full inventory.
 	Inventory *Inventory `protobuf:"bytes,3,opt,name=inventory,proto3" json:"inventory,omitempty"`
 }

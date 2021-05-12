@@ -165,9 +165,9 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object inventoryChecksum_;
   /**
    * <pre>
-   * Required. This is a client created checksum that should be generated based on the
-   * contents of the reported inventory.  This will be used by the service to
-   * determine if it has the latest version of inventory.
+   * Required. This is a client created checksum that should be generated based
+   * on the contents of the reported inventory.  This will be used by the
+   * service to determine if it has the latest version of inventory.
    * </pre>
    *
    * <code>string inventory_checksum = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -188,9 +188,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. This is a client created checksum that should be generated based on the
-   * contents of the reported inventory.  This will be used by the service to
-   * determine if it has the latest version of inventory.
+   * Required. This is a client created checksum that should be generated based
+   * on the contents of the reported inventory.  This will be used by the
+   * service to determine if it has the latest version of inventory.
    * </pre>
    *
    * <code>string inventory_checksum = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -215,8 +215,8 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.osconfig.agentendpoint.v1.Inventory inventory_;
   /**
    * <pre>
-   * Optional. This is the details of the inventory.  Should only be provided if the
-   * inventory has changed since the last report, or if instructed by the
+   * Optional. This is the details of the inventory.  Should only be provided if
+   * the inventory has changed since the last report, or if instructed by the
    * service to provide full inventory.
    * </pre>
    *
@@ -229,8 +229,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. This is the details of the inventory.  Should only be provided if the
-   * inventory has changed since the last report, or if instructed by the
+   * Optional. This is the details of the inventory.  Should only be provided if
+   * the inventory has changed since the last report, or if instructed by the
    * service to provide full inventory.
    * </pre>
    *
@@ -243,8 +243,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. This is the details of the inventory.  Should only be provided if the
-   * inventory has changed since the last report, or if instructed by the
+   * Optional. This is the details of the inventory.  Should only be provided if
+   * the inventory has changed since the last report, or if instructed by the
    * service to provide full inventory.
    * </pre>
    *
@@ -717,9 +717,9 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object inventoryChecksum_ = "";
     /**
      * <pre>
-     * Required. This is a client created checksum that should be generated based on the
-     * contents of the reported inventory.  This will be used by the service to
-     * determine if it has the latest version of inventory.
+     * Required. This is a client created checksum that should be generated based
+     * on the contents of the reported inventory.  This will be used by the
+     * service to determine if it has the latest version of inventory.
      * </pre>
      *
      * <code>string inventory_checksum = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -739,9 +739,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. This is a client created checksum that should be generated based on the
-     * contents of the reported inventory.  This will be used by the service to
-     * determine if it has the latest version of inventory.
+     * Required. This is a client created checksum that should be generated based
+     * on the contents of the reported inventory.  This will be used by the
+     * service to determine if it has the latest version of inventory.
      * </pre>
      *
      * <code>string inventory_checksum = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -762,9 +762,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. This is a client created checksum that should be generated based on the
-     * contents of the reported inventory.  This will be used by the service to
-     * determine if it has the latest version of inventory.
+     * Required. This is a client created checksum that should be generated based
+     * on the contents of the reported inventory.  This will be used by the
+     * service to determine if it has the latest version of inventory.
      * </pre>
      *
      * <code>string inventory_checksum = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -783,9 +783,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. This is a client created checksum that should be generated based on the
-     * contents of the reported inventory.  This will be used by the service to
-     * determine if it has the latest version of inventory.
+     * Required. This is a client created checksum that should be generated based
+     * on the contents of the reported inventory.  This will be used by the
+     * service to determine if it has the latest version of inventory.
      * </pre>
      *
      * <code>string inventory_checksum = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -799,9 +799,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. This is a client created checksum that should be generated based on the
-     * contents of the reported inventory.  This will be used by the service to
-     * determine if it has the latest version of inventory.
+     * Required. This is a client created checksum that should be generated based
+     * on the contents of the reported inventory.  This will be used by the
+     * service to determine if it has the latest version of inventory.
      * </pre>
      *
      * <code>string inventory_checksum = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -825,8 +825,8 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.osconfig.agentendpoint.v1.Inventory, com.google.cloud.osconfig.agentendpoint.v1.Inventory.Builder, com.google.cloud.osconfig.agentendpoint.v1.InventoryOrBuilder> inventoryBuilder_;
     /**
      * <pre>
-     * Optional. This is the details of the inventory.  Should only be provided if the
-     * inventory has changed since the last report, or if instructed by the
+     * Optional. This is the details of the inventory.  Should only be provided if
+     * the inventory has changed since the last report, or if instructed by the
      * service to provide full inventory.
      * </pre>
      *
@@ -838,8 +838,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. This is the details of the inventory.  Should only be provided if the
-     * inventory has changed since the last report, or if instructed by the
+     * Optional. This is the details of the inventory.  Should only be provided if
+     * the inventory has changed since the last report, or if instructed by the
      * service to provide full inventory.
      * </pre>
      *
@@ -855,8 +855,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. This is the details of the inventory.  Should only be provided if the
-     * inventory has changed since the last report, or if instructed by the
+     * Optional. This is the details of the inventory.  Should only be provided if
+     * the inventory has changed since the last report, or if instructed by the
      * service to provide full inventory.
      * </pre>
      *
@@ -877,8 +877,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. This is the details of the inventory.  Should only be provided if the
-     * inventory has changed since the last report, or if instructed by the
+     * Optional. This is the details of the inventory.  Should only be provided if
+     * the inventory has changed since the last report, or if instructed by the
      * service to provide full inventory.
      * </pre>
      *
@@ -897,8 +897,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. This is the details of the inventory.  Should only be provided if the
-     * inventory has changed since the last report, or if instructed by the
+     * Optional. This is the details of the inventory.  Should only be provided if
+     * the inventory has changed since the last report, or if instructed by the
      * service to provide full inventory.
      * </pre>
      *
@@ -921,8 +921,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. This is the details of the inventory.  Should only be provided if the
-     * inventory has changed since the last report, or if instructed by the
+     * Optional. This is the details of the inventory.  Should only be provided if
+     * the inventory has changed since the last report, or if instructed by the
      * service to provide full inventory.
      * </pre>
      *
@@ -941,8 +941,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. This is the details of the inventory.  Should only be provided if the
-     * inventory has changed since the last report, or if instructed by the
+     * Optional. This is the details of the inventory.  Should only be provided if
+     * the inventory has changed since the last report, or if instructed by the
      * service to provide full inventory.
      * </pre>
      *
@@ -955,8 +955,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. This is the details of the inventory.  Should only be provided if the
-     * inventory has changed since the last report, or if instructed by the
+     * Optional. This is the details of the inventory.  Should only be provided if
+     * the inventory has changed since the last report, or if instructed by the
      * service to provide full inventory.
      * </pre>
      *
@@ -972,8 +972,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. This is the details of the inventory.  Should only be provided if the
-     * inventory has changed since the last report, or if instructed by the
+     * Optional. This is the details of the inventory.  Should only be provided if
+     * the inventory has changed since the last report, or if instructed by the
      * service to provide full inventory.
      * </pre>
      *

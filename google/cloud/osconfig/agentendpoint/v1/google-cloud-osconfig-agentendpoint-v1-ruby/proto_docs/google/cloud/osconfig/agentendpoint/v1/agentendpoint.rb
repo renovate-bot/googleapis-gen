@@ -81,6 +81,7 @@ module Google
           #     specified below:
           #     APPLY_PATCHES = ApplyPatchesTaskProgress
           #     EXEC_STEP = Progress not supported for this type.
+          #     APPLY_CONFIG_TASK = ApplyConfigTaskProgress
           # @!attribute [rw] apply_patches_task_progress
           #   @return [::Google::Cloud::Osconfig::Agentendpoint::V1::ApplyPatchesTaskProgress]
           #     Details about the progress of the apply patches task.
@@ -121,6 +122,7 @@ module Google
           #     specified below:
           #     APPLY_PATCHES = ApplyPatchesTaskOutput
           #     EXEC_STEP = ExecStepTaskOutput
+          #     APPLY_CONFIG_TASK = ApplyConfigTaskOutput
           # @!attribute [rw] error_message
           #   @return [::String]
           #     Descriptive error message if the task execution ended in error.
@@ -158,6 +160,7 @@ module Google
           #     Required. The capabilities supported by the agent. Supported values are:
           #     PATCH_GA
           #     GUEST_POLICY_BETA
+          #     CONFIG_V1
           class RegisterAgentRequest
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -177,13 +180,13 @@ module Google
           #     where the audience is 'osconfig.googleapis.com' and the format is 'full'.
           # @!attribute [rw] inventory_checksum
           #   @return [::String]
-          #     Required. This is a client created checksum that should be generated based on the
-          #     contents of the reported inventory.  This will be used by the service to
-          #     determine if it has the latest version of inventory.
+          #     Required. This is a client created checksum that should be generated based
+          #     on the contents of the reported inventory.  This will be used by the
+          #     service to determine if it has the latest version of inventory.
           # @!attribute [rw] inventory
           #   @return [::Google::Cloud::Osconfig::Agentendpoint::V1::Inventory]
-          #     Optional. This is the details of the inventory.  Should only be provided if the
-          #     inventory has changed since the last report, or if instructed by the
+          #     Optional. This is the details of the inventory.  Should only be provided if
+          #     the inventory has changed since the last report, or if instructed by the
           #     service to provide full inventory.
           class ReportInventoryRequest
             include ::Google::Protobuf::MessageExts

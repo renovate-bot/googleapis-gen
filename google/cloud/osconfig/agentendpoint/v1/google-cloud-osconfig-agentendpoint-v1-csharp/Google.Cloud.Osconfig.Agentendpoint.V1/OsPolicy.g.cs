@@ -26,8 +26,8 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
           string.Concat(
             "CjZnb29nbGUvY2xvdWQvb3Njb25maWcvYWdlbnRlbmRwb2ludC92MS9vc19w",
             "b2xpY3kucHJvdG8SJmdvb2dsZS5jbG91ZC5vc2NvbmZpZy5hZ2VudGVuZHBv",
-            "aW50LnYxGh9nb29nbGUvYXBpL2ZpZWxkX2JlaGF2aW9yLnByb3RvIpEgCghP",
-            "U1BvbGljeRrFHwoIUmVzb3VyY2USDwoCaWQYASABKAlCA+BBAhJYCgNwa2cY",
+            "aW50LnYxGh9nb29nbGUvYXBpL2ZpZWxkX2JlaGF2aW9yLnByb3RvIqsgCghP",
+            "U1BvbGljeRrfHwoIUmVzb3VyY2USDwoCaWQYASABKAlCA+BBAhJYCgNwa2cY",
             "AiABKAsySS5nb29nbGUuY2xvdWQub3Njb25maWcuYWdlbnRlbmRwb2ludC52",
             "MS5PU1BvbGljeS5SZXNvdXJjZS5QYWNrYWdlUmVzb3VyY2VIABJiCgpyZXBv",
             "c2l0b3J5GAMgASgLMkwuZ29vZ2xlLmNsb3VkLm9zY29uZmlnLmFnZW50ZW5k",
@@ -96,32 +96,33 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
             "clJlcG9zaXRvcnkSDwoCaWQYASABKAlCA+BBAhIUCgxkaXNwbGF5X25hbWUY",
             "AiABKAkSFQoIYmFzZV91cmwYAyABKAlCA+BBAhIQCghncGdfa2V5cxgEIAMo",
             "CRo0Cg1Hb29SZXBvc2l0b3J5EhEKBG5hbWUYASABKAlCA+BBAhIQCgN1cmwY",
-            "AiABKAlCA+BBAkIMCgpyZXBvc2l0b3J5GpcECgxFeGVjUmVzb3VyY2USYgoI",
+            "AiABKAlCA+BBAkIMCgpyZXBvc2l0b3J5GrEECgxFeGVjUmVzb3VyY2USYgoI",
             "dmFsaWRhdGUYASABKAsySy5nb29nbGUuY2xvdWQub3Njb25maWcuYWdlbnRl",
             "bmRwb2ludC52MS5PU1BvbGljeS5SZXNvdXJjZS5FeGVjUmVzb3VyY2UuRXhl",
             "Y0ID4EECElwKB2VuZm9yY2UYAiABKAsySy5nb29nbGUuY2xvdWQub3Njb25m",
             "aWcuYWdlbnRlbmRwb2ludC52MS5PU1BvbGljeS5SZXNvdXJjZS5FeGVjUmVz",
-            "b3VyY2UuRXhlYxrEAgoERXhlYxJOCgRmaWxlGAEgASgLMj4uZ29vZ2xlLmNs",
+            "b3VyY2UuRXhlYxreAgoERXhlYxJOCgRmaWxlGAEgASgLMj4uZ29vZ2xlLmNs",
             "b3VkLm9zY29uZmlnLmFnZW50ZW5kcG9pbnQudjEuT1NQb2xpY3kuUmVzb3Vy",
             "Y2UuRmlsZUgAEhAKBnNjcmlwdBgCIAEoCUgAEgwKBGFyZ3MYAyADKAkScQoL",
             "aW50ZXJwcmV0ZXIYBCABKA4yVy5nb29nbGUuY2xvdWQub3Njb25maWcuYWdl",
             "bnRlbmRwb2ludC52MS5PU1BvbGljeS5SZXNvdXJjZS5FeGVjUmVzb3VyY2Uu",
-            "RXhlYy5JbnRlcnByZXRlckID4EECIk8KC0ludGVycHJldGVyEhsKF0lOVEVS",
-            "UFJFVEVSX1VOU1BFQ0lGSUVEEAASCAoETk9ORRABEgkKBVNIRUxMEAISDgoK",
-            "UE9XRVJTSEVMTBADQggKBnNvdXJjZRroAgoMRmlsZVJlc291cmNlEk4KBGZp",
-            "bGUYASABKAsyPi5nb29nbGUuY2xvdWQub3Njb25maWcuYWdlbnRlbmRwb2lu",
-            "dC52MS5PU1BvbGljeS5SZXNvdXJjZS5GaWxlSAASEQoHY29udGVudBgCIAEo",
-            "CUgAEhEKBHBhdGgYAyABKAlCA+BBAhJnCgVzdGF0ZRgEIAEoDjJTLmdvb2ds",
-            "ZS5jbG91ZC5vc2NvbmZpZy5hZ2VudGVuZHBvaW50LnYxLk9TUG9saWN5LlJl",
-            "c291cmNlLkZpbGVSZXNvdXJjZS5EZXNpcmVkU3RhdGVCA+BBAhITCgtwZXJt",
-            "aXNzaW9ucxgFIAEoCSJaCgxEZXNpcmVkU3RhdGUSHQoZREVTSVJFRF9TVEFU",
-            "RV9VTlNQRUNJRklFRBAAEgsKB1BSRVNFTlQQARIKCgZBQlNFTlQQAhISCg5D",
-            "T05URU5UU19NQVRDSBADQggKBnNvdXJjZUIPCg1yZXNvdXJjZV90eXBlIj0K",
-            "BE1vZGUSFAoQTU9ERV9VTlNQRUNJRklFRBAAEg4KClZBTElEQVRJT04QARIP",
-            "CgtFTkZPUkNFTUVOVBACQpIBCipjb20uZ29vZ2xlLmNsb3VkLm9zY29uZmln",
-            "LmFnZW50ZW5kcG9pbnQudjFCDU9TUG9saWN5UHJvdG9QAVpTZ29vZ2xlLmdv",
-            "bGFuZy5vcmcvZ2VucHJvdG8vZ29vZ2xlYXBpcy9jbG91ZC9vc2NvbmZpZy9h",
-            "Z2VudGVuZHBvaW50L3YxO2FnZW50ZW5kcG9pbnRiBnByb3RvMw=="));
+            "RXhlYy5JbnRlcnByZXRlckID4EECEhgKEG91dHB1dF9maWxlX3BhdGgYBSAB",
+            "KAkiTwoLSW50ZXJwcmV0ZXISGwoXSU5URVJQUkVURVJfVU5TUEVDSUZJRUQQ",
+            "ABIICgROT05FEAESCQoFU0hFTEwQAhIOCgpQT1dFUlNIRUxMEANCCAoGc291",
+            "cmNlGugCCgxGaWxlUmVzb3VyY2USTgoEZmlsZRgBIAEoCzI+Lmdvb2dsZS5j",
+            "bG91ZC5vc2NvbmZpZy5hZ2VudGVuZHBvaW50LnYxLk9TUG9saWN5LlJlc291",
+            "cmNlLkZpbGVIABIRCgdjb250ZW50GAIgASgJSAASEQoEcGF0aBgDIAEoCUID",
+            "4EECEmcKBXN0YXRlGAQgASgOMlMuZ29vZ2xlLmNsb3VkLm9zY29uZmlnLmFn",
+            "ZW50ZW5kcG9pbnQudjEuT1NQb2xpY3kuUmVzb3VyY2UuRmlsZVJlc291cmNl",
+            "LkRlc2lyZWRTdGF0ZUID4EECEhMKC3Blcm1pc3Npb25zGAUgASgJIloKDERl",
+            "c2lyZWRTdGF0ZRIdChlERVNJUkVEX1NUQVRFX1VOU1BFQ0lGSUVEEAASCwoH",
+            "UFJFU0VOVBABEgoKBkFCU0VOVBACEhIKDkNPTlRFTlRTX01BVENIEANCCAoG",
+            "c291cmNlQg8KDXJlc291cmNlX3R5cGUiPQoETW9kZRIUChBNT0RFX1VOU1BF",
+            "Q0lGSUVEEAASDgoKVkFMSURBVElPThABEg8KC0VORk9SQ0VNRU5UEAJCkgEK",
+            "KmNvbS5nb29nbGUuY2xvdWQub3Njb25maWcuYWdlbnRlbmRwb2ludC52MUIN",
+            "T1NQb2xpY3lQcm90b1ABWlNnb29nbGUuZ29sYW5nLm9yZy9nZW5wcm90by9n",
+            "b29nbGVhcGlzL2Nsb3VkL29zY29uZmlnL2FnZW50ZW5kcG9pbnQvdjE7YWdl",
+            "bnRlbmRwb2ludGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.FieldBehaviorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -138,7 +139,7 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Osconfig.Agentendpoint.V1.OSPolicy.Types.Resource.Types.RepositoryResource.Types.YumRepository), global::Google.Cloud.Osconfig.Agentendpoint.V1.OSPolicy.Types.Resource.Types.RepositoryResource.Types.YumRepository.Parser, new[]{ "Id", "DisplayName", "BaseUrl", "GpgKeys" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Osconfig.Agentendpoint.V1.OSPolicy.Types.Resource.Types.RepositoryResource.Types.ZypperRepository), global::Google.Cloud.Osconfig.Agentendpoint.V1.OSPolicy.Types.Resource.Types.RepositoryResource.Types.ZypperRepository.Parser, new[]{ "Id", "DisplayName", "BaseUrl", "GpgKeys" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Osconfig.Agentendpoint.V1.OSPolicy.Types.Resource.Types.RepositoryResource.Types.GooRepository), global::Google.Cloud.Osconfig.Agentendpoint.V1.OSPolicy.Types.Resource.Types.RepositoryResource.Types.GooRepository.Parser, new[]{ "Name", "Url" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Osconfig.Agentendpoint.V1.OSPolicy.Types.Resource.Types.ExecResource), global::Google.Cloud.Osconfig.Agentendpoint.V1.OSPolicy.Types.Resource.Types.ExecResource.Parser, new[]{ "Validate", "Enforce" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Osconfig.Agentendpoint.V1.OSPolicy.Types.Resource.Types.ExecResource.Types.Exec), global::Google.Cloud.Osconfig.Agentendpoint.V1.OSPolicy.Types.Resource.Types.ExecResource.Types.Exec.Parser, new[]{ "File", "Script", "Args", "Interpreter" }, new[]{ "Source" }, new[]{ typeof(global::Google.Cloud.Osconfig.Agentendpoint.V1.OSPolicy.Types.Resource.Types.ExecResource.Types.Exec.Types.Interpreter) }, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Osconfig.Agentendpoint.V1.OSPolicy.Types.Resource.Types.ExecResource), global::Google.Cloud.Osconfig.Agentendpoint.V1.OSPolicy.Types.Resource.Types.ExecResource.Parser, new[]{ "Validate", "Enforce" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Osconfig.Agentendpoint.V1.OSPolicy.Types.Resource.Types.ExecResource.Types.Exec), global::Google.Cloud.Osconfig.Agentendpoint.V1.OSPolicy.Types.Resource.Types.ExecResource.Types.Exec.Parser, new[]{ "File", "Script", "Args", "Interpreter", "OutputFilePath" }, new[]{ "Source" }, new[]{ typeof(global::Google.Cloud.Osconfig.Agentendpoint.V1.OSPolicy.Types.Resource.Types.ExecResource.Types.Exec.Types.Interpreter) }, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Osconfig.Agentendpoint.V1.OSPolicy.Types.Resource.Types.FileResource), global::Google.Cloud.Osconfig.Agentendpoint.V1.OSPolicy.Types.Resource.Types.FileResource.Parser, new[]{ "File", "Content", "Path", "State", "Permissions" }, new[]{ "Source" }, new[]{ typeof(global::Google.Cloud.Osconfig.Agentendpoint.V1.OSPolicy.Types.Resource.Types.FileResource.Types.DesiredState) }, null, null)})})
           }));
     }
@@ -1151,8 +1152,8 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
                 public const int UriFieldNumber = 1;
                 private string uri_ = "";
                 /// <summary>
-                /// Required. URI from which to fetch the object. It should contain both the
-                /// protocol and path following the format `{protocol}://{location}`.
+                /// Required. URI from which to fetch the object. It should contain both
+                /// the protocol and path following the format `{protocol}://{location}`.
                 /// </summary>
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
                 public string Uri {
@@ -1653,8 +1654,8 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
             public const int DesiredStateFieldNumber = 1;
             private global::Google.Cloud.Osconfig.Agentendpoint.V1.OSPolicy.Types.Resource.Types.PackageResource.Types.DesiredState desiredState_ = global::Google.Cloud.Osconfig.Agentendpoint.V1.OSPolicy.Types.Resource.Types.PackageResource.Types.DesiredState.Unspecified;
             /// <summary>
-            /// Required. The desired state the agent should maintain for this package. The
-            /// default is to ensure the package is installed.
+            /// Required. The desired state the agent should maintain for this package.
+            /// The default is to ensure the package is installed.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             public global::Google.Cloud.Osconfig.Agentendpoint.V1.OSPolicy.Types.Resource.Types.PackageResource.Types.DesiredState DesiredState {
@@ -4032,8 +4033,8 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
                 public const int ArchiveTypeFieldNumber = 1;
                 private global::Google.Cloud.Osconfig.Agentendpoint.V1.OSPolicy.Types.Resource.Types.RepositoryResource.Types.AptRepository.Types.ArchiveType archiveType_ = global::Google.Cloud.Osconfig.Agentendpoint.V1.OSPolicy.Types.Resource.Types.RepositoryResource.Types.AptRepository.Types.ArchiveType.Unspecified;
                 /// <summary>
-                /// Required. Type of archive files in this repository. The default behavior is
-                /// DEB.
+                /// Required. Type of archive files in this repository. The default
+                /// behavior is DEB.
                 /// </summary>
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
                 public global::Google.Cloud.Osconfig.Agentendpoint.V1.OSPolicy.Types.Resource.Types.RepositoryResource.Types.AptRepository.Types.ArchiveType ArchiveType {
@@ -4077,8 +4078,8 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
                     = pb::FieldCodec.ForString(34);
                 private readonly pbc::RepeatedField<string> components_ = new pbc::RepeatedField<string>();
                 /// <summary>
-                /// Required. List of components for this repository. Must contain at least one
-                /// item.
+                /// Required. List of components for this repository. Must contain at
+                /// least one item.
                 /// </summary>
                 [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
                 public pbc::RepeatedField<string> Components {
@@ -4384,8 +4385,8 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
                 public const int IdFieldNumber = 1;
                 private string id_ = "";
                 /// <summary>
-                /// Required. A one word, unique name for this repository. This is  the `repo
-                /// id` in the yum config file and also the `display_name` if
+                /// Required. A one word, unique name for this repository. This is  the
+                /// `repo id` in the yum config file and also the `display_name` if
                 /// `display_name` is omitted. This id is also used as the unique
                 /// identifier when checking for resource conflicts.
                 /// </summary>
@@ -4673,8 +4674,8 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
                 public const int IdFieldNumber = 1;
                 private string id_ = "";
                 /// <summary>
-                /// Required. A one word, unique name for this repository. This is the `repo
-                /// id` in the zypper config file and also the `display_name` if
+                /// Required. A one word, unique name for this repository. This is the
+                /// `repo id` in the zypper config file and also the `display_name` if
                 /// `display_name` is omitted. This id is also used as the unique
                 /// identifier when checking for GuestPolicy conflicts.
                 /// </summary>
@@ -5182,10 +5183,10 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
             public const int ValidateFieldNumber = 1;
             private global::Google.Cloud.Osconfig.Agentendpoint.V1.OSPolicy.Types.Resource.Types.ExecResource.Types.Exec validate_;
             /// <summary>
-            /// Required. What to run to validate this resource is in the desired state.
-            /// An exit code of 100 indicates "in desired state", and exit code of 101
-            /// indicates "not in desired state". Any other exit code indicates a
-            /// failure running validate.
+            /// Required. What to run to validate this resource is in the desired
+            /// state. An exit code of 100 indicates "in desired state", and exit code
+            /// of 101 indicates "not in desired state". Any other exit code indicates
+            /// a failure running validate.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             public global::Google.Cloud.Osconfig.Agentendpoint.V1.OSPolicy.Types.Resource.Types.ExecResource.Types.Exec Validate {
@@ -5412,6 +5413,7 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
                 public Exec(Exec other) : this() {
                   args_ = other.args_.Clone();
                   interpreter_ = other.interpreter_;
+                  outputFilePath_ = other.outputFilePath_;
                   switch (other.SourceCase) {
                     case SourceOneofCase.File:
                       File = other.File.Clone();
@@ -5484,6 +5486,25 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
                   }
                 }
 
+                /// <summary>Field number for the "output_file_path" field.</summary>
+                public const int OutputFilePathFieldNumber = 5;
+                private string outputFilePath_ = "";
+                /// <summary>
+                /// Only recorded for enforce Exec.
+                /// Path to an output file (that is created by this Exec) whose
+                /// content will be recorded in OSPolicyResourceCompliance after a
+                /// successful run. Absence or failure to read this file will result in
+                /// this ExecResource being non-compliant. Output file size is limited to
+                /// 100K bytes.
+                /// </summary>
+                [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                public string OutputFilePath {
+                  get { return outputFilePath_; }
+                  set {
+                    outputFilePath_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+                  }
+                }
+
                 private object source_;
                 /// <summary>Enum of possible cases for the "source" oneof.</summary>
                 public enum SourceOneofCase {
@@ -5520,6 +5541,7 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
                   if (Script != other.Script) return false;
                   if(!args_.Equals(other.args_)) return false;
                   if (Interpreter != other.Interpreter) return false;
+                  if (OutputFilePath != other.OutputFilePath) return false;
                   if (SourceCase != other.SourceCase) return false;
                   return Equals(_unknownFields, other._unknownFields);
                 }
@@ -5531,6 +5553,7 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
                   if (sourceCase_ == SourceOneofCase.Script) hash ^= Script.GetHashCode();
                   hash ^= args_.GetHashCode();
                   if (Interpreter != global::Google.Cloud.Osconfig.Agentendpoint.V1.OSPolicy.Types.Resource.Types.ExecResource.Types.Exec.Types.Interpreter.Unspecified) hash ^= Interpreter.GetHashCode();
+                  if (OutputFilePath.Length != 0) hash ^= OutputFilePath.GetHashCode();
                   hash ^= (int) sourceCase_;
                   if (_unknownFields != null) {
                     hash ^= _unknownFields.GetHashCode();
@@ -5561,6 +5584,10 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
                     output.WriteRawTag(32);
                     output.WriteEnum((int) Interpreter);
                   }
+                  if (OutputFilePath.Length != 0) {
+                    output.WriteRawTag(42);
+                    output.WriteString(OutputFilePath);
+                  }
                   if (_unknownFields != null) {
                     _unknownFields.WriteTo(output);
                   }
@@ -5583,6 +5610,10 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
                     output.WriteRawTag(32);
                     output.WriteEnum((int) Interpreter);
                   }
+                  if (OutputFilePath.Length != 0) {
+                    output.WriteRawTag(42);
+                    output.WriteString(OutputFilePath);
+                  }
                   if (_unknownFields != null) {
                     _unknownFields.WriteTo(ref output);
                   }
@@ -5602,6 +5633,9 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
                   if (Interpreter != global::Google.Cloud.Osconfig.Agentendpoint.V1.OSPolicy.Types.Resource.Types.ExecResource.Types.Exec.Types.Interpreter.Unspecified) {
                     size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Interpreter);
                   }
+                  if (OutputFilePath.Length != 0) {
+                    size += 1 + pb::CodedOutputStream.ComputeStringSize(OutputFilePath);
+                  }
                   if (_unknownFields != null) {
                     size += _unknownFields.CalculateSize();
                   }
@@ -5616,6 +5650,9 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
                   args_.Add(other.args_);
                   if (other.Interpreter != global::Google.Cloud.Osconfig.Agentendpoint.V1.OSPolicy.Types.Resource.Types.ExecResource.Types.Exec.Types.Interpreter.Unspecified) {
                     Interpreter = other.Interpreter;
+                  }
+                  if (other.OutputFilePath.Length != 0) {
+                    OutputFilePath = other.OutputFilePath;
                   }
                   switch (other.SourceCase) {
                     case SourceOneofCase.File:
@@ -5664,6 +5701,10 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
                         Interpreter = (global::Google.Cloud.Osconfig.Agentendpoint.V1.OSPolicy.Types.Resource.Types.ExecResource.Types.Exec.Types.Interpreter) input.ReadEnum();
                         break;
                       }
+                      case 42: {
+                        OutputFilePath = input.ReadString();
+                        break;
+                      }
                     }
                   }
                 #endif
@@ -5697,6 +5738,10 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
                       }
                       case 32: {
                         Interpreter = (global::Google.Cloud.Osconfig.Agentendpoint.V1.OSPolicy.Types.Resource.Types.ExecResource.Types.Exec.Types.Interpreter) input.ReadEnum();
+                        break;
+                      }
+                      case 42: {
+                        OutputFilePath = input.ReadString();
                         break;
                       }
                     }

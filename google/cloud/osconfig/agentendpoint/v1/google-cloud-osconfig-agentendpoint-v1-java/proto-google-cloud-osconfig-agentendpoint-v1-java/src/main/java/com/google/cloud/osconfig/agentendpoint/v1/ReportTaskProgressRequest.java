@@ -295,6 +295,7 @@ private static final long serialVersionUID = 0L;
    * specified below:
    * APPLY_PATCHES = ApplyPatchesTaskProgress
    * EXEC_STEP = Progress not supported for this type.
+   * APPLY_CONFIG_TASK = ApplyConfigTaskProgress
    * </pre>
    *
    * <code>.google.cloud.osconfig.agentendpoint.v1.TaskType task_type = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -310,6 +311,7 @@ private static final long serialVersionUID = 0L;
    * specified below:
    * APPLY_PATCHES = ApplyPatchesTaskProgress
    * EXEC_STEP = Progress not supported for this type.
+   * APPLY_CONFIG_TASK = ApplyConfigTaskProgress
    * </pre>
    *
    * <code>.google.cloud.osconfig.agentendpoint.v1.TaskType task_type = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1109,6 +1111,7 @@ private static final long serialVersionUID = 0L;
      * specified below:
      * APPLY_PATCHES = ApplyPatchesTaskProgress
      * EXEC_STEP = Progress not supported for this type.
+     * APPLY_CONFIG_TASK = ApplyConfigTaskProgress
      * </pre>
      *
      * <code>.google.cloud.osconfig.agentendpoint.v1.TaskType task_type = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1124,6 +1127,7 @@ private static final long serialVersionUID = 0L;
      * specified below:
      * APPLY_PATCHES = ApplyPatchesTaskProgress
      * EXEC_STEP = Progress not supported for this type.
+     * APPLY_CONFIG_TASK = ApplyConfigTaskProgress
      * </pre>
      *
      * <code>.google.cloud.osconfig.agentendpoint.v1.TaskType task_type = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1143,6 +1147,7 @@ private static final long serialVersionUID = 0L;
      * specified below:
      * APPLY_PATCHES = ApplyPatchesTaskProgress
      * EXEC_STEP = Progress not supported for this type.
+     * APPLY_CONFIG_TASK = ApplyConfigTaskProgress
      * </pre>
      *
      * <code>.google.cloud.osconfig.agentendpoint.v1.TaskType task_type = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1161,6 +1166,7 @@ private static final long serialVersionUID = 0L;
      * specified below:
      * APPLY_PATCHES = ApplyPatchesTaskProgress
      * EXEC_STEP = Progress not supported for this type.
+     * APPLY_CONFIG_TASK = ApplyConfigTaskProgress
      * </pre>
      *
      * <code>.google.cloud.osconfig.agentendpoint.v1.TaskType task_type = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1183,6 +1189,7 @@ private static final long serialVersionUID = 0L;
      * specified below:
      * APPLY_PATCHES = ApplyPatchesTaskProgress
      * EXEC_STEP = Progress not supported for this type.
+     * APPLY_CONFIG_TASK = ApplyConfigTaskProgress
      * </pre>
      *
      * <code>.google.cloud.osconfig.agentendpoint.v1.TaskType task_type = 3 [(.google.api.field_behavior) = REQUIRED];</code>

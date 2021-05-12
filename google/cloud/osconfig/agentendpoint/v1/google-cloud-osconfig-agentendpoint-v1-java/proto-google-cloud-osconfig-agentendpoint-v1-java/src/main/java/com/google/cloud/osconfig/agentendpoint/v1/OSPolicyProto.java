@@ -131,7 +131,7 @@ public final class OSPolicyProto {
       "\n6google/cloud/osconfig/agentendpoint/v1" +
       "/os_policy.proto\022&google.cloud.osconfig." +
       "agentendpoint.v1\032\037google/api/field_behav" +
-      "ior.proto\"\221 \n\010OSPolicy\032\305\037\n\010Resource\022\017\n\002i" +
+      "ior.proto\"\253 \n\010OSPolicy\032\337\037\n\010Resource\022\017\n\002i" +
       "d\030\001 \001(\tB\003\340A\002\022X\n\003pkg\030\002 \001(\0132I.google.cloud" +
       ".osconfig.agentendpoint.v1.OSPolicy.Reso" +
       "urce.PackageResourceH\000\022b\n\nrepository\030\003 \001" +
@@ -209,36 +209,36 @@ public final class OSPolicyProto {
       "id\030\001 \001(\tB\003\340A\002\022\024\n\014display_name\030\002 \001(\t\022\025\n\010b" +
       "ase_url\030\003 \001(\tB\003\340A\002\022\020\n\010gpg_keys\030\004 \003(\t\0324\n\r" +
       "GooRepository\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\020\n\003url\030" +
-      "\002 \001(\tB\003\340A\002B\014\n\nrepository\032\227\004\n\014ExecResourc" +
+      "\002 \001(\tB\003\340A\002B\014\n\nrepository\032\261\004\n\014ExecResourc" +
       "e\022b\n\010validate\030\001 \001(\0132K.google.cloud.oscon" +
       "fig.agentendpoint.v1.OSPolicy.Resource.E" +
       "xecResource.ExecB\003\340A\002\022\\\n\007enforce\030\002 \001(\0132K" +
       ".google.cloud.osconfig.agentendpoint.v1." +
-      "OSPolicy.Resource.ExecResource.Exec\032\304\002\n\004" +
+      "OSPolicy.Resource.ExecResource.Exec\032\336\002\n\004" +
       "Exec\022N\n\004file\030\001 \001(\0132>.google.cloud.osconf" +
       "ig.agentendpoint.v1.OSPolicy.Resource.Fi" +
       "leH\000\022\020\n\006script\030\002 \001(\tH\000\022\014\n\004args\030\003 \003(\t\022q\n\013" +
       "interpreter\030\004 \001(\0162W.google.cloud.osconfi" +
       "g.agentendpoint.v1.OSPolicy.Resource.Exe" +
-      "cResource.Exec.InterpreterB\003\340A\002\"O\n\013Inter" +
-      "preter\022\033\n\027INTERPRETER_UNSPECIFIED\020\000\022\010\n\004N" +
-      "ONE\020\001\022\t\n\005SHELL\020\002\022\016\n\nPOWERSHELL\020\003B\010\n\006sour" +
-      "ce\032\350\002\n\014FileResource\022N\n\004file\030\001 \001(\0132>.goog" +
-      "le.cloud.osconfig.agentendpoint.v1.OSPol" +
-      "icy.Resource.FileH\000\022\021\n\007content\030\002 \001(\tH\000\022\021" +
-      "\n\004path\030\003 \001(\tB\003\340A\002\022g\n\005state\030\004 \001(\0162S.googl" +
-      "e.cloud.osconfig.agentendpoint.v1.OSPoli" +
-      "cy.Resource.FileResource.DesiredStateB\003\340" +
-      "A\002\022\023\n\013permissions\030\005 \001(\t\"Z\n\014DesiredState\022" +
-      "\035\n\031DESIRED_STATE_UNSPECIFIED\020\000\022\013\n\007PRESEN" +
-      "T\020\001\022\n\n\006ABSENT\020\002\022\022\n\016CONTENTS_MATCH\020\003B\010\n\006s" +
-      "ourceB\017\n\rresource_type\"=\n\004Mode\022\024\n\020MODE_U" +
-      "NSPECIFIED\020\000\022\016\n\nVALIDATION\020\001\022\017\n\013ENFORCEM" +
-      "ENT\020\002B\222\001\n*com.google.cloud.osconfig.agen" +
-      "tendpoint.v1B\rOSPolicyProtoP\001ZSgoogle.go" +
-      "lang.org/genproto/googleapis/cloud/oscon" +
-      "fig/agentendpoint/v1;agentendpointb\006prot" +
-      "o3"
+      "cResource.Exec.InterpreterB\003\340A\002\022\030\n\020outpu" +
+      "t_file_path\030\005 \001(\t\"O\n\013Interpreter\022\033\n\027INTE" +
+      "RPRETER_UNSPECIFIED\020\000\022\010\n\004NONE\020\001\022\t\n\005SHELL" +
+      "\020\002\022\016\n\nPOWERSHELL\020\003B\010\n\006source\032\350\002\n\014FileRes" +
+      "ource\022N\n\004file\030\001 \001(\0132>.google.cloud.oscon" +
+      "fig.agentendpoint.v1.OSPolicy.Resource.F" +
+      "ileH\000\022\021\n\007content\030\002 \001(\tH\000\022\021\n\004path\030\003 \001(\tB\003" +
+      "\340A\002\022g\n\005state\030\004 \001(\0162S.google.cloud.osconf" +
+      "ig.agentendpoint.v1.OSPolicy.Resource.Fi" +
+      "leResource.DesiredStateB\003\340A\002\022\023\n\013permissi" +
+      "ons\030\005 \001(\t\"Z\n\014DesiredState\022\035\n\031DESIRED_STA" +
+      "TE_UNSPECIFIED\020\000\022\013\n\007PRESENT\020\001\022\n\n\006ABSENT\020" +
+      "\002\022\022\n\016CONTENTS_MATCH\020\003B\010\n\006sourceB\017\n\rresou" +
+      "rce_type\"=\n\004Mode\022\024\n\020MODE_UNSPECIFIED\020\000\022\016" +
+      "\n\nVALIDATION\020\001\022\017\n\013ENFORCEMENT\020\002B\222\001\n*com." +
+      "google.cloud.osconfig.agentendpoint.v1B\r" +
+      "OSPolicyProtoP\001ZSgoogle.golang.org/genpr" +
+      "oto/googleapis/cloud/osconfig/agentendpo" +
+      "int/v1;agentendpointb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -364,7 +364,7 @@ public final class OSPolicyProto {
     internal_static_google_cloud_osconfig_agentendpoint_v1_OSPolicy_Resource_ExecResource_Exec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_osconfig_agentendpoint_v1_OSPolicy_Resource_ExecResource_Exec_descriptor,
-        new java.lang.String[] { "File", "Script", "Args", "Interpreter", "Source", });
+        new java.lang.String[] { "File", "Script", "Args", "Interpreter", "OutputFilePath", "Source", });
     internal_static_google_cloud_osconfig_agentendpoint_v1_OSPolicy_Resource_FileResource_descriptor =
       internal_static_google_cloud_osconfig_agentendpoint_v1_OSPolicy_Resource_descriptor.getNestedTypes().get(4);
     internal_static_google_cloud_osconfig_agentendpoint_v1_OSPolicy_Resource_FileResource_fieldAccessorTable = new

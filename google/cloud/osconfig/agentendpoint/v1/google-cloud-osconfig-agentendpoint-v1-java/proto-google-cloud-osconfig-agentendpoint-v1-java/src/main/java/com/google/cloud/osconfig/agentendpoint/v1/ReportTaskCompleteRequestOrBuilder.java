@@ -58,6 +58,7 @@ public interface ReportTaskCompleteRequestOrBuilder extends
    * specified below:
    * APPLY_PATCHES = ApplyPatchesTaskOutput
    * EXEC_STEP = ExecStepTaskOutput
+   * APPLY_CONFIG_TASK = ApplyConfigTaskOutput
    * </pre>
    *
    * <code>.google.cloud.osconfig.agentendpoint.v1.TaskType task_type = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -71,6 +72,7 @@ public interface ReportTaskCompleteRequestOrBuilder extends
    * specified below:
    * APPLY_PATCHES = ApplyPatchesTaskOutput
    * EXEC_STEP = ExecStepTaskOutput
+   * APPLY_CONFIG_TASK = ApplyConfigTaskOutput
    * </pre>
    *
    * <code>.google.cloud.osconfig.agentendpoint.v1.TaskType task_type = 3 [(.google.api.field_behavior) = REQUIRED];</code>

@@ -94,4 +94,33 @@ public interface OSPolicyResourceComplianceOrBuilder extends
    * @return The state.
    */
   com.google.cloud.osconfig.agentendpoint.v1.OSPolicyComplianceState getState();
+
+  /**
+   * <pre>
+   * ExecResource specific output.
+   * </pre>
+   *
+   * <code>.google.cloud.osconfig.agentendpoint.v1.OSPolicyResourceCompliance.ExecResourceOutput exec_resource_output = 4;</code>
+   * @return Whether the execResourceOutput field is set.
+   */
+  boolean hasExecResourceOutput();
+  /**
+   * <pre>
+   * ExecResource specific output.
+   * </pre>
+   *
+   * <code>.google.cloud.osconfig.agentendpoint.v1.OSPolicyResourceCompliance.ExecResourceOutput exec_resource_output = 4;</code>
+   * @return The execResourceOutput.
+   */
+  com.google.cloud.osconfig.agentendpoint.v1.OSPolicyResourceCompliance.ExecResourceOutput getExecResourceOutput();
+  /**
+   * <pre>
+   * ExecResource specific output.
+   * </pre>
+   *
+   * <code>.google.cloud.osconfig.agentendpoint.v1.OSPolicyResourceCompliance.ExecResourceOutput exec_resource_output = 4;</code>
+   */
+  com.google.cloud.osconfig.agentendpoint.v1.OSPolicyResourceCompliance.ExecResourceOutputOrBuilder getExecResourceOutputOrBuilder();
+
+  public com.google.cloud.osconfig.agentendpoint.v1.OSPolicyResourceCompliance.OutputCase getOutputCase();
 }

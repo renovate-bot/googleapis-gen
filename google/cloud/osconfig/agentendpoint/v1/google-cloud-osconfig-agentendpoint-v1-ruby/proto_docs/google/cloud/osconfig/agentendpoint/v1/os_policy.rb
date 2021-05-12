@@ -82,8 +82,8 @@ module Google
                 # Specifies a file available via some URI.
                 # @!attribute [rw] uri
                 #   @return [::String]
-                #     Required. URI from which to fetch the object. It should contain both the
-                #     protocol and path following the format `{protocol}://{location}`.
+                #     Required. URI from which to fetch the object. It should contain both
+                #     the protocol and path following the format `{protocol}://{location}`.
                 # @!attribute [rw] sha256_checksum
                 #   @return [::String]
                 #     SHA256 checksum of the remote file.
@@ -111,8 +111,8 @@ module Google
               # A resource that manages a system package.
               # @!attribute [rw] desired_state
               #   @return [::Google::Cloud::Osconfig::Agentendpoint::V1::OSPolicy::Resource::PackageResource::DesiredState]
-              #     Required. The desired state the agent should maintain for this package. The
-              #     default is to ensure the package is installed.
+              #     Required. The desired state the agent should maintain for this package.
+              #     The default is to ensure the package is installed.
               # @!attribute [rw] apt
               #   @return [::Google::Cloud::Osconfig::Agentendpoint::V1::OSPolicy::Resource::PackageResource::APT]
               #     A package managed by Apt.
@@ -263,8 +263,8 @@ module Google
                 # /etc/apt/sources.list.d/google_osconfig.list.
                 # @!attribute [rw] archive_type
                 #   @return [::Google::Cloud::Osconfig::Agentendpoint::V1::OSPolicy::Resource::RepositoryResource::AptRepository::ArchiveType]
-                #     Required. Type of archive files in this repository. The default behavior is
-                #     DEB.
+                #     Required. Type of archive files in this repository. The default
+                #     behavior is DEB.
                 # @!attribute [rw] uri
                 #   @return [::String]
                 #     Required. URI for this repository.
@@ -273,8 +273,8 @@ module Google
                 #     Required. Distribution of this repository.
                 # @!attribute [rw] components
                 #   @return [::Array<::String>]
-                #     Required. List of components for this repository. Must contain at least one
-                #     item.
+                #     Required. List of components for this repository. Must contain at
+                #     least one item.
                 # @!attribute [rw] gpg_key
                 #   @return [::String]
                 #     URI of the key file for this repository. The agent maintains a
@@ -301,8 +301,8 @@ module Google
                 # `/etc/yum.repos.d/google_osconfig.repo`.
                 # @!attribute [rw] id
                 #   @return [::String]
-                #     Required. A one word, unique name for this repository. This is  the `repo
-                #     id` in the yum config file and also the `display_name` if
+                #     Required. A one word, unique name for this repository. This is  the
+                #     `repo id` in the yum config file and also the `display_name` if
                 #     `display_name` is omitted. This id is also used as the unique
                 #     identifier when checking for resource conflicts.
                 # @!attribute [rw] display_name
@@ -324,8 +324,8 @@ module Google
                 # `/etc/zypp/repos.d/google_osconfig.repo`.
                 # @!attribute [rw] id
                 #   @return [::String]
-                #     Required. A one word, unique name for this repository. This is the `repo
-                #     id` in the zypper config file and also the `display_name` if
+                #     Required. A one word, unique name for this repository. This is the
+                #     `repo id` in the zypper config file and also the `display_name` if
                 #     `display_name` is omitted. This id is also used as the unique
                 #     identifier when checking for GuestPolicy conflicts.
                 # @!attribute [rw] display_name
@@ -360,10 +360,10 @@ module Google
               # A resource that contains custom validation and enforcement steps.
               # @!attribute [rw] validate
               #   @return [::Google::Cloud::Osconfig::Agentendpoint::V1::OSPolicy::Resource::ExecResource::Exec]
-              #     Required. What to run to validate this resource is in the desired state.
-              #     An exit code of 100 indicates "in desired state", and exit code of 101
-              #     indicates "not in desired state". Any other exit code indicates a
-              #     failure running validate.
+              #     Required. What to run to validate this resource is in the desired
+              #     state. An exit code of 100 indicates "in desired state", and exit code
+              #     of 101 indicates "not in desired state". Any other exit code indicates
+              #     a failure running validate.
               # @!attribute [rw] enforce
               #   @return [::Google::Cloud::Osconfig::Agentendpoint::V1::OSPolicy::Resource::ExecResource::Exec]
               #     What to run to bring this resource into the desired state.
@@ -386,6 +386,14 @@ module Google
                 # @!attribute [rw] interpreter
                 #   @return [::Google::Cloud::Osconfig::Agentendpoint::V1::OSPolicy::Resource::ExecResource::Exec::Interpreter]
                 #     Required. The script interpreter to use.
+                # @!attribute [rw] output_file_path
+                #   @return [::String]
+                #     Only recorded for enforce Exec.
+                #     Path to an output file (that is created by this Exec) whose
+                #     content will be recorded in OSPolicyResourceCompliance after a
+                #     successful run. Absence or failure to read this file will result in
+                #     this ExecResource being non-compliant. Output file size is limited to
+                #     100K bytes.
                 class Exec
                   include ::Google::Protobuf::MessageExts
                   extend ::Google::Protobuf::MessageExts::ClassMethods

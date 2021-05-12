@@ -33,9 +33,9 @@ public interface ReportInventoryRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. This is a client created checksum that should be generated based on the
-   * contents of the reported inventory.  This will be used by the service to
-   * determine if it has the latest version of inventory.
+   * Required. This is a client created checksum that should be generated based
+   * on the contents of the reported inventory.  This will be used by the
+   * service to determine if it has the latest version of inventory.
    * </pre>
    *
    * <code>string inventory_checksum = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -44,9 +44,9 @@ public interface ReportInventoryRequestOrBuilder extends
   java.lang.String getInventoryChecksum();
   /**
    * <pre>
-   * Required. This is a client created checksum that should be generated based on the
-   * contents of the reported inventory.  This will be used by the service to
-   * determine if it has the latest version of inventory.
+   * Required. This is a client created checksum that should be generated based
+   * on the contents of the reported inventory.  This will be used by the
+   * service to determine if it has the latest version of inventory.
    * </pre>
    *
    * <code>string inventory_checksum = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -57,8 +57,8 @@ public interface ReportInventoryRequestOrBuilder extends
 
   /**
    * <pre>
-   * Optional. This is the details of the inventory.  Should only be provided if the
-   * inventory has changed since the last report, or if instructed by the
+   * Optional. This is the details of the inventory.  Should only be provided if
+   * the inventory has changed since the last report, or if instructed by the
    * service to provide full inventory.
    * </pre>
    *
@@ -68,8 +68,8 @@ public interface ReportInventoryRequestOrBuilder extends
   boolean hasInventory();
   /**
    * <pre>
-   * Optional. This is the details of the inventory.  Should only be provided if the
-   * inventory has changed since the last report, or if instructed by the
+   * Optional. This is the details of the inventory.  Should only be provided if
+   * the inventory has changed since the last report, or if instructed by the
    * service to provide full inventory.
    * </pre>
    *
@@ -79,8 +79,8 @@ public interface ReportInventoryRequestOrBuilder extends
   com.google.cloud.osconfig.agentendpoint.v1.Inventory getInventory();
   /**
    * <pre>
-   * Optional. This is the details of the inventory.  Should only be provided if the
-   * inventory has changed since the last report, or if instructed by the
+   * Optional. This is the details of the inventory.  Should only be provided if
+   * the inventory has changed since the last report, or if instructed by the
    * service to provide full inventory.
    * </pre>
    *

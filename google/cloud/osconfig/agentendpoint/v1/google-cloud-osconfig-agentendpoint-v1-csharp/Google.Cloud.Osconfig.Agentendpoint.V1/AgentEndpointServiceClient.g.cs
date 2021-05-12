@@ -432,6 +432,7 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1
         /// specified below:
         /// APPLY_PATCHES = ApplyPatchesTaskProgress
         /// EXEC_STEP = Progress not supported for this type.
+        /// APPLY_CONFIG_TASK = ApplyConfigTaskProgress
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
@@ -461,6 +462,7 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1
         /// specified below:
         /// APPLY_PATCHES = ApplyPatchesTaskProgress
         /// EXEC_STEP = Progress not supported for this type.
+        /// APPLY_CONFIG_TASK = ApplyConfigTaskProgress
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
@@ -490,6 +492,7 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1
         /// specified below:
         /// APPLY_PATCHES = ApplyPatchesTaskProgress
         /// EXEC_STEP = Progress not supported for this type.
+        /// APPLY_CONFIG_TASK = ApplyConfigTaskProgress
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
         /// <returns>A Task containing the RPC response.</returns>
@@ -545,6 +548,7 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1
         /// specified below:
         /// APPLY_PATCHES = ApplyPatchesTaskOutput
         /// EXEC_STEP = ExecStepTaskOutput
+        /// APPLY_CONFIG_TASK = ApplyConfigTaskOutput
         /// </param>
         /// <param name="errorMessage">
         /// Descriptive error message if the task execution ended in error.
@@ -579,6 +583,7 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1
         /// specified below:
         /// APPLY_PATCHES = ApplyPatchesTaskOutput
         /// EXEC_STEP = ExecStepTaskOutput
+        /// APPLY_CONFIG_TASK = ApplyConfigTaskOutput
         /// </param>
         /// <param name="errorMessage">
         /// Descriptive error message if the task execution ended in error.
@@ -613,6 +618,7 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1
         /// specified below:
         /// APPLY_PATCHES = ApplyPatchesTaskOutput
         /// EXEC_STEP = ExecStepTaskOutput
+        /// APPLY_CONFIG_TASK = ApplyConfigTaskOutput
         /// </param>
         /// <param name="errorMessage">
         /// Descriptive error message if the task execution ended in error.
@@ -664,6 +670,7 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1
         /// Required. The capabilities supported by the agent. Supported values are:
         /// PATCH_GA
         /// GUEST_POLICY_BETA
+        /// CONFIG_V1
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
@@ -693,6 +700,7 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1
         /// Required. The capabilities supported by the agent. Supported values are:
         /// PATCH_GA
         /// GUEST_POLICY_BETA
+        /// CONFIG_V1
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
@@ -722,6 +730,7 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1
         /// Required. The capabilities supported by the agent. Supported values are:
         /// PATCH_GA
         /// GUEST_POLICY_BETA
+        /// CONFIG_V1
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
         /// <returns>A Task containing the RPC response.</returns>
@@ -764,13 +773,13 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1
         /// where the audience is 'osconfig.googleapis.com' and the format is 'full'.
         /// </param>
         /// <param name="inventoryChecksum">
-        /// Required. This is a client created checksum that should be generated based on the
-        /// contents of the reported inventory.  This will be used by the service to
-        /// determine if it has the latest version of inventory.
+        /// Required. This is a client created checksum that should be generated based
+        /// on the contents of the reported inventory.  This will be used by the
+        /// service to determine if it has the latest version of inventory.
         /// </param>
         /// <param name="inventory">
-        /// Optional. This is the details of the inventory.  Should only be provided if the
-        /// inventory has changed since the last report, or if instructed by the
+        /// Optional. This is the details of the inventory.  Should only be provided if
+        /// the inventory has changed since the last report, or if instructed by the
         /// service to provide full inventory.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -792,13 +801,13 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1
         /// where the audience is 'osconfig.googleapis.com' and the format is 'full'.
         /// </param>
         /// <param name="inventoryChecksum">
-        /// Required. This is a client created checksum that should be generated based on the
-        /// contents of the reported inventory.  This will be used by the service to
-        /// determine if it has the latest version of inventory.
+        /// Required. This is a client created checksum that should be generated based
+        /// on the contents of the reported inventory.  This will be used by the
+        /// service to determine if it has the latest version of inventory.
         /// </param>
         /// <param name="inventory">
-        /// Optional. This is the details of the inventory.  Should only be provided if the
-        /// inventory has changed since the last report, or if instructed by the
+        /// Optional. This is the details of the inventory.  Should only be provided if
+        /// the inventory has changed since the last report, or if instructed by the
         /// service to provide full inventory.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -820,13 +829,13 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1
         /// where the audience is 'osconfig.googleapis.com' and the format is 'full'.
         /// </param>
         /// <param name="inventoryChecksum">
-        /// Required. This is a client created checksum that should be generated based on the
-        /// contents of the reported inventory.  This will be used by the service to
-        /// determine if it has the latest version of inventory.
+        /// Required. This is a client created checksum that should be generated based
+        /// on the contents of the reported inventory.  This will be used by the
+        /// service to determine if it has the latest version of inventory.
         /// </param>
         /// <param name="inventory">
-        /// Optional. This is the details of the inventory.  Should only be provided if the
-        /// inventory has changed since the last report, or if instructed by the
+        /// Optional. This is the details of the inventory.  Should only be provided if
+        /// the inventory has changed since the last report, or if instructed by the
         /// service to provide full inventory.
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>

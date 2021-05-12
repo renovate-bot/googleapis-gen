@@ -30,6 +30,10 @@ module Google
           # @!attribute [rw] outcome
           #   @return [::Google::Cloud::Osconfig::Agentendpoint::V1::OSPolicyResourceConfigStep::Outcome]
           #     Outcome of the configuration step.
+          # @!attribute [rw] error_message
+          #   @return [::String]
+          #     An error message recorded during the execution of this step.
+          #     Only populated when outcome is FAILED.
           class OSPolicyResourceConfigStep
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -82,9 +86,22 @@ module Google
           # @!attribute [rw] state
           #   @return [::Google::Cloud::Osconfig::Agentendpoint::V1::OSPolicyComplianceState]
           #     Compliance state of the OS policy resource.
+          # @!attribute [rw] exec_resource_output
+          #   @return [::Google::Cloud::Osconfig::Agentendpoint::V1::OSPolicyResourceCompliance::ExecResourceOutput]
+          #     ExecResource specific output.
           class OSPolicyResourceCompliance
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
+
+            # ExecResource specific output.
+            # @!attribute [rw] enforcement_output
+            #   @return [::String]
+            #     Output from Enforcement phase output file (if run).
+            #     Output size is limited to 100K bytes.
+            class ExecResourceOutput
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
           end
 
           # Supported OSPolicy compliance states.
