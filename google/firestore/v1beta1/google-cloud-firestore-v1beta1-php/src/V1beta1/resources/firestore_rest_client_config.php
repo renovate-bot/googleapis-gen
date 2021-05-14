@@ -3,13 +3,14 @@
 return [
     'interfaces' => [
         'google.firestore.v1beta1.Firestore' => [
-            'DeleteDocument' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1beta1/{name=projects/*/databases/*/documents/*/**}',
+            'BatchWrite' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta1/{database=projects/*/databases/*}/documents:batchWrite',
+                'body' => '*',
                 'placeholders' => [
-                    'name' => [
+                    'database' => [
                         'getters' => [
-                            'getName',
+                            'getDatabase',
                         ],
                     ],
                 ],
@@ -26,14 +27,53 @@ return [
                     ],
                 ],
             ],
-            'Rollback' => [
+            'Commit' => [
                 'method' => 'post',
-                'uriTemplate' => '/v1beta1/{database=projects/*/databases/*}/documents:rollback',
+                'uriTemplate' => '/v1beta1/{database=projects/*/databases/*}/documents:commit',
                 'body' => '*',
                 'placeholders' => [
                     'database' => [
                         'getters' => [
                             'getDatabase',
+                        ],
+                    ],
+                ],
+            ],
+            'CreateDocument' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta1/{parent=projects/*/databases/*/documents/**}/{collection_id}',
+                'body' => 'document',
+                'placeholders' => [
+                    'collection_id' => [
+                        'getters' => [
+                            'getCollectionId',
+                        ],
+                    ],
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'DeleteDocument' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1beta1/{name=projects/*/databases/*/documents/*/**}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'GetDocument' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta1/{name=projects/*/databases/*/documents/*/**}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
                         ],
                     ],
                 ],
@@ -57,17 +97,6 @@ return [
                     ],
                 ],
             ],
-            'GetDocument' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1beta1/{name=projects/*/databases/*/documents/*/**}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
             'ListDocuments' => [
                 'method' => 'get',
                 'uriTemplate' => '/v1beta1/{parent=projects/*/databases/*/documents/*/**}/{collection_id}',
@@ -80,31 +109,6 @@ return [
                     'parent' => [
                         'getters' => [
                             'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'UpdateDocument' => [
-                'method' => 'patch',
-                'uriTemplate' => '/v1beta1/{document.name=projects/*/databases/*/documents/*/**}',
-                'body' => 'document',
-                'placeholders' => [
-                    'document.name' => [
-                        'getters' => [
-                            'getDocument',
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'Commit' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1beta1/{database=projects/*/databases/*}/documents:commit',
-                'body' => '*',
-                'placeholders' => [
-                    'database' => [
-                        'getters' => [
-                            'getDatabase',
                         ],
                     ],
                 ],
@@ -128,9 +132,9 @@ return [
                     ],
                 ],
             ],
-            'BatchWrite' => [
+            'Rollback' => [
                 'method' => 'post',
-                'uriTemplate' => '/v1beta1/{database=projects/*/databases/*}/documents:batchWrite',
+                'uriTemplate' => '/v1beta1/{database=projects/*/databases/*}/documents:rollback',
                 'body' => '*',
                 'placeholders' => [
                     'database' => [
@@ -140,19 +144,15 @@ return [
                     ],
                 ],
             ],
-            'CreateDocument' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1beta1/{parent=projects/*/databases/*/documents/**}/{collection_id}',
+            'UpdateDocument' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v1beta1/{document.name=projects/*/databases/*/documents/*/**}',
                 'body' => 'document',
                 'placeholders' => [
-                    'collection_id' => [
+                    'document.name' => [
                         'getters' => [
-                            'getCollectionId',
-                        ],
-                    ],
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
+                            'getDocument',
+                            'getName',
                         ],
                     ],
                 ],
