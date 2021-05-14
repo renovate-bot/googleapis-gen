@@ -152,7 +152,7 @@ class ExplainedPolicy(proto.Message):
     policy = proto.Field(
         proto.MESSAGE,
         number=3,
-        message=gi_policy.Policy,
+        message=policy_pb2.Policy,
     )
     binding_explanations = proto.RepeatedField(
         proto.MESSAGE,

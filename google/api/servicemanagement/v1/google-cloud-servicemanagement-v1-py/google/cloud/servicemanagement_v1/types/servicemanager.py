@@ -275,7 +275,7 @@ class ListServiceConfigsResponse(proto.Message):
     service_configs = proto.RepeatedField(
         proto.MESSAGE,
         number=1,
-        message=ga_service.Service,
+        message=service_pb2.Service,
     )
     next_page_token = proto.Field(
         proto.STRING,
@@ -302,7 +302,7 @@ class CreateServiceConfigRequest(proto.Message):
     service_config = proto.Field(
         proto.MESSAGE,
         number=2,
-        message=ga_service.Service,
+        message=service_pb2.Service,
     )
 
 
@@ -349,7 +349,7 @@ class SubmitConfigSourceResponse(proto.Message):
     service_config = proto.Field(
         proto.MESSAGE,
         number=1,
-        message=ga_service.Service,
+        message=service_pb2.Service,
     )
 
 
@@ -556,12 +556,12 @@ class GenerateConfigReportRequest(proto.Message):
     new_config = proto.Field(
         proto.MESSAGE,
         number=1,
-        message=gp_any.Any,
+        message=any_pb2.Any,
     )
     old_config = proto.Field(
         proto.MESSAGE,
         number=2,
-        message=gp_any.Any,
+        message=any_pb2.Any,
     )
 
 

@@ -1180,7 +1180,7 @@ class TargetChange(proto.Message):
     cause = proto.Field(
         proto.MESSAGE,
         number=3,
-        message=gr_status.Status,
+        message=status_pb2.Status,
     )
     resume_token = proto.Field(
         proto.BYTES,
@@ -1307,7 +1307,7 @@ class BatchWriteResponse(proto.Message):
     status = proto.RepeatedField(
         proto.MESSAGE,
         number=2,
-        message=gr_status.Status,
+        message=status_pb2.Status,
     )
 
 

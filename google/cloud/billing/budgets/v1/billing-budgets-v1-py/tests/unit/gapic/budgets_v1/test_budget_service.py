@@ -2030,7 +2030,7 @@ def test_budget_service_transport_create_channel_old_api_core(transport_class, g
         transport_class(quota_project_id="octopus")
 
         create_channel.assert_called_with(
-            "billingbudgets.googleapis.com",
+            "billingbudgets.googleapis.com:443",
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",
@@ -2066,7 +2066,7 @@ def test_budget_service_transport_create_channel_user_scopes(transport_class, gr
         transport_class(quota_project_id="octopus", scopes=["1", "2"])
 
         create_channel.assert_called_with(
-            "billingbudgets.googleapis.com",
+            "billingbudgets.googleapis.com:443",
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",

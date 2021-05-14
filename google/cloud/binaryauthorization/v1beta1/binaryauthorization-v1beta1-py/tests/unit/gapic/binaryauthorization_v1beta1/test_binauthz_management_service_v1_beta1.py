@@ -2493,7 +2493,7 @@ def test_binauthz_management_service_v1_beta1_transport_create_channel_old_api_c
         transport_class(quota_project_id="octopus")
 
         create_channel.assert_called_with(
-            "binaryauthorization.googleapis.com",
+            "binaryauthorization.googleapis.com:443",
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",
@@ -2528,7 +2528,7 @@ def test_binauthz_management_service_v1_beta1_transport_create_channel_user_scop
         transport_class(quota_project_id="octopus", scopes=["1", "2"])
 
         create_channel.assert_called_with(
-            "binaryauthorization.googleapis.com",
+            "binaryauthorization.googleapis.com:443",
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",

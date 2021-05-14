@@ -73,7 +73,8 @@ class WebSecurityScannerAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -88,7 +89,7 @@ class WebSecurityScannerAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -105,7 +106,7 @@ class WebSecurityScannerAsyncClient:
 
     @property
     def transport(self) -> WebSecurityScannerTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             WebSecurityScannerTransport: The transport used by the client instance.
@@ -116,11 +117,11 @@ class WebSecurityScannerAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, WebSecurityScannerTransport] = 'grpc_asyncio',
+            transport: Union[str, WebSecurityScannerTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the web security scanner client.
+        """Instantiates the web security scanner client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -209,8 +210,8 @@ class WebSecurityScannerAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, scan_config])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = web_security_scanner.CreateScanConfigRequest(request)
 
@@ -233,7 +234,7 @@ class WebSecurityScannerAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -283,8 +284,8 @@ class WebSecurityScannerAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = web_security_scanner.DeleteScanConfigRequest(request)
 
@@ -299,8 +300,8 @@ class WebSecurityScannerAsyncClient:
             self._client._transport.delete_scan_config,
             default_retry=retries.Retry(
 initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=600.0,
             ),
@@ -312,7 +313,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -365,8 +366,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = web_security_scanner.GetScanConfigRequest(request)
 
@@ -381,8 +382,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.get_scan_config,
             default_retry=retries.Retry(
 initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=600.0,
             ),
@@ -394,7 +395,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -450,8 +451,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = web_security_scanner.ListScanConfigsRequest(request)
 
@@ -466,8 +467,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.list_scan_configs,
             default_retry=retries.Retry(
 initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=600.0,
             ),
@@ -479,7 +480,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -555,8 +556,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([scan_config, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = web_security_scanner.UpdateScanConfigRequest(request)
 
@@ -579,7 +580,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('scan_config.name', request.scan_config.name),
+                ("scan_config.name", request.scan_config.name),
             )),
         )
 
@@ -634,8 +635,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = web_security_scanner.StartScanRunRequest(request)
 
@@ -656,7 +657,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -710,8 +711,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = web_security_scanner.GetScanRunRequest(request)
 
@@ -726,8 +727,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.get_scan_run,
             default_retry=retries.Retry(
 initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=600.0,
             ),
@@ -739,7 +740,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -797,8 +798,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = web_security_scanner.ListScanRunsRequest(request)
 
@@ -813,8 +814,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.list_scan_runs,
             default_retry=retries.Retry(
 initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=600.0,
             ),
@@ -826,7 +827,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -890,8 +891,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = web_security_scanner.StopScanRunRequest(request)
 
@@ -912,7 +913,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -969,8 +970,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = web_security_scanner.ListCrawledUrlsRequest(request)
 
@@ -985,8 +986,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.list_crawled_urls,
             default_retry=retries.Retry(
 initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=600.0,
             ),
@@ -998,7 +999,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1062,8 +1063,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = web_security_scanner.GetFindingRequest(request)
 
@@ -1078,8 +1079,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.get_finding,
             default_retry=retries.Retry(
 initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=600.0,
             ),
@@ -1091,7 +1092,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1157,8 +1158,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, filter])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = web_security_scanner.ListFindingsRequest(request)
 
@@ -1175,8 +1176,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.list_findings,
             default_retry=retries.Retry(
 initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=600.0,
             ),
@@ -1188,7 +1189,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1250,8 +1251,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = web_security_scanner.ListFindingTypeStatsRequest(request)
 
@@ -1266,8 +1267,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.list_finding_type_stats,
             default_retry=retries.Retry(
 initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=600.0,
             ),
@@ -1279,7 +1280,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1301,7 +1302,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-websecurityscanner',
+            "google-cloud-websecurityscanner",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -1309,5 +1310,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'WebSecurityScannerAsyncClient',
+    "WebSecurityScannerAsyncClient",
 )

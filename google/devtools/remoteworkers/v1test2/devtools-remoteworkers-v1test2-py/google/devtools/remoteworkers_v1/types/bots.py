@@ -231,12 +231,12 @@ class Lease(proto.Message):
     payload = proto.Field(
         proto.MESSAGE,
         number=8,
-        message=gp_any.Any,
+        message=any_pb2.Any,
     )
     result = proto.Field(
         proto.MESSAGE,
         number=9,
-        message=gp_any.Any,
+        message=any_pb2.Any,
     )
     state = proto.Field(
         proto.ENUM,
@@ -246,7 +246,7 @@ class Lease(proto.Message):
     status = proto.Field(
         proto.MESSAGE,
         number=3,
-        message=gr_status.Status,
+        message=status_pb2.Status,
     )
     requirements = proto.Field(
         proto.MESSAGE,
@@ -265,7 +265,7 @@ class Lease(proto.Message):
     inline_assignment = proto.Field(
         proto.MESSAGE,
         number=6,
-        message=gp_any.Any,
+        message=any_pb2.Any,
     )
 
 

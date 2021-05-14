@@ -81,7 +81,7 @@ class Action(proto.Message):
         proto.MESSAGE,
         number=5,
         oneof='time',
-        message=gp_timestamp.Timestamp,
+        message=timestamp_pb2.Timestamp,
     )
     time_range = proto.Field(
         proto.MESSAGE,

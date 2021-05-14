@@ -281,8 +281,8 @@ initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if
     def get_metric_descriptor(self) -> Callable[
             [metric_service.GetMetricDescriptorRequest],
             Union[
-                ga_metric.MetricDescriptor,
-                Awaitable[ga_metric.MetricDescriptor]
+                metric_pb2.MetricDescriptor,
+                Awaitable[metric_pb2.MetricDescriptor]
             ]]:
         raise NotImplementedError()
 
@@ -290,8 +290,8 @@ initial=0.1,maximum=30.0,multiplier=1.3,                    predicate=retries.if
     def create_metric_descriptor(self) -> Callable[
             [metric_service.CreateMetricDescriptorRequest],
             Union[
-                ga_metric.MetricDescriptor,
-                Awaitable[ga_metric.MetricDescriptor]
+                metric_pb2.MetricDescriptor,
+                Awaitable[metric_pb2.MetricDescriptor]
             ]]:
         raise NotImplementedError()
 

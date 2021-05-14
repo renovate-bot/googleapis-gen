@@ -1290,9 +1290,9 @@ def test_list_metric_descriptors_pager():
         call.side_effect = (
             metric_service.ListMetricDescriptorsResponse(
                 metric_descriptors=[
-                    ga_metric.MetricDescriptor(),
-                    ga_metric.MetricDescriptor(),
-                    ga_metric.MetricDescriptor(),
+                    metric_pb2.MetricDescriptor(),
+                    metric_pb2.MetricDescriptor(),
+                    metric_pb2.MetricDescriptor(),
                 ],
                 next_page_token='abc',
             ),
@@ -1302,14 +1302,14 @@ def test_list_metric_descriptors_pager():
             ),
             metric_service.ListMetricDescriptorsResponse(
                 metric_descriptors=[
-                    ga_metric.MetricDescriptor(),
+                    metric_pb2.MetricDescriptor(),
                 ],
                 next_page_token='ghi',
             ),
             metric_service.ListMetricDescriptorsResponse(
                 metric_descriptors=[
-                    ga_metric.MetricDescriptor(),
-                    ga_metric.MetricDescriptor(),
+                    metric_pb2.MetricDescriptor(),
+                    metric_pb2.MetricDescriptor(),
                 ],
             ),
             RuntimeError,
@@ -1327,7 +1327,7 @@ def test_list_metric_descriptors_pager():
 
         results = [i for i in pager]
         assert len(results) == 6
-        assert all(isinstance(i, ga_metric.MetricDescriptor)
+        assert all(isinstance(i, metric_pb2.MetricDescriptor)
                    for i in results)
 
 def test_list_metric_descriptors_pages():
@@ -1343,9 +1343,9 @@ def test_list_metric_descriptors_pages():
         call.side_effect = (
             metric_service.ListMetricDescriptorsResponse(
                 metric_descriptors=[
-                    ga_metric.MetricDescriptor(),
-                    ga_metric.MetricDescriptor(),
-                    ga_metric.MetricDescriptor(),
+                    metric_pb2.MetricDescriptor(),
+                    metric_pb2.MetricDescriptor(),
+                    metric_pb2.MetricDescriptor(),
                 ],
                 next_page_token='abc',
             ),
@@ -1355,14 +1355,14 @@ def test_list_metric_descriptors_pages():
             ),
             metric_service.ListMetricDescriptorsResponse(
                 metric_descriptors=[
-                    ga_metric.MetricDescriptor(),
+                    metric_pb2.MetricDescriptor(),
                 ],
                 next_page_token='ghi',
             ),
             metric_service.ListMetricDescriptorsResponse(
                 metric_descriptors=[
-                    ga_metric.MetricDescriptor(),
-                    ga_metric.MetricDescriptor(),
+                    metric_pb2.MetricDescriptor(),
+                    metric_pb2.MetricDescriptor(),
                 ],
             ),
             RuntimeError,
@@ -1385,9 +1385,9 @@ async def test_list_metric_descriptors_async_pager():
         call.side_effect = (
             metric_service.ListMetricDescriptorsResponse(
                 metric_descriptors=[
-                    ga_metric.MetricDescriptor(),
-                    ga_metric.MetricDescriptor(),
-                    ga_metric.MetricDescriptor(),
+                    metric_pb2.MetricDescriptor(),
+                    metric_pb2.MetricDescriptor(),
+                    metric_pb2.MetricDescriptor(),
                 ],
                 next_page_token='abc',
             ),
@@ -1397,14 +1397,14 @@ async def test_list_metric_descriptors_async_pager():
             ),
             metric_service.ListMetricDescriptorsResponse(
                 metric_descriptors=[
-                    ga_metric.MetricDescriptor(),
+                    metric_pb2.MetricDescriptor(),
                 ],
                 next_page_token='ghi',
             ),
             metric_service.ListMetricDescriptorsResponse(
                 metric_descriptors=[
-                    ga_metric.MetricDescriptor(),
-                    ga_metric.MetricDescriptor(),
+                    metric_pb2.MetricDescriptor(),
+                    metric_pb2.MetricDescriptor(),
                 ],
             ),
             RuntimeError,
@@ -1416,7 +1416,7 @@ async def test_list_metric_descriptors_async_pager():
             responses.append(response)
 
         assert len(responses) == 6
-        assert all(isinstance(i, ga_metric.MetricDescriptor)
+        assert all(isinstance(i, metric_pb2.MetricDescriptor)
                    for i in responses)
 
 @pytest.mark.asyncio
@@ -1433,9 +1433,9 @@ async def test_list_metric_descriptors_async_pages():
         call.side_effect = (
             metric_service.ListMetricDescriptorsResponse(
                 metric_descriptors=[
-                    ga_metric.MetricDescriptor(),
-                    ga_metric.MetricDescriptor(),
-                    ga_metric.MetricDescriptor(),
+                    metric_pb2.MetricDescriptor(),
+                    metric_pb2.MetricDescriptor(),
+                    metric_pb2.MetricDescriptor(),
                 ],
                 next_page_token='abc',
             ),
@@ -1445,14 +1445,14 @@ async def test_list_metric_descriptors_async_pages():
             ),
             metric_service.ListMetricDescriptorsResponse(
                 metric_descriptors=[
-                    ga_metric.MetricDescriptor(),
+                    metric_pb2.MetricDescriptor(),
                 ],
                 next_page_token='ghi',
             ),
             metric_service.ListMetricDescriptorsResponse(
                 metric_descriptors=[
-                    ga_metric.MetricDescriptor(),
-                    ga_metric.MetricDescriptor(),
+                    metric_pb2.MetricDescriptor(),
+                    metric_pb2.MetricDescriptor(),
                 ],
             ),
             RuntimeError,
@@ -1478,11 +1478,11 @@ def test_get_metric_descriptor(transport: str = 'grpc', request_type=metric_serv
             type(client.transport.get_metric_descriptor),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = ga_metric.MetricDescriptor(
+        call.return_value = metric_pb2.MetricDescriptor(
             name='name_value',
             type_='type__value',
-            metric_kind=ga_metric.MetricDescriptor.MetricKind.GAUGE,
-            value_type=ga_metric.MetricDescriptor.ValueType.BOOL,
+            metric_kind=metric_pb2.MetricDescriptor.MetricKind.GAUGE,
+            value_type=metric_pb2.MetricDescriptor.ValueType.BOOL,
             unit='unit_value',
             description='description_value',
             display_name='display_name_value',
@@ -1497,11 +1497,11 @@ def test_get_metric_descriptor(transport: str = 'grpc', request_type=metric_serv
         assert args[0] == metric_service.GetMetricDescriptorRequest()
 
     # Establish that the response is the type that we expect.
-    assert isinstance(response, ga_metric.MetricDescriptor)
+    assert isinstance(response, metric_pb2.MetricDescriptor)
     assert response.name == 'name_value'
     assert response.type_ == 'type__value'
-    assert response.metric_kind == ga_metric.MetricDescriptor.MetricKind.GAUGE
-    assert response.value_type == ga_metric.MetricDescriptor.ValueType.BOOL
+    assert response.metric_kind == metric_pb2.MetricDescriptor.MetricKind.GAUGE
+    assert response.value_type == metric_pb2.MetricDescriptor.ValueType.BOOL
     assert response.unit == 'unit_value'
     assert response.description == 'description_value'
     assert response.display_name == 'display_name_value'
@@ -1547,11 +1547,11 @@ async def test_get_metric_descriptor_async(transport: str = 'grpc_asyncio', requ
             type(client.transport.get_metric_descriptor),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(ga_metric.MetricDescriptor(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(metric_pb2.MetricDescriptor(
             name='name_value',
             type_='type__value',
-            metric_kind=ga_metric.MetricDescriptor.MetricKind.GAUGE,
-            value_type=ga_metric.MetricDescriptor.ValueType.BOOL,
+            metric_kind=metric_pb2.MetricDescriptor.MetricKind.GAUGE,
+            value_type=metric_pb2.MetricDescriptor.ValueType.BOOL,
             unit='unit_value',
             description='description_value',
             display_name='display_name_value',
@@ -1566,11 +1566,11 @@ async def test_get_metric_descriptor_async(transport: str = 'grpc_asyncio', requ
         assert args[0] == metric_service.GetMetricDescriptorRequest()
 
     # Establish that the response is the type that we expect.
-    assert isinstance(response, ga_metric.MetricDescriptor)
+    assert isinstance(response, metric_pb2.MetricDescriptor)
     assert response.name == 'name_value'
     assert response.type_ == 'type__value'
-    assert response.metric_kind == ga_metric.MetricDescriptor.MetricKind.GAUGE
-    assert response.value_type == ga_metric.MetricDescriptor.ValueType.BOOL
+    assert response.metric_kind == metric_pb2.MetricDescriptor.MetricKind.GAUGE
+    assert response.value_type == metric_pb2.MetricDescriptor.ValueType.BOOL
     assert response.unit == 'unit_value'
     assert response.description == 'description_value'
     assert response.display_name == 'display_name_value'
@@ -1598,7 +1598,7 @@ def test_get_metric_descriptor_field_headers():
     with mock.patch.object(
             type(client.transport.get_metric_descriptor),
             '__call__') as call:
-        call.return_value = ga_metric.MetricDescriptor()
+        call.return_value = metric_pb2.MetricDescriptor()
         client.get_metric_descriptor(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1630,7 +1630,7 @@ async def test_get_metric_descriptor_field_headers_async():
     with mock.patch.object(
             type(client.transport.get_metric_descriptor),
             '__call__') as call:
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(ga_metric.MetricDescriptor())
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(metric_pb2.MetricDescriptor())
         await client.get_metric_descriptor(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1656,7 +1656,7 @@ def test_get_metric_descriptor_flattened():
             type(client.transport.get_metric_descriptor),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = ga_metric.MetricDescriptor()
+        call.return_value = metric_pb2.MetricDescriptor()
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_metric_descriptor(
@@ -1695,9 +1695,9 @@ async def test_get_metric_descriptor_flattened_async():
             type(client.transport.get_metric_descriptor),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = ga_metric.MetricDescriptor()
+        call.return_value = metric_pb2.MetricDescriptor()
 
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(ga_metric.MetricDescriptor())
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(metric_pb2.MetricDescriptor())
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         response = await client.get_metric_descriptor(
@@ -1741,11 +1741,11 @@ def test_create_metric_descriptor(transport: str = 'grpc', request_type=metric_s
             type(client.transport.create_metric_descriptor),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = ga_metric.MetricDescriptor(
+        call.return_value = metric_pb2.MetricDescriptor(
             name='name_value',
             type_='type__value',
-            metric_kind=ga_metric.MetricDescriptor.MetricKind.GAUGE,
-            value_type=ga_metric.MetricDescriptor.ValueType.BOOL,
+            metric_kind=metric_pb2.MetricDescriptor.MetricKind.GAUGE,
+            value_type=metric_pb2.MetricDescriptor.ValueType.BOOL,
             unit='unit_value',
             description='description_value',
             display_name='display_name_value',
@@ -1760,11 +1760,11 @@ def test_create_metric_descriptor(transport: str = 'grpc', request_type=metric_s
         assert args[0] == metric_service.CreateMetricDescriptorRequest()
 
     # Establish that the response is the type that we expect.
-    assert isinstance(response, ga_metric.MetricDescriptor)
+    assert isinstance(response, metric_pb2.MetricDescriptor)
     assert response.name == 'name_value'
     assert response.type_ == 'type__value'
-    assert response.metric_kind == ga_metric.MetricDescriptor.MetricKind.GAUGE
-    assert response.value_type == ga_metric.MetricDescriptor.ValueType.BOOL
+    assert response.metric_kind == metric_pb2.MetricDescriptor.MetricKind.GAUGE
+    assert response.value_type == metric_pb2.MetricDescriptor.ValueType.BOOL
     assert response.unit == 'unit_value'
     assert response.description == 'description_value'
     assert response.display_name == 'display_name_value'
@@ -1810,11 +1810,11 @@ async def test_create_metric_descriptor_async(transport: str = 'grpc_asyncio', r
             type(client.transport.create_metric_descriptor),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(ga_metric.MetricDescriptor(
+        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(metric_pb2.MetricDescriptor(
             name='name_value',
             type_='type__value',
-            metric_kind=ga_metric.MetricDescriptor.MetricKind.GAUGE,
-            value_type=ga_metric.MetricDescriptor.ValueType.BOOL,
+            metric_kind=metric_pb2.MetricDescriptor.MetricKind.GAUGE,
+            value_type=metric_pb2.MetricDescriptor.ValueType.BOOL,
             unit='unit_value',
             description='description_value',
             display_name='display_name_value',
@@ -1829,11 +1829,11 @@ async def test_create_metric_descriptor_async(transport: str = 'grpc_asyncio', r
         assert args[0] == metric_service.CreateMetricDescriptorRequest()
 
     # Establish that the response is the type that we expect.
-    assert isinstance(response, ga_metric.MetricDescriptor)
+    assert isinstance(response, metric_pb2.MetricDescriptor)
     assert response.name == 'name_value'
     assert response.type_ == 'type__value'
-    assert response.metric_kind == ga_metric.MetricDescriptor.MetricKind.GAUGE
-    assert response.value_type == ga_metric.MetricDescriptor.ValueType.BOOL
+    assert response.metric_kind == metric_pb2.MetricDescriptor.MetricKind.GAUGE
+    assert response.value_type == metric_pb2.MetricDescriptor.ValueType.BOOL
     assert response.unit == 'unit_value'
     assert response.description == 'description_value'
     assert response.display_name == 'display_name_value'
@@ -1861,7 +1861,7 @@ def test_create_metric_descriptor_field_headers():
     with mock.patch.object(
             type(client.transport.create_metric_descriptor),
             '__call__') as call:
-        call.return_value = ga_metric.MetricDescriptor()
+        call.return_value = metric_pb2.MetricDescriptor()
         client.create_metric_descriptor(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1893,7 +1893,7 @@ async def test_create_metric_descriptor_field_headers_async():
     with mock.patch.object(
             type(client.transport.create_metric_descriptor),
             '__call__') as call:
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(ga_metric.MetricDescriptor())
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(metric_pb2.MetricDescriptor())
         await client.create_metric_descriptor(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1919,12 +1919,12 @@ def test_create_metric_descriptor_flattened():
             type(client.transport.create_metric_descriptor),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = ga_metric.MetricDescriptor()
+        call.return_value = metric_pb2.MetricDescriptor()
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_metric_descriptor(
             name='name_value',
-            metric_descriptor=ga_metric.MetricDescriptor(name='name_value'),
+            metric_descriptor=metric_pb2.MetricDescriptor(name='name_value'),
         )
 
         # Establish that the underlying call was made with the expected
@@ -1932,7 +1932,7 @@ def test_create_metric_descriptor_flattened():
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
         assert args[0].name == 'name_value'
-        assert args[0].metric_descriptor == ga_metric.MetricDescriptor(name='name_value')
+        assert args[0].metric_descriptor == metric_pb2.MetricDescriptor(name='name_value')
 
 
 def test_create_metric_descriptor_flattened_error():
@@ -1946,7 +1946,7 @@ def test_create_metric_descriptor_flattened_error():
         client.create_metric_descriptor(
             metric_service.CreateMetricDescriptorRequest(),
             name='name_value',
-            metric_descriptor=ga_metric.MetricDescriptor(name='name_value'),
+            metric_descriptor=metric_pb2.MetricDescriptor(name='name_value'),
         )
 
 
@@ -1961,14 +1961,14 @@ async def test_create_metric_descriptor_flattened_async():
             type(client.transport.create_metric_descriptor),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value = ga_metric.MetricDescriptor()
+        call.return_value = metric_pb2.MetricDescriptor()
 
-        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(ga_metric.MetricDescriptor())
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(metric_pb2.MetricDescriptor())
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         response = await client.create_metric_descriptor(
             name='name_value',
-            metric_descriptor=ga_metric.MetricDescriptor(name='name_value'),
+            metric_descriptor=metric_pb2.MetricDescriptor(name='name_value'),
         )
 
         # Establish that the underlying call was made with the expected
@@ -1976,7 +1976,7 @@ async def test_create_metric_descriptor_flattened_async():
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
         assert args[0].name == 'name_value'
-        assert args[0].metric_descriptor == ga_metric.MetricDescriptor(name='name_value')
+        assert args[0].metric_descriptor == metric_pb2.MetricDescriptor(name='name_value')
 
 
 @pytest.mark.asyncio
@@ -1991,7 +1991,7 @@ async def test_create_metric_descriptor_flattened_error_async():
         await client.create_metric_descriptor(
             metric_service.CreateMetricDescriptorRequest(),
             name='name_value',
-            metric_descriptor=ga_metric.MetricDescriptor(name='name_value'),
+            metric_descriptor=metric_pb2.MetricDescriptor(name='name_value'),
         )
 
 
@@ -2819,7 +2819,7 @@ def test_create_time_series_flattened():
         # using the keyword arguments to the method.
         client.create_time_series(
             name='name_value',
-            time_series=[gm_metric.TimeSeries(metric=ga_metric.Metric(type_='type__value'))],
+            time_series=[gm_metric.TimeSeries(metric=metric_pb2.Metric(type_='type__value'))],
         )
 
         # Establish that the underlying call was made with the expected
@@ -2827,7 +2827,7 @@ def test_create_time_series_flattened():
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
         assert args[0].name == 'name_value'
-        assert args[0].time_series == [gm_metric.TimeSeries(metric=ga_metric.Metric(type_='type__value'))]
+        assert args[0].time_series == [gm_metric.TimeSeries(metric=metric_pb2.Metric(type_='type__value'))]
 
 
 def test_create_time_series_flattened_error():
@@ -2841,7 +2841,7 @@ def test_create_time_series_flattened_error():
         client.create_time_series(
             metric_service.CreateTimeSeriesRequest(),
             name='name_value',
-            time_series=[gm_metric.TimeSeries(metric=ga_metric.Metric(type_='type__value'))],
+            time_series=[gm_metric.TimeSeries(metric=metric_pb2.Metric(type_='type__value'))],
         )
 
 
@@ -2863,7 +2863,7 @@ async def test_create_time_series_flattened_async():
         # using the keyword arguments to the method.
         response = await client.create_time_series(
             name='name_value',
-            time_series=[gm_metric.TimeSeries(metric=ga_metric.Metric(type_='type__value'))],
+            time_series=[gm_metric.TimeSeries(metric=metric_pb2.Metric(type_='type__value'))],
         )
 
         # Establish that the underlying call was made with the expected
@@ -2871,7 +2871,7 @@ async def test_create_time_series_flattened_async():
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
         assert args[0].name == 'name_value'
-        assert args[0].time_series == [gm_metric.TimeSeries(metric=ga_metric.Metric(type_='type__value'))]
+        assert args[0].time_series == [gm_metric.TimeSeries(metric=metric_pb2.Metric(type_='type__value'))]
 
 
 @pytest.mark.asyncio
@@ -2886,7 +2886,7 @@ async def test_create_time_series_flattened_error_async():
         await client.create_time_series(
             metric_service.CreateTimeSeriesRequest(),
             name='name_value',
-            time_series=[gm_metric.TimeSeries(metric=ga_metric.Metric(type_='type__value'))],
+            time_series=[gm_metric.TimeSeries(metric=metric_pb2.Metric(type_='type__value'))],
         )
 
 
@@ -3186,7 +3186,7 @@ def test_metric_service_transport_create_channel_old_api_core(transport_class, g
         transport_class(quota_project_id="octopus")
 
         create_channel.assert_called_with(
-            "monitoring.googleapis.com",
+            "monitoring.googleapis.com:443",
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",
@@ -3224,7 +3224,7 @@ def test_metric_service_transport_create_channel_user_scopes(transport_class, gr
         transport_class(quota_project_id="octopus", scopes=["1", "2"])
 
         create_channel.assert_called_with(
-            "monitoring.googleapis.com",
+            "monitoring.googleapis.com:443",
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",

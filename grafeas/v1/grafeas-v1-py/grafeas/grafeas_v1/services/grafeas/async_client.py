@@ -87,7 +87,8 @@ class GrafeasAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -102,7 +103,7 @@ class GrafeasAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -119,7 +120,7 @@ class GrafeasAsyncClient:
 
     @property
     def transport(self) -> GrafeasTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             GrafeasTransport: The transport used by the client instance.
@@ -130,11 +131,11 @@ class GrafeasAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, GrafeasTransport] = 'grpc_asyncio',
+            transport: Union[str, GrafeasTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the grafeas client.
+        """Instantiates the grafeas client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -211,8 +212,8 @@ class GrafeasAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = grafeas.GetOccurrenceRequest(request)
 
@@ -227,8 +228,8 @@ class GrafeasAsyncClient:
             self._client._transport.get_occurrence,
             default_retry=retries.Retry(
 initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
             ),
@@ -240,7 +241,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -300,8 +301,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, filter])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = grafeas.ListOccurrencesRequest(request)
 
@@ -318,8 +319,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.list_occurrences,
             default_retry=retries.Retry(
 initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
             ),
@@ -331,7 +332,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -388,8 +389,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = grafeas.DeleteOccurrenceRequest(request)
 
@@ -404,8 +405,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.delete_occurrence,
             default_retry=retries.Retry(
 initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
             ),
@@ -417,7 +418,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -473,8 +474,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, occurrence])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = grafeas.CreateOccurrenceRequest(request)
 
@@ -497,7 +498,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -559,8 +560,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, occurrences])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = grafeas.BatchCreateOccurrencesRequest(request)
 
@@ -583,7 +584,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -647,8 +648,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name, occurrence, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = grafeas.UpdateOccurrenceRequest(request)
 
@@ -673,7 +674,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -728,8 +729,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = grafeas.GetOccurrenceNoteRequest(request)
 
@@ -744,8 +745,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.get_occurrence_note,
             default_retry=retries.Retry(
 initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
             ),
@@ -757,7 +758,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -809,8 +810,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = grafeas.GetNoteRequest(request)
 
@@ -825,8 +826,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.get_note,
             default_retry=retries.Retry(
 initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
             ),
@@ -838,7 +839,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -898,8 +899,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, filter])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = grafeas.ListNotesRequest(request)
 
@@ -916,8 +917,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.list_notes,
             default_retry=retries.Retry(
 initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
             ),
@@ -929,7 +930,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -984,8 +985,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = grafeas.DeleteNoteRequest(request)
 
@@ -1000,8 +1001,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.delete_note,
             default_retry=retries.Retry(
 initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
             ),
@@ -1013,7 +1014,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1075,8 +1076,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, note_id, note])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = grafeas.CreateNoteRequest(request)
 
@@ -1101,7 +1102,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1160,8 +1161,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, notes])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = grafeas.BatchCreateNotesRequest(request)
 
@@ -1185,7 +1186,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1249,8 +1250,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name, note, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = grafeas.UpdateNoteRequest(request)
 
@@ -1275,7 +1276,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1340,8 +1341,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name, filter])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = grafeas.ListNoteOccurrencesRequest(request)
 
@@ -1358,8 +1359,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.list_note_occurrences,
             default_retry=retries.Retry(
 initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
             ),
@@ -1371,7 +1372,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1402,7 +1403,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'grafeas-grafeas',
+            "grafeas-grafeas",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -1410,5 +1411,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'GrafeasAsyncClient',
+    "GrafeasAsyncClient",
 )

@@ -84,7 +84,8 @@ class InstanceAdminAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -99,7 +100,7 @@ class InstanceAdminAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -116,7 +117,7 @@ class InstanceAdminAsyncClient:
 
     @property
     def transport(self) -> InstanceAdminTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             InstanceAdminTransport: The transport used by the client instance.
@@ -127,11 +128,11 @@ class InstanceAdminAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, InstanceAdminTransport] = 'grpc_asyncio',
+            transport: Union[str, InstanceAdminTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the instance admin client.
+        """Instantiates the instance admin client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -214,8 +215,8 @@ class InstanceAdminAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = spanner_instance_admin.ListInstanceConfigsRequest(request)
 
@@ -230,8 +231,8 @@ class InstanceAdminAsyncClient:
             self._client._transport.list_instance_configs,
             default_retry=retries.Retry(
 initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=3600.0,
             ),
@@ -243,7 +244,7 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -309,8 +310,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = spanner_instance_admin.GetInstanceConfigRequest(request)
 
@@ -325,8 +326,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.get_instance_config,
             default_retry=retries.Retry(
 initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=3600.0,
             ),
@@ -338,7 +339,7 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -395,8 +396,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = spanner_instance_admin.ListInstancesRequest(request)
 
@@ -411,8 +412,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.list_instances,
             default_retry=retries.Retry(
 initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=3600.0,
             ),
@@ -424,7 +425,7 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -487,8 +488,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = spanner_instance_admin.GetInstanceRequest(request)
 
@@ -503,8 +504,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.get_instance,
             default_retry=retries.Retry(
 initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=3600.0,
             ),
@@ -516,7 +517,7 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -628,8 +629,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, instance_id, instance])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = spanner_instance_admin.CreateInstanceRequest(request)
 
@@ -654,7 +655,7 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -681,7 +682,7 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
             request: spanner_instance_admin.UpdateInstanceRequest = None,
             *,
             instance: spanner_instance_admin.Instance = None,
-            field_mask: gp_field_mask.FieldMask = None,
+            field_mask: field_mask_pb2.FieldMask = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -779,8 +780,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([instance, field_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = spanner_instance_admin.UpdateInstanceRequest(request)
 
@@ -803,7 +804,7 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('instance.name', request.instance.name),
+                ("instance.name", request.instance.name),
             )),
         )
 
@@ -869,8 +870,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = spanner_instance_admin.DeleteInstanceRequest(request)
 
@@ -885,8 +886,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.delete_instance,
             default_retry=retries.Retry(
 initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=3600.0,
             ),
@@ -898,7 +899,7 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1007,8 +1008,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([resource])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
          # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
@@ -1029,7 +1030,7 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('resource', request.resource),
+                ("resource", request.resource),
             )),
         )
 
@@ -1142,8 +1143,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([resource])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
          # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
@@ -1158,8 +1159,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.get_iam_policy,
             default_retry=retries.Retry(
 initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
             ),
@@ -1171,7 +1172,7 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('resource', request.resource),
+                ("resource", request.resource),
             )),
         )
 
@@ -1240,8 +1241,8 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([resource, permissions])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
          # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
@@ -1262,7 +1263,7 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('resource', request.resource),
+                ("resource", request.resource),
             )),
         )
 
@@ -1284,7 +1285,7 @@ initial=1.0,maximum=32.0,multiplier=1.3,                predicate=retries.if_exc
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-spanner-admin-instance',
+            "google-cloud-spanner-admin-instance",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -1292,5 +1293,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'InstanceAdminAsyncClient',
+    "InstanceAdminAsyncClient",
 )

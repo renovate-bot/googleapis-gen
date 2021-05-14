@@ -71,7 +71,8 @@ class GroupServiceAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -86,7 +87,7 @@ class GroupServiceAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -103,7 +104,7 @@ class GroupServiceAsyncClient:
 
     @property
     def transport(self) -> GroupServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             GroupServiceTransport: The transport used by the client instance.
@@ -114,11 +115,11 @@ class GroupServiceAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, GroupServiceTransport] = 'grpc_asyncio',
+            transport: Union[str, GroupServiceTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the group service client.
+        """Instantiates the group service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -201,8 +202,8 @@ class GroupServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = group_service.ListGroupsRequest(request)
 
@@ -217,8 +218,8 @@ class GroupServiceAsyncClient:
             self._client._transport.list_groups,
             default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
             ),
@@ -230,7 +231,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -325,8 +326,8 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = group_service.GetGroupRequest(request)
 
@@ -341,8 +342,8 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.get_group,
             default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
             ),
@@ -354,7 +355,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -449,8 +450,8 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name, group])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = group_service.CreateGroupRequest(request)
 
@@ -473,7 +474,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -558,8 +559,8 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([group])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = group_service.UpdateGroupRequest(request)
 
@@ -574,8 +575,8 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.update_group,
             default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
             ),
@@ -587,7 +588,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('group.name', request.group.name),
+                ("group.name", request.group.name),
             )),
         )
 
@@ -638,8 +639,8 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = group_service.DeleteGroupRequest(request)
 
@@ -654,8 +655,8 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.delete_group,
             default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
             ),
@@ -667,7 +668,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -723,8 +724,8 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = group_service.ListGroupMembersRequest(request)
 
@@ -739,8 +740,8 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.list_group_members,
             default_retry=retries.Retry(
 initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
             ),
@@ -752,7 +753,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -783,7 +784,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-monitoring',
+            "google-cloud-monitoring",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -791,5 +792,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'GroupServiceAsyncClient',
+    "GroupServiceAsyncClient",
 )

@@ -102,7 +102,7 @@ class ListServicesAsyncPager:
             response: servicemanager.ListServicesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -224,7 +224,7 @@ class ListServiceConfigsAsyncPager:
             response: servicemanager.ListServiceConfigsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -346,7 +346,7 @@ class ListServiceRolloutsAsyncPager:
             response: servicemanager.ListServiceRolloutsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

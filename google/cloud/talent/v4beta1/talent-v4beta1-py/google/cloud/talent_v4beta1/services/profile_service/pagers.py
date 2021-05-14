@@ -102,7 +102,7 @@ class ListProfilesAsyncPager:
             response: profile_service.ListProfilesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -224,7 +224,7 @@ class SearchProfilesAsyncPager:
             response: profile_service.SearchProfilesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

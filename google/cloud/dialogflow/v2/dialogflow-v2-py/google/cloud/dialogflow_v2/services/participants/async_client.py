@@ -69,7 +69,8 @@ class ParticipantsAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -84,7 +85,7 @@ class ParticipantsAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -101,7 +102,7 @@ class ParticipantsAsyncClient:
 
     @property
     def transport(self) -> ParticipantsTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             ParticipantsTransport: The transport used by the client instance.
@@ -112,11 +113,11 @@ class ParticipantsAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, ParticipantsTransport] = 'grpc_asyncio',
+            transport: Union[str, ParticipantsTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the participants client.
+        """Instantiates the participants client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -201,8 +202,8 @@ class ParticipantsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, participant])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = gcd_participant.CreateParticipantRequest(request)
 
@@ -225,7 +226,7 @@ class ParticipantsAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -278,8 +279,8 @@ class ParticipantsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = participant.GetParticipantRequest(request)
 
@@ -300,7 +301,7 @@ class ParticipantsAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -358,8 +359,8 @@ class ParticipantsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = participant.ListParticipantsRequest(request)
 
@@ -380,7 +381,7 @@ class ParticipantsAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -448,8 +449,8 @@ class ParticipantsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([participant, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = gcd_participant.UpdateParticipantRequest(request)
 
@@ -472,7 +473,7 @@ class ParticipantsAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('participant.name', request.participant.name),
+                ("participant.name", request.participant.name),
             )),
         )
 
@@ -545,8 +546,8 @@ class ParticipantsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([participant, text_input, event_input])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = gcd_participant.AnalyzeContentRequest(request)
 
@@ -565,7 +566,7 @@ class ParticipantsAsyncClient:
             self._client._transport.analyze_content,
             default_retry=retries.Retry(
 initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=220.0,
             ),
@@ -577,7 +578,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('participant', request.participant),
+                ("participant", request.participant),
             )),
         )
 
@@ -632,8 +633,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = participant.SuggestArticlesRequest(request)
 
@@ -654,7 +655,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -709,8 +710,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = participant.SuggestFaqAnswersRequest(request)
 
@@ -731,7 +732,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -753,7 +754,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-dialogflow',
+            "google-cloud-dialogflow",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -761,5 +762,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'ParticipantsAsyncClient',
+    "ParticipantsAsyncClient",
 )

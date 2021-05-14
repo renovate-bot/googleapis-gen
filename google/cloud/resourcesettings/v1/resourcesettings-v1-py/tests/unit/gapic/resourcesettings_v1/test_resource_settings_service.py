@@ -1454,7 +1454,7 @@ def test_resource_settings_service_transport_create_channel_old_api_core(transpo
         transport_class(quota_project_id="octopus")
 
         create_channel.assert_called_with(
-            "resourcesettings.googleapis.com",
+            "resourcesettings.googleapis.com:443",
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",
@@ -1489,7 +1489,7 @@ def test_resource_settings_service_transport_create_channel_user_scopes(transpor
         transport_class(quota_project_id="octopus", scopes=["1", "2"])
 
         create_channel.assert_called_with(
-            "resourcesettings.googleapis.com",
+            "resourcesettings.googleapis.com:443",
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",

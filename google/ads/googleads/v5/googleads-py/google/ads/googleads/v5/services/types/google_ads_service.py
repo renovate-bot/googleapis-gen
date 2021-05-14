@@ -299,7 +299,7 @@ class SearchGoogleAdsResponse(proto.Message):
     field_mask = proto.Field(
         proto.MESSAGE,
         number=5,
-        message=gp_field_mask.FieldMask,
+        message=field_mask_pb2.FieldMask,
     )
     summary_row = proto.Field(
         proto.MESSAGE,
@@ -366,7 +366,7 @@ class SearchGoogleAdsStreamResponse(proto.Message):
     field_mask = proto.Field(
         proto.MESSAGE,
         number=2,
-        message=gp_field_mask.FieldMask,
+        message=field_mask_pb2.FieldMask,
     )
     summary_row = proto.Field(
         proto.MESSAGE,

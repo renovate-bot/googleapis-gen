@@ -69,7 +69,8 @@ class SpecialistPoolServiceAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -84,7 +85,7 @@ class SpecialistPoolServiceAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -101,7 +102,7 @@ class SpecialistPoolServiceAsyncClient:
 
     @property
     def transport(self) -> SpecialistPoolServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             SpecialistPoolServiceTransport: The transport used by the client instance.
@@ -112,11 +113,11 @@ class SpecialistPoolServiceAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, SpecialistPoolServiceTransport] = 'grpc_asyncio',
+            transport: Union[str, SpecialistPoolServiceTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the specialist pool service client.
+        """Instantiates the specialist pool service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -211,8 +212,8 @@ class SpecialistPoolServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, specialist_pool])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = specialist_pool_service.CreateSpecialistPoolRequest(request)
 
@@ -235,7 +236,7 @@ class SpecialistPoolServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -306,8 +307,8 @@ class SpecialistPoolServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = specialist_pool_service.GetSpecialistPoolRequest(request)
 
@@ -328,7 +329,7 @@ class SpecialistPoolServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -385,8 +386,8 @@ class SpecialistPoolServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = specialist_pool_service.ListSpecialistPoolsRequest(request)
 
@@ -407,7 +408,7 @@ class SpecialistPoolServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -484,8 +485,8 @@ class SpecialistPoolServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = specialist_pool_service.DeleteSpecialistPoolRequest(request)
 
@@ -506,7 +507,7 @@ class SpecialistPoolServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -583,8 +584,8 @@ class SpecialistPoolServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([specialist_pool, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = specialist_pool_service.UpdateSpecialistPoolRequest(request)
 
@@ -607,7 +608,7 @@ class SpecialistPoolServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('specialist_pool.name', request.specialist_pool.name),
+                ("specialist_pool.name", request.specialist_pool.name),
             )),
         )
 
@@ -637,7 +638,7 @@ class SpecialistPoolServiceAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-aiplatform',
+            "google-cloud-aiplatform",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -645,5 +646,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'SpecialistPoolServiceAsyncClient',
+    "SpecialistPoolServiceAsyncClient",
 )

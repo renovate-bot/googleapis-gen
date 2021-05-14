@@ -306,7 +306,7 @@ class MetricServiceGrpcTransport(MetricServiceTransport):
     @property
     def get_metric_descriptor(self) -> Callable[
             [metric_service.GetMetricDescriptorRequest],
-            ga_metric.MetricDescriptor]:
+            metric_pb2.MetricDescriptor]:
         r"""Return a callable for the get metric descriptor method over gRPC.
 
         Gets a single metric descriptor. This method does not
@@ -326,14 +326,14 @@ class MetricServiceGrpcTransport(MetricServiceTransport):
             self._stubs['get_metric_descriptor'] = self.grpc_channel.unary_unary(
                 '/google.monitoring.v3.MetricService/GetMetricDescriptor',
                 request_serializer=metric_service.GetMetricDescriptorRequest.serialize,
-                response_deserializer=ga_metric.MetricDescriptor.FromString,
+                response_deserializer=metric_pb2.MetricDescriptor.FromString,
             )
         return self._stubs['get_metric_descriptor']
 
     @property
     def create_metric_descriptor(self) -> Callable[
             [metric_service.CreateMetricDescriptorRequest],
-            ga_metric.MetricDescriptor]:
+            metric_pb2.MetricDescriptor]:
         r"""Return a callable for the create metric descriptor method over gRPC.
 
         Creates a new metric descriptor. User-created metric descriptors
@@ -354,7 +354,7 @@ class MetricServiceGrpcTransport(MetricServiceTransport):
             self._stubs['create_metric_descriptor'] = self.grpc_channel.unary_unary(
                 '/google.monitoring.v3.MetricService/CreateMetricDescriptor',
                 request_serializer=metric_service.CreateMetricDescriptorRequest.serialize,
-                response_deserializer=ga_metric.MetricDescriptor.FromString,
+                response_deserializer=metric_pb2.MetricDescriptor.FromString,
             )
         return self._stubs['create_metric_descriptor']
 

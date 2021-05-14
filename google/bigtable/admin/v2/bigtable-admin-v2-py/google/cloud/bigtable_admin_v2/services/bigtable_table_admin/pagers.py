@@ -101,7 +101,7 @@ class ListTablesAsyncPager:
             response: bigtable_table_admin.ListTablesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -223,7 +223,7 @@ class ListSnapshotsAsyncPager:
             response: bigtable_table_admin.ListSnapshotsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -345,7 +345,7 @@ class ListBackupsAsyncPager:
             response: bigtable_table_admin.ListBackupsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

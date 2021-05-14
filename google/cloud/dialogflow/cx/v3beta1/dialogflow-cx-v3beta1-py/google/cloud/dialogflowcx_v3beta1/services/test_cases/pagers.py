@@ -100,7 +100,7 @@ class ListTestCasesAsyncPager:
             response: test_case.ListTestCasesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -222,7 +222,7 @@ class ListTestCaseResultsAsyncPager:
             response: test_case.ListTestCaseResultsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

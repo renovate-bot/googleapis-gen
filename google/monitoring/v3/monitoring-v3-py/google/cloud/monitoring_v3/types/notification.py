@@ -104,7 +104,7 @@ class NotificationChannelDescriptor(proto.Message):
     launch_stage = proto.Field(
         proto.ENUM,
         number=7,
-        enum=ga_launch_stage.LaunchStage,
+        enum=launch_stage_pb2.LaunchStage,
     )
 
 

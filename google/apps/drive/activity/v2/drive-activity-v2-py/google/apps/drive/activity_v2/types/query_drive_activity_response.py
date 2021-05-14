@@ -113,7 +113,7 @@ class DriveActivity(proto.Message):
         proto.MESSAGE,
         number=6,
         oneof='time',
-        message=gp_timestamp.Timestamp,
+        message=timestamp_pb2.Timestamp,
     )
     time_range = proto.Field(
         proto.MESSAGE,

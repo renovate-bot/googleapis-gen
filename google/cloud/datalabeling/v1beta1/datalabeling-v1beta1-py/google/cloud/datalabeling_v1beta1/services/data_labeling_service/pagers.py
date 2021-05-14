@@ -105,7 +105,7 @@ class ListDatasetsAsyncPager:
             response: data_labeling_service.ListDatasetsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -227,7 +227,7 @@ class ListDataItemsAsyncPager:
             response: data_labeling_service.ListDataItemsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -349,7 +349,7 @@ class ListAnnotatedDatasetsAsyncPager:
             response: data_labeling_service.ListAnnotatedDatasetsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -471,7 +471,7 @@ class ListExamplesAsyncPager:
             response: data_labeling_service.ListExamplesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -593,7 +593,7 @@ class ListAnnotationSpecSetsAsyncPager:
             response: data_labeling_service.ListAnnotationSpecSetsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -715,7 +715,7 @@ class ListInstructionsAsyncPager:
             response: data_labeling_service.ListInstructionsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -837,7 +837,7 @@ class SearchEvaluationsAsyncPager:
             response: data_labeling_service.SearchEvaluationsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -959,7 +959,7 @@ class SearchExampleComparisonsAsyncPager:
             response: data_labeling_service.SearchExampleComparisonsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -1081,7 +1081,7 @@ class ListEvaluationJobsAsyncPager:
             response: data_labeling_service.ListEvaluationJobsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

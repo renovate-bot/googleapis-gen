@@ -65,7 +65,8 @@ class TraceServiceAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -80,7 +81,7 @@ class TraceServiceAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -97,7 +98,7 @@ class TraceServiceAsyncClient:
 
     @property
     def transport(self) -> TraceServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             TraceServiceTransport: The transport used by the client instance.
@@ -108,11 +109,11 @@ class TraceServiceAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, TraceServiceTransport] = 'grpc_asyncio',
+            transport: Union[str, TraceServiceTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the trace service client.
+        """Instantiates the trace service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -194,8 +195,8 @@ class TraceServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name, spans])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = tracing.BatchWriteSpansRequest(request)
 
@@ -218,7 +219,7 @@ class TraceServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -278,8 +279,8 @@ class TraceServiceAsyncClient:
             self._client._transport.create_span,
             default_retry=retries.Retry(
 initial=0.1,maximum=1.0,multiplier=1.2,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=120.0,
             ),
@@ -291,7 +292,7 @@ initial=0.1,maximum=1.0,multiplier=1.2,                predicate=retries.if_exce
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -313,7 +314,7 @@ initial=0.1,maximum=1.0,multiplier=1.2,                predicate=retries.if_exce
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-trace',
+            "google-cloud-trace",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -321,5 +322,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'TraceServiceAsyncClient',
+    "TraceServiceAsyncClient",
 )

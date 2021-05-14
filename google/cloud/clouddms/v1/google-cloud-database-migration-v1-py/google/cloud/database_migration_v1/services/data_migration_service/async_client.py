@@ -66,7 +66,8 @@ class DataMigrationServiceAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -81,7 +82,7 @@ class DataMigrationServiceAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -98,7 +99,7 @@ class DataMigrationServiceAsyncClient:
 
     @property
     def transport(self) -> DataMigrationServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             DataMigrationServiceTransport: The transport used by the client instance.
@@ -109,11 +110,11 @@ class DataMigrationServiceAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, DataMigrationServiceTransport] = 'grpc_asyncio',
+            transport: Union[str, DataMigrationServiceTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the data migration service client.
+        """Instantiates the data migration service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -194,8 +195,8 @@ class DataMigrationServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = clouddms.ListMigrationJobsRequest(request)
 
@@ -216,7 +217,7 @@ class DataMigrationServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -278,8 +279,8 @@ class DataMigrationServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = clouddms.GetMigrationJobRequest(request)
 
@@ -300,7 +301,7 @@ class DataMigrationServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -376,8 +377,8 @@ class DataMigrationServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, migration_job, migration_job_id])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = clouddms.CreateMigrationJobRequest(request)
 
@@ -402,7 +403,7 @@ class DataMigrationServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -477,8 +478,8 @@ class DataMigrationServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([migration_job, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = clouddms.UpdateMigrationJobRequest(request)
 
@@ -501,7 +502,7 @@ class DataMigrationServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('migration_job.name', request.migration_job.name),
+                ("migration_job.name", request.migration_job.name),
             )),
         )
 
@@ -575,8 +576,8 @@ class DataMigrationServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = clouddms.DeleteMigrationJobRequest(request)
 
@@ -597,7 +598,7 @@ class DataMigrationServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -664,7 +665,7 @@ class DataMigrationServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -731,7 +732,7 @@ class DataMigrationServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -799,7 +800,7 @@ class DataMigrationServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -868,7 +869,7 @@ class DataMigrationServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -937,7 +938,7 @@ class DataMigrationServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1006,7 +1007,7 @@ class DataMigrationServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1070,7 +1071,7 @@ class DataMigrationServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('migration_job', request.migration_job),
+                ("migration_job", request.migration_job),
             )),
         )
 
@@ -1127,8 +1128,8 @@ class DataMigrationServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = clouddms.ListConnectionProfilesRequest(request)
 
@@ -1149,7 +1150,7 @@ class DataMigrationServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1209,8 +1210,8 @@ class DataMigrationServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = clouddms.GetConnectionProfileRequest(request)
 
@@ -1231,7 +1232,7 @@ class DataMigrationServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1304,8 +1305,8 @@ class DataMigrationServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, connection_profile, connection_profile_id])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = clouddms.CreateConnectionProfileRequest(request)
 
@@ -1330,7 +1331,7 @@ class DataMigrationServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1405,8 +1406,8 @@ class DataMigrationServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([connection_profile, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = clouddms.UpdateConnectionProfileRequest(request)
 
@@ -1429,7 +1430,7 @@ class DataMigrationServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('connection_profile.name', request.connection_profile.name),
+                ("connection_profile.name", request.connection_profile.name),
             )),
         )
 
@@ -1506,8 +1507,8 @@ class DataMigrationServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = clouddms.DeleteConnectionProfileRequest(request)
 
@@ -1528,7 +1529,7 @@ class DataMigrationServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1558,7 +1559,7 @@ class DataMigrationServiceAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-database-migration',
+            "google-cloud-database-migration",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -1566,5 +1567,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'DataMigrationServiceAsyncClient',
+    "DataMigrationServiceAsyncClient",
 )

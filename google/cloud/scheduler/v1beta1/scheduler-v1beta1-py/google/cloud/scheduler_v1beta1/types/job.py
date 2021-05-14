@@ -202,7 +202,7 @@ class Job(proto.Message):
     status = proto.Field(
         proto.MESSAGE,
         number=11,
-        message=gr_status.Status,
+        message=status_pb2.Status,
     )
     schedule_time = proto.Field(
         proto.MESSAGE,

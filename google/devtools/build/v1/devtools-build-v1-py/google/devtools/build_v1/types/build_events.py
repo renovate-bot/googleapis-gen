@@ -95,7 +95,7 @@ class BuildEvent(proto.Message):
         details = proto.Field(
             proto.MESSAGE,
             number=2,
-            message=gp_any.Any,
+            message=any_pb2.Any,
         )
 
     class InvocationAttemptFinished(proto.Message):
@@ -116,7 +116,7 @@ class BuildEvent(proto.Message):
         details = proto.Field(
             proto.MESSAGE,
             number=4,
-            message=gp_any.Any,
+            message=any_pb2.Any,
         )
 
     class BuildEnqueued(proto.Message):
@@ -129,7 +129,7 @@ class BuildEvent(proto.Message):
         details = proto.Field(
             proto.MESSAGE,
             number=1,
-            message=gp_any.Any,
+            message=any_pb2.Any,
         )
 
     class BuildFinished(proto.Message):
@@ -153,7 +153,7 @@ class BuildEvent(proto.Message):
         details = proto.Field(
             proto.MESSAGE,
             number=2,
-            message=gp_any.Any,
+            message=any_pb2.Any,
         )
 
     class ConsoleOutput(proto.Message):
@@ -250,19 +250,19 @@ class BuildEvent(proto.Message):
         proto.MESSAGE,
         number=60,
         oneof='event',
-        message=gp_any.Any,
+        message=any_pb2.Any,
     )
     build_execution_event = proto.Field(
         proto.MESSAGE,
         number=61,
         oneof='event',
-        message=gp_any.Any,
+        message=any_pb2.Any,
     )
     source_fetch_event = proto.Field(
         proto.MESSAGE,
         number=62,
         oneof='event',
-        message=gp_any.Any,
+        message=any_pb2.Any,
     )
 
 

@@ -184,7 +184,7 @@ class EgressResponse(proto.Message):
     status = proto.Field(
         proto.MESSAGE,
         number=3,
-        message=gr_status.Status,
+        message=status_pb2.Status,
     )
     project = proto.Field(
         proto.STRING,

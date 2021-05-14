@@ -88,7 +88,8 @@ class DataprocMetastoreAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -103,7 +104,7 @@ class DataprocMetastoreAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -120,7 +121,7 @@ class DataprocMetastoreAsyncClient:
 
     @property
     def transport(self) -> DataprocMetastoreTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             DataprocMetastoreTransport: The transport used by the client instance.
@@ -131,11 +132,11 @@ class DataprocMetastoreAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, DataprocMetastoreTransport] = 'grpc_asyncio',
+            transport: Union[str, DataprocMetastoreTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the dataproc metastore client.
+        """Instantiates the dataproc metastore client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -218,8 +219,8 @@ class DataprocMetastoreAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = metastore.ListServicesRequest(request)
 
@@ -240,7 +241,7 @@ class DataprocMetastoreAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -304,8 +305,8 @@ class DataprocMetastoreAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = metastore.GetServiceRequest(request)
 
@@ -326,7 +327,7 @@ class DataprocMetastoreAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -411,8 +412,8 @@ class DataprocMetastoreAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, service, service_id])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = metastore.CreateServiceRequest(request)
 
@@ -437,7 +438,7 @@ class DataprocMetastoreAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -516,8 +517,8 @@ class DataprocMetastoreAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([service, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = metastore.UpdateServiceRequest(request)
 
@@ -540,7 +541,7 @@ class DataprocMetastoreAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('service.name', request.service.name),
+                ("service.name", request.service.name),
             )),
         )
 
@@ -616,8 +617,8 @@ class DataprocMetastoreAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = metastore.DeleteServiceRequest(request)
 
@@ -638,7 +639,7 @@ class DataprocMetastoreAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -704,8 +705,8 @@ class DataprocMetastoreAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = metastore.ListMetadataImportsRequest(request)
 
@@ -726,7 +727,7 @@ class DataprocMetastoreAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -790,8 +791,8 @@ class DataprocMetastoreAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = metastore.GetMetadataImportRequest(request)
 
@@ -812,7 +813,7 @@ class DataprocMetastoreAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -896,8 +897,8 @@ class DataprocMetastoreAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, metadata_import, metadata_import_id])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = metastore.CreateMetadataImportRequest(request)
 
@@ -922,7 +923,7 @@ class DataprocMetastoreAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1003,8 +1004,8 @@ class DataprocMetastoreAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([metadata_import, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = metastore.UpdateMetadataImportRequest(request)
 
@@ -1027,7 +1028,7 @@ class DataprocMetastoreAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('metadata_import.name', request.metadata_import.name),
+                ("metadata_import.name", request.metadata_import.name),
             )),
         )
 
@@ -1093,7 +1094,7 @@ class DataprocMetastoreAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('service', request.service),
+                ("service", request.service),
             )),
         )
 
@@ -1123,7 +1124,7 @@ class DataprocMetastoreAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-metastore',
+            "google-cloud-metastore",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -1131,5 +1132,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'DataprocMetastoreAsyncClient',
+    "DataprocMetastoreAsyncClient",
 )

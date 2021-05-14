@@ -49,13 +49,13 @@ class ReservationServiceClientMeta(type):
     objects.
     """
     _transport_registry = OrderedDict()  # type: Dict[str, Type[ReservationServiceTransport]]
-    _transport_registry['grpc'] = ReservationServiceGrpcTransport
-    _transport_registry['grpc_asyncio'] = ReservationServiceGrpcAsyncIOTransport
+    _transport_registry["grpc"] = ReservationServiceGrpcTransport
+    _transport_registry["grpc_asyncio"] = ReservationServiceGrpcAsyncIOTransport
 
     def get_transport_class(cls,
             label: str = None,
         ) -> Type[ReservationServiceTransport]:
-        """Return an appropriate transport class.
+        """Returns an appropriate transport class.
 
         Args:
             label: The name of the desired transport. If none is
@@ -95,7 +95,8 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
 
     @staticmethod
     def _get_default_mtls_endpoint(api_endpoint):
-        """Convert api endpoint to mTLS endpoint.
+        """Converts api endpoint to mTLS endpoint.
+
         Convert "*.sandbox.googleapis.com" and "*.googleapis.com" to
         "*.mtls.sandbox.googleapis.com" and "*.mtls.googleapis.com" respectively.
         Args:
@@ -122,14 +123,15 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
 
         return api_endpoint.replace(".googleapis.com", ".mtls.googleapis.com")
 
-    DEFAULT_ENDPOINT = 'bigqueryreservation.googleapis.com'
+    DEFAULT_ENDPOINT = "bigqueryreservation.googleapis.com"
     DEFAULT_MTLS_ENDPOINT = _get_default_mtls_endpoint.__func__(  # type: ignore
         DEFAULT_ENDPOINT
     )
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -146,7 +148,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -159,67 +161,68 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         """
         credentials = service_account.Credentials.from_service_account_file(
             filename)
-        kwargs['credentials'] = credentials
+        kwargs["credentials"] = credentials
         return cls(*args, **kwargs)
 
     from_service_account_json = from_service_account_file
 
     @property
     def transport(self) -> ReservationServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
-            ReservationServiceTransport: The transport used by the client instance.
+            ReservationServiceTransport: The transport used by the client
+                instance.
         """
         return self._transport
 
     @staticmethod
     def assignment_path(project: str,location: str,reservation: str,assignment: str,) -> str:
-        """Return a fully-qualified assignment string."""
+        """Returns a fully-qualified assignment string."""
         return "projects/{project}/locations/{location}/reservations/{reservation}/assignments/{assignment}".format(project=project, location=location, reservation=reservation, assignment=assignment, )
 
     @staticmethod
     def parse_assignment_path(path: str) -> Dict[str,str]:
-        """Parse a assignment path into its component segments."""
+        """Parses a assignment path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/reservations/(?P<reservation>.+?)/assignments/(?P<assignment>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def bi_reservation_path(project: str,location: str,bireservation: str,) -> str:
-        """Return a fully-qualified bi_reservation string."""
+        """Returns a fully-qualified bi_reservation string."""
         return "projects/{project}/locations/{location}/bireservation/{bireservation}".format(project=project, location=location, bireservation=bireservation, )
 
     @staticmethod
     def parse_bi_reservation_path(path: str) -> Dict[str,str]:
-        """Parse a bi_reservation path into its component segments."""
+        """Parses a bi_reservation path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/bireservation/(?P<bireservation>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def capacity_commitment_path(project: str,location: str,capacity_commitment: str,) -> str:
-        """Return a fully-qualified capacity_commitment string."""
+        """Returns a fully-qualified capacity_commitment string."""
         return "projects/{project}/locations/{location}/capacityCommitments/{capacity_commitment}".format(project=project, location=location, capacity_commitment=capacity_commitment, )
 
     @staticmethod
     def parse_capacity_commitment_path(path: str) -> Dict[str,str]:
-        """Parse a capacity_commitment path into its component segments."""
+        """Parses a capacity_commitment path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/capacityCommitments/(?P<capacity_commitment>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def reservation_path(project: str,location: str,reservation: str,) -> str:
-        """Return a fully-qualified reservation string."""
+        """Returns a fully-qualified reservation string."""
         return "projects/{project}/locations/{location}/reservations/{reservation}".format(project=project, location=location, reservation=reservation, )
 
     @staticmethod
     def parse_reservation_path(path: str) -> Dict[str,str]:
-        """Parse a reservation path into its component segments."""
+        """Parses a reservation path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/reservations/(?P<reservation>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
-        """Return a fully-qualified billing_account string."""
+        """Returns a fully-qualified billing_account string."""
         return "billingAccounts/{billing_account}".format(billing_account=billing_account, )
 
     @staticmethod
@@ -230,7 +233,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
 
     @staticmethod
     def common_folder_path(folder: str, ) -> str:
-        """Return a fully-qualified folder string."""
+        """Returns a fully-qualified folder string."""
         return "folders/{folder}".format(folder=folder, )
 
     @staticmethod
@@ -241,7 +244,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
 
     @staticmethod
     def common_organization_path(organization: str, ) -> str:
-        """Return a fully-qualified organization string."""
+        """Returns a fully-qualified organization string."""
         return "organizations/{organization}".format(organization=organization, )
 
     @staticmethod
@@ -252,7 +255,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
 
     @staticmethod
     def common_project_path(project: str, ) -> str:
-        """Return a fully-qualified project string."""
+        """Returns a fully-qualified project string."""
         return "projects/{project}".format(project=project, )
 
     @staticmethod
@@ -263,7 +266,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
 
     @staticmethod
     def common_location_path(project: str, location: str, ) -> str:
-        """Return a fully-qualified location string."""
+        """Returns a fully-qualified location string."""
         return "projects/{project}/locations/{location}".format(project=project, location=location, )
 
     @staticmethod
@@ -278,7 +281,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the reservation service client.
+        """Instantiates the reservation service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -331,7 +334,10 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
                 client_cert_source_func = client_options.client_cert_source
             else:
                 is_mtls = mtls.has_default_client_cert_source()
-                client_cert_source_func = mtls.default_client_cert_source() if is_mtls else None
+                if is_mtls:
+                    client_cert_source_func = mtls.default_client_cert_source()
+                else:
+                    client_cert_source_func = None
 
         # Figure out which api endpoint to use.
         if client_options.api_endpoint is not None:
@@ -343,10 +349,14 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
             elif use_mtls_env == "always":
                 api_endpoint = self.DEFAULT_MTLS_ENDPOINT
             elif use_mtls_env == "auto":
-                api_endpoint = self.DEFAULT_MTLS_ENDPOINT if is_mtls else self.DEFAULT_ENDPOINT
+                if is_mtls:
+                    api_endpoint = self.DEFAULT_MTLS_ENDPOINT
+                else:
+                    api_endpoint = self.DEFAULT_ENDPOINT
             else:
                 raise MutualTLSChannelError(
-                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted values: never, auto, always"
+                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted "
+                    "values: never, auto, always"
                 )
 
         # Save or instantiate the transport.
@@ -355,12 +365,12 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         if isinstance(transport, ReservationServiceTransport):
             # transport is a ReservationServiceTransport instance.
             if credentials or client_options.credentials_file:
-                raise ValueError('When providing a transport instance, '
-                                 'provide its credentials directly.')
+                raise ValueError("When providing a transport instance, "
+                                 "provide its credentials directly.")
             if client_options.scopes:
                 raise ValueError(
-                    "When providing a transport instance, "
-                    "provide its scopes directly."
+                    "When providing a transport instance, provide its scopes "
+                    "directly."
                 )
             self._transport = transport
         else:
@@ -457,7 +467,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -536,7 +546,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -621,7 +631,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -693,7 +703,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -773,7 +783,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('reservation.name', request.reservation.name),
+                ("reservation.name", request.reservation.name),
             )),
         )
 
@@ -870,7 +880,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -930,7 +940,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1027,7 +1037,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1099,7 +1109,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1200,7 +1210,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('capacity_commitment.name', request.capacity_commitment.name),
+                ("capacity_commitment.name", request.capacity_commitment.name),
             )),
         )
 
@@ -1293,7 +1303,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1401,7 +1411,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1519,7 +1529,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1623,7 +1633,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1718,7 +1728,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1835,7 +1845,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1940,7 +1950,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2014,7 +2024,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2102,7 +2112,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('reservation.name', request.reservation.name),
+                ("reservation.name", request.reservation.name),
             )),
         )
 
@@ -2124,7 +2134,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-bigquery-reservation',
+            "google-cloud-bigquery-reservation",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -2132,5 +2142,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'ReservationServiceClient',
+    "ReservationServiceClient",
 )

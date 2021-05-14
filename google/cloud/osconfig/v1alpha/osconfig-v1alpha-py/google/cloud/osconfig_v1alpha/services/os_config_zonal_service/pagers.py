@@ -103,7 +103,7 @@ class ListOSPolicyAssignmentsAsyncPager:
             response: os_policy_assignments.ListOSPolicyAssignmentsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -225,7 +225,7 @@ class ListOSPolicyAssignmentRevisionsAsyncPager:
             response: os_policy_assignments.ListOSPolicyAssignmentRevisionsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -347,7 +347,7 @@ class ListInstanceOSPoliciesCompliancesAsyncPager:
             response: instance_os_policies_compliance.ListInstanceOSPoliciesCompliancesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -469,7 +469,7 @@ class ListInventoriesAsyncPager:
             response: inventory.ListInventoriesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -591,7 +591,7 @@ class ListVulnerabilityReportsAsyncPager:
             response: vulnerability.ListVulnerabilityReportsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

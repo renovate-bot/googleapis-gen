@@ -101,7 +101,7 @@ class ListJobsAsyncPager:
             response: services.ListJobsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -223,7 +223,7 @@ class ListJobTemplatesAsyncPager:
             response: services.ListJobTemplatesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

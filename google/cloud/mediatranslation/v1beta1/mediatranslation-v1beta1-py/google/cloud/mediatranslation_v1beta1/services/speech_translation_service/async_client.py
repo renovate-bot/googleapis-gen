@@ -54,7 +54,8 @@ class SpeechTranslationServiceAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -69,7 +70,7 @@ class SpeechTranslationServiceAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -86,7 +87,7 @@ class SpeechTranslationServiceAsyncClient:
 
     @property
     def transport(self) -> SpeechTranslationServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             SpeechTranslationServiceTransport: The transport used by the client instance.
@@ -97,11 +98,11 @@ class SpeechTranslationServiceAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, SpeechTranslationServiceTransport] = 'grpc_asyncio',
+            transport: Union[str, SpeechTranslationServiceTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the speech translation service client.
+        """Instantiates the speech translation service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -202,7 +203,7 @@ class SpeechTranslationServiceAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-mediatranslation',
+            "google-cloud-mediatranslation",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -210,5 +211,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'SpeechTranslationServiceAsyncClient',
+    "SpeechTranslationServiceAsyncClient",
 )

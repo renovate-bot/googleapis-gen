@@ -58,7 +58,8 @@ class ModelServiceAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -73,7 +74,7 @@ class ModelServiceAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -90,7 +91,7 @@ class ModelServiceAsyncClient:
 
     @property
     def transport(self) -> ModelServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             ModelServiceTransport: The transport used by the client instance.
@@ -101,11 +102,11 @@ class ModelServiceAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, ModelServiceTransport] = 'grpc_asyncio',
+            transport: Union[str, ModelServiceTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the model service client.
+        """Instantiates the model service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -196,8 +197,8 @@ class ModelServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([project_id, dataset_id, model_id])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = model.GetModelRequest(request)
 
@@ -283,8 +284,8 @@ class ModelServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([project_id, dataset_id, max_results])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = model.ListModelsRequest(request)
 
@@ -377,8 +378,8 @@ class ModelServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([project_id, dataset_id, model_id, model])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = gcb_model.PatchModelRequest(request)
 
@@ -460,8 +461,8 @@ class ModelServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([project_id, dataset_id, model_id])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = model.DeleteModelRequest(request)
 
@@ -497,7 +498,7 @@ class ModelServiceAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-bigquery',
+            "google-cloud-bigquery",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -505,5 +506,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'ModelServiceAsyncClient',
+    "ModelServiceAsyncClient",
 )

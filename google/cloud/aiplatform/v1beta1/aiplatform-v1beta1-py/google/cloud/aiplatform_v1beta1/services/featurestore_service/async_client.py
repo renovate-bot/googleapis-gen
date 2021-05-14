@@ -76,7 +76,8 @@ class FeaturestoreServiceAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -91,7 +92,7 @@ class FeaturestoreServiceAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -108,7 +109,7 @@ class FeaturestoreServiceAsyncClient:
 
     @property
     def transport(self) -> FeaturestoreServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             FeaturestoreServiceTransport: The transport used by the client instance.
@@ -119,11 +120,11 @@ class FeaturestoreServiceAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, FeaturestoreServiceTransport] = 'grpc_asyncio',
+            transport: Union[str, FeaturestoreServiceTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the featurestore service client.
+        """Instantiates the featurestore service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -213,8 +214,8 @@ class FeaturestoreServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, featurestore])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = featurestore_service.CreateFeaturestoreRequest(request)
 
@@ -237,7 +238,7 @@ class FeaturestoreServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -299,8 +300,8 @@ class FeaturestoreServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = featurestore_service.GetFeaturestoreRequest(request)
 
@@ -321,7 +322,7 @@ class FeaturestoreServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -378,8 +379,8 @@ class FeaturestoreServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = featurestore_service.ListFeaturestoresRequest(request)
 
@@ -400,7 +401,7 @@ class FeaturestoreServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -488,8 +489,8 @@ class FeaturestoreServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([featurestore, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = featurestore_service.UpdateFeaturestoreRequest(request)
 
@@ -512,7 +513,7 @@ class FeaturestoreServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('featurestore.name', request.featurestore.name),
+                ("featurestore.name", request.featurestore.name),
             )),
         )
 
@@ -589,8 +590,8 @@ class FeaturestoreServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = featurestore_service.DeleteFeaturestoreRequest(request)
 
@@ -611,7 +612,7 @@ class FeaturestoreServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -683,8 +684,8 @@ class FeaturestoreServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, entity_type])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = featurestore_service.CreateEntityTypeRequest(request)
 
@@ -707,7 +708,7 @@ class FeaturestoreServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -772,8 +773,8 @@ class FeaturestoreServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = featurestore_service.GetEntityTypeRequest(request)
 
@@ -794,7 +795,7 @@ class FeaturestoreServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -851,8 +852,8 @@ class FeaturestoreServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = featurestore_service.ListEntityTypesRequest(request)
 
@@ -873,7 +874,7 @@ class FeaturestoreServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -961,8 +962,8 @@ class FeaturestoreServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([entity_type, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = featurestore_service.UpdateEntityTypeRequest(request)
 
@@ -985,7 +986,7 @@ class FeaturestoreServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('entity_type.name', request.entity_type.name),
+                ("entity_type.name", request.entity_type.name),
             )),
         )
 
@@ -1054,8 +1055,8 @@ class FeaturestoreServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = featurestore_service.DeleteEntityTypeRequest(request)
 
@@ -1076,7 +1077,7 @@ class FeaturestoreServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1147,8 +1148,8 @@ class FeaturestoreServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, feature])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = featurestore_service.CreateFeatureRequest(request)
 
@@ -1171,7 +1172,7 @@ class FeaturestoreServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1249,8 +1250,8 @@ class FeaturestoreServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, requests])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = featurestore_service.BatchCreateFeaturesRequest(request)
 
@@ -1273,7 +1274,7 @@ class FeaturestoreServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1337,8 +1338,8 @@ class FeaturestoreServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = featurestore_service.GetFeatureRequest(request)
 
@@ -1359,7 +1360,7 @@ class FeaturestoreServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1416,8 +1417,8 @@ class FeaturestoreServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = featurestore_service.ListFeaturesRequest(request)
 
@@ -1438,7 +1439,7 @@ class FeaturestoreServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1525,8 +1526,8 @@ class FeaturestoreServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([feature, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = featurestore_service.UpdateFeatureRequest(request)
 
@@ -1549,7 +1550,7 @@ class FeaturestoreServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('feature.name', request.feature.name),
+                ("feature.name", request.feature.name),
             )),
         )
 
@@ -1616,8 +1617,8 @@ class FeaturestoreServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = featurestore_service.DeleteFeatureRequest(request)
 
@@ -1638,7 +1639,7 @@ class FeaturestoreServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1725,8 +1726,8 @@ class FeaturestoreServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([entity_type])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = featurestore_service.ImportFeatureValuesRequest(request)
 
@@ -1747,7 +1748,7 @@ class FeaturestoreServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('entity_type', request.entity_type),
+                ("entity_type", request.entity_type),
             )),
         )
 
@@ -1819,8 +1820,8 @@ class FeaturestoreServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([featurestore])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = featurestore_service.BatchReadFeatureValuesRequest(request)
 
@@ -1841,7 +1842,7 @@ class FeaturestoreServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('featurestore', request.featurestore),
+                ("featurestore", request.featurestore),
             )),
         )
 
@@ -1908,8 +1909,8 @@ class FeaturestoreServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([entity_type])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = featurestore_service.ExportFeatureValuesRequest(request)
 
@@ -1930,7 +1931,7 @@ class FeaturestoreServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('entity_type', request.entity_type),
+                ("entity_type", request.entity_type),
             )),
         )
 
@@ -1996,8 +1997,8 @@ class FeaturestoreServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([location])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = featurestore_service.SearchFeaturesRequest(request)
 
@@ -2018,7 +2019,7 @@ class FeaturestoreServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('location', request.location),
+                ("location", request.location),
             )),
         )
 
@@ -2049,7 +2050,7 @@ class FeaturestoreServiceAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-aiplatform',
+            "google-cloud-aiplatform",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -2057,5 +2058,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'FeaturestoreServiceAsyncClient',
+    "FeaturestoreServiceAsyncClient",
 )

@@ -172,12 +172,12 @@ class Document(proto.Message):
         color = proto.Field(
             proto.MESSAGE,
             number=2,
-            message=gt_color.Color,
+            message=color_pb2.Color,
         )
         background_color = proto.Field(
             proto.MESSAGE,
             number=3,
-            message=gt_color.Color,
+            message=color_pb2.Color,
         )
         font_weight = proto.Field(
             proto.STRING,

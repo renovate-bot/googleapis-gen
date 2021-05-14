@@ -101,7 +101,7 @@ class ListTopicsAsyncPager:
             response: admin.ListTopicsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -223,7 +223,7 @@ class ListTopicSubscriptionsAsyncPager:
             response: admin.ListTopicSubscriptionsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -345,7 +345,7 @@ class ListSubscriptionsAsyncPager:
             response: admin.ListSubscriptionsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

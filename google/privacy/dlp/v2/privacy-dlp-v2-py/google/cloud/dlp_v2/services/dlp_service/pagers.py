@@ -100,7 +100,7 @@ class ListInspectTemplatesAsyncPager:
             response: dlp.ListInspectTemplatesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -222,7 +222,7 @@ class ListDeidentifyTemplatesAsyncPager:
             response: dlp.ListDeidentifyTemplatesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -344,7 +344,7 @@ class ListJobTriggersAsyncPager:
             response: dlp.ListJobTriggersResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -466,7 +466,7 @@ class ListDlpJobsAsyncPager:
             response: dlp.ListDlpJobsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -588,7 +588,7 @@ class ListStoredInfoTypesAsyncPager:
             response: dlp.ListStoredInfoTypesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

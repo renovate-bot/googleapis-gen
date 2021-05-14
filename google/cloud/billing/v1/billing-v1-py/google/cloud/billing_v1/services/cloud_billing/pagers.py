@@ -100,7 +100,7 @@ class ListBillingAccountsAsyncPager:
             response: cloud_billing.ListBillingAccountsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -222,7 +222,7 @@ class ListProjectBillingInfoAsyncPager:
             response: cloud_billing.ListProjectBillingInfoResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

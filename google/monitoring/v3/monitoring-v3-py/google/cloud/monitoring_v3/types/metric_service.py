@@ -212,7 +212,7 @@ class ListMetricDescriptorsResponse(proto.Message):
     metric_descriptors = proto.RepeatedField(
         proto.MESSAGE,
         number=1,
-        message=ga_metric.MetricDescriptor,
+        message=metric_pb2.MetricDescriptor,
     )
     next_page_token = proto.Field(
         proto.STRING,
@@ -264,7 +264,7 @@ class CreateMetricDescriptorRequest(proto.Message):
     metric_descriptor = proto.Field(
         proto.MESSAGE,
         number=2,
-        message=ga_metric.MetricDescriptor,
+        message=metric_pb2.MetricDescriptor,
     )
 
 
@@ -434,7 +434,7 @@ class ListTimeSeriesResponse(proto.Message):
     execution_errors = proto.RepeatedField(
         proto.MESSAGE,
         number=3,
-        message=gr_status.Status,
+        message=status_pb2.Status,
     )
     unit = proto.Field(
         proto.STRING,
@@ -494,7 +494,7 @@ class CreateTimeSeriesError(proto.Message):
     status = proto.Field(
         proto.MESSAGE,
         number=2,
-        message=gr_status.Status,
+        message=status_pb2.Status,
     )
 
 
@@ -526,7 +526,7 @@ class CreateTimeSeriesSummary(proto.Message):
         status = proto.Field(
             proto.MESSAGE,
             number=1,
-            message=gr_status.Status,
+            message=status_pb2.Status,
         )
         point_count = proto.Field(
             proto.INT32,
@@ -630,7 +630,7 @@ class QueryTimeSeriesResponse(proto.Message):
     partial_errors = proto.RepeatedField(
         proto.MESSAGE,
         number=11,
-        message=gr_status.Status,
+        message=status_pb2.Status,
     )
 
 

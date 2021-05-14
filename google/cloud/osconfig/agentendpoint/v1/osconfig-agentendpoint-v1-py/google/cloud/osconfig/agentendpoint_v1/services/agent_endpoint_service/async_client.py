@@ -57,7 +57,8 @@ class AgentEndpointServiceAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -72,7 +73,7 @@ class AgentEndpointServiceAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -89,7 +90,7 @@ class AgentEndpointServiceAsyncClient:
 
     @property
     def transport(self) -> AgentEndpointServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             AgentEndpointServiceTransport: The transport used by the client instance.
@@ -100,11 +101,11 @@ class AgentEndpointServiceAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, AgentEndpointServiceTransport] = 'grpc_asyncio',
+            transport: Union[str, AgentEndpointServiceTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the agent endpoint service client.
+        """Instantiates the agent endpoint service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -196,8 +197,8 @@ class AgentEndpointServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([instance_id_token, agent_version])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = agentendpoint.ReceiveTaskNotificationRequest(request)
 
@@ -214,11 +215,11 @@ class AgentEndpointServiceAsyncClient:
             self._client._transport.receive_task_notification,
             default_retry=retries.Retry(
 initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.Aborted,
-                    exceptions.Cancelled,
-                    exceptions.DeadlineExceeded,
-                    exceptions.InternalServerError,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.Aborted,
+                    core_exceptions.Cancelled,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.InternalServerError,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=3600.0,
             ),
@@ -280,8 +281,8 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([instance_id_token])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = agentendpoint.StartNextTaskRequest(request)
 
@@ -373,8 +374,8 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([instance_id_token, task_id, task_type])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = agentendpoint.ReportTaskProgressRequest(request)
 
@@ -477,8 +478,8 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([instance_id_token, task_id, task_type, error_message])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = agentendpoint.ReportTaskCompleteRequest(request)
 
@@ -569,8 +570,8 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([instance_id_token, agent_version, supported_capabilities])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = agentendpoint.RegisterAgentRequest(request)
 
@@ -667,8 +668,8 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([instance_id_token, inventory_checksum, inventory])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = agentendpoint.ReportInventoryRequest(request)
 
@@ -707,7 +708,7 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-osconfig-agentendpoint',
+            "google-cloud-osconfig-agentendpoint",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -715,5 +716,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'AgentEndpointServiceAsyncClient',
+    "AgentEndpointServiceAsyncClient",
 )

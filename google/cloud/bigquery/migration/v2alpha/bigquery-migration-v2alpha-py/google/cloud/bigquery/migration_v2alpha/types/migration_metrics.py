@@ -67,12 +67,12 @@ class TimeSeries(proto.Message):
     value_type = proto.Field(
         proto.ENUM,
         number=2,
-        enum=ga_metric.MetricDescriptor.ValueType,
+        enum=metric_pb2.MetricDescriptor.ValueType,
     )
     metric_kind = proto.Field(
         proto.ENUM,
         number=3,
-        enum=ga_metric.MetricDescriptor.MetricKind,
+        enum=metric_pb2.MetricDescriptor.MetricKind,
     )
     points = proto.RepeatedField(
         proto.MESSAGE,

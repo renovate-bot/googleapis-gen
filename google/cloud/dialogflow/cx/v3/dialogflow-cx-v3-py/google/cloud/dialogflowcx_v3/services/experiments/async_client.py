@@ -64,7 +64,8 @@ class ExperimentsAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -79,7 +80,7 @@ class ExperimentsAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -96,7 +97,7 @@ class ExperimentsAsyncClient:
 
     @property
     def transport(self) -> ExperimentsTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             ExperimentsTransport: The transport used by the client instance.
@@ -107,11 +108,11 @@ class ExperimentsAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, ExperimentsTransport] = 'grpc_asyncio',
+            transport: Union[str, ExperimentsTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the experiments client.
+        """Instantiates the experiments client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -195,8 +196,8 @@ class ExperimentsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = experiment.ListExperimentsRequest(request)
 
@@ -217,7 +218,7 @@ class ExperimentsAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -282,8 +283,8 @@ class ExperimentsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = experiment.GetExperimentRequest(request)
 
@@ -304,7 +305,7 @@ class ExperimentsAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -370,8 +371,8 @@ class ExperimentsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, experiment])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = gcdc_experiment.CreateExperimentRequest(request)
 
@@ -394,7 +395,7 @@ class ExperimentsAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -454,8 +455,8 @@ class ExperimentsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([experiment, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = gcdc_experiment.UpdateExperimentRequest(request)
 
@@ -478,7 +479,7 @@ class ExperimentsAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('experiment.name', request.experiment.name),
+                ("experiment.name", request.experiment.name),
             )),
         )
 
@@ -528,8 +529,8 @@ class ExperimentsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = experiment.DeleteExperimentRequest(request)
 
@@ -550,7 +551,7 @@ class ExperimentsAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -603,8 +604,8 @@ class ExperimentsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = experiment.StartExperimentRequest(request)
 
@@ -625,7 +626,7 @@ class ExperimentsAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -681,8 +682,8 @@ class ExperimentsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = experiment.StopExperimentRequest(request)
 
@@ -703,7 +704,7 @@ class ExperimentsAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -725,7 +726,7 @@ class ExperimentsAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-dialogflowcx',
+            "google-cloud-dialogflowcx",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -733,5 +734,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'ExperimentsAsyncClient',
+    "ExperimentsAsyncClient",
 )

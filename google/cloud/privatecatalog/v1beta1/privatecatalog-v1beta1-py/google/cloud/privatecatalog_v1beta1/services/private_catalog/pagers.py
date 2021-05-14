@@ -100,7 +100,7 @@ class SearchCatalogsAsyncPager:
             response: private_catalog.SearchCatalogsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -222,7 +222,7 @@ class SearchProductsAsyncPager:
             response: private_catalog.SearchProductsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -344,7 +344,7 @@ class SearchVersionsAsyncPager:
             response: private_catalog.SearchVersionsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

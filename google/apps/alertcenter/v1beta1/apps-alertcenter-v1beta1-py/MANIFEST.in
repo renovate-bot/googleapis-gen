@@ -1,0 +1,2 @@
+recursive-include google/apps/alertcenter *.py
+recursive-include google/apps/alertcenter_v1beta1 *.py

@@ -111,7 +111,7 @@ class PatchDeployment(proto.Message):
     duration = proto.Field(
         proto.MESSAGE,
         number=5,
-        message=gp_duration.Duration,
+        message=duration_pb2.Duration,
     )
     one_time_schedule = proto.Field(
         proto.MESSAGE,

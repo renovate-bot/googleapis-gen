@@ -58,7 +58,8 @@ class SecuritySettingsServiceAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -73,7 +74,7 @@ class SecuritySettingsServiceAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -90,7 +91,7 @@ class SecuritySettingsServiceAsyncClient:
 
     @property
     def transport(self) -> SecuritySettingsServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             SecuritySettingsServiceTransport: The transport used by the client instance.
@@ -101,11 +102,11 @@ class SecuritySettingsServiceAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, SecuritySettingsServiceTransport] = 'grpc_asyncio',
+            transport: Union[str, SecuritySettingsServiceTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the security settings service client.
+        """Instantiates the security settings service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -197,8 +198,8 @@ class SecuritySettingsServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, security_settings])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = gcdc_security_settings.CreateSecuritySettingsRequest(request)
 
@@ -221,7 +222,7 @@ class SecuritySettingsServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -280,8 +281,8 @@ class SecuritySettingsServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = security_settings.GetSecuritySettingsRequest(request)
 
@@ -302,7 +303,7 @@ class SecuritySettingsServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -369,8 +370,8 @@ class SecuritySettingsServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([security_settings, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = gcdc_security_settings.UpdateSecuritySettingsRequest(request)
 
@@ -393,7 +394,7 @@ class SecuritySettingsServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('security_settings.name', request.security_settings.name),
+                ("security_settings.name", request.security_settings.name),
             )),
         )
 
@@ -451,8 +452,8 @@ class SecuritySettingsServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = security_settings.ListSecuritySettingsRequest(request)
 
@@ -473,7 +474,7 @@ class SecuritySettingsServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -532,8 +533,8 @@ class SecuritySettingsServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = security_settings.DeleteSecuritySettingsRequest(request)
 
@@ -554,7 +555,7 @@ class SecuritySettingsServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -573,7 +574,7 @@ class SecuritySettingsServiceAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-dialogflowcx',
+            "google-cloud-dialogflowcx",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -581,5 +582,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'SecuritySettingsServiceAsyncClient',
+    "SecuritySettingsServiceAsyncClient",
 )

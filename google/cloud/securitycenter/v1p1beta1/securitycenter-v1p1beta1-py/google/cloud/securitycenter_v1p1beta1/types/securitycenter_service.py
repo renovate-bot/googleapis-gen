@@ -990,7 +990,7 @@ class ListAssetsRequest(proto.Message):
     field_mask = proto.Field(
         proto.MESSAGE,
         number=7,
-        message=gp_field_mask.FieldMask,
+        message=field_mask_pb2.FieldMask,
     )
     page_token = proto.Field(
         proto.STRING,
@@ -1244,7 +1244,7 @@ class ListFindingsRequest(proto.Message):
     field_mask = proto.Field(
         proto.MESSAGE,
         number=7,
-        message=gp_field_mask.FieldMask,
+        message=field_mask_pb2.FieldMask,
     )
     page_token = proto.Field(
         proto.STRING,
@@ -1466,7 +1466,7 @@ class UpdateFindingRequest(proto.Message):
     update_mask = proto.Field(
         proto.MESSAGE,
         number=2,
-        message=gp_field_mask.FieldMask,
+        message=field_mask_pb2.FieldMask,
     )
 
 
@@ -1489,7 +1489,7 @@ class UpdateNotificationConfigRequest(proto.Message):
     update_mask = proto.Field(
         proto.MESSAGE,
         number=2,
-        message=gp_field_mask.FieldMask,
+        message=field_mask_pb2.FieldMask,
     )
 
 
@@ -1513,7 +1513,7 @@ class UpdateOrganizationSettingsRequest(proto.Message):
     update_mask = proto.Field(
         proto.MESSAGE,
         number=2,
-        message=gp_field_mask.FieldMask,
+        message=field_mask_pb2.FieldMask,
     )
 
 
@@ -1536,7 +1536,7 @@ class UpdateSourceRequest(proto.Message):
     update_mask = proto.Field(
         proto.MESSAGE,
         number=2,
-        message=gp_field_mask.FieldMask,
+        message=field_mask_pb2.FieldMask,
     )
 
 
@@ -1569,7 +1569,7 @@ class UpdateSecurityMarksRequest(proto.Message):
     update_mask = proto.Field(
         proto.MESSAGE,
         number=2,
-        message=gp_field_mask.FieldMask,
+        message=field_mask_pb2.FieldMask,
     )
     start_time = proto.Field(
         proto.MESSAGE,

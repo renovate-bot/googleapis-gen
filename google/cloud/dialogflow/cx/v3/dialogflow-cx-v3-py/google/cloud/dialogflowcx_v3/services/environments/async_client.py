@@ -66,7 +66,8 @@ class EnvironmentsAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -81,7 +82,7 @@ class EnvironmentsAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -98,7 +99,7 @@ class EnvironmentsAsyncClient:
 
     @property
     def transport(self) -> EnvironmentsTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             EnvironmentsTransport: The transport used by the client instance.
@@ -109,11 +110,11 @@ class EnvironmentsAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, EnvironmentsTransport] = 'grpc_asyncio',
+            transport: Union[str, EnvironmentsTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the environments client.
+        """Instantiates the environments client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -197,8 +198,8 @@ class EnvironmentsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = environment.ListEnvironmentsRequest(request)
 
@@ -219,7 +220,7 @@ class EnvironmentsAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -297,8 +298,8 @@ class EnvironmentsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = environment.GetEnvironmentRequest(request)
 
@@ -319,7 +320,7 @@ class EnvironmentsAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -395,8 +396,8 @@ class EnvironmentsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, environment])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = gcdc_environment.CreateEnvironmentRequest(request)
 
@@ -419,7 +420,7 @@ class EnvironmentsAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -498,8 +499,8 @@ class EnvironmentsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([environment, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = gcdc_environment.UpdateEnvironmentRequest(request)
 
@@ -522,7 +523,7 @@ class EnvironmentsAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('environment.name', request.environment.name),
+                ("environment.name", request.environment.name),
             )),
         )
 
@@ -580,8 +581,8 @@ class EnvironmentsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = environment.DeleteEnvironmentRequest(request)
 
@@ -602,7 +603,7 @@ class EnvironmentsAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -657,8 +658,8 @@ class EnvironmentsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = environment.LookupEnvironmentHistoryRequest(request)
 
@@ -679,7 +680,7 @@ class EnvironmentsAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -710,7 +711,7 @@ class EnvironmentsAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-dialogflowcx',
+            "google-cloud-dialogflowcx",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -718,5 +719,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'EnvironmentsAsyncClient',
+    "EnvironmentsAsyncClient",
 )

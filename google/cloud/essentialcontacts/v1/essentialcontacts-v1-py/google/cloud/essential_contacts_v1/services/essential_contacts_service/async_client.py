@@ -59,7 +59,8 @@ class EssentialContactsServiceAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -74,7 +75,7 @@ class EssentialContactsServiceAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -91,7 +92,7 @@ class EssentialContactsServiceAsyncClient:
 
     @property
     def transport(self) -> EssentialContactsServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             EssentialContactsServiceTransport: The transport used by the client instance.
@@ -102,11 +103,11 @@ class EssentialContactsServiceAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, EssentialContactsServiceTransport] = 'grpc_asyncio',
+            transport: Union[str, EssentialContactsServiceTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the essential contacts service client.
+        """Instantiates the essential contacts service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -194,8 +195,8 @@ class EssentialContactsServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, contact])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = service.CreateContactRequest(request)
 
@@ -218,7 +219,7 @@ class EssentialContactsServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -283,8 +284,8 @@ class EssentialContactsServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([contact, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = service.UpdateContactRequest(request)
 
@@ -307,7 +308,7 @@ class EssentialContactsServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('contact.name', request.contact.name),
+                ("contact.name", request.contact.name),
             )),
         )
 
@@ -364,8 +365,8 @@ class EssentialContactsServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = service.ListContactsRequest(request)
 
@@ -380,7 +381,7 @@ class EssentialContactsServiceAsyncClient:
             self._client._transport.list_contacts,
             default_retry=retries.Retry(
 initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
             ),
@@ -392,7 +393,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -456,8 +457,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = service.GetContactRequest(request)
 
@@ -472,7 +473,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.get_contact,
             default_retry=retries.Retry(
 initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
             ),
@@ -484,7 +485,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -533,8 +534,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = service.DeleteContactRequest(request)
 
@@ -555,7 +556,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -612,7 +613,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -671,7 +672,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('resource', request.resource),
+                ("resource", request.resource),
             )),
         )
 
@@ -690,7 +691,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-essential-contacts',
+            "google-cloud-essential-contacts",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -698,5 +699,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'EssentialContactsServiceAsyncClient',
+    "EssentialContactsServiceAsyncClient",
 )

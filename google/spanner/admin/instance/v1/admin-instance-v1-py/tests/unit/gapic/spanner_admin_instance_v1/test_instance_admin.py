@@ -2103,7 +2103,7 @@ def test_update_instance_flattened():
         # using the keyword arguments to the method.
         client.update_instance(
             instance=spanner_instance_admin.Instance(name='name_value'),
-            field_mask=gp_field_mask.FieldMask(paths=['paths_value']),
+            field_mask=field_mask_pb2.FieldMask(paths=['paths_value']),
         )
 
         # Establish that the underlying call was made with the expected
@@ -2111,7 +2111,7 @@ def test_update_instance_flattened():
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
         assert args[0].instance == spanner_instance_admin.Instance(name='name_value')
-        assert args[0].field_mask == gp_field_mask.FieldMask(paths=['paths_value'])
+        assert args[0].field_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
 
 
 def test_update_instance_flattened_error():
@@ -2125,7 +2125,7 @@ def test_update_instance_flattened_error():
         client.update_instance(
             spanner_instance_admin.UpdateInstanceRequest(),
             instance=spanner_instance_admin.Instance(name='name_value'),
-            field_mask=gp_field_mask.FieldMask(paths=['paths_value']),
+            field_mask=field_mask_pb2.FieldMask(paths=['paths_value']),
         )
 
 
@@ -2149,7 +2149,7 @@ async def test_update_instance_flattened_async():
         # using the keyword arguments to the method.
         response = await client.update_instance(
             instance=spanner_instance_admin.Instance(name='name_value'),
-            field_mask=gp_field_mask.FieldMask(paths=['paths_value']),
+            field_mask=field_mask_pb2.FieldMask(paths=['paths_value']),
         )
 
         # Establish that the underlying call was made with the expected
@@ -2157,7 +2157,7 @@ async def test_update_instance_flattened_async():
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
         assert args[0].instance == spanner_instance_admin.Instance(name='name_value')
-        assert args[0].field_mask == gp_field_mask.FieldMask(paths=['paths_value'])
+        assert args[0].field_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
 
 
 @pytest.mark.asyncio
@@ -2172,7 +2172,7 @@ async def test_update_instance_flattened_error_async():
         await client.update_instance(
             spanner_instance_admin.UpdateInstanceRequest(),
             instance=spanner_instance_admin.Instance(name='name_value'),
-            field_mask=gp_field_mask.FieldMask(paths=['paths_value']),
+            field_mask=field_mask_pb2.FieldMask(paths=['paths_value']),
         )
 
 
@@ -3452,7 +3452,7 @@ def test_instance_admin_transport_create_channel_old_api_core(transport_class, g
         transport_class(quota_project_id="octopus")
 
         create_channel.assert_called_with(
-            "spanner.googleapis.com",
+            "spanner.googleapis.com:443",
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",
@@ -3488,7 +3488,7 @@ def test_instance_admin_transport_create_channel_user_scopes(transport_class, gr
         transport_class(quota_project_id="octopus", scopes=["1", "2"])
 
         create_channel.assert_called_with(
-            "spanner.googleapis.com",
+            "spanner.googleapis.com:443",
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",

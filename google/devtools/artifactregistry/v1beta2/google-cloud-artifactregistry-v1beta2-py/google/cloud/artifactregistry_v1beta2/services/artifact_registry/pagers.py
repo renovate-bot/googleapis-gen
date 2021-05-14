@@ -104,7 +104,7 @@ class ListRepositoriesAsyncPager:
             response: repository.ListRepositoriesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -226,7 +226,7 @@ class ListPackagesAsyncPager:
             response: package.ListPackagesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -348,7 +348,7 @@ class ListVersionsAsyncPager:
             response: version.ListVersionsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -470,7 +470,7 @@ class ListFilesAsyncPager:
             response: file.ListFilesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -592,7 +592,7 @@ class ListTagsAsyncPager:
             response: tag.ListTagsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

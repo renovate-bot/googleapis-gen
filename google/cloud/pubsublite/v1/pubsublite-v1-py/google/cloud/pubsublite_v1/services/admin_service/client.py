@@ -47,13 +47,13 @@ class AdminServiceClientMeta(type):
     objects.
     """
     _transport_registry = OrderedDict()  # type: Dict[str, Type[AdminServiceTransport]]
-    _transport_registry['grpc'] = AdminServiceGrpcTransport
-    _transport_registry['grpc_asyncio'] = AdminServiceGrpcAsyncIOTransport
+    _transport_registry["grpc"] = AdminServiceGrpcTransport
+    _transport_registry["grpc_asyncio"] = AdminServiceGrpcAsyncIOTransport
 
     def get_transport_class(cls,
             label: str = None,
         ) -> Type[AdminServiceTransport]:
-        """Return an appropriate transport class.
+        """Returns an appropriate transport class.
 
         Args:
             label: The name of the desired transport. If none is
@@ -79,7 +79,8 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
 
     @staticmethod
     def _get_default_mtls_endpoint(api_endpoint):
-        """Convert api endpoint to mTLS endpoint.
+        """Converts api endpoint to mTLS endpoint.
+
         Convert "*.sandbox.googleapis.com" and "*.googleapis.com" to
         "*.mtls.sandbox.googleapis.com" and "*.mtls.googleapis.com" respectively.
         Args:
@@ -106,14 +107,15 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
 
         return api_endpoint.replace(".googleapis.com", ".mtls.googleapis.com")
 
-    DEFAULT_ENDPOINT = 'pubsublite.googleapis.com'
+    DEFAULT_ENDPOINT = "pubsublite.googleapis.com"
     DEFAULT_MTLS_ENDPOINT = _get_default_mtls_endpoint.__func__(  # type: ignore
         DEFAULT_ENDPOINT
     )
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -130,7 +132,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -143,45 +145,46 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         """
         credentials = service_account.Credentials.from_service_account_file(
             filename)
-        kwargs['credentials'] = credentials
+        kwargs["credentials"] = credentials
         return cls(*args, **kwargs)
 
     from_service_account_json = from_service_account_file
 
     @property
     def transport(self) -> AdminServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
-            AdminServiceTransport: The transport used by the client instance.
+            AdminServiceTransport: The transport used by the client
+                instance.
         """
         return self._transport
 
     @staticmethod
     def subscription_path(project: str,location: str,subscription: str,) -> str:
-        """Return a fully-qualified subscription string."""
+        """Returns a fully-qualified subscription string."""
         return "projects/{project}/locations/{location}/subscriptions/{subscription}".format(project=project, location=location, subscription=subscription, )
 
     @staticmethod
     def parse_subscription_path(path: str) -> Dict[str,str]:
-        """Parse a subscription path into its component segments."""
+        """Parses a subscription path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/subscriptions/(?P<subscription>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def topic_path(project: str,location: str,topic: str,) -> str:
-        """Return a fully-qualified topic string."""
+        """Returns a fully-qualified topic string."""
         return "projects/{project}/locations/{location}/topics/{topic}".format(project=project, location=location, topic=topic, )
 
     @staticmethod
     def parse_topic_path(path: str) -> Dict[str,str]:
-        """Parse a topic path into its component segments."""
+        """Parses a topic path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/topics/(?P<topic>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
-        """Return a fully-qualified billing_account string."""
+        """Returns a fully-qualified billing_account string."""
         return "billingAccounts/{billing_account}".format(billing_account=billing_account, )
 
     @staticmethod
@@ -192,7 +195,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
 
     @staticmethod
     def common_folder_path(folder: str, ) -> str:
-        """Return a fully-qualified folder string."""
+        """Returns a fully-qualified folder string."""
         return "folders/{folder}".format(folder=folder, )
 
     @staticmethod
@@ -203,7 +206,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
 
     @staticmethod
     def common_organization_path(organization: str, ) -> str:
-        """Return a fully-qualified organization string."""
+        """Returns a fully-qualified organization string."""
         return "organizations/{organization}".format(organization=organization, )
 
     @staticmethod
@@ -214,7 +217,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
 
     @staticmethod
     def common_project_path(project: str, ) -> str:
-        """Return a fully-qualified project string."""
+        """Returns a fully-qualified project string."""
         return "projects/{project}".format(project=project, )
 
     @staticmethod
@@ -225,7 +228,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
 
     @staticmethod
     def common_location_path(project: str, location: str, ) -> str:
-        """Return a fully-qualified location string."""
+        """Returns a fully-qualified location string."""
         return "projects/{project}/locations/{location}".format(project=project, location=location, )
 
     @staticmethod
@@ -240,7 +243,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the admin service client.
+        """Instantiates the admin service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -293,7 +296,10 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
                 client_cert_source_func = client_options.client_cert_source
             else:
                 is_mtls = mtls.has_default_client_cert_source()
-                client_cert_source_func = mtls.default_client_cert_source() if is_mtls else None
+                if is_mtls:
+                    client_cert_source_func = mtls.default_client_cert_source()
+                else:
+                    client_cert_source_func = None
 
         # Figure out which api endpoint to use.
         if client_options.api_endpoint is not None:
@@ -305,10 +311,14 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
             elif use_mtls_env == "always":
                 api_endpoint = self.DEFAULT_MTLS_ENDPOINT
             elif use_mtls_env == "auto":
-                api_endpoint = self.DEFAULT_MTLS_ENDPOINT if is_mtls else self.DEFAULT_ENDPOINT
+                if is_mtls:
+                    api_endpoint = self.DEFAULT_MTLS_ENDPOINT
+                else:
+                    api_endpoint = self.DEFAULT_ENDPOINT
             else:
                 raise MutualTLSChannelError(
-                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted values: never, auto, always"
+                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted "
+                    "values: never, auto, always"
                 )
 
         # Save or instantiate the transport.
@@ -317,12 +327,12 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         if isinstance(transport, AdminServiceTransport):
             # transport is a AdminServiceTransport instance.
             if credentials or client_options.credentials_file:
-                raise ValueError('When providing a transport instance, '
-                                 'provide its credentials directly.')
+                raise ValueError("When providing a transport instance, "
+                                 "provide its credentials directly.")
             if client_options.scopes:
                 raise ValueError(
-                    "When providing a transport instance, "
-                    "provide its scopes directly."
+                    "When providing a transport instance, provide its scopes "
+                    "directly."
                 )
             self._transport = transport
         else:
@@ -417,7 +427,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -489,7 +499,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -562,7 +572,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -639,7 +649,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -730,7 +740,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('topic.name', request.topic.name),
+                ("topic.name", request.topic.name),
             )),
         )
 
@@ -798,7 +808,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -872,7 +882,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -978,7 +988,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1053,7 +1063,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1131,7 +1141,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1224,7 +1234,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('subscription.name', request.subscription.name),
+                ("subscription.name", request.subscription.name),
             )),
         )
 
@@ -1292,7 +1302,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1311,7 +1321,7 @@ class AdminServiceClient(metaclass=AdminServiceClientMeta):
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-pubsublite',
+            "google-cloud-pubsublite",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -1319,5 +1329,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'AdminServiceClient',
+    "AdminServiceClient",
 )

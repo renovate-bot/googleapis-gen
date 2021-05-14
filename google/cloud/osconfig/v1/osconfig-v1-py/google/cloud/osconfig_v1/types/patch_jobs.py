@@ -101,7 +101,7 @@ class ExecutePatchJobRequest(proto.Message):
     duration = proto.Field(
         proto.MESSAGE,
         number=5,
-        message=gp_duration.Duration,
+        message=duration_pb2.Duration,
     )
     dry_run = proto.Field(
         proto.BOOL,
@@ -520,7 +520,7 @@ class PatchJob(proto.Message):
     duration = proto.Field(
         proto.MESSAGE,
         number=8,
-        message=gp_duration.Duration,
+        message=duration_pb2.Duration,
     )
     instance_details_summary = proto.Field(
         proto.MESSAGE,

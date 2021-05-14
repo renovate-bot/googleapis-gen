@@ -57,7 +57,7 @@ class DocumentProcessorServiceTransport(abc.ABC):
         'https://www.googleapis.com/auth/cloud-platform',
     )
 
-    DEFAULT_HOST: str = 'us-documentai.googleapis.com'
+    DEFAULT_HOST: str = 'documentai.googleapis.com'
     def __init__(
             self, *,
             host: str = DEFAULT_HOST,

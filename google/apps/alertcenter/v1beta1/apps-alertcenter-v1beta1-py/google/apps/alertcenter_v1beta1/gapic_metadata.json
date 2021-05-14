@@ -1,0 +1,133 @@
+ {
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "python",
+  "libraryPackage": "google.apps.alertcenter_v1beta1",
+  "protoPackage": "google.apps.alertcenter.v1beta1",
+  "schema": "1.0",
+  "services": {
+    "AlertCenterService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AlertCenterServiceClient",
+          "rpcs": {
+            "BatchDeleteAlerts": {
+              "methods": [
+                "batch_delete_alerts"
+              ]
+            },
+            "BatchUndeleteAlerts": {
+              "methods": [
+                "batch_undelete_alerts"
+              ]
+            },
+            "CreateAlertFeedback": {
+              "methods": [
+                "create_alert_feedback"
+              ]
+            },
+            "DeleteAlert": {
+              "methods": [
+                "delete_alert"
+              ]
+            },
+            "GetAlert": {
+              "methods": [
+                "get_alert"
+              ]
+            },
+            "GetAlertMetadata": {
+              "methods": [
+                "get_alert_metadata"
+              ]
+            },
+            "GetSettings": {
+              "methods": [
+                "get_settings"
+              ]
+            },
+            "ListAlertFeedback": {
+              "methods": [
+                "list_alert_feedback"
+              ]
+            },
+            "ListAlerts": {
+              "methods": [
+                "list_alerts"
+              ]
+            },
+            "UndeleteAlert": {
+              "methods": [
+                "undelete_alert"
+              ]
+            },
+            "UpdateSettings": {
+              "methods": [
+                "update_settings"
+              ]
+            }
+          }
+        },
+        "grpc-async": {
+          "libraryClient": "AlertCenterServiceAsyncClient",
+          "rpcs": {
+            "BatchDeleteAlerts": {
+              "methods": [
+                "batch_delete_alerts"
+              ]
+            },
+            "BatchUndeleteAlerts": {
+              "methods": [
+                "batch_undelete_alerts"
+              ]
+            },
+            "CreateAlertFeedback": {
+              "methods": [
+                "create_alert_feedback"
+              ]
+            },
+            "DeleteAlert": {
+              "methods": [
+                "delete_alert"
+              ]
+            },
+            "GetAlert": {
+              "methods": [
+                "get_alert"
+              ]
+            },
+            "GetAlertMetadata": {
+              "methods": [
+                "get_alert_metadata"
+              ]
+            },
+            "GetSettings": {
+              "methods": [
+                "get_settings"
+              ]
+            },
+            "ListAlertFeedback": {
+              "methods": [
+                "list_alert_feedback"
+              ]
+            },
+            "ListAlerts": {
+              "methods": [
+                "list_alerts"
+              ]
+            },
+            "UndeleteAlert": {
+              "methods": [
+                "undelete_alert"
+              ]
+            },
+            "UpdateSettings": {
+              "methods": [
+                "update_settings"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

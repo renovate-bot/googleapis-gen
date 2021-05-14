@@ -180,7 +180,7 @@ class Profile(proto.Message):
     duration = proto.Field(
         proto.MESSAGE,
         number=4,
-        message=gp_duration.Duration,
+        message=duration_pb2.Duration,
     )
     profile_bytes = proto.Field(
         proto.BYTES,

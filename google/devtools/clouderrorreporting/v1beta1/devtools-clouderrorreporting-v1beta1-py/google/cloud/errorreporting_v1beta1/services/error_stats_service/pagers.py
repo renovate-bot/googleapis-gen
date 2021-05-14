@@ -101,7 +101,7 @@ class ListGroupStatsAsyncPager:
             response: error_stats_service.ListGroupStatsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -223,7 +223,7 @@ class ListEventsAsyncPager:
             response: error_stats_service.ListEventsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

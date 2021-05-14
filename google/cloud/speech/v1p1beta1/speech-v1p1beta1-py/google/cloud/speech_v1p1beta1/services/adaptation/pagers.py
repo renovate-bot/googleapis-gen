@@ -101,7 +101,7 @@ class ListPhraseSetAsyncPager:
             response: cloud_speech_adaptation.ListPhraseSetResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -223,7 +223,7 @@ class ListCustomClassesAsyncPager:
             response: cloud_speech_adaptation.ListCustomClassesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

@@ -327,7 +327,7 @@ class ConversationTurn(proto.Message):
         status = proto.Field(
             proto.MESSAGE,
             number=10,
-            message=gr_status.Status,
+            message=status_pb2.Status,
         )
 
     user_input = proto.Field(
@@ -958,7 +958,7 @@ class TestError(proto.Message):
     status = proto.Field(
         proto.MESSAGE,
         number=2,
-        message=gr_status.Status,
+        message=status_pb2.Status,
     )
     test_time = proto.Field(
         proto.MESSAGE,
@@ -1050,7 +1050,7 @@ class TestCaseError(proto.Message):
     status = proto.Field(
         proto.MESSAGE,
         number=2,
-        message=gr_status.Status,
+        message=status_pb2.Status,
     )
 
 

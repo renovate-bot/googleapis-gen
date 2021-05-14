@@ -58,13 +58,13 @@ class DatasetServiceClientMeta(type):
     objects.
     """
     _transport_registry = OrderedDict()  # type: Dict[str, Type[DatasetServiceTransport]]
-    _transport_registry['grpc'] = DatasetServiceGrpcTransport
-    _transport_registry['grpc_asyncio'] = DatasetServiceGrpcAsyncIOTransport
+    _transport_registry["grpc"] = DatasetServiceGrpcTransport
+    _transport_registry["grpc_asyncio"] = DatasetServiceGrpcAsyncIOTransport
 
     def get_transport_class(cls,
             label: str = None,
         ) -> Type[DatasetServiceTransport]:
-        """Return an appropriate transport class.
+        """Returns an appropriate transport class.
 
         Args:
             label: The name of the desired transport. If none is
@@ -87,7 +87,8 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
 
     @staticmethod
     def _get_default_mtls_endpoint(api_endpoint):
-        """Convert api endpoint to mTLS endpoint.
+        """Converts api endpoint to mTLS endpoint.
+
         Convert "*.sandbox.googleapis.com" and "*.googleapis.com" to
         "*.mtls.sandbox.googleapis.com" and "*.mtls.googleapis.com" respectively.
         Args:
@@ -114,14 +115,15 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
 
         return api_endpoint.replace(".googleapis.com", ".mtls.googleapis.com")
 
-    DEFAULT_ENDPOINT = 'aiplatform.googleapis.com'
+    DEFAULT_ENDPOINT = "aiplatform.googleapis.com"
     DEFAULT_MTLS_ENDPOINT = _get_default_mtls_endpoint.__func__(  # type: ignore
         DEFAULT_ENDPOINT
     )
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -138,7 +140,7 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -151,67 +153,68 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
         """
         credentials = service_account.Credentials.from_service_account_file(
             filename)
-        kwargs['credentials'] = credentials
+        kwargs["credentials"] = credentials
         return cls(*args, **kwargs)
 
     from_service_account_json = from_service_account_file
 
     @property
     def transport(self) -> DatasetServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
-            DatasetServiceTransport: The transport used by the client instance.
+            DatasetServiceTransport: The transport used by the client
+                instance.
         """
         return self._transport
 
     @staticmethod
     def annotation_path(project: str,location: str,dataset: str,data_item: str,annotation: str,) -> str:
-        """Return a fully-qualified annotation string."""
+        """Returns a fully-qualified annotation string."""
         return "projects/{project}/locations/{location}/datasets/{dataset}/dataItems/{data_item}/annotations/{annotation}".format(project=project, location=location, dataset=dataset, data_item=data_item, annotation=annotation, )
 
     @staticmethod
     def parse_annotation_path(path: str) -> Dict[str,str]:
-        """Parse a annotation path into its component segments."""
+        """Parses a annotation path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/datasets/(?P<dataset>.+?)/dataItems/(?P<data_item>.+?)/annotations/(?P<annotation>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def annotation_spec_path(project: str,location: str,dataset: str,annotation_spec: str,) -> str:
-        """Return a fully-qualified annotation_spec string."""
+        """Returns a fully-qualified annotation_spec string."""
         return "projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}".format(project=project, location=location, dataset=dataset, annotation_spec=annotation_spec, )
 
     @staticmethod
     def parse_annotation_spec_path(path: str) -> Dict[str,str]:
-        """Parse a annotation_spec path into its component segments."""
+        """Parses a annotation_spec path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/datasets/(?P<dataset>.+?)/annotationSpecs/(?P<annotation_spec>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def data_item_path(project: str,location: str,dataset: str,data_item: str,) -> str:
-        """Return a fully-qualified data_item string."""
+        """Returns a fully-qualified data_item string."""
         return "projects/{project}/locations/{location}/datasets/{dataset}/dataItems/{data_item}".format(project=project, location=location, dataset=dataset, data_item=data_item, )
 
     @staticmethod
     def parse_data_item_path(path: str) -> Dict[str,str]:
-        """Parse a data_item path into its component segments."""
+        """Parses a data_item path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/datasets/(?P<dataset>.+?)/dataItems/(?P<data_item>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def dataset_path(project: str,location: str,dataset: str,) -> str:
-        """Return a fully-qualified dataset string."""
+        """Returns a fully-qualified dataset string."""
         return "projects/{project}/locations/{location}/datasets/{dataset}".format(project=project, location=location, dataset=dataset, )
 
     @staticmethod
     def parse_dataset_path(path: str) -> Dict[str,str]:
-        """Parse a dataset path into its component segments."""
+        """Parses a dataset path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/datasets/(?P<dataset>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
-        """Return a fully-qualified billing_account string."""
+        """Returns a fully-qualified billing_account string."""
         return "billingAccounts/{billing_account}".format(billing_account=billing_account, )
 
     @staticmethod
@@ -222,7 +225,7 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
 
     @staticmethod
     def common_folder_path(folder: str, ) -> str:
-        """Return a fully-qualified folder string."""
+        """Returns a fully-qualified folder string."""
         return "folders/{folder}".format(folder=folder, )
 
     @staticmethod
@@ -233,7 +236,7 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
 
     @staticmethod
     def common_organization_path(organization: str, ) -> str:
-        """Return a fully-qualified organization string."""
+        """Returns a fully-qualified organization string."""
         return "organizations/{organization}".format(organization=organization, )
 
     @staticmethod
@@ -244,7 +247,7 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
 
     @staticmethod
     def common_project_path(project: str, ) -> str:
-        """Return a fully-qualified project string."""
+        """Returns a fully-qualified project string."""
         return "projects/{project}".format(project=project, )
 
     @staticmethod
@@ -255,7 +258,7 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
 
     @staticmethod
     def common_location_path(project: str, location: str, ) -> str:
-        """Return a fully-qualified location string."""
+        """Returns a fully-qualified location string."""
         return "projects/{project}/locations/{location}".format(project=project, location=location, )
 
     @staticmethod
@@ -270,7 +273,7 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the dataset service client.
+        """Instantiates the dataset service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -323,7 +326,10 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
                 client_cert_source_func = client_options.client_cert_source
             else:
                 is_mtls = mtls.has_default_client_cert_source()
-                client_cert_source_func = mtls.default_client_cert_source() if is_mtls else None
+                if is_mtls:
+                    client_cert_source_func = mtls.default_client_cert_source()
+                else:
+                    client_cert_source_func = None
 
         # Figure out which api endpoint to use.
         if client_options.api_endpoint is not None:
@@ -335,10 +341,14 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
             elif use_mtls_env == "always":
                 api_endpoint = self.DEFAULT_MTLS_ENDPOINT
             elif use_mtls_env == "auto":
-                api_endpoint = self.DEFAULT_MTLS_ENDPOINT if is_mtls else self.DEFAULT_ENDPOINT
+                if is_mtls:
+                    api_endpoint = self.DEFAULT_MTLS_ENDPOINT
+                else:
+                    api_endpoint = self.DEFAULT_ENDPOINT
             else:
                 raise MutualTLSChannelError(
-                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted values: never, auto, always"
+                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted "
+                    "values: never, auto, always"
                 )
 
         # Save or instantiate the transport.
@@ -347,12 +357,12 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
         if isinstance(transport, DatasetServiceTransport):
             # transport is a DatasetServiceTransport instance.
             if credentials or client_options.credentials_file:
-                raise ValueError('When providing a transport instance, '
-                                 'provide its credentials directly.')
+                raise ValueError("When providing a transport instance, "
+                                 "provide its credentials directly.")
             if client_options.scopes:
                 raise ValueError(
-                    "When providing a transport instance, "
-                    "provide its scopes directly."
+                    "When providing a transport instance, provide its scopes "
+                    "directly."
                 )
             self._transport = transport
         else:
@@ -439,7 +449,7 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -522,7 +532,7 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -613,7 +623,7 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('dataset.name', request.dataset.name),
+                ("dataset.name", request.dataset.name),
             )),
         )
 
@@ -691,7 +701,7 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -789,7 +799,7 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -887,7 +897,7 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -984,7 +994,7 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1071,7 +1081,7 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1157,7 +1167,7 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1237,7 +1247,7 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1268,7 +1278,7 @@ class DatasetServiceClient(metaclass=DatasetServiceClientMeta):
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-aiplatform',
+            "google-cloud-aiplatform",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -1276,5 +1286,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'DatasetServiceClient',
+    "DatasetServiceClient",
 )

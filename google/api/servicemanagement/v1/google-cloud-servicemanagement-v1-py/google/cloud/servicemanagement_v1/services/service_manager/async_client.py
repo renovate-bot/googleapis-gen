@@ -83,7 +83,8 @@ class ServiceManagerAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -98,7 +99,7 @@ class ServiceManagerAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -115,7 +116,7 @@ class ServiceManagerAsyncClient:
 
     @property
     def transport(self) -> ServiceManagerTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             ServiceManagerTransport: The transport used by the client instance.
@@ -126,11 +127,11 @@ class ServiceManagerAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, ServiceManagerTransport] = 'grpc_asyncio',
+            transport: Union[str, ServiceManagerTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the service manager client.
+        """Instantiates the service manager client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -230,8 +231,8 @@ class ServiceManagerAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([producer_project_id, consumer_id])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = servicemanager.ListServicesRequest(request)
 
@@ -311,8 +312,8 @@ class ServiceManagerAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([service_name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = servicemanager.GetServiceRequest(request)
 
@@ -383,8 +384,8 @@ class ServiceManagerAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([service])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = servicemanager.CreateServiceRequest(request)
 
@@ -480,8 +481,8 @@ class ServiceManagerAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([service_name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = servicemanager.DeleteServiceRequest(request)
 
@@ -566,8 +567,8 @@ class ServiceManagerAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([service_name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = servicemanager.UndeleteServiceRequest(request)
 
@@ -647,8 +648,8 @@ class ServiceManagerAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([service_name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = servicemanager.ListServiceConfigsRequest(request)
 
@@ -762,8 +763,8 @@ class ServiceManagerAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([service_name, config_id, view])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = servicemanager.GetServiceConfigRequest(request)
 
@@ -868,8 +869,8 @@ class ServiceManagerAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([service_name, service_config])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = servicemanager.CreateServiceConfigRequest(request)
 
@@ -972,8 +973,8 @@ class ServiceManagerAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([service_name, config_source, validate_only])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = servicemanager.SubmitConfigSourceRequest(request)
 
@@ -1073,8 +1074,8 @@ class ServiceManagerAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([service_name, filter])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = servicemanager.ListServiceRolloutsRequest(request)
 
@@ -1166,8 +1167,8 @@ class ServiceManagerAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([service_name, rollout_id])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = servicemanager.GetServiceRolloutRequest(request)
 
@@ -1265,8 +1266,8 @@ class ServiceManagerAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([service_name, rollout])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = servicemanager.CreateServiceRolloutRequest(request)
 
@@ -1307,8 +1308,8 @@ class ServiceManagerAsyncClient:
     async def generate_config_report(self,
             request: servicemanager.GenerateConfigReportRequest = None,
             *,
-            new_config: gp_any.Any = None,
-            old_config: gp_any.Any = None,
+            new_config: any_pb2.Any = None,
+            old_config: any_pb2.Any = None,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -1369,8 +1370,8 @@ class ServiceManagerAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([new_config, old_config])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = servicemanager.GenerateConfigReportRequest(request)
 
@@ -1464,8 +1465,8 @@ class ServiceManagerAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([service_name, consumer_id])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = servicemanager.EnableServiceRequest(request)
 
@@ -1567,8 +1568,8 @@ class ServiceManagerAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([service_name, consumer_id])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = servicemanager.DisableServiceRequest(request)
 
@@ -1613,7 +1614,7 @@ class ServiceManagerAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-service-management',
+            "google-cloud-service-management",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -1621,5 +1622,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'ServiceManagerAsyncClient',
+    "ServiceManagerAsyncClient",
 )

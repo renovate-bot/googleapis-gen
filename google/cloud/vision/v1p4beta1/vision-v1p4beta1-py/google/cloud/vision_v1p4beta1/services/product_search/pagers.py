@@ -100,7 +100,7 @@ class ListProductSetsAsyncPager:
             response: product_search_service.ListProductSetsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -222,7 +222,7 @@ class ListProductsAsyncPager:
             response: product_search_service.ListProductsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -344,7 +344,7 @@ class ListReferenceImagesAsyncPager:
             response: product_search_service.ListReferenceImagesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -466,7 +466,7 @@ class ListProductsInProductSetAsyncPager:
             response: product_search_service.ListProductsInProductSetResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

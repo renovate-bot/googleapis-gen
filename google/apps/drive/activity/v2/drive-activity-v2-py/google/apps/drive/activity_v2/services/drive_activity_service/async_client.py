@@ -58,7 +58,8 @@ class DriveActivityServiceAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -73,7 +74,7 @@ class DriveActivityServiceAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -90,7 +91,7 @@ class DriveActivityServiceAsyncClient:
 
     @property
     def transport(self) -> DriveActivityServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             DriveActivityServiceTransport: The transport used by the client instance.
@@ -101,11 +102,11 @@ class DriveActivityServiceAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, DriveActivityServiceTransport] = 'grpc_asyncio',
+            transport: Union[str, DriveActivityServiceTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the drive activity service client.
+        """Instantiates the drive activity service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -182,7 +183,7 @@ class DriveActivityServiceAsyncClient:
             self._client._transport.query_drive_activity,
             default_retry=retries.Retry(
 initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
             ),
@@ -217,7 +218,7 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-apps-drive-activity',
+            "google-apps-drive-activity",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -225,5 +226,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'DriveActivityServiceAsyncClient',
+    "DriveActivityServiceAsyncClient",
 )

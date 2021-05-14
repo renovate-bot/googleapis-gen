@@ -100,7 +100,7 @@ class ListServiceAccountsAsyncPager:
             response: iam.ListServiceAccountsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -222,7 +222,7 @@ class QueryGrantableRolesAsyncPager:
             response: iam.QueryGrantableRolesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -344,7 +344,7 @@ class ListRolesAsyncPager:
             response: iam.ListRolesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -466,7 +466,7 @@ class QueryTestablePermissionsAsyncPager:
             response: iam.QueryTestablePermissionsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

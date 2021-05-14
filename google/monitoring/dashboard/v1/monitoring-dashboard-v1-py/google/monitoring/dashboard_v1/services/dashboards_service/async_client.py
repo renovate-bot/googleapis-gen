@@ -60,7 +60,8 @@ class DashboardsServiceAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -75,7 +76,7 @@ class DashboardsServiceAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -92,7 +93,7 @@ class DashboardsServiceAsyncClient:
 
     @property
     def transport(self) -> DashboardsServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             DashboardsServiceTransport: The transport used by the client instance.
@@ -103,11 +104,11 @@ class DashboardsServiceAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, DashboardsServiceTransport] = 'grpc_asyncio',
+            transport: Union[str, DashboardsServiceTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the dashboards service client.
+        """Instantiates the dashboards service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -194,7 +195,7 @@ class DashboardsServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -255,7 +256,7 @@ class DashboardsServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -325,7 +326,7 @@ class DashboardsServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -378,7 +379,7 @@ class DashboardsServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -436,7 +437,7 @@ class DashboardsServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('dashboard.name', request.dashboard.name),
+                ("dashboard.name", request.dashboard.name),
             )),
         )
 
@@ -458,7 +459,7 @@ class DashboardsServiceAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-monitoring-dashboard',
+            "google-monitoring-dashboard",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -466,5 +467,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'DashboardsServiceAsyncClient',
+    "DashboardsServiceAsyncClient",
 )

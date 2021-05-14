@@ -102,7 +102,7 @@ class ListInsightsAsyncPager:
             response: recommender_service.ListInsightsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -224,7 +224,7 @@ class ListRecommendationsAsyncPager:
             response: recommender_service.ListRecommendationsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

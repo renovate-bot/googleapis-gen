@@ -59,7 +59,8 @@ class TopicStatsServiceAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -74,7 +75,7 @@ class TopicStatsServiceAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -91,7 +92,7 @@ class TopicStatsServiceAsyncClient:
 
     @property
     def transport(self) -> TopicStatsServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             TopicStatsServiceTransport: The transport used by the client instance.
@@ -102,11 +103,11 @@ class TopicStatsServiceAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, TopicStatsServiceTransport] = 'grpc_asyncio',
+            transport: Union[str, TopicStatsServiceTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the topic stats service client.
+        """Instantiates the topic stats service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -188,7 +189,7 @@ class TopicStatsServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('topic', request.topic),
+                ("topic", request.topic),
             )),
         )
 
@@ -249,7 +250,7 @@ class TopicStatsServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('topic', request.topic),
+                ("topic", request.topic),
             )),
         )
 
@@ -306,7 +307,7 @@ class TopicStatsServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('topic', request.topic),
+                ("topic", request.topic),
             )),
         )
 
@@ -328,7 +329,7 @@ class TopicStatsServiceAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-pubsublite',
+            "google-cloud-pubsublite",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -336,5 +337,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'TopicStatsServiceAsyncClient',
+    "TopicStatsServiceAsyncClient",
 )

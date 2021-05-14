@@ -128,7 +128,7 @@ class TimeSeries(proto.Message):
     metric = proto.Field(
         proto.MESSAGE,
         number=1,
-        message=ga_metric.Metric,
+        message=metric_pb2.Metric,
     )
     resource = proto.Field(
         proto.MESSAGE,
@@ -143,12 +143,12 @@ class TimeSeries(proto.Message):
     metric_kind = proto.Field(
         proto.ENUM,
         number=3,
-        enum=ga_metric.MetricDescriptor.MetricKind,
+        enum=metric_pb2.MetricDescriptor.MetricKind,
     )
     value_type = proto.Field(
         proto.ENUM,
         number=4,
-        enum=ga_metric.MetricDescriptor.ValueType,
+        enum=metric_pb2.MetricDescriptor.ValueType,
     )
     points = proto.RepeatedField(
         proto.MESSAGE,
@@ -193,12 +193,12 @@ class TimeSeriesDescriptor(proto.Message):
         value_type = proto.Field(
             proto.ENUM,
             number=2,
-            enum=ga_metric.MetricDescriptor.ValueType,
+            enum=metric_pb2.MetricDescriptor.ValueType,
         )
         metric_kind = proto.Field(
             proto.ENUM,
             number=3,
-            enum=ga_metric.MetricDescriptor.MetricKind,
+            enum=metric_pb2.MetricDescriptor.MetricKind,
         )
         unit = proto.Field(
             proto.STRING,

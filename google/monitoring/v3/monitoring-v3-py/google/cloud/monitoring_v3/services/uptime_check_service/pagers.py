@@ -101,7 +101,7 @@ class ListUptimeCheckConfigsAsyncPager:
             response: uptime_service.ListUptimeCheckConfigsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -223,7 +223,7 @@ class ListUptimeCheckIpsAsyncPager:
             response: uptime_service.ListUptimeCheckIpsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

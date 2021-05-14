@@ -714,7 +714,7 @@ def test_streaming_video_intelligence_service_transport_create_channel_old_api_c
         transport_class(quota_project_id="octopus")
 
         create_channel.assert_called_with(
-            "videointelligence.googleapis.com",
+            "videointelligence.googleapis.com:443",
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",
@@ -749,7 +749,7 @@ def test_streaming_video_intelligence_service_transport_create_channel_user_scop
         transport_class(quota_project_id="octopus", scopes=["1", "2"])
 
         create_channel.assert_called_with(
-            "videointelligence.googleapis.com",
+            "videointelligence.googleapis.com:443",
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",

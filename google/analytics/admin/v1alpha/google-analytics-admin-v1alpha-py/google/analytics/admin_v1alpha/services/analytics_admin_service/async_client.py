@@ -82,7 +82,8 @@ class AnalyticsAdminServiceAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -97,7 +98,7 @@ class AnalyticsAdminServiceAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -114,7 +115,7 @@ class AnalyticsAdminServiceAsyncClient:
 
     @property
     def transport(self) -> AnalyticsAdminServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             AnalyticsAdminServiceTransport: The transport used by the client instance.
@@ -125,11 +126,11 @@ class AnalyticsAdminServiceAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, AnalyticsAdminServiceTransport] = 'grpc_asyncio',
+            transport: Union[str, AnalyticsAdminServiceTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the analytics admin service client.
+        """Instantiates the analytics admin service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -207,8 +208,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.GetAccountRequest(request)
 
@@ -229,7 +230,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -349,8 +350,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.DeleteAccountRequest(request)
 
@@ -371,7 +372,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -432,8 +433,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([account, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.UpdateAccountRequest(request)
 
@@ -456,7 +457,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('account.name', request.account.name),
+                ("account.name", request.account.name),
             )),
         )
 
@@ -615,8 +616,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.GetPropertyRequest(request)
 
@@ -637,7 +638,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -757,8 +758,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([property])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.CreatePropertyRequest(request)
 
@@ -836,8 +837,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.DeletePropertyRequest(request)
 
@@ -858,7 +859,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -923,8 +924,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([property, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.UpdatePropertyRequest(request)
 
@@ -947,7 +948,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('property.name', request.property.name),
+                ("property.name", request.property.name),
             )),
         )
 
@@ -1001,8 +1002,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.GetUserLinkRequest(request)
 
@@ -1023,7 +1024,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1079,7 +1080,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1135,8 +1136,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.ListUserLinksRequest(request)
 
@@ -1157,7 +1158,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1234,7 +1235,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1315,8 +1316,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, user_link])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.CreateUserLinkRequest(request)
 
@@ -1339,7 +1340,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1397,7 +1398,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1449,8 +1450,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([user_link])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.UpdateUserLinkRequest(request)
 
@@ -1471,7 +1472,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('user_link.name', request.user_link.name),
+                ("user_link.name", request.user_link.name),
             )),
         )
 
@@ -1527,7 +1528,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1574,8 +1575,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.DeleteUserLinkRequest(request)
 
@@ -1596,7 +1597,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1643,7 +1644,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1695,8 +1696,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.GetWebDataStreamRequest(request)
 
@@ -1717,7 +1718,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1766,8 +1767,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.DeleteWebDataStreamRequest(request)
 
@@ -1788,7 +1789,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1849,8 +1850,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([web_data_stream, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.UpdateWebDataStreamRequest(request)
 
@@ -1873,7 +1874,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('web_data_stream.name', request.web_data_stream.name),
+                ("web_data_stream.name", request.web_data_stream.name),
             )),
         )
 
@@ -1934,8 +1935,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, web_data_stream])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.CreateWebDataStreamRequest(request)
 
@@ -1958,7 +1959,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -2020,8 +2021,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.ListWebDataStreamsRequest(request)
 
@@ -2042,7 +2043,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -2106,8 +2107,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.GetIosAppDataStreamRequest(request)
 
@@ -2128,7 +2129,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2177,8 +2178,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.DeleteIosAppDataStreamRequest(request)
 
@@ -2199,7 +2200,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2261,8 +2262,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([ios_app_data_stream, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.UpdateIosAppDataStreamRequest(request)
 
@@ -2285,7 +2286,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('ios_app_data_stream.name', request.ios_app_data_stream.name),
+                ("ios_app_data_stream.name", request.ios_app_data_stream.name),
             )),
         )
 
@@ -2347,8 +2348,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.ListIosAppDataStreamsRequest(request)
 
@@ -2369,7 +2370,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -2433,8 +2434,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.GetAndroidAppDataStreamRequest(request)
 
@@ -2455,7 +2456,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2504,8 +2505,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.DeleteAndroidAppDataStreamRequest(request)
 
@@ -2526,7 +2527,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2588,8 +2589,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([android_app_data_stream, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.UpdateAndroidAppDataStreamRequest(request)
 
@@ -2612,7 +2613,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('android_app_data_stream.name', request.android_app_data_stream.name),
+                ("android_app_data_stream.name", request.android_app_data_stream.name),
             )),
         )
 
@@ -2674,8 +2675,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.ListAndroidAppDataStreamsRequest(request)
 
@@ -2696,7 +2697,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -2764,8 +2765,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.GetEnhancedMeasurementSettingsRequest(request)
 
@@ -2786,7 +2787,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2854,8 +2855,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([enhanced_measurement_settings, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.UpdateEnhancedMeasurementSettingsRequest(request)
 
@@ -2878,7 +2879,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('enhanced_measurement_settings.name', request.enhanced_measurement_settings.name),
+                ("enhanced_measurement_settings.name", request.enhanced_measurement_settings.name),
             )),
         )
 
@@ -2940,8 +2941,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, firebase_link])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.CreateFirebaseLinkRequest(request)
 
@@ -2964,7 +2965,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -3028,8 +3029,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([firebase_link, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.UpdateFirebaseLinkRequest(request)
 
@@ -3052,7 +3053,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('firebase_link.name', request.firebase_link.name),
+                ("firebase_link.name", request.firebase_link.name),
             )),
         )
 
@@ -3100,8 +3101,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.DeleteFirebaseLinkRequest(request)
 
@@ -3122,7 +3123,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -3176,8 +3177,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.ListFirebaseLinksRequest(request)
 
@@ -3198,7 +3199,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -3266,8 +3267,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.GetGlobalSiteTagRequest(request)
 
@@ -3288,7 +3289,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -3349,8 +3350,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, google_ads_link])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.CreateGoogleAdsLinkRequest(request)
 
@@ -3373,7 +3374,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -3435,8 +3436,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([google_ads_link, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.UpdateGoogleAdsLinkRequest(request)
 
@@ -3459,7 +3460,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('google_ads_link.name', request.google_ads_link.name),
+                ("google_ads_link.name", request.google_ads_link.name),
             )),
         )
 
@@ -3506,8 +3507,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.DeleteGoogleAdsLinkRequest(request)
 
@@ -3528,7 +3529,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -3581,8 +3582,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.ListGoogleAdsLinksRequest(request)
 
@@ -3603,7 +3604,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -3670,8 +3671,8 @@ class AnalyticsAdminServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = analytics_admin.GetDataSharingSettingsRequest(request)
 
@@ -3692,7 +3693,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -3751,7 +3752,7 @@ class AnalyticsAdminServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('account', request.account),
+                ("account", request.account),
             )),
         )
 
@@ -3782,7 +3783,7 @@ class AnalyticsAdminServiceAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-analytics-admin',
+            "google-analytics-admin",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -3790,5 +3791,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'AnalyticsAdminServiceAsyncClient',
+    "AnalyticsAdminServiceAsyncClient",
 )

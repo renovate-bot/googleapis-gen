@@ -216,7 +216,7 @@ class BundleElement(proto.Message):
         proto.MESSAGE,
         number=4,
         oneof='element_type',
-        message=gfv_document.Document,
+        message=document_pb2.Document,
     )
 
 

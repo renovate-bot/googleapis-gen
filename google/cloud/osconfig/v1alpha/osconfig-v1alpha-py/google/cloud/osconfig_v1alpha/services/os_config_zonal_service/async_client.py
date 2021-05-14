@@ -78,7 +78,8 @@ class OsConfigZonalServiceAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -93,7 +94,7 @@ class OsConfigZonalServiceAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -110,7 +111,7 @@ class OsConfigZonalServiceAsyncClient:
 
     @property
     def transport(self) -> OsConfigZonalServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             OsConfigZonalServiceTransport: The transport used by the client instance.
@@ -121,11 +122,11 @@ class OsConfigZonalServiceAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, OsConfigZonalServiceTransport] = 'grpc_asyncio',
+            transport: Union[str, OsConfigZonalServiceTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the os config zonal service client.
+        """Instantiates the os config zonal service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -249,8 +250,8 @@ class OsConfigZonalServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, os_policy_assignment, os_policy_assignment_id])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = os_policy_assignments.CreateOSPolicyAssignmentRequest(request)
 
@@ -275,7 +276,7 @@ class OsConfigZonalServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -366,8 +367,8 @@ class OsConfigZonalServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([os_policy_assignment, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = os_policy_assignments.UpdateOSPolicyAssignmentRequest(request)
 
@@ -390,7 +391,7 @@ class OsConfigZonalServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('os_policy_assignment.name', request.os_policy_assignment.name),
+                ("os_policy_assignment.name", request.os_policy_assignment.name),
             )),
         )
 
@@ -467,8 +468,8 @@ class OsConfigZonalServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = os_policy_assignments.GetOSPolicyAssignmentRequest(request)
 
@@ -489,7 +490,7 @@ class OsConfigZonalServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -546,8 +547,8 @@ class OsConfigZonalServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = os_policy_assignments.ListOSPolicyAssignmentsRequest(request)
 
@@ -568,7 +569,7 @@ class OsConfigZonalServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -634,8 +635,8 @@ class OsConfigZonalServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = os_policy_assignments.ListOSPolicyAssignmentRevisionsRequest(request)
 
@@ -656,7 +657,7 @@ class OsConfigZonalServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -743,8 +744,8 @@ class OsConfigZonalServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = os_policy_assignments.DeleteOSPolicyAssignmentRequest(request)
 
@@ -765,7 +766,7 @@ class OsConfigZonalServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -849,8 +850,8 @@ class OsConfigZonalServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = instance_os_policies_compliance.GetInstanceOSPoliciesComplianceRequest(request)
 
@@ -871,7 +872,7 @@ class OsConfigZonalServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -934,8 +935,8 @@ class OsConfigZonalServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = instance_os_policies_compliance.ListInstanceOSPoliciesCompliancesRequest(request)
 
@@ -956,7 +957,7 @@ class OsConfigZonalServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1034,8 +1035,8 @@ class OsConfigZonalServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = inventory.GetInventoryRequest(request)
 
@@ -1056,7 +1057,7 @@ class OsConfigZonalServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1121,8 +1122,8 @@ class OsConfigZonalServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = inventory.ListInventoriesRequest(request)
 
@@ -1143,7 +1144,7 @@ class OsConfigZonalServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1218,8 +1219,8 @@ class OsConfigZonalServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = vulnerability.GetVulnerabilityReportRequest(request)
 
@@ -1240,7 +1241,7 @@ class OsConfigZonalServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1306,8 +1307,8 @@ class OsConfigZonalServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = vulnerability.ListVulnerabilityReportsRequest(request)
 
@@ -1328,7 +1329,7 @@ class OsConfigZonalServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1359,7 +1360,7 @@ class OsConfigZonalServiceAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-osconfig',
+            "google-cloud-osconfig",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -1367,5 +1368,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'OsConfigZonalServiceAsyncClient',
+    "OsConfigZonalServiceAsyncClient",
 )

@@ -59,7 +59,8 @@ class ServiceControllerAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -74,7 +75,7 @@ class ServiceControllerAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -91,7 +92,7 @@ class ServiceControllerAsyncClient:
 
     @property
     def transport(self) -> ServiceControllerTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             ServiceControllerTransport: The transport used by the client instance.
@@ -102,11 +103,11 @@ class ServiceControllerAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, ServiceControllerTransport] = 'grpc_asyncio',
+            transport: Union[str, ServiceControllerTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the service controller client.
+        """Instantiates the service controller client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -282,7 +283,7 @@ class ServiceControllerAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-service-control',
+            "google-cloud-service-control",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -290,5 +291,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'ServiceControllerAsyncClient',
+    "ServiceControllerAsyncClient",
 )

@@ -60,7 +60,8 @@ class AdaptationAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -75,7 +76,7 @@ class AdaptationAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -92,7 +93,7 @@ class AdaptationAsyncClient:
 
     @property
     def transport(self) -> AdaptationTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             AdaptationTransport: The transport used by the client instance.
@@ -103,11 +104,11 @@ class AdaptationAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, AdaptationTransport] = 'grpc_asyncio',
+            transport: Union[str, AdaptationTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the adaptation client.
+        """Instantiates the adaptation client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -207,8 +208,8 @@ class AdaptationAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, phrase_set, phrase_set_id])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloud_speech_adaptation.CreatePhraseSetRequest(request)
 
@@ -233,7 +234,7 @@ class AdaptationAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -288,8 +289,8 @@ class AdaptationAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloud_speech_adaptation.GetPhraseSetRequest(request)
 
@@ -310,7 +311,7 @@ class AdaptationAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -367,8 +368,8 @@ class AdaptationAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloud_speech_adaptation.ListPhraseSetRequest(request)
 
@@ -389,7 +390,7 @@ class AdaptationAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -461,8 +462,8 @@ class AdaptationAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([phrase_set, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloud_speech_adaptation.UpdatePhraseSetRequest(request)
 
@@ -485,7 +486,7 @@ class AdaptationAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('phrase_set.name', request.phrase_set.name),
+                ("phrase_set.name", request.phrase_set.name),
             )),
         )
 
@@ -532,8 +533,8 @@ class AdaptationAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloud_speech_adaptation.DeletePhraseSetRequest(request)
 
@@ -554,7 +555,7 @@ class AdaptationAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -627,8 +628,8 @@ class AdaptationAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, custom_class, custom_class_id])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloud_speech_adaptation.CreateCustomClassRequest(request)
 
@@ -653,7 +654,7 @@ class AdaptationAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -712,8 +713,8 @@ class AdaptationAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloud_speech_adaptation.GetCustomClassRequest(request)
 
@@ -734,7 +735,7 @@ class AdaptationAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -791,8 +792,8 @@ class AdaptationAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloud_speech_adaptation.ListCustomClassesRequest(request)
 
@@ -813,7 +814,7 @@ class AdaptationAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -889,8 +890,8 @@ class AdaptationAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([custom_class, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloud_speech_adaptation.UpdateCustomClassRequest(request)
 
@@ -913,7 +914,7 @@ class AdaptationAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('custom_class.name', request.custom_class.name),
+                ("custom_class.name", request.custom_class.name),
             )),
         )
 
@@ -961,8 +962,8 @@ class AdaptationAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloud_speech_adaptation.DeleteCustomClassRequest(request)
 
@@ -983,7 +984,7 @@ class AdaptationAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1002,7 +1003,7 @@ class AdaptationAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-speech',
+            "google-cloud-speech",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -1010,5 +1011,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'AdaptationAsyncClient',
+    "AdaptationAsyncClient",
 )

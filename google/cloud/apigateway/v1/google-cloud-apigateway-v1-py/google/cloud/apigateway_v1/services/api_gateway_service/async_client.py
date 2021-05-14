@@ -73,7 +73,8 @@ class ApiGatewayServiceAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -88,7 +89,7 @@ class ApiGatewayServiceAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -105,7 +106,7 @@ class ApiGatewayServiceAsyncClient:
 
     @property
     def transport(self) -> ApiGatewayServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             ApiGatewayServiceTransport: The transport used by the client instance.
@@ -116,11 +117,11 @@ class ApiGatewayServiceAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, ApiGatewayServiceTransport] = 'grpc_asyncio',
+            transport: Union[str, ApiGatewayServiceTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the api gateway service client.
+        """Instantiates the api gateway service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -201,8 +202,8 @@ class ApiGatewayServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = apigateway.ListGatewaysRequest(request)
 
@@ -223,7 +224,7 @@ class ApiGatewayServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -289,8 +290,8 @@ class ApiGatewayServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = apigateway.GetGatewayRequest(request)
 
@@ -311,7 +312,7 @@ class ApiGatewayServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -384,8 +385,8 @@ class ApiGatewayServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, gateway, gateway_id])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = apigateway.CreateGatewayRequest(request)
 
@@ -404,8 +405,8 @@ class ApiGatewayServiceAsyncClient:
             self._client._transport.create_gateway,
             default_retry=retries.Retry(
 initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
-                    exceptions.Unknown,
+                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.Unknown,
                 ),
                 deadline=60.0,
             ),
@@ -417,7 +418,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -492,8 +493,8 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([gateway, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = apigateway.UpdateGatewayRequest(request)
 
@@ -510,8 +511,8 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
             self._client._transport.update_gateway,
             default_retry=retries.Retry(
 initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
-                    exceptions.Unknown,
+                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.Unknown,
                 ),
                 deadline=60.0,
             ),
@@ -523,7 +524,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('gateway.name', request.gateway.name),
+                ("gateway.name", request.gateway.name),
             )),
         )
 
@@ -597,8 +598,8 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = apigateway.DeleteGatewayRequest(request)
 
@@ -613,8 +614,8 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
             self._client._transport.delete_gateway,
             default_retry=retries.Retry(
 initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
-                    exceptions.Unknown,
+                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.Unknown,
                 ),
                 deadline=60.0,
             ),
@@ -626,7 +627,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -690,8 +691,8 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = apigateway.ListApisRequest(request)
 
@@ -712,7 +713,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -774,8 +775,8 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = apigateway.GetApiRequest(request)
 
@@ -796,7 +797,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -867,8 +868,8 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, api, api_id])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = apigateway.CreateApiRequest(request)
 
@@ -887,8 +888,8 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
             self._client._transport.create_api,
             default_retry=retries.Retry(
 initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
-                    exceptions.Unknown,
+                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.Unknown,
                 ),
                 deadline=60.0,
             ),
@@ -900,7 +901,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -974,8 +975,8 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([api, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = apigateway.UpdateApiRequest(request)
 
@@ -992,8 +993,8 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
             self._client._transport.update_api,
             default_retry=retries.Retry(
 initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
-                    exceptions.Unknown,
+                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.Unknown,
                 ),
                 deadline=60.0,
             ),
@@ -1005,7 +1006,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('api.name', request.api.name),
+                ("api.name", request.api.name),
             )),
         )
 
@@ -1079,8 +1080,8 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = apigateway.DeleteApiRequest(request)
 
@@ -1095,8 +1096,8 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
             self._client._transport.delete_api,
             default_retry=retries.Retry(
 initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
-                    exceptions.Unknown,
+                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.Unknown,
                 ),
                 deadline=60.0,
             ),
@@ -1108,7 +1109,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1172,8 +1173,8 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = apigateway.ListApiConfigsRequest(request)
 
@@ -1194,7 +1195,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1257,8 +1258,8 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = apigateway.GetApiConfigRequest(request)
 
@@ -1279,7 +1280,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1350,8 +1351,8 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, api_config, api_config_id])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = apigateway.CreateApiConfigRequest(request)
 
@@ -1370,8 +1371,8 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
             self._client._transport.create_api_config,
             default_retry=retries.Retry(
 initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
-                    exceptions.Unknown,
+                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.Unknown,
                 ),
                 deadline=60.0,
             ),
@@ -1383,7 +1384,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1456,8 +1457,8 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([api_config, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = apigateway.UpdateApiConfigRequest(request)
 
@@ -1474,8 +1475,8 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
             self._client._transport.update_api_config,
             default_retry=retries.Retry(
 initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
-                    exceptions.Unknown,
+                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.Unknown,
                 ),
                 deadline=60.0,
             ),
@@ -1487,7 +1488,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('api_config.name', request.api_config.name),
+                ("api_config.name", request.api_config.name),
             )),
         )
 
@@ -1561,8 +1562,8 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = apigateway.DeleteApiConfigRequest(request)
 
@@ -1577,8 +1578,8 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
             self._client._transport.delete_api_config,
             default_retry=retries.Retry(
 initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
-                    exceptions.Unknown,
+                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.Unknown,
                 ),
                 deadline=60.0,
             ),
@@ -1590,7 +1591,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1620,7 +1621,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-api-gateway',
+            "google-cloud-api-gateway",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -1628,5 +1629,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'ApiGatewayServiceAsyncClient',
+    "ApiGatewayServiceAsyncClient",
 )

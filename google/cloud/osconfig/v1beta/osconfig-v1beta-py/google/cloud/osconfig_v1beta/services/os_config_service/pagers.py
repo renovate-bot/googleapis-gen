@@ -102,7 +102,7 @@ class ListPatchJobsAsyncPager:
             response: patch_jobs.ListPatchJobsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -224,7 +224,7 @@ class ListPatchJobInstanceDetailsAsyncPager:
             response: patch_jobs.ListPatchJobInstanceDetailsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -346,7 +346,7 @@ class ListPatchDeploymentsAsyncPager:
             response: patch_deployments.ListPatchDeploymentsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -468,7 +468,7 @@ class ListGuestPoliciesAsyncPager:
             response: guest_policies.ListGuestPoliciesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

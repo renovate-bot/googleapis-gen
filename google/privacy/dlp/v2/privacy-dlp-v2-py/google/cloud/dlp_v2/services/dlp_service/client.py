@@ -47,13 +47,13 @@ class DlpServiceClientMeta(type):
     objects.
     """
     _transport_registry = OrderedDict()  # type: Dict[str, Type[DlpServiceTransport]]
-    _transport_registry['grpc'] = DlpServiceGrpcTransport
-    _transport_registry['grpc_asyncio'] = DlpServiceGrpcAsyncIOTransport
+    _transport_registry["grpc"] = DlpServiceGrpcTransport
+    _transport_registry["grpc_asyncio"] = DlpServiceGrpcAsyncIOTransport
 
     def get_transport_class(cls,
             label: str = None,
         ) -> Type[DlpServiceTransport]:
-        """Return an appropriate transport class.
+        """Returns an appropriate transport class.
 
         Args:
             label: The name of the desired transport. If none is
@@ -85,7 +85,8 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
     @staticmethod
     def _get_default_mtls_endpoint(api_endpoint):
-        """Convert api endpoint to mTLS endpoint.
+        """Converts api endpoint to mTLS endpoint.
+
         Convert "*.sandbox.googleapis.com" and "*.googleapis.com" to
         "*.mtls.sandbox.googleapis.com" and "*.mtls.googleapis.com" respectively.
         Args:
@@ -112,14 +113,15 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
         return api_endpoint.replace(".googleapis.com", ".mtls.googleapis.com")
 
-    DEFAULT_ENDPOINT = 'dlp.googleapis.com'
+    DEFAULT_ENDPOINT = "dlp.googleapis.com"
     DEFAULT_MTLS_ENDPOINT = _get_default_mtls_endpoint.__func__(  # type: ignore
         DEFAULT_ENDPOINT
     )
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -136,7 +138,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -149,100 +151,101 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         """
         credentials = service_account.Credentials.from_service_account_file(
             filename)
-        kwargs['credentials'] = credentials
+        kwargs["credentials"] = credentials
         return cls(*args, **kwargs)
 
     from_service_account_json = from_service_account_file
 
     @property
     def transport(self) -> DlpServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
-            DlpServiceTransport: The transport used by the client instance.
+            DlpServiceTransport: The transport used by the client
+                instance.
         """
         return self._transport
 
     @staticmethod
     def deidentify_template_path(organization: str,deidentify_template: str,) -> str:
-        """Return a fully-qualified deidentify_template string."""
+        """Returns a fully-qualified deidentify_template string."""
         return "organizations/{organization}/deidentifyTemplates/{deidentify_template}".format(organization=organization, deidentify_template=deidentify_template, )
 
     @staticmethod
     def parse_deidentify_template_path(path: str) -> Dict[str,str]:
-        """Parse a deidentify_template path into its component segments."""
+        """Parses a deidentify_template path into its component segments."""
         m = re.match(r"^organizations/(?P<organization>.+?)/deidentifyTemplates/(?P<deidentify_template>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def dlp_content_path(project: str,) -> str:
-        """Return a fully-qualified dlp_content string."""
+        """Returns a fully-qualified dlp_content string."""
         return "projects/{project}/dlpContent".format(project=project, )
 
     @staticmethod
     def parse_dlp_content_path(path: str) -> Dict[str,str]:
-        """Parse a dlp_content path into its component segments."""
+        """Parses a dlp_content path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/dlpContent$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def dlp_job_path(project: str,dlp_job: str,) -> str:
-        """Return a fully-qualified dlp_job string."""
+        """Returns a fully-qualified dlp_job string."""
         return "projects/{project}/dlpJobs/{dlp_job}".format(project=project, dlp_job=dlp_job, )
 
     @staticmethod
     def parse_dlp_job_path(path: str) -> Dict[str,str]:
-        """Parse a dlp_job path into its component segments."""
+        """Parses a dlp_job path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/dlpJobs/(?P<dlp_job>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def finding_path(project: str,location: str,finding: str,) -> str:
-        """Return a fully-qualified finding string."""
+        """Returns a fully-qualified finding string."""
         return "projects/{project}/locations/{location}/findings/{finding}".format(project=project, location=location, finding=finding, )
 
     @staticmethod
     def parse_finding_path(path: str) -> Dict[str,str]:
-        """Parse a finding path into its component segments."""
+        """Parses a finding path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/findings/(?P<finding>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def inspect_template_path(organization: str,inspect_template: str,) -> str:
-        """Return a fully-qualified inspect_template string."""
+        """Returns a fully-qualified inspect_template string."""
         return "organizations/{organization}/inspectTemplates/{inspect_template}".format(organization=organization, inspect_template=inspect_template, )
 
     @staticmethod
     def parse_inspect_template_path(path: str) -> Dict[str,str]:
-        """Parse a inspect_template path into its component segments."""
+        """Parses a inspect_template path into its component segments."""
         m = re.match(r"^organizations/(?P<organization>.+?)/inspectTemplates/(?P<inspect_template>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def job_trigger_path(project: str,job_trigger: str,) -> str:
-        """Return a fully-qualified job_trigger string."""
+        """Returns a fully-qualified job_trigger string."""
         return "projects/{project}/jobTriggers/{job_trigger}".format(project=project, job_trigger=job_trigger, )
 
     @staticmethod
     def parse_job_trigger_path(path: str) -> Dict[str,str]:
-        """Parse a job_trigger path into its component segments."""
+        """Parses a job_trigger path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/jobTriggers/(?P<job_trigger>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def stored_info_type_path(organization: str,stored_info_type: str,) -> str:
-        """Return a fully-qualified stored_info_type string."""
+        """Returns a fully-qualified stored_info_type string."""
         return "organizations/{organization}/storedInfoTypes/{stored_info_type}".format(organization=organization, stored_info_type=stored_info_type, )
 
     @staticmethod
     def parse_stored_info_type_path(path: str) -> Dict[str,str]:
-        """Parse a stored_info_type path into its component segments."""
+        """Parses a stored_info_type path into its component segments."""
         m = re.match(r"^organizations/(?P<organization>.+?)/storedInfoTypes/(?P<stored_info_type>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
-        """Return a fully-qualified billing_account string."""
+        """Returns a fully-qualified billing_account string."""
         return "billingAccounts/{billing_account}".format(billing_account=billing_account, )
 
     @staticmethod
@@ -253,7 +256,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
     @staticmethod
     def common_folder_path(folder: str, ) -> str:
-        """Return a fully-qualified folder string."""
+        """Returns a fully-qualified folder string."""
         return "folders/{folder}".format(folder=folder, )
 
     @staticmethod
@@ -264,7 +267,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
     @staticmethod
     def common_organization_path(organization: str, ) -> str:
-        """Return a fully-qualified organization string."""
+        """Returns a fully-qualified organization string."""
         return "organizations/{organization}".format(organization=organization, )
 
     @staticmethod
@@ -275,7 +278,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
     @staticmethod
     def common_project_path(project: str, ) -> str:
-        """Return a fully-qualified project string."""
+        """Returns a fully-qualified project string."""
         return "projects/{project}".format(project=project, )
 
     @staticmethod
@@ -286,7 +289,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 
     @staticmethod
     def common_location_path(project: str, location: str, ) -> str:
-        """Return a fully-qualified location string."""
+        """Returns a fully-qualified location string."""
         return "projects/{project}/locations/{location}".format(project=project, location=location, )
 
     @staticmethod
@@ -301,7 +304,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the dlp service client.
+        """Instantiates the dlp service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -354,7 +357,10 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
                 client_cert_source_func = client_options.client_cert_source
             else:
                 is_mtls = mtls.has_default_client_cert_source()
-                client_cert_source_func = mtls.default_client_cert_source() if is_mtls else None
+                if is_mtls:
+                    client_cert_source_func = mtls.default_client_cert_source()
+                else:
+                    client_cert_source_func = None
 
         # Figure out which api endpoint to use.
         if client_options.api_endpoint is not None:
@@ -366,10 +372,14 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
             elif use_mtls_env == "always":
                 api_endpoint = self.DEFAULT_MTLS_ENDPOINT
             elif use_mtls_env == "auto":
-                api_endpoint = self.DEFAULT_MTLS_ENDPOINT if is_mtls else self.DEFAULT_ENDPOINT
+                if is_mtls:
+                    api_endpoint = self.DEFAULT_MTLS_ENDPOINT
+                else:
+                    api_endpoint = self.DEFAULT_ENDPOINT
             else:
                 raise MutualTLSChannelError(
-                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted values: never, auto, always"
+                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted "
+                    "values: never, auto, always"
                 )
 
         # Save or instantiate the transport.
@@ -378,12 +388,12 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         if isinstance(transport, DlpServiceTransport):
             # transport is a DlpServiceTransport instance.
             if credentials or client_options.credentials_file:
-                raise ValueError('When providing a transport instance, '
-                                 'provide its credentials directly.')
+                raise ValueError("When providing a transport instance, "
+                                 "provide its credentials directly.")
             if client_options.scopes:
                 raise ValueError(
-                    "When providing a transport instance, "
-                    "provide its scopes directly."
+                    "When providing a transport instance, provide its scopes "
+                    "directly."
                 )
             self._transport = transport
         else:
@@ -446,7 +456,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -510,7 +520,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -575,7 +585,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -630,7 +640,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -819,7 +829,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -921,7 +931,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1005,7 +1015,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1107,7 +1117,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1189,7 +1199,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1300,7 +1310,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1400,7 +1410,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1482,7 +1492,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1584,7 +1594,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1666,7 +1676,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1769,7 +1779,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1867,7 +1877,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1950,7 +1960,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2029,7 +2039,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2124,7 +2134,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -2205,7 +2215,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2260,7 +2270,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2382,7 +2392,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -2481,7 +2491,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -2568,7 +2578,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2642,7 +2652,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2694,7 +2704,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2802,7 +2812,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -2906,7 +2916,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2986,7 +2996,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -3088,7 +3098,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -3170,7 +3180,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -3249,7 +3259,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -3304,7 +3314,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -3323,7 +3333,7 @@ class DlpServiceClient(metaclass=DlpServiceClientMeta):
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-dlp',
+            "google-cloud-dlp",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -3331,5 +3341,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'DlpServiceClient',
+    "DlpServiceClient",
 )

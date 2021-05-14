@@ -163,7 +163,7 @@ class Operation(proto.Message):
     extensions = proto.RepeatedField(
         proto.MESSAGE,
         number=16,
-        message=gp_any.Any,
+        message=any_pb2.Any,
     )
 
 

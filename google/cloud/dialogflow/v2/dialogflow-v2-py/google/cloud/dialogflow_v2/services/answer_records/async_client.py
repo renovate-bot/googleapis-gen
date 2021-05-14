@@ -60,7 +60,8 @@ class AnswerRecordsAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -75,7 +76,7 @@ class AnswerRecordsAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -92,7 +93,7 @@ class AnswerRecordsAsyncClient:
 
     @property
     def transport(self) -> AnswerRecordsTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             AnswerRecordsTransport: The transport used by the client instance.
@@ -103,11 +104,11 @@ class AnswerRecordsAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, AnswerRecordsTransport] = 'grpc_asyncio',
+            transport: Union[str, AnswerRecordsTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the answer records client.
+        """Instantiates the answer records client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -190,8 +191,8 @@ class AnswerRecordsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = answer_record.ListAnswerRecordsRequest(request)
 
@@ -212,7 +213,7 @@ class AnswerRecordsAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -311,8 +312,8 @@ class AnswerRecordsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([answer_record, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = gcd_answer_record.UpdateAnswerRecordRequest(request)
 
@@ -335,7 +336,7 @@ class AnswerRecordsAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('answer_record.name', request.answer_record.name),
+                ("answer_record.name", request.answer_record.name),
             )),
         )
 
@@ -357,7 +358,7 @@ class AnswerRecordsAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-dialogflow',
+            "google-cloud-dialogflow",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -365,5 +366,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'AnswerRecordsAsyncClient',
+    "AnswerRecordsAsyncClient",
 )

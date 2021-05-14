@@ -60,7 +60,8 @@ class AssuredWorkloadsServiceAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -75,7 +76,7 @@ class AssuredWorkloadsServiceAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -92,7 +93,7 @@ class AssuredWorkloadsServiceAsyncClient:
 
     @property
     def transport(self) -> AssuredWorkloadsServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             AssuredWorkloadsServiceTransport: The transport used by the client instance.
@@ -103,11 +104,11 @@ class AssuredWorkloadsServiceAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, AssuredWorkloadsServiceTransport] = 'grpc_asyncio',
+            transport: Union[str, AssuredWorkloadsServiceTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the assured workloads service client.
+        """Instantiates the assured workloads service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -193,8 +194,8 @@ class AssuredWorkloadsServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, workload])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = assuredworkloads_v1beta1.CreateWorkloadRequest(request)
 
@@ -217,7 +218,7 @@ class AssuredWorkloadsServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -291,8 +292,8 @@ class AssuredWorkloadsServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([workload, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = assuredworkloads_v1beta1.UpdateWorkloadRequest(request)
 
@@ -315,7 +316,7 @@ class AssuredWorkloadsServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('workload.name', request.workload.name),
+                ("workload.name", request.workload.name),
             )),
         )
 
@@ -364,8 +365,8 @@ class AssuredWorkloadsServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = assuredworkloads_v1beta1.DeleteWorkloadRequest(request)
 
@@ -380,7 +381,7 @@ class AssuredWorkloadsServiceAsyncClient:
             self._client._transport.delete_workload,
             default_retry=retries.Retry(
 initial=0.2,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
             ),
@@ -392,7 +393,7 @@ initial=0.2,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -446,8 +447,8 @@ initial=0.2,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = assuredworkloads_v1beta1.GetWorkloadRequest(request)
 
@@ -462,7 +463,7 @@ initial=0.2,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.get_workload,
             default_retry=retries.Retry(
 initial=0.2,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
             ),
@@ -474,7 +475,7 @@ initial=0.2,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -530,8 +531,8 @@ initial=0.2,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = assuredworkloads_v1beta1.ListWorkloadsRequest(request)
 
@@ -546,7 +547,7 @@ initial=0.2,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.list_workloads,
             default_retry=retries.Retry(
 initial=0.2,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
             ),
@@ -558,7 +559,7 @@ initial=0.2,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -589,7 +590,7 @@ initial=0.2,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-assuredworkloads',
+            "google-cloud-assuredworkloads",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -597,5 +598,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'AssuredWorkloadsServiceAsyncClient',
+    "AssuredWorkloadsServiceAsyncClient",
 )

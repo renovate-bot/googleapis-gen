@@ -749,7 +749,7 @@ def test_customer_license_service_transport_create_channel_old_api_core(transpor
         transport_class(quota_project_id="octopus")
 
         create_channel.assert_called_with(
-            "appsmarket.googleapis.com",
+            "appsmarket.googleapis.com:443",
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",
@@ -784,7 +784,7 @@ def test_customer_license_service_transport_create_channel_user_scopes(transport
         transport_class(quota_project_id="octopus", scopes=["1", "2"])
 
         create_channel.assert_called_with(
-            "appsmarket.googleapis.com",
+            "appsmarket.googleapis.com:443",
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",

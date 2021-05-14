@@ -101,7 +101,7 @@ class ListKeyRingsAsyncPager:
             response: service.ListKeyRingsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -223,7 +223,7 @@ class ListCryptoKeysAsyncPager:
             response: service.ListCryptoKeysResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -345,7 +345,7 @@ class ListCryptoKeyVersionsAsyncPager:
             response: service.ListCryptoKeyVersionsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -467,7 +467,7 @@ class ListImportJobsAsyncPager:
             response: service.ListImportJobsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

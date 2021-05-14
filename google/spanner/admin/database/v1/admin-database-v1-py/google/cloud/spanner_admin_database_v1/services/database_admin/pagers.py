@@ -102,7 +102,7 @@ class ListDatabasesAsyncPager:
             response: spanner_database_admin.ListDatabasesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -224,7 +224,7 @@ class ListBackupsAsyncPager:
             response: backup.ListBackupsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -346,7 +346,7 @@ class ListDatabaseOperationsAsyncPager:
             response: spanner_database_admin.ListDatabaseOperationsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -468,7 +468,7 @@ class ListBackupOperationsAsyncPager:
             response: backup.ListBackupOperationsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

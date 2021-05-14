@@ -46,7 +46,7 @@ class ResourceErrorDetail(proto.Message):
     resource_info = proto.Field(
         proto.MESSAGE,
         number=1,
-        message=gr_error_details.ResourceInfo,
+        message=error_details_pb2.ResourceInfo,
     )
     error_details = proto.RepeatedField(
         proto.MESSAGE,
@@ -80,7 +80,7 @@ class ErrorDetail(proto.Message):
     error_info = proto.Field(
         proto.MESSAGE,
         number=2,
-        message=gr_error_details.ErrorInfo,
+        message=error_details_pb2.ErrorInfo,
     )
 
 

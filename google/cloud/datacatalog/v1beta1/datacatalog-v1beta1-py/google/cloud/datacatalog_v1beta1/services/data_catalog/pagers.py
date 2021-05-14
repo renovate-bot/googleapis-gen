@@ -102,7 +102,7 @@ class SearchCatalogAsyncPager:
             response: datacatalog.SearchCatalogResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -224,7 +224,7 @@ class ListEntryGroupsAsyncPager:
             response: datacatalog.ListEntryGroupsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -346,7 +346,7 @@ class ListEntriesAsyncPager:
             response: datacatalog.ListEntriesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -468,7 +468,7 @@ class ListTagsAsyncPager:
             response: datacatalog.ListTagsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

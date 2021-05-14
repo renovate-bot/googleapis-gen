@@ -75,7 +75,7 @@ class BuildStatus(proto.Message):
     details = proto.Field(
         proto.MESSAGE,
         number=2,
-        message=gp_any.Any,
+        message=any_pb2.Any,
     )
 
 

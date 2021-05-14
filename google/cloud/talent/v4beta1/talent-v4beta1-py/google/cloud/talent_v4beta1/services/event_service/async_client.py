@@ -57,7 +57,8 @@ class EventServiceAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -72,7 +73,7 @@ class EventServiceAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -89,7 +90,7 @@ class EventServiceAsyncClient:
 
     @property
     def transport(self) -> EventServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             EventServiceTransport: The transport used by the client instance.
@@ -100,11 +101,11 @@ class EventServiceAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, EventServiceTransport] = 'grpc_asyncio',
+            transport: Union[str, EventServiceTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the event service client.
+        """Instantiates the event service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -210,8 +211,8 @@ class EventServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, client_event])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = event_service.CreateClientEventRequest(request)
 
@@ -234,7 +235,7 @@ class EventServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -256,7 +257,7 @@ class EventServiceAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-talent',
+            "google-cloud-talent",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -264,5 +265,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'EventServiceAsyncClient',
+    "EventServiceAsyncClient",
 )

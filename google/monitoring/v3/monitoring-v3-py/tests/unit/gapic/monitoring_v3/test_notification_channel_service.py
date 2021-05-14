@@ -3454,7 +3454,7 @@ def test_notification_channel_service_transport_create_channel_old_api_core(tran
         transport_class(quota_project_id="octopus")
 
         create_channel.assert_called_with(
-            "monitoring.googleapis.com",
+            "monitoring.googleapis.com:443",
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",
@@ -3491,7 +3491,7 @@ def test_notification_channel_service_transport_create_channel_user_scopes(trans
         transport_class(quota_project_id="octopus", scopes=["1", "2"])
 
         create_channel.assert_called_with(
-            "monitoring.googleapis.com",
+            "monitoring.googleapis.com:443",
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",

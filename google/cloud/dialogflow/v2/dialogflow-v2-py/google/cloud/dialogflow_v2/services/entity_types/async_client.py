@@ -63,7 +63,8 @@ class EntityTypesAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -78,7 +79,7 @@ class EntityTypesAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -95,7 +96,7 @@ class EntityTypesAsyncClient:
 
     @property
     def transport(self) -> EntityTypesTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             EntityTypesTransport: The transport used by the client instance.
@@ -106,11 +107,11 @@ class EntityTypesAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, EntityTypesTransport] = 'grpc_asyncio',
+            transport: Union[str, EntityTypesTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the entity types client.
+        """Instantiates the entity types client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -203,8 +204,8 @@ class EntityTypesAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, language_code])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = entity_type.ListEntityTypesRequest(request)
 
@@ -227,7 +228,7 @@ class EntityTypesAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -313,8 +314,8 @@ class EntityTypesAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name, language_code])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = entity_type.GetEntityTypeRequest(request)
 
@@ -337,7 +338,7 @@ class EntityTypesAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -420,8 +421,8 @@ class EntityTypesAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, entity_type, language_code])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = gcd_entity_type.CreateEntityTypeRequest(request)
 
@@ -446,7 +447,7 @@ class EntityTypesAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -521,8 +522,8 @@ class EntityTypesAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([entity_type, language_code])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = gcd_entity_type.UpdateEntityTypeRequest(request)
 
@@ -545,7 +546,7 @@ class EntityTypesAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('entity_type.name', request.entity_type.name),
+                ("entity_type.name", request.entity_type.name),
             )),
         )
 
@@ -592,8 +593,8 @@ class EntityTypesAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = entity_type.DeleteEntityTypeRequest(request)
 
@@ -614,7 +615,7 @@ class EntityTypesAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -673,7 +674,7 @@ class EntityTypesAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -758,8 +759,8 @@ class EntityTypesAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, entity_type_names])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = entity_type.BatchDeleteEntityTypesRequest(request)
 
@@ -782,7 +783,7 @@ class EntityTypesAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -877,8 +878,8 @@ class EntityTypesAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, entities, language_code])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = entity_type.BatchCreateEntitiesRequest(request)
 
@@ -903,7 +904,7 @@ class EntityTypesAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1002,8 +1003,8 @@ class EntityTypesAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, entities, language_code])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = entity_type.BatchUpdateEntitiesRequest(request)
 
@@ -1028,7 +1029,7 @@ class EntityTypesAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1126,8 +1127,8 @@ class EntityTypesAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, entity_values, language_code])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = entity_type.BatchDeleteEntitiesRequest(request)
 
@@ -1152,7 +1153,7 @@ class EntityTypesAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1182,7 +1183,7 @@ class EntityTypesAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-dialogflow',
+            "google-cloud-dialogflow",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -1190,5 +1191,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'EntityTypesAsyncClient',
+    "EntityTypesAsyncClient",
 )

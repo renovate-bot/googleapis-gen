@@ -101,7 +101,7 @@ class ListCertificatesAsyncPager:
             response: service.ListCertificatesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -223,7 +223,7 @@ class ListCertificateAuthoritiesAsyncPager:
             response: service.ListCertificateAuthoritiesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -345,7 +345,7 @@ class ListCertificateRevocationListsAsyncPager:
             response: service.ListCertificateRevocationListsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -467,7 +467,7 @@ class ListReusableConfigsAsyncPager:
             response: service.ListReusableConfigsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

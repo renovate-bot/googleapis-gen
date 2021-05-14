@@ -103,7 +103,7 @@ class ListModelsAsyncPager:
             response: model_service.ListModelsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -225,7 +225,7 @@ class ListModelEvaluationsAsyncPager:
             response: model_service.ListModelEvaluationsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -347,7 +347,7 @@ class ListModelEvaluationSlicesAsyncPager:
             response: model_service.ListModelEvaluationSlicesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

@@ -797,7 +797,7 @@ def test_completion_transport_create_channel_old_api_core(transport_class, grpc_
         transport_class(quota_project_id="octopus")
 
         create_channel.assert_called_with(
-            "jobs.googleapis.com",
+            "jobs.googleapis.com:443",
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",
@@ -833,7 +833,7 @@ def test_completion_transport_create_channel_user_scopes(transport_class, grpc_h
         transport_class(quota_project_id="octopus", scopes=["1", "2"])
 
         create_channel.assert_called_with(
-            "jobs.googleapis.com",
+            "jobs.googleapis.com:443",
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",

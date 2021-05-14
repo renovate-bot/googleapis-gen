@@ -100,7 +100,7 @@ class ListLogMetricsAsyncPager:
             response: logging_metrics.ListLogMetricsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

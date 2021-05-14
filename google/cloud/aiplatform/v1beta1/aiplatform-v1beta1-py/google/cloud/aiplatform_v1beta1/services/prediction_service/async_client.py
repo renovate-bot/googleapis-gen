@@ -57,7 +57,8 @@ class PredictionServiceAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -72,7 +73,7 @@ class PredictionServiceAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -89,7 +90,7 @@ class PredictionServiceAsyncClient:
 
     @property
     def transport(self) -> PredictionServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             PredictionServiceTransport: The transport used by the client instance.
@@ -100,11 +101,11 @@ class PredictionServiceAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, PredictionServiceTransport] = 'grpc_asyncio',
+            transport: Union[str, PredictionServiceTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the prediction service client.
+        """Instantiates the prediction service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -212,8 +213,8 @@ class PredictionServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([endpoint, instances, parameters])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = prediction_service.PredictRequest(request)
 
@@ -238,7 +239,7 @@ class PredictionServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('endpoint', request.endpoint),
+                ("endpoint", request.endpoint),
             )),
         )
 
@@ -341,8 +342,8 @@ class PredictionServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([endpoint, instances, parameters, deployed_model_id])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = prediction_service.ExplainRequest(request)
 
@@ -369,7 +370,7 @@ class PredictionServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('endpoint', request.endpoint),
+                ("endpoint", request.endpoint),
             )),
         )
 
@@ -391,7 +392,7 @@ class PredictionServiceAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-aiplatform',
+            "google-cloud-aiplatform",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -399,5 +400,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'PredictionServiceAsyncClient',
+    "PredictionServiceAsyncClient",
 )

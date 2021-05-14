@@ -69,7 +69,8 @@ class PagesAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -84,7 +85,7 @@ class PagesAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -101,7 +102,7 @@ class PagesAsyncClient:
 
     @property
     def transport(self) -> PagesTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             PagesTransport: The transport used by the client instance.
@@ -112,11 +113,11 @@ class PagesAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, PagesTransport] = 'grpc_asyncio',
+            transport: Union[str, PagesTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the pages client.
+        """Instantiates the pages client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -197,8 +198,8 @@ class PagesAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = page.ListPagesRequest(request)
 
@@ -219,7 +220,7 @@ class PagesAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -301,8 +302,8 @@ class PagesAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = page.GetPageRequest(request)
 
@@ -323,7 +324,7 @@ class PagesAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -402,8 +403,8 @@ class PagesAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, page])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = gcdc_page.CreatePageRequest(request)
 
@@ -426,7 +427,7 @@ class PagesAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -506,8 +507,8 @@ class PagesAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([page, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = gcdc_page.UpdatePageRequest(request)
 
@@ -530,7 +531,7 @@ class PagesAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('page.name', request.page.name),
+                ("page.name", request.page.name),
             )),
         )
 
@@ -577,8 +578,8 @@ class PagesAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = page.DeletePageRequest(request)
 
@@ -599,7 +600,7 @@ class PagesAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -618,7 +619,7 @@ class PagesAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-dialogflowcx',
+            "google-cloud-dialogflowcx",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -626,5 +627,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'PagesAsyncClient',
+    "PagesAsyncClient",
 )

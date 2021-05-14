@@ -58,7 +58,8 @@ class LookupServiceAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -73,7 +74,7 @@ class LookupServiceAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -90,7 +91,7 @@ class LookupServiceAsyncClient:
 
     @property
     def transport(self) -> LookupServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             LookupServiceTransport: The transport used by the client instance.
@@ -101,11 +102,11 @@ class LookupServiceAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, LookupServiceTransport] = 'grpc_asyncio',
+            transport: Union[str, LookupServiceTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the lookup service client.
+        """Instantiates the lookup service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -189,7 +190,7 @@ class LookupServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -211,7 +212,7 @@ class LookupServiceAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-servicedirectory',
+            "google-cloud-servicedirectory",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -219,5 +220,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'LookupServiceAsyncClient',
+    "LookupServiceAsyncClient",
 )

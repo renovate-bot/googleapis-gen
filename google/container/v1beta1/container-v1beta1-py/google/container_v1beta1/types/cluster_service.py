@@ -2472,7 +2472,7 @@ class Operation(proto.Message):
     error = proto.Field(
         proto.MESSAGE,
         number=15,
-        message=gr_status.Status,
+        message=status_pb2.Status,
     )
 
 
@@ -5105,7 +5105,7 @@ class StatusCondition(proto.Message):
     canonical_code = proto.Field(
         proto.ENUM,
         number=3,
-        enum=gr_code.Code,
+        enum=code_pb2.Code,
     )
 
 

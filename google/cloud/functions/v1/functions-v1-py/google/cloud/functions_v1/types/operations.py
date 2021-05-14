@@ -71,7 +71,7 @@ class OperationMetadataV1(proto.Message):
     request = proto.Field(
         proto.MESSAGE,
         number=3,
-        message=gp_any.Any,
+        message=any_pb2.Any,
     )
     version_id = proto.Field(
         proto.INT64,

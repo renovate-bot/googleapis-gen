@@ -409,7 +409,7 @@ class Span(proto.Message):
     status = proto.Field(
         proto.MESSAGE,
         number=11,
-        message=gr_status.Status,
+        message=status_pb2.Status,
     )
     same_process_as_parent_span = proto.Field(
         proto.MESSAGE,

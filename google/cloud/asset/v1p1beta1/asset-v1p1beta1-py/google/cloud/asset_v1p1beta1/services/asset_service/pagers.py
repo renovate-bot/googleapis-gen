@@ -101,7 +101,7 @@ class SearchAllResourcesAsyncPager:
             response: asset_service.SearchAllResourcesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -223,7 +223,7 @@ class SearchAllIamPoliciesAsyncPager:
             response: asset_service.SearchAllIamPoliciesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

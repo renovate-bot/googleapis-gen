@@ -176,7 +176,7 @@ class LogEntry(proto.Message):
         proto.MESSAGE,
         number=2,
         oneof='payload',
-        message=gp_any.Any,
+        message=any_pb2.Any,
     )
     text_payload = proto.Field(
         proto.STRING,
@@ -192,12 +192,12 @@ class LogEntry(proto.Message):
     timestamp = proto.Field(
         proto.MESSAGE,
         number=9,
-        message=gp_timestamp.Timestamp,
+        message=timestamp_pb2.Timestamp,
     )
     receive_timestamp = proto.Field(
         proto.MESSAGE,
         number=24,
-        message=gp_timestamp.Timestamp,
+        message=timestamp_pb2.Timestamp,
     )
     severity = proto.Field(
         proto.ENUM,
@@ -211,7 +211,7 @@ class LogEntry(proto.Message):
     http_request = proto.Field(
         proto.MESSAGE,
         number=7,
-        message=glt_http_request.HttpRequest,
+        message=http_request_pb2.HttpRequest,
     )
     labels = proto.MapField(
         proto.STRING,

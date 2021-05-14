@@ -88,7 +88,8 @@ class BotsAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -103,7 +104,7 @@ class BotsAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -120,7 +121,7 @@ class BotsAsyncClient:
 
     @property
     def transport(self) -> BotsTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             BotsTransport: The transport used by the client instance.
@@ -131,11 +132,11 @@ class BotsAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, BotsTransport] = 'grpc_asyncio',
+            transport: Union[str, BotsTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the bots client.
+        """Instantiates the bots client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -230,8 +231,8 @@ class BotsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, bot_session])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = bots.CreateBotSessionRequest(request)
 
@@ -254,7 +255,7 @@ class BotsAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -335,8 +336,8 @@ class BotsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name, bot_session, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = bots.UpdateBotSessionRequest(request)
 
@@ -361,7 +362,7 @@ class BotsAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -383,7 +384,7 @@ class BotsAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-devtools-remoteworkers',
+            "google-devtools-remoteworkers",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -391,5 +392,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'BotsAsyncClient',
+    "BotsAsyncClient",
 )

@@ -48,13 +48,13 @@ class IAMClientMeta(type):
     objects.
     """
     _transport_registry = OrderedDict()  # type: Dict[str, Type[IAMTransport]]
-    _transport_registry['grpc'] = IAMGrpcTransport
-    _transport_registry['grpc_asyncio'] = IAMGrpcAsyncIOTransport
+    _transport_registry["grpc"] = IAMGrpcTransport
+    _transport_registry["grpc_asyncio"] = IAMGrpcAsyncIOTransport
 
     def get_transport_class(cls,
             label: str = None,
         ) -> Type[IAMTransport]:
-        """Return an appropriate transport class.
+        """Returns an appropriate transport class.
 
         Args:
             label: The name of the desired transport. If none is
@@ -97,7 +97,8 @@ class IAMClient(metaclass=IAMClientMeta):
 
     @staticmethod
     def _get_default_mtls_endpoint(api_endpoint):
-        """Convert api endpoint to mTLS endpoint.
+        """Converts api endpoint to mTLS endpoint.
+
         Convert "*.sandbox.googleapis.com" and "*.googleapis.com" to
         "*.mtls.sandbox.googleapis.com" and "*.mtls.googleapis.com" respectively.
         Args:
@@ -124,14 +125,15 @@ class IAMClient(metaclass=IAMClientMeta):
 
         return api_endpoint.replace(".googleapis.com", ".mtls.googleapis.com")
 
-    DEFAULT_ENDPOINT = 'iam.googleapis.com'
+    DEFAULT_ENDPOINT = "iam.googleapis.com"
     DEFAULT_MTLS_ENDPOINT = _get_default_mtls_endpoint.__func__(  # type: ignore
         DEFAULT_ENDPOINT
     )
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -148,7 +150,7 @@ class IAMClient(metaclass=IAMClientMeta):
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -161,45 +163,46 @@ class IAMClient(metaclass=IAMClientMeta):
         """
         credentials = service_account.Credentials.from_service_account_file(
             filename)
-        kwargs['credentials'] = credentials
+        kwargs["credentials"] = credentials
         return cls(*args, **kwargs)
 
     from_service_account_json = from_service_account_file
 
     @property
     def transport(self) -> IAMTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
-            IAMTransport: The transport used by the client instance.
+            IAMTransport: The transport used by the client
+                instance.
         """
         return self._transport
 
     @staticmethod
     def key_path(project: str,service_account: str,key: str,) -> str:
-        """Return a fully-qualified key string."""
+        """Returns a fully-qualified key string."""
         return "projects/{project}/serviceAccounts/{service_account}/keys/{key}".format(project=project, service_account=service_account, key=key, )
 
     @staticmethod
     def parse_key_path(path: str) -> Dict[str,str]:
-        """Parse a key path into its component segments."""
+        """Parses a key path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/serviceAccounts/(?P<service_account>.+?)/keys/(?P<key>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def service_account_path(project: str,service_account: str,) -> str:
-        """Return a fully-qualified service_account string."""
+        """Returns a fully-qualified service_account string."""
         return "projects/{project}/serviceAccounts/{service_account}".format(project=project, service_account=service_account, )
 
     @staticmethod
     def parse_service_account_path(path: str) -> Dict[str,str]:
-        """Parse a service_account path into its component segments."""
+        """Parses a service_account path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/serviceAccounts/(?P<service_account>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
-        """Return a fully-qualified billing_account string."""
+        """Returns a fully-qualified billing_account string."""
         return "billingAccounts/{billing_account}".format(billing_account=billing_account, )
 
     @staticmethod
@@ -210,7 +213,7 @@ class IAMClient(metaclass=IAMClientMeta):
 
     @staticmethod
     def common_folder_path(folder: str, ) -> str:
-        """Return a fully-qualified folder string."""
+        """Returns a fully-qualified folder string."""
         return "folders/{folder}".format(folder=folder, )
 
     @staticmethod
@@ -221,7 +224,7 @@ class IAMClient(metaclass=IAMClientMeta):
 
     @staticmethod
     def common_organization_path(organization: str, ) -> str:
-        """Return a fully-qualified organization string."""
+        """Returns a fully-qualified organization string."""
         return "organizations/{organization}".format(organization=organization, )
 
     @staticmethod
@@ -232,7 +235,7 @@ class IAMClient(metaclass=IAMClientMeta):
 
     @staticmethod
     def common_project_path(project: str, ) -> str:
-        """Return a fully-qualified project string."""
+        """Returns a fully-qualified project string."""
         return "projects/{project}".format(project=project, )
 
     @staticmethod
@@ -243,7 +246,7 @@ class IAMClient(metaclass=IAMClientMeta):
 
     @staticmethod
     def common_location_path(project: str, location: str, ) -> str:
-        """Return a fully-qualified location string."""
+        """Returns a fully-qualified location string."""
         return "projects/{project}/locations/{location}".format(project=project, location=location, )
 
     @staticmethod
@@ -258,7 +261,7 @@ class IAMClient(metaclass=IAMClientMeta):
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the iam client.
+        """Instantiates the iam client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -311,7 +314,10 @@ class IAMClient(metaclass=IAMClientMeta):
                 client_cert_source_func = client_options.client_cert_source
             else:
                 is_mtls = mtls.has_default_client_cert_source()
-                client_cert_source_func = mtls.default_client_cert_source() if is_mtls else None
+                if is_mtls:
+                    client_cert_source_func = mtls.default_client_cert_source()
+                else:
+                    client_cert_source_func = None
 
         # Figure out which api endpoint to use.
         if client_options.api_endpoint is not None:
@@ -323,10 +329,14 @@ class IAMClient(metaclass=IAMClientMeta):
             elif use_mtls_env == "always":
                 api_endpoint = self.DEFAULT_MTLS_ENDPOINT
             elif use_mtls_env == "auto":
-                api_endpoint = self.DEFAULT_MTLS_ENDPOINT if is_mtls else self.DEFAULT_ENDPOINT
+                if is_mtls:
+                    api_endpoint = self.DEFAULT_MTLS_ENDPOINT
+                else:
+                    api_endpoint = self.DEFAULT_ENDPOINT
             else:
                 raise MutualTLSChannelError(
-                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted values: never, auto, always"
+                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted "
+                    "values: never, auto, always"
                 )
 
         # Save or instantiate the transport.
@@ -335,12 +345,12 @@ class IAMClient(metaclass=IAMClientMeta):
         if isinstance(transport, IAMTransport):
             # transport is a IAMTransport instance.
             if credentials or client_options.credentials_file:
-                raise ValueError('When providing a transport instance, '
-                                 'provide its credentials directly.')
+                raise ValueError("When providing a transport instance, "
+                                 "provide its credentials directly.")
             if client_options.scopes:
                 raise ValueError(
-                    "When providing a transport instance, "
-                    "provide its scopes directly."
+                    "When providing a transport instance, provide its scopes "
+                    "directly."
                 )
             self._transport = transport
         else:
@@ -418,7 +428,7 @@ class IAMClient(metaclass=IAMClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -517,7 +527,7 @@ class IAMClient(metaclass=IAMClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -628,7 +638,7 @@ class IAMClient(metaclass=IAMClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -712,7 +722,7 @@ class IAMClient(metaclass=IAMClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -785,7 +795,7 @@ class IAMClient(metaclass=IAMClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('service_account.name', request.service_account.name),
+                ("service_account.name", request.service_account.name),
             )),
         )
 
@@ -876,7 +886,7 @@ class IAMClient(metaclass=IAMClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -935,7 +945,7 @@ class IAMClient(metaclass=IAMClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -994,7 +1004,7 @@ class IAMClient(metaclass=IAMClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1058,7 +1068,7 @@ class IAMClient(metaclass=IAMClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1151,7 +1161,7 @@ class IAMClient(metaclass=IAMClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1275,7 +1285,7 @@ class IAMClient(metaclass=IAMClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1411,7 +1421,7 @@ class IAMClient(metaclass=IAMClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1501,7 +1511,7 @@ class IAMClient(metaclass=IAMClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1579,7 +1589,7 @@ class IAMClient(metaclass=IAMClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1686,7 +1696,7 @@ class IAMClient(metaclass=IAMClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1806,7 +1816,7 @@ class IAMClient(metaclass=IAMClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1946,7 +1956,7 @@ class IAMClient(metaclass=IAMClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('resource', request.resource),
+                ("resource", request.resource),
             )),
         )
 
@@ -2095,7 +2105,7 @@ class IAMClient(metaclass=IAMClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('resource', request.resource),
+                ("resource", request.resource),
             )),
         )
 
@@ -2182,7 +2192,7 @@ class IAMClient(metaclass=IAMClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('resource', request.resource),
+                ("resource", request.resource),
             )),
         )
 
@@ -2384,7 +2394,7 @@ class IAMClient(metaclass=IAMClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2439,7 +2449,7 @@ class IAMClient(metaclass=IAMClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -2495,7 +2505,7 @@ class IAMClient(metaclass=IAMClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2570,7 +2580,7 @@ class IAMClient(metaclass=IAMClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2626,7 +2636,7 @@ class IAMClient(metaclass=IAMClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2818,7 +2828,7 @@ class IAMClient(metaclass=IAMClientMeta):
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-iam-admin',
+            "google-iam-admin",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -2826,5 +2836,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'IAMClient',
+    "IAMClient",
 )

@@ -81,7 +81,8 @@ class QuestionServiceAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -96,7 +97,7 @@ class QuestionServiceAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -113,7 +114,7 @@ class QuestionServiceAsyncClient:
 
     @property
     def transport(self) -> QuestionServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             QuestionServiceTransport: The transport used by the client instance.
@@ -124,11 +125,11 @@ class QuestionServiceAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, QuestionServiceTransport] = 'grpc_asyncio',
+            transport: Union[str, QuestionServiceTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the question service client.
+        """Instantiates the question service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -209,8 +210,8 @@ class QuestionServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = question_service.GetQuestionRequest(request)
 
@@ -231,7 +232,7 @@ class QuestionServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -294,8 +295,8 @@ class QuestionServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, question])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = question_service.CreateQuestionRequest(request)
 
@@ -318,7 +319,7 @@ class QuestionServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -382,8 +383,8 @@ class QuestionServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name, interpretation_index])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = question_service.ExecuteQuestionRequest(request)
 
@@ -406,7 +407,7 @@ class QuestionServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -458,8 +459,8 @@ class QuestionServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = question_service.GetUserFeedbackRequest(request)
 
@@ -480,7 +481,7 @@ class QuestionServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -541,8 +542,8 @@ class QuestionServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([user_feedback, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = question_service.UpdateUserFeedbackRequest(request)
 
@@ -565,7 +566,7 @@ class QuestionServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('user_feedback.name', request.user_feedback.name),
+                ("user_feedback.name", request.user_feedback.name),
             )),
         )
 
@@ -587,7 +588,7 @@ class QuestionServiceAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-dataqna',
+            "google-cloud-dataqna",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -595,5 +596,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'QuestionServiceAsyncClient',
+    "QuestionServiceAsyncClient",
 )

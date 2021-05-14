@@ -351,7 +351,7 @@ class CostProjection(proto.Message):
     duration = proto.Field(
         proto.MESSAGE,
         number=2,
-        message=gp_duration.Duration,
+        message=duration_pb2.Duration,
     )
 
 

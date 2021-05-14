@@ -1526,7 +1526,7 @@ def test_prediction_api_key_registry_transport_create_channel_old_api_core(trans
         transport_class(quota_project_id="octopus")
 
         create_channel.assert_called_with(
-            "recommendationengine.googleapis.com",
+            "recommendationengine.googleapis.com:443",
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",
@@ -1561,7 +1561,7 @@ def test_prediction_api_key_registry_transport_create_channel_user_scopes(transp
         transport_class(quota_project_id="octopus", scopes=["1", "2"])
 
         create_channel.assert_called_with(
-            "recommendationengine.googleapis.com",
+            "recommendationengine.googleapis.com:443",
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",

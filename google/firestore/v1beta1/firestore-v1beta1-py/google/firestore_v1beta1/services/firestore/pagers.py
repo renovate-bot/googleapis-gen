@@ -102,7 +102,7 @@ class ListDocumentsAsyncPager:
             response: firestore.ListDocumentsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -224,7 +224,7 @@ class PartitionQueryAsyncPager:
             response: firestore.PartitionQueryResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -346,7 +346,7 @@ class ListCollectionIdsAsyncPager:
             response: firestore.ListCollectionIdsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

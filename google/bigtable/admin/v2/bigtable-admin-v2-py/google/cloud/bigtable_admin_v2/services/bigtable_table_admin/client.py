@@ -53,13 +53,13 @@ class BigtableTableAdminClientMeta(type):
     objects.
     """
     _transport_registry = OrderedDict()  # type: Dict[str, Type[BigtableTableAdminTransport]]
-    _transport_registry['grpc'] = BigtableTableAdminGrpcTransport
-    _transport_registry['grpc_asyncio'] = BigtableTableAdminGrpcAsyncIOTransport
+    _transport_registry["grpc"] = BigtableTableAdminGrpcTransport
+    _transport_registry["grpc_asyncio"] = BigtableTableAdminGrpcAsyncIOTransport
 
     def get_transport_class(cls,
             label: str = None,
         ) -> Type[BigtableTableAdminTransport]:
-        """Return an appropriate transport class.
+        """Returns an appropriate transport class.
 
         Args:
             label: The name of the desired transport. If none is
@@ -87,7 +87,8 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
 
     @staticmethod
     def _get_default_mtls_endpoint(api_endpoint):
-        """Convert api endpoint to mTLS endpoint.
+        """Converts api endpoint to mTLS endpoint.
+
         Convert "*.sandbox.googleapis.com" and "*.googleapis.com" to
         "*.mtls.sandbox.googleapis.com" and "*.mtls.googleapis.com" respectively.
         Args:
@@ -114,14 +115,15 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
 
         return api_endpoint.replace(".googleapis.com", ".mtls.googleapis.com")
 
-    DEFAULT_ENDPOINT = 'bigtableadmin.googleapis.com'
+    DEFAULT_ENDPOINT = "bigtableadmin.googleapis.com"
     DEFAULT_MTLS_ENDPOINT = _get_default_mtls_endpoint.__func__(  # type: ignore
         DEFAULT_ENDPOINT
     )
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -138,7 +140,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -151,89 +153,90 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         """
         credentials = service_account.Credentials.from_service_account_file(
             filename)
-        kwargs['credentials'] = credentials
+        kwargs["credentials"] = credentials
         return cls(*args, **kwargs)
 
     from_service_account_json = from_service_account_file
 
     @property
     def transport(self) -> BigtableTableAdminTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
-            BigtableTableAdminTransport: The transport used by the client instance.
+            BigtableTableAdminTransport: The transport used by the client
+                instance.
         """
         return self._transport
 
     @staticmethod
     def backup_path(project: str,instance: str,cluster: str,backup: str,) -> str:
-        """Return a fully-qualified backup string."""
+        """Returns a fully-qualified backup string."""
         return "projects/{project}/instances/{instance}/clusters/{cluster}/backups/{backup}".format(project=project, instance=instance, cluster=cluster, backup=backup, )
 
     @staticmethod
     def parse_backup_path(path: str) -> Dict[str,str]:
-        """Parse a backup path into its component segments."""
+        """Parses a backup path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/instances/(?P<instance>.+?)/clusters/(?P<cluster>.+?)/backups/(?P<backup>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def cluster_path(project: str,instance: str,cluster: str,) -> str:
-        """Return a fully-qualified cluster string."""
+        """Returns a fully-qualified cluster string."""
         return "projects/{project}/instances/{instance}/clusters/{cluster}".format(project=project, instance=instance, cluster=cluster, )
 
     @staticmethod
     def parse_cluster_path(path: str) -> Dict[str,str]:
-        """Parse a cluster path into its component segments."""
+        """Parses a cluster path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/instances/(?P<instance>.+?)/clusters/(?P<cluster>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def crypto_key_version_path(project: str,location: str,key_ring: str,crypto_key: str,crypto_key_version: str,) -> str:
-        """Return a fully-qualified crypto_key_version string."""
+        """Returns a fully-qualified crypto_key_version string."""
         return "projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoKeyVersions/{crypto_key_version}".format(project=project, location=location, key_ring=key_ring, crypto_key=crypto_key, crypto_key_version=crypto_key_version, )
 
     @staticmethod
     def parse_crypto_key_version_path(path: str) -> Dict[str,str]:
-        """Parse a crypto_key_version path into its component segments."""
+        """Parses a crypto_key_version path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/keyRings/(?P<key_ring>.+?)/cryptoKeys/(?P<crypto_key>.+?)/cryptoKeyVersions/(?P<crypto_key_version>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def instance_path(project: str,instance: str,) -> str:
-        """Return a fully-qualified instance string."""
+        """Returns a fully-qualified instance string."""
         return "projects/{project}/instances/{instance}".format(project=project, instance=instance, )
 
     @staticmethod
     def parse_instance_path(path: str) -> Dict[str,str]:
-        """Parse a instance path into its component segments."""
+        """Parses a instance path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/instances/(?P<instance>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def snapshot_path(project: str,instance: str,cluster: str,snapshot: str,) -> str:
-        """Return a fully-qualified snapshot string."""
+        """Returns a fully-qualified snapshot string."""
         return "projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}".format(project=project, instance=instance, cluster=cluster, snapshot=snapshot, )
 
     @staticmethod
     def parse_snapshot_path(path: str) -> Dict[str,str]:
-        """Parse a snapshot path into its component segments."""
+        """Parses a snapshot path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/instances/(?P<instance>.+?)/clusters/(?P<cluster>.+?)/snapshots/(?P<snapshot>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def table_path(project: str,instance: str,table: str,) -> str:
-        """Return a fully-qualified table string."""
+        """Returns a fully-qualified table string."""
         return "projects/{project}/instances/{instance}/tables/{table}".format(project=project, instance=instance, table=table, )
 
     @staticmethod
     def parse_table_path(path: str) -> Dict[str,str]:
-        """Parse a table path into its component segments."""
+        """Parses a table path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/instances/(?P<instance>.+?)/tables/(?P<table>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
-        """Return a fully-qualified billing_account string."""
+        """Returns a fully-qualified billing_account string."""
         return "billingAccounts/{billing_account}".format(billing_account=billing_account, )
 
     @staticmethod
@@ -244,7 +247,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
 
     @staticmethod
     def common_folder_path(folder: str, ) -> str:
-        """Return a fully-qualified folder string."""
+        """Returns a fully-qualified folder string."""
         return "folders/{folder}".format(folder=folder, )
 
     @staticmethod
@@ -255,7 +258,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
 
     @staticmethod
     def common_organization_path(organization: str, ) -> str:
-        """Return a fully-qualified organization string."""
+        """Returns a fully-qualified organization string."""
         return "organizations/{organization}".format(organization=organization, )
 
     @staticmethod
@@ -266,7 +269,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
 
     @staticmethod
     def common_project_path(project: str, ) -> str:
-        """Return a fully-qualified project string."""
+        """Returns a fully-qualified project string."""
         return "projects/{project}".format(project=project, )
 
     @staticmethod
@@ -277,7 +280,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
 
     @staticmethod
     def common_location_path(project: str, location: str, ) -> str:
-        """Return a fully-qualified location string."""
+        """Returns a fully-qualified location string."""
         return "projects/{project}/locations/{location}".format(project=project, location=location, )
 
     @staticmethod
@@ -292,7 +295,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the bigtable table admin client.
+        """Instantiates the bigtable table admin client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -345,7 +348,10 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
                 client_cert_source_func = client_options.client_cert_source
             else:
                 is_mtls = mtls.has_default_client_cert_source()
-                client_cert_source_func = mtls.default_client_cert_source() if is_mtls else None
+                if is_mtls:
+                    client_cert_source_func = mtls.default_client_cert_source()
+                else:
+                    client_cert_source_func = None
 
         # Figure out which api endpoint to use.
         if client_options.api_endpoint is not None:
@@ -357,10 +363,14 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
             elif use_mtls_env == "always":
                 api_endpoint = self.DEFAULT_MTLS_ENDPOINT
             elif use_mtls_env == "auto":
-                api_endpoint = self.DEFAULT_MTLS_ENDPOINT if is_mtls else self.DEFAULT_ENDPOINT
+                if is_mtls:
+                    api_endpoint = self.DEFAULT_MTLS_ENDPOINT
+                else:
+                    api_endpoint = self.DEFAULT_ENDPOINT
             else:
                 raise MutualTLSChannelError(
-                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted values: never, auto, always"
+                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted "
+                    "values: never, auto, always"
                 )
 
         # Save or instantiate the transport.
@@ -369,12 +379,12 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         if isinstance(transport, BigtableTableAdminTransport):
             # transport is a BigtableTableAdminTransport instance.
             if credentials or client_options.credentials_file:
-                raise ValueError('When providing a transport instance, '
-                                 'provide its credentials directly.')
+                raise ValueError("When providing a transport instance, "
+                                 "provide its credentials directly.")
             if client_options.scopes:
                 raise ValueError(
-                    "When providing a transport instance, "
-                    "provide its scopes directly."
+                    "When providing a transport instance, provide its scopes "
+                    "directly."
                 )
             self._transport = transport
         else:
@@ -474,7 +484,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -590,7 +600,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -677,7 +687,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -764,7 +774,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -835,7 +845,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -929,7 +939,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -982,7 +992,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1059,7 +1069,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1148,7 +1158,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1280,7 +1290,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1387,7 +1397,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1489,7 +1499,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1580,7 +1590,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1688,7 +1698,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1770,7 +1780,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1862,7 +1872,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('backup.name', request.backup.name),
+                ("backup.name", request.backup.name),
             )),
         )
 
@@ -1932,7 +1942,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2012,7 +2022,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -2088,7 +2098,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -2227,7 +2237,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('resource', request.resource),
+                ("resource", request.resource),
             )),
         )
 
@@ -2357,7 +2367,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('resource', request.resource),
+                ("resource", request.resource),
             )),
         )
 
@@ -2444,7 +2454,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('resource', request.resource),
+                ("resource", request.resource),
             )),
         )
 
@@ -2466,7 +2476,7 @@ class BigtableTableAdminClient(metaclass=BigtableTableAdminClientMeta):
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-bigtable-admin',
+            "google-cloud-bigtable-admin",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -2474,5 +2484,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'BigtableTableAdminClient',
+    "BigtableTableAdminClient",
 )

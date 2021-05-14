@@ -214,17 +214,17 @@ class CommandTask(proto.Message):
         execution = proto.Field(
             proto.MESSAGE,
             number=1,
-            message=gp_duration.Duration,
+            message=duration_pb2.Duration,
         )
         idle = proto.Field(
             proto.MESSAGE,
             number=2,
-            message=gp_duration.Duration,
+            message=duration_pb2.Duration,
         )
         shutdown = proto.Field(
             proto.MESSAGE,
             number=3,
-            message=gp_duration.Duration,
+            message=duration_pb2.Duration,
         )
 
     inputs = proto.Field(
@@ -292,12 +292,12 @@ class CommandOverhead(proto.Message):
     duration = proto.Field(
         proto.MESSAGE,
         number=1,
-        message=gp_duration.Duration,
+        message=duration_pb2.Duration,
     )
     overhead = proto.Field(
         proto.MESSAGE,
         number=2,
-        message=gp_duration.Duration,
+        message=duration_pb2.Duration,
     )
 
 
@@ -341,7 +341,7 @@ class CommandResult(proto.Message):
     status = proto.Field(
         proto.MESSAGE,
         number=1,
-        message=gr_status.Status,
+        message=status_pb2.Status,
     )
     exit_code = proto.Field(
         proto.INT32,
@@ -355,17 +355,17 @@ class CommandResult(proto.Message):
     duration = proto.Field(
         proto.MESSAGE,
         number=4,
-        message=gp_duration.Duration,
+        message=duration_pb2.Duration,
     )
     overhead = proto.Field(
         proto.MESSAGE,
         number=5,
-        message=gp_duration.Duration,
+        message=duration_pb2.Duration,
     )
     metadata = proto.RepeatedField(
         proto.MESSAGE,
         number=6,
-        message=gp_any.Any,
+        message=any_pb2.Any,
     )
 
 

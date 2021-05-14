@@ -51,13 +51,13 @@ class QuestionServiceClientMeta(type):
     objects.
     """
     _transport_registry = OrderedDict()  # type: Dict[str, Type[QuestionServiceTransport]]
-    _transport_registry['grpc'] = QuestionServiceGrpcTransport
-    _transport_registry['grpc_asyncio'] = QuestionServiceGrpcAsyncIOTransport
+    _transport_registry["grpc"] = QuestionServiceGrpcTransport
+    _transport_registry["grpc_asyncio"] = QuestionServiceGrpcAsyncIOTransport
 
     def get_transport_class(cls,
             label: str = None,
         ) -> Type[QuestionServiceTransport]:
-        """Return an appropriate transport class.
+        """Returns an appropriate transport class.
 
         Args:
             label: The name of the desired transport. If none is
@@ -97,7 +97,8 @@ class QuestionServiceClient(metaclass=QuestionServiceClientMeta):
 
     @staticmethod
     def _get_default_mtls_endpoint(api_endpoint):
-        """Convert api endpoint to mTLS endpoint.
+        """Converts api endpoint to mTLS endpoint.
+
         Convert "*.sandbox.googleapis.com" and "*.googleapis.com" to
         "*.mtls.sandbox.googleapis.com" and "*.mtls.googleapis.com" respectively.
         Args:
@@ -124,14 +125,15 @@ class QuestionServiceClient(metaclass=QuestionServiceClientMeta):
 
         return api_endpoint.replace(".googleapis.com", ".mtls.googleapis.com")
 
-    DEFAULT_ENDPOINT = 'dataqna.googleapis.com'
+    DEFAULT_ENDPOINT = "dataqna.googleapis.com"
     DEFAULT_MTLS_ENDPOINT = _get_default_mtls_endpoint.__func__(  # type: ignore
         DEFAULT_ENDPOINT
     )
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -148,7 +150,7 @@ class QuestionServiceClient(metaclass=QuestionServiceClientMeta):
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -161,45 +163,46 @@ class QuestionServiceClient(metaclass=QuestionServiceClientMeta):
         """
         credentials = service_account.Credentials.from_service_account_file(
             filename)
-        kwargs['credentials'] = credentials
+        kwargs["credentials"] = credentials
         return cls(*args, **kwargs)
 
     from_service_account_json = from_service_account_file
 
     @property
     def transport(self) -> QuestionServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
-            QuestionServiceTransport: The transport used by the client instance.
+            QuestionServiceTransport: The transport used by the client
+                instance.
         """
         return self._transport
 
     @staticmethod
     def question_path(project: str,location: str,question: str,) -> str:
-        """Return a fully-qualified question string."""
+        """Returns a fully-qualified question string."""
         return "projects/{project}/locations/{location}/questions/{question}".format(project=project, location=location, question=question, )
 
     @staticmethod
     def parse_question_path(path: str) -> Dict[str,str]:
-        """Parse a question path into its component segments."""
+        """Parses a question path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/questions/(?P<question>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def user_feedback_path(project: str,location: str,question: str,) -> str:
-        """Return a fully-qualified user_feedback string."""
+        """Returns a fully-qualified user_feedback string."""
         return "projects/{project}/locations/{location}/questions/{question}/userFeedback".format(project=project, location=location, question=question, )
 
     @staticmethod
     def parse_user_feedback_path(path: str) -> Dict[str,str]:
-        """Parse a user_feedback path into its component segments."""
+        """Parses a user_feedback path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/questions/(?P<question>.+?)/userFeedback$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
-        """Return a fully-qualified billing_account string."""
+        """Returns a fully-qualified billing_account string."""
         return "billingAccounts/{billing_account}".format(billing_account=billing_account, )
 
     @staticmethod
@@ -210,7 +213,7 @@ class QuestionServiceClient(metaclass=QuestionServiceClientMeta):
 
     @staticmethod
     def common_folder_path(folder: str, ) -> str:
-        """Return a fully-qualified folder string."""
+        """Returns a fully-qualified folder string."""
         return "folders/{folder}".format(folder=folder, )
 
     @staticmethod
@@ -221,7 +224,7 @@ class QuestionServiceClient(metaclass=QuestionServiceClientMeta):
 
     @staticmethod
     def common_organization_path(organization: str, ) -> str:
-        """Return a fully-qualified organization string."""
+        """Returns a fully-qualified organization string."""
         return "organizations/{organization}".format(organization=organization, )
 
     @staticmethod
@@ -232,7 +235,7 @@ class QuestionServiceClient(metaclass=QuestionServiceClientMeta):
 
     @staticmethod
     def common_project_path(project: str, ) -> str:
-        """Return a fully-qualified project string."""
+        """Returns a fully-qualified project string."""
         return "projects/{project}".format(project=project, )
 
     @staticmethod
@@ -243,7 +246,7 @@ class QuestionServiceClient(metaclass=QuestionServiceClientMeta):
 
     @staticmethod
     def common_location_path(project: str, location: str, ) -> str:
-        """Return a fully-qualified location string."""
+        """Returns a fully-qualified location string."""
         return "projects/{project}/locations/{location}".format(project=project, location=location, )
 
     @staticmethod
@@ -258,7 +261,7 @@ class QuestionServiceClient(metaclass=QuestionServiceClientMeta):
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the question service client.
+        """Instantiates the question service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -311,7 +314,10 @@ class QuestionServiceClient(metaclass=QuestionServiceClientMeta):
                 client_cert_source_func = client_options.client_cert_source
             else:
                 is_mtls = mtls.has_default_client_cert_source()
-                client_cert_source_func = mtls.default_client_cert_source() if is_mtls else None
+                if is_mtls:
+                    client_cert_source_func = mtls.default_client_cert_source()
+                else:
+                    client_cert_source_func = None
 
         # Figure out which api endpoint to use.
         if client_options.api_endpoint is not None:
@@ -323,10 +329,14 @@ class QuestionServiceClient(metaclass=QuestionServiceClientMeta):
             elif use_mtls_env == "always":
                 api_endpoint = self.DEFAULT_MTLS_ENDPOINT
             elif use_mtls_env == "auto":
-                api_endpoint = self.DEFAULT_MTLS_ENDPOINT if is_mtls else self.DEFAULT_ENDPOINT
+                if is_mtls:
+                    api_endpoint = self.DEFAULT_MTLS_ENDPOINT
+                else:
+                    api_endpoint = self.DEFAULT_ENDPOINT
             else:
                 raise MutualTLSChannelError(
-                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted values: never, auto, always"
+                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted "
+                    "values: never, auto, always"
                 )
 
         # Save or instantiate the transport.
@@ -335,12 +345,12 @@ class QuestionServiceClient(metaclass=QuestionServiceClientMeta):
         if isinstance(transport, QuestionServiceTransport):
             # transport is a QuestionServiceTransport instance.
             if credentials or client_options.credentials_file:
-                raise ValueError('When providing a transport instance, '
-                                 'provide its credentials directly.')
+                raise ValueError("When providing a transport instance, "
+                                 "provide its credentials directly.")
             if client_options.scopes:
                 raise ValueError(
-                    "When providing a transport instance, "
-                    "provide its scopes directly."
+                    "When providing a transport instance, provide its scopes "
+                    "directly."
                 )
             self._transport = transport
         else:
@@ -418,7 +428,7 @@ class QuestionServiceClient(metaclass=QuestionServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -505,7 +515,7 @@ class QuestionServiceClient(metaclass=QuestionServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -593,7 +603,7 @@ class QuestionServiceClient(metaclass=QuestionServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -667,7 +677,7 @@ class QuestionServiceClient(metaclass=QuestionServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -752,7 +762,7 @@ class QuestionServiceClient(metaclass=QuestionServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('user_feedback.name', request.user_feedback.name),
+                ("user_feedback.name", request.user_feedback.name),
             )),
         )
 
@@ -774,7 +784,7 @@ class QuestionServiceClient(metaclass=QuestionServiceClientMeta):
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-dataqna',
+            "google-cloud-dataqna",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -782,5 +792,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'QuestionServiceClient',
+    "QuestionServiceClient",
 )

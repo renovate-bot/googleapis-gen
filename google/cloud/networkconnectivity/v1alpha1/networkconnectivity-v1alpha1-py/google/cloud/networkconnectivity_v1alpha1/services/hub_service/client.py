@@ -52,13 +52,13 @@ class HubServiceClientMeta(type):
     objects.
     """
     _transport_registry = OrderedDict()  # type: Dict[str, Type[HubServiceTransport]]
-    _transport_registry['grpc'] = HubServiceGrpcTransport
-    _transport_registry['grpc_asyncio'] = HubServiceGrpcAsyncIOTransport
+    _transport_registry["grpc"] = HubServiceGrpcTransport
+    _transport_registry["grpc_asyncio"] = HubServiceGrpcAsyncIOTransport
 
     def get_transport_class(cls,
             label: str = None,
         ) -> Type[HubServiceTransport]:
-        """Return an appropriate transport class.
+        """Returns an appropriate transport class.
 
         Args:
             label: The name of the desired transport. If none is
@@ -85,7 +85,8 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
 
     @staticmethod
     def _get_default_mtls_endpoint(api_endpoint):
-        """Convert api endpoint to mTLS endpoint.
+        """Converts api endpoint to mTLS endpoint.
+
         Convert "*.sandbox.googleapis.com" and "*.googleapis.com" to
         "*.mtls.sandbox.googleapis.com" and "*.mtls.googleapis.com" respectively.
         Args:
@@ -112,14 +113,15 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
 
         return api_endpoint.replace(".googleapis.com", ".mtls.googleapis.com")
 
-    DEFAULT_ENDPOINT = 'networkconnectivity.googleapis.com'
+    DEFAULT_ENDPOINT = "networkconnectivity.googleapis.com"
     DEFAULT_MTLS_ENDPOINT = _get_default_mtls_endpoint.__func__(  # type: ignore
         DEFAULT_ENDPOINT
     )
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -136,7 +138,7 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -149,78 +151,79 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
         """
         credentials = service_account.Credentials.from_service_account_file(
             filename)
-        kwargs['credentials'] = credentials
+        kwargs["credentials"] = credentials
         return cls(*args, **kwargs)
 
     from_service_account_json = from_service_account_file
 
     @property
     def transport(self) -> HubServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
-            HubServiceTransport: The transport used by the client instance.
+            HubServiceTransport: The transport used by the client
+                instance.
         """
         return self._transport
 
     @staticmethod
     def hub_path(project: str,hub: str,) -> str:
-        """Return a fully-qualified hub string."""
+        """Returns a fully-qualified hub string."""
         return "projects/{project}/locations/global/hubs/{hub}".format(project=project, hub=hub, )
 
     @staticmethod
     def parse_hub_path(path: str) -> Dict[str,str]:
-        """Parse a hub path into its component segments."""
+        """Parses a hub path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/global/hubs/(?P<hub>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def instance_path(project: str,zone: str,instance: str,) -> str:
-        """Return a fully-qualified instance string."""
+        """Returns a fully-qualified instance string."""
         return "projects/{project}/zones/{zone}/instances/{instance}".format(project=project, zone=zone, instance=instance, )
 
     @staticmethod
     def parse_instance_path(path: str) -> Dict[str,str]:
-        """Parse a instance path into its component segments."""
+        """Parses a instance path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/zones/(?P<zone>.+?)/instances/(?P<instance>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def interconnect_attachment_path(project: str,region: str,resource_id: str,) -> str:
-        """Return a fully-qualified interconnect_attachment string."""
+        """Returns a fully-qualified interconnect_attachment string."""
         return "projects/{project}/regions/{region}/interconnectAttachments/{resource_id}".format(project=project, region=region, resource_id=resource_id, )
 
     @staticmethod
     def parse_interconnect_attachment_path(path: str) -> Dict[str,str]:
-        """Parse a interconnect_attachment path into its component segments."""
+        """Parses a interconnect_attachment path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/regions/(?P<region>.+?)/interconnectAttachments/(?P<resource_id>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def spoke_path(project: str,location: str,spoke: str,) -> str:
-        """Return a fully-qualified spoke string."""
+        """Returns a fully-qualified spoke string."""
         return "projects/{project}/locations/{location}/spokes/{spoke}".format(project=project, location=location, spoke=spoke, )
 
     @staticmethod
     def parse_spoke_path(path: str) -> Dict[str,str]:
-        """Parse a spoke path into its component segments."""
+        """Parses a spoke path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/spokes/(?P<spoke>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def vpn_tunnel_path(project: str,region: str,resource_id: str,) -> str:
-        """Return a fully-qualified vpn_tunnel string."""
+        """Returns a fully-qualified vpn_tunnel string."""
         return "projects/{project}/regions/{region}/vpnTunnels/{resource_id}".format(project=project, region=region, resource_id=resource_id, )
 
     @staticmethod
     def parse_vpn_tunnel_path(path: str) -> Dict[str,str]:
-        """Parse a vpn_tunnel path into its component segments."""
+        """Parses a vpn_tunnel path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/regions/(?P<region>.+?)/vpnTunnels/(?P<resource_id>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
-        """Return a fully-qualified billing_account string."""
+        """Returns a fully-qualified billing_account string."""
         return "billingAccounts/{billing_account}".format(billing_account=billing_account, )
 
     @staticmethod
@@ -231,7 +234,7 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
 
     @staticmethod
     def common_folder_path(folder: str, ) -> str:
-        """Return a fully-qualified folder string."""
+        """Returns a fully-qualified folder string."""
         return "folders/{folder}".format(folder=folder, )
 
     @staticmethod
@@ -242,7 +245,7 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
 
     @staticmethod
     def common_organization_path(organization: str, ) -> str:
-        """Return a fully-qualified organization string."""
+        """Returns a fully-qualified organization string."""
         return "organizations/{organization}".format(organization=organization, )
 
     @staticmethod
@@ -253,7 +256,7 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
 
     @staticmethod
     def common_project_path(project: str, ) -> str:
-        """Return a fully-qualified project string."""
+        """Returns a fully-qualified project string."""
         return "projects/{project}".format(project=project, )
 
     @staticmethod
@@ -264,7 +267,7 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
 
     @staticmethod
     def common_location_path(project: str, location: str, ) -> str:
-        """Return a fully-qualified location string."""
+        """Returns a fully-qualified location string."""
         return "projects/{project}/locations/{location}".format(project=project, location=location, )
 
     @staticmethod
@@ -279,7 +282,7 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the hub service client.
+        """Instantiates the hub service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -332,7 +335,10 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
                 client_cert_source_func = client_options.client_cert_source
             else:
                 is_mtls = mtls.has_default_client_cert_source()
-                client_cert_source_func = mtls.default_client_cert_source() if is_mtls else None
+                if is_mtls:
+                    client_cert_source_func = mtls.default_client_cert_source()
+                else:
+                    client_cert_source_func = None
 
         # Figure out which api endpoint to use.
         if client_options.api_endpoint is not None:
@@ -344,10 +350,14 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
             elif use_mtls_env == "always":
                 api_endpoint = self.DEFAULT_MTLS_ENDPOINT
             elif use_mtls_env == "auto":
-                api_endpoint = self.DEFAULT_MTLS_ENDPOINT if is_mtls else self.DEFAULT_ENDPOINT
+                if is_mtls:
+                    api_endpoint = self.DEFAULT_MTLS_ENDPOINT
+                else:
+                    api_endpoint = self.DEFAULT_ENDPOINT
             else:
                 raise MutualTLSChannelError(
-                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted values: never, auto, always"
+                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted "
+                    "values: never, auto, always"
                 )
 
         # Save or instantiate the transport.
@@ -356,12 +366,12 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
         if isinstance(transport, HubServiceTransport):
             # transport is a HubServiceTransport instance.
             if credentials or client_options.credentials_file:
-                raise ValueError('When providing a transport instance, '
-                                 'provide its credentials directly.')
+                raise ValueError("When providing a transport instance, "
+                                 "provide its credentials directly.")
             if client_options.scopes:
                 raise ValueError(
-                    "When providing a transport instance, "
-                    "provide its scopes directly."
+                    "When providing a transport instance, provide its scopes "
+                    "directly."
                 )
             self._transport = transport
         else:
@@ -439,7 +449,7 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -529,7 +539,7 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -630,7 +640,7 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -733,7 +743,7 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('hub.name', request.hub.name),
+                ("hub.name", request.hub.name),
             )),
         )
 
@@ -829,7 +839,7 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -913,7 +923,7 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -998,7 +1008,7 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1097,7 +1107,7 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1199,7 +1209,7 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('spoke.name', request.spoke.name),
+                ("spoke.name", request.spoke.name),
             )),
         )
 
@@ -1295,7 +1305,7 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1325,7 +1335,7 @@ class HubServiceClient(metaclass=HubServiceClientMeta):
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-network-connectivity',
+            "google-cloud-network-connectivity",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -1333,5 +1343,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'HubServiceClient',
+    "HubServiceClient",
 )

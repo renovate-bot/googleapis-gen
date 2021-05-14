@@ -70,7 +70,8 @@ class ConversationProfilesAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -85,7 +86,7 @@ class ConversationProfilesAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -102,7 +103,7 @@ class ConversationProfilesAsyncClient:
 
     @property
     def transport(self) -> ConversationProfilesTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             ConversationProfilesTransport: The transport used by the client instance.
@@ -113,11 +114,11 @@ class ConversationProfilesAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, ConversationProfilesTransport] = 'grpc_asyncio',
+            transport: Union[str, ConversationProfilesTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the conversation profiles client.
+        """Instantiates the conversation profiles client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -200,8 +201,8 @@ class ConversationProfilesAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = conversation_profile.ListConversationProfilesRequest(request)
 
@@ -222,7 +223,7 @@ class ConversationProfilesAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -285,8 +286,8 @@ class ConversationProfilesAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = conversation_profile.GetConversationProfileRequest(request)
 
@@ -307,7 +308,7 @@ class ConversationProfilesAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -375,8 +376,8 @@ class ConversationProfilesAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, conversation_profile])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = gcd_conversation_profile.CreateConversationProfileRequest(request)
 
@@ -399,7 +400,7 @@ class ConversationProfilesAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -466,8 +467,8 @@ class ConversationProfilesAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([conversation_profile, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = gcd_conversation_profile.UpdateConversationProfileRequest(request)
 
@@ -490,7 +491,7 @@ class ConversationProfilesAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('conversation_profile.name', request.conversation_profile.name),
+                ("conversation_profile.name", request.conversation_profile.name),
             )),
         )
 
@@ -540,8 +541,8 @@ class ConversationProfilesAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = conversation_profile.DeleteConversationProfileRequest(request)
 
@@ -562,7 +563,7 @@ class ConversationProfilesAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -581,7 +582,7 @@ class ConversationProfilesAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-dialogflow',
+            "google-cloud-dialogflow",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -589,5 +590,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'ConversationProfilesAsyncClient',
+    "ConversationProfilesAsyncClient",
 )

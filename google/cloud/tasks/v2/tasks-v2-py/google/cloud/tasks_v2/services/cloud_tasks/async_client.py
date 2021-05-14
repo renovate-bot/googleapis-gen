@@ -70,7 +70,8 @@ class CloudTasksAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -85,7 +86,7 @@ class CloudTasksAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -102,7 +103,7 @@ class CloudTasksAsyncClient:
 
     @property
     def transport(self) -> CloudTasksTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             CloudTasksTransport: The transport used by the client instance.
@@ -113,11 +114,11 @@ class CloudTasksAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, CloudTasksTransport] = 'grpc_asyncio',
+            transport: Union[str, CloudTasksTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the cloud tasks client.
+        """Instantiates the cloud tasks client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -199,8 +200,8 @@ class CloudTasksAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloudtasks.ListQueuesRequest(request)
 
@@ -215,8 +216,8 @@ class CloudTasksAsyncClient:
             self._client._transport.list_queues,
             default_retry=retries.Retry(
 initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=10.0,
             ),
@@ -228,7 +229,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -294,8 +295,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloudtasks.GetQueueRequest(request)
 
@@ -310,8 +311,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.get_queue,
             default_retry=retries.Retry(
 initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=10.0,
             ),
@@ -323,7 +324,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -405,8 +406,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, queue])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloudtasks.CreateQueueRequest(request)
 
@@ -429,7 +430,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -517,8 +518,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([queue, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloudtasks.UpdateQueueRequest(request)
 
@@ -541,7 +542,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('queue.name', request.queue.name),
+                ("queue.name", request.queue.name),
             )),
         )
 
@@ -599,8 +600,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloudtasks.DeleteQueueRequest(request)
 
@@ -615,8 +616,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.delete_queue,
             default_retry=retries.Retry(
 initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=10.0,
             ),
@@ -628,7 +629,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -687,8 +688,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloudtasks.PurgeQueueRequest(request)
 
@@ -709,7 +710,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -773,8 +774,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloudtasks.PauseQueueRequest(request)
 
@@ -795,7 +796,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -866,8 +867,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloudtasks.ResumeQueueRequest(request)
 
@@ -888,7 +889,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1004,8 +1005,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([resource])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
          # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
@@ -1020,8 +1021,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.get_iam_policy,
             default_retry=retries.Retry(
 initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=10.0,
             ),
@@ -1033,7 +1034,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('resource', request.resource),
+                ("resource", request.resource),
             )),
         )
 
@@ -1153,8 +1154,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([resource])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
          # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
@@ -1175,7 +1176,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('resource', request.resource),
+                ("resource", request.resource),
             )),
         )
 
@@ -1246,8 +1247,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([resource, permissions])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
          # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
@@ -1262,8 +1263,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.test_iam_permissions,
             default_retry=retries.Retry(
 initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=10.0,
             ),
@@ -1275,7 +1276,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('resource', request.resource),
+                ("resource", request.resource),
             )),
         )
 
@@ -1341,8 +1342,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloudtasks.ListTasksRequest(request)
 
@@ -1357,8 +1358,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.list_tasks,
             default_retry=retries.Retry(
 initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=10.0,
             ),
@@ -1370,7 +1371,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1431,8 +1432,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloudtasks.GetTaskRequest(request)
 
@@ -1447,8 +1448,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.get_task,
             default_retry=retries.Retry(
 initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=10.0,
             ),
@@ -1460,7 +1461,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1565,8 +1566,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, task])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloudtasks.CreateTaskRequest(request)
 
@@ -1589,7 +1590,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1640,8 +1641,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloudtasks.DeleteTaskRequest(request)
 
@@ -1656,8 +1657,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.delete_task,
             default_retry=retries.Retry(
 initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=10.0,
             ),
@@ -1669,7 +1670,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1744,8 +1745,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloudtasks.RunTaskRequest(request)
 
@@ -1766,7 +1767,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1788,7 +1789,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-tasks',
+            "google-cloud-tasks",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -1796,5 +1797,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'CloudTasksAsyncClient',
+    "CloudTasksAsyncClient",
 )

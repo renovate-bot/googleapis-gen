@@ -49,13 +49,13 @@ class AnalyticsAdminServiceClientMeta(type):
     objects.
     """
     _transport_registry = OrderedDict()  # type: Dict[str, Type[AnalyticsAdminServiceTransport]]
-    _transport_registry['grpc'] = AnalyticsAdminServiceGrpcTransport
-    _transport_registry['grpc_asyncio'] = AnalyticsAdminServiceGrpcAsyncIOTransport
+    _transport_registry["grpc"] = AnalyticsAdminServiceGrpcTransport
+    _transport_registry["grpc_asyncio"] = AnalyticsAdminServiceGrpcAsyncIOTransport
 
     def get_transport_class(cls,
             label: str = None,
         ) -> Type[AnalyticsAdminServiceTransport]:
-        """Return an appropriate transport class.
+        """Returns an appropriate transport class.
 
         Args:
             label: The name of the desired transport. If none is
@@ -78,7 +78,8 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
 
     @staticmethod
     def _get_default_mtls_endpoint(api_endpoint):
-        """Convert api endpoint to mTLS endpoint.
+        """Converts api endpoint to mTLS endpoint.
+
         Convert "*.sandbox.googleapis.com" and "*.googleapis.com" to
         "*.mtls.sandbox.googleapis.com" and "*.mtls.googleapis.com" respectively.
         Args:
@@ -105,14 +106,15 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
 
         return api_endpoint.replace(".googleapis.com", ".mtls.googleapis.com")
 
-    DEFAULT_ENDPOINT = 'analyticsadmin.googleapis.com'
+    DEFAULT_ENDPOINT = "analyticsadmin.googleapis.com"
     DEFAULT_MTLS_ENDPOINT = _get_default_mtls_endpoint.__func__(  # type: ignore
         DEFAULT_ENDPOINT
     )
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -129,7 +131,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -142,155 +144,156 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         """
         credentials = service_account.Credentials.from_service_account_file(
             filename)
-        kwargs['credentials'] = credentials
+        kwargs["credentials"] = credentials
         return cls(*args, **kwargs)
 
     from_service_account_json = from_service_account_file
 
     @property
     def transport(self) -> AnalyticsAdminServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
-            AnalyticsAdminServiceTransport: The transport used by the client instance.
+            AnalyticsAdminServiceTransport: The transport used by the client
+                instance.
         """
         return self._transport
 
     @staticmethod
     def account_path(account: str,) -> str:
-        """Return a fully-qualified account string."""
+        """Returns a fully-qualified account string."""
         return "accounts/{account}".format(account=account, )
 
     @staticmethod
     def parse_account_path(path: str) -> Dict[str,str]:
-        """Parse a account path into its component segments."""
+        """Parses a account path into its component segments."""
         m = re.match(r"^accounts/(?P<account>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def account_summary_path(account_summary: str,) -> str:
-        """Return a fully-qualified account_summary string."""
+        """Returns a fully-qualified account_summary string."""
         return "accountSummaries/{account_summary}".format(account_summary=account_summary, )
 
     @staticmethod
     def parse_account_summary_path(path: str) -> Dict[str,str]:
-        """Parse a account_summary path into its component segments."""
+        """Parses a account_summary path into its component segments."""
         m = re.match(r"^accountSummaries/(?P<account_summary>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def android_app_data_stream_path(property: str,android_app_data_stream: str,) -> str:
-        """Return a fully-qualified android_app_data_stream string."""
+        """Returns a fully-qualified android_app_data_stream string."""
         return "properties/{property}/androidAppDataStreams/{android_app_data_stream}".format(property=property, android_app_data_stream=android_app_data_stream, )
 
     @staticmethod
     def parse_android_app_data_stream_path(path: str) -> Dict[str,str]:
-        """Parse a android_app_data_stream path into its component segments."""
+        """Parses a android_app_data_stream path into its component segments."""
         m = re.match(r"^properties/(?P<property>.+?)/androidAppDataStreams/(?P<android_app_data_stream>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def data_sharing_settings_path(account: str,) -> str:
-        """Return a fully-qualified data_sharing_settings string."""
+        """Returns a fully-qualified data_sharing_settings string."""
         return "accounts/{account}/dataSharingSettings".format(account=account, )
 
     @staticmethod
     def parse_data_sharing_settings_path(path: str) -> Dict[str,str]:
-        """Parse a data_sharing_settings path into its component segments."""
+        """Parses a data_sharing_settings path into its component segments."""
         m = re.match(r"^accounts/(?P<account>.+?)/dataSharingSettings$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def enhanced_measurement_settings_path(property: str,web_data_stream: str,) -> str:
-        """Return a fully-qualified enhanced_measurement_settings string."""
+        """Returns a fully-qualified enhanced_measurement_settings string."""
         return "properties/{property}/webDataStreams/{web_data_stream}/enhancedMeasurementSettings".format(property=property, web_data_stream=web_data_stream, )
 
     @staticmethod
     def parse_enhanced_measurement_settings_path(path: str) -> Dict[str,str]:
-        """Parse a enhanced_measurement_settings path into its component segments."""
+        """Parses a enhanced_measurement_settings path into its component segments."""
         m = re.match(r"^properties/(?P<property>.+?)/webDataStreams/(?P<web_data_stream>.+?)/enhancedMeasurementSettings$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def firebase_link_path(property: str,firebase_link: str,) -> str:
-        """Return a fully-qualified firebase_link string."""
+        """Returns a fully-qualified firebase_link string."""
         return "properties/{property}/firebaseLinks/{firebase_link}".format(property=property, firebase_link=firebase_link, )
 
     @staticmethod
     def parse_firebase_link_path(path: str) -> Dict[str,str]:
-        """Parse a firebase_link path into its component segments."""
+        """Parses a firebase_link path into its component segments."""
         m = re.match(r"^properties/(?P<property>.+?)/firebaseLinks/(?P<firebase_link>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def global_site_tag_path(property: str,) -> str:
-        """Return a fully-qualified global_site_tag string."""
+        """Returns a fully-qualified global_site_tag string."""
         return "properties/{property}/globalSiteTag".format(property=property, )
 
     @staticmethod
     def parse_global_site_tag_path(path: str) -> Dict[str,str]:
-        """Parse a global_site_tag path into its component segments."""
+        """Parses a global_site_tag path into its component segments."""
         m = re.match(r"^properties/(?P<property>.+?)/globalSiteTag$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def google_ads_link_path(property: str,google_ads_link: str,) -> str:
-        """Return a fully-qualified google_ads_link string."""
+        """Returns a fully-qualified google_ads_link string."""
         return "properties/{property}/googleAdsLinks/{google_ads_link}".format(property=property, google_ads_link=google_ads_link, )
 
     @staticmethod
     def parse_google_ads_link_path(path: str) -> Dict[str,str]:
-        """Parse a google_ads_link path into its component segments."""
+        """Parses a google_ads_link path into its component segments."""
         m = re.match(r"^properties/(?P<property>.+?)/googleAdsLinks/(?P<google_ads_link>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def ios_app_data_stream_path(property: str,ios_app_data_stream: str,) -> str:
-        """Return a fully-qualified ios_app_data_stream string."""
+        """Returns a fully-qualified ios_app_data_stream string."""
         return "properties/{property}/iosAppDataStreams/{ios_app_data_stream}".format(property=property, ios_app_data_stream=ios_app_data_stream, )
 
     @staticmethod
     def parse_ios_app_data_stream_path(path: str) -> Dict[str,str]:
-        """Parse a ios_app_data_stream path into its component segments."""
+        """Parses a ios_app_data_stream path into its component segments."""
         m = re.match(r"^properties/(?P<property>.+?)/iosAppDataStreams/(?P<ios_app_data_stream>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def property_path(property: str,) -> str:
-        """Return a fully-qualified property string."""
+        """Returns a fully-qualified property string."""
         return "properties/{property}".format(property=property, )
 
     @staticmethod
     def parse_property_path(path: str) -> Dict[str,str]:
-        """Parse a property path into its component segments."""
+        """Parses a property path into its component segments."""
         m = re.match(r"^properties/(?P<property>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def user_link_path(account: str,user_link: str,) -> str:
-        """Return a fully-qualified user_link string."""
+        """Returns a fully-qualified user_link string."""
         return "accounts/{account}/userLinks/{user_link}".format(account=account, user_link=user_link, )
 
     @staticmethod
     def parse_user_link_path(path: str) -> Dict[str,str]:
-        """Parse a user_link path into its component segments."""
+        """Parses a user_link path into its component segments."""
         m = re.match(r"^accounts/(?P<account>.+?)/userLinks/(?P<user_link>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def web_data_stream_path(property: str,web_data_stream: str,) -> str:
-        """Return a fully-qualified web_data_stream string."""
+        """Returns a fully-qualified web_data_stream string."""
         return "properties/{property}/webDataStreams/{web_data_stream}".format(property=property, web_data_stream=web_data_stream, )
 
     @staticmethod
     def parse_web_data_stream_path(path: str) -> Dict[str,str]:
-        """Parse a web_data_stream path into its component segments."""
+        """Parses a web_data_stream path into its component segments."""
         m = re.match(r"^properties/(?P<property>.+?)/webDataStreams/(?P<web_data_stream>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
-        """Return a fully-qualified billing_account string."""
+        """Returns a fully-qualified billing_account string."""
         return "billingAccounts/{billing_account}".format(billing_account=billing_account, )
 
     @staticmethod
@@ -301,7 +304,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
 
     @staticmethod
     def common_folder_path(folder: str, ) -> str:
-        """Return a fully-qualified folder string."""
+        """Returns a fully-qualified folder string."""
         return "folders/{folder}".format(folder=folder, )
 
     @staticmethod
@@ -312,7 +315,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
 
     @staticmethod
     def common_organization_path(organization: str, ) -> str:
-        """Return a fully-qualified organization string."""
+        """Returns a fully-qualified organization string."""
         return "organizations/{organization}".format(organization=organization, )
 
     @staticmethod
@@ -323,7 +326,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
 
     @staticmethod
     def common_project_path(project: str, ) -> str:
-        """Return a fully-qualified project string."""
+        """Returns a fully-qualified project string."""
         return "projects/{project}".format(project=project, )
 
     @staticmethod
@@ -334,7 +337,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
 
     @staticmethod
     def common_location_path(project: str, location: str, ) -> str:
-        """Return a fully-qualified location string."""
+        """Returns a fully-qualified location string."""
         return "projects/{project}/locations/{location}".format(project=project, location=location, )
 
     @staticmethod
@@ -349,7 +352,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the analytics admin service client.
+        """Instantiates the analytics admin service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -402,7 +405,10 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
                 client_cert_source_func = client_options.client_cert_source
             else:
                 is_mtls = mtls.has_default_client_cert_source()
-                client_cert_source_func = mtls.default_client_cert_source() if is_mtls else None
+                if is_mtls:
+                    client_cert_source_func = mtls.default_client_cert_source()
+                else:
+                    client_cert_source_func = None
 
         # Figure out which api endpoint to use.
         if client_options.api_endpoint is not None:
@@ -414,10 +420,14 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
             elif use_mtls_env == "always":
                 api_endpoint = self.DEFAULT_MTLS_ENDPOINT
             elif use_mtls_env == "auto":
-                api_endpoint = self.DEFAULT_MTLS_ENDPOINT if is_mtls else self.DEFAULT_ENDPOINT
+                if is_mtls:
+                    api_endpoint = self.DEFAULT_MTLS_ENDPOINT
+                else:
+                    api_endpoint = self.DEFAULT_ENDPOINT
             else:
                 raise MutualTLSChannelError(
-                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted values: never, auto, always"
+                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted "
+                    "values: never, auto, always"
                 )
 
         # Save or instantiate the transport.
@@ -426,12 +436,12 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         if isinstance(transport, AnalyticsAdminServiceTransport):
             # transport is a AnalyticsAdminServiceTransport instance.
             if credentials or client_options.credentials_file:
-                raise ValueError('When providing a transport instance, '
-                                 'provide its credentials directly.')
+                raise ValueError("When providing a transport instance, "
+                                 "provide its credentials directly.")
             if client_options.scopes:
                 raise ValueError(
-                    "When providing a transport instance, "
-                    "provide its scopes directly."
+                    "When providing a transport instance, provide its scopes "
+                    "directly."
                 )
             self._transport = transport
         else:
@@ -506,7 +516,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -649,7 +659,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -734,7 +744,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('account.name', request.account.name),
+                ("account.name", request.account.name),
             )),
         )
 
@@ -917,7 +927,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1139,7 +1149,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1228,7 +1238,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('property.name', request.property.name),
+                ("property.name", request.property.name),
             )),
         )
 
@@ -1304,7 +1314,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1361,7 +1371,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1439,7 +1449,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1517,7 +1527,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1622,7 +1632,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1681,7 +1691,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1755,7 +1765,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('user_link.name', request.user_link.name),
+                ("user_link.name", request.user_link.name),
             )),
         )
 
@@ -1812,7 +1822,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1881,7 +1891,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1929,7 +1939,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -2003,7 +2013,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2074,7 +2084,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2159,7 +2169,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('web_data_stream.name', request.web_data_stream.name),
+                ("web_data_stream.name", request.web_data_stream.name),
             )),
         )
 
@@ -2244,7 +2254,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -2328,7 +2338,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -2414,7 +2424,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2485,7 +2495,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2571,7 +2581,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('ios_app_data_stream.name', request.ios_app_data_stream.name),
+                ("ios_app_data_stream.name", request.ios_app_data_stream.name),
             )),
         )
 
@@ -2655,7 +2665,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -2741,7 +2751,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2812,7 +2822,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2898,7 +2908,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('android_app_data_stream.name', request.android_app_data_stream.name),
+                ("android_app_data_stream.name", request.android_app_data_stream.name),
             )),
         )
 
@@ -2982,7 +2992,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -3072,7 +3082,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -3164,7 +3174,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('enhanced_measurement_settings.name', request.enhanced_measurement_settings.name),
+                ("enhanced_measurement_settings.name", request.enhanced_measurement_settings.name),
             )),
         )
 
@@ -3250,7 +3260,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -3338,7 +3348,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('firebase_link.name', request.firebase_link.name),
+                ("firebase_link.name", request.firebase_link.name),
             )),
         )
 
@@ -3408,7 +3418,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -3484,7 +3494,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -3574,7 +3584,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -3659,7 +3669,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -3745,7 +3755,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('google_ads_link.name', request.google_ads_link.name),
+                ("google_ads_link.name", request.google_ads_link.name),
             )),
         )
 
@@ -3814,7 +3824,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -3889,7 +3899,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -3978,7 +3988,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -4038,7 +4048,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('account', request.account),
+                ("account", request.account),
             )),
         )
 
@@ -4069,7 +4079,7 @@ class AnalyticsAdminServiceClient(metaclass=AnalyticsAdminServiceClientMeta):
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-analytics-admin',
+            "google-analytics-admin",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -4077,5 +4087,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'AnalyticsAdminServiceClient',
+    "AnalyticsAdminServiceClient",
 )

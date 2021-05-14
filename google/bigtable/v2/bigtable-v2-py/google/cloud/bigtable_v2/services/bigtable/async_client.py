@@ -58,7 +58,8 @@ class BigtableAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -73,7 +74,7 @@ class BigtableAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -90,7 +91,7 @@ class BigtableAsyncClient:
 
     @property
     def transport(self) -> BigtableTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             BigtableTransport: The transport used by the client instance.
@@ -101,11 +102,11 @@ class BigtableAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, BigtableTransport] = 'grpc_asyncio',
+            transport: Union[str, BigtableTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the bigtable client.
+        """Instantiates the bigtable client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -199,8 +200,8 @@ class BigtableAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([table_name, app_profile_id])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = bigtable.ReadRowsRequest(request)
 
@@ -228,7 +229,7 @@ initial=0.01,maximum=60.0,multiplier=2,                predicate=retries.if_exce
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('table_name', request.table_name),
+                ("table_name", request.table_name),
             )),
         )
 
@@ -296,8 +297,8 @@ initial=0.01,maximum=60.0,multiplier=2,                predicate=retries.if_exce
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([table_name, app_profile_id])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = bigtable.SampleRowKeysRequest(request)
 
@@ -325,7 +326,7 @@ initial=0.01,maximum=60.0,multiplier=2,                predicate=retries.if_exce
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('table_name', request.table_name),
+                ("table_name", request.table_name),
             )),
         )
 
@@ -410,8 +411,8 @@ initial=0.01,maximum=60.0,multiplier=2,                predicate=retries.if_exce
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([table_name, row_key, mutations, app_profile_id])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = bigtable.MutateRowRequest(request)
 
@@ -432,8 +433,8 @@ initial=0.01,maximum=60.0,multiplier=2,                predicate=retries.if_exce
             self._client._transport.mutate_row,
             default_retry=retries.Retry(
 initial=0.01,maximum=60.0,multiplier=2,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
             ),
@@ -445,7 +446,7 @@ initial=0.01,maximum=60.0,multiplier=2,                predicate=retries.if_exce
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('table_name', request.table_name),
+                ("table_name", request.table_name),
             )),
         )
 
@@ -526,8 +527,8 @@ initial=0.01,maximum=60.0,multiplier=2,                predicate=retries.if_exce
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([table_name, entries, app_profile_id])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = bigtable.MutateRowsRequest(request)
 
@@ -557,7 +558,7 @@ initial=0.01,maximum=60.0,multiplier=2,                predicate=retries.if_exce
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('table_name', request.table_name),
+                ("table_name", request.table_name),
             )),
         )
 
@@ -667,8 +668,8 @@ initial=0.01,maximum=60.0,multiplier=2,                predicate=retries.if_exce
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([table_name, row_key, predicate_filter, true_mutations, false_mutations, app_profile_id])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = bigtable.CheckAndMutateRowRequest(request)
 
@@ -704,7 +705,7 @@ initial=0.01,maximum=60.0,multiplier=2,                predicate=retries.if_exce
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('table_name', request.table_name),
+                ("table_name", request.table_name),
             )),
         )
 
@@ -796,8 +797,8 @@ initial=0.01,maximum=60.0,multiplier=2,                predicate=retries.if_exce
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([table_name, row_key, rules, app_profile_id])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = bigtable.ReadModifyWriteRowRequest(request)
 
@@ -829,7 +830,7 @@ initial=0.01,maximum=60.0,multiplier=2,                predicate=retries.if_exce
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('table_name', request.table_name),
+                ("table_name", request.table_name),
             )),
         )
 
@@ -851,7 +852,7 @@ initial=0.01,maximum=60.0,multiplier=2,                predicate=retries.if_exce
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-bigtable',
+            "google-cloud-bigtable",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -859,5 +860,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'BigtableAsyncClient',
+    "BigtableAsyncClient",
 )

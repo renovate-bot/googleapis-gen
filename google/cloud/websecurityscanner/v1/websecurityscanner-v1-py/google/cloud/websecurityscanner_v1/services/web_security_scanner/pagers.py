@@ -104,7 +104,7 @@ class ListScanConfigsAsyncPager:
             response: web_security_scanner.ListScanConfigsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -226,7 +226,7 @@ class ListScanRunsAsyncPager:
             response: web_security_scanner.ListScanRunsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -348,7 +348,7 @@ class ListCrawledUrlsAsyncPager:
             response: web_security_scanner.ListCrawledUrlsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -470,7 +470,7 @@ class ListFindingsAsyncPager:
             response: web_security_scanner.ListFindingsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

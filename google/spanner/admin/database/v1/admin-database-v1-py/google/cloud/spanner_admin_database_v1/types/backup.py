@@ -552,7 +552,7 @@ class ListBackupOperationsResponse(proto.Message):
     operations = proto.RepeatedField(
         proto.MESSAGE,
         number=1,
-        message=gl_operations.Operation,
+        message=operations_pb2.Operation,
     )
     next_page_token = proto.Field(
         proto.STRING,

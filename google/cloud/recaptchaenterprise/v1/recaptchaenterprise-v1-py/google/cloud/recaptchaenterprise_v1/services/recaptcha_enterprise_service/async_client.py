@@ -59,7 +59,8 @@ class RecaptchaEnterpriseServiceAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -74,7 +75,7 @@ class RecaptchaEnterpriseServiceAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -91,7 +92,7 @@ class RecaptchaEnterpriseServiceAsyncClient:
 
     @property
     def transport(self) -> RecaptchaEnterpriseServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             RecaptchaEnterpriseServiceTransport: The transport used by the client instance.
@@ -102,11 +103,11 @@ class RecaptchaEnterpriseServiceAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, RecaptchaEnterpriseServiceTransport] = 'grpc_asyncio',
+            transport: Union[str, RecaptchaEnterpriseServiceTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the recaptcha enterprise service client.
+        """Instantiates the recaptcha enterprise service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -190,8 +191,8 @@ class RecaptchaEnterpriseServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, assessment])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = recaptchaenterprise.CreateAssessmentRequest(request)
 
@@ -214,7 +215,7 @@ class RecaptchaEnterpriseServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -278,8 +279,8 @@ class RecaptchaEnterpriseServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name, annotation])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = recaptchaenterprise.AnnotateAssessmentRequest(request)
 
@@ -302,7 +303,7 @@ class RecaptchaEnterpriseServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -357,7 +358,7 @@ class RecaptchaEnterpriseServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -415,7 +416,7 @@ class RecaptchaEnterpriseServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -479,7 +480,7 @@ class RecaptchaEnterpriseServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -534,7 +535,7 @@ class RecaptchaEnterpriseServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('key.name', request.key.name),
+                ("key.name", request.key.name),
             )),
         )
 
@@ -582,7 +583,7 @@ class RecaptchaEnterpriseServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -601,7 +602,7 @@ class RecaptchaEnterpriseServiceAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-recaptchaenterprise',
+            "google-cloud-recaptchaenterprise",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -609,5 +610,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'RecaptchaEnterpriseServiceAsyncClient',
+    "RecaptchaEnterpriseServiceAsyncClient",
 )

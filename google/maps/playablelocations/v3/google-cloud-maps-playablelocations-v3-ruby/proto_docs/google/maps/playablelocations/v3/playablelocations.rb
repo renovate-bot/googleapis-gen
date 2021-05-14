@@ -65,9 +65,10 @@ module Google
         #     in the request.
         # @!attribute [rw] ttl
         #   @return [::Google::Protobuf::Duration]
-        #     Required. Specifies the "time-to-live" for the set of playable locations. You can use
-        #     this value to determine how long to cache the set of playable locations.
-        #     After this length of time, your back-end game server should issue a new
+        #     Required. Specifies the "time-to-live" for the set of playable locations.
+        #     You can use this value to determine how long to cache the set of playable
+        #     locations. After this length of time, your back-end game server should
+        #     issue a new
         #     {::Google::Maps::Playablelocations::V3::PlayableLocations::Client#sample_playable_locations SamplePlayableLocations}
         #     request to get a fresh set of playable locations (because for example, they
         #     might have been removed, a park might have closed for the day, a
@@ -89,27 +90,28 @@ module Google
         # A request for logging your player's bad location reports.
         # @!attribute [rw] player_reports
         #   @return [::Array<::Google::Maps::Playablelocations::V3::PlayerReport>]
-        #     Required. Player reports. The maximum number of player reports that you can log at
-        #     once is 50.
+        #     Required. Player reports. The maximum number of player reports that you can
+        #     log at once is 50.
         # @!attribute [rw] request_id
         #   @return [::String]
-        #     Required. A string that uniquely identifies the log player reports request. This
-        #     allows you to detect duplicate requests. We recommend that you use UUIDs
-        #     for this value. The value must not exceed 50 characters.
+        #     Required. A string that uniquely identifies the log player reports request.
+        #     This allows you to detect duplicate requests. We recommend that you use
+        #     UUIDs for this value. The value must not exceed 50 characters.
         #
         #     You should reuse the `request_id` only when retrying a request in the case
         #     of a failure. In that case, the request must be identical to the one that
         #     failed.
         # @!attribute [rw] client_info
         #   @return [::Google::Maps::Unity::ClientInfo]
-        #     Required. Information about the client device (for example, device model and
-        #     operating system).
+        #     Required. Information about the client device (for example, device model
+        #     and operating system).
         class LogPlayerReportsRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # A response for the {::Google::Maps::Playablelocations::V3::PlayableLocations::Client#log_player_reports LogPlayerReports}
+        # A response for the
+        # {::Google::Maps::Playablelocations::V3::PlayableLocations::Client#log_player_reports LogPlayerReports}
         # method.
         #
         # This method returns no data upon success.
@@ -121,28 +123,29 @@ module Google
         # A request for logging impressions.
         # @!attribute [rw] impressions
         #   @return [::Array<::Google::Maps::Playablelocations::V3::Impression>]
-        #     Required. Impression event details. The maximum number of impression reports that you
-        #     can log at once is 50.
+        #     Required. Impression event details. The maximum number of impression
+        #     reports that you can log at once is 50.
         # @!attribute [rw] request_id
         #   @return [::String]
-        #     Required. A string that uniquely identifies the log impressions request. This allows
-        #     you to detect duplicate requests. We recommend that you use UUIDs for this
-        #     value. The value must not exceed 50 characters.
+        #     Required. A string that uniquely identifies the log impressions request.
+        #     This allows you to detect duplicate requests. We recommend that you use
+        #     UUIDs for this value. The value must not exceed 50 characters.
         #
         #     You should reuse the `request_id` only when retrying a request in case of
         #     failure. In this case, the request must be identical to the one that
         #     failed.
         # @!attribute [rw] client_info
         #   @return [::Google::Maps::Unity::ClientInfo]
-        #     Required. Information about the client device. For example, device model and
-        #     operating system.
+        #     Required. Information about the client device. For example, device model
+        #     and operating system.
         class LogImpressionsRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # A response for the {::Google::Maps::Playablelocations::V3::PlayableLocations::Client#log_impressions LogImpressions} method.
-        # This method returns no data upon success.
+        # A response for the
+        # {::Google::Maps::Playablelocations::V3::PlayableLocations::Client#log_impressions LogImpressions}
+        # method. This method returns no data upon success.
         class LogImpressionsResponse
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

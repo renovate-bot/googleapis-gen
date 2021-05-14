@@ -59,7 +59,8 @@ class ErrorStatsServiceAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -74,7 +75,7 @@ class ErrorStatsServiceAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -91,7 +92,7 @@ class ErrorStatsServiceAsyncClient:
 
     @property
     def transport(self) -> ErrorStatsServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             ErrorStatsServiceTransport: The transport used by the client instance.
@@ -102,11 +103,11 @@ class ErrorStatsServiceAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, ErrorStatsServiceTransport] = 'grpc_asyncio',
+            transport: Union[str, ErrorStatsServiceTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the error stats service client.
+        """Instantiates the error stats service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -207,8 +208,8 @@ class ErrorStatsServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([project_name, time_range])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = error_stats_service.ListGroupStatsRequest(request)
 
@@ -231,7 +232,7 @@ class ErrorStatsServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('project_name', request.project_name),
+                ("project_name", request.project_name),
             )),
         )
 
@@ -308,8 +309,8 @@ class ErrorStatsServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([project_name, group_id])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = error_stats_service.ListEventsRequest(request)
 
@@ -332,7 +333,7 @@ class ErrorStatsServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('project_name', request.project_name),
+                ("project_name", request.project_name),
             )),
         )
 
@@ -397,8 +398,8 @@ class ErrorStatsServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([project_name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = error_stats_service.DeleteEventsRequest(request)
 
@@ -419,7 +420,7 @@ class ErrorStatsServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('project_name', request.project_name),
+                ("project_name", request.project_name),
             )),
         )
 
@@ -441,7 +442,7 @@ class ErrorStatsServiceAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-errorreporting',
+            "google-cloud-errorreporting",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -449,5 +450,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'ErrorStatsServiceAsyncClient',
+    "ErrorStatsServiceAsyncClient",
 )

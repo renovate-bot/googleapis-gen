@@ -3,14 +3,18 @@
 return [
     'interfaces' => [
         'google.devtools.cloudtrace.v1.TraceService' => [
-            'PatchTraces' => [
-                'method' => 'patch',
-                'uriTemplate' => '/v1/projects/{project_id}/traces',
-                'body' => 'traces',
+            'GetTrace' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/projects/{project_id}/traces/{trace_id}',
                 'placeholders' => [
                     'project_id' => [
                         'getters' => [
                             'getProjectId',
+                        ],
+                    ],
+                    'trace_id' => [
+                        'getters' => [
+                            'getTraceId',
                         ],
                     ],
                 ],
@@ -26,18 +30,14 @@ return [
                     ],
                 ],
             ],
-            'GetTrace' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/projects/{project_id}/traces/{trace_id}',
+            'PatchTraces' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v1/projects/{project_id}/traces',
+                'body' => 'traces',
                 'placeholders' => [
                     'project_id' => [
                         'getters' => [
                             'getProjectId',
-                        ],
-                    ],
-                    'trace_id' => [
-                        'getters' => [
-                            'getTraceId',
                         ],
                     ],
                 ],

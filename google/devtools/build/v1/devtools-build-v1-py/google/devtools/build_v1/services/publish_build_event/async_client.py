@@ -71,7 +71,8 @@ class PublishBuildEventAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -86,7 +87,7 @@ class PublishBuildEventAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -103,7 +104,7 @@ class PublishBuildEventAsyncClient:
 
     @property
     def transport(self) -> PublishBuildEventTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             PublishBuildEventTransport: The transport used by the client instance.
@@ -114,11 +115,11 @@ class PublishBuildEventAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, PublishBuildEventTransport] = 'grpc_asyncio',
+            transport: Union[str, PublishBuildEventTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the publish build event client.
+        """Instantiates the publish build event client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -206,7 +207,7 @@ class PublishBuildEventAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('project_id', request.project_id),
+                ("project_id", request.project_id),
             )),
         )
 
@@ -280,7 +281,7 @@ class PublishBuildEventAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-devtools-build',
+            "google-devtools-build",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -288,5 +289,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'PublishBuildEventAsyncClient',
+    "PublishBuildEventAsyncClient",
 )

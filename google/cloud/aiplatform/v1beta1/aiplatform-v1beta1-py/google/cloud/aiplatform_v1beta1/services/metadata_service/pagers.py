@@ -105,7 +105,7 @@ class ListMetadataStoresAsyncPager:
             response: metadata_service.ListMetadataStoresResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -227,7 +227,7 @@ class ListArtifactsAsyncPager:
             response: metadata_service.ListArtifactsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -349,7 +349,7 @@ class ListContextsAsyncPager:
             response: metadata_service.ListContextsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -471,7 +471,7 @@ class ListExecutionsAsyncPager:
             response: metadata_service.ListExecutionsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -593,7 +593,7 @@ class ListMetadataSchemasAsyncPager:
             response: metadata_service.ListMetadataSchemasResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

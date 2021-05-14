@@ -1,0 +1,73 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "ruby",
+  "protoPackage": "google.apps.alertcenter.v1beta1",
+  "libraryPackage": "::Google::Apps::AlertCenter::V1beta1",
+  "services": {
+    "AlertCenterService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Apps::AlertCenter::V1beta1::AlertCenterService::Client",
+          "rpcs": {
+            "ListAlerts": {
+              "methods": [
+                "list_alerts"
+              ]
+            },
+            "GetAlert": {
+              "methods": [
+                "get_alert"
+              ]
+            },
+            "DeleteAlert": {
+              "methods": [
+                "delete_alert"
+              ]
+            },
+            "UndeleteAlert": {
+              "methods": [
+                "undelete_alert"
+              ]
+            },
+            "CreateAlertFeedback": {
+              "methods": [
+                "create_alert_feedback"
+              ]
+            },
+            "ListAlertFeedback": {
+              "methods": [
+                "list_alert_feedback"
+              ]
+            },
+            "GetAlertMetadata": {
+              "methods": [
+                "get_alert_metadata"
+              ]
+            },
+            "GetSettings": {
+              "methods": [
+                "get_settings"
+              ]
+            },
+            "UpdateSettings": {
+              "methods": [
+                "update_settings"
+              ]
+            },
+            "BatchDeleteAlerts": {
+              "methods": [
+                "batch_delete_alerts"
+              ]
+            },
+            "BatchUndeleteAlerts": {
+              "methods": [
+                "batch_undelete_alerts"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

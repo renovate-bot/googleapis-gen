@@ -143,12 +143,12 @@ class ServiceConfig(proto.Message):
     documentation = proto.Field(
         proto.MESSAGE,
         number=6,
-        message=ga_documentation.Documentation,
+        message=documentation_pb2.Documentation,
     )
     quota = proto.Field(
         proto.MESSAGE,
         number=10,
-        message=ga_quota.Quota,
+        message=quota_pb2.Quota,
     )
     authentication = proto.Field(
         proto.MESSAGE,
@@ -158,7 +158,7 @@ class ServiceConfig(proto.Message):
     usage = proto.Field(
         proto.MESSAGE,
         number=15,
-        message=ga_usage.Usage,
+        message=usage_pb2.Usage,
     )
     endpoints = proto.RepeatedField(
         proto.MESSAGE,
@@ -173,7 +173,7 @@ class ServiceConfig(proto.Message):
     monitoring = proto.Field(
         proto.MESSAGE,
         number=28,
-        message=ga_monitoring.Monitoring,
+        message=monitoring_pb2.Monitoring,
     )
 
 

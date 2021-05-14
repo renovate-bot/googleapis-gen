@@ -145,7 +145,7 @@ class Question(proto.Message):
     debug_info = proto.Field(
         proto.MESSAGE,
         number=10,
-        message=gp_any.Any,
+        message=any_pb2.Any,
     )
 
 

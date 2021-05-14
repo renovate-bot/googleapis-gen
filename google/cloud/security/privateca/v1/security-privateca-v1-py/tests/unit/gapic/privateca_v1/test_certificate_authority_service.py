@@ -8514,7 +8514,7 @@ def test_certificate_authority_service_transport_create_channel_old_api_core(tra
         transport_class(quota_project_id="octopus")
 
         create_channel.assert_called_with(
-            "privateca.googleapis.com",
+            "privateca.googleapis.com:443",
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",
@@ -8549,7 +8549,7 @@ def test_certificate_authority_service_transport_create_channel_user_scopes(tran
         transport_class(quota_project_id="octopus", scopes=["1", "2"])
 
         create_channel.assert_called_with(
-            "privateca.googleapis.com",
+            "privateca.googleapis.com:443",
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",

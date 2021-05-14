@@ -103,7 +103,7 @@ class ListDatasetsAsyncPager:
             response: dataset_service.ListDatasetsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -225,7 +225,7 @@ class ListDataItemsAsyncPager:
             response: dataset_service.ListDataItemsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -347,7 +347,7 @@ class ListAnnotationsAsyncPager:
             response: dataset_service.ListAnnotationsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

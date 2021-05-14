@@ -247,7 +247,7 @@ class AttemptStatus(proto.Message):
     response_status = proto.Field(
         proto.MESSAGE,
         number=4,
-        message=gr_status.Status,
+        message=status_pb2.Status,
     )
 
 

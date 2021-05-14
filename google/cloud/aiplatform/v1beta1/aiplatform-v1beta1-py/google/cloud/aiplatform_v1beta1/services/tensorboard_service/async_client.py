@@ -78,7 +78,8 @@ class TensorboardServiceAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -93,7 +94,7 @@ class TensorboardServiceAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -110,7 +111,7 @@ class TensorboardServiceAsyncClient:
 
     @property
     def transport(self) -> TensorboardServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             TensorboardServiceTransport: The transport used by the client instance.
@@ -121,11 +122,11 @@ class TensorboardServiceAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, TensorboardServiceTransport] = 'grpc_asyncio',
+            transport: Union[str, TensorboardServiceTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the tensorboard service client.
+        """Instantiates the tensorboard service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -214,8 +215,8 @@ class TensorboardServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, tensorboard])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = tensorboard_service.CreateTensorboardRequest(request)
 
@@ -238,7 +239,7 @@ class TensorboardServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -303,8 +304,8 @@ class TensorboardServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = tensorboard_service.GetTensorboardRequest(request)
 
@@ -325,7 +326,7 @@ class TensorboardServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -396,8 +397,8 @@ class TensorboardServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([tensorboard, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = tensorboard_service.UpdateTensorboardRequest(request)
 
@@ -420,7 +421,7 @@ class TensorboardServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('tensorboard.name', request.tensorboard.name),
+                ("tensorboard.name", request.tensorboard.name),
             )),
         )
 
@@ -485,8 +486,8 @@ class TensorboardServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = tensorboard_service.ListTensorboardsRequest(request)
 
@@ -507,7 +508,7 @@ class TensorboardServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -583,8 +584,8 @@ class TensorboardServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = tensorboard_service.DeleteTensorboardRequest(request)
 
@@ -605,7 +606,7 @@ class TensorboardServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -687,8 +688,8 @@ class TensorboardServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, tensorboard_experiment, tensorboard_experiment_id])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = tensorboard_service.CreateTensorboardExperimentRequest(request)
 
@@ -713,7 +714,7 @@ class TensorboardServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -769,8 +770,8 @@ class TensorboardServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = tensorboard_service.GetTensorboardExperimentRequest(request)
 
@@ -791,7 +792,7 @@ class TensorboardServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -861,8 +862,8 @@ class TensorboardServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([tensorboard_experiment, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = tensorboard_service.UpdateTensorboardExperimentRequest(request)
 
@@ -885,7 +886,7 @@ class TensorboardServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('tensorboard_experiment.name', request.tensorboard_experiment.name),
+                ("tensorboard_experiment.name", request.tensorboard_experiment.name),
             )),
         )
 
@@ -943,8 +944,8 @@ class TensorboardServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = tensorboard_service.ListTensorboardExperimentsRequest(request)
 
@@ -965,7 +966,7 @@ class TensorboardServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1041,8 +1042,8 @@ class TensorboardServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = tensorboard_service.DeleteTensorboardExperimentRequest(request)
 
@@ -1063,7 +1064,7 @@ class TensorboardServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1147,8 +1148,8 @@ class TensorboardServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, tensorboard_run, tensorboard_run_id])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = tensorboard_service.CreateTensorboardRunRequest(request)
 
@@ -1173,7 +1174,7 @@ class TensorboardServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1229,8 +1230,8 @@ class TensorboardServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = tensorboard_service.GetTensorboardRunRequest(request)
 
@@ -1251,7 +1252,7 @@ class TensorboardServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1320,8 +1321,8 @@ class TensorboardServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([tensorboard_run, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = tensorboard_service.UpdateTensorboardRunRequest(request)
 
@@ -1344,7 +1345,7 @@ class TensorboardServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('tensorboard_run.name', request.tensorboard_run.name),
+                ("tensorboard_run.name", request.tensorboard_run.name),
             )),
         )
 
@@ -1402,8 +1403,8 @@ class TensorboardServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = tensorboard_service.ListTensorboardRunsRequest(request)
 
@@ -1424,7 +1425,7 @@ class TensorboardServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1500,8 +1501,8 @@ class TensorboardServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = tensorboard_service.DeleteTensorboardRunRequest(request)
 
@@ -1522,7 +1523,7 @@ class TensorboardServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1592,8 +1593,8 @@ class TensorboardServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, tensorboard_time_series])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = tensorboard_service.CreateTensorboardTimeSeriesRequest(request)
 
@@ -1616,7 +1617,7 @@ class TensorboardServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1670,8 +1671,8 @@ class TensorboardServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = tensorboard_service.GetTensorboardTimeSeriesRequest(request)
 
@@ -1692,7 +1693,7 @@ class TensorboardServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1760,8 +1761,8 @@ class TensorboardServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([tensorboard_time_series, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = tensorboard_service.UpdateTensorboardTimeSeriesRequest(request)
 
@@ -1784,7 +1785,7 @@ class TensorboardServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('tensorboard_time_series.name', request.tensorboard_time_series.name),
+                ("tensorboard_time_series.name", request.tensorboard_time_series.name),
             )),
         )
 
@@ -1842,8 +1843,8 @@ class TensorboardServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = tensorboard_service.ListTensorboardTimeSeriesRequest(request)
 
@@ -1864,7 +1865,7 @@ class TensorboardServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1940,8 +1941,8 @@ class TensorboardServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = tensorboard_service.DeleteTensorboardTimeSeriesRequest(request)
 
@@ -1962,7 +1963,7 @@ class TensorboardServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2029,8 +2030,8 @@ class TensorboardServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([tensorboard_time_series])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = tensorboard_service.ReadTensorboardTimeSeriesDataRequest(request)
 
@@ -2051,7 +2052,7 @@ class TensorboardServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('tensorboard_time_series', request.tensorboard_time_series),
+                ("tensorboard_time_series", request.tensorboard_time_series),
             )),
         )
 
@@ -2108,8 +2109,8 @@ class TensorboardServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([time_series])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = tensorboard_service.ReadTensorboardBlobDataRequest(request)
 
@@ -2130,7 +2131,7 @@ class TensorboardServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('time_series', request.time_series),
+                ("time_series", request.time_series),
             )),
         )
 
@@ -2200,8 +2201,8 @@ class TensorboardServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([tensorboard_run, time_series_data])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = tensorboard_service.WriteTensorboardRunDataRequest(request)
 
@@ -2224,7 +2225,7 @@ class TensorboardServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('tensorboard_run', request.tensorboard_run),
+                ("tensorboard_run", request.tensorboard_run),
             )),
         )
 
@@ -2282,8 +2283,8 @@ class TensorboardServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([tensorboard_time_series])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = tensorboard_service.ExportTensorboardTimeSeriesDataRequest(request)
 
@@ -2304,7 +2305,7 @@ class TensorboardServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('tensorboard_time_series', request.tensorboard_time_series),
+                ("tensorboard_time_series", request.tensorboard_time_series),
             )),
         )
 
@@ -2335,7 +2336,7 @@ class TensorboardServiceAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-aiplatform',
+            "google-cloud-aiplatform",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -2343,5 +2344,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'TensorboardServiceAsyncClient',
+    "TensorboardServiceAsyncClient",
 )

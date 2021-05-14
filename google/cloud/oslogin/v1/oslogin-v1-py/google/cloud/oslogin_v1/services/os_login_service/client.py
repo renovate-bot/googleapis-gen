@@ -46,13 +46,13 @@ class OsLoginServiceClientMeta(type):
     objects.
     """
     _transport_registry = OrderedDict()  # type: Dict[str, Type[OsLoginServiceTransport]]
-    _transport_registry['grpc'] = OsLoginServiceGrpcTransport
-    _transport_registry['grpc_asyncio'] = OsLoginServiceGrpcAsyncIOTransport
+    _transport_registry["grpc"] = OsLoginServiceGrpcTransport
+    _transport_registry["grpc_asyncio"] = OsLoginServiceGrpcAsyncIOTransport
 
     def get_transport_class(cls,
             label: str = None,
         ) -> Type[OsLoginServiceTransport]:
-        """Return an appropriate transport class.
+        """Returns an appropriate transport class.
 
         Args:
             label: The name of the desired transport. If none is
@@ -79,7 +79,8 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
 
     @staticmethod
     def _get_default_mtls_endpoint(api_endpoint):
-        """Convert api endpoint to mTLS endpoint.
+        """Converts api endpoint to mTLS endpoint.
+
         Convert "*.sandbox.googleapis.com" and "*.googleapis.com" to
         "*.mtls.sandbox.googleapis.com" and "*.mtls.googleapis.com" respectively.
         Args:
@@ -106,14 +107,15 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
 
         return api_endpoint.replace(".googleapis.com", ".mtls.googleapis.com")
 
-    DEFAULT_ENDPOINT = 'oslogin.googleapis.com'
+    DEFAULT_ENDPOINT = "oslogin.googleapis.com"
     DEFAULT_MTLS_ENDPOINT = _get_default_mtls_endpoint.__func__(  # type: ignore
         DEFAULT_ENDPOINT
     )
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -130,7 +132,7 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -143,45 +145,46 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
         """
         credentials = service_account.Credentials.from_service_account_file(
             filename)
-        kwargs['credentials'] = credentials
+        kwargs["credentials"] = credentials
         return cls(*args, **kwargs)
 
     from_service_account_json = from_service_account_file
 
     @property
     def transport(self) -> OsLoginServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
-            OsLoginServiceTransport: The transport used by the client instance.
+            OsLoginServiceTransport: The transport used by the client
+                instance.
         """
         return self._transport
 
     @staticmethod
     def posix_account_path(user: str,project: str,) -> str:
-        """Return a fully-qualified posix_account string."""
+        """Returns a fully-qualified posix_account string."""
         return "users/{user}/projects/{project}".format(user=user, project=project, )
 
     @staticmethod
     def parse_posix_account_path(path: str) -> Dict[str,str]:
-        """Parse a posix_account path into its component segments."""
+        """Parses a posix_account path into its component segments."""
         m = re.match(r"^users/(?P<user>.+?)/projects/(?P<project>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def ssh_public_key_path(user: str,fingerprint: str,) -> str:
-        """Return a fully-qualified ssh_public_key string."""
+        """Returns a fully-qualified ssh_public_key string."""
         return "users/{user}/sshPublicKeys/{fingerprint}".format(user=user, fingerprint=fingerprint, )
 
     @staticmethod
     def parse_ssh_public_key_path(path: str) -> Dict[str,str]:
-        """Parse a ssh_public_key path into its component segments."""
+        """Parses a ssh_public_key path into its component segments."""
         m = re.match(r"^users/(?P<user>.+?)/sshPublicKeys/(?P<fingerprint>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
-        """Return a fully-qualified billing_account string."""
+        """Returns a fully-qualified billing_account string."""
         return "billingAccounts/{billing_account}".format(billing_account=billing_account, )
 
     @staticmethod
@@ -192,7 +195,7 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
 
     @staticmethod
     def common_folder_path(folder: str, ) -> str:
-        """Return a fully-qualified folder string."""
+        """Returns a fully-qualified folder string."""
         return "folders/{folder}".format(folder=folder, )
 
     @staticmethod
@@ -203,7 +206,7 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
 
     @staticmethod
     def common_organization_path(organization: str, ) -> str:
-        """Return a fully-qualified organization string."""
+        """Returns a fully-qualified organization string."""
         return "organizations/{organization}".format(organization=organization, )
 
     @staticmethod
@@ -214,7 +217,7 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
 
     @staticmethod
     def common_project_path(project: str, ) -> str:
-        """Return a fully-qualified project string."""
+        """Returns a fully-qualified project string."""
         return "projects/{project}".format(project=project, )
 
     @staticmethod
@@ -225,7 +228,7 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
 
     @staticmethod
     def common_location_path(project: str, location: str, ) -> str:
-        """Return a fully-qualified location string."""
+        """Returns a fully-qualified location string."""
         return "projects/{project}/locations/{location}".format(project=project, location=location, )
 
     @staticmethod
@@ -240,7 +243,7 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the os login service client.
+        """Instantiates the os login service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -293,7 +296,10 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
                 client_cert_source_func = client_options.client_cert_source
             else:
                 is_mtls = mtls.has_default_client_cert_source()
-                client_cert_source_func = mtls.default_client_cert_source() if is_mtls else None
+                if is_mtls:
+                    client_cert_source_func = mtls.default_client_cert_source()
+                else:
+                    client_cert_source_func = None
 
         # Figure out which api endpoint to use.
         if client_options.api_endpoint is not None:
@@ -305,10 +311,14 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
             elif use_mtls_env == "always":
                 api_endpoint = self.DEFAULT_MTLS_ENDPOINT
             elif use_mtls_env == "auto":
-                api_endpoint = self.DEFAULT_MTLS_ENDPOINT if is_mtls else self.DEFAULT_ENDPOINT
+                if is_mtls:
+                    api_endpoint = self.DEFAULT_MTLS_ENDPOINT
+                else:
+                    api_endpoint = self.DEFAULT_ENDPOINT
             else:
                 raise MutualTLSChannelError(
-                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted values: never, auto, always"
+                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted "
+                    "values: never, auto, always"
                 )
 
         # Save or instantiate the transport.
@@ -317,12 +327,12 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
         if isinstance(transport, OsLoginServiceTransport):
             # transport is a OsLoginServiceTransport instance.
             if credentials or client_options.credentials_file:
-                raise ValueError('When providing a transport instance, '
-                                 'provide its credentials directly.')
+                raise ValueError("When providing a transport instance, "
+                                 "provide its credentials directly.")
             if client_options.scopes:
                 raise ValueError(
-                    "When providing a transport instance, "
-                    "provide its scopes directly."
+                    "When providing a transport instance, provide its scopes "
+                    "directly."
                 )
             self._transport = transport
         else:
@@ -393,7 +403,7 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -461,7 +471,7 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -535,7 +545,7 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -612,7 +622,7 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -710,7 +720,7 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -808,7 +818,7 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -830,7 +840,7 @@ class OsLoginServiceClient(metaclass=OsLoginServiceClientMeta):
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-oslogin',
+            "google-cloud-oslogin",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -838,5 +848,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'OsLoginServiceClient',
+    "OsLoginServiceClient",
 )

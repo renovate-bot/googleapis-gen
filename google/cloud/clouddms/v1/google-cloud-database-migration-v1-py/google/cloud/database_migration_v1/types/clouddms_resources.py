@@ -308,7 +308,7 @@ class SqlAclEntry(proto.Message):
         proto.MESSAGE,
         number=11,
         oneof='expiration',
-        message=gp_duration.Duration,
+        message=duration_pb2.Duration,
     )
     label = proto.Field(
         proto.STRING,
@@ -793,7 +793,7 @@ class MigrationJob(proto.Message):
     duration = proto.Field(
         proto.MESSAGE,
         number=12,
-        message=gp_duration.Duration,
+        message=duration_pb2.Duration,
     )
     error = proto.Field(
         proto.MESSAGE,

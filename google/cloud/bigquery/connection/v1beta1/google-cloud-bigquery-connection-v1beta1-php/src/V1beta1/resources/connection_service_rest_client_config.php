@@ -15,54 +15,19 @@ return [
                     ],
                 ],
             ],
-            'GetConnection' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/connections/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'ListConnections' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1beta1/{parent=projects/*/locations/*}/connections',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
-                    ],
-                ],
-            ],
-            'UpdateConnection' => [
-                'method' => 'patch',
-                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/connections/*}',
-                'body' => 'connection',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'UpdateConnectionCredential' => [
-                'method' => 'patch',
-                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/connections/*/credential}',
-                'body' => 'credential',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
             'DeleteConnection' => [
                 'method' => 'delete',
+                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/connections/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'GetConnection' => [
+                'method' => 'get',
                 'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/connections/*}',
                 'placeholders' => [
                     'name' => [
@@ -80,6 +45,17 @@ return [
                     'resource' => [
                         'getters' => [
                             'getResource',
+                        ],
+                    ],
+                ],
+            ],
+            'ListConnections' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta1/{parent=projects/*/locations/*}/connections',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
                         ],
                     ],
                 ],
@@ -104,6 +80,30 @@ return [
                     'resource' => [
                         'getters' => [
                             'getResource',
+                        ],
+                    ],
+                ],
+            ],
+            'UpdateConnection' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/connections/*}',
+                'body' => 'connection',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'UpdateConnectionCredential' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/connections/*/credential}',
+                'body' => 'credential',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
                         ],
                     ],
                 ],

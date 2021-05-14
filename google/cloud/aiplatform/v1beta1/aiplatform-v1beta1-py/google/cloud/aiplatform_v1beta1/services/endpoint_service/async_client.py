@@ -67,7 +67,8 @@ class EndpointServiceAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -82,7 +83,7 @@ class EndpointServiceAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -99,7 +100,7 @@ class EndpointServiceAsyncClient:
 
     @property
     def transport(self) -> EndpointServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             EndpointServiceTransport: The transport used by the client instance.
@@ -110,11 +111,11 @@ class EndpointServiceAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, EndpointServiceTransport] = 'grpc_asyncio',
+            transport: Union[str, EndpointServiceTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the endpoint service client.
+        """Instantiates the endpoint service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -201,8 +202,8 @@ class EndpointServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, endpoint])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = endpoint_service.CreateEndpointRequest(request)
 
@@ -225,7 +226,7 @@ class EndpointServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -287,8 +288,8 @@ class EndpointServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = endpoint_service.GetEndpointRequest(request)
 
@@ -309,7 +310,7 @@ class EndpointServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -366,8 +367,8 @@ class EndpointServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = endpoint_service.ListEndpointsRequest(request)
 
@@ -388,7 +389,7 @@ class EndpointServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -459,8 +460,8 @@ class EndpointServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([endpoint, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = endpoint_service.UpdateEndpointRequest(request)
 
@@ -483,7 +484,7 @@ class EndpointServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('endpoint.name', request.endpoint.name),
+                ("endpoint.name", request.endpoint.name),
             )),
         )
 
@@ -550,8 +551,8 @@ class EndpointServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = endpoint_service.DeleteEndpointRequest(request)
 
@@ -572,7 +573,7 @@ class EndpointServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -672,8 +673,8 @@ class EndpointServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([endpoint, deployed_model, traffic_split])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = endpoint_service.DeployModelRequest(request)
 
@@ -699,7 +700,7 @@ class EndpointServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('endpoint', request.endpoint),
+                ("endpoint", request.endpoint),
             )),
         )
 
@@ -790,8 +791,8 @@ class EndpointServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([endpoint, deployed_model_id, traffic_split])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = endpoint_service.UndeployModelRequest(request)
 
@@ -817,7 +818,7 @@ class EndpointServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('endpoint', request.endpoint),
+                ("endpoint", request.endpoint),
             )),
         )
 
@@ -847,7 +848,7 @@ class EndpointServiceAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-aiplatform',
+            "google-cloud-aiplatform",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -855,5 +856,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'EndpointServiceAsyncClient',
+    "EndpointServiceAsyncClient",
 )

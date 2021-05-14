@@ -87,7 +87,7 @@ class LogEntry(proto.Message):
     timestamp = proto.Field(
         proto.MESSAGE,
         number=11,
-        message=gp_timestamp.Timestamp,
+        message=timestamp_pb2.Timestamp,
     )
     severity = proto.Field(
         proto.ENUM,
@@ -116,7 +116,7 @@ class LogEntry(proto.Message):
         proto.MESSAGE,
         number=2,
         oneof='payload',
-        message=gp_any.Any,
+        message=any_pb2.Any,
     )
     text_payload = proto.Field(
         proto.STRING,

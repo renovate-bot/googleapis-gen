@@ -127,7 +127,7 @@ class UpdateDeviceRegistryRequest(proto.Message):
     update_mask = proto.Field(
         proto.MESSAGE,
         number=2,
-        message=gp_field_mask.FieldMask,
+        message=field_mask_pb2.FieldMask,
     )
 
 
@@ -236,7 +236,7 @@ class GetDeviceRequest(proto.Message):
     field_mask = proto.Field(
         proto.MESSAGE,
         number=2,
-        message=gp_field_mask.FieldMask,
+        message=field_mask_pb2.FieldMask,
     )
 
 
@@ -265,7 +265,7 @@ class UpdateDeviceRequest(proto.Message):
     update_mask = proto.Field(
         proto.MESSAGE,
         number=3,
-        message=gp_field_mask.FieldMask,
+        message=field_mask_pb2.FieldMask,
     )
 
 
@@ -333,7 +333,7 @@ class ListDevicesRequest(proto.Message):
     field_mask = proto.Field(
         proto.MESSAGE,
         number=4,
-        message=gp_field_mask.FieldMask,
+        message=field_mask_pb2.FieldMask,
     )
     gateway_list_options = proto.Field(
         proto.MESSAGE,

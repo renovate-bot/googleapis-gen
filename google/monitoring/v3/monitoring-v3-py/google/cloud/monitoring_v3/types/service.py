@@ -361,7 +361,7 @@ class ServiceLevelObjective(proto.Message):
         proto.ENUM,
         number=6,
         oneof='period',
-        enum=gt_calendar_period.CalendarPeriod,
+        enum=calendar_period_pb2.CalendarPeriod,
     )
 
 

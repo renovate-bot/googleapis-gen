@@ -67,7 +67,8 @@ class PolicyTagManagerAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -82,7 +83,7 @@ class PolicyTagManagerAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -99,7 +100,7 @@ class PolicyTagManagerAsyncClient:
 
     @property
     def transport(self) -> PolicyTagManagerTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             PolicyTagManagerTransport: The transport used by the client instance.
@@ -110,11 +111,11 @@ class PolicyTagManagerAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, PolicyTagManagerTransport] = 'grpc_asyncio',
+            transport: Union[str, PolicyTagManagerTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the policy tag manager client.
+        """Instantiates the policy tag manager client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -210,8 +211,8 @@ class PolicyTagManagerAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, taxonomy])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = policytagmanager.CreateTaxonomyRequest(request)
 
@@ -234,7 +235,7 @@ class PolicyTagManagerAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -284,8 +285,8 @@ class PolicyTagManagerAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = policytagmanager.DeleteTaxonomyRequest(request)
 
@@ -306,7 +307,7 @@ class PolicyTagManagerAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -367,8 +368,8 @@ class PolicyTagManagerAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([taxonomy])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = policytagmanager.UpdateTaxonomyRequest(request)
 
@@ -389,7 +390,7 @@ class PolicyTagManagerAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('taxonomy.name', request.taxonomy.name),
+                ("taxonomy.name", request.taxonomy.name),
             )),
         )
 
@@ -446,8 +447,8 @@ class PolicyTagManagerAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = policytagmanager.ListTaxonomiesRequest(request)
 
@@ -468,7 +469,7 @@ class PolicyTagManagerAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -539,8 +540,8 @@ class PolicyTagManagerAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = policytagmanager.GetTaxonomyRequest(request)
 
@@ -561,7 +562,7 @@ class PolicyTagManagerAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -627,8 +628,8 @@ class PolicyTagManagerAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, policy_tag])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = policytagmanager.CreatePolicyTagRequest(request)
 
@@ -651,7 +652,7 @@ class PolicyTagManagerAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -705,8 +706,8 @@ class PolicyTagManagerAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = policytagmanager.DeletePolicyTagRequest(request)
 
@@ -727,7 +728,7 @@ class PolicyTagManagerAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -786,8 +787,8 @@ class PolicyTagManagerAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([policy_tag])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = policytagmanager.UpdatePolicyTagRequest(request)
 
@@ -808,7 +809,7 @@ class PolicyTagManagerAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('policy_tag.name', request.policy_tag.name),
+                ("policy_tag.name", request.policy_tag.name),
             )),
         )
 
@@ -864,8 +865,8 @@ class PolicyTagManagerAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = policytagmanager.ListPolicyTagsRequest(request)
 
@@ -886,7 +887,7 @@ class PolicyTagManagerAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -954,8 +955,8 @@ class PolicyTagManagerAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = policytagmanager.GetPolicyTagRequest(request)
 
@@ -976,7 +977,7 @@ class PolicyTagManagerAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1087,7 +1088,7 @@ class PolicyTagManagerAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('resource', request.resource),
+                ("resource", request.resource),
             )),
         )
 
@@ -1198,7 +1199,7 @@ class PolicyTagManagerAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('resource', request.resource),
+                ("resource", request.resource),
             )),
         )
 
@@ -1255,7 +1256,7 @@ class PolicyTagManagerAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('resource', request.resource),
+                ("resource", request.resource),
             )),
         )
 
@@ -1277,7 +1278,7 @@ class PolicyTagManagerAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-datacatalog',
+            "google-cloud-datacatalog",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -1285,5 +1286,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'PolicyTagManagerAsyncClient',
+    "PolicyTagManagerAsyncClient",
 )

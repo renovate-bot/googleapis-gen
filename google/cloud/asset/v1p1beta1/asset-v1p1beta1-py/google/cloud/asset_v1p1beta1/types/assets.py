@@ -167,7 +167,7 @@ class IamPolicySearchResult(proto.Message):
     policy = proto.Field(
         proto.MESSAGE,
         number=4,
-        message=giv_policy.Policy,
+        message=policy_pb2.Policy,
     )
     explanation = proto.Field(
         proto.MESSAGE,

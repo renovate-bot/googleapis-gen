@@ -83,7 +83,8 @@ class CloudRedisAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -98,7 +99,7 @@ class CloudRedisAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -115,7 +116,7 @@ class CloudRedisAsyncClient:
 
     @property
     def transport(self) -> CloudRedisTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             CloudRedisTransport: The transport used by the client instance.
@@ -126,11 +127,11 @@ class CloudRedisAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, CloudRedisTransport] = 'grpc_asyncio',
+            transport: Union[str, CloudRedisTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the cloud redis client.
+        """Instantiates the cloud redis client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -222,8 +223,8 @@ class CloudRedisAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloud_redis.ListInstancesRequest(request)
 
@@ -244,7 +245,7 @@ class CloudRedisAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -305,8 +306,8 @@ class CloudRedisAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloud_redis.GetInstanceRequest(request)
 
@@ -327,7 +328,7 @@ class CloudRedisAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -419,8 +420,8 @@ class CloudRedisAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, instance_id, instance])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloud_redis.CreateInstanceRequest(request)
 
@@ -445,7 +446,7 @@ class CloudRedisAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -462,7 +463,7 @@ class CloudRedisAsyncClient:
             response,
             self._client._transport.operations_client,
             cloud_redis.Instance,
-            metadata_type=gp_any.Any,
+            metadata_type=any_pb2.Any,
         )
 
         # Done; return the response.
@@ -529,8 +530,8 @@ class CloudRedisAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([update_mask, instance])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloud_redis.UpdateInstanceRequest(request)
 
@@ -553,7 +554,7 @@ class CloudRedisAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('instance.name', request.instance.name),
+                ("instance.name", request.instance.name),
             )),
         )
 
@@ -570,7 +571,7 @@ class CloudRedisAsyncClient:
             response,
             self._client._transport.operations_client,
             cloud_redis.Instance,
-            metadata_type=gp_any.Any,
+            metadata_type=any_pb2.Any,
         )
 
         # Done; return the response.
@@ -627,8 +628,8 @@ class CloudRedisAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name, redis_version])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloud_redis.UpgradeInstanceRequest(request)
 
@@ -651,7 +652,7 @@ class CloudRedisAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -668,7 +669,7 @@ class CloudRedisAsyncClient:
             response,
             self._client._transport.operations_client,
             cloud_redis.Instance,
-            metadata_type=gp_any.Any,
+            metadata_type=any_pb2.Any,
         )
 
         # Done; return the response.
@@ -732,8 +733,8 @@ class CloudRedisAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name, input_config])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloud_redis.ImportInstanceRequest(request)
 
@@ -756,7 +757,7 @@ class CloudRedisAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -773,7 +774,7 @@ class CloudRedisAsyncClient:
             response,
             self._client._transport.operations_client,
             cloud_redis.Instance,
-            metadata_type=gp_any.Any,
+            metadata_type=any_pb2.Any,
         )
 
         # Done; return the response.
@@ -833,8 +834,8 @@ class CloudRedisAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name, output_config])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloud_redis.ExportInstanceRequest(request)
 
@@ -857,7 +858,7 @@ class CloudRedisAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -874,7 +875,7 @@ class CloudRedisAsyncClient:
             response,
             self._client._transport.operations_client,
             cloud_redis.Instance,
-            metadata_type=gp_any.Any,
+            metadata_type=any_pb2.Any,
         )
 
         # Done; return the response.
@@ -933,8 +934,8 @@ class CloudRedisAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name, data_protection_mode])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloud_redis.FailoverInstanceRequest(request)
 
@@ -957,7 +958,7 @@ class CloudRedisAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -974,7 +975,7 @@ class CloudRedisAsyncClient:
             response,
             self._client._transport.operations_client,
             cloud_redis.Instance,
-            metadata_type=gp_any.Any,
+            metadata_type=any_pb2.Any,
         )
 
         # Done; return the response.
@@ -1033,8 +1034,8 @@ class CloudRedisAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloud_redis.DeleteInstanceRequest(request)
 
@@ -1055,7 +1056,7 @@ class CloudRedisAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1072,7 +1073,7 @@ class CloudRedisAsyncClient:
             response,
             self._client._transport.operations_client,
             empty_pb2.Empty,
-            metadata_type=gp_any.Any,
+            metadata_type=any_pb2.Any,
         )
 
         # Done; return the response.
@@ -1085,7 +1086,7 @@ class CloudRedisAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-redis',
+            "google-cloud-redis",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -1093,5 +1094,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'CloudRedisAsyncClient',
+    "CloudRedisAsyncClient",
 )

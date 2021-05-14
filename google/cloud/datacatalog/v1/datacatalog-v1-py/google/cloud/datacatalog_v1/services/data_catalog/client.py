@@ -56,13 +56,13 @@ class DataCatalogClientMeta(type):
     objects.
     """
     _transport_registry = OrderedDict()  # type: Dict[str, Type[DataCatalogTransport]]
-    _transport_registry['grpc'] = DataCatalogGrpcTransport
-    _transport_registry['grpc_asyncio'] = DataCatalogGrpcAsyncIOTransport
+    _transport_registry["grpc"] = DataCatalogGrpcTransport
+    _transport_registry["grpc_asyncio"] = DataCatalogGrpcAsyncIOTransport
 
     def get_transport_class(cls,
             label: str = None,
         ) -> Type[DataCatalogTransport]:
-        """Return an appropriate transport class.
+        """Returns an appropriate transport class.
 
         Args:
             label: The name of the desired transport. If none is
@@ -87,7 +87,8 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
 
     @staticmethod
     def _get_default_mtls_endpoint(api_endpoint):
-        """Convert api endpoint to mTLS endpoint.
+        """Converts api endpoint to mTLS endpoint.
+
         Convert "*.sandbox.googleapis.com" and "*.googleapis.com" to
         "*.mtls.sandbox.googleapis.com" and "*.mtls.googleapis.com" respectively.
         Args:
@@ -114,14 +115,15 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
 
         return api_endpoint.replace(".googleapis.com", ".mtls.googleapis.com")
 
-    DEFAULT_ENDPOINT = 'datacatalog.googleapis.com'
+    DEFAULT_ENDPOINT = "datacatalog.googleapis.com"
     DEFAULT_MTLS_ENDPOINT = _get_default_mtls_endpoint.__func__(  # type: ignore
         DEFAULT_ENDPOINT
     )
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -138,7 +140,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -151,89 +153,90 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         """
         credentials = service_account.Credentials.from_service_account_file(
             filename)
-        kwargs['credentials'] = credentials
+        kwargs["credentials"] = credentials
         return cls(*args, **kwargs)
 
     from_service_account_json = from_service_account_file
 
     @property
     def transport(self) -> DataCatalogTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
-            DataCatalogTransport: The transport used by the client instance.
+            DataCatalogTransport: The transport used by the client
+                instance.
         """
         return self._transport
 
     @staticmethod
     def entry_path(project: str,location: str,entry_group: str,entry: str,) -> str:
-        """Return a fully-qualified entry string."""
+        """Returns a fully-qualified entry string."""
         return "projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}".format(project=project, location=location, entry_group=entry_group, entry=entry, )
 
     @staticmethod
     def parse_entry_path(path: str) -> Dict[str,str]:
-        """Parse a entry path into its component segments."""
+        """Parses a entry path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/entryGroups/(?P<entry_group>.+?)/entries/(?P<entry>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def entry_group_path(project: str,location: str,entry_group: str,) -> str:
-        """Return a fully-qualified entry_group string."""
+        """Returns a fully-qualified entry_group string."""
         return "projects/{project}/locations/{location}/entryGroups/{entry_group}".format(project=project, location=location, entry_group=entry_group, )
 
     @staticmethod
     def parse_entry_group_path(path: str) -> Dict[str,str]:
-        """Parse a entry_group path into its component segments."""
+        """Parses a entry_group path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/entryGroups/(?P<entry_group>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def tag_path(project: str,location: str,entry_group: str,entry: str,tag: str,) -> str:
-        """Return a fully-qualified tag string."""
+        """Returns a fully-qualified tag string."""
         return "projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}/tags/{tag}".format(project=project, location=location, entry_group=entry_group, entry=entry, tag=tag, )
 
     @staticmethod
     def parse_tag_path(path: str) -> Dict[str,str]:
-        """Parse a tag path into its component segments."""
+        """Parses a tag path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/entryGroups/(?P<entry_group>.+?)/entries/(?P<entry>.+?)/tags/(?P<tag>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def tag_template_path(project: str,location: str,tag_template: str,) -> str:
-        """Return a fully-qualified tag_template string."""
+        """Returns a fully-qualified tag_template string."""
         return "projects/{project}/locations/{location}/tagTemplates/{tag_template}".format(project=project, location=location, tag_template=tag_template, )
 
     @staticmethod
     def parse_tag_template_path(path: str) -> Dict[str,str]:
-        """Parse a tag_template path into its component segments."""
+        """Parses a tag_template path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/tagTemplates/(?P<tag_template>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def tag_template_field_path(project: str,location: str,tag_template: str,field: str,) -> str:
-        """Return a fully-qualified tag_template_field string."""
+        """Returns a fully-qualified tag_template_field string."""
         return "projects/{project}/locations/{location}/tagTemplates/{tag_template}/fields/{field}".format(project=project, location=location, tag_template=tag_template, field=field, )
 
     @staticmethod
     def parse_tag_template_field_path(path: str) -> Dict[str,str]:
-        """Parse a tag_template_field path into its component segments."""
+        """Parses a tag_template_field path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/tagTemplates/(?P<tag_template>.+?)/fields/(?P<field>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def tag_template_field_enum_value_path(project: str,location: str,tag_template: str,tag_template_field_id: str,enum_value_display_name: str,) -> str:
-        """Return a fully-qualified tag_template_field_enum_value string."""
+        """Returns a fully-qualified tag_template_field_enum_value string."""
         return "projects/{project}/locations/{location}/tagTemplates/{tag_template}/fields/{tag_template_field_id}/enumValues/{enum_value_display_name}".format(project=project, location=location, tag_template=tag_template, tag_template_field_id=tag_template_field_id, enum_value_display_name=enum_value_display_name, )
 
     @staticmethod
     def parse_tag_template_field_enum_value_path(path: str) -> Dict[str,str]:
-        """Parse a tag_template_field_enum_value path into its component segments."""
+        """Parses a tag_template_field_enum_value path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/tagTemplates/(?P<tag_template>.+?)/fields/(?P<tag_template_field_id>.+?)/enumValues/(?P<enum_value_display_name>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
-        """Return a fully-qualified billing_account string."""
+        """Returns a fully-qualified billing_account string."""
         return "billingAccounts/{billing_account}".format(billing_account=billing_account, )
 
     @staticmethod
@@ -244,7 +247,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
 
     @staticmethod
     def common_folder_path(folder: str, ) -> str:
-        """Return a fully-qualified folder string."""
+        """Returns a fully-qualified folder string."""
         return "folders/{folder}".format(folder=folder, )
 
     @staticmethod
@@ -255,7 +258,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
 
     @staticmethod
     def common_organization_path(organization: str, ) -> str:
-        """Return a fully-qualified organization string."""
+        """Returns a fully-qualified organization string."""
         return "organizations/{organization}".format(organization=organization, )
 
     @staticmethod
@@ -266,7 +269,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
 
     @staticmethod
     def common_project_path(project: str, ) -> str:
-        """Return a fully-qualified project string."""
+        """Returns a fully-qualified project string."""
         return "projects/{project}".format(project=project, )
 
     @staticmethod
@@ -277,7 +280,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
 
     @staticmethod
     def common_location_path(project: str, location: str, ) -> str:
-        """Return a fully-qualified location string."""
+        """Returns a fully-qualified location string."""
         return "projects/{project}/locations/{location}".format(project=project, location=location, )
 
     @staticmethod
@@ -292,7 +295,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the data catalog client.
+        """Instantiates the data catalog client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -345,7 +348,10 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
                 client_cert_source_func = client_options.client_cert_source
             else:
                 is_mtls = mtls.has_default_client_cert_source()
-                client_cert_source_func = mtls.default_client_cert_source() if is_mtls else None
+                if is_mtls:
+                    client_cert_source_func = mtls.default_client_cert_source()
+                else:
+                    client_cert_source_func = None
 
         # Figure out which api endpoint to use.
         if client_options.api_endpoint is not None:
@@ -357,10 +363,14 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
             elif use_mtls_env == "always":
                 api_endpoint = self.DEFAULT_MTLS_ENDPOINT
             elif use_mtls_env == "auto":
-                api_endpoint = self.DEFAULT_MTLS_ENDPOINT if is_mtls else self.DEFAULT_ENDPOINT
+                if is_mtls:
+                    api_endpoint = self.DEFAULT_MTLS_ENDPOINT
+                else:
+                    api_endpoint = self.DEFAULT_ENDPOINT
             else:
                 raise MutualTLSChannelError(
-                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted values: never, auto, always"
+                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted "
+                    "values: never, auto, always"
                 )
 
         # Save or instantiate the transport.
@@ -369,12 +379,12 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         if isinstance(transport, DataCatalogTransport):
             # transport is a DataCatalogTransport instance.
             if credentials or client_options.credentials_file:
-                raise ValueError('When providing a transport instance, '
-                                 'provide its credentials directly.')
+                raise ValueError("When providing a transport instance, "
+                                 "provide its credentials directly.")
             if client_options.scopes:
                 raise ValueError(
-                    "When providing a transport instance, "
-                    "provide its scopes directly."
+                    "When providing a transport instance, provide its scopes "
+                    "directly."
                 )
             self._transport = transport
         else:
@@ -622,7 +632,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -709,7 +719,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -805,7 +815,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('entry_group.name', request.entry_group.name),
+                ("entry_group.name", request.entry_group.name),
             )),
         )
 
@@ -879,7 +889,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -957,7 +967,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1086,7 +1096,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1213,7 +1223,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('entry.name', request.entry.name),
+                ("entry.name", request.entry.name),
             )),
         )
 
@@ -1289,7 +1299,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1372,7 +1382,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1513,7 +1523,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1635,7 +1645,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1718,7 +1728,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1824,7 +1834,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('tag_template.name', request.tag_template.name),
+                ("tag_template.name", request.tag_template.name),
             )),
         )
 
@@ -1911,7 +1921,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2020,7 +2030,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -2135,7 +2145,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2225,7 +2235,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2312,7 +2322,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2400,7 +2410,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2497,7 +2507,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -2594,7 +2604,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('tag.name', request.tag.name),
+                ("tag.name", request.tag.name),
             )),
         )
 
@@ -2664,7 +2674,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2746,7 +2756,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -2900,7 +2910,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('resource', request.resource),
+                ("resource", request.resource),
             )),
         )
 
@@ -3049,7 +3059,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('resource', request.resource),
+                ("resource", request.resource),
             )),
         )
 
@@ -3117,7 +3127,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('resource', request.resource),
+                ("resource", request.resource),
             )),
         )
 
@@ -3139,7 +3149,7 @@ class DataCatalogClient(metaclass=DataCatalogClientMeta):
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-datacatalog',
+            "google-cloud-datacatalog",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -3147,5 +3157,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'DataCatalogClient',
+    "DataCatalogClient",
 )

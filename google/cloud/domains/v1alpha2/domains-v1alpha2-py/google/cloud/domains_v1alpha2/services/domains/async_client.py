@@ -64,7 +64,8 @@ class DomainsAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -79,7 +80,7 @@ class DomainsAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -96,7 +97,7 @@ class DomainsAsyncClient:
 
     @property
     def transport(self) -> DomainsTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             DomainsTransport: The transport used by the client instance.
@@ -107,11 +108,11 @@ class DomainsAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, DomainsTransport] = 'grpc_asyncio',
+            transport: Union[str, DomainsTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the domains client.
+        """Instantiates the domains client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -200,8 +201,8 @@ class DomainsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([location, query])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = domains.SearchDomainsRequest(request)
 
@@ -224,7 +225,7 @@ class DomainsAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('location', request.location),
+                ("location", request.location),
             )),
         )
 
@@ -286,8 +287,8 @@ class DomainsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([location, domain_name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = domains.RetrieveRegisterParametersRequest(request)
 
@@ -310,7 +311,7 @@ class DomainsAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('location', request.location),
+                ("location", request.location),
             )),
         )
 
@@ -405,8 +406,8 @@ class DomainsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, registration, yearly_price])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = domains.RegisterDomainRequest(request)
 
@@ -431,7 +432,7 @@ class DomainsAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -495,8 +496,8 @@ class DomainsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = domains.ListRegistrationsRequest(request)
 
@@ -517,7 +518,7 @@ class DomainsAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -587,8 +588,8 @@ class DomainsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = domains.GetRegistrationRequest(request)
 
@@ -609,7 +610,7 @@ class DomainsAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -688,8 +689,8 @@ class DomainsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([registration, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = domains.UpdateRegistrationRequest(request)
 
@@ -712,7 +713,7 @@ class DomainsAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('registration.name', request.registration.name),
+                ("registration.name", request.registration.name),
             )),
         )
 
@@ -800,8 +801,8 @@ class DomainsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([registration, management_settings, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = domains.ConfigureManagementSettingsRequest(request)
 
@@ -826,7 +827,7 @@ class DomainsAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('registration', request.registration),
+                ("registration", request.registration),
             )),
         )
 
@@ -921,8 +922,8 @@ class DomainsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([registration, dns_settings, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = domains.ConfigureDnsSettingsRequest(request)
 
@@ -947,7 +948,7 @@ class DomainsAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('registration', request.registration),
+                ("registration", request.registration),
             )),
         )
 
@@ -1036,8 +1037,8 @@ class DomainsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([registration, contact_settings, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = domains.ConfigureContactSettingsRequest(request)
 
@@ -1062,7 +1063,7 @@ class DomainsAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('registration', request.registration),
+                ("registration", request.registration),
             )),
         )
 
@@ -1146,8 +1147,8 @@ class DomainsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = domains.ExportRegistrationRequest(request)
 
@@ -1168,7 +1169,7 @@ class DomainsAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1248,8 +1249,8 @@ class DomainsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = domains.DeleteRegistrationRequest(request)
 
@@ -1270,7 +1271,7 @@ class DomainsAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1334,8 +1335,8 @@ class DomainsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([registration])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = domains.RetrieveAuthorizationCodeRequest(request)
 
@@ -1356,7 +1357,7 @@ class DomainsAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('registration', request.registration),
+                ("registration", request.registration),
             )),
         )
 
@@ -1412,8 +1413,8 @@ class DomainsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([registration])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = domains.ResetAuthorizationCodeRequest(request)
 
@@ -1434,7 +1435,7 @@ class DomainsAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('registration', request.registration),
+                ("registration", request.registration),
             )),
         )
 
@@ -1456,7 +1457,7 @@ class DomainsAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-domains',
+            "google-cloud-domains",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -1464,5 +1465,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'DomainsAsyncClient',
+    "DomainsAsyncClient",
 )

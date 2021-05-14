@@ -2081,7 +2081,7 @@ def test_recaptcha_enterprise_service_v1_beta1_transport_create_channel_old_api_
         transport_class(quota_project_id="octopus")
 
         create_channel.assert_called_with(
-            "recaptchaenterprise.googleapis.com",
+            "recaptchaenterprise.googleapis.com:443",
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",
@@ -2116,7 +2116,7 @@ def test_recaptcha_enterprise_service_v1_beta1_transport_create_channel_user_sco
         transport_class(quota_project_id="octopus", scopes=["1", "2"])
 
         create_channel.assert_called_with(
-            "recaptchaenterprise.googleapis.com",
+            "recaptchaenterprise.googleapis.com:443",
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",

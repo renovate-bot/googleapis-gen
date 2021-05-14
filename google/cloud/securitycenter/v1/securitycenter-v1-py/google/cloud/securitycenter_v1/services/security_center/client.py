@@ -63,13 +63,13 @@ class SecurityCenterClientMeta(type):
     objects.
     """
     _transport_registry = OrderedDict()  # type: Dict[str, Type[SecurityCenterTransport]]
-    _transport_registry['grpc'] = SecurityCenterGrpcTransport
-    _transport_registry['grpc_asyncio'] = SecurityCenterGrpcAsyncIOTransport
+    _transport_registry["grpc"] = SecurityCenterGrpcTransport
+    _transport_registry["grpc_asyncio"] = SecurityCenterGrpcAsyncIOTransport
 
     def get_transport_class(cls,
             label: str = None,
         ) -> Type[SecurityCenterTransport]:
-        """Return an appropriate transport class.
+        """Returns an appropriate transport class.
 
         Args:
             label: The name of the desired transport. If none is
@@ -92,7 +92,8 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
 
     @staticmethod
     def _get_default_mtls_endpoint(api_endpoint):
-        """Convert api endpoint to mTLS endpoint.
+        """Converts api endpoint to mTLS endpoint.
+
         Convert "*.sandbox.googleapis.com" and "*.googleapis.com" to
         "*.mtls.sandbox.googleapis.com" and "*.mtls.googleapis.com" respectively.
         Args:
@@ -119,14 +120,15 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
 
         return api_endpoint.replace(".googleapis.com", ".mtls.googleapis.com")
 
-    DEFAULT_ENDPOINT = 'securitycenter.googleapis.com'
+    DEFAULT_ENDPOINT = "securitycenter.googleapis.com"
     DEFAULT_MTLS_ENDPOINT = _get_default_mtls_endpoint.__func__(  # type: ignore
         DEFAULT_ENDPOINT
     )
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -143,7 +145,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -156,100 +158,101 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         """
         credentials = service_account.Credentials.from_service_account_file(
             filename)
-        kwargs['credentials'] = credentials
+        kwargs["credentials"] = credentials
         return cls(*args, **kwargs)
 
     from_service_account_json = from_service_account_file
 
     @property
     def transport(self) -> SecurityCenterTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
-            SecurityCenterTransport: The transport used by the client instance.
+            SecurityCenterTransport: The transport used by the client
+                instance.
         """
         return self._transport
 
     @staticmethod
     def asset_path(organization: str,asset: str,) -> str:
-        """Return a fully-qualified asset string."""
+        """Returns a fully-qualified asset string."""
         return "organizations/{organization}/assets/{asset}".format(organization=organization, asset=asset, )
 
     @staticmethod
     def parse_asset_path(path: str) -> Dict[str,str]:
-        """Parse a asset path into its component segments."""
+        """Parses a asset path into its component segments."""
         m = re.match(r"^organizations/(?P<organization>.+?)/assets/(?P<asset>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def finding_path(organization: str,source: str,finding: str,) -> str:
-        """Return a fully-qualified finding string."""
+        """Returns a fully-qualified finding string."""
         return "organizations/{organization}/sources/{source}/findings/{finding}".format(organization=organization, source=source, finding=finding, )
 
     @staticmethod
     def parse_finding_path(path: str) -> Dict[str,str]:
-        """Parse a finding path into its component segments."""
+        """Parses a finding path into its component segments."""
         m = re.match(r"^organizations/(?P<organization>.+?)/sources/(?P<source>.+?)/findings/(?P<finding>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def notification_config_path(organization: str,notification_config: str,) -> str:
-        """Return a fully-qualified notification_config string."""
+        """Returns a fully-qualified notification_config string."""
         return "organizations/{organization}/notificationConfigs/{notification_config}".format(organization=organization, notification_config=notification_config, )
 
     @staticmethod
     def parse_notification_config_path(path: str) -> Dict[str,str]:
-        """Parse a notification_config path into its component segments."""
+        """Parses a notification_config path into its component segments."""
         m = re.match(r"^organizations/(?P<organization>.+?)/notificationConfigs/(?P<notification_config>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def organization_settings_path(organization: str,) -> str:
-        """Return a fully-qualified organization_settings string."""
+        """Returns a fully-qualified organization_settings string."""
         return "organizations/{organization}/organizationSettings".format(organization=organization, )
 
     @staticmethod
     def parse_organization_settings_path(path: str) -> Dict[str,str]:
-        """Parse a organization_settings path into its component segments."""
+        """Parses a organization_settings path into its component segments."""
         m = re.match(r"^organizations/(?P<organization>.+?)/organizationSettings$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def security_marks_path(organization: str,asset: str,) -> str:
-        """Return a fully-qualified security_marks string."""
+        """Returns a fully-qualified security_marks string."""
         return "organizations/{organization}/assets/{asset}/securityMarks".format(organization=organization, asset=asset, )
 
     @staticmethod
     def parse_security_marks_path(path: str) -> Dict[str,str]:
-        """Parse a security_marks path into its component segments."""
+        """Parses a security_marks path into its component segments."""
         m = re.match(r"^organizations/(?P<organization>.+?)/assets/(?P<asset>.+?)/securityMarks$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def source_path(organization: str,source: str,) -> str:
-        """Return a fully-qualified source string."""
+        """Returns a fully-qualified source string."""
         return "organizations/{organization}/sources/{source}".format(organization=organization, source=source, )
 
     @staticmethod
     def parse_source_path(path: str) -> Dict[str,str]:
-        """Parse a source path into its component segments."""
+        """Parses a source path into its component segments."""
         m = re.match(r"^organizations/(?P<organization>.+?)/sources/(?P<source>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def topic_path(project: str,topic: str,) -> str:
-        """Return a fully-qualified topic string."""
+        """Returns a fully-qualified topic string."""
         return "projects/{project}/topics/{topic}".format(project=project, topic=topic, )
 
     @staticmethod
     def parse_topic_path(path: str) -> Dict[str,str]:
-        """Parse a topic path into its component segments."""
+        """Parses a topic path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/topics/(?P<topic>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
-        """Return a fully-qualified billing_account string."""
+        """Returns a fully-qualified billing_account string."""
         return "billingAccounts/{billing_account}".format(billing_account=billing_account, )
 
     @staticmethod
@@ -260,7 +263,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
 
     @staticmethod
     def common_folder_path(folder: str, ) -> str:
-        """Return a fully-qualified folder string."""
+        """Returns a fully-qualified folder string."""
         return "folders/{folder}".format(folder=folder, )
 
     @staticmethod
@@ -271,7 +274,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
 
     @staticmethod
     def common_organization_path(organization: str, ) -> str:
-        """Return a fully-qualified organization string."""
+        """Returns a fully-qualified organization string."""
         return "organizations/{organization}".format(organization=organization, )
 
     @staticmethod
@@ -282,7 +285,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
 
     @staticmethod
     def common_project_path(project: str, ) -> str:
-        """Return a fully-qualified project string."""
+        """Returns a fully-qualified project string."""
         return "projects/{project}".format(project=project, )
 
     @staticmethod
@@ -293,7 +296,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
 
     @staticmethod
     def common_location_path(project: str, location: str, ) -> str:
-        """Return a fully-qualified location string."""
+        """Returns a fully-qualified location string."""
         return "projects/{project}/locations/{location}".format(project=project, location=location, )
 
     @staticmethod
@@ -308,7 +311,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the security center client.
+        """Instantiates the security center client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -361,7 +364,10 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
                 client_cert_source_func = client_options.client_cert_source
             else:
                 is_mtls = mtls.has_default_client_cert_source()
-                client_cert_source_func = mtls.default_client_cert_source() if is_mtls else None
+                if is_mtls:
+                    client_cert_source_func = mtls.default_client_cert_source()
+                else:
+                    client_cert_source_func = None
 
         # Figure out which api endpoint to use.
         if client_options.api_endpoint is not None:
@@ -373,10 +379,14 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
             elif use_mtls_env == "always":
                 api_endpoint = self.DEFAULT_MTLS_ENDPOINT
             elif use_mtls_env == "auto":
-                api_endpoint = self.DEFAULT_MTLS_ENDPOINT if is_mtls else self.DEFAULT_ENDPOINT
+                if is_mtls:
+                    api_endpoint = self.DEFAULT_MTLS_ENDPOINT
+                else:
+                    api_endpoint = self.DEFAULT_ENDPOINT
             else:
                 raise MutualTLSChannelError(
-                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted values: never, auto, always"
+                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted "
+                    "values: never, auto, always"
                 )
 
         # Save or instantiate the transport.
@@ -385,12 +395,12 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         if isinstance(transport, SecurityCenterTransport):
             # transport is a SecurityCenterTransport instance.
             if credentials or client_options.credentials_file:
-                raise ValueError('When providing a transport instance, '
-                                 'provide its credentials directly.')
+                raise ValueError("When providing a transport instance, "
+                                 "provide its credentials directly.")
             if client_options.scopes:
                 raise ValueError(
-                    "When providing a transport instance, "
-                    "provide its scopes directly."
+                    "When providing a transport instance, provide its scopes "
+                    "directly."
                 )
             self._transport = transport
         else:
@@ -480,7 +490,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -588,7 +598,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -693,7 +703,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -763,7 +773,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -890,7 +900,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('resource', request.resource),
+                ("resource", request.resource),
             )),
         )
 
@@ -970,7 +980,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1047,7 +1057,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1127,7 +1137,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1187,7 +1197,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1311,7 +1321,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1377,7 +1387,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1448,7 +1458,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1536,7 +1546,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1623,7 +1633,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1716,7 +1726,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1829,7 +1839,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1959,7 +1969,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('resource', request.resource),
+                ("resource", request.resource),
             )),
         )
 
@@ -2046,7 +2056,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('resource', request.resource),
+                ("resource", request.resource),
             )),
         )
 
@@ -2134,7 +2144,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('finding.name', request.finding.name),
+                ("finding.name", request.finding.name),
             )),
         )
 
@@ -2226,7 +2236,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('notification_config.name', request.notification_config.name),
+                ("notification_config.name", request.notification_config.name),
             )),
         )
 
@@ -2302,7 +2312,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('organization_settings.name', request.organization_settings.name),
+                ("organization_settings.name", request.organization_settings.name),
             )),
         )
 
@@ -2381,7 +2391,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('source.name', request.source.name),
+                ("source.name", request.source.name),
             )),
         )
 
@@ -2462,7 +2472,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('security_marks.name', request.security_marks.name),
+                ("security_marks.name", request.security_marks.name),
             )),
         )
 
@@ -2484,7 +2494,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-securitycenter',
+            "google-cloud-securitycenter",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -2492,5 +2502,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'SecurityCenterClient',
+    "SecurityCenterClient",
 )

@@ -57,13 +57,13 @@ class CloudChannelServiceClientMeta(type):
     objects.
     """
     _transport_registry = OrderedDict()  # type: Dict[str, Type[CloudChannelServiceTransport]]
-    _transport_registry['grpc'] = CloudChannelServiceGrpcTransport
-    _transport_registry['grpc_asyncio'] = CloudChannelServiceGrpcAsyncIOTransport
+    _transport_registry["grpc"] = CloudChannelServiceGrpcTransport
+    _transport_registry["grpc_asyncio"] = CloudChannelServiceGrpcAsyncIOTransport
 
     def get_transport_class(cls,
             label: str = None,
         ) -> Type[CloudChannelServiceTransport]:
-        """Return an appropriate transport class.
+        """Returns an appropriate transport class.
 
         Args:
             label: The name of the desired transport. If none is
@@ -109,7 +109,8 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
     @staticmethod
     def _get_default_mtls_endpoint(api_endpoint):
-        """Convert api endpoint to mTLS endpoint.
+        """Converts api endpoint to mTLS endpoint.
+
         Convert "*.sandbox.googleapis.com" and "*.googleapis.com" to
         "*.mtls.sandbox.googleapis.com" and "*.mtls.googleapis.com" respectively.
         Args:
@@ -136,14 +137,15 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
         return api_endpoint.replace(".googleapis.com", ".mtls.googleapis.com")
 
-    DEFAULT_ENDPOINT = 'cloudchannel.googleapis.com'
+    DEFAULT_ENDPOINT = "cloudchannel.googleapis.com"
     DEFAULT_MTLS_ENDPOINT = _get_default_mtls_endpoint.__func__(  # type: ignore
         DEFAULT_ENDPOINT
     )
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -160,7 +162,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -173,78 +175,79 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         """
         credentials = service_account.Credentials.from_service_account_file(
             filename)
-        kwargs['credentials'] = credentials
+        kwargs["credentials"] = credentials
         return cls(*args, **kwargs)
 
     from_service_account_json = from_service_account_file
 
     @property
     def transport(self) -> CloudChannelServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
-            CloudChannelServiceTransport: The transport used by the client instance.
+            CloudChannelServiceTransport: The transport used by the client
+                instance.
         """
         return self._transport
 
     @staticmethod
     def customer_path(account: str,customer: str,) -> str:
-        """Return a fully-qualified customer string."""
+        """Returns a fully-qualified customer string."""
         return "accounts/{account}/customers/{customer}".format(account=account, customer=customer, )
 
     @staticmethod
     def parse_customer_path(path: str) -> Dict[str,str]:
-        """Parse a customer path into its component segments."""
+        """Parses a customer path into its component segments."""
         m = re.match(r"^accounts/(?P<account>.+?)/customers/(?P<customer>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def entitlement_path(account: str,customer: str,entitlement: str,) -> str:
-        """Return a fully-qualified entitlement string."""
+        """Returns a fully-qualified entitlement string."""
         return "accounts/{account}/customers/{customer}/entitlements/{entitlement}".format(account=account, customer=customer, entitlement=entitlement, )
 
     @staticmethod
     def parse_entitlement_path(path: str) -> Dict[str,str]:
-        """Parse a entitlement path into its component segments."""
+        """Parses a entitlement path into its component segments."""
         m = re.match(r"^accounts/(?P<account>.+?)/customers/(?P<customer>.+?)/entitlements/(?P<entitlement>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def offer_path(account: str,offer: str,) -> str:
-        """Return a fully-qualified offer string."""
+        """Returns a fully-qualified offer string."""
         return "accounts/{account}/offers/{offer}".format(account=account, offer=offer, )
 
     @staticmethod
     def parse_offer_path(path: str) -> Dict[str,str]:
-        """Parse a offer path into its component segments."""
+        """Parses a offer path into its component segments."""
         m = re.match(r"^accounts/(?P<account>.+?)/offers/(?P<offer>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def product_path(product: str,) -> str:
-        """Return a fully-qualified product string."""
+        """Returns a fully-qualified product string."""
         return "products/{product}".format(product=product, )
 
     @staticmethod
     def parse_product_path(path: str) -> Dict[str,str]:
-        """Parse a product path into its component segments."""
+        """Parses a product path into its component segments."""
         m = re.match(r"^products/(?P<product>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def sku_path(product: str,sku: str,) -> str:
-        """Return a fully-qualified sku string."""
+        """Returns a fully-qualified sku string."""
         return "products/{product}/skus/{sku}".format(product=product, sku=sku, )
 
     @staticmethod
     def parse_sku_path(path: str) -> Dict[str,str]:
-        """Parse a sku path into its component segments."""
+        """Parses a sku path into its component segments."""
         m = re.match(r"^products/(?P<product>.+?)/skus/(?P<sku>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
-        """Return a fully-qualified billing_account string."""
+        """Returns a fully-qualified billing_account string."""
         return "billingAccounts/{billing_account}".format(billing_account=billing_account, )
 
     @staticmethod
@@ -255,7 +258,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
     @staticmethod
     def common_folder_path(folder: str, ) -> str:
-        """Return a fully-qualified folder string."""
+        """Returns a fully-qualified folder string."""
         return "folders/{folder}".format(folder=folder, )
 
     @staticmethod
@@ -266,7 +269,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
     @staticmethod
     def common_organization_path(organization: str, ) -> str:
-        """Return a fully-qualified organization string."""
+        """Returns a fully-qualified organization string."""
         return "organizations/{organization}".format(organization=organization, )
 
     @staticmethod
@@ -277,7 +280,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
     @staticmethod
     def common_project_path(project: str, ) -> str:
-        """Return a fully-qualified project string."""
+        """Returns a fully-qualified project string."""
         return "projects/{project}".format(project=project, )
 
     @staticmethod
@@ -288,7 +291,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 
     @staticmethod
     def common_location_path(project: str, location: str, ) -> str:
-        """Return a fully-qualified location string."""
+        """Returns a fully-qualified location string."""
         return "projects/{project}/locations/{location}".format(project=project, location=location, )
 
     @staticmethod
@@ -303,7 +306,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the cloud channel service client.
+        """Instantiates the cloud channel service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -356,7 +359,10 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
                 client_cert_source_func = client_options.client_cert_source
             else:
                 is_mtls = mtls.has_default_client_cert_source()
-                client_cert_source_func = mtls.default_client_cert_source() if is_mtls else None
+                if is_mtls:
+                    client_cert_source_func = mtls.default_client_cert_source()
+                else:
+                    client_cert_source_func = None
 
         # Figure out which api endpoint to use.
         if client_options.api_endpoint is not None:
@@ -368,10 +374,14 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
             elif use_mtls_env == "always":
                 api_endpoint = self.DEFAULT_MTLS_ENDPOINT
             elif use_mtls_env == "auto":
-                api_endpoint = self.DEFAULT_MTLS_ENDPOINT if is_mtls else self.DEFAULT_ENDPOINT
+                if is_mtls:
+                    api_endpoint = self.DEFAULT_MTLS_ENDPOINT
+                else:
+                    api_endpoint = self.DEFAULT_ENDPOINT
             else:
                 raise MutualTLSChannelError(
-                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted values: never, auto, always"
+                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted "
+                    "values: never, auto, always"
                 )
 
         # Save or instantiate the transport.
@@ -380,12 +390,12 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         if isinstance(transport, CloudChannelServiceTransport):
             # transport is a CloudChannelServiceTransport instance.
             if credentials or client_options.credentials_file:
-                raise ValueError('When providing a transport instance, '
-                                 'provide its credentials directly.')
+                raise ValueError("When providing a transport instance, "
+                                 "provide its credentials directly.")
             if client_options.scopes:
                 raise ValueError(
-                    "When providing a transport instance, "
-                    "provide its scopes directly."
+                    "When providing a transport instance, provide its scopes "
+                    "directly."
                 )
             self._transport = transport
         else:
@@ -455,7 +465,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -553,7 +563,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -628,7 +638,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -697,7 +707,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -766,7 +776,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('customer.name', request.customer.name),
+                ("customer.name", request.customer.name),
             )),
         )
 
@@ -846,7 +856,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -924,7 +934,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('customer', request.customer),
+                ("customer", request.customer),
             )),
         )
 
@@ -1002,7 +1012,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1092,7 +1102,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1184,7 +1194,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1261,7 +1271,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1365,7 +1375,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1457,7 +1467,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1551,7 +1561,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1641,7 +1651,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1734,7 +1744,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1824,7 +1834,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1928,7 +1938,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2025,7 +2035,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2127,7 +2137,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -2239,7 +2249,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -2320,7 +2330,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -2401,7 +2411,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2482,7 +2492,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -2563,7 +2573,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2688,7 +2698,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -2759,7 +2769,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -2837,7 +2847,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('customer', request.customer),
+                ("customer", request.customer),
             )),
         )
 
@@ -2915,7 +2925,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('customer', request.customer),
+                ("customer", request.customer),
             )),
         )
 
@@ -2998,7 +3008,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('account', request.account),
+                ("account", request.account),
             )),
         )
 
@@ -3075,7 +3085,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('account', request.account),
+                ("account", request.account),
             )),
         )
 
@@ -3148,7 +3158,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('account', request.account),
+                ("account", request.account),
             )),
         )
 
@@ -3179,7 +3189,7 @@ class CloudChannelServiceClient(metaclass=CloudChannelServiceClientMeta):
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-channel',
+            "google-cloud-channel",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -3187,5 +3197,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'CloudChannelServiceClient',
+    "CloudChannelServiceClient",
 )

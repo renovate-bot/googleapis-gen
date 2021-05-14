@@ -101,7 +101,7 @@ class ListNotificationChannelDescriptorsAsyncPager:
             response: notification_service.ListNotificationChannelDescriptorsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -223,7 +223,7 @@ class ListNotificationChannelsAsyncPager:
             response: notification_service.ListNotificationChannelsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

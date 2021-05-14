@@ -3153,16 +3153,16 @@ def test_generate_config_report_flattened():
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.generate_config_report(
-            new_config=gp_any.Any(type_url='type_url_value'),
-            old_config=gp_any.Any(type_url='type_url_value'),
+            new_config=any_pb2.Any(type_url='type_url_value'),
+            old_config=any_pb2.Any(type_url='type_url_value'),
         )
 
         # Establish that the underlying call was made with the expected
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].new_config == gp_any.Any(type_url='type_url_value')
-        assert args[0].old_config == gp_any.Any(type_url='type_url_value')
+        assert args[0].new_config == any_pb2.Any(type_url='type_url_value')
+        assert args[0].old_config == any_pb2.Any(type_url='type_url_value')
 
 
 def test_generate_config_report_flattened_error():
@@ -3175,8 +3175,8 @@ def test_generate_config_report_flattened_error():
     with pytest.raises(ValueError):
         client.generate_config_report(
             servicemanager.GenerateConfigReportRequest(),
-            new_config=gp_any.Any(type_url='type_url_value'),
-            old_config=gp_any.Any(type_url='type_url_value'),
+            new_config=any_pb2.Any(type_url='type_url_value'),
+            old_config=any_pb2.Any(type_url='type_url_value'),
         )
 
 
@@ -3197,16 +3197,16 @@ async def test_generate_config_report_flattened_async():
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         response = await client.generate_config_report(
-            new_config=gp_any.Any(type_url='type_url_value'),
-            old_config=gp_any.Any(type_url='type_url_value'),
+            new_config=any_pb2.Any(type_url='type_url_value'),
+            old_config=any_pb2.Any(type_url='type_url_value'),
         )
 
         # Establish that the underlying call was made with the expected
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].new_config == gp_any.Any(type_url='type_url_value')
-        assert args[0].old_config == gp_any.Any(type_url='type_url_value')
+        assert args[0].new_config == any_pb2.Any(type_url='type_url_value')
+        assert args[0].old_config == any_pb2.Any(type_url='type_url_value')
 
 
 @pytest.mark.asyncio
@@ -3220,8 +3220,8 @@ async def test_generate_config_report_flattened_error_async():
     with pytest.raises(ValueError):
         await client.generate_config_report(
             servicemanager.GenerateConfigReportRequest(),
-            new_config=gp_any.Any(type_url='type_url_value'),
-            old_config=gp_any.Any(type_url='type_url_value'),
+            new_config=any_pb2.Any(type_url='type_url_value'),
+            old_config=any_pb2.Any(type_url='type_url_value'),
         )
 
 
@@ -3877,7 +3877,7 @@ def test_service_manager_transport_create_channel_old_api_core(transport_class, 
         transport_class(quota_project_id="octopus")
 
         create_channel.assert_called_with(
-            "servicemanagement.googleapis.com",
+            "servicemanagement.googleapis.com:443",
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",
@@ -3915,7 +3915,7 @@ def test_service_manager_transport_create_channel_user_scopes(transport_class, g
         transport_class(quota_project_id="octopus", scopes=["1", "2"])
 
         create_channel.assert_called_with(
-            "servicemanagement.googleapis.com",
+            "servicemanagement.googleapis.com:443",
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",

@@ -54,7 +54,7 @@ class DocumentProcessorServiceGrpcAsyncIOTransport(DocumentProcessorServiceTrans
 
     @classmethod
     def create_channel(cls,
-                       host: str = 'us-documentai.googleapis.com',
+                       host: str = 'documentai.googleapis.com',
                        credentials: ga_credentials.Credentials = None,
                        credentials_file: Optional[str] = None,
                        scopes: Optional[Sequence[str]] = None,
@@ -94,7 +94,7 @@ class DocumentProcessorServiceGrpcAsyncIOTransport(DocumentProcessorServiceTrans
         )
 
     def __init__(self, *,
-            host: str = 'us-documentai.googleapis.com',
+            host: str = 'documentai.googleapis.com',
             credentials: ga_credentials.Credentials = None,
             credentials_file: Optional[str] = None,
             scopes: Optional[Sequence[str]] = None,

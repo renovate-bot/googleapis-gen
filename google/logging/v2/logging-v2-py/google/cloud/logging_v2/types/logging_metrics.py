@@ -181,7 +181,7 @@ class LogMetric(proto.Message):
     metric_descriptor = proto.Field(
         proto.MESSAGE,
         number=5,
-        message=ga_metric.MetricDescriptor,
+        message=metric_pb2.MetricDescriptor,
     )
     value_extractor = proto.Field(
         proto.STRING,

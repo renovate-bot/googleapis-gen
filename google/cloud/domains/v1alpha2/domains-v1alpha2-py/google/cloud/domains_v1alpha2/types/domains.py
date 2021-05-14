@@ -510,7 +510,7 @@ class ContactSettings(proto.Message):
         postal_address = proto.Field(
             proto.MESSAGE,
             number=1,
-            message=gt_postal_address.PostalAddress,
+            message=postal_address_pb2.PostalAddress,
         )
         email = proto.Field(
             proto.STRING,

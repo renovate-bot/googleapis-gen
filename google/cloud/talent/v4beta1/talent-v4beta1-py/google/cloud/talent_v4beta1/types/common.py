@@ -321,7 +321,7 @@ class Location(proto.Message):
     postal_address = proto.Field(
         proto.MESSAGE,
         number=2,
-        message=gt_postal_address.PostalAddress,
+        message=postal_address_pb2.PostalAddress,
     )
     lat_lng = proto.Field(
         proto.MESSAGE,

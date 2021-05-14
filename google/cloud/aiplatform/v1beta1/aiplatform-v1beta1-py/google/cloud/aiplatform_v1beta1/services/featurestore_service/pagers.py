@@ -103,7 +103,7 @@ class ListFeaturestoresAsyncPager:
             response: featurestore_service.ListFeaturestoresResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -225,7 +225,7 @@ class ListEntityTypesAsyncPager:
             response: featurestore_service.ListEntityTypesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -347,7 +347,7 @@ class ListFeaturesAsyncPager:
             response: featurestore_service.ListFeaturesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -469,7 +469,7 @@ class SearchFeaturesAsyncPager:
             response: featurestore_service.SearchFeaturesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

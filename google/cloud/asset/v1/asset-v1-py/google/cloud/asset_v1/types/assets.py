@@ -213,7 +213,7 @@ class Asset(proto.Message):
     iam_policy = proto.Field(
         proto.MESSAGE,
         number=4,
-        message=gi_policy.Policy,
+        message=policy_pb2.Policy,
     )
     org_policy = proto.RepeatedField(
         proto.MESSAGE,
@@ -224,19 +224,19 @@ class Asset(proto.Message):
         proto.MESSAGE,
         number=7,
         oneof='access_context_policy',
-        message=gia_access_policy.AccessPolicy,
+        message=access_policy_pb2.AccessPolicy,
     )
     access_level = proto.Field(
         proto.MESSAGE,
         number=8,
         oneof='access_context_policy',
-        message=gia_access_level.AccessLevel,
+        message=access_level_pb2.AccessLevel,
     )
     service_perimeter = proto.Field(
         proto.MESSAGE,
         number=9,
         oneof='access_context_policy',
-        message=gia_service_perimeter.ServicePerimeter,
+        message=service_perimeter_pb2.ServicePerimeter,
     )
     os_inventory = proto.Field(
         proto.MESSAGE,
@@ -576,7 +576,7 @@ class IamPolicySearchResult(proto.Message):
     policy = proto.Field(
         proto.MESSAGE,
         number=3,
-        message=gi_policy.Policy,
+        message=policy_pb2.Policy,
     )
     explanation = proto.Field(
         proto.MESSAGE,
@@ -608,7 +608,7 @@ class IamPolicyAnalysisState(proto.Message):
     code = proto.Field(
         proto.ENUM,
         number=1,
-        enum=gr_code.Code,
+        enum=code_pb2.Code,
     )
     cause = proto.Field(
         proto.STRING,
@@ -846,7 +846,7 @@ class IamPolicyAnalysisResult(proto.Message):
     iam_binding = proto.Field(
         proto.MESSAGE,
         number=2,
-        message=gi_policy.Binding,
+        message=policy_pb2.Binding,
     )
     access_control_lists = proto.RepeatedField(
         proto.MESSAGE,

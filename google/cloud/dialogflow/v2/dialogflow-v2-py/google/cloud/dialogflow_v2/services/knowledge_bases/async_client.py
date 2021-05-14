@@ -60,7 +60,8 @@ class KnowledgeBasesAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -75,7 +76,7 @@ class KnowledgeBasesAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -92,7 +93,7 @@ class KnowledgeBasesAsyncClient:
 
     @property
     def transport(self) -> KnowledgeBasesTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             KnowledgeBasesTransport: The transport used by the client instance.
@@ -103,11 +104,11 @@ class KnowledgeBasesAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, KnowledgeBasesTransport] = 'grpc_asyncio',
+            transport: Union[str, KnowledgeBasesTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the knowledge bases client.
+        """Instantiates the knowledge bases client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -190,8 +191,8 @@ class KnowledgeBasesAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = knowledge_base.ListKnowledgeBasesRequest(request)
 
@@ -212,7 +213,7 @@ class KnowledgeBasesAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -285,8 +286,8 @@ class KnowledgeBasesAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = knowledge_base.GetKnowledgeBaseRequest(request)
 
@@ -307,7 +308,7 @@ class KnowledgeBasesAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -379,8 +380,8 @@ class KnowledgeBasesAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, knowledge_base])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = gcd_knowledge_base.CreateKnowledgeBaseRequest(request)
 
@@ -403,7 +404,7 @@ class KnowledgeBasesAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -451,8 +452,8 @@ class KnowledgeBasesAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = knowledge_base.DeleteKnowledgeBaseRequest(request)
 
@@ -473,7 +474,7 @@ class KnowledgeBasesAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -542,8 +543,8 @@ class KnowledgeBasesAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([knowledge_base, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = gcd_knowledge_base.UpdateKnowledgeBaseRequest(request)
 
@@ -566,7 +567,7 @@ class KnowledgeBasesAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('knowledge_base.name', request.knowledge_base.name),
+                ("knowledge_base.name", request.knowledge_base.name),
             )),
         )
 
@@ -588,7 +589,7 @@ class KnowledgeBasesAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-dialogflow',
+            "google-cloud-dialogflow",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -596,5 +597,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'KnowledgeBasesAsyncClient',
+    "KnowledgeBasesAsyncClient",
 )

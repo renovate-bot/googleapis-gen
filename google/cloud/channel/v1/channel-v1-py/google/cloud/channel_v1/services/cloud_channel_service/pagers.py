@@ -105,7 +105,7 @@ class ListCustomersAsyncPager:
             response: service.ListCustomersResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -227,7 +227,7 @@ class ListEntitlementsAsyncPager:
             response: service.ListEntitlementsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -349,7 +349,7 @@ class ListTransferableSkusAsyncPager:
             response: service.ListTransferableSkusResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -471,7 +471,7 @@ class ListTransferableOffersAsyncPager:
             response: service.ListTransferableOffersResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -593,7 +593,7 @@ class ListChannelPartnerLinksAsyncPager:
             response: service.ListChannelPartnerLinksResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -715,7 +715,7 @@ class ListProductsAsyncPager:
             response: service.ListProductsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -837,7 +837,7 @@ class ListSkusAsyncPager:
             response: service.ListSkusResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -959,7 +959,7 @@ class ListOffersAsyncPager:
             response: service.ListOffersResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -1081,7 +1081,7 @@ class ListPurchasableSkusAsyncPager:
             response: service.ListPurchasableSkusResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -1203,7 +1203,7 @@ class ListPurchasableOffersAsyncPager:
             response: service.ListPurchasableOffersResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -1325,7 +1325,7 @@ class ListSubscribersAsyncPager:
             response: service.ListSubscribersResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

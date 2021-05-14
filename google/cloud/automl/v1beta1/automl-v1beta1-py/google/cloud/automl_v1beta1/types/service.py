@@ -196,7 +196,7 @@ class UpdateDatasetRequest(proto.Message):
     update_mask = proto.Field(
         proto.MESSAGE,
         number=2,
-        message=gp_field_mask.FieldMask,
+        message=field_mask_pb2.FieldMask,
     )
 
 
@@ -298,7 +298,7 @@ class GetTableSpecRequest(proto.Message):
     field_mask = proto.Field(
         proto.MESSAGE,
         number=2,
-        message=gp_field_mask.FieldMask,
+        message=field_mask_pb2.FieldMask,
     )
 
 
@@ -334,7 +334,7 @@ class ListTableSpecsRequest(proto.Message):
     field_mask = proto.Field(
         proto.MESSAGE,
         number=2,
-        message=gp_field_mask.FieldMask,
+        message=field_mask_pb2.FieldMask,
     )
     filter = proto.Field(
         proto.STRING,
@@ -398,7 +398,7 @@ class UpdateTableSpecRequest(proto.Message):
     update_mask = proto.Field(
         proto.MESSAGE,
         number=2,
-        message=gp_field_mask.FieldMask,
+        message=field_mask_pb2.FieldMask,
     )
 
 
@@ -421,7 +421,7 @@ class GetColumnSpecRequest(proto.Message):
     field_mask = proto.Field(
         proto.MESSAGE,
         number=2,
-        message=gp_field_mask.FieldMask,
+        message=field_mask_pb2.FieldMask,
     )
 
 
@@ -457,7 +457,7 @@ class ListColumnSpecsRequest(proto.Message):
     field_mask = proto.Field(
         proto.MESSAGE,
         number=2,
-        message=gp_field_mask.FieldMask,
+        message=field_mask_pb2.FieldMask,
     )
     filter = proto.Field(
         proto.STRING,
@@ -521,7 +521,7 @@ class UpdateColumnSpecRequest(proto.Message):
     update_mask = proto.Field(
         proto.MESSAGE,
         number=2,
-        message=gp_field_mask.FieldMask,
+        message=field_mask_pb2.FieldMask,
     )
 
 

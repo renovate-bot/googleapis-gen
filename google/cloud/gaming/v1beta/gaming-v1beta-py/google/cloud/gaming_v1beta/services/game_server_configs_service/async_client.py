@@ -63,7 +63,8 @@ class GameServerConfigsServiceAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -78,7 +79,7 @@ class GameServerConfigsServiceAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -95,7 +96,7 @@ class GameServerConfigsServiceAsyncClient:
 
     @property
     def transport(self) -> GameServerConfigsServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             GameServerConfigsServiceTransport: The transport used by the client instance.
@@ -106,11 +107,11 @@ class GameServerConfigsServiceAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, GameServerConfigsServiceTransport] = 'grpc_asyncio',
+            transport: Union[str, GameServerConfigsServiceTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the game server configs service client.
+        """Instantiates the game server configs service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -193,8 +194,8 @@ class GameServerConfigsServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = game_server_configs.ListGameServerConfigsRequest(request)
 
@@ -209,7 +210,7 @@ class GameServerConfigsServiceAsyncClient:
             self._client._transport.list_game_server_configs,
             default_retry=retries.Retry(
 initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
             ),
@@ -221,7 +222,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -283,8 +284,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = game_server_configs.GetGameServerConfigRequest(request)
 
@@ -299,7 +300,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.get_game_server_config,
             default_retry=retries.Retry(
 initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
             ),
@@ -311,7 +312,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -380,8 +381,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, game_server_config])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = game_server_configs.CreateGameServerConfigRequest(request)
 
@@ -404,7 +405,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -482,8 +483,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = game_server_configs.DeleteGameServerConfigRequest(request)
 
@@ -504,7 +505,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -534,7 +535,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-gaming',
+            "google-cloud-gaming",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -542,5 +543,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'GameServerConfigsServiceAsyncClient',
+    "GameServerConfigsServiceAsyncClient",
 )

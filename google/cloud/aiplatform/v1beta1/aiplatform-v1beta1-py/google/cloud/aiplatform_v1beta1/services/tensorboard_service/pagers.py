@@ -105,7 +105,7 @@ class ListTensorboardsAsyncPager:
             response: tensorboard_service.ListTensorboardsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -227,7 +227,7 @@ class ListTensorboardExperimentsAsyncPager:
             response: tensorboard_service.ListTensorboardExperimentsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -349,7 +349,7 @@ class ListTensorboardRunsAsyncPager:
             response: tensorboard_service.ListTensorboardRunsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -471,7 +471,7 @@ class ListTensorboardTimeSeriesAsyncPager:
             response: tensorboard_service.ListTensorboardTimeSeriesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -593,7 +593,7 @@ class ExportTensorboardTimeSeriesDataAsyncPager:
             response: tensorboard_service.ExportTensorboardTimeSeriesDataResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

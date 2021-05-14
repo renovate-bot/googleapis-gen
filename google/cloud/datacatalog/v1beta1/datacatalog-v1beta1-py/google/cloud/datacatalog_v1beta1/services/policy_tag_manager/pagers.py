@@ -100,7 +100,7 @@ class ListTaxonomiesAsyncPager:
             response: policytagmanager.ListTaxonomiesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -222,7 +222,7 @@ class ListPolicyTagsAsyncPager:
             response: policytagmanager.ListPolicyTagsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

@@ -56,7 +56,8 @@ class SpeechAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -71,7 +72,7 @@ class SpeechAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -88,7 +89,7 @@ class SpeechAsyncClient:
 
     @property
     def transport(self) -> SpeechTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             SpeechTransport: The transport used by the client instance.
@@ -99,11 +100,11 @@ class SpeechAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, SpeechTransport] = 'grpc_asyncio',
+            transport: Union[str, SpeechTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the speech client.
+        """Instantiates the speech client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -192,8 +193,8 @@ class SpeechAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([config, audio])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloud_speech.RecognizeRequest(request)
 
@@ -210,8 +211,8 @@ class SpeechAsyncClient:
             self._client._transport.recognize,
             default_retry=retries.Retry(
 initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=5000.0,
             ),
@@ -288,8 +289,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([config, audio])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloud_speech.LongRunningRecognizeRequest(request)
 
@@ -424,8 +425,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.streaming_recognize,
             default_retry=retries.Retry(
 initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=5000.0,
             ),
@@ -451,7 +452,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-speech',
+            "google-cloud-speech",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -459,5 +460,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'SpeechAsyncClient',
+    "SpeechAsyncClient",
 )

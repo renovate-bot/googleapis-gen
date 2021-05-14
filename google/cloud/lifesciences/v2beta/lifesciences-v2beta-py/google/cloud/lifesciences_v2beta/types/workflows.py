@@ -986,17 +986,17 @@ class Metadata(proto.Message):
     create_time = proto.Field(
         proto.MESSAGE,
         number=4,
-        message=gp_timestamp.Timestamp,
+        message=timestamp_pb2.Timestamp,
     )
     start_time = proto.Field(
         proto.MESSAGE,
         number=5,
-        message=gp_timestamp.Timestamp,
+        message=timestamp_pb2.Timestamp,
     )
     end_time = proto.Field(
         proto.MESSAGE,
         number=6,
-        message=gp_timestamp.Timestamp,
+        message=timestamp_pb2.Timestamp,
     )
     pub_sub_topic = proto.Field(
         proto.STRING,
@@ -1051,7 +1051,7 @@ class Event(proto.Message):
     timestamp = proto.Field(
         proto.MESSAGE,
         number=1,
-        message=gp_timestamp.Timestamp,
+        message=timestamp_pb2.Timestamp,
     )
     description = proto.Field(
         proto.STRING,
@@ -1351,7 +1351,7 @@ class FailedEvent(proto.Message):
     code = proto.Field(
         proto.ENUM,
         number=1,
-        enum=gr_code.Code,
+        enum=code_pb2.Code,
     )
     cause = proto.Field(
         proto.STRING,

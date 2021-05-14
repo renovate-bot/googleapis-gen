@@ -949,7 +949,7 @@ class ValidateExclusivityResponse(proto.Message):
     status = proto.Field(
         proto.MESSAGE,
         number=1,
-        message=gr_status.Status,
+        message=status_pb2.Status,
     )
 
 

@@ -65,7 +65,8 @@ class CloudShellServiceAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -80,7 +81,7 @@ class CloudShellServiceAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -97,7 +98,7 @@ class CloudShellServiceAsyncClient:
 
     @property
     def transport(self) -> CloudShellServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             CloudShellServiceTransport: The transport used by the client instance.
@@ -108,11 +109,11 @@ class CloudShellServiceAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, CloudShellServiceTransport] = 'grpc_asyncio',
+            transport: Union[str, CloudShellServiceTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the cloud shell service client.
+        """Instantiates the cloud shell service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -198,8 +199,8 @@ class CloudShellServiceAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloudshell.GetEnvironmentRequest(request)
 
@@ -214,8 +215,8 @@ class CloudShellServiceAsyncClient:
             self._client._transport.get_environment,
             default_retry=retries.Retry(
 initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
-                    exceptions.Unknown,
+                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.Unknown,
                 ),
                 deadline=60.0,
             ),
@@ -227,7 +228,7 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -292,7 +293,7 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -361,7 +362,7 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -429,7 +430,7 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('environment', request.environment),
+                ("environment", request.environment),
             )),
         )
 
@@ -497,7 +498,7 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('environment', request.environment),
+                ("environment", request.environment),
             )),
         )
 
@@ -527,7 +528,7 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-shell',
+            "google-cloud-shell",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -535,5 +536,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'CloudShellServiceAsyncClient',
+    "CloudShellServiceAsyncClient",
 )

@@ -2804,7 +2804,7 @@ def test_game_server_deployments_service_transport_create_channel_old_api_core(t
         transport_class(quota_project_id="octopus")
 
         create_channel.assert_called_with(
-            "gameservices.googleapis.com",
+            "gameservices.googleapis.com:443",
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",
@@ -2839,7 +2839,7 @@ def test_game_server_deployments_service_transport_create_channel_user_scopes(tr
         transport_class(quota_project_id="octopus", scopes=["1", "2"])
 
         create_channel.assert_called_with(
-            "gameservices.googleapis.com",
+            "gameservices.googleapis.com:443",
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",

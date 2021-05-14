@@ -102,19 +102,19 @@ class Asset(proto.Message):
         proto.MESSAGE,
         number=7,
         oneof='access_context_policy',
-        message=giav_access_policy.AccessPolicy,
+        message=access_policy_pb2.AccessPolicy,
     )
     access_level = proto.Field(
         proto.MESSAGE,
         number=8,
         oneof='access_context_policy',
-        message=giav_access_level.AccessLevel,
+        message=access_level_pb2.AccessLevel,
     )
     service_perimeter = proto.Field(
         proto.MESSAGE,
         number=9,
         oneof='access_context_policy',
-        message=giav_service_perimeter.ServicePerimeter,
+        message=service_perimeter_pb2.ServicePerimeter,
     )
     ancestors = proto.RepeatedField(
         proto.STRING,

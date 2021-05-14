@@ -100,7 +100,7 @@ class ListInstanceConfigsAsyncPager:
             response: spanner_instance_admin.ListInstanceConfigsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -222,7 +222,7 @@ class ListInstancesAsyncPager:
             response: spanner_instance_admin.ListInstancesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

@@ -62,7 +62,8 @@ class WorkloadIdentityPoolsAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -77,7 +78,7 @@ class WorkloadIdentityPoolsAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -94,7 +95,7 @@ class WorkloadIdentityPoolsAsyncClient:
 
     @property
     def transport(self) -> WorkloadIdentityPoolsTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             WorkloadIdentityPoolsTransport: The transport used by the client instance.
@@ -105,11 +106,11 @@ class WorkloadIdentityPoolsAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, WorkloadIdentityPoolsTransport] = 'grpc_asyncio',
+            transport: Union[str, WorkloadIdentityPoolsTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the workload identity pools client.
+        """Instantiates the workload identity pools client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -193,8 +194,8 @@ class WorkloadIdentityPoolsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = workload_identity_pool.ListWorkloadIdentityPoolsRequest(request)
 
@@ -209,8 +210,8 @@ class WorkloadIdentityPoolsAsyncClient:
             self._client._transport.list_workload_identity_pools,
             default_retry=retries.Retry(
 initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
             ),
@@ -222,7 +223,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -287,8 +288,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = workload_identity_pool.GetWorkloadIdentityPoolRequest(request)
 
@@ -303,8 +304,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.get_workload_identity_pool,
             default_retry=retries.Retry(
 initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
             ),
@@ -316,7 +317,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -393,8 +394,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, workload_identity_pool, workload_identity_pool_id])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = gi_workload_identity_pool.CreateWorkloadIdentityPoolRequest(request)
 
@@ -413,8 +414,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.create_workload_identity_pool,
             default_retry=retries.Retry(
 initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
             ),
@@ -426,7 +427,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -497,8 +498,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([workload_identity_pool, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = gi_workload_identity_pool.UpdateWorkloadIdentityPoolRequest(request)
 
@@ -515,8 +516,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.update_workload_identity_pool,
             default_retry=retries.Retry(
 initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
             ),
@@ -528,7 +529,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('workload_identity_pool.name', request.workload_identity_pool.name),
+                ("workload_identity_pool.name", request.workload_identity_pool.name),
             )),
         )
 
@@ -602,8 +603,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = workload_identity_pool.DeleteWorkloadIdentityPoolRequest(request)
 
@@ -618,8 +619,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.delete_workload_identity_pool,
             default_retry=retries.Retry(
 initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
             ),
@@ -631,7 +632,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -697,8 +698,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = workload_identity_pool.UndeleteWorkloadIdentityPoolRequest(request)
 
@@ -713,8 +714,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.undelete_workload_identity_pool,
             default_retry=retries.Retry(
 initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
             ),
@@ -726,7 +727,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -795,8 +796,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = workload_identity_pool.ListWorkloadIdentityPoolProvidersRequest(request)
 
@@ -811,8 +812,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.list_workload_identity_pool_providers,
             default_retry=retries.Retry(
 initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
             ),
@@ -824,7 +825,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -887,8 +888,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = workload_identity_pool.GetWorkloadIdentityPoolProviderRequest(request)
 
@@ -903,8 +904,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.get_workload_identity_pool_provider,
             default_retry=retries.Retry(
 initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
             ),
@@ -916,7 +917,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -995,8 +996,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([parent, workload_identity_pool_provider, workload_identity_pool_provider_id])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = workload_identity_pool.CreateWorkloadIdentityPoolProviderRequest(request)
 
@@ -1015,8 +1016,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.create_workload_identity_pool_provider,
             default_retry=retries.Retry(
 initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
             ),
@@ -1028,7 +1029,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1099,8 +1100,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([workload_identity_pool_provider, update_mask])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = workload_identity_pool.UpdateWorkloadIdentityPoolProviderRequest(request)
 
@@ -1117,8 +1118,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.update_workload_identity_pool_provider,
             default_retry=retries.Retry(
 initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
             ),
@@ -1130,7 +1131,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('workload_identity_pool_provider.name', request.workload_identity_pool_provider.name),
+                ("workload_identity_pool_provider.name", request.workload_identity_pool_provider.name),
             )),
         )
 
@@ -1200,8 +1201,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = workload_identity_pool.DeleteWorkloadIdentityPoolProviderRequest(request)
 
@@ -1216,8 +1217,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.delete_workload_identity_pool_provider,
             default_retry=retries.Retry(
 initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
             ),
@@ -1229,7 +1230,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1295,8 +1296,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = workload_identity_pool.UndeleteWorkloadIdentityPoolProviderRequest(request)
 
@@ -1311,8 +1312,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.undelete_workload_identity_pool_provider,
             default_retry=retries.Retry(
 initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
             ),
@@ -1324,7 +1325,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1354,7 +1355,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-iam',
+            "google-iam",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -1362,5 +1363,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'WorkloadIdentityPoolsAsyncClient',
+    "WorkloadIdentityPoolsAsyncClient",
 )

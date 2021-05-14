@@ -48,13 +48,13 @@ class ConversationsClientMeta(type):
     objects.
     """
     _transport_registry = OrderedDict()  # type: Dict[str, Type[ConversationsTransport]]
-    _transport_registry['grpc'] = ConversationsGrpcTransport
-    _transport_registry['grpc_asyncio'] = ConversationsGrpcAsyncIOTransport
+    _transport_registry["grpc"] = ConversationsGrpcTransport
+    _transport_registry["grpc_asyncio"] = ConversationsGrpcAsyncIOTransport
 
     def get_transport_class(cls,
             label: str = None,
         ) -> Type[ConversationsTransport]:
-        """Return an appropriate transport class.
+        """Returns an appropriate transport class.
 
         Args:
             label: The name of the desired transport. If none is
@@ -79,7 +79,8 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
 
     @staticmethod
     def _get_default_mtls_endpoint(api_endpoint):
-        """Convert api endpoint to mTLS endpoint.
+        """Converts api endpoint to mTLS endpoint.
+
         Convert "*.sandbox.googleapis.com" and "*.googleapis.com" to
         "*.mtls.sandbox.googleapis.com" and "*.mtls.googleapis.com" respectively.
         Args:
@@ -106,14 +107,15 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
 
         return api_endpoint.replace(".googleapis.com", ".mtls.googleapis.com")
 
-    DEFAULT_ENDPOINT = 'dialogflow.googleapis.com'
+    DEFAULT_ENDPOINT = "dialogflow.googleapis.com"
     DEFAULT_MTLS_ENDPOINT = _get_default_mtls_endpoint.__func__(  # type: ignore
         DEFAULT_ENDPOINT
     )
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -130,7 +132,7 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -143,56 +145,57 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
         """
         credentials = service_account.Credentials.from_service_account_file(
             filename)
-        kwargs['credentials'] = credentials
+        kwargs["credentials"] = credentials
         return cls(*args, **kwargs)
 
     from_service_account_json = from_service_account_file
 
     @property
     def transport(self) -> ConversationsTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
-            ConversationsTransport: The transport used by the client instance.
+            ConversationsTransport: The transport used by the client
+                instance.
         """
         return self._transport
 
     @staticmethod
     def conversation_path(project: str,conversation: str,) -> str:
-        """Return a fully-qualified conversation string."""
+        """Returns a fully-qualified conversation string."""
         return "projects/{project}/conversations/{conversation}".format(project=project, conversation=conversation, )
 
     @staticmethod
     def parse_conversation_path(path: str) -> Dict[str,str]:
-        """Parse a conversation path into its component segments."""
+        """Parses a conversation path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/conversations/(?P<conversation>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def conversation_profile_path(project: str,conversation_profile: str,) -> str:
-        """Return a fully-qualified conversation_profile string."""
+        """Returns a fully-qualified conversation_profile string."""
         return "projects/{project}/conversationProfiles/{conversation_profile}".format(project=project, conversation_profile=conversation_profile, )
 
     @staticmethod
     def parse_conversation_profile_path(path: str) -> Dict[str,str]:
-        """Parse a conversation_profile path into its component segments."""
+        """Parses a conversation_profile path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/conversationProfiles/(?P<conversation_profile>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def message_path(project: str,conversation: str,message: str,) -> str:
-        """Return a fully-qualified message string."""
+        """Returns a fully-qualified message string."""
         return "projects/{project}/conversations/{conversation}/messages/{message}".format(project=project, conversation=conversation, message=message, )
 
     @staticmethod
     def parse_message_path(path: str) -> Dict[str,str]:
-        """Parse a message path into its component segments."""
+        """Parses a message path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/conversations/(?P<conversation>.+?)/messages/(?P<message>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
-        """Return a fully-qualified billing_account string."""
+        """Returns a fully-qualified billing_account string."""
         return "billingAccounts/{billing_account}".format(billing_account=billing_account, )
 
     @staticmethod
@@ -203,7 +206,7 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
 
     @staticmethod
     def common_folder_path(folder: str, ) -> str:
-        """Return a fully-qualified folder string."""
+        """Returns a fully-qualified folder string."""
         return "folders/{folder}".format(folder=folder, )
 
     @staticmethod
@@ -214,7 +217,7 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
 
     @staticmethod
     def common_organization_path(organization: str, ) -> str:
-        """Return a fully-qualified organization string."""
+        """Returns a fully-qualified organization string."""
         return "organizations/{organization}".format(organization=organization, )
 
     @staticmethod
@@ -225,7 +228,7 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
 
     @staticmethod
     def common_project_path(project: str, ) -> str:
-        """Return a fully-qualified project string."""
+        """Returns a fully-qualified project string."""
         return "projects/{project}".format(project=project, )
 
     @staticmethod
@@ -236,7 +239,7 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
 
     @staticmethod
     def common_location_path(project: str, location: str, ) -> str:
-        """Return a fully-qualified location string."""
+        """Returns a fully-qualified location string."""
         return "projects/{project}/locations/{location}".format(project=project, location=location, )
 
     @staticmethod
@@ -251,7 +254,7 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the conversations client.
+        """Instantiates the conversations client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -304,7 +307,10 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
                 client_cert_source_func = client_options.client_cert_source
             else:
                 is_mtls = mtls.has_default_client_cert_source()
-                client_cert_source_func = mtls.default_client_cert_source() if is_mtls else None
+                if is_mtls:
+                    client_cert_source_func = mtls.default_client_cert_source()
+                else:
+                    client_cert_source_func = None
 
         # Figure out which api endpoint to use.
         if client_options.api_endpoint is not None:
@@ -316,10 +322,14 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
             elif use_mtls_env == "always":
                 api_endpoint = self.DEFAULT_MTLS_ENDPOINT
             elif use_mtls_env == "auto":
-                api_endpoint = self.DEFAULT_MTLS_ENDPOINT if is_mtls else self.DEFAULT_ENDPOINT
+                if is_mtls:
+                    api_endpoint = self.DEFAULT_MTLS_ENDPOINT
+                else:
+                    api_endpoint = self.DEFAULT_ENDPOINT
             else:
                 raise MutualTLSChannelError(
-                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted values: never, auto, always"
+                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted "
+                    "values: never, auto, always"
                 )
 
         # Save or instantiate the transport.
@@ -328,12 +338,12 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
         if isinstance(transport, ConversationsTransport):
             # transport is a ConversationsTransport instance.
             if credentials or client_options.credentials_file:
-                raise ValueError('When providing a transport instance, '
-                                 'provide its credentials directly.')
+                raise ValueError("When providing a transport instance, "
+                                 "provide its credentials directly.")
             if client_options.scopes:
                 raise ValueError(
-                    "When providing a transport instance, "
-                    "provide its scopes directly."
+                    "When providing a transport instance, provide its scopes "
+                    "directly."
                 )
             self._transport = transport
         else:
@@ -442,7 +452,7 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -522,7 +532,7 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -611,7 +621,7 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -694,7 +704,7 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -777,7 +787,7 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -808,7 +818,7 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-dialogflow',
+            "google-cloud-dialogflow",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -816,5 +826,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'ConversationsClient',
+    "ConversationsClient",
 )

@@ -45,6 +45,11 @@ from .automl_text_sentiment import (
     AutoMlTextSentiment,
     AutoMlTextSentimentInputs,
 )
+from .automl_time_series_forecasting import (
+    AutoMlForecasting,
+    AutoMlForecastingInputs,
+    AutoMlForecastingMetadata,
+)
 from .automl_video_action_recognition import (
     AutoMlVideoActionRecognition,
     AutoMlVideoActionRecognitionInputs,
@@ -80,6 +85,9 @@ __all__ = (
     'AutoMlTextExtractionInputs',
     'AutoMlTextSentiment',
     'AutoMlTextSentimentInputs',
+    'AutoMlForecasting',
+    'AutoMlForecastingInputs',
+    'AutoMlForecastingMetadata',
     'AutoMlVideoActionRecognition',
     'AutoMlVideoActionRecognitionInputs',
     'AutoMlVideoClassification',

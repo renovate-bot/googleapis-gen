@@ -601,7 +601,7 @@ class ColorInfo(proto.Message):
     color = proto.Field(
         proto.MESSAGE,
         number=1,
-        message=gt_color.Color,
+        message=color_pb2.Color,
     )
     score = proto.Field(
         proto.FLOAT,

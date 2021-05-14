@@ -189,7 +189,7 @@ class PhotoResponse(proto.Message):
     status = proto.Field(
         proto.MESSAGE,
         number=1,
-        message=gr_status.Status,
+        message=status_pb2.Status,
     )
     photo = proto.Field(
         proto.MESSAGE,
@@ -433,7 +433,7 @@ class BatchDeletePhotosResponse(proto.Message):
     status = proto.RepeatedField(
         proto.MESSAGE,
         number=1,
-        message=gr_status.Status,
+        message=status_pb2.Status,
     )
 
 

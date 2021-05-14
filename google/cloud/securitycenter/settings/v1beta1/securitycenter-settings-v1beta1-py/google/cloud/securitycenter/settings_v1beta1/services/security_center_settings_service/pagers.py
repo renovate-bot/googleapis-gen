@@ -101,7 +101,7 @@ class ListDetectorsAsyncPager:
             response: securitycenter_settings_service.ListDetectorsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -223,7 +223,7 @@ class ListComponentsAsyncPager:
             response: securitycenter_settings_service.ListComponentsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

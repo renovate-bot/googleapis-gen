@@ -59,7 +59,8 @@ class ManagedIdentitiesServiceAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -74,7 +75,7 @@ class ManagedIdentitiesServiceAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -91,7 +92,7 @@ class ManagedIdentitiesServiceAsyncClient:
 
     @property
     def transport(self) -> ManagedIdentitiesServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             ManagedIdentitiesServiceTransport: The transport used by the client instance.
@@ -102,11 +103,11 @@ class ManagedIdentitiesServiceAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, ManagedIdentitiesServiceTransport] = 'grpc_asyncio',
+            transport: Union[str, ManagedIdentitiesServiceTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the managed identities service client.
+        """Instantiates the managed identities service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -189,7 +190,7 @@ class ManagedIdentitiesServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -252,7 +253,7 @@ class ManagedIdentitiesServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -310,7 +311,7 @@ class ManagedIdentitiesServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -374,7 +375,7 @@ class ManagedIdentitiesServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -432,7 +433,7 @@ class ManagedIdentitiesServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('domain.name', request.domain.name),
+                ("domain.name", request.domain.name),
             )),
         )
 
@@ -508,7 +509,7 @@ class ManagedIdentitiesServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -574,7 +575,7 @@ class ManagedIdentitiesServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -640,7 +641,7 @@ class ManagedIdentitiesServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -706,7 +707,7 @@ class ManagedIdentitiesServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -774,7 +775,7 @@ class ManagedIdentitiesServiceAsyncClient:
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -804,7 +805,7 @@ class ManagedIdentitiesServiceAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-managedidentities',
+            "google-cloud-managedidentities",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -812,5 +813,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'ManagedIdentitiesServiceAsyncClient',
+    "ManagedIdentitiesServiceAsyncClient",
 )

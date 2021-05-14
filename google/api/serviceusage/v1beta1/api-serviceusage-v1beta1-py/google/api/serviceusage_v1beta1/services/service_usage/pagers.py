@@ -101,7 +101,7 @@ class ListServicesAsyncPager:
             response: serviceusage.ListServicesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -223,7 +223,7 @@ class ListConsumerQuotaMetricsAsyncPager:
             response: serviceusage.ListConsumerQuotaMetricsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -345,7 +345,7 @@ class ListAdminOverridesAsyncPager:
             response: serviceusage.ListAdminOverridesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -467,7 +467,7 @@ class ListConsumerOverridesAsyncPager:
             response: serviceusage.ListConsumerOverridesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

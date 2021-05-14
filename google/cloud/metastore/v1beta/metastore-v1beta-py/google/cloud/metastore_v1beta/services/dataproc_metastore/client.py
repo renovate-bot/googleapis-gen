@@ -50,13 +50,13 @@ class DataprocMetastoreClientMeta(type):
     objects.
     """
     _transport_registry = OrderedDict()  # type: Dict[str, Type[DataprocMetastoreTransport]]
-    _transport_registry['grpc'] = DataprocMetastoreGrpcTransport
-    _transport_registry['grpc_asyncio'] = DataprocMetastoreGrpcAsyncIOTransport
+    _transport_registry["grpc"] = DataprocMetastoreGrpcTransport
+    _transport_registry["grpc_asyncio"] = DataprocMetastoreGrpcAsyncIOTransport
 
     def get_transport_class(cls,
             label: str = None,
         ) -> Type[DataprocMetastoreTransport]:
-        """Return an appropriate transport class.
+        """Returns an appropriate transport class.
 
         Args:
             label: The name of the desired transport. If none is
@@ -102,7 +102,8 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
 
     @staticmethod
     def _get_default_mtls_endpoint(api_endpoint):
-        """Convert api endpoint to mTLS endpoint.
+        """Converts api endpoint to mTLS endpoint.
+
         Convert "*.sandbox.googleapis.com" and "*.googleapis.com" to
         "*.mtls.sandbox.googleapis.com" and "*.mtls.googleapis.com" respectively.
         Args:
@@ -129,14 +130,15 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
 
         return api_endpoint.replace(".googleapis.com", ".mtls.googleapis.com")
 
-    DEFAULT_ENDPOINT = 'metastore.googleapis.com'
+    DEFAULT_ENDPOINT = "metastore.googleapis.com"
     DEFAULT_MTLS_ENDPOINT = _get_default_mtls_endpoint.__func__(  # type: ignore
         DEFAULT_ENDPOINT
     )
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -153,7 +155,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -166,67 +168,68 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
         """
         credentials = service_account.Credentials.from_service_account_file(
             filename)
-        kwargs['credentials'] = credentials
+        kwargs["credentials"] = credentials
         return cls(*args, **kwargs)
 
     from_service_account_json = from_service_account_file
 
     @property
     def transport(self) -> DataprocMetastoreTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
-            DataprocMetastoreTransport: The transport used by the client instance.
+            DataprocMetastoreTransport: The transport used by the client
+                instance.
         """
         return self._transport
 
     @staticmethod
     def backup_path(project: str,location: str,service: str,backup: str,) -> str:
-        """Return a fully-qualified backup string."""
+        """Returns a fully-qualified backup string."""
         return "projects/{project}/locations/{location}/services/{service}/backups/{backup}".format(project=project, location=location, service=service, backup=backup, )
 
     @staticmethod
     def parse_backup_path(path: str) -> Dict[str,str]:
-        """Parse a backup path into its component segments."""
+        """Parses a backup path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/services/(?P<service>.+?)/backups/(?P<backup>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def metadata_import_path(project: str,location: str,service: str,metadata_import: str,) -> str:
-        """Return a fully-qualified metadata_import string."""
+        """Returns a fully-qualified metadata_import string."""
         return "projects/{project}/locations/{location}/services/{service}/metadataImports/{metadata_import}".format(project=project, location=location, service=service, metadata_import=metadata_import, )
 
     @staticmethod
     def parse_metadata_import_path(path: str) -> Dict[str,str]:
-        """Parse a metadata_import path into its component segments."""
+        """Parses a metadata_import path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/services/(?P<service>.+?)/metadataImports/(?P<metadata_import>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def network_path(project: str,network: str,) -> str:
-        """Return a fully-qualified network string."""
+        """Returns a fully-qualified network string."""
         return "projects/{project}/global/networks/{network}".format(project=project, network=network, )
 
     @staticmethod
     def parse_network_path(path: str) -> Dict[str,str]:
-        """Parse a network path into its component segments."""
+        """Parses a network path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/global/networks/(?P<network>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def service_path(project: str,location: str,service: str,) -> str:
-        """Return a fully-qualified service string."""
+        """Returns a fully-qualified service string."""
         return "projects/{project}/locations/{location}/services/{service}".format(project=project, location=location, service=service, )
 
     @staticmethod
     def parse_service_path(path: str) -> Dict[str,str]:
-        """Parse a service path into its component segments."""
+        """Parses a service path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/services/(?P<service>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
-        """Return a fully-qualified billing_account string."""
+        """Returns a fully-qualified billing_account string."""
         return "billingAccounts/{billing_account}".format(billing_account=billing_account, )
 
     @staticmethod
@@ -237,7 +240,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
 
     @staticmethod
     def common_folder_path(folder: str, ) -> str:
-        """Return a fully-qualified folder string."""
+        """Returns a fully-qualified folder string."""
         return "folders/{folder}".format(folder=folder, )
 
     @staticmethod
@@ -248,7 +251,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
 
     @staticmethod
     def common_organization_path(organization: str, ) -> str:
-        """Return a fully-qualified organization string."""
+        """Returns a fully-qualified organization string."""
         return "organizations/{organization}".format(organization=organization, )
 
     @staticmethod
@@ -259,7 +262,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
 
     @staticmethod
     def common_project_path(project: str, ) -> str:
-        """Return a fully-qualified project string."""
+        """Returns a fully-qualified project string."""
         return "projects/{project}".format(project=project, )
 
     @staticmethod
@@ -270,7 +273,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
 
     @staticmethod
     def common_location_path(project: str, location: str, ) -> str:
-        """Return a fully-qualified location string."""
+        """Returns a fully-qualified location string."""
         return "projects/{project}/locations/{location}".format(project=project, location=location, )
 
     @staticmethod
@@ -285,7 +288,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the dataproc metastore client.
+        """Instantiates the dataproc metastore client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -338,7 +341,10 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
                 client_cert_source_func = client_options.client_cert_source
             else:
                 is_mtls = mtls.has_default_client_cert_source()
-                client_cert_source_func = mtls.default_client_cert_source() if is_mtls else None
+                if is_mtls:
+                    client_cert_source_func = mtls.default_client_cert_source()
+                else:
+                    client_cert_source_func = None
 
         # Figure out which api endpoint to use.
         if client_options.api_endpoint is not None:
@@ -350,10 +356,14 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
             elif use_mtls_env == "always":
                 api_endpoint = self.DEFAULT_MTLS_ENDPOINT
             elif use_mtls_env == "auto":
-                api_endpoint = self.DEFAULT_MTLS_ENDPOINT if is_mtls else self.DEFAULT_ENDPOINT
+                if is_mtls:
+                    api_endpoint = self.DEFAULT_MTLS_ENDPOINT
+                else:
+                    api_endpoint = self.DEFAULT_ENDPOINT
             else:
                 raise MutualTLSChannelError(
-                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted values: never, auto, always"
+                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted "
+                    "values: never, auto, always"
                 )
 
         # Save or instantiate the transport.
@@ -362,12 +372,12 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
         if isinstance(transport, DataprocMetastoreTransport):
             # transport is a DataprocMetastoreTransport instance.
             if credentials or client_options.credentials_file:
-                raise ValueError('When providing a transport instance, '
-                                 'provide its credentials directly.')
+                raise ValueError("When providing a transport instance, "
+                                 "provide its credentials directly.")
             if client_options.scopes:
                 raise ValueError(
-                    "When providing a transport instance, "
-                    "provide its scopes directly."
+                    "When providing a transport instance, provide its scopes "
+                    "directly."
                 )
             self._transport = transport
         else:
@@ -447,7 +457,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -533,7 +543,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -644,7 +654,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -747,7 +757,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('service.name', request.service.name),
+                ("service.name", request.service.name),
             )),
         )
 
@@ -845,7 +855,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -933,7 +943,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1019,7 +1029,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1129,7 +1139,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1234,7 +1244,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('metadata_import.name', request.metadata_import.name),
+                ("metadata_import.name", request.metadata_import.name),
             )),
         )
 
@@ -1301,7 +1311,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('service', request.service),
+                ("service", request.service),
             )),
         )
 
@@ -1401,7 +1411,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('service', request.service),
+                ("service", request.service),
             )),
         )
 
@@ -1489,7 +1499,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1573,7 +1583,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1680,7 +1690,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1778,7 +1788,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1808,7 +1818,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-dataproc-metastore',
+            "google-cloud-dataproc-metastore",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -1816,5 +1826,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'DataprocMetastoreClient',
+    "DataprocMetastoreClient",
 )

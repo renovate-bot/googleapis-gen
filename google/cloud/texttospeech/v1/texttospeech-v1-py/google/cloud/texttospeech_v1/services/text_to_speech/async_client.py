@@ -53,7 +53,8 @@ class TextToSpeechAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -68,7 +69,7 @@ class TextToSpeechAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -85,7 +86,7 @@ class TextToSpeechAsyncClient:
 
     @property
     def transport(self) -> TextToSpeechTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             TextToSpeechTransport: The transport used by the client instance.
@@ -96,11 +97,11 @@ class TextToSpeechAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, TextToSpeechTransport] = 'grpc_asyncio',
+            transport: Union[str, TextToSpeechTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the text to speech client.
+        """Instantiates the text to speech client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -186,8 +187,8 @@ class TextToSpeechAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([language_code])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloud_tts.ListVoicesRequest(request)
 
@@ -202,8 +203,8 @@ class TextToSpeechAsyncClient:
             self._client._transport.list_voices,
             default_retry=retries.Retry(
 initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=600.0,
             ),
@@ -277,8 +278,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([input, voice, audio_config])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = cloud_tts.SynthesizeSpeechRequest(request)
 
@@ -297,8 +298,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
             self._client._transport.synthesize_speech,
             default_retry=retries.Retry(
 initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded,
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.DeadlineExceeded,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=600.0,
             ),
@@ -324,7 +325,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-texttospeech',
+            "google-cloud-texttospeech",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -332,5 +333,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'TextToSpeechAsyncClient',
+    "TextToSpeechAsyncClient",
 )

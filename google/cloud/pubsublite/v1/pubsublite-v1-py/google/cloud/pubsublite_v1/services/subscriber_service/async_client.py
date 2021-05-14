@@ -55,7 +55,8 @@ class SubscriberServiceAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -70,7 +71,7 @@ class SubscriberServiceAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -87,7 +88,7 @@ class SubscriberServiceAsyncClient:
 
     @property
     def transport(self) -> SubscriberServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             SubscriberServiceTransport: The transport used by the client instance.
@@ -98,11 +99,11 @@ class SubscriberServiceAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, SubscriberServiceTransport] = 'grpc_asyncio',
+            transport: Union[str, SubscriberServiceTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the subscriber service client.
+        """Instantiates the subscriber service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -193,7 +194,7 @@ class SubscriberServiceAsyncClient:
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-pubsublite',
+            "google-cloud-pubsublite",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -201,5 +202,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'SubscriberServiceAsyncClient',
+    "SubscriberServiceAsyncClient",
 )

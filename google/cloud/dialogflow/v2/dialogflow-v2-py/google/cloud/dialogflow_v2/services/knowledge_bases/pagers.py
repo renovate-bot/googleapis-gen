@@ -100,7 +100,7 @@ class ListKnowledgeBasesAsyncPager:
             response: knowledge_base.ListKnowledgeBasesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

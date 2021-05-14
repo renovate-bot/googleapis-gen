@@ -59,13 +59,13 @@ class ArtifactRegistryClientMeta(type):
     objects.
     """
     _transport_registry = OrderedDict()  # type: Dict[str, Type[ArtifactRegistryTransport]]
-    _transport_registry['grpc'] = ArtifactRegistryGrpcTransport
-    _transport_registry['grpc_asyncio'] = ArtifactRegistryGrpcAsyncIOTransport
+    _transport_registry["grpc"] = ArtifactRegistryGrpcTransport
+    _transport_registry["grpc_asyncio"] = ArtifactRegistryGrpcAsyncIOTransport
 
     def get_transport_class(cls,
             label: str = None,
         ) -> Type[ArtifactRegistryTransport]:
-        """Return an appropriate transport class.
+        """Returns an appropriate transport class.
 
         Args:
             label: The name of the desired transport. If none is
@@ -101,7 +101,8 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
 
     @staticmethod
     def _get_default_mtls_endpoint(api_endpoint):
-        """Convert api endpoint to mTLS endpoint.
+        """Converts api endpoint to mTLS endpoint.
+
         Convert "*.sandbox.googleapis.com" and "*.googleapis.com" to
         "*.mtls.sandbox.googleapis.com" and "*.mtls.googleapis.com" respectively.
         Args:
@@ -128,14 +129,15 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
 
         return api_endpoint.replace(".googleapis.com", ".mtls.googleapis.com")
 
-    DEFAULT_ENDPOINT = 'artifactregistry.googleapis.com'
+    DEFAULT_ENDPOINT = "artifactregistry.googleapis.com"
     DEFAULT_MTLS_ENDPOINT = _get_default_mtls_endpoint.__func__(  # type: ignore
         DEFAULT_ENDPOINT
     )
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -152,7 +154,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -165,45 +167,46 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         """
         credentials = service_account.Credentials.from_service_account_file(
             filename)
-        kwargs['credentials'] = credentials
+        kwargs["credentials"] = credentials
         return cls(*args, **kwargs)
 
     from_service_account_json = from_service_account_file
 
     @property
     def transport(self) -> ArtifactRegistryTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
-            ArtifactRegistryTransport: The transport used by the client instance.
+            ArtifactRegistryTransport: The transport used by the client
+                instance.
         """
         return self._transport
 
     @staticmethod
     def file_path(project: str,location: str,repo: str,file: str,) -> str:
-        """Return a fully-qualified file string."""
+        """Returns a fully-qualified file string."""
         return "projects/{project}/locations/{location}/repositories/{repo}/files/{file}".format(project=project, location=location, repo=repo, file=file, )
 
     @staticmethod
     def parse_file_path(path: str) -> Dict[str,str]:
-        """Parse a file path into its component segments."""
+        """Parses a file path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/repositories/(?P<repo>.+?)/files/(?P<file>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def repository_path(project: str,location: str,repository: str,) -> str:
-        """Return a fully-qualified repository string."""
+        """Returns a fully-qualified repository string."""
         return "projects/{project}/locations/{location}/repositories/{repository}".format(project=project, location=location, repository=repository, )
 
     @staticmethod
     def parse_repository_path(path: str) -> Dict[str,str]:
-        """Parse a repository path into its component segments."""
+        """Parses a repository path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/repositories/(?P<repository>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
-        """Return a fully-qualified billing_account string."""
+        """Returns a fully-qualified billing_account string."""
         return "billingAccounts/{billing_account}".format(billing_account=billing_account, )
 
     @staticmethod
@@ -214,7 +217,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
 
     @staticmethod
     def common_folder_path(folder: str, ) -> str:
-        """Return a fully-qualified folder string."""
+        """Returns a fully-qualified folder string."""
         return "folders/{folder}".format(folder=folder, )
 
     @staticmethod
@@ -225,7 +228,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
 
     @staticmethod
     def common_organization_path(organization: str, ) -> str:
-        """Return a fully-qualified organization string."""
+        """Returns a fully-qualified organization string."""
         return "organizations/{organization}".format(organization=organization, )
 
     @staticmethod
@@ -236,7 +239,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
 
     @staticmethod
     def common_project_path(project: str, ) -> str:
-        """Return a fully-qualified project string."""
+        """Returns a fully-qualified project string."""
         return "projects/{project}".format(project=project, )
 
     @staticmethod
@@ -247,7 +250,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
 
     @staticmethod
     def common_location_path(project: str, location: str, ) -> str:
-        """Return a fully-qualified location string."""
+        """Returns a fully-qualified location string."""
         return "projects/{project}/locations/{location}".format(project=project, location=location, )
 
     @staticmethod
@@ -262,7 +265,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the artifact registry client.
+        """Instantiates the artifact registry client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -315,7 +318,10 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
                 client_cert_source_func = client_options.client_cert_source
             else:
                 is_mtls = mtls.has_default_client_cert_source()
-                client_cert_source_func = mtls.default_client_cert_source() if is_mtls else None
+                if is_mtls:
+                    client_cert_source_func = mtls.default_client_cert_source()
+                else:
+                    client_cert_source_func = None
 
         # Figure out which api endpoint to use.
         if client_options.api_endpoint is not None:
@@ -327,10 +333,14 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
             elif use_mtls_env == "always":
                 api_endpoint = self.DEFAULT_MTLS_ENDPOINT
             elif use_mtls_env == "auto":
-                api_endpoint = self.DEFAULT_MTLS_ENDPOINT if is_mtls else self.DEFAULT_ENDPOINT
+                if is_mtls:
+                    api_endpoint = self.DEFAULT_MTLS_ENDPOINT
+                else:
+                    api_endpoint = self.DEFAULT_ENDPOINT
             else:
                 raise MutualTLSChannelError(
-                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted values: never, auto, always"
+                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted "
+                    "values: never, auto, always"
                 )
 
         # Save or instantiate the transport.
@@ -339,12 +349,12 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         if isinstance(transport, ArtifactRegistryTransport):
             # transport is a ArtifactRegistryTransport instance.
             if credentials or client_options.credentials_file:
-                raise ValueError('When providing a transport instance, '
-                                 'provide its credentials directly.')
+                raise ValueError("When providing a transport instance, "
+                                 "provide its credentials directly.")
             if client_options.scopes:
                 raise ValueError(
-                    "When providing a transport instance, "
-                    "provide its scopes directly."
+                    "When providing a transport instance, provide its scopes "
+                    "directly."
                 )
             self._transport = transport
         else:
@@ -421,7 +431,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -505,7 +515,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -604,7 +614,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -697,7 +707,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('repository.name', request.repository.name),
+                ("repository.name", request.repository.name),
             )),
         )
 
@@ -785,7 +795,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -869,7 +879,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -950,7 +960,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1037,7 +1047,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1121,7 +1131,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1205,7 +1215,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1292,7 +1302,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1376,7 +1386,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1458,7 +1468,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1534,7 +1544,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1616,7 +1626,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1709,7 +1719,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1796,7 +1806,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('tag.name', request.tag.name),
+                ("tag.name", request.tag.name),
             )),
         )
 
@@ -1862,7 +1872,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1969,7 +1979,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('resource', request.resource),
+                ("resource", request.resource),
             )),
         )
 
@@ -2079,7 +2089,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('resource', request.resource),
+                ("resource", request.resource),
             )),
         )
 
@@ -2135,7 +2145,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('resource', request.resource),
+                ("resource", request.resource),
             )),
         )
 
@@ -2157,7 +2167,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-artifact-registry',
+            "google-cloud-artifact-registry",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -2165,5 +2175,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'ArtifactRegistryClient',
+    "ArtifactRegistryClient",
 )

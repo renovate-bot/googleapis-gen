@@ -51,13 +51,13 @@ class DeviceManagerClientMeta(type):
     objects.
     """
     _transport_registry = OrderedDict()  # type: Dict[str, Type[DeviceManagerTransport]]
-    _transport_registry['grpc'] = DeviceManagerGrpcTransport
-    _transport_registry['grpc_asyncio'] = DeviceManagerGrpcAsyncIOTransport
+    _transport_registry["grpc"] = DeviceManagerGrpcTransport
+    _transport_registry["grpc_asyncio"] = DeviceManagerGrpcAsyncIOTransport
 
     def get_transport_class(cls,
             label: str = None,
         ) -> Type[DeviceManagerTransport]:
-        """Return an appropriate transport class.
+        """Returns an appropriate transport class.
 
         Args:
             label: The name of the desired transport. If none is
@@ -82,7 +82,8 @@ class DeviceManagerClient(metaclass=DeviceManagerClientMeta):
 
     @staticmethod
     def _get_default_mtls_endpoint(api_endpoint):
-        """Convert api endpoint to mTLS endpoint.
+        """Converts api endpoint to mTLS endpoint.
+
         Convert "*.sandbox.googleapis.com" and "*.googleapis.com" to
         "*.mtls.sandbox.googleapis.com" and "*.mtls.googleapis.com" respectively.
         Args:
@@ -109,14 +110,15 @@ class DeviceManagerClient(metaclass=DeviceManagerClientMeta):
 
         return api_endpoint.replace(".googleapis.com", ".mtls.googleapis.com")
 
-    DEFAULT_ENDPOINT = 'cloudiot.googleapis.com'
+    DEFAULT_ENDPOINT = "cloudiot.googleapis.com"
     DEFAULT_MTLS_ENDPOINT = _get_default_mtls_endpoint.__func__(  # type: ignore
         DEFAULT_ENDPOINT
     )
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -133,7 +135,7 @@ class DeviceManagerClient(metaclass=DeviceManagerClientMeta):
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -146,45 +148,46 @@ class DeviceManagerClient(metaclass=DeviceManagerClientMeta):
         """
         credentials = service_account.Credentials.from_service_account_file(
             filename)
-        kwargs['credentials'] = credentials
+        kwargs["credentials"] = credentials
         return cls(*args, **kwargs)
 
     from_service_account_json = from_service_account_file
 
     @property
     def transport(self) -> DeviceManagerTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
-            DeviceManagerTransport: The transport used by the client instance.
+            DeviceManagerTransport: The transport used by the client
+                instance.
         """
         return self._transport
 
     @staticmethod
     def device_path(project: str,location: str,registry: str,device: str,) -> str:
-        """Return a fully-qualified device string."""
+        """Returns a fully-qualified device string."""
         return "projects/{project}/locations/{location}/registries/{registry}/devices/{device}".format(project=project, location=location, registry=registry, device=device, )
 
     @staticmethod
     def parse_device_path(path: str) -> Dict[str,str]:
-        """Parse a device path into its component segments."""
+        """Parses a device path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/registries/(?P<registry>.+?)/devices/(?P<device>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def registry_path(project: str,location: str,registry: str,) -> str:
-        """Return a fully-qualified registry string."""
+        """Returns a fully-qualified registry string."""
         return "projects/{project}/locations/{location}/registries/{registry}".format(project=project, location=location, registry=registry, )
 
     @staticmethod
     def parse_registry_path(path: str) -> Dict[str,str]:
-        """Parse a registry path into its component segments."""
+        """Parses a registry path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/registries/(?P<registry>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
-        """Return a fully-qualified billing_account string."""
+        """Returns a fully-qualified billing_account string."""
         return "billingAccounts/{billing_account}".format(billing_account=billing_account, )
 
     @staticmethod
@@ -195,7 +198,7 @@ class DeviceManagerClient(metaclass=DeviceManagerClientMeta):
 
     @staticmethod
     def common_folder_path(folder: str, ) -> str:
-        """Return a fully-qualified folder string."""
+        """Returns a fully-qualified folder string."""
         return "folders/{folder}".format(folder=folder, )
 
     @staticmethod
@@ -206,7 +209,7 @@ class DeviceManagerClient(metaclass=DeviceManagerClientMeta):
 
     @staticmethod
     def common_organization_path(organization: str, ) -> str:
-        """Return a fully-qualified organization string."""
+        """Returns a fully-qualified organization string."""
         return "organizations/{organization}".format(organization=organization, )
 
     @staticmethod
@@ -217,7 +220,7 @@ class DeviceManagerClient(metaclass=DeviceManagerClientMeta):
 
     @staticmethod
     def common_project_path(project: str, ) -> str:
-        """Return a fully-qualified project string."""
+        """Returns a fully-qualified project string."""
         return "projects/{project}".format(project=project, )
 
     @staticmethod
@@ -228,7 +231,7 @@ class DeviceManagerClient(metaclass=DeviceManagerClientMeta):
 
     @staticmethod
     def common_location_path(project: str, location: str, ) -> str:
-        """Return a fully-qualified location string."""
+        """Returns a fully-qualified location string."""
         return "projects/{project}/locations/{location}".format(project=project, location=location, )
 
     @staticmethod
@@ -243,7 +246,7 @@ class DeviceManagerClient(metaclass=DeviceManagerClientMeta):
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the device manager client.
+        """Instantiates the device manager client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -296,7 +299,10 @@ class DeviceManagerClient(metaclass=DeviceManagerClientMeta):
                 client_cert_source_func = client_options.client_cert_source
             else:
                 is_mtls = mtls.has_default_client_cert_source()
-                client_cert_source_func = mtls.default_client_cert_source() if is_mtls else None
+                if is_mtls:
+                    client_cert_source_func = mtls.default_client_cert_source()
+                else:
+                    client_cert_source_func = None
 
         # Figure out which api endpoint to use.
         if client_options.api_endpoint is not None:
@@ -308,10 +314,14 @@ class DeviceManagerClient(metaclass=DeviceManagerClientMeta):
             elif use_mtls_env == "always":
                 api_endpoint = self.DEFAULT_MTLS_ENDPOINT
             elif use_mtls_env == "auto":
-                api_endpoint = self.DEFAULT_MTLS_ENDPOINT if is_mtls else self.DEFAULT_ENDPOINT
+                if is_mtls:
+                    api_endpoint = self.DEFAULT_MTLS_ENDPOINT
+                else:
+                    api_endpoint = self.DEFAULT_ENDPOINT
             else:
                 raise MutualTLSChannelError(
-                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted values: never, auto, always"
+                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted "
+                    "values: never, auto, always"
                 )
 
         # Save or instantiate the transport.
@@ -320,12 +330,12 @@ class DeviceManagerClient(metaclass=DeviceManagerClientMeta):
         if isinstance(transport, DeviceManagerTransport):
             # transport is a DeviceManagerTransport instance.
             if credentials or client_options.credentials_file:
-                raise ValueError('When providing a transport instance, '
-                                 'provide its credentials directly.')
+                raise ValueError("When providing a transport instance, "
+                                 "provide its credentials directly.")
             if client_options.scopes:
                 raise ValueError(
-                    "When providing a transport instance, "
-                    "provide its scopes directly."
+                    "When providing a transport instance, provide its scopes "
+                    "directly."
                 )
             self._transport = transport
         else:
@@ -410,7 +420,7 @@ class DeviceManagerClient(metaclass=DeviceManagerClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -482,7 +492,7 @@ class DeviceManagerClient(metaclass=DeviceManagerClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -570,7 +580,7 @@ class DeviceManagerClient(metaclass=DeviceManagerClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('device_registry.name', request.device_registry.name),
+                ("device_registry.name", request.device_registry.name),
             )),
         )
 
@@ -638,7 +648,7 @@ class DeviceManagerClient(metaclass=DeviceManagerClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -712,7 +722,7 @@ class DeviceManagerClient(metaclass=DeviceManagerClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -806,7 +816,7 @@ class DeviceManagerClient(metaclass=DeviceManagerClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -880,7 +890,7 @@ class DeviceManagerClient(metaclass=DeviceManagerClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -968,7 +978,7 @@ class DeviceManagerClient(metaclass=DeviceManagerClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('device.name', request.device.name),
+                ("device.name", request.device.name),
             )),
         )
 
@@ -1038,7 +1048,7 @@ class DeviceManagerClient(metaclass=DeviceManagerClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1112,7 +1122,7 @@ class DeviceManagerClient(metaclass=DeviceManagerClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1210,7 +1220,7 @@ class DeviceManagerClient(metaclass=DeviceManagerClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1286,7 +1296,7 @@ class DeviceManagerClient(metaclass=DeviceManagerClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1361,7 +1371,7 @@ class DeviceManagerClient(metaclass=DeviceManagerClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1491,7 +1501,7 @@ class DeviceManagerClient(metaclass=DeviceManagerClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('resource', request.resource),
+                ("resource", request.resource),
             )),
         )
 
@@ -1622,7 +1632,7 @@ class DeviceManagerClient(metaclass=DeviceManagerClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('resource', request.resource),
+                ("resource", request.resource),
             )),
         )
 
@@ -1710,7 +1720,7 @@ class DeviceManagerClient(metaclass=DeviceManagerClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('resource', request.resource),
+                ("resource", request.resource),
             )),
         )
 
@@ -1828,7 +1838,7 @@ class DeviceManagerClient(metaclass=DeviceManagerClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1921,7 +1931,7 @@ class DeviceManagerClient(metaclass=DeviceManagerClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -2016,7 +2026,7 @@ class DeviceManagerClient(metaclass=DeviceManagerClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -2038,7 +2048,7 @@ class DeviceManagerClient(metaclass=DeviceManagerClientMeta):
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-iot',
+            "google-cloud-iot",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -2046,5 +2056,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'DeviceManagerClient',
+    "DeviceManagerClient",
 )

@@ -2943,7 +2943,7 @@ class Value(proto.Message):
         proto.MESSAGE,
         number=7,
         oneof='type',
-        message=gt_date.Date,
+        message=date_pb2.Date,
     )
     day_of_week_value = proto.Field(
         proto.ENUM,
@@ -3001,7 +3001,7 @@ class DateTime(proto.Message):
     date = proto.Field(
         proto.MESSAGE,
         number=1,
-        message=gt_date.Date,
+        message=date_pb2.Date,
     )
     day_of_week = proto.Field(
         proto.ENUM,
@@ -4362,7 +4362,7 @@ class Error(proto.Message):
     details = proto.Field(
         proto.MESSAGE,
         number=1,
-        message=gr_status.Status,
+        message=status_pb2.Status,
     )
     timestamps = proto.RepeatedField(
         proto.MESSAGE,

@@ -101,7 +101,7 @@ class ListTenantsAsyncPager:
             response: tenant_service.ListTenantsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

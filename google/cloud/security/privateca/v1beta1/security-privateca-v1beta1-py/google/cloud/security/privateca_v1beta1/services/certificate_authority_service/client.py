@@ -51,13 +51,13 @@ class CertificateAuthorityServiceClientMeta(type):
     objects.
     """
     _transport_registry = OrderedDict()  # type: Dict[str, Type[CertificateAuthorityServiceTransport]]
-    _transport_registry['grpc'] = CertificateAuthorityServiceGrpcTransport
-    _transport_registry['grpc_asyncio'] = CertificateAuthorityServiceGrpcAsyncIOTransport
+    _transport_registry["grpc"] = CertificateAuthorityServiceGrpcTransport
+    _transport_registry["grpc_asyncio"] = CertificateAuthorityServiceGrpcAsyncIOTransport
 
     def get_transport_class(cls,
             label: str = None,
         ) -> Type[CertificateAuthorityServiceTransport]:
-        """Return an appropriate transport class.
+        """Returns an appropriate transport class.
 
         Args:
             label: The name of the desired transport. If none is
@@ -83,7 +83,8 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
     @staticmethod
     def _get_default_mtls_endpoint(api_endpoint):
-        """Convert api endpoint to mTLS endpoint.
+        """Converts api endpoint to mTLS endpoint.
+
         Convert "*.sandbox.googleapis.com" and "*.googleapis.com" to
         "*.mtls.sandbox.googleapis.com" and "*.mtls.googleapis.com" respectively.
         Args:
@@ -110,14 +111,15 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
         return api_endpoint.replace(".googleapis.com", ".mtls.googleapis.com")
 
-    DEFAULT_ENDPOINT = 'privateca.googleapis.com'
+    DEFAULT_ENDPOINT = "privateca.googleapis.com"
     DEFAULT_MTLS_ENDPOINT = _get_default_mtls_endpoint.__func__(  # type: ignore
         DEFAULT_ENDPOINT
     )
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -134,7 +136,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -147,67 +149,68 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         """
         credentials = service_account.Credentials.from_service_account_file(
             filename)
-        kwargs['credentials'] = credentials
+        kwargs["credentials"] = credentials
         return cls(*args, **kwargs)
 
     from_service_account_json = from_service_account_file
 
     @property
     def transport(self) -> CertificateAuthorityServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
-            CertificateAuthorityServiceTransport: The transport used by the client instance.
+            CertificateAuthorityServiceTransport: The transport used by the client
+                instance.
         """
         return self._transport
 
     @staticmethod
     def certificate_path(project: str,location: str,certificate_authority: str,certificate: str,) -> str:
-        """Return a fully-qualified certificate string."""
+        """Returns a fully-qualified certificate string."""
         return "projects/{project}/locations/{location}/certificateAuthorities/{certificate_authority}/certificates/{certificate}".format(project=project, location=location, certificate_authority=certificate_authority, certificate=certificate, )
 
     @staticmethod
     def parse_certificate_path(path: str) -> Dict[str,str]:
-        """Parse a certificate path into its component segments."""
+        """Parses a certificate path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/certificateAuthorities/(?P<certificate_authority>.+?)/certificates/(?P<certificate>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def certificate_authority_path(project: str,location: str,certificate_authority: str,) -> str:
-        """Return a fully-qualified certificate_authority string."""
+        """Returns a fully-qualified certificate_authority string."""
         return "projects/{project}/locations/{location}/certificateAuthorities/{certificate_authority}".format(project=project, location=location, certificate_authority=certificate_authority, )
 
     @staticmethod
     def parse_certificate_authority_path(path: str) -> Dict[str,str]:
-        """Parse a certificate_authority path into its component segments."""
+        """Parses a certificate_authority path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/certificateAuthorities/(?P<certificate_authority>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def certificate_revocation_list_path(project: str,location: str,certificate_authority: str,certificate_revocation_list: str,) -> str:
-        """Return a fully-qualified certificate_revocation_list string."""
+        """Returns a fully-qualified certificate_revocation_list string."""
         return "projects/{project}/locations/{location}/certificateAuthorities/{certificate_authority}/certificateRevocationLists/{certificate_revocation_list}".format(project=project, location=location, certificate_authority=certificate_authority, certificate_revocation_list=certificate_revocation_list, )
 
     @staticmethod
     def parse_certificate_revocation_list_path(path: str) -> Dict[str,str]:
-        """Parse a certificate_revocation_list path into its component segments."""
+        """Parses a certificate_revocation_list path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/certificateAuthorities/(?P<certificate_authority>.+?)/certificateRevocationLists/(?P<certificate_revocation_list>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def reusable_config_path(project: str,location: str,reusable_config: str,) -> str:
-        """Return a fully-qualified reusable_config string."""
+        """Returns a fully-qualified reusable_config string."""
         return "projects/{project}/locations/{location}/reusableConfigs/{reusable_config}".format(project=project, location=location, reusable_config=reusable_config, )
 
     @staticmethod
     def parse_reusable_config_path(path: str) -> Dict[str,str]:
-        """Parse a reusable_config path into its component segments."""
+        """Parses a reusable_config path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/reusableConfigs/(?P<reusable_config>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
-        """Return a fully-qualified billing_account string."""
+        """Returns a fully-qualified billing_account string."""
         return "billingAccounts/{billing_account}".format(billing_account=billing_account, )
 
     @staticmethod
@@ -218,7 +221,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
     @staticmethod
     def common_folder_path(folder: str, ) -> str:
-        """Return a fully-qualified folder string."""
+        """Returns a fully-qualified folder string."""
         return "folders/{folder}".format(folder=folder, )
 
     @staticmethod
@@ -229,7 +232,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
     @staticmethod
     def common_organization_path(organization: str, ) -> str:
-        """Return a fully-qualified organization string."""
+        """Returns a fully-qualified organization string."""
         return "organizations/{organization}".format(organization=organization, )
 
     @staticmethod
@@ -240,7 +243,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
     @staticmethod
     def common_project_path(project: str, ) -> str:
-        """Return a fully-qualified project string."""
+        """Returns a fully-qualified project string."""
         return "projects/{project}".format(project=project, )
 
     @staticmethod
@@ -251,7 +254,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 
     @staticmethod
     def common_location_path(project: str, location: str, ) -> str:
-        """Return a fully-qualified location string."""
+        """Returns a fully-qualified location string."""
         return "projects/{project}/locations/{location}".format(project=project, location=location, )
 
     @staticmethod
@@ -266,7 +269,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the certificate authority service client.
+        """Instantiates the certificate authority service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -319,7 +322,10 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
                 client_cert_source_func = client_options.client_cert_source
             else:
                 is_mtls = mtls.has_default_client_cert_source()
-                client_cert_source_func = mtls.default_client_cert_source() if is_mtls else None
+                if is_mtls:
+                    client_cert_source_func = mtls.default_client_cert_source()
+                else:
+                    client_cert_source_func = None
 
         # Figure out which api endpoint to use.
         if client_options.api_endpoint is not None:
@@ -331,10 +337,14 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
             elif use_mtls_env == "always":
                 api_endpoint = self.DEFAULT_MTLS_ENDPOINT
             elif use_mtls_env == "auto":
-                api_endpoint = self.DEFAULT_MTLS_ENDPOINT if is_mtls else self.DEFAULT_ENDPOINT
+                if is_mtls:
+                    api_endpoint = self.DEFAULT_MTLS_ENDPOINT
+                else:
+                    api_endpoint = self.DEFAULT_ENDPOINT
             else:
                 raise MutualTLSChannelError(
-                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted values: never, auto, always"
+                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted "
+                    "values: never, auto, always"
                 )
 
         # Save or instantiate the transport.
@@ -343,12 +353,12 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         if isinstance(transport, CertificateAuthorityServiceTransport):
             # transport is a CertificateAuthorityServiceTransport instance.
             if credentials or client_options.credentials_file:
-                raise ValueError('When providing a transport instance, '
-                                 'provide its credentials directly.')
+                raise ValueError("When providing a transport instance, "
+                                 "provide its credentials directly.")
             if client_options.scopes:
                 raise ValueError(
-                    "When providing a transport instance, "
-                    "provide its scopes directly."
+                    "When providing a transport instance, provide its scopes "
+                    "directly."
                 )
             self._transport = transport
         else:
@@ -456,7 +466,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -535,7 +545,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -617,7 +627,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -704,7 +714,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -794,7 +804,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('certificate.name', request.certificate.name),
+                ("certificate.name", request.certificate.name),
             )),
         )
 
@@ -885,7 +895,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -998,7 +1008,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1089,7 +1099,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1180,7 +1190,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1275,7 +1285,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1357,7 +1367,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1438,7 +1448,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1531,7 +1541,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1623,7 +1633,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1723,7 +1733,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('certificate_authority.name', request.certificate_authority.name),
+                ("certificate_authority.name", request.certificate_authority.name),
             )),
         )
 
@@ -1812,7 +1822,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1894,7 +1904,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1994,7 +2004,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('certificate_revocation_list.name', request.certificate_revocation_list.name),
+                ("certificate_revocation_list.name", request.certificate_revocation_list.name),
             )),
         )
 
@@ -2081,7 +2091,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -2162,7 +2172,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -2193,7 +2203,7 @@ class CertificateAuthorityServiceClient(metaclass=CertificateAuthorityServiceCli
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-security-privateca',
+            "google-cloud-security-privateca",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -2201,5 +2211,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'CertificateAuthorityServiceClient',
+    "CertificateAuthorityServiceClient",
 )

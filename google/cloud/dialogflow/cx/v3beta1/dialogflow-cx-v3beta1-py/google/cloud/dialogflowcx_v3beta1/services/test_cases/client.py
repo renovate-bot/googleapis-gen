@@ -50,13 +50,13 @@ class TestCasesClientMeta(type):
     objects.
     """
     _transport_registry = OrderedDict()  # type: Dict[str, Type[TestCasesTransport]]
-    _transport_registry['grpc'] = TestCasesGrpcTransport
-    _transport_registry['grpc_asyncio'] = TestCasesGrpcAsyncIOTransport
+    _transport_registry["grpc"] = TestCasesGrpcTransport
+    _transport_registry["grpc_asyncio"] = TestCasesGrpcAsyncIOTransport
 
     def get_transport_class(cls,
             label: str = None,
         ) -> Type[TestCasesTransport]:
-        """Return an appropriate transport class.
+        """Returns an appropriate transport class.
 
         Args:
             label: The name of the desired transport. If none is
@@ -82,7 +82,8 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
 
     @staticmethod
     def _get_default_mtls_endpoint(api_endpoint):
-        """Convert api endpoint to mTLS endpoint.
+        """Converts api endpoint to mTLS endpoint.
+
         Convert "*.sandbox.googleapis.com" and "*.googleapis.com" to
         "*.mtls.sandbox.googleapis.com" and "*.mtls.googleapis.com" respectively.
         Args:
@@ -109,14 +110,15 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
 
         return api_endpoint.replace(".googleapis.com", ".mtls.googleapis.com")
 
-    DEFAULT_ENDPOINT = 'dialogflow.googleapis.com'
+    DEFAULT_ENDPOINT = "dialogflow.googleapis.com"
     DEFAULT_MTLS_ENDPOINT = _get_default_mtls_endpoint.__func__(  # type: ignore
         DEFAULT_ENDPOINT
     )
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -133,7 +135,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -146,133 +148,134 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
         """
         credentials = service_account.Credentials.from_service_account_file(
             filename)
-        kwargs['credentials'] = credentials
+        kwargs["credentials"] = credentials
         return cls(*args, **kwargs)
 
     from_service_account_json = from_service_account_file
 
     @property
     def transport(self) -> TestCasesTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
-            TestCasesTransport: The transport used by the client instance.
+            TestCasesTransport: The transport used by the client
+                instance.
         """
         return self._transport
 
     @staticmethod
     def agent_path(project: str,location: str,agent: str,) -> str:
-        """Return a fully-qualified agent string."""
+        """Returns a fully-qualified agent string."""
         return "projects/{project}/locations/{location}/agents/{agent}".format(project=project, location=location, agent=agent, )
 
     @staticmethod
     def parse_agent_path(path: str) -> Dict[str,str]:
-        """Parse a agent path into its component segments."""
+        """Parses a agent path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/agents/(?P<agent>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def entity_type_path(project: str,location: str,agent: str,entity_type: str,) -> str:
-        """Return a fully-qualified entity_type string."""
+        """Returns a fully-qualified entity_type string."""
         return "projects/{project}/locations/{location}/agents/{agent}/entityTypes/{entity_type}".format(project=project, location=location, agent=agent, entity_type=entity_type, )
 
     @staticmethod
     def parse_entity_type_path(path: str) -> Dict[str,str]:
-        """Parse a entity_type path into its component segments."""
+        """Parses a entity_type path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/agents/(?P<agent>.+?)/entityTypes/(?P<entity_type>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def environment_path(project: str,location: str,agent: str,environment: str,) -> str:
-        """Return a fully-qualified environment string."""
+        """Returns a fully-qualified environment string."""
         return "projects/{project}/locations/{location}/agents/{agent}/environments/{environment}".format(project=project, location=location, agent=agent, environment=environment, )
 
     @staticmethod
     def parse_environment_path(path: str) -> Dict[str,str]:
-        """Parse a environment path into its component segments."""
+        """Parses a environment path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/agents/(?P<agent>.+?)/environments/(?P<environment>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def flow_path(project: str,location: str,agent: str,flow: str,) -> str:
-        """Return a fully-qualified flow string."""
+        """Returns a fully-qualified flow string."""
         return "projects/{project}/locations/{location}/agents/{agent}/flows/{flow}".format(project=project, location=location, agent=agent, flow=flow, )
 
     @staticmethod
     def parse_flow_path(path: str) -> Dict[str,str]:
-        """Parse a flow path into its component segments."""
+        """Parses a flow path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/agents/(?P<agent>.+?)/flows/(?P<flow>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def intent_path(project: str,location: str,agent: str,intent: str,) -> str:
-        """Return a fully-qualified intent string."""
+        """Returns a fully-qualified intent string."""
         return "projects/{project}/locations/{location}/agents/{agent}/intents/{intent}".format(project=project, location=location, agent=agent, intent=intent, )
 
     @staticmethod
     def parse_intent_path(path: str) -> Dict[str,str]:
-        """Parse a intent path into its component segments."""
+        """Parses a intent path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/agents/(?P<agent>.+?)/intents/(?P<intent>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def page_path(project: str,location: str,agent: str,flow: str,page: str,) -> str:
-        """Return a fully-qualified page string."""
+        """Returns a fully-qualified page string."""
         return "projects/{project}/locations/{location}/agents/{agent}/flows/{flow}/pages/{page}".format(project=project, location=location, agent=agent, flow=flow, page=page, )
 
     @staticmethod
     def parse_page_path(path: str) -> Dict[str,str]:
-        """Parse a page path into its component segments."""
+        """Parses a page path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/agents/(?P<agent>.+?)/flows/(?P<flow>.+?)/pages/(?P<page>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def test_case_path(project: str,location: str,agent: str,test_case: str,) -> str:
-        """Return a fully-qualified test_case string."""
+        """Returns a fully-qualified test_case string."""
         return "projects/{project}/locations/{location}/agents/{agent}/testCases/{test_case}".format(project=project, location=location, agent=agent, test_case=test_case, )
 
     @staticmethod
     def parse_test_case_path(path: str) -> Dict[str,str]:
-        """Parse a test_case path into its component segments."""
+        """Parses a test_case path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/agents/(?P<agent>.+?)/testCases/(?P<test_case>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def test_case_result_path(project: str,location: str,agent: str,test_case: str,result: str,) -> str:
-        """Return a fully-qualified test_case_result string."""
+        """Returns a fully-qualified test_case_result string."""
         return "projects/{project}/locations/{location}/agents/{agent}/testCases/{test_case}/results/{result}".format(project=project, location=location, agent=agent, test_case=test_case, result=result, )
 
     @staticmethod
     def parse_test_case_result_path(path: str) -> Dict[str,str]:
-        """Parse a test_case_result path into its component segments."""
+        """Parses a test_case_result path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/agents/(?P<agent>.+?)/testCases/(?P<test_case>.+?)/results/(?P<result>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def transition_route_group_path(project: str,location: str,agent: str,flow: str,transition_route_group: str,) -> str:
-        """Return a fully-qualified transition_route_group string."""
+        """Returns a fully-qualified transition_route_group string."""
         return "projects/{project}/locations/{location}/agents/{agent}/flows/{flow}/transitionRouteGroups/{transition_route_group}".format(project=project, location=location, agent=agent, flow=flow, transition_route_group=transition_route_group, )
 
     @staticmethod
     def parse_transition_route_group_path(path: str) -> Dict[str,str]:
-        """Parse a transition_route_group path into its component segments."""
+        """Parses a transition_route_group path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/agents/(?P<agent>.+?)/flows/(?P<flow>.+?)/transitionRouteGroups/(?P<transition_route_group>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def webhook_path(project: str,location: str,agent: str,webhook: str,) -> str:
-        """Return a fully-qualified webhook string."""
+        """Returns a fully-qualified webhook string."""
         return "projects/{project}/locations/{location}/agents/{agent}/webhooks/{webhook}".format(project=project, location=location, agent=agent, webhook=webhook, )
 
     @staticmethod
     def parse_webhook_path(path: str) -> Dict[str,str]:
-        """Parse a webhook path into its component segments."""
+        """Parses a webhook path into its component segments."""
         m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/agents/(?P<agent>.+?)/webhooks/(?P<webhook>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
-        """Return a fully-qualified billing_account string."""
+        """Returns a fully-qualified billing_account string."""
         return "billingAccounts/{billing_account}".format(billing_account=billing_account, )
 
     @staticmethod
@@ -283,7 +286,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
 
     @staticmethod
     def common_folder_path(folder: str, ) -> str:
-        """Return a fully-qualified folder string."""
+        """Returns a fully-qualified folder string."""
         return "folders/{folder}".format(folder=folder, )
 
     @staticmethod
@@ -294,7 +297,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
 
     @staticmethod
     def common_organization_path(organization: str, ) -> str:
-        """Return a fully-qualified organization string."""
+        """Returns a fully-qualified organization string."""
         return "organizations/{organization}".format(organization=organization, )
 
     @staticmethod
@@ -305,7 +308,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
 
     @staticmethod
     def common_project_path(project: str, ) -> str:
-        """Return a fully-qualified project string."""
+        """Returns a fully-qualified project string."""
         return "projects/{project}".format(project=project, )
 
     @staticmethod
@@ -316,7 +319,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
 
     @staticmethod
     def common_location_path(project: str, location: str, ) -> str:
-        """Return a fully-qualified location string."""
+        """Returns a fully-qualified location string."""
         return "projects/{project}/locations/{location}".format(project=project, location=location, )
 
     @staticmethod
@@ -331,7 +334,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the test cases client.
+        """Instantiates the test cases client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -384,7 +387,10 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
                 client_cert_source_func = client_options.client_cert_source
             else:
                 is_mtls = mtls.has_default_client_cert_source()
-                client_cert_source_func = mtls.default_client_cert_source() if is_mtls else None
+                if is_mtls:
+                    client_cert_source_func = mtls.default_client_cert_source()
+                else:
+                    client_cert_source_func = None
 
         # Figure out which api endpoint to use.
         if client_options.api_endpoint is not None:
@@ -396,10 +402,14 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
             elif use_mtls_env == "always":
                 api_endpoint = self.DEFAULT_MTLS_ENDPOINT
             elif use_mtls_env == "auto":
-                api_endpoint = self.DEFAULT_MTLS_ENDPOINT if is_mtls else self.DEFAULT_ENDPOINT
+                if is_mtls:
+                    api_endpoint = self.DEFAULT_MTLS_ENDPOINT
+                else:
+                    api_endpoint = self.DEFAULT_ENDPOINT
             else:
                 raise MutualTLSChannelError(
-                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted values: never, auto, always"
+                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted "
+                    "values: never, auto, always"
                 )
 
         # Save or instantiate the transport.
@@ -408,12 +418,12 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
         if isinstance(transport, TestCasesTransport):
             # transport is a TestCasesTransport instance.
             if credentials or client_options.credentials_file:
-                raise ValueError('When providing a transport instance, '
-                                 'provide its credentials directly.')
+                raise ValueError("When providing a transport instance, "
+                                 "provide its credentials directly.")
             if client_options.scopes:
                 raise ValueError(
-                    "When providing a transport instance, "
-                    "provide its scopes directly."
+                    "When providing a transport instance, provide its scopes "
+                    "directly."
                 )
             self._transport = transport
         else:
@@ -491,7 +501,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -569,7 +579,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -639,7 +649,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -720,7 +730,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -805,7 +815,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('test_case.name', request.test_case.name),
+                ("test_case.name", request.test_case.name),
             )),
         )
 
@@ -865,7 +875,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -933,7 +943,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -997,7 +1007,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('agent', request.agent),
+                ("agent", request.agent),
             )),
         )
 
@@ -1060,7 +1070,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1130,7 +1140,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1218,7 +1228,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('parent', request.parent),
+                ("parent", request.parent),
             )),
         )
 
@@ -1302,7 +1312,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -1324,7 +1334,7 @@ class TestCasesClient(metaclass=TestCasesClientMeta):
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-dialogflowcx',
+            "google-cloud-dialogflowcx",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -1332,5 +1342,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'TestCasesClient',
+    "TestCasesClient",
 )

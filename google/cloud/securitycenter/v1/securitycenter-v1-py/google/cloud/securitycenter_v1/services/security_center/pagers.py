@@ -102,7 +102,7 @@ class GroupAssetsAsyncPager:
             response: securitycenter_service.GroupAssetsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -224,7 +224,7 @@ class GroupFindingsAsyncPager:
             response: securitycenter_service.GroupFindingsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -346,7 +346,7 @@ class ListAssetsAsyncPager:
             response: securitycenter_service.ListAssetsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -468,7 +468,7 @@ class ListFindingsAsyncPager:
             response: securitycenter_service.ListFindingsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -590,7 +590,7 @@ class ListNotificationConfigsAsyncPager:
             response: securitycenter_service.ListNotificationConfigsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -712,7 +712,7 @@ class ListSourcesAsyncPager:
             response: securitycenter_service.ListSourcesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

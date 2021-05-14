@@ -54,7 +54,8 @@ class UserLicenseServiceAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -69,7 +70,7 @@ class UserLicenseServiceAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -86,7 +87,7 @@ class UserLicenseServiceAsyncClient:
 
     @property
     def transport(self) -> UserLicenseServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             UserLicenseServiceTransport: The transport used by the client instance.
@@ -97,11 +98,11 @@ class UserLicenseServiceAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, UserLicenseServiceTransport] = 'grpc_asyncio',
+            transport: Union[str, UserLicenseServiceTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the user license service client.
+        """Instantiates the user license service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -173,8 +174,8 @@ class UserLicenseServiceAsyncClient:
             self._client._transport.get,
             default_retry=retries.Retry(
 initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
-                    exceptions.Unknown,
+                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.Unknown,
                 ),
                 deadline=60.0,
             ),
@@ -200,7 +201,7 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'ccc-hosted-marketplace',
+            "ccc-hosted-marketplace",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -208,5 +209,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'UserLicenseServiceAsyncClient',
+    "UserLicenseServiceAsyncClient",
 )

@@ -77,7 +77,7 @@ class IamPolicyAnalysisResult(proto.Message):
         code = proto.Field(
             proto.ENUM,
             number=1,
-            enum=gr_code.Code,
+            enum=code_pb2.Code,
         )
         cause = proto.Field(
             proto.STRING,

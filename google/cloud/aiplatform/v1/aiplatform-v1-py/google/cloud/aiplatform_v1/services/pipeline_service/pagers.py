@@ -101,7 +101,7 @@ class ListTrainingPipelinesAsyncPager:
             response: pipeline_service.ListTrainingPipelinesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

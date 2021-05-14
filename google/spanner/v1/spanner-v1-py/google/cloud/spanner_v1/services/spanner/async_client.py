@@ -68,7 +68,8 @@ class SpannerAsyncClient:
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -83,7 +84,7 @@ class SpannerAsyncClient:
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
-        file.
+            file.
 
         Args:
             filename (str): The path to the service account private key json
@@ -100,7 +101,7 @@ class SpannerAsyncClient:
 
     @property
     def transport(self) -> SpannerTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
             SpannerTransport: The transport used by the client instance.
@@ -111,11 +112,11 @@ class SpannerAsyncClient:
 
     def __init__(self, *,
             credentials: ga_credentials.Credentials = None,
-            transport: Union[str, SpannerTransport] = 'grpc_asyncio',
+            transport: Union[str, SpannerTransport] = "grpc_asyncio",
             client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the spanner client.
+        """Instantiates the spanner client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -209,8 +210,8 @@ class SpannerAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([database])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = spanner.CreateSessionRequest(request)
 
@@ -225,7 +226,7 @@ class SpannerAsyncClient:
             self._client._transport.create_session,
             default_retry=retries.Retry(
 initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
             ),
@@ -237,7 +238,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('database', request.database),
+                ("database", request.database),
             )),
         )
 
@@ -306,8 +307,8 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([database, session_count])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = spanner.BatchCreateSessionsRequest(request)
 
@@ -324,7 +325,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
             self._client._transport.batch_create_sessions,
             default_retry=retries.Retry(
 initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
             ),
@@ -336,7 +337,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('database', request.database),
+                ("database", request.database),
             )),
         )
 
@@ -389,8 +390,8 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = spanner.GetSessionRequest(request)
 
@@ -405,7 +406,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
             self._client._transport.get_session,
             default_retry=retries.Retry(
 initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
             ),
@@ -417,7 +418,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -473,8 +474,8 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([database])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = spanner.ListSessionsRequest(request)
 
@@ -489,7 +490,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
             self._client._transport.list_sessions,
             default_retry=retries.Retry(
 initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=3600.0,
             ),
@@ -501,7 +502,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('database', request.database),
+                ("database", request.database),
             )),
         )
 
@@ -559,8 +560,8 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = spanner.DeleteSessionRequest(request)
 
@@ -575,7 +576,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
             self._client._transport.delete_session,
             default_retry=retries.Retry(
 initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
             ),
@@ -587,7 +588,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('name', request.name),
+                ("name", request.name),
             )),
         )
 
@@ -647,7 +648,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
             self._client._transport.execute_sql,
             default_retry=retries.Retry(
 initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
             ),
@@ -659,7 +660,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('session', request.session),
+                ("session", request.session),
             )),
         )
 
@@ -723,7 +724,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('session', request.session),
+                ("session", request.session),
             )),
         )
 
@@ -822,7 +823,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
             self._client._transport.execute_batch_dml,
             default_retry=retries.Retry(
 initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
             ),
@@ -834,7 +835,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('session', request.session),
+                ("session", request.session),
             )),
         )
 
@@ -898,7 +899,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
             self._client._transport.read,
             default_retry=retries.Retry(
 initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
             ),
@@ -910,7 +911,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('session', request.session),
+                ("session", request.session),
             )),
         )
 
@@ -974,7 +975,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('session', request.session),
+                ("session", request.session),
             )),
         )
 
@@ -1037,8 +1038,8 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([session, options])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = spanner.BeginTransactionRequest(request)
 
@@ -1055,7 +1056,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
             self._client._transport.begin_transaction,
             default_retry=retries.Retry(
 initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
             ),
@@ -1067,7 +1068,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('session', request.session),
+                ("session", request.session),
             )),
         )
 
@@ -1169,8 +1170,8 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([session, transaction_id, mutations, single_use_transaction])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = spanner.CommitRequest(request)
 
@@ -1191,7 +1192,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
             self._client._transport.commit,
             default_retry=retries.Retry(
 initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=3600.0,
             ),
@@ -1203,7 +1204,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('session', request.session),
+                ("session", request.session),
             )),
         )
 
@@ -1267,8 +1268,8 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([session, transaction_id])
         if request is not None and has_flattened_params:
-            raise ValueError('If the `request` argument is set, then none of '
-                             'the individual field arguments should be set.')
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
 
         request = spanner.RollbackRequest(request)
 
@@ -1285,7 +1286,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
             self._client._transport.rollback,
             default_retry=retries.Retry(
 initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
             ),
@@ -1297,7 +1298,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('session', request.session),
+                ("session", request.session),
             )),
         )
 
@@ -1357,7 +1358,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
             self._client._transport.partition_query,
             default_retry=retries.Retry(
 initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
             ),
@@ -1369,7 +1370,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('session', request.session),
+                ("session", request.session),
             )),
         )
 
@@ -1435,7 +1436,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
             self._client._transport.partition_read,
             default_retry=retries.Retry(
 initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable,
+                    core_exceptions.ServiceUnavailable,
                 ),
                 deadline=30.0,
             ),
@@ -1447,7 +1448,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('session', request.session),
+                ("session", request.session),
             )),
         )
 
@@ -1469,7 +1470,7 @@ initial=0.25,maximum=32.0,multiplier=1.3,                predicate=retries.if_ex
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-cloud-spanner',
+            "google-cloud-spanner",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -1477,5 +1478,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    'SpannerAsyncClient',
+    "SpannerAsyncClient",
 )

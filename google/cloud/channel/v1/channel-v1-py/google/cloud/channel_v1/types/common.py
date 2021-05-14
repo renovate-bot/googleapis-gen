@@ -177,7 +177,7 @@ class Value(proto.Message):
         proto.MESSAGE,
         number=4,
         oneof='kind',
-        message=gp_any.Any,
+        message=any_pb2.Any,
     )
     bool_value = proto.Field(
         proto.BOOL,

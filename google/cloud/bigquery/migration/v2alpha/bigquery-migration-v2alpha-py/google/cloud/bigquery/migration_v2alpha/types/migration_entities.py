@@ -144,7 +144,7 @@ class MigrationTask(proto.Message):
     details = proto.Field(
         proto.MESSAGE,
         number=3,
-        message=gp_any.Any,
+        message=any_pb2.Any,
     )
     state = proto.Field(
         proto.ENUM,

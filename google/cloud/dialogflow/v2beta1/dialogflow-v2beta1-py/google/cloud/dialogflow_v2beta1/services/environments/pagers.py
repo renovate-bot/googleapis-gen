@@ -100,7 +100,7 @@ class ListEnvironmentsAsyncPager:
             response: environment.ListEnvironmentsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -222,7 +222,7 @@ class GetEnvironmentHistoryAsyncPager:
             response: environment.EnvironmentHistory,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and

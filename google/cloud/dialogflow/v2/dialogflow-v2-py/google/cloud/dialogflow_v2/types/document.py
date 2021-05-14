@@ -133,7 +133,7 @@ class Document(proto.Message):
         status = proto.Field(
             proto.MESSAGE,
             number=2,
-            message=gr_status.Status,
+            message=status_pb2.Status,
         )
 
     name = proto.Field(

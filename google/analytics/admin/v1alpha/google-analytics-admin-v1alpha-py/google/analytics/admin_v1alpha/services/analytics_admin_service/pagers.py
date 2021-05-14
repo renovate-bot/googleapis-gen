@@ -101,7 +101,7 @@ class ListAccountsAsyncPager:
             response: analytics_admin.ListAccountsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -223,7 +223,7 @@ class ListAccountSummariesAsyncPager:
             response: analytics_admin.ListAccountSummariesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -345,7 +345,7 @@ class ListPropertiesAsyncPager:
             response: analytics_admin.ListPropertiesResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -467,7 +467,7 @@ class ListUserLinksAsyncPager:
             response: analytics_admin.ListUserLinksResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -589,7 +589,7 @@ class AuditUserLinksAsyncPager:
             response: analytics_admin.AuditUserLinksResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -711,7 +711,7 @@ class ListWebDataStreamsAsyncPager:
             response: analytics_admin.ListWebDataStreamsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -833,7 +833,7 @@ class ListIosAppDataStreamsAsyncPager:
             response: analytics_admin.ListIosAppDataStreamsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -955,7 +955,7 @@ class ListAndroidAppDataStreamsAsyncPager:
             response: analytics_admin.ListAndroidAppDataStreamsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -1077,7 +1077,7 @@ class ListFirebaseLinksAsyncPager:
             response: analytics_admin.ListFirebaseLinksResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -1199,7 +1199,7 @@ class ListGoogleAdsLinksAsyncPager:
             response: analytics_admin.ListGoogleAdsLinksResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
@@ -1321,7 +1321,7 @@ class SearchChangeHistoryEventsAsyncPager:
             response: analytics_admin.SearchChangeHistoryEventsResponse,
             *,
             metadata: Sequence[Tuple[str, str]] = ()):
-        """Instantiate the pager.
+        """Instantiates the pager.
 
         Args:
             method (Callable): The method that was originally called, and
