@@ -817,6 +817,7 @@ def test_create_secret(transport: str = 'grpc', request_type=service.CreateSecre
         # Designate an appropriate return value for the call.
         call.return_value = resources.Secret(
             name='name_value',
+            etag='etag_value',
             expire_time=timestamp_pb2.Timestamp(seconds=751),
         )
         response = client.create_secret(request)
@@ -829,6 +830,7 @@ def test_create_secret(transport: str = 'grpc', request_type=service.CreateSecre
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.Secret)
     assert response.name == 'name_value'
+    assert response.etag == 'etag_value'
 
 
 def test_create_secret_from_dict():
@@ -871,6 +873,7 @@ async def test_create_secret_async(transport: str = 'grpc_asyncio', request_type
         # Designate an appropriate return value for the call.
         call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.Secret(
             name='name_value',
+            etag='etag_value',
         ))
         response = await client.create_secret(request)
 
@@ -882,6 +885,7 @@ async def test_create_secret_async(transport: str = 'grpc_asyncio', request_type
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.Secret)
     assert response.name == 'name_value'
+    assert response.etag == 'etag_value'
 
 
 @pytest.mark.asyncio
@@ -1062,6 +1066,7 @@ def test_add_secret_version(transport: str = 'grpc', request_type=service.AddSec
         call.return_value = resources.SecretVersion(
             name='name_value',
             state=resources.SecretVersion.State.ENABLED,
+            etag='etag_value',
         )
         response = client.add_secret_version(request)
 
@@ -1074,6 +1079,7 @@ def test_add_secret_version(transport: str = 'grpc', request_type=service.AddSec
     assert isinstance(response, resources.SecretVersion)
     assert response.name == 'name_value'
     assert response.state == resources.SecretVersion.State.ENABLED
+    assert response.etag == 'etag_value'
 
 
 def test_add_secret_version_from_dict():
@@ -1117,6 +1123,7 @@ async def test_add_secret_version_async(transport: str = 'grpc_asyncio', request
         call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.SecretVersion(
             name='name_value',
             state=resources.SecretVersion.State.ENABLED,
+            etag='etag_value',
         ))
         response = await client.add_secret_version(request)
 
@@ -1129,6 +1136,7 @@ async def test_add_secret_version_async(transport: str = 'grpc_asyncio', request
     assert isinstance(response, resources.SecretVersion)
     assert response.name == 'name_value'
     assert response.state == resources.SecretVersion.State.ENABLED
+    assert response.etag == 'etag_value'
 
 
 @pytest.mark.asyncio
@@ -1302,6 +1310,7 @@ def test_get_secret(transport: str = 'grpc', request_type=service.GetSecretReque
         # Designate an appropriate return value for the call.
         call.return_value = resources.Secret(
             name='name_value',
+            etag='etag_value',
             expire_time=timestamp_pb2.Timestamp(seconds=751),
         )
         response = client.get_secret(request)
@@ -1314,6 +1323,7 @@ def test_get_secret(transport: str = 'grpc', request_type=service.GetSecretReque
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.Secret)
     assert response.name == 'name_value'
+    assert response.etag == 'etag_value'
 
 
 def test_get_secret_from_dict():
@@ -1356,6 +1366,7 @@ async def test_get_secret_async(transport: str = 'grpc_asyncio', request_type=se
         # Designate an appropriate return value for the call.
         call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.Secret(
             name='name_value',
+            etag='etag_value',
         ))
         response = await client.get_secret(request)
 
@@ -1367,6 +1378,7 @@ async def test_get_secret_async(transport: str = 'grpc_asyncio', request_type=se
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.Secret)
     assert response.name == 'name_value'
+    assert response.etag == 'etag_value'
 
 
 @pytest.mark.asyncio
@@ -1534,6 +1546,7 @@ def test_update_secret(transport: str = 'grpc', request_type=service.UpdateSecre
         # Designate an appropriate return value for the call.
         call.return_value = resources.Secret(
             name='name_value',
+            etag='etag_value',
             expire_time=timestamp_pb2.Timestamp(seconds=751),
         )
         response = client.update_secret(request)
@@ -1546,6 +1559,7 @@ def test_update_secret(transport: str = 'grpc', request_type=service.UpdateSecre
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.Secret)
     assert response.name == 'name_value'
+    assert response.etag == 'etag_value'
 
 
 def test_update_secret_from_dict():
@@ -1588,6 +1602,7 @@ async def test_update_secret_async(transport: str = 'grpc_asyncio', request_type
         # Designate an appropriate return value for the call.
         call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.Secret(
             name='name_value',
+            etag='etag_value',
         ))
         response = await client.update_secret(request)
 
@@ -1599,6 +1614,7 @@ async def test_update_secret_async(transport: str = 'grpc_asyncio', request_type
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.Secret)
     assert response.name == 'name_value'
+    assert response.etag == 'etag_value'
 
 
 @pytest.mark.asyncio
@@ -2419,6 +2435,7 @@ def test_get_secret_version(transport: str = 'grpc', request_type=service.GetSec
         call.return_value = resources.SecretVersion(
             name='name_value',
             state=resources.SecretVersion.State.ENABLED,
+            etag='etag_value',
         )
         response = client.get_secret_version(request)
 
@@ -2431,6 +2448,7 @@ def test_get_secret_version(transport: str = 'grpc', request_type=service.GetSec
     assert isinstance(response, resources.SecretVersion)
     assert response.name == 'name_value'
     assert response.state == resources.SecretVersion.State.ENABLED
+    assert response.etag == 'etag_value'
 
 
 def test_get_secret_version_from_dict():
@@ -2474,6 +2492,7 @@ async def test_get_secret_version_async(transport: str = 'grpc_asyncio', request
         call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.SecretVersion(
             name='name_value',
             state=resources.SecretVersion.State.ENABLED,
+            etag='etag_value',
         ))
         response = await client.get_secret_version(request)
 
@@ -2486,6 +2505,7 @@ async def test_get_secret_version_async(transport: str = 'grpc_asyncio', request
     assert isinstance(response, resources.SecretVersion)
     assert response.name == 'name_value'
     assert response.state == resources.SecretVersion.State.ENABLED
+    assert response.etag == 'etag_value'
 
 
 @pytest.mark.asyncio
@@ -2885,6 +2905,7 @@ def test_disable_secret_version(transport: str = 'grpc', request_type=service.Di
         call.return_value = resources.SecretVersion(
             name='name_value',
             state=resources.SecretVersion.State.ENABLED,
+            etag='etag_value',
         )
         response = client.disable_secret_version(request)
 
@@ -2897,6 +2918,7 @@ def test_disable_secret_version(transport: str = 'grpc', request_type=service.Di
     assert isinstance(response, resources.SecretVersion)
     assert response.name == 'name_value'
     assert response.state == resources.SecretVersion.State.ENABLED
+    assert response.etag == 'etag_value'
 
 
 def test_disable_secret_version_from_dict():
@@ -2940,6 +2962,7 @@ async def test_disable_secret_version_async(transport: str = 'grpc_asyncio', req
         call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.SecretVersion(
             name='name_value',
             state=resources.SecretVersion.State.ENABLED,
+            etag='etag_value',
         ))
         response = await client.disable_secret_version(request)
 
@@ -2952,6 +2975,7 @@ async def test_disable_secret_version_async(transport: str = 'grpc_asyncio', req
     assert isinstance(response, resources.SecretVersion)
     assert response.name == 'name_value'
     assert response.state == resources.SecretVersion.State.ENABLED
+    assert response.etag == 'etag_value'
 
 
 @pytest.mark.asyncio
@@ -3120,6 +3144,7 @@ def test_enable_secret_version(transport: str = 'grpc', request_type=service.Ena
         call.return_value = resources.SecretVersion(
             name='name_value',
             state=resources.SecretVersion.State.ENABLED,
+            etag='etag_value',
         )
         response = client.enable_secret_version(request)
 
@@ -3132,6 +3157,7 @@ def test_enable_secret_version(transport: str = 'grpc', request_type=service.Ena
     assert isinstance(response, resources.SecretVersion)
     assert response.name == 'name_value'
     assert response.state == resources.SecretVersion.State.ENABLED
+    assert response.etag == 'etag_value'
 
 
 def test_enable_secret_version_from_dict():
@@ -3175,6 +3201,7 @@ async def test_enable_secret_version_async(transport: str = 'grpc_asyncio', requ
         call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.SecretVersion(
             name='name_value',
             state=resources.SecretVersion.State.ENABLED,
+            etag='etag_value',
         ))
         response = await client.enable_secret_version(request)
 
@@ -3187,6 +3214,7 @@ async def test_enable_secret_version_async(transport: str = 'grpc_asyncio', requ
     assert isinstance(response, resources.SecretVersion)
     assert response.name == 'name_value'
     assert response.state == resources.SecretVersion.State.ENABLED
+    assert response.etag == 'etag_value'
 
 
 @pytest.mark.asyncio
@@ -3355,6 +3383,7 @@ def test_destroy_secret_version(transport: str = 'grpc', request_type=service.De
         call.return_value = resources.SecretVersion(
             name='name_value',
             state=resources.SecretVersion.State.ENABLED,
+            etag='etag_value',
         )
         response = client.destroy_secret_version(request)
 
@@ -3367,6 +3396,7 @@ def test_destroy_secret_version(transport: str = 'grpc', request_type=service.De
     assert isinstance(response, resources.SecretVersion)
     assert response.name == 'name_value'
     assert response.state == resources.SecretVersion.State.ENABLED
+    assert response.etag == 'etag_value'
 
 
 def test_destroy_secret_version_from_dict():
@@ -3410,6 +3440,7 @@ async def test_destroy_secret_version_async(transport: str = 'grpc_asyncio', req
         call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.SecretVersion(
             name='name_value',
             state=resources.SecretVersion.State.ENABLED,
+            etag='etag_value',
         ))
         response = await client.destroy_secret_version(request)
 
@@ -3422,6 +3453,7 @@ async def test_destroy_secret_version_async(transport: str = 'grpc_asyncio', req
     assert isinstance(response, resources.SecretVersion)
     assert response.name == 'name_value'
     assert response.state == resources.SecretVersion.State.ENABLED
+    assert response.etag == 'etag_value'
 
 
 @pytest.mark.asyncio

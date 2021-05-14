@@ -9,7 +9,9 @@ public interface RotationOrBuilder extends
 
   /**
    * <pre>
-   * Optional. Timestamp in UTC at which the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to rotate.
+   * Optional. Timestamp in UTC at which the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to rotate. Cannot be
+   * set to less than 300s (5 min) in the future and at most 3153600000s (100
+   * years).
    * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] MUST  be set if [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period] is set.
    * </pre>
    *
@@ -19,7 +21,9 @@ public interface RotationOrBuilder extends
   boolean hasNextRotationTime();
   /**
    * <pre>
-   * Optional. Timestamp in UTC at which the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to rotate.
+   * Optional. Timestamp in UTC at which the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to rotate. Cannot be
+   * set to less than 300s (5 min) in the future and at most 3153600000s (100
+   * years).
    * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] MUST  be set if [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period] is set.
    * </pre>
    *
@@ -29,7 +33,9 @@ public interface RotationOrBuilder extends
   com.google.protobuf.Timestamp getNextRotationTime();
   /**
    * <pre>
-   * Optional. Timestamp in UTC at which the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to rotate.
+   * Optional. Timestamp in UTC at which the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to rotate. Cannot be
+   * set to less than 300s (5 min) in the future and at most 3153600000s (100
+   * years).
    * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] MUST  be set if [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period] is set.
    * </pre>
    *

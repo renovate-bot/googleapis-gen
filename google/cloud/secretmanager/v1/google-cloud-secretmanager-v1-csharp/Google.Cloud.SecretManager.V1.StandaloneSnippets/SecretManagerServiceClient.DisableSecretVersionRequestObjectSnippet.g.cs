@@ -33,6 +33,7 @@ namespace Google.Cloud.SecretManager.V1.Snippets
             DisableSecretVersionRequest request = new DisableSecretVersionRequest
             {
                 SecretVersionName = SecretVersionName.FromProjectSecretSecretVersion("[PROJECT]", "[SECRET]", "[SECRET_VERSION]"),
+                Etag = "",
             };
             // Make the request
             SecretVersion response = secretManagerServiceClient.DisableSecretVersion(request);

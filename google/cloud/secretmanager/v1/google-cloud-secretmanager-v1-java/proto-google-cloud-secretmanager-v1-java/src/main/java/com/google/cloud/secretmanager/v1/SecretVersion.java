@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   private SecretVersion() {
     name_ = "";
     state_ = 0;
+    etag_ = "";
   }
 
   @java.lang.Override
@@ -103,6 +104,12 @@ private static final long serialVersionUID = 0L;
               replicationStatus_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            etag_ = s;
             break;
           }
           default: {
@@ -504,6 +511,52 @@ private static final long serialVersionUID = 0L;
     return getReplicationStatus();
   }
 
+  public static final int ETAG_FIELD_NUMBER = 6;
+  private volatile java.lang.Object etag_;
+  /**
+   * <pre>
+   * Output only. Etag of the currently stored [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+   * </pre>
+   *
+   * <code>string etag = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The etag.
+   */
+  @java.lang.Override
+  public java.lang.String getEtag() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      etag_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Output only. Etag of the currently stored [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+   * </pre>
+   *
+   * <code>string etag = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for etag.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getEtagBytes() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      etag_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -533,6 +586,9 @@ private static final long serialVersionUID = 0L;
     if (replicationStatus_ != null) {
       output.writeMessage(5, getReplicationStatus());
     }
+    if (!getEtagBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, etag_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -560,6 +616,9 @@ private static final long serialVersionUID = 0L;
     if (replicationStatus_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getReplicationStatus());
+    }
+    if (!getEtagBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, etag_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -594,6 +653,8 @@ private static final long serialVersionUID = 0L;
       if (!getReplicationStatus()
           .equals(other.getReplicationStatus())) return false;
     }
+    if (!getEtag()
+        .equals(other.getEtag())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -621,6 +682,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + REPLICATION_STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getReplicationStatus().hashCode();
     }
+    hash = (37 * hash) + ETAG_FIELD_NUMBER;
+    hash = (53 * hash) + getEtag().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -780,6 +843,8 @@ private static final long serialVersionUID = 0L;
         replicationStatus_ = null;
         replicationStatusBuilder_ = null;
       }
+      etag_ = "";
+
       return this;
     }
 
@@ -823,6 +888,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.replicationStatus_ = replicationStatusBuilder_.build();
       }
+      result.etag_ = etag_;
       onBuilt();
       return result;
     }
@@ -886,6 +952,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasReplicationStatus()) {
         mergeReplicationStatus(other.getReplicationStatus());
+      }
+      if (!other.getEtag().isEmpty()) {
+        etag_ = other.etag_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1582,6 +1652,102 @@ private static final long serialVersionUID = 0L;
         replicationStatus_ = null;
       }
       return replicationStatusBuilder_;
+    }
+
+    private java.lang.Object etag_ = "";
+    /**
+     * <pre>
+     * Output only. Etag of the currently stored [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * </pre>
+     *
+     * <code>string etag = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The etag.
+     */
+    public java.lang.String getEtag() {
+      java.lang.Object ref = etag_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        etag_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. Etag of the currently stored [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * </pre>
+     *
+     * <code>string etag = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for etag.
+     */
+    public com.google.protobuf.ByteString
+        getEtagBytes() {
+      java.lang.Object ref = etag_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        etag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. Etag of the currently stored [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * </pre>
+     *
+     * <code>string etag = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtag(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      etag_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Etag of the currently stored [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * </pre>
+     *
+     * <code>string etag = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEtag() {
+      
+      etag_ = getDefaultInstance().getEtag();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Etag of the currently stored [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * </pre>
+     *
+     * <code>string etag = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtagBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      etag_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

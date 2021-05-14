@@ -275,8 +275,9 @@ class GetSecretVersionRequest(proto.Message):
             Required. The resource name of the
             [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]
             in the format ``projects/*/secrets/*/versions/*``.
+
             ``projects/*/secrets/*/versions/latest`` is an alias to the
-            ``latest``
+            most recently created
             [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
     """
 
@@ -319,6 +320,10 @@ class AccessSecretVersionRequest(proto.Message):
             Required. The resource name of the
             [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]
             in the format ``projects/*/secrets/*/versions/*``.
+
+            ``projects/*/secrets/*/versions/latest`` is an alias to the
+            most recently created
+            [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
     """
 
     name = proto.Field(
@@ -360,11 +365,20 @@ class DeleteSecretRequest(proto.Message):
             Required. The resource name of the
             [Secret][google.cloud.secretmanager.v1.Secret] to delete in
             the format ``projects/*/secrets/*``.
+        etag (str):
+            Optional. Etag of the
+            [Secret][google.cloud.secretmanager.v1.Secret]. The request
+            succeeds if it matches the etag of the currently stored
+            secret object. If the etag is omitted, the request succeeds.
     """
 
     name = proto.Field(
         proto.STRING,
         number=1,
+    )
+    etag = proto.Field(
+        proto.STRING,
+        number=2,
     )
 
 
@@ -378,11 +392,21 @@ class DisableSecretVersionRequest(proto.Message):
             [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]
             to disable in the format
             ``projects/*/secrets/*/versions/*``.
+        etag (str):
+            Optional. Etag of the
+            [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+            The request succeeds if it matches the etag of the currently
+            stored secret version object. If the etag is omitted, the
+            request succeeds.
     """
 
     name = proto.Field(
         proto.STRING,
         number=1,
+    )
+    etag = proto.Field(
+        proto.STRING,
+        number=2,
     )
 
 
@@ -395,11 +419,21 @@ class EnableSecretVersionRequest(proto.Message):
             Required. The resource name of the
             [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]
             to enable in the format ``projects/*/secrets/*/versions/*``.
+        etag (str):
+            Optional. Etag of the
+            [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+            The request succeeds if it matches the etag of the currently
+            stored secret version object. If the etag is omitted, the
+            request succeeds.
     """
 
     name = proto.Field(
         proto.STRING,
         number=1,
+    )
+    etag = proto.Field(
+        proto.STRING,
+        number=2,
     )
 
 
@@ -413,11 +447,21 @@ class DestroySecretVersionRequest(proto.Message):
             [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]
             to destroy in the format
             ``projects/*/secrets/*/versions/*``.
+        etag (str):
+            Optional. Etag of the
+            [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+            The request succeeds if it matches the etag of the currently
+            stored secret version object. If the etag is omitted, the
+            request succeeds.
     """
 
     name = proto.Field(
         proto.STRING,
         number=1,
+    )
+    etag = proto.Field(
+        proto.STRING,
+        number=2,
     )
 
 

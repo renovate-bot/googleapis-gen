@@ -34,6 +34,7 @@ namespace Google.Cloud.SecretManager.V1.Snippets
             DeleteSecretRequest request = new DeleteSecretRequest
             {
                 SecretName = SecretName.FromProjectSecret("[PROJECT]", "[SECRET]"),
+                Etag = "",
             };
             // Make the request
             await secretManagerServiceClient.DeleteSecretAsync(request);

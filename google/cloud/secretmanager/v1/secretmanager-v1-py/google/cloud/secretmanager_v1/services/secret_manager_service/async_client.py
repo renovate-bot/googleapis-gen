@@ -792,8 +792,8 @@ class SecretManagerServiceAsyncClient:
         r"""Gets metadata for a
         [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
 
-        ``projects/*/secrets/*/versions/latest`` is an alias to the
-        ``latest``
+        ``projects/*/secrets/*/versions/latest`` is an alias to the most
+        recently created
         [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
 
         Args:
@@ -804,8 +804,9 @@ class SecretManagerServiceAsyncClient:
                 Required. The resource name of the
                 [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]
                 in the format ``projects/*/secrets/*/versions/*``.
+
                 ``projects/*/secrets/*/versions/latest`` is an alias to
-                the ``latest``
+                the most recently created
                 [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
 
                 This corresponds to the ``name`` field
@@ -877,8 +878,8 @@ class SecretManagerServiceAsyncClient:
         [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
         This call returns the secret data.
 
-        ``projects/*/secrets/*/versions/latest`` is an alias to the
-        ``latest``
+        ``projects/*/secrets/*/versions/latest`` is an alias to the most
+        recently created
         [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
 
         Args:
@@ -889,6 +890,10 @@ class SecretManagerServiceAsyncClient:
                 Required. The resource name of the
                 [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]
                 in the format ``projects/*/secrets/*/versions/*``.
+
+                ``projects/*/secrets/*/versions/latest`` is an alias to
+                the most recently created
+                [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
 
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this

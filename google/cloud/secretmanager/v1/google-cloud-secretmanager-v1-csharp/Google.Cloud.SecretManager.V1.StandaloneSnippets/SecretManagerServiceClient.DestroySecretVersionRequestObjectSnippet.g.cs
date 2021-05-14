@@ -33,6 +33,7 @@ namespace Google.Cloud.SecretManager.V1.Snippets
             DestroySecretVersionRequest request = new DestroySecretVersionRequest
             {
                 SecretVersionName = SecretVersionName.FromProjectSecretSecretVersion("[PROJECT]", "[SECRET]", "[SECRET_VERSION]"),
+                Etag = "",
             };
             // Make the request
             SecretVersion response = secretManagerServiceClient.DestroySecretVersion(request);

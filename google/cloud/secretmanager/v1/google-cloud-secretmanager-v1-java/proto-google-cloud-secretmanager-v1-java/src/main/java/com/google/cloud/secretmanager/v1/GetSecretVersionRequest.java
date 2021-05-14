@@ -97,8 +97,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Required. The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
    * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
-   * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the `latest`
-   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+   * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the most recently
+   * created [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -121,8 +121,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Required. The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
    * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
-   * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the `latest`
-   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+   * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the most recently
+   * created [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -454,8 +454,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
-     * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the `latest`
-     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the most recently
+     * created [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -477,8 +477,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
-     * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the `latest`
-     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the most recently
+     * created [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -501,8 +501,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
-     * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the `latest`
-     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the most recently
+     * created [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -523,8 +523,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
-     * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the `latest`
-     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the most recently
+     * created [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -540,8 +540,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
-     * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the `latest`
-     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the most recently
+     * created [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

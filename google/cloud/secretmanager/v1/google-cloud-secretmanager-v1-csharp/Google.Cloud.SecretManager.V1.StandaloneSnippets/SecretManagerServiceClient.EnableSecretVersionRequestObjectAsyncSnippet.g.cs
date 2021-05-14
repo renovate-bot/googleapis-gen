@@ -34,6 +34,7 @@ namespace Google.Cloud.SecretManager.V1.Snippets
             EnableSecretVersionRequest request = new EnableSecretVersionRequest
             {
                 SecretVersionName = SecretVersionName.FromProjectSecretSecretVersion("[PROJECT]", "[SECRET]", "[SECRET_VERSION]"),
+                Etag = "",
             };
             // Make the request
             SecretVersion response = await secretManagerServiceClient.EnableSecretVersionAsync(request);

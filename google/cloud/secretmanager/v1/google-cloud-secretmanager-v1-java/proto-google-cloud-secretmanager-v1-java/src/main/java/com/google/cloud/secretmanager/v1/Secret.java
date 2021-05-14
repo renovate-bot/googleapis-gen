@@ -25,6 +25,7 @@ private static final long serialVersionUID = 0L;
   private Secret() {
     name_ = "";
     topics_ = java.util.Collections.emptyList();
+    etag_ = "";
   }
 
   @java.lang.Override
@@ -138,6 +139,12 @@ private static final long serialVersionUID = 0L;
               expiration_ = subBuilder.buildPartial();
             }
             expirationCase_ = 7;
+            break;
+          }
+          case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            etag_ = s;
             break;
           }
           case 74: {
@@ -645,6 +652,52 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.Duration.getDefaultInstance();
   }
 
+  public static final int ETAG_FIELD_NUMBER = 8;
+  private volatile java.lang.Object etag_;
+  /**
+   * <pre>
+   * Optional. Etag of the currently stored [Secret][google.cloud.secretmanager.v1.Secret].
+   * </pre>
+   *
+   * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The etag.
+   */
+  @java.lang.Override
+  public java.lang.String getEtag() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      etag_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Optional. Etag of the currently stored [Secret][google.cloud.secretmanager.v1.Secret].
+   * </pre>
+   *
+   * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for etag.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getEtagBytes() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      etag_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int ROTATION_FIELD_NUMBER = 9;
   private com.google.cloud.secretmanager.v1.Rotation rotation_;
   /**
@@ -724,6 +777,9 @@ private static final long serialVersionUID = 0L;
     if (expirationCase_ == 7) {
       output.writeMessage(7, (com.google.protobuf.Duration) expiration_);
     }
+    if (!getEtagBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, etag_);
+    }
     if (rotation_ != null) {
       output.writeMessage(9, getRotation());
     }
@@ -769,6 +825,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, (com.google.protobuf.Duration) expiration_);
     }
+    if (!getEtagBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, etag_);
+    }
     if (rotation_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, getRotation());
@@ -804,6 +863,8 @@ private static final long serialVersionUID = 0L;
         other.internalGetLabels())) return false;
     if (!getTopicsList()
         .equals(other.getTopicsList())) return false;
+    if (!getEtag()
+        .equals(other.getEtag())) return false;
     if (hasRotation() != other.hasRotation()) return false;
     if (hasRotation()) {
       if (!getRotation()
@@ -851,6 +912,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + TOPICS_FIELD_NUMBER;
       hash = (53 * hash) + getTopicsList().hashCode();
     }
+    hash = (37 * hash) + ETAG_FIELD_NUMBER;
+    hash = (53 * hash) + getEtag().hashCode();
     if (hasRotation()) {
       hash = (37 * hash) + ROTATION_FIELD_NUMBER;
       hash = (53 * hash) + getRotation().hashCode();
@@ -1051,6 +1114,8 @@ private static final long serialVersionUID = 0L;
       } else {
         topicsBuilder_.clear();
       }
+      etag_ = "";
+
       if (rotationBuilder_ == null) {
         rotation_ = null;
       } else {
@@ -1122,6 +1187,7 @@ private static final long serialVersionUID = 0L;
           result.expiration_ = ttlBuilder_.build();
         }
       }
+      result.etag_ = etag_;
       if (rotationBuilder_ == null) {
         result.rotation_ = rotation_;
       } else {
@@ -1213,6 +1279,10 @@ private static final long serialVersionUID = 0L;
             topicsBuilder_.addAllMessages(other.topics_);
           }
         }
+      }
+      if (!other.getEtag().isEmpty()) {
+        etag_ = other.etag_;
+        onChanged();
       }
       if (other.hasRotation()) {
         mergeRotation(other.getRotation());
@@ -2586,6 +2656,102 @@ private static final long serialVersionUID = 0L;
       expirationCase_ = 7;
       onChanged();;
       return ttlBuilder_;
+    }
+
+    private java.lang.Object etag_ = "";
+    /**
+     * <pre>
+     * Optional. Etag of the currently stored [Secret][google.cloud.secretmanager.v1.Secret].
+     * </pre>
+     *
+     * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The etag.
+     */
+    public java.lang.String getEtag() {
+      java.lang.Object ref = etag_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        etag_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Etag of the currently stored [Secret][google.cloud.secretmanager.v1.Secret].
+     * </pre>
+     *
+     * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for etag.
+     */
+    public com.google.protobuf.ByteString
+        getEtagBytes() {
+      java.lang.Object ref = etag_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        etag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Etag of the currently stored [Secret][google.cloud.secretmanager.v1.Secret].
+     * </pre>
+     *
+     * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtag(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      etag_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Etag of the currently stored [Secret][google.cloud.secretmanager.v1.Secret].
+     * </pre>
+     *
+     * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEtag() {
+      
+      etag_ = getDefaultInstance().getEtag();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Etag of the currently stored [Secret][google.cloud.secretmanager.v1.Secret].
+     * </pre>
+     *
+     * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtagBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      etag_ = value;
+      onChanged();
+      return this;
     }
 
     private com.google.cloud.secretmanager.v1.Rotation rotation_;

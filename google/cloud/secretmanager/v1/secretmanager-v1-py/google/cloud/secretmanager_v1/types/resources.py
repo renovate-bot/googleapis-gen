@@ -86,6 +86,9 @@ class Secret(proto.Message):
         ttl (google.protobuf.duration_pb2.Duration):
             Input only. The TTL for the
             [Secret][google.cloud.secretmanager.v1.Secret].
+        etag (str):
+            Optional. Etag of the currently stored
+            [Secret][google.cloud.secretmanager.v1.Secret].
         rotation (google.cloud.secretmanager_v1.types.Rotation):
             Optional. Rotation policy attached to the
             [Secret][google.cloud.secretmanager.v1.Secret]. May be
@@ -128,6 +131,10 @@ class Secret(proto.Message):
         oneof='expiration',
         message=duration_pb2.Duration,
     )
+    etag = proto.Field(
+        proto.STRING,
+        number=8,
+    )
     rotation = proto.Field(
         proto.MESSAGE,
         number=9,
@@ -164,6 +171,9 @@ class SecretVersion(proto.Message):
         replication_status (google.cloud.secretmanager_v1.types.ReplicationStatus):
             The replication status of the
             [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+        etag (str):
+            Output only. Etag of the currently stored
+            [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
     """
     class State(proto.Enum):
         r"""The state of a
@@ -198,6 +208,10 @@ class SecretVersion(proto.Message):
         proto.MESSAGE,
         number=5,
         message='ReplicationStatus',
+    )
+    etag = proto.Field(
+        proto.STRING,
+        number=6,
     )
 
 
@@ -488,7 +502,8 @@ class Rotation(proto.Message):
         next_rotation_time (google.protobuf.timestamp_pb2.Timestamp):
             Optional. Timestamp in UTC at which the
             [Secret][google.cloud.secretmanager.v1.Secret] is scheduled
-            to rotate.
+            to rotate. Cannot be set to less than 300s (5 min) in the
+            future and at most 3153600000s (100 years).
 
             [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
             MUST be set if

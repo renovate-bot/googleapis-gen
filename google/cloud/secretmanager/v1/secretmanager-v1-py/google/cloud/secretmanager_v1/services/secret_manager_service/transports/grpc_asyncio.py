@@ -430,8 +430,8 @@ class SecretManagerServiceGrpcAsyncIOTransport(SecretManagerServiceTransport):
         Gets metadata for a
         [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
 
-        ``projects/*/secrets/*/versions/latest`` is an alias to the
-        ``latest``
+        ``projects/*/secrets/*/versions/latest`` is an alias to the most
+        recently created
         [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
 
         Returns:
@@ -462,8 +462,8 @@ class SecretManagerServiceGrpcAsyncIOTransport(SecretManagerServiceTransport):
         [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
         This call returns the secret data.
 
-        ``projects/*/secrets/*/versions/latest`` is an alias to the
-        ``latest``
+        ``projects/*/secrets/*/versions/latest`` is an alias to the most
+        recently created
         [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
 
         Returns:
