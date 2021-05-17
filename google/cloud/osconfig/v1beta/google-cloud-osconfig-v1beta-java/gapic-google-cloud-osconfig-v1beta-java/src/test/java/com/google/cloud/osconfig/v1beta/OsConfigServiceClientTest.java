@@ -33,8 +33,10 @@ import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Duration;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
@@ -86,13 +88,31 @@ public class OsConfigServiceClientTest {
 
   @Test
   public void executePatchJobTest() throws Exception {
-    PatchJobs.PatchJob expectedResponse = PatchJobs.PatchJob.newBuilder().build();
+    PatchJobs.PatchJob expectedResponse =
+        PatchJobs.PatchJob.newBuilder()
+            .setName("name3373707")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInstanceFilter(PatchJobs.PatchInstanceFilter.newBuilder().build())
+            .setPatchConfig(PatchJobs.PatchConfig.newBuilder().build())
+            .setDuration(Duration.newBuilder().build())
+            .setInstanceDetailsSummary(
+                PatchJobs.PatchJob.InstanceDetailsSummary.newBuilder().build())
+            .setDryRun(true)
+            .setErrorMessage("errorMessage1203236063")
+            .setPercentComplete(-1960969229)
+            .setPatchDeployment("patchDeployment1500445997")
+            .build();
     mockOsConfigService.addResponse(expectedResponse);
 
     PatchJobs.ExecutePatchJobRequest request =
         PatchJobs.ExecutePatchJobRequest.newBuilder()
             .setParent("parent-995424086")
             .setDescription("description-1724546052")
+            .setInstanceFilter(PatchJobs.PatchInstanceFilter.newBuilder().build())
+            .setPatchConfig(PatchJobs.PatchConfig.newBuilder().build())
             .setDuration(Duration.newBuilder().build())
             .setDryRun(true)
             .setDisplayName("displayName1714148973")
@@ -129,6 +149,8 @@ public class OsConfigServiceClientTest {
           PatchJobs.ExecutePatchJobRequest.newBuilder()
               .setParent("parent-995424086")
               .setDescription("description-1724546052")
+              .setInstanceFilter(PatchJobs.PatchInstanceFilter.newBuilder().build())
+              .setPatchConfig(PatchJobs.PatchConfig.newBuilder().build())
               .setDuration(Duration.newBuilder().build())
               .setDryRun(true)
               .setDisplayName("displayName1714148973")
@@ -142,7 +164,23 @@ public class OsConfigServiceClientTest {
 
   @Test
   public void getPatchJobTest() throws Exception {
-    PatchJobs.PatchJob expectedResponse = PatchJobs.PatchJob.newBuilder().build();
+    PatchJobs.PatchJob expectedResponse =
+        PatchJobs.PatchJob.newBuilder()
+            .setName("name3373707")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInstanceFilter(PatchJobs.PatchInstanceFilter.newBuilder().build())
+            .setPatchConfig(PatchJobs.PatchConfig.newBuilder().build())
+            .setDuration(Duration.newBuilder().build())
+            .setInstanceDetailsSummary(
+                PatchJobs.PatchJob.InstanceDetailsSummary.newBuilder().build())
+            .setDryRun(true)
+            .setErrorMessage("errorMessage1203236063")
+            .setPercentComplete(-1960969229)
+            .setPatchDeployment("patchDeployment1500445997")
+            .build();
     mockOsConfigService.addResponse(expectedResponse);
 
     PatchJobs.GetPatchJobRequest request =
@@ -180,7 +218,23 @@ public class OsConfigServiceClientTest {
 
   @Test
   public void cancelPatchJobTest() throws Exception {
-    PatchJobs.PatchJob expectedResponse = PatchJobs.PatchJob.newBuilder().build();
+    PatchJobs.PatchJob expectedResponse =
+        PatchJobs.PatchJob.newBuilder()
+            .setName("name3373707")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setInstanceFilter(PatchJobs.PatchInstanceFilter.newBuilder().build())
+            .setPatchConfig(PatchJobs.PatchConfig.newBuilder().build())
+            .setDuration(Duration.newBuilder().build())
+            .setInstanceDetailsSummary(
+                PatchJobs.PatchJob.InstanceDetailsSummary.newBuilder().build())
+            .setDryRun(true)
+            .setErrorMessage("errorMessage1203236063")
+            .setPercentComplete(-1960969229)
+            .setPatchDeployment("patchDeployment1500445997")
+            .build();
     mockOsConfigService.addResponse(expectedResponse);
 
     PatchJobs.CancelPatchJobRequest request =
@@ -327,13 +381,23 @@ public class OsConfigServiceClientTest {
   @Test
   public void createPatchDeploymentTest() throws Exception {
     PatchDeployments.PatchDeployment expectedResponse =
-        PatchDeployments.PatchDeployment.newBuilder().build();
+        PatchDeployments.PatchDeployment.newBuilder()
+            .setName("name3373707")
+            .setDescription("description-1724546052")
+            .setInstanceFilter(PatchJobs.PatchInstanceFilter.newBuilder().build())
+            .setPatchConfig(PatchJobs.PatchConfig.newBuilder().build())
+            .setDuration(Duration.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastExecuteTime(Timestamp.newBuilder().build())
+            .build();
     mockOsConfigService.addResponse(expectedResponse);
 
     PatchDeployments.CreatePatchDeploymentRequest request =
         PatchDeployments.CreatePatchDeploymentRequest.newBuilder()
             .setParent("parent-995424086")
             .setPatchDeploymentId("patchDeploymentId-1180405976")
+            .setPatchDeployment(PatchDeployments.PatchDeployment.newBuilder().build())
             .build();
 
     PatchDeployments.PatchDeployment actualResponse = client.createPatchDeployment(request);
@@ -363,6 +427,7 @@ public class OsConfigServiceClientTest {
           PatchDeployments.CreatePatchDeploymentRequest.newBuilder()
               .setParent("parent-995424086")
               .setPatchDeploymentId("patchDeploymentId-1180405976")
+              .setPatchDeployment(PatchDeployments.PatchDeployment.newBuilder().build())
               .build();
       client.createPatchDeployment(request);
       Assert.fail("No exception raised");
@@ -374,7 +439,16 @@ public class OsConfigServiceClientTest {
   @Test
   public void getPatchDeploymentTest() throws Exception {
     PatchDeployments.PatchDeployment expectedResponse =
-        PatchDeployments.PatchDeployment.newBuilder().build();
+        PatchDeployments.PatchDeployment.newBuilder()
+            .setName("name3373707")
+            .setDescription("description-1724546052")
+            .setInstanceFilter(PatchJobs.PatchInstanceFilter.newBuilder().build())
+            .setPatchConfig(PatchJobs.PatchConfig.newBuilder().build())
+            .setDuration(Duration.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastExecuteTime(Timestamp.newBuilder().build())
+            .build();
     mockOsConfigService.addResponse(expectedResponse);
 
     PatchDeployments.GetPatchDeploymentRequest request =
@@ -508,7 +582,18 @@ public class OsConfigServiceClientTest {
 
   @Test
   public void createGuestPolicyTest() throws Exception {
-    GuestPolicies.GuestPolicy expectedResponse = GuestPolicies.GuestPolicy.newBuilder().build();
+    GuestPolicies.GuestPolicy expectedResponse =
+        GuestPolicies.GuestPolicy.newBuilder()
+            .setName(GuestPolicyName.of("[PROJECT]", "[GUEST_POLICY]").toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setAssignment(GuestPolicies.Assignment.newBuilder().build())
+            .addAllPackages(new ArrayList<GuestPolicies.Package>())
+            .addAllPackageRepositories(new ArrayList<GuestPolicies.PackageRepository>())
+            .addAllRecipes(new ArrayList<GuestPolicies.SoftwareRecipe>())
+            .setEtag("etag3123477")
+            .build();
     mockOsConfigService.addResponse(expectedResponse);
 
     ProjectName parent = ProjectName.of("[PROJECT]");
@@ -547,7 +632,18 @@ public class OsConfigServiceClientTest {
 
   @Test
   public void createGuestPolicyTest2() throws Exception {
-    GuestPolicies.GuestPolicy expectedResponse = GuestPolicies.GuestPolicy.newBuilder().build();
+    GuestPolicies.GuestPolicy expectedResponse =
+        GuestPolicies.GuestPolicy.newBuilder()
+            .setName(GuestPolicyName.of("[PROJECT]", "[GUEST_POLICY]").toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setAssignment(GuestPolicies.Assignment.newBuilder().build())
+            .addAllPackages(new ArrayList<GuestPolicies.Package>())
+            .addAllPackageRepositories(new ArrayList<GuestPolicies.PackageRepository>())
+            .addAllRecipes(new ArrayList<GuestPolicies.SoftwareRecipe>())
+            .setEtag("etag3123477")
+            .build();
     mockOsConfigService.addResponse(expectedResponse);
 
     String parent = "parent-995424086";
@@ -586,7 +682,18 @@ public class OsConfigServiceClientTest {
 
   @Test
   public void getGuestPolicyTest() throws Exception {
-    GuestPolicies.GuestPolicy expectedResponse = GuestPolicies.GuestPolicy.newBuilder().build();
+    GuestPolicies.GuestPolicy expectedResponse =
+        GuestPolicies.GuestPolicy.newBuilder()
+            .setName(GuestPolicyName.of("[PROJECT]", "[GUEST_POLICY]").toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setAssignment(GuestPolicies.Assignment.newBuilder().build())
+            .addAllPackages(new ArrayList<GuestPolicies.Package>())
+            .addAllPackageRepositories(new ArrayList<GuestPolicies.PackageRepository>())
+            .addAllRecipes(new ArrayList<GuestPolicies.SoftwareRecipe>())
+            .setEtag("etag3123477")
+            .build();
     mockOsConfigService.addResponse(expectedResponse);
 
     GuestPolicyName name = GuestPolicyName.of("[PROJECT]", "[GUEST_POLICY]");
@@ -622,7 +729,18 @@ public class OsConfigServiceClientTest {
 
   @Test
   public void getGuestPolicyTest2() throws Exception {
-    GuestPolicies.GuestPolicy expectedResponse = GuestPolicies.GuestPolicy.newBuilder().build();
+    GuestPolicies.GuestPolicy expectedResponse =
+        GuestPolicies.GuestPolicy.newBuilder()
+            .setName(GuestPolicyName.of("[PROJECT]", "[GUEST_POLICY]").toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setAssignment(GuestPolicies.Assignment.newBuilder().build())
+            .addAllPackages(new ArrayList<GuestPolicies.Package>())
+            .addAllPackageRepositories(new ArrayList<GuestPolicies.PackageRepository>())
+            .addAllRecipes(new ArrayList<GuestPolicies.SoftwareRecipe>())
+            .setEtag("etag3123477")
+            .build();
     mockOsConfigService.addResponse(expectedResponse);
 
     String name = "name3373707";
@@ -748,7 +866,18 @@ public class OsConfigServiceClientTest {
 
   @Test
   public void updateGuestPolicyTest() throws Exception {
-    GuestPolicies.GuestPolicy expectedResponse = GuestPolicies.GuestPolicy.newBuilder().build();
+    GuestPolicies.GuestPolicy expectedResponse =
+        GuestPolicies.GuestPolicy.newBuilder()
+            .setName(GuestPolicyName.of("[PROJECT]", "[GUEST_POLICY]").toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setAssignment(GuestPolicies.Assignment.newBuilder().build())
+            .addAllPackages(new ArrayList<GuestPolicies.Package>())
+            .addAllPackageRepositories(new ArrayList<GuestPolicies.PackageRepository>())
+            .addAllRecipes(new ArrayList<GuestPolicies.SoftwareRecipe>())
+            .setEtag("etag3123477")
+            .build();
     mockOsConfigService.addResponse(expectedResponse);
 
     GuestPolicies.GuestPolicy guestPolicy = GuestPolicies.GuestPolicy.newBuilder().build();
@@ -858,7 +987,13 @@ public class OsConfigServiceClientTest {
   @Test
   public void lookupEffectiveGuestPolicyTest() throws Exception {
     GuestPolicies.EffectiveGuestPolicy expectedResponse =
-        GuestPolicies.EffectiveGuestPolicy.newBuilder().build();
+        GuestPolicies.EffectiveGuestPolicy.newBuilder()
+            .addAllPackages(new ArrayList<GuestPolicies.EffectiveGuestPolicy.SourcedPackage>())
+            .addAllPackageRepositories(
+                new ArrayList<GuestPolicies.EffectiveGuestPolicy.SourcedPackageRepository>())
+            .addAllSoftwareRecipes(
+                new ArrayList<GuestPolicies.EffectiveGuestPolicy.SourcedSoftwareRecipe>())
+            .build();
     mockOsConfigService.addResponse(expectedResponse);
 
     GuestPolicies.LookupEffectiveGuestPolicyRequest request =

@@ -668,6 +668,7 @@ public class OsLoginServiceClient implements BackgroundResource {
    *   ImportSshPublicKeyRequest request =
    *       ImportSshPublicKeyRequest.newBuilder()
    *           .setParent(SshPublicKeyName.of("[USER]", "[FINGERPRINT]").toString())
+   *           .setSshPublicKey(OsLoginProto.SshPublicKey.newBuilder().build())
    *           .setProjectId("projectId-894832108")
    *           .build();
    *   ImportSshPublicKeyResponse response = osLoginServiceClient.importSshPublicKey(request);
@@ -693,6 +694,7 @@ public class OsLoginServiceClient implements BackgroundResource {
    *   ImportSshPublicKeyRequest request =
    *       ImportSshPublicKeyRequest.newBuilder()
    *           .setParent(SshPublicKeyName.of("[USER]", "[FINGERPRINT]").toString())
+   *           .setSshPublicKey(OsLoginProto.SshPublicKey.newBuilder().build())
    *           .setProjectId("projectId-894832108")
    *           .build();
    *   ApiFuture<ImportSshPublicKeyResponse> future =
@@ -850,6 +852,7 @@ public class OsLoginServiceClient implements BackgroundResource {
    *   UpdateSshPublicKeyRequest request =
    *       UpdateSshPublicKeyRequest.newBuilder()
    *           .setName(SshPublicKeyName.of("[USER]", "[FINGERPRINT]").toString())
+   *           .setSshPublicKey(OsLoginProto.SshPublicKey.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   OsLoginProto.SshPublicKey response = osLoginServiceClient.updateSshPublicKey(request);
@@ -875,6 +878,7 @@ public class OsLoginServiceClient implements BackgroundResource {
    *   UpdateSshPublicKeyRequest request =
    *       UpdateSshPublicKeyRequest.newBuilder()
    *           .setName(SshPublicKeyName.of("[USER]", "[FINGERPRINT]").toString())
+   *           .setSshPublicKey(OsLoginProto.SshPublicKey.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   ApiFuture<OsLoginProto.SshPublicKey> future =

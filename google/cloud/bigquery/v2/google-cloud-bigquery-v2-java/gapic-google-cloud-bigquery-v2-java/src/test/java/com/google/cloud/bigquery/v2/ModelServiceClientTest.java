@@ -28,7 +28,9 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.UInt32Value;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import javax.annotation.Generated;
@@ -79,7 +81,23 @@ public class ModelServiceClientTest {
 
   @Test
   public void getModelTest() throws Exception {
-    ModelProto.Model expectedResponse = ModelProto.Model.newBuilder().build();
+    ModelProto.Model expectedResponse =
+        ModelProto.Model.newBuilder()
+            .setEtag("etag3123477")
+            .setModelReference(ModelReferenceProto.ModelReference.newBuilder().build())
+            .setCreationTime(1932333101)
+            .setLastModifiedTime(-671513446)
+            .setDescription("description-1724546052")
+            .setFriendlyName("friendlyName461933014")
+            .putAllLabels(new HashMap<String, String>())
+            .setExpirationTime(767170141)
+            .setLocation("location1901043637")
+            .setEncryptionConfiguration(
+                EncryptionConfigProto.EncryptionConfiguration.newBuilder().build())
+            .addAllTrainingRuns(new ArrayList<ModelProto.Model.TrainingRun>())
+            .addAllFeatureColumns(new ArrayList<StandardSqlProto.StandardSqlField>())
+            .addAllLabelColumns(new ArrayList<StandardSqlProto.StandardSqlField>())
+            .build();
     mockModelService.addResponse(expectedResponse);
 
     String projectId = "projectId-894832108";
@@ -121,7 +139,10 @@ public class ModelServiceClientTest {
   @Test
   public void listModelsTest() throws Exception {
     ModelProto.ListModelsResponse expectedResponse =
-        ModelProto.ListModelsResponse.newBuilder().build();
+        ModelProto.ListModelsResponse.newBuilder()
+            .addAllModels(new ArrayList<ModelProto.Model>())
+            .setNextPageToken("nextPageToken-1386094857")
+            .build();
     mockModelService.addResponse(expectedResponse);
 
     String projectId = "projectId-894832108";
@@ -164,7 +185,23 @@ public class ModelServiceClientTest {
 
   @Test
   public void patchModelTest() throws Exception {
-    ModelProto.Model expectedResponse = ModelProto.Model.newBuilder().build();
+    ModelProto.Model expectedResponse =
+        ModelProto.Model.newBuilder()
+            .setEtag("etag3123477")
+            .setModelReference(ModelReferenceProto.ModelReference.newBuilder().build())
+            .setCreationTime(1932333101)
+            .setLastModifiedTime(-671513446)
+            .setDescription("description-1724546052")
+            .setFriendlyName("friendlyName461933014")
+            .putAllLabels(new HashMap<String, String>())
+            .setExpirationTime(767170141)
+            .setLocation("location1901043637")
+            .setEncryptionConfiguration(
+                EncryptionConfigProto.EncryptionConfiguration.newBuilder().build())
+            .addAllTrainingRuns(new ArrayList<ModelProto.Model.TrainingRun>())
+            .addAllFeatureColumns(new ArrayList<StandardSqlProto.StandardSqlField>())
+            .addAllLabelColumns(new ArrayList<StandardSqlProto.StandardSqlField>())
+            .build();
     mockModelService.addResponse(expectedResponse);
 
     String projectId = "projectId-894832108";

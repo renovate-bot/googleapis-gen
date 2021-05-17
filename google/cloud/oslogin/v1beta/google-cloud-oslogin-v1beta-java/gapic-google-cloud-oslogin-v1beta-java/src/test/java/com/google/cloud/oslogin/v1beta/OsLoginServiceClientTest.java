@@ -301,7 +301,13 @@ public class OsLoginServiceClientTest {
 
   @Test
   public void getSshPublicKeyTest() throws Exception {
-    OsLoginProto.SshPublicKey expectedResponse = OsLoginProto.SshPublicKey.newBuilder().build();
+    OsLoginProto.SshPublicKey expectedResponse =
+        OsLoginProto.SshPublicKey.newBuilder()
+            .setKey("key106079")
+            .setExpirationTimeUsec(-2058878882)
+            .setFingerprint("fingerprint-1375934236")
+            .setName(SshPublicKeyName.of("[USER]", "[FINGERPRINT]").toString())
+            .build();
     mockOsLoginService.addResponse(expectedResponse);
 
     SshPublicKeyName name = SshPublicKeyName.of("[USER]", "[FINGERPRINT]");
@@ -336,7 +342,13 @@ public class OsLoginServiceClientTest {
 
   @Test
   public void getSshPublicKeyTest2() throws Exception {
-    OsLoginProto.SshPublicKey expectedResponse = OsLoginProto.SshPublicKey.newBuilder().build();
+    OsLoginProto.SshPublicKey expectedResponse =
+        OsLoginProto.SshPublicKey.newBuilder()
+            .setKey("key106079")
+            .setExpirationTimeUsec(-2058878882)
+            .setFingerprint("fingerprint-1375934236")
+            .setName(SshPublicKeyName.of("[USER]", "[FINGERPRINT]").toString())
+            .build();
     mockOsLoginService.addResponse(expectedResponse);
 
     String name = "name3373707";
@@ -543,7 +555,13 @@ public class OsLoginServiceClientTest {
 
   @Test
   public void updateSshPublicKeyTest() throws Exception {
-    OsLoginProto.SshPublicKey expectedResponse = OsLoginProto.SshPublicKey.newBuilder().build();
+    OsLoginProto.SshPublicKey expectedResponse =
+        OsLoginProto.SshPublicKey.newBuilder()
+            .setKey("key106079")
+            .setExpirationTimeUsec(-2058878882)
+            .setFingerprint("fingerprint-1375934236")
+            .setName(SshPublicKeyName.of("[USER]", "[FINGERPRINT]").toString())
+            .build();
     mockOsLoginService.addResponse(expectedResponse);
 
     SshPublicKeyName name = SshPublicKeyName.of("[USER]", "[FINGERPRINT]");
@@ -581,7 +599,13 @@ public class OsLoginServiceClientTest {
 
   @Test
   public void updateSshPublicKeyTest2() throws Exception {
-    OsLoginProto.SshPublicKey expectedResponse = OsLoginProto.SshPublicKey.newBuilder().build();
+    OsLoginProto.SshPublicKey expectedResponse =
+        OsLoginProto.SshPublicKey.newBuilder()
+            .setKey("key106079")
+            .setExpirationTimeUsec(-2058878882)
+            .setFingerprint("fingerprint-1375934236")
+            .setName(SshPublicKeyName.of("[USER]", "[FINGERPRINT]").toString())
+            .build();
     mockOsLoginService.addResponse(expectedResponse);
 
     String name = "name3373707";
@@ -619,7 +643,13 @@ public class OsLoginServiceClientTest {
 
   @Test
   public void updateSshPublicKeyTest3() throws Exception {
-    OsLoginProto.SshPublicKey expectedResponse = OsLoginProto.SshPublicKey.newBuilder().build();
+    OsLoginProto.SshPublicKey expectedResponse =
+        OsLoginProto.SshPublicKey.newBuilder()
+            .setKey("key106079")
+            .setExpirationTimeUsec(-2058878882)
+            .setFingerprint("fingerprint-1375934236")
+            .setName(SshPublicKeyName.of("[USER]", "[FINGERPRINT]").toString())
+            .build();
     mockOsLoginService.addResponse(expectedResponse);
 
     SshPublicKeyName name = SshPublicKeyName.of("[USER]", "[FINGERPRINT]");
@@ -661,7 +691,13 @@ public class OsLoginServiceClientTest {
 
   @Test
   public void updateSshPublicKeyTest4() throws Exception {
-    OsLoginProto.SshPublicKey expectedResponse = OsLoginProto.SshPublicKey.newBuilder().build();
+    OsLoginProto.SshPublicKey expectedResponse =
+        OsLoginProto.SshPublicKey.newBuilder()
+            .setKey("key106079")
+            .setExpirationTimeUsec(-2058878882)
+            .setFingerprint("fingerprint-1375934236")
+            .setName(SshPublicKeyName.of("[USER]", "[FINGERPRINT]").toString())
+            .build();
     mockOsLoginService.addResponse(expectedResponse);
 
     String name = "name3373707";

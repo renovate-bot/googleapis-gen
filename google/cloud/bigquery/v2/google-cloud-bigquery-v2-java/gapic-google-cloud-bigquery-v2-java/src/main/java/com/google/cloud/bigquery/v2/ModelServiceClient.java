@@ -354,6 +354,7 @@ public class ModelServiceClient implements BackgroundResource {
    *           .setProjectId("projectId-894832108")
    *           .setDatasetId("datasetId-345342029")
    *           .setModelId("modelId1226956324")
+   *           .setModel(ModelProto.Model.newBuilder().build())
    *           .build();
    *   ModelProto.Model response = modelServiceClient.patchModel(request);
    * }
@@ -379,6 +380,7 @@ public class ModelServiceClient implements BackgroundResource {
    *           .setProjectId("projectId-894832108")
    *           .setDatasetId("datasetId-345342029")
    *           .setModelId("modelId1226956324")
+   *           .setModel(ModelProto.Model.newBuilder().build())
    *           .build();
    *   ApiFuture<ModelProto.Model> future =
    *       modelServiceClient.patchModelCallable().futureCall(request);

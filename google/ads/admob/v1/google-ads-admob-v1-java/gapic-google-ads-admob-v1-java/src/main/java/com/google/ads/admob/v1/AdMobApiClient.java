@@ -320,6 +320,7 @@ public class AdMobApiClient implements BackgroundResource {
    *   AdMobApiProto.GenerateNetworkReportRequest request =
    *       AdMobApiProto.GenerateNetworkReportRequest.newBuilder()
    *           .setParent("parent-995424086")
+   *           .setReportSpec(AdMobResourcesProto.NetworkReportSpec.newBuilder().build())
    *           .build();
    *   ServerStream<AdMobApiProto.GenerateNetworkReportResponse> stream =
    *       adMobApiClient.generateNetworkReportCallable().call(request);
@@ -346,6 +347,7 @@ public class AdMobApiClient implements BackgroundResource {
    *   AdMobApiProto.GenerateMediationReportRequest request =
    *       AdMobApiProto.GenerateMediationReportRequest.newBuilder()
    *           .setParent("parent-995424086")
+   *           .setReportSpec(AdMobResourcesProto.MediationReportSpec.newBuilder().build())
    *           .build();
    *   ServerStream<AdMobApiProto.GenerateMediationReportResponse> stream =
    *       adMobApiClient.generateMediationReportCallable().call(request);

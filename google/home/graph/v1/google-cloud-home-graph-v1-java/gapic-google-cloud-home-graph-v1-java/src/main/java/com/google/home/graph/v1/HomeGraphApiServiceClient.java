@@ -327,6 +327,7 @@ public class HomeGraphApiServiceClient implements BackgroundResource {
    *           .setEventId("eventId-1376502443")
    *           .setAgentUserId("agentUserId1708672427")
    *           .setFollowUpToken("followUpToken628008749")
+   *           .setPayload(HomeGraphApiServiceProto.StateAndNotificationPayload.newBuilder().build())
    *           .build();
    *   HomeGraphApiServiceProto.ReportStateAndNotificationResponse response =
    *       homeGraphApiServiceClient.reportStateAndNotification(request);
@@ -369,6 +370,7 @@ public class HomeGraphApiServiceClient implements BackgroundResource {
    *           .setEventId("eventId-1376502443")
    *           .setAgentUserId("agentUserId1708672427")
    *           .setFollowUpToken("followUpToken628008749")
+   *           .setPayload(HomeGraphApiServiceProto.StateAndNotificationPayload.newBuilder().build())
    *           .build();
    *   ApiFuture<HomeGraphApiServiceProto.ReportStateAndNotificationResponse> future =
    *       homeGraphApiServiceClient.reportStateAndNotificationCallable().futureCall(request);

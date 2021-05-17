@@ -85,7 +85,12 @@ public class AdMobApiClientTest {
   @Test
   public void getPublisherAccountTest() throws Exception {
     AdMobResourcesProto.PublisherAccount expectedResponse =
-        AdMobResourcesProto.PublisherAccount.newBuilder().build();
+        AdMobResourcesProto.PublisherAccount.newBuilder()
+            .setName(PublisherAccountName.of("[PUBLISHER]").toString())
+            .setPublisherId("publisherId-614130633")
+            .setReportingTimeZone("reportingTimeZone354539623")
+            .setCurrencyCode("currencyCode1004773790")
+            .build();
     mockAdMobApi.addResponse(expectedResponse);
 
     String name = "name3373707";
@@ -183,6 +188,7 @@ public class AdMobApiClientTest {
     AdMobApiProto.GenerateNetworkReportRequest request =
         AdMobApiProto.GenerateNetworkReportRequest.newBuilder()
             .setParent("parent-995424086")
+            .setReportSpec(AdMobResourcesProto.NetworkReportSpec.newBuilder().build())
             .build();
 
     MockStreamObserver<AdMobApiProto.GenerateNetworkReportResponse> responseObserver =
@@ -206,6 +212,7 @@ public class AdMobApiClientTest {
     AdMobApiProto.GenerateNetworkReportRequest request =
         AdMobApiProto.GenerateNetworkReportRequest.newBuilder()
             .setParent("parent-995424086")
+            .setReportSpec(AdMobResourcesProto.NetworkReportSpec.newBuilder().build())
             .build();
 
     MockStreamObserver<AdMobApiProto.GenerateNetworkReportResponse> responseObserver =
@@ -235,6 +242,7 @@ public class AdMobApiClientTest {
     AdMobApiProto.GenerateMediationReportRequest request =
         AdMobApiProto.GenerateMediationReportRequest.newBuilder()
             .setParent("parent-995424086")
+            .setReportSpec(AdMobResourcesProto.MediationReportSpec.newBuilder().build())
             .build();
 
     MockStreamObserver<AdMobApiProto.GenerateMediationReportResponse> responseObserver =
@@ -259,6 +267,7 @@ public class AdMobApiClientTest {
     AdMobApiProto.GenerateMediationReportRequest request =
         AdMobApiProto.GenerateMediationReportRequest.newBuilder()
             .setParent("parent-995424086")
+            .setReportSpec(AdMobResourcesProto.MediationReportSpec.newBuilder().build())
             .build();
 
     MockStreamObserver<AdMobApiProto.GenerateMediationReportResponse> responseObserver =

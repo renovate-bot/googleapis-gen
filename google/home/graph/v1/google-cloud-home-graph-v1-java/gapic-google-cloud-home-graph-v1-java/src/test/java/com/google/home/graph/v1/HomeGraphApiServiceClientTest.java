@@ -118,7 +118,9 @@ public class HomeGraphApiServiceClientTest {
   @Test
   public void reportStateAndNotificationTest() throws Exception {
     HomeGraphApiServiceProto.ReportStateAndNotificationResponse expectedResponse =
-        HomeGraphApiServiceProto.ReportStateAndNotificationResponse.newBuilder().build();
+        HomeGraphApiServiceProto.ReportStateAndNotificationResponse.newBuilder()
+            .setRequestId("requestId693933066")
+            .build();
     mockHomeGraphApiService.addResponse(expectedResponse);
 
     String requestId = "requestId693933066";
@@ -243,7 +245,10 @@ public class HomeGraphApiServiceClientTest {
   @Test
   public void queryTest() throws Exception {
     HomeGraphApiServiceProto.QueryResponse expectedResponse =
-        HomeGraphApiServiceProto.QueryResponse.newBuilder().build();
+        HomeGraphApiServiceProto.QueryResponse.newBuilder()
+            .setRequestId("requestId693933066")
+            .setPayload(HomeGraphApiServiceProto.QueryResponsePayload.newBuilder().build())
+            .build();
     mockHomeGraphApiService.addResponse(expectedResponse);
 
     String requestId = "requestId693933066";
@@ -287,7 +292,10 @@ public class HomeGraphApiServiceClientTest {
   @Test
   public void syncTest() throws Exception {
     HomeGraphApiServiceProto.SyncResponse expectedResponse =
-        HomeGraphApiServiceProto.SyncResponse.newBuilder().build();
+        HomeGraphApiServiceProto.SyncResponse.newBuilder()
+            .setRequestId("requestId693933066")
+            .setPayload(HomeGraphApiServiceProto.SyncResponsePayload.newBuilder().build())
+            .build();
     mockHomeGraphApiService.addResponse(expectedResponse);
 
     String requestId = "requestId693933066";

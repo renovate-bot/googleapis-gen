@@ -310,7 +310,9 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    * try (StreetViewPublishServiceClient streetViewPublishServiceClient =
    *     StreetViewPublishServiceClient.create()) {
    *   StreetViewPublishRpcMessages.CreatePhotoRequest request =
-   *       StreetViewPublishRpcMessages.CreatePhotoRequest.newBuilder().build();
+   *       StreetViewPublishRpcMessages.CreatePhotoRequest.newBuilder()
+   *           .setPhoto(StreetViewPublishResources.Photo.newBuilder().build())
+   *           .build();
    *   StreetViewPublishResources.Photo response =
    *       streetViewPublishServiceClient.createPhoto(request);
    * }
@@ -353,7 +355,9 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    * try (StreetViewPublishServiceClient streetViewPublishServiceClient =
    *     StreetViewPublishServiceClient.create()) {
    *   StreetViewPublishRpcMessages.CreatePhotoRequest request =
-   *       StreetViewPublishRpcMessages.CreatePhotoRequest.newBuilder().build();
+   *       StreetViewPublishRpcMessages.CreatePhotoRequest.newBuilder()
+   *           .setPhoto(StreetViewPublishResources.Photo.newBuilder().build())
+   *           .build();
    *   ApiFuture<StreetViewPublishResources.Photo> future =
    *       streetViewPublishServiceClient.createPhotoCallable().futureCall(request);
    *   // Do something.
@@ -433,6 +437,7 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    *   StreetViewPublishRpcMessages.GetPhotoRequest request =
    *       StreetViewPublishRpcMessages.GetPhotoRequest.newBuilder()
    *           .setPhotoId("photoId-595295507")
+   *           .setView(StreetViewPublishRpcMessages.PhotoView.forNumber(0))
    *           .setLanguageCode("languageCode-2092349083")
    *           .build();
    *   StreetViewPublishResources.Photo response = streetViewPublishServiceClient.getPhoto(request);
@@ -470,6 +475,7 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    *   StreetViewPublishRpcMessages.GetPhotoRequest request =
    *       StreetViewPublishRpcMessages.GetPhotoRequest.newBuilder()
    *           .setPhotoId("photoId-595295507")
+   *           .setView(StreetViewPublishRpcMessages.PhotoView.forNumber(0))
    *           .setLanguageCode("languageCode-2092349083")
    *           .build();
    *   ApiFuture<StreetViewPublishResources.Photo> future =
@@ -551,6 +557,7 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    *   StreetViewPublishRpcMessages.BatchGetPhotosRequest request =
    *       StreetViewPublishRpcMessages.BatchGetPhotosRequest.newBuilder()
    *           .addAllPhotoIds(new ArrayList<String>())
+   *           .setView(StreetViewPublishRpcMessages.PhotoView.forNumber(0))
    *           .setLanguageCode("languageCode-2092349083")
    *           .build();
    *   StreetViewPublishRpcMessages.BatchGetPhotosResponse response =
@@ -588,6 +595,7 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    *   StreetViewPublishRpcMessages.BatchGetPhotosRequest request =
    *       StreetViewPublishRpcMessages.BatchGetPhotosRequest.newBuilder()
    *           .addAllPhotoIds(new ArrayList<String>())
+   *           .setView(StreetViewPublishRpcMessages.PhotoView.forNumber(0))
    *           .setLanguageCode("languageCode-2092349083")
    *           .build();
    *   ApiFuture<StreetViewPublishRpcMessages.BatchGetPhotosResponse> future =
@@ -656,6 +664,7 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    *     StreetViewPublishServiceClient.create()) {
    *   StreetViewPublishRpcMessages.ListPhotosRequest request =
    *       StreetViewPublishRpcMessages.ListPhotosRequest.newBuilder()
+   *           .setView(StreetViewPublishRpcMessages.PhotoView.forNumber(0))
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -690,6 +699,7 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    *     StreetViewPublishServiceClient.create()) {
    *   StreetViewPublishRpcMessages.ListPhotosRequest request =
    *       StreetViewPublishRpcMessages.ListPhotosRequest.newBuilder()
+   *           .setView(StreetViewPublishRpcMessages.PhotoView.forNumber(0))
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -724,6 +734,7 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    *     StreetViewPublishServiceClient.create()) {
    *   StreetViewPublishRpcMessages.ListPhotosRequest request =
    *       StreetViewPublishRpcMessages.ListPhotosRequest.newBuilder()
+   *           .setView(StreetViewPublishRpcMessages.PhotoView.forNumber(0))
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -852,6 +863,7 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    *     StreetViewPublishServiceClient.create()) {
    *   StreetViewPublishRpcMessages.UpdatePhotoRequest request =
    *       StreetViewPublishRpcMessages.UpdatePhotoRequest.newBuilder()
+   *           .setPhoto(StreetViewPublishResources.Photo.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   StreetViewPublishResources.Photo response =
@@ -896,6 +908,7 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    *     StreetViewPublishServiceClient.create()) {
    *   StreetViewPublishRpcMessages.UpdatePhotoRequest request =
    *       StreetViewPublishRpcMessages.UpdatePhotoRequest.newBuilder()
+   *           .setPhoto(StreetViewPublishResources.Photo.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   ApiFuture<StreetViewPublishResources.Photo> future =

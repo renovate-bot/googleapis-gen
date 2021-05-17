@@ -259,7 +259,13 @@ public class AgentEndpointServiceClientTest {
   @Test
   public void lookupEffectiveGuestPolicyTest() throws Exception {
     GuestPolicies.EffectiveGuestPolicy expectedResponse =
-        GuestPolicies.EffectiveGuestPolicy.newBuilder().build();
+        GuestPolicies.EffectiveGuestPolicy.newBuilder()
+            .addAllPackages(new ArrayList<GuestPolicies.EffectiveGuestPolicy.SourcedPackage>())
+            .addAllPackageRepositories(
+                new ArrayList<GuestPolicies.EffectiveGuestPolicy.SourcedPackageRepository>())
+            .addAllSoftwareRecipes(
+                new ArrayList<GuestPolicies.EffectiveGuestPolicy.SourcedSoftwareRecipe>())
+            .build();
     mockAgentEndpointService.addResponse(expectedResponse);
 
     String instanceIdToken = "instanceIdToken55138121";

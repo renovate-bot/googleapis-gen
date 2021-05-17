@@ -52,6 +52,8 @@ import javax.annotation.Generated;
  *       PatchJobs.ExecutePatchJobRequest.newBuilder()
  *           .setParent("parent-995424086")
  *           .setDescription("description-1724546052")
+ *           .setInstanceFilter(PatchJobs.PatchInstanceFilter.newBuilder().build())
+ *           .setPatchConfig(PatchJobs.PatchConfig.newBuilder().build())
  *           .setDuration(Duration.newBuilder().build())
  *           .setDryRun(true)
  *           .setDisplayName("displayName1714148973")
@@ -175,6 +177,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    *       PatchJobs.ExecutePatchJobRequest.newBuilder()
    *           .setParent("parent-995424086")
    *           .setDescription("description-1724546052")
+   *           .setInstanceFilter(PatchJobs.PatchInstanceFilter.newBuilder().build())
+   *           .setPatchConfig(PatchJobs.PatchConfig.newBuilder().build())
    *           .setDuration(Duration.newBuilder().build())
    *           .setDryRun(true)
    *           .setDisplayName("displayName1714148973")
@@ -202,6 +206,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    *       PatchJobs.ExecutePatchJobRequest.newBuilder()
    *           .setParent("parent-995424086")
    *           .setDescription("description-1724546052")
+   *           .setInstanceFilter(PatchJobs.PatchInstanceFilter.newBuilder().build())
+   *           .setPatchConfig(PatchJobs.PatchConfig.newBuilder().build())
    *           .setDuration(Duration.newBuilder().build())
    *           .setDryRun(true)
    *           .setDisplayName("displayName1714148973")
@@ -535,6 +541,7 @@ public class OsConfigServiceClient implements BackgroundResource {
    *       PatchDeployments.CreatePatchDeploymentRequest.newBuilder()
    *           .setParent("parent-995424086")
    *           .setPatchDeploymentId("patchDeploymentId-1180405976")
+   *           .setPatchDeployment(PatchDeployments.PatchDeployment.newBuilder().build())
    *           .build();
    *   PatchDeployments.PatchDeployment response =
    *       osConfigServiceClient.createPatchDeployment(request);
@@ -561,6 +568,7 @@ public class OsConfigServiceClient implements BackgroundResource {
    *       PatchDeployments.CreatePatchDeploymentRequest.newBuilder()
    *           .setParent("parent-995424086")
    *           .setPatchDeploymentId("patchDeploymentId-1180405976")
+   *           .setPatchDeployment(PatchDeployments.PatchDeployment.newBuilder().build())
    *           .build();
    *   ApiFuture<PatchDeployments.PatchDeployment> future =
    *       osConfigServiceClient.createPatchDeploymentCallable().futureCall(request);
@@ -830,6 +838,7 @@ public class OsConfigServiceClient implements BackgroundResource {
    *       GuestPolicies.CreateGuestPolicyRequest.newBuilder()
    *           .setParent(GuestPolicyName.of("[PROJECT]", "[GUEST_POLICY]").toString())
    *           .setGuestPolicyId("guestPolicyId1234592741")
+   *           .setGuestPolicy(GuestPolicies.GuestPolicy.newBuilder().build())
    *           .build();
    *   GuestPolicies.GuestPolicy response = osConfigServiceClient.createGuestPolicy(request);
    * }
@@ -855,6 +864,7 @@ public class OsConfigServiceClient implements BackgroundResource {
    *       GuestPolicies.CreateGuestPolicyRequest.newBuilder()
    *           .setParent(GuestPolicyName.of("[PROJECT]", "[GUEST_POLICY]").toString())
    *           .setGuestPolicyId("guestPolicyId1234592741")
+   *           .setGuestPolicy(GuestPolicies.GuestPolicy.newBuilder().build())
    *           .build();
    *   ApiFuture<GuestPolicies.GuestPolicy> future =
    *       osConfigServiceClient.createGuestPolicyCallable().futureCall(request);
@@ -1150,6 +1160,7 @@ public class OsConfigServiceClient implements BackgroundResource {
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   GuestPolicies.UpdateGuestPolicyRequest request =
    *       GuestPolicies.UpdateGuestPolicyRequest.newBuilder()
+   *           .setGuestPolicy(GuestPolicies.GuestPolicy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   GuestPolicies.GuestPolicy response = osConfigServiceClient.updateGuestPolicy(request);
@@ -1174,6 +1185,7 @@ public class OsConfigServiceClient implements BackgroundResource {
    * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
    *   GuestPolicies.UpdateGuestPolicyRequest request =
    *       GuestPolicies.UpdateGuestPolicyRequest.newBuilder()
+   *           .setGuestPolicy(GuestPolicies.GuestPolicy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   ApiFuture<GuestPolicies.GuestPolicy> future =

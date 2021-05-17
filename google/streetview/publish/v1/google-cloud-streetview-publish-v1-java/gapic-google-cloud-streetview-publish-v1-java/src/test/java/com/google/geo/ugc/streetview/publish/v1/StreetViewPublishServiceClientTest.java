@@ -29,6 +29,8 @@ import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Timestamp;
+import com.google.rpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -85,7 +87,9 @@ public class StreetViewPublishServiceClientTest {
   @Test
   public void startUploadTest() throws Exception {
     StreetViewPublishResources.UploadRef expectedResponse =
-        StreetViewPublishResources.UploadRef.newBuilder().build();
+        StreetViewPublishResources.UploadRef.newBuilder()
+            .setUploadUrl("uploadUrl1239085998")
+            .build();
     mockStreetViewPublishService.addResponse(expectedResponse);
 
     Empty request = Empty.newBuilder().build();
@@ -120,7 +124,18 @@ public class StreetViewPublishServiceClientTest {
   @Test
   public void createPhotoTest() throws Exception {
     StreetViewPublishResources.Photo expectedResponse =
-        StreetViewPublishResources.Photo.newBuilder().build();
+        StreetViewPublishResources.Photo.newBuilder()
+            .setPhotoId(StreetViewPublishResources.PhotoId.newBuilder().build())
+            .setUploadReference(StreetViewPublishResources.UploadRef.newBuilder().build())
+            .setDownloadUrl("downloadUrl-1211148345")
+            .setThumbnailUrl("thumbnailUrl-356760349")
+            .setShareLink("shareLink-1582273415")
+            .setPose(StreetViewPublishResources.Pose.newBuilder().build())
+            .addAllConnections(new ArrayList<StreetViewPublishResources.Connection>())
+            .setCaptureTime(Timestamp.newBuilder().build())
+            .addAllPlaces(new ArrayList<StreetViewPublishResources.Place>())
+            .setViewCount(-1534353675)
+            .build();
     mockStreetViewPublishService.addResponse(expectedResponse);
 
     StreetViewPublishResources.Photo photo = StreetViewPublishResources.Photo.newBuilder().build();
@@ -158,7 +173,18 @@ public class StreetViewPublishServiceClientTest {
   @Test
   public void getPhotoTest() throws Exception {
     StreetViewPublishResources.Photo expectedResponse =
-        StreetViewPublishResources.Photo.newBuilder().build();
+        StreetViewPublishResources.Photo.newBuilder()
+            .setPhotoId(StreetViewPublishResources.PhotoId.newBuilder().build())
+            .setUploadReference(StreetViewPublishResources.UploadRef.newBuilder().build())
+            .setDownloadUrl("downloadUrl-1211148345")
+            .setThumbnailUrl("thumbnailUrl-356760349")
+            .setShareLink("shareLink-1582273415")
+            .setPose(StreetViewPublishResources.Pose.newBuilder().build())
+            .addAllConnections(new ArrayList<StreetViewPublishResources.Connection>())
+            .setCaptureTime(Timestamp.newBuilder().build())
+            .addAllPlaces(new ArrayList<StreetViewPublishResources.Place>())
+            .setViewCount(-1534353675)
+            .build();
     mockStreetViewPublishService.addResponse(expectedResponse);
 
     String photoId = "photoId-595295507";
@@ -200,7 +226,9 @@ public class StreetViewPublishServiceClientTest {
   @Test
   public void batchGetPhotosTest() throws Exception {
     StreetViewPublishRpcMessages.BatchGetPhotosResponse expectedResponse =
-        StreetViewPublishRpcMessages.BatchGetPhotosResponse.newBuilder().build();
+        StreetViewPublishRpcMessages.BatchGetPhotosResponse.newBuilder()
+            .addAllResults(new ArrayList<StreetViewPublishRpcMessages.PhotoResponse>())
+            .build();
     mockStreetViewPublishService.addResponse(expectedResponse);
 
     List<String> photoIds = new ArrayList<>();
@@ -295,7 +323,18 @@ public class StreetViewPublishServiceClientTest {
   @Test
   public void updatePhotoTest() throws Exception {
     StreetViewPublishResources.Photo expectedResponse =
-        StreetViewPublishResources.Photo.newBuilder().build();
+        StreetViewPublishResources.Photo.newBuilder()
+            .setPhotoId(StreetViewPublishResources.PhotoId.newBuilder().build())
+            .setUploadReference(StreetViewPublishResources.UploadRef.newBuilder().build())
+            .setDownloadUrl("downloadUrl-1211148345")
+            .setThumbnailUrl("thumbnailUrl-356760349")
+            .setShareLink("shareLink-1582273415")
+            .setPose(StreetViewPublishResources.Pose.newBuilder().build())
+            .addAllConnections(new ArrayList<StreetViewPublishResources.Connection>())
+            .setCaptureTime(Timestamp.newBuilder().build())
+            .addAllPlaces(new ArrayList<StreetViewPublishResources.Place>())
+            .setViewCount(-1534353675)
+            .build();
     mockStreetViewPublishService.addResponse(expectedResponse);
 
     StreetViewPublishResources.Photo photo = StreetViewPublishResources.Photo.newBuilder().build();
@@ -336,7 +375,9 @@ public class StreetViewPublishServiceClientTest {
   @Test
   public void batchUpdatePhotosTest() throws Exception {
     StreetViewPublishRpcMessages.BatchUpdatePhotosResponse expectedResponse =
-        StreetViewPublishRpcMessages.BatchUpdatePhotosResponse.newBuilder().build();
+        StreetViewPublishRpcMessages.BatchUpdatePhotosResponse.newBuilder()
+            .addAllResults(new ArrayList<StreetViewPublishRpcMessages.PhotoResponse>())
+            .build();
     mockStreetViewPublishService.addResponse(expectedResponse);
 
     List<StreetViewPublishRpcMessages.UpdatePhotoRequest> updatePhotoRequests = new ArrayList<>();
@@ -409,7 +450,9 @@ public class StreetViewPublishServiceClientTest {
   @Test
   public void batchDeletePhotosTest() throws Exception {
     StreetViewPublishRpcMessages.BatchDeletePhotosResponse expectedResponse =
-        StreetViewPublishRpcMessages.BatchDeletePhotosResponse.newBuilder().build();
+        StreetViewPublishRpcMessages.BatchDeletePhotosResponse.newBuilder()
+            .addAllStatus(new ArrayList<Status>())
+            .build();
     mockStreetViewPublishService.addResponse(expectedResponse);
 
     List<String> photoIds = new ArrayList<>();

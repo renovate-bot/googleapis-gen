@@ -32,6 +32,8 @@
  *       PatchJobs.ExecutePatchJobRequest.newBuilder()
  *           .setParent("parent-995424086")
  *           .setDescription("description-1724546052")
+ *           .setInstanceFilter(PatchJobs.PatchInstanceFilter.newBuilder().build())
+ *           .setPatchConfig(PatchJobs.PatchConfig.newBuilder().build())
  *           .setDuration(Duration.newBuilder().build())
  *           .setDryRun(true)
  *           .setDisplayName("displayName1714148973")
