@@ -116,6 +116,14 @@ private static final long serialVersionUID = 0L;
      * <code>LZ4_FRAME = 1;</code>
      */
     LZ4_FRAME(1),
+    /**
+     * <pre>
+     * Zstandard compression.
+     * </pre>
+     *
+     * <code>ZSTD = 2;</code>
+     */
+    ZSTD(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -135,6 +143,14 @@ private static final long serialVersionUID = 0L;
      * <code>LZ4_FRAME = 1;</code>
      */
     public static final int LZ4_FRAME_VALUE = 1;
+    /**
+     * <pre>
+     * Zstandard compression.
+     * </pre>
+     *
+     * <code>ZSTD = 2;</code>
+     */
+    public static final int ZSTD_VALUE = 2;
 
 
     public final int getNumber() {
@@ -163,6 +179,7 @@ private static final long serialVersionUID = 0L;
       switch (value) {
         case 0: return COMPRESSION_UNSPECIFIED;
         case 1: return LZ4_FRAME;
+        case 2: return ZSTD;
         default: return null;
       }
     }

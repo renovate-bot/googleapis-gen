@@ -967,16 +967,28 @@ private static final long serialVersionUID = 0L;
         getRowRestrictionBytes();
 
     /**
+     * <pre>
+     * Optional. Options specific to the Apache Arrow output format.
+     * </pre>
+     *
      * <code>.google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the arrowSerializationOptions field is set.
      */
     boolean hasArrowSerializationOptions();
     /**
+     * <pre>
+     * Optional. Options specific to the Apache Arrow output format.
+     * </pre>
+     *
      * <code>.google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The arrowSerializationOptions.
      */
     com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions getArrowSerializationOptions();
     /**
+     * <pre>
+     * Optional. Options specific to the Apache Arrow output format.
+     * </pre>
+     *
      * <code>.google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     com.google.cloud.bigquery.storage.v1.ArrowSerializationOptionsOrBuilder getArrowSerializationOptionsOrBuilder();
@@ -1263,6 +1275,10 @@ private static final long serialVersionUID = 0L;
 
     public static final int ARROW_SERIALIZATION_OPTIONS_FIELD_NUMBER = 3;
     /**
+     * <pre>
+     * Optional. Options specific to the Apache Arrow output format.
+     * </pre>
+     *
      * <code>.google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the arrowSerializationOptions field is set.
      */
@@ -1271,6 +1287,10 @@ private static final long serialVersionUID = 0L;
       return outputFormatSerializationOptionsCase_ == 3;
     }
     /**
+     * <pre>
+     * Optional. Options specific to the Apache Arrow output format.
+     * </pre>
+     *
      * <code>.google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The arrowSerializationOptions.
      */
@@ -1282,6 +1302,10 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.getDefaultInstance();
     }
     /**
+     * <pre>
+     * Optional. Options specific to the Apache Arrow output format.
+     * </pre>
+     *
      * <code>.google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
@@ -1999,6 +2023,10 @@ private static final long serialVersionUID = 0L;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions, com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.Builder, com.google.cloud.bigquery.storage.v1.ArrowSerializationOptionsOrBuilder> arrowSerializationOptionsBuilder_;
       /**
+       * <pre>
+       * Optional. Options specific to the Apache Arrow output format.
+       * </pre>
+       *
        * <code>.google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return Whether the arrowSerializationOptions field is set.
        */
@@ -2007,6 +2035,10 @@ private static final long serialVersionUID = 0L;
         return outputFormatSerializationOptionsCase_ == 3;
       }
       /**
+       * <pre>
+       * Optional. Options specific to the Apache Arrow output format.
+       * </pre>
+       *
        * <code>.google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return The arrowSerializationOptions.
        */
@@ -2025,6 +2057,10 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       * <pre>
+       * Optional. Options specific to the Apache Arrow output format.
+       * </pre>
+       *
        * <code>.google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder setArrowSerializationOptions(com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions value) {
@@ -2041,6 +2077,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       * <pre>
+       * Optional. Options specific to the Apache Arrow output format.
+       * </pre>
+       *
        * <code>.google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder setArrowSerializationOptions(
@@ -2055,6 +2095,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       * <pre>
+       * Optional. Options specific to the Apache Arrow output format.
+       * </pre>
+       *
        * <code>.google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder mergeArrowSerializationOptions(com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions value) {
@@ -2077,6 +2121,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       * <pre>
+       * Optional. Options specific to the Apache Arrow output format.
+       * </pre>
+       *
        * <code>.google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder clearArrowSerializationOptions() {
@@ -2096,12 +2144,20 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       * <pre>
+       * Optional. Options specific to the Apache Arrow output format.
+       * </pre>
+       *
        * <code>.google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.Builder getArrowSerializationOptionsBuilder() {
         return getArrowSerializationOptionsFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Optional. Options specific to the Apache Arrow output format.
+       * </pre>
+       *
        * <code>.google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       @java.lang.Override
@@ -2116,6 +2172,10 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       * <pre>
+       * Optional. Options specific to the Apache Arrow output format.
+       * </pre>
+       *
        * <code>.google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -2282,10 +2342,9 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp expireTime_;
   /**
    * <pre>
-   * Output only. Time at which the session becomes invalid. After this time,
-   * subsequent requests to read this Session will return errors. The
-   * expire_time is automatically assigned and currently cannot be specified or
-   * updated.
+   * Output only. Time at which the session becomes invalid. After this time, subsequent
+   * requests to read this Session will return errors. The expire_time is
+   * automatically assigned and currently cannot be specified or updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2297,10 +2356,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. Time at which the session becomes invalid. After this time,
-   * subsequent requests to read this Session will return errors. The
-   * expire_time is automatically assigned and currently cannot be specified or
-   * updated.
+   * Output only. Time at which the session becomes invalid. After this time, subsequent
+   * requests to read this Session will return errors. The expire_time is
+   * automatically assigned and currently cannot be specified or updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2312,10 +2370,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. Time at which the session becomes invalid. After this time,
-   * subsequent requests to read this Session will return errors. The
-   * expire_time is automatically assigned and currently cannot be specified or
-   * updated.
+   * Output only. Time at which the session becomes invalid. After this time, subsequent
+   * requests to read this Session will return errors. The expire_time is
+   * automatically assigned and currently cannot be specified or updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2490,8 +2547,7 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.bigquery.storage.v1.ReadSession.TableModifiers tableModifiers_;
   /**
    * <pre>
-   * Optional. Any modifiers which are applied when reading from the specified
-   * table.
+   * Optional. Any modifiers which are applied when reading from the specified table.
    * </pre>
    *
    * <code>.google.cloud.bigquery.storage.v1.ReadSession.TableModifiers table_modifiers = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2503,8 +2559,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Any modifiers which are applied when reading from the specified
-   * table.
+   * Optional. Any modifiers which are applied when reading from the specified table.
    * </pre>
    *
    * <code>.google.cloud.bigquery.storage.v1.ReadSession.TableModifiers table_modifiers = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2516,8 +2571,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Any modifiers which are applied when reading from the specified
-   * table.
+   * Optional. Any modifiers which are applied when reading from the specified table.
    * </pre>
    *
    * <code>.google.cloud.bigquery.storage.v1.ReadSession.TableModifiers table_modifiers = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3321,10 +3375,9 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> expireTimeBuilder_;
     /**
      * <pre>
-     * Output only. Time at which the session becomes invalid. After this time,
-     * subsequent requests to read this Session will return errors. The
-     * expire_time is automatically assigned and currently cannot be specified or
-     * updated.
+     * Output only. Time at which the session becomes invalid. After this time, subsequent
+     * requests to read this Session will return errors. The expire_time is
+     * automatically assigned and currently cannot be specified or updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3335,10 +3388,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Time at which the session becomes invalid. After this time,
-     * subsequent requests to read this Session will return errors. The
-     * expire_time is automatically assigned and currently cannot be specified or
-     * updated.
+     * Output only. Time at which the session becomes invalid. After this time, subsequent
+     * requests to read this Session will return errors. The expire_time is
+     * automatically assigned and currently cannot be specified or updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3353,10 +3405,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Time at which the session becomes invalid. After this time,
-     * subsequent requests to read this Session will return errors. The
-     * expire_time is automatically assigned and currently cannot be specified or
-     * updated.
+     * Output only. Time at which the session becomes invalid. After this time, subsequent
+     * requests to read this Session will return errors. The expire_time is
+     * automatically assigned and currently cannot be specified or updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3376,10 +3427,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Time at which the session becomes invalid. After this time,
-     * subsequent requests to read this Session will return errors. The
-     * expire_time is automatically assigned and currently cannot be specified or
-     * updated.
+     * Output only. Time at which the session becomes invalid. After this time, subsequent
+     * requests to read this Session will return errors. The expire_time is
+     * automatically assigned and currently cannot be specified or updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3397,10 +3447,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Time at which the session becomes invalid. After this time,
-     * subsequent requests to read this Session will return errors. The
-     * expire_time is automatically assigned and currently cannot be specified or
-     * updated.
+     * Output only. Time at which the session becomes invalid. After this time, subsequent
+     * requests to read this Session will return errors. The expire_time is
+     * automatically assigned and currently cannot be specified or updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3422,10 +3471,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Time at which the session becomes invalid. After this time,
-     * subsequent requests to read this Session will return errors. The
-     * expire_time is automatically assigned and currently cannot be specified or
-     * updated.
+     * Output only. Time at which the session becomes invalid. After this time, subsequent
+     * requests to read this Session will return errors. The expire_time is
+     * automatically assigned and currently cannot be specified or updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3443,10 +3491,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Time at which the session becomes invalid. After this time,
-     * subsequent requests to read this Session will return errors. The
-     * expire_time is automatically assigned and currently cannot be specified or
-     * updated.
+     * Output only. Time at which the session becomes invalid. After this time, subsequent
+     * requests to read this Session will return errors. The expire_time is
+     * automatically assigned and currently cannot be specified or updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3458,10 +3505,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Time at which the session becomes invalid. After this time,
-     * subsequent requests to read this Session will return errors. The
-     * expire_time is automatically assigned and currently cannot be specified or
-     * updated.
+     * Output only. Time at which the session becomes invalid. After this time, subsequent
+     * requests to read this Session will return errors. The expire_time is
+     * automatically assigned and currently cannot be specified or updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3476,10 +3522,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Time at which the session becomes invalid. After this time,
-     * subsequent requests to read this Session will return errors. The
-     * expire_time is automatically assigned and currently cannot be specified or
-     * updated.
+     * Output only. Time at which the session becomes invalid. After this time, subsequent
+     * requests to read this Session will return errors. The expire_time is
+     * automatically assigned and currently cannot be specified or updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4032,8 +4077,7 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.bigquery.storage.v1.ReadSession.TableModifiers, com.google.cloud.bigquery.storage.v1.ReadSession.TableModifiers.Builder, com.google.cloud.bigquery.storage.v1.ReadSession.TableModifiersOrBuilder> tableModifiersBuilder_;
     /**
      * <pre>
-     * Optional. Any modifiers which are applied when reading from the specified
-     * table.
+     * Optional. Any modifiers which are applied when reading from the specified table.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1.ReadSession.TableModifiers table_modifiers = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4044,8 +4088,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Any modifiers which are applied when reading from the specified
-     * table.
+     * Optional. Any modifiers which are applied when reading from the specified table.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1.ReadSession.TableModifiers table_modifiers = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4060,8 +4103,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Any modifiers which are applied when reading from the specified
-     * table.
+     * Optional. Any modifiers which are applied when reading from the specified table.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1.ReadSession.TableModifiers table_modifiers = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4081,8 +4123,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Any modifiers which are applied when reading from the specified
-     * table.
+     * Optional. Any modifiers which are applied when reading from the specified table.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1.ReadSession.TableModifiers table_modifiers = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4100,8 +4141,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Any modifiers which are applied when reading from the specified
-     * table.
+     * Optional. Any modifiers which are applied when reading from the specified table.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1.ReadSession.TableModifiers table_modifiers = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4123,8 +4163,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Any modifiers which are applied when reading from the specified
-     * table.
+     * Optional. Any modifiers which are applied when reading from the specified table.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1.ReadSession.TableModifiers table_modifiers = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4142,8 +4181,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Any modifiers which are applied when reading from the specified
-     * table.
+     * Optional. Any modifiers which are applied when reading from the specified table.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1.ReadSession.TableModifiers table_modifiers = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4155,8 +4193,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Any modifiers which are applied when reading from the specified
-     * table.
+     * Optional. Any modifiers which are applied when reading from the specified table.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1.ReadSession.TableModifiers table_modifiers = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4171,8 +4208,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Any modifiers which are applied when reading from the specified
-     * table.
+     * Optional. Any modifiers which are applied when reading from the specified table.
      * </pre>
      *
      * <code>.google.cloud.bigquery.storage.v1.ReadSession.TableModifiers table_modifiers = 7 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -31,10 +31,9 @@ public interface ReadSessionOrBuilder extends
 
   /**
    * <pre>
-   * Output only. Time at which the session becomes invalid. After this time,
-   * subsequent requests to read this Session will return errors. The
-   * expire_time is automatically assigned and currently cannot be specified or
-   * updated.
+   * Output only. Time at which the session becomes invalid. After this time, subsequent
+   * requests to read this Session will return errors. The expire_time is
+   * automatically assigned and currently cannot be specified or updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -43,10 +42,9 @@ public interface ReadSessionOrBuilder extends
   boolean hasExpireTime();
   /**
    * <pre>
-   * Output only. Time at which the session becomes invalid. After this time,
-   * subsequent requests to read this Session will return errors. The
-   * expire_time is automatically assigned and currently cannot be specified or
-   * updated.
+   * Output only. Time at which the session becomes invalid. After this time, subsequent
+   * requests to read this Session will return errors. The expire_time is
+   * automatically assigned and currently cannot be specified or updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -55,10 +53,9 @@ public interface ReadSessionOrBuilder extends
   com.google.protobuf.Timestamp getExpireTime();
   /**
    * <pre>
-   * Output only. Time at which the session becomes invalid. After this time,
-   * subsequent requests to read this Session will return errors. The
-   * expire_time is automatically assigned and currently cannot be specified or
-   * updated.
+   * Output only. Time at which the session becomes invalid. After this time, subsequent
+   * requests to read this Session will return errors. The expire_time is
+   * automatically assigned and currently cannot be specified or updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -162,8 +159,7 @@ public interface ReadSessionOrBuilder extends
 
   /**
    * <pre>
-   * Optional. Any modifiers which are applied when reading from the specified
-   * table.
+   * Optional. Any modifiers which are applied when reading from the specified table.
    * </pre>
    *
    * <code>.google.cloud.bigquery.storage.v1.ReadSession.TableModifiers table_modifiers = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -172,8 +168,7 @@ public interface ReadSessionOrBuilder extends
   boolean hasTableModifiers();
   /**
    * <pre>
-   * Optional. Any modifiers which are applied when reading from the specified
-   * table.
+   * Optional. Any modifiers which are applied when reading from the specified table.
    * </pre>
    *
    * <code>.google.cloud.bigquery.storage.v1.ReadSession.TableModifiers table_modifiers = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -182,8 +177,7 @@ public interface ReadSessionOrBuilder extends
   com.google.cloud.bigquery.storage.v1.ReadSession.TableModifiers getTableModifiers();
   /**
    * <pre>
-   * Optional. Any modifiers which are applied when reading from the specified
-   * table.
+   * Optional. Any modifiers which are applied when reading from the specified table.
    * </pre>
    *
    * <code>.google.cloud.bigquery.storage.v1.ReadSession.TableModifiers table_modifiers = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
