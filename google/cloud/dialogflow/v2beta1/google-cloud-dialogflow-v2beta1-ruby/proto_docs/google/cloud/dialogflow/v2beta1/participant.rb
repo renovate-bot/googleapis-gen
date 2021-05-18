@@ -218,10 +218,22 @@ module Google
         # @!attribute [rw] event
         #   @return [::String]
         #     Event name if an event is triggered for the query.
+        # @!attribute [rw] match_confidence
+        #   @return [::Float]
+        #     The confidence of the match. Values range from 0.0 (completely uncertain)
+        #     to 1.0 (completely certain).
+        #     This value is for informational purpose only and is only used to help match
+        #     the best intent within the classification threshold. This value may change
+        #     for the same end-user expression at any time due to a model retraining or
+        #     change in implementation.
+        # @!attribute [rw] parameters
+        #   @return [::Google::Protobuf::Struct]
+        #     The collection of current parameters at the time of this response.
         # @!attribute [rw] cx_session_parameters
         #   @return [::Google::Protobuf::Struct]
         #     The collection of current Dialogflow CX agent session parameters at the
         #     time of this response.
+        #     Deprecated: Use `parameters` instead.
         class AutomatedAgentReply
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

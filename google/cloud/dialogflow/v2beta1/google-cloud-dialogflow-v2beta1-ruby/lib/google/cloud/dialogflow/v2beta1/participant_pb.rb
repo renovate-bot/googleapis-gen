@@ -66,6 +66,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "google.cloud.dialogflow.v2beta1.AutomatedAgentReply" do
       repeated :response_messages, :message, 3, "google.cloud.dialogflow.v2beta1.ResponseMessage"
+      optional :match_confidence, :float, 9
+      optional :parameters, :message, 10, "google.protobuf.Struct"
       optional :cx_session_parameters, :message, 6, "google.protobuf.Struct"
       oneof :response do
         optional :detect_intent_response, :message, 1, "google.cloud.dialogflow.v2beta1.DetectIntentResponse"

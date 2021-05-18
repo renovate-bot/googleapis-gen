@@ -121,7 +121,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_enum "google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType" do
       value :MESSAGE_TYPE_UNSPECIFIED, 0
       value :TRANSCRIPT, 1
+      value :DTMF_DIGITS, 3
       value :END_OF_SINGLE_UTTERANCE, 2
+      value :PARTIAL_DTMF_DIGITS, 4
     end
     add_message "google.cloud.dialogflow.v2beta1.TextInput" do
       optional :text, :string, 1

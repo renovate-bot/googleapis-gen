@@ -26,6 +26,15 @@ class MessageType
      */
     const TRANSCRIPT = 1;
     /**
+     * Message contains DTMF digits. When the client gets the message, it
+     * should stop sending additional data, half-close the gRPC connection, and
+     * wait for any additional results until the server closes the gRPC.
+     * connection.
+     *
+     * Generated from protobuf enum <code>DTMF_DIGITS = 3;</code>
+     */
+    const DTMF_DIGITS = 3;
+    /**
      * Event indicates that the server has detected the end of the user's speech
      * utterance and expects no additional speech. Therefore, the server will
      * not process additional audio (although it may subsequently return
@@ -37,11 +46,21 @@ class MessageType
      * Generated from protobuf enum <code>END_OF_SINGLE_UTTERANCE = 2;</code>
      */
     const END_OF_SINGLE_UTTERANCE = 2;
+    /**
+     * Message contains DTMF digits. Before a message with DTMF_DIGITS is sent,
+     * a message with PARTIAL_DTMF_DIGITS may be sent with DTMF digits collected
+     * up to the time of sending, which represents an intermediate result.
+     *
+     * Generated from protobuf enum <code>PARTIAL_DTMF_DIGITS = 4;</code>
+     */
+    const PARTIAL_DTMF_DIGITS = 4;
 
     private static $valueToName = [
         self::MESSAGE_TYPE_UNSPECIFIED => 'MESSAGE_TYPE_UNSPECIFIED',
         self::TRANSCRIPT => 'TRANSCRIPT',
+        self::DTMF_DIGITS => 'DTMF_DIGITS',
         self::END_OF_SINGLE_UTTERANCE => 'END_OF_SINGLE_UTTERANCE',
+        self::PARTIAL_DTMF_DIGITS => 'PARTIAL_DTMF_DIGITS',
     ];
 
     public static function name($value)

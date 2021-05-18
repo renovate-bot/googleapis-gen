@@ -102,6 +102,24 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 77: {
+
+            matchConfidence_ = input.readFloat();
+            break;
+          }
+          case 82: {
+            com.google.protobuf.Struct.Builder subBuilder = null;
+            if (parameters_ != null) {
+              subBuilder = parameters_.toBuilder();
+            }
+            parameters_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(parameters_);
+              parameters_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -460,44 +478,105 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int MATCH_CONFIDENCE_FIELD_NUMBER = 9;
+  private float matchConfidence_;
+  /**
+   * <pre>
+   * The confidence of the match. Values range from 0.0 (completely uncertain)
+   * to 1.0 (completely certain).
+   * This value is for informational purpose only and is only used to help match
+   * the best intent within the classification threshold. This value may change
+   * for the same end-user expression at any time due to a model retraining or
+   * change in implementation.
+   * </pre>
+   *
+   * <code>float match_confidence = 9;</code>
+   * @return The matchConfidence.
+   */
+  @java.lang.Override
+  public float getMatchConfidence() {
+    return matchConfidence_;
+  }
+
+  public static final int PARAMETERS_FIELD_NUMBER = 10;
+  private com.google.protobuf.Struct parameters_;
+  /**
+   * <pre>
+   * The collection of current parameters at the time of this response.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct parameters = 10;</code>
+   * @return Whether the parameters field is set.
+   */
+  @java.lang.Override
+  public boolean hasParameters() {
+    return parameters_ != null;
+  }
+  /**
+   * <pre>
+   * The collection of current parameters at the time of this response.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct parameters = 10;</code>
+   * @return The parameters.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Struct getParameters() {
+    return parameters_ == null ? com.google.protobuf.Struct.getDefaultInstance() : parameters_;
+  }
+  /**
+   * <pre>
+   * The collection of current parameters at the time of this response.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct parameters = 10;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StructOrBuilder getParametersOrBuilder() {
+    return getParameters();
+  }
+
   public static final int CX_SESSION_PARAMETERS_FIELD_NUMBER = 6;
   private com.google.protobuf.Struct cxSessionParameters_;
   /**
    * <pre>
    * The collection of current Dialogflow CX agent session parameters at the
    * time of this response.
+   * Deprecated: Use `parameters` instead.
    * </pre>
    *
-   * <code>.google.protobuf.Struct cx_session_parameters = 6;</code>
+   * <code>.google.protobuf.Struct cx_session_parameters = 6 [deprecated = true];</code>
    * @return Whether the cxSessionParameters field is set.
    */
   @java.lang.Override
-  public boolean hasCxSessionParameters() {
+  @java.lang.Deprecated public boolean hasCxSessionParameters() {
     return cxSessionParameters_ != null;
   }
   /**
    * <pre>
    * The collection of current Dialogflow CX agent session parameters at the
    * time of this response.
+   * Deprecated: Use `parameters` instead.
    * </pre>
    *
-   * <code>.google.protobuf.Struct cx_session_parameters = 6;</code>
+   * <code>.google.protobuf.Struct cx_session_parameters = 6 [deprecated = true];</code>
    * @return The cxSessionParameters.
    */
   @java.lang.Override
-  public com.google.protobuf.Struct getCxSessionParameters() {
+  @java.lang.Deprecated public com.google.protobuf.Struct getCxSessionParameters() {
     return cxSessionParameters_ == null ? com.google.protobuf.Struct.getDefaultInstance() : cxSessionParameters_;
   }
   /**
    * <pre>
    * The collection of current Dialogflow CX agent session parameters at the
    * time of this response.
+   * Deprecated: Use `parameters` instead.
    * </pre>
    *
-   * <code>.google.protobuf.Struct cx_session_parameters = 6;</code>
+   * <code>.google.protobuf.Struct cx_session_parameters = 6 [deprecated = true];</code>
    */
   @java.lang.Override
-  public com.google.protobuf.StructOrBuilder getCxSessionParametersOrBuilder() {
+  @java.lang.Deprecated public com.google.protobuf.StructOrBuilder getCxSessionParametersOrBuilder() {
     return getCxSessionParameters();
   }
 
@@ -530,6 +609,12 @@ private static final long serialVersionUID = 0L;
     if (cxSessionParameters_ != null) {
       output.writeMessage(6, getCxSessionParameters());
     }
+    if (matchConfidence_ != 0F) {
+      output.writeFloat(9, matchConfidence_);
+    }
+    if (parameters_ != null) {
+      output.writeMessage(10, getParameters());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -557,6 +642,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getCxSessionParameters());
     }
+    if (matchConfidence_ != 0F) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeFloatSize(9, matchConfidence_);
+    }
+    if (parameters_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(10, getParameters());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -574,6 +667,14 @@ private static final long serialVersionUID = 0L;
 
     if (!getResponseMessagesList()
         .equals(other.getResponseMessagesList())) return false;
+    if (java.lang.Float.floatToIntBits(getMatchConfidence())
+        != java.lang.Float.floatToIntBits(
+            other.getMatchConfidence())) return false;
+    if (hasParameters() != other.hasParameters()) return false;
+    if (hasParameters()) {
+      if (!getParameters()
+          .equals(other.getParameters())) return false;
+    }
     if (hasCxSessionParameters() != other.hasCxSessionParameters()) return false;
     if (hasCxSessionParameters()) {
       if (!getCxSessionParameters()
@@ -615,6 +716,13 @@ private static final long serialVersionUID = 0L;
     if (getResponseMessagesCount() > 0) {
       hash = (37 * hash) + RESPONSE_MESSAGES_FIELD_NUMBER;
       hash = (53 * hash) + getResponseMessagesList().hashCode();
+    }
+    hash = (37 * hash) + MATCH_CONFIDENCE_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(
+        getMatchConfidence());
+    if (hasParameters()) {
+      hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
+      hash = (53 * hash) + getParameters().hashCode();
     }
     if (hasCxSessionParameters()) {
       hash = (37 * hash) + CX_SESSION_PARAMETERS_FIELD_NUMBER;
@@ -784,6 +892,14 @@ private static final long serialVersionUID = 0L;
       } else {
         responseMessagesBuilder_.clear();
       }
+      matchConfidence_ = 0F;
+
+      if (parametersBuilder_ == null) {
+        parameters_ = null;
+      } else {
+        parameters_ = null;
+        parametersBuilder_ = null;
+      }
       if (cxSessionParametersBuilder_ == null) {
         cxSessionParameters_ = null;
       } else {
@@ -842,6 +958,12 @@ private static final long serialVersionUID = 0L;
       }
       if (matchCase_ == 5) {
         result.match_ = match_;
+      }
+      result.matchConfidence_ = matchConfidence_;
+      if (parametersBuilder_ == null) {
+        result.parameters_ = parameters_;
+      } else {
+        result.parameters_ = parametersBuilder_.build();
       }
       if (cxSessionParametersBuilder_ == null) {
         result.cxSessionParameters_ = cxSessionParameters_;
@@ -923,6 +1045,12 @@ private static final long serialVersionUID = 0L;
             responseMessagesBuilder_.addAllMessages(other.responseMessages_);
           }
         }
+      }
+      if (other.getMatchConfidence() != 0F) {
+        setMatchConfidence(other.getMatchConfidence());
+      }
+      if (other.hasParameters()) {
+        mergeParameters(other.getParameters());
       }
       if (other.hasCxSessionParameters()) {
         mergeCxSessionParameters(other.getCxSessionParameters());
@@ -1768,6 +1896,219 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private float matchConfidence_ ;
+    /**
+     * <pre>
+     * The confidence of the match. Values range from 0.0 (completely uncertain)
+     * to 1.0 (completely certain).
+     * This value is for informational purpose only and is only used to help match
+     * the best intent within the classification threshold. This value may change
+     * for the same end-user expression at any time due to a model retraining or
+     * change in implementation.
+     * </pre>
+     *
+     * <code>float match_confidence = 9;</code>
+     * @return The matchConfidence.
+     */
+    @java.lang.Override
+    public float getMatchConfidence() {
+      return matchConfidence_;
+    }
+    /**
+     * <pre>
+     * The confidence of the match. Values range from 0.0 (completely uncertain)
+     * to 1.0 (completely certain).
+     * This value is for informational purpose only and is only used to help match
+     * the best intent within the classification threshold. This value may change
+     * for the same end-user expression at any time due to a model retraining or
+     * change in implementation.
+     * </pre>
+     *
+     * <code>float match_confidence = 9;</code>
+     * @param value The matchConfidence to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMatchConfidence(float value) {
+      
+      matchConfidence_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The confidence of the match. Values range from 0.0 (completely uncertain)
+     * to 1.0 (completely certain).
+     * This value is for informational purpose only and is only used to help match
+     * the best intent within the classification threshold. This value may change
+     * for the same end-user expression at any time due to a model retraining or
+     * change in implementation.
+     * </pre>
+     *
+     * <code>float match_confidence = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMatchConfidence() {
+      
+      matchConfidence_ = 0F;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Struct parameters_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> parametersBuilder_;
+    /**
+     * <pre>
+     * The collection of current parameters at the time of this response.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct parameters = 10;</code>
+     * @return Whether the parameters field is set.
+     */
+    public boolean hasParameters() {
+      return parametersBuilder_ != null || parameters_ != null;
+    }
+    /**
+     * <pre>
+     * The collection of current parameters at the time of this response.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct parameters = 10;</code>
+     * @return The parameters.
+     */
+    public com.google.protobuf.Struct getParameters() {
+      if (parametersBuilder_ == null) {
+        return parameters_ == null ? com.google.protobuf.Struct.getDefaultInstance() : parameters_;
+      } else {
+        return parametersBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The collection of current parameters at the time of this response.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct parameters = 10;</code>
+     */
+    public Builder setParameters(com.google.protobuf.Struct value) {
+      if (parametersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        parameters_ = value;
+        onChanged();
+      } else {
+        parametersBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The collection of current parameters at the time of this response.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct parameters = 10;</code>
+     */
+    public Builder setParameters(
+        com.google.protobuf.Struct.Builder builderForValue) {
+      if (parametersBuilder_ == null) {
+        parameters_ = builderForValue.build();
+        onChanged();
+      } else {
+        parametersBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The collection of current parameters at the time of this response.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct parameters = 10;</code>
+     */
+    public Builder mergeParameters(com.google.protobuf.Struct value) {
+      if (parametersBuilder_ == null) {
+        if (parameters_ != null) {
+          parameters_ =
+            com.google.protobuf.Struct.newBuilder(parameters_).mergeFrom(value).buildPartial();
+        } else {
+          parameters_ = value;
+        }
+        onChanged();
+      } else {
+        parametersBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The collection of current parameters at the time of this response.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct parameters = 10;</code>
+     */
+    public Builder clearParameters() {
+      if (parametersBuilder_ == null) {
+        parameters_ = null;
+        onChanged();
+      } else {
+        parameters_ = null;
+        parametersBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The collection of current parameters at the time of this response.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct parameters = 10;</code>
+     */
+    public com.google.protobuf.Struct.Builder getParametersBuilder() {
+      
+      onChanged();
+      return getParametersFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The collection of current parameters at the time of this response.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct parameters = 10;</code>
+     */
+    public com.google.protobuf.StructOrBuilder getParametersOrBuilder() {
+      if (parametersBuilder_ != null) {
+        return parametersBuilder_.getMessageOrBuilder();
+      } else {
+        return parameters_ == null ?
+            com.google.protobuf.Struct.getDefaultInstance() : parameters_;
+      }
+    }
+    /**
+     * <pre>
+     * The collection of current parameters at the time of this response.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct parameters = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
+        getParametersFieldBuilder() {
+      if (parametersBuilder_ == null) {
+        parametersBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
+                getParameters(),
+                getParentForChildren(),
+                isClean());
+        parameters_ = null;
+      }
+      return parametersBuilder_;
+    }
+
     private com.google.protobuf.Struct cxSessionParameters_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> cxSessionParametersBuilder_;
@@ -1775,24 +2116,26 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The collection of current Dialogflow CX agent session parameters at the
      * time of this response.
+     * Deprecated: Use `parameters` instead.
      * </pre>
      *
-     * <code>.google.protobuf.Struct cx_session_parameters = 6;</code>
+     * <code>.google.protobuf.Struct cx_session_parameters = 6 [deprecated = true];</code>
      * @return Whether the cxSessionParameters field is set.
      */
-    public boolean hasCxSessionParameters() {
+    @java.lang.Deprecated public boolean hasCxSessionParameters() {
       return cxSessionParametersBuilder_ != null || cxSessionParameters_ != null;
     }
     /**
      * <pre>
      * The collection of current Dialogflow CX agent session parameters at the
      * time of this response.
+     * Deprecated: Use `parameters` instead.
      * </pre>
      *
-     * <code>.google.protobuf.Struct cx_session_parameters = 6;</code>
+     * <code>.google.protobuf.Struct cx_session_parameters = 6 [deprecated = true];</code>
      * @return The cxSessionParameters.
      */
-    public com.google.protobuf.Struct getCxSessionParameters() {
+    @java.lang.Deprecated public com.google.protobuf.Struct getCxSessionParameters() {
       if (cxSessionParametersBuilder_ == null) {
         return cxSessionParameters_ == null ? com.google.protobuf.Struct.getDefaultInstance() : cxSessionParameters_;
       } else {
@@ -1803,11 +2146,12 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The collection of current Dialogflow CX agent session parameters at the
      * time of this response.
+     * Deprecated: Use `parameters` instead.
      * </pre>
      *
-     * <code>.google.protobuf.Struct cx_session_parameters = 6;</code>
+     * <code>.google.protobuf.Struct cx_session_parameters = 6 [deprecated = true];</code>
      */
-    public Builder setCxSessionParameters(com.google.protobuf.Struct value) {
+    @java.lang.Deprecated public Builder setCxSessionParameters(com.google.protobuf.Struct value) {
       if (cxSessionParametersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1824,11 +2168,12 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The collection of current Dialogflow CX agent session parameters at the
      * time of this response.
+     * Deprecated: Use `parameters` instead.
      * </pre>
      *
-     * <code>.google.protobuf.Struct cx_session_parameters = 6;</code>
+     * <code>.google.protobuf.Struct cx_session_parameters = 6 [deprecated = true];</code>
      */
-    public Builder setCxSessionParameters(
+    @java.lang.Deprecated public Builder setCxSessionParameters(
         com.google.protobuf.Struct.Builder builderForValue) {
       if (cxSessionParametersBuilder_ == null) {
         cxSessionParameters_ = builderForValue.build();
@@ -1843,11 +2188,12 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The collection of current Dialogflow CX agent session parameters at the
      * time of this response.
+     * Deprecated: Use `parameters` instead.
      * </pre>
      *
-     * <code>.google.protobuf.Struct cx_session_parameters = 6;</code>
+     * <code>.google.protobuf.Struct cx_session_parameters = 6 [deprecated = true];</code>
      */
-    public Builder mergeCxSessionParameters(com.google.protobuf.Struct value) {
+    @java.lang.Deprecated public Builder mergeCxSessionParameters(com.google.protobuf.Struct value) {
       if (cxSessionParametersBuilder_ == null) {
         if (cxSessionParameters_ != null) {
           cxSessionParameters_ =
@@ -1866,11 +2212,12 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The collection of current Dialogflow CX agent session parameters at the
      * time of this response.
+     * Deprecated: Use `parameters` instead.
      * </pre>
      *
-     * <code>.google.protobuf.Struct cx_session_parameters = 6;</code>
+     * <code>.google.protobuf.Struct cx_session_parameters = 6 [deprecated = true];</code>
      */
-    public Builder clearCxSessionParameters() {
+    @java.lang.Deprecated public Builder clearCxSessionParameters() {
       if (cxSessionParametersBuilder_ == null) {
         cxSessionParameters_ = null;
         onChanged();
@@ -1885,11 +2232,12 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The collection of current Dialogflow CX agent session parameters at the
      * time of this response.
+     * Deprecated: Use `parameters` instead.
      * </pre>
      *
-     * <code>.google.protobuf.Struct cx_session_parameters = 6;</code>
+     * <code>.google.protobuf.Struct cx_session_parameters = 6 [deprecated = true];</code>
      */
-    public com.google.protobuf.Struct.Builder getCxSessionParametersBuilder() {
+    @java.lang.Deprecated public com.google.protobuf.Struct.Builder getCxSessionParametersBuilder() {
       
       onChanged();
       return getCxSessionParametersFieldBuilder().getBuilder();
@@ -1898,11 +2246,12 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The collection of current Dialogflow CX agent session parameters at the
      * time of this response.
+     * Deprecated: Use `parameters` instead.
      * </pre>
      *
-     * <code>.google.protobuf.Struct cx_session_parameters = 6;</code>
+     * <code>.google.protobuf.Struct cx_session_parameters = 6 [deprecated = true];</code>
      */
-    public com.google.protobuf.StructOrBuilder getCxSessionParametersOrBuilder() {
+    @java.lang.Deprecated public com.google.protobuf.StructOrBuilder getCxSessionParametersOrBuilder() {
       if (cxSessionParametersBuilder_ != null) {
         return cxSessionParametersBuilder_.getMessageOrBuilder();
       } else {
@@ -1914,9 +2263,10 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The collection of current Dialogflow CX agent session parameters at the
      * time of this response.
+     * Deprecated: Use `parameters` instead.
      * </pre>
      *
-     * <code>.google.protobuf.Struct cx_session_parameters = 6;</code>
+     * <code>.google.protobuf.Struct cx_session_parameters = 6 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 

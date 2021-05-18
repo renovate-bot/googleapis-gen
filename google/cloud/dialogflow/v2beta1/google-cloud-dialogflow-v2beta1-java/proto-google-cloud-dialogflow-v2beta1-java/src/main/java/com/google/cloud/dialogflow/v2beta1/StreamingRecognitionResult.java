@@ -199,6 +199,17 @@ private static final long serialVersionUID = 0L;
     TRANSCRIPT(1),
     /**
      * <pre>
+     * Message contains DTMF digits. When the client gets the message, it
+     * should stop sending additional data, half-close the gRPC connection, and
+     * wait for any additional results until the server closes the gRPC.
+     * connection.
+     * </pre>
+     *
+     * <code>DTMF_DIGITS = 3;</code>
+     */
+    DTMF_DIGITS(3),
+    /**
+     * <pre>
      * Event indicates that the server has detected the end of the user's speech
      * utterance and expects no additional speech. Therefore, the server will
      * not process additional audio (although it may subsequently return
@@ -211,6 +222,16 @@ private static final long serialVersionUID = 0L;
      * <code>END_OF_SINGLE_UTTERANCE = 2;</code>
      */
     END_OF_SINGLE_UTTERANCE(2),
+    /**
+     * <pre>
+     * Message contains DTMF digits. Before a message with DTMF_DIGITS is sent,
+     * a message with PARTIAL_DTMF_DIGITS may be sent with DTMF digits collected
+     * up to the time of sending, which represents an intermediate result.
+     * </pre>
+     *
+     * <code>PARTIAL_DTMF_DIGITS = 4;</code>
+     */
+    PARTIAL_DTMF_DIGITS(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -232,6 +253,17 @@ private static final long serialVersionUID = 0L;
     public static final int TRANSCRIPT_VALUE = 1;
     /**
      * <pre>
+     * Message contains DTMF digits. When the client gets the message, it
+     * should stop sending additional data, half-close the gRPC connection, and
+     * wait for any additional results until the server closes the gRPC.
+     * connection.
+     * </pre>
+     *
+     * <code>DTMF_DIGITS = 3;</code>
+     */
+    public static final int DTMF_DIGITS_VALUE = 3;
+    /**
+     * <pre>
      * Event indicates that the server has detected the end of the user's speech
      * utterance and expects no additional speech. Therefore, the server will
      * not process additional audio (although it may subsequently return
@@ -244,6 +276,16 @@ private static final long serialVersionUID = 0L;
      * <code>END_OF_SINGLE_UTTERANCE = 2;</code>
      */
     public static final int END_OF_SINGLE_UTTERANCE_VALUE = 2;
+    /**
+     * <pre>
+     * Message contains DTMF digits. Before a message with DTMF_DIGITS is sent,
+     * a message with PARTIAL_DTMF_DIGITS may be sent with DTMF digits collected
+     * up to the time of sending, which represents an intermediate result.
+     * </pre>
+     *
+     * <code>PARTIAL_DTMF_DIGITS = 4;</code>
+     */
+    public static final int PARTIAL_DTMF_DIGITS_VALUE = 4;
 
 
     public final int getNumber() {
@@ -272,7 +314,9 @@ private static final long serialVersionUID = 0L;
       switch (value) {
         case 0: return MESSAGE_TYPE_UNSPECIFIED;
         case 1: return TRANSCRIPT;
+        case 3: return DTMF_DIGITS;
         case 2: return END_OF_SINGLE_UTTERANCE;
+        case 4: return PARTIAL_DTMF_DIGITS;
         default: return null;
       }
     }
