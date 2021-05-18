@@ -156,6 +156,9 @@ export class ActionsSdkClient {
       releaseChannelPathTemplate: new this._gaxModule.PathTemplate(
         'projects/{project}/releaseChannels/{release_channel}'
       ),
+      sampleProjectPathTemplate: new this._gaxModule.PathTemplate(
+        'sampleProjects/{sample_project}'
+      ),
       versionPathTemplate: new this._gaxModule.PathTemplate(
         'projects/{project}/versions/{version}'
       ),
@@ -165,6 +168,8 @@ export class ActionsSdkClient {
     // (e.g. 50 results at a time, with tokens to get subsequent
     // pages). Denote the keys used for pagination and results.
     this.descriptors.page = {
+      listSampleProjects:
+          new this._gaxModule.PageDescriptor('pageToken', 'nextPageToken', 'sampleProjects'),
       listReleaseChannels:
           new this._gaxModule.PageDescriptor('pageToken', 'nextPageToken', 'releaseChannels'),
       listVersions:
@@ -221,7 +226,7 @@ export class ActionsSdkClient {
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
     const actionsSdkStubMethods =
-        ['writeDraft', 'writePreview', 'createVersion', 'readDraft', 'readVersion', 'encryptSecret', 'decryptSecret', 'listReleaseChannels', 'listVersions'];
+        ['writeDraft', 'writePreview', 'createVersion', 'readDraft', 'readVersion', 'encryptSecret', 'decryptSecret', 'listSampleProjects', 'listReleaseChannels', 'listVersions'];
     for (const methodName of actionsSdkStubMethods) {
       const callPromise = this.actionsSdkStub.then(
         stub => (...args: Array<{}>) => {
@@ -665,6 +670,166 @@ export class ActionsSdkClient {
     return this.innerApiCalls.readVersion(request, options);
   }
 
+  listSampleProjects(
+      request: protos.google.actions.sdk.v2.IListSampleProjectsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.actions.sdk.v2.ISampleProject[],
+        protos.google.actions.sdk.v2.IListSampleProjectsRequest|null,
+        protos.google.actions.sdk.v2.IListSampleProjectsResponse
+      ]>;
+  listSampleProjects(
+      request: protos.google.actions.sdk.v2.IListSampleProjectsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.actions.sdk.v2.IListSampleProjectsRequest,
+          protos.google.actions.sdk.v2.IListSampleProjectsResponse|null|undefined,
+          protos.google.actions.sdk.v2.ISampleProject>): void;
+  listSampleProjects(
+      request: protos.google.actions.sdk.v2.IListSampleProjectsRequest,
+      callback: PaginationCallback<
+          protos.google.actions.sdk.v2.IListSampleProjectsRequest,
+          protos.google.actions.sdk.v2.IListSampleProjectsResponse|null|undefined,
+          protos.google.actions.sdk.v2.ISampleProject>): void;
+/**
+ * Lists all the sample projects supported by the gactions CLI.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {number} [request.pageSize]
+ *   Optional. The maximum number of sample projects to return. The service may return
+ *   fewer than this value.
+ *   If unspecified, at most 1000 sample projects will be returned. Values above
+ *   1000 will be coerced to 1000.
+ * @param {string} [request.pageToken]
+ *   Optional. A page token, received from a previous 'ListSampleProjects' call.
+ *   Provide this to retrieve the subsequent page.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is Array of [SampleProject]{@link google.actions.sdk.v2.SampleProject}.
+ *   The client library will perform auto-pagination by default: it will call the API as many
+ *   times as needed and will merge results from all the pages into this array.
+ *   Note that it can affect your quota.
+ *   We recommend using `listSampleProjectsAsync()`
+ *   method described below for async iteration which you can stop as needed.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+ *   for more details and examples.
+ */
+  listSampleProjects(
+      request: protos.google.actions.sdk.v2.IListSampleProjectsRequest,
+      optionsOrCallback?: CallOptions|PaginationCallback<
+          protos.google.actions.sdk.v2.IListSampleProjectsRequest,
+          protos.google.actions.sdk.v2.IListSampleProjectsResponse|null|undefined,
+          protos.google.actions.sdk.v2.ISampleProject>,
+      callback?: PaginationCallback<
+          protos.google.actions.sdk.v2.IListSampleProjectsRequest,
+          protos.google.actions.sdk.v2.IListSampleProjectsResponse|null|undefined,
+          protos.google.actions.sdk.v2.ISampleProject>):
+      Promise<[
+        protos.google.actions.sdk.v2.ISampleProject[],
+        protos.google.actions.sdk.v2.IListSampleProjectsRequest|null,
+        protos.google.actions.sdk.v2.IListSampleProjectsResponse
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    this.initialize();
+    return this.innerApiCalls.listSampleProjects(request, options, callback);
+  }
+
+/**
+ * Equivalent to `method.name.toCamelCase()`, but returns a NodeJS Stream object.
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {number} [request.pageSize]
+ *   Optional. The maximum number of sample projects to return. The service may return
+ *   fewer than this value.
+ *   If unspecified, at most 1000 sample projects will be returned. Values above
+ *   1000 will be coerced to 1000.
+ * @param {string} [request.pageToken]
+ *   Optional. A page token, received from a previous 'ListSampleProjects' call.
+ *   Provide this to retrieve the subsequent page.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Stream}
+ *   An object stream which emits an object representing [SampleProject]{@link google.actions.sdk.v2.SampleProject} on 'data' event.
+ *   The client library will perform auto-pagination by default: it will call the API as many
+ *   times as needed. Note that it can affect your quota.
+ *   We recommend using `listSampleProjectsAsync()`
+ *   method described below for async iteration which you can stop as needed.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+ *   for more details and examples.
+ */
+  listSampleProjectsStream(
+      request?: protos.google.actions.sdk.v2.IListSampleProjectsRequest,
+      options?: CallOptions):
+    Transform{
+    request = request || {};
+    options = options || {};
+    const callSettings = new gax.CallSettings(options);
+    this.initialize();
+    return this.descriptors.page.listSampleProjects.createStream(
+      this.innerApiCalls.listSampleProjects as gax.GaxCall,
+      request,
+      callSettings
+    );
+  }
+
+/**
+ * Equivalent to `listSampleProjects`, but returns an iterable object.
+ *
+ * `for`-`await`-`of` syntax is used with the iterable to get response elements on-demand.
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {number} [request.pageSize]
+ *   Optional. The maximum number of sample projects to return. The service may return
+ *   fewer than this value.
+ *   If unspecified, at most 1000 sample projects will be returned. Values above
+ *   1000 will be coerced to 1000.
+ * @param {string} [request.pageToken]
+ *   Optional. A page token, received from a previous 'ListSampleProjects' call.
+ *   Provide this to retrieve the subsequent page.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Object}
+ *   An iterable Object that allows [async iteration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols).
+ *   When you iterate the returned iterable, each element will be an object representing
+ *   [SampleProject]{@link google.actions.sdk.v2.SampleProject}. The API will be called under the hood as needed, once per the page,
+ *   so you can stop the iteration when you don't need more results.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+ *   for more details and examples.
+ * @example
+ * const iterable = client.listSampleProjectsAsync(request);
+ * for await (const response of iterable) {
+ *   // process response
+ * }
+ */
+  listSampleProjectsAsync(
+      request?: protos.google.actions.sdk.v2.IListSampleProjectsRequest,
+      options?: CallOptions):
+    AsyncIterable<protos.google.actions.sdk.v2.ISampleProject>{
+    request = request || {};
+    options = options || {};
+    options = options || {};
+    const callSettings = new gax.CallSettings(options);
+    this.initialize();
+    return this.descriptors.page.listSampleProjects.asyncIterate(
+      this.innerApiCalls['listSampleProjects'] as GaxCall,
+      request as unknown as RequestType,
+      callSettings
+    ) as AsyncIterable<protos.google.actions.sdk.v2.ISampleProject>;
+  }
   listReleaseChannels(
       request: protos.google.actions.sdk.v2.IListReleaseChannelsRequest,
       options?: CallOptions):
@@ -1171,6 +1336,29 @@ export class ActionsSdkClient {
    */
   matchReleaseChannelFromReleaseChannelName(releaseChannelName: string) {
     return this.pathTemplates.releaseChannelPathTemplate.match(releaseChannelName).release_channel;
+  }
+
+  /**
+   * Return a fully-qualified sampleProject resource name string.
+   *
+   * @param {string} sample_project
+   * @returns {string} Resource name string.
+   */
+  sampleProjectPath(sampleProject:string) {
+    return this.pathTemplates.sampleProjectPathTemplate.render({
+      sample_project: sampleProject,
+    });
+  }
+
+  /**
+   * Parse the sample_project from SampleProject resource.
+   *
+   * @param {string} sampleProjectName
+   *   A fully-qualified path representing SampleProject resource.
+   * @returns {string} A string representing the sample_project.
+   */
+  matchSampleProjectFromSampleProjectName(sampleProjectName: string) {
+    return this.pathTemplates.sampleProjectPathTemplate.match(sampleProjectName).sample_project;
   }
 
   /**

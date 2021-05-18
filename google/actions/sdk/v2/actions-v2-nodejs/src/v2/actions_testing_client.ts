@@ -151,6 +151,9 @@ export class ActionsTestingClient {
       releaseChannelPathTemplate: new this._gaxModule.PathTemplate(
         'projects/{project}/releaseChannels/{release_channel}'
       ),
+      sampleProjectPathTemplate: new this._gaxModule.PathTemplate(
+        'sampleProjects/{sample_project}'
+      ),
       versionPathTemplate: new this._gaxModule.PathTemplate(
         'projects/{project}/versions/{version}'
       ),
@@ -608,6 +611,29 @@ export class ActionsTestingClient {
    */
   matchReleaseChannelFromReleaseChannelName(releaseChannelName: string) {
     return this.pathTemplates.releaseChannelPathTemplate.match(releaseChannelName).release_channel;
+  }
+
+  /**
+   * Return a fully-qualified sampleProject resource name string.
+   *
+   * @param {string} sample_project
+   * @returns {string} Resource name string.
+   */
+  sampleProjectPath(sampleProject:string) {
+    return this.pathTemplates.sampleProjectPathTemplate.render({
+      sample_project: sampleProject,
+    });
+  }
+
+  /**
+   * Parse the sample_project from SampleProject resource.
+   *
+   * @param {string} sampleProjectName
+   *   A fully-qualified path representing SampleProject resource.
+   * @returns {string} A string representing the sample_project.
+   */
+  matchSampleProjectFromSampleProjectName(sampleProjectName: string) {
+    return this.pathTemplates.sampleProjectPathTemplate.match(sampleProjectName).sample_project;
   }
 
   /**

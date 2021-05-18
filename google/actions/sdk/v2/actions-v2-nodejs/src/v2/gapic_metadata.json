@@ -45,6 +45,13 @@
                 "readVersion"
               ]
             },
+            "ListSampleProjects": {
+              "methods": [
+                "listSampleProjects",
+                "listSampleProjectsStream",
+                "listSampleProjectsAsync"
+              ]
+            },
             "ListReleaseChannels": {
               "methods": [
                 "listReleaseChannels",
@@ -72,6 +79,13 @@
             "DecryptSecret": {
               "methods": [
                 "decryptSecret"
+              ]
+            },
+            "ListSampleProjects": {
+              "methods": [
+                "listSampleProjects",
+                "listSampleProjectsStream",
+                "listSampleProjectsAsync"
               ]
             },
             "ListReleaseChannels": {
