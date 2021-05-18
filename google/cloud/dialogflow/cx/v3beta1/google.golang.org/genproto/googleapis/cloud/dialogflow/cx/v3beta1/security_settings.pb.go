@@ -153,8 +153,8 @@ type SecuritySettings_PurgeDataType int32
 const (
 	// Unspecified. Do not use.
 	SecuritySettings_PURGE_DATA_TYPE_UNSPECIFIED SecuritySettings_PurgeDataType = 0
-	// Dialogflow history. This does not include Stackdriver log, which is
-	// owned by the user not Dialogflow.
+	// Dialogflow history. This does not include Cloud logging, which is
+	// owned by the user - not Dialogflow.
 	SecuritySettings_DIALOGFLOW_HISTORY SecuritySettings_PurgeDataType = 1
 )
 
@@ -563,8 +563,9 @@ type SecuritySettings struct {
 	DisplayName string `protobuf:"bytes,2,opt,name=display_name,json=displayName,proto3" json:"display_name,omitempty"`
 	// Strategy that defines how we do redaction.
 	RedactionStrategy SecuritySettings_RedactionStrategy `protobuf:"varint,3,opt,name=redaction_strategy,json=redactionStrategy,proto3,enum=google.cloud.dialogflow.cx.v3beta1.SecuritySettings_RedactionStrategy" json:"redaction_strategy,omitempty"`
-	// Defines on what data we apply redaction. Note that we don't
-	// redact data to which we don't have access, e.g., Stackdriver logs.
+	// Defines the data for which Dialogflow applies redaction. Dialogflow does
+	// not redact data that it does not have access to – for example, Cloud
+	// logging.
 	RedactionScope SecuritySettings_RedactionScope `protobuf:"varint,4,opt,name=redaction_scope,json=redactionScope,proto3,enum=google.cloud.dialogflow.cx.v3beta1.SecuritySettings_RedactionScope" json:"redaction_scope,omitempty"`
 	// DLP inspect template name. Use this template to define inspect base
 	// settings.
@@ -679,11 +680,15 @@ type isSecuritySettings_DataRetention interface {
 }
 
 type SecuritySettings_RetentionWindowDays struct {
-	// Retains the data for the specified number of days.
+	// Retains data in interaction logging for the specified number of days.
+	// This does not apply to Cloud logging, which is owned by the user - not
+	// Dialogflow.
 	// User must Set a value lower than Dialogflow's default 30d TTL. Setting a
 	// value higher than that has no effect.
 	// A missing value or setting to 0 also means we use Dialogflow's default
 	// TTL.
+	// Note: Interaction logging is a limited access feature. Talk to your
+	// Google representative to check availability for you.
 	RetentionWindowDays int32 `protobuf:"varint,6,opt,name=retention_window_days,json=retentionWindowDays,proto3,oneof"`
 }
 

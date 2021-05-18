@@ -428,6 +428,8 @@ private static final long serialVersionUID = 0L;
    * parameters][SessionInfo.parameters]. To remove a
    * parameter from the session, clients should explicitly set the parameter
    * value to null.
+   * You can reference the session parameters in the agent with the following
+   * format: $session.params.parameter-id.
    * Depending on your protocol or client library language, this is a
    * map, associative array, symbol table, dictionary, or JSON object
    * composed of a collection of (MapKey, MapValue) pairs:
@@ -436,7 +438,7 @@ private static final long serialVersionUID = 0L;
    * -   MapValue type:
    *     -   If parameter's entity type is a composite entity: map
    *     -   Else: depending on parameter value type, could be one of string,
-   *     number, boolean, null, list or map
+   *         number, boolean, null, list or map
    * -   MapValue value:
    *     -   If parameter's entity type is a composite entity:
    *         map from composite entity property names to property values
@@ -456,6 +458,8 @@ private static final long serialVersionUID = 0L;
    * parameters][SessionInfo.parameters]. To remove a
    * parameter from the session, clients should explicitly set the parameter
    * value to null.
+   * You can reference the session parameters in the agent with the following
+   * format: $session.params.parameter-id.
    * Depending on your protocol or client library language, this is a
    * map, associative array, symbol table, dictionary, or JSON object
    * composed of a collection of (MapKey, MapValue) pairs:
@@ -464,7 +468,7 @@ private static final long serialVersionUID = 0L;
    * -   MapValue type:
    *     -   If parameter's entity type is a composite entity: map
    *     -   Else: depending on parameter value type, could be one of string,
-   *     number, boolean, null, list or map
+   *         number, boolean, null, list or map
    * -   MapValue value:
    *     -   If parameter's entity type is a composite entity:
    *         map from composite entity property names to property values
@@ -484,6 +488,8 @@ private static final long serialVersionUID = 0L;
    * parameters][SessionInfo.parameters]. To remove a
    * parameter from the session, clients should explicitly set the parameter
    * value to null.
+   * You can reference the session parameters in the agent with the following
+   * format: $session.params.parameter-id.
    * Depending on your protocol or client library language, this is a
    * map, associative array, symbol table, dictionary, or JSON object
    * composed of a collection of (MapKey, MapValue) pairs:
@@ -492,7 +498,7 @@ private static final long serialVersionUID = 0L;
    * -   MapValue type:
    *     -   If parameter's entity type is a composite entity: map
    *     -   Else: depending on parameter value type, could be one of string,
-   *     number, boolean, null, list or map
+   *         number, boolean, null, list or map
    * -   MapValue value:
    *     -   If parameter's entity type is a composite entity:
    *         map from composite entity property names to property values
@@ -2167,6 +2173,8 @@ private static final long serialVersionUID = 0L;
      * parameters][SessionInfo.parameters]. To remove a
      * parameter from the session, clients should explicitly set the parameter
      * value to null.
+     * You can reference the session parameters in the agent with the following
+     * format: $session.params.parameter-id.
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
@@ -2175,7 +2183,7 @@ private static final long serialVersionUID = 0L;
      * -   MapValue type:
      *     -   If parameter's entity type is a composite entity: map
      *     -   Else: depending on parameter value type, could be one of string,
-     *     number, boolean, null, list or map
+     *         number, boolean, null, list or map
      * -   MapValue value:
      *     -   If parameter's entity type is a composite entity:
      *         map from composite entity property names to property values
@@ -2194,6 +2202,8 @@ private static final long serialVersionUID = 0L;
      * parameters][SessionInfo.parameters]. To remove a
      * parameter from the session, clients should explicitly set the parameter
      * value to null.
+     * You can reference the session parameters in the agent with the following
+     * format: $session.params.parameter-id.
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
@@ -2202,7 +2212,7 @@ private static final long serialVersionUID = 0L;
      * -   MapValue type:
      *     -   If parameter's entity type is a composite entity: map
      *     -   Else: depending on parameter value type, could be one of string,
-     *     number, boolean, null, list or map
+     *         number, boolean, null, list or map
      * -   MapValue value:
      *     -   If parameter's entity type is a composite entity:
      *         map from composite entity property names to property values
@@ -2225,6 +2235,8 @@ private static final long serialVersionUID = 0L;
      * parameters][SessionInfo.parameters]. To remove a
      * parameter from the session, clients should explicitly set the parameter
      * value to null.
+     * You can reference the session parameters in the agent with the following
+     * format: $session.params.parameter-id.
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
@@ -2233,7 +2245,7 @@ private static final long serialVersionUID = 0L;
      * -   MapValue type:
      *     -   If parameter's entity type is a composite entity: map
      *     -   Else: depending on parameter value type, could be one of string,
-     *     number, boolean, null, list or map
+     *         number, boolean, null, list or map
      * -   MapValue value:
      *     -   If parameter's entity type is a composite entity:
      *         map from composite entity property names to property values
@@ -2261,6 +2273,8 @@ private static final long serialVersionUID = 0L;
      * parameters][SessionInfo.parameters]. To remove a
      * parameter from the session, clients should explicitly set the parameter
      * value to null.
+     * You can reference the session parameters in the agent with the following
+     * format: $session.params.parameter-id.
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
@@ -2269,7 +2283,7 @@ private static final long serialVersionUID = 0L;
      * -   MapValue type:
      *     -   If parameter's entity type is a composite entity: map
      *     -   Else: depending on parameter value type, could be one of string,
-     *     number, boolean, null, list or map
+     *         number, boolean, null, list or map
      * -   MapValue value:
      *     -   If parameter's entity type is a composite entity:
      *         map from composite entity property names to property values
@@ -2295,6 +2309,8 @@ private static final long serialVersionUID = 0L;
      * parameters][SessionInfo.parameters]. To remove a
      * parameter from the session, clients should explicitly set the parameter
      * value to null.
+     * You can reference the session parameters in the agent with the following
+     * format: $session.params.parameter-id.
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
@@ -2303,7 +2319,7 @@ private static final long serialVersionUID = 0L;
      * -   MapValue type:
      *     -   If parameter's entity type is a composite entity: map
      *     -   Else: depending on parameter value type, could be one of string,
-     *     number, boolean, null, list or map
+     *         number, boolean, null, list or map
      * -   MapValue value:
      *     -   If parameter's entity type is a composite entity:
      *         map from composite entity property names to property values
@@ -2333,6 +2349,8 @@ private static final long serialVersionUID = 0L;
      * parameters][SessionInfo.parameters]. To remove a
      * parameter from the session, clients should explicitly set the parameter
      * value to null.
+     * You can reference the session parameters in the agent with the following
+     * format: $session.params.parameter-id.
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
@@ -2341,7 +2359,7 @@ private static final long serialVersionUID = 0L;
      * -   MapValue type:
      *     -   If parameter's entity type is a composite entity: map
      *     -   Else: depending on parameter value type, could be one of string,
-     *     number, boolean, null, list or map
+     *         number, boolean, null, list or map
      * -   MapValue value:
      *     -   If parameter's entity type is a composite entity:
      *         map from composite entity property names to property values
@@ -2367,6 +2385,8 @@ private static final long serialVersionUID = 0L;
      * parameters][SessionInfo.parameters]. To remove a
      * parameter from the session, clients should explicitly set the parameter
      * value to null.
+     * You can reference the session parameters in the agent with the following
+     * format: $session.params.parameter-id.
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
@@ -2375,7 +2395,7 @@ private static final long serialVersionUID = 0L;
      * -   MapValue type:
      *     -   If parameter's entity type is a composite entity: map
      *     -   Else: depending on parameter value type, could be one of string,
-     *     number, boolean, null, list or map
+     *         number, boolean, null, list or map
      * -   MapValue value:
      *     -   If parameter's entity type is a composite entity:
      *         map from composite entity property names to property values
@@ -2395,6 +2415,8 @@ private static final long serialVersionUID = 0L;
      * parameters][SessionInfo.parameters]. To remove a
      * parameter from the session, clients should explicitly set the parameter
      * value to null.
+     * You can reference the session parameters in the agent with the following
+     * format: $session.params.parameter-id.
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
@@ -2403,7 +2425,7 @@ private static final long serialVersionUID = 0L;
      * -   MapValue type:
      *     -   If parameter's entity type is a composite entity: map
      *     -   Else: depending on parameter value type, could be one of string,
-     *     number, boolean, null, list or map
+     *         number, boolean, null, list or map
      * -   MapValue value:
      *     -   If parameter's entity type is a composite entity:
      *         map from composite entity property names to property values
@@ -2426,6 +2448,8 @@ private static final long serialVersionUID = 0L;
      * parameters][SessionInfo.parameters]. To remove a
      * parameter from the session, clients should explicitly set the parameter
      * value to null.
+     * You can reference the session parameters in the agent with the following
+     * format: $session.params.parameter-id.
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
@@ -2434,7 +2458,7 @@ private static final long serialVersionUID = 0L;
      * -   MapValue type:
      *     -   If parameter's entity type is a composite entity: map
      *     -   Else: depending on parameter value type, could be one of string,
-     *     number, boolean, null, list or map
+     *         number, boolean, null, list or map
      * -   MapValue value:
      *     -   If parameter's entity type is a composite entity:
      *         map from composite entity property names to property values

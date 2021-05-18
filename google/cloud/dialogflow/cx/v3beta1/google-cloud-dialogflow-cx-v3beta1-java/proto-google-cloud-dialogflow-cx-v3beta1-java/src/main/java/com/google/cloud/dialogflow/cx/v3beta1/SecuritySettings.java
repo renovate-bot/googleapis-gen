@@ -433,8 +433,8 @@ private static final long serialVersionUID = 0L;
     PURGE_DATA_TYPE_UNSPECIFIED(0),
     /**
      * <pre>
-     * Dialogflow history. This does not include Stackdriver log, which is
-     * owned by the user not Dialogflow.
+     * Dialogflow history. This does not include Cloud logging, which is
+     * owned by the user - not Dialogflow.
      * </pre>
      *
      * <code>DIALOGFLOW_HISTORY = 1;</code>
@@ -453,8 +453,8 @@ private static final long serialVersionUID = 0L;
     public static final int PURGE_DATA_TYPE_UNSPECIFIED_VALUE = 0;
     /**
      * <pre>
-     * Dialogflow history. This does not include Stackdriver log, which is
-     * owned by the user not Dialogflow.
+     * Dialogflow history. This does not include Cloud logging, which is
+     * owned by the user - not Dialogflow.
      * </pre>
      *
      * <code>DIALOGFLOW_HISTORY = 1;</code>
@@ -712,8 +712,9 @@ private static final long serialVersionUID = 0L;
   private int redactionScope_;
   /**
    * <pre>
-   * Defines on what data we apply redaction. Note that we don't
-   * redact data to which we don't have access, e.g., Stackdriver logs.
+   * Defines the data for which Dialogflow applies redaction. Dialogflow does
+   * not redact data that it does not have access to – for example, Cloud
+   * logging.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.RedactionScope redaction_scope = 4;</code>
@@ -724,8 +725,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Defines on what data we apply redaction. Note that we don't
-   * redact data to which we don't have access, e.g., Stackdriver logs.
+   * Defines the data for which Dialogflow applies redaction. Dialogflow does
+   * not redact data that it does not have access to – for example, Cloud
+   * logging.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.RedactionScope redaction_scope = 4;</code>
@@ -796,11 +798,15 @@ private static final long serialVersionUID = 0L;
   public static final int RETENTION_WINDOW_DAYS_FIELD_NUMBER = 6;
   /**
    * <pre>
-   * Retains the data for the specified number of days.
+   * Retains data in interaction logging for the specified number of days.
+   * This does not apply to Cloud logging, which is owned by the user - not
+   * Dialogflow.
    * User must Set a value lower than Dialogflow's default 30d TTL. Setting a
    * value higher than that has no effect.
    * A missing value or setting to 0 also means we use Dialogflow's default
    * TTL.
+   * Note: Interaction logging is a limited access feature. Talk to your
+   * Google representative to check availability for you.
    * </pre>
    *
    * <code>int32 retention_window_days = 6;</code>
@@ -812,11 +818,15 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Retains the data for the specified number of days.
+   * Retains data in interaction logging for the specified number of days.
+   * This does not apply to Cloud logging, which is owned by the user - not
+   * Dialogflow.
    * User must Set a value lower than Dialogflow's default 30d TTL. Setting a
    * value higher than that has no effect.
    * A missing value or setting to 0 also means we use Dialogflow's default
    * TTL.
+   * Note: Interaction logging is a limited access feature. Talk to your
+   * Google representative to check availability for you.
    * </pre>
    *
    * <code>int32 retention_window_days = 6;</code>
@@ -1666,8 +1676,9 @@ private static final long serialVersionUID = 0L;
     private int redactionScope_ = 0;
     /**
      * <pre>
-     * Defines on what data we apply redaction. Note that we don't
-     * redact data to which we don't have access, e.g., Stackdriver logs.
+     * Defines the data for which Dialogflow applies redaction. Dialogflow does
+     * not redact data that it does not have access to – for example, Cloud
+     * logging.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.RedactionScope redaction_scope = 4;</code>
@@ -1678,8 +1689,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Defines on what data we apply redaction. Note that we don't
-     * redact data to which we don't have access, e.g., Stackdriver logs.
+     * Defines the data for which Dialogflow applies redaction. Dialogflow does
+     * not redact data that it does not have access to – for example, Cloud
+     * logging.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.RedactionScope redaction_scope = 4;</code>
@@ -1694,8 +1706,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Defines on what data we apply redaction. Note that we don't
-     * redact data to which we don't have access, e.g., Stackdriver logs.
+     * Defines the data for which Dialogflow applies redaction. Dialogflow does
+     * not redact data that it does not have access to – for example, Cloud
+     * logging.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.RedactionScope redaction_scope = 4;</code>
@@ -1709,8 +1722,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Defines on what data we apply redaction. Note that we don't
-     * redact data to which we don't have access, e.g., Stackdriver logs.
+     * Defines the data for which Dialogflow applies redaction. Dialogflow does
+     * not redact data that it does not have access to – for example, Cloud
+     * logging.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.RedactionScope redaction_scope = 4;</code>
@@ -1728,8 +1742,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Defines on what data we apply redaction. Note that we don't
-     * redact data to which we don't have access, e.g., Stackdriver logs.
+     * Defines the data for which Dialogflow applies redaction. Dialogflow does
+     * not redact data that it does not have access to – for example, Cloud
+     * logging.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.RedactionScope redaction_scope = 4;</code>
@@ -1865,11 +1880,15 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Retains the data for the specified number of days.
+     * Retains data in interaction logging for the specified number of days.
+     * This does not apply to Cloud logging, which is owned by the user - not
+     * Dialogflow.
      * User must Set a value lower than Dialogflow's default 30d TTL. Setting a
      * value higher than that has no effect.
      * A missing value or setting to 0 also means we use Dialogflow's default
      * TTL.
+     * Note: Interaction logging is a limited access feature. Talk to your
+     * Google representative to check availability for you.
      * </pre>
      *
      * <code>int32 retention_window_days = 6;</code>
@@ -1880,11 +1899,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Retains the data for the specified number of days.
+     * Retains data in interaction logging for the specified number of days.
+     * This does not apply to Cloud logging, which is owned by the user - not
+     * Dialogflow.
      * User must Set a value lower than Dialogflow's default 30d TTL. Setting a
      * value higher than that has no effect.
      * A missing value or setting to 0 also means we use Dialogflow's default
      * TTL.
+     * Note: Interaction logging is a limited access feature. Talk to your
+     * Google representative to check availability for you.
      * </pre>
      *
      * <code>int32 retention_window_days = 6;</code>
@@ -1898,11 +1921,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Retains the data for the specified number of days.
+     * Retains data in interaction logging for the specified number of days.
+     * This does not apply to Cloud logging, which is owned by the user - not
+     * Dialogflow.
      * User must Set a value lower than Dialogflow's default 30d TTL. Setting a
      * value higher than that has no effect.
      * A missing value or setting to 0 also means we use Dialogflow's default
      * TTL.
+     * Note: Interaction logging is a limited access feature. Talk to your
+     * Google representative to check availability for you.
      * </pre>
      *
      * <code>int32 retention_window_days = 6;</code>
@@ -1917,11 +1944,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Retains the data for the specified number of days.
+     * Retains data in interaction logging for the specified number of days.
+     * This does not apply to Cloud logging, which is owned by the user - not
+     * Dialogflow.
      * User must Set a value lower than Dialogflow's default 30d TTL. Setting a
      * value higher than that has no effect.
      * A missing value or setting to 0 also means we use Dialogflow's default
      * TTL.
+     * Note: Interaction logging is a limited access feature. Talk to your
+     * Google representative to check availability for you.
      * </pre>
      *
      * <code>int32 retention_window_days = 6;</code>

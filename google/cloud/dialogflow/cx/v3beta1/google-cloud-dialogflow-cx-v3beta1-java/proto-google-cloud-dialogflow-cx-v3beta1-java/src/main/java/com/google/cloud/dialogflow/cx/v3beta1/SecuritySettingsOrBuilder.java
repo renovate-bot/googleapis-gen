@@ -74,8 +74,9 @@ public interface SecuritySettingsOrBuilder extends
 
   /**
    * <pre>
-   * Defines on what data we apply redaction. Note that we don't
-   * redact data to which we don't have access, e.g., Stackdriver logs.
+   * Defines the data for which Dialogflow applies redaction. Dialogflow does
+   * not redact data that it does not have access to – for example, Cloud
+   * logging.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.RedactionScope redaction_scope = 4;</code>
@@ -84,8 +85,9 @@ public interface SecuritySettingsOrBuilder extends
   int getRedactionScopeValue();
   /**
    * <pre>
-   * Defines on what data we apply redaction. Note that we don't
-   * redact data to which we don't have access, e.g., Stackdriver logs.
+   * Defines the data for which Dialogflow applies redaction. Dialogflow does
+   * not redact data that it does not have access to – for example, Cloud
+   * logging.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.RedactionScope redaction_scope = 4;</code>
@@ -125,11 +127,15 @@ public interface SecuritySettingsOrBuilder extends
 
   /**
    * <pre>
-   * Retains the data for the specified number of days.
+   * Retains data in interaction logging for the specified number of days.
+   * This does not apply to Cloud logging, which is owned by the user - not
+   * Dialogflow.
    * User must Set a value lower than Dialogflow's default 30d TTL. Setting a
    * value higher than that has no effect.
    * A missing value or setting to 0 also means we use Dialogflow's default
    * TTL.
+   * Note: Interaction logging is a limited access feature. Talk to your
+   * Google representative to check availability for you.
    * </pre>
    *
    * <code>int32 retention_window_days = 6;</code>
@@ -138,11 +144,15 @@ public interface SecuritySettingsOrBuilder extends
   boolean hasRetentionWindowDays();
   /**
    * <pre>
-   * Retains the data for the specified number of days.
+   * Retains data in interaction logging for the specified number of days.
+   * This does not apply to Cloud logging, which is owned by the user - not
+   * Dialogflow.
    * User must Set a value lower than Dialogflow's default 30d TTL. Setting a
    * value higher than that has no effect.
    * A missing value or setting to 0 also means we use Dialogflow's default
    * TTL.
+   * Note: Interaction logging is a limited access feature. Talk to your
+   * Google representative to check availability for you.
    * </pre>
    *
    * <code>int32 retention_window_days = 6;</code>

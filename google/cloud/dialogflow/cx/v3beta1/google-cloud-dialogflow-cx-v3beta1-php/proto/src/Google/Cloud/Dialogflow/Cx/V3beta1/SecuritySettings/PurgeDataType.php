@@ -20,8 +20,8 @@ class PurgeDataType
      */
     const PURGE_DATA_TYPE_UNSPECIFIED = 0;
     /**
-     * Dialogflow history. This does not include Stackdriver log, which is
-     * owned by the user not Dialogflow.
+     * Dialogflow history. This does not include Cloud logging, which is
+     * owned by the user - not Dialogflow.
      *
      * Generated from protobuf enum <code>DIALOGFLOW_HISTORY = 1;</code>
      */
