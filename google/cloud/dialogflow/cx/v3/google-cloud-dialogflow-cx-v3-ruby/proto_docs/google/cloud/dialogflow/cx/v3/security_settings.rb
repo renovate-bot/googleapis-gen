@@ -118,8 +118,9 @@ module Google
           #     Strategy that defines how we do redaction.
           # @!attribute [rw] redaction_scope
           #   @return [::Google::Cloud::Dialogflow::Cx::V3::SecuritySettings::RedactionScope]
-          #     Defines on what data we apply redaction. Note that we don't
-          #     redact data to which we don't have access, e.g., Stackdriver logs.
+          #     Defines the data for which Dialogflow applies redaction. Dialogflow does
+          #     not redact data that it does not have access to – for example, Cloud
+          #     logging.
           # @!attribute [rw] inspect_template
           #   @return [::String]
           #     DLP inspect template name. Use this template to define inspect base
@@ -132,11 +133,15 @@ module Google
           #     `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`
           # @!attribute [rw] retention_window_days
           #   @return [::Integer]
-          #     Retains the data for the specified number of days.
+          #     Retains data in interaction logging for the specified number of days.
+          #     This does not apply to Cloud logging, which is owned by the user - not
+          #     Dialogflow.
           #     User must Set a value lower than Dialogflow's default 30d TTL. Setting a
           #     value higher than that has no effect.
           #     A missing value or setting to 0 also means we use Dialogflow's default
           #     TTL.
+          #     Note: Interaction logging is a limited access feature. Talk to your
+          #     Google representative to check availability for you.
           # @!attribute [rw] purge_data_types
           #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3::SecuritySettings::PurgeDataType>]
           #     List of types of data to remove when retention settings triggers purge.
@@ -169,8 +174,8 @@ module Google
               # Unspecified. Do not use.
               PURGE_DATA_TYPE_UNSPECIFIED = 0
 
-              # Dialogflow history. This does not include Stackdriver log, which is
-              # owned by the user not Dialogflow.
+              # Dialogflow history. This does not include Cloud logging, which is
+              # owned by the user - not Dialogflow.
               DIALOGFLOW_HISTORY = 1
             end
           end
