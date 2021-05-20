@@ -45,7 +45,7 @@ use Google\Auth\FetchAuthTokenInterface;
  * ```
  * $licenseNotificationServiceClient = new LicenseNotificationServiceClient();
  * try {
- *     $response = $licenseNotificationServiceClient->list_();
+ *     $response = $licenseNotificationServiceClient->list();
  * } finally {
  *     $licenseNotificationServiceClient->close();
  * }
@@ -165,7 +165,7 @@ class LicenseNotificationServiceGapicClient
      * ```
      * $licenseNotificationServiceClient = new LicenseNotificationServiceClient();
      * try {
-     *     $response = $licenseNotificationServiceClient->list_();
+     *     $response = $licenseNotificationServiceClient->list();
      * } finally {
      *     $licenseNotificationServiceClient->close();
      * }
@@ -191,7 +191,7 @@ class LicenseNotificationServiceGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function list_(array $optionalArgs = [])
+    public function list(array $optionalArgs = [])
     {
         $request = new LicenseNotificationListRequest();
         $requestParamHeaders = [];
