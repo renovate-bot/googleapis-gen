@@ -25,9 +25,9 @@ export V1BETA1_CREDENTIALS=path/to/keyfile.json
 3. Initialize the client.
 
 ```ruby
-require "google/cloud/privatecatalog/v1beta1"
+require "google/cloud/private_catalog/v1beta1"
 
-client = ::Google::Cloud::Privatecatalog::V1beta1::PrivateCatalog::Client.new
+client = ::Google::Cloud::PrivateCatalog::V1beta1::PrivateCatalog::Client.new
 ```
 
 ## Credential Lookup
@@ -64,7 +64,7 @@ containers where writing files is difficult or not encouraged.
 
 The environment variables that google-cloud-privatecatalog-v1beta1
 checks for credentials are configured on the service Credentials class (such as
-{::Google::Cloud::Privatecatalog::V1beta1::PrivateCatalog::Credentials}):
+{::Google::Cloud::PrivateCatalog::V1beta1::PrivateCatalog::Credentials}):
 
 1. `V1BETA1_CREDENTIALS` - Path to JSON file, or JSON contents
 2. `V1BETA1_KEYFILE` - Path to JSON file, or JSON contents
@@ -73,11 +73,11 @@ checks for credentials are configured on the service Credentials class (such as
 5. `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
 
 ```ruby
-require "google/cloud/privatecatalog/v1beta1"
+require "google/cloud/private_catalog/v1beta1"
 
 ENV["V1BETA1_CREDENTIALS"] = "path/to/keyfile.json"
 
-client = ::Google::Cloud::Privatecatalog::V1beta1::PrivateCatalog::Client.new
+client = ::Google::Cloud::PrivateCatalog::V1beta1::PrivateCatalog::Client.new
 ```
 
 ### Configuration
@@ -86,9 +86,9 @@ The **Credentials JSON** can be configured instead of placing them in
 environment variables. Either on an individual client initialization:
 
 ```ruby
-require "google/cloud/privatecatalog/v1beta1"
+require "google/cloud/private_catalog/v1beta1"
 
-client = ::Google::Cloud::Privatecatalog::V1beta1::PrivateCatalog::Client.new do |config|
+client = ::Google::Cloud::PrivateCatalog::V1beta1::PrivateCatalog::Client.new do |config|
   config.credentials = "path/to/keyfile.json"
 end
 ```
@@ -96,13 +96,13 @@ end
 Or configured globally for all clients:
 
 ```ruby
-require "google/cloud/privatecatalog/v1beta1"
+require "google/cloud/private_catalog/v1beta1"
 
-::Google::Cloud::Privatecatalog::V1beta1::PrivateCatalog::Client.configure do |config|
+::Google::Cloud::PrivateCatalog::V1beta1::PrivateCatalog::Client.configure do |config|
   config.credentials = "path/to/keyfile.json"
 end
 
-client = ::Google::Cloud::Privatecatalog::V1beta1::PrivateCatalog::Client.new
+client = ::Google::Cloud::PrivateCatalog::V1beta1::PrivateCatalog::Client.new
 ```
 
 ### Cloud SDK

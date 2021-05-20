@@ -189,11 +189,14 @@ public final class PrivateCatalogProto {
       "Z/\022-/v1beta1/{resource=folders/*}/versio" +
       "ns:search\032V\312A\"cloudprivatecatalog.google" +
       "apis.com\322A.https://www.googleapis.com/au" +
-      "th/cloud-platformB\223\001\n\'com.google.cloud.p" +
+      "th/cloud-platformB\210\002\n\'com.google.cloud.p" +
       "rivatecatalog.v1beta1B\023PrivateCatalogPro" +
       "toP\001ZQgoogle.golang.org/genproto/googlea" +
       "pis/cloud/privatecatalog/v1beta1;private" +
-      "catalogb\006proto3"
+      "catalog\252\002#Google.Cloud.PrivateCatalog.V1" +
+      "Beta1\312\002#Google\\Cloud\\PrivateCatalog\\V1be" +
+      "ta1\352\002&Google::Cloud::PrivateCatalog::V1b" +
+      "eta1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

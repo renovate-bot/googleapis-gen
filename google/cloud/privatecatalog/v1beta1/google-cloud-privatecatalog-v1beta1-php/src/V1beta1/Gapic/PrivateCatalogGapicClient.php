@@ -24,7 +24,7 @@
  * @experimental
  */
 
-namespace Google\Cloud\Privatecatalog\V1beta1\Gapic;
+namespace Google\Cloud\PrivateCatalog\V1beta1\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
@@ -35,12 +35,12 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
-use Google\Cloud\Privatecatalog\V1beta1\SearchCatalogsRequest;
-use Google\Cloud\Privatecatalog\V1beta1\SearchCatalogsResponse;
-use Google\Cloud\Privatecatalog\V1beta1\SearchProductsRequest;
-use Google\Cloud\Privatecatalog\V1beta1\SearchProductsResponse;
-use Google\Cloud\Privatecatalog\V1beta1\SearchVersionsRequest;
-use Google\Cloud\Privatecatalog\V1beta1\SearchVersionsResponse;
+use Google\Cloud\PrivateCatalog\V1beta1\SearchCatalogsRequest;
+use Google\Cloud\PrivateCatalog\V1beta1\SearchCatalogsResponse;
+use Google\Cloud\PrivateCatalog\V1beta1\SearchProductsRequest;
+use Google\Cloud\PrivateCatalog\V1beta1\SearchProductsResponse;
+use Google\Cloud\PrivateCatalog\V1beta1\SearchVersionsRequest;
+use Google\Cloud\PrivateCatalog\V1beta1\SearchVersionsResponse;
 
 /**
  * Service Description: `PrivateCatalog` allows catalog consumers to retrieve `Catalog`, `Product`

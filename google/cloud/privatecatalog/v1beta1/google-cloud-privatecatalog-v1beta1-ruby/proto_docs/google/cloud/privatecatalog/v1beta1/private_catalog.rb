@@ -19,9 +19,9 @@
 
 module Google
   module Cloud
-    module Privatecatalog
+    module PrivateCatalog
       module V1beta1
-        # Request message for {::Google::Cloud::Privatecatalog::V1beta1::PrivateCatalog::Client#search_catalogs PrivateCatalog.SearchCatalogs}.
+        # Request message for {::Google::Cloud::PrivateCatalog::V1beta1::PrivateCatalog::Client#search_catalogs PrivateCatalog.SearchCatalogs}.
         # @!attribute [rw] resource
         #   @return [::String]
         #     Required. The name of the resource context. It can be in following formats:
@@ -46,9 +46,9 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Response message for {::Google::Cloud::Privatecatalog::V1beta1::PrivateCatalog::Client#search_catalogs PrivateCatalog.SearchCatalogs}.
+        # Response message for {::Google::Cloud::PrivateCatalog::V1beta1::PrivateCatalog::Client#search_catalogs PrivateCatalog.SearchCatalogs}.
         # @!attribute [rw] catalogs
-        #   @return [::Array<::Google::Cloud::Privatecatalog::V1beta1::Catalog>]
+        #   @return [::Array<::Google::Cloud::PrivateCatalog::V1beta1::Catalog>]
         #     The `Catalog`s computed from the resource context.
         # @!attribute [rw] next_page_token
         #   @return [::String]
@@ -59,10 +59,10 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Privatecatalog::V1beta1::PrivateCatalog::Client#search_products PrivateCatalog.SearchProducts}.
+        # Request message for {::Google::Cloud::PrivateCatalog::V1beta1::PrivateCatalog::Client#search_products PrivateCatalog.SearchProducts}.
         # @!attribute [rw] resource
         #   @return [::String]
-        #     Required. The name of the resource context. See {::Google::Cloud::Privatecatalog::V1beta1::SearchCatalogsRequest#resource SearchCatalogsRequest.resource}
+        #     Required. The name of the resource context. See {::Google::Cloud::PrivateCatalog::V1beta1::SearchCatalogsRequest#resource SearchCatalogsRequest.resource}
         #     for details.
         # @!attribute [rw] query
         #   @return [::String]
@@ -85,9 +85,9 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Response message for {::Google::Cloud::Privatecatalog::V1beta1::PrivateCatalog::Client#search_products PrivateCatalog.SearchProducts}.
+        # Response message for {::Google::Cloud::PrivateCatalog::V1beta1::PrivateCatalog::Client#search_products PrivateCatalog.SearchProducts}.
         # @!attribute [rw] products
-        #   @return [::Array<::Google::Cloud::Privatecatalog::V1beta1::Product>]
+        #   @return [::Array<::Google::Cloud::PrivateCatalog::V1beta1::Product>]
         #     The `Product` resources computed from the resource context.
         # @!attribute [rw] next_page_token
         #   @return [::String]
@@ -98,10 +98,10 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Privatecatalog::V1beta1::PrivateCatalog::Client#search_versions PrivateCatalog.SearchVersions}.
+        # Request message for {::Google::Cloud::PrivateCatalog::V1beta1::PrivateCatalog::Client#search_versions PrivateCatalog.SearchVersions}.
         # @!attribute [rw] resource
         #   @return [::String]
-        #     Required. The name of the resource context. See {::Google::Cloud::Privatecatalog::V1beta1::SearchCatalogsRequest#resource SearchCatalogsRequest.resource}
+        #     Required. The name of the resource context. See {::Google::Cloud::PrivateCatalog::V1beta1::SearchCatalogsRequest#resource SearchCatalogsRequest.resource}
         #     for details.
         # @!attribute [rw] query
         #   @return [::String]
@@ -124,9 +124,9 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Response message for {::Google::Cloud::Privatecatalog::V1beta1::PrivateCatalog::Client#search_versions PrivateCatalog.SearchVersions}.
+        # Response message for {::Google::Cloud::PrivateCatalog::V1beta1::PrivateCatalog::Client#search_versions PrivateCatalog.SearchVersions}.
         # @!attribute [rw] versions
-        #   @return [::Array<::Google::Cloud::Privatecatalog::V1beta1::Version>]
+        #   @return [::Array<::Google::Cloud::PrivateCatalog::V1beta1::Version>]
         #     The `Version` resources computed from the resource context.
         # @!attribute [rw] next_page_token
         #   @return [::String]
@@ -178,7 +178,7 @@ module Google
         # @!attribute [r] display_metadata
         #   @return [::Google::Protobuf::Struct]
         #     Required. Output only. The display metadata to describe the product. The JSON schema of the
-        #     metadata differs by {::Google::Cloud::Privatecatalog::V1beta1::Product#asset_type Product.asset_type}.
+        #     metadata differs by {::Google::Cloud::PrivateCatalog::V1beta1::Product#asset_type Product.asset_type}.
         #     When the type is `google.deploymentmanager.Template`, the schema is as
         #     follows:
         #
@@ -338,7 +338,7 @@ module Google
         #   @return [::String]
         #     Output only. The icon URI of the product.
         # @!attribute [r] asset_references
-        #   @return [::Array<::Google::Cloud::Privatecatalog::V1beta1::AssetReference>]
+        #   @return [::Array<::Google::Cloud::PrivateCatalog::V1beta1::AssetReference>]
         #     Output only. A collection of assets referred by a product.
         #     This field is set for Terraform Products only.
         # @!attribute [r] create_time
@@ -361,10 +361,10 @@ module Google
         #     Output only. The human-readable description of the referenced asset. Maximum 256
         #     characters in length.
         # @!attribute [r] inputs
-        #   @return [::Google::Cloud::Privatecatalog::V1beta1::Inputs]
+        #   @return [::Google::Cloud::PrivateCatalog::V1beta1::Inputs]
         #     Output only. The definition of input parameters to hydrate the asset template.
         # @!attribute [r] validation_status
-        #   @return [::Google::Cloud::Privatecatalog::V1beta1::AssetReference::AssetValidationState]
+        #   @return [::Google::Cloud::PrivateCatalog::V1beta1::AssetReference::AssetValidationState]
         #     Output only. The current state of the asset reference.
         # @!attribute [r] validation_operation
         #   @return [::Google::Longrunning::Operation]
@@ -376,10 +376,10 @@ module Google
         #   @return [::String]
         #     Output only. The cloud storage object path.
         # @!attribute [r] git_source
-        #   @return [::Google::Cloud::Privatecatalog::V1beta1::GitSource]
+        #   @return [::Google::Cloud::PrivateCatalog::V1beta1::GitSource]
         #     Output only. The git source.
         # @!attribute [r] gcs_source
-        #   @return [::Google::Cloud::Privatecatalog::V1beta1::GcsSource]
+        #   @return [::Google::Cloud::PrivateCatalog::V1beta1::GcsSource]
         #     Output only. The cloud storage source.
         # @!attribute [r] create_time
         #   @return [::Google::Protobuf::Timestamp]

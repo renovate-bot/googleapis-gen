@@ -20,20 +20,20 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Cloud\Privatecatalog\Tests\Unit\V1beta1;
+namespace Google\Cloud\PrivateCatalog\Tests\Unit\V1beta1;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
 
 use Google\ApiCore\Testing\MockTransport;
-use Google\Cloud\Privatecatalog\V1beta1\Catalog;
-use Google\Cloud\Privatecatalog\V1beta1\PrivateCatalogClient;
-use Google\Cloud\Privatecatalog\V1beta1\Product;
-use Google\Cloud\Privatecatalog\V1beta1\SearchCatalogsResponse;
-use Google\Cloud\Privatecatalog\V1beta1\SearchProductsResponse;
-use Google\Cloud\Privatecatalog\V1beta1\SearchVersionsResponse;
-use Google\Cloud\Privatecatalog\V1beta1\Version;
+use Google\Cloud\PrivateCatalog\V1beta1\Catalog;
+use Google\Cloud\PrivateCatalog\V1beta1\PrivateCatalogClient;
+use Google\Cloud\PrivateCatalog\V1beta1\Product;
+use Google\Cloud\PrivateCatalog\V1beta1\SearchCatalogsResponse;
+use Google\Cloud\PrivateCatalog\V1beta1\SearchProductsResponse;
+use Google\Cloud\PrivateCatalog\V1beta1\SearchVersionsResponse;
+use Google\Cloud\PrivateCatalog\V1beta1\Version;
 use Google\Rpc\Code;
 use stdClass;
 

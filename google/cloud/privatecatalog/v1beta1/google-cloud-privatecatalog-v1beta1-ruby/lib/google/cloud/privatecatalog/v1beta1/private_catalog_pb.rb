@@ -112,7 +112,7 @@ end
 
 module Google
   module Cloud
-    module Privatecatalog
+    module PrivateCatalog
       module V1beta1
         SearchCatalogsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.privatecatalog.v1beta1.SearchCatalogsRequest").msgclass
         SearchCatalogsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.privatecatalog.v1beta1.SearchCatalogsResponse").msgclass

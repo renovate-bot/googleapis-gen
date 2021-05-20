@@ -24,9 +24,9 @@
  * @experimental
  */
 
-namespace Google\Cloud\Privatecatalog\V1beta1;
+namespace Google\Cloud\PrivateCatalog\V1beta1;
 
-use Google\Cloud\Privatecatalog\V1beta1\Gapic\PrivateCatalogGapicClient;
+use Google\Cloud\PrivateCatalog\V1beta1\Gapic\PrivateCatalogGapicClient;
 
 /** {@inheritdoc} */
 class PrivateCatalogClient extends PrivateCatalogGapicClient

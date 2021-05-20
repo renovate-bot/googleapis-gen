@@ -29,9 +29,9 @@ In order to use this library, you first need to go through the following steps:
 ## Quick Start
 
 ```ruby
-require "google/cloud/privatecatalog/v1beta1"
+require "google/cloud/private_catalog/v1beta1"
 
-client = ::Google::Cloud::Privatecatalog::V1beta1::PrivateCatalog::Client.new
+client = ::Google::Cloud::PrivateCatalog::V1beta1::PrivateCatalog::Client.new
 request = my_create_request
 response = client.search_catalogs request
 ```
