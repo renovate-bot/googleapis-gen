@@ -37,12 +37,12 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
-use Google\Cloud\Vpcaccess\V1\Connector;
-use Google\Cloud\Vpcaccess\V1\CreateConnectorRequest;
-use Google\Cloud\Vpcaccess\V1\DeleteConnectorRequest;
-use Google\Cloud\Vpcaccess\V1\GetConnectorRequest;
-use Google\Cloud\Vpcaccess\V1\ListConnectorsRequest;
-use Google\Cloud\Vpcaccess\V1\ListConnectorsResponse;
+use Google\Cloud\VpcAccess\V1\Connector;
+use Google\Cloud\VpcAccess\V1\CreateConnectorRequest;
+use Google\Cloud\VpcAccess\V1\DeleteConnectorRequest;
+use Google\Cloud\VpcAccess\V1\GetConnectorRequest;
+use Google\Cloud\VpcAccess\V1\ListConnectorsRequest;
+use Google\Cloud\VpcAccess\V1\ListConnectorsResponse;
 use Google\LongRunning\Operation;
 
 /**
@@ -470,7 +470,7 @@ class VpcAccessServiceGapicClient
      *          {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Vpcaccess\V1\Connector
+     * @return \Google\Cloud\VpcAccess\V1\Connector
      *
      * @throws ApiException if the remote call fails
      * @experimental

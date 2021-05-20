@@ -5,8 +5,8 @@ return [
         'google.cloud.vpcaccess.v1.VpcAccessService' => [
             'CreateConnector' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Vpcaccess\V1\Connector',
-                    'metadataReturnType' => '\Google\Cloud\Vpcaccess\V1\OperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\VpcAccess\V1\Connector',
+                    'metadataReturnType' => '\Google\Cloud\VpcAccess\V1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -16,7 +16,7 @@ return [
             'DeleteConnector' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Protobuf\GPBEmpty',
-                    'metadataReturnType' => '\Google\Cloud\Vpcaccess\V1\OperationMetadata',
+                    'metadataReturnType' => '\Google\Cloud\VpcAccess\V1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',

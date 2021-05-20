@@ -29,9 +29,9 @@ In order to use this library, you first need to go through the following steps:
 ## Quick Start
 
 ```ruby
-require "google/cloud/vpcaccess/v1"
+require "google/cloud/vpc_access/v1"
 
-client = ::Google::Cloud::Vpcaccess::V1::VpcAccessService::Client.new
+client = ::Google::Cloud::VpcAccess::V1::VpcAccessService::Client.new
 request = my_create_request
 response = client.create_connector request
 ```

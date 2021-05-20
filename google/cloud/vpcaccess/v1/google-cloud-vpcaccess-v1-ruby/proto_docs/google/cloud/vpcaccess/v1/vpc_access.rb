@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Vpcaccess
+    module VpcAccess
       module V1
         # Definition of a Serverless VPC Access connector.
         # @!attribute [rw] name
@@ -33,7 +33,7 @@ module Google
         #     The range of internal addresses that follows RFC 4632 notation.
         #     Example: `10.132.0.0/28`.
         # @!attribute [r] state
-        #   @return [::Google::Cloud::Vpcaccess::V1::Connector::State]
+        #   @return [::Google::Cloud::VpcAccess::V1::Connector::State]
         #     Output only. State of the VPC access connector.
         # @!attribute [rw] min_throughput
         #   @return [::Integer]
@@ -45,7 +45,7 @@ module Google
         #   @return [::Array<::String>]
         #     Output only. List of projects using the connector.
         # @!attribute [rw] subnet
-        #   @return [::Google::Cloud::Vpcaccess::V1::Connector::Subnet]
+        #   @return [::Google::Cloud::VpcAccess::V1::Connector::Subnet]
         #     The subnet in which to house the VPC Access Connector.
         class Connector
           include ::Google::Protobuf::MessageExts
@@ -99,7 +99,7 @@ module Google
         #   @return [::String]
         #     Required. The ID to use for this connector.
         # @!attribute [rw] connector
-        #   @return [::Google::Cloud::Vpcaccess::V1::Connector]
+        #   @return [::Google::Cloud::VpcAccess::V1::Connector]
         #     Required. Resource to create.
         class CreateConnectorRequest
           include ::Google::Protobuf::MessageExts
@@ -132,7 +132,7 @@ module Google
 
         # Response for listing Serverless VPC Access connectors.
         # @!attribute [rw] connectors
-        #   @return [::Array<::Google::Cloud::Vpcaccess::V1::Connector>]
+        #   @return [::Array<::Google::Cloud::VpcAccess::V1::Connector>]
         #     List of Serverless VPC Access connectors.
         # @!attribute [rw] next_page_token
         #   @return [::String]

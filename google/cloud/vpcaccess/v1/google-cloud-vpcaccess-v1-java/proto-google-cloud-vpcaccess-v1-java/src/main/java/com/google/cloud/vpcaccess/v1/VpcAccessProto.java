@@ -124,10 +124,12 @@ public final class VpcAccessProto {
       "\332A\004name\312A*\n\025google.protobuf.Empty\022\021Opera" +
       "tionMetadata\032L\312A\030vpcaccess.googleapis.co" +
       "m\322A.https://www.googleapis.com/auth/clou" +
-      "d-platformBu\n\035com.google.cloud.vpcaccess" +
-      ".v1B\016VpcAccessProtoP\001ZBgoogle.golang.org" +
-      "/genproto/googleapis/cloud/vpcaccess/v1;" +
-      "vpcaccessb\006proto3"
+      "d-platformB\314\001\n\035com.google.cloud.vpcacces" +
+      "s.v1B\016VpcAccessProtoP\001ZBgoogle.golang.or" +
+      "g/genproto/googleapis/cloud/vpcaccess/v1" +
+      ";vpcaccess\252\002\031Google.Cloud.VpcAccess.V1\312\002" +
+      "\031Google\\Cloud\\VpcAccess\\V1\352\002\034Google::Clo" +
+      "ud::VpcAccess::V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

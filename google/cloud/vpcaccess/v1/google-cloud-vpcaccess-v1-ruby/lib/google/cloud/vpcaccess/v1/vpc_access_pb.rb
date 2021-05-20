@@ -64,7 +64,7 @@ end
 
 module Google
   module Cloud
-    module Vpcaccess
+    module VpcAccess
       module V1
         Connector = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.vpcaccess.v1.Connector").msgclass
         Connector::Subnet = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.vpcaccess.v1.Connector.Subnet").msgclass
