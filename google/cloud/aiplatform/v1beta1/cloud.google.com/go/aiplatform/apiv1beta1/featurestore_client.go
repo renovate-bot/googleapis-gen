@@ -100,7 +100,7 @@ func defaultFeaturestoreCallOptions() *FeaturestoreCallOptions {
 	}
 }
 
-// internalFeaturestoreClient is an interface that defines the methods availaible from Cloud AI Platform API.
+// internalFeaturestoreClient is an interface that defines the methods availaible from Vertex AI API.
 type internalFeaturestoreClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -138,7 +138,7 @@ type internalFeaturestoreClient interface {
 	SearchFeatures(context.Context, *aiplatformpb.SearchFeaturesRequest, ...gax.CallOption) *FeatureIterator
 }
 
-// FeaturestoreClient is a client for interacting with Cloud AI Platform API.
+// FeaturestoreClient is a client for interacting with Vertex AI API.
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 //
 // The service that handles CRUD and List for resources for Featurestore.
@@ -371,7 +371,7 @@ func (c *FeaturestoreClient) SearchFeatures(ctx context.Context, req *aiplatform
 	return c.internalClient.SearchFeatures(ctx, req, opts...)
 }
 
-// featurestoreGRPCClient is a client for interacting with Cloud AI Platform API over gRPC transport.
+// featurestoreGRPCClient is a client for interacting with Vertex AI API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 type featurestoreGRPCClient struct {

@@ -83,7 +83,7 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
     protected $dedicated_resources = null;
     /**
      * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
      * the tuning itself).
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ManualBatchTuningParameters manual_batch_tuning_parameters = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -249,7 +249,7 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
      *           must be provided.
      *     @type \Google\Cloud\Aiplatform\V1beta1\ManualBatchTuningParameters $manual_batch_tuning_parameters
      *           Immutable. Parameters configuring the batch behavior. Currently only applicable when
-     *           [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+     *           [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
      *           the tuning itself).
      *     @type bool $generate_explanation
      *           Generate explanation with the batch prediction results.
@@ -584,7 +584,7 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
 
     /**
      * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
      * the tuning itself).
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ManualBatchTuningParameters manual_batch_tuning_parameters = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -607,7 +607,7 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
 
     /**
      * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
      * the tuning itself).
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ManualBatchTuningParameters manual_batch_tuning_parameters = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>

@@ -90,7 +90,7 @@ func defaultVizierCallOptions() *VizierCallOptions {
 	}
 }
 
-// internalVizierClient is an interface that defines the methods availaible from Cloud AI Platform API.
+// internalVizierClient is an interface that defines the methods availaible from Vertex AI API.
 type internalVizierClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -114,10 +114,10 @@ type internalVizierClient interface {
 	ListOptimalTrials(context.Context, *aiplatformpb.ListOptimalTrialsRequest, ...gax.CallOption) (*aiplatformpb.ListOptimalTrialsResponse, error)
 }
 
-// VizierClient is a client for interacting with Cloud AI Platform API.
+// VizierClient is a client for interacting with Vertex AI API.
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 //
-// Cloud AI Platform Vizier API.
+// Vertex Vizier API.
 //
 // Vizier service is a GCP service to solve blackbox optimization problems,
 // such as tuning machine learning hyperparameters and searching over deep
@@ -185,7 +185,7 @@ func (c *VizierClient) LookupStudy(ctx context.Context, req *aiplatformpb.Lookup
 }
 
 // SuggestTrials adds one or more Trials to a Study, with parameter values
-// suggested by AI Platform Vizier. Returns a long-running
+// suggested by Vertex Vizier. Returns a long-running
 // operation associated with the generation of Trial suggestions.
 // When this long-running operation succeeds, it will contain
 // a SuggestTrialsResponse.
@@ -257,7 +257,7 @@ func (c *VizierClient) ListOptimalTrials(ctx context.Context, req *aiplatformpb.
 	return c.internalClient.ListOptimalTrials(ctx, req, opts...)
 }
 
-// vizierGRPCClient is a client for interacting with Cloud AI Platform API over gRPC transport.
+// vizierGRPCClient is a client for interacting with Vertex AI API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 type vizierGRPCClient struct {
@@ -285,7 +285,7 @@ type vizierGRPCClient struct {
 // NewVizierClient creates a new vizier service client based on gRPC.
 // The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
-// Cloud AI Platform Vizier API.
+// Vertex Vizier API.
 //
 // Vizier service is a GCP service to solve blackbox optimization problems,
 // such as tuning machine learning hyperparameters and searching over deep

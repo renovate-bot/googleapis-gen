@@ -184,7 +184,6 @@ type ListFeaturestoresRequest struct {
 	// Lists the featurestores that match the filter expression. The following
 	// fields are supported:
 	//
-	// * `display_name`: Supports =, != comparisons.
 	// * `create_time`: Supports =, !=, <, >, <=, and >= comparisons. Values must
 	// be
 	//   in RFC 3339 format.
@@ -219,7 +218,6 @@ type ListFeaturestoresRequest struct {
 	// Use "desc" after a field name for descending.
 	// Supported Fields:
 	//
-	//   * `display_name`
 	//   * `create_time`
 	//   * `update_time`
 	//   * `online_serving_config.fixed_node_count`
@@ -383,10 +381,8 @@ type UpdateFeaturestoreRequest struct {
 	//
 	// Updatable fields:
 	//
-	//   * `display_name`
 	//   * `labels`
 	//   * `online_serving_config.fixed_node_count`
-	//   * `retention_policy.online_storage_ttl_days`
 	UpdateMask *fieldmaskpb.FieldMask `protobuf:"bytes,2,opt,name=update_mask,json=updateMask,proto3" json:"update_mask,omitempty"`
 }
 

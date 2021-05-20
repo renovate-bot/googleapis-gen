@@ -55,8 +55,6 @@ class PipelineJob extends \Google\Protobuf\Internal\Message
     protected $update_time = null;
     /**
      * Required. The spec of the pipeline.
-     * The spec contains a `schema_version` field which indicates the Kubeflow
-     * Pipeline schema version to decode the struct.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -126,7 +124,7 @@ class PipelineJob extends \Google\Protobuf\Internal\Message
      * network name.
      * Private services access must already be configured for the network.
      * Pipeline job will apply the network configuration to the GCP resources
-     * being launched, if applied, such as Cloud AI Platform
+     * being launched, if applied, such as Vertex AI
      * Training or Dataflow job. If left unspecified, the workload is not peered
      * with any network.
      *
@@ -156,8 +154,6 @@ class PipelineJob extends \Google\Protobuf\Internal\Message
      *           Output only. Timestamp when this PipelineJob was most recently updated.
      *     @type \Google\Protobuf\Struct $pipeline_spec
      *           Required. The spec of the pipeline.
-     *           The spec contains a `schema_version` field which indicates the Kubeflow
-     *           Pipeline schema version to decode the struct.
      *     @type int $state
      *           Output only. The detailed state of the job.
      *     @type \Google\Cloud\Aiplatform\V1beta1\PipelineJobDetail $job_detail
@@ -195,7 +191,7 @@ class PipelineJob extends \Google\Protobuf\Internal\Message
      *           network name.
      *           Private services access must already be configured for the network.
      *           Pipeline job will apply the network configuration to the GCP resources
-     *           being launched, if applied, such as Cloud AI Platform
+     *           being launched, if applied, such as Vertex AI
      *           Training or Dataflow job. If left unspecified, the workload is not peered
      *           with any network.
      * }
@@ -407,8 +403,6 @@ class PipelineJob extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The spec of the pipeline.
-     * The spec contains a `schema_version` field which indicates the Kubeflow
-     * Pipeline schema version to decode the struct.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Protobuf\Struct|null
@@ -430,8 +424,6 @@ class PipelineJob extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The spec of the pipeline.
-     * The spec contains a `schema_version` field which indicates the Kubeflow
-     * Pipeline schema version to decode the struct.
      *
      * Generated from protobuf field <code>.google.protobuf.Struct pipeline_spec = 7 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Protobuf\Struct $var
@@ -702,7 +694,7 @@ class PipelineJob extends \Google\Protobuf\Internal\Message
      * network name.
      * Private services access must already be configured for the network.
      * Pipeline job will apply the network configuration to the GCP resources
-     * being launched, if applied, such as Cloud AI Platform
+     * being launched, if applied, such as Vertex AI
      * Training or Dataflow job. If left unspecified, the workload is not peered
      * with any network.
      *
@@ -725,7 +717,7 @@ class PipelineJob extends \Google\Protobuf\Internal\Message
      * network name.
      * Private services access must already be configured for the network.
      * Pipeline job will apply the network configuration to the GCP resources
-     * being launched, if applied, such as Cloud AI Platform
+     * being launched, if applied, such as Vertex AI
      * Training or Dataflow job. If left unspecified, the workload is not peered
      * with any network.
      *

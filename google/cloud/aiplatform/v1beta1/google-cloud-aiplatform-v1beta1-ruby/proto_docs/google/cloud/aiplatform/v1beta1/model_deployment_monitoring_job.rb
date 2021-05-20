@@ -83,7 +83,7 @@ module Google
         #     prediction request/response.
         #     If there are any data type differences between predict instance and TFDV
         #     instance, this field can be used to override the schema.
-        #     For models trained with AI Platform, this field must be set as all the
+        #     For models trained with Vertex AI, this field must be set as all the
         #     fields in predict instance formatted as string.
         # @!attribute [r] bigquery_tables
         #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::ModelDeploymentMonitoringBigQueryTable>]

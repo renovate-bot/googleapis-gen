@@ -10,7 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Config of migrating one resource from automl.googleapis.com,
- * datalabeling.googleapis.com and ml.googleapis.com to AI Platform.
+ * datalabeling.googleapis.com and ml.googleapis.com to Vertex AI.
  *
  * Generated from protobuf message <code>google.cloud.aiplatform.v1beta1.MigrateResourceRequest</code>
  */
@@ -25,16 +25,16 @@ class MigrateResourceRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Aiplatform\V1beta1\MigrateResourceRequest\MigrateMlEngineModelVersionConfig $migrate_ml_engine_model_version_config
-     *           Config for migrating Version in ml.googleapis.com to AI Platform's Model.
+     *           Config for migrating Version in ml.googleapis.com to Vertex AI's Model.
      *     @type \Google\Cloud\Aiplatform\V1beta1\MigrateResourceRequest\MigrateAutomlModelConfig $migrate_automl_model_config
-     *           Config for migrating Model in automl.googleapis.com to AI Platform's
+     *           Config for migrating Model in automl.googleapis.com to Vertex AI's
      *           Model.
      *     @type \Google\Cloud\Aiplatform\V1beta1\MigrateResourceRequest\MigrateAutomlDatasetConfig $migrate_automl_dataset_config
-     *           Config for migrating Dataset in automl.googleapis.com to AI Platform's
+     *           Config for migrating Dataset in automl.googleapis.com to Vertex AI's
      *           Dataset.
      *     @type \Google\Cloud\Aiplatform\V1beta1\MigrateResourceRequest\MigrateDataLabelingDatasetConfig $migrate_data_labeling_dataset_config
      *           Config for migrating Dataset in datalabeling.googleapis.com to
-     *           AI Platform's Dataset.
+     *           Vertex AI's Dataset.
      * }
      */
     public function __construct($data = NULL) {
@@ -43,7 +43,7 @@ class MigrateResourceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Config for migrating Version in ml.googleapis.com to AI Platform's Model.
+     * Config for migrating Version in ml.googleapis.com to Vertex AI's Model.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.MigrateResourceRequest.MigrateMlEngineModelVersionConfig migrate_ml_engine_model_version_config = 1;</code>
      * @return \Google\Cloud\Aiplatform\V1beta1\MigrateResourceRequest\MigrateMlEngineModelVersionConfig|null
@@ -59,7 +59,7 @@ class MigrateResourceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Config for migrating Version in ml.googleapis.com to AI Platform's Model.
+     * Config for migrating Version in ml.googleapis.com to Vertex AI's Model.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.MigrateResourceRequest.MigrateMlEngineModelVersionConfig migrate_ml_engine_model_version_config = 1;</code>
      * @param \Google\Cloud\Aiplatform\V1beta1\MigrateResourceRequest\MigrateMlEngineModelVersionConfig $var
@@ -74,7 +74,7 @@ class MigrateResourceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Config for migrating Model in automl.googleapis.com to AI Platform's
+     * Config for migrating Model in automl.googleapis.com to Vertex AI's
      * Model.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.MigrateResourceRequest.MigrateAutomlModelConfig migrate_automl_model_config = 2;</code>
@@ -91,7 +91,7 @@ class MigrateResourceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Config for migrating Model in automl.googleapis.com to AI Platform's
+     * Config for migrating Model in automl.googleapis.com to Vertex AI's
      * Model.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.MigrateResourceRequest.MigrateAutomlModelConfig migrate_automl_model_config = 2;</code>
@@ -107,7 +107,7 @@ class MigrateResourceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Config for migrating Dataset in automl.googleapis.com to AI Platform's
+     * Config for migrating Dataset in automl.googleapis.com to Vertex AI's
      * Dataset.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.MigrateResourceRequest.MigrateAutomlDatasetConfig migrate_automl_dataset_config = 3;</code>
@@ -124,7 +124,7 @@ class MigrateResourceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Config for migrating Dataset in automl.googleapis.com to AI Platform's
+     * Config for migrating Dataset in automl.googleapis.com to Vertex AI's
      * Dataset.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.MigrateResourceRequest.MigrateAutomlDatasetConfig migrate_automl_dataset_config = 3;</code>
@@ -141,7 +141,7 @@ class MigrateResourceRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Config for migrating Dataset in datalabeling.googleapis.com to
-     * AI Platform's Dataset.
+     * Vertex AI's Dataset.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.MigrateResourceRequest.MigrateDataLabelingDatasetConfig migrate_data_labeling_dataset_config = 4;</code>
      * @return \Google\Cloud\Aiplatform\V1beta1\MigrateResourceRequest\MigrateDataLabelingDatasetConfig|null
@@ -158,7 +158,7 @@ class MigrateResourceRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Config for migrating Dataset in datalabeling.googleapis.com to
-     * AI Platform's Dataset.
+     * Vertex AI's Dataset.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.MigrateResourceRequest.MigrateDataLabelingDatasetConfig migrate_data_labeling_dataset_config = 4;</code>
      * @param \Google\Cloud\Aiplatform\V1beta1\MigrateResourceRequest\MigrateDataLabelingDatasetConfig $var

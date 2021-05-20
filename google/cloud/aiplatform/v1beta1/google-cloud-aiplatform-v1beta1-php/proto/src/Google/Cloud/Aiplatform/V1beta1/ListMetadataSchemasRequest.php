@@ -34,7 +34,7 @@ class ListMetadataSchemasRequest extends \Google\Protobuf\Internal\Message
     /**
      * A page token, received from a previous
      * [MetadataService.ListMetadataSchemas][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataSchemas] call. Provide this to retrieve the
-     * subsequent page.
+     * next page.
      * When paginating, all other provided parameters must match the call that
      * provided the page token. (Otherwise the request will fail with
      * INVALID_ARGUMENT error.)
@@ -66,7 +66,7 @@ class ListMetadataSchemasRequest extends \Google\Protobuf\Internal\Message
      *     @type string $page_token
      *           A page token, received from a previous
      *           [MetadataService.ListMetadataSchemas][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataSchemas] call. Provide this to retrieve the
-     *           subsequent page.
+     *           next page.
      *           When paginating, all other provided parameters must match the call that
      *           provided the page token. (Otherwise the request will fail with
      *           INVALID_ARGUMENT error.)
@@ -142,7 +142,7 @@ class ListMetadataSchemasRequest extends \Google\Protobuf\Internal\Message
     /**
      * A page token, received from a previous
      * [MetadataService.ListMetadataSchemas][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataSchemas] call. Provide this to retrieve the
-     * subsequent page.
+     * next page.
      * When paginating, all other provided parameters must match the call that
      * provided the page token. (Otherwise the request will fail with
      * INVALID_ARGUMENT error.)
@@ -158,7 +158,7 @@ class ListMetadataSchemasRequest extends \Google\Protobuf\Internal\Message
     /**
      * A page token, received from a previous
      * [MetadataService.ListMetadataSchemas][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataSchemas] call. Provide this to retrieve the
-     * subsequent page.
+     * next page.
      * When paginating, all other provided parameters must match the call that
      * provided the page token. (Otherwise the request will fail with
      * INVALID_ARGUMENT error.)

@@ -33,10 +33,8 @@ class UpdateFeaturestoreRequest extends \Google\Protobuf\Internal\Message
      * request will be overwritten. Set the update_mask to `*` to override all
      * fields.
      * Updatable fields:
-     *   * `display_name`
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
-     *   * `retention_policy.online_storage_ttl_days`
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
@@ -62,10 +60,8 @@ class UpdateFeaturestoreRequest extends \Google\Protobuf\Internal\Message
      *           request will be overwritten. Set the update_mask to `*` to override all
      *           fields.
      *           Updatable fields:
-     *             * `display_name`
      *             * `labels`
      *             * `online_serving_config.fixed_node_count`
-     *             * `retention_policy.online_storage_ttl_days`
      * }
      */
     public function __construct($data = NULL) {
@@ -124,10 +120,8 @@ class UpdateFeaturestoreRequest extends \Google\Protobuf\Internal\Message
      * request will be overwritten. Set the update_mask to `*` to override all
      * fields.
      * Updatable fields:
-     *   * `display_name`
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
-     *   * `retention_policy.online_storage_ttl_days`
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
      * @return \Google\Protobuf\FieldMask|null
@@ -156,10 +150,8 @@ class UpdateFeaturestoreRequest extends \Google\Protobuf\Internal\Message
      * request will be overwritten. Set the update_mask to `*` to override all
      * fields.
      * Updatable fields:
-     *   * `display_name`
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
-     *   * `retention_policy.online_storage_ttl_days`
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
      * @param \Google\Protobuf\FieldMask $var

@@ -98,8 +98,9 @@ module Google
         #   @return [::String]
         #     Specifies the service account for workload run-as account.
         #     Users submitting jobs must have act-as permission on this run-as account.
-        #     If unspecified, the AI Platform Custom Code Service Agent for the
-        #     CustomJob's project is used.
+        #     If unspecified, the [AI Platform Custom Code Service
+        #     Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
+        #     for the CustomJob's project is used.
         # @!attribute [rw] network
         #   @return [::String]
         #     The full name of the Compute Engine
@@ -121,7 +122,7 @@ module Google
         #     {::Google::Cloud::Aiplatform::V1beta1::Trial#id id} under its parent HyperparameterTuningJob's
         #     baseOutputDirectory.
         #
-        #     The following AI Platform environment variables will be passed to
+        #     The following Vertex AI environment variables will be passed to
         #     containers or python modules when this field is set:
         #
         #       For CustomJob:
@@ -137,7 +138,7 @@ module Google
         #       * AIP_TENSORBOARD_LOG_DIR = `<base_output_directory>/<trial_id>/logs/`
         # @!attribute [rw] tensorboard
         #   @return [::String]
-        #     Optional. The name of an AI Platform {::Google::Cloud::Aiplatform::V1beta1::Tensorboard Tensorboard} resource to which this CustomJob
+        #     Optional. The name of a Vertex AI {::Google::Cloud::Aiplatform::V1beta1::Tensorboard Tensorboard} resource to which this CustomJob
         #     will upload Tensorboard logs.
         #     Format:
         #     `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
@@ -188,10 +189,10 @@ module Google
         # @!attribute [rw] executor_image_uri
         #   @return [::String]
         #     Required. The URI of a container image in Artifact Registry that will run the
-        #     provided Python package. AI Platform provides a wide range of executor
+        #     provided Python package. Vertex AI provides a wide range of executor
         #     images with pre-installed packages to meet users' various use cases. See
         #     the list of [pre-built containers for
-        #     training](https://cloud.google.com/ai-platform-unified/docs/training/pre-built-containers).
+        #     training](https://cloud.google.com/vertex-ai/docs/training/pre-built-containers).
         #     You must use an image from this list.
         # @!attribute [rw] package_uris
         #   @return [::Array<::String>]

@@ -70,7 +70,7 @@ module Google
         # @!attribute [rw] manual_batch_tuning_parameters
         #   @return [::Google::Cloud::Aiplatform::V1beta1::ManualBatchTuningParameters]
         #     Immutable. Parameters configuring the batch behavior. Currently only applicable when
-        #     {::Google::Cloud::Aiplatform::V1beta1::BatchPredictionJob#dedicated_resources dedicated_resources} are used (in other cases AI Platform does
+        #     {::Google::Cloud::Aiplatform::V1beta1::BatchPredictionJob#dedicated_resources dedicated_resources} are used (in other cases Vertex AI does
         #     the tuning itself).
         # @!attribute [rw] generate_explanation
         #   @return [::Boolean]
@@ -228,7 +228,7 @@ module Google
           #     represented as a STRUCT, and containing only `code` and `message`.
           # @!attribute [rw] predictions_format
           #   @return [::String]
-          #     Required. The format in which AI Platform gives the predictions, must be one of the
+          #     Required. The format in which Vertex AI gives the predictions, must be one of the
           #     [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
           #     {::Google::Cloud::Aiplatform::V1beta1::Model#supported_output_storage_formats supported_output_storage_formats}.
           class OutputConfig

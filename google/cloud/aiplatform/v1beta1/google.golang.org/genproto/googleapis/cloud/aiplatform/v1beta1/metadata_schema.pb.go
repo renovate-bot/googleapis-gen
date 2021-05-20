@@ -114,8 +114,9 @@ type MetadataSchema struct {
 	// of [MetadataSchema.version] and the schema name given by `title` in
 	// [MetadataSchema.schema] must be unique within a MetadataStore.
 	//
-	// The schema is defined as an OpenAPI 3.0.2 [MetadataSchema Object](
-	// https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md#schemaObject)
+	// The schema is defined as an OpenAPI 3.0.2
+	// [MetadataSchema
+	// Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md#schemaObject)
 	Schema string `protobuf:"bytes,3,opt,name=schema,proto3" json:"schema,omitempty"`
 	// The type of the MetadataSchema. This is a property that identifies which
 	// metadata types will use the MetadataSchema.

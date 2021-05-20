@@ -325,7 +325,7 @@ type ModelDeploymentMonitoringJob struct {
 	// prediction request/response.
 	// If there are any data type differences between predict instance and TFDV
 	// instance, this field can be used to override the schema.
-	// For models trained with AI Platform, this field must be set as all the
+	// For models trained with Vertex AI, this field must be set as all the
 	// fields in predict instance formatted as string.
 	AnalysisInstanceSchemaUri string `protobuf:"bytes,16,opt,name=analysis_instance_schema_uri,json=analysisInstanceSchemaUri,proto3" json:"analysis_instance_schema_uri,omitempty"`
 	// Output only. The created bigquery tables for the job under customer project. Customer

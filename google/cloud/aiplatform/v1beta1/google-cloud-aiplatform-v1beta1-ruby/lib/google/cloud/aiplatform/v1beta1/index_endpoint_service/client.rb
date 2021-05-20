@@ -27,7 +27,7 @@ module Google
           ##
           # Client for the IndexEndpointService service.
           #
-          # A service for managing AI Platform's IndexEndpoints.
+          # A service for managing Vertex AI's IndexEndpoints.
           #
           class Client
             include Paths

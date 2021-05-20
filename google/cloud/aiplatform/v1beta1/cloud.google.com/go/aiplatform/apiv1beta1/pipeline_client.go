@@ -80,7 +80,7 @@ func defaultPipelineCallOptions() *PipelineCallOptions {
 	}
 }
 
-// internalPipelineClient is an interface that defines the methods availaible from Cloud AI Platform API.
+// internalPipelineClient is an interface that defines the methods availaible from Vertex AI API.
 type internalPipelineClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -99,10 +99,12 @@ type internalPipelineClient interface {
 	CancelPipelineJob(context.Context, *aiplatformpb.CancelPipelineJobRequest, ...gax.CallOption) error
 }
 
-// PipelineClient is a client for interacting with Cloud AI Platform API.
+// PipelineClient is a client for interacting with Vertex AI API.
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 //
-// A service for creating and managing AI Platform’s pipelines.
+// A service for creating and managing Vertex AI’s pipelines. This includes both
+// TrainingPipeline resources (used for AutoML and custom training) and
+// PipelineJob resources (used for Vertex Pipelines).
 type PipelineClient struct {
 	// The internal transport-dependent client.
 	internalClient internalPipelineClient
@@ -219,7 +221,7 @@ func (c *PipelineClient) CancelPipelineJob(ctx context.Context, req *aiplatformp
 	return c.internalClient.CancelPipelineJob(ctx, req, opts...)
 }
 
-// pipelineGRPCClient is a client for interacting with Cloud AI Platform API over gRPC transport.
+// pipelineGRPCClient is a client for interacting with Vertex AI API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 type pipelineGRPCClient struct {
@@ -247,7 +249,9 @@ type pipelineGRPCClient struct {
 // NewPipelineClient creates a new pipeline service client based on gRPC.
 // The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
-// A service for creating and managing AI Platform’s pipelines.
+// A service for creating and managing Vertex AI’s pipelines. This includes both
+// TrainingPipeline resources (used for AutoML and custom training) and
+// PipelineJob resources (used for Vertex Pipelines).
 func NewPipelineClient(ctx context.Context, opts ...option.ClientOption) (*PipelineClient, error) {
 	clientOpts := defaultPipelineGRPCClientOptions()
 	if newPipelineClientHook != nil {

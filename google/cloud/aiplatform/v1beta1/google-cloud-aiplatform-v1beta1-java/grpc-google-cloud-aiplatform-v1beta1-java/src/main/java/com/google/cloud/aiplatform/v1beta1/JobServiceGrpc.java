@@ -4,7 +4,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
  * <pre>
- * A service for creating and managing AI Platform's jobs.
+ * A service for creating and managing Vertex AI's jobs.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -931,7 +931,7 @@ public final class JobServiceGrpc {
 
   /**
    * <pre>
-   * A service for creating and managing AI Platform's jobs.
+   * A service for creating and managing Vertex AI's jobs.
    * </pre>
    */
   public static abstract class JobServiceImplBase implements io.grpc.BindableService {
@@ -1454,7 +1454,7 @@ public final class JobServiceGrpc {
 
   /**
    * <pre>
-   * A service for creating and managing AI Platform's jobs.
+   * A service for creating and managing Vertex AI's jobs.
    * </pre>
    */
   public static final class JobServiceStub extends io.grpc.stub.AbstractAsyncStub<JobServiceStub> {
@@ -1814,7 +1814,7 @@ public final class JobServiceGrpc {
 
   /**
    * <pre>
-   * A service for creating and managing AI Platform's jobs.
+   * A service for creating and managing Vertex AI's jobs.
    * </pre>
    */
   public static final class JobServiceBlockingStub extends io.grpc.stub.AbstractBlockingStub<JobServiceBlockingStub> {
@@ -2146,7 +2146,7 @@ public final class JobServiceGrpc {
 
   /**
    * <pre>
-   * A service for creating and managing AI Platform's jobs.
+   * A service for creating and managing Vertex AI's jobs.
    * </pre>
    */
   public static final class JobServiceFutureStub extends io.grpc.stub.AbstractFutureStub<JobServiceFutureStub> {

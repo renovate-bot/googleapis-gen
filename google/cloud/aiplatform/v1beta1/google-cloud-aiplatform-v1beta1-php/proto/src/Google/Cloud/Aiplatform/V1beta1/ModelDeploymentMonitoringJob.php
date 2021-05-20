@@ -107,7 +107,7 @@ class ModelDeploymentMonitoringJob extends \Google\Protobuf\Internal\Message
      * prediction request/response.
      * If there are any data type differences between predict instance and TFDV
      * instance, this field can be used to override the schema.
-     * For models trained with AI Platform, this field must be set as all the
+     * For models trained with Vertex AI, this field must be set as all the
      * fields in predict instance formatted as string.
      *
      * Generated from protobuf field <code>string analysis_instance_schema_uri = 16;</code>
@@ -220,7 +220,7 @@ class ModelDeploymentMonitoringJob extends \Google\Protobuf\Internal\Message
      *           prediction request/response.
      *           If there are any data type differences between predict instance and TFDV
      *           instance, this field can be used to override the schema.
-     *           For models trained with AI Platform, this field must be set as all the
+     *           For models trained with Vertex AI, this field must be set as all the
      *           fields in predict instance formatted as string.
      *     @type \Google\Cloud\Aiplatform\V1beta1\ModelDeploymentMonitoringBigQueryTable[]|\Google\Protobuf\Internal\RepeatedField $bigquery_tables
      *           Output only. The created bigquery tables for the job under customer project. Customer
@@ -620,7 +620,7 @@ class ModelDeploymentMonitoringJob extends \Google\Protobuf\Internal\Message
      * prediction request/response.
      * If there are any data type differences between predict instance and TFDV
      * instance, this field can be used to override the schema.
-     * For models trained with AI Platform, this field must be set as all the
+     * For models trained with Vertex AI, this field must be set as all the
      * fields in predict instance formatted as string.
      *
      * Generated from protobuf field <code>string analysis_instance_schema_uri = 16;</code>
@@ -640,7 +640,7 @@ class ModelDeploymentMonitoringJob extends \Google\Protobuf\Internal\Message
      * prediction request/response.
      * If there are any data type differences between predict instance and TFDV
      * instance, this field can be used to override the schema.
-     * For models trained with AI Platform, this field must be set as all the
+     * For models trained with Vertex AI, this field must be set as all the
      * fields in predict instance formatted as string.
      *
      * Generated from protobuf field <code>string analysis_instance_schema_uri = 16;</code>

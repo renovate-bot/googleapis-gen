@@ -34,7 +34,7 @@ import { operationsProtos } from 'google-gax';
 const version = require('../../../package.json').version;
 
 /**
- *  Cloud AI Platform Vizier API.
+ *  Vertex Vizier API.
  *
  *  Vizier service is a GCP service to solve blackbox optimization problems,
  *  such as tuning machine learning hyperparameters and searching over deep
@@ -1257,7 +1257,7 @@ export class VizierServiceClient {
           {}|null|undefined>): void;
 /**
  * Adds one or more Trials to a Study, with parameter values
- * suggested by AI Platform Vizier. Returns a long-running
+ * suggested by Vertex Vizier. Returns a long-running
  * operation associated with the generation of Trial suggestions.
  * When this long-running operation succeeds, it will contain
  * a {@link google.cloud.ml.v1.SuggestTrialsResponse|SuggestTrialsResponse}.

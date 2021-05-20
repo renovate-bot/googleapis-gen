@@ -24,7 +24,7 @@ module Google
     module Aiplatform
       module V1beta1
         module IndexService
-          # A service for creating and managing AI Platform's Index resources.
+          # A service for creating and managing Vertex AI's Index resources.
           class Service
 
             include GRPC::GenericService

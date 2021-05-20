@@ -20,7 +20,7 @@ namespace Google\Cloud\Aiplatform\V1beta1;
 
 /**
  * A service that migrates resources from automl.googleapis.com,
- * datalabeling.googleapis.com and ml.googleapis.com to AI Platform.
+ * datalabeling.googleapis.com and ml.googleapis.com to Vertex AI.
  */
 class MigrationServiceGrpcClient extends \Grpc\BaseStub {
 
@@ -36,7 +36,7 @@ class MigrationServiceGrpcClient extends \Grpc\BaseStub {
     /**
      * Searches all of the resources in automl.googleapis.com,
      * datalabeling.googleapis.com and ml.googleapis.com that can be migrated to
-     * AI Platform's given location.
+     * Vertex AI's given location.
      * @param \Google\Cloud\Aiplatform\V1beta1\SearchMigratableResourcesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -52,7 +52,7 @@ class MigrationServiceGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Batch migrates resources from ml.googleapis.com, automl.googleapis.com,
-     * and datalabeling.googleapis.com to AI Platform (Unified).
+     * and datalabeling.googleapis.com to Vertex AI.
      * @param \Google\Cloud\Aiplatform\V1beta1\BatchMigrateResourcesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

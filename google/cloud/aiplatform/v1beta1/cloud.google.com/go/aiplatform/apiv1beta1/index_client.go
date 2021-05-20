@@ -70,7 +70,7 @@ func defaultIndexCallOptions() *IndexCallOptions {
 	}
 }
 
-// internalIndexClient is an interface that defines the methods availaible from Cloud AI Platform API.
+// internalIndexClient is an interface that defines the methods availaible from Vertex AI API.
 type internalIndexClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -85,10 +85,10 @@ type internalIndexClient interface {
 	DeleteIndexOperation(name string) *DeleteIndexOperation
 }
 
-// IndexClient is a client for interacting with Cloud AI Platform API.
+// IndexClient is a client for interacting with Vertex AI API.
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 //
-// A service for creating and managing AI Platform’s Index resources.
+// A service for creating and managing Vertex AI’s Index resources.
 type IndexClient struct {
 	// The internal transport-dependent client.
 	internalClient internalIndexClient
@@ -169,7 +169,7 @@ func (c *IndexClient) DeleteIndexOperation(name string) *DeleteIndexOperation {
 	return c.internalClient.DeleteIndexOperation(name)
 }
 
-// indexGRPCClient is a client for interacting with Cloud AI Platform API over gRPC transport.
+// indexGRPCClient is a client for interacting with Vertex AI API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 type indexGRPCClient struct {
@@ -197,7 +197,7 @@ type indexGRPCClient struct {
 // NewIndexClient creates a new index service client based on gRPC.
 // The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
-// A service for creating and managing AI Platform’s Index resources.
+// A service for creating and managing Vertex AI’s Index resources.
 func NewIndexClient(ctx context.Context, opts ...option.ClientOption) (*IndexClient, error) {
 	clientOpts := defaultIndexGRPCClientOptions()
 	if newIndexClientHook != nil {

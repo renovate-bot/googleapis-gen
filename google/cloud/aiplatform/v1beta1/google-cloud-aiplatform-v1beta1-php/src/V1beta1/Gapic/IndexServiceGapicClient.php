@@ -50,7 +50,7 @@ use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
 
 /**
- * Service Description: A service for creating and managing AI Platform's Index resources.
+ * Service Description: A service for creating and managing Vertex AI's Index resources.
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -677,7 +677,7 @@ class IndexServiceGapicClient
      *     @type FieldMask $updateMask
      *           The update mask applies to the resource.
      *           For the `FieldMask` definition, see
-     *           [FieldMask](https://tinyurl.com/protobufs#google.protobuf.FieldMask).
+     *           [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry

@@ -1765,7 +1765,6 @@ class FeaturestoreServiceGapicClient
      *           Lists the featurestores that match the filter expression. The following
      *           fields are supported:
      *
-     *           * `display_name`: Supports =, != comparisons.
      *           * `create_time`: Supports =, !=, <, >, <=, and >= comparisons. Values must
      *           be
      *           in RFC 3339 format.
@@ -1796,7 +1795,6 @@ class FeaturestoreServiceGapicClient
      *           Use "desc" after a field name for descending.
      *           Supported Fields:
      *
-     *           * `display_name`
      *           * `create_time`
      *           * `update_time`
      *           * `online_serving_config.fixed_node_count`
@@ -2168,10 +2166,8 @@ class FeaturestoreServiceGapicClient
      *
      *           Updatable fields:
      *
-     *           * `display_name`
      *           * `labels`
      *           * `online_serving_config.fixed_node_count`
-     *           * `retention_policy.online_storage_ttl_days`
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry

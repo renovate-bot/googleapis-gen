@@ -98,7 +98,7 @@ class Attribution extends \Google\Protobuf\Internal\Message
      * * For [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution],
      * increasing
      * [step_count][google.cloud.aiplatform.v1beta1.XraiAttribution.step_count] might reduce the error.
-     * See [this introduction](/ai-platform-unified/docs/explainable-ai/overview)
+     * See [this introduction](/vertex-ai/docs/explainable-ai/overview)
      * for more information.
      *
      * Generated from protobuf field <code>double approximation_error = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -181,7 +181,7 @@ class Attribution extends \Google\Protobuf\Internal\Message
      *           * For [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution],
      *           increasing
      *           [step_count][google.cloud.aiplatform.v1beta1.XraiAttribution.step_count] might reduce the error.
-     *           See [this introduction](/ai-platform-unified/docs/explainable-ai/overview)
+     *           See [this introduction](/vertex-ai/docs/explainable-ai/overview)
      *           for more information.
      *     @type string $output_name
      *           Output only. Name of the explain output. Specified as the key in
@@ -425,7 +425,7 @@ class Attribution extends \Google\Protobuf\Internal\Message
      * * For [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution],
      * increasing
      * [step_count][google.cloud.aiplatform.v1beta1.XraiAttribution.step_count] might reduce the error.
-     * See [this introduction](/ai-platform-unified/docs/explainable-ai/overview)
+     * See [this introduction](/vertex-ai/docs/explainable-ai/overview)
      * for more information.
      *
      * Generated from protobuf field <code>double approximation_error = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -450,7 +450,7 @@ class Attribution extends \Google\Protobuf\Internal\Message
      * * For [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution],
      * increasing
      * [step_count][google.cloud.aiplatform.v1beta1.XraiAttribution.step_count] might reduce the error.
-     * See [this introduction](/ai-platform-unified/docs/explainable-ai/overview)
+     * See [this introduction](/vertex-ai/docs/explainable-ai/overview)
      * for more information.
      *
      * Generated from protobuf field <code>double approximation_error = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

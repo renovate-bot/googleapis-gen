@@ -5,7 +5,7 @@ package com.google.cloud.aiplatform.v1beta1;
 
 /**
  * <pre>
- * A description of resources that to large degree are decided by AI Platform,
+ * A description of resources that to large degree are decided by Vertex AI,
  * and require only a modest additional configuration.
  * Each Model supporting these resources documents its specific guidelines.
  * </pre>
@@ -126,7 +126,7 @@ private static final long serialVersionUID = 0L;
    * outages). If traffic against the DeployedModel increases beyond what its
    * replicas at maximum may handle, a portion of the traffic will be dropped.
    * If this value is not provided, a no upper bound for scaling under heavy
-   * traffic will be assume, though AI Platform may be unable to scale beyond
+   * traffic will be assume, though Vertex AI may be unable to scale beyond
    * certain replica number.
    * </pre>
    *
@@ -306,7 +306,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A description of resources that to large degree are decided by AI Platform,
+   * A description of resources that to large degree are decided by Vertex AI,
    * and require only a modest additional configuration.
    * Each Model supporting these resources documents its specific guidelines.
    * </pre>
@@ -528,7 +528,7 @@ private static final long serialVersionUID = 0L;
      * outages). If traffic against the DeployedModel increases beyond what its
      * replicas at maximum may handle, a portion of the traffic will be dropped.
      * If this value is not provided, a no upper bound for scaling under heavy
-     * traffic will be assume, though AI Platform may be unable to scale beyond
+     * traffic will be assume, though Vertex AI may be unable to scale beyond
      * certain replica number.
      * </pre>
      *
@@ -548,7 +548,7 @@ private static final long serialVersionUID = 0L;
      * outages). If traffic against the DeployedModel increases beyond what its
      * replicas at maximum may handle, a portion of the traffic will be dropped.
      * If this value is not provided, a no upper bound for scaling under heavy
-     * traffic will be assume, though AI Platform may be unable to scale beyond
+     * traffic will be assume, though Vertex AI may be unable to scale beyond
      * certain replica number.
      * </pre>
      *
@@ -571,7 +571,7 @@ private static final long serialVersionUID = 0L;
      * outages). If traffic against the DeployedModel increases beyond what its
      * replicas at maximum may handle, a portion of the traffic will be dropped.
      * If this value is not provided, a no upper bound for scaling under heavy
-     * traffic will be assume, though AI Platform may be unable to scale beyond
+     * traffic will be assume, though Vertex AI may be unable to scale beyond
      * certain replica number.
      * </pre>
      *

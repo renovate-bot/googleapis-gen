@@ -108,7 +108,7 @@ func defaultTensorboardCallOptions() *TensorboardCallOptions {
 	}
 }
 
-// internalTensorboardClient is an interface that defines the methods availaible from Cloud AI Platform API.
+// internalTensorboardClient is an interface that defines the methods availaible from Vertex AI API.
 type internalTensorboardClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -145,7 +145,7 @@ type internalTensorboardClient interface {
 	ExportTensorboardTimeSeriesData(context.Context, *aiplatformpb.ExportTensorboardTimeSeriesDataRequest, ...gax.CallOption) *TimeSeriesDataPointIterator
 }
 
-// TensorboardClient is a client for interacting with Cloud AI Platform API.
+// TensorboardClient is a client for interacting with Vertex AI API.
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 //
 // TensorboardService
@@ -350,7 +350,7 @@ func (c *TensorboardClient) ExportTensorboardTimeSeriesData(ctx context.Context,
 	return c.internalClient.ExportTensorboardTimeSeriesData(ctx, req, opts...)
 }
 
-// tensorboardGRPCClient is a client for interacting with Cloud AI Platform API over gRPC transport.
+// tensorboardGRPCClient is a client for interacting with Vertex AI API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 type tensorboardGRPCClient struct {

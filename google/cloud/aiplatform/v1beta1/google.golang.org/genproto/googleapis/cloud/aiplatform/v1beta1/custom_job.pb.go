@@ -212,8 +212,9 @@ type CustomJobSpec struct {
 	Scheduling *Scheduling `protobuf:"bytes,3,opt,name=scheduling,proto3" json:"scheduling,omitempty"`
 	// Specifies the service account for workload run-as account.
 	// Users submitting jobs must have act-as permission on this run-as account.
-	// If unspecified, the AI Platform Custom Code Service Agent for the
-	// CustomJob's project is used.
+	// If unspecified, the [AI Platform Custom Code Service
+	// Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
+	// for the CustomJob's project is used.
 	ServiceAccount string `protobuf:"bytes,4,opt,name=service_account,json=serviceAccount,proto3" json:"service_account,omitempty"`
 	// The full name of the Compute Engine
 	// [network](/compute/docs/networks-and-firewalls#networks) to which the Job
@@ -233,7 +234,7 @@ type CustomJobSpec struct {
 	// [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent HyperparameterTuningJob's
 	// baseOutputDirectory.
 	//
-	// The following AI Platform environment variables will be passed to
+	// The following Vertex AI environment variables will be passed to
 	// containers or python modules when this field is set:
 	//
 	//   For CustomJob:
@@ -248,7 +249,7 @@ type CustomJobSpec struct {
 	//   * AIP_CHECKPOINT_DIR = `<base_output_directory>/<trial_id>/checkpoints/`
 	//   * AIP_TENSORBOARD_LOG_DIR = `<base_output_directory>/<trial_id>/logs/`
 	BaseOutputDirectory *GcsDestination `protobuf:"bytes,6,opt,name=base_output_directory,json=baseOutputDirectory,proto3" json:"base_output_directory,omitempty"`
-	// Optional. The name of an AI Platform [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to which this CustomJob
+	// Optional. The name of a Vertex AI [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to which this CustomJob
 	// will upload Tensorboard logs.
 	// Format:
 	// `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
@@ -517,10 +518,10 @@ type PythonPackageSpec struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Required. The URI of a container image in Artifact Registry that will run the
-	// provided Python package. AI Platform provides a wide range of executor
+	// provided Python package. Vertex AI provides a wide range of executor
 	// images with pre-installed packages to meet users' various use cases. See
 	// the list of [pre-built containers for
-	// training](https://cloud.google.com/ai-platform-unified/docs/training/pre-built-containers).
+	// training](https://cloud.google.com/vertex-ai/docs/training/pre-built-containers).
 	// You must use an image from this list.
 	ExecutorImageUri string `protobuf:"bytes,1,opt,name=executor_image_uri,json=executorImageUri,proto3" json:"executor_image_uri,omitempty"`
 	// Required. The Google Cloud Storage location of the Python package files which are

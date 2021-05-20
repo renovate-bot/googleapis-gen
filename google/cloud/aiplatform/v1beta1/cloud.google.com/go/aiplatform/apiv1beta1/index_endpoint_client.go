@@ -74,7 +74,7 @@ func defaultIndexEndpointCallOptions() *IndexEndpointCallOptions {
 	}
 }
 
-// internalIndexEndpointClient is an interface that defines the methods availaible from Cloud AI Platform API.
+// internalIndexEndpointClient is an interface that defines the methods availaible from Vertex AI API.
 type internalIndexEndpointClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -92,10 +92,10 @@ type internalIndexEndpointClient interface {
 	UndeployIndexOperation(name string) *UndeployIndexOperation
 }
 
-// IndexEndpointClient is a client for interacting with Cloud AI Platform API.
+// IndexEndpointClient is a client for interacting with Vertex AI API.
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 //
-// A service for managing AI Platform’s IndexEndpoints.
+// A service for managing Vertex AI’s IndexEndpoints.
 type IndexEndpointClient struct {
 	// The internal transport-dependent client.
 	internalClient internalIndexEndpointClient
@@ -193,7 +193,7 @@ func (c *IndexEndpointClient) UndeployIndexOperation(name string) *UndeployIndex
 	return c.internalClient.UndeployIndexOperation(name)
 }
 
-// indexEndpointGRPCClient is a client for interacting with Cloud AI Platform API over gRPC transport.
+// indexEndpointGRPCClient is a client for interacting with Vertex AI API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 type indexEndpointGRPCClient struct {
@@ -221,7 +221,7 @@ type indexEndpointGRPCClient struct {
 // NewIndexEndpointClient creates a new index endpoint service client based on gRPC.
 // The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
-// A service for managing AI Platform’s IndexEndpoints.
+// A service for managing Vertex AI’s IndexEndpoints.
 func NewIndexEndpointClient(ctx context.Context, opts ...option.ClientOption) (*IndexEndpointClient, error) {
 	clientOpts := defaultIndexEndpointGRPCClientOptions()
 	if newIndexEndpointClientHook != nil {

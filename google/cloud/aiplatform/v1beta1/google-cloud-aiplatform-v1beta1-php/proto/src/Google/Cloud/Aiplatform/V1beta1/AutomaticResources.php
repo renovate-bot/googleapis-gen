@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * A description of resources that to large degree are decided by AI Platform,
+ * A description of resources that to large degree are decided by Vertex AI,
  * and require only a modest additional configuration.
  * Each Model supporting these resources documents its specific guidelines.
  *
@@ -35,7 +35,7 @@ class AutomaticResources extends \Google\Protobuf\Internal\Message
      * outages). If traffic against the DeployedModel increases beyond what its
      * replicas at maximum may handle, a portion of the traffic will be dropped.
      * If this value is not provided, a no upper bound for scaling under heavy
-     * traffic will be assume, though AI Platform may be unable to scale beyond
+     * traffic will be assume, though Vertex AI may be unable to scale beyond
      * certain replica number.
      *
      * Generated from protobuf field <code>int32 max_replica_count = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -62,7 +62,7 @@ class AutomaticResources extends \Google\Protobuf\Internal\Message
      *           outages). If traffic against the DeployedModel increases beyond what its
      *           replicas at maximum may handle, a portion of the traffic will be dropped.
      *           If this value is not provided, a no upper bound for scaling under heavy
-     *           traffic will be assume, though AI Platform may be unable to scale beyond
+     *           traffic will be assume, though Vertex AI may be unable to scale beyond
      *           certain replica number.
      * }
      */
@@ -113,7 +113,7 @@ class AutomaticResources extends \Google\Protobuf\Internal\Message
      * outages). If traffic against the DeployedModel increases beyond what its
      * replicas at maximum may handle, a portion of the traffic will be dropped.
      * If this value is not provided, a no upper bound for scaling under heavy
-     * traffic will be assume, though AI Platform may be unable to scale beyond
+     * traffic will be assume, though Vertex AI may be unable to scale beyond
      * certain replica number.
      *
      * Generated from protobuf field <code>int32 max_replica_count = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -132,7 +132,7 @@ class AutomaticResources extends \Google\Protobuf\Internal\Message
      * outages). If traffic against the DeployedModel increases beyond what its
      * replicas at maximum may handle, a portion of the traffic will be dropped.
      * If this value is not provided, a no upper bound for scaling under heavy
-     * traffic will be assume, though AI Platform may be unable to scale beyond
+     * traffic will be assume, though Vertex AI may be unable to scale beyond
      * certain replica number.
      *
      * Generated from protobuf field <code>int32 max_replica_count = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>

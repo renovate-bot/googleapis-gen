@@ -27,7 +27,9 @@ module Google
           ##
           # Client for the PipelineService service.
           #
-          # A service for creating and managing AI Platform's pipelines.
+          # A service for creating and managing Vertex AI's pipelines. This includes both
+          # `TrainingPipeline` resources (used for AutoML and custom training) and
+          # `PipelineJob` resources (used for Vertex Pipelines).
           #
           class Client
             include Paths
@@ -718,14 +720,16 @@ module Google
             #   @param filter [::String]
             #     The standard list filter.
             #     Supported fields:
-            #       * `display_name` supports = and !=.
-            #       * `state` supports = and !=.
             #
-            #     Some examples of using the filter are:
-            #      * `state="PIPELINE_STATE_SUCCEEDED" AND display_name="my_pipeline"`
-            #      * `state="PIPELINE_STATE_RUNNING" OR display_name="my_pipeline"`
-            #      * `NOT display_name="my_pipeline"`
-            #      * `state="PIPELINE_STATE_FAILED"`
+            #     * `display_name` supports `=` and `!=`.
+            #     * `state` supports `=` and `!=`.
+            #
+            #     The following examples demonstrate how to filter the list of PipelineJobs:
+            #
+            #     * `state="PIPELINE_STATE_SUCCEEDED" AND display_name="my_pipeline"`
+            #     * `state="PIPELINE_STATE_RUNNING" OR display_name="my_pipeline"`
+            #     * `NOT display_name="my_pipeline"`
+            #     * `state="PIPELINE_STATE_FAILED"`
             #   @param page_size [::Integer]
             #     The standard list page size.
             #   @param page_token [::String]

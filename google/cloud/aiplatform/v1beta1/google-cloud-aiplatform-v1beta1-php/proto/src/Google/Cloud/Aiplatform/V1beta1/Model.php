@@ -49,7 +49,7 @@ class Model extends \Google\Protobuf\Internal\Message
      * does not have any additional information.
      * The schema is defined as an OpenAPI 3.0.2
      * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-     * AutoML Models always have this field populated by AI Platform, if no
+     * AutoML Models always have this field populated by Vertex AI, if no
      * additional metadata is needed, this field is set to an empty string.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
@@ -83,7 +83,7 @@ class Model extends \Google\Protobuf\Internal\Message
      * Input only. The specification of the container that is to be used when deploying
      * this Model. The specification is ingested upon
      * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel], and all binaries it contains are copied
-     * and stored internally by AI Platform.
+     * and stored internally by Vertex AI.
      * Not present for AutoML Models.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ModelContainerSpec container_spec = 9 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -179,7 +179,7 @@ class Model extends \Google\Protobuf\Internal\Message
      */
     private $supported_output_storage_formats;
     /**
-     * Output only. Timestamp when this Model was uploaded into AI Platform.
+     * Output only. Timestamp when this Model was uploaded into Vertex AI.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -270,7 +270,7 @@ class Model extends \Google\Protobuf\Internal\Message
      *           does not have any additional information.
      *           The schema is defined as an OpenAPI 3.0.2
      *           [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-     *           AutoML Models always have this field populated by AI Platform, if no
+     *           AutoML Models always have this field populated by Vertex AI, if no
      *           additional metadata is needed, this field is set to an empty string.
      *           Note: The URI given on output will be immutable and probably different,
      *           including the URI scheme, than the one given on input. The output URI will
@@ -288,7 +288,7 @@ class Model extends \Google\Protobuf\Internal\Message
      *           Input only. The specification of the container that is to be used when deploying
      *           this Model. The specification is ingested upon
      *           [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel], and all binaries it contains are copied
-     *           and stored internally by AI Platform.
+     *           and stored internally by Vertex AI.
      *           Not present for AutoML Models.
      *     @type string $artifact_uri
      *           Immutable. The path to the directory containing the Model artifact and any of its
@@ -364,7 +364,7 @@ class Model extends \Google\Protobuf\Internal\Message
      *           predictions by using [PredictionService.Predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict] or
      *           [PredictionService.Explain][google.cloud.aiplatform.v1beta1.PredictionService.Explain].
      *     @type \Google\Protobuf\Timestamp $create_time
-     *           Output only. Timestamp when this Model was uploaded into AI Platform.
+     *           Output only. Timestamp when this Model was uploaded into Vertex AI.
      *     @type \Google\Protobuf\Timestamp $update_time
      *           Output only. Timestamp when this Model was most recently updated.
      *     @type \Google\Cloud\Aiplatform\V1beta1\DeployedModelRef[]|\Google\Protobuf\Internal\RepeatedField $deployed_models
@@ -537,7 +537,7 @@ class Model extends \Google\Protobuf\Internal\Message
      * does not have any additional information.
      * The schema is defined as an OpenAPI 3.0.2
      * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-     * AutoML Models always have this field populated by AI Platform, if no
+     * AutoML Models always have this field populated by Vertex AI, if no
      * additional metadata is needed, this field is set to an empty string.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
@@ -557,7 +557,7 @@ class Model extends \Google\Protobuf\Internal\Message
      * does not have any additional information.
      * The schema is defined as an OpenAPI 3.0.2
      * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-     * AutoML Models always have this field populated by AI Platform, if no
+     * AutoML Models always have this field populated by Vertex AI, if no
      * additional metadata is needed, this field is set to an empty string.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
@@ -673,7 +673,7 @@ class Model extends \Google\Protobuf\Internal\Message
      * Input only. The specification of the container that is to be used when deploying
      * this Model. The specification is ingested upon
      * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel], and all binaries it contains are copied
-     * and stored internally by AI Platform.
+     * and stored internally by Vertex AI.
      * Not present for AutoML Models.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ModelContainerSpec container_spec = 9 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -698,7 +698,7 @@ class Model extends \Google\Protobuf\Internal\Message
      * Input only. The specification of the container that is to be used when deploying
      * this Model. The specification is ingested upon
      * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel], and all binaries it contains are copied
-     * and stored internally by AI Platform.
+     * and stored internally by Vertex AI.
      * Not present for AutoML Models.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ModelContainerSpec container_spec = 9 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -948,7 +948,7 @@ class Model extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Timestamp when this Model was uploaded into AI Platform.
+     * Output only. Timestamp when this Model was uploaded into Vertex AI.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Timestamp|null
@@ -969,7 +969,7 @@ class Model extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Timestamp when this Model was uploaded into AI Platform.
+     * Output only. Timestamp when this Model was uploaded into Vertex AI.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Timestamp $var

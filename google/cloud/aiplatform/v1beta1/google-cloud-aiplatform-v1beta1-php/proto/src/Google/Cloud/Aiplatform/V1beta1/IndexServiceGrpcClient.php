@@ -19,7 +19,7 @@
 namespace Google\Cloud\Aiplatform\V1beta1;
 
 /**
- * A service for creating and managing AI Platform's Index resources.
+ * A service for creating and managing Vertex AI's Index resources.
  */
 class IndexServiceGrpcClient extends \Grpc\BaseStub {
 

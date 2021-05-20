@@ -24,7 +24,7 @@ module Google
     module Aiplatform
       module V1beta1
         module IndexEndpointService
-          # A service for managing AI Platform's IndexEndpoints.
+          # A service for managing Vertex AI's IndexEndpoints.
           class Service
 
             include GRPC::GenericService

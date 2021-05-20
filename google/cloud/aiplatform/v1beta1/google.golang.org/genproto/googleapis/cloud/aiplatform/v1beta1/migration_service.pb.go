@@ -53,7 +53,7 @@ type SearchMigratableResourcesRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Required. The location that the migratable resources should be searched from.
-	// It's the AI Platform location that the resources can be migrated to, not
+	// It's the Vertex AI location that the resources can be migrated to, not
 	// the resources' original location.
 	// Format:
 	// `projects/{project}/locations/{location}`
@@ -261,7 +261,7 @@ func (x *BatchMigrateResourcesRequest) GetMigrateResourceRequests() []*MigrateRe
 }
 
 // Config of migrating one resource from automl.googleapis.com,
-// datalabeling.googleapis.com and ml.googleapis.com to AI Platform.
+// datalabeling.googleapis.com and ml.googleapis.com to Vertex AI.
 type MigrateResourceRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -347,25 +347,25 @@ type isMigrateResourceRequest_Request interface {
 }
 
 type MigrateResourceRequest_MigrateMlEngineModelVersionConfig_ struct {
-	// Config for migrating Version in ml.googleapis.com to AI Platform's Model.
+	// Config for migrating Version in ml.googleapis.com to Vertex AI's Model.
 	MigrateMlEngineModelVersionConfig *MigrateResourceRequest_MigrateMlEngineModelVersionConfig `protobuf:"bytes,1,opt,name=migrate_ml_engine_model_version_config,json=migrateMlEngineModelVersionConfig,proto3,oneof"`
 }
 
 type MigrateResourceRequest_MigrateAutomlModelConfig_ struct {
-	// Config for migrating Model in automl.googleapis.com to AI Platform's
+	// Config for migrating Model in automl.googleapis.com to Vertex AI's
 	// Model.
 	MigrateAutomlModelConfig *MigrateResourceRequest_MigrateAutomlModelConfig `protobuf:"bytes,2,opt,name=migrate_automl_model_config,json=migrateAutomlModelConfig,proto3,oneof"`
 }
 
 type MigrateResourceRequest_MigrateAutomlDatasetConfig_ struct {
-	// Config for migrating Dataset in automl.googleapis.com to AI Platform's
+	// Config for migrating Dataset in automl.googleapis.com to Vertex AI's
 	// Dataset.
 	MigrateAutomlDatasetConfig *MigrateResourceRequest_MigrateAutomlDatasetConfig `protobuf:"bytes,3,opt,name=migrate_automl_dataset_config,json=migrateAutomlDatasetConfig,proto3,oneof"`
 }
 
 type MigrateResourceRequest_MigrateDataLabelingDatasetConfig_ struct {
 	// Config for migrating Dataset in datalabeling.googleapis.com to
-	// AI Platform's Dataset.
+	// Vertex AI's Dataset.
 	MigrateDataLabelingDatasetConfig *MigrateResourceRequest_MigrateDataLabelingDatasetConfig `protobuf:"bytes,4,opt,name=migrate_data_labeling_dataset_config,json=migrateDataLabelingDatasetConfig,proto3,oneof"`
 }
 
@@ -433,7 +433,7 @@ type MigrateResourceResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// After migration, the resource name in AI Platform.
+	// After migration, the resource name in Vertex AI.
 	//
 	// Types that are assignable to MigratedResource:
 	//	*MigrateResourceResponse_Dataset
@@ -580,7 +580,7 @@ func (x *BatchMigrateResourcesOperationMetadata) GetPartialResults() []*BatchMig
 	return nil
 }
 
-// Config for migrating version in ml.googleapis.com to AI Platform's Model.
+// Config for migrating version in ml.googleapis.com to Vertex AI's Model.
 type MigrateResourceRequest_MigrateMlEngineModelVersionConfig struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -601,7 +601,7 @@ type MigrateResourceRequest_MigrateMlEngineModelVersionConfig struct {
 	// Required. Full resource name of ml engine model version.
 	// Format: `projects/{project}/models/{model}/versions/{version}`.
 	ModelVersion string `protobuf:"bytes,2,opt,name=model_version,json=modelVersion,proto3" json:"model_version,omitempty"`
-	// Required. Display name of the model in AI Platform.
+	// Required. Display name of the model in Vertex AI.
 	// System will pick a display name if unspecified.
 	ModelDisplayName string `protobuf:"bytes,3,opt,name=model_display_name,json=modelDisplayName,proto3" json:"model_display_name,omitempty"`
 }
@@ -659,7 +659,7 @@ func (x *MigrateResourceRequest_MigrateMlEngineModelVersionConfig) GetModelDispl
 	return ""
 }
 
-// Config for migrating Model in automl.googleapis.com to AI Platform's Model.
+// Config for migrating Model in automl.googleapis.com to Vertex AI's Model.
 type MigrateResourceRequest_MigrateAutomlModelConfig struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -669,7 +669,7 @@ type MigrateResourceRequest_MigrateAutomlModelConfig struct {
 	// Format:
 	// `projects/{project}/locations/{location}/models/{model}`.
 	Model string `protobuf:"bytes,1,opt,name=model,proto3" json:"model,omitempty"`
-	// Optional. Display name of the model in AI Platform.
+	// Optional. Display name of the model in Vertex AI.
 	// System will pick a display name if unspecified.
 	ModelDisplayName string `protobuf:"bytes,2,opt,name=model_display_name,json=modelDisplayName,proto3" json:"model_display_name,omitempty"`
 }
@@ -720,7 +720,7 @@ func (x *MigrateResourceRequest_MigrateAutomlModelConfig) GetModelDisplayName() 
 	return ""
 }
 
-// Config for migrating Dataset in automl.googleapis.com to AI Platform's
+// Config for migrating Dataset in automl.googleapis.com to Vertex AI's
 // Dataset.
 type MigrateResourceRequest_MigrateAutomlDatasetConfig struct {
 	state         protoimpl.MessageState
@@ -731,7 +731,7 @@ type MigrateResourceRequest_MigrateAutomlDatasetConfig struct {
 	// Format:
 	// `projects/{project}/locations/{location}/datasets/{dataset}`.
 	Dataset string `protobuf:"bytes,1,opt,name=dataset,proto3" json:"dataset,omitempty"`
-	// Required. Display name of the Dataset in AI Platform.
+	// Required. Display name of the Dataset in Vertex AI.
 	// System will pick a display name if unspecified.
 	DatasetDisplayName string `protobuf:"bytes,2,opt,name=dataset_display_name,json=datasetDisplayName,proto3" json:"dataset_display_name,omitempty"`
 }
@@ -793,11 +793,11 @@ type MigrateResourceRequest_MigrateDataLabelingDatasetConfig struct {
 	// Format:
 	// `projects/{project}/datasets/{dataset}`.
 	Dataset string `protobuf:"bytes,1,opt,name=dataset,proto3" json:"dataset,omitempty"`
-	// Optional. Display name of the Dataset in AI Platform.
+	// Optional. Display name of the Dataset in Vertex AI.
 	// System will pick a display name if unspecified.
 	DatasetDisplayName string `protobuf:"bytes,2,opt,name=dataset_display_name,json=datasetDisplayName,proto3" json:"dataset_display_name,omitempty"`
 	// Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-	// AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+	// Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
 	// to the datalabeling Dataset.
 	MigrateDataLabelingAnnotatedDatasetConfigs []*MigrateResourceRequest_MigrateDataLabelingDatasetConfig_MigrateDataLabelingAnnotatedDatasetConfig `protobuf:"bytes,3,rep,name=migrate_data_labeling_annotated_dataset_configs,json=migrateDataLabelingAnnotatedDatasetConfigs,proto3" json:"migrate_data_labeling_annotated_dataset_configs,omitempty"`
 }
@@ -856,7 +856,7 @@ func (x *MigrateResourceRequest_MigrateDataLabelingDatasetConfig) GetMigrateData
 }
 
 // Config for migrating AnnotatedDataset in datalabeling.googleapis.com to
-// AI Platform's SavedQuery.
+// Vertex AI's SavedQuery.
 type MigrateResourceRequest_MigrateDataLabelingDatasetConfig_MigrateDataLabelingAnnotatedDatasetConfig struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1589,10 +1589,10 @@ const _ = grpc.SupportPackageIsVersion6
 type MigrationServiceClient interface {
 	// Searches all of the resources in automl.googleapis.com,
 	// datalabeling.googleapis.com and ml.googleapis.com that can be migrated to
-	// AI Platform's given location.
+	// Vertex AI's given location.
 	SearchMigratableResources(ctx context.Context, in *SearchMigratableResourcesRequest, opts ...grpc.CallOption) (*SearchMigratableResourcesResponse, error)
 	// Batch migrates resources from ml.googleapis.com, automl.googleapis.com,
-	// and datalabeling.googleapis.com to AI Platform (Unified).
+	// and datalabeling.googleapis.com to Vertex AI.
 	BatchMigrateResources(ctx context.Context, in *BatchMigrateResourcesRequest, opts ...grpc.CallOption) (*longrunning.Operation, error)
 }
 
@@ -1626,10 +1626,10 @@ func (c *migrationServiceClient) BatchMigrateResources(ctx context.Context, in *
 type MigrationServiceServer interface {
 	// Searches all of the resources in automl.googleapis.com,
 	// datalabeling.googleapis.com and ml.googleapis.com that can be migrated to
-	// AI Platform's given location.
+	// Vertex AI's given location.
 	SearchMigratableResources(context.Context, *SearchMigratableResourcesRequest) (*SearchMigratableResourcesResponse, error)
 	// Batch migrates resources from ml.googleapis.com, automl.googleapis.com,
-	// and datalabeling.googleapis.com to AI Platform (Unified).
+	// and datalabeling.googleapis.com to Vertex AI.
 	BatchMigrateResources(context.Context, *BatchMigrateResourcesRequest) (*longrunning.Operation, error)
 }
 

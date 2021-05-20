@@ -11,7 +11,7 @@ use Google\Protobuf\Internal\GPBUtil;
 /**
  * Metadata of the input of a feature.
  * Fields other than [InputMetadata.input_baselines][google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.input_baselines] are applicable only
- * for Models that are using AI Platform-provided images for Tensorflow.
+ * for Models that are using Vertex AI-provided images for Tensorflow.
  *
  * Generated from protobuf message <code>google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata</code>
  */
@@ -19,11 +19,11 @@ class InputMetadata extends \Google\Protobuf\Internal\Message
 {
     /**
      * Baseline inputs for this feature.
-     * If no baseline is specified, AI Platform chooses the baseline for this
-     * feature. If multiple baselines are specified, AI Platform returns the
+     * If no baseline is specified, Vertex AI chooses the baseline for this
+     * feature. If multiple baselines are specified, Vertex AI returns the
      * average attributions across them in
      * [Attributions.baseline_attribution][].
-     * For AI Platform provided Tensorflow images (both 1.x and 2.x), the shape
+     * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      * of each baseline must match the shape of the input tensor. If a scalar is
      * provided, we broadcast to the same shape as the input tensor.
      * For custom images, the element of the baselines must be in the same
@@ -39,7 +39,7 @@ class InputMetadata extends \Google\Protobuf\Internal\Message
     private $input_baselines;
     /**
      * Name of the input tensor for this feature. Required and is only
-     * applicable to AI Platform provided images for Tensorflow.
+     * applicable to Vertex AI-provided images for Tensorflow.
      *
      * Generated from protobuf field <code>string input_tensor_name = 2;</code>
      */
@@ -105,7 +105,7 @@ class InputMetadata extends \Google\Protobuf\Internal\Message
     /**
      * A list of baselines for the encoded tensor.
      * The shape of each baseline should match the shape of the encoded tensor.
-     * If a scalar is provided, AI Platform broadcast to the same shape as the
+     * If a scalar is provided, Vertex AI broadcasts to the same shape as the
      * encoded tensor.
      *
      * Generated from protobuf field <code>repeated .google.protobuf.Value encoded_baselines = 10;</code>
@@ -137,11 +137,11 @@ class InputMetadata extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Protobuf\Value[]|\Google\Protobuf\Internal\RepeatedField $input_baselines
      *           Baseline inputs for this feature.
-     *           If no baseline is specified, AI Platform chooses the baseline for this
-     *           feature. If multiple baselines are specified, AI Platform returns the
+     *           If no baseline is specified, Vertex AI chooses the baseline for this
+     *           feature. If multiple baselines are specified, Vertex AI returns the
      *           average attributions across them in
      *           [Attributions.baseline_attribution][].
-     *           For AI Platform provided Tensorflow images (both 1.x and 2.x), the shape
+     *           For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      *           of each baseline must match the shape of the input tensor. If a scalar is
      *           provided, we broadcast to the same shape as the input tensor.
      *           For custom images, the element of the baselines must be in the same
@@ -153,7 +153,7 @@ class InputMetadata extends \Google\Protobuf\Internal\Message
      *           [instance_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.instance_schema_uri].
      *     @type string $input_tensor_name
      *           Name of the input tensor for this feature. Required and is only
-     *           applicable to AI Platform provided images for Tensorflow.
+     *           applicable to Vertex AI-provided images for Tensorflow.
      *     @type int $encoding
      *           Defines how the feature is encoded into the input tensor. Defaults to
      *           IDENTITY.
@@ -187,7 +187,7 @@ class InputMetadata extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Value[]|\Google\Protobuf\Internal\RepeatedField $encoded_baselines
      *           A list of baselines for the encoded tensor.
      *           The shape of each baseline should match the shape of the encoded tensor.
-     *           If a scalar is provided, AI Platform broadcast to the same shape as the
+     *           If a scalar is provided, Vertex AI broadcasts to the same shape as the
      *           encoded tensor.
      *     @type \Google\Cloud\Aiplatform\V1beta1\ExplanationMetadata\InputMetadata\Visualization $visualization
      *           Visualization configurations for image explanation.
@@ -207,11 +207,11 @@ class InputMetadata extends \Google\Protobuf\Internal\Message
 
     /**
      * Baseline inputs for this feature.
-     * If no baseline is specified, AI Platform chooses the baseline for this
-     * feature. If multiple baselines are specified, AI Platform returns the
+     * If no baseline is specified, Vertex AI chooses the baseline for this
+     * feature. If multiple baselines are specified, Vertex AI returns the
      * average attributions across them in
      * [Attributions.baseline_attribution][].
-     * For AI Platform provided Tensorflow images (both 1.x and 2.x), the shape
+     * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      * of each baseline must match the shape of the input tensor. If a scalar is
      * provided, we broadcast to the same shape as the input tensor.
      * For custom images, the element of the baselines must be in the same
@@ -232,11 +232,11 @@ class InputMetadata extends \Google\Protobuf\Internal\Message
 
     /**
      * Baseline inputs for this feature.
-     * If no baseline is specified, AI Platform chooses the baseline for this
-     * feature. If multiple baselines are specified, AI Platform returns the
+     * If no baseline is specified, Vertex AI chooses the baseline for this
+     * feature. If multiple baselines are specified, Vertex AI returns the
      * average attributions across them in
      * [Attributions.baseline_attribution][].
-     * For AI Platform provided Tensorflow images (both 1.x and 2.x), the shape
+     * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      * of each baseline must match the shape of the input tensor. If a scalar is
      * provided, we broadcast to the same shape as the input tensor.
      * For custom images, the element of the baselines must be in the same
@@ -261,7 +261,7 @@ class InputMetadata extends \Google\Protobuf\Internal\Message
 
     /**
      * Name of the input tensor for this feature. Required and is only
-     * applicable to AI Platform provided images for Tensorflow.
+     * applicable to Vertex AI-provided images for Tensorflow.
      *
      * Generated from protobuf field <code>string input_tensor_name = 2;</code>
      * @return string
@@ -273,7 +273,7 @@ class InputMetadata extends \Google\Protobuf\Internal\Message
 
     /**
      * Name of the input tensor for this feature. Required and is only
-     * applicable to AI Platform provided images for Tensorflow.
+     * applicable to Vertex AI-provided images for Tensorflow.
      *
      * Generated from protobuf field <code>string input_tensor_name = 2;</code>
      * @param string $var
@@ -514,7 +514,7 @@ class InputMetadata extends \Google\Protobuf\Internal\Message
     /**
      * A list of baselines for the encoded tensor.
      * The shape of each baseline should match the shape of the encoded tensor.
-     * If a scalar is provided, AI Platform broadcast to the same shape as the
+     * If a scalar is provided, Vertex AI broadcasts to the same shape as the
      * encoded tensor.
      *
      * Generated from protobuf field <code>repeated .google.protobuf.Value encoded_baselines = 10;</code>
@@ -528,7 +528,7 @@ class InputMetadata extends \Google\Protobuf\Internal\Message
     /**
      * A list of baselines for the encoded tensor.
      * The shape of each baseline should match the shape of the encoded tensor.
-     * If a scalar is provided, AI Platform broadcast to the same shape as the
+     * If a scalar is provided, Vertex AI broadcasts to the same shape as the
      * encoded tensor.
      *
      * Generated from protobuf field <code>repeated .google.protobuf.Value encoded_baselines = 10;</code>

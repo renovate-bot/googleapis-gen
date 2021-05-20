@@ -445,7 +445,7 @@ type UpdateIndexRequest struct {
 	Index *Index `protobuf:"bytes,1,opt,name=index,proto3" json:"index,omitempty"`
 	// The update mask applies to the resource.
 	// For the `FieldMask` definition, see
-	// [FieldMask](https://tinyurl.com/protobufs#google.protobuf.FieldMask).
+	// [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
 	UpdateMask *fieldmaskpb.FieldMask `protobuf:"bytes,2,opt,name=update_mask,json=updateMask,proto3" json:"update_mask,omitempty"`
 }
 

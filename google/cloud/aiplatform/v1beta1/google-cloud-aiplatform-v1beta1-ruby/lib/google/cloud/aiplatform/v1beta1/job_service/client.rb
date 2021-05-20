@@ -27,7 +27,7 @@ module Google
           ##
           # Client for the JobService service.
           #
-          # A service for creating and managing AI Platform's jobs.
+          # A service for creating and managing Vertex AI's jobs.
           #
           class Client
             include Paths

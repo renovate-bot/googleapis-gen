@@ -26,6 +26,8 @@ class AddContextArtifactsAndExecutionsRequest extends \Google\Protobuf\Internal\
     protected $context = '';
     /**
      * The resource names of the Artifacts to attribute to the Context.
+     * Format:
+     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
      *
      * Generated from protobuf field <code>repeated string artifacts = 2 [(.google.api.resource_reference) = {</code>
      */
@@ -33,6 +35,8 @@ class AddContextArtifactsAndExecutionsRequest extends \Google\Protobuf\Internal\
     /**
      * The resource names of the Executions to associate with the
      * Context.
+     * Format:
+     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
      *
      * Generated from protobuf field <code>repeated string executions = 3 [(.google.api.resource_reference) = {</code>
      */
@@ -51,9 +55,13 @@ class AddContextArtifactsAndExecutionsRequest extends \Google\Protobuf\Internal\
      *           projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $artifacts
      *           The resource names of the Artifacts to attribute to the Context.
+     *           Format:
+     *           projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $executions
      *           The resource names of the Executions to associate with the
      *           Context.
+     *           Format:
+     *           projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
      * }
      */
     public function __construct($data = NULL) {
@@ -95,6 +103,8 @@ class AddContextArtifactsAndExecutionsRequest extends \Google\Protobuf\Internal\
 
     /**
      * The resource names of the Artifacts to attribute to the Context.
+     * Format:
+     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
      *
      * Generated from protobuf field <code>repeated string artifacts = 2 [(.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -106,6 +116,8 @@ class AddContextArtifactsAndExecutionsRequest extends \Google\Protobuf\Internal\
 
     /**
      * The resource names of the Artifacts to attribute to the Context.
+     * Format:
+     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
      *
      * Generated from protobuf field <code>repeated string artifacts = 2 [(.google.api.resource_reference) = {</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -122,6 +134,8 @@ class AddContextArtifactsAndExecutionsRequest extends \Google\Protobuf\Internal\
     /**
      * The resource names of the Executions to associate with the
      * Context.
+     * Format:
+     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
      *
      * Generated from protobuf field <code>repeated string executions = 3 [(.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -134,6 +148,8 @@ class AddContextArtifactsAndExecutionsRequest extends \Google\Protobuf\Internal\
     /**
      * The resource names of the Executions to associate with the
      * Context.
+     * Format:
+     * projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
      *
      * Generated from protobuf field <code>repeated string executions = 3 [(.google.api.resource_reference) = {</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var

@@ -112,7 +112,7 @@ func defaultMetadataCallOptions() *MetadataCallOptions {
 	}
 }
 
-// internalMetadataClient is an interface that defines the methods availaible from Cloud AI Platform API.
+// internalMetadataClient is an interface that defines the methods availaible from Vertex AI API.
 type internalMetadataClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -148,7 +148,7 @@ type internalMetadataClient interface {
 	QueryArtifactLineageSubgraph(context.Context, *aiplatformpb.QueryArtifactLineageSubgraphRequest, ...gax.CallOption) (*aiplatformpb.LineageSubgraph, error)
 }
 
-// MetadataClient is a client for interacting with Cloud AI Platform API.
+// MetadataClient is a client for interacting with Vertex AI API.
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 //
 // Service for reading and writing metadata entries.
@@ -280,7 +280,7 @@ func (c *MetadataClient) AddContextArtifactsAndExecutions(ctx context.Context, r
 // AddContextChildren adds a set of Contexts as children to a parent Context. If any of the
 // child Contexts have already been added to the parent Context, they are
 // simply skipped. If this call would create a cycle or cause any Context to
-// have more than 10 parents, the request will fail with INVALID_ARGUMENT
+// have more than 10 parents, the request will fail with an INVALID_ARGUMENT
 // error.
 func (c *MetadataClient) AddContextChildren(ctx context.Context, req *aiplatformpb.AddContextChildrenRequest, opts ...gax.CallOption) (*aiplatformpb.AddContextChildrenResponse, error) {
 	return c.internalClient.AddContextChildren(ctx, req, opts...)
@@ -312,9 +312,10 @@ func (c *MetadataClient) UpdateExecution(ctx context.Context, req *aiplatformpb.
 	return c.internalClient.UpdateExecution(ctx, req, opts...)
 }
 
-// AddExecutionEvents adds Events for denoting whether each Artifact was an input or output for a
-// given Execution. If any Events already exist between the Execution and any
-// of the specified Artifacts they are simply skipped.
+// AddExecutionEvents adds Events to the specified Execution. An Event indicates whether an
+// Artifact was used as an input or output for an Execution. If an Event
+// already exists between the Execution and the Artifact, the Event is
+// skipped.
 func (c *MetadataClient) AddExecutionEvents(ctx context.Context, req *aiplatformpb.AddExecutionEventsRequest, opts ...gax.CallOption) (*aiplatformpb.AddExecutionEventsResponse, error) {
 	return c.internalClient.AddExecutionEvents(ctx, req, opts...)
 }
@@ -326,7 +327,7 @@ func (c *MetadataClient) QueryExecutionInputsAndOutputs(ctx context.Context, req
 	return c.internalClient.QueryExecutionInputsAndOutputs(ctx, req, opts...)
 }
 
-// CreateMetadataSchema creates an MetadataSchema.
+// CreateMetadataSchema creates a MetadataSchema.
 func (c *MetadataClient) CreateMetadataSchema(ctx context.Context, req *aiplatformpb.CreateMetadataSchemaRequest, opts ...gax.CallOption) (*aiplatformpb.MetadataSchema, error) {
 	return c.internalClient.CreateMetadataSchema(ctx, req, opts...)
 }
@@ -347,7 +348,7 @@ func (c *MetadataClient) QueryArtifactLineageSubgraph(ctx context.Context, req *
 	return c.internalClient.QueryArtifactLineageSubgraph(ctx, req, opts...)
 }
 
-// metadataGRPCClient is a client for interacting with Cloud AI Platform API over gRPC transport.
+// metadataGRPCClient is a client for interacting with Vertex AI API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 type metadataGRPCClient struct {

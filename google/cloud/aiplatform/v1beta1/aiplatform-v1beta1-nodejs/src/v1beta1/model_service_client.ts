@@ -34,7 +34,7 @@ import { operationsProtos } from 'google-gax';
 const version = require('../../../package.json').version;
 
 /**
- *  A service for managing AI Platform's machine learning Models.
+ *  A service for managing Vertex AI's machine learning Models.
  * @class
  * @memberof v1beta1
  */
@@ -735,7 +735,7 @@ export class ModelServiceClient {
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
 /**
- * Uploads a Model artifact into AI Platform.
+ * Uploads a Model artifact into Vertex AI.
  *
  * @param {Object} request
  *   The request object that will be sent.

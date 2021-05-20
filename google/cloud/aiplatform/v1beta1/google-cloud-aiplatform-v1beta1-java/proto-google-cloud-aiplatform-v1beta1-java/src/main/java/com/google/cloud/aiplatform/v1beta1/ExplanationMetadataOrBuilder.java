@@ -13,8 +13,8 @@ public interface ExplanationMetadataOrBuilder extends
    * features. Values are the specification of the feature.
    * An empty InputMetadata is valid. It describes a text feature which has the
    * name specified as the key in [ExplanationMetadata.inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs]. The baseline
-   * of the empty feature is chosen by AI Platform.
-   * For AI Platform provided Tensorflow images, the key can be any friendly
+   * of the empty feature is chosen by Vertex AI.
+   * For Vertex AI-provided Tensorflow images, the key can be any friendly
    * name of the feature. Once specified,
    * [featureAttributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions] are keyed by
    * this key (if not grouped with another feature).
@@ -31,8 +31,8 @@ public interface ExplanationMetadataOrBuilder extends
    * features. Values are the specification of the feature.
    * An empty InputMetadata is valid. It describes a text feature which has the
    * name specified as the key in [ExplanationMetadata.inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs]. The baseline
-   * of the empty feature is chosen by AI Platform.
-   * For AI Platform provided Tensorflow images, the key can be any friendly
+   * of the empty feature is chosen by Vertex AI.
+   * For Vertex AI-provided Tensorflow images, the key can be any friendly
    * name of the feature. Once specified,
    * [featureAttributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions] are keyed by
    * this key (if not grouped with another feature).
@@ -56,8 +56,8 @@ public interface ExplanationMetadataOrBuilder extends
    * features. Values are the specification of the feature.
    * An empty InputMetadata is valid. It describes a text feature which has the
    * name specified as the key in [ExplanationMetadata.inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs]. The baseline
-   * of the empty feature is chosen by AI Platform.
-   * For AI Platform provided Tensorflow images, the key can be any friendly
+   * of the empty feature is chosen by Vertex AI.
+   * For Vertex AI-provided Tensorflow images, the key can be any friendly
    * name of the feature. Once specified,
    * [featureAttributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions] are keyed by
    * this key (if not grouped with another feature).
@@ -75,8 +75,8 @@ public interface ExplanationMetadataOrBuilder extends
    * features. Values are the specification of the feature.
    * An empty InputMetadata is valid. It describes a text feature which has the
    * name specified as the key in [ExplanationMetadata.inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs]. The baseline
-   * of the empty feature is chosen by AI Platform.
-   * For AI Platform provided Tensorflow images, the key can be any friendly
+   * of the empty feature is chosen by Vertex AI.
+   * For Vertex AI-provided Tensorflow images, the key can be any friendly
    * name of the feature. Once specified,
    * [featureAttributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions] are keyed by
    * this key (if not grouped with another feature).
@@ -96,8 +96,8 @@ public interface ExplanationMetadataOrBuilder extends
    * features. Values are the specification of the feature.
    * An empty InputMetadata is valid. It describes a text feature which has the
    * name specified as the key in [ExplanationMetadata.inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs]. The baseline
-   * of the empty feature is chosen by AI Platform.
-   * For AI Platform provided Tensorflow images, the key can be any friendly
+   * of the empty feature is chosen by Vertex AI.
+   * For Vertex AI-provided Tensorflow images, the key can be any friendly
    * name of the feature. Once specified,
    * [featureAttributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions] are keyed by
    * this key (if not grouped with another feature).
@@ -114,7 +114,7 @@ public interface ExplanationMetadataOrBuilder extends
   /**
    * <pre>
    * Required. Map from output names to output metadata.
-   * For AI Platform provided Tensorflow images, keys can be any user defined
+   * For Vertex AI-provided Tensorflow images, keys can be any user defined
    * string that consists of any UTF-8 characters.
    * For custom images, keys are the name of the output field in the prediction
    * to be explained.
@@ -127,7 +127,7 @@ public interface ExplanationMetadataOrBuilder extends
   /**
    * <pre>
    * Required. Map from output names to output metadata.
-   * For AI Platform provided Tensorflow images, keys can be any user defined
+   * For Vertex AI-provided Tensorflow images, keys can be any user defined
    * string that consists of any UTF-8 characters.
    * For custom images, keys are the name of the output field in the prediction
    * to be explained.
@@ -147,7 +147,7 @@ public interface ExplanationMetadataOrBuilder extends
   /**
    * <pre>
    * Required. Map from output names to output metadata.
-   * For AI Platform provided Tensorflow images, keys can be any user defined
+   * For Vertex AI-provided Tensorflow images, keys can be any user defined
    * string that consists of any UTF-8 characters.
    * For custom images, keys are the name of the output field in the prediction
    * to be explained.
@@ -161,7 +161,7 @@ public interface ExplanationMetadataOrBuilder extends
   /**
    * <pre>
    * Required. Map from output names to output metadata.
-   * For AI Platform provided Tensorflow images, keys can be any user defined
+   * For Vertex AI-provided Tensorflow images, keys can be any user defined
    * string that consists of any UTF-8 characters.
    * For custom images, keys are the name of the output field in the prediction
    * to be explained.
@@ -177,7 +177,7 @@ public interface ExplanationMetadataOrBuilder extends
   /**
    * <pre>
    * Required. Map from output names to output metadata.
-   * For AI Platform provided Tensorflow images, keys can be any user defined
+   * For Vertex AI-provided Tensorflow images, keys can be any user defined
    * string that consists of any UTF-8 characters.
    * For custom images, keys are the name of the output field in the prediction
    * to be explained.
@@ -196,7 +196,7 @@ public interface ExplanationMetadataOrBuilder extends
    * of the [feature attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
    * The schema is defined as an OpenAPI 3.0.2
    * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-   * AutoML tabular Models always have this field populated by AI Platform.
+   * AutoML tabular Models always have this field populated by Vertex AI.
    * Note: The URI given on output may be different, including the URI scheme,
    * than the one given on input. The output URI will point to a location where
    * the user only has a read access.
@@ -212,7 +212,7 @@ public interface ExplanationMetadataOrBuilder extends
    * of the [feature attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
    * The schema is defined as an OpenAPI 3.0.2
    * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-   * AutoML tabular Models always have this field populated by AI Platform.
+   * AutoML tabular Models always have this field populated by Vertex AI.
    * Note: The URI given on output may be different, including the URI scheme,
    * than the one given on input. The output URI will point to a location where
    * the user only has a read access.

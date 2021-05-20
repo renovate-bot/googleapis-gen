@@ -48,7 +48,11 @@ from .client import PipelineServiceClient
 
 
 class PipelineServiceAsyncClient:
-    """A service for creating and managing AI Platform's pipelines."""
+    """A service for creating and managing Vertex AI's pipelines. This
+    includes both ``TrainingPipeline`` resources (used for AutoML and
+    custom training) and ``PipelineJob`` resources (used for Vertex
+    Pipelines).
+    """
 
     _client: PipelineServiceClient
 
@@ -215,10 +219,10 @@ class PipelineServiceAsyncClient:
             google.cloud.aiplatform_v1beta1.types.TrainingPipeline:
                 The TrainingPipeline orchestrates tasks associated with training a Model. It
                    always executes the training task, and optionally may
-                   also export data from AI Platform's Dataset which
+                   also export data from Vertex AI's Dataset which
                    becomes the training input,
                    [upload][google.cloud.aiplatform.v1beta1.ModelService.UploadModel]
-                   the Model to AI Platform, and evaluate the Model.
+                   the Model to Vertex AI, and evaluate the Model.
 
         """
         # Create or coerce a protobuf request object.
@@ -297,10 +301,10 @@ class PipelineServiceAsyncClient:
             google.cloud.aiplatform_v1beta1.types.TrainingPipeline:
                 The TrainingPipeline orchestrates tasks associated with training a Model. It
                    always executes the training task, and optionally may
-                   also export data from AI Platform's Dataset which
+                   also export data from Vertex AI's Dataset which
                    becomes the training input,
                    [upload][google.cloud.aiplatform.v1beta1.ModelService.UploadModel]
-                   the Model to AI Platform, and evaluate the Model.
+                   the Model to Vertex AI, and evaluate the Model.
 
         """
         # Create or coerce a protobuf request object.

@@ -25,7 +25,7 @@ module Google
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The location that the migratable resources should be searched from.
-        #     It's the AI Platform location that the resources can be migrated to, not
+        #     It's the Vertex AI location that the resources can be migrated to, not
         #     the resources' original location.
         #     Format:
         #     `projects/{project}/locations/{location}`
@@ -86,27 +86,27 @@ module Google
         end
 
         # Config of migrating one resource from automl.googleapis.com,
-        # datalabeling.googleapis.com and ml.googleapis.com to AI Platform.
+        # datalabeling.googleapis.com and ml.googleapis.com to Vertex AI.
         # @!attribute [rw] migrate_ml_engine_model_version_config
         #   @return [::Google::Cloud::Aiplatform::V1beta1::MigrateResourceRequest::MigrateMlEngineModelVersionConfig]
-        #     Config for migrating Version in ml.googleapis.com to AI Platform's Model.
+        #     Config for migrating Version in ml.googleapis.com to Vertex AI's Model.
         # @!attribute [rw] migrate_automl_model_config
         #   @return [::Google::Cloud::Aiplatform::V1beta1::MigrateResourceRequest::MigrateAutomlModelConfig]
-        #     Config for migrating Model in automl.googleapis.com to AI Platform's
+        #     Config for migrating Model in automl.googleapis.com to Vertex AI's
         #     Model.
         # @!attribute [rw] migrate_automl_dataset_config
         #   @return [::Google::Cloud::Aiplatform::V1beta1::MigrateResourceRequest::MigrateAutomlDatasetConfig]
-        #     Config for migrating Dataset in automl.googleapis.com to AI Platform's
+        #     Config for migrating Dataset in automl.googleapis.com to Vertex AI's
         #     Dataset.
         # @!attribute [rw] migrate_data_labeling_dataset_config
         #   @return [::Google::Cloud::Aiplatform::V1beta1::MigrateResourceRequest::MigrateDataLabelingDatasetConfig]
         #     Config for migrating Dataset in datalabeling.googleapis.com to
-        #     AI Platform's Dataset.
+        #     Vertex AI's Dataset.
         class MigrateResourceRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
 
-          # Config for migrating version in ml.googleapis.com to AI Platform's Model.
+          # Config for migrating version in ml.googleapis.com to Vertex AI's Model.
           # @!attribute [rw] endpoint
           #   @return [::String]
           #     Required. The ml.googleapis.com endpoint that this model version should be migrated
@@ -126,14 +126,14 @@ module Google
           #     Format: `projects/{project}/models/{model}/versions/{version}`.
           # @!attribute [rw] model_display_name
           #   @return [::String]
-          #     Required. Display name of the model in AI Platform.
+          #     Required. Display name of the model in Vertex AI.
           #     System will pick a display name if unspecified.
           class MigrateMlEngineModelVersionConfig
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # Config for migrating Model in automl.googleapis.com to AI Platform's Model.
+          # Config for migrating Model in automl.googleapis.com to Vertex AI's Model.
           # @!attribute [rw] model
           #   @return [::String]
           #     Required. Full resource name of automl Model.
@@ -141,14 +141,14 @@ module Google
           #     `projects/{project}/locations/{location}/models/{model}`.
           # @!attribute [rw] model_display_name
           #   @return [::String]
-          #     Optional. Display name of the model in AI Platform.
+          #     Optional. Display name of the model in Vertex AI.
           #     System will pick a display name if unspecified.
           class MigrateAutomlModelConfig
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # Config for migrating Dataset in automl.googleapis.com to AI Platform's
+          # Config for migrating Dataset in automl.googleapis.com to Vertex AI's
           # Dataset.
           # @!attribute [rw] dataset
           #   @return [::String]
@@ -157,7 +157,7 @@ module Google
           #     `projects/{project}/locations/{location}/datasets/{dataset}`.
           # @!attribute [rw] dataset_display_name
           #   @return [::String]
-          #     Required. Display name of the Dataset in AI Platform.
+          #     Required. Display name of the Dataset in Vertex AI.
           #     System will pick a display name if unspecified.
           class MigrateAutomlDatasetConfig
             include ::Google::Protobuf::MessageExts
@@ -173,19 +173,19 @@ module Google
           #     `projects/{project}/datasets/{dataset}`.
           # @!attribute [rw] dataset_display_name
           #   @return [::String]
-          #     Optional. Display name of the Dataset in AI Platform.
+          #     Optional. Display name of the Dataset in Vertex AI.
           #     System will pick a display name if unspecified.
           # @!attribute [rw] migrate_data_labeling_annotated_dataset_configs
           #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::MigrateResourceRequest::MigrateDataLabelingDatasetConfig::MigrateDataLabelingAnnotatedDatasetConfig>]
           #     Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-          #     AI Platform's SavedQuery. The specified AnnotatedDatasets have to belong
+          #     Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
           #     to the datalabeling Dataset.
           class MigrateDataLabelingDatasetConfig
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
 
             # Config for migrating AnnotatedDataset in datalabeling.googleapis.com to
-            # AI Platform's SavedQuery.
+            # Vertex AI's SavedQuery.
             # @!attribute [rw] annotated_dataset
             #   @return [::String]
             #     Required. Full resource name of data labeling AnnotatedDataset.

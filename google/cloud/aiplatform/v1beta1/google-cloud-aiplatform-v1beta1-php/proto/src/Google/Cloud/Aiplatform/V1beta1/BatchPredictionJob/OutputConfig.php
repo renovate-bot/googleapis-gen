@@ -18,7 +18,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class OutputConfig extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. The format in which AI Platform gives the predictions, must be one of the
+     * Required. The format in which Vertex AI gives the predictions, must be one of the
      * [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
      * [supported_output_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_output_storage_formats].
      *
@@ -75,7 +75,7 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
      *           has [`google.rpc.Status`](Status)
      *           represented as a STRUCT, and containing only `code` and `message`.
      *     @type string $predictions_format
-     *           Required. The format in which AI Platform gives the predictions, must be one of the
+     *           Required. The format in which Vertex AI gives the predictions, must be one of the
      *           [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
      *           [supported_output_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_output_storage_formats].
      * }
@@ -222,7 +222,7 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The format in which AI Platform gives the predictions, must be one of the
+     * Required. The format in which Vertex AI gives the predictions, must be one of the
      * [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
      * [supported_output_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_output_storage_formats].
      *
@@ -235,7 +235,7 @@ class OutputConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The format in which AI Platform gives the predictions, must be one of the
+     * Required. The format in which Vertex AI gives the predictions, must be one of the
      * [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
      * [supported_output_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_output_storage_formats].
      *

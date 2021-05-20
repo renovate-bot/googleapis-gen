@@ -161,14 +161,16 @@ module Google
         #   @return [::String]
         #     The standard list filter.
         #     Supported fields:
-        #       * `display_name` supports = and !=.
-        #       * `state` supports = and !=.
         #
-        #     Some examples of using the filter are:
-        #      * `state="PIPELINE_STATE_SUCCEEDED" AND display_name="my_pipeline"`
-        #      * `state="PIPELINE_STATE_RUNNING" OR display_name="my_pipeline"`
-        #      * `NOT display_name="my_pipeline"`
-        #      * `state="PIPELINE_STATE_FAILED"`
+        #     * `display_name` supports `=` and `!=`.
+        #     * `state` supports `=` and `!=`.
+        #
+        #     The following examples demonstrate how to filter the list of PipelineJobs:
+        #
+        #     * `state="PIPELINE_STATE_SUCCEEDED" AND display_name="my_pipeline"`
+        #     * `state="PIPELINE_STATE_RUNNING" OR display_name="my_pipeline"`
+        #     * `NOT display_name="my_pipeline"`
+        #     * `state="PIPELINE_STATE_FAILED"`
         # @!attribute [rw] page_size
         #   @return [::Integer]
         #     The standard list page size.

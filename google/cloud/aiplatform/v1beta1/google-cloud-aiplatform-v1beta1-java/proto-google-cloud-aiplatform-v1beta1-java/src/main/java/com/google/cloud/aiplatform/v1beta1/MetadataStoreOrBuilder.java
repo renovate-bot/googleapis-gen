@@ -83,9 +83,9 @@ public interface MetadataStoreOrBuilder extends
 
   /**
    * <pre>
-   * Customer-managed encryption key spec for an Metadata Store. If set, this
-   * Metadata Store and all sub-resources of this Metadata Store will be secured
-   * by this key.
+   * Customer-managed encryption key spec for a Metadata Store. If set, this
+   * Metadata Store and all sub-resources of this Metadata Store are secured
+   * using this key.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 5;</code>
@@ -94,9 +94,9 @@ public interface MetadataStoreOrBuilder extends
   boolean hasEncryptionSpec();
   /**
    * <pre>
-   * Customer-managed encryption key spec for an Metadata Store. If set, this
-   * Metadata Store and all sub-resources of this Metadata Store will be secured
-   * by this key.
+   * Customer-managed encryption key spec for a Metadata Store. If set, this
+   * Metadata Store and all sub-resources of this Metadata Store are secured
+   * using this key.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 5;</code>
@@ -105,9 +105,9 @@ public interface MetadataStoreOrBuilder extends
   com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec();
   /**
    * <pre>
-   * Customer-managed encryption key spec for an Metadata Store. If set, this
-   * Metadata Store and all sub-resources of this Metadata Store will be secured
-   * by this key.
+   * Customer-managed encryption key spec for a Metadata Store. If set, this
+   * Metadata Store and all sub-resources of this Metadata Store are secured
+   * using this key.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 5;</code>

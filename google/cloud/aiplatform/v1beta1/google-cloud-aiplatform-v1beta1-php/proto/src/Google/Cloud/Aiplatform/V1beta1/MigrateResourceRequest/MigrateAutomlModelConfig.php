@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Config for migrating Model in automl.googleapis.com to AI Platform's Model.
+ * Config for migrating Model in automl.googleapis.com to Vertex AI's Model.
  *
  * Generated from protobuf message <code>google.cloud.aiplatform.v1beta1.MigrateResourceRequest.MigrateAutomlModelConfig</code>
  */
@@ -24,7 +24,7 @@ class MigrateAutomlModelConfig extends \Google\Protobuf\Internal\Message
      */
     protected $model = '';
     /**
-     * Optional. Display name of the model in AI Platform.
+     * Optional. Display name of the model in Vertex AI.
      * System will pick a display name if unspecified.
      *
      * Generated from protobuf field <code>string model_display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -42,7 +42,7 @@ class MigrateAutomlModelConfig extends \Google\Protobuf\Internal\Message
      *           Format:
      *           `projects/{project}/locations/{location}/models/{model}`.
      *     @type string $model_display_name
-     *           Optional. Display name of the model in AI Platform.
+     *           Optional. Display name of the model in Vertex AI.
      *           System will pick a display name if unspecified.
      * }
      */
@@ -82,7 +82,7 @@ class MigrateAutomlModelConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. Display name of the model in AI Platform.
+     * Optional. Display name of the model in Vertex AI.
      * System will pick a display name if unspecified.
      *
      * Generated from protobuf field <code>string model_display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -94,7 +94,7 @@ class MigrateAutomlModelConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. Display name of the model in AI Platform.
+     * Optional. Display name of the model in Vertex AI.
      * System will pick a display name if unspecified.
      *
      * Generated from protobuf field <code>string model_display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

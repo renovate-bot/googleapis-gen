@@ -45,8 +45,6 @@ module Google
         # @!attribute [rw] pipeline_spec
         #   @return [::Google::Protobuf::Struct]
         #     Required. The spec of the pipeline.
-        #     The spec contains a `schema_version` field which indicates the Kubeflow
-        #     Pipeline schema version to decode the struct.
         # @!attribute [r] state
         #   @return [::Google::Cloud::Aiplatform::V1beta1::PipelineState]
         #     Output only. The detailed state of the job.
@@ -96,7 +94,7 @@ module Google
         #
         #     Private services access must already be configured for the network.
         #     Pipeline job will apply the network configuration to the GCP resources
-        #     being launched, if applied, such as Cloud AI Platform
+        #     being launched, if applied, such as Vertex AI
         #     Training or Dataflow job. If left unspecified, the workload is not peered
         #     with any network.
         class PipelineJob
@@ -257,8 +255,9 @@ module Google
             # Specifies task was skipped due to cache hit.
             SKIPPED = 8
 
-            # Specifies task was not triggered because the trigger policy of the task
-            # in the [PipelineJob.pipeline_spec.condition][] is not satisfied.
+            # Specifies that the task was not triggered because the task's trigger
+            # policy is not satisfied. The trigger policy is specified in the
+            # `condition` field of {::Google::Cloud::Aiplatform::V1beta1::PipelineJob#pipeline_spec PipelineJob.pipeline_spec}.
             NOT_TRIGGERED = 9
           end
         end

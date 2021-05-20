@@ -17,10 +17,10 @@ class PythonPackageSpec extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The URI of a container image in Artifact Registry that will run the
-     * provided Python package. AI Platform provides a wide range of executor
+     * provided Python package. Vertex AI provides a wide range of executor
      * images with pre-installed packages to meet users' various use cases. See
      * the list of [pre-built containers for
-     * training](https://cloud.google.com/ai-platform-unified/docs/training/pre-built-containers).
+     * training](https://cloud.google.com/vertex-ai/docs/training/pre-built-containers).
      * You must use an image from this list.
      *
      * Generated from protobuf field <code>string executor_image_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -55,10 +55,10 @@ class PythonPackageSpec extends \Google\Protobuf\Internal\Message
      *
      *     @type string $executor_image_uri
      *           Required. The URI of a container image in Artifact Registry that will run the
-     *           provided Python package. AI Platform provides a wide range of executor
+     *           provided Python package. Vertex AI provides a wide range of executor
      *           images with pre-installed packages to meet users' various use cases. See
      *           the list of [pre-built containers for
-     *           training](https://cloud.google.com/ai-platform-unified/docs/training/pre-built-containers).
+     *           training](https://cloud.google.com/vertex-ai/docs/training/pre-built-containers).
      *           You must use an image from this list.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $package_uris
      *           Required. The Google Cloud Storage location of the Python package files which are
@@ -77,10 +77,10 @@ class PythonPackageSpec extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The URI of a container image in Artifact Registry that will run the
-     * provided Python package. AI Platform provides a wide range of executor
+     * provided Python package. Vertex AI provides a wide range of executor
      * images with pre-installed packages to meet users' various use cases. See
      * the list of [pre-built containers for
-     * training](https://cloud.google.com/ai-platform-unified/docs/training/pre-built-containers).
+     * training](https://cloud.google.com/vertex-ai/docs/training/pre-built-containers).
      * You must use an image from this list.
      *
      * Generated from protobuf field <code>string executor_image_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -93,10 +93,10 @@ class PythonPackageSpec extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The URI of a container image in Artifact Registry that will run the
-     * provided Python package. AI Platform provides a wide range of executor
+     * provided Python package. Vertex AI provides a wide range of executor
      * images with pre-installed packages to meet users' various use cases. See
      * the list of [pre-built containers for
-     * training](https://cloud.google.com/ai-platform-unified/docs/training/pre-built-containers).
+     * training](https://cloud.google.com/vertex-ai/docs/training/pre-built-containers).
      * You must use an image from this list.
      *
      * Generated from protobuf field <code>string executor_image_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>

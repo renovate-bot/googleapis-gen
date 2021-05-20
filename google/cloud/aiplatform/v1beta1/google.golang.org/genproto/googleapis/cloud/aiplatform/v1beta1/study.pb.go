@@ -174,7 +174,9 @@ func (Trial_State) EnumDescriptor() ([]byte, []int) {
 type StudySpec_Algorithm int32
 
 const (
-	// The default algorithm used by AI Platform Optimization service.
+	// The default algorithm used by Vertex AI for [hyperparameter
+	// tuning](https://cloud.google.com/vertex-ai/docs/training/hyperparameter-tuning-overview)
+	// and [Vertex Vizier](https://cloud.google.com/vertex-ai/docs/vizier).
 	StudySpec_ALGORITHM_UNSPECIFIED StudySpec_Algorithm = 0
 	// Simple grid search within the feasible space. To use grid search,
 	// all parameters must be `INTEGER`, `CATEGORICAL`, or `DISCRETE`.
@@ -231,13 +233,13 @@ func (StudySpec_Algorithm) EnumDescriptor() ([]byte, []int) {
 type StudySpec_ObservationNoise int32
 
 const (
-	// The default noise level chosen by the AI Platform service.
+	// The default noise level chosen by Vertex AI.
 	StudySpec_OBSERVATION_NOISE_UNSPECIFIED StudySpec_ObservationNoise = 0
-	// AI Platform Vizier assumes that the objective function is (nearly)
+	// Vertex AI assumes that the objective function is (nearly)
 	// perfectly reproducible, and will never repeat the same Trial
 	// parameters.
 	StudySpec_LOW StudySpec_ObservationNoise = 1
-	// AI Platform Vizier will estimate the amount of noise in metric
+	// Vertex AI will estimate the amount of noise in metric
 	// evaluations, it may repeat the same Trial parameters more than once.
 	StudySpec_HIGH StudySpec_ObservationNoise = 2
 )

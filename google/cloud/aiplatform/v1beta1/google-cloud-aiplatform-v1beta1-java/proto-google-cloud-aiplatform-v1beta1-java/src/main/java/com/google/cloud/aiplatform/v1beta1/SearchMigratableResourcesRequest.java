@@ -115,7 +115,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The location that the migratable resources should be searched from.
-   * It's the AI Platform location that the resources can be migrated to, not
+   * It's the Vertex AI location that the resources can be migrated to, not
    * the resources' original location.
    * Format:
    * `projects/{project}/locations/{location}`
@@ -140,7 +140,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The location that the migratable resources should be searched from.
-   * It's the AI Platform location that the resources can be migrated to, not
+   * It's the Vertex AI location that the resources can be migrated to, not
    * the resources' original location.
    * Format:
    * `projects/{project}/locations/{location}`
@@ -653,7 +653,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The location that the migratable resources should be searched from.
-     * It's the AI Platform location that the resources can be migrated to, not
+     * It's the Vertex AI location that the resources can be migrated to, not
      * the resources' original location.
      * Format:
      * `projects/{project}/locations/{location}`
@@ -677,7 +677,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The location that the migratable resources should be searched from.
-     * It's the AI Platform location that the resources can be migrated to, not
+     * It's the Vertex AI location that the resources can be migrated to, not
      * the resources' original location.
      * Format:
      * `projects/{project}/locations/{location}`
@@ -702,7 +702,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The location that the migratable resources should be searched from.
-     * It's the AI Platform location that the resources can be migrated to, not
+     * It's the Vertex AI location that the resources can be migrated to, not
      * the resources' original location.
      * Format:
      * `projects/{project}/locations/{location}`
@@ -725,7 +725,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The location that the migratable resources should be searched from.
-     * It's the AI Platform location that the resources can be migrated to, not
+     * It's the Vertex AI location that the resources can be migrated to, not
      * the resources' original location.
      * Format:
      * `projects/{project}/locations/{location}`
@@ -743,7 +743,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The location that the migratable resources should be searched from.
-     * It's the AI Platform location that the resources can be migrated to, not
+     * It's the Vertex AI location that the resources can be migrated to, not
      * the resources' original location.
      * Format:
      * `projects/{project}/locations/{location}`

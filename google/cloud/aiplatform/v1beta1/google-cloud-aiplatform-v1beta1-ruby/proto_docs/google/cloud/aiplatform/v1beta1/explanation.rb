@@ -153,7 +153,7 @@ module Google
         #     increasing
         #     {::Google::Cloud::Aiplatform::V1beta1::XraiAttribution#step_count step_count} might reduce the error.
         #
-        #     See [this introduction](/ai-platform-unified/docs/explainable-ai/overview)
+        #     See [this introduction](/vertex-ai/docs/explainable-ai/overview)
         #     for more information.
         # @!attribute [r] output_name
         #   @return [::String]

@@ -19,7 +19,7 @@
 namespace Google\Cloud\Aiplatform\V1beta1;
 
 /**
- * A service for managing AI Platform's machine learning Models.
+ * A service for managing Vertex AI's machine learning Models.
  */
 class ModelServiceGrpcClient extends \Grpc\BaseStub {
 
@@ -33,7 +33,7 @@ class ModelServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Uploads a Model artifact into AI Platform.
+     * Uploads a Model artifact into Vertex AI.
      * @param \Google\Cloud\Aiplatform\V1beta1\UploadModelRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

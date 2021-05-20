@@ -415,7 +415,7 @@ private static final long serialVersionUID = 0L;
    * * For [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution],
    * increasing
    * [step_count][google.cloud.aiplatform.v1beta1.XraiAttribution.step_count] might reduce the error.
-   * See [this introduction](/ai-platform-unified/docs/explainable-ai/overview)
+   * See [this introduction](/vertex-ai/docs/explainable-ai/overview)
    * for more information.
    * </pre>
    *
@@ -1653,7 +1653,7 @@ private static final long serialVersionUID = 0L;
      * * For [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution],
      * increasing
      * [step_count][google.cloud.aiplatform.v1beta1.XraiAttribution.step_count] might reduce the error.
-     * See [this introduction](/ai-platform-unified/docs/explainable-ai/overview)
+     * See [this introduction](/vertex-ai/docs/explainable-ai/overview)
      * for more information.
      * </pre>
      *
@@ -1679,7 +1679,7 @@ private static final long serialVersionUID = 0L;
      * * For [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution],
      * increasing
      * [step_count][google.cloud.aiplatform.v1beta1.XraiAttribution.step_count] might reduce the error.
-     * See [this introduction](/ai-platform-unified/docs/explainable-ai/overview)
+     * See [this introduction](/vertex-ai/docs/explainable-ai/overview)
      * for more information.
      * </pre>
      *
@@ -1708,7 +1708,7 @@ private static final long serialVersionUID = 0L;
      * * For [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution],
      * increasing
      * [step_count][google.cloud.aiplatform.v1beta1.XraiAttribution.step_count] might reduce the error.
-     * See [this introduction](/ai-platform-unified/docs/explainable-ai/overview)
+     * See [this introduction](/vertex-ai/docs/explainable-ai/overview)
      * for more information.
      * </pre>
      *

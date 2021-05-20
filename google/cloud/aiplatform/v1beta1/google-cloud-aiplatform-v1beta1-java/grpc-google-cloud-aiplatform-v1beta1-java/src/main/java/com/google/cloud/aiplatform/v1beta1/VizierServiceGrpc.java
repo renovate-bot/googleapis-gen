@@ -4,7 +4,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
  * <pre>
- * Cloud AI Platform Vizier API.
+ * Vertex Vizier API.
  * Vizier service is a GCP service to solve blackbox optimization problems,
  * such as tuning machine learning hyperparameters and searching over deep
  * learning architectures.
@@ -531,7 +531,7 @@ public final class VizierServiceGrpc {
 
   /**
    * <pre>
-   * Cloud AI Platform Vizier API.
+   * Vertex Vizier API.
    * Vizier service is a GCP service to solve blackbox optimization problems,
    * such as tuning machine learning hyperparameters and searching over deep
    * learning architectures.
@@ -594,7 +594,7 @@ public final class VizierServiceGrpc {
     /**
      * <pre>
      * Adds one or more Trials to a Study, with parameter values
-     * suggested by AI Platform Vizier. Returns a long-running
+     * suggested by Vertex Vizier. Returns a long-running
      * operation associated with the generation of Trial suggestions.
      * When this long-running operation succeeds, it will contain
      * a [SuggestTrialsResponse][google.cloud.ml.v1.SuggestTrialsResponse].
@@ -815,7 +815,7 @@ public final class VizierServiceGrpc {
 
   /**
    * <pre>
-   * Cloud AI Platform Vizier API.
+   * Vertex Vizier API.
    * Vizier service is a GCP service to solve blackbox optimization problems,
    * such as tuning machine learning hyperparameters and searching over deep
    * learning architectures.
@@ -893,7 +893,7 @@ public final class VizierServiceGrpc {
     /**
      * <pre>
      * Adds one or more Trials to a Study, with parameter values
-     * suggested by AI Platform Vizier. Returns a long-running
+     * suggested by Vertex Vizier. Returns a long-running
      * operation associated with the generation of Trial suggestions.
      * When this long-running operation succeeds, it will contain
      * a [SuggestTrialsResponse][google.cloud.ml.v1.SuggestTrialsResponse].
@@ -1014,7 +1014,7 @@ public final class VizierServiceGrpc {
 
   /**
    * <pre>
-   * Cloud AI Platform Vizier API.
+   * Vertex Vizier API.
    * Vizier service is a GCP service to solve blackbox optimization problems,
    * such as tuning machine learning hyperparameters and searching over deep
    * learning architectures.
@@ -1087,7 +1087,7 @@ public final class VizierServiceGrpc {
     /**
      * <pre>
      * Adds one or more Trials to a Study, with parameter values
-     * suggested by AI Platform Vizier. Returns a long-running
+     * suggested by Vertex Vizier. Returns a long-running
      * operation associated with the generation of Trial suggestions.
      * When this long-running operation succeeds, it will contain
      * a [SuggestTrialsResponse][google.cloud.ml.v1.SuggestTrialsResponse].
@@ -1198,7 +1198,7 @@ public final class VizierServiceGrpc {
 
   /**
    * <pre>
-   * Cloud AI Platform Vizier API.
+   * Vertex Vizier API.
    * Vizier service is a GCP service to solve blackbox optimization problems,
    * such as tuning machine learning hyperparameters and searching over deep
    * learning architectures.
@@ -1276,7 +1276,7 @@ public final class VizierServiceGrpc {
     /**
      * <pre>
      * Adds one or more Trials to a Study, with parameter values
-     * suggested by AI Platform Vizier. Returns a long-running
+     * suggested by Vertex Vizier. Returns a long-running
      * operation associated with the generation of Trial suggestions.
      * When this long-running operation succeeds, it will contain
      * a [SuggestTrialsResponse][google.cloud.ml.v1.SuggestTrialsResponse].

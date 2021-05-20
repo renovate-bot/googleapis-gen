@@ -25,7 +25,7 @@ module Google
       module V1beta1
         module MigrationService
           # A service that migrates resources from automl.googleapis.com,
-          # datalabeling.googleapis.com and ml.googleapis.com to AI Platform.
+          # datalabeling.googleapis.com and ml.googleapis.com to Vertex AI.
           class Service
 
             include GRPC::GenericService
@@ -36,10 +36,10 @@ module Google
 
             # Searches all of the resources in automl.googleapis.com,
             # datalabeling.googleapis.com and ml.googleapis.com that can be migrated to
-            # AI Platform's given location.
+            # Vertex AI's given location.
             rpc :SearchMigratableResources, ::Google::Cloud::Aiplatform::V1beta1::SearchMigratableResourcesRequest, ::Google::Cloud::Aiplatform::V1beta1::SearchMigratableResourcesResponse
             # Batch migrates resources from ml.googleapis.com, automl.googleapis.com,
-            # and datalabeling.googleapis.com to AI Platform (Unified).
+            # and datalabeling.googleapis.com to Vertex AI.
             rpc :BatchMigrateResources, ::Google::Cloud::Aiplatform::V1beta1::BatchMigrateResourcesRequest, ::Google::Longrunning::Operation
           end
 

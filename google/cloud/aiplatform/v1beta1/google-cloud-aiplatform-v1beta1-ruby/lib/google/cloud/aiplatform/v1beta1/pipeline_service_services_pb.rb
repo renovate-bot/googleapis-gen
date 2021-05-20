@@ -24,7 +24,9 @@ module Google
     module Aiplatform
       module V1beta1
         module PipelineService
-          # A service for creating and managing AI Platform's pipelines.
+          # A service for creating and managing Vertex AI's pipelines. This includes both
+          # `TrainingPipeline` resources (used for AutoML and custom training) and
+          # `PipelineJob` resources (used for Vertex Pipelines).
           class Service
 
             include GRPC::GenericService

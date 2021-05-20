@@ -185,7 +185,9 @@ private static final long serialVersionUID = 0L;
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
      * <pre>
-     * The default algorithm used by AI Platform Optimization service.
+     * The default algorithm used by Vertex AI for [hyperparameter
+     * tuning](https://cloud.google.com/vertex-ai/docs/training/hyperparameter-tuning-overview)
+     * and [Vertex Vizier](https://cloud.google.com/vertex-ai/docs/vizier).
      * </pre>
      *
      * <code>ALGORITHM_UNSPECIFIED = 0;</code>
@@ -213,7 +215,9 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * The default algorithm used by AI Platform Optimization service.
+     * The default algorithm used by Vertex AI for [hyperparameter
+     * tuning](https://cloud.google.com/vertex-ai/docs/training/hyperparameter-tuning-overview)
+     * and [Vertex Vizier](https://cloud.google.com/vertex-ai/docs/vizier).
      * </pre>
      *
      * <code>ALGORITHM_UNSPECIFIED = 0;</code>
@@ -334,7 +338,7 @@ private static final long serialVersionUID = 0L;
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
      * <pre>
-     * The default noise level chosen by the AI Platform service.
+     * The default noise level chosen by Vertex AI.
      * </pre>
      *
      * <code>OBSERVATION_NOISE_UNSPECIFIED = 0;</code>
@@ -342,7 +346,7 @@ private static final long serialVersionUID = 0L;
     OBSERVATION_NOISE_UNSPECIFIED(0),
     /**
      * <pre>
-     * AI Platform Vizier assumes that the objective function is (nearly)
+     * Vertex AI assumes that the objective function is (nearly)
      * perfectly reproducible, and will never repeat the same Trial
      * parameters.
      * </pre>
@@ -352,7 +356,7 @@ private static final long serialVersionUID = 0L;
     LOW(1),
     /**
      * <pre>
-     * AI Platform Vizier will estimate the amount of noise in metric
+     * Vertex AI will estimate the amount of noise in metric
      * evaluations, it may repeat the same Trial parameters more than once.
      * </pre>
      *
@@ -364,7 +368,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * The default noise level chosen by the AI Platform service.
+     * The default noise level chosen by Vertex AI.
      * </pre>
      *
      * <code>OBSERVATION_NOISE_UNSPECIFIED = 0;</code>
@@ -372,7 +376,7 @@ private static final long serialVersionUID = 0L;
     public static final int OBSERVATION_NOISE_UNSPECIFIED_VALUE = 0;
     /**
      * <pre>
-     * AI Platform Vizier assumes that the objective function is (nearly)
+     * Vertex AI assumes that the objective function is (nearly)
      * perfectly reproducible, and will never repeat the same Trial
      * parameters.
      * </pre>
@@ -382,7 +386,7 @@ private static final long serialVersionUID = 0L;
     public static final int LOW_VALUE = 1;
     /**
      * <pre>
-     * AI Platform Vizier will estimate the amount of noise in metric
+     * Vertex AI will estimate the amount of noise in metric
      * evaluations, it may repeat the same Trial parameters more than once.
      * </pre>
      *

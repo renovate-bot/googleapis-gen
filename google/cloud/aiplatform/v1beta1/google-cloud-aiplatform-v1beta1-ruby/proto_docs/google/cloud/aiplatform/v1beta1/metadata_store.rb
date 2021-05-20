@@ -34,9 +34,9 @@ module Google
         #     Output only. Timestamp when this MetadataStore was last updated.
         # @!attribute [rw] encryption_spec
         #   @return [::Google::Cloud::Aiplatform::V1beta1::EncryptionSpec]
-        #     Customer-managed encryption key spec for an Metadata Store. If set, this
-        #     Metadata Store and all sub-resources of this Metadata Store will be secured
-        #     by this key.
+        #     Customer-managed encryption key spec for a Metadata Store. If set, this
+        #     Metadata Store and all sub-resources of this Metadata Store are secured
+        #     using this key.
         # @!attribute [rw] description
         #   @return [::String]
         #     Description of the MetadataStore.
@@ -47,7 +47,7 @@ module Google
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
 
-          # Represent state information for a MetadataStore.
+          # Represents state information for a MetadataStore.
           # @!attribute [rw] disk_utilization_bytes
           #   @return [::Integer]
           #     The disk utilization of the MetadataStore in bytes.

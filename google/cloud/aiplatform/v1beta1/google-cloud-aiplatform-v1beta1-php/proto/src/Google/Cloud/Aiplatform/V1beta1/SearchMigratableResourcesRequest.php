@@ -17,7 +17,7 @@ class SearchMigratableResourcesRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The location that the migratable resources should be searched from.
-     * It's the AI Platform location that the resources can be migrated to, not
+     * It's the Vertex AI location that the resources can be migrated to, not
      * the resources' original location.
      * Format:
      * `projects/{project}/locations/{location}`
@@ -63,7 +63,7 @@ class SearchMigratableResourcesRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $parent
      *           Required. The location that the migratable resources should be searched from.
-     *           It's the AI Platform location that the resources can be migrated to, not
+     *           It's the Vertex AI location that the resources can be migrated to, not
      *           the resources' original location.
      *           Format:
      *           `projects/{project}/locations/{location}`
@@ -93,7 +93,7 @@ class SearchMigratableResourcesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The location that the migratable resources should be searched from.
-     * It's the AI Platform location that the resources can be migrated to, not
+     * It's the Vertex AI location that the resources can be migrated to, not
      * the resources' original location.
      * Format:
      * `projects/{project}/locations/{location}`
@@ -108,7 +108,7 @@ class SearchMigratableResourcesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The location that the migratable resources should be searched from.
-     * It's the AI Platform location that the resources can be migrated to, not
+     * It's the Vertex AI location that the resources can be migrated to, not
      * the resources' original location.
      * Format:
      * `projects/{project}/locations/{location}`

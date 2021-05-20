@@ -24,7 +24,7 @@ class UpdateIndexRequest extends \Google\Protobuf\Internal\Message
     /**
      * The update mask applies to the resource.
      * For the `FieldMask` definition, see
-     * [FieldMask](https://tinyurl.com/protobufs#google.protobuf.FieldMask).
+     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
@@ -41,7 +41,7 @@ class UpdateIndexRequest extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\FieldMask $update_mask
      *           The update mask applies to the resource.
      *           For the `FieldMask` definition, see
-     *           [FieldMask](https://tinyurl.com/protobufs#google.protobuf.FieldMask).
+     *           [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
      * }
      */
     public function __construct($data = NULL) {
@@ -88,7 +88,7 @@ class UpdateIndexRequest extends \Google\Protobuf\Internal\Message
     /**
      * The update mask applies to the resource.
      * For the `FieldMask` definition, see
-     * [FieldMask](https://tinyurl.com/protobufs#google.protobuf.FieldMask).
+     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
      * @return \Google\Protobuf\FieldMask|null
@@ -111,7 +111,7 @@ class UpdateIndexRequest extends \Google\Protobuf\Internal\Message
     /**
      * The update mask applies to the resource.
      * For the `FieldMask` definition, see
-     * [FieldMask](https://tinyurl.com/protobufs#google.protobuf.FieldMask).
+     * [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
      * @param \Google\Protobuf\FieldMask $var

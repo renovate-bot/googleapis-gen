@@ -151,7 +151,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Immutable. The number of machine replicas used at the start of the batch operation.
-   * If not set, AI Platform decides starting number, not greater than
+   * If not set, Vertex AI decides starting number, not greater than
    * [max_replica_count][google.cloud.aiplatform.v1beta1.BatchDedicatedResources.max_replica_count]
    * </pre>
    *
@@ -692,7 +692,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. The number of machine replicas used at the start of the batch operation.
-     * If not set, AI Platform decides starting number, not greater than
+     * If not set, Vertex AI decides starting number, not greater than
      * [max_replica_count][google.cloud.aiplatform.v1beta1.BatchDedicatedResources.max_replica_count]
      * </pre>
      *
@@ -706,7 +706,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. The number of machine replicas used at the start of the batch operation.
-     * If not set, AI Platform decides starting number, not greater than
+     * If not set, Vertex AI decides starting number, not greater than
      * [max_replica_count][google.cloud.aiplatform.v1beta1.BatchDedicatedResources.max_replica_count]
      * </pre>
      *
@@ -723,7 +723,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. The number of machine replicas used at the start of the batch operation.
-     * If not set, AI Platform decides starting number, not greater than
+     * If not set, Vertex AI decides starting number, not greater than
      * [max_replica_count][google.cloud.aiplatform.v1beta1.BatchDedicatedResources.max_replica_count]
      * </pre>
      *

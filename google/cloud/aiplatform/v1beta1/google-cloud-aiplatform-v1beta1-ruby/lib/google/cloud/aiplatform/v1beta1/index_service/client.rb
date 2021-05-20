@@ -27,7 +27,7 @@ module Google
           ##
           # Client for the IndexService service.
           #
-          # A service for creating and managing AI Platform's Index resources.
+          # A service for creating and managing Vertex AI's Index resources.
           #
           class Client
             include Paths
@@ -412,7 +412,7 @@ module Google
             #   @param update_mask [::Google::Protobuf::FieldMask, ::Hash]
             #     The update mask applies to the resource.
             #     For the `FieldMask` definition, see
-            #     [FieldMask](https://tinyurl.com/protobufs#google.protobuf.FieldMask).
+            #     [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
             #
             # @yield [response, operation] Access the result along with the RPC operation
             # @yieldparam response [::Gapic::Operation]

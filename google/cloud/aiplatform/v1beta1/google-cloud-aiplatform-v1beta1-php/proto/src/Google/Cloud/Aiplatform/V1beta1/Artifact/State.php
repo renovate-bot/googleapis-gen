@@ -20,7 +20,7 @@ class State
      */
     const STATE_UNSPECIFIED = 0;
     /**
-     * A state used by systems like Managed Pipelines to indicate that the
+     * A state used by systems like Vertex Pipelines to indicate that the
      * underlying data item represented by this Artifact is being created.
      *
      * Generated from protobuf enum <code>PENDING = 1;</code>

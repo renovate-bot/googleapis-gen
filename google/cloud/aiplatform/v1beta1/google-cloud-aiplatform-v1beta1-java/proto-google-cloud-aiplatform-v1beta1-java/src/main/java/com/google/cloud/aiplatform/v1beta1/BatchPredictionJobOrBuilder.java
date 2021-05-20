@@ -238,7 +238,7 @@ public interface BatchPredictionJobOrBuilder extends
   /**
    * <pre>
    * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-   * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+   * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
    * the tuning itself).
    * </pre>
    *
@@ -249,7 +249,7 @@ public interface BatchPredictionJobOrBuilder extends
   /**
    * <pre>
    * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-   * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+   * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
    * the tuning itself).
    * </pre>
    *
@@ -260,7 +260,7 @@ public interface BatchPredictionJobOrBuilder extends
   /**
    * <pre>
    * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-   * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+   * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
    * the tuning itself).
    * </pre>
    *

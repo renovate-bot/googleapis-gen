@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Represent state information for a MetadataStore.
+ * Represents state information for a MetadataStore.
  *
  * Generated from protobuf message <code>google.cloud.aiplatform.v1beta1.MetadataStore.MetadataStoreState</code>
  */

@@ -68,7 +68,7 @@ class Artifact extends \Google\Protobuf\Internal\Message
     /**
      * The state of this Artifact. This is a property of the Artifact, and does
      * not imply or capture any ongoing process. This property is managed by
-     * clients (such as AI Platform Pipelines), and the system does not prescribe
+     * clients (such as Vertex Pipelines), and the system does not prescribe
      * or check the validity of state transitions.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.Artifact.State state = 13;</code>
@@ -136,7 +136,7 @@ class Artifact extends \Google\Protobuf\Internal\Message
      *     @type int $state
      *           The state of this Artifact. This is a property of the Artifact, and does
      *           not imply or capture any ongoing process. This property is managed by
-     *           clients (such as AI Platform Pipelines), and the system does not prescribe
+     *           clients (such as Vertex Pipelines), and the system does not prescribe
      *           or check the validity of state transitions.
      *     @type string $schema_title
      *           The title of the schema describing the metadata.
@@ -380,7 +380,7 @@ class Artifact extends \Google\Protobuf\Internal\Message
     /**
      * The state of this Artifact. This is a property of the Artifact, and does
      * not imply or capture any ongoing process. This property is managed by
-     * clients (such as AI Platform Pipelines), and the system does not prescribe
+     * clients (such as Vertex Pipelines), and the system does not prescribe
      * or check the validity of state transitions.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.Artifact.State state = 13;</code>
@@ -394,7 +394,7 @@ class Artifact extends \Google\Protobuf\Internal\Message
     /**
      * The state of this Artifact. This is a property of the Artifact, and does
      * not imply or capture any ongoing process. This property is managed by
-     * clients (such as AI Platform Pipelines), and the system does not prescribe
+     * clients (such as Vertex Pipelines), and the system does not prescribe
      * or check the validity of state transitions.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.Artifact.State state = 13;</code>

@@ -139,11 +139,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Baseline inputs for this feature.
-     * If no baseline is specified, AI Platform chooses the baseline for this
-     * feature. If multiple baselines are specified, AI Platform returns the
+     * If no baseline is specified, Vertex AI chooses the baseline for this
+     * feature. If multiple baselines are specified, Vertex AI returns the
      * average attributions across them in
      * [Attributions.baseline_attribution][].
-     * For AI Platform provided Tensorflow images (both 1.x and 2.x), the shape
+     * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      * of each baseline must match the shape of the input tensor. If a scalar is
      * provided, we broadcast to the same shape as the input tensor.
      * For custom images, the element of the baselines must be in the same
@@ -162,11 +162,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Baseline inputs for this feature.
-     * If no baseline is specified, AI Platform chooses the baseline for this
-     * feature. If multiple baselines are specified, AI Platform returns the
+     * If no baseline is specified, Vertex AI chooses the baseline for this
+     * feature. If multiple baselines are specified, Vertex AI returns the
      * average attributions across them in
      * [Attributions.baseline_attribution][].
-     * For AI Platform provided Tensorflow images (both 1.x and 2.x), the shape
+     * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      * of each baseline must match the shape of the input tensor. If a scalar is
      * provided, we broadcast to the same shape as the input tensor.
      * For custom images, the element of the baselines must be in the same
@@ -184,11 +184,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Baseline inputs for this feature.
-     * If no baseline is specified, AI Platform chooses the baseline for this
-     * feature. If multiple baselines are specified, AI Platform returns the
+     * If no baseline is specified, Vertex AI chooses the baseline for this
+     * feature. If multiple baselines are specified, Vertex AI returns the
      * average attributions across them in
      * [Attributions.baseline_attribution][].
-     * For AI Platform provided Tensorflow images (both 1.x and 2.x), the shape
+     * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      * of each baseline must match the shape of the input tensor. If a scalar is
      * provided, we broadcast to the same shape as the input tensor.
      * For custom images, the element of the baselines must be in the same
@@ -206,11 +206,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Baseline inputs for this feature.
-     * If no baseline is specified, AI Platform chooses the baseline for this
-     * feature. If multiple baselines are specified, AI Platform returns the
+     * If no baseline is specified, Vertex AI chooses the baseline for this
+     * feature. If multiple baselines are specified, Vertex AI returns the
      * average attributions across them in
      * [Attributions.baseline_attribution][].
-     * For AI Platform provided Tensorflow images (both 1.x and 2.x), the shape
+     * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      * of each baseline must match the shape of the input tensor. If a scalar is
      * provided, we broadcast to the same shape as the input tensor.
      * For custom images, the element of the baselines must be in the same
@@ -229,11 +229,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Baseline inputs for this feature.
-     * If no baseline is specified, AI Platform chooses the baseline for this
-     * feature. If multiple baselines are specified, AI Platform returns the
+     * If no baseline is specified, Vertex AI chooses the baseline for this
+     * feature. If multiple baselines are specified, Vertex AI returns the
      * average attributions across them in
      * [Attributions.baseline_attribution][].
-     * For AI Platform provided Tensorflow images (both 1.x and 2.x), the shape
+     * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      * of each baseline must match the shape of the input tensor. If a scalar is
      * provided, we broadcast to the same shape as the input tensor.
      * For custom images, the element of the baselines must be in the same
@@ -253,7 +253,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Name of the input tensor for this feature. Required and is only
-     * applicable to AI Platform provided images for Tensorflow.
+     * applicable to Vertex AI-provided images for Tensorflow.
      * </pre>
      *
      * <code>string input_tensor_name = 2;</code>
@@ -263,7 +263,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Name of the input tensor for this feature. Required and is only
-     * applicable to AI Platform provided images for Tensorflow.
+     * applicable to Vertex AI-provided images for Tensorflow.
      * </pre>
      *
      * <code>string input_tensor_name = 2;</code>
@@ -480,7 +480,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A list of baselines for the encoded tensor.
      * The shape of each baseline should match the shape of the encoded tensor.
-     * If a scalar is provided, AI Platform broadcast to the same shape as the
+     * If a scalar is provided, Vertex AI broadcasts to the same shape as the
      * encoded tensor.
      * </pre>
      *
@@ -492,7 +492,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A list of baselines for the encoded tensor.
      * The shape of each baseline should match the shape of the encoded tensor.
-     * If a scalar is provided, AI Platform broadcast to the same shape as the
+     * If a scalar is provided, Vertex AI broadcasts to the same shape as the
      * encoded tensor.
      * </pre>
      *
@@ -503,7 +503,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A list of baselines for the encoded tensor.
      * The shape of each baseline should match the shape of the encoded tensor.
-     * If a scalar is provided, AI Platform broadcast to the same shape as the
+     * If a scalar is provided, Vertex AI broadcasts to the same shape as the
      * encoded tensor.
      * </pre>
      *
@@ -514,7 +514,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A list of baselines for the encoded tensor.
      * The shape of each baseline should match the shape of the encoded tensor.
-     * If a scalar is provided, AI Platform broadcast to the same shape as the
+     * If a scalar is provided, Vertex AI broadcasts to the same shape as the
      * encoded tensor.
      * </pre>
      *
@@ -526,7 +526,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A list of baselines for the encoded tensor.
      * The shape of each baseline should match the shape of the encoded tensor.
-     * If a scalar is provided, AI Platform broadcast to the same shape as the
+     * If a scalar is provided, Vertex AI broadcasts to the same shape as the
      * encoded tensor.
      * </pre>
      *
@@ -596,7 +596,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Metadata of the input of a feature.
    * Fields other than [InputMetadata.input_baselines][google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.input_baselines] are applicable only
-   * for Models that are using AI Platform-provided images for Tensorflow.
+   * for Models that are using Vertex AI-provided images for Tensorflow.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata}
@@ -3960,11 +3960,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Baseline inputs for this feature.
-     * If no baseline is specified, AI Platform chooses the baseline for this
-     * feature. If multiple baselines are specified, AI Platform returns the
+     * If no baseline is specified, Vertex AI chooses the baseline for this
+     * feature. If multiple baselines are specified, Vertex AI returns the
      * average attributions across them in
      * [Attributions.baseline_attribution][].
-     * For AI Platform provided Tensorflow images (both 1.x and 2.x), the shape
+     * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      * of each baseline must match the shape of the input tensor. If a scalar is
      * provided, we broadcast to the same shape as the input tensor.
      * For custom images, the element of the baselines must be in the same
@@ -3985,11 +3985,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Baseline inputs for this feature.
-     * If no baseline is specified, AI Platform chooses the baseline for this
-     * feature. If multiple baselines are specified, AI Platform returns the
+     * If no baseline is specified, Vertex AI chooses the baseline for this
+     * feature. If multiple baselines are specified, Vertex AI returns the
      * average attributions across them in
      * [Attributions.baseline_attribution][].
-     * For AI Platform provided Tensorflow images (both 1.x and 2.x), the shape
+     * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      * of each baseline must match the shape of the input tensor. If a scalar is
      * provided, we broadcast to the same shape as the input tensor.
      * For custom images, the element of the baselines must be in the same
@@ -4011,11 +4011,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Baseline inputs for this feature.
-     * If no baseline is specified, AI Platform chooses the baseline for this
-     * feature. If multiple baselines are specified, AI Platform returns the
+     * If no baseline is specified, Vertex AI chooses the baseline for this
+     * feature. If multiple baselines are specified, Vertex AI returns the
      * average attributions across them in
      * [Attributions.baseline_attribution][].
-     * For AI Platform provided Tensorflow images (both 1.x and 2.x), the shape
+     * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      * of each baseline must match the shape of the input tensor. If a scalar is
      * provided, we broadcast to the same shape as the input tensor.
      * For custom images, the element of the baselines must be in the same
@@ -4036,11 +4036,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Baseline inputs for this feature.
-     * If no baseline is specified, AI Platform chooses the baseline for this
-     * feature. If multiple baselines are specified, AI Platform returns the
+     * If no baseline is specified, Vertex AI chooses the baseline for this
+     * feature. If multiple baselines are specified, Vertex AI returns the
      * average attributions across them in
      * [Attributions.baseline_attribution][].
-     * For AI Platform provided Tensorflow images (both 1.x and 2.x), the shape
+     * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      * of each baseline must match the shape of the input tensor. If a scalar is
      * provided, we broadcast to the same shape as the input tensor.
      * For custom images, the element of the baselines must be in the same
@@ -4061,11 +4061,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Baseline inputs for this feature.
-     * If no baseline is specified, AI Platform chooses the baseline for this
-     * feature. If multiple baselines are specified, AI Platform returns the
+     * If no baseline is specified, Vertex AI chooses the baseline for this
+     * feature. If multiple baselines are specified, Vertex AI returns the
      * average attributions across them in
      * [Attributions.baseline_attribution][].
-     * For AI Platform provided Tensorflow images (both 1.x and 2.x), the shape
+     * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      * of each baseline must match the shape of the input tensor. If a scalar is
      * provided, we broadcast to the same shape as the input tensor.
      * For custom images, the element of the baselines must be in the same
@@ -4090,7 +4090,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Name of the input tensor for this feature. Required and is only
-     * applicable to AI Platform provided images for Tensorflow.
+     * applicable to Vertex AI-provided images for Tensorflow.
      * </pre>
      *
      * <code>string input_tensor_name = 2;</code>
@@ -4112,7 +4112,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Name of the input tensor for this feature. Required and is only
-     * applicable to AI Platform provided images for Tensorflow.
+     * applicable to Vertex AI-provided images for Tensorflow.
      * </pre>
      *
      * <code>string input_tensor_name = 2;</code>
@@ -4476,7 +4476,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A list of baselines for the encoded tensor.
      * The shape of each baseline should match the shape of the encoded tensor.
-     * If a scalar is provided, AI Platform broadcast to the same shape as the
+     * If a scalar is provided, Vertex AI broadcasts to the same shape as the
      * encoded tensor.
      * </pre>
      *
@@ -4490,7 +4490,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A list of baselines for the encoded tensor.
      * The shape of each baseline should match the shape of the encoded tensor.
-     * If a scalar is provided, AI Platform broadcast to the same shape as the
+     * If a scalar is provided, Vertex AI broadcasts to the same shape as the
      * encoded tensor.
      * </pre>
      *
@@ -4505,7 +4505,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A list of baselines for the encoded tensor.
      * The shape of each baseline should match the shape of the encoded tensor.
-     * If a scalar is provided, AI Platform broadcast to the same shape as the
+     * If a scalar is provided, Vertex AI broadcasts to the same shape as the
      * encoded tensor.
      * </pre>
      *
@@ -4519,7 +4519,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A list of baselines for the encoded tensor.
      * The shape of each baseline should match the shape of the encoded tensor.
-     * If a scalar is provided, AI Platform broadcast to the same shape as the
+     * If a scalar is provided, Vertex AI broadcasts to the same shape as the
      * encoded tensor.
      * </pre>
      *
@@ -4533,7 +4533,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A list of baselines for the encoded tensor.
      * The shape of each baseline should match the shape of the encoded tensor.
-     * If a scalar is provided, AI Platform broadcast to the same shape as the
+     * If a scalar is provided, Vertex AI broadcasts to the same shape as the
      * encoded tensor.
      * </pre>
      *
@@ -4932,7 +4932,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Metadata of the input of a feature.
      * Fields other than [InputMetadata.input_baselines][google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata.input_baselines] are applicable only
-     * for Models that are using AI Platform-provided images for Tensorflow.
+     * for Models that are using Vertex AI-provided images for Tensorflow.
      * </pre>
      *
      * Protobuf type {@code google.cloud.aiplatform.v1beta1.ExplanationMetadata.InputMetadata}
@@ -5269,11 +5269,11 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Baseline inputs for this feature.
-       * If no baseline is specified, AI Platform chooses the baseline for this
-       * feature. If multiple baselines are specified, AI Platform returns the
+       * If no baseline is specified, Vertex AI chooses the baseline for this
+       * feature. If multiple baselines are specified, Vertex AI returns the
        * average attributions across them in
        * [Attributions.baseline_attribution][].
-       * For AI Platform provided Tensorflow images (both 1.x and 2.x), the shape
+       * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
        * For custom images, the element of the baselines must be in the same
@@ -5297,11 +5297,11 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Baseline inputs for this feature.
-       * If no baseline is specified, AI Platform chooses the baseline for this
-       * feature. If multiple baselines are specified, AI Platform returns the
+       * If no baseline is specified, Vertex AI chooses the baseline for this
+       * feature. If multiple baselines are specified, Vertex AI returns the
        * average attributions across them in
        * [Attributions.baseline_attribution][].
-       * For AI Platform provided Tensorflow images (both 1.x and 2.x), the shape
+       * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
        * For custom images, the element of the baselines must be in the same
@@ -5325,11 +5325,11 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Baseline inputs for this feature.
-       * If no baseline is specified, AI Platform chooses the baseline for this
-       * feature. If multiple baselines are specified, AI Platform returns the
+       * If no baseline is specified, Vertex AI chooses the baseline for this
+       * feature. If multiple baselines are specified, Vertex AI returns the
        * average attributions across them in
        * [Attributions.baseline_attribution][].
-       * For AI Platform provided Tensorflow images (both 1.x and 2.x), the shape
+       * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
        * For custom images, the element of the baselines must be in the same
@@ -5353,11 +5353,11 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Baseline inputs for this feature.
-       * If no baseline is specified, AI Platform chooses the baseline for this
-       * feature. If multiple baselines are specified, AI Platform returns the
+       * If no baseline is specified, Vertex AI chooses the baseline for this
+       * feature. If multiple baselines are specified, Vertex AI returns the
        * average attributions across them in
        * [Attributions.baseline_attribution][].
-       * For AI Platform provided Tensorflow images (both 1.x and 2.x), the shape
+       * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
        * For custom images, the element of the baselines must be in the same
@@ -5388,11 +5388,11 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Baseline inputs for this feature.
-       * If no baseline is specified, AI Platform chooses the baseline for this
-       * feature. If multiple baselines are specified, AI Platform returns the
+       * If no baseline is specified, Vertex AI chooses the baseline for this
+       * feature. If multiple baselines are specified, Vertex AI returns the
        * average attributions across them in
        * [Attributions.baseline_attribution][].
-       * For AI Platform provided Tensorflow images (both 1.x and 2.x), the shape
+       * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
        * For custom images, the element of the baselines must be in the same
@@ -5420,11 +5420,11 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Baseline inputs for this feature.
-       * If no baseline is specified, AI Platform chooses the baseline for this
-       * feature. If multiple baselines are specified, AI Platform returns the
+       * If no baseline is specified, Vertex AI chooses the baseline for this
+       * feature. If multiple baselines are specified, Vertex AI returns the
        * average attributions across them in
        * [Attributions.baseline_attribution][].
-       * For AI Platform provided Tensorflow images (both 1.x and 2.x), the shape
+       * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
        * For custom images, the element of the baselines must be in the same
@@ -5454,11 +5454,11 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Baseline inputs for this feature.
-       * If no baseline is specified, AI Platform chooses the baseline for this
-       * feature. If multiple baselines are specified, AI Platform returns the
+       * If no baseline is specified, Vertex AI chooses the baseline for this
+       * feature. If multiple baselines are specified, Vertex AI returns the
        * average attributions across them in
        * [Attributions.baseline_attribution][].
-       * For AI Platform provided Tensorflow images (both 1.x and 2.x), the shape
+       * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
        * For custom images, the element of the baselines must be in the same
@@ -5489,11 +5489,11 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Baseline inputs for this feature.
-       * If no baseline is specified, AI Platform chooses the baseline for this
-       * feature. If multiple baselines are specified, AI Platform returns the
+       * If no baseline is specified, Vertex AI chooses the baseline for this
+       * feature. If multiple baselines are specified, Vertex AI returns the
        * average attributions across them in
        * [Attributions.baseline_attribution][].
-       * For AI Platform provided Tensorflow images (both 1.x and 2.x), the shape
+       * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
        * For custom images, the element of the baselines must be in the same
@@ -5521,11 +5521,11 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Baseline inputs for this feature.
-       * If no baseline is specified, AI Platform chooses the baseline for this
-       * feature. If multiple baselines are specified, AI Platform returns the
+       * If no baseline is specified, Vertex AI chooses the baseline for this
+       * feature. If multiple baselines are specified, Vertex AI returns the
        * average attributions across them in
        * [Attributions.baseline_attribution][].
-       * For AI Platform provided Tensorflow images (both 1.x and 2.x), the shape
+       * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
        * For custom images, the element of the baselines must be in the same
@@ -5553,11 +5553,11 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Baseline inputs for this feature.
-       * If no baseline is specified, AI Platform chooses the baseline for this
-       * feature. If multiple baselines are specified, AI Platform returns the
+       * If no baseline is specified, Vertex AI chooses the baseline for this
+       * feature. If multiple baselines are specified, Vertex AI returns the
        * average attributions across them in
        * [Attributions.baseline_attribution][].
-       * For AI Platform provided Tensorflow images (both 1.x and 2.x), the shape
+       * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
        * For custom images, the element of the baselines must be in the same
@@ -5586,11 +5586,11 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Baseline inputs for this feature.
-       * If no baseline is specified, AI Platform chooses the baseline for this
-       * feature. If multiple baselines are specified, AI Platform returns the
+       * If no baseline is specified, Vertex AI chooses the baseline for this
+       * feature. If multiple baselines are specified, Vertex AI returns the
        * average attributions across them in
        * [Attributions.baseline_attribution][].
-       * For AI Platform provided Tensorflow images (both 1.x and 2.x), the shape
+       * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
        * For custom images, the element of the baselines must be in the same
@@ -5617,11 +5617,11 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Baseline inputs for this feature.
-       * If no baseline is specified, AI Platform chooses the baseline for this
-       * feature. If multiple baselines are specified, AI Platform returns the
+       * If no baseline is specified, Vertex AI chooses the baseline for this
+       * feature. If multiple baselines are specified, Vertex AI returns the
        * average attributions across them in
        * [Attributions.baseline_attribution][].
-       * For AI Platform provided Tensorflow images (both 1.x and 2.x), the shape
+       * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
        * For custom images, the element of the baselines must be in the same
@@ -5648,11 +5648,11 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Baseline inputs for this feature.
-       * If no baseline is specified, AI Platform chooses the baseline for this
-       * feature. If multiple baselines are specified, AI Platform returns the
+       * If no baseline is specified, Vertex AI chooses the baseline for this
+       * feature. If multiple baselines are specified, Vertex AI returns the
        * average attributions across them in
        * [Attributions.baseline_attribution][].
-       * For AI Platform provided Tensorflow images (both 1.x and 2.x), the shape
+       * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
        * For custom images, the element of the baselines must be in the same
@@ -5673,11 +5673,11 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Baseline inputs for this feature.
-       * If no baseline is specified, AI Platform chooses the baseline for this
-       * feature. If multiple baselines are specified, AI Platform returns the
+       * If no baseline is specified, Vertex AI chooses the baseline for this
+       * feature. If multiple baselines are specified, Vertex AI returns the
        * average attributions across them in
        * [Attributions.baseline_attribution][].
-       * For AI Platform provided Tensorflow images (both 1.x and 2.x), the shape
+       * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
        * For custom images, the element of the baselines must be in the same
@@ -5701,11 +5701,11 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Baseline inputs for this feature.
-       * If no baseline is specified, AI Platform chooses the baseline for this
-       * feature. If multiple baselines are specified, AI Platform returns the
+       * If no baseline is specified, Vertex AI chooses the baseline for this
+       * feature. If multiple baselines are specified, Vertex AI returns the
        * average attributions across them in
        * [Attributions.baseline_attribution][].
-       * For AI Platform provided Tensorflow images (both 1.x and 2.x), the shape
+       * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
        * For custom images, the element of the baselines must be in the same
@@ -5730,11 +5730,11 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Baseline inputs for this feature.
-       * If no baseline is specified, AI Platform chooses the baseline for this
-       * feature. If multiple baselines are specified, AI Platform returns the
+       * If no baseline is specified, Vertex AI chooses the baseline for this
+       * feature. If multiple baselines are specified, Vertex AI returns the
        * average attributions across them in
        * [Attributions.baseline_attribution][].
-       * For AI Platform provided Tensorflow images (both 1.x and 2.x), the shape
+       * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
        * For custom images, the element of the baselines must be in the same
@@ -5755,11 +5755,11 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Baseline inputs for this feature.
-       * If no baseline is specified, AI Platform chooses the baseline for this
-       * feature. If multiple baselines are specified, AI Platform returns the
+       * If no baseline is specified, Vertex AI chooses the baseline for this
+       * feature. If multiple baselines are specified, Vertex AI returns the
        * average attributions across them in
        * [Attributions.baseline_attribution][].
-       * For AI Platform provided Tensorflow images (both 1.x and 2.x), the shape
+       * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
        * For custom images, the element of the baselines must be in the same
@@ -5781,11 +5781,11 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Baseline inputs for this feature.
-       * If no baseline is specified, AI Platform chooses the baseline for this
-       * feature. If multiple baselines are specified, AI Platform returns the
+       * If no baseline is specified, Vertex AI chooses the baseline for this
+       * feature. If multiple baselines are specified, Vertex AI returns the
        * average attributions across them in
        * [Attributions.baseline_attribution][].
-       * For AI Platform provided Tensorflow images (both 1.x and 2.x), the shape
+       * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
        * For custom images, the element of the baselines must be in the same
@@ -5822,7 +5822,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Name of the input tensor for this feature. Required and is only
-       * applicable to AI Platform provided images for Tensorflow.
+       * applicable to Vertex AI-provided images for Tensorflow.
        * </pre>
        *
        * <code>string input_tensor_name = 2;</code>
@@ -5843,7 +5843,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Name of the input tensor for this feature. Required and is only
-       * applicable to AI Platform provided images for Tensorflow.
+       * applicable to Vertex AI-provided images for Tensorflow.
        * </pre>
        *
        * <code>string input_tensor_name = 2;</code>
@@ -5865,7 +5865,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Name of the input tensor for this feature. Required and is only
-       * applicable to AI Platform provided images for Tensorflow.
+       * applicable to Vertex AI-provided images for Tensorflow.
        * </pre>
        *
        * <code>string input_tensor_name = 2;</code>
@@ -5885,7 +5885,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Name of the input tensor for this feature. Required and is only
-       * applicable to AI Platform provided images for Tensorflow.
+       * applicable to Vertex AI-provided images for Tensorflow.
        * </pre>
        *
        * <code>string input_tensor_name = 2;</code>
@@ -5900,7 +5900,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Name of the input tensor for this feature. Required and is only
-       * applicable to AI Platform provided images for Tensorflow.
+       * applicable to Vertex AI-provided images for Tensorflow.
        * </pre>
        *
        * <code>string input_tensor_name = 2;</code>
@@ -6786,7 +6786,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * A list of baselines for the encoded tensor.
        * The shape of each baseline should match the shape of the encoded tensor.
-       * If a scalar is provided, AI Platform broadcast to the same shape as the
+       * If a scalar is provided, Vertex AI broadcasts to the same shape as the
        * encoded tensor.
        * </pre>
        *
@@ -6803,7 +6803,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * A list of baselines for the encoded tensor.
        * The shape of each baseline should match the shape of the encoded tensor.
-       * If a scalar is provided, AI Platform broadcast to the same shape as the
+       * If a scalar is provided, Vertex AI broadcasts to the same shape as the
        * encoded tensor.
        * </pre>
        *
@@ -6820,7 +6820,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * A list of baselines for the encoded tensor.
        * The shape of each baseline should match the shape of the encoded tensor.
-       * If a scalar is provided, AI Platform broadcast to the same shape as the
+       * If a scalar is provided, Vertex AI broadcasts to the same shape as the
        * encoded tensor.
        * </pre>
        *
@@ -6837,7 +6837,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * A list of baselines for the encoded tensor.
        * The shape of each baseline should match the shape of the encoded tensor.
-       * If a scalar is provided, AI Platform broadcast to the same shape as the
+       * If a scalar is provided, Vertex AI broadcasts to the same shape as the
        * encoded tensor.
        * </pre>
        *
@@ -6861,7 +6861,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * A list of baselines for the encoded tensor.
        * The shape of each baseline should match the shape of the encoded tensor.
-       * If a scalar is provided, AI Platform broadcast to the same shape as the
+       * If a scalar is provided, Vertex AI broadcasts to the same shape as the
        * encoded tensor.
        * </pre>
        *
@@ -6882,7 +6882,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * A list of baselines for the encoded tensor.
        * The shape of each baseline should match the shape of the encoded tensor.
-       * If a scalar is provided, AI Platform broadcast to the same shape as the
+       * If a scalar is provided, Vertex AI broadcasts to the same shape as the
        * encoded tensor.
        * </pre>
        *
@@ -6905,7 +6905,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * A list of baselines for the encoded tensor.
        * The shape of each baseline should match the shape of the encoded tensor.
-       * If a scalar is provided, AI Platform broadcast to the same shape as the
+       * If a scalar is provided, Vertex AI broadcasts to the same shape as the
        * encoded tensor.
        * </pre>
        *
@@ -6929,7 +6929,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * A list of baselines for the encoded tensor.
        * The shape of each baseline should match the shape of the encoded tensor.
-       * If a scalar is provided, AI Platform broadcast to the same shape as the
+       * If a scalar is provided, Vertex AI broadcasts to the same shape as the
        * encoded tensor.
        * </pre>
        *
@@ -6950,7 +6950,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * A list of baselines for the encoded tensor.
        * The shape of each baseline should match the shape of the encoded tensor.
-       * If a scalar is provided, AI Platform broadcast to the same shape as the
+       * If a scalar is provided, Vertex AI broadcasts to the same shape as the
        * encoded tensor.
        * </pre>
        *
@@ -6971,7 +6971,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * A list of baselines for the encoded tensor.
        * The shape of each baseline should match the shape of the encoded tensor.
-       * If a scalar is provided, AI Platform broadcast to the same shape as the
+       * If a scalar is provided, Vertex AI broadcasts to the same shape as the
        * encoded tensor.
        * </pre>
        *
@@ -6993,7 +6993,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * A list of baselines for the encoded tensor.
        * The shape of each baseline should match the shape of the encoded tensor.
-       * If a scalar is provided, AI Platform broadcast to the same shape as the
+       * If a scalar is provided, Vertex AI broadcasts to the same shape as the
        * encoded tensor.
        * </pre>
        *
@@ -7013,7 +7013,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * A list of baselines for the encoded tensor.
        * The shape of each baseline should match the shape of the encoded tensor.
-       * If a scalar is provided, AI Platform broadcast to the same shape as the
+       * If a scalar is provided, Vertex AI broadcasts to the same shape as the
        * encoded tensor.
        * </pre>
        *
@@ -7033,7 +7033,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * A list of baselines for the encoded tensor.
        * The shape of each baseline should match the shape of the encoded tensor.
-       * If a scalar is provided, AI Platform broadcast to the same shape as the
+       * If a scalar is provided, Vertex AI broadcasts to the same shape as the
        * encoded tensor.
        * </pre>
        *
@@ -7047,7 +7047,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * A list of baselines for the encoded tensor.
        * The shape of each baseline should match the shape of the encoded tensor.
-       * If a scalar is provided, AI Platform broadcast to the same shape as the
+       * If a scalar is provided, Vertex AI broadcasts to the same shape as the
        * encoded tensor.
        * </pre>
        *
@@ -7064,7 +7064,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * A list of baselines for the encoded tensor.
        * The shape of each baseline should match the shape of the encoded tensor.
-       * If a scalar is provided, AI Platform broadcast to the same shape as the
+       * If a scalar is provided, Vertex AI broadcasts to the same shape as the
        * encoded tensor.
        * </pre>
        *
@@ -7082,7 +7082,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * A list of baselines for the encoded tensor.
        * The shape of each baseline should match the shape of the encoded tensor.
-       * If a scalar is provided, AI Platform broadcast to the same shape as the
+       * If a scalar is provided, Vertex AI broadcasts to the same shape as the
        * encoded tensor.
        * </pre>
        *
@@ -7096,7 +7096,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * A list of baselines for the encoded tensor.
        * The shape of each baseline should match the shape of the encoded tensor.
-       * If a scalar is provided, AI Platform broadcast to the same shape as the
+       * If a scalar is provided, Vertex AI broadcasts to the same shape as the
        * encoded tensor.
        * </pre>
        *
@@ -7111,7 +7111,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * A list of baselines for the encoded tensor.
        * The shape of each baseline should match the shape of the encoded tensor.
-       * If a scalar is provided, AI Platform broadcast to the same shape as the
+       * If a scalar is provided, Vertex AI broadcasts to the same shape as the
        * encoded tensor.
        * </pre>
        *
@@ -8905,8 +8905,8 @@ private static final long serialVersionUID = 0L;
    * features. Values are the specification of the feature.
    * An empty InputMetadata is valid. It describes a text feature which has the
    * name specified as the key in [ExplanationMetadata.inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs]. The baseline
-   * of the empty feature is chosen by AI Platform.
-   * For AI Platform provided Tensorflow images, the key can be any friendly
+   * of the empty feature is chosen by Vertex AI.
+   * For Vertex AI-provided Tensorflow images, the key can be any friendly
    * name of the feature. Once specified,
    * [featureAttributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions] are keyed by
    * this key (if not grouped with another feature).
@@ -8937,8 +8937,8 @@ private static final long serialVersionUID = 0L;
    * features. Values are the specification of the feature.
    * An empty InputMetadata is valid. It describes a text feature which has the
    * name specified as the key in [ExplanationMetadata.inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs]. The baseline
-   * of the empty feature is chosen by AI Platform.
-   * For AI Platform provided Tensorflow images, the key can be any friendly
+   * of the empty feature is chosen by Vertex AI.
+   * For Vertex AI-provided Tensorflow images, the key can be any friendly
    * name of the feature. Once specified,
    * [featureAttributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions] are keyed by
    * this key (if not grouped with another feature).
@@ -8959,8 +8959,8 @@ private static final long serialVersionUID = 0L;
    * features. Values are the specification of the feature.
    * An empty InputMetadata is valid. It describes a text feature which has the
    * name specified as the key in [ExplanationMetadata.inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs]. The baseline
-   * of the empty feature is chosen by AI Platform.
-   * For AI Platform provided Tensorflow images, the key can be any friendly
+   * of the empty feature is chosen by Vertex AI.
+   * For Vertex AI-provided Tensorflow images, the key can be any friendly
    * name of the feature. Once specified,
    * [featureAttributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions] are keyed by
    * this key (if not grouped with another feature).
@@ -8986,8 +8986,8 @@ private static final long serialVersionUID = 0L;
    * features. Values are the specification of the feature.
    * An empty InputMetadata is valid. It describes a text feature which has the
    * name specified as the key in [ExplanationMetadata.inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs]. The baseline
-   * of the empty feature is chosen by AI Platform.
-   * For AI Platform provided Tensorflow images, the key can be any friendly
+   * of the empty feature is chosen by Vertex AI.
+   * For Vertex AI-provided Tensorflow images, the key can be any friendly
    * name of the feature. Once specified,
    * [featureAttributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions] are keyed by
    * this key (if not grouped with another feature).
@@ -9039,7 +9039,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. Map from output names to output metadata.
-   * For AI Platform provided Tensorflow images, keys can be any user defined
+   * For Vertex AI-provided Tensorflow images, keys can be any user defined
    * string that consists of any UTF-8 characters.
    * For custom images, keys are the name of the output field in the prediction
    * to be explained.
@@ -9066,7 +9066,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. Map from output names to output metadata.
-   * For AI Platform provided Tensorflow images, keys can be any user defined
+   * For Vertex AI-provided Tensorflow images, keys can be any user defined
    * string that consists of any UTF-8 characters.
    * For custom images, keys are the name of the output field in the prediction
    * to be explained.
@@ -9083,7 +9083,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. Map from output names to output metadata.
-   * For AI Platform provided Tensorflow images, keys can be any user defined
+   * For Vertex AI-provided Tensorflow images, keys can be any user defined
    * string that consists of any UTF-8 characters.
    * For custom images, keys are the name of the output field in the prediction
    * to be explained.
@@ -9105,7 +9105,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. Map from output names to output metadata.
-   * For AI Platform provided Tensorflow images, keys can be any user defined
+   * For Vertex AI-provided Tensorflow images, keys can be any user defined
    * string that consists of any UTF-8 characters.
    * For custom images, keys are the name of the output field in the prediction
    * to be explained.
@@ -9135,7 +9135,7 @@ private static final long serialVersionUID = 0L;
    * of the [feature attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
    * The schema is defined as an OpenAPI 3.0.2
    * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-   * AutoML tabular Models always have this field populated by AI Platform.
+   * AutoML tabular Models always have this field populated by Vertex AI.
    * Note: The URI given on output may be different, including the URI scheme,
    * than the one given on input. The output URI will point to a location where
    * the user only has a read access.
@@ -9163,7 +9163,7 @@ private static final long serialVersionUID = 0L;
    * of the [feature attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
    * The schema is defined as an OpenAPI 3.0.2
    * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-   * AutoML tabular Models always have this field populated by AI Platform.
+   * AutoML tabular Models always have this field populated by Vertex AI.
    * Note: The URI given on output may be different, including the URI scheme,
    * than the one given on input. The output URI will point to a location where
    * the user only has a read access.
@@ -9607,8 +9607,8 @@ private static final long serialVersionUID = 0L;
      * features. Values are the specification of the feature.
      * An empty InputMetadata is valid. It describes a text feature which has the
      * name specified as the key in [ExplanationMetadata.inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs]. The baseline
-     * of the empty feature is chosen by AI Platform.
-     * For AI Platform provided Tensorflow images, the key can be any friendly
+     * of the empty feature is chosen by Vertex AI.
+     * For Vertex AI-provided Tensorflow images, the key can be any friendly
      * name of the feature. Once specified,
      * [featureAttributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions] are keyed by
      * this key (if not grouped with another feature).
@@ -9639,8 +9639,8 @@ private static final long serialVersionUID = 0L;
      * features. Values are the specification of the feature.
      * An empty InputMetadata is valid. It describes a text feature which has the
      * name specified as the key in [ExplanationMetadata.inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs]. The baseline
-     * of the empty feature is chosen by AI Platform.
-     * For AI Platform provided Tensorflow images, the key can be any friendly
+     * of the empty feature is chosen by Vertex AI.
+     * For Vertex AI-provided Tensorflow images, the key can be any friendly
      * name of the feature. Once specified,
      * [featureAttributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions] are keyed by
      * this key (if not grouped with another feature).
@@ -9661,8 +9661,8 @@ private static final long serialVersionUID = 0L;
      * features. Values are the specification of the feature.
      * An empty InputMetadata is valid. It describes a text feature which has the
      * name specified as the key in [ExplanationMetadata.inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs]. The baseline
-     * of the empty feature is chosen by AI Platform.
-     * For AI Platform provided Tensorflow images, the key can be any friendly
+     * of the empty feature is chosen by Vertex AI.
+     * For Vertex AI-provided Tensorflow images, the key can be any friendly
      * name of the feature. Once specified,
      * [featureAttributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions] are keyed by
      * this key (if not grouped with another feature).
@@ -9688,8 +9688,8 @@ private static final long serialVersionUID = 0L;
      * features. Values are the specification of the feature.
      * An empty InputMetadata is valid. It describes a text feature which has the
      * name specified as the key in [ExplanationMetadata.inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs]. The baseline
-     * of the empty feature is chosen by AI Platform.
-     * For AI Platform provided Tensorflow images, the key can be any friendly
+     * of the empty feature is chosen by Vertex AI.
+     * For Vertex AI-provided Tensorflow images, the key can be any friendly
      * name of the feature. Once specified,
      * [featureAttributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions] are keyed by
      * this key (if not grouped with another feature).
@@ -9723,8 +9723,8 @@ private static final long serialVersionUID = 0L;
      * features. Values are the specification of the feature.
      * An empty InputMetadata is valid. It describes a text feature which has the
      * name specified as the key in [ExplanationMetadata.inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs]. The baseline
-     * of the empty feature is chosen by AI Platform.
-     * For AI Platform provided Tensorflow images, the key can be any friendly
+     * of the empty feature is chosen by Vertex AI.
+     * For Vertex AI-provided Tensorflow images, the key can be any friendly
      * name of the feature. Once specified,
      * [featureAttributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions] are keyed by
      * this key (if not grouped with another feature).
@@ -9756,8 +9756,8 @@ private static final long serialVersionUID = 0L;
      * features. Values are the specification of the feature.
      * An empty InputMetadata is valid. It describes a text feature which has the
      * name specified as the key in [ExplanationMetadata.inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs]. The baseline
-     * of the empty feature is chosen by AI Platform.
-     * For AI Platform provided Tensorflow images, the key can be any friendly
+     * of the empty feature is chosen by Vertex AI.
+     * For Vertex AI-provided Tensorflow images, the key can be any friendly
      * name of the feature. Once specified,
      * [featureAttributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions] are keyed by
      * this key (if not grouped with another feature).
@@ -9782,8 +9782,8 @@ private static final long serialVersionUID = 0L;
      * features. Values are the specification of the feature.
      * An empty InputMetadata is valid. It describes a text feature which has the
      * name specified as the key in [ExplanationMetadata.inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs]. The baseline
-     * of the empty feature is chosen by AI Platform.
-     * For AI Platform provided Tensorflow images, the key can be any friendly
+     * of the empty feature is chosen by Vertex AI.
+     * For Vertex AI-provided Tensorflow images, the key can be any friendly
      * name of the feature. Once specified,
      * [featureAttributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions] are keyed by
      * this key (if not grouped with another feature).
@@ -9830,7 +9830,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. Map from output names to output metadata.
-     * For AI Platform provided Tensorflow images, keys can be any user defined
+     * For Vertex AI-provided Tensorflow images, keys can be any user defined
      * string that consists of any UTF-8 characters.
      * For custom images, keys are the name of the output field in the prediction
      * to be explained.
@@ -9857,7 +9857,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. Map from output names to output metadata.
-     * For AI Platform provided Tensorflow images, keys can be any user defined
+     * For Vertex AI-provided Tensorflow images, keys can be any user defined
      * string that consists of any UTF-8 characters.
      * For custom images, keys are the name of the output field in the prediction
      * to be explained.
@@ -9874,7 +9874,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. Map from output names to output metadata.
-     * For AI Platform provided Tensorflow images, keys can be any user defined
+     * For Vertex AI-provided Tensorflow images, keys can be any user defined
      * string that consists of any UTF-8 characters.
      * For custom images, keys are the name of the output field in the prediction
      * to be explained.
@@ -9896,7 +9896,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. Map from output names to output metadata.
-     * For AI Platform provided Tensorflow images, keys can be any user defined
+     * For Vertex AI-provided Tensorflow images, keys can be any user defined
      * string that consists of any UTF-8 characters.
      * For custom images, keys are the name of the output field in the prediction
      * to be explained.
@@ -9926,7 +9926,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. Map from output names to output metadata.
-     * For AI Platform provided Tensorflow images, keys can be any user defined
+     * For Vertex AI-provided Tensorflow images, keys can be any user defined
      * string that consists of any UTF-8 characters.
      * For custom images, keys are the name of the output field in the prediction
      * to be explained.
@@ -9954,7 +9954,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. Map from output names to output metadata.
-     * For AI Platform provided Tensorflow images, keys can be any user defined
+     * For Vertex AI-provided Tensorflow images, keys can be any user defined
      * string that consists of any UTF-8 characters.
      * For custom images, keys are the name of the output field in the prediction
      * to be explained.
@@ -9975,7 +9975,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. Map from output names to output metadata.
-     * For AI Platform provided Tensorflow images, keys can be any user defined
+     * For Vertex AI-provided Tensorflow images, keys can be any user defined
      * string that consists of any UTF-8 characters.
      * For custom images, keys are the name of the output field in the prediction
      * to be explained.
@@ -9999,7 +9999,7 @@ private static final long serialVersionUID = 0L;
      * of the [feature attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
      * The schema is defined as an OpenAPI 3.0.2
      * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-     * AutoML tabular Models always have this field populated by AI Platform.
+     * AutoML tabular Models always have this field populated by Vertex AI.
      * Note: The URI given on output may be different, including the URI scheme,
      * than the one given on input. The output URI will point to a location where
      * the user only has a read access.
@@ -10026,7 +10026,7 @@ private static final long serialVersionUID = 0L;
      * of the [feature attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
      * The schema is defined as an OpenAPI 3.0.2
      * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-     * AutoML tabular Models always have this field populated by AI Platform.
+     * AutoML tabular Models always have this field populated by Vertex AI.
      * Note: The URI given on output may be different, including the URI scheme,
      * than the one given on input. The output URI will point to a location where
      * the user only has a read access.
@@ -10054,7 +10054,7 @@ private static final long serialVersionUID = 0L;
      * of the [feature attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
      * The schema is defined as an OpenAPI 3.0.2
      * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-     * AutoML tabular Models always have this field populated by AI Platform.
+     * AutoML tabular Models always have this field populated by Vertex AI.
      * Note: The URI given on output may be different, including the URI scheme,
      * than the one given on input. The output URI will point to a location where
      * the user only has a read access.
@@ -10080,7 +10080,7 @@ private static final long serialVersionUID = 0L;
      * of the [feature attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
      * The schema is defined as an OpenAPI 3.0.2
      * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-     * AutoML tabular Models always have this field populated by AI Platform.
+     * AutoML tabular Models always have this field populated by Vertex AI.
      * Note: The URI given on output may be different, including the URI scheme,
      * than the one given on input. The output URI will point to a location where
      * the user only has a read access.
@@ -10101,7 +10101,7 @@ private static final long serialVersionUID = 0L;
      * of the [feature attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions].
      * The schema is defined as an OpenAPI 3.0.2
      * [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-     * AutoML tabular Models always have this field populated by AI Platform.
+     * AutoML tabular Models always have this field populated by Vertex AI.
      * Note: The URI given on output may be different, including the URI scheme,
      * than the one given on input. The output URI will point to a location where
      * the user only has a read access.

@@ -248,7 +248,7 @@ class MetadataServiceGrpcClient extends \Grpc\BaseStub {
      * Adds a set of Contexts as children to a parent Context. If any of the
      * child Contexts have already been added to the parent Context, they are
      * simply skipped. If this call would create a cycle or cause any Context to
-     * have more than 10 parents, the request will fail with INVALID_ARGUMENT
+     * have more than 10 parents, the request will fail with an INVALID_ARGUMENT
      * error.
      * @param \Google\Cloud\Aiplatform\V1beta1\AddContextChildrenRequest $argument input argument
      * @param array $metadata metadata
@@ -340,9 +340,10 @@ class MetadataServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Adds Events for denoting whether each Artifact was an input or output for a
-     * given Execution. If any Events already exist between the Execution and any
-     * of the specified Artifacts they are simply skipped.
+     * Adds Events to the specified Execution. An Event indicates whether an
+     * Artifact was used as an input or output for an Execution. If an Event
+     * already exists between the Execution and the Artifact, the Event is
+     * skipped.
      * @param \Google\Cloud\Aiplatform\V1beta1\AddExecutionEventsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -374,7 +375,7 @@ class MetadataServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Creates an MetadataSchema.
+     * Creates a MetadataSchema.
      * @param \Google\Cloud\Aiplatform\V1beta1\CreateMetadataSchemaRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

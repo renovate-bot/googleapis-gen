@@ -60,7 +60,7 @@ use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
 
 /**
- * Service Description: A service for managing AI Platform's machine learning Models.
+ * Service Description: A service for managing Vertex AI's machine learning Models.
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -1067,7 +1067,7 @@ class ModelServiceGapicClient
     }
 
     /**
-     * Uploads a Model artifact into AI Platform.
+     * Uploads a Model artifact into Vertex AI.
      *
      * Sample code:
      * ```

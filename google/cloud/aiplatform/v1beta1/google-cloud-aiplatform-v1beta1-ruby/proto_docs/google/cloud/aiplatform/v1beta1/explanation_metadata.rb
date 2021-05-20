@@ -29,9 +29,9 @@ module Google
         #
         #     An empty InputMetadata is valid. It describes a text feature which has the
         #     name specified as the key in {::Google::Cloud::Aiplatform::V1beta1::ExplanationMetadata#inputs ExplanationMetadata.inputs}. The baseline
-        #     of the empty feature is chosen by AI Platform.
+        #     of the empty feature is chosen by Vertex AI.
         #
-        #     For AI Platform provided Tensorflow images, the key can be any friendly
+        #     For Vertex AI-provided Tensorflow images, the key can be any friendly
         #     name of the feature. Once specified,
         #     {::Google::Cloud::Aiplatform::V1beta1::Attribution#feature_attributions featureAttributions} are keyed by
         #     this key (if not grouped with another feature).
@@ -42,7 +42,7 @@ module Google
         #   @return [::Google::Protobuf::Map{::String => ::Google::Cloud::Aiplatform::V1beta1::ExplanationMetadata::OutputMetadata}]
         #     Required. Map from output names to output metadata.
         #
-        #     For AI Platform provided Tensorflow images, keys can be any user defined
+        #     For Vertex AI-provided Tensorflow images, keys can be any user defined
         #     string that consists of any UTF-8 characters.
         #
         #     For custom images, keys are the name of the output field in the prediction
@@ -55,7 +55,7 @@ module Google
         #     of the {::Google::Cloud::Aiplatform::V1beta1::Attribution#feature_attributions feature attributions}.
         #     The schema is defined as an OpenAPI 3.0.2
         #     [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-        #     AutoML tabular Models always have this field populated by AI Platform.
+        #     AutoML tabular Models always have this field populated by Vertex AI.
         #     Note: The URI given on output may be different, including the URI scheme,
         #     than the one given on input. The output URI will point to a location where
         #     the user only has a read access.
@@ -66,17 +66,17 @@ module Google
           # Metadata of the input of a feature.
           #
           # Fields other than {::Google::Cloud::Aiplatform::V1beta1::ExplanationMetadata::InputMetadata#input_baselines InputMetadata.input_baselines} are applicable only
-          # for Models that are using AI Platform-provided images for Tensorflow.
+          # for Models that are using Vertex AI-provided images for Tensorflow.
           # @!attribute [rw] input_baselines
           #   @return [::Array<::Google::Protobuf::Value>]
           #     Baseline inputs for this feature.
           #
-          #     If no baseline is specified, AI Platform chooses the baseline for this
-          #     feature. If multiple baselines are specified, AI Platform returns the
+          #     If no baseline is specified, Vertex AI chooses the baseline for this
+          #     feature. If multiple baselines are specified, Vertex AI returns the
           #     average attributions across them in
           #     [Attributions.baseline_attribution][].
           #
-          #     For AI Platform provided Tensorflow images (both 1.x and 2.x), the shape
+          #     For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
           #     of each baseline must match the shape of the input tensor. If a scalar is
           #     provided, we broadcast to the same shape as the input tensor.
           #
@@ -90,7 +90,7 @@ module Google
           # @!attribute [rw] input_tensor_name
           #   @return [::String]
           #     Name of the input tensor for this feature. Required and is only
-          #     applicable to AI Platform provided images for Tensorflow.
+          #     applicable to Vertex AI-provided images for Tensorflow.
           # @!attribute [rw] encoding
           #   @return [::Google::Cloud::Aiplatform::V1beta1::ExplanationMetadata::InputMetadata::Encoding]
           #     Defines how the feature is encoded into the input tensor. Defaults to
@@ -134,7 +134,7 @@ module Google
           #     A list of baselines for the encoded tensor.
           #
           #     The shape of each baseline should match the shape of the encoded tensor.
-          #     If a scalar is provided, AI Platform broadcast to the same shape as the
+          #     If a scalar is provided, Vertex AI broadcasts to the same shape as the
           #     encoded tensor.
           # @!attribute [rw] visualization
           #   @return [::Google::Cloud::Aiplatform::V1beta1::ExplanationMetadata::InputMetadata::Visualization]

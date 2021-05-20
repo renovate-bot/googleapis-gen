@@ -19,7 +19,7 @@
 namespace Google\Cloud\Aiplatform\V1beta1;
 
 /**
- * A service for creating and managing AI Platform's jobs.
+ * A service for creating and managing Vertex AI's jobs.
  */
 class JobServiceGrpcClient extends \Grpc\BaseStub {
 

@@ -45,7 +45,7 @@ module Google
         #     does not have any additional information.
         #     The schema is defined as an OpenAPI 3.0.2
         #     [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-        #     AutoML Models always have this field populated by AI Platform, if no
+        #     AutoML Models always have this field populated by Vertex AI, if no
         #     additional metadata is needed, this field is set to an empty string.
         #     Note: The URI given on output will be immutable and probably different,
         #     including the URI scheme, than the one given on input. The output URI will
@@ -67,7 +67,7 @@ module Google
         #     Input only. The specification of the container that is to be used when deploying
         #     this Model. The specification is ingested upon
         #     {::Google::Cloud::Aiplatform::V1beta1::ModelService::Client#upload_model ModelService.UploadModel}, and all binaries it contains are copied
-        #     and stored internally by AI Platform.
+        #     and stored internally by Vertex AI.
         #     Not present for AutoML Models.
         # @!attribute [rw] artifact_uri
         #   @return [::String]
@@ -163,7 +163,7 @@ module Google
         #     {::Google::Cloud::Aiplatform::V1beta1::PredictionService::Client#explain PredictionService.Explain}.
         # @!attribute [r] create_time
         #   @return [::Google::Protobuf::Timestamp]
-        #     Output only. Timestamp when this Model was uploaded into AI Platform.
+        #     Output only. Timestamp when this Model was uploaded into Vertex AI.
         # @!attribute [r] update_time
         #   @return [::Google::Protobuf::Timestamp]
         #     Output only. Timestamp when this Model was most recently updated.
@@ -283,7 +283,7 @@ module Google
             # higher degree of manual configuration.
             DEDICATED_RESOURCES = 1
 
-            # Resources that to large degree are decided by AI Platform, and require
+            # Resources that to large degree are decided by Vertex AI, and require
             # only a modest additional configuration.
             AUTOMATIC_RESOURCES = 2
           end
@@ -300,7 +300,7 @@ module Google
         #     {::Google::Cloud::Aiplatform::V1beta1::BatchPredictionJob#input_config BatchPredictionJob.input_config}.
         #     The schema is defined as an OpenAPI 3.0.2
         #     [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-        #     AutoML Models always have this field populated by AI Platform.
+        #     AutoML Models always have this field populated by Vertex AI.
         #     Note: The URI given on output will be immutable and probably different,
         #     including the URI scheme, than the one given on input. The output URI will
         #     point to a location where the user only has a read access.
@@ -312,7 +312,7 @@ module Google
         #     {::Google::Cloud::Aiplatform::V1beta1::BatchPredictionJob#model_parameters BatchPredictionJob.model_parameters}.
         #     The schema is defined as an OpenAPI 3.0.2
         #     [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-        #     AutoML Models always have this field populated by AI Platform, if no
+        #     AutoML Models always have this field populated by Vertex AI, if no
         #     parameters are supported, then it is set to an empty string.
         #     Note: The URI given on output will be immutable and probably different,
         #     including the URI scheme, than the one given on input. The output URI will
@@ -325,7 +325,7 @@ module Google
         #     {::Google::Cloud::Aiplatform::V1beta1::BatchPredictionJob#output_config BatchPredictionJob.output_config}.
         #     The schema is defined as an OpenAPI 3.0.2
         #     [Schema Object](https://tinyurl.com/y538mdwt#schema-object).
-        #     AutoML Models always have this field populated by AI Platform.
+        #     AutoML Models always have this field populated by Vertex AI.
         #     Note: The URI given on output will be immutable and probably different,
         #     including the URI scheme, than the one given on input. The output URI will
         #     point to a location where the user only has a read access.
@@ -352,8 +352,8 @@ module Google
         #     To learn about the requirements for the Docker image itself, see
         #     [Custom container requirements](https://tinyurl.com/cust-cont-reqs).
         #
-        #     You can use the URI to one of AI Platform's [pre-built container images for
-        #     prediction](https://cloud.google.com/ai-platform-unified/docs/predictions/pre-built-containers)
+        #     You can use the URI to one of Vertex AI's [pre-built container images for
+        #     prediction](https://cloud.google.com/vertex-ai/docs/predictions/pre-built-containers)
         #     in this field.
         # @!attribute [rw] command
         #   @return [::Array<::String>]
@@ -379,7 +379,7 @@ module Google
         #     `CMD`.
         #
         #     In this field, you can reference environment variables
-        #     [set by AI Platform](https://tinyurl.com/cust-cont-reqs#aip-variables)
+        #     [set by Vertex AI](https://tinyurl.com/cust-cont-reqs#aip-variables)
         #     and environment variables set in the {::Google::Cloud::Aiplatform::V1beta1::ModelContainerSpec#env env} field.
         #     You cannot reference environment variables set in the Docker image. In
         #     order for environment variables to be expanded, reference them by using the
@@ -415,7 +415,7 @@ module Google
         #     [interact](https://tinyurl.com/h3kdcgs).
         #
         #     In this field, you can reference environment variables
-        #     [set by AI Platform](https://tinyurl.com/cust-cont-reqs#aip-variables)
+        #     [set by Vertex AI](https://tinyurl.com/cust-cont-reqs#aip-variables)
         #     and environment variables set in the {::Google::Cloud::Aiplatform::V1beta1::ModelContainerSpec#env env} field.
         #     You cannot reference environment variables set in the Docker image. In
         #     order for environment variables to be expanded, reference them by using the
@@ -459,7 +459,7 @@ module Google
         #     [v1 core API](https://tinyurl.com/k8s-io-api/v1.18/#container-v1-core).
         # @!attribute [rw] ports
         #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::Port>]
-        #     Immutable. List of ports to expose from the container. AI Platform sends any
+        #     Immutable. List of ports to expose from the container. Vertex AI sends any
         #     prediction requests that it receives to the first port on this list. AI
         #     Platform also sends
         #     [liveness and health checks](https://tinyurl.com/cust-cont-reqs#health)
@@ -475,18 +475,18 @@ module Google
         #     ]
         #     ```
         #
-        #     AI Platform does not use ports other than the first one listed. This field
+        #     Vertex AI does not use ports other than the first one listed. This field
         #     corresponds to the `ports` field of the Kubernetes Containers
         #     [v1 core API](https://tinyurl.com/k8s-io-api/v1.18/#container-v1-core).
         # @!attribute [rw] predict_route
         #   @return [::String]
-        #     Immutable. HTTP path on the container to send prediction requests to. AI Platform
+        #     Immutable. HTTP path on the container to send prediction requests to. Vertex AI
         #     forwards requests sent using
         #     {::Google::Cloud::Aiplatform::V1beta1::PredictionService::Client#predict projects.locations.endpoints.predict} to this
-        #     path on the container's IP address and port. AI Platform then returns the
+        #     path on the container's IP address and port. Vertex AI then returns the
         #     container's response in the API response.
         #
-        #     For example, if you set this field to `/foo`, then when AI Platform
+        #     For example, if you set this field to `/foo`, then when Vertex AI
         #     receives a prediction request, it forwards the request body in a POST
         #     request to the `/foo` path on the port of your container specified by the
         #     first value of this `ModelContainerSpec`'s
@@ -499,24 +499,24 @@ module Google
         #
         #     * <var>ENDPOINT</var>: The last segment (following `endpoints/`)of the
         #       Endpoint.name][] field of the Endpoint where this Model has been
-        #       deployed. (AI Platform makes this value available to your container code
+        #       deployed. (Vertex AI makes this value available to your container code
         #       as the
         #      [`AIP_ENDPOINT_ID`](https://tinyurl.com/cust-cont-reqs#aip-variables)
         #      environment variable.)
         #
         #     * <var>DEPLOYED_MODEL</var>: {::Google::Cloud::Aiplatform::V1beta1::DeployedModel#id DeployedModel.id} of the `DeployedModel`.
-        #       (AI Platform makes this value available to your container code
+        #       (Vertex AI makes this value available to your container code
         #       as the [`AIP_DEPLOYED_MODEL_ID` environment
         #       variable](https://tinyurl.com/cust-cont-reqs#aip-variables).)
         # @!attribute [rw] health_route
         #   @return [::String]
-        #     Immutable. HTTP path on the container to send health checks to. AI Platform
+        #     Immutable. HTTP path on the container to send health checks to. Vertex AI
         #     intermittently sends GET requests to this path on the container's IP
         #     address and port to check that the container is healthy. Read more about
         #     [health
         #     checks](https://tinyurl.com/cust-cont-reqs#checks).
         #
-        #     For example, if you set this field to `/bar`, then AI Platform
+        #     For example, if you set this field to `/bar`, then Vertex AI
         #     intermittently sends a GET request to the `/bar` path on the port of your
         #     container specified by the first value of this `ModelContainerSpec`'s
         #     {::Google::Cloud::Aiplatform::V1beta1::ModelContainerSpec#ports ports} field.
@@ -528,13 +528,13 @@ module Google
         #
         #     * <var>ENDPOINT</var>: The last segment (following `endpoints/`)of the
         #       Endpoint.name][] field of the Endpoint where this Model has been
-        #       deployed. (AI Platform makes this value available to your container code
+        #       deployed. (Vertex AI makes this value available to your container code
         #       as the
         #       [`AIP_ENDPOINT_ID`](https://tinyurl.com/cust-cont-reqs#aip-variables)
         #       environment variable.)
         #
         #     * <var>DEPLOYED_MODEL</var>: {::Google::Cloud::Aiplatform::V1beta1::DeployedModel#id DeployedModel.id} of the `DeployedModel`.
-        #       (AI Platform makes this value available to your container code as the
+        #       (Vertex AI makes this value available to your container code as the
         #     [`AIP_DEPLOYED_MODEL_ID`](https://tinyurl.com/cust-cont-reqs#aip-variables)
         #       environment variable.)
         class ModelContainerSpec

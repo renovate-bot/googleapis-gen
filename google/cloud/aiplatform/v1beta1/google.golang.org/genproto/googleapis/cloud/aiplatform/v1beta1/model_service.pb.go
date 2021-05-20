@@ -1957,7 +1957,7 @@ const _ = grpc.SupportPackageIsVersion6
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type ModelServiceClient interface {
-	// Uploads a Model artifact into AI Platform.
+	// Uploads a Model artifact into Vertex AI.
 	UploadModel(ctx context.Context, in *UploadModelRequest, opts ...grpc.CallOption) (*longrunning.Operation, error)
 	// Gets a Model.
 	GetModel(ctx context.Context, in *GetModelRequest, opts ...grpc.CallOption) (*Model, error)
@@ -2083,7 +2083,7 @@ func (c *modelServiceClient) ListModelEvaluationSlices(ctx context.Context, in *
 
 // ModelServiceServer is the server API for ModelService service.
 type ModelServiceServer interface {
-	// Uploads a Model artifact into AI Platform.
+	// Uploads a Model artifact into Vertex AI.
 	UploadModel(context.Context, *UploadModelRequest) (*longrunning.Operation, error)
 	// Gets a Model.
 	GetModel(context.Context, *GetModelRequest) (*Model, error)

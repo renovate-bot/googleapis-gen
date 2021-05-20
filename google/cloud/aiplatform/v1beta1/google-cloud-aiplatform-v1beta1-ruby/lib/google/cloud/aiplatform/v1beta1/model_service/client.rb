@@ -27,7 +27,7 @@ module Google
           ##
           # Client for the ModelService service.
           #
-          # A service for managing AI Platform's machine learning Models.
+          # A service for managing Vertex AI's machine learning Models.
           #
           class Client
             include Paths
@@ -183,7 +183,7 @@ module Google
             # Service calls
 
             ##
-            # Uploads a Model artifact into AI Platform.
+            # Uploads a Model artifact into Vertex AI.
             #
             # @overload upload_model(request, options = nil)
             #   Pass arguments to `upload_model` via a request object, either of type

@@ -53,7 +53,7 @@ use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
 
 /**
- * Service Description: A service for managing AI Platform's IndexEndpoints.
+ * Service Description: A service for managing Vertex AI's IndexEndpoints.
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:

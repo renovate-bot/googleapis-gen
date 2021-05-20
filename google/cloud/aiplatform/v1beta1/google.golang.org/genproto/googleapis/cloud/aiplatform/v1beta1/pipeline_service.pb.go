@@ -557,14 +557,16 @@ type ListPipelineJobsRequest struct {
 	Parent string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
 	// The standard list filter.
 	// Supported fields:
-	//   * `display_name` supports = and !=.
-	//   * `state` supports = and !=.
 	//
-	// Some examples of using the filter are:
-	//  * `state="PIPELINE_STATE_SUCCEEDED" AND display_name="my_pipeline"`
-	//  * `state="PIPELINE_STATE_RUNNING" OR display_name="my_pipeline"`
-	//  * `NOT display_name="my_pipeline"`
-	//  * `state="PIPELINE_STATE_FAILED"`
+	// * `display_name` supports `=` and `!=`.
+	// * `state` supports `=` and `!=`.
+	//
+	// The following examples demonstrate how to filter the list of PipelineJobs:
+	//
+	// * `state="PIPELINE_STATE_SUCCEEDED" AND display_name="my_pipeline"`
+	// * `state="PIPELINE_STATE_RUNNING" OR display_name="my_pipeline"`
+	// * `NOT display_name="my_pipeline"`
+	// * `state="PIPELINE_STATE_FAILED"`
 	Filter string `protobuf:"bytes,2,opt,name=filter,proto3" json:"filter,omitempty"`
 	// The standard list page size.
 	PageSize int32 `protobuf:"varint,3,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`

@@ -24,7 +24,7 @@ module Google
     module Aiplatform
       module V1beta1
         module ModelService
-          # A service for managing AI Platform's machine learning Models.
+          # A service for managing Vertex AI's machine learning Models.
           class Service
 
             include GRPC::GenericService
@@ -33,7 +33,7 @@ module Google
             self.unmarshal_class_method = :decode
             self.service_name = 'google.cloud.aiplatform.v1beta1.ModelService'
 
-            # Uploads a Model artifact into AI Platform.
+            # Uploads a Model artifact into Vertex AI.
             rpc :UploadModel, ::Google::Cloud::Aiplatform::V1beta1::UploadModelRequest, ::Google::Longrunning::Operation
             # Gets a Model.
             rpc :GetModel, ::Google::Cloud::Aiplatform::V1beta1::GetModelRequest, ::Google::Cloud::Aiplatform::V1beta1::Model

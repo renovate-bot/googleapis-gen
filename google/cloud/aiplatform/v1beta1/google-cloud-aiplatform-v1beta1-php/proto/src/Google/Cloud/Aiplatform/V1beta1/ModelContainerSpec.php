@@ -28,8 +28,8 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
      * internally, and this original path is afterwards not used.
      * To learn about the requirements for the Docker image itself, see
      * [Custom container requirements](https://tinyurl.com/cust-cont-reqs).
-     * You can use the URI to one of AI Platform's [pre-built container images for
-     * prediction](https://cloud.google.com/ai-platform-unified/docs/predictions/pre-built-containers)
+     * You can use the URI to one of Vertex AI's [pre-built container images for
+     * prediction](https://cloud.google.com/vertex-ai/docs/predictions/pre-built-containers)
      * in this field.
      *
      * Generated from protobuf field <code>string image_uri = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
@@ -55,7 +55,7 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
      * `command` and `args` fields interact with a container's `ENTRYPOINT` and
      * `CMD`.
      * In this field, you can reference environment variables
-     * [set by AI Platform](https://tinyurl.com/cust-cont-reqs#aip-variables)
+     * [set by Vertex AI](https://tinyurl.com/cust-cont-reqs#aip-variables)
      * and environment variables set in the [env][google.cloud.aiplatform.v1beta1.ModelContainerSpec.env] field.
      * You cannot reference environment variables set in the Docker image. In
      * order for environment variables to be expanded, reference them by using the
@@ -91,7 +91,7 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
      * documentation about how `CMD` and `ENTRYPOINT`
      * [interact](https://tinyurl.com/h3kdcgs).
      * In this field, you can reference environment variables
-     * [set by AI Platform](https://tinyurl.com/cust-cont-reqs#aip-variables)
+     * [set by Vertex AI](https://tinyurl.com/cust-cont-reqs#aip-variables)
      * and environment variables set in the [env][google.cloud.aiplatform.v1beta1.ModelContainerSpec.env] field.
      * You cannot reference environment variables set in the Docker image. In
      * order for environment variables to be expanded, reference them by using the
@@ -137,7 +137,7 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
      */
     private $env;
     /**
-     * Immutable. List of ports to expose from the container. AI Platform sends any
+     * Immutable. List of ports to expose from the container. Vertex AI sends any
      * prediction requests that it receives to the first port on this list. AI
      * Platform also sends
      * [liveness and health checks](https://tinyurl.com/cust-cont-reqs#health)
@@ -150,7 +150,7 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
      *   }
      * ]
      * ```
-     * AI Platform does not use ports other than the first one listed. This field
+     * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core API](https://tinyurl.com/k8s-io-api/v1.18/#container-v1-core).
      *
@@ -158,12 +158,12 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
      */
     private $ports;
     /**
-     * Immutable. HTTP path on the container to send prediction requests to. AI Platform
+     * Immutable. HTTP path on the container to send prediction requests to. Vertex AI
      * forwards requests sent using
      * [projects.locations.endpoints.predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict] to this
-     * path on the container's IP address and port. AI Platform then returns the
+     * path on the container's IP address and port. Vertex AI then returns the
      * container's response in the API response.
-     * For example, if you set this field to `/foo`, then when AI Platform
+     * For example, if you set this field to `/foo`, then when Vertex AI
      * receives a prediction request, it forwards the request body in a POST
      * request to the `/foo` path on the port of your container specified by the
      * first value of this `ModelContainerSpec`'s
@@ -174,12 +174,12 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
      * The placeholders in this value are replaced as follows:
      * * <var>ENDPOINT</var>: The last segment (following `endpoints/`)of the
      *   Endpoint.name][] field of the Endpoint where this Model has been
-     *   deployed. (AI Platform makes this value available to your container code
+     *   deployed. (Vertex AI makes this value available to your container code
      *   as the
      *  [`AIP_ENDPOINT_ID`](https://tinyurl.com/cust-cont-reqs#aip-variables)
      *  environment variable.)
      * * <var>DEPLOYED_MODEL</var>: [DeployedModel.id][google.cloud.aiplatform.v1beta1.DeployedModel.id] of the `DeployedModel`.
-     *   (AI Platform makes this value available to your container code
+     *   (Vertex AI makes this value available to your container code
      *   as the [`AIP_DEPLOYED_MODEL_ID` environment
      *   variable](https://tinyurl.com/cust-cont-reqs#aip-variables).)
      *
@@ -187,12 +187,12 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
      */
     protected $predict_route = '';
     /**
-     * Immutable. HTTP path on the container to send health checks to. AI Platform
+     * Immutable. HTTP path on the container to send health checks to. Vertex AI
      * intermittently sends GET requests to this path on the container's IP
      * address and port to check that the container is healthy. Read more about
      * [health
      * checks](https://tinyurl.com/cust-cont-reqs#checks).
-     * For example, if you set this field to `/bar`, then AI Platform
+     * For example, if you set this field to `/bar`, then Vertex AI
      * intermittently sends a GET request to the `/bar` path on the port of your
      * container specified by the first value of this `ModelContainerSpec`'s
      * [ports][google.cloud.aiplatform.v1beta1.ModelContainerSpec.ports] field.
@@ -202,12 +202,12 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
      * The placeholders in this value are replaced as follows:
      * * <var>ENDPOINT</var>: The last segment (following `endpoints/`)of the
      *   Endpoint.name][] field of the Endpoint where this Model has been
-     *   deployed. (AI Platform makes this value available to your container code
+     *   deployed. (Vertex AI makes this value available to your container code
      *   as the
      *   [`AIP_ENDPOINT_ID`](https://tinyurl.com/cust-cont-reqs#aip-variables)
      *   environment variable.)
      * * <var>DEPLOYED_MODEL</var>: [DeployedModel.id][google.cloud.aiplatform.v1beta1.DeployedModel.id] of the `DeployedModel`.
-     *   (AI Platform makes this value available to your container code as the
+     *   (Vertex AI makes this value available to your container code as the
      * [`AIP_DEPLOYED_MODEL_ID`](https://tinyurl.com/cust-cont-reqs#aip-variables)
      *   environment variable.)
      *
@@ -232,8 +232,8 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
      *           internally, and this original path is afterwards not used.
      *           To learn about the requirements for the Docker image itself, see
      *           [Custom container requirements](https://tinyurl.com/cust-cont-reqs).
-     *           You can use the URI to one of AI Platform's [pre-built container images for
-     *           prediction](https://cloud.google.com/ai-platform-unified/docs/predictions/pre-built-containers)
+     *           You can use the URI to one of Vertex AI's [pre-built container images for
+     *           prediction](https://cloud.google.com/vertex-ai/docs/predictions/pre-built-containers)
      *           in this field.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $command
      *           Immutable. Specifies the command that runs when the container starts. This overrides
@@ -255,7 +255,7 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
      *           `command` and `args` fields interact with a container's `ENTRYPOINT` and
      *           `CMD`.
      *           In this field, you can reference environment variables
-     *           [set by AI Platform](https://tinyurl.com/cust-cont-reqs#aip-variables)
+     *           [set by Vertex AI](https://tinyurl.com/cust-cont-reqs#aip-variables)
      *           and environment variables set in the [env][google.cloud.aiplatform.v1beta1.ModelContainerSpec.env] field.
      *           You cannot reference environment variables set in the Docker image. In
      *           order for environment variables to be expanded, reference them by using the
@@ -287,7 +287,7 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
      *           documentation about how `CMD` and `ENTRYPOINT`
      *           [interact](https://tinyurl.com/h3kdcgs).
      *           In this field, you can reference environment variables
-     *           [set by AI Platform](https://tinyurl.com/cust-cont-reqs#aip-variables)
+     *           [set by Vertex AI](https://tinyurl.com/cust-cont-reqs#aip-variables)
      *           and environment variables set in the [env][google.cloud.aiplatform.v1beta1.ModelContainerSpec.env] field.
      *           You cannot reference environment variables set in the Docker image. In
      *           order for environment variables to be expanded, reference them by using the
@@ -325,7 +325,7 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
      *           This field corresponds to the `env` field of the Kubernetes Containers
      *           [v1 core API](https://tinyurl.com/k8s-io-api/v1.18/#container-v1-core).
      *     @type \Google\Cloud\Aiplatform\V1beta1\Port[]|\Google\Protobuf\Internal\RepeatedField $ports
-     *           Immutable. List of ports to expose from the container. AI Platform sends any
+     *           Immutable. List of ports to expose from the container. Vertex AI sends any
      *           prediction requests that it receives to the first port on this list. AI
      *           Platform also sends
      *           [liveness and health checks](https://tinyurl.com/cust-cont-reqs#health)
@@ -338,16 +338,16 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
      *             }
      *           ]
      *           ```
-     *           AI Platform does not use ports other than the first one listed. This field
+     *           Vertex AI does not use ports other than the first one listed. This field
      *           corresponds to the `ports` field of the Kubernetes Containers
      *           [v1 core API](https://tinyurl.com/k8s-io-api/v1.18/#container-v1-core).
      *     @type string $predict_route
-     *           Immutable. HTTP path on the container to send prediction requests to. AI Platform
+     *           Immutable. HTTP path on the container to send prediction requests to. Vertex AI
      *           forwards requests sent using
      *           [projects.locations.endpoints.predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict] to this
-     *           path on the container's IP address and port. AI Platform then returns the
+     *           path on the container's IP address and port. Vertex AI then returns the
      *           container's response in the API response.
-     *           For example, if you set this field to `/foo`, then when AI Platform
+     *           For example, if you set this field to `/foo`, then when Vertex AI
      *           receives a prediction request, it forwards the request body in a POST
      *           request to the `/foo` path on the port of your container specified by the
      *           first value of this `ModelContainerSpec`'s
@@ -358,21 +358,21 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
      *           The placeholders in this value are replaced as follows:
      *           * <var>ENDPOINT</var>: The last segment (following `endpoints/`)of the
      *             Endpoint.name][] field of the Endpoint where this Model has been
-     *             deployed. (AI Platform makes this value available to your container code
+     *             deployed. (Vertex AI makes this value available to your container code
      *             as the
      *            [`AIP_ENDPOINT_ID`](https://tinyurl.com/cust-cont-reqs#aip-variables)
      *            environment variable.)
      *           * <var>DEPLOYED_MODEL</var>: [DeployedModel.id][google.cloud.aiplatform.v1beta1.DeployedModel.id] of the `DeployedModel`.
-     *             (AI Platform makes this value available to your container code
+     *             (Vertex AI makes this value available to your container code
      *             as the [`AIP_DEPLOYED_MODEL_ID` environment
      *             variable](https://tinyurl.com/cust-cont-reqs#aip-variables).)
      *     @type string $health_route
-     *           Immutable. HTTP path on the container to send health checks to. AI Platform
+     *           Immutable. HTTP path on the container to send health checks to. Vertex AI
      *           intermittently sends GET requests to this path on the container's IP
      *           address and port to check that the container is healthy. Read more about
      *           [health
      *           checks](https://tinyurl.com/cust-cont-reqs#checks).
-     *           For example, if you set this field to `/bar`, then AI Platform
+     *           For example, if you set this field to `/bar`, then Vertex AI
      *           intermittently sends a GET request to the `/bar` path on the port of your
      *           container specified by the first value of this `ModelContainerSpec`'s
      *           [ports][google.cloud.aiplatform.v1beta1.ModelContainerSpec.ports] field.
@@ -382,12 +382,12 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
      *           The placeholders in this value are replaced as follows:
      *           * <var>ENDPOINT</var>: The last segment (following `endpoints/`)of the
      *             Endpoint.name][] field of the Endpoint where this Model has been
-     *             deployed. (AI Platform makes this value available to your container code
+     *             deployed. (Vertex AI makes this value available to your container code
      *             as the
      *             [`AIP_ENDPOINT_ID`](https://tinyurl.com/cust-cont-reqs#aip-variables)
      *             environment variable.)
      *           * <var>DEPLOYED_MODEL</var>: [DeployedModel.id][google.cloud.aiplatform.v1beta1.DeployedModel.id] of the `DeployedModel`.
-     *             (AI Platform makes this value available to your container code as the
+     *             (Vertex AI makes this value available to your container code as the
      *           [`AIP_DEPLOYED_MODEL_ID`](https://tinyurl.com/cust-cont-reqs#aip-variables)
      *             environment variable.)
      * }
@@ -408,8 +408,8 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
      * internally, and this original path is afterwards not used.
      * To learn about the requirements for the Docker image itself, see
      * [Custom container requirements](https://tinyurl.com/cust-cont-reqs).
-     * You can use the URI to one of AI Platform's [pre-built container images for
-     * prediction](https://cloud.google.com/ai-platform-unified/docs/predictions/pre-built-containers)
+     * You can use the URI to one of Vertex AI's [pre-built container images for
+     * prediction](https://cloud.google.com/vertex-ai/docs/predictions/pre-built-containers)
      * in this field.
      *
      * Generated from protobuf field <code>string image_uri = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
@@ -431,8 +431,8 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
      * internally, and this original path is afterwards not used.
      * To learn about the requirements for the Docker image itself, see
      * [Custom container requirements](https://tinyurl.com/cust-cont-reqs).
-     * You can use the URI to one of AI Platform's [pre-built container images for
-     * prediction](https://cloud.google.com/ai-platform-unified/docs/predictions/pre-built-containers)
+     * You can use the URI to one of Vertex AI's [pre-built container images for
+     * prediction](https://cloud.google.com/vertex-ai/docs/predictions/pre-built-containers)
      * in this field.
      *
      * Generated from protobuf field <code>string image_uri = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
@@ -467,7 +467,7 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
      * `command` and `args` fields interact with a container's `ENTRYPOINT` and
      * `CMD`.
      * In this field, you can reference environment variables
-     * [set by AI Platform](https://tinyurl.com/cust-cont-reqs#aip-variables)
+     * [set by Vertex AI](https://tinyurl.com/cust-cont-reqs#aip-variables)
      * and environment variables set in the [env][google.cloud.aiplatform.v1beta1.ModelContainerSpec.env] field.
      * You cannot reference environment variables set in the Docker image. In
      * order for environment variables to be expanded, reference them by using the
@@ -509,7 +509,7 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
      * `command` and `args` fields interact with a container's `ENTRYPOINT` and
      * `CMD`.
      * In this field, you can reference environment variables
-     * [set by AI Platform](https://tinyurl.com/cust-cont-reqs#aip-variables)
+     * [set by Vertex AI](https://tinyurl.com/cust-cont-reqs#aip-variables)
      * and environment variables set in the [env][google.cloud.aiplatform.v1beta1.ModelContainerSpec.env] field.
      * You cannot reference environment variables set in the Docker image. In
      * order for environment variables to be expanded, reference them by using the
@@ -554,7 +554,7 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
      * documentation about how `CMD` and `ENTRYPOINT`
      * [interact](https://tinyurl.com/h3kdcgs).
      * In this field, you can reference environment variables
-     * [set by AI Platform](https://tinyurl.com/cust-cont-reqs#aip-variables)
+     * [set by Vertex AI](https://tinyurl.com/cust-cont-reqs#aip-variables)
      * and environment variables set in the [env][google.cloud.aiplatform.v1beta1.ModelContainerSpec.env] field.
      * You cannot reference environment variables set in the Docker image. In
      * order for environment variables to be expanded, reference them by using the
@@ -595,7 +595,7 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
      * documentation about how `CMD` and `ENTRYPOINT`
      * [interact](https://tinyurl.com/h3kdcgs).
      * In this field, you can reference environment variables
-     * [set by AI Platform](https://tinyurl.com/cust-cont-reqs#aip-variables)
+     * [set by Vertex AI](https://tinyurl.com/cust-cont-reqs#aip-variables)
      * and environment variables set in the [env][google.cloud.aiplatform.v1beta1.ModelContainerSpec.env] field.
      * You cannot reference environment variables set in the Docker image. In
      * order for environment variables to be expanded, reference them by using the
@@ -692,7 +692,7 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. List of ports to expose from the container. AI Platform sends any
+     * Immutable. List of ports to expose from the container. Vertex AI sends any
      * prediction requests that it receives to the first port on this list. AI
      * Platform also sends
      * [liveness and health checks](https://tinyurl.com/cust-cont-reqs#health)
@@ -705,7 +705,7 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
      *   }
      * ]
      * ```
-     * AI Platform does not use ports other than the first one listed. This field
+     * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core API](https://tinyurl.com/k8s-io-api/v1.18/#container-v1-core).
      *
@@ -718,7 +718,7 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. List of ports to expose from the container. AI Platform sends any
+     * Immutable. List of ports to expose from the container. Vertex AI sends any
      * prediction requests that it receives to the first port on this list. AI
      * Platform also sends
      * [liveness and health checks](https://tinyurl.com/cust-cont-reqs#health)
@@ -731,7 +731,7 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
      *   }
      * ]
      * ```
-     * AI Platform does not use ports other than the first one listed. This field
+     * Vertex AI does not use ports other than the first one listed. This field
      * corresponds to the `ports` field of the Kubernetes Containers
      * [v1 core API](https://tinyurl.com/k8s-io-api/v1.18/#container-v1-core).
      *
@@ -748,12 +748,12 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. HTTP path on the container to send prediction requests to. AI Platform
+     * Immutable. HTTP path on the container to send prediction requests to. Vertex AI
      * forwards requests sent using
      * [projects.locations.endpoints.predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict] to this
-     * path on the container's IP address and port. AI Platform then returns the
+     * path on the container's IP address and port. Vertex AI then returns the
      * container's response in the API response.
-     * For example, if you set this field to `/foo`, then when AI Platform
+     * For example, if you set this field to `/foo`, then when Vertex AI
      * receives a prediction request, it forwards the request body in a POST
      * request to the `/foo` path on the port of your container specified by the
      * first value of this `ModelContainerSpec`'s
@@ -764,12 +764,12 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
      * The placeholders in this value are replaced as follows:
      * * <var>ENDPOINT</var>: The last segment (following `endpoints/`)of the
      *   Endpoint.name][] field of the Endpoint where this Model has been
-     *   deployed. (AI Platform makes this value available to your container code
+     *   deployed. (Vertex AI makes this value available to your container code
      *   as the
      *  [`AIP_ENDPOINT_ID`](https://tinyurl.com/cust-cont-reqs#aip-variables)
      *  environment variable.)
      * * <var>DEPLOYED_MODEL</var>: [DeployedModel.id][google.cloud.aiplatform.v1beta1.DeployedModel.id] of the `DeployedModel`.
-     *   (AI Platform makes this value available to your container code
+     *   (Vertex AI makes this value available to your container code
      *   as the [`AIP_DEPLOYED_MODEL_ID` environment
      *   variable](https://tinyurl.com/cust-cont-reqs#aip-variables).)
      *
@@ -782,12 +782,12 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. HTTP path on the container to send prediction requests to. AI Platform
+     * Immutable. HTTP path on the container to send prediction requests to. Vertex AI
      * forwards requests sent using
      * [projects.locations.endpoints.predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict] to this
-     * path on the container's IP address and port. AI Platform then returns the
+     * path on the container's IP address and port. Vertex AI then returns the
      * container's response in the API response.
-     * For example, if you set this field to `/foo`, then when AI Platform
+     * For example, if you set this field to `/foo`, then when Vertex AI
      * receives a prediction request, it forwards the request body in a POST
      * request to the `/foo` path on the port of your container specified by the
      * first value of this `ModelContainerSpec`'s
@@ -798,12 +798,12 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
      * The placeholders in this value are replaced as follows:
      * * <var>ENDPOINT</var>: The last segment (following `endpoints/`)of the
      *   Endpoint.name][] field of the Endpoint where this Model has been
-     *   deployed. (AI Platform makes this value available to your container code
+     *   deployed. (Vertex AI makes this value available to your container code
      *   as the
      *  [`AIP_ENDPOINT_ID`](https://tinyurl.com/cust-cont-reqs#aip-variables)
      *  environment variable.)
      * * <var>DEPLOYED_MODEL</var>: [DeployedModel.id][google.cloud.aiplatform.v1beta1.DeployedModel.id] of the `DeployedModel`.
-     *   (AI Platform makes this value available to your container code
+     *   (Vertex AI makes this value available to your container code
      *   as the [`AIP_DEPLOYED_MODEL_ID` environment
      *   variable](https://tinyurl.com/cust-cont-reqs#aip-variables).)
      *
@@ -820,12 +820,12 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. HTTP path on the container to send health checks to. AI Platform
+     * Immutable. HTTP path on the container to send health checks to. Vertex AI
      * intermittently sends GET requests to this path on the container's IP
      * address and port to check that the container is healthy. Read more about
      * [health
      * checks](https://tinyurl.com/cust-cont-reqs#checks).
-     * For example, if you set this field to `/bar`, then AI Platform
+     * For example, if you set this field to `/bar`, then Vertex AI
      * intermittently sends a GET request to the `/bar` path on the port of your
      * container specified by the first value of this `ModelContainerSpec`'s
      * [ports][google.cloud.aiplatform.v1beta1.ModelContainerSpec.ports] field.
@@ -835,12 +835,12 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
      * The placeholders in this value are replaced as follows:
      * * <var>ENDPOINT</var>: The last segment (following `endpoints/`)of the
      *   Endpoint.name][] field of the Endpoint where this Model has been
-     *   deployed. (AI Platform makes this value available to your container code
+     *   deployed. (Vertex AI makes this value available to your container code
      *   as the
      *   [`AIP_ENDPOINT_ID`](https://tinyurl.com/cust-cont-reqs#aip-variables)
      *   environment variable.)
      * * <var>DEPLOYED_MODEL</var>: [DeployedModel.id][google.cloud.aiplatform.v1beta1.DeployedModel.id] of the `DeployedModel`.
-     *   (AI Platform makes this value available to your container code as the
+     *   (Vertex AI makes this value available to your container code as the
      * [`AIP_DEPLOYED_MODEL_ID`](https://tinyurl.com/cust-cont-reqs#aip-variables)
      *   environment variable.)
      *
@@ -853,12 +853,12 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. HTTP path on the container to send health checks to. AI Platform
+     * Immutable. HTTP path on the container to send health checks to. Vertex AI
      * intermittently sends GET requests to this path on the container's IP
      * address and port to check that the container is healthy. Read more about
      * [health
      * checks](https://tinyurl.com/cust-cont-reqs#checks).
-     * For example, if you set this field to `/bar`, then AI Platform
+     * For example, if you set this field to `/bar`, then Vertex AI
      * intermittently sends a GET request to the `/bar` path on the port of your
      * container specified by the first value of this `ModelContainerSpec`'s
      * [ports][google.cloud.aiplatform.v1beta1.ModelContainerSpec.ports] field.
@@ -868,12 +868,12 @@ class ModelContainerSpec extends \Google\Protobuf\Internal\Message
      * The placeholders in this value are replaced as follows:
      * * <var>ENDPOINT</var>: The last segment (following `endpoints/`)of the
      *   Endpoint.name][] field of the Endpoint where this Model has been
-     *   deployed. (AI Platform makes this value available to your container code
+     *   deployed. (Vertex AI makes this value available to your container code
      *   as the
      *   [`AIP_ENDPOINT_ID`](https://tinyurl.com/cust-cont-reqs#aip-variables)
      *   environment variable.)
      * * <var>DEPLOYED_MODEL</var>: [DeployedModel.id][google.cloud.aiplatform.v1beta1.DeployedModel.id] of the `DeployedModel`.
-     *   (AI Platform makes this value available to your container code as the
+     *   (Vertex AI makes this value available to your container code as the
      * [`AIP_DEPLOYED_MODEL_ID`](https://tinyurl.com/cust-cont-reqs#aip-variables)
      *   environment variable.)
      *

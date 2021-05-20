@@ -183,7 +183,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * A page token, received from a previous
    * [MetadataService.ListMetadataSchemas][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataSchemas] call. Provide this to retrieve the
-   * subsequent page.
+   * next page.
    * When paginating, all other provided parameters must match the call that
    * provided the page token. (Otherwise the request will fail with
    * INVALID_ARGUMENT error.)
@@ -209,7 +209,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * A page token, received from a previous
    * [MetadataService.ListMetadataSchemas][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataSchemas] call. Provide this to retrieve the
-   * subsequent page.
+   * next page.
    * When paginating, all other provided parameters must match the call that
    * provided the page token. (Otherwise the request will fail with
    * INVALID_ARGUMENT error.)
@@ -796,7 +796,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A page token, received from a previous
      * [MetadataService.ListMetadataSchemas][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataSchemas] call. Provide this to retrieve the
-     * subsequent page.
+     * next page.
      * When paginating, all other provided parameters must match the call that
      * provided the page token. (Otherwise the request will fail with
      * INVALID_ARGUMENT error.)
@@ -821,7 +821,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A page token, received from a previous
      * [MetadataService.ListMetadataSchemas][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataSchemas] call. Provide this to retrieve the
-     * subsequent page.
+     * next page.
      * When paginating, all other provided parameters must match the call that
      * provided the page token. (Otherwise the request will fail with
      * INVALID_ARGUMENT error.)
@@ -847,7 +847,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A page token, received from a previous
      * [MetadataService.ListMetadataSchemas][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataSchemas] call. Provide this to retrieve the
-     * subsequent page.
+     * next page.
      * When paginating, all other provided parameters must match the call that
      * provided the page token. (Otherwise the request will fail with
      * INVALID_ARGUMENT error.)
@@ -871,7 +871,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A page token, received from a previous
      * [MetadataService.ListMetadataSchemas][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataSchemas] call. Provide this to retrieve the
-     * subsequent page.
+     * next page.
      * When paginating, all other provided parameters must match the call that
      * provided the page token. (Otherwise the request will fail with
      * INVALID_ARGUMENT error.)
@@ -890,7 +890,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A page token, received from a previous
      * [MetadataService.ListMetadataSchemas][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataSchemas] call. Provide this to retrieve the
-     * subsequent page.
+     * next page.
      * When paginating, all other provided parameters must match the call that
      * provided the page token. (Otherwise the request will fail with
      * INVALID_ARGUMENT error.)

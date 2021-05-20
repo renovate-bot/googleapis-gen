@@ -185,7 +185,7 @@ class UpdateIndexRequest(proto.Message):
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             The update mask applies to the resource. For the
             ``FieldMask`` definition, see
-            `FieldMask <https://tinyurl.com/protobufs#google.protobuf.FieldMask>`__.
+            `FieldMask <https://tinyurl.com/protobufs/google.protobuf#fieldmask>`__.
     """
 
     index = proto.Field(

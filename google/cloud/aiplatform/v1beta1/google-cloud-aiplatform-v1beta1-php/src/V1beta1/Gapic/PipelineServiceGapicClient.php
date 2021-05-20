@@ -58,7 +58,9 @@ use Google\Protobuf\FieldMask;
 use Google\Protobuf\GPBEmpty;
 
 /**
- * Service Description: A service for creating and managing AI Platform's pipelines.
+ * Service Description: A service for creating and managing Vertex AI's pipelines. This includes both
+ * `TrainingPipeline` resources (used for AutoML and custom training) and
+ * `PipelineJob` resources (used for Vertex Pipelines).
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -873,10 +875,12 @@ class PipelineServiceGapicClient
      *     @type string $filter
      *           The standard list filter.
      *           Supported fields:
-     *           * `display_name` supports = and !=.
-     *           * `state` supports = and !=.
      *
-     *           Some examples of using the filter are:
+     *           * `display_name` supports `=` and `!=`.
+     *           * `state` supports `=` and `!=`.
+     *
+     *           The following examples demonstrate how to filter the list of PipelineJobs:
+     *
      *           * `state="PIPELINE_STATE_SUCCEEDED" AND display_name="my_pipeline"`
      *           * `state="PIPELINE_STATE_RUNNING" OR display_name="my_pipeline"`
      *           * `NOT display_name="my_pipeline"`

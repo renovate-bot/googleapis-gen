@@ -27,7 +27,7 @@ class DeploymentResourcesType
      */
     const DEDICATED_RESOURCES = 1;
     /**
-     * Resources that to large degree are decided by AI Platform, and require
+     * Resources that to large degree are decided by Vertex AI, and require
      * only a modest additional configuration.
      *
      * Generated from protobuf enum <code>AUTOMATIC_RESOURCES = 2;</code>

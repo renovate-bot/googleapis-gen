@@ -41,6 +41,34 @@ class ListContextsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $page_token = '';
     /**
+     * Filter specifying the boolean condition for the Contexts to satisfy in
+     * order to be part of the result set.
+     * The syntax to define filter query is based on https://google.aip.dev/160.
+     * Following are the supported set of filters:
+     * *  **Attribute filtering**:
+     *    For example: `display_name = "test"`.
+     *    Supported fields include: `name`, `display_name`, `schema_title`,
+     *    `create_time`, and `update_time`.
+     *    Time fields, such as `create_time` and `update_time`, require values
+     *    specified in RFC-3339 format.
+     *    For example: `create_time = "2020-11-19T11:30:00-04:00"`.
+     * *  **Metadata field**:
+     *    To filter on metadata fields use traversal operation as follows:
+     *    `metadata.<field_name>.<type_value>`.
+     *    For example: `metadata.field_1.number_value = 10.0`.
+     * *  **Parent Child filtering**:
+     *    To filter Contexts based on parent-child relationship use the HAS
+     *    operator as follows:
+     *    ```
+     *    parent_contexts:
+     *    "projects/<project_number>/locations/<location>/metadataStores/<metadatastore_name>/contexts/<context_id>"
+     *    child_contexts:
+     *    "projects/<project_number>/locations/<location>/metadataStores/<metadatastore_name>/contexts/<context_id>"
+     *    ```
+     * Each of the above supported filters can be combined together using
+     * logical operators (`AND` & `OR`).
+     * For example: `display_name = "test" AND metadata.field1.bool_value = true`.
+     *
      * Generated from protobuf field <code>string filter = 4;</code>
      */
     protected $filter = '';
@@ -65,6 +93,33 @@ class ListContextsRequest extends \Google\Protobuf\Internal\Message
      *           provided the page token. (Otherwise the request will fail with
      *           INVALID_ARGUMENT error.)
      *     @type string $filter
+     *           Filter specifying the boolean condition for the Contexts to satisfy in
+     *           order to be part of the result set.
+     *           The syntax to define filter query is based on https://google.aip.dev/160.
+     *           Following are the supported set of filters:
+     *           *  **Attribute filtering**:
+     *              For example: `display_name = "test"`.
+     *              Supported fields include: `name`, `display_name`, `schema_title`,
+     *              `create_time`, and `update_time`.
+     *              Time fields, such as `create_time` and `update_time`, require values
+     *              specified in RFC-3339 format.
+     *              For example: `create_time = "2020-11-19T11:30:00-04:00"`.
+     *           *  **Metadata field**:
+     *              To filter on metadata fields use traversal operation as follows:
+     *              `metadata.<field_name>.<type_value>`.
+     *              For example: `metadata.field_1.number_value = 10.0`.
+     *           *  **Parent Child filtering**:
+     *              To filter Contexts based on parent-child relationship use the HAS
+     *              operator as follows:
+     *              ```
+     *              parent_contexts:
+     *              "projects/<project_number>/locations/<location>/metadataStores/<metadatastore_name>/contexts/<context_id>"
+     *              child_contexts:
+     *              "projects/<project_number>/locations/<location>/metadataStores/<metadatastore_name>/contexts/<context_id>"
+     *              ```
+     *           Each of the above supported filters can be combined together using
+     *           logical operators (`AND` & `OR`).
+     *           For example: `display_name = "test" AND metadata.field1.bool_value = true`.
      * }
      */
     public function __construct($data = NULL) {
@@ -165,6 +220,34 @@ class ListContextsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Filter specifying the boolean condition for the Contexts to satisfy in
+     * order to be part of the result set.
+     * The syntax to define filter query is based on https://google.aip.dev/160.
+     * Following are the supported set of filters:
+     * *  **Attribute filtering**:
+     *    For example: `display_name = "test"`.
+     *    Supported fields include: `name`, `display_name`, `schema_title`,
+     *    `create_time`, and `update_time`.
+     *    Time fields, such as `create_time` and `update_time`, require values
+     *    specified in RFC-3339 format.
+     *    For example: `create_time = "2020-11-19T11:30:00-04:00"`.
+     * *  **Metadata field**:
+     *    To filter on metadata fields use traversal operation as follows:
+     *    `metadata.<field_name>.<type_value>`.
+     *    For example: `metadata.field_1.number_value = 10.0`.
+     * *  **Parent Child filtering**:
+     *    To filter Contexts based on parent-child relationship use the HAS
+     *    operator as follows:
+     *    ```
+     *    parent_contexts:
+     *    "projects/<project_number>/locations/<location>/metadataStores/<metadatastore_name>/contexts/<context_id>"
+     *    child_contexts:
+     *    "projects/<project_number>/locations/<location>/metadataStores/<metadatastore_name>/contexts/<context_id>"
+     *    ```
+     * Each of the above supported filters can be combined together using
+     * logical operators (`AND` & `OR`).
+     * For example: `display_name = "test" AND metadata.field1.bool_value = true`.
+     *
      * Generated from protobuf field <code>string filter = 4;</code>
      * @return string
      */
@@ -174,6 +257,34 @@ class ListContextsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Filter specifying the boolean condition for the Contexts to satisfy in
+     * order to be part of the result set.
+     * The syntax to define filter query is based on https://google.aip.dev/160.
+     * Following are the supported set of filters:
+     * *  **Attribute filtering**:
+     *    For example: `display_name = "test"`.
+     *    Supported fields include: `name`, `display_name`, `schema_title`,
+     *    `create_time`, and `update_time`.
+     *    Time fields, such as `create_time` and `update_time`, require values
+     *    specified in RFC-3339 format.
+     *    For example: `create_time = "2020-11-19T11:30:00-04:00"`.
+     * *  **Metadata field**:
+     *    To filter on metadata fields use traversal operation as follows:
+     *    `metadata.<field_name>.<type_value>`.
+     *    For example: `metadata.field_1.number_value = 10.0`.
+     * *  **Parent Child filtering**:
+     *    To filter Contexts based on parent-child relationship use the HAS
+     *    operator as follows:
+     *    ```
+     *    parent_contexts:
+     *    "projects/<project_number>/locations/<location>/metadataStores/<metadatastore_name>/contexts/<context_id>"
+     *    child_contexts:
+     *    "projects/<project_number>/locations/<location>/metadataStores/<metadatastore_name>/contexts/<context_id>"
+     *    ```
+     * Each of the above supported filters can be combined together using
+     * logical operators (`AND` & `OR`).
+     * For example: `display_name = "test" AND metadata.field1.bool_value = true`.
+     *
      * Generated from protobuf field <code>string filter = 4;</code>
      * @param string $var
      * @return $this

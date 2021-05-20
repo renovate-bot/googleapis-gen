@@ -80,7 +80,7 @@ func defaultModelCallOptions() *ModelCallOptions {
 	}
 }
 
-// internalModelClient is an interface that defines the methods availaible from Cloud AI Platform API.
+// internalModelClient is an interface that defines the methods availaible from Vertex AI API.
 type internalModelClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -100,10 +100,10 @@ type internalModelClient interface {
 	ListModelEvaluationSlices(context.Context, *aiplatformpb.ListModelEvaluationSlicesRequest, ...gax.CallOption) *ModelEvaluationSliceIterator
 }
 
-// ModelClient is a client for interacting with Cloud AI Platform API.
+// ModelClient is a client for interacting with Vertex AI API.
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 //
-// A service for managing AI Platform’s machine learning Models.
+// A service for managing Vertex AI’s machine learning Models.
 type ModelClient struct {
 	// The internal transport-dependent client.
 	internalClient internalModelClient
@@ -139,7 +139,7 @@ func (c *ModelClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
 }
 
-// UploadModel uploads a Model artifact into AI Platform.
+// UploadModel uploads a Model artifact into Vertex AI.
 func (c *ModelClient) UploadModel(ctx context.Context, req *aiplatformpb.UploadModelRequest, opts ...gax.CallOption) (*UploadModelOperation, error) {
 	return c.internalClient.UploadModel(ctx, req, opts...)
 }
@@ -211,7 +211,7 @@ func (c *ModelClient) ListModelEvaluationSlices(ctx context.Context, req *aiplat
 	return c.internalClient.ListModelEvaluationSlices(ctx, req, opts...)
 }
 
-// modelGRPCClient is a client for interacting with Cloud AI Platform API over gRPC transport.
+// modelGRPCClient is a client for interacting with Vertex AI API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 type modelGRPCClient struct {
@@ -239,7 +239,7 @@ type modelGRPCClient struct {
 // NewModelClient creates a new model service client based on gRPC.
 // The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
-// A service for managing AI Platform’s machine learning Models.
+// A service for managing Vertex AI’s machine learning Models.
 func NewModelClient(ctx context.Context, opts ...option.ClientOption) (*ModelClient, error) {
 	clientOpts := defaultModelGRPCClientOptions()
 	if newModelClientHook != nil {

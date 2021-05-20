@@ -66,7 +66,7 @@ module Google
             # Adds a set of Contexts as children to a parent Context. If any of the
             # child Contexts have already been added to the parent Context, they are
             # simply skipped. If this call would create a cycle or cause any Context to
-            # have more than 10 parents, the request will fail with INVALID_ARGUMENT
+            # have more than 10 parents, the request will fail with an INVALID_ARGUMENT
             # error.
             rpc :AddContextChildren, ::Google::Cloud::Aiplatform::V1beta1::AddContextChildrenRequest, ::Google::Cloud::Aiplatform::V1beta1::AddContextChildrenResponse
             # Retrieves Artifacts and Executions within the specified Context, connected
@@ -80,15 +80,16 @@ module Google
             rpc :ListExecutions, ::Google::Cloud::Aiplatform::V1beta1::ListExecutionsRequest, ::Google::Cloud::Aiplatform::V1beta1::ListExecutionsResponse
             # Updates a stored Execution.
             rpc :UpdateExecution, ::Google::Cloud::Aiplatform::V1beta1::UpdateExecutionRequest, ::Google::Cloud::Aiplatform::V1beta1::Execution
-            # Adds Events for denoting whether each Artifact was an input or output for a
-            # given Execution. If any Events already exist between the Execution and any
-            # of the specified Artifacts they are simply skipped.
+            # Adds Events to the specified Execution. An Event indicates whether an
+            # Artifact was used as an input or output for an Execution. If an Event
+            # already exists between the Execution and the Artifact, the Event is
+            # skipped.
             rpc :AddExecutionEvents, ::Google::Cloud::Aiplatform::V1beta1::AddExecutionEventsRequest, ::Google::Cloud::Aiplatform::V1beta1::AddExecutionEventsResponse
             # Obtains the set of input and output Artifacts for this Execution, in the
             # form of LineageSubgraph that also contains the Execution and connecting
             # Events.
             rpc :QueryExecutionInputsAndOutputs, ::Google::Cloud::Aiplatform::V1beta1::QueryExecutionInputsAndOutputsRequest, ::Google::Cloud::Aiplatform::V1beta1::LineageSubgraph
-            # Creates an MetadataSchema.
+            # Creates a MetadataSchema.
             rpc :CreateMetadataSchema, ::Google::Cloud::Aiplatform::V1beta1::CreateMetadataSchemaRequest, ::Google::Cloud::Aiplatform::V1beta1::MetadataSchema
             # Retrieves a specific MetadataSchema.
             rpc :GetMetadataSchema, ::Google::Cloud::Aiplatform::V1beta1::GetMetadataSchemaRequest, ::Google::Cloud::Aiplatform::V1beta1::MetadataSchema

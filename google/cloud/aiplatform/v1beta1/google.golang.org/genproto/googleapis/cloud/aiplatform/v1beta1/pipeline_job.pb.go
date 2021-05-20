@@ -65,8 +65,9 @@ const (
 	PipelineTaskDetail_FAILED PipelineTaskDetail_State = 7
 	// Specifies task was skipped due to cache hit.
 	PipelineTaskDetail_SKIPPED PipelineTaskDetail_State = 8
-	// Specifies task was not triggered because the trigger policy of the task
-	// in the [PipelineJob.pipeline_spec.condition][] is not satisfied.
+	// Specifies that the task was not triggered because the task's trigger
+	// policy is not satisfied. The trigger policy is specified in the
+	// `condition` field of [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1beta1.PipelineJob.pipeline_spec].
 	PipelineTaskDetail_NOT_TRIGGERED PipelineTaskDetail_State = 9
 )
 
@@ -146,8 +147,6 @@ type PipelineJob struct {
 	// Output only. Timestamp when this PipelineJob was most recently updated.
 	UpdateTime *timestamppb.Timestamp `protobuf:"bytes,6,opt,name=update_time,json=updateTime,proto3" json:"update_time,omitempty"`
 	// Required. The spec of the pipeline.
-	// The spec contains a `schema_version` field which indicates the Kubeflow
-	// Pipeline schema version to decode the struct.
 	PipelineSpec *structpb.Struct `protobuf:"bytes,7,opt,name=pipeline_spec,json=pipelineSpec,proto3" json:"pipeline_spec,omitempty"`
 	// Output only. The detailed state of the job.
 	State PipelineState `protobuf:"varint,8,opt,name=state,proto3,enum=google.cloud.aiplatform.v1beta1.PipelineState" json:"state,omitempty"`
@@ -189,7 +188,7 @@ type PipelineJob struct {
 	//
 	// Private services access must already be configured for the network.
 	// Pipeline job will apply the network configuration to the GCP resources
-	// being launched, if applied, such as Cloud AI Platform
+	// being launched, if applied, such as Vertex AI
 	// Training or Dataflow job. If left unspecified, the workload is not peered
 	// with any network.
 	Network string `protobuf:"bytes,18,opt,name=network,proto3" json:"network,omitempty"`

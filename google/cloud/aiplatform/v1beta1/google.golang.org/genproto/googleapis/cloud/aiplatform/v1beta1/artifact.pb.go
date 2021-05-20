@@ -48,7 +48,7 @@ type Artifact_State int32
 const (
 	// Unspecified state for the Artifact.
 	Artifact_STATE_UNSPECIFIED Artifact_State = 0
-	// A state used by systems like Managed Pipelines to indicate that the
+	// A state used by systems like Vertex Pipelines to indicate that the
 	// underlying data item represented by this Artifact is being created.
 	Artifact_PENDING Artifact_State = 1
 	// A state indicating that the Artifact should exist, unless something
@@ -128,7 +128,7 @@ type Artifact struct {
 	UpdateTime *timestamppb.Timestamp `protobuf:"bytes,12,opt,name=update_time,json=updateTime,proto3" json:"update_time,omitempty"`
 	// The state of this Artifact. This is a property of the Artifact, and does
 	// not imply or capture any ongoing process. This property is managed by
-	// clients (such as AI Platform Pipelines), and the system does not prescribe
+	// clients (such as Vertex Pipelines), and the system does not prescribe
 	// or check the validity of state transitions.
 	State Artifact_State `protobuf:"varint,13,opt,name=state,proto3,enum=google.cloud.aiplatform.v1beta1.Artifact_State" json:"state,omitempty"`
 	// The title of the schema describing the metadata.

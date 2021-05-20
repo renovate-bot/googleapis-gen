@@ -48,7 +48,7 @@ const _ = proto.ProtoPackageIsVersion4
 // window, start_time = end_time. Timestamp of the stats and anomalies always
 // refers to end_time. Raw stats and anomalies are stored in stats_uri or
 // anomaly_uri in the tensorflow defined protos. Field data_stats contains
-// almost identical information with the raw stats in AI Platform
+// almost identical information with the raw stats in Vertex AI
 // defined proto, for UI to display.
 type FeatureStatsAnomaly struct {
 	state         protoimpl.MessageState

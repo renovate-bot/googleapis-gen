@@ -25,13 +25,13 @@ class ListPipelineJobsRequest extends \Google\Protobuf\Internal\Message
     /**
      * The standard list filter.
      * Supported fields:
-     *   * `display_name` supports = and !=.
-     *   * `state` supports = and !=.
-     * Some examples of using the filter are:
-     *  * `state="PIPELINE_STATE_SUCCEEDED" AND display_name="my_pipeline"`
-     *  * `state="PIPELINE_STATE_RUNNING" OR display_name="my_pipeline"`
-     *  * `NOT display_name="my_pipeline"`
-     *  * `state="PIPELINE_STATE_FAILED"`
+     * * `display_name` supports `=` and `!=`.
+     * * `state` supports `=` and `!=`.
+     * The following examples demonstrate how to filter the list of PipelineJobs:
+     * * `state="PIPELINE_STATE_SUCCEEDED" AND display_name="my_pipeline"`
+     * * `state="PIPELINE_STATE_RUNNING" OR display_name="my_pipeline"`
+     * * `NOT display_name="my_pipeline"`
+     * * `state="PIPELINE_STATE_FAILED"`
      *
      * Generated from protobuf field <code>string filter = 2;</code>
      */
@@ -64,13 +64,13 @@ class ListPipelineJobsRequest extends \Google\Protobuf\Internal\Message
      *     @type string $filter
      *           The standard list filter.
      *           Supported fields:
-     *             * `display_name` supports = and !=.
-     *             * `state` supports = and !=.
-     *           Some examples of using the filter are:
-     *            * `state="PIPELINE_STATE_SUCCEEDED" AND display_name="my_pipeline"`
-     *            * `state="PIPELINE_STATE_RUNNING" OR display_name="my_pipeline"`
-     *            * `NOT display_name="my_pipeline"`
-     *            * `state="PIPELINE_STATE_FAILED"`
+     *           * `display_name` supports `=` and `!=`.
+     *           * `state` supports `=` and `!=`.
+     *           The following examples demonstrate how to filter the list of PipelineJobs:
+     *           * `state="PIPELINE_STATE_SUCCEEDED" AND display_name="my_pipeline"`
+     *           * `state="PIPELINE_STATE_RUNNING" OR display_name="my_pipeline"`
+     *           * `NOT display_name="my_pipeline"`
+     *           * `state="PIPELINE_STATE_FAILED"`
      *     @type int $page_size
      *           The standard list page size.
      *     @type string $page_token
@@ -116,13 +116,13 @@ class ListPipelineJobsRequest extends \Google\Protobuf\Internal\Message
     /**
      * The standard list filter.
      * Supported fields:
-     *   * `display_name` supports = and !=.
-     *   * `state` supports = and !=.
-     * Some examples of using the filter are:
-     *  * `state="PIPELINE_STATE_SUCCEEDED" AND display_name="my_pipeline"`
-     *  * `state="PIPELINE_STATE_RUNNING" OR display_name="my_pipeline"`
-     *  * `NOT display_name="my_pipeline"`
-     *  * `state="PIPELINE_STATE_FAILED"`
+     * * `display_name` supports `=` and `!=`.
+     * * `state` supports `=` and `!=`.
+     * The following examples demonstrate how to filter the list of PipelineJobs:
+     * * `state="PIPELINE_STATE_SUCCEEDED" AND display_name="my_pipeline"`
+     * * `state="PIPELINE_STATE_RUNNING" OR display_name="my_pipeline"`
+     * * `NOT display_name="my_pipeline"`
+     * * `state="PIPELINE_STATE_FAILED"`
      *
      * Generated from protobuf field <code>string filter = 2;</code>
      * @return string
@@ -135,13 +135,13 @@ class ListPipelineJobsRequest extends \Google\Protobuf\Internal\Message
     /**
      * The standard list filter.
      * Supported fields:
-     *   * `display_name` supports = and !=.
-     *   * `state` supports = and !=.
-     * Some examples of using the filter are:
-     *  * `state="PIPELINE_STATE_SUCCEEDED" AND display_name="my_pipeline"`
-     *  * `state="PIPELINE_STATE_RUNNING" OR display_name="my_pipeline"`
-     *  * `NOT display_name="my_pipeline"`
-     *  * `state="PIPELINE_STATE_FAILED"`
+     * * `display_name` supports `=` and `!=`.
+     * * `state` supports `=` and `!=`.
+     * The following examples demonstrate how to filter the list of PipelineJobs:
+     * * `state="PIPELINE_STATE_SUCCEEDED" AND display_name="my_pipeline"`
+     * * `state="PIPELINE_STATE_RUNNING" OR display_name="my_pipeline"`
+     * * `NOT display_name="my_pipeline"`
+     * * `state="PIPELINE_STATE_FAILED"`
      *
      * Generated from protobuf field <code>string filter = 2;</code>
      * @param string $var

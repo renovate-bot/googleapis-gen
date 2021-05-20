@@ -54,9 +54,9 @@ type MetadataStore struct {
 	CreateTime *timestamppb.Timestamp `protobuf:"bytes,3,opt,name=create_time,json=createTime,proto3" json:"create_time,omitempty"`
 	// Output only. Timestamp when this MetadataStore was last updated.
 	UpdateTime *timestamppb.Timestamp `protobuf:"bytes,4,opt,name=update_time,json=updateTime,proto3" json:"update_time,omitempty"`
-	// Customer-managed encryption key spec for an Metadata Store. If set, this
-	// Metadata Store and all sub-resources of this Metadata Store will be secured
-	// by this key.
+	// Customer-managed encryption key spec for a Metadata Store. If set, this
+	// Metadata Store and all sub-resources of this Metadata Store are secured
+	// using this key.
 	EncryptionSpec *EncryptionSpec `protobuf:"bytes,5,opt,name=encryption_spec,json=encryptionSpec,proto3" json:"encryption_spec,omitempty"`
 	// Description of the MetadataStore.
 	Description string `protobuf:"bytes,6,opt,name=description,proto3" json:"description,omitempty"`
@@ -138,7 +138,7 @@ func (x *MetadataStore) GetState() *MetadataStore_MetadataStoreState {
 	return nil
 }
 
-// Represent state information for a MetadataStore.
+// Represents state information for a MetadataStore.
 type MetadataStore_MetadataStoreState struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

@@ -1868,7 +1868,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Required. The format in which AI Platform gives the predictions, must be one of the
+     * Required. The format in which Vertex AI gives the predictions, must be one of the
      * [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
      * [supported_output_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_output_storage_formats].
      * </pre>
@@ -1879,7 +1879,7 @@ private static final long serialVersionUID = 0L;
     java.lang.String getPredictionsFormat();
     /**
      * <pre>
-     * Required. The format in which AI Platform gives the predictions, must be one of the
+     * Required. The format in which Vertex AI gives the predictions, must be one of the
      * [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
      * [supported_output_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_output_storage_formats].
      * </pre>
@@ -2252,7 +2252,7 @@ private static final long serialVersionUID = 0L;
     private volatile java.lang.Object predictionsFormat_;
     /**
      * <pre>
-     * Required. The format in which AI Platform gives the predictions, must be one of the
+     * Required. The format in which Vertex AI gives the predictions, must be one of the
      * [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
      * [supported_output_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_output_storage_formats].
      * </pre>
@@ -2275,7 +2275,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The format in which AI Platform gives the predictions, must be one of the
+     * Required. The format in which Vertex AI gives the predictions, must be one of the
      * [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
      * [supported_output_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_output_storage_formats].
      * </pre>
@@ -3380,7 +3380,7 @@ private static final long serialVersionUID = 0L;
       private java.lang.Object predictionsFormat_ = "";
       /**
        * <pre>
-       * Required. The format in which AI Platform gives the predictions, must be one of the
+       * Required. The format in which Vertex AI gives the predictions, must be one of the
        * [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
        * [supported_output_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_output_storage_formats].
        * </pre>
@@ -3402,7 +3402,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. The format in which AI Platform gives the predictions, must be one of the
+       * Required. The format in which Vertex AI gives the predictions, must be one of the
        * [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
        * [supported_output_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_output_storage_formats].
        * </pre>
@@ -3425,7 +3425,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. The format in which AI Platform gives the predictions, must be one of the
+       * Required. The format in which Vertex AI gives the predictions, must be one of the
        * [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
        * [supported_output_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_output_storage_formats].
        * </pre>
@@ -3446,7 +3446,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. The format in which AI Platform gives the predictions, must be one of the
+       * Required. The format in which Vertex AI gives the predictions, must be one of the
        * [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
        * [supported_output_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_output_storage_formats].
        * </pre>
@@ -3462,7 +3462,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. The format in which AI Platform gives the predictions, must be one of the
+       * Required. The format in which Vertex AI gives the predictions, must be one of the
        * [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
        * [supported_output_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_output_storage_formats].
        * </pre>
@@ -4915,7 +4915,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-   * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+   * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
    * the tuning itself).
    * </pre>
    *
@@ -4929,7 +4929,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-   * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+   * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
    * the tuning itself).
    * </pre>
    *
@@ -4943,7 +4943,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-   * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+   * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
    * the tuning itself).
    * </pre>
    *
@@ -7641,7 +7641,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
      * the tuning itself).
      * </pre>
      *
@@ -7654,7 +7654,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
      * the tuning itself).
      * </pre>
      *
@@ -7671,7 +7671,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
      * the tuning itself).
      * </pre>
      *
@@ -7693,7 +7693,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
      * the tuning itself).
      * </pre>
      *
@@ -7713,7 +7713,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
      * the tuning itself).
      * </pre>
      *
@@ -7737,7 +7737,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
      * the tuning itself).
      * </pre>
      *
@@ -7757,7 +7757,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
      * the tuning itself).
      * </pre>
      *
@@ -7771,7 +7771,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
      * the tuning itself).
      * </pre>
      *
@@ -7788,7 +7788,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+     * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
      * the tuning itself).
      * </pre>
      *

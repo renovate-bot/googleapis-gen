@@ -46,7 +46,7 @@ type PipelineState int32
 const (
 	// The pipeline state is unspecified.
 	PipelineState_PIPELINE_STATE_UNSPECIFIED PipelineState = 0
-	// The pipeline has been just created or resumed and processing has not yet
+	// The pipeline has been created or resumed, and processing has not yet
 	// begun.
 	PipelineState_PIPELINE_STATE_QUEUED PipelineState = 1
 	// The service is preparing to run the pipeline.
@@ -57,7 +57,7 @@ const (
 	PipelineState_PIPELINE_STATE_SUCCEEDED PipelineState = 4
 	// The pipeline failed.
 	PipelineState_PIPELINE_STATE_FAILED PipelineState = 5
-	// The pipeline is being cancelled. From this state the pipeline may only go
+	// The pipeline is being cancelled. From this state, the pipeline may only go
 	// to either PIPELINE_STATE_SUCCEEDED, PIPELINE_STATE_FAILED or
 	// PIPELINE_STATE_CANCELLED.
 	PipelineState_PIPELINE_STATE_CANCELLING PipelineState = 6

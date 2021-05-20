@@ -251,7 +251,7 @@ type Attribution struct {
 	// increasing
 	// [step_count][google.cloud.aiplatform.v1beta1.XraiAttribution.step_count] might reduce the error.
 	//
-	// See [this introduction](/ai-platform-unified/docs/explainable-ai/overview)
+	// See [this introduction](/vertex-ai/docs/explainable-ai/overview)
 	// for more information.
 	ApproximationError float64 `protobuf:"fixed64,6,opt,name=approximation_error,json=approximationError,proto3" json:"approximation_error,omitempty"`
 	// Output only. Name of the explain output. Specified as the key in

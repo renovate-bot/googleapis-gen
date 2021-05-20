@@ -4,7 +4,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
  * <pre>
- * A service for managing AI Platform's IndexEndpoints.
+ * A service for managing Vertex AI's IndexEndpoints.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -280,7 +280,7 @@ public final class IndexEndpointServiceGrpc {
 
   /**
    * <pre>
-   * A service for managing AI Platform's IndexEndpoints.
+   * A service for managing Vertex AI's IndexEndpoints.
    * </pre>
    */
   public static abstract class IndexEndpointServiceImplBase implements io.grpc.BindableService {
@@ -415,7 +415,7 @@ public final class IndexEndpointServiceGrpc {
 
   /**
    * <pre>
-   * A service for managing AI Platform's IndexEndpoints.
+   * A service for managing Vertex AI's IndexEndpoints.
    * </pre>
    */
   public static final class IndexEndpointServiceStub extends io.grpc.stub.AbstractAsyncStub<IndexEndpointServiceStub> {
@@ -513,7 +513,7 @@ public final class IndexEndpointServiceGrpc {
 
   /**
    * <pre>
-   * A service for managing AI Platform's IndexEndpoints.
+   * A service for managing Vertex AI's IndexEndpoints.
    * </pre>
    */
   public static final class IndexEndpointServiceBlockingStub extends io.grpc.stub.AbstractBlockingStub<IndexEndpointServiceBlockingStub> {
@@ -604,7 +604,7 @@ public final class IndexEndpointServiceGrpc {
 
   /**
    * <pre>
-   * A service for managing AI Platform's IndexEndpoints.
+   * A service for managing Vertex AI's IndexEndpoints.
    * </pre>
    */
   public static final class IndexEndpointServiceFutureStub extends io.grpc.stub.AbstractFutureStub<IndexEndpointServiceFutureStub> {

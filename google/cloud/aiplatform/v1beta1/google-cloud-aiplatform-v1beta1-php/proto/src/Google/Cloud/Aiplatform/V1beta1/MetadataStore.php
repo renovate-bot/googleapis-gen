@@ -35,9 +35,9 @@ class MetadataStore extends \Google\Protobuf\Internal\Message
      */
     protected $update_time = null;
     /**
-     * Customer-managed encryption key spec for an Metadata Store. If set, this
-     * Metadata Store and all sub-resources of this Metadata Store will be secured
-     * by this key.
+     * Customer-managed encryption key spec for a Metadata Store. If set, this
+     * Metadata Store and all sub-resources of this Metadata Store are secured
+     * using this key.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 5;</code>
      */
@@ -68,9 +68,9 @@ class MetadataStore extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $update_time
      *           Output only. Timestamp when this MetadataStore was last updated.
      *     @type \Google\Cloud\Aiplatform\V1beta1\EncryptionSpec $encryption_spec
-     *           Customer-managed encryption key spec for an Metadata Store. If set, this
-     *           Metadata Store and all sub-resources of this Metadata Store will be secured
-     *           by this key.
+     *           Customer-managed encryption key spec for a Metadata Store. If set, this
+     *           Metadata Store and all sub-resources of this Metadata Store are secured
+     *           using this key.
      *     @type string $description
      *           Description of the MetadataStore.
      *     @type \Google\Cloud\Aiplatform\V1beta1\MetadataStore\MetadataStoreState $state
@@ -181,9 +181,9 @@ class MetadataStore extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Customer-managed encryption key spec for an Metadata Store. If set, this
-     * Metadata Store and all sub-resources of this Metadata Store will be secured
-     * by this key.
+     * Customer-managed encryption key spec for a Metadata Store. If set, this
+     * Metadata Store and all sub-resources of this Metadata Store are secured
+     * using this key.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 5;</code>
      * @return \Google\Cloud\Aiplatform\V1beta1\EncryptionSpec|null
@@ -204,9 +204,9 @@ class MetadataStore extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Customer-managed encryption key spec for an Metadata Store. If set, this
-     * Metadata Store and all sub-resources of this Metadata Store will be secured
-     * by this key.
+     * Customer-managed encryption key spec for a Metadata Store. If set, this
+     * Metadata Store and all sub-resources of this Metadata Store are secured
+     * using this key.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 5;</code>
      * @param \Google\Cloud\Aiplatform\V1beta1\EncryptionSpec $var

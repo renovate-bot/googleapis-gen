@@ -24,7 +24,7 @@ class BatchDedicatedResources extends \Google\Protobuf\Internal\Message
     protected $machine_spec = null;
     /**
      * Immutable. The number of machine replicas used at the start of the batch operation.
-     * If not set, AI Platform decides starting number, not greater than
+     * If not set, Vertex AI decides starting number, not greater than
      * [max_replica_count][google.cloud.aiplatform.v1beta1.BatchDedicatedResources.max_replica_count]
      *
      * Generated from protobuf field <code>int32 starting_replica_count = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -48,7 +48,7 @@ class BatchDedicatedResources extends \Google\Protobuf\Internal\Message
      *           Required. Immutable. The specification of a single machine.
      *     @type int $starting_replica_count
      *           Immutable. The number of machine replicas used at the start of the batch operation.
-     *           If not set, AI Platform decides starting number, not greater than
+     *           If not set, Vertex AI decides starting number, not greater than
      *           [max_replica_count][google.cloud.aiplatform.v1beta1.BatchDedicatedResources.max_replica_count]
      *     @type int $max_replica_count
      *           Immutable. The maximum number of machine replicas the batch operation may be scaled
@@ -98,7 +98,7 @@ class BatchDedicatedResources extends \Google\Protobuf\Internal\Message
 
     /**
      * Immutable. The number of machine replicas used at the start of the batch operation.
-     * If not set, AI Platform decides starting number, not greater than
+     * If not set, Vertex AI decides starting number, not greater than
      * [max_replica_count][google.cloud.aiplatform.v1beta1.BatchDedicatedResources.max_replica_count]
      *
      * Generated from protobuf field <code>int32 starting_replica_count = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -111,7 +111,7 @@ class BatchDedicatedResources extends \Google\Protobuf\Internal\Message
 
     /**
      * Immutable. The number of machine replicas used at the start of the batch operation.
-     * If not set, AI Platform decides starting number, not greater than
+     * If not set, Vertex AI decides starting number, not greater than
      * [max_replica_count][google.cloud.aiplatform.v1beta1.BatchDedicatedResources.max_replica_count]
      *
      * Generated from protobuf field <code>int32 starting_replica_count = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>

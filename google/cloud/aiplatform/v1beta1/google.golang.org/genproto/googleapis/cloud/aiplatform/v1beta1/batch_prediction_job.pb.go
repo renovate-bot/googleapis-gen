@@ -88,7 +88,7 @@ type BatchPredictionJob struct {
 	// must be provided.
 	DedicatedResources *BatchDedicatedResources `protobuf:"bytes,7,opt,name=dedicated_resources,json=dedicatedResources,proto3" json:"dedicated_resources,omitempty"`
 	// Immutable. Parameters configuring the batch behavior. Currently only applicable when
-	// [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases AI Platform does
+	// [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
 	// the tuning itself).
 	ManualBatchTuningParameters *ManualBatchTuningParameters `protobuf:"bytes,8,opt,name=manual_batch_tuning_parameters,json=manualBatchTuningParameters,proto3" json:"manual_batch_tuning_parameters,omitempty"`
 	// Generate explanation with the batch prediction results.
@@ -462,7 +462,7 @@ type BatchPredictionJob_OutputConfig struct {
 	//	*BatchPredictionJob_OutputConfig_GcsDestination
 	//	*BatchPredictionJob_OutputConfig_BigqueryDestination
 	Destination isBatchPredictionJob_OutputConfig_Destination `protobuf_oneof:"destination"`
-	// Required. The format in which AI Platform gives the predictions, must be one of the
+	// Required. The format in which Vertex AI gives the predictions, must be one of the
 	// [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
 	// [supported_output_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_output_storage_formats].
 	PredictionsFormat string `protobuf:"bytes,1,opt,name=predictions_format,json=predictionsFormat,proto3" json:"predictions_format,omitempty"`

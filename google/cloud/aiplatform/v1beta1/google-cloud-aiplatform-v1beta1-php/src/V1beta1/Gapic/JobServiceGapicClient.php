@@ -86,7 +86,7 @@ use Google\Protobuf\GPBEmpty;
 use Google\Protobuf\Timestamp;
 
 /**
- * Service Description: A service for creating and managing AI Platform's jobs.
+ * Service Description: A service for creating and managing Vertex AI's jobs.
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:

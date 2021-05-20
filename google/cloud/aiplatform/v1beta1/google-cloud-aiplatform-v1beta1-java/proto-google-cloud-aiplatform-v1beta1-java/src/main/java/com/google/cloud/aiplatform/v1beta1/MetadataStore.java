@@ -167,7 +167,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Represent state information for a MetadataStore.
+   * Represents state information for a MetadataStore.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.MetadataStore.MetadataStoreState}
@@ -424,7 +424,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Represent state information for a MetadataStore.
+     * Represents state information for a MetadataStore.
      * </pre>
      *
      * Protobuf type {@code google.cloud.aiplatform.v1beta1.MetadataStore.MetadataStoreState}
@@ -794,9 +794,9 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.aiplatform.v1beta1.EncryptionSpec encryptionSpec_;
   /**
    * <pre>
-   * Customer-managed encryption key spec for an Metadata Store. If set, this
-   * Metadata Store and all sub-resources of this Metadata Store will be secured
-   * by this key.
+   * Customer-managed encryption key spec for a Metadata Store. If set, this
+   * Metadata Store and all sub-resources of this Metadata Store are secured
+   * using this key.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 5;</code>
@@ -808,9 +808,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Customer-managed encryption key spec for an Metadata Store. If set, this
-   * Metadata Store and all sub-resources of this Metadata Store will be secured
-   * by this key.
+   * Customer-managed encryption key spec for a Metadata Store. If set, this
+   * Metadata Store and all sub-resources of this Metadata Store are secured
+   * using this key.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 5;</code>
@@ -822,9 +822,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Customer-managed encryption key spec for an Metadata Store. If set, this
-   * Metadata Store and all sub-resources of this Metadata Store will be secured
-   * by this key.
+   * Customer-managed encryption key spec for a Metadata Store. If set, this
+   * Metadata Store and all sub-resources of this Metadata Store are secured
+   * using this key.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 5;</code>
@@ -1773,9 +1773,9 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.aiplatform.v1beta1.EncryptionSpec, com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder, com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder> encryptionSpecBuilder_;
     /**
      * <pre>
-     * Customer-managed encryption key spec for an Metadata Store. If set, this
-     * Metadata Store and all sub-resources of this Metadata Store will be secured
-     * by this key.
+     * Customer-managed encryption key spec for a Metadata Store. If set, this
+     * Metadata Store and all sub-resources of this Metadata Store are secured
+     * using this key.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 5;</code>
@@ -1786,9 +1786,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Customer-managed encryption key spec for an Metadata Store. If set, this
-     * Metadata Store and all sub-resources of this Metadata Store will be secured
-     * by this key.
+     * Customer-managed encryption key spec for a Metadata Store. If set, this
+     * Metadata Store and all sub-resources of this Metadata Store are secured
+     * using this key.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 5;</code>
@@ -1803,9 +1803,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Customer-managed encryption key spec for an Metadata Store. If set, this
-     * Metadata Store and all sub-resources of this Metadata Store will be secured
-     * by this key.
+     * Customer-managed encryption key spec for a Metadata Store. If set, this
+     * Metadata Store and all sub-resources of this Metadata Store are secured
+     * using this key.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 5;</code>
@@ -1825,9 +1825,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Customer-managed encryption key spec for an Metadata Store. If set, this
-     * Metadata Store and all sub-resources of this Metadata Store will be secured
-     * by this key.
+     * Customer-managed encryption key spec for a Metadata Store. If set, this
+     * Metadata Store and all sub-resources of this Metadata Store are secured
+     * using this key.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 5;</code>
@@ -1845,9 +1845,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Customer-managed encryption key spec for an Metadata Store. If set, this
-     * Metadata Store and all sub-resources of this Metadata Store will be secured
-     * by this key.
+     * Customer-managed encryption key spec for a Metadata Store. If set, this
+     * Metadata Store and all sub-resources of this Metadata Store are secured
+     * using this key.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 5;</code>
@@ -1869,9 +1869,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Customer-managed encryption key spec for an Metadata Store. If set, this
-     * Metadata Store and all sub-resources of this Metadata Store will be secured
-     * by this key.
+     * Customer-managed encryption key spec for a Metadata Store. If set, this
+     * Metadata Store and all sub-resources of this Metadata Store are secured
+     * using this key.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 5;</code>
@@ -1889,9 +1889,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Customer-managed encryption key spec for an Metadata Store. If set, this
-     * Metadata Store and all sub-resources of this Metadata Store will be secured
-     * by this key.
+     * Customer-managed encryption key spec for a Metadata Store. If set, this
+     * Metadata Store and all sub-resources of this Metadata Store are secured
+     * using this key.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 5;</code>
@@ -1903,9 +1903,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Customer-managed encryption key spec for an Metadata Store. If set, this
-     * Metadata Store and all sub-resources of this Metadata Store will be secured
-     * by this key.
+     * Customer-managed encryption key spec for a Metadata Store. If set, this
+     * Metadata Store and all sub-resources of this Metadata Store are secured
+     * using this key.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 5;</code>
@@ -1920,9 +1920,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Customer-managed encryption key spec for an Metadata Store. If set, this
-     * Metadata Store and all sub-resources of this Metadata Store will be secured
-     * by this key.
+     * Customer-managed encryption key spec for a Metadata Store. If set, this
+     * Metadata Store and all sub-resources of this Metadata Store are secured
+     * using this key.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 5;</code>

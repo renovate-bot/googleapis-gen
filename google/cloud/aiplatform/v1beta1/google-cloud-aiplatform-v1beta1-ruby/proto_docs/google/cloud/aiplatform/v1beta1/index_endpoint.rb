@@ -128,7 +128,7 @@ module Google
         # @!attribute [rw] automatic_resources
         #   @return [::Google::Cloud::Aiplatform::V1beta1::AutomaticResources]
         #     Optional. A description of resources that the DeployedIndex uses, which to large
-        #     degree are decided by AI Platform, and optionally allows only a modest
+        #     degree are decided by Vertex AI, and optionally allows only a modest
         #     additional configuration.
         #     If min_replica_count is not set, the default value is 1. If
         #     max_replica_count is not set, the default value is min_replica_count. The
