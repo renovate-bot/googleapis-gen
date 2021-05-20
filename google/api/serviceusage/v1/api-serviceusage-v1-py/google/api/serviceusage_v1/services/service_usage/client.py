@@ -73,7 +73,13 @@ class ServiceUsageClientMeta(type):
 
 
 class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
-    """`Service Usage API </service-usage/docs/overview>`__"""
+    """Enables services that service consumers want to use on Google Cloud
+    Platform, lists the available or enabled services, or disables
+    services that service consumers no longer use.
+
+    See `Service Usage
+    API <https://cloud.google.com/service-usage/docs/overview>`__
+    """
 
     @staticmethod
     def _get_default_mtls_endpoint(api_endpoint):

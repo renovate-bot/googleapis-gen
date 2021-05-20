@@ -18,8 +18,8 @@
 
 
 module Google
-  module Api
-    module Serviceusage
+  module Cloud
+    module ServiceUsage
       module V1
         # Request message for the `EnableService` method.
         # @!attribute [rw] name
@@ -44,7 +44,7 @@ module Google
         # This response message is assigned to the `response` field of the returned
         # Operation when that operation is done.
         # @!attribute [rw] service
-        #   @return [::Google::Api::Serviceusage::V1::Service]
+        #   @return [::Google::Cloud::ServiceUsage::V1::Service]
         #     The new state of the service after enabling.
         class EnableServiceResponse
           include ::Google::Protobuf::MessageExts
@@ -69,7 +69,7 @@ module Google
         #     service, and any enabled services that depend on it, will be disabled
         #     together.
         # @!attribute [rw] check_if_service_has_usage
-        #   @return [::Google::Api::Serviceusage::V1::DisableServiceRequest::CheckIfServiceHasUsage]
+        #   @return [::Google::Cloud::ServiceUsage::V1::DisableServiceRequest::CheckIfServiceHasUsage]
         #     Defines the behavior for checking service usage when disabling a service.
         class DisableServiceRequest
           include ::Google::Protobuf::MessageExts
@@ -95,7 +95,7 @@ module Google
         # This response message is assigned to the `response` field of the returned
         # Operation when that operation is done.
         # @!attribute [rw] service
-        #   @return [::Google::Api::Serviceusage::V1::Service]
+        #   @return [::Google::Cloud::ServiceUsage::V1::Service]
         #     The new state of the service after disabling.
         class DisableServiceResponse
           include ::Google::Protobuf::MessageExts
@@ -142,7 +142,7 @@ module Google
 
         # Response message for the `ListServices` method.
         # @!attribute [rw] services
-        #   @return [::Array<::Google::Api::Serviceusage::V1::Service>]
+        #   @return [::Array<::Google::Cloud::ServiceUsage::V1::Service>]
         #     The available services for the requested project.
         # @!attribute [rw] next_page_token
         #   @return [::String]
@@ -184,10 +184,10 @@ module Google
         # This response message is assigned to the `response` field of the returned
         # Operation when that operation is done.
         # @!attribute [rw] services
-        #   @return [::Array<::Google::Api::Serviceusage::V1::Service>]
+        #   @return [::Array<::Google::Cloud::ServiceUsage::V1::Service>]
         #     The new state of the services after enabling.
         # @!attribute [rw] failures
-        #   @return [::Array<::Google::Api::Serviceusage::V1::BatchEnableServicesResponse::EnableFailure>]
+        #   @return [::Array<::Google::Cloud::ServiceUsage::V1::BatchEnableServicesResponse::EnableFailure>]
         #     If allow_partial_success is true, and one or more services could not be
         #     enabled, this field contains the details about each failure.
         class BatchEnableServicesResponse
@@ -230,7 +230,7 @@ module Google
 
         # Response message for the `BatchGetServices` method.
         # @!attribute [rw] services
-        #   @return [::Array<::Google::Api::Serviceusage::V1::Service>]
+        #   @return [::Array<::Google::Cloud::ServiceUsage::V1::Service>]
         #     The requested Service states.
         class BatchGetServicesResponse
           include ::Google::Protobuf::MessageExts

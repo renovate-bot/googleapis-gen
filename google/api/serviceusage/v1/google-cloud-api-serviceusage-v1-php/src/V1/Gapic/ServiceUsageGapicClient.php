@@ -22,34 +22,38 @@
  * Updates to the above are reflected here through a refresh process.
  */
 
-namespace Google\Api\Serviceusage\V1\Gapic;
+namespace Google\Cloud\ServiceUsage\V1\Gapic;
 
-use Google\Api\Serviceusage\V1\BatchEnableServicesRequest;
-use Google\Api\Serviceusage\V1\BatchGetServicesRequest;
-
-use Google\Api\Serviceusage\V1\BatchGetServicesResponse;
-
-use Google\Api\Serviceusage\V1\DisableServiceRequest;
-use Google\Api\Serviceusage\V1\EnableServiceRequest;
-use Google\Api\Serviceusage\V1\GetServiceRequest;
-use Google\Api\Serviceusage\V1\ListServicesRequest;
-use Google\Api\Serviceusage\V1\ListServicesResponse;
-use Google\Api\Serviceusage\V1\Service;
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
+
 use Google\ApiCore\GapicClientTrait;
+
 use Google\ApiCore\LongRunning\OperationsClient;
 use Google\ApiCore\OperationResponse;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
-
 use Google\Auth\FetchAuthTokenInterface;
+use Google\Cloud\ServiceUsage\V1\BatchEnableServicesRequest;
+use Google\Cloud\ServiceUsage\V1\BatchGetServicesRequest;
+use Google\Cloud\ServiceUsage\V1\BatchGetServicesResponse;
+use Google\Cloud\ServiceUsage\V1\DisableServiceRequest;
+use Google\Cloud\ServiceUsage\V1\EnableServiceRequest;
+use Google\Cloud\ServiceUsage\V1\GetServiceRequest;
+use Google\Cloud\ServiceUsage\V1\ListServicesRequest;
+use Google\Cloud\ServiceUsage\V1\ListServicesResponse;
+
+use Google\Cloud\ServiceUsage\V1\Service;
 use Google\LongRunning\Operation;
 
 /**
- * Service Description: [Service Usage API](/service-usage/docs/overview)
+ * Service Description: Enables services that service consumers want to use on Google Cloud Platform,
+ * lists the available or enabled services, or disables services that service
+ * consumers no longer use.
+ *
+ * See [Service Usage API](https://cloud.google.com/service-usage/docs/overview)
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -357,7 +361,7 @@ class ServiceUsageGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Api\Serviceusage\V1\BatchGetServicesResponse
+     * @return \Google\Cloud\ServiceUsage\V1\BatchGetServicesResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -442,7 +446,7 @@ class ServiceUsageGapicClient
      *           together.
      *     @type int $checkIfServiceHasUsage
      *           Defines the behavior for checking service usage when disabling a service.
-     *           For allowed values, use constants defined on {@see \Google\Api\Serviceusage\V1\DisableServiceRequest\CheckIfServiceHasUsage}
+     *           For allowed values, use constants defined on {@see \Google\Cloud\ServiceUsage\V1\DisableServiceRequest\CheckIfServiceHasUsage}
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -583,7 +587,7 @@ class ServiceUsageGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Api\Serviceusage\V1\Service
+     * @return \Google\Cloud\ServiceUsage\V1\Service
      *
      * @throws ApiException if the remote call fails
      */

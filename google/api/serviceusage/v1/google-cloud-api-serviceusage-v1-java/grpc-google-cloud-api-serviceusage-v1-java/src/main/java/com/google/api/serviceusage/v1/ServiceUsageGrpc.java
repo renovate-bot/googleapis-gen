@@ -4,7 +4,10 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
  * <pre>
- * [Service Usage API](/service-usage/docs/overview)
+ * Enables services that service consumers want to use on Google Cloud Platform,
+ * lists the available or enabled services, or disables services that service
+ * consumers no longer use.
+ * See [Service Usage API](https://cloud.google.com/service-usage/docs/overview)
  * </pre>
  */
 @javax.annotation.Generated(
@@ -249,7 +252,10 @@ public final class ServiceUsageGrpc {
 
   /**
    * <pre>
-   * [Service Usage API](/service-usage/docs/overview)
+   * Enables services that service consumers want to use on Google Cloud Platform,
+   * lists the available or enabled services, or disables services that service
+   * consumers no longer use.
+   * See [Service Usage API](https://cloud.google.com/service-usage/docs/overview)
    * </pre>
    */
   public static abstract class ServiceUsageImplBase implements io.grpc.BindableService {
@@ -383,7 +389,10 @@ public final class ServiceUsageGrpc {
 
   /**
    * <pre>
-   * [Service Usage API](/service-usage/docs/overview)
+   * Enables services that service consumers want to use on Google Cloud Platform,
+   * lists the available or enabled services, or disables services that service
+   * consumers no longer use.
+   * See [Service Usage API](https://cloud.google.com/service-usage/docs/overview)
    * </pre>
    */
   public static final class ServiceUsageStub extends io.grpc.stub.AbstractAsyncStub<ServiceUsageStub> {
@@ -486,7 +495,10 @@ public final class ServiceUsageGrpc {
 
   /**
    * <pre>
-   * [Service Usage API](/service-usage/docs/overview)
+   * Enables services that service consumers want to use on Google Cloud Platform,
+   * lists the available or enabled services, or disables services that service
+   * consumers no longer use.
+   * See [Service Usage API](https://cloud.google.com/service-usage/docs/overview)
    * </pre>
    */
   public static final class ServiceUsageBlockingStub extends io.grpc.stub.AbstractBlockingStub<ServiceUsageBlockingStub> {
@@ -583,7 +595,10 @@ public final class ServiceUsageGrpc {
 
   /**
    * <pre>
-   * [Service Usage API](/service-usage/docs/overview)
+   * Enables services that service consumers want to use on Google Cloud Platform,
+   * lists the available or enabled services, or disables services that service
+   * consumers no longer use.
+   * See [Service Usage API](https://cloud.google.com/service-usage/docs/overview)
    * </pre>
    */
   public static final class ServiceUsageFutureStub extends io.grpc.stub.AbstractFutureStub<ServiceUsageFutureStub> {

@@ -64,8 +64,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
 end
 
 module Google
-  module Api
-    module Serviceusage
+  module Cloud
+    module ServiceUsage
       module V1
         EnableServiceRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.api.serviceusage.v1.EnableServiceRequest").msgclass
         EnableServiceResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.api.serviceusage.v1.EnableServiceResponse").msgclass

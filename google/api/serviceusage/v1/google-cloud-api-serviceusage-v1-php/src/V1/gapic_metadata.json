@@ -3,7 +3,7 @@
     "comment": "This file maps proto services\/RPCs to the corresponding library clients\/methods",
     "language": "php",
     "protoPackage": "google.api.serviceusage.v1",
-    "libraryPackage": "Google\\Api\\Serviceusage\\V1",
+    "libraryPackage": "Google\\Cloud\\ServiceUsage\\V1",
     "services": {
         "ServiceUsage": {
             "clients": {

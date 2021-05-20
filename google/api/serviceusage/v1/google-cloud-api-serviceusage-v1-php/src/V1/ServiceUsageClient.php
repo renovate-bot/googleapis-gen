@@ -22,9 +22,9 @@
  * Updates to the above are reflected here through a refresh process.
  */
 
-namespace Google\Api\Serviceusage\V1;
+namespace Google\Cloud\ServiceUsage\V1;
 
-use Google\Api\Serviceusage\V1\Gapic\ServiceUsageGapicClient;
+use Google\Cloud\ServiceUsage\V1\Gapic\ServiceUsageGapicClient;
 
 /** {@inheritdoc} */
 class ServiceUsageClient extends ServiceUsageGapicClient

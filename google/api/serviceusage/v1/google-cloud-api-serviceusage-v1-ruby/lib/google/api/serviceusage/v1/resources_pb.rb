@@ -44,8 +44,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
 end
 
 module Google
-  module Api
-    module Serviceusage
+  module Cloud
+    module ServiceUsage
       module V1
         Service = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.api.serviceusage.v1.Service").msgclass
         ServiceConfig = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.api.serviceusage.v1.ServiceConfig").msgclass

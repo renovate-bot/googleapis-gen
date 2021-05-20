@@ -20,23 +20,23 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Api\Serviceusage\Tests\Unit\V1;
+namespace Google\Cloud\ServiceUsage\Tests\Unit\V1;
 
-use Google\Api\Serviceusage\V1\BatchEnableServicesResponse;
-
-use Google\Api\Serviceusage\V1\BatchGetServicesResponse;
-use Google\Api\Serviceusage\V1\DisableServiceResponse;
-
-use Google\Api\Serviceusage\V1\EnableServiceResponse;
-use Google\Api\Serviceusage\V1\ListServicesResponse;
-use Google\Api\Serviceusage\V1\Service;
-
-use Google\Api\Serviceusage\V1\ServiceUsageClient;
 use Google\ApiCore\ApiException;
+
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\LongRunning\OperationsClient;
+
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
+use Google\Cloud\ServiceUsage\V1\BatchEnableServicesResponse;
+
+use Google\Cloud\ServiceUsage\V1\BatchGetServicesResponse;
+use Google\Cloud\ServiceUsage\V1\DisableServiceResponse;
+use Google\Cloud\ServiceUsage\V1\EnableServiceResponse;
+use Google\Cloud\ServiceUsage\V1\ListServicesResponse;
+use Google\Cloud\ServiceUsage\V1\Service;
+use Google\Cloud\ServiceUsage\V1\ServiceUsageClient;
 use Google\LongRunning\GetOperationRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\Any;

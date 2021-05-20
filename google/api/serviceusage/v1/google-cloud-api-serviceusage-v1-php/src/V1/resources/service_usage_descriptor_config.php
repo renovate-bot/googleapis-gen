@@ -5,8 +5,8 @@ return [
         'google.api.serviceusage.v1.ServiceUsage' => [
             'BatchEnableServices' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Api\Serviceusage\V1\BatchEnableServicesResponse',
-                    'metadataReturnType' => '\Google\Api\Serviceusage\V1\OperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\ServiceUsage\V1\BatchEnableServicesResponse',
+                    'metadataReturnType' => '\Google\Cloud\ServiceUsage\V1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -15,8 +15,8 @@ return [
             ],
             'DisableService' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Api\Serviceusage\V1\DisableServiceResponse',
-                    'metadataReturnType' => '\Google\Api\Serviceusage\V1\OperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\ServiceUsage\V1\DisableServiceResponse',
+                    'metadataReturnType' => '\Google\Cloud\ServiceUsage\V1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -25,8 +25,8 @@ return [
             ],
             'EnableService' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Api\Serviceusage\V1\EnableServiceResponse',
-                    'metadataReturnType' => '\Google\Api\Serviceusage\V1\OperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\ServiceUsage\V1\EnableServiceResponse',
+                    'metadataReturnType' => '\Google\Cloud\ServiceUsage\V1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',

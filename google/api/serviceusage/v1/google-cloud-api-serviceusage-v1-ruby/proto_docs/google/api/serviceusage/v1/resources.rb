@@ -18,8 +18,8 @@
 
 
 module Google
-  module Api
-    module Serviceusage
+  module Cloud
+    module ServiceUsage
       module V1
         # A service that is available for use by the consumer.
         # @!attribute [rw] name
@@ -35,13 +35,13 @@ module Google
         #     A valid name would be:
         #     - projects/123
         # @!attribute [rw] config
-        #   @return [::Google::Api::Serviceusage::V1::ServiceConfig]
+        #   @return [::Google::Cloud::ServiceUsage::V1::ServiceConfig]
         #     The service configuration of the available service.
         #     Some fields may be filtered out of the configuration in responses to
         #     the `ListServices` method. These fields are present only in responses to
         #     the `GetService` method.
         # @!attribute [rw] state
-        #   @return [::Google::Api::Serviceusage::V1::State]
+        #   @return [::Google::Cloud::ServiceUsage::V1::State]
         #     Whether or not the service has been enabled for use by the consumer.
         class Service
           include ::Google::Protobuf::MessageExts
