@@ -69,9 +69,9 @@ module Google
                 default_config.rpcs.list_tag_bindings.timeout = 60.0
                 default_config.rpcs.list_tag_bindings.retry_policy = {
                   initial_delay: 0.1,
-              max_delay: 60.0,
-              multiplier: 1.3,
-              retry_codes: [14]
+                  max_delay: 60.0,
+                  multiplier: 1.3,
+                  retry_codes: [14]
                 }
 
                 default_config.rpcs.create_tag_binding.timeout = 60.0

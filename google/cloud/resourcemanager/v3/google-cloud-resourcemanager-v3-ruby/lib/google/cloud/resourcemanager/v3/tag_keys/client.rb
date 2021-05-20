@@ -68,17 +68,17 @@ module Google
                 default_config.rpcs.list_tag_keys.timeout = 60.0
                 default_config.rpcs.list_tag_keys.retry_policy = {
                   initial_delay: 0.1,
-              max_delay: 60.0,
-              multiplier: 1.3,
-              retry_codes: [14]
+                  max_delay: 60.0,
+                  multiplier: 1.3,
+                  retry_codes: [14]
                 }
 
                 default_config.rpcs.get_tag_key.timeout = 60.0
                 default_config.rpcs.get_tag_key.retry_policy = {
                   initial_delay: 0.1,
-              max_delay: 60.0,
-              multiplier: 1.3,
-              retry_codes: [14]
+                  max_delay: 60.0,
+                  multiplier: 1.3,
+                  retry_codes: [14]
                 }
 
                 default_config.rpcs.create_tag_key.timeout = 60.0
@@ -90,9 +90,9 @@ module Google
                 default_config.rpcs.get_iam_policy.timeout = 60.0
                 default_config.rpcs.get_iam_policy.retry_policy = {
                   initial_delay: 0.1,
-              max_delay: 60.0,
-              multiplier: 1.3,
-              retry_codes: [14]
+                  max_delay: 60.0,
+                  multiplier: 1.3,
+                  retry_codes: [14]
                 }
 
                 default_config.rpcs.set_iam_policy.timeout = 60.0

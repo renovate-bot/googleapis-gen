@@ -69,9 +69,9 @@ module Google
                 default_config.timeout = 600.0
                 default_config.retry_policy = {
                   initial_delay: 0.1,
-                max_delay: 60.0,
-                multiplier: 1.3,
-                retry_codes: [4, 14, 10, 13, 2]
+                  max_delay: 60.0,
+                  multiplier: 1.3,
+                  retry_codes: [4, 14, 10, 13, 2]
                 }
 
                 default_config

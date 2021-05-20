@@ -68,17 +68,17 @@ module Google
                 default_config.rpcs.get_project.timeout = 60.0
                 default_config.rpcs.get_project.retry_policy = {
                   initial_delay: 0.1,
-              max_delay: 60.0,
-              multiplier: 1.3,
-              retry_codes: [14]
+                  max_delay: 60.0,
+                  multiplier: 1.3,
+                  retry_codes: [14]
                 }
 
                 default_config.rpcs.list_projects.timeout = 60.0
                 default_config.rpcs.list_projects.retry_policy = {
                   initial_delay: 0.1,
-              max_delay: 60.0,
-              multiplier: 1.3,
-              retry_codes: [14]
+                  max_delay: 60.0,
+                  multiplier: 1.3,
+                  retry_codes: [14]
                 }
 
                 default_config.rpcs.search_projects.timeout = 60.0
@@ -96,9 +96,9 @@ module Google
                 default_config.rpcs.get_iam_policy.timeout = 60.0
                 default_config.rpcs.get_iam_policy.retry_policy = {
                   initial_delay: 0.1,
-              max_delay: 60.0,
-              multiplier: 1.3,
-              retry_codes: [14]
+                  max_delay: 60.0,
+                  multiplier: 1.3,
+                  retry_codes: [14]
                 }
 
                 default_config.rpcs.set_iam_policy.timeout = 60.0

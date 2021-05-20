@@ -70,17 +70,17 @@ module Google
                 default_config.rpcs.commit_cursor.timeout = 600.0
                 default_config.rpcs.commit_cursor.retry_policy = {
                   initial_delay: 0.1,
-              max_delay: 60.0,
-              multiplier: 1.3,
-              retry_codes: [4, 14, 10, 13, 2]
+                  max_delay: 60.0,
+                  multiplier: 1.3,
+                  retry_codes: [4, 14, 10, 13, 2]
                 }
 
                 default_config.rpcs.list_partition_cursors.timeout = 600.0
                 default_config.rpcs.list_partition_cursors.retry_policy = {
                   initial_delay: 0.1,
-              max_delay: 60.0,
-              multiplier: 1.3,
-              retry_codes: [4, 14, 10, 13, 2]
+                  max_delay: 60.0,
+                  multiplier: 1.3,
+                  retry_codes: [4, 14, 10, 13, 2]
                 }
 
                 default_config

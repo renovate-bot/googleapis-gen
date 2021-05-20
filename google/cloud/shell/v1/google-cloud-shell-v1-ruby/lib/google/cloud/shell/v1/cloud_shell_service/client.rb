@@ -74,9 +74,9 @@ module Google
                 default_config.rpcs.get_environment.timeout = 60.0
                 default_config.rpcs.get_environment.retry_policy = {
                   initial_delay: 1.0,
-              max_delay: 60.0,
-              multiplier: 1.3,
-              retry_codes: [14, 2]
+                  max_delay: 60.0,
+                  multiplier: 1.3,
+                  retry_codes: [14, 2]
                 }
 
                 default_config.rpcs.start_environment.timeout = 60.0

@@ -64,9 +64,9 @@ module Ccc
                 default_config.rpcs.get.timeout = 60.0
                 default_config.rpcs.get.retry_policy = {
                   initial_delay: 1.0,
-              max_delay: 60.0,
-              multiplier: 1.3,
-              retry_codes: [14, 2]
+                  max_delay: 60.0,
+                  multiplier: 1.3,
+                  retry_codes: [14, 2]
                 }
 
                 default_config

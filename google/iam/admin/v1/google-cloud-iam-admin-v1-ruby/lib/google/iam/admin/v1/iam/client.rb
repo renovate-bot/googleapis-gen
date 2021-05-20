@@ -86,17 +86,17 @@ module Google
                 default_config.rpcs.list_service_accounts.timeout = 60.0
                 default_config.rpcs.list_service_accounts.retry_policy = {
                   initial_delay: 0.1,
-              max_delay: 60.0,
-              multiplier: 1.3,
-              retry_codes: [14, 4]
+                  max_delay: 60.0,
+                  multiplier: 1.3,
+                  retry_codes: [14, 4]
                 }
 
                 default_config.rpcs.get_service_account.timeout = 60.0
                 default_config.rpcs.get_service_account.retry_policy = {
                   initial_delay: 0.1,
-              max_delay: 60.0,
-              multiplier: 1.3,
-              retry_codes: [14, 4]
+                  max_delay: 60.0,
+                  multiplier: 1.3,
+                  retry_codes: [14, 4]
                 }
 
                 default_config.rpcs.create_service_account.timeout = 60.0
@@ -104,33 +104,33 @@ module Google
                 default_config.rpcs.update_service_account.timeout = 60.0
                 default_config.rpcs.update_service_account.retry_policy = {
                   initial_delay: 0.1,
-              max_delay: 60.0,
-              multiplier: 1.3,
-              retry_codes: [14, 4]
+                  max_delay: 60.0,
+                  multiplier: 1.3,
+                  retry_codes: [14, 4]
                 }
 
                 default_config.rpcs.delete_service_account.timeout = 60.0
                 default_config.rpcs.delete_service_account.retry_policy = {
                   initial_delay: 0.1,
-              max_delay: 60.0,
-              multiplier: 1.3,
-              retry_codes: [14, 4]
+                  max_delay: 60.0,
+                  multiplier: 1.3,
+                  retry_codes: [14, 4]
                 }
 
                 default_config.rpcs.list_service_account_keys.timeout = 60.0
                 default_config.rpcs.list_service_account_keys.retry_policy = {
                   initial_delay: 0.1,
-              max_delay: 60.0,
-              multiplier: 1.3,
-              retry_codes: [14, 4]
+                  max_delay: 60.0,
+                  multiplier: 1.3,
+                  retry_codes: [14, 4]
                 }
 
                 default_config.rpcs.get_service_account_key.timeout = 60.0
                 default_config.rpcs.get_service_account_key.retry_policy = {
                   initial_delay: 0.1,
-              max_delay: 60.0,
-              multiplier: 1.3,
-              retry_codes: [14, 4]
+                  max_delay: 60.0,
+                  multiplier: 1.3,
+                  retry_codes: [14, 4]
                 }
 
                 default_config.rpcs.create_service_account_key.timeout = 60.0
@@ -138,9 +138,9 @@ module Google
                 default_config.rpcs.delete_service_account_key.timeout = 60.0
                 default_config.rpcs.delete_service_account_key.retry_policy = {
                   initial_delay: 0.1,
-              max_delay: 60.0,
-              multiplier: 1.3,
-              retry_codes: [14, 4]
+                  max_delay: 60.0,
+                  multiplier: 1.3,
+                  retry_codes: [14, 4]
                 }
 
                 default_config.rpcs.sign_blob.timeout = 60.0

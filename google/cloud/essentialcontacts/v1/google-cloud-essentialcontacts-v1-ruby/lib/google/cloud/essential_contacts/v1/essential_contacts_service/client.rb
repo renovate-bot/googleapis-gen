@@ -72,17 +72,17 @@ module Google
                 default_config.rpcs.list_contacts.timeout = 60.0
                 default_config.rpcs.list_contacts.retry_policy = {
                   initial_delay: 1.0,
-              max_delay: 10.0,
-              multiplier: 1.3,
-              retry_codes: [14]
+                  max_delay: 10.0,
+                  multiplier: 1.3,
+                  retry_codes: [14]
                 }
 
                 default_config.rpcs.get_contact.timeout = 60.0
                 default_config.rpcs.get_contact.retry_policy = {
                   initial_delay: 1.0,
-              max_delay: 10.0,
-              multiplier: 1.3,
-              retry_codes: [14]
+                  max_delay: 10.0,
+                  multiplier: 1.3,
+                  retry_codes: [14]
                 }
 
                 default_config.rpcs.delete_contact.timeout = 60.0

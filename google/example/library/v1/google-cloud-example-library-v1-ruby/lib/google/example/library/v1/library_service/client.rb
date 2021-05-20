@@ -76,89 +76,89 @@ module Google
                 default_config.rpcs.create_shelf.timeout = 60.0
                 default_config.rpcs.create_shelf.retry_policy = {
                   initial_delay: 0.1,
-              max_delay: 60.0,
-              multiplier: 1.3,
-              retry_codes: []
+                  max_delay: 60.0,
+                  multiplier: 1.3,
+                  retry_codes: []
                 }
 
                 default_config.rpcs.get_shelf.timeout = 60.0
                 default_config.rpcs.get_shelf.retry_policy = {
                   initial_delay: 0.1,
-              max_delay: 60.0,
-              multiplier: 1.3,
-              retry_codes: [4, 14]
+                  max_delay: 60.0,
+                  multiplier: 1.3,
+                  retry_codes: [4, 14]
                 }
 
                 default_config.rpcs.list_shelves.timeout = 60.0
                 default_config.rpcs.list_shelves.retry_policy = {
                   initial_delay: 0.1,
-              max_delay: 60.0,
-              multiplier: 1.3,
-              retry_codes: [4, 14]
+                  max_delay: 60.0,
+                  multiplier: 1.3,
+                  retry_codes: [4, 14]
                 }
 
                 default_config.rpcs.delete_shelf.timeout = 60.0
                 default_config.rpcs.delete_shelf.retry_policy = {
                   initial_delay: 0.1,
-              max_delay: 60.0,
-              multiplier: 1.3,
-              retry_codes: [4, 14]
+                  max_delay: 60.0,
+                  multiplier: 1.3,
+                  retry_codes: [4, 14]
                 }
 
                 default_config.rpcs.merge_shelves.timeout = 60.0
                 default_config.rpcs.merge_shelves.retry_policy = {
                   initial_delay: 0.1,
-              max_delay: 60.0,
-              multiplier: 1.3,
-              retry_codes: []
+                  max_delay: 60.0,
+                  multiplier: 1.3,
+                  retry_codes: []
                 }
 
                 default_config.rpcs.create_book.timeout = 60.0
                 default_config.rpcs.create_book.retry_policy = {
                   initial_delay: 0.1,
-              max_delay: 60.0,
-              multiplier: 1.3,
-              retry_codes: []
+                  max_delay: 60.0,
+                  multiplier: 1.3,
+                  retry_codes: []
                 }
 
                 default_config.rpcs.get_book.timeout = 60.0
                 default_config.rpcs.get_book.retry_policy = {
                   initial_delay: 0.1,
-              max_delay: 60.0,
-              multiplier: 1.3,
-              retry_codes: [4, 14]
+                  max_delay: 60.0,
+                  multiplier: 1.3,
+                  retry_codes: [4, 14]
                 }
 
                 default_config.rpcs.list_books.timeout = 60.0
                 default_config.rpcs.list_books.retry_policy = {
                   initial_delay: 0.1,
-              max_delay: 60.0,
-              multiplier: 1.3,
-              retry_codes: [4, 14]
+                  max_delay: 60.0,
+                  multiplier: 1.3,
+                  retry_codes: [4, 14]
                 }
 
                 default_config.rpcs.delete_book.timeout = 60.0
                 default_config.rpcs.delete_book.retry_policy = {
                   initial_delay: 0.1,
-              max_delay: 60.0,
-              multiplier: 1.3,
-              retry_codes: [4, 14]
+                  max_delay: 60.0,
+                  multiplier: 1.3,
+                  retry_codes: [4, 14]
                 }
 
                 default_config.rpcs.update_book.timeout = 60.0
                 default_config.rpcs.update_book.retry_policy = {
                   initial_delay: 0.1,
-              max_delay: 60.0,
-              multiplier: 1.3,
-              retry_codes: [4, 14]
+                  max_delay: 60.0,
+                  multiplier: 1.3,
+                  retry_codes: [4, 14]
                 }
 
                 default_config.rpcs.move_book.timeout = 60.0
                 default_config.rpcs.move_book.retry_policy = {
                   initial_delay: 0.1,
-              max_delay: 60.0,
-              multiplier: 1.3,
-              retry_codes: []
+                  max_delay: 60.0,
+                  multiplier: 1.3,
+                  retry_codes: []
                 }
 
                 default_config
